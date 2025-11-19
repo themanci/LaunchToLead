@@ -2609,122 +2609,227 @@ body {
 }
 
 /* ========================================
-   CARD DECK HOVER EFFECT
+   3D CARD CAROUSEL (COVER FLOW STYLE)
    ======================================== */
-.card-deck {
+.card-carousel-wrapper {
     position: relative;
-    min-height: 500px;
-    padding: 2rem 0;
+    width: 100%;
+    padding: 3rem 0 4rem;
+    overflow: hidden;
 }
 
-.card-deck-item {
+.card-carousel-container {
+    perspective: 1200px;
+    perspective-origin: 50% 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 450px;
+    position: relative;
+}
+
+.card-carousel {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    transform-style: preserve-3d;
+}
+
+.card-carousel-item {
     position: absolute;
-    left: 50%;
-    width: 90%;
-    max-width: 600px;
-    transform: translateX(-50%);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    width: 350px;
+    background: var(--bg-white);
+    border: 2px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    box-shadow: var(--shadow-xl);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     cursor: pointer;
+    backface-visibility: hidden;
+    left: 50%;
+    top: 50%;
+    transform-origin: center center;
 }
 
-.card-deck-item:nth-child(1) {
-    top: 0;
-    z-index: 6;
+/* Center card (active) */
+.card-carousel-item.active {
+    transform: translate(-50%, -50%) rotateY(0deg) translateZ(0px) scale(1);
+    z-index: 10;
+    opacity: 1;
+    border-color: var(--primary);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
 }
 
-.card-deck-item:nth-child(2) {
-    top: 60px;
-    z-index: 5;
+/* Left cards */
+.card-carousel-item.left-1 {
+    transform: translate(-50%, -50%) rotateY(45deg) translateZ(-200px) translateX(-300px) scale(0.85);
+    z-index: 9;
+    opacity: 0.7;
 }
 
-.card-deck-item:nth-child(3) {
-    top: 120px;
-    z-index: 4;
+.card-carousel-item.left-2 {
+    transform: translate(-50%, -50%) rotateY(50deg) translateZ(-250px) translateX(-450px) scale(0.7);
+    z-index: 8;
+    opacity: 0.5;
 }
 
-.card-deck-item:nth-child(4) {
-    top: 180px;
-    z-index: 3;
+.card-carousel-item.left-3 {
+    transform: translate(-50%, -50%) rotateY(55deg) translateZ(-300px) translateX(-600px) scale(0.6);
+    z-index: 7;
+    opacity: 0.3;
 }
 
-.card-deck-item:nth-child(5) {
-    top: 240px;
-    z-index: 2;
+/* Right cards */
+.card-carousel-item.right-1 {
+    transform: translate(-50%, -50%) rotateY(-45deg) translateZ(-200px) translateX(300px) scale(0.85);
+    z-index: 9;
+    opacity: 0.7;
 }
 
-.card-deck-item:nth-child(6) {
-    top: 300px;
-    z-index: 1;
+.card-carousel-item.right-2 {
+    transform: translate(-50%, -50%) rotateY(-50deg) translateZ(-250px) translateX(450px) scale(0.7);
+    z-index: 8;
+    opacity: 0.5;
 }
 
-.card-deck-item:hover {
-    z-index: 100 !important;
-    transform: translateX(-50%) translateY(-10px) scale(1.02);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+.card-carousel-item.right-3 {
+    transform: translate(-50%, -50%) rotateY(-55deg) translateZ(-300px) translateX(600px) scale(0.6);
+    z-index: 7;
+    opacity: 0.3;
 }
 
-.card-deck .feature-card,
-.card-deck .insight-card,
-.card-deck .framework-card {
-    margin: 0;
-    height: auto;
-    min-height: 200px;
+/* Hidden cards */
+.card-carousel-item.hidden {
+    opacity: 0;
+    pointer-events: none;
 }
 
-/* Mobile: Carousel instead of deck */
+.card-carousel-item .feature-icon,
+.card-carousel-item .insight-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.card-carousel-item .framework-number {
+    width: 50px;
+    height: 50px;
+    background: var(--primary);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: var(--font-weight-bold);
+    margin-bottom: 1rem;
+}
+
+.card-carousel-item h3 {
+    font-size: 1.25rem;
+    color: var(--dark);
+    margin-bottom: 0.75rem;
+}
+
+.card-carousel-item p {
+    font-size: 0.9375rem;
+    color: var(--gray);
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+.card-carousel-item .insight-note {
+    margin-top: 1rem;
+    font-size: 0.875rem;
+    color: var(--dark-light);
+    font-style: italic;
+    padding: 0.75rem;
+    background: var(--primary-light);
+    border-radius: var(--radius-sm);
+    border-left: 3px solid var(--primary);
+}
+
+/* Carousel Navigation */
+.carousel-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.carousel-nav-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--primary);
+    color: #fff;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-nav-btn:hover {
+    background: var(--primary-dark);
+    transform: scale(1.1);
+}
+
+.carousel-nav-btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.carousel-indicators {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.carousel-indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--border);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.carousel-indicator.active {
+    background: var(--primary);
+    width: 30px;
+    border-radius: 5px;
+}
+
+.carousel-counter {
+    font-size: 0.9375rem;
+    color: var(--gray);
+    font-weight: var(--font-weight-medium);
+}
+
+/* Mobile: Stack cards */
 @media (max-width: 768px) {
-    .card-deck {
-        position: relative;
-        min-height: auto;
-        overflow: hidden;
+    .card-carousel-container {
+        perspective: 800px;
+        min-height: 350px;
     }
     
-    .card-deck-wrapper {
-        display: flex;
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
-        gap: var(--space-lg);
-        padding: var(--space-lg) 0;
-        scrollbar-width: none;
-        -ms-overflow-style: none;
+    .card-carousel-item {
+        width: 300px;
     }
     
-    .card-deck-wrapper::-webkit-scrollbar {
-        display: none;
+    .card-carousel-item.left-1,
+    .card-carousel-item.right-1 {
+        scale: 0.8;
     }
     
-    .card-deck-item {
-        position: relative;
-        top: auto;
-        left: auto;
-        transform: none;
-        flex: 0 0 85%;
-        scroll-snap-align: center;
-    }
-    
-    .card-deck-item:hover {
-        transform: none;
-    }
-    
-    .carousel-dots {
-        display: flex;
-        justify-content: center;
-        gap: 0.5rem;
-        margin-top: var(--space-md);
-    }
-    
-    .carousel-dot {
-        width: 8px;
-        height: 8px;
-        border-radius: 50%;
-        background: var(--border);
-        transition: all 0.3s ease;
-    }
-    
-    .carousel-dot.active {
-        background: var(--primary);
-        width: 24px;
-        border-radius: 4px;
+    .card-carousel-item.left-2,
+    .card-carousel-item.left-3,
+    .card-carousel-item.right-2,
+    .card-carousel-item.right-3 {
+        opacity: 0;
+        pointer-events: none;
     }
 }
 

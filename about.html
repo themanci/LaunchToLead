@@ -209,33 +209,50 @@
     <section class="section">
         <div class="container">
             <h2 class="section-title center">What I Learned (That Nobody Tells You)</h2>
-            <div class="card-deck">
-                <div class="card-deck-item">
-                    <div class="insight-icon">👁️</div>
-                    <p>Hard work isn't enough—visibility is a skill you have to learn (and I'll teach you)</p>
-                    <p class="insight-note"><em>(Real talk: I was TERRIBLE at this at first. I thought "good work speaks for itself." It doesn't. A mentor had to basically force me to start sending weekly updates. Now it's second nature.)</em></p>
+            <div class="card-carousel-wrapper">
+                <div class="card-carousel-container">
+                    <div class="card-carousel">
+                        <div class="card-carousel-item">
+                            <div class="insight-icon">👁️</div>
+                            <p>Hard work isn't enough—visibility is a skill you have to learn (and I'll teach you)</p>
+                            <p class="insight-note"><em>(Real talk: I was TERRIBLE at this at first. I thought "good work speaks for itself." It doesn't. A mentor had to basically force me to start sending weekly updates. Now it's second nature.)</em></p>
+                        </div>
+                        <div class="card-carousel-item">
+                            <div class="insight-icon">🎯</div>
+                            <p>Your manager wants to promote you—but only if you make it easy for them</p>
+                        </div>
+                        <div class="card-carousel-item">
+                            <div class="insight-icon">🔄</div>
+                            <p>Pivoting careers doesn't require going back to school—it requires strategic positioning</p>
+                            <p class="insight-note"><em>(I almost gave up on my mechanical-to-software pivot. Took 6 months of rejections before a mentor showed me the actual strategy.)</em></p>
+                        </div>
+                        <div class="card-carousel-item">
+                            <div class="insight-icon">⏰</div>
+                            <p>The 'right time' to ask for promotion is way earlier than you think</p>
+                        </div>
+                        <div class="card-carousel-item">
+                            <div class="insight-icon">🤝</div>
+                            <p>Networking isn't about collecting LinkedIn connections—it's about 3 strategic relationships</p>
+                        </div>
+                        <div class="card-carousel-item">
+                            <div class="insight-icon">📄</div>
+                            <p>Your resume is rejected by a robot before a human ever sees it—here's how to fix that</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="card-deck-item">
-                    <div class="insight-icon">🎯</div>
-                    <p>Your manager wants to promote you—but only if you make it easy for them</p>
+                <div class="carousel-nav">
+                    <button class="carousel-nav-btn carousel-prev" aria-label="Previous card">‹</button>
+                    <div class="carousel-indicators">
+                        <span class="carousel-indicator active"></span>
+                        <span class="carousel-indicator"></span>
+                        <span class="carousel-indicator"></span>
+                        <span class="carousel-indicator"></span>
+                        <span class="carousel-indicator"></span>
+                        <span class="carousel-indicator"></span>
+                    </div>
+                    <button class="carousel-nav-btn carousel-next" aria-label="Next card">›</button>
                 </div>
-                <div class="card-deck-item">
-                    <div class="insight-icon">🔄</div>
-                    <p>Pivoting careers doesn't require going back to school—it requires strategic positioning</p>
-                    <p class="insight-note"><em>(I almost gave up on my mechanical-to-software pivot. Took 6 months of rejections before a mentor showed me the actual strategy.)</em></p>
-                </div>
-                <div class="card-deck-item">
-                    <div class="insight-icon">⏰</div>
-                    <p>The 'right time' to ask for promotion is way earlier than you think</p>
-                </div>
-                <div class="card-deck-item">
-                    <div class="insight-icon">🤝</div>
-                    <p>Networking isn't about collecting LinkedIn connections—it's about 3 strategic relationships</p>
-                </div>
-                <div class="card-deck-item">
-                    <div class="insight-icon">📄</div>
-                    <p>Your resume is rejected by a robot before a human ever sees it—here's how to fix that</p>
-                </div>
+                <div class="carousel-counter" style="text-align: center; margin-top: 0.5rem;">1 / 6</div>
             </div>
         </div>
     </section>
@@ -494,5 +511,6 @@
             </div>
         </div>
     </footer>
+    <script src="carousel.js"></script>
 </body>
 </html>
