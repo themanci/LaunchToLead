@@ -66,6 +66,9 @@ body {
     background-size: 25px 25px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
 }
 
 /* Container */
@@ -73,6 +76,8 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 var(--space-lg);
+    width: 100%;
+    overflow-x: hidden;
 }
 
 /* Navigation */
@@ -640,9 +645,16 @@ body {
 
 .footer-content {
     display: grid;
-    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
     gap: var(--space-xl);
     margin-bottom: var(--space-xl);
+}
+
+.footer-links {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-xl);
+    grid-column: 2 / -1;
 }
 
 .footer-brand .logo {
@@ -688,30 +700,93 @@ body {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .nav-links {
-        gap: var(--space-md);
+    .container {
+        padding-left: var(--space-md);
+        padding-right: var(--space-md);
+    }
+    
+    .nav {
+        padding: 0.75rem 0;
+    }
+    
+    .nav-container {
+        padding-left: var(--space-md);
+        padding-right: var(--space-md);
+        flex-wrap: wrap;
+        gap: 0.75rem;
+    }
+    
+    .logo {
+        gap: 0.375rem;
+        flex: 0 0 auto;
+    }
+    
+    .logo-icon {
+        width: 2rem;
+        height: 2rem;
+        font-size: 1rem;
+    }
+    
+    .logo-main {
         font-size: 0.875rem;
     }
     
+    .logo-sub {
+        font-size: 0.625rem;
+    }
+    
+    .nav-links {
+        flex: 1 1 100%;
+        justify-content: space-evenly;
+        gap: 0.5rem;
+        order: 3;
+    }
+    
+    .nav-links a {
+        font-size: 0.8125rem;
+        padding: 0.375rem 0.5rem;
+    }
+    
     .btn-nav {
-        padding: 0.375rem 0.75rem;
+        padding: 0.375rem 0.625rem;
+        font-size: 0.8125rem;
+    }
+    
+    .hero {
+        padding: var(--space-xl) 0 var(--space-lg);
+    }
+    
+    .hero::before,
+    .hero::after {
+        display: none;
+    }
+    
+    .hero-badge {
+        font-size: 0.75rem;
+        padding: 0.25rem 0.625rem;
     }
     
     .hero-title {
-        font-size: 2rem;
+        font-size: 1.75rem;
+        line-height: 1.25;
+        margin-bottom: var(--space-sm);
     }
     
     .hero-subtitle {
-        font-size: 1.125rem;
+        font-size: 1rem;
+        line-height: 1.5;
+        margin-bottom: var(--space-lg);
     }
     
     .hero-cta {
         flex-direction: column;
-        align-items: center;
+        align-items: stretch;
+        gap: var(--space-sm);
     }
     
     .hero-stats {
         grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-md);
     }
     
     .section-title {
@@ -726,6 +801,13 @@ body {
     
     .footer-content {
         grid-template-columns: 1fr;
+        gap: var(--space-lg);
+    }
+    
+    .footer-links {
+        grid-template-columns: 1fr;
+        grid-column: 1;
+        gap: var(--space-lg);
     }
     
     .cta-content h2 {
@@ -734,16 +816,108 @@ body {
 }
 
 @media (max-width: 480px) {
+    .container {
+        padding-left: var(--space-sm);
+        padding-right: var(--space-sm);
+    }
+    
+    .nav {
+        padding: 0.625rem 0;
+    }
+    
+    .nav-container {
+        padding-left: var(--space-sm);
+        padding-right: var(--space-sm);
+        gap: 0.625rem;
+    }
+    
+    .logo {
+        gap: 0.375rem;
+    }
+    
+    .logo-icon {
+        width: 1.875rem;
+        height: 1.875rem;
+        font-size: 0.9375rem;
+    }
+    
+    .logo-main {
+        font-size: 0.8125rem;
+    }
+    
+    .logo-sub {
+        font-size: 0.5625rem;
+    }
+    
+    .nav-links {
+        gap: 0.375rem;
+    }
+    
+    .nav-links a {
+        font-size: 0.75rem;
+        padding: 0.3125rem 0.4375rem;
+    }
+    
+    .btn-nav {
+        padding: 0.3125rem 0.5rem;
+        font-size: 0.75rem;
+        white-space: nowrap;
+    }
+    
+    .hero {
+        padding: var(--space-lg) 0;
+    }
+    
+    .hero-badge {
+        font-size: 0.6875rem;
+        padding: 0.25rem 0.5rem;
+        margin-bottom: var(--space-sm);
+    }
+    
     .hero-title {
-        font-size: 1.75rem;
+        font-size: 1.5rem;
+        line-height: 1.3;
+        margin-bottom: var(--space-sm);
     }
     
     .hero-subtitle {
-        font-size: 1rem;
+        font-size: 0.875rem;
+        line-height: 1.5;
+        margin-bottom: var(--space-md);
+    }
+    
+    .hero-cta {
+        margin-bottom: var(--space-lg);
+    }
+    
+    .hero-stats {
+        gap: var(--space-sm);
     }
     
     .stat-number {
         font-size: 1.5rem;
+    }
+    
+    .stat-label {
+        font-size: 0.75rem;
+    }
+    
+    .btn {
+        font-size: 0.875rem;
+        padding: 0.625rem 1.25rem;
+    }
+    
+    .section {
+        padding: var(--space-xl) 0;
+    }
+    
+    .section-title {
+        font-size: 1.5rem;
+    }
+    
+    .footer-column a {
+        font-size: 0.875rem;
+        word-break: break-word;
     }
 }
 
@@ -976,6 +1150,22 @@ body {
     text-align: center;
 }
 
+.payment-note {
+    text-align: center;
+    margin-top: var(--space-xl);
+    padding: var(--space-md) var(--space-lg);
+    background-color: rgba(15, 118, 110, 0.05);
+    border-left: 4px solid var(--primary);
+    border-radius: var(--radius-md);
+    color: var(--dark-light);
+    font-size: 0.9375rem;
+    line-height: 1.6;
+}
+
+.payment-note strong {
+    color: var(--primary);
+}
+
 /* Process Timeline */
 .process-timeline {
     max-width: 800px;
@@ -1109,6 +1299,32 @@ body {
     color: var(--gray);
     font-style: italic;
     margin-top: var(--space-md);
+}
+
+.booking-calendar {
+    background-color: var(--bg-white);
+    border-radius: var(--radius-lg);
+    padding: var(--space-md);
+    margin-bottom: var(--space-lg);
+}
+
+.booking-calendar iframe {
+    display: block;
+    margin: 0 auto;
+}
+
+.google-form-container {
+    background-color: var(--bg-white);
+    border: 2px solid var(--border);
+    border-radius: var(--radius-xl);
+    padding: var(--space-lg);
+    overflow: hidden;
+}
+
+.google-form-container iframe {
+    display: block;
+    margin: 0 auto;
+    max-width: 700px;
 }
 
 .payment-info {

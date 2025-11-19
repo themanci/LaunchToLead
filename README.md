@@ -158,7 +158,7 @@ Check:
 ## 🆘 Support
 
 For questions or updates, reach out to:
-- Email: TheManci@gmail.com
+- Email: LaunchToLeadEngineering@gmail.com
 - LinkedIn: linkedin.com/in/mancimansour
 
 ## 📄 License
