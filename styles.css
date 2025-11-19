@@ -2903,22 +2903,20 @@ body {
 .timeline-horizontal {
     position: relative;
     padding: 3rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
 }
 
 .timeline-line {
     position: absolute;
     top: 50%;
-    left: 0;
-    right: 0;
+    left: 5%;
+    right: 5%;
     height: 3px;
     background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 100%);
     transform: translateY(-50%);
-}
-
-.timeline-items {
-    display: flex;
-    justify-content: space-between;
-    position: relative;
     z-index: 1;
 }
 
@@ -2928,39 +2926,41 @@ body {
     flex-direction: column;
     align-items: center;
     position: relative;
+    z-index: 2;
 }
 
 .timeline-dot {
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
     border-radius: 50%;
     background: var(--primary);
     border: 4px solid var(--bg-white);
     box-shadow: 0 0 0 3px var(--primary-light);
     cursor: pointer;
     transition: all 0.3s ease;
-    z-index: 2;
+    margin-bottom: 1rem;
 }
 
 .timeline-item:hover .timeline-dot {
-    transform: scale(1.3);
+    transform: scale(1.4);
     box-shadow: 0 0 0 6px var(--primary-light), 0 4px 12px rgba(15, 118, 110, 0.3);
 }
 
-.timeline-year {
-    font-size: 1.125rem;
+.timeline-label {
+    font-size: 0.875rem;
     font-weight: var(--font-weight-bold);
     color: var(--primary);
-    margin-top: 1.5rem;
     margin-bottom: 0.5rem;
+    white-space: nowrap;
 }
 
 .timeline-title {
-    font-size: 0.875rem;
+    font-size: 0.8125rem;
     font-weight: var(--font-weight-semibold);
     color: var(--dark);
     text-align: center;
-    max-width: 150px;
+    max-width: 120px;
+    line-height: 1.3;
 }
 
 .timeline-tooltip {
@@ -3014,15 +3014,26 @@ body {
     .timeline-horizontal {
         overflow-x: auto;
         padding: 2rem 1rem;
+        min-width: min(600px, 100%);
     }
     
-    .timeline-items {
-        min-width: 600px;
+    .timeline-item {
+        min-width: 80px;
+    }
+    
+    .timeline-label {
+        font-size: 0.8125rem;
+    }
+    
+    .timeline-title {
+        font-size: 0.75rem;
+        max-width: 100px;
     }
     
     .timeline-tooltip {
-        width: 250px;
+        width: 200px;
         font-size: 0.8125rem;
+        padding: 0.75rem 1rem;
     }
 }
 
