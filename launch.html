@@ -1,374 +1,609 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Launch - Career coaching for engineering students. Land your first job at a top company with proven strategies.">
     <title>Launch - For Students | Launch to Lead Engineering</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- FontAwesome -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Custom Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            primary: '#064e3b', /* Emerald 900 */
+                            secondary: '#14b8a6', /* Teal 500 */
+                            accent: '#a3e635', /* Lime 400 */
+                            light: '#ecfdf5', /* Emerald 50 */
+                            surface: '#ffffff'
+                        },
+                        pivot: {
+                            primary: '#b45309', /* Amber 700 */
+                            secondary: '#f59e0b', /* Amber 500 */
+                            light: '#fffbeb', /* Amber 50 */
+                        },
+                        accelerate: {
+                            primary: '#4338ca', /* Indigo 700 */
+                            secondary: '#6366f1', /* Indigo 500 */
+                            light: '#eef2ff', /* Indigo 50 */
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'soft': '0 4px 20px -2px rgba(6, 78, 59, 0.1)',
+                        'card': '0 10px 40px -10px rgba(6, 78, 59, 0.15)',
+                        'fresh': '0 0 20px rgba(20, 184, 166, 0.25)'
+                    },
+                    backgroundImage: {
+                        'dots': 'radial-gradient(#14b8a6 1px, transparent 1px)',
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body>
+<body class="bg-brand-light text-slate-600 font-sans antialiased">
+
     <!-- Navigation -->
-    <nav class="nav">
-        <div class="container nav-container">
-            <a href="index.html" class="logo">
-                <span class="logo-icon">L²</span>
-                <span class="logo-text">
-                    <span class="logo-main">Launch to Lead</span>
-                    <span class="logo-sub">Engineering</span>
-                </span>
-            </a>
-            <div class="nav-links">
-                <a href="launch.html">Launch</a>
-                <a href="pivot.html">Pivot</a>
-                <a href="accelerate.html">Accelerate</a>
-                <a href="packages.html">Packages</a>
-                <a href="about.html">About Me</a>
-                <a href="faq.html">FAQ</a>
-                <a href="contact.html" class="btn-nav">Get Started</a>
+    <nav class="bg-white/80 backdrop-blur-lg border-b border-emerald-100 fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center gap-2 group">
+                        <div class="bg-brand-primary text-white w-8 h-8 rounded-lg flex items-center justify-center group-hover:bg-brand-accent group-hover:text-brand-primary transition duration-300">
+                            <span class="font-bold text-sm">L²</span>
+                        </div>
+                        <span class="font-bold text-xl text-brand-primary tracking-tight">Launch<span class="font-light text-brand-secondary">ToLead</span></span>
+                    </a>
+                </div>
+
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="launch.html" class="text-sm font-bold text-brand-primary">Launch</a>
+                    <a href="pivot.html" class="text-sm font-medium text-slate-500 hover:text-pivot-secondary transition">Pivot</a>
+                    <a href="accelerate.html" class="text-sm font-medium text-slate-500 hover:text-accelerate-secondary transition">Accelerate</a>
+                    <a href="packages.html" class="text-sm font-medium text-slate-500 hover:text-brand-secondary transition">Packages</a>
+                    <a href="about.html" class="text-sm font-medium text-slate-500 hover:text-brand-secondary transition">About</a>
+                    <a href="contact.html" class="bg-brand-primary text-white px-5 py-2 rounded-full font-semibold text-sm hover:bg-brand-secondary transition shadow-soft hover:shadow-fresh">
+                        Apply Now
+                    </a>
+                </div>
+                
+                <!-- Mobile menu button (simplified) -->
+                <div class="md:hidden flex items-center">
+                    <a href="contact.html" class="text-brand-primary font-bold text-sm">Apply</a>
+                </div>
             </div>
         </div>
     </nav>
 
-    <!-- Sticky Section Navigation -->
-    <div class="sticky-section-nav">
-        <div class="container">
-            <a href="#pricing" class="sticky-nav-link">Packages</a>
-            <a href="#my-promise" class="sticky-nav-link">My Promise</a>
-            <a href="#ai" class="sticky-nav-link">AI</a>
-            <a href="#how-it-works" class="sticky-nav-link">How It Works</a>
+    <!-- HERO -->
+    <div class="relative pt-32 pb-24 lg:pt-48 lg:pb-32 bg-white overflow-hidden">
+        <!-- Dot Pattern -->
+        <div class="absolute inset-0 bg-dots opacity-20" style="background-size: 20px 20px;"></div>
+
+        <!-- Fresh Background blobs -->
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-teal-100 rounded-full blur-3xl opacity-60"></div>
+        <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-96 h-96 bg-lime-100 rounded-full blur-3xl opacity-60"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-100 text-emerald-900 text-xs font-semibold mb-8">
+                <span class="w-2 h-2 rounded-full bg-brand-accent"></span>
+                For College Students or Early Career
+            </div>
+            <h1 class="text-5xl md:text-7xl font-extrabold text-slate-900 tracking-tight mb-8 leading-[1.1]">
+                Launch Your<br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-brand-secondary">Engineering Career.</span>
+            </h1>
+            <p class="mt-4 max-w-2xl mx-auto text-xl text-slate-500 mb-10 font-light leading-relaxed">
+                Land your first engineering role at a top company with the exact strategies that got me hired at a Fortune 100 employer.
+            </p>
+            <div class="flex justify-center gap-4">
+                <a href="#pricing" class="px-8 py-4 bg-brand-primary text-white font-bold rounded-full hover:bg-brand-secondary transition shadow-card hover:shadow-fresh hover:-translate-y-1">
+                    View Packages
+                </a>
+            </div>
         </div>
     </div>
 
-    <!-- Page Hero -->
-    <section class="page-hero">
-        <div class="container">
-            <div class="page-hero-content">
-                <div class="page-badge">For College Students or Early Career</div>
-                <h1 class="page-title">Launch Your Engineering Career</h1>
-                <p class="page-subtitle">Land your first engineering role at a top company with the exact strategies that got me hired at a Fortune 100 employer.</p>
+    <!-- What You'll Master -->
+    <div id="master" class="py-24 bg-brand-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900">What You'll Master</h2>
             </div>
-        </div>
-    </section>
 
-    <!-- What You'll Get -->
-    <section id="master" class="section section-condensed">
-        <div class="container">
-            <h2 class="section-title center">What You'll Master</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <h3>⭐ Resume That Stands Out</h3>
-                    <p>Learn to write achievement-focused bullet points that quantify your impact. Get past ATS systems and catch the hiring manager's eye in 30 seconds.</p>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-emerald-100 hover:shadow-card transition duration-300">
+                    <div class="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center text-brand-primary text-xl mb-6">
+                        <i class="fa-solid fa-file-lines"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-4">Resume That Stands Out</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        Learn to write achievement-focused bullet points that quantify your impact. Get past ATS systems and catch the hiring manager's eye in 30 seconds.
+                    </p>
                 </div>
-                <div class="feature-card">
-                    <h3>⭐ Career Fair Strategy</h3>
-                    <p>Master the 3-minute pitch that makes recruiters remember you. Learn which companies to target and how to follow up effectively.</p>
+
+                <!-- Card 2 -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-emerald-100 hover:shadow-card transition duration-300">
+                    <div class="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center text-brand-primary text-xl mb-6">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-4">Career Fair Strategy</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        Master the 3-minute pitch that makes recruiters remember you. Learn which companies to target and how to follow up effectively.
+                    </p>
                 </div>
-                <div class="feature-card">
-                    <h3>⭐ Application Strategy</h3>
-                    <p>Stop the spray-and-pray approach. Learn to strategically target companies where your background is a perfect fit.</p>
+
+                <!-- Card 3 -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-emerald-100 hover:shadow-card transition duration-300">
+                    <div class="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center text-brand-primary text-xl mb-6">
+                        <i class="fa-solid fa-paper-plane"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-4">Application Strategy</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        Stop the spray-and-pray approach. Learn to strategically target companies where your background is a perfect fit.
+                    </p>
                 </div>
-                <div class="feature-card">
-                    <h3>⭐ Interview Preparation</h3>
-                    <p>Practice technical and behavioral questions with someone who's been on both sides of the table. Learn the STAR method that actually works.</p>
+
+                <!-- Card 4 -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-emerald-100 hover:shadow-card transition duration-300">
+                    <div class="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center text-brand-primary text-xl mb-6">
+                        <i class="fa-solid fa-comments"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-4">Interview Preparation</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        Practice technical and behavioral questions with someone who's been on both sides of the table. Learn the STAR method that actually works.
+                    </p>
                 </div>
-                <div class="feature-card">
-                    <h3>⭐ LinkedIn Optimization</h3>
-                    <p>Build a profile that attracts recruiters. Learn keyword optimization and how to network with engineers at target companies.</p>
+
+                <!-- Card 5 -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-emerald-100 hover:shadow-card transition duration-300">
+                    <div class="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center text-brand-primary text-xl mb-6">
+                        <i class="fa-brands fa-linkedin"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-4">LinkedIn Optimization</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        Build a profile that attracts recruiters. Learn keyword optimization and how to network with engineers at target companies.
+                    </p>
                 </div>
-                <div class="feature-card">
-                    <h3>⭐ Networking Skills</h3>
-                    <p>Learn to reach out to alumni and professionals without being awkward. Build genuine connections that lead to referrals.</p>
+
+                <!-- Card 6 -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-emerald-100 hover:shadow-card transition duration-300">
+                    <div class="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center text-brand-primary text-xl mb-6">
+                        <i class="fa-solid fa-handshake"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-4">Networking Skills</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        Learn to reach out to alumni and professionals without being awkward. Build genuine connections that lead to referrals.
+                    </p>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
     <!-- Pricing Packages -->
-    <section id="pricing" class="section section-alt">
-        <div class="container">
-            <h2 class="section-title center">Choose Your Package</h2>
-            <p class="section-subtitle center">All packages include 1-on-1 video sessions, personalized feedback, and actionable deliverables.</p>
+    <div id="pricing" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900">Choose Your Package</h2>
+                <p class="mt-4 text-slate-500 max-w-2xl mx-auto">
+                    All packages include 1-on-1 video sessions, personalized feedback, and actionable deliverables.
+                </p>
+            </div>
             
-            <div class="pricing-grid">
+            <div class="grid md:grid-cols-3 gap-8">
                 <!-- Single Session Package -->
-                <div class="pricing-card">
-                    <div class="pricing-header">
-                        <h3>Resume & Strategy Session</h3>
-                        <div class="pricing-amount">
-                            <span class="price-dollar">$</span>
-                            <span class="price-value">65</span>
-                            <span class="price-total">total</span>
-                        </div>
+                <div class="p-8 rounded-3xl bg-white border border-slate-200 hover:border-brand-secondary/50 hover:shadow-card transition duration-300 flex flex-col h-full">
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Resume & Strategy</h3>
+                    <div class="flex items-baseline gap-1 mb-6">
+                        <span class="text-3xl font-bold text-brand-primary">$65</span>
+                        <span class="text-sm text-slate-400">total</span>
                     </div>
-                    <div class="pricing-content">
-                        <p class="pricing-description">Get your resume polished and learn to showcase your experience.</p>
-                        <p class="perfect-for"><strong>Perfect if you:</strong> Have a specific resume/application you need help with RIGHT NOW</p>
-                        <ul class="pricing-features">
-                            <li>1 hour 1-on-1 session</li>
-                            <li>Full resume review and improvement recommendations</li>
-                            <li>Learn to dig into college experiences, projects, and internships</li>
-                            <li>Craft compelling examples that resonate with employers</li>
-                            <li>Strategies to land interviews at target companies</li>
-                            <li>Action plan and follow-up resources</li>
-                        </ul>
-                        <a href="#booking" class="btn btn-outline btn-block">Get Started</a>
+                    
+                    <p class="text-slate-500 text-sm mb-6 leading-relaxed">
+                        Get your resume polished and learn to showcase your experience.
+                    </p>
+                    
+                    <div class="bg-slate-50 p-4 rounded-xl mb-6 text-xs text-slate-600">
+                        <strong>Perfect if you:</strong> Have a specific resume/application you need help with RIGHT NOW
                     </div>
+
+                    <ul class="space-y-3 mb-8 text-sm text-slate-600 flex-grow">
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs mt-1"></i> <span>1 hour 1-on-1 session</span></li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs mt-1"></i> <span>Full resume review and improvement recommendations</span></li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs mt-1"></i> <span>Learn to dig into college experiences, projects, and internships</span></li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs mt-1"></i> <span>Craft compelling examples that resonate with employers</span></li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs mt-1"></i> <span>Strategies to land interviews at target companies</span></li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs mt-1"></i> <span>Action plan and follow-up resources</span></li>
+                    </ul>
+
+                    <a href="#booking" class="w-full py-3 rounded-xl border border-emerald-200 text-brand-primary font-bold text-center hover:bg-brand-primary hover:text-white transition">
+                        Get Started
+                    </a>
                 </div>
 
                 <!-- Two Session Package -->
-                <div class="pricing-card pricing-popular">
-                    <div class="popular-badge">Most Popular</div>
-                    <div class="pricing-header">
-                        <h3>Resume + Interview Prep</h3>
-                        <div class="pricing-amount">
-                            <span class="price-dollar">$</span>
-                            <span class="price-value">120</span>
-                            <span class="price-total">total</span>
-                        </div>
+                <div class="relative p-8 rounded-3xl bg-white border-2 border-brand-secondary shadow-card flex flex-col h-full transform md:-translate-y-4">
+                    <div class="absolute top-0 right-0 bg-brand-secondary text-white text-xs font-bold px-3 py-1 rounded-bl-xl rounded-tr-xl uppercase tracking-wider">
+                        Most Popular
                     </div>
-                    <div class="pricing-content">
-                        <p class="pricing-description">Resume development plus interview preparation to seal the deal.</p>
-                        <p class="perfect-for"><strong>Perfect if you:</strong> Want to completely overhaul your approach and land multiple interviews</p>
-                        <ul class="pricing-features">
-                            <li>2 sessions (2 hours total)</li>
-                            <li><strong>Session 1:</strong> Everything from Resume & Strategy Session</li>
-                            <li><strong>Session 2:</strong> Interview preparation and practice</li>
-                            <li>Technical and behavioral question strategies</li>
-                            <li>Learn the STAR method that actually works</li>
-                            <li>Common pitfalls and how to avoid them</li>
-                            <li>Confidence-building techniques</li>
-                        </ul>
-                        <a href="#booking" class="btn btn-primary btn-block">Book Package</a>
+                    
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Resume + Interview</h3>
+                    <div class="flex items-baseline gap-1 mb-6">
+                        <span class="text-3xl font-bold text-brand-primary">$120</span>
+                        <span class="text-sm text-slate-400">total</span>
                     </div>
+                    
+                    <p class="text-slate-500 text-sm mb-6 leading-relaxed">
+                        Resume development plus interview preparation to seal the deal.
+                    </p>
+                    
+                    <div class="bg-emerald-50 p-4 rounded-xl mb-6 text-xs text-emerald-800">
+                        <strong>Perfect if you:</strong> Want to completely overhaul your approach and land multiple interviews
+                    </div>
+
+                    <ul class="space-y-3 mb-8 text-sm text-slate-600 flex-grow">
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs mt-1"></i> <span>2 sessions (2 hours total)</span></li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs mt-1"></i> <span><strong>Session 1:</strong> Everything from Resume & Strategy Session</span></li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs mt-1"></i> <span><strong>Session 2:</strong> Interview preparation and practice</span></li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs mt-1"></i> <span>Technical and behavioral question strategies</span></li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs mt-1"></i> <span>Learn the STAR method that actually works</span></li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs mt-1"></i> <span>Common pitfalls and how to avoid them</span></li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs mt-1"></i> <span>Confidence-building techniques</span></li>
+                    </ul>
+
+                    <a href="#booking" class="w-full py-3 rounded-xl bg-brand-primary text-white font-bold text-center hover:bg-brand-secondary transition shadow-lg hover:shadow-fresh">
+                        Book Package
+                    </a>
                 </div>
 
                 <!-- Three Session Package -->
-                <div class="pricing-card">
-                    <div class="pricing-header">
-                        <h3>Complete Launch Package</h3>
-                        <div class="pricing-amount">
-                            <span class="price-dollar">$</span>
-                            <span class="price-value">165</span>
-                            <span class="price-total">total</span>
-                        </div>
+                <div class="p-8 rounded-3xl bg-white border border-slate-200 hover:border-brand-secondary/50 hover:shadow-card transition duration-300 flex flex-col h-full">
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Complete Launch</h3>
+                    <div class="flex items-baseline gap-1 mb-6">
+                        <span class="text-3xl font-bold text-brand-primary">$165</span>
+                        <span class="text-sm text-slate-400">total</span>
                     </div>
-                    <div class="pricing-content">
-                        <p class="pricing-description">Full preparation from resume to mock interview with detailed feedback.</p>
-                        <p class="perfect-for"><strong>Perfect if you:</strong> Are serious about making a career change and want full support from start to finish</p>
-                        <ul class="pricing-features">
-                            <li>3 sessions (3 hours total)</li>
-                            <li><strong>Sessions 1-2:</strong> Everything from Resume + Interview Prep</li>
-                            <li><strong>Session 3:</strong> Full mock interview</li>
-                            <li>Complete technical or behavioral interview simulation</li>
-                            <li>Recorded session for your review</li>
-                            <li>Detailed written feedback on performance</li>
-                            <li>Specific improvement recommendations</li>
-                            <li>Final polish before your real interviews</li>
-                        </ul>
-                        <a href="#booking" class="btn btn-primary btn-block">Launch My Career</a>
+                    
+                    <p class="text-slate-500 text-sm mb-6 leading-relaxed">
+                        Full preparation from resume to mock interview with detailed feedback.
+                    </p>
+                    
+                    <div class="bg-slate-50 p-4 rounded-xl mb-6 text-xs text-slate-600">
+                        <strong>Perfect if you:</strong> Are serious about making a career change and want full support from start to finish
                     </div>
+
+                    <ul class="space-y-3 mb-8 text-sm text-slate-600 flex-grow">
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs mt-1"></i> <span>3 sessions (3 hours total)</span></li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs mt-1"></i> <span><strong>Sessions 1-2:</strong> Everything from Resume + Interview Prep</span></li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs mt-1"></i> <span><strong>Session 3:</strong> Full mock interview</span></li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs mt-1"></i> <span>Complete technical or behavioral interview simulation</span></li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs mt-1"></i> <span>Recorded session for your review</span></li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs mt-1"></i> <span>Detailed written feedback on performance</span></li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs mt-1"></i> <span>Specific improvement recommendations</span></li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs mt-1"></i> <span>Final polish before your real interviews</span></li>
+                    </ul>
+
+                    <a href="#booking" class="w-full py-3 rounded-xl border border-emerald-200 text-brand-primary font-bold text-center hover:bg-brand-primary hover:text-white transition">
+                        Launch My Career
+                    </a>
                 </div>
-            </div>
-                            </div>
             </div>
             
-            <p class="payment-note">💳 <strong>Payment:</strong> After your free discovery call, we'll agree on the right package for you. Payment is arranged directly via Venmo or Zelle—simple and secure.</p>
+            <div class="mt-12 p-6 bg-slate-50 rounded-2xl border border-slate-200 text-center text-sm text-slate-500">
+                <i class="fa-regular fa-credit-card mr-2"></i> <strong>Payment:</strong> After your free discovery call, we'll agree on the right package for you. Payment is arranged directly via Venmo or Zelle—simple and secure.
+            </div>
         </div>
-    </section>
+    </div>
 
-    <!-- What You Won't Get -->
-    <section id="my-promise" class="section">
-        <div class="container">
-            <h2 class="section-title center">My Promise</h2>
-            <div class="comparison-grid-condensed">
-                <div class="comparison-card-large">
-                    <h3>❌ What You Won't Get From Me</h3>
-                    <ul class="comparison-list">
-                        <li>"Just apply to more jobs" (useless advice)</li>
-                        <li>Generic resume template everyone uses</li>
-                        <li>"Be yourself" interview prep (too vague)</li>
-                        <li>A PDF course you never finish</li>
+    <!-- My Promise & AI -->
+    <div id="my-promise" class="py-24 bg-brand-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900">My Promise</h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 mb-20">
+                <!-- What You Won't Get -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-red-100">
+                    <h3 class="text-xl font-bold text-red-600 mb-6 flex items-center gap-2">
+                        <i class="fa-solid fa-xmark"></i> What You Won't Get
+                    </h3>
+                    <ul class="space-y-4 text-slate-600">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-xmark text-red-400 mt-1"></i>
+                            <span>"Just apply to more jobs" (useless advice)</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-xmark text-red-400 mt-1"></i>
+                            <span>Generic resume template everyone uses</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-xmark text-red-400 mt-1"></i>
+                            <span>"Be yourself" interview prep (too vague)</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-xmark text-red-400 mt-1"></i>
+                            <span>A PDF course you never finish</span>
+                        </li>
                     </ul>
                 </div>
-                
-                <div class="comparison-card-large">
-                    <h3>✅ What You WILL Get Instead</h3>
-                    <ul class="comparison-list">
-                        <li>The exact ATS keywords for YOUR target role</li>
-                        <li>Your resume rewritten for YOUR specific experience</li>
-                        <li>Mock interview with feedback on YOUR weak spots</li>
-                        <li>1-on-1 coaching customized to YOUR situation</li>
+
+                <!-- What You Will Get -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-emerald-100">
+                    <h3 class="text-xl font-bold text-brand-primary mb-6 flex items-center gap-2">
+                        <i class="fa-solid fa-check"></i> What You WILL Get
+                    </h3>
+                    <ul class="space-y-4 text-slate-600">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-brand-secondary mt-1"></i>
+                            <span>The exact ATS keywords for YOUR target role</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-brand-secondary mt-1"></i>
+                            <span>Your resume rewritten for YOUR specific experience</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-brand-secondary mt-1"></i>
+                            <span>Mock interview with feedback on YOUR weak spots</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-brand-secondary mt-1"></i>
+                            <span>1-on-1 coaching customized to YOUR situation</span>
+                        </li>
                     </ul>
                 </div>
             </div>
             
             <!-- AI Market Reality -->
-            <div id="ai" class="ai-market-section">
-                <h3 class="section-subtitle center" style="margin-top: 3rem; font-size: 1.5rem; color: var(--dark); font-weight: 600;">Navigating the AI-Era Job Market</h3>
+            <div id="ai" class="bg-slate-900 rounded-3xl p-8 md:p-12 text-white relative overflow-hidden">
+                <!-- Background decoration -->
+                <div class="absolute top-0 right-0 -mt-20 -mr-20 w-80 h-80 bg-brand-secondary rounded-full blur-3xl opacity-20"></div>
+                <div class="absolute bottom-0 left-0 -mb-20 -ml-20 w-80 h-80 bg-brand-primary rounded-full blur-3xl opacity-40"></div>
                 
-                <div class="ai-reality-box">
-                    <p><strong>The Reality:</strong> Entry-level hiring is down. Companies are using AI for tasks junior engineers used to do.</p>
+                <div class="relative z-10">
+                    <h3 class="text-2xl md:text-3xl font-bold mb-8 text-center">Navigating the AI-Era Job Market</h3>
                     
-                    <p><strong>But Here's What They're Not Telling You:</strong> Companies still need engineers who can:</p>
-                    <ul class="ai-skills-list">
-                        <li><strong>Prompt and validate AI outputs</strong> (AI writes code, but someone needs to verify it works)</li>
-                        <li><strong>Debug AI-generated solutions</strong> (AI makes mistakes—a lot)</li>
-                        <li><strong>Design systems</strong> (AI can't architect; it can only execute what you tell it)</li>
-                        <li><strong>Communicate with non-technical stakeholders</strong> (AI definitely can't do this)</li>
-                    </ul>
-                    
-                    <p><strong>What This Means for You:</strong></p>
-                    <ul class="ai-strategy-list">
-                        <li>Your resume needs to show you can work WITH AI, not compete against it</li>
-                        <li>Highlight projects where you used ChatGPT, GitHub Copilot, or other AI tools effectively</li>
-                        <li>Frame yourself as "AI-augmented engineer" not "entry-level engineer"</li>
-                    </ul>
-                    
-                    <p><strong>I'll help you:</strong></p>
-                    <ul class="coaching-helps">
-                        <li>Reposition your experience to highlight AI collaboration</li>
-                        <li>Build portfolio projects that demonstrate AI tool proficiency</li>
-                        <li>Navigate the "AI paradox": companies want AI-savvy engineers but are hiring fewer entry-level roles</li>
-                    </ul>
+                    <div class="grid md:grid-cols-2 gap-12">
+                        <div>
+                            <div class="mb-8">
+                                <h4 class="text-brand-accent font-bold mb-2 uppercase tracking-wider text-sm">The Reality</h4>
+                                <p class="text-slate-300 leading-relaxed">
+                                    Entry-level hiring is down. Companies are using AI for tasks junior engineers used to do.
+                                </p>
+                            </div>
+                            
+                            <div>
+                                <h4 class="text-brand-accent font-bold mb-2 uppercase tracking-wider text-sm">But Here's The Truth</h4>
+                                <p class="text-slate-300 mb-4">Companies still need engineers who can:</p>
+                                <ul class="space-y-2 text-slate-300 text-sm">
+                                    <li class="flex items-start gap-2"><i class="fa-solid fa-angle-right text-brand-secondary mt-1"></i> <span><strong>Prompt and validate AI outputs</strong> (AI writes code, but someone needs to verify it works)</span></li>
+                                    <li class="flex items-start gap-2"><i class="fa-solid fa-angle-right text-brand-secondary mt-1"></i> <span><strong>Debug AI-generated solutions</strong> (AI makes mistakes—a lot)</span></li>
+                                    <li class="flex items-start gap-2"><i class="fa-solid fa-angle-right text-brand-secondary mt-1"></i> <span><strong>Design systems</strong> (AI can't architect; it can only execute)</span></li>
+                                    <li class="flex items-start gap-2"><i class="fa-solid fa-angle-right text-brand-secondary mt-1"></i> <span><strong>Communicate with stakeholders</strong> (AI definitely can't do this)</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white/5 p-8 rounded-2xl border border-white/10">
+                            <h4 class="text-white font-bold mb-4 text-lg">What This Means for You</h4>
+                            <ul class="space-y-4 text-slate-300 text-sm mb-8">
+                                <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-accent mt-1"></i> <span>Your resume needs to show you can work WITH AI, not compete against it</span></li>
+                                <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-accent mt-1"></i> <span>Highlight projects where you used ChatGPT, GitHub Copilot, or other AI tools effectively</span></li>
+                                <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-accent mt-1"></i> <span>Frame yourself as "AI-augmented engineer" not "entry-level engineer"</span></li>
+                            </ul>
+                            
+                            <div class="pt-6 border-t border-white/10">
+                                <p class="text-brand-accent font-bold mb-2">I'll help you:</p>
+                                <ul class="space-y-2 text-slate-300 text-sm">
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-arrow-right text-brand-secondary text-xs"></i> Reposition your experience</li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-arrow-right text-brand-secondary text-xs"></i> Build AI-proficient portfolio</li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-arrow-right text-brand-secondary text-xs"></i> Navigate the "AI paradox"</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- How It Works -->
-    <section id="how-it-works" class="section">
-        <div class="container">
-            <h2 class="section-title center">How It Works</h2>
-            <div class="steps-grid">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <h3>Resume Review & Story Mining</h3>
-                    <p>We'll dig deep into your college experiences, projects, internships, and coursework to uncover compelling examples.</p>
+    <!-- HOW IT WORKS -->
+    <div id="how-it-works" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900">How It Works</h2>
+            </div>
+
+            <div class="grid md:grid-cols-4 gap-8 text-center">
+                <!-- Step 1 -->
+                <div>
+                    <div class="w-16 h-16 bg-brand-primary text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6 shadow-lg shadow-emerald-200">1</div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-4">Resume Review & Story Mining</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed">
+                        We'll dig deep into your college experiences, projects, internships, and coursework to uncover compelling examples.
+                    </p>
                 </div>
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <h3>Interview Preparation</h3>
-                    <p>Learn how to answer technical and behavioral questions with confidence. Master the STAR method with real examples from your experience.</p>
+
+                <!-- Step 2 -->
+                <div>
+                    <div class="w-16 h-16 bg-brand-primary text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6 shadow-lg shadow-emerald-200">2</div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-4">Interview Preparation</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed">
+                        Learn how to answer technical and behavioral questions with confidence. Master the STAR method with real examples from your experience.
+                    </p>
                 </div>
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <h3>Mock Interview & Feedback</h3>
-                    <p>Experience a full-length mock interview simulation. Get detailed feedback on your answers, body language, and delivery.</p>
+
+                <!-- Step 3 -->
+                <div>
+                    <div class="w-16 h-16 bg-brand-primary text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6 shadow-lg shadow-emerald-200">3</div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-4">Mock Interview & Feedback</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed">
+                        Experience a full-length mock interview simulation. Get detailed feedback on your answers, body language, and delivery.
+                    </p>
                 </div>
-                <div class="step">
-                    <div class="step-number">4</div>
-                    <h3>Land Your Offer</h3>
-                    <p>Apply with confidence using your polished resume and interview skills. Ace your interviews and land offers from top companies.</p>
+
+                <!-- Step 4 -->
+                <div>
+                    <div class="w-16 h-16 bg-brand-primary text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6 shadow-lg shadow-emerald-200">4</div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-4">Land Your Offer</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed">
+                        Apply with confidence using your polished resume and interview skills. Ace your interviews and land offers from top companies.
+                    </p>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
     <!-- Testimonials Placeholder -->
-    <section class="section section-alt">
-        <div class="container">
-            <h2 class="section-title center">Success Stories</h2>
-            <p class="section-subtitle center">Real results from engineering students who launched their careers.</p>
-            <div class="testimonial-placeholder">
-                <p class="placeholder-text">Testimonials coming soon from coaching clients!</p>
-                <p class="placeholder-subtext">Be one of the first to share your success story.</p>
+    <div class="py-24 bg-brand-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900">Success Stories</h2>
+                <p class="mt-4 text-slate-500 max-w-2xl mx-auto">
+                    Real results from engineering students who launched their careers.
+                </p>
+            </div>
+            
+            <div class="max-w-3xl mx-auto bg-white p-12 rounded-3xl shadow-sm border border-emerald-100 text-center">
+                <div class="w-16 h-16 bg-emerald-50 rounded-full flex items-center justify-center text-brand-primary text-2xl mx-auto mb-6">
+                    <i class="fa-solid fa-quote-left"></i>
+                </div>
+                <p class="text-xl text-slate-600 italic mb-6">"Testimonials coming soon from coaching clients! Be one of the first to share your success story."</p>
+                <div class="font-bold text-slate-900">Future Success Story</div>
+                <div class="text-sm text-brand-secondary">Engineering Student</div>
             </div>
         </div>
-    </section>
+    </div>
 
     <!-- Booking Section -->
-    <section class="section" id="booking">
-        <div class="container">
-            <h2 class="section-title center">Ready to Get Started?</h2>
-            <div class="booking-container">
-                <div class="booking-content">
-                    <h3>Book Your Free Discovery Call</h3>
-                    <p>Schedule a 30-minute call to discuss your goals and see if we're a good fit. No pressure, no hard sell—just an honest conversation about your career.</p>
-                    <p class="booking-highlight">All sessions are conducted via Google Meet video call.</p>
-                    
-                    <div class="booking-cta">
-                        <a href="https://calendar.app.google/uzaLZUWSUH3ZbaGr6" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-large">📅 Book Your Free Call</a>
-                        <p class="booking-note"><em>Opens in a new window. You'll receive a confirmation email with the Google Meet link.</em></p>
-                    </div>
-                </div>
+    <div id="booking" class="py-24 bg-brand-primary relative overflow-hidden">
+        <!-- Background decoration -->
+        <div class="absolute top-0 right-0 -mt-20 -mr-20 w-96 h-96 bg-brand-secondary rounded-full blur-3xl opacity-20"></div>
+        <div class="absolute bottom-0 left-0 -mb-20 -ml-20 w-96 h-96 bg-brand-accent rounded-full blur-3xl opacity-10"></div>
+        
+        <div class="max-w-4xl mx-auto px-4 relative z-10 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Ready to Get Started?</h2>
+            <p class="text-emerald-100 text-lg mb-10 max-w-2xl mx-auto">
+                Schedule a 30-minute call to discuss your goals and see if we're a good fit. No pressure, no hard sell—just an honest conversation about your career.
+            </p>
+            
+            <div class="flex flex-col items-center gap-4">
+                <a href="https://calendar.app.google/uzaLZUWSUH3ZbaGr6" target="_blank" rel="noopener noreferrer" class="px-8 py-4 bg-white text-brand-primary font-bold rounded-full hover:bg-brand-accent hover:text-brand-primary transition shadow-lg hover:shadow-fresh hover:-translate-y-1 inline-flex items-center gap-2">
+                    <i class="fa-regular fa-calendar"></i> Book Your Free Call
+                </a>
+                <p class="text-emerald-200 text-sm mt-4">
+                    <i class="fa-solid fa-video mr-1"></i> All sessions are conducted via Google Meet video call.
+                </p>
             </div>
         </div>
-    </section>
+    </div>
 
     <!-- FAQ -->
-    <section id="faq" class="section section-alt">
-        <div class="container">
-            <h2 class="section-title center">Frequently Asked Questions</h2>
-            <div class="faq-compact-grid">
-                <div class="faq-item">
-                    <h3>What majors do you work with?</h3>
-                    <p>All engineering majors! Mechanical, Electrical, Computer, Civil, Chemical, Aerospace, etc.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>Do you only help students targeting FAANG?</h3>
-                    <p>Not at all! My specialty is large traditional engineering companies that are becoming tech-forward.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>How far in advance should I start?</h3>
-                    <p>Ideally 3-6 months before career fairs, but I've helped students prep in 2 weeks before an interview.</p>
-                </div>
+    <div id="faq" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900">Frequently Asked Questions</h2>
             </div>
-            <div style="text-align: center; margin-top: 2rem;">
-                <a href="faq.html" class="btn btn-outline">See All FAQs →</a>
-            </div>
-        </div>
-    </section>
 
-    <!-- CTA -->
-    <section class="section cta-section">
-        <div class="container">
-            <div class="cta-content">
-                <h2>Launch Your Engineering Career Today</h2>
-                <p>Stop sending applications into the void. Get personalized coaching that gets results.</p>
-                <a href="#booking" class="btn btn-primary btn-large">Book Your First Session</a>
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-100">
+                    <h3 class="font-bold text-slate-900 mb-4">What majors do you work with?</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">All engineering majors! Mechanical, Electrical, Computer, Civil, Chemical, Aerospace, etc.</p>
+                </div>
+                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-100">
+                    <h3 class="font-bold text-slate-900 mb-4">Do you only help students targeting FAANG?</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">Not at all! My specialty is large traditional engineering companies that are becoming tech-forward.</p>
+                </div>
+                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-100">
+                    <h3 class="font-bold text-slate-900 mb-4">How far in advance should I start?</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">Ideally 3-6 months before career fairs, but I've helped students prep in 2 weeks before an interview.</p>
+                </div>
+            </div>
+            
+            <div class="text-center">
+                <a href="faq.html" class="inline-flex items-center gap-2 text-brand-primary font-bold hover:text-brand-secondary transition">
+                    See All FAQs <i class="fa-solid fa-arrow-right"></i>
+                </a>
             </div>
         </div>
-    </section>
+    </div>
+
+    <!-- Sticky Bottom Navigation -->
+    <div class="fixed bottom-0 left-0 right-0 z-40 bg-white/80 backdrop-blur-md border-t border-emerald-100 shadow-[0_-4px_20px_-5px_rgba(0,0,0,0.1)] transition-transform duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-center items-center space-x-4 md:space-x-12 py-4 overflow-x-auto">
+                <a href="#master" class="text-xs md:text-sm font-semibold text-slate-600 hover:text-brand-primary transition-colors uppercase tracking-wider whitespace-nowrap">Mastery</a>
+                <a href="#pricing" class="text-xs md:text-sm font-semibold text-slate-600 hover:text-brand-primary transition-colors uppercase tracking-wider whitespace-nowrap">Packages</a>
+                <a href="#my-promise" class="text-xs md:text-sm font-semibold text-slate-600 hover:text-brand-primary transition-colors uppercase tracking-wider whitespace-nowrap">Promise</a>
+                <a href="#ai" class="text-xs md:text-sm font-semibold text-slate-600 hover:text-brand-primary transition-colors uppercase tracking-wider whitespace-nowrap">AI Reality</a>
+                <a href="#how-it-works" class="text-xs md:text-sm font-semibold text-slate-600 hover:text-brand-primary transition-colors uppercase tracking-wider whitespace-nowrap">Process</a>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <div class="logo">
-                        <span class="logo-icon">L²</span>
-                        <span class="logo-text">
-                            <span class="logo-main">Launch to Lead</span>
-                            <span class="logo-sub">Engineering</span>
-                        </span>
-                    </div>
-                    <p>Engineering career coaching for students and professionals.</p>
+    <footer class="bg-brand-primary text-white py-16 border-t border-emerald-800 mb-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-12 mb-12">
+                <!-- Brand -->
+                <div class="col-span-1">
+                    <a href="index.html" class="flex items-center gap-2 mb-6 group">
+                        <div class="bg-brand-accent text-brand-primary w-10 h-10 rounded-lg flex items-center justify-center group-hover:bg-white transition duration-300">
+                            <span class="font-bold text-lg">L²</span>
+                        </div>
+                        <span class="font-bold text-xl text-white tracking-tight">Launch<span class="font-light text-brand-accent">ToLead</span></span>
+                    </a>
+                    <p class="text-emerald-100 text-sm leading-relaxed">
+                        Engineering career coaching for students and professionals.
+                    </p>
                 </div>
-                <div class="footer-links">
-                    <div class="footer-column">
-                        <h4>Services</h4>
-                        <a href="launch.html">Launch</a>
-                        <a href="pivot.html">Pivot</a>
-                        <a href="accelerate.html">Accelerate</a>
-                    </div>
-                    <div class="footer-column">
-                        <h4>Company</h4>
-                        <a href="about.html">About</a>
-                        <a href="success-stories.html">Success Stories</a>
-                        <a href="contact.html">Contact</a>
-                    </div>
-                    <div class="footer-column">
-                        <h4>Connect</h4>
-                        <a href="mailto:contact@launchtolead.io">contact@launchtolead.io</a>
-                        <a href="https://www.linkedin.com/in/mancimansour" target="_blank">LinkedIn</a>
-                    </div>
+
+                <!-- Services -->
+                <div>
+                    <h4 class="font-bold text-lg mb-6 text-white uppercase tracking-wider text-sm">Services</h4>
+                    <ul class="space-y-4 text-sm text-emerald-100">
+                        <li><a href="launch.html" class="text-brand-accent font-bold">Launch</a></li>
+                        <li><a href="pivot.html" class="hover:text-brand-accent transition">Pivot</a></li>
+                        <li><a href="accelerate.html" class="hover:text-brand-accent transition">Accelerate</a></li>
+                    </ul>
+                </div>
+
+                <!-- Company -->
+                <div>
+                    <h4 class="font-bold text-lg mb-6 text-white uppercase tracking-wider text-sm">Company</h4>
+                    <ul class="space-y-4 text-sm text-emerald-100">
+                        <li><a href="about.html" class="hover:text-brand-accent transition">About</a></li>
+                        <li><a href="success-stories.html" class="hover:text-brand-accent transition">Success Stories</a></li>
+                        <li><a href="contact.html" class="hover:text-brand-accent transition">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Connect -->
+                <div>
+                    <h4 class="font-bold text-lg mb-6 text-white uppercase tracking-wider text-sm">Connect</h4>
+                    <ul class="space-y-4 text-sm text-emerald-100">
+                        <li><a href="mailto:contact@launchtolead.io" class="hover:text-brand-accent transition">contact@launchtolead.io</a></li>
+                        <li><a href="https://www.linkedin.com/in/mancimansour" target="_blank" class="hover:text-brand-accent transition">LinkedIn</a></li>
+                    </ul>
                 </div>
             </div>
-            <div class="footer-bottom">
+            
+            <div class="border-t border-emerald-800 pt-8 text-center text-emerald-400 text-sm">
                 <p>&copy; 2025 Launch to Lead Engineering. All rights reserved.</p>
             </div>
         </div>
