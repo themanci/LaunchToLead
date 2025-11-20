@@ -197,6 +197,16 @@ body {
     background-position: 0 0, 0 0, 0 0;
 }
 
+.section-condensed {
+    padding: 1.75rem 0;
+}
+
+@media (max-width: 768px) {
+    .section-condensed {
+        padding: 1rem 0;
+    }
+}
+
 .section-title {
     font-size: 2.25rem;
     font-weight: var(--font-weight-bold);
@@ -2462,6 +2472,70 @@ body {
     margin: 0;
 }
 
+/* Condensed Comparison Cards */
+.comparison-grid-condensed {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-xl);
+    margin-top: var(--space-xl);
+}
+
+.comparison-card-large {
+    background: var(--bg-white);
+    padding: var(--space-xl);
+    border-radius: var(--radius-lg);
+    border: 2px solid var(--border);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.comparison-icon-large {
+    font-size: 3rem;
+    margin-bottom: var(--space-md);
+    text-align: center;
+}
+
+.comparison-card-large h3 {
+    font-size: 1.25rem;
+    margin-bottom: var(--space-md);
+    color: var(--charcoal);
+    text-align: center;
+}
+
+.comparison-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.comparison-list li {
+    padding: var(--space-sm) 0;
+    padding-left: var(--space-lg);
+    color: var(--dark-light);
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    position: relative;
+}
+
+.comparison-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--primary);
+    font-weight: bold;
+    font-size: 1.25rem;
+}
+
+@media (max-width: 768px) {
+    .comparison-grid-condensed {
+        grid-template-columns: 1fr;
+        gap: var(--space-lg);
+    }
+    
+    .comparison-card-large {
+        padding: var(--space-lg);
+    }
+}
+
 .perfect-for {
     background: var(--primary-light);
     padding: var(--space-sm) var(--space-md);
@@ -2956,7 +3030,7 @@ body {
     padding: 5rem 2rem 3rem;
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: center;
     gap: 1rem;
     overflow: visible;
 }
@@ -2976,9 +3050,11 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: flex-start;
     position: relative;
     z-index: 2;
     padding-bottom: 2.5rem;
+    min-height: 120px;
 }
 
 .timeline-dot {
@@ -2990,7 +3066,8 @@ body {
     box-shadow: 0 0 0 3px var(--primary-light);
     cursor: pointer;
     transition: all 0.3s ease;
-    margin-top: 1.5rem;
+    margin-top: auto;
+    margin-bottom: 0;
 }
 
 .timeline-item:hover .timeline-dot {
@@ -3042,16 +3119,16 @@ body {
 .timeline-tooltip {
     position: fixed;
     top: 50%;
-    right: 5%;
-    transform: translateY(-50%);
+    left: 50%;
+    transform: translate(-50%, -50%);
     background: var(--dark);
     color: #fff;
     padding: 1.5rem 2rem;
     border-radius: var(--radius-lg);
     border: 3px solid var(--primary);
     box-shadow: 0 12px 48px rgba(0,0,0,0.5);
-    max-width: 400px;
-    width: 90%;
+    max-width: 500px;
+    width: 85%;
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s ease;
@@ -3066,7 +3143,7 @@ body {
 .timeline-item:hover .timeline-tooltip {
     opacity: 1;
     visibility: visible;
-    transform: translateY(-50%) translateX(0);
+    transform: translate(-50%, -50%);
 }
 
 .timeline-tooltip h4 {
@@ -3089,6 +3166,13 @@ body {
         overflow-x: auto;
         padding: 4rem 1rem 3rem;
         min-width: min(600px, 100%);
+        scrollbar-width: thin;
+        scrollbar-color: var(--primary-light) var(--bg-off-white);
+    }
+    
+    /* Hide scrollbar when tooltip is active */
+    .timeline-horizontal:has(.timeline-item:hover) {
+        overflow: hidden;
     }
     
     .timeline-item {
@@ -3114,12 +3198,12 @@ body {
         max-width: 320px;
         font-size: 0.875rem;
         padding: 1.25rem 1.5rem;
-        right: 50%;
-        transform: translate(50%, -50%);
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
     
     .timeline-item:hover .timeline-tooltip {
-        transform: translate(50%, -50%);
+        transform: translate(-50%, -50%);
     }
     
     .timeline-tooltip h4 {
