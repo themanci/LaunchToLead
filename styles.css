@@ -1326,11 +1326,13 @@ body {
     font-weight: var(--font-weight-bold);
     color: var(--dark);
     margin-bottom: var(--space-sm);
+    text-align: center;
 }
 
 .booking-content > p {
     color: var(--gray);
     margin-bottom: var(--space-xl);
+    text-align: center;
 }
 
 .calendly-placeholder {
@@ -3225,6 +3227,68 @@ body {
     
     .timeline-tooltip h4 {
         font-size: 1rem;
+    }
+}
+
+/* ========================================
+   SIMPLE JOURNEY TIMELINE
+   ======================================== */
+.journey-timeline {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.journey-item {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 1.5rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.journey-item:last-child {
+    border-bottom: none;
+}
+
+.journey-year {
+    font-size: 1.5rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--primary);
+    text-align: right;
+    padding-top: 0.25rem;
+}
+
+.journey-content h4 {
+    font-size: 1.125rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--dark);
+    margin-bottom: 0.5rem;
+}
+
+.journey-content p {
+    font-size: 0.9375rem;
+    color: var(--gray);
+    line-height: 1.6;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .journey-item {
+        grid-template-columns: 70px 1fr;
+        gap: 1rem;
+        padding: 0.75rem 0;
+    }
+    
+    .journey-year {
+        font-size: 1.25rem;
+    }
+    
+    .journey-content h4 {
+        font-size: 1rem;
+    }
+    
+    .journey-content p {
+        font-size: 0.875rem;
     }
 }
 
