@@ -10,6 +10,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 :root {
     /* Colors - Teal/Charcoal Palette */
     --primary: #0f766e;
@@ -3091,6 +3095,65 @@ body {
     
     .timeline-tooltip h4 {
         font-size: 1rem;
+    }
+}
+
+/* ========================================
+   STICKY SECTION NAVIGATION
+   ======================================== */
+.sticky-section-nav {
+    position: sticky;
+    top: 60px;
+    background: var(--bg-white);
+    border-bottom: 2px solid var(--border);
+    z-index: 900;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.sticky-section-nav .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    flex-wrap: wrap;
+}
+
+.sticky-nav-link {
+    padding: 0.5rem 1rem;
+    color: var(--gray);
+    text-decoration: none;
+    font-weight: var(--font-weight-medium);
+    font-size: 0.9375rem;
+    border-radius: var(--radius-md);
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.sticky-nav-link:hover {
+    background: var(--bg-off-white);
+    color: var(--primary);
+}
+
+.sticky-nav-link.active {
+    background: var(--primary);
+    color: #fff;
+    font-weight: var(--font-weight-semibold);
+}
+
+@media (max-width: 768px) {
+    .sticky-section-nav {
+        top: 52px;
+    }
+    
+    .sticky-section-nav .container {
+        gap: 0.25rem;
+        padding: 0.75rem 0.5rem;
+    }
+    
+    .sticky-nav-link {
+        padding: 0.375rem 0.625rem;
+        font-size: 0.8125rem;
     }
 }
 
