@@ -1,321 +1,330 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Launch to Lead Engineering - Career coaching for engineering students and professionals. From mechanical engineer to software leader in 6 years.">
-    <title>Launch to Lead Engineering | Career Coaching for Engineers</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- SEO Optimization -->
+    <title>Launch to Lead Engineering | Career Coaching</title>
+    <meta name="description" content="From Mechanical Engineer to Software Leader. The comprehensive coaching ecosystem for engineering careers.">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- FontAwesome -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            primary: '#064e3b', /* Emerald 900 */
+                            secondary: '#14b8a6', /* Teal 500 */
+                            accent: '#a3e635', /* Lime 400 */
+                            light: '#ecfdf5', /* Emerald 50 */
+                            surface: '#ffffff'
+                        },
+                        pivot: {
+                            primary: '#b45309', /* Amber 700 */
+                            secondary: '#f59e0b', /* Amber 500 */
+                            light: '#fffbeb', /* Amber 50 */
+                        },
+                        accelerate: {
+                            primary: '#4338ca', /* Indigo 700 */
+                            secondary: '#6366f1', /* Indigo 500 */
+                            light: '#eef2ff', /* Indigo 50 */
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'soft': '0 4px 20px -2px rgba(6, 78, 59, 0.1)',
+                        'card': '0 10px 40px -10px rgba(6, 78, 59, 0.15)',
+                        'fresh': '0 0 20px rgba(20, 184, 166, 0.25)'
+                    },
+                    backgroundImage: {
+                        'dots': 'radial-gradient(#14b8a6 1px, transparent 1px)',
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body>
+
+<body class="bg-brand-light text-slate-600 font-sans antialiased">
+
     <!-- Navigation -->
-    <nav class="nav">
-        <div class="container nav-container">
-            <a href="index.html" class="logo">
-                <span class="logo-icon">L²</span>
-                <span class="logo-text">
-                    <span class="logo-main">Launch to Lead</span>
-                    <span class="logo-sub">Engineering</span>
-                </span>
-            </a>
-            <div class="nav-links">
-                <a href="launch.html">Launch</a>
-                <a href="pivot.html">Pivot</a>
-                <a href="accelerate.html">Accelerate</a>
-                <a href="packages.html">Packages</a>
-                <a href="about.html">About Me</a>
-                <a href="faq.html">FAQ</a>
-                <a href="contact.html" class="btn-nav">Get Started</a>
+    <nav class="bg-white/80 backdrop-blur-lg border-b border-emerald-100 fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center gap-2 group">
+                        <div
+                            class="bg-brand-primary text-white w-8 h-8 rounded-lg flex items-center justify-center group-hover:bg-brand-accent group-hover:text-brand-primary transition duration-300">
+                            <span class="font-bold text-sm">L²</span>
+                        </div>
+                        <span class="font-bold text-xl text-brand-primary tracking-tight">Launch<span
+                                class="font-light text-brand-secondary">ToLead</span></span>
+                    </a>
+                </div>
+
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="launch.html" class="text-sm font-medium text-slate-500 hover:text-brand-secondary transition">Launch</a>
+                    <a href="pivot.html" class="text-sm font-medium text-slate-500 hover:text-pivot-secondary transition">Pivot</a>
+                    <a href="accelerate.html" class="text-sm font-medium text-slate-500 hover:text-accelerate-secondary transition">Accelerate</a>
+                    <a href="packages.html" class="text-sm font-medium text-slate-500 hover:text-brand-secondary transition">Packages</a>
+                    <a href="about.html" class="text-sm font-medium text-slate-500 hover:text-brand-secondary transition">About</a>
+                    <a href="contact.html"
+                        class="bg-brand-primary text-white px-5 py-2 rounded-full font-semibold text-sm hover:bg-brand-secondary transition shadow-soft hover:shadow-fresh">
+                        Apply Now
+                    </a>
+                </div>
+                
+                <!-- Mobile menu button (simplified) -->
+                <div class="md:hidden flex items-center">
+                    <a href="contact.html" class="text-brand-primary font-bold text-sm">Apply</a>
+                </div>
             </div>
         </div>
     </nav>
 
-    <!-- Sticky Section Navigation -->
-    <div class="sticky-section-nav">
-        <div class="container">
-            <a href="#pain-points" class="sticky-nav-link">Pain Points</a>
-            <a href="#your-path" class="sticky-nav-link">Your Path</a>
-            <a href="#why-us" class="sticky-nav-link">Why Us</a>
-            <a href="#how-it-works" class="sticky-nav-link">How It Works</a>
+    <!-- HERO -->
+    <div class="relative pt-32 pb-24 lg:pt-48 lg:pb-32 bg-white overflow-hidden">
+        <!-- Dot Pattern -->
+        <div class="absolute inset-0 bg-dots opacity-20" style="background-size: 20px 20px;"></div>
+
+        <!-- Fresh Background blobs -->
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-teal-100 rounded-full blur-3xl opacity-60"></div>
+        <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-96 h-96 bg-lime-100 rounded-full blur-3xl opacity-60">
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <div
+                class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-100 text-emerald-900 text-xs font-semibold mb-8">
+                <span class="w-2 h-2 rounded-full bg-brand-accent"></span>
+                Engineering Career Coaching
+            </div>
+            <h1 class="text-5xl md:text-7xl font-extrabold text-slate-900 tracking-tight mb-8 leading-[1.1]">
+                From Mechanical Engineer to<br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-brand-secondary">Software Leader.</span>
+            </h1>
+            <p class="mt-4 max-w-2xl mx-auto text-xl text-slate-500 mb-10 font-light leading-relaxed">
+                I earned 4 promotions and pivoted 4 times in 7 years at a Fortune 100 company.
+                Now I'm sharing the exact frameworks to help you do the same.
+            </p>
+            <div class="flex justify-center gap-4">
+                <a href="#tracks"
+                    class="px-8 py-4 bg-brand-primary text-white font-bold rounded-full hover:bg-brand-secondary transition shadow-card hover:shadow-fresh hover:-translate-y-1">
+                    Choose Your Path
+                </a>
+                <a href="contact.html"
+                    class="px-8 py-4 bg-white text-brand-primary font-bold rounded-full border border-emerald-200 hover:border-brand-primary hover:text-brand-secondary transition">
+                    Book Strategy Call
+                </a>
+            </div>
+            
+            <!-- Stats -->
+            <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto border-t border-slate-100 pt-8">
+                <div>
+                    <div class="text-3xl font-bold text-brand-primary">4</div>
+                    <div class="text-sm text-slate-500 uppercase tracking-wide font-medium">Promotions</div>
+                </div>
+                <div>
+                    <div class="text-3xl font-bold text-brand-primary">7</div>
+                    <div class="text-sm text-slate-500 uppercase tracking-wide font-medium">Years</div>
+                </div>
+                <div>
+                    <div class="text-3xl font-bold text-brand-primary">4</div>
+                    <div class="text-sm text-slate-500 uppercase tracking-wide font-medium">Pivots</div>
+                </div>
+                <div>
+                    <div class="text-3xl font-bold text-brand-primary">75k+</div>
+                    <div class="text-sm text-slate-500 uppercase tracking-wide font-medium">Employees</div>
+                </div>
+            </div>
         </div>
     </div>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-badge">Engineering Career Coaching</div>
-                <h1 class="hero-title">I Went From Mechanical Engineer to Software Development Leader in 7 Years—Let Me Help You Do the Same</h1>
-                <p class="hero-subtitle">In my 7 years at a Fortune 100 company, I earned 4 promotions and successfully pivoted 4 times across different engineering disciplines. Now I'm sharing the exact strategies that accelerated my career to help you achieve yours.</p>
-                <p class="hero-subtitle">At a $50B+ global industrial leader with 75,000+ employees and operations in 30+ countries—where I helped drive software transformation across mission-critical systems.</p>
-                <p class="hero-authenticity">No generic advice. No fluff. Just the exact frameworks I used to earn 4 promotions—and that I'm using right now to help engineers like you do the same.</p>
-                <div class="hero-cta" style="margin-top: 2rem;">
-                    <a href="contact.html" class="btn btn-primary">Book a Free Discovery Call</a>
-                    <a href="about.html" class="btn btn-secondary">My Story</a>
-                </div>
-                <div class="hero-stats">
-                    <div class="stat">
-                        <div class="stat-number">4</div>
-                        <div class="stat-label">Promotions</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number">7</div>
-                        <div class="stat-label">Years</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number">4</div>
-                        <div class="stat-label">Career Pivots</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number">75K</div>
-                        <div class="stat-label">Employee Company</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Problem Section -->
-    <section id="pain-points" class="section section-alt">
-        <div class="container">
-            <h2 class="section-title center">You're a talented engineer, but...</h2>
-            <div class="problem-grid">
-                <div class="problem-card">
-                    <div class="problem-icon">🎓</div>
-                    <h3>You're Graduating—And Terrified</h3>
-                    <p>You've applied to 100+ jobs and heard nothing back. Your roommate got 3 offers. What's different? Nobody tells you the ATS keywords or the networking strategies that actually work.</p>
-                </div>
-                <div class="problem-card">
-                    <div class="problem-icon">🔄</div>
-                    <h3>You Want to Switch Disciplines—But Feel Stuck</h3>
-                    <p>You're a mechanical engineer who wants to code. But you don't have 'software engineer' on your resume. How do you make the leap without going back to school? I did it—four times.</p>
-                </div>
-                <div class="problem-card">
-                    <div class="problem-icon">📈</div>
-                    <h3>You're Working Hard—But Nobody Notices</h3>
-                    <p>You've shipped critical projects. Your teammates respect you. But your manager doesn't mention you in promotion discussions. You're doing the work of the next level, but not getting the title. Sound familiar?</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="your-path" class="section">
-        <div class="container">
-            <h2 class="section-title center">Choose Your Path</h2>
-            <p class="section-subtitle center">Personalized coaching tailored to where you are in your engineering career</p>
-            
-            <div class="services-grid">
-                <!-- Launch Track -->
-                <div class="service-card">
-                    <div class="service-header">
-                        <div class="service-icon">🚀</div>
-                        <h3>Launch</h3>
-                        <p class="service-for">For College Students or Early Career</p>
-                    </div>
-                    <div class="service-content">
-                        <p class="service-description">Land your first engineering role at a top company with a proven strategy.</p>
-                        <ul class="service-features">
-                            <li>Resume that gets past ATS and impresses managers</li>
-                            <li>Dig into experiences to craft compelling examples</li>
-                            <li>Technical and behavioral interview prep</li>
-                            <li>Full mock interview with detailed feedback</li>
+    <!-- THE PAIN -->
+    <div class="py-24 bg-brand-light">
+        <div class="max-w-5xl mx-auto px-4">
+            <div class="bg-white rounded-3xl p-12 shadow-card border border-emerald-100">
+                <div class="grid md:grid-cols-2 gap-16 items-center">
+                    <div>
+                        <h2 class="text-3xl font-bold text-slate-900 mb-6">You're a talented engineer, but...</h2>
+                        <ul class="space-y-5">
+                            <li class="flex items-start">
+                                <div
+                                    class="flex-shrink-0 w-6 h-6 rounded-full bg-red-50 flex items-center justify-center mt-1 mr-4">
+                                    <i class="fa-solid fa-graduation-cap text-red-500 text-xs"></i>
+                                </div>
+                                <p class="text-slate-600"><strong>The Resume Black Hole:</strong> You've applied to 100+ jobs and haven't heard a word back.</p>
+                            </li>
+                            <li class="flex items-start">
+                                <div
+                                    class="flex-shrink-0 w-6 h-6 rounded-full bg-red-50 flex items-center justify-center mt-1 mr-4">
+                                    <i class="fa-solid fa-arrows-rotate text-red-500 text-xs"></i>
+                                </div>
+                                <p class="text-slate-600"><strong>The Domain Trap:</strong> You want to switch disciplines (e.g., Mech to Software) but get pigeonholed.</p>
+                            </li>
+                            <li class="flex items-start">
+                                <div
+                                    class="flex-shrink-0 w-6 h-6 rounded-full bg-red-50 flex items-center justify-center mt-1 mr-4">
+                                    <i class="fa-solid fa-chart-line text-red-500 text-xs"></i>
+                                </div>
+                                <p class="text-slate-600"><strong>The Invisible Performer:</strong> You're doing the work of the next level, but not getting the title.</p>
+                            </li>
                         </ul>
-                        <div class="service-pricing">
-                            <div class="price-range">From $65/session</div>
-                            <div class="price-packages">Packages: $65 - $165</div>
+                    </div>
+                    <div class="text-center">
+                        <div
+                            class="w-20 h-20 bg-emerald-50 rounded-2xl flex items-center justify-center mx-auto mb-6 rotate-3 border border-emerald-100">
+                            <i class="fa-solid fa-ban text-emerald-400 text-3xl"></i>
                         </div>
-                        <a href="launch.html" class="btn btn-outline">Learn More →</a>
-                    </div>
-                </div>
-
-                <!-- Pivot Track -->
-                <div class="service-card service-featured">
-                    <div class="featured-badge">Most Popular</div>
-                    <div class="service-header">
-                        <div class="service-icon">🔄</div>
-                        <h3>Pivot</h3>
-                        <p class="service-for">For Career Transitioners</p>
-                    </div>
-                    <div class="service-content">
-                        <p class="service-description">Successfully transition engineering disciplines like I did: mechanical → software → leadership.</p>
-                        <ul class="service-features">
-                            <li>My proven mechanical-to-software roadmap</li>
-                            <li>Build new technical skills strategically</li>
-                            <li>Position yourself for internal transfers</li>
-                            <li>Leverage your unique cross-functional background</li>
-                        </ul>
-                        <div class="service-pricing">
-                            <div class="price-range">From $85/session</div>
-                            <div class="price-packages">Packages: $85 - $225</div>
-                        </div>
-                        <a href="pivot.html" class="btn btn-primary">Learn More →</a>
-                    </div>
-                </div>
-
-                <!-- Accelerate Track -->
-                <div class="service-card">
-                    <div class="service-header">
-                        <div class="service-icon">⚡</div>
-                        <h3>Accelerate</h3>
-                        <p class="service-for">For Promotion Seekers</p>
-                    </div>
-                    <div class="service-content">
-                        <p class="service-description">Get promoted faster with frameworks that drove my 4 promotions in 7 years.</p>
-                        <ul class="service-features">
-                            <li>Get noticed by leadership and decision-makers</li>
-                            <li>Influence without authority</li>
-                            <li>Drive measurable results</li>
-                            <li>Transition from IC to Lead/Supervisor/Manager</li>
-                        </ul>
-                        <div class="service-pricing">
-                            <div class="price-range">From $85/session</div>
-                            <div class="price-packages">Packages: $85 - $225</div>
-                        </div>
-                        <a href="accelerate.html" class="btn btn-outline">Learn More →</a>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Hope is not a strategy.</h3>
+                        <p class="text-slate-500 text-sm leading-relaxed">
+                            Most engineers treat their career like a lottery ticket. They submit and hope.
+                            <br><br>
+                            <strong class="text-brand-primary">You need a system.</strong>
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- Why I'm Different -->
-    <section id="why-us" class="section section-alt">
-        <div class="container">
-            <h2 class="section-title center">Why Launch to Lead Is Different</h2>
-            <p class="section-subtitle center">Most career advice is so high-level, generic, and broad it's hard to actually see results from it. Here's why mine isn't.</p>
-            
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">✓</div>
-                    <h3>I've Actually Done It (Multiple Times)</h3>
-                    <ul class="feature-list">
-                        <li>4 promotions in 7 years isn't luck</li>
-                        <li>I've replicated these frameworks across different roles</li>
-                        <li>Mechanical → Software → Leadership: I've pivoted successfully 4 times</li>
-                        <li>At a 180-year-old manufacturing powerhouse that invests $2B annually in R&D—more than most tech startups' entire revenue</li>
-                        <li>Real experience, not theory</li>
+    <!-- THE TRACKS (SOLUTION) -->
+    <div id="tracks" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20">
+                <span class="text-brand-secondary font-bold uppercase text-xs tracking-widest">The Ecosystem</span>
+                <h2 class="mt-3 text-4xl font-bold text-slate-900">Choose Your <span
+                        class="text-brand-secondary">Path</span></h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Track 1: Launch -->
+                <div class="group relative p-8 rounded-3xl bg-white border border-emerald-100 hover:border-brand-secondary/50 hover:shadow-card transition duration-300 flex flex-col h-full">
+                    <div class="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 bg-emerald-50 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition"></div>
+                    
+                    <div class="w-12 h-12 bg-brand-light text-brand-primary rounded-xl flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition">
+                        <i class="fa-solid fa-rocket"></i>
+                    </div>
+                    
+                    <h3 class="text-2xl font-bold text-slate-900 mb-2">Launch</h3>
+                    <p class="text-brand-secondary font-medium text-sm mb-4 uppercase tracking-wide">For Students & Grads</p>
+                    
+                    <p class="text-slate-500 text-sm mb-8 leading-relaxed flex-grow">
+                        Stop applying into the void. Learn to extract your "Me-in-We" value, build a visual portfolio, and force the door open.
+                    </p>
+                    
+                    <ul class="space-y-3 mb-8 text-sm text-slate-600">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs"></i> Resume Impact Equation</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs"></i> Visual Binder Strategy</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs"></i> High-Contrast Interview</li>
                     </ul>
+
+                    <a href="launch.html" class="w-full py-3 rounded-xl border border-emerald-200 text-brand-primary font-bold text-center hover:bg-brand-primary hover:text-white transition">
+                        Explore Launch
+                    </a>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">📋</div>
-                    <h3>Specific, Not Generic</h3>
-                    <ul class="feature-list">
-                        <li>Not "work hard and be visible"—but exactly HOW to be visible</li>
-                        <li>Not "network more"—but the 3 types of relationships that matter for promotion</li>
-                        <li>Not "improve your resume"—but the 5 ATS keywords hiring managers actually search for</li>
-                        <li>Step-by-step frameworks you can use immediately</li>
+
+                <!-- Track 2: Pivot -->
+                <div class="group relative p-8 rounded-3xl bg-white border border-amber-100 hover:border-pivot-secondary/50 hover:shadow-card transition duration-300 flex flex-col h-full">
+                    <div class="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 bg-amber-50 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition"></div>
+                    
+                    <div class="w-12 h-12 bg-pivot-light text-pivot-primary rounded-xl flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition">
+                        <i class="fa-solid fa-arrows-rotate"></i>
+                    </div>
+                    
+                    <h3 class="text-2xl font-bold text-slate-900 mb-2">Pivot</h3>
+                    <p class="text-pivot-secondary font-medium text-sm mb-4 uppercase tracking-wide">For Career Switchers</p>
+                    
+                    <p class="text-slate-500 text-sm mb-8 leading-relaxed flex-grow">
+                        Change careers without quitting. Use the "Trojan Horse" strategy to build a portfolio in your current role and bypass HR.
+                    </p>
+                    
+                    <ul class="space-y-3 mb-8 text-sm text-slate-600">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-pivot-secondary text-xs"></i> Trojan Horse Strategy</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-pivot-secondary text-xs"></i> The 10% Margin</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-pivot-secondary text-xs"></i> Shadow Campaign</li>
                     </ul>
+
+                    <a href="pivot.html" class="w-full py-3 rounded-xl border border-amber-200 text-pivot-primary font-bold text-center hover:bg-pivot-primary hover:text-white transition">
+                        Explore Pivot
+                    </a>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🤝</div>
-                    <h3>Hands-On, Not Hands-Off</h3>
-                    <ul class="feature-list">
-                        <li>I don't sell you a course and disappear</li>
-                        <li>1-on-1 sessions where we build YOUR strategy together</li>
-                        <li>Between sessions: answer questions, review drafts, provide feedback</li>
-                        <li>Partnership, not transaction</li>
+
+                <!-- Track 3: Accelerate -->
+                <div class="group relative p-8 rounded-3xl bg-white border border-indigo-100 hover:border-accelerate-secondary/50 hover:shadow-card transition duration-300 flex flex-col h-full">
+                    <div class="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 bg-indigo-50 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition"></div>
+                    
+                    <div class="w-12 h-12 bg-accelerate-light text-accelerate-primary rounded-xl flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                    
+                    <h3 class="text-2xl font-bold text-slate-900 mb-2">Accelerate</h3>
+                    <p class="text-accelerate-secondary font-medium text-sm mb-4 uppercase tracking-wide">For Aspiring Leaders</p>
+                    
+                    <p class="text-slate-500 text-sm mb-8 leading-relaxed flex-grow">
+                        Get promoted in record time. Master the "Visibility Pyramid" and turn your performance into undeniable influence.
+                    </p>
+                    
+                    <ul class="space-y-3 mb-8 text-sm text-slate-600">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-accelerate-secondary text-xs"></i> Visibility Pyramid</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-accelerate-secondary text-xs"></i> Service-Based Ask</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-accelerate-secondary text-xs"></i> Reputation Wildfire</li>
                     </ul>
+
+                    <a href="accelerate.html" class="w-full py-3 rounded-xl border border-indigo-200 text-accelerate-primary font-bold text-center hover:bg-accelerate-primary hover:text-white transition">
+                        Explore Accelerate
+                    </a>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- How It Works -->
-    <section id="how-it-works" class="section">
-        <div class="container">
-            <h2 class="section-title center">How It Works</h2>
-            <div class="steps-grid">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <h3>Book a Discovery Call</h3>
-                    <p>We start with a real conversation—not a sales pitch. Tell me where you are, where you want to go, and I'll tell you honestly if I can help. No pressure, no BS.</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <h3>Choose Your Path</h3>
-                    <p>Every engineer's situation is different. We'll pick the package that fits YOUR timeline, YOUR budget, and YOUR specific goals. Not a one-size-fits-all program.</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <h3>Work Together 1-on-1</h3>
-                    <p>In our sessions, we build YOUR resume, YOUR visibility strategy, YOUR promotion case—not generic templates. You'll leave each session with specific actions to take that week.</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">4</div>
-                    <h3>Land Your Goal</h3>
-                    <p>Get the interview. Nail the pivot. Earn the promotion. And when you do, you'll know exactly what worked—because we built the playbook together.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+    </div>
 
     <!-- CTA Section -->
-    <section class="section cta-section">
-        <div class="container">
-            <div class="cta-content">
-                <h2>Ready to Accelerate Your Engineering Career?</h2>
-                <p>Book a free 15-minute discovery call to discuss your goals and how I can help you achieve them.</p>
-                <a href="contact.html" class="btn btn-primary btn-large">Book Your Free Call</a>
+    <div id="contact" class="py-24 bg-brand-light">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <div class="bg-white rounded-[2rem] p-16 shadow-card border border-emerald-100 relative overflow-hidden">
+                <div class="absolute -left-10 -bottom-10 w-40 h-40 bg-brand-accent/20 rounded-full blur-2xl"></div>
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6 relative z-10">Ready to take control?</h2>
+                <p class="text-slate-500 text-lg mb-10 max-w-2xl mx-auto relative z-10">
+                    Whether you're launching, pivoting, or accelerating, the principles are the same: 
+                    <strong>Don't wait to be picked. Pick yourself.</strong>
+                </p>
+                <a href="contact.html"
+                    class="relative z-10 inline-block bg-brand-primary text-white font-bold text-lg px-10 py-4 rounded-full hover:bg-brand-secondary transition shadow-lg hover:shadow-xl hover:-translate-y-1">
+                    Apply for Coaching
+                </a>
+                <p class="text-slate-400 text-xs mt-6">Limited spots available per month.</p>
             </div>
         </div>
-    </section>
-
-    <!-- Testimonial Preview -->
-    <section class="section section-alt">
-        <div class="container">
-            <h2 class="section-title center">This Actually Works—Because It's Real</h2>
-            <div class="testimonial-preview">
-                <div class="testimonial-card">
-                    <p class="testimonial-text">"I followed the exact framework for getting noticed by leadership. Within 8 weeks, I had my first 1-on-1 with the VP. 4 months later, I got promoted."</p>
-                    <p class="testimonial-author">— Alex M., Software Engineer</p>
-                    <p class="testimonial-note"><em>Placeholder testimonial - Real client testimonials coming soon</em></p>
-                </div>
-            </div>
-        </div>
-    </section>
+    </div>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <div class="logo">
-                        <span class="logo-icon">L²</span>
-                        <span class="logo-text">
-                            <span class="logo-main">Launch to Lead</span>
-                            <span class="logo-sub">Engineering</span>
-                        </span>
-                    </div>
-                    <p>Engineering career coaching for students and professionals.</p>
-                </div>
-                <div class="footer-links">
-                    <div class="footer-column">
-                        <h4>Services</h4>
-                        <a href="launch.html">Launch</a>
-                        <a href="pivot.html">Pivot</a>
-                        <a href="accelerate.html">Accelerate</a>
-                    </div>
-                    <div class="footer-column">
-                        <h4>Company</h4>
-                        <a href="about.html">About</a>
-                        <a href="success-stories.html">Success Stories</a>
-                        <a href="contact.html">Contact</a>
-                    </div>
-                    <div class="footer-column">
-                        <h4>Connect</h4>
-                        <a href="mailto:contact@launchtolead.io">contact@launchtolead.io</a>
-                        <a href="https://www.linkedin.com/in/mancimansour" target="_blank">LinkedIn</a>
-                    </div>
-                </div>
+    <footer class="bg-white py-12 border-t border-emerald-100">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <div class="flex justify-center gap-8 mb-8">
+                <a href="launch.html" class="text-slate-400 hover:text-brand-primary transition">Launch</a>
+                <a href="pivot.html" class="text-slate-400 hover:text-brand-primary transition">Pivot</a>
+                <a href="accelerate.html" class="text-slate-400 hover:text-brand-primary transition">Accelerate</a>
+                <a href="packages.html" class="text-slate-400 hover:text-brand-primary transition">Packages</a>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Launch to Lead Engineering. All rights reserved.</p>
-            </div>
+            <p class="text-slate-400 text-sm">© 2025 Launch to Lead Engineering. All rights reserved.</p>
         </div>
     </footer>
+
 </body>
+
 </html>
