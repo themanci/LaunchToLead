@@ -1,479 +1,667 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Pivot - Career coaching for engineers transitioning disciplines. From mechanical to software, test to development, and more.">
     <title>Pivot - Career Transitions | Launch to Lead Engineering</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- FontAwesome -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Custom Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            primary: '#064e3b', /* Emerald 900 */
+                            secondary: '#14b8a6', /* Teal 500 */
+                            accent: '#a3e635', /* Lime 400 */
+                            light: '#ecfdf5', /* Emerald 50 */
+                            surface: '#ffffff'
+                        },
+                        pivot: {
+                            primary: '#b45309', /* Amber 700 */
+                            secondary: '#f59e0b', /* Amber 500 */
+                            light: '#fffbeb', /* Amber 50 */
+                        },
+                        accelerate: {
+                            primary: '#4338ca', /* Indigo 700 */
+                            secondary: '#6366f1', /* Indigo 500 */
+                            light: '#eef2ff', /* Indigo 50 */
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'soft': '0 4px 20px -2px rgba(6, 78, 59, 0.1)',
+                        'card': '0 10px 40px -10px rgba(6, 78, 59, 0.15)',
+                        'fresh': '0 0 20px rgba(20, 184, 166, 0.25)'
+                    },
+                    backgroundImage: {
+                        'dots': 'radial-gradient(#14b8a6 1px, transparent 1px)',
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body>
+<body class="bg-brand-light text-slate-600 font-sans antialiased">
+
     <!-- Navigation -->
-    <nav class="nav">
-        <div class="container nav-container">
-            <a href="index.html" class="logo">
-                <span class="logo-icon">L²</span>
-                <span class="logo-text">
-                    <span class="logo-main">Launch to Lead</span>
-                    <span class="logo-sub">Engineering</span>
-                </span>
-            </a>
-            <div class="nav-links">
-                <a href="launch.html">Launch</a>
-                <a href="pivot.html">Pivot</a>
-                <a href="accelerate.html">Accelerate</a>
-                <a href="packages.html">Packages</a>
-                <a href="about.html">About Me</a>
-                <a href="faq.html">FAQ</a>
-                <a href="contact.html" class="btn-nav">Get Started</a>
+    <nav class="bg-white/80 backdrop-blur-lg border-b border-emerald-100 fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center gap-2 group">
+                        <div class="bg-brand-primary text-white w-8 h-8 rounded-lg flex items-center justify-center group-hover:bg-brand-accent group-hover:text-brand-primary transition duration-300">
+                            <span class="font-bold text-sm">L²</span>
+                        </div>
+                        <span class="font-bold text-xl text-brand-primary tracking-tight">Launch<span class="font-light text-brand-secondary">ToLead</span></span>
+                    </a>
+                </div>
+
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="launch.html" class="text-sm font-medium text-slate-500 hover:text-brand-secondary transition">Launch</a>
+                    <a href="pivot.html" class="text-sm font-bold text-pivot-primary">Pivot</a>
+                    <a href="accelerate.html" class="text-sm font-medium text-slate-500 hover:text-accelerate-secondary transition">Accelerate</a>
+                    <a href="packages.html" class="text-sm font-medium text-slate-500 hover:text-brand-secondary transition">Packages</a>
+                    <a href="about.html" class="text-sm font-medium text-slate-500 hover:text-brand-secondary transition">About</a>
+                    <a href="contact.html" class="bg-brand-primary text-white px-5 py-2 rounded-full font-semibold text-sm hover:bg-brand-secondary transition shadow-soft hover:shadow-fresh">
+                        Apply Now
+                    </a>
+                </div>
+                
+                <!-- Mobile menu button (simplified) -->
+                <div class="md:hidden flex items-center">
+                    <a href="contact.html" class="text-brand-primary font-bold text-sm">Apply</a>
+                </div>
             </div>
         </div>
     </nav>
 
-    <!-- Sticky Section Navigation -->
-    <div class="sticky-section-nav">
-        <div class="container">
-            <a href="#ai" class="sticky-nav-link">AI</a>
-            <a href="#my-pivot" class="sticky-nav-link">My Pivot</a>
-            <a href="#packages" class="sticky-nav-link">Packages</a>
-            <a href="#how-it-works" class="sticky-nav-link">How It Works</a>
+    <!-- HERO -->
+    <div class="relative pt-32 pb-24 lg:pt-48 lg:pb-32 bg-white overflow-hidden">
+        <!-- Dot Pattern -->
+        <div class="absolute inset-0 bg-dots opacity-20" style="background-size: 20px 20px;"></div>
+
+        <!-- Fresh Background blobs -->
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-amber-100 rounded-full blur-3xl opacity-60"></div>
+        <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-96 h-96 bg-orange-100 rounded-full blur-3xl opacity-60"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-50 border border-amber-100 text-amber-900 text-xs font-semibold mb-8">
+                <span class="w-2 h-2 rounded-full bg-pivot-secondary"></span>
+                For Career Transitioners
+            </div>
+            <h1 class="text-5xl md:text-7xl font-extrabold text-slate-900 tracking-tight mb-8 leading-[1.1]">
+                Pivot Your<br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-pivot-primary to-pivot-secondary">Engineering Career.</span>
+            </h1>
+            <p class="mt-4 max-w-2xl mx-auto text-xl text-slate-500 mb-10 font-light leading-relaxed">
+                Over 7 years at a Fortune 100 company, I transitioned from a Mechanical Engineer testing engines, to writing software for embedded systems, to leading large embedded software and AI initiatives across the entire company.
+            </p>
+            <div class="flex justify-center gap-4">
+                <a href="#packages" class="px-8 py-4 bg-pivot-primary text-white font-bold rounded-full hover:bg-pivot-secondary transition shadow-card hover:shadow-fresh hover:-translate-y-1">
+                    View Packages
+                </a>
+            </div>
         </div>
     </div>
 
-    <!-- Page Hero -->
-    <section class="page-hero">
-        <div class="container">
-            <div class="page-hero-content">
-                <div class="page-badge">For Career Transitioners</div>
-                <h1 class="page-title">Pivot Your Engineering Career</h1>
-                <p class="page-subtitle">Over 7 years at a Fortune 100 company, I transitioned from a Mechanical Engineer testing engines, to writing software for embedded systems, to leading large embedded software and AI initiatives across the entire company. And I want to help you achieve similar results.</p>
-            </div>
-        </div>
-    </section>
-
     <!-- Credibility Box -->
-    <section class="section section-alt">
-        <div class="container">
-            <div class="credibility-box-compact">
-                <h2>I've Pivoted 4 Times at a Fortune 100 Company</h2>
-                <div class="pivot-progression-compact">
-                    <span class="pivot-step-compact">🔧 Mechanical Test</span>
-                    <span class="pivot-arrow-compact">→</span>
-                    <span class="pivot-step-compact">💻 Software Dev</span>
-                    <span class="pivot-arrow-compact">→</span>
-                    <span class="pivot-step-compact">📋 Product Owner</span>
-                    <span class="pivot-arrow-compact">→</span>
-                    <span class="pivot-step-compact">👥 Manager</span>
-                    <span class="pivot-arrow-compact">→</span>
-                    <span class="pivot-step-compact">🚀 Leadership</span>
+    <div class="py-12 bg-brand-light">
+        <div class="max-w-5xl mx-auto px-4">
+            <div class="bg-white rounded-3xl p-8 md:p-12 shadow-card border border-amber-100 text-center">
+                <h2 class="text-2xl font-bold text-slate-900 mb-8">I've Pivoted 4 Times at a Fortune 100 Company</h2>
+                
+                <div class="flex flex-wrap justify-center items-center gap-4 md:gap-8 mb-8 text-sm md:text-base font-semibold text-slate-700">
+                    <span class="px-4 py-2 bg-slate-50 rounded-lg border border-slate-100">🔧 Mechanical Test</span>
+                    <i class="fa-solid fa-arrow-right text-pivot-secondary"></i>
+                    <span class="px-4 py-2 bg-slate-50 rounded-lg border border-slate-100">💻 Software Dev</span>
+                    <i class="fa-solid fa-arrow-right text-pivot-secondary"></i>
+                    <span class="px-4 py-2 bg-slate-50 rounded-lg border border-slate-100">📋 Product Owner</span>
+                    <i class="fa-solid fa-arrow-right text-pivot-secondary"></i>
+                    <span class="px-4 py-2 bg-slate-50 rounded-lg border border-slate-100">🚀 Leadership</span>
                 </div>
-                <p class="credibility-note-compact">All within the same $100B+ industrial leader. 75,000+ employees, 45-60% market share. You can reinvent yourself without starting over.</p>
+                
+                <p class="text-slate-500 text-sm">
+                    All within the same $100B+ industrial leader. 75,000+ employees, 45-60% market share. You can reinvent yourself without starting over.
+                </p>
             </div>
             
             <!-- AI Pivot Advantage -->
-            <div id="ai" class="ai-pivot-section">
-                <h3 class="section-subtitle center" style="margin-top: 3rem; font-size: 1.5rem; color: var(--dark); font-weight: 600;">Why AI Makes Pivoting EASIER (Not Harder)</h3>
+            <div id="ai" class="mt-12 bg-slate-900 rounded-3xl p-8 md:p-12 text-white relative overflow-hidden">
+                <!-- Background decoration -->
+                <div class="absolute top-0 right-0 -mt-20 -mr-20 w-80 h-80 bg-pivot-secondary rounded-full blur-3xl opacity-20"></div>
+                <div class="absolute bottom-0 left-0 -mb-20 -ml-20 w-80 h-80 bg-pivot-primary rounded-full blur-3xl opacity-40"></div>
                 
-                <div class="ai-advantage-box">
-                    <p class="lead-text"><strong>The AI Advantage for Career Pivots:</strong></p>
+                <div class="relative z-10">
+                    <h3 class="text-2xl md:text-3xl font-bold mb-8 text-center">Why AI Makes Pivoting EASIER (Not Harder)</h3>
                     
-                    <p>When I pivoted from mechanical to software, I had to:</p>
-                    <ul class="old-way-list">
-                        <li>Learn Python by reading books and taking courses</li>
-                        <li>Build projects slowly, line by line</li>
-                        <li>Debug errors by Googling and reading Stack Overflow for hours</li>
-                    </ul>
-                    
-                    <p class="highlight-text"><strong>You have AI now. That changes everything.</strong></p>
-                    
-                    <p><strong>What You Can Do That I Couldn't:</strong></p>
-                    <ul class="new-way-list">
-                        <li><strong>Learn faster:</strong> Ask ChatGPT to explain concepts in mechanical terms you already understand</li>
-                        <li><strong>Build faster:</strong> Use AI to scaffold projects, then customize and learn from the code</li>
-                        <li><strong>Debug smarter:</strong> Paste error messages into AI, get explanations instantly</li>
-                        <li><strong>Close skill gaps quicker:</strong> Generate practice problems, get instant feedback</li>
-                    </ul>
-                    
-                    <div class="catch-box">
-                        <p><strong>But Here's The Catch:</strong> You need to know:</p>
-                        <ul>
-                            <li><strong>WHAT</strong> to learn (AI won't tell you which skills matter for your target role)</li>
-                            <li><strong>HOW</strong> to demonstrate competence (AI can't build your portfolio strategy)</li>
-                            <li><strong>WHO</strong> to network with (AI can't introduce you to hiring managers)</li>
-                        </ul>
-                    </div>
-                    
-                    <p><strong>I'll help you:</strong></p>
-                    <ul class="coaching-helps">
-                        <li>Identify the exact skills your target role needs</li>
-                        <li>Build an AI-accelerated learning plan (but with human strategic guidance)</li>
-                        <li>Position your pivot story in a way that highlights AI proficiency as a strength</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- My Story -->
-    <section id="my-pivot" class="section section-condensed">
-        <div class="container">
-            <h2 class="section-title center">My Pivot Journey</h2>
-            <p class="section-subtitle center">4 major pivots in 7 years—from mechanical testing to software leadership</p>
-            <div class="journey-timeline">
-                <div class="journey-item">
-                    <div class="journey-year">2018</div>
-                    <div class="journey-content">
-                        <h4>Mechanical Engineer — Engine Testing</h4>
-                        <p>Started testing physical vehicle components. Reduced post-test processing time by 75% with automation scripts.</p>
-                    </div>
-                </div>
-                
-                <div class="journey-item">
-                    <div class="journey-year">2019</div>
-                    <div class="journey-content">
-                        <h4>First Major Pivot → Embedded Software</h4>
-                        <p>Delivered experimental software in under 2 days. Worked on drivetrain software for tractors.</p>
-                    </div>
-                </div>
-                
-                <div class="journey-item">
-                    <div class="journey-year">2020</div>
-                    <div class="journey-content">
-                        <h4>Engine Control Systems Engineer</h4>
-                        <p>Deepened expertise in embedded C and MATLAB/Simulink. Decreased unit test run time from 33s to 25ms.</p>
-                    </div>
-                </div>
-                
-                <div class="journey-item">
-                    <div class="journey-year">2022</div>
-                    <div class="journey-content">
-                        <h4>Product Owner & Scrum Master</h4>
-                        <p>Transitioned into agile leadership. Spearheaded Rally adoption, designed standardized user story templates.</p>
-                    </div>
-                </div>
-                
-                <div class="journey-item">
-                    <div class="journey-year">2023</div>
-                    <div class="journey-content">
-                        <h4>Software Test Engineering Manager</h4>
-                        <p>Led team of 6-10 engineers. 30% reduction in overtime, 90% reduction in weekend work.</p>
-                    </div>
-                </div>
-                
-                <div class="journey-item">
-                    <div class="journey-year">2025</div>
-                    <div class="journey-content">
-                        <h4>Software Development Enablement Lead</h4>
-                        <p>Partnering with engineers to resolve inefficiencies. From testing engines to shaping company-wide software strategy.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Pivot Myths -->
-    <section class="section">
-        <div class="container">
-            <h2 class="section-title center">The Pivot Myths I'll Help You Debunk</h2>
-            <div class="myths-grid">
-                <div class="myth-card">
-                    <h3>MYTH 1: "You need to go back to school"</h3>
-                    <p class="myth-reality"><strong>REALITY:</strong> I pivoted four times without any additional degrees. Strategic positioning > credentials.</p>
-                </div>
-                <div class="myth-card">
-                    <h3>MYTH 2: "You need connections in the new field"</h3>
-                    <p class="myth-reality"><strong>REALITY:</strong> It's helpful, but not 100% necessary. You build relationships AS you pivot, not before.</p>
-                </div>
-                <div class="myth-card">
-                    <h3>MYTH 3: "You'll have to start at junior level"</h3>
-                    <p class="myth-reality"><strong>REALITY:</strong> I laterally moved each time. Your existing experience IS valuable—if you position it right.</p>
-                </div>
-                <div class="myth-card">
-                    <h3>MYTH 4: "It takes years"</h3>
-                    <p class="myth-reality"><strong>REALITY:</strong> My first pivot took 8 months. With the right strategy, you can move faster than you think.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- What You'll Get -->
-    <section class="section section-alt section-condensed">
-        <div class="container">
-            <h2 class="section-title center">What You'll Master</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <h3>🗺️ Custom Pivot Roadmap</h3>
-                    <p>A personalized 6-12 month plan tailored to your current role, target discipline, and company dynamics. Not generic advice—a real playbook.</p>
-                </div>
-                <div class="feature-card">
-                    <h3>💻 Strategic Skill Building</h3>
-                    <p>Learn which skills to prioritize first. I'll show you the 20% of skills that drive 80% of credibility in your target role.</p>
-                </div>
-                <div class="feature-card">
-                    <h3>🎯 Internal Positioning</h3>
-                    <p>Navigate internal transfers, build relationships with the right teams, and position yourself as the obvious choice for cross-functional projects.</p>
-                </div>
-                <div class="feature-card">
-                    <h3>🔨 Portfolio Projects</h3>
-                    <p>Design projects that demonstrate competence in your target discipline. Learn to showcase them effectively to hiring managers.</p>
-                </div>
-                <div class="feature-card">
-                    <h3>🤝 Leverage Your Unique Background</h3>
-                    <p>Your cross-functional background is an asset, not a liability. Learn to pitch it as your competitive advantage.</p>
-                </div>
-                <div class="feature-card">
-                    <h3>📈 Prove Your Value Early</h3>
-                    <p>Quick wins to establish credibility in your new role. Learn from my playbook: automate, document, deliver results fast.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Common Pivots -->
-    <section class="section section-condensed">
-        <div class="container">
-            <h2 class="section-title center">Common Engineering Pivots I Help With</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <h3>Mechanical → Software</h3>
-                    <p>Hardware to embedded software, controls engineering, or full-stack development</p>
-                </div>
-                <div class="feature-card">
-                    <h3>Test/Validation → Development</h3>
-                    <p>Move from testing products to building them. Leverage your quality mindset.</p>
-                </div>
-                <div class="feature-card">
-                    <h3>Electrical → Embedded/Firmware</h3>
-                    <p>Natural transition from circuits to code. Learn software best practices.</p>
-                </div>
-                <div class="feature-card">
-                    <h3>Any Engineering → Data/ML</h3>
-                    <p>Python, data analysis, ML—especially powerful in traditional industries going tech.</p>
-                </div>
-                <div class="feature-card">
-                    <h3>Individual Contributor → Systems Engineering</h3>
-                    <p>Broader scope, cross-functional coordination, architecture thinking.</p>
-                </div>
-                <div class="feature-card">
-                    <h3>Technical → Management</h3>
-                    <p>First leadership role. Balance technical depth with people skills.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Pricing Packages -->
-    <section id="packages" class="section section-alt">
-        <div class="container">
-            <h2 class="section-title center">Choose Your Package</h2>
-            <p class="section-subtitle center">All packages include 1-on-1 video sessions, personalized roadmap, and ongoing email support.</p>
-            
-            <div class="pricing-grid">
-                <!-- Single Session Package -->
-                <div class="pricing-card">
-                    <div class="pricing-header">
-                        <h3>Pivot Assessment & Roadmap</h3>
-                        <div class="pricing-amount">
-                            <span class="price-dollar">$</span>
-                            <span class="price-value">85</span>
-                            <span class="price-total">total</span>
+                    <div class="grid md:grid-cols-2 gap-12">
+                        <div>
+                            <div class="mb-8">
+                                <h4 class="text-brand-accent font-bold mb-2 uppercase tracking-wider text-sm">The Old Way</h4>
+                                <p class="text-slate-300 mb-4">When I pivoted from mechanical to software, I had to:</p>
+                                <ul class="space-y-2 text-slate-300 text-sm">
+                                    <li class="flex items-start gap-2"><i class="fa-solid fa-xmark text-red-400 mt-1"></i> <span>Learn Python by reading books and taking courses</span></li>
+                                    <li class="flex items-start gap-2"><i class="fa-solid fa-xmark text-red-400 mt-1"></i> <span>Build projects slowly, line by line</span></li>
+                                    <li class="flex items-start gap-2"><i class="fa-solid fa-xmark text-red-400 mt-1"></i> <span>Debug errors by Googling and reading Stack Overflow for hours</span></li>
+                                </ul>
+                            </div>
+                            
+                            <div>
+                                <h4 class="text-brand-accent font-bold mb-2 uppercase tracking-wider text-sm">The New Way</h4>
+                                <p class="text-slate-300 mb-4"><strong>You have AI now. That changes everything.</strong></p>
+                                <ul class="space-y-2 text-slate-300 text-sm">
+                                    <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-accent mt-1"></i> <span><strong>Learn faster:</strong> Ask ChatGPT to explain concepts in mechanical terms you already understand</span></li>
+                                    <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-accent mt-1"></i> <span><strong>Build faster:</strong> Use AI to scaffold projects, then customize and learn from the code</span></li>
+                                    <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-accent mt-1"></i> <span><strong>Debug smarter:</strong> Paste error messages into AI, get explanations instantly</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white/5 p-8 rounded-2xl border border-white/10">
+                            <h4 class="text-white font-bold mb-4 text-lg">But Here's The Catch</h4>
+                            <p class="text-slate-300 text-sm mb-4">You need to know:</p>
+                            <ul class="space-y-4 text-slate-300 text-sm mb-8">
+                                <li class="flex items-start gap-2"><i class="fa-solid fa-exclamation-circle text-brand-accent mt-1"></i> <span><strong>WHAT</strong> to learn (AI won't tell you which skills matter for your target role)</span></li>
+                                <li class="flex items-start gap-2"><i class="fa-solid fa-exclamation-circle text-brand-accent mt-1"></i> <span><strong>HOW</strong> to demonstrate competence (AI can't build your portfolio strategy)</span></li>
+                                <li class="flex items-start gap-2"><i class="fa-solid fa-exclamation-circle text-brand-accent mt-1"></i> <span><strong>WHO</strong> to network with (AI can't introduce you to hiring managers)</span></li>
+                            </ul>
+                            
+                            <div class="pt-6 border-t border-white/10">
+                                <p class="text-brand-accent font-bold mb-2">I'll help you:</p>
+                                <ul class="space-y-2 text-slate-300 text-sm">
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-arrow-right text-pivot-secondary text-xs"></i> Identify exact skills needed</li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-arrow-right text-pivot-secondary text-xs"></i> Build AI-accelerated learning plan</li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-arrow-right text-pivot-secondary text-xs"></i> Position pivot story effectively</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-                    <div class="pricing-content">
-                        <p class="pricing-description">Understand your path and create a strategic plan for your pivot.</p>
-                        <ul class="pricing-features">
-                            <li>1 hour 1-on-1 session</li>
-                            <li>Assessment of current skills vs target discipline</li>
-                            <li>Gap analysis: what you need to learn</li>
-                            <li>High-level strategic roadmap for your transition</li>
-                            <li>Recommended learning resources and portfolio projects</li>
-                            <li>Next steps action plan</li>
-                        </ul>
-                        <a href="#booking" class="btn btn-outline btn-block">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- My Story -->
+    <div id="my-pivot" class="py-24 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900">My Pivot Journey</h2>
+                <p class="mt-4 text-slate-500">4 major pivots in 7 years—from mechanical testing to software leadership</p>
+            </div>
+
+            <div class="relative border-l-2 border-emerald-100 ml-4 md:ml-12 space-y-12">
+                <!-- Item 1 -->
+                <div class="relative pl-8 md:pl-12">
+                    <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-white border-4 border-emerald-200"></div>
+                    <div class="text-sm font-bold text-brand-secondary mb-1">2018</div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-2">Mechanical Engineer — Engine Testing</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed">Started testing physical vehicle components. Reduced post-test processing time by 75% with automation scripts.</p>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="relative pl-8 md:pl-12">
+                    <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-white border-4 border-pivot-secondary"></div>
+                    <div class="text-sm font-bold text-pivot-secondary mb-1">2019</div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-2">First Major Pivot → Embedded Software</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed">Delivered experimental software in under 2 days. Worked on drivetrain software for tractors.</p>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="relative pl-8 md:pl-12">
+                    <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-white border-4 border-emerald-200"></div>
+                    <div class="text-sm font-bold text-brand-secondary mb-1">2020</div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-2">Engine Control Systems Engineer</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed">Deepened expertise in embedded C and MATLAB/Simulink. Decreased unit test run time from 33s to 25ms.</p>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="relative pl-8 md:pl-12">
+                    <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-white border-4 border-emerald-200"></div>
+                    <div class="text-sm font-bold text-brand-secondary mb-1">2022</div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-2">Product Owner & Scrum Master</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed">Transitioned into agile leadership. Spearheaded Rally adoption, designed standardized user story templates.</p>
+                </div>
+
+                <!-- Item 5 -->
+                <div class="relative pl-8 md:pl-12">
+                    <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-white border-4 border-emerald-200"></div>
+                    <div class="text-sm font-bold text-brand-secondary mb-1">2023</div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-2">Software Test Engineering Manager</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed">Led team of 6-10 engineers. 30% reduction in overtime, 90% reduction in weekend work.</p>
+                </div>
+
+                <!-- Item 6 -->
+                <div class="relative pl-8 md:pl-12">
+                    <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-white border-4 border-emerald-200"></div>
+                    <div class="text-sm font-bold text-brand-secondary mb-1">2025</div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-2">Software Development Enablement Lead</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed">Partnering with engineers to resolve inefficiencies. From testing engines to shaping company-wide software strategy.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pivot Myths -->
+    <div class="py-24 bg-brand-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900">The Pivot Myths I'll Help You Debunk</h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-emerald-100">
+                    <h3 class="font-bold text-slate-900 mb-3 text-sm uppercase tracking-wide">MYTH 1: "You need to go back to school"</h3>
+                    <p class="text-sm text-slate-600"><strong>REALITY:</strong> I pivoted four times without any additional degrees. Strategic positioning > credentials.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-emerald-100">
+                    <h3 class="font-bold text-slate-900 mb-3 text-sm uppercase tracking-wide">MYTH 2: "You need connections in the new field"</h3>
+                    <p class="text-sm text-slate-600"><strong>REALITY:</strong> It's helpful, but not 100% necessary. You build relationships AS you pivot, not before.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-emerald-100">
+                    <h3 class="font-bold text-slate-900 mb-3 text-sm uppercase tracking-wide">MYTH 3: "You'll have to start at junior level"</h3>
+                    <p class="text-sm text-slate-600"><strong>REALITY:</strong> I laterally moved each time. Your existing experience IS valuable—if you position it right.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-emerald-100">
+                    <h3 class="font-bold text-slate-900 mb-3 text-sm uppercase tracking-wide">MYTH 4: "It takes years"</h3>
+                    <p class="text-sm text-slate-600"><strong>REALITY:</strong> My first pivot took 8 months. With the right strategy, you can move faster than you think.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- What You'll Master -->
+    <div class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900">What You'll Master</h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-emerald-100 hover:shadow-card transition duration-300">
+                    <div class="w-12 h-12 bg-amber-50 rounded-xl flex items-center justify-center text-pivot-primary text-xl mb-6">
+                        <i class="fa-solid fa-map"></i>
                     </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-4">Custom Pivot Roadmap</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        A personalized 6-12 month plan tailored to your current role, target discipline, and company dynamics. Not generic advice—a real playbook.
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-emerald-100 hover:shadow-card transition duration-300">
+                    <div class="w-12 h-12 bg-amber-50 rounded-xl flex items-center justify-center text-pivot-primary text-xl mb-6">
+                        <i class="fa-solid fa-laptop-code"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-4">Strategic Skill Building</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        Learn which skills to prioritize first. I'll show you the 20% of skills that drive 80% of credibility in your target role.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-emerald-100 hover:shadow-card transition duration-300">
+                    <div class="w-12 h-12 bg-amber-50 rounded-xl flex items-center justify-center text-pivot-primary text-xl mb-6">
+                        <i class="fa-solid fa-crosshairs"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-4">Internal Positioning</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        Navigate internal transfers, build relationships with the right teams, and position yourself as the obvious choice for cross-functional projects.
+                    </p>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-emerald-100 hover:shadow-card transition duration-300">
+                    <div class="w-12 h-12 bg-amber-50 rounded-xl flex items-center justify-center text-pivot-primary text-xl mb-6">
+                        <i class="fa-solid fa-hammer"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-4">Portfolio Projects</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        Design projects that demonstrate competence in your target discipline. Learn to showcase them effectively to hiring managers.
+                    </p>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-emerald-100 hover:shadow-card transition duration-300">
+                    <div class="w-12 h-12 bg-amber-50 rounded-xl flex items-center justify-center text-pivot-primary text-xl mb-6">
+                        <i class="fa-solid fa-handshake"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-4">Leverage Your Background</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        Your cross-functional background is an asset, not a liability. Learn to pitch it as your competitive advantage.
+                    </p>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-emerald-100 hover:shadow-card transition duration-300">
+                    <div class="w-12 h-12 bg-amber-50 rounded-xl flex items-center justify-center text-pivot-primary text-xl mb-6">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-4">Prove Your Value Early</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        Quick wins to establish credibility in your new role. Learn from my playbook: automate, document, deliver results fast.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Common Pivots -->
+    <div class="py-24 bg-brand-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900">Common Engineering Pivots</h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-emerald-100">
+                    <h3 class="font-bold text-slate-900 mb-2">Mechanical → Software</h3>
+                    <p class="text-sm text-slate-600">Hardware to embedded software, controls engineering, or full-stack development</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-emerald-100">
+                    <h3 class="font-bold text-slate-900 mb-2">Test/Validation → Development</h3>
+                    <p class="text-sm text-slate-600">Move from testing products to building them. Leverage your quality mindset.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-emerald-100">
+                    <h3 class="font-bold text-slate-900 mb-2">Electrical → Embedded/Firmware</h3>
+                    <p class="text-sm text-slate-600">Natural transition from circuits to code. Learn software best practices.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-emerald-100">
+                    <h3 class="font-bold text-slate-900 mb-2">Any Engineering → Data/ML</h3>
+                    <p class="text-sm text-slate-600">Python, data analysis, ML—especially powerful in traditional industries going tech.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-emerald-100">
+                    <h3 class="font-bold text-slate-900 mb-2">Individual Contributor → Systems</h3>
+                    <p class="text-sm text-slate-600">Broader scope, cross-functional coordination, architecture thinking.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-emerald-100">
+                    <h3 class="font-bold text-slate-900 mb-2">Technical → Management</h3>
+                    <p class="text-sm text-slate-600">First leadership role. Balance technical depth with people skills.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pricing Packages -->
+    <div id="packages" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900">Choose Your Package</h2>
+                <p class="mt-4 text-slate-500 max-w-2xl mx-auto">
+                    All packages include 1-on-1 video sessions, personalized roadmap, and ongoing email support.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Single Session Package -->
+                <div class="p-8 rounded-3xl bg-white border border-slate-200 hover:border-pivot-secondary/50 hover:shadow-card transition duration-300 flex flex-col h-full">
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Pivot Assessment</h3>
+                    <div class="flex items-baseline gap-1 mb-6">
+                        <span class="text-3xl font-bold text-pivot-primary">$85</span>
+                        <span class="text-sm text-slate-400">total</span>
+                    </div>
+                    
+                    <p class="text-slate-500 text-sm mb-6 leading-relaxed">
+                        Understand your path and create a strategic plan for your pivot.
+                    </p>
+
+                    <ul class="space-y-3 mb-8 text-sm text-slate-600 flex-grow">
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-pivot-secondary text-xs mt-1"></i> <span>1 hour 1-on-1 session</span></li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-pivot-secondary text-xs mt-1"></i> <span>Assessment of current skills vs target discipline</span></li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-pivot-secondary text-xs mt-1"></i> <span>Gap analysis: what you need to learn</span></li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-pivot-secondary text-xs mt-1"></i> <span>High-level strategic roadmap for your transition</span></li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-pivot-secondary text-xs mt-1"></i> <span>Recommended learning resources and portfolio projects</span></li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-pivot-secondary text-xs mt-1"></i> <span>Next steps action plan</span></li>
+                    </ul>
+
+                    <a href="#booking" class="w-full py-3 rounded-xl border border-amber-200 text-pivot-primary font-bold text-center hover:bg-pivot-primary hover:text-white transition">
+                        Get Started
+                    </a>
                 </div>
 
                 <!-- Two Session Package -->
-                <div class="pricing-card pricing-popular">
-                    <div class="popular-badge">Most Popular</div>
-                    <div class="pricing-header">
-                        <h3>Strategic Pivot Plan</h3>
-                        <div class="pricing-amount">
-                            <span class="price-dollar">$</span>
-                            <span class="price-value">160</span>
-                            <span class="price-total">total</span>
-                        </div>
+                <div class="relative p-8 rounded-3xl bg-white border-2 border-pivot-secondary shadow-card flex flex-col h-full transform md:-translate-y-4">
+                    <div class="absolute top-0 right-0 bg-pivot-secondary text-white text-xs font-bold px-3 py-1 rounded-bl-xl rounded-tr-xl uppercase tracking-wider">
+                        Most Popular
                     </div>
-                    <div class="pricing-content">
-                        <p class="pricing-description">Develop your roadmap and position yourself for the transition.</p>
-                        <ul class="pricing-features">
-                            <li>2 sessions (2 hours total)</li>
-                            <li><strong>Session 1:</strong> Everything from Pivot Assessment & Roadmap</li>
-                            <li><strong>Session 2:</strong> Internal positioning and portfolio strategy</li>
-                            <li>How to leverage current role to gain new skills</li>
-                            <li>Resume and LinkedIn rewrite for pivot</li>
-                            <li>Networking strategy to connect with target teams</li>
-                            <li>Talking points to pitch your transferable skills</li>
-                        </ul>
-                        <a href="#booking" class="btn btn-primary btn-block">Start Pivot</a>
+                    
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Strategic Pivot Plan</h3>
+                    <div class="flex items-baseline gap-1 mb-6">
+                        <span class="text-3xl font-bold text-pivot-primary">$160</span>
+                        <span class="text-sm text-slate-400">total</span>
                     </div>
+                    
+                    <p class="text-slate-500 text-sm mb-6 leading-relaxed">
+                        Develop your roadmap and position yourself for the transition.
+                    </p>
+
+                    <ul class="space-y-3 mb-8 text-sm text-slate-600 flex-grow">
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-pivot-secondary text-xs mt-1"></i> <span>2 sessions (2 hours total)</span></li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-pivot-secondary text-xs mt-1"></i> <span><strong>Session 1:</strong> Everything from Pivot Assessment & Roadmap</span></li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-pivot-secondary text-xs mt-1"></i> <span><strong>Session 2:</strong> Internal positioning and portfolio strategy</span></li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-pivot-secondary text-xs mt-1"></i> <span>How to leverage current role to gain new skills</span></li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-pivot-secondary text-xs mt-1"></i> <span>Resume and LinkedIn rewrite for pivot</span></li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-pivot-secondary text-xs mt-1"></i> <span>Networking strategy to connect with target teams</span></li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-pivot-secondary text-xs mt-1"></i> <span>Talking points to pitch your transferable skills</span></li>
+                    </ul>
+
+                    <a href="#booking" class="w-full py-3 rounded-xl bg-pivot-primary text-white font-bold text-center hover:bg-pivot-secondary transition shadow-lg hover:shadow-fresh">
+                        Start Pivot
+                    </a>
                 </div>
 
                 <!-- Three Session Package -->
-                <div class="pricing-card">
-                    <div class="pricing-header">
-                        <h3>Complete Pivot Package</h3>
-                        <div class="pricing-amount">
-                            <span class="price-dollar">$</span>
-                            <span class="price-value">225</span>
-                            <span class="price-total">total</span>
-                        </div>
+                <div class="p-8 rounded-3xl bg-white border border-slate-200 hover:border-pivot-secondary/50 hover:shadow-card transition duration-300 flex flex-col h-full">
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Complete Pivot</h3>
+                    <div class="flex items-baseline gap-1 mb-6">
+                        <span class="text-3xl font-bold text-pivot-primary">$225</span>
+                        <span class="text-sm text-slate-400">total</span>
                     </div>
-                    <div class="pricing-content">
-                        <p class="pricing-description">Full support from planning to landing your new role.</p>
-                        <ul class="pricing-features">
-                            <li>3 sessions (3 hours total)</li>
-                            <li><strong>Sessions 1-2:</strong> Everything from Strategic Pivot Plan</li>
-                            <li><strong>Session 3:</strong> Interview prep and role transition</li>
-                            <li>Mock technical interview for your target discipline</li>
-                            <li>How to explain your pivot in interviews</li>
-                            <li>Portfolio project review and feedback</li>
-                            <li>First 90-day success plan in new role</li>
-                            <li>Ongoing support as you make the transition</li>
-                        </ul>
-                        <a href="#booking" class="btn btn-primary btn-block">Complete Pivot</a>
-                    </div>
-                </div>
-            </div>
-            <p class="payment-note">💳 <strong>Payment:</strong> After your free discovery call, we'll agree on the right package for you. Payment is arranged directly via Venmo or Zelle—simple and secure.</p>
-        </div>
-    </section>
+                    
+                    <p class="text-slate-500 text-sm mb-6 leading-relaxed">
+                        Full support from planning to landing your new role.
+                    </p>
 
-    <!-- How It Works -->
-    <section id="how-it-works" class="section">
-        <div class="container">
-            <h2 class="section-title center">How It Works</h2>
-            <div class="steps-grid">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <h3>Assess Your Pivot Potential</h3>
-                    <p>We'll map YOUR current skills to your target role—not generic 'transferable skills,' but specific value YOU bring.</p>
+                    <ul class="space-y-3 mb-8 text-sm text-slate-600 flex-grow">
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-pivot-secondary text-xs mt-1"></i> <span>3 sessions (3 hours total)</span></li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-pivot-secondary text-xs mt-1"></i> <span><strong>Sessions 1-2:</strong> Everything from Strategic Pivot Plan</span></li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-pivot-secondary text-xs mt-1"></i> <span><strong>Session 3:</strong> Interview prep and role transition</span></li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-pivot-secondary text-xs mt-1"></i> <span>Mock technical interview for your target discipline</span></li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-pivot-secondary text-xs mt-1"></i> <span>How to explain your pivot in interviews</span></li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-pivot-secondary text-xs mt-1"></i> <span>Portfolio project review and feedback</span></li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-pivot-secondary text-xs mt-1"></i> <span>First 90-day success plan in new role</span></li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-pivot-secondary text-xs mt-1"></i> <span>Ongoing support as you make the transition</span></li>
+                    </ul>
+
+                    <a href="#booking" class="w-full py-3 rounded-xl border border-amber-200 text-pivot-primary font-bold text-center hover:bg-pivot-primary hover:text-white transition">
+                        Complete Pivot
+                    </a>
                 </div>
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <h3>Build Your Transition Roadmap</h3>
-                    <p>Based on YOUR company's structure, YOUR team dynamics, YOUR timeline—not a cookie-cutter plan.</p>
+            </div>
+            
+            <div class="mt-12 p-6 bg-slate-50 rounded-2xl border border-slate-200 text-center text-sm text-slate-500">
+                <i class="fa-regular fa-credit-card mr-2"></i> <strong>Payment:</strong> After your free discovery call, we'll agree on the right package for you. Payment is arranged directly via Venmo or Zelle—simple and secure.
+            </div>
+        </div>
+    </div>
+
+    <!-- HOW IT WORKS -->
+    <div id="how-it-works" class="py-24 bg-brand-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900">How It Works</h2>
+            </div>
+
+            <div class="grid md:grid-cols-4 gap-8 text-center">
+                <!-- Step 1 -->
+                <div>
+                    <div class="w-16 h-16 bg-pivot-primary text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6 shadow-lg shadow-amber-200">1</div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-4">Assess Your Pivot Potential</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed">
+                        We'll map YOUR current skills to your target role—not generic 'transferable skills,' but specific value YOU bring.
+                    </p>
                 </div>
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <h3>Execute Your Pivot</h3>
-                    <p>I'll review YOUR positioning emails, YOUR internal applications, YOUR conversations with leadership—with specific feedback.</p>
+
+                <!-- Step 2 -->
+                <div>
+                    <div class="w-16 h-16 bg-pivot-primary text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6 shadow-lg shadow-amber-200">2</div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-4">Build Your Transition Roadmap</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed">
+                        Based on YOUR company's structure, YOUR team dynamics, YOUR timeline—not a cookie-cutter plan.
+                    </p>
                 </div>
-                <div class="step">
-                    <div class="step-number">4</div>
-                    <h3>Land & Excel in Your New Role</h3>
-                    <p>Apply with a compelling narrative about why your unique background makes you the ideal candidate. Navigate the transition with proven strategies.</p>
+
+                <!-- Step 3 -->
+                <div>
+                    <div class="w-16 h-16 bg-pivot-primary text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6 shadow-lg shadow-amber-200">3</div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-4">Execute Your Pivot</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed">
+                        I'll review YOUR positioning emails, YOUR internal applications, YOUR conversations with leadership—with specific feedback.
+                    </p>
+                </div>
+
+                <!-- Step 4 -->
+                <div>
+                    <div class="w-16 h-16 bg-pivot-primary text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6 shadow-lg shadow-amber-200">4</div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-4">Land & Excel in Your New Role</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed">
+                        Apply with a compelling narrative about why your unique background makes you the ideal candidate. Navigate the transition with proven strategies.
+                    </p>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
     <!-- Booking Section -->
-    <section class="section section-alt" id="booking">
-        <div class="container">
-            <h2 class="section-title center">Ready to Make Your Pivot?</h2>
-            <div class="booking-container">
-                <div class="booking-content">
-                    <h3>Book Your Free Discovery Call</h3>
-                    <p>Schedule a 30-minute call to discuss your goals and see if we're a good fit. No pressure, no hard sell—just an honest conversation about your career.</p>
-                    <p class="booking-highlight">All sessions are conducted via Google Meet video call.</p>
-                    
-                    <div class="booking-cta">
-                        <a href="https://calendar.app.google/uzaLZUWSUH3ZbaGr6" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-large">📅 Book Your Free Call</a>
-                        <p class="booking-note"><em>Opens in a new window. You'll receive a confirmation email with the Google Meet link.</em></p>
-                    </div>
-                </div>
+    <div id="booking" class="py-24 bg-brand-primary relative overflow-hidden">
+        <!-- Background decoration -->
+        <div class="absolute top-0 right-0 -mt-20 -mr-20 w-96 h-96 bg-pivot-secondary rounded-full blur-3xl opacity-20"></div>
+        <div class="absolute bottom-0 left-0 -mb-20 -ml-20 w-96 h-96 bg-pivot-primary rounded-full blur-3xl opacity-10"></div>
+        
+        <div class="max-w-4xl mx-auto px-4 relative z-10 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Ready to Make Your Pivot?</h2>
+            <p class="text-emerald-100 text-lg mb-10 max-w-2xl mx-auto">
+                Schedule a 30-minute call to discuss your goals and see if we're a good fit. No pressure, no hard sell—just an honest conversation about your career.
+            </p>
+            
+            <div class="flex flex-col items-center gap-4">
+                <a href="https://calendar.app.google/uzaLZUWSUH3ZbaGr6" target="_blank" rel="noopener noreferrer" class="px-8 py-4 bg-white text-brand-primary font-bold rounded-full hover:bg-brand-accent hover:text-brand-primary transition shadow-lg hover:shadow-fresh hover:-translate-y-1 inline-flex items-center gap-2">
+                    <i class="fa-regular fa-calendar"></i> Book Your Free Call
+                </a>
+                <p class="text-emerald-200 text-sm mt-4">
+                    <i class="fa-solid fa-video mr-1"></i> All sessions are conducted via Google Meet video call.
+                </p>
             </div>
         </div>
-    </section>
+    </div>
 
     <!-- FAQ -->
-    <section id="faq" class="section">
-        <div class="container">
-            <h2 class="section-title center">Frequently Asked Questions</h2>
-            <div class="faq-compact-grid">
-                <div class="faq-item">
-                    <h3>How long does a typical pivot take?</h3>
-                    <p>6-18 months depending on the disciplines. I was contributing to software projects within 6 months.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>Do I need to leave my company to pivot?</h3>
-                    <p>Not necessarily! Internal pivots are often easier. I'll help you navigate transfers strategically.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>Can I pivot while working full-time?</h3>
-                    <p>Absolutely. That's how I did it. We'll create a realistic plan—usually 5-10 hours per week.</p>
-                </div>
+    <div id="faq" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900">Frequently Asked Questions</h2>
             </div>
-            <div style="text-align: center; margin-top: 2rem;">
-                <a href="faq.html" class="btn btn-outline">See All FAQs →</a>
-            </div>
-        </div>
-    </section>
 
-    <!-- CTA -->
-    <section class="section cta-section">
-        <div class="container">
-            <div class="cta-content">
-                <h2>Transform Your Engineering Career</h2>
-                <p>Stop feeling stuck. Start your pivot journey with someone who's done it successfully.</p>
-                <a href="#booking" class="btn btn-primary btn-large">Book Your First Session</a>
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-100">
+                    <h3 class="font-bold text-slate-900 mb-4">How long does a typical pivot take?</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">6-18 months depending on the disciplines. I was contributing to software projects within 6 months.</p>
+                </div>
+                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-100">
+                    <h3 class="font-bold text-slate-900 mb-4">Do I need to leave my company to pivot?</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">Not necessarily! Internal pivots are often easier. I'll help you navigate transfers strategically.</p>
+                </div>
+                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-100">
+                    <h3 class="font-bold text-slate-900 mb-4">Can I pivot while working full-time?</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">Absolutely. That's how I did it. We'll create a realistic plan—usually 5-10 hours per week.</p>
+                </div>
+            </div>
+            
+            <div class="text-center">
+                <a href="faq.html" class="inline-flex items-center gap-2 text-brand-primary font-bold hover:text-brand-secondary transition">
+                    See All FAQs <i class="fa-solid fa-arrow-right"></i>
+                </a>
             </div>
         </div>
-    </section>
+    </div>
+
+    <!-- Sticky Bottom Navigation -->
+    <div class="fixed bottom-0 left-0 right-0 z-40 bg-white/80 backdrop-blur-md border-t border-emerald-100 shadow-[0_-4px_20px_-5px_rgba(0,0,0,0.1)] transition-transform duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-center items-center space-x-4 md:space-x-12 py-4 overflow-x-auto">
+                <a href="#ai" class="text-xs md:text-sm font-semibold text-slate-600 hover:text-brand-primary transition-colors uppercase tracking-wider whitespace-nowrap">AI Advantage</a>
+                <a href="#my-pivot" class="text-xs md:text-sm font-semibold text-slate-600 hover:text-brand-primary transition-colors uppercase tracking-wider whitespace-nowrap">My Journey</a>
+                <a href="#packages" class="text-xs md:text-sm font-semibold text-slate-600 hover:text-brand-primary transition-colors uppercase tracking-wider whitespace-nowrap">Packages</a>
+                <a href="#how-it-works" class="text-xs md:text-sm font-semibold text-slate-600 hover:text-brand-primary transition-colors uppercase tracking-wider whitespace-nowrap">Process</a>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <div class="logo">
-                        <span class="logo-icon">L²</span>
-                        <span class="logo-text">
-                            <span class="logo-main">Launch to Lead</span>
-                            <span class="logo-sub">Engineering</span>
-                        </span>
-                    </div>
-                    <p>Engineering career coaching for students and professionals.</p>
+    <footer class="bg-brand-primary text-white py-16 border-t border-emerald-800 mb-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-12 mb-12">
+                <!-- Brand -->
+                <div class="col-span-1">
+                    <a href="index.html" class="flex items-center gap-2 mb-6 group">
+                        <div class="bg-brand-accent text-brand-primary w-10 h-10 rounded-lg flex items-center justify-center group-hover:bg-white transition duration-300">
+                            <span class="font-bold text-lg">L²</span>
+                        </div>
+                        <span class="font-bold text-xl text-white tracking-tight">Launch<span class="font-light text-brand-accent">ToLead</span></span>
+                    </a>
+                    <p class="text-emerald-100 text-sm leading-relaxed">
+                        Engineering career coaching for students and professionals.
+                    </p>
                 </div>
-                <div class="footer-links">
-                    <div class="footer-column">
-                        <h4>Services</h4>
-                        <a href="launch.html">Launch</a>
-                        <a href="pivot.html">Pivot</a>
-                        <a href="accelerate.html">Accelerate</a>
-                    </div>
-                    <div class="footer-column">
-                        <h4>Company</h4>
-                        <a href="about.html">About</a>
-                        <a href="success-stories.html">Success Stories</a>
-                        <a href="contact.html">Contact</a>
-                    </div>
-                    <div class="footer-column">
-                        <h4>Connect</h4>
-                        <a href="mailto:contact@launchtolead.io">contact@launchtolead.io</a>
-                        <a href="https://www.linkedin.com/in/mancimansour" target="_blank">LinkedIn</a>
-                    </div>
+
+                <!-- Services -->
+                <div>
+                    <h4 class="font-bold text-lg mb-6 text-white uppercase tracking-wider text-sm">Services</h4>
+                    <ul class="space-y-4 text-sm text-emerald-100">
+                        <li><a href="launch.html" class="hover:text-brand-accent transition">Launch</a></li>
+                        <li><a href="pivot.html" class="text-brand-accent font-bold">Pivot</a></li>
+                        <li><a href="accelerate.html" class="hover:text-brand-accent transition">Accelerate</a></li>
+                    </ul>
+                </div>
+
+                <!-- Company -->
+                <div>
+                    <h4 class="font-bold text-lg mb-6 text-white uppercase tracking-wider text-sm">Company</h4>
+                    <ul class="space-y-4 text-sm text-emerald-100">
+                        <li><a href="about.html" class="hover:text-brand-accent transition">About</a></li>
+                        <li><a href="success-stories.html" class="hover:text-brand-accent transition">Success Stories</a></li>
+                        <li><a href="contact.html" class="hover:text-brand-accent transition">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Connect -->
+                <div>
+                    <h4 class="font-bold text-lg mb-6 text-white uppercase tracking-wider text-sm">Connect</h4>
+                    <ul class="space-y-4 text-sm text-emerald-100">
+                        <li><a href="mailto:contact@launchtolead.io" class="hover:text-brand-accent transition">contact@launchtolead.io</a></li>
+                        <li><a href="https://www.linkedin.com/in/mancimansour" target="_blank" class="hover:text-brand-accent transition">LinkedIn</a></li>
+                    </ul>
                 </div>
             </div>
-            <div class="footer-bottom">
+            
+            <div class="border-t border-emerald-800 pt-8 text-center text-emerald-400 text-sm">
                 <p>&copy; 2025 Launch to Lead Engineering. All rights reserved.</p>
             </div>
         </div>
     </footer>
-    <script src="carousel.js"></script>
 </body>
 </html>
