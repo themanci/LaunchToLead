@@ -1,47 +1,114 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Frequently Asked Questions | Launch to Lead Engineering</title>
     <meta name="description" content="Find answers to common questions about Launch to Lead Engineering career coaching services.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            primary: '#0f766e',
+                            secondary: '#0d9488',
+                            accent: '#2dd4bf',
+                            dark: '#111827',
+                            light: '#f0fdfa'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'soft': '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+                        'fresh': '0 10px 15px -3px rgba(13, 148, 136, 0.1), 0 4px 6px -2px rgba(13, 148, 136, 0.05)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- FontAwesome -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Alpine.js -->
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    
     <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="nav">
-        <div class="container nav-container">
-            <a href="index.html" class="logo">
-                <span class="logo-icon">L²</span>
-                <span class="logo-text">
-                    <span class="logo-main">Launch to Lead</span>
-                    <span class="logo-sub">Engineering</span>
-                </span>
-            </a>
-            <div class="nav-links">
-                <a href="launch.html">Launch</a>
-                <a href="pivot.html">Pivot</a>
-                <a href="accelerate.html">Accelerate</a>
-                <a href="packages.html">Packages</a>
-                <a href="about.html">About Me</a>
-                <a href="faq.html" style="color: var(--primary); font-weight: 600;">FAQ</a>
-                <a href="contact.html" class="btn-nav">Get Started</a>
+    <nav class="bg-white/80 backdrop-blur-lg border-b border-emerald-100 fixed top-0 w-full z-50" x-data="{ open: false }">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center gap-2 group">
+                        <div class="bg-brand-primary text-white w-8 h-8 rounded-lg flex items-center justify-center group-hover:bg-brand-accent group-hover:text-brand-primary transition duration-300">
+                            <span class="font-bold text-sm">L²</span>
+                        </div>
+                        <span class="font-bold text-xl text-brand-primary tracking-tight">Launch<span class="font-light text-brand-secondary">ToLead</span></span>
+                    </a>
+                </div>
+
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="launch.html" class="text-sm font-medium text-slate-500 hover:text-brand-secondary transition">Launch</a>
+                    <a href="pivot.html" class="text-sm font-medium text-slate-500 hover:text-brand-secondary transition">Pivot</a>
+                    <a href="accelerate.html" class="text-sm font-medium text-slate-500 hover:text-brand-secondary transition">Accelerate</a>
+                    <a href="packages.html" class="text-sm font-medium text-slate-500 hover:text-brand-secondary transition">Packages</a>
+                    <a href="about.html" class="text-sm font-medium text-slate-500 hover:text-brand-secondary transition">About</a>
+                    <a href="contact.html" class="bg-brand-primary text-white px-5 py-2 rounded-full font-semibold text-sm hover:bg-brand-secondary transition shadow-soft hover:shadow-fresh">
+                        Get Started
+                    </a>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button @click="open = !open" class="inline-flex items-center justify-center p-2 rounded-md text-slate-400 hover:text-slate-500 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-brand-primary" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg x-show="!open" class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                        <svg x-show="open" class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile menu, show/hide based on menu state. -->
+        <div x-show="open" @click.away="open = false" class="md:hidden absolute top-20 left-0 w-full bg-white border-b border-emerald-100 shadow-lg z-50" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="launch.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-secondary hover:bg-slate-50">Launch</a>
+                <a href="pivot.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-secondary hover:bg-slate-50">Pivot</a>
+                <a href="accelerate.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-secondary hover:bg-slate-50">Accelerate</a>
+                <a href="packages.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-secondary hover:bg-slate-50">Packages</a>
+                <a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-secondary hover:bg-slate-50">About</a>
+                <a href="contact.html" class="block px-3 py-2 rounded-md text-base font-medium text-brand-primary font-bold bg-slate-50">Get Started</a>
             </div>
         </div>
     </nav>
 
-    <!-- Page Hero -->
-    <section class="page-hero">
-        <div class="container">
-            <div class="page-hero-content">
-                <h1 class="page-title">Frequently Asked Questions</h1>
-                <p class="page-subtitle">Find answers to common questions about Launch to Lead Engineering coaching services</p>
-            </div>
+    <main>
+    <!-- HERO -->
+    <div class="relative pt-28 pb-20 lg:pt-32 lg:pb-24 bg-white overflow-hidden">
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight mb-6">
+                Frequently Asked <span class="text-brand-primary">Questions</span>
+            </h1>
+            <p class="mt-4 max-w-2xl mx-auto text-xl text-slate-500">
+                Find answers to common questions about Launch to Lead Engineering coaching services.
+            </p>
         </div>
-    </section>
+    </div>
 
     <!-- FAQ Content -->
     <section class="section">
@@ -281,6 +348,7 @@
             </div>
         </div>
     </section>
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
@@ -318,8 +386,8 @@
                     <div class="footer-column">
                         <h4>Connect</h4>
                         <ul>
-                            <li><a href="mailto:contact@launchtolead.io">📧 contact@launchtolead.io</a></li>
-                            <li><a href="https://www.linkedin.com/in/mansour-manci/" target="_blank">LinkedIn</a></li>
+                            <li><a href="mailto:contact@launchtolead.io"><i class="fa-solid fa-envelope"></i> contact@launchtolead.io</a></li>
+                            <li><a href="https://www.linkedin.com/in/launchtolead" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin" style="color: #0077b5;"></i> LinkedIn</a></li>
                         </ul>
                     </div>
                 </div>
@@ -329,6 +397,7 @@
             </div>
         </div>
     </footer>
+
 
     <script src="faq.js"></script>
 </body>

@@ -159,7 +159,7 @@ Check:
 
 For questions or updates, reach out to:
 - Email: LaunchToLeadEngineering@gmail.com
-- LinkedIn: linkedin.com/in/mancimansour
+- LinkedIn: www.linkedin.com/in/launchtolead
 
 ## 📄 License
 
