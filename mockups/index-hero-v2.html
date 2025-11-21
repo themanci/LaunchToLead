@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index Hero V2 - Option 1 with Testimonial Link</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../tailwind-config.js"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .bg-dots {
+            background-image: radial-gradient(circle, #d1fae5 1px, transparent 1px);
+        }
+    </style>
+</head>
+<body class="bg-white text-slate-600 antialiased">
+
+    <div class="max-w-7xl mx-auto px-4 py-8">
+        <!-- Mockup Header -->
+        <div class="bg-emerald-50 border-2 border-emerald-400 rounded-2xl p-6 mb-8">
+            <h1 class="text-2xl font-bold text-emerald-900 mb-2">📋 Mockup V2: Index Hero Section (Option 1)</h1>
+            <p class="text-emerald-800 text-sm">Split layout with headshot on right, tighter spacing, plus testimonial link callout box</p>
+        </div>
+
+        <!-- HERO SECTION -->
+        <div class="relative pt-12 pb-20 bg-white overflow-hidden border-2 border-slate-200 rounded-3xl">
+            <!-- Dot Pattern -->
+            <div class="absolute inset-0 bg-dots opacity-20" style="background-size: 20px 20px;"></div>
+
+            <!-- Background blobs -->
+            <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-teal-100 rounded-full blur-3xl opacity-60 pointer-events-none"></div>
+            <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-96 h-96 bg-lime-100 rounded-full blur-3xl opacity-60 pointer-events-none"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="grid lg:grid-cols-2 gap-8 items-center">
+                    <!-- Left: Content -->
+                    <div>
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-100 text-emerald-900 text-xs font-semibold mb-6">
+                            <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                            Engineering Career Coaching
+                        </div>
+                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight mb-6 leading-[1.1]">
+                            From Mechanical Engineer to<br>
+                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-600">Software Leader.</span>
+                        </h1>
+                        <p class="text-base md:text-lg lg:text-xl text-slate-500 mb-8 font-light leading-relaxed">
+                            I earned 4 promotions and pivoted 4 times in 7 years at a Fortune 100 company. Now I'm sharing the exact frameworks to help you do the same.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4 mb-6">
+                            <a href="#tracks"
+                                class="px-8 py-4 bg-emerald-600 text-white font-bold rounded-full hover:bg-teal-600 transition shadow-lg hover:shadow-xl hover:-translate-y-1 text-center">
+                                Choose Your Path
+                            </a>
+                            <a href="contact.html"
+                                class="px-8 py-4 bg-white text-emerald-600 font-bold rounded-full border-2 border-emerald-200 hover:border-emerald-600 hover:text-teal-600 transition text-center">
+                                Book Strategy Call
+                            </a>
+                        </div>
+                        
+                        <!-- Testimonial Teaser Box - Mobile -->
+                        <div class="lg:hidden mt-8">
+                            <a href="success-stories.html" class="group block bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-6 border-2 border-amber-200 hover:border-amber-400 transition-all duration-300 hover:shadow-lg">
+                                <div class="flex items-start gap-4">
+                                    <div class="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-amber-200 to-orange-200 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                                        <i data-lucide="quote" class="w-8 h-8 text-amber-700"></i>
+                                    </div>
+                                    <div class="flex-1 min-w-0">
+                                        <p class="text-xs font-bold text-amber-900 uppercase tracking-wider mb-1">Don't just take my word for it</p>
+                                        <p class="text-sm text-slate-700 font-semibold mb-2">See real results from engineers like you</p>
+                                        <div class="flex items-center gap-2 text-emerald-600 font-bold text-sm">
+                                            <span>View Success Stories</span>
+                                            <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Placeholder for testimonial preview -->
+                                <div class="mt-4 bg-white/60 rounded-lg p-3 border border-amber-100">
+                                    <p class="text-xs text-slate-600 italic">"[Testimonial snippet preview goes here - short quote from a client]"</p>
+                                    <p class="text-xs text-slate-500 mt-1 font-semibold">— Client Name, Job Title</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Right: Headshot with Link -->
+                    <div class="flex justify-center lg:justify-end">
+                        <div class="relative w-full max-w-sm">
+                            <!-- Headshot Link -->
+                            <a href="about.html" class="group block">
+                                <div class="relative">
+                                    <!-- Decorative elements -->
+                                    <div class="absolute -inset-4 bg-gradient-to-br from-emerald-400 to-teal-400 rounded-3xl opacity-20 group-hover:opacity-30 transition blur-xl"></div>
+                                    
+                                    <!-- Image container -->
+                                    <div class="relative bg-white rounded-3xl p-2 shadow-2xl group-hover:shadow-fresh transition-all duration-300 group-hover:-translate-y-2">
+                                        <div class="relative rounded-2xl overflow-hidden aspect-[3/4]">
+                                            <!-- Placeholder image - replace with real headshot -->
+                                            <div class="w-full h-full bg-gradient-to-br from-emerald-100 via-teal-50 to-lime-100 flex items-center justify-center">
+                                                <div class="text-center">
+                                                    <i data-lucide="user" class="w-24 h-24 text-emerald-600 mx-auto mb-4"></i>
+                                                    <p class="text-emerald-800 font-semibold">Your Headshot Here</p>
+                                                    <p class="text-emerald-600 text-sm">400x500px recommended</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- "Learn More" overlay on hover -->
+                                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl flex items-end justify-center pb-8">
+                                            <div class="text-white text-center">
+                                                <p class="font-bold text-lg mb-2">Learn My Story</p>
+                                                <div class="flex items-center gap-2 text-emerald-300 justify-center">
+                                                    <span class="text-sm">Read more about me</span>
+                                                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Floating badge -->
+                                    <div class="absolute -bottom-4 -left-4 bg-white rounded-2xl shadow-lg px-4 py-3 border-2 border-emerald-100 group-hover:border-emerald-300 transition">
+                                        <div class="flex items-center gap-2">
+                                            <i data-lucide="briefcase" class="w-5 h-5 text-emerald-600"></i>
+                                            <div class="text-left">
+                                                <div class="text-xs text-slate-500 font-medium">Moline, IL</div>
+                                                <div class="text-sm font-bold text-slate-900 whitespace-nowrap">Fortune 100 Engineer</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            
+                            <!-- Testimonial Teaser Box - Desktop -->
+                            <div class="hidden lg:block mt-8">
+                                <a href="success-stories.html" class="group block bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-6 border-2 border-amber-200 hover:border-amber-400 transition-all duration-300 hover:shadow-lg">
+                                    <div class="flex items-start gap-4">
+                                        <div class="flex-shrink-0 w-14 h-14 bg-gradient-to-br from-amber-200 to-orange-200 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                                            <i data-lucide="quote" class="w-7 h-7 text-amber-700"></i>
+                                        </div>
+                                        <div class="flex-1 min-w-0">
+                                            <p class="text-xs font-bold text-amber-900 uppercase tracking-wider mb-1">Don't just take my word for it</p>
+                                            <p class="text-sm text-slate-700 font-semibold mb-2">See real results from engineers like you</p>
+                                            <div class="flex items-center gap-2 text-emerald-600 font-bold text-sm">
+                                                <span>View Success Stories</span>
+                                                <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Placeholder for testimonial preview -->
+                                    <div class="mt-4 bg-white/60 rounded-lg p-3 border border-amber-100">
+                                        <p class="text-xs text-slate-600 italic">"[Testimonial snippet preview goes here - short quote from a client about results they achieved]"</p>
+                                        <p class="text-xs text-slate-500 mt-1 font-semibold">— Client Name, Job Title</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stats -->
+                <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 max-w-4xl mx-auto border-t border-slate-200 pt-8">
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-emerald-600">4</div>
+                        <div class="text-sm text-slate-500 uppercase tracking-wide font-medium">Promotions</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-emerald-600">7</div>
+                        <div class="text-sm text-slate-500 uppercase tracking-wide font-medium">Years</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-emerald-600">4</div>
+                        <div class="text-sm text-slate-500 uppercase tracking-wide font-medium">Pivots</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-emerald-600">75k+</div>
+                        <div class="text-sm text-slate-500 uppercase tracking-wide font-medium">Employees</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Implementation Notes -->
+        <div class="mt-8 bg-slate-100 border-2 border-slate-300 rounded-xl p-6">
+            <h3 class="text-lg font-bold text-slate-900 mb-3">📝 Implementation Notes:</h3>
+            <ul class="space-y-2 text-slate-700 text-sm">
+                <li><strong>✅ Tighter spacing:</strong> Reduced gap from gap-12 to gap-8 between content and image columns</li>
+                <li><strong>✅ Mobile optimized:</strong> Testimonial box appears below CTAs on mobile, beside headshot on desktop</li>
+                <li><strong>✅ Testimonial teaser:</strong> Amber/orange gradient box with quote icon, links to success-stories.html</li>
+                <li><strong>✅ Responsive text:</strong> Headings scale from 4xl → 5xl → 6xl based on screen size</li>
+                <li><strong>✅ Placeholder areas:</strong> Clear spots for headshot (400x500px) and testimonial snippet</li>
+                <li><strong>🎨 Brand colors:</strong> Emerald/teal primary, amber for testimonials to create visual hierarchy</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

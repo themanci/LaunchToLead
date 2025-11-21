@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="About Mansour Manci - Engineering career coach with 7 years at Fortune 100 company, 4 promotions, mechanical to software leadership transition.">
+    <title>About V2 with My Story Section | Launch to Lead Engineering</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../tailwind-config.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .bg-dots {
+            background-image: radial-gradient(circle, #d1fae5 1px, transparent 1px);
+        }
+    </style>
+</head>
+<body class="bg-brand-light text-slate-600 font-sans antialiased">
+
+    <!-- Mockup Banner -->
+    <div class="bg-emerald-600 text-white py-4 sticky top-0 z-50 border-b-4 border-emerald-800">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h1 class="text-lg md:text-xl font-bold">📋 MOCKUP V2: Complete About Page with "My Story" Section at Top</h1>
+            <p class="text-emerald-100 text-sm mt-1">Scroll to see how the new personal story section integrates with existing content</p>
+        </div>
+    </div>
+
+    <!-- Navigation (sticky global) -->
+    <nav class="bg-white/80 backdrop-blur-lg border-b border-emerald-100 sticky top-16 w-full z-40" x-data="{ open: false }">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20">
+                <div class="flex items-center">
+                    <a href="../index.html" class="flex items-center gap-2 group">
+                        <div class="bg-brand-primary text-white w-8 h-8 rounded-lg flex items-center justify-center group-hover:bg-brand-accent group-hover:text-brand-primary transition duration-300">
+                            <span class="font-bold text-sm">L²</span>
+                        </div>
+                        <span class="font-bold text-xl text-brand-primary tracking-tight">Launch<span class="font-light text-brand-secondary">ToLead</span></span>
+                    </a>
+                </div>
+
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="../launch.html" class="text-sm font-medium text-slate-500 hover:text-brand-secondary transition">Launch</a>
+                    <a href="../pivot.html" class="text-sm font-medium text-slate-500 hover:text-brand-secondary transition">Pivot</a>
+                    <a href="../accelerate.html" class="text-sm font-medium text-slate-500 hover:text-brand-secondary transition">Accelerate</a>
+                    <a href="../packages.html" class="text-sm font-medium text-slate-500 hover:text-brand-secondary transition">Packages</a>
+                    <a href="../about.html" class="text-sm font-medium text-slate-500 hover:text-brand-secondary transition">About</a>
+                    <a href="../contact.html" class="bg-brand-primary text-white px-5 py-2 rounded-full font-semibold text-sm hover:bg-brand-secondary transition shadow-soft hover:shadow-fresh">
+                        Get Started
+                    </a>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button @click="open = !open" class="inline-flex items-center justify-center p-2 rounded-md text-slate-400 hover:text-slate-500 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-brand-primary">
+                        <i x-show="!open" data-lucide="menu" class="h-6 w-6"></i>
+                        <i x-show="open" data-lucide="x" class="h-6 w-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile menu -->
+        <div x-show="open" @click.away="open = false" class="md:hidden bg-white border-b border-emerald-100 shadow-lg">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="../launch.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-secondary hover:bg-slate-50">Launch</a>
+                <a href="../pivot.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-secondary hover:bg-slate-50">Pivot</a>
+                <a href="../accelerate.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-secondary hover:bg-slate-50">Accelerate</a>
+                <a href="../packages.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-secondary hover:bg-slate-50">Packages</a>
+                <a href="../about.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-secondary hover:bg-slate-50">About</a>
+                <a href="../contact.html" class="block px-3 py-2 rounded-md text-base font-medium text-brand-primary font-bold bg-slate-50">Get Started</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <div id="top" class="relative pt-28 pb-20 lg:pt-32 lg:pb-24 bg-white overflow-hidden">
+        <!-- Dot Pattern -->
+        <div class="absolute inset-0 bg-dots opacity-20" style="background-size: 20px 20px;"></div>
+        
+        <!-- Background blobs -->
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-brand-accent rounded-full blur-3xl opacity-20" aria-hidden="true"></div>
+        <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-96 h-96 bg-brand-secondary rounded-full blur-3xl opacity-20" aria-hidden="true"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight mb-6">
+                About <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-brand-secondary">Mansour Manci</span>
+            </h1>
+            <p class="mt-4 max-w-3xl mx-auto text-lg md:text-xl text-slate-500 font-light leading-relaxed">
+                Software and Systems Engineering Leader | Career Coach | Mechanical Engineer Turned Software Development Expert
+            </p>
+        </div>
+    </div>
+
+    <main>
+
+    <!-- 🆕 MY STORY SECTION (NEW - OPTION C) -->
+    <div id="my-story" class="py-16 md:py-24 bg-white scroll-mt-32">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center mb-12 md:mb-16">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-900 text-sm font-semibold mb-4">
+                    <i data-lucide="heart" class="w-4 h-4"></i>
+                    The Real Story
+                </div>
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Not Just the Resume Version</h2>
+                <p class="text-lg text-slate-500 max-w-2xl mx-auto">How a mechanical engineer from the Midwest figured out the promotion game</p>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-8 md:gap-12 mb-12">
+                <!-- Main Story Content -->
+                <div class="lg:col-span-2">
+                    <div class="prose prose-slate prose-lg max-w-none">
+                        <!-- Personal Background Blurb - PLACEHOLDER -->
+                        <div class="bg-gradient-to-br from-emerald-50 to-teal-50 border-l-4 border-emerald-600 rounded-r-2xl p-6 md:p-8 mb-8 shadow-sm">
+                            <p class="text-slate-700 leading-relaxed mb-4 text-base md:text-lg">
+                                <strong class="text-emerald-900">📝 [YOUR PERSONAL STORY STARTS HERE]</strong> This is where you share your authentic background—not the LinkedIn version, but the real, human story.
+                            </p>
+                            <p class="text-slate-600 text-sm italic bg-white/60 p-4 rounded-lg">
+                                <strong>Suggested content:</strong> Where you're from, what got you into engineering, early struggles or "aha moments," what you thought success would look like vs. reality, the moment you decided to figure out the system, what drives you beyond career success.
+                            </p>
+                        </div>
+
+                        <p class="text-base md:text-lg text-slate-700 leading-relaxed mb-6">
+                            I grew up in <strong>[HOMETOWN/REGION]</strong>, and honestly, I didn't have some grand master plan to become an engineer. <strong>[Brief origin story - maybe family influence, practical decision, random spark of interest].</strong> Engineering felt like a stable path, I was decent at math, so... why not?
+                        </p>
+
+                        <p class="text-base md:text-lg text-slate-700 leading-relaxed mb-8">
+                            Fast forward to my first role at <strong>[COMPANY]</strong> as a mechanical test engineer. I was excited to finally be "doing engineering"—but I quickly realized something: <strong class="text-slate-900">nobody tells you how to actually build a career.</strong> They teach you thermodynamics and statics, but not "how to get promoted" or "how to pivot disciplines without starting over."
+                        </p>
+
+                        <!-- The Turning Point Box -->
+                        <div class="bg-white rounded-2xl p-6 md:p-8 my-8 border-2 border-emerald-200 shadow-lg">
+                            <div class="flex flex-col md:flex-row md:items-start gap-4 md:gap-6">
+                                <div class="bg-emerald-600 text-white rounded-2xl w-14 h-14 md:w-16 md:h-16 flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="zap" class="w-7 h-7 md:w-8 md:h-8"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <h3 class="text-xl md:text-2xl font-bold text-slate-900 mb-3">The Turning Point</h3>
+                                    <p class="text-slate-700 text-sm md:text-base leading-relaxed">
+                                        <strong>[INSERT YOUR "AHA MOMENT"]</strong> - The specific event or realization that made you decide to reverse-engineer career advancement. Maybe watching someone less qualified get promoted, realizing your technical skills weren't enough, discovering a pattern in who got ahead, or a mentor's advice that changed everything.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <p class="text-base md:text-lg text-slate-700 leading-relaxed mb-6">
+                            So I started paying attention. Not just to my work, but to <em>how the game actually worked</em>. What did the people getting promoted do differently? How did they talk about their work? Who did they know? What projects did they choose? What did they say in meetings?
+                        </p>
+
+                        <p class="text-base md:text-lg text-slate-700 leading-relaxed mb-8">
+                            <strong>[ADD MORE PERSONAL CONTEXT]</strong> - Share the struggles, failed attempts, times you felt stuck, how you tested theories, what worked and what bombed. The messier and more real, the better. People connect with the struggle, not the highlight reel.
+                        </p>
+
+                        <!-- What Worked / Didn't Work Grid -->
+                        <div class="grid md:grid-cols-2 gap-6 my-10">
+                            <div class="bg-red-50 rounded-xl p-6 border-2 border-red-200">
+                                <h4 class="font-bold text-slate-900 mb-4 flex items-center gap-2 text-lg">
+                                    <i data-lucide="x-circle" class="w-6 h-6 text-red-500"></i>
+                                    What Didn't Work
+                                </h4>
+                                <ul class="space-y-3 text-sm text-slate-600">
+                                    <li class="flex items-start gap-2">
+                                        <span class="text-red-500 font-bold mt-0.5">•</span>
+                                        <span>Just working harder and hoping someone would notice</span>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <span class="text-red-500 font-bold mt-0.5">•</span>
+                                        <span>Waiting for my manager to "advocate" for me</span>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <span class="text-red-500 font-bold mt-0.5">•</span>
+                                        <span>Assuming technical excellence = promotion</span>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <span class="text-red-500 font-bold mt-0.5">•</span>
+                                        <span><strong>[Add your own failures/lessons]</strong></span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="bg-emerald-50 rounded-xl p-6 border-2 border-emerald-200">
+                                <h4 class="font-bold text-slate-900 mb-4 flex items-center gap-2 text-lg">
+                                    <i data-lucide="check-circle" class="w-6 h-6 text-emerald-600"></i>
+                                    What Actually Worked
+                                </h4>
+                                <ul class="space-y-3 text-sm text-slate-600">
+                                    <li class="flex items-start gap-2">
+                                        <span class="text-emerald-600 font-bold mt-0.5">✓</span>
+                                        <span>Building relationships 2-3 levels up</span>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <span class="text-emerald-600 font-bold mt-0.5">✓</span>
+                                        <span>Documenting impact with numbers, not adjectives</span>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <span class="text-emerald-600 font-bold mt-0.5">✓</span>
+                                        <span>Taking on visible problems nobody else wanted</span>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <span class="text-emerald-600 font-bold mt-0.5">✓</span>
+                                        <span><strong>[Add your breakthrough strategies]</strong></span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <p class="text-base md:text-lg text-slate-700 leading-relaxed mb-8">
+                            The result? 4 promotions in 7 years, including pivoting from mechanical to software to leadership—all at the same company. Not because I'm some genius, but because <strong class="text-slate-900">I figured out the patterns and replicated them</strong>.
+                        </p>
+
+                        <h3 class="text-2xl font-bold text-slate-900 mt-12 mb-6">Why I'm Doing This</h3>
+                        
+                        <p class="text-base md:text-lg text-slate-700 leading-relaxed mb-6">
+                            <strong>[YOUR PERSONAL MOTIVATION]</strong> - Why coaching? What drives you beyond money? Maybe you remember being stuck and want to help others skip years of frustration. Maybe you're passionate about helping engineers realize their potential. Maybe you hate seeing talented people stuck because they don't know "the unwritten rules."
+                        </p>
+
+                        <p class="text-base md:text-lg text-slate-700 leading-relaxed mb-8">
+                            I'm not interested in generic career advice or motivational fluff. I want to give you the <strong>specific, tactical frameworks</strong> that worked for me—and show you how to adapt them to your situation.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Sidebar - "Beyond the Office" -->
+                <div class="lg:col-span-1">
+                    <div class="bg-slate-900 text-white rounded-3xl p-6 md:p-8 sticky top-40 shadow-xl">
+                        <h3 class="text-xl font-bold mb-6 border-b border-slate-700 pb-4">Beyond the Office</h3>
+                        
+                        <div class="space-y-6">
+                            <div>
+                                <p class="text-emerald-400 font-semibold mb-2 text-sm flex items-center gap-2">
+                                    <i data-lucide="coffee" class="w-4 h-4"></i>
+                                    When I'm not coaching or engineering
+                                </p>
+                                <p class="text-slate-300 text-sm leading-relaxed">
+                                    <strong>[ADD PERSONAL INTERESTS]</strong> - Hobbies, family, side projects, what you do for fun, what keeps you balanced. Could be "trying to keep my kids from breaking things" to "obsessively optimizing my home setup" to "training for marathons."
+                                </p>
+                            </div>
+                            
+                            <div>
+                                <p class="text-emerald-400 font-semibold mb-2 text-sm flex items-center gap-2">
+                                    <i data-lucide="book-open" class="w-4 h-4"></i>
+                                    Current obsession
+                                </p>
+                                <p class="text-slate-300 text-sm leading-relaxed">
+                                    <strong>[WHAT YOU'RE INTO RIGHT NOW]</strong> - Could be a book, technology, learning project, personal challenge. Shows you're always growing and curious.
+                                </p>
+                            </div>
+                            
+                            <div>
+                                <p class="text-emerald-400 font-semibold mb-2 text-sm flex items-center gap-2">
+                                    <i data-lucide="map-pin" class="w-4 h-4"></i>
+                                    Based in
+                                </p>
+                                <p class="text-slate-300 text-sm">Moline, IL area</p>
+                            </div>
+
+                            <div>
+                                <p class="text-emerald-400 font-semibold mb-2 text-sm flex items-center gap-2">
+                                    <i data-lucide="sparkles" class="w-4 h-4"></i>
+                                    Fun fact
+                                </p>
+                                <p class="text-slate-300 text-sm leading-relaxed">
+                                    <strong>[ADD A QUIRKY FACT]</strong> - Something surprising or humanizing that makes you memorable
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Separator -->
+    <div class="py-8 bg-gradient-to-r from-emerald-600 to-teal-600">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p class="text-white text-lg md:text-xl font-semibold">Now, the professional stuff...</p>
+        </div>
+    </div>
+
+    <!-- EXISTING INTRO SECTION -->
+    <div id="intro" class="py-16 md:py-24 bg-white scroll-mt-32">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-3 gap-8 md:gap-12">
+                <div class="lg:col-span-2">
+                    <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-6 leading-tight">I'm Not a Career Coach Who Got Lucky Once—I'm an Engineer Who Figured Out The System</h2>
+                    <div class="prose prose-slate prose-lg text-slate-500">
+                        <p class="mb-4 text-base md:text-lg">Most career advice comes from people who either: (1) got incredibly lucky, or (2) never actually worked a day in engineering.</p>
+                        <p class="mb-4 font-bold text-slate-900 text-base md:text-lg">I'm neither.</p>
+                        <p class="mb-4 text-base md:text-lg">I earned 4 promotions in 7 years at a Fortune 100 company—not because I'm a genius, but because I figured out the patterns. What makes leadership promote you? What do they actually look for? How do you transition disciplines without starting over?</p>
+                        <p class="mb-4 text-base md:text-lg">This happened at a Fortune 100 industrial giant—one that employs more software engineers than many Silicon Valley firms, manages 500,000+ connected machines globally, and where failure literally impacts the global food supply.</p>
+                        <p class="mb-8 text-base md:text-lg">I reverse-engineered it. Then I did it again. And again. And again.</p>
+                        
+                        <h3 class="text-xl font-bold text-slate-900 mb-4">My 4 pivots:</h3>
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-start gap-3">
+                                <div class="mt-1 w-6 h-6 rounded-full bg-emerald-100 flex items-center justify-center flex-shrink-0 text-brand-primary text-xs"><i class="fa-solid fa-check"></i></div>
+                                <div class="text-base"><strong class="text-slate-900">Mechanical to Software:</strong> Test engineer analyzing engine data → Software engineer writing embedded code</div>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <div class="mt-1 w-6 h-6 rounded-full bg-emerald-100 flex items-center justify-center flex-shrink-0 text-brand-primary text-xs"><i class="fa-solid fa-check"></i></div>
+                                <div class="text-base"><strong class="text-slate-900">Individual Contributor to Agile Leadership:</strong> Software engineer → Product Owner & Scrum Master leading a team</div>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <div class="mt-1 w-6 h-6 rounded-full bg-emerald-100 flex items-center justify-center flex-shrink-0 text-brand-primary text-xs"><i class="fa-solid fa-check"></i></div>
+                                <div class="text-base"><strong class="text-slate-900">IC to People Manager:</strong> Individual contributor → Manager leading 6-10 engineers building systems and machines that operate globally across diverse applications</div>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <div class="mt-1 w-6 h-6 rounded-full bg-emerald-100 flex items-center justify-center flex-shrink-0 text-brand-primary text-xs"><i class="fa-solid fa-check"></i></div>
+                                <div class="text-base"><strong class="text-slate-900">Team Manager to Organization-Wide Lead:</strong> Team manager → Software Development Enablement Lead driving company-wide initiatives</div>
+                            </li>
+                        </ul>
+                        <p class="text-base md:text-lg">Now I help other engineers do the same—with the same specific frameworks, not vague platitudes.</p>
+                    </div>
+                </div>
+                
+                <!-- Sidebar -->
+                <div class="lg:col-span-1">
+                    <div class="bg-brand-light p-6 md:p-8 rounded-3xl border border-emerald-100 sticky top-40">
+                        <h3 class="text-xl font-bold text-slate-900 mb-6 border-b border-emerald-200 pb-4">Quick Facts</h3>
+                        <ul class="space-y-6">
+                            <li>
+                                <div class="text-xs font-bold text-brand-primary uppercase tracking-wider mb-1">What I'm learning now</div>
+                                <div class="text-slate-600 text-sm">How to use AI to drive productivity and efficiency in the key bottleneck areas of whatever I am working on, professionally or personally.</div>
+                            </li>
+                            <li>
+                                <div class="text-xs font-bold text-brand-primary uppercase tracking-wider mb-1">Last book that changed my thinking</div>
+                                <div class="text-slate-600 text-sm">The Phoenix Project</div>
+                            </li>
+                            <li>
+                                <div class="text-xs font-bold text-brand-primary uppercase tracking-wider mb-1">Hot take</div>
+                                <div class="text-slate-600 text-sm">I don't think college is becoming irrelevant. I think it is on us to change the curriculum and teach more useful and relevant skills, not eliminate learning in this way.</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Timeline Section (condensed for mockup) -->
+    <div id="my-journey" class="py-16 md:py-24 bg-brand-light scroll-mt-32">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 md:mb-16">
+                <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900">Career Journey</h2>
+                <p class="mt-4 text-slate-500">7 years, 7 roles, 4 promotions—from mechanical testing to software leadership</p>
+            </div>
+            
+            <div class="bg-white rounded-3xl p-6 md:p-8 shadow-lg border border-emerald-100">
+                <p class="text-slate-600 text-center italic">[Full timeline from existing about page would go here - showing just placeholder for mockup brevity]</p>
+                <p class="text-slate-500 text-sm text-center mt-4">2018 → 2019 → 2020 → 2022 → 2023 → 2025</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- What I Learned Section (condensed) -->
+    <div id="secret-sauce" class="py-16 md:py-24 bg-white scroll-mt-32">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 text-center mb-12 md:mb-16">What I Learned (That Nobody Tells You)</h2>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                <div class="bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-emerald-100 hover:shadow-card transition duration-300">
+                    <h3 class="text-lg md:text-xl font-bold text-slate-900 mb-4 flex items-center gap-2"><i data-lucide="eye" class="w-5 h-5 text-brand-primary"></i> Visibility is Learnable</h3>
+                    <p class="text-slate-500 text-sm">Hard work isn't enough—visibility is a skill you have to learn</p>
+                </div>
+                <div class="bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-emerald-100 hover:shadow-card transition duration-300">
+                    <h3 class="text-lg md:text-xl font-bold text-slate-900 mb-4 flex items-center gap-2"><i data-lucide="target" class="w-5 h-5 text-brand-primary"></i> Make It Easy for Your Manager</h3>
+                    <p class="text-slate-500 text-sm">Your manager wants to promote you—but only if you make it easy</p>
+                </div>
+                <div class="bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-emerald-100 hover:shadow-card transition duration-300">
+                    <h3 class="text-lg md:text-xl font-bold text-slate-900 mb-4 flex items-center gap-2"><i data-lucide="refresh-cw" class="w-5 h-5 text-brand-primary"></i> Strategic Positioning</h3>
+                    <p class="text-slate-500 text-sm">Pivoting doesn't require school—it requires strategy</p>
+                </div>
+            </div>
+            <p class="text-center text-slate-400 text-sm mt-8 italic">[Additional insight cards from existing page would continue here...]</p>
+        </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="py-16 md:py-24 bg-brand-primary relative overflow-hidden">
+        <div class="absolute top-0 right-0 -mt-20 -mr-20 w-96 h-96 bg-brand-secondary rounded-full blur-3xl opacity-20 pointer-events-none"></div>
+        
+        <div class="max-w-4xl mx-auto px-4 relative z-10 text-center">
+            <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-6">Ready to Accelerate Your Career?</h2>
+            <p class="text-emerald-100 text-base md:text-lg mb-10 max-w-2xl mx-auto">
+                Let's apply these frameworks to your unique situation.
+            </p>
+            
+            <a href="../contact.html" class="px-8 py-4 bg-white text-brand-primary font-bold rounded-full hover:bg-brand-accent hover:text-brand-primary transition shadow-lg hover:shadow-fresh hover:-translate-y-1 inline-flex items-center gap-2">
+                <i class="fa-regular fa-calendar"></i> Book a Free Discovery Call
+            </a>
+        </div>
+    </div>
+
+    <!-- Implementation Notes Banner -->
+    <div class="bg-yellow-50 border-t-4 border-yellow-400 py-8">
+        <div class="max-w-7xl mx-auto px-4">
+            <h3 class="text-lg font-bold text-yellow-900 mb-3">📝 V2 Implementation Notes:</h3>
+            <ul class="space-y-2 text-yellow-800 text-sm">
+                <li><strong>✅ New "My Story" section:</strong> Placed at top (Option C) with business casual tone, personal background, turning point, lessons learned</li>
+                <li><strong>✅ Mobile optimized:</strong> Responsive text sizing, proper spacing, collapsible sections work well on small screens</li>
+                <li><strong>✅ Visual hierarchy:</strong> Story section uses emerald gradient header, sidebars with dark slate for contrast</li>
+                <li><strong>✅ Existing content preserved:</strong> All current about page sections remain (timeline, credentials, etc.) - just shown condensed in mockup</li>
+                <li><strong>✅ Smooth transition:</strong> Gradient separator bar between story and professional credentials creates clear section break</li>
+                <li><strong>🎨 Brand consistency:</strong> Uses emerald/teal primary colors, proper hover states, shadow effects</li>
+            </ul>
+        </div>
+    </div>
+
+    </main>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
