@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Launch to Lead - LinkedIn Banner</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .banner-container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        
+        .banner {
+            width: 1584px;
+            height: 396px;
+            background: linear-gradient(135deg, #064e3b 0%, #065f46 50%, #047857 100%);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        /* Background decorative elements */
+        .bg-blob-1 {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(20, 184, 166, 0.2) 0%, transparent 70%);
+            border-radius: 50%;
+            top: -200px;
+            right: -100px;
+            filter: blur(40px);
+        }
+        
+        .bg-blob-2 {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(163, 230, 53, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            bottom: -150px;
+            left: -50px;
+            filter: blur(40px);
+        }
+        
+        /* Dots pattern overlay */
+        .bg-dots {
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(rgba(20, 184, 166, 0.3) 1px, transparent 1px);
+            background-size: 20px 20px;
+            opacity: 0.4;
+        }
+        
+        /* Content container */
+        .content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            padding: 0 60px;
+        }
+        
+        /* Logo/Badge */
+        .logo-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        
+        .logo-icon {
+            background: white;
+            color: #064e3b;
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 24px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .logo-text {
+            font-size: 32px;
+            font-weight: 800;
+            color: white;
+            letter-spacing: -0.5px;
+        }
+        
+        .logo-text-accent {
+            font-weight: 300;
+            color: #a3e635;
+        }
+        
+        /* Main heading */
+        h1 {
+            font-size: 56px;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 16px;
+            line-height: 1.1;
+            letter-spacing: -1px;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #14b8a6 0%, #a3e635 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        /* Tagline */
+        .tagline {
+            font-size: 24px;
+            color: rgba(255, 255, 255, 0.95);
+            font-weight: 400;
+            margin-bottom: 24px;
+            letter-spacing: -0.3px;
+        }
+        
+        /* Service badges */
+        .services {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .service-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 999px;
+            font-size: 16px;
+            font-weight: 600;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .service-divider {
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 20px;
+            font-weight: 300;
+        }
+        
+        /* CTA with arrow */
+        .cta-container {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .arrow-down {
+            font-size: 32px;
+            color: #a3e635;
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+        
+        .cta-text {
+            font-size: 18px;
+            font-weight: 600;
+            color: white;
+            background: rgba(163, 230, 53, 0.2);
+            padding: 8px 24px;
+            border-radius: 999px;
+            border: 1px solid rgba(163, 230, 53, 0.4);
+        }
+        
+        /* Instructions */
+        .instructions {
+            margin-top: 20px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            text-align: left;
+            max-width: 1584px;
+        }
+        
+        .instructions h3 {
+            color: #064e3b;
+            margin-bottom: 12px;
+            font-size: 18px;
+        }
+        
+        .instructions ol {
+            margin-left: 20px;
+            color: #334155;
+            line-height: 1.8;
+        }
+        
+        .instructions code {
+            background: #e2e8f0;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 13px;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="banner-container">
+        <div class="banner" id="linkedin-banner">
+            <!-- Background decorations -->
+            <div class="bg-blob-1"></div>
+            <div class="bg-blob-2"></div>
+            <div class="bg-dots"></div>
+            
+            <!-- Content -->
+            <div class="content">
+                <div class="logo-badge">
+                    <div class="logo-icon">L²</div>
+                    <div class="logo-text">
+                        Launch<span class="logo-text-accent">ToLead</span>
+                    </div>
+                </div>
+                
+                <h1>
+                    Engineering Career <span class="gradient-text">Coaching</span>
+                </h1>
+                
+                <p class="tagline">
+                    From First Job to Leadership
+                </p>
+                
+                <div class="services">
+                    <span class="service-badge">Launch</span>
+                    <span class="service-divider">·</span>
+                    <span class="service-badge">Pivot</span>
+                    <span class="service-divider">·</span>
+                    <span class="service-badge">Accelerate</span>
+                </div>
+                
+                <!-- CTA with arrow -->
+                <div class="cta-container">
+                    <div class="arrow-down">↓</div>
+                    <p class="cta-text">Book a Free Strategy Call Today!</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="instructions">
+            <h3>📸 How to Export Your LinkedIn Banner:</h3>
+            <ol>
+                <li><strong>Option 1 - Screenshot:</strong> Use Windows Snipping Tool (Win+Shift+S) to capture just the banner area above</li>
+                <li><strong>Option 2 - Browser DevTools:</strong>
+                    <ul>
+                        <li>Right-click the banner → "Inspect"</li>
+                        <li>In DevTools, right-click the <code>&lt;div class="banner"&gt;</code> element</li>
+                        <li>Select "Capture node screenshot"</li>
+                    </ul>
+                </li>
+                <li><strong>Upload to LinkedIn:</strong> Profile → Edit Cover Image → Upload the saved image (1584x396px perfect size)</li>
+            </ol>
+        </div>
+    </div>
+</body>
+</html>

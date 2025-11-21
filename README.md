@@ -11,35 +11,45 @@ Launch to Lead Engineering provides career coaching for:
 
 ## 🛠️ Tech Stack
 
-- **Frontend**: HTML5, CSS3 (Vanilla - no frameworks)
-- **Design**: Modern, minimal aesthetic inspired by Tailwind CSS, Atlassian, and Notion
+- **Frontend**: HTML5, Tailwind CSS (CDN + custom config), Alpine.js for interactivity
+- **Design**: "Emerald Flow" design system - emerald/teal/lime color palette
+- **Icons**: FontAwesome 6.4.0
+- **Typography**: Plus Jakarta Sans (Google Fonts)
 - **Hosting**: GitHub Pages (free, fast, reliable)
-- **Forms**: Formspree integration (to be configured)
-- **Booking**: Calendly integration (to be configured)
-- **Payments**: Stripe Payment Links (to be configured)
+- **Forms**: Direct LinkedIn/Email contact
+- **Booking**: Direct scheduling via contact page
+- **Payments**: Venmo/Zelle (arranged after discovery call)
 
 ## 📁 Project Structure
 
 ```
 launch-to-lead/
-├── index.html          # Homepage
-├── launch.html         # Services for students
-├── pivot.html          # Services for career transitioners
-├── accelerate.html     # Services for promotion-seekers
-├── about.html          # About Mansour Manci
-├── contact.html        # Contact form and booking
-├── success-stories.html # Testimonials (coming soon)
-├── styles.css          # All styles in one file
-└── README.md           # This file
+├── index.html              # Homepage with 3D carousel
+├── launch.html             # Services for students/early career
+├── pivot.html              # Services for career transitioners
+├── accelerate.html         # Services for promotion-seekers
+├── about.html              # About Mansour Manci
+├── packages.html           # Pricing for all tracks
+├── contact.html            # Contact options
+├── success-stories.html    # Testimonials (launching soon)
+├── faq.html                # Frequently asked questions with search/filter
+├── tailwind-config.js      # Tailwind custom configuration
+├── carousel.js             # 3D Cover Flow carousel
+├── faq.js                  # FAQ accordion interactivity
+├── DESIGN_SYSTEM.md        # Complete design system documentation
+├── BACKLOG.md              # Feature roadmap
+└── README.md               # This file
 ```
 
 ## 🎨 Design Features
 
-- **Color Palette**: Teal/Cyan + Charcoal (modern, professional)
-- **Typography**: Inter font family
-- **Responsive**: Mobile-first design
-- **Accessibility**: Semantic HTML, proper contrast ratios
-- **Performance**: Minimal dependencies, optimized loading
+- **Color Palette**: "Emerald Flow" - Emerald 900 (#064e3b), Teal 500 (#14b8a6), Lime 400 (#a3e635)
+- **Typography**: Plus Jakarta Sans (300-800 weights)
+- **Architecture**: Pure Tailwind CSS + minimal custom CSS (18 lines for FAQ interactivity)
+- **Responsive**: Mobile-first design with consistent spacing scale
+- **Accessibility**: Semantic HTML landmarks, ARIA attributes, proper contrast
+- **Performance**: Tailwind CDN, minimal dependencies
+- **Components**: Documented in DESIGN_SYSTEM.md
 
 ## 🚀 Deployment to GitHub Pages
 
