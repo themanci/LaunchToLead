@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index Hero V4 - Enhanced Option 2 (Final Review)</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../tailwind-config.js"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .bg-dots {
+            background-image: radial-gradient(circle, #d1fae5 1px, transparent 1px);
+        }
+    </style>
+</head>
+<body class="bg-white text-slate-600 antialiased">
+
+    <div class="max-w-7xl mx-auto px-4 py-8">
+        <!-- Mockup Header -->
+        <div class="bg-emerald-50 border-2 border-emerald-400 rounded-2xl p-6 mb-8">
+            <h1 class="text-2xl font-bold text-emerald-900 mb-2">📋 Mockup V4: Enhanced Center Hero Card (Final Review)</h1>
+            <p class="text-emerald-800 text-sm">Bigger headshot, maximized card space, vertical stacking on right side</p>
+        </div>
+
+        <!-- HERO SECTION -->
+        <div class="relative pt-12 pb-20 bg-white overflow-hidden border-2 border-slate-200 rounded-3xl">
+            <!-- Dot Pattern -->
+            <div class="absolute inset-0 bg-dots opacity-20" style="background-size: 20px 20px;"></div>
+
+            <!-- Background blobs -->
+            <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-teal-100 rounded-full blur-3xl opacity-60 pointer-events-none"></div>
+            <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-96 h-96 bg-lime-100 rounded-full blur-3xl opacity-60 pointer-events-none"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+                <!-- Epic Banner Section -->
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-100 text-emerald-900 text-xs font-semibold mb-6">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                    Engineering Career Coaching
+                </div>
+                <h1 class="text-5xl md:text-7xl font-extrabold text-slate-900 tracking-tight mb-6 leading-[1.1]">
+                    From Mechanical Engineer to<br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-600">Software Leader.</span>
+                </h1>
+                <p class="mt-4 max-w-3xl mx-auto text-xl text-slate-500 mb-8 font-light leading-relaxed">
+                    I earned 4 promotions and pivoted 4 times in 7 years at a Fortune 100 company. Now I'm sharing the exact frameworks to help you do the same.
+                </p>
+                <div class="flex justify-center gap-4 mb-12">
+                    <a href="#tracks"
+                        class="px-8 py-4 bg-emerald-600 text-white font-bold rounded-full hover:bg-teal-600 transition shadow-lg hover:shadow-xl hover:-translate-y-1">
+                        Choose Your Path
+                    </a>
+                    <a href="contact.html"
+                        class="px-8 py-4 bg-white text-emerald-600 font-bold rounded-full border-2 border-emerald-200 hover:border-emerald-600 hover:text-teal-600 transition">
+                        Book Strategy Call
+                    </a>
+                </div>
+
+                <!-- Enhanced Center Hero Card -->
+                <div class="max-w-4xl mx-auto mb-12">
+                    <div class="bg-white rounded-3xl p-6 md:p-10 border-2 border-emerald-200 shadow-2xl">
+                        <div class="flex flex-col md:flex-row items-start md:items-stretch gap-6 md:gap-8">
+                            <!-- Bigger Headshot -->
+                            <a href="about.html" class="group flex-shrink-0 mx-auto md:mx-0">
+                                <div class="relative">
+                                    <div class="w-40 h-40 md:w-48 md:h-48 rounded-3xl overflow-hidden border-4 border-emerald-100 shadow-xl group-hover:scale-105 transition-transform duration-300">
+                                        <!-- Placeholder image -->
+                                        <div class="w-full h-full bg-gradient-to-br from-emerald-100 via-teal-50 to-lime-100 flex items-center justify-center">
+                                            <div class="text-center">
+                                                <i data-lucide="user" class="w-20 h-20 md:w-24 md:h-24 text-emerald-600 mx-auto"></i>
+                                                <p class="text-emerald-800 font-semibold text-xs mt-2">Your Photo</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="absolute -bottom-3 -right-3 w-10 h-10 bg-emerald-600 rounded-full flex items-center justify-center border-4 border-white shadow-lg">
+                                        <i data-lucide="check" class="w-5 h-5 text-white"></i>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <!-- Vertical Stack: Your Info + Testimonial -->
+                            <div class="flex-1 flex flex-col justify-between text-center md:text-left space-y-6">
+                                <!-- Your Info Section -->
+                                <div>
+                                    <h3 class="text-2xl md:text-3xl font-bold text-slate-900 mb-2">Mansour Manci</h3>
+                                    <p class="text-emerald-600 font-bold text-base md:text-lg mb-3">Fortune 100 Engineer → Software Leader</p>
+                                    <div class="flex flex-wrap gap-3 justify-center md:justify-start text-sm text-slate-600 mb-4">
+                                        <span class="flex items-center gap-1.5">
+                                            <i data-lucide="map-pin" class="w-4 h-4 text-emerald-600"></i>
+                                            Moline, IL
+                                        </span>
+                                        <span class="flex items-center gap-1.5">
+                                            <i data-lucide="calendar" class="w-4 h-4 text-emerald-600"></i>
+                                            7 years experience
+                                        </span>
+                                        <span class="flex items-center gap-1.5">
+                                            <i data-lucide="trending-up" class="w-4 h-4 text-emerald-600"></i>
+                                            4 promotions
+                                        </span>
+                                    </div>
+                                    
+                                    <div class="flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
+                                        <a href="about.html" class="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-emerald-50 text-emerald-700 font-semibold rounded-lg hover:bg-emerald-100 transition text-sm">
+                                            <i data-lucide="user" class="w-4 h-4"></i>
+                                            <span>Read My Story</span>
+                                        </a>
+                                        <a href="success-stories.html" class="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-amber-50 text-amber-700 font-semibold rounded-lg hover:bg-amber-100 transition text-sm">
+                                            <i data-lucide="star" class="w-4 h-4"></i>
+                                            <span>Success Stories</span>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- Testimonial Section -->
+                                <div class="pt-6 border-t border-slate-100">
+                                    <div class="flex items-start gap-3 text-left">
+                                        <div class="flex-shrink-0 w-10 h-10 rounded-lg bg-amber-100 flex items-center justify-center">
+                                            <i data-lucide="quote" class="w-5 h-5 text-amber-600"></i>
+                                        </div>
+                                        <div class="flex-1">
+                                            <p class="text-slate-700 italic text-sm md:text-base leading-relaxed mb-2">
+                                                "[Short impactful testimonial quote from a client - keep it brief and powerful. Something about real results they achieved.]"
+                                            </p>
+                                            <p class="text-xs md:text-sm text-slate-500 font-semibold">
+                                                — Client Name, <span class="text-emerald-600">Previous Role → New Role</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Stats -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 max-w-4xl mx-auto border-t border-slate-200 pt-8">
+                    <div class="text-center">
+                        <div class="text-3xl md:text-4xl font-bold text-emerald-600">4</div>
+                        <div class="text-xs md:text-sm text-slate-500 uppercase tracking-wide font-medium">Promotions</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl md:text-4xl font-bold text-emerald-600">7</div>
+                        <div class="text-xs md:text-sm text-slate-500 uppercase tracking-wide font-medium">Years</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl md:text-4xl font-bold text-emerald-600">4</div>
+                        <div class="text-xs md:text-sm text-slate-500 uppercase tracking-wide font-medium">Pivots</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl md:text-4xl font-bold text-emerald-600">75k+</div>
+                        <div class="text-xs md:text-sm text-slate-500 uppercase tracking-wide font-medium">Employees</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Implementation Notes -->
+        <div class="mt-8 bg-emerald-100 border-2 border-emerald-300 rounded-xl p-6">
+            <h3 class="text-lg font-bold text-emerald-900 mb-3">✅ V4 Enhancements:</h3>
+            <ul class="space-y-2 text-emerald-900 text-sm">
+                <li><strong>✓ Bigger headshot:</strong> Increased from 32 (128px) to 40/48 (160px/192px) - more prominent</li>
+                <li><strong>✓ Better space usage:</strong> Increased card padding (p-10 on desktop), wider max-width (4xl)</li>
+                <li><strong>✓ Vertical stacking:</strong> Info section and testimonial clearly separated with border-top divider</li>
+                <li><strong>✓ Enhanced details:</strong> Added icon badges for location, experience, promotions</li>
+                <li><strong>✓ Improved testimonial:</strong> Larger quote box with icon, better visual weight</li>
+                <li><strong>✓ Mobile optimized:</strong> Headshot centers on mobile, text sizes adjust responsively</li>
+                <li><strong>✓ Epic banner intact:</strong> Big headline still dominates, card complements without overshadowing</li>
+            </ul>
+        </div>
+
+        <!-- Quick Visual Reference -->
+        <div class="mt-8 bg-slate-50 border-2 border-slate-200 rounded-xl p-6">
+            <h3 class="text-lg font-bold text-slate-900 mb-4">📐 Layout Structure:</h3>
+            <div class="bg-white rounded-lg p-4 border border-slate-200">
+                <pre class="text-xs text-slate-600 font-mono">
+Epic Banner (text-7xl)
+    ↓
+CTAs (Choose Path + Book Call)
+    ↓
+┌─────────────────────────────────────────┐
+│  Card (max-w-4xl, p-10)                │
+│  ┌────────┐  ┌─────────────────────┐   │
+│  │        │  │ Name (text-3xl)     │   │
+│  │ 192px  │  │ Title               │   │
+│  │ Photo  │  │ Location • Years    │   │
+│  │        │  │ [Story] [Success]   │   │
+│  │        │  ├─────────────────────┤   │
+│  │        │  │ 💬 Testimonial      │   │
+│  └────────┘  └─────────────────────┘   │
+└─────────────────────────────────────────┘
+    ↓
+Stats (4 columns)
+                </pre>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
