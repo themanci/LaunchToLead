@@ -1,460 +1,560 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="About Mansour Manci - Engineering career coach with 7 years at Fortune 100 company, 4 promotions, mechanical to software leadership transition.">
     <title>About | Launch to Lead Engineering</title>
-    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="tailwind-config.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body>
+<body class="bg-brand-light text-slate-600 font-sans antialiased">
+
     <!-- Navigation -->
-    <nav class="nav">
-        <div class="container nav-container">
-            <a href="index.html" class="logo">
-                <span class="logo-icon">L²</span>
-                <span class="logo-text">
-                    <span class="logo-main">Launch to Lead</span>
-                    <span class="logo-sub">Engineering</span>
-                </span>
-            </a>
-            <div class="nav-links">
-                <a href="launch.html">Launch</a>
-                <a href="pivot.html">Pivot</a>
-                <a href="accelerate.html">Accelerate</a>
-                <a href="packages.html">Packages</a>
-                <a href="about.html">About Me</a>
-                <a href="faq.html">FAQ</a>
-                <a href="contact.html" class="btn-nav">Get Started</a>
+    <nav class="bg-white/80 backdrop-blur-lg border-b border-emerald-100 fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center gap-2 group">
+                        <div class="bg-brand-primary text-white w-8 h-8 rounded-lg flex items-center justify-center group-hover:bg-brand-accent group-hover:text-brand-primary transition duration-300">
+                            <span class="font-bold text-sm">L²</span>
+                        </div>
+                        <span class="font-bold text-xl text-brand-primary tracking-tight">Launch<span class="font-light text-brand-secondary">ToLead</span></span>
+                    </a>
+                </div>
+
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="launch.html" class="text-sm font-medium text-slate-500 hover:text-brand-secondary transition">Launch</a>
+                    <a href="pivot.html" class="text-sm font-medium text-slate-500 hover:text-brand-secondary transition">Pivot</a>
+                    <a href="accelerate.html" class="text-sm font-medium text-slate-500 hover:text-brand-secondary transition">Accelerate</a>
+                    <a href="packages.html" class="text-sm font-medium text-slate-500 hover:text-brand-secondary transition">Packages</a>
+                    <a href="about.html" class="text-sm font-bold text-brand-primary">About</a>
+                    <a href="contact.html" class="bg-brand-primary text-white px-5 py-2 rounded-full font-semibold text-sm hover:bg-brand-secondary transition shadow-soft hover:shadow-fresh">
+                        Apply Now
+                    </a>
+                </div>
+                
+                <!-- Mobile menu button (simplified) -->
+                <div class="md:hidden flex items-center">
+                    <a href="contact.html" class="text-brand-primary font-bold text-sm">Apply</a>
+                </div>
             </div>
         </div>
     </nav>
 
-    <!-- Sticky Section Navigation -->
-    <div class="sticky-section-nav">
-        <div class="container">
-            <a href="#my-journey" class="sticky-nav-link">My Journey</a>
-            <a href="#secret-sauce" class="sticky-nav-link">Secret Sauce</a>
-            <a href="#my-approach" class="sticky-nav-link">My Approach</a>
-            <a href="#my-why" class="sticky-nav-link">My Why</a>
-            <a href="#superpower" class="sticky-nav-link">Superpower</a>
-            <a href="#credentials" class="sticky-nav-link">Credentials</a>
+    <!-- HERO -->
+    <div class="relative pt-32 pb-20 lg:pt-48 lg:pb-24 bg-white overflow-hidden">
+        <!-- Dot Pattern -->
+        <div class="absolute inset-0 bg-dots opacity-20" style="background-size: 20px 20px;"></div>
+        
+        <!-- Background blobs -->
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-brand-accent rounded-full blur-3xl opacity-20"></div>
+        <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-96 h-96 bg-brand-secondary rounded-full blur-3xl opacity-20"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <h1 class="text-5xl md:text-6xl font-extrabold text-slate-900 tracking-tight mb-6">
+                About <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-brand-secondary">Mansour Manci</span>
+            </h1>
+            <p class="mt-4 max-w-3xl mx-auto text-xl text-slate-500 font-light leading-relaxed">
+                Software and Systems Engineering Leader | Career Coach | Mechanical Engineer Turned Software Development Expert
+            </p>
         </div>
     </div>
 
-    <!-- Page Hero -->
-    <section class="page-hero">
-        <div class="container">
-            <div class="page-hero-content">
-                <h1 class="page-title">About Mansour Manci</h1>
-                <p class="page-subtitle">Software and Systems Engineering Leader | Career Coach | Mechanical Engineer Turned Software Development Expert</p>
+    <!-- Sticky Sub-Nav -->
+    <div class="sticky top-20 z-40 bg-white/90 backdrop-blur-md border-b border-emerald-100 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-center space-x-4 md:space-x-8 py-4 overflow-x-auto no-scrollbar">
+                <a href="#intro" class="text-sm font-bold text-slate-600 hover:text-brand-primary transition whitespace-nowrap">My Story</a>
+                <a href="#my-journey" class="text-sm font-bold text-slate-600 hover:text-brand-primary transition whitespace-nowrap">Journey</a>
+                <a href="#secret-sauce" class="text-sm font-bold text-slate-600 hover:text-brand-primary transition whitespace-nowrap">Lessons</a>
+                <a href="#my-approach" class="text-sm font-bold text-slate-600 hover:text-brand-primary transition whitespace-nowrap">Approach</a>
+                <a href="#credentials" class="text-sm font-bold text-slate-600 hover:text-brand-primary transition whitespace-nowrap">Credentials</a>
             </div>
         </div>
-    </section>
+    </div>
 
     <!-- Intro Section -->
-    <section class="section">
-        <div class="container">
-            <div class="about-intro-wrapper">
-                <div class="about-intro">
-                    <div class="about-content">
-                        <h2>I'm Not a Career Coach Who Got Lucky Once—I'm an Engineer Who Figured Out The System</h2>
-                    <p>Most career advice comes from people who either: (1) got incredibly lucky, or (2) never actually worked a day in engineering.</p>
-                    
-                    <p>I'm neither.</p>
-                    
-                    <p>I earned 4 promotions in 7 years at a Fortune 100 company—not because I'm a genius, but because I figured out the patterns. What makes leadership promote you? What do they actually look for? How do you transition disciplines without starting over?</p>
-                    
-                    <p>This happened at a Fortune 100 industrial giant—one that employs more software engineers than many Silicon Valley firms, manages 500,000+ connected machines globally, and where failure literally impacts the global food supply.</p>
-                    
-                    <p>I reverse-engineered it. Then I did it again. And again. And again.</p>
-                    
-                    <p><strong>My 4 pivots:</strong></p>
-                    <ul class="pivot-list">
-                        <li><strong>Mechanical to Software:</strong> Test engineer analyzing engine data → Software engineer writing embedded code</li>
-                        <li><strong>Individual Contributor to Agile Leadership:</strong> Software engineer → Product Owner & Scrum Master leading a team</li>
-                        <li><strong>IC to People Manager:</strong> Individual contributor → Manager leading 6-10 engineers building systems and machines that operate globally across diverse applications</li>
-                        <li><strong>Team Manager to Organization-Wide Lead:</strong> Team manager → Software Development Enablement Lead driving company-wide initiatives</li>
+    <div id="intro" class="py-24 bg-white scroll-mt-32">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-3 gap-12">
+                <div class="lg:col-span-2">
+                    <h2 class="text-3xl font-bold text-slate-900 mb-6 leading-tight">I'm Not a Career Coach Who Got Lucky Once—I'm an Engineer Who Figured Out The System</h2>
+                    <div class="prose prose-slate prose-lg text-slate-500">
+                        <p class="mb-4">Most career advice comes from people who either: (1) got incredibly lucky, or (2) never actually worked a day in engineering.</p>
+                        <p class="mb-4 font-bold text-slate-900">I'm neither.</p>
+                        <p class="mb-4">I earned 4 promotions in 7 years at a Fortune 100 company—not because I'm a genius, but because I figured out the patterns. What makes leadership promote you? What do they actually look for? How do you transition disciplines without starting over?</p>
+                        <p class="mb-4">This happened at a Fortune 100 industrial giant—one that employs more software engineers than many Silicon Valley firms, manages 500,000+ connected machines globally, and where failure literally impacts the global food supply.</p>
+                        <p class="mb-8">I reverse-engineered it. Then I did it again. And again. And again.</p>
+                        
+                        <h3 class="text-xl font-bold text-slate-900 mb-4">My 4 pivots:</h3>
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-start gap-3">
+                                <div class="mt-1 w-6 h-6 rounded-full bg-emerald-100 flex items-center justify-center flex-shrink-0 text-brand-primary text-xs"><i class="fa-solid fa-check"></i></div>
+                                <div><strong class="text-slate-900">Mechanical to Software:</strong> Test engineer analyzing engine data → Software engineer writing embedded code</div>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <div class="mt-1 w-6 h-6 rounded-full bg-emerald-100 flex items-center justify-center flex-shrink-0 text-brand-primary text-xs"><i class="fa-solid fa-check"></i></div>
+                                <div><strong class="text-slate-900">Individual Contributor to Agile Leadership:</strong> Software engineer → Product Owner & Scrum Master leading a team</div>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <div class="mt-1 w-6 h-6 rounded-full bg-emerald-100 flex items-center justify-center flex-shrink-0 text-brand-primary text-xs"><i class="fa-solid fa-check"></i></div>
+                                <div><strong class="text-slate-900">IC to People Manager:</strong> Individual contributor → Manager leading 6-10 engineers building systems and machines that operate globally across diverse applications</div>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <div class="mt-1 w-6 h-6 rounded-full bg-emerald-100 flex items-center justify-center flex-shrink-0 text-brand-primary text-xs"><i class="fa-solid fa-check"></i></div>
+                                <div><strong class="text-slate-900">Team Manager to Organization-Wide Lead:</strong> Team manager → Software Development Enablement Lead driving company-wide initiatives</div>
+                            </li>
+                        </ul>
+                        <p>Now I help other engineers do the same—with the same specific frameworks, not vague platitudes.</p>
+                    </div>
+                </div>
+                
+                <!-- Sidebar -->
+                <div class="lg:col-span-1">
+                    <div class="bg-brand-light p-8 rounded-3xl border border-emerald-100 sticky top-40">
+                        <h3 class="text-xl font-bold text-slate-900 mb-6 border-b border-emerald-200 pb-4">Beyond Engineering</h3>
+                        <ul class="space-y-6">
+                            <li>
+                                <div class="text-xs font-bold text-brand-primary uppercase tracking-wider mb-1">What I'm learning now</div>
+                                <div class="text-slate-600 text-sm">[Edit this content]</div>
+                            </li>
+                            <li>
+                                <div class="text-xs font-bold text-brand-primary uppercase tracking-wider mb-1">Last book that changed my thinking</div>
+                                <div class="text-slate-600 text-sm">[Edit this content]</div>
+                            </li>
+                            <li>
+                                <div class="text-xs font-bold text-brand-primary uppercase tracking-wider mb-1">Hot take</div>
+                                <div class="text-slate-600 text-sm">[Edit this content]</div>
+                            </li>
+                            <li>
+                                <div class="text-xs font-bold text-brand-primary uppercase tracking-wider mb-1">Based in</div>
+                                <div class="text-slate-600 text-sm">[Edit this content]</div>
+                            </li>
+                            <li>
+                                <div class="text-xs font-bold text-brand-primary uppercase tracking-wider mb-1">Headshot</div>
+                                <div class="text-slate-600 text-sm">Coming soon!</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Timeline Section -->
+    <div id="my-journey" class="py-24 bg-brand-light scroll-mt-32">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900">Career Journey</h2>
+                <p class="mt-4 text-slate-500">7 years, 7 roles, 4 promotions—from mechanical testing to software leadership</p>
+            </div>
+            
+            <div class="relative border-l-2 border-emerald-200 ml-4 md:ml-0 md:pl-0 space-y-12">
+                <!-- Timeline Item -->
+                <div class="relative pl-8 md:pl-0">
+                    <div class="absolute -left-[9px] top-0 w-5 h-5 rounded-full bg-brand-primary border-4 border-white shadow-sm"></div>
+                    <div class="md:grid md:grid-cols-12 md:gap-8">
+                        <div class="md:col-span-3 md:text-right mb-2 md:mb-0">
+                            <span class="text-brand-primary font-bold">2018</span>
+                        </div>
+                        <div class="md:col-span-9 bg-white p-6 rounded-2xl shadow-sm border border-emerald-50 hover:shadow-md transition">
+                            <h4 class="font-bold text-slate-900 text-lg">PVV Mechanical Development Engineer</h4>
+                            <p class="text-slate-500 mt-2 text-sm">Reduced post-test processing time by 75% with automation scripts. Created software request tool decreasing payload lead times.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Timeline Item -->
+                <div class="relative pl-8 md:pl-0">
+                    <div class="absolute -left-[9px] top-0 w-5 h-5 rounded-full bg-brand-primary border-4 border-white shadow-sm"></div>
+                    <div class="md:grid md:grid-cols-12 md:gap-8">
+                        <div class="md:col-span-3 md:text-right mb-2 md:mb-0">
+                            <span class="text-brand-primary font-bold">2019</span>
+                        </div>
+                        <div class="md:col-span-9 bg-white p-6 rounded-2xl shadow-sm border border-emerald-50 hover:shadow-md transition">
+                            <h4 class="font-bold text-slate-900 text-lg">Controls Continuous Improvement Software Engineer</h4>
+                            <p class="text-slate-500 mt-2 text-sm">Delivered experimental software in under 2 days. Decreased engine payload release time by 15-20%.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline Item -->
+                <div class="relative pl-8 md:pl-0">
+                    <div class="absolute -left-[9px] top-0 w-5 h-5 rounded-full bg-brand-primary border-4 border-white shadow-sm"></div>
+                    <div class="md:grid md:grid-cols-12 md:gap-8">
+                        <div class="md:col-span-3 md:text-right mb-2 md:mb-0">
+                            <span class="text-brand-primary font-bold">2019</span>
+                        </div>
+                        <div class="md:col-span-9 bg-white p-6 rounded-2xl shadow-sm border border-emerald-50 hover:shadow-md transition">
+                            <h4 class="font-bold text-slate-900 text-lg">Drivetrain Embedded Software Engineer</h4>
+                            <p class="text-slate-500 mt-2 text-sm">Implemented code for 8R IVT tractor shaft speed. Improved PTO clutch protection.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline Item -->
+                <div class="relative pl-8 md:pl-0">
+                    <div class="absolute -left-[9px] top-0 w-5 h-5 rounded-full bg-brand-primary border-4 border-white shadow-sm"></div>
+                    <div class="md:grid md:grid-cols-12 md:gap-8">
+                        <div class="md:col-span-3 md:text-right mb-2 md:mb-0">
+                            <span class="text-brand-primary font-bold">2020</span>
+                        </div>
+                        <div class="md:col-span-9 bg-white p-6 rounded-2xl shadow-sm border border-emerald-50 hover:shadow-md transition">
+                            <h4 class="font-bold text-slate-900 text-lg">Engine Control Systems Engineer</h4>
+                            <p class="text-slate-500 mt-2 text-sm">Decreased C code unit test run time from 33,000ms to 25ms. Resolved Jenkins CI/CD build errors.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline Item -->
+                <div class="relative pl-8 md:pl-0">
+                    <div class="absolute -left-[9px] top-0 w-5 h-5 rounded-full bg-brand-primary border-4 border-white shadow-sm"></div>
+                    <div class="md:grid md:grid-cols-12 md:gap-8">
+                        <div class="md:col-span-3 md:text-right mb-2 md:mb-0">
+                            <span class="text-brand-primary font-bold">2022</span>
+                        </div>
+                        <div class="md:col-span-9 bg-white p-6 rounded-2xl shadow-sm border border-emerald-50 hover:shadow-md transition">
+                            <h4 class="font-bold text-slate-900 text-lg">Embedded Software Engineer</h4>
+                            <p class="text-slate-500 mt-2 text-sm">Spearheaded Rally Agile adoption, became Scrum Master. Improved team productivity with standardized templates.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline Item -->
+                <div class="relative pl-8 md:pl-0">
+                    <div class="absolute -left-[9px] top-0 w-5 h-5 rounded-full bg-brand-primary border-4 border-white shadow-sm"></div>
+                    <div class="md:grid md:grid-cols-12 md:gap-8">
+                        <div class="md:col-span-3 md:text-right mb-2 md:mb-0">
+                            <span class="text-brand-primary font-bold">2023</span>
+                        </div>
+                        <div class="md:col-span-9 bg-white p-6 rounded-2xl shadow-sm border border-emerald-50 hover:shadow-md transition">
+                            <h4 class="font-bold text-slate-900 text-lg">Supervisor, Crop Care Software PV&V Engineering</h4>
+                            <p class="text-slate-500 mt-2 text-sm">Led team of 6-10 engineers. 30% reduction in overtime, 90% reduction in weekend work. Reduced release errors by 25-30%.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline Item -->
+                <div class="relative pl-8 md:pl-0">
+                    <div class="absolute -left-[9px] top-0 w-5 h-5 rounded-full bg-brand-primary border-4 border-white shadow-sm"></div>
+                    <div class="md:grid md:grid-cols-12 md:gap-8">
+                        <div class="md:col-span-3 md:text-right mb-2 md:mb-0">
+                            <span class="text-brand-primary font-bold">2025</span>
+                        </div>
+                        <div class="md:col-span-9 bg-white p-6 rounded-2xl shadow-sm border border-emerald-50 hover:shadow-md transition">
+                            <h4 class="font-bold text-slate-900 text-lg">Software Development Enablement Lead</h4>
+                            <p class="text-slate-500 mt-2 text-sm">Partner with engineers to resolve inefficiencies. Champion adoption of new technologies.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- What I Learned (Grid) -->
+    <div id="secret-sauce" class="py-24 bg-white scroll-mt-32">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-slate-900 text-center mb-16">What I Learned (That Nobody Tells You)</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Insight 1 -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-emerald-100 hover:shadow-card transition duration-300">
+                    <h3 class="text-xl font-bold text-slate-900 mb-4">👁️ Visibility is a Learnable Skill</h3>
+                    <p class="text-slate-500 text-sm mb-4">Hard work isn't enough—visibility is a skill you have to learn (and I'll teach you)</p>
+                    <p class="text-xs text-slate-400 italic bg-slate-50 p-3 rounded-lg">(Real talk: I was TERRIBLE at this at first. I thought "good work speaks for itself." It doesn't. A mentor had to basically force me to start sending weekly updates. Now it's second nature.)</p>
+                </div>
+
+                <!-- Insight 2 -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-emerald-100 hover:shadow-card transition duration-300">
+                    <h3 class="text-xl font-bold text-slate-900 mb-4">🎯 Make It Easy for Your Manager</h3>
+                    <p class="text-slate-500 text-sm">Your manager wants to promote you—but only if you make it easy for them</p>
+                </div>
+
+                <!-- Insight 3 -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-emerald-100 hover:shadow-card transition duration-300">
+                    <h3 class="text-xl font-bold text-slate-900 mb-4">🔄 Strategic Positioning Over Credentials</h3>
+                    <p class="text-slate-500 text-sm mb-4">Pivoting careers doesn't require going back to school—it requires strategic positioning</p>
+                    <p class="text-xs text-slate-400 italic bg-slate-50 p-3 rounded-lg">(I almost gave up on my mechanical-to-software pivot. Took 6 months of rejections before a mentor showed me the actual strategy.)</p>
+                </div>
+
+                <!-- Insight 4 -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-emerald-100 hover:shadow-card transition duration-300">
+                    <h3 class="text-xl font-bold text-slate-900 mb-4">⏰ Ask Earlier Than You Think</h3>
+                    <p class="text-slate-500 text-sm">The 'right time' to ask for promotion is way earlier than you think</p>
+                </div>
+
+                <!-- Insight 5 -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-emerald-100 hover:shadow-card transition duration-300">
+                    <h3 class="text-xl font-bold text-slate-900 mb-4">🤝 3 Strategic Relationships Matter</h3>
+                    <p class="text-slate-500 text-sm">Networking isn't about collecting LinkedIn connections—it's about 3 strategic relationships</p>
+                </div>
+
+                <!-- Insight 6 -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-emerald-100 hover:shadow-card transition duration-300">
+                    <h3 class="text-xl font-bold text-slate-900 mb-4">📄 Beat the ATS Robots</h3>
+                    <p class="text-slate-500 text-sm">Your resume is rejected by a robot before a human ever sees it—here's how to fix that</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- How I Coach -->
+    <div id="my-approach" class="py-24 bg-brand-primary text-white scroll-mt-32 relative overflow-hidden">
+        <!-- Background decoration -->
+        <div class="absolute top-0 right-0 -mt-20 -mr-20 w-96 h-96 bg-brand-secondary rounded-full blur-3xl opacity-20"></div>
+        <div class="absolute bottom-0 left-0 -mb-20 -ml-20 w-96 h-96 bg-brand-accent rounded-full blur-3xl opacity-10"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <h2 class="text-3xl md:text-4xl font-bold text-white text-center mb-16">How I Actually Coach (Not How Most 'Gurus' Do)</h2>
+            
+            <div class="max-w-3xl mx-auto text-center mb-16">
+                <p class="text-xl text-emerald-100 mb-4">I don't sell you a video course and wish you luck. That's not coaching—that's content consumption.</p>
+                <p class="text-xl text-white font-bold">Here's how we actually work together:</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white/10 backdrop-blur-sm p-8 rounded-3xl border border-white/20">
+                    <h3 class="text-xl font-bold text-brand-accent mb-4">Session Format</h3>
+                    <ul class="space-y-3 text-emerald-100 text-sm">
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary mt-1"></i> <span>1-on-1 video calls where we solve YOUR specific challenges</span></li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary mt-1"></i> <span>We don't follow a script—we address what YOU need right now</span></li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary mt-1"></i> <span>You leave each session with 3-5 specific actions for that week</span></li>
                     </ul>
-                    
-                    <p>Now I help other engineers do the same—with the same specific frameworks, not vague platitudes.</p>
+                </div>
+
+                <div class="bg-white/10 backdrop-blur-sm p-8 rounded-3xl border border-white/20">
+                    <h3 class="text-xl font-bold text-brand-accent mb-4">Between Sessions</h3>
+                    <ul class="space-y-3 text-emerald-100 text-sm">
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary mt-1"></i> <span>Email me your resume draft—I'll review it with specific feedback</span></li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary mt-1"></i> <span>Stuck on how to phrase something? Send it over</span></li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary mt-1"></i> <span>Need to prep for a tough conversation? We'll practice</span></li>
+                    </ul>
+                </div>
+
+                <div class="bg-white/10 backdrop-blur-sm p-8 rounded-3xl border border-white/20">
+                    <h3 class="text-xl font-bold text-brand-accent mb-4">Accountability</h3>
+                    <ul class="space-y-3 text-emerald-100 text-sm">
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary mt-1"></i> <span>I'll check in on your progress (because most people need that nudge)</span></li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary mt-1"></i> <span>We'll adjust the strategy based on what's working</span></li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary mt-1"></i> <span>If something isn't working, we pivot immediately</span></li>
+                    </ul>
                 </div>
             </div>
             
-            <!-- Sidebar -->
-            <aside class="about-sidebar">
-                <div class="sidebar-box">
-                    <h3>Beyond Engineering</h3>
-                    <ul class="sidebar-list">
-                        <li>🎮 <strong>What I'm learning now:</strong> [Edit this content]</li>
-                        <li>📚 <strong>Last book that changed my thinking:</strong> [Edit this content]</li>
-                        <li>⚡ <strong>Hot take:</strong> [Edit this content]</li>
-                        <li>🌎 <strong>Based in:</strong> [Edit this content]</li>
-                        <li>📸 <strong>Headshot:</strong> Coming soon!</li>
-                    </ul>
-                </div>
-            </aside>
-        </div>
-        </div>
-    </section>
-
-    <!-- Career Timeline -->
-    <section id="my-journey" class="section section-alt section-condensed">
-        <div class="container">
-            <h2 class="section-title center">Career Journey</h2>
-            <p class="section-subtitle center">7 years, 7 roles, 4 promotions—from mechanical testing to software leadership</p>
-            <div class="journey-timeline">
-                <div class="journey-item">
-                    <div class="journey-year">2018</div>
-                    <div class="journey-content">
-                        <h4>PVV Mechanical Development Engineer</h4>
-                        <p>Reduced post-test processing time by 75% with automation scripts. Created software request tool decreasing payload lead times.</p>
-                    </div>
-                </div>
-                
-                <div class="journey-item">
-                    <div class="journey-year">2019</div>
-                    <div class="journey-content">
-                        <h4>Controls Continuous Improvement Software Engineer</h4>
-                        <p>Delivered experimental software in under 2 days. Decreased engine payload release time by 15-20%.</p>
-                    </div>
-                </div>
-                
-                <div class="journey-item">
-                    <div class="journey-year">2019</div>
-                    <div class="journey-content">
-                        <h4>Drivetrain Embedded Software Engineer</h4>
-                        <p>Implemented code for 8R IVT tractor shaft speed. Improved PTO clutch protection.</p>
-                    </div>
-                </div>
-                
-                <div class="journey-item">
-                    <div class="journey-year">2020</div>
-                    <div class="journey-content">
-                        <h4>Engine Control Systems Engineer</h4>
-                        <p>Decreased C code unit test run time from 33,000ms to 25ms. Resolved Jenkins CI/CD build errors.</p>
-                    </div>
-                </div>
-                
-                <div class="journey-item">
-                    <div class="journey-year">2022</div>
-                    <div class="journey-content">
-                        <h4>Embedded Software Engineer</h4>
-                        <p>Spearheaded Rally Agile adoption, became Scrum Master. Improved team productivity with standardized templates.</p>
-                    </div>
-                </div>
-                
-                <div class="journey-item">
-                    <div class="journey-year">2023</div>
-                    <div class="journey-content">
-                        <h4>Supervisor, Crop Care Software PV&V Engineering</h4>
-                        <p>Led team of 6-10 engineers. 30% reduction in overtime, 90% reduction in weekend work. Reduced release errors by 25-30%.</p>
-                    </div>
-                </div>
-                
-                <div class="journey-item">
-                    <div class="journey-year">2025</div>
-                    <div class="journey-content">
-                        <h4>Software Development Enablement Lead</h4>
-                        <p>Partner with engineers to resolve inefficiencies. Champion adoption of new technologies.</p>
-                    </div>
-                </div>
+            <div class="text-center mt-12">
+                <p class="text-lg font-bold text-white">This is hands-on partnership, not passive content.</p>
             </div>
         </div>
-    </section>
-
-    <!-- What I Learned -->
-    <section id="secret-sauce" class="section section-condensed">
-        <div class="container">
-            <h2 class="section-title center">What I Learned (That Nobody Tells You)</h2>
-            <div class="insights-grid">
-                <div class="insight-card">
-                    <h3>👁️ Visibility is a Learnable Skill</h3>
-                    <p>Hard work isn't enough—visibility is a skill you have to learn (and I'll teach you)</p>
-                    <p class="insight-note"><em>(Real talk: I was TERRIBLE at this at first. I thought "good work speaks for itself." It doesn't. A mentor had to basically force me to start sending weekly updates. Now it's second nature.)</em></p>
-                </div>
-                <div class="insight-card">
-                    <h3>🎯 Make It Easy for Your Manager</h3>
-                    <p>Your manager wants to promote you—but only if you make it easy for them</p>
-                </div>
-                <div class="insight-card">
-                    <h3>🔄 Strategic Positioning Over Credentials</h3>
-                    <p>Pivoting careers doesn't require going back to school—it requires strategic positioning</p>
-                    <p class="insight-note"><em>(I almost gave up on my mechanical-to-software pivot. Took 6 months of rejections before a mentor showed me the actual strategy.)</em></p>
-                </div>
-                <div class="insight-card">
-                    <h3>⏰ Ask Earlier Than You Think</h3>
-                    <p>The 'right time' to ask for promotion is way earlier than you think</p>
-                </div>
-                <div class="insight-card">
-                    <h3>🤝 3 Strategic Relationships Matter</h3>
-                    <p>Networking isn't about collecting LinkedIn connections—it's about 3 strategic relationships</p>
-                </div>
-                <div class="insight-card">
-                    <h3>📄 Beat the ATS Robots</h3>
-                    <p>Your resume is rejected by a robot before a human ever sees it—here's how to fix that</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- How I Coach -->
-    <section id="my-approach" class="section section-alt">
-        <div class="container">
-            <h2 class="section-title center">How I Actually Coach (Not How Most 'Gurus' Do)</h2>
-            <div class="coaching-style">
-                <p class="lead-text">I don't sell you a video course and wish you luck. That's not coaching—that's content consumption.</p>
-                <p class="lead-text">Here's how we actually work together:</p>
-                
-                <div class="coaching-details">
-                    <div class="coaching-section">
-                        <h3>Session Format</h3>
-                        <ul>
-                            <li>1-on-1 video calls where we solve YOUR specific challenges</li>
-                            <li>We don't follow a script—we address what YOU need right now</li>
-                            <li>You leave each session with 3-5 specific actions for that week</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="coaching-section">
-                        <h3>Between Sessions</h3>
-                        <ul>
-                            <li>Email me your resume draft—I'll review it with specific feedback</li>
-                            <li>Stuck on how to phrase something? Send it over</li>
-                            <li>Need to prep for a tough conversation? We'll practice</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="coaching-section">
-                        <h3>Accountability</h3>
-                        <ul>
-                            <li>I'll check in on your progress (because most people need that nudge)</li>
-                            <li>We'll adjust the strategy based on what's working</li>
-                            <li>If something isn't working, we pivot immediately</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <p class="lead-text"><strong>This is hands-on partnership, not passive content.</strong></p>
-            </div>
-        </div>
-    </section>
+    </div>
 
     <!-- Why I Do This -->
-    <section id="my-why" class="section section-alt">
-        <div class="container">
-            <h2 class="section-title center">Why I Do This (It's Not Just a Side Hustle)</h2>
-            <div class="why-section">
+    <div id="my-why" class="py-24 bg-white scroll-mt-32">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-slate-900 text-center mb-12">Why I Do This (It's Not Just a Side Hustle)</h2>
+            <div class="prose prose-slate prose-lg text-slate-500 mx-auto">
                 <p>I have a full-time job I genuinely enjoy. I don't need Launch to Lead financially.</p>
-                
                 <p>So why do I spend nights and weekends coaching engineers?</p>
-                
-                <p><strong>Because I remember how lost I felt.</strong></p>
-                
+                <p class="font-bold text-slate-900">Because I remember how lost I felt.</p>
                 <p>I remember being a mechanical engineer staring at software job postings, thinking, "I'll never break in."</p>
-                
                 <p>I remember being passed over for a promotion and not understanding why—just being told to "be more visible" (whatever that means).</p>
-                
                 <p>I remember watching peers get promoted while I stayed stuck, wondering what they knew that I didn't.</p>
-                
                 <p>And I remember the relief—the <em>massive</em> relief—when someone who'd been there said, "Here's exactly what you need to do."</p>
-                
-                <p><strong>That's what I want to give you.</strong> Not motivation. Not platitudes. Not "believe in yourself."</p>
-                
+                <p class="font-bold text-slate-900">That's what I want to give you. Not motivation. Not platitudes. Not "believe in yourself."</p>
                 <p>I want to give you the <strong>map</strong>. The specific steps. The "if you do X, you'll likely get Y" frameworks.</p>
-                
                 <p>Because once I had that map, everything changed. And I think you deserve that too.</p>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- Mentorship Philosophy -->
-    <section id="superpower" class="section">
-        <div class="container">
-            <h2 class="section-title center">I Didn't Do This Alone (And You Shouldn't Either)</h2>
-            <div class="mentorship-section">
-                <p class="lead-text">Let me be crystal clear about something: <strong>I did not figure all of this out by myself.</strong></p>
+    <!-- Mentorship -->
+    <div id="superpower" class="py-24 bg-brand-light scroll-mt-32">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-slate-900 text-center mb-12">I Didn't Do This Alone (And You Shouldn't Either)</h2>
+            
+            <div class="bg-white p-8 md:p-12 rounded-3xl shadow-sm border border-emerald-100 mb-12">
+                <p class="text-lg text-slate-600 mb-6">Let me be crystal clear about something: <strong>I did not figure all of this out by myself.</strong></p>
+                <p class="text-slate-500 mb-8">Every pivot I made, every promotion I earned, every mistake I avoided (or learned from)—I had mentors and coaches helping me navigate the path. Not because I was incompetent. Not because I couldn't do it alone. But because <strong>having someone who's been where you want to go is a superpower, not a crutch.</strong></p>
                 
-                <p class="lead-text">Every pivot I made, every promotion I earned, every mistake I avoided (or learned from)—I had mentors and coaches helping me navigate the path. Not because I was incompetent. Not because I couldn't do it alone. But because <strong>having someone who's been where you want to go is a superpower, not a crutch.</strong></p>
-                
-                <h3>The Mentors Who Shaped My Career</h3>
-                <p>Throughout my 7 years at a Fortune 100 company, I had:</p>
-                <ul class="mentorship-list">
-                    <li><strong>A senior software engineer</strong> who taught me how to think like a developer when I pivoted from mechanical to software (and patiently reviewed my terrible early code)</li>
-                    <li><strong>An agile coach</strong> who showed me the difference between managing tasks and leading people</li>
-                    <li><strong>A director</strong> who gave me the brutal feedback I needed to hear about my communication style (and how to fix it)</li>
-                    <li><strong>Peer mentors</strong> who helped me navigate politics, timing, and strategy when I was going for promotions</li>
+                <h3 class="text-xl font-bold text-slate-900 mb-4">The Mentors Who Shaped My Career</h3>
+                <ul class="space-y-3 mb-8 text-slate-500">
+                    <li class="flex items-start gap-3"><i class="fa-solid fa-user-group text-brand-primary mt-1"></i> <span><strong>A senior software engineer</strong> who taught me how to think like a developer when I pivoted from mechanical to software</span></li>
+                    <li class="flex items-start gap-3"><i class="fa-solid fa-user-group text-brand-primary mt-1"></i> <span><strong>An agile coach</strong> who showed me the difference between managing tasks and leading people</span></li>
+                    <li class="flex items-start gap-3"><i class="fa-solid fa-user-group text-brand-primary mt-1"></i> <span><strong>A director</strong> who gave me the brutal feedback I needed to hear about my communication style</span></li>
+                    <li class="flex items-start gap-3"><i class="fa-solid fa-user-group text-brand-primary mt-1"></i> <span><strong>Peer mentors</strong> who helped me navigate politics, timing, and strategy</span></li>
                 </ul>
+
+                <h3 class="text-xl font-bold text-slate-900 mb-4">I'm Still Learning (And Still Being Coached)</h3>
+                <p class="text-slate-500 mb-8">And here's the thing: <strong>I still have coaches and mentors today.</strong> I have a leadership coach I meet with monthly. I have peers in other companies I bounce ideas off. Why? Because the moment you think you've figured it all out is the moment you stop growing.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-emerald-100">
+                    <h3 class="text-xl font-bold text-slate-900 mb-4">Coaching = Leverage</h3>
+                    <p class="text-slate-500 text-sm mb-4">Some people think getting coaching is admitting weakness. That's backwards. Coaching is leverage. It's tapping into someone else's 10, 20, 30 years of experience and compressing their lessons into YOUR growth.</p>
+                    <div class="bg-slate-50 p-4 rounded-xl text-sm">
+                        <p class="mb-2"><strong class="text-red-500">Without coaching:</strong> Try → fail → learn → try again. (2-3 years)</p>
+                        <p><strong class="text-brand-primary">With coaching:</strong> Try → feedback → adjust → succeed. (6-12 months)</p>
+                    </div>
+                </div>
                 
-                <h3>I'm Still Learning (And Still Being Coached)</h3>
-                <p>And here's the thing: <strong>I still have coaches and mentors today.</strong></p>
-                
-                <p>I have a leadership coach I meet with monthly. I have peers in other companies I bounce ideas off. I read, I listen to podcasts, I ask for feedback constantly.</p>
-                
-                <p>Why? Because the moment you think you've figured it all out is the moment you stop growing.</p>
-                
-                <h3>Coaching = Leverage, Not Weakness</h3>
-                <p>Some people think getting coaching is admitting weakness. That's backwards.</p>
-                
-                <p><strong>Coaching is leverage.</strong> It's tapping into someone else's 10, 20, 30 years of experience and compressing their lessons into YOUR growth—without you having to make all the same mistakes.</p>
-                
-                <p>Think about it:</p>
-                <ul class="comparison-points">
-                    <li><strong>Without coaching:</strong> You try something → fail → figure out what went wrong → try again → maybe succeed. Takes 2-3 years.</li>
-                    <li><strong>With coaching:</strong> You try something → get immediate feedback → adjust → succeed faster. Takes 6-12 months.</li>
-                </ul>
-                
-                <p>The person with a coach doesn't just move faster—they compound their advantage. After 5 years, the gap between them and the uncoached person isn't just bigger, it's exponential.</p>
-                
-                <h3>What You're Really Getting</h3>
-                <p>You're not just getting "my advice" when you work with me. You're getting:</p>
-                <ul class="value-list">
-                    <li>The lessons from the 5+ mentors who shaped my career</li>
-                    <li>The frameworks from the leadership coaches I've learned from</li>
-                    <li>The strategies that worked (and the ones that failed spectacularly)</li>
-                    <li>A decade of compressed experience you can apply immediately</li>
-                </ul>
-                
-                <p>That's not arrogance—that's the whole point of coaching. You shouldn't have to reinvent the wheel. You should learn from people who've already done it.</p>
-                
-                <div class="closing-thought">
-                    <p><strong>So if you're thinking, "Do I really need a coach?"—here's my answer:</strong></p>
-                    
-                    <p>You don't NEED one. You can figure it out yourself. Many people do.</p>
-                    
-                    <p>But why would you want to? Why take 10 years to learn something you could master in 3? Why make all the mistakes when you could avoid 80% of them?</p>
-                    
-                    <p><strong>Coaching isn't about dependency. It's about velocity.</strong></p>
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-emerald-100">
+                    <h3 class="text-xl font-bold text-slate-900 mb-4">What You're Really Getting</h3>
+                    <ul class="space-y-3 text-slate-500 text-sm">
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary mt-1"></i> <span>The lessons from the 5+ mentors who shaped my career</span></li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary mt-1"></i> <span>The frameworks from the leadership coaches I've learned from</span></li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary mt-1"></i> <span>The strategies that worked (and the ones that failed)</span></li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary mt-1"></i> <span>A decade of compressed experience</span></li>
+                    </ul>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- Education & Skills -->
-    <section id="credentials" class="section">
-        <div class="container">
-            <h2 class="section-title center">Education & Expertise</h2>
-            <div class="education-grid">
-                <div class="education-card">
-                    <div class="education-icon">🎓</div>
-                    <h3>Master of Engineering</h3>
-                    <p class="education-field">Mechanical Engineering</p>
-                    <p class="education-school">Iowa State University, Ames, IA</p>
+    <!-- Credentials -->
+    <div id="credentials" class="py-24 bg-white scroll-mt-32">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-slate-900 text-center mb-16">Education & Expertise</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8 mb-16">
+                <div class="bg-brand-light p-8 rounded-3xl border border-emerald-100 text-center">
+                    <div class="text-4xl mb-4">🎓</div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-1">Master of Engineering</h3>
+                    <p class="text-brand-primary font-medium text-sm mb-2">Mechanical Engineering</p>
+                    <p class="text-slate-400 text-xs">Iowa State University, Ames, IA</p>
                 </div>
-                <div class="education-card">
-                    <div class="education-icon">🎓</div>
-                    <h3>Bachelor of Science</h3>
-                    <p class="education-field">Mechanical Engineering</p>
-                    <p class="education-school">Iowa State University, Ames, IA</p>
+                <div class="bg-brand-light p-8 rounded-3xl border border-emerald-100 text-center">
+                    <div class="text-4xl mb-4">🎓</div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-1">Bachelor of Science</h3>
+                    <p class="text-brand-primary font-medium text-sm mb-2">Mechanical Engineering</p>
+                    <p class="text-slate-400 text-xs">Iowa State University, Ames, IA</p>
                 </div>
-                <div class="education-card">
-                    <div class="education-icon">📜</div>
-                    <h3>Systems Engineering Certificate</h3>
-                    <p class="education-field">Advanced Systems Training</p>
-                    <p class="education-school">California Institute of Technology (Caltech)</p>
+                <div class="bg-brand-light p-8 rounded-3xl border border-emerald-100 text-center">
+                    <div class="text-4xl mb-4">📜</div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-1">Systems Engineering Certificate</h3>
+                    <p class="text-brand-primary font-medium text-sm mb-2">Advanced Systems Training</p>
+                    <p class="text-slate-400 text-xs">California Institute of Technology (Caltech)</p>
                 </div>
             </div>
             
-            <div class="skills-section">
-                <h3>Technical Skills</h3>
-                <div class="skills-grid">
-                    <div class="skill-category">
-                        <h4>Programming Languages</h4>
-                        <p>C, Python, MATLAB, Simulink, R, VBScript, DIAdem</p>
+            <div class="bg-slate-900 rounded-3xl p-8 md:p-12 text-white">
+                <h3 class="text-2xl font-bold mb-8 text-center">Technical Skills</h3>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div>
+                        <h4 class="text-brand-accent font-bold mb-4 border-b border-slate-700 pb-2">Programming Languages</h4>
+                        <p class="text-slate-300 text-sm leading-relaxed">C, Python, MATLAB, Simulink, R, VBScript, DIAdem</p>
                     </div>
-                    <div class="skill-category">
-                        <h4>Tools & Technologies</h4>
-                        <p>Azure DevOps, Git, Subversion, Mercurial, Jenkins, CANalyzer, TractorSim</p>
+                    <div>
+                        <h4 class="text-brand-accent font-bold mb-4 border-b border-slate-700 pb-2">Tools & Technologies</h4>
+                        <p class="text-slate-300 text-sm leading-relaxed">Azure DevOps, Git, Subversion, Mercurial, Jenkins, CANalyzer, TractorSim</p>
                     </div>
-                    <div class="skill-category">
-                        <h4>Methodologies</h4>
-                        <p>DevEx, Product Verification & Validation (PV&V), Systems Engineering, Continuous Improvement (CI), Root Cause Analysis, Hardware-in-the-Loop (HIL), Software-in-the-Loop (SIL), Model-in-the-Loop (MIL)</p>
+                    <div>
+                        <h4 class="text-brand-accent font-bold mb-4 border-b border-slate-700 pb-2">Methodologies</h4>
+                        <p class="text-slate-300 text-sm leading-relaxed">DevEx, Product Verification & Validation (PV&V), Systems Engineering, Continuous Improvement (CI), Root Cause Analysis, Hardware-in-the-Loop (HIL), Software-in-the-Loop (SIL), Model-in-the-Loop (MIL)</p>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
     <!-- Philosophy -->
-    <section class="section section-alt">
-        <div class="container">
-            <div class="philosophy-section">
-                <h2 class="section-title center">My Coaching Philosophy</h2>
-                <div class="philosophy-grid">
-                    <div class="philosophy-card">
-                        <h3>🎯 Results-Driven</h3>
-                        <p>Success in engineering careers isn't about luck—it's about measurable results. I teach you to quantify your impact and communicate it effectively.</p>
-                    </div>
-                    <div class="philosophy-card">
-                        <h3>🗺️ Strategic Positioning</h3>
-                        <p>Technical excellence alone isn't enough. You need to be visible, aligned with company priorities, and positioned for opportunities.</p>
-                    </div>
-                    <div class="philosophy-card">
-                        <h3>📈 Actionable Frameworks</h3>
-                        <p>No vague advice. I provide concrete frameworks, templates, and playbooks based on what actually worked in my career.</p>
-                    </div>
-                    <div class="philosophy-card">
-                        <h3>🔄 Continuous Growth</h3>
-                        <p>Career development is a journey. I help you build systems for ongoing learning, visibility, and advancement.</p>
-                    </div>
+    <div class="py-24 bg-brand-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-slate-900 text-center mb-16">My Coaching Philosophy</h2>
+            <div class="grid md:grid-cols-4 gap-6">
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-emerald-50">
+                    <h3 class="text-lg font-bold text-slate-900 mb-3">🎯 Results-Driven</h3>
+                    <p class="text-slate-500 text-sm">Success in engineering careers isn't about luck—it's about measurable results. I teach you to quantify your impact.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-emerald-50">
+                    <h3 class="text-lg font-bold text-slate-900 mb-3">🗺️ Strategic Positioning</h3>
+                    <p class="text-slate-500 text-sm">Technical excellence alone isn't enough. You need to be visible, aligned with company priorities, and positioned for opportunities.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-emerald-50">
+                    <h3 class="text-lg font-bold text-slate-900 mb-3">📈 Actionable Frameworks</h3>
+                    <p class="text-slate-500 text-sm">No vague advice. I provide concrete frameworks, templates, and playbooks based on what actually worked in my career.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-emerald-50">
+                    <h3 class="text-lg font-bold text-slate-900 mb-3">🔄 Continuous Growth</h3>
+                    <p class="text-slate-500 text-sm">Career development is a journey. I help you build systems for ongoing learning, visibility, and advancement.</p>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
     <!-- CTA -->
-    <section class="section cta-section">
-        <div class="container">
-            <div class="cta-content">
-                <h2>Ready to Accelerate Your Career?</h2>
-                <p>Let's apply these frameworks to your unique situation.</p>
-                <a href="contact.html" class="btn btn-primary btn-large">Book a Free Discovery Call</a>
-            </div>
+    <div class="py-24 bg-brand-primary relative overflow-hidden">
+        <!-- Background decoration -->
+        <div class="absolute top-0 right-0 -mt-20 -mr-20 w-96 h-96 bg-brand-secondary rounded-full blur-3xl opacity-20"></div>
+        <div class="absolute bottom-0 left-0 -mb-20 -ml-20 w-96 h-96 bg-brand-primary rounded-full blur-3xl opacity-10"></div>
+        
+        <div class="max-w-4xl mx-auto px-4 relative z-10 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Ready to Accelerate Your Career?</h2>
+            <p class="text-emerald-100 text-lg mb-10 max-w-2xl mx-auto">
+                Let's apply these frameworks to your unique situation.
+            </p>
+            
+            <a href="contact.html" class="px-8 py-4 bg-white text-brand-primary font-bold rounded-full hover:bg-brand-accent hover:text-brand-primary transition shadow-lg hover:shadow-fresh hover:-translate-y-1 inline-flex items-center gap-2">
+                <i class="fa-regular fa-calendar"></i> Book a Free Discovery Call
+            </a>
         </div>
-    </section>
+    </div>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <div class="logo">
-                        <span class="logo-icon">L²</span>
-                        <span class="logo-text">
-                            <span class="logo-main">Launch to Lead</span>
-                            <span class="logo-sub">Engineering</span>
-                        </span>
-                    </div>
-                    <p>Engineering career coaching for students and professionals.</p>
+    <footer class="bg-brand-primary text-white py-16 border-t border-emerald-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-12 mb-12">
+                <!-- Brand -->
+                <div class="col-span-1">
+                    <a href="index.html" class="flex items-center gap-2 mb-6 group">
+                        <div class="bg-brand-accent text-brand-primary w-10 h-10 rounded-lg flex items-center justify-center group-hover:bg-white transition duration-300">
+                            <span class="font-bold text-lg">L²</span>
+                        </div>
+                        <span class="font-bold text-xl text-white tracking-tight">Launch<span class="font-light text-brand-accent">ToLead</span></span>
+                    </a>
+                    <p class="text-emerald-100 text-sm leading-relaxed">
+                        Engineering career coaching for students and professionals.
+                    </p>
                 </div>
-                <div class="footer-links">
-                    <div class="footer-column">
-                        <h4>Services</h4>
-                        <a href="launch.html">Launch</a>
-                        <a href="pivot.html">Pivot</a>
-                        <a href="accelerate.html">Accelerate</a>
-                    </div>
-                    <div class="footer-column">
-                        <h4>Company</h4>
-                        <a href="about.html">About</a>
-                        <a href="success-stories.html">Success Stories</a>
-                        <a href="contact.html">Contact</a>
-                    </div>
-                    <div class="footer-column">
-                        <h4>Connect</h4>
-                        <a href="mailto:contact@launchtolead.io">contact@launchtolead.io</a>
-                        <a href="https://www.linkedin.com/in/mancimansour" target="_blank">LinkedIn</a>
-                    </div>
+
+                <!-- Services -->
+                <div>
+                    <h4 class="font-bold text-lg mb-6 text-white uppercase tracking-wider text-sm">Services</h4>
+                    <ul class="space-y-4 text-sm text-emerald-100">
+                        <li><a href="launch.html" class="hover:text-brand-accent transition">Launch</a></li>
+                        <li><a href="pivot.html" class="hover:text-brand-accent transition">Pivot</a></li>
+                        <li><a href="accelerate.html" class="hover:text-brand-accent transition">Accelerate</a></li>
+                        <li><a href="packages.html" class="hover:text-brand-accent transition">Packages</a></li>
+                    </ul>
+                </div>
+
+                <!-- Company -->
+                <div>
+                    <h4 class="font-bold text-lg mb-6 text-white uppercase tracking-wider text-sm">Company</h4>
+                    <ul class="space-y-4 text-sm text-emerald-100">
+                        <li><a href="about.html" class="text-brand-accent font-bold">About</a></li>
+                        <li><a href="success-stories.html" class="hover:text-brand-accent transition">Success Stories</a></li>
+                        <li><a href="contact.html" class="hover:text-brand-accent transition">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Connect -->
+                <div>
+                    <h4 class="font-bold text-lg mb-6 text-white uppercase tracking-wider text-sm">Connect</h4>
+                    <ul class="space-y-4 text-sm text-emerald-100">
+                        <li><a href="mailto:contact@launchtolead.io" class="hover:text-brand-accent transition">contact@launchtolead.io</a></li>
+                        <li><a href="https://www.linkedin.com/in/mancimansour" target="_blank" class="hover:text-brand-accent transition">LinkedIn</a></li>
+                    </ul>
                 </div>
             </div>
-            <div class="footer-bottom">
+            
+            <div class="border-t border-emerald-800 pt-8 text-center text-emerald-400 text-sm">
                 <p>&copy; 2025 Launch to Lead Engineering. All rights reserved.</p>
             </div>
         </div>
     </footer>
-    <script src="carousel.js"></script>
 </body>
 </html>
