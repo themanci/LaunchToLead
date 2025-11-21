@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How It Works - 3 Design Proposals</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../tailwind-config.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-600 antialiased">
+
+    <div class="max-w-7xl mx-auto px-4 py-8">
+        <!-- Header -->
+        <div class="bg-purple-50 border-2 border-purple-400 rounded-2xl p-6 mb-8">
+            <h1 class="text-2xl font-bold text-purple-900 mb-2">📋 "How It Works" Section - 3 Design Proposals</h1>
+            <p class="text-purple-800 text-sm">Sharper, more space-efficient alternatives to the current 4-column grid layout</p>
+        </div>
+
+        <!-- OPTION 1: Horizontal Timeline with Progress Bar -->
+        <div class="mb-16 bg-white rounded-3xl p-8 border-2 border-emerald-200">
+            <div class="mb-8">
+                <h2 class="text-2xl font-bold text-emerald-900 mb-2">Option 1: Horizontal Timeline with Progress Bar</h2>
+                <p class="text-emerald-700 text-sm">Clean, linear flow with visual progress indicator. More compact than 4-column grid.</p>
+            </div>
+
+            <!-- The Design -->
+            <div class="bg-slate-50 rounded-2xl p-8">
+                <div class="text-center mb-12">
+                    <h3 class="text-3xl font-bold text-slate-900">How It Works</h3>
+                    <p class="text-slate-500 mt-2">A proven 4-step process to land your first role</p>
+                </div>
+
+                <!-- Progress Bar -->
+                <div class="relative max-w-5xl mx-auto mb-8">
+                    <div class="absolute top-1/2 left-0 right-0 h-1 bg-emerald-200 -translate-y-1/2"></div>
+                    <div class="relative flex justify-between">
+                        <div class="w-12 h-12 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-lg shadow-lg z-10">1</div>
+                        <div class="w-12 h-12 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-lg shadow-lg z-10">2</div>
+                        <div class="w-12 h-12 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-lg shadow-lg z-10">3</div>
+                        <div class="w-12 h-12 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-lg shadow-lg z-10">4</div>
+                    </div>
+                </div>
+
+                <!-- Steps -->
+                <div class="grid md:grid-cols-4 gap-6 max-w-5xl mx-auto">
+                    <div class="text-center">
+                        <h4 class="font-bold text-slate-900 mb-2 text-base">Resume Review</h4>
+                        <p class="text-xs text-slate-600 leading-relaxed">Uncover compelling examples from projects and coursework</p>
+                    </div>
+                    <div class="text-center">
+                        <h4 class="font-bold text-slate-900 mb-2 text-base">Interview Prep</h4>
+                        <p class="text-xs text-slate-600 leading-relaxed">Master STAR method with real examples</p>
+                    </div>
+                    <div class="text-center">
+                        <h4 class="font-bold text-slate-900 mb-2 text-base">Mock Interview</h4>
+                        <p class="text-xs text-slate-600 leading-relaxed">Full simulation with detailed feedback</p>
+                    </div>
+                    <div class="text-center">
+                        <h4 class="font-bold text-slate-900 mb-2 text-base">Land Your Offer</h4>
+                        <p class="text-xs text-slate-600 leading-relaxed">Apply with confidence and ace interviews</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pros/Cons -->
+            <div class="mt-6 grid md:grid-cols-2 gap-4">
+                <div class="bg-green-50 rounded-lg p-4 border border-green-200">
+                    <p class="font-bold text-green-900 mb-2 text-sm">✅ Pros:</p>
+                    <ul class="text-xs text-green-800 space-y-1">
+                        <li>• Visual progress flow - easy to follow</li>
+                        <li>• 50% less vertical space than current design</li>
+                        <li>• Works great on mobile (stacks vertically)</li>
+                        <li>• Professional, modern aesthetic</li>
+                    </ul>
+                </div>
+                <div class="bg-red-50 rounded-lg p-4 border border-red-200">
+                    <p class="font-bold text-red-900 mb-2 text-sm">⚠️ Cons:</p>
+                    <ul class="text-xs text-red-800 space-y-1">
+                        <li>• Shorter descriptions (but that's good for scanning)</li>
+                        <li>• Requires precise spacing for progress bar alignment</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- OPTION 2: Accordion / Expandable Cards -->
+        <div class="mb-16 bg-white rounded-3xl p-8 border-2 border-blue-200">
+            <div class="mb-8">
+                <h2 class="text-2xl font-bold text-blue-900 mb-2">Option 2: Compact Cards with Icons</h2>
+                <p class="text-blue-700 text-sm">Side-by-side cards with large icons. Most space-efficient option.</p>
+            </div>
+
+            <!-- The Design -->
+            <div class="bg-slate-50 rounded-2xl p-8">
+                <div class="text-center mb-10">
+                    <h3 class="text-3xl font-bold text-slate-900">How It Works</h3>
+                    <p class="text-slate-500 mt-2">Simple, proven 4-step process</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-4 max-w-4xl mx-auto">
+                    <!-- Step 1 -->
+                    <div class="bg-white rounded-xl p-5 border-2 border-emerald-100 hover:border-emerald-300 hover:shadow-md transition">
+                        <div class="flex items-start gap-4">
+                            <div class="flex-shrink-0 w-12 h-12 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center">
+                                <i data-lucide="file-text" class="w-6 h-6"></i>
+                            </div>
+                            <div class="flex-1">
+                                <div class="flex items-center gap-2 mb-1">
+                                    <span class="text-xs font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full">STEP 1</span>
+                                </div>
+                                <h4 class="font-bold text-slate-900 mb-1 text-sm">Resume Review & Story Mining</h4>
+                                <p class="text-xs text-slate-600 leading-relaxed">Dig deep into projects and experiences to uncover compelling examples</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="bg-white rounded-xl p-5 border-2 border-emerald-100 hover:border-emerald-300 hover:shadow-md transition">
+                        <div class="flex items-start gap-4">
+                            <div class="flex-shrink-0 w-12 h-12 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center">
+                                <i data-lucide="message-square" class="w-6 h-6"></i>
+                            </div>
+                            <div class="flex-1">
+                                <div class="flex items-center gap-2 mb-1">
+                                    <span class="text-xs font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full">STEP 2</span>
+                                </div>
+                                <h4 class="font-bold text-slate-900 mb-1 text-sm">Interview Preparation</h4>
+                                <p class="text-xs text-slate-600 leading-relaxed">Master STAR method with confidence-building practice</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="bg-white rounded-xl p-5 border-2 border-emerald-100 hover:border-emerald-300 hover:shadow-md transition">
+                        <div class="flex items-start gap-4">
+                            <div class="flex-shrink-0 w-12 h-12 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center">
+                                <i data-lucide="video" class="w-6 h-6"></i>
+                            </div>
+                            <div class="flex-1">
+                                <div class="flex items-center gap-2 mb-1">
+                                    <span class="text-xs font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full">STEP 3</span>
+                                </div>
+                                <h4 class="font-bold text-slate-900 mb-1 text-sm">Mock Interview & Feedback</h4>
+                                <p class="text-xs text-slate-600 leading-relaxed">Full simulation with detailed feedback on answers and delivery</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="bg-white rounded-xl p-5 border-2 border-emerald-100 hover:border-emerald-300 hover:shadow-md transition">
+                        <div class="flex items-start gap-4">
+                            <div class="flex-shrink-0 w-12 h-12 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center">
+                                <i data-lucide="trophy" class="w-6 h-6"></i>
+                            </div>
+                            <div class="flex-1">
+                                <div class="flex items-center gap-2 mb-1">
+                                    <span class="text-xs font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full">STEP 4</span>
+                                </div>
+                                <h4 class="font-bold text-slate-900 mb-1 text-sm">Land Your Offer</h4>
+                                <p class="text-xs text-slate-600 leading-relaxed">Apply with confidence and ace interviews at top companies</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pros/Cons -->
+            <div class="mt-6 grid md:grid-cols-2 gap-4">
+                <div class="bg-green-50 rounded-lg p-4 border border-green-200">
+                    <p class="font-bold text-green-900 mb-2 text-sm">✅ Pros:</p>
+                    <ul class="text-xs text-green-800 space-y-1">
+                        <li>• Most space-efficient (60% less space)</li>
+                        <li>• Clear visual hierarchy with icons</li>
+                        <li>• Easy to scan quickly</li>
+                        <li>• Hover states add interactivity</li>
+                        <li>• Works great on all screen sizes</li>
+                    </ul>
+                </div>
+                <div class="bg-red-50 rounded-lg p-4 border border-red-200">
+                    <p class="font-bold text-red-900 mb-2 text-sm">⚠️ Cons:</p>
+                    <ul class="text-xs text-red-800 space-y-1">
+                        <li>• Less emphasis on step numbers</li>
+                        <li>• Might feel too compact for some users</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- OPTION 3: Vertical Flow with Connectors -->
+        <div class="mb-16 bg-white rounded-3xl p-8 border-2 border-orange-200">
+            <div class="mb-8">
+                <h2 class="text-2xl font-bold text-orange-900 mb-2">Option 3: Vertical Flow with Arrow Connectors</h2>
+                <p class="text-orange-700 text-sm">Single column with visual flow. Best for mobile-first design.</p>
+            </div>
+
+            <!-- The Design -->
+            <div class="bg-slate-50 rounded-2xl p-8">
+                <div class="text-center mb-12">
+                    <h3 class="text-3xl font-bold text-slate-900">How It Works</h3>
+                    <p class="text-slate-500 mt-2">From confused student to confident candidate</p>
+                </div>
+
+                <div class="max-w-2xl mx-auto space-y-6">
+                    <!-- Step 1 -->
+                    <div class="relative">
+                        <div class="flex items-start gap-4 bg-white rounded-2xl p-6 border-2 border-emerald-200 shadow-sm">
+                            <div class="flex-shrink-0 w-10 h-10 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold">1</div>
+                            <div class="flex-1">
+                                <h4 class="font-bold text-slate-900 mb-2">Resume Review & Story Mining</h4>
+                                <p class="text-sm text-slate-600">Uncover compelling examples from your projects, internships, and coursework</p>
+                            </div>
+                        </div>
+                        <div class="flex justify-center my-2">
+                            <i data-lucide="arrow-down" class="w-6 h-6 text-emerald-400"></i>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="relative">
+                        <div class="flex items-start gap-4 bg-white rounded-2xl p-6 border-2 border-emerald-200 shadow-sm">
+                            <div class="flex-shrink-0 w-10 h-10 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold">2</div>
+                            <div class="flex-1">
+                                <h4 class="font-bold text-slate-900 mb-2">Interview Preparation</h4>
+                                <p class="text-sm text-slate-600">Master technical and behavioral questions with STAR method examples</p>
+                            </div>
+                        </div>
+                        <div class="flex justify-center my-2">
+                            <i data-lucide="arrow-down" class="w-6 h-6 text-emerald-400"></i>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="relative">
+                        <div class="flex items-start gap-4 bg-white rounded-2xl p-6 border-2 border-emerald-200 shadow-sm">
+                            <div class="flex-shrink-0 w-10 h-10 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold">3</div>
+                            <div class="flex-1">
+                                <h4 class="font-bold text-slate-900 mb-2">Mock Interview & Feedback</h4>
+                                <p class="text-sm text-slate-600">Full-length simulation with detailed feedback on delivery and content</p>
+                            </div>
+                        </div>
+                        <div class="flex justify-center my-2">
+                            <i data-lucide="arrow-down" class="w-6 h-6 text-emerald-400"></i>
+                        </div>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="relative">
+                        <div class="flex items-start gap-4 bg-white rounded-2xl p-6 border-2 border-emerald-600 shadow-lg">
+                            <div class="flex-shrink-0 w-10 h-10 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold">4</div>
+                            <div class="flex-1">
+                                <h4 class="font-bold text-slate-900 mb-2">Land Your Offer 🎉</h4>
+                                <p class="text-sm text-slate-600">Apply with confidence and ace interviews at your target companies</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pros/Cons -->
+            <div class="mt-6 grid md:grid-cols-2 gap-4">
+                <div class="bg-green-50 rounded-lg p-4 border border-green-200">
+                    <p class="font-bold text-green-900 mb-2 text-sm">✅ Pros:</p>
+                    <ul class="text-xs text-green-800 space-y-1">
+                        <li>• Very clear sequential flow</li>
+                        <li>• Narrative storytelling feel</li>
+                        <li>• Perfect for mobile (no layout shift)</li>
+                        <li>• Room for longer descriptions if needed</li>
+                        <li>• Visual progression with arrows</li>
+                    </ul>
+                </div>
+                <div class="bg-red-50 rounded-lg p-4 border border-red-200">
+                    <p class="font-bold text-red-900 mb-2 text-sm">⚠️ Cons:</p>
+                    <ul class="text-xs text-red-800 space-y-1">
+                        <li>• Uses more vertical space than Option 2</li>
+                        <li>• Less scannable than side-by-side layouts</li>
+                        <li>• Desktop users need to scroll more</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recommendation -->
+        <div class="bg-gradient-to-br from-emerald-50 to-teal-50 border-2 border-emerald-300 rounded-2xl p-8">
+            <h2 class="text-2xl font-bold text-emerald-900 mb-4">💡 My Recommendation: Option 2 (Compact Cards)</h2>
+            <div class="prose prose-slate max-w-none">
+                <p class="text-emerald-900 mb-4"><strong>Why Option 2 is the best choice:</strong></p>
+                <ul class="text-emerald-800 space-y-2 text-sm">
+                    <li><strong>Space Efficiency:</strong> Saves 60% vertical space compared to current design - critical for keeping users engaged</li>
+                    <li><strong>Scannability:</strong> Users can see all 4 steps at once without scrolling</li>
+                    <li><strong>Modern Aesthetic:</strong> Icons + compact cards feel professional and current</li>
+                    <li><strong>Flexibility:</strong> Easy to adapt for different page contexts (Launch, Pivot, Accelerate)</li>
+                    <li><strong>Mobile-Friendly:</strong> Cards stack nicely on mobile, maintaining clarity</li>
+                </ul>
+                <p class="text-emerald-800 text-sm mt-4"><strong>When to use alternatives:</strong> Use Option 1 if you want more emphasis on sequential progress. Use Option 3 for storytelling-heavy pages.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
