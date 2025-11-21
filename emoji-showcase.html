@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sophisticated Symbol & Icon Showcase</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .symbol-card {
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+        .symbol-card:hover {
+            transform: translateY(-2px);
+            background-color: #f0fdf4; /* emerald-50 */
+            border-color: #10b981; /* emerald-500 */
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            primary: '#064e3b', // Emerald 900
+                            secondary: '#14b8a6', // Teal 500
+                            accent: '#a3e635', // Lime 400
+                        }
+                    }
+                }
+            }
+        }
+        
+        function copySymbol(symbol) {
+            navigator.clipboard.writeText(symbol);
+            alert('Copied: ' + symbol);
+        }
+    </script>
+</head>
+<body class="bg-slate-50 text-slate-800 p-10">
+
+    <div class="max-w-6xl mx-auto">
+        <div class="mb-12 text-center">
+            <h1 class="text-4xl font-bold text-brand-primary mb-4">Sophisticated Symbol Inventory</h1>
+            <p class="text-xl text-slate-600 max-w-2xl mx-auto">
+                A curated collection of Unicode symbols and professional icons to replace generic "cartoon" emojis.
+                Click any box to copy.
+            </p>
+        </div>
+
+        <!-- SECTION 1: Geometric & Abstract (The "High-End" Look) -->
+        <div class="mb-16">
+            <h2 class="text-2xl font-bold text-brand-secondary mb-6 flex items-center gap-3">
+                <i class="fa-solid fa-shapes"></i> Geometric & Abstract
+                <span class="text-sm font-normal text-slate-500 ml-2">(Clean, modern, tech-focused)</span>
+            </h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4">
+                <!-- Stars/Sparks -->
+                <div onclick="copySymbol('✦')" class="symbol-card bg-white p-4 rounded-xl border border-slate-200 text-center shadow-sm">
+                    <div class="text-4xl mb-2 text-brand-primary">✦</div>
+                    <div class="text-xs text-slate-400">Black Star</div>
+                </div>
+                <div onclick="copySymbol('✧')" class="symbol-card bg-white p-4 rounded-xl border border-slate-200 text-center shadow-sm">
+                    <div class="text-4xl mb-2 text-brand-primary">✧</div>
+                    <div class="text-xs text-slate-400">White Star</div>
+                </div>
+                <div onclick="copySymbol('✺')" class="symbol-card bg-white p-4 rounded-xl border border-slate-200 text-center shadow-sm">
+                    <div class="text-4xl mb-2 text-brand-primary">✺</div>
+                    <div class="text-xs text-slate-400">Burst</div>
+                </div>
+                <div onclick="copySymbol('⟡')" class="symbol-card bg-white p-4 rounded-xl border border-slate-200 text-center shadow-sm">
+                    <div class="text-4xl mb-2 text-brand-primary">⟡</div>
+                    <div class="text-xs text-slate-400">Diamond</div>
+                </div>
+                
+                <!-- Shapes -->
+                <div onclick="copySymbol('❖')" class="symbol-card bg-white p-4 rounded-xl border border-slate-200 text-center shadow-sm">
+                    <div class="text-4xl mb-2 text-brand-primary">❖</div>
+                    <div class="text-xs text-slate-400">Diamond Dot</div>
+                </div>
+                <div onclick="copySymbol('◈')" class="symbol-card bg-white p-4 rounded-xl border border-slate-200 text-center shadow-sm">
+                    <div class="text-4xl mb-2 text-brand-primary">◈</div>
+                    <div class="text-xs text-slate-400">White Diamond</div>
+                </div>
+                <div onclick="copySymbol('■')" class="symbol-card bg-white p-4 rounded-xl border border-slate-200 text-center shadow-sm">
+                    <div class="text-4xl mb-2 text-brand-primary">■</div>
+                    <div class="text-xs text-slate-400">Square</div>
+                </div>
+                <div onclick="copySymbol('●')" class="symbol-card bg-white p-4 rounded-xl border border-slate-200 text-center shadow-sm">
+                    <div class="text-4xl mb-2 text-brand-primary">●</div>
+                    <div class="text-xs text-slate-400">Circle</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 2: Arrows & Pointers (Action-Oriented) -->
+        <div class="mb-16">
+            <h2 class="text-2xl font-bold text-brand-secondary mb-6 flex items-center gap-3">
+                <i class="fa-solid fa-arrow-right"></i> Arrows & Direction
+                <span class="text-sm font-normal text-slate-500 ml-2">(For CTAs and flows)</span>
+            </h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4">
+                <div onclick="copySymbol('➔')" class="symbol-card bg-white p-4 rounded-xl border border-slate-200 text-center shadow-sm">
+                    <div class="text-4xl mb-2 text-brand-primary">➔</div>
+                    <div class="text-xs text-slate-400">Heavy Right</div>
+                </div>
+                <div onclick="copySymbol('➝')" class="symbol-card bg-white p-4 rounded-xl border border-slate-200 text-center shadow-sm">
+                    <div class="text-4xl mb-2 text-brand-primary">➝</div>
+                    <div class="text-xs text-slate-400">Thin Right</div>
+                </div>
+                <div onclick="copySymbol('↗')" class="symbol-card bg-white p-4 rounded-xl border border-slate-200 text-center shadow-sm">
+                    <div class="text-4xl mb-2 text-brand-primary">↗</div>
+                    <div class="text-xs text-slate-400">Up Right</div>
+                </div>
+                <div onclick="copySymbol('⚡︎')" class="symbol-card bg-white p-4 rounded-xl border border-slate-200 text-center shadow-sm">
+                    <div class="text-4xl mb-2 text-brand-primary">⚡︎</div>
+                    <div class="text-xs text-slate-400">Bolt</div>
+                </div>
+                <div onclick="copySymbol('➜')" class="symbol-card bg-white p-4 rounded-xl border border-slate-200 text-center shadow-sm">
+                    <div class="text-4xl mb-2 text-brand-primary">➜</div>
+                    <div class="text-xs text-slate-400">Bold Arrow</div>
+                </div>
+                <div onclick="copySymbol('➤')" class="symbol-card bg-white p-4 rounded-xl border border-slate-200 text-center shadow-sm">
+                    <div class="text-4xl mb-2 text-brand-primary">➤</div>
+                    <div class="text-xs text-slate-400">Pointer</div>
+                </div>
+                <div onclick="copySymbol('»')" class="symbol-card bg-white p-4 rounded-xl border border-slate-200 text-center shadow-sm">
+                    <div class="text-4xl mb-2 text-brand-primary">»</div>
+                    <div class="text-xs text-slate-400">Guillemet</div>
+                </div>
+                <div onclick="copySymbol('›')" class="symbol-card bg-white p-4 rounded-xl border border-slate-200 text-center shadow-sm">
+                    <div class="text-4xl mb-2 text-brand-primary">›</div>
+                    <div class="text-xs text-slate-400">Chevron</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 3: Professional UI Symbols -->
+        <div class="mb-16">
+            <h2 class="text-2xl font-bold text-brand-secondary mb-6 flex items-center gap-3">
+                <i class="fa-solid fa-check-double"></i> Functional UI
+                <span class="text-sm font-normal text-slate-500 ml-2">(Checklists, warnings, info)</span>
+            </h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4">
+                <div onclick="copySymbol('✓')" class="symbol-card bg-white p-4 rounded-xl border border-slate-200 text-center shadow-sm">
+                    <div class="text-4xl mb-2 text-brand-primary">✓</div>
+                    <div class="text-xs text-slate-400">Check</div>
+                </div>
+                <div onclick="copySymbol('✕')" class="symbol-card bg-white p-4 rounded-xl border border-slate-200 text-center shadow-sm">
+                    <div class="text-4xl mb-2 text-brand-primary">✕</div>
+                    <div class="text-xs text-slate-400">Cross</div>
+                </div>
+                <div onclick="copySymbol('⚠')" class="symbol-card bg-white p-4 rounded-xl border border-slate-200 text-center shadow-sm">
+                    <div class="text-4xl mb-2 text-brand-primary">⚠</div>
+                    <div class="text-xs text-slate-400">Warning</div>
+                </div>
+                <div onclick="copySymbol('✎')" class="symbol-card bg-white p-4 rounded-xl border border-slate-200 text-center shadow-sm">
+                    <div class="text-4xl mb-2 text-brand-primary">✎</div>
+                    <div class="text-xs text-slate-400">Pencil</div>
+                </div>
+                <div onclick="copySymbol('⚙')" class="symbol-card bg-white p-4 rounded-xl border border-slate-200 text-center shadow-sm">
+                    <div class="text-4xl mb-2 text-brand-primary">⚙</div>
+                    <div class="text-xs text-slate-400">Gear</div>
+                </div>
+                <div onclick="copySymbol('✉')" class="symbol-card bg-white p-4 rounded-xl border border-slate-200 text-center shadow-sm">
+                    <div class="text-4xl mb-2 text-brand-primary">✉</div>
+                    <div class="text-xs text-slate-400">Envelope</div>
+                </div>
+                <div onclick="copySymbol('★')" class="symbol-card bg-white p-4 rounded-xl border border-slate-200 text-center shadow-sm">
+                    <div class="text-4xl mb-2 text-brand-primary">★</div>
+                    <div class="text-xs text-slate-400">Star</div>
+                </div>
+                <div onclick="copySymbol('♥')" class="symbol-card bg-white p-4 rounded-xl border border-slate-200 text-center shadow-sm">
+                    <div class="text-4xl mb-2 text-brand-primary">♥</div>
+                    <div class="text-xs text-slate-400">Heart</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 4: The "Pro" Alternative (FontAwesome) -->
+        <div class="mb-16">
+            <h2 class="text-2xl font-bold text-brand-secondary mb-6 flex items-center gap-3">
+                <i class="fa-solid fa-rocket"></i> FontAwesome Icons
+                <span class="text-sm font-normal text-slate-500 ml-2">(The professional standard - already installed)</span>
+            </h2>
+            <p class="mb-6 text-slate-600">
+                Instead of emojis, use these classes. They inherit your text color (Emerald/Teal) and scale perfectly.
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Comparison 1 -->
+                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm flex items-center justify-between">
+                    <div class="text-center w-1/2 border-r border-slate-100">
+                        <div class="text-5xl mb-2">🚀</div>
+                        <div class="text-sm text-red-500 font-bold">Generic Emoji</div>
+                        <div class="text-xs text-slate-400">Hard to style, looks "cartoonish"</div>
+                    </div>
+                    <div class="text-center w-1/2">
+                        <div class="text-5xl mb-2 text-brand-primary"><i class="fa-solid fa-rocket"></i></div>
+                        <div class="text-sm text-emerald-600 font-bold">FontAwesome</div>
+                        <div class="text-xs text-slate-400"><code>&lt;i class="fa-solid fa-rocket"&gt;&lt;/i&gt;</code></div>
+                    </div>
+                </div>
+
+                <!-- Comparison 2 -->
+                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm flex items-center justify-between">
+                    <div class="text-center w-1/2 border-r border-slate-100">
+                        <div class="text-5xl mb-2">🎯</div>
+                        <div class="text-sm text-red-500 font-bold">Generic Emoji</div>
+                    </div>
+                    <div class="text-center w-1/2">
+                        <div class="text-5xl mb-2 text-brand-secondary"><i class="fa-solid fa-bullseye"></i></div>
+                        <div class="text-sm text-emerald-600 font-bold">FontAwesome</div>
+                        <div class="text-xs text-slate-400"><code>&lt;i class="fa-solid fa-bullseye"&gt;&lt;/i&gt;</code></div>
+                    </div>
+                </div>
+
+                <!-- Comparison 3 -->
+                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm flex items-center justify-between">
+                    <div class="text-center w-1/2 border-r border-slate-100">
+                        <div class="text-5xl mb-2">💡</div>
+                        <div class="text-sm text-red-500 font-bold">Generic Emoji</div>
+                    </div>
+                    <div class="text-center w-1/2">
+                        <div class="text-5xl mb-2 text-brand-accent"><i class="fa-solid fa-lightbulb"></i></div>
+                        <div class="text-sm text-emerald-600 font-bold">FontAwesome</div>
+                        <div class="text-xs text-slate-400"><code>&lt;i class="fa-solid fa-lightbulb"&gt;&lt;/i&gt;</code></div>
+                    </div>
+                </div>
+
+                <!-- Comparison 4 -->
+                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm flex items-center justify-between">
+                    <div class="text-center w-1/2 border-r border-slate-100">
+                        <div class="text-5xl mb-2">🤝</div>
+                        <div class="text-sm text-red-500 font-bold">Generic Emoji</div>
+                    </div>
+                    <div class="text-center w-1/2">
+                        <div class="text-5xl mb-2 text-brand-primary"><i class="fa-solid fa-handshake"></i></div>
+                        <div class="text-sm text-emerald-600 font-bold">FontAwesome</div>
+                        <div class="text-xs text-slate-400"><code>&lt;i class="fa-solid fa-handshake"&gt;&lt;/i&gt;</code></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 5: Math & Technical (For Engineering Vibe) -->
+        <div class="mb-16">
+            <h2 class="text-2xl font-bold text-brand-secondary mb-6 flex items-center gap-3">
+                <i class="fa-solid fa-square-root-variable"></i> Technical & Math
+                <span class="text-sm font-normal text-slate-500 ml-2">(Great for "Engineering" branding)</span>
+            </h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4">
+                <div onclick="copySymbol('∑')" class="symbol-card bg-white p-4 rounded-xl border border-slate-200 text-center shadow-sm">
+                    <div class="text-4xl mb-2 text-brand-primary">∑</div>
+                    <div class="text-xs text-slate-400">Sum</div>
+                </div>
+                <div onclick="copySymbol('∆')" class="symbol-card bg-white p-4 rounded-xl border border-slate-200 text-center shadow-sm">
+                    <div class="text-4xl mb-2 text-brand-primary">∆</div>
+                    <div class="text-xs text-slate-400">Delta</div>
+                </div>
+                <div onclick="copySymbol('∫')" class="symbol-card bg-white p-4 rounded-xl border border-slate-200 text-center shadow-sm">
+                    <div class="text-4xl mb-2 text-brand-primary">∫</div>
+                    <div class="text-xs text-slate-400">Integral</div>
+                </div>
+                <div onclick="copySymbol('≠')" class="symbol-card bg-white p-4 rounded-xl border border-slate-200 text-center shadow-sm">
+                    <div class="text-4xl mb-2 text-brand-primary">≠</div>
+                    <div class="text-xs text-slate-400">Not Equal</div>
+                </div>
+                <div onclick="copySymbol('∞')" class="symbol-card bg-white p-4 rounded-xl border border-slate-200 text-center shadow-sm">
+                    <div class="text-4xl mb-2 text-brand-primary">∞</div>
+                    <div class="text-xs text-slate-400">Infinity</div>
+                </div>
+                <div onclick="copySymbol('≈')" class="symbol-card bg-white p-4 rounded-xl border border-slate-200 text-center shadow-sm">
+                    <div class="text-4xl mb-2 text-brand-primary">≈</div>
+                    <div class="text-xs text-slate-400">Approx</div>
+                </div>
+                <div onclick="copySymbol('√')" class="symbol-card bg-white p-4 rounded-xl border border-slate-200 text-center shadow-sm">
+                    <div class="text-4xl mb-2 text-brand-primary">√</div>
+                    <div class="text-xs text-slate-400">Root</div>
+                </div>
+                <div onclick="copySymbol('∅')" class="symbol-card bg-white p-4 rounded-xl border border-slate-200 text-center shadow-sm">
+                    <div class="text-4xl mb-2 text-brand-primary">∅</div>
+                    <div class="text-xs text-slate-400">Empty Set</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

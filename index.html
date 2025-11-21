@@ -15,7 +15,10 @@
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- FontAwesome -->
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- FontAwesome (Legacy support) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
 
     <!-- Google Fonts -->
@@ -87,9 +90,10 @@
     
     <!-- Company Launch Special Banner -->
     <div class="fixed top-20 left-0 right-0 z-40 bg-gradient-to-r from-red-600 via-red-500 to-orange-500 text-white py-3 shadow-lg border-b-2 border-red-700">
-        <div class="max-w-7xl mx-auto px-4 text-center">
-            <p class="text-sm md:text-base font-bold">
-                🎉 <span class="text-yellow-200">Company Launch Special:</span> 50% OFF All Packages! 
+        <div class="max-w-7xl mx-auto px-4 text-center flex items-center justify-center gap-2">
+            <i data-lucide="party-popper" class="w-5 h-5 text-yellow-200"></i>
+            <p class="text-sm md:text-base font-bold flex items-center gap-1">
+                <span class="text-yellow-200">Company Launch Special:</span> 50% OFF All Packages! 
                 <span class="hidden sm:inline text-red-100">Limited time offer for new clients.</span>
             </p>
         </div>
@@ -157,33 +161,29 @@
                     <div>
                         <h2 class="text-3xl font-bold text-slate-900 mb-6">You're a talented engineer, but...</h2>
                         <ul class="space-y-5">
-                            <li class="flex items-start">
-                                <div
-                                    class="flex-shrink-0 w-6 h-6 rounded-full bg-red-50 flex items-center justify-center mt-1 mr-4">
-                                    <i class="fa-solid fa-graduation-cap text-red-500 text-xs"></i>
+                            <li class="flex items-start gap-4">
+                                <div class="flex-shrink-0 w-10 h-10 rounded-full bg-red-50 flex items-center justify-center border border-red-100">
+                                    <i data-lucide="file-x" class="text-red-500 w-5 h-5"></i>
                                 </div>
-                                <p class="text-slate-600"><strong>The Resume Black Hole:</strong> You've applied to 100+ jobs and haven't heard a word back.</p>
+                                <p class="text-slate-600 pt-2"><strong>The Resume Black Hole:</strong> You've applied to 100+ jobs and haven't heard a word back.</p>
                             </li>
-                            <li class="flex items-start">
-                                <div
-                                    class="flex-shrink-0 w-6 h-6 rounded-full bg-red-50 flex items-center justify-center mt-1 mr-4">
-                                    <i class="fa-solid fa-arrows-rotate text-red-500 text-xs"></i>
+                            <li class="flex items-start gap-4">
+                                <div class="flex-shrink-0 w-10 h-10 rounded-full bg-red-50 flex items-center justify-center border border-red-100">
+                                    <i data-lucide="refresh-cw" class="text-red-500 w-5 h-5"></i>
                                 </div>
-                                <p class="text-slate-600"><strong>The Domain Trap:</strong> You want to switch disciplines (e.g., Mech to Software) but get pigeonholed.</p>
+                                <p class="text-slate-600 pt-2"><strong>The Domain Trap:</strong> You want to switch disciplines (e.g., Mech to Software) but get pigeonholed.</p>
                             </li>
-                            <li class="flex items-start">
-                                <div
-                                    class="flex-shrink-0 w-6 h-6 rounded-full bg-red-50 flex items-center justify-center mt-1 mr-4">
-                                    <i class="fa-solid fa-chart-line text-red-500 text-xs"></i>
+                            <li class="flex items-start gap-4">
+                                <div class="flex-shrink-0 w-10 h-10 rounded-full bg-red-50 flex items-center justify-center border border-red-100">
+                                    <i data-lucide="ghost" class="text-red-500 w-5 h-5"></i>
                                 </div>
-                                <p class="text-slate-600"><strong>The Invisible Performer:</strong> You're doing the work of the next level, but not getting the title.</p>
+                                <p class="text-slate-600 pt-2"><strong>The Invisible Performer:</strong> You're doing the work of the next level, but not getting the title.</p>
                             </li>
                         </ul>
                     </div>
                     <div class="text-center">
-                        <div
-                            class="w-20 h-20 bg-emerald-50 rounded-2xl flex items-center justify-center mx-auto mb-6 rotate-3 border border-emerald-100">
-                            <i class="fa-solid fa-ban text-emerald-400 text-3xl"></i>
+                        <div class="w-20 h-20 bg-emerald-50 rounded-2xl flex items-center justify-center mx-auto mb-6 rotate-3 border border-emerald-100 shadow-sm">
+                            <i data-lucide="ban" class="text-emerald-500 w-10 h-10"></i>
                         </div>
                         <h3 class="text-xl font-bold text-slate-900 mb-2">Hope is not a strategy.</h3>
                         <p class="text-slate-500 text-sm leading-relaxed">
@@ -210,8 +210,8 @@
                 <!-- Track 1: Launch -->
                 <div class="bg-gradient-to-br from-emerald-50 to-teal-50 p-8 rounded-3xl border-2 border-emerald-200 hover:shadow-card transition duration-300">
                     <div class="flex items-center gap-3 mb-4">
-                        <div class="w-12 h-12 bg-brand-primary text-white rounded-xl flex items-center justify-center text-xl">
-                            <i class="fa-solid fa-rocket"></i>
+                        <div class="w-12 h-12 bg-brand-primary text-white rounded-xl flex items-center justify-center shadow-sm">
+                            <i data-lucide="rocket" class="w-6 h-6"></i>
                         </div>
                         <div>
                             <h3 class="text-2xl font-bold text-slate-900">Launch</h3>
@@ -229,19 +229,19 @@
                         <div class="text-sm text-brand-accent font-semibold">2-4 Sessions • 50% OFF</div>
                     </div>
 
-                    <a href="launch.html#pricing" class="block w-full py-3 rounded-xl border-2 border-brand-primary text-brand-primary font-bold text-center hover:bg-brand-primary hover:text-white transition">
-                        View Packages →
+                    <a href="launch.html#pricing" class="flex items-center justify-center gap-2 w-full py-3 rounded-xl border-2 border-brand-primary text-brand-primary font-bold text-center hover:bg-brand-primary hover:text-white transition group">
+                        View Packages <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1"></i>
                     </a>
                 </div>
 
                 <!-- Track 2: Pivot -->
                 <div class="relative bg-gradient-to-br from-amber-50 to-orange-50 p-8 rounded-3xl border-2 border-amber-200 hover:shadow-lg transition duration-300 transform md:-translate-y-4">
-                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-pivot-secondary text-white px-4 py-1.5 rounded-full text-xs font-bold shadow-lg whitespace-nowrap">
-                        ⭐ MOST POPULAR
+                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-pivot-secondary text-white px-4 py-1.5 rounded-full text-xs font-bold shadow-lg whitespace-nowrap flex items-center gap-1">
+                        <i data-lucide="star" class="w-3 h-3 fill-current"></i> MOST POPULAR
                     </div>
                     <div class="flex items-center gap-3 mb-4 mt-2">
-                        <div class="w-12 h-12 bg-pivot-primary text-white rounded-xl flex items-center justify-center text-xl">
-                            <i class="fa-solid fa-arrows-rotate"></i>
+                        <div class="w-12 h-12 bg-pivot-primary text-white rounded-xl flex items-center justify-center shadow-sm">
+                            <i data-lucide="refresh-cw" class="w-6 h-6"></i>
                         </div>
                         <div>
                             <h3 class="text-2xl font-bold text-slate-900">Pivot</h3>
@@ -259,16 +259,16 @@
                         <div class="text-sm text-brand-accent font-semibold">2-4 Sessions • 50% OFF</div>
                     </div>
 
-                    <a href="pivot.html#packages" class="block w-full py-3 rounded-xl bg-pivot-primary text-white font-bold text-center hover:bg-pivot-secondary transition shadow-lg">
-                        View Packages →
+                    <a href="pivot.html#packages" class="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-pivot-primary text-white font-bold text-center hover:bg-pivot-secondary transition shadow-lg group">
+                        View Packages <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1"></i>
                     </a>
                 </div>
 
                 <!-- Track 3: Accelerate -->
                 <div class="bg-gradient-to-br from-indigo-50 to-purple-50 p-8 rounded-3xl border-2 border-indigo-200 hover:shadow-card transition duration-300">
                     <div class="flex items-center gap-3 mb-4">
-                        <div class="w-12 h-12 bg-accelerate-primary text-white rounded-xl flex items-center justify-center text-xl">
-                            <i class="fa-solid fa-chart-line"></i>
+                        <div class="w-12 h-12 bg-accelerate-primary text-white rounded-xl flex items-center justify-center shadow-sm">
+                            <i data-lucide="trending-up" class="w-6 h-6"></i>
                         </div>
                         <div>
                             <h3 class="text-2xl font-bold text-slate-900">Accelerate</h3>
@@ -286,8 +286,8 @@
                         <div class="text-sm text-brand-accent font-semibold">2-4 Sessions • 50% OFF</div>
                     </div>
 
-                    <a href="accelerate.html#packages" class="block w-full py-3 rounded-xl border-2 border-accelerate-primary text-accelerate-primary font-bold text-center hover:bg-accelerate-primary hover:text-white transition">
-                        View Packages →
+                    <a href="accelerate.html#packages" class="flex items-center justify-center gap-2 w-full py-3 rounded-xl border-2 border-accelerate-primary text-accelerate-primary font-bold text-center hover:bg-accelerate-primary hover:text-white transition group">
+                        View Packages <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1"></i>
                     </a>
                 </div>
             </div>
@@ -307,44 +307,44 @@
             <div class="grid md:grid-cols-3 gap-8">
                 <!-- Card 1 -->
                 <div class="bg-white p-8 rounded-3xl shadow-sm border border-emerald-100">
-                    <div class="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center text-brand-primary text-xl mb-6">
-                        <i class="fa-solid fa-check"></i>
+                    <div class="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center text-brand-primary shadow-sm mb-6">
+                        <i data-lucide="check-circle" class="w-6 h-6"></i>
                     </div>
                     <h3 class="text-xl font-bold text-slate-900 mb-4">I've Actually Done It (Multiple Times)</h3>
                     <ul class="space-y-3 text-sm text-slate-600">
-                        <li class="flex items-start gap-2"><span class="text-brand-secondary">→</span> 4 promotions in 7 years isn't luck</li>
-                        <li class="flex items-start gap-2"><span class="text-brand-secondary">→</span> I've replicated these frameworks across different roles</li>
-                        <li class="flex items-start gap-2"><span class="text-brand-secondary">→</span> Mechanical → Software → Leadership: I've pivoted successfully 4 times</li>
-                        <li class="flex items-start gap-2"><span class="text-brand-secondary">→</span> At a 180-year-old manufacturing powerhouse that invests $2B annually in R&D—more than most tech startups' entire revenue</li>
-                        <li class="flex items-start gap-2"><span class="text-brand-secondary">→</span> Real experience, not theory</li>
+                        <li class="flex items-start gap-2"><i data-lucide="chevron-right" class="w-4 h-4 text-brand-secondary mt-0.5 shrink-0"></i> 4 promotions in 7 years isn't luck</li>
+                        <li class="flex items-start gap-2"><i data-lucide="chevron-right" class="w-4 h-4 text-brand-secondary mt-0.5 shrink-0"></i> I've replicated these frameworks across different roles</li>
+                        <li class="flex items-start gap-2"><i data-lucide="chevron-right" class="w-4 h-4 text-brand-secondary mt-0.5 shrink-0"></i> Mechanical → Software → Leadership: I've pivoted successfully 4 times</li>
+                        <li class="flex items-start gap-2"><i data-lucide="chevron-right" class="w-4 h-4 text-brand-secondary mt-0.5 shrink-0"></i> At a 180-year-old manufacturing powerhouse that invests $2B annually in R&D—more than most tech startups' entire revenue</li>
+                        <li class="flex items-start gap-2"><i data-lucide="chevron-right" class="w-4 h-4 text-brand-secondary mt-0.5 shrink-0"></i> Real experience, not theory</li>
                     </ul>
                 </div>
 
                 <!-- Card 2 -->
                 <div class="bg-white p-8 rounded-3xl shadow-sm border border-emerald-100">
-                    <div class="w-12 h-12 bg-amber-50 rounded-xl flex items-center justify-center text-amber-600 text-xl mb-6">
-                        <i class="fa-regular fa-clipboard"></i>
+                    <div class="w-12 h-12 bg-amber-50 rounded-xl flex items-center justify-center text-amber-600 shadow-sm mb-6">
+                        <i data-lucide="clipboard-list" class="w-6 h-6"></i>
                     </div>
                     <h3 class="text-xl font-bold text-slate-900 mb-4">Specific, Not Generic</h3>
                     <ul class="space-y-3 text-sm text-slate-600">
-                        <li class="flex items-start gap-2"><span class="text-brand-secondary">→</span> Not "work hard and be visible"—but exactly HOW to be visible</li>
-                        <li class="flex items-start gap-2"><span class="text-brand-secondary">→</span> Not "network more"—but the 3 types of relationships that matter for promotion</li>
-                        <li class="flex items-start gap-2"><span class="text-brand-secondary">→</span> Not "improve your resume"—but the 5 ATS keywords hiring managers actually search for</li>
-                        <li class="flex items-start gap-2"><span class="text-brand-secondary">→</span> Step-by-step frameworks you can use immediately</li>
+                        <li class="flex items-start gap-2"><i data-lucide="chevron-right" class="w-4 h-4 text-brand-secondary mt-0.5 shrink-0"></i> Not "work hard and be visible"—but exactly HOW to be visible</li>
+                        <li class="flex items-start gap-2"><i data-lucide="chevron-right" class="w-4 h-4 text-brand-secondary mt-0.5 shrink-0"></i> Not "network more"—but the 3 types of relationships that matter for promotion</li>
+                        <li class="flex items-start gap-2"><i data-lucide="chevron-right" class="w-4 h-4 text-brand-secondary mt-0.5 shrink-0"></i> Not "improve your resume"—but the 5 ATS keywords hiring managers actually search for</li>
+                        <li class="flex items-start gap-2"><i data-lucide="chevron-right" class="w-4 h-4 text-brand-secondary mt-0.5 shrink-0"></i> Step-by-step frameworks you can use immediately</li>
                     </ul>
                 </div>
 
                 <!-- Card 3 -->
                 <div class="bg-white p-8 rounded-3xl shadow-sm border border-emerald-100">
-                    <div class="w-12 h-12 bg-indigo-50 rounded-xl flex items-center justify-center text-indigo-600 text-xl mb-6">
-                        <i class="fa-solid fa-handshake"></i>
+                    <div class="w-12 h-12 bg-indigo-50 rounded-xl flex items-center justify-center text-indigo-600 shadow-sm mb-6">
+                        <i data-lucide="handshake" class="w-6 h-6"></i>
                     </div>
                     <h3 class="text-xl font-bold text-slate-900 mb-4">Hands-On, Not Hands-Off</h3>
                     <ul class="space-y-3 text-sm text-slate-600">
-                        <li class="flex items-start gap-2"><span class="text-brand-secondary">→</span> I don't sell you a course and disappear</li>
-                        <li class="flex items-start gap-2"><span class="text-brand-secondary">→</span> 1-on-1 sessions where we build YOUR strategy together</li>
-                        <li class="flex items-start gap-2"><span class="text-brand-secondary">→</span> Between sessions: answer questions, review drafts, provide feedback</li>
-                        <li class="flex items-start gap-2"><span class="text-brand-secondary">→</span> Partnership, not transaction</li>
+                        <li class="flex items-start gap-2"><i data-lucide="chevron-right" class="w-4 h-4 text-brand-secondary mt-0.5 shrink-0"></i> I don't sell you a course and disappear</li>
+                        <li class="flex items-start gap-2"><i data-lucide="chevron-right" class="w-4 h-4 text-brand-secondary mt-0.5 shrink-0"></i> 1-on-1 sessions where we build YOUR strategy together</li>
+                        <li class="flex items-start gap-2"><i data-lucide="chevron-right" class="w-4 h-4 text-brand-secondary mt-0.5 shrink-0"></i> Between sessions: answer questions, review drafts, provide feedback</li>
+                        <li class="flex items-start gap-2"><i data-lucide="chevron-right" class="w-4 h-4 text-brand-secondary mt-0.5 shrink-0"></i> Partnership, not transaction</li>
                     </ul>
                 </div>
             </div>
@@ -423,8 +423,8 @@
             <h2 class="text-3xl font-bold text-slate-900 mb-12">This Actually Works—Because It's Real</h2>
             
             <div class="bg-white p-10 rounded-3xl shadow-card border border-emerald-100 relative">
-                <div class="text-4xl text-brand-secondary absolute top-8 left-8 opacity-20">
-                    <i class="fa-solid fa-quote-left"></i>
+                <div class="text-brand-secondary absolute top-8 left-8 opacity-20">
+                    <i data-lucide="quote" class="w-10 h-10"></i>
                 </div>
                 <p class="text-xl text-slate-600 italic mb-8 relative z-10">
                     "I followed the exact framework for getting noticed by leadership. Within 8 weeks, I had my first 1-on-1 with the VP. 4 months later, I got promoted."
@@ -479,8 +479,8 @@
                 <div>
                     <h4 class="font-bold text-lg mb-6 text-white uppercase tracking-wider text-sm">Connect</h4>
                     <ul class="space-y-4 text-sm text-emerald-100">
-                        <li><a href="mailto:contact@launchtolead.io" class="hover:text-brand-accent transition inline-flex items-center gap-2"><i class="fa-solid fa-envelope"></i> contact@launchtolead.io</a></li>
-                        <li><a href="https://www.linkedin.com/in/launchtolead" target="_blank" rel="noopener noreferrer" class="hover:text-brand-accent transition inline-flex items-center gap-2"><i class="fa-brands fa-linkedin text-blue-400"></i> LinkedIn</a></li>
+                        <li><a href="mailto:contact@launchtolead.io" class="hover:text-brand-accent transition inline-flex items-center gap-2"><i data-lucide="mail" class="w-4 h-4"></i> contact@launchtolead.io</a></li>
+                        <li><a href="https://www.linkedin.com/in/launchtolead" target="_blank" rel="noopener noreferrer" class="hover:text-brand-accent transition inline-flex items-center gap-2"><i data-lucide="linkedin" class="w-4 h-4"></i> LinkedIn</a></li>
                     </ul>
                 </div>
             </div>
@@ -492,5 +492,8 @@
     </footer>
 
 
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
 </html>

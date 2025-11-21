@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucide Icons Showcase</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons Script -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .icon-card {
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+        .icon-card:hover {
+            transform: translateY(-2px);
+            background-color: #f0fdf4; /* emerald-50 */
+            border-color: #10b981; /* emerald-500 */
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            primary: '#064e3b', // Emerald 900
+                            secondary: '#14b8a6', // Teal 500
+                            accent: '#a3e635', // Lime 400
+                        }
+                    }
+                }
+            }
+        }
+        
+        function copyIcon(iconName) {
+            const code = `<i data-lucide="${iconName}"></i>`;
+            navigator.clipboard.writeText(code);
+            alert('Copied: ' + code);
+        }
+    </script>
+</head>
+<body class="bg-slate-50 text-slate-800 p-10">
+
+    <div class="max-w-6xl mx-auto">
+        <div class="mb-12 text-center">
+            <div class="flex justify-center mb-4">
+                <i data-lucide="feather" class="w-16 h-16 text-brand-secondary"></i>
+            </div>
+            <h1 class="text-4xl font-bold text-brand-primary mb-4">Lucide Icons Collection</h1>
+            <p class="text-xl text-slate-600 max-w-2xl mx-auto">
+                Beautiful, consistent, and lightweight icons. Perfect for a modern engineering brand.
+                <br><span class="text-sm text-slate-400">Click any box to copy the HTML code.</span>
+            </p>
+        </div>
+
+        <!-- SECTION 1: Core UI -->
+        <div class="mb-16">
+            <h2 class="text-2xl font-bold text-brand-secondary mb-6 flex items-center gap-3">
+                <i data-lucide="layout-grid"></i> Core Interface
+            </h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4">
+                <div onclick="copyIcon('arrow-right')" class="icon-card bg-white p-4 rounded-xl border border-slate-200 text-center shadow-sm flex flex-col items-center gap-3">
+                    <i data-lucide="arrow-right" class="text-brand-primary w-8 h-8"></i>
+                    <div class="text-xs text-slate-400">arrow-right</div>
+                </div>
+                <div onclick="copyIcon('check')" class="icon-card bg-white p-4 rounded-xl border border-slate-200 text-center shadow-sm flex flex-col items-center gap-3">
+                    <i data-lucide="check" class="text-brand-primary w-8 h-8"></i>
+                    <div class="text-xs text-slate-400">check</div>
+                </div>
+                <div onclick="copyIcon('chevron-right')" class="icon-card bg-white p-4 rounded-xl border border-slate-200 text-center shadow-sm flex flex-col items-center gap-3">
+                    <i data-lucide="chevron-right" class="text-brand-primary w-8 h-8"></i>
+                    <div class="text-xs text-slate-400">chevron-right</div>
+                </div>
+                <div onclick="copyIcon('menu')" class="icon-card bg-white p-4 rounded-xl border border-slate-200 text-center shadow-sm flex flex-col items-center gap-3">
+                    <i data-lucide="menu" class="text-brand-primary w-8 h-8"></i>
+                    <div class="text-xs text-slate-400">menu</div>
+                </div>
+                <div onclick="copyIcon('search')" class="icon-card bg-white p-4 rounded-xl border border-slate-200 text-center shadow-sm flex flex-col items-center gap-3">
+                    <i data-lucide="search" class="text-brand-primary w-8 h-8"></i>
+                    <div class="text-xs text-slate-400">search</div>
+                </div>
+                <div onclick="copyIcon('user')" class="icon-card bg-white p-4 rounded-xl border border-slate-200 text-center shadow-sm flex flex-col items-center gap-3">
+                    <i data-lucide="user" class="text-brand-primary w-8 h-8"></i>
+                    <div class="text-xs text-slate-400">user</div>
+                </div>
+                <div onclick="copyIcon('mail')" class="icon-card bg-white p-4 rounded-xl border border-slate-200 text-center shadow-sm flex flex-col items-center gap-3">
+                    <i data-lucide="mail" class="text-brand-primary w-8 h-8"></i>
+                    <div class="text-xs text-slate-400">mail</div>
+                </div>
+                <div onclick="copyIcon('calendar')" class="icon-card bg-white p-4 rounded-xl border border-slate-200 text-center shadow-sm flex flex-col items-center gap-3">
+                    <i data-lucide="calendar" class="text-brand-primary w-8 h-8"></i>
+                    <div class="text-xs text-slate-400">calendar</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 2: Engineering & Tech -->
+        <div class="mb-16">
+            <h2 class="text-2xl font-bold text-brand-secondary mb-6 flex items-center gap-3">
+                <i data-lucide="cpu"></i> Engineering & Tech
+            </h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4">
+                <div onclick="copyIcon('code-2')" class="icon-card bg-white p-4 rounded-xl border border-slate-200 text-center shadow-sm flex flex-col items-center gap-3">
+                    <i data-lucide="code-2" class="text-brand-primary w-8 h-8"></i>
+                    <div class="text-xs text-slate-400">code-2</div>
+                </div>
+                <div onclick="copyIcon('terminal')" class="icon-card bg-white p-4 rounded-xl border border-slate-200 text-center shadow-sm flex flex-col items-center gap-3">
+                    <i data-lucide="terminal" class="text-brand-primary w-8 h-8"></i>
+                    <div class="text-xs text-slate-400">terminal</div>
+                </div>
+                <div onclick="copyIcon('cpu')" class="icon-card bg-white p-4 rounded-xl border border-slate-200 text-center shadow-sm flex flex-col items-center gap-3">
+                    <i data-lucide="cpu" class="text-brand-primary w-8 h-8"></i>
+                    <div class="text-xs text-slate-400">cpu</div>
+                </div>
+                <div onclick="copyIcon('database')" class="icon-card bg-white p-4 rounded-xl border border-slate-200 text-center shadow-sm flex flex-col items-center gap-3">
+                    <i data-lucide="database" class="text-brand-primary w-8 h-8"></i>
+                    <div class="text-xs text-slate-400">database</div>
+                </div>
+                <div onclick="copyIcon('git-branch')" class="icon-card bg-white p-4 rounded-xl border border-slate-200 text-center shadow-sm flex flex-col items-center gap-3">
+                    <i data-lucide="git-branch" class="text-brand-primary w-8 h-8"></i>
+                    <div class="text-xs text-slate-400">git-branch</div>
+                </div>
+                <div onclick="copyIcon('server')" class="icon-card bg-white p-4 rounded-xl border border-slate-200 text-center shadow-sm flex flex-col items-center gap-3">
+                    <i data-lucide="server" class="text-brand-primary w-8 h-8"></i>
+                    <div class="text-xs text-slate-400">server</div>
+                </div>
+                <div onclick="copyIcon('workflow')" class="icon-card bg-white p-4 rounded-xl border border-slate-200 text-center shadow-sm flex flex-col items-center gap-3">
+                    <i data-lucide="workflow" class="text-brand-primary w-8 h-8"></i>
+                    <div class="text-xs text-slate-400">workflow</div>
+                </div>
+                <div onclick="copyIcon('zap')" class="icon-card bg-white p-4 rounded-xl border border-slate-200 text-center shadow-sm flex flex-col items-center gap-3">
+                    <i data-lucide="zap" class="text-brand-primary w-8 h-8"></i>
+                    <div class="text-xs text-slate-400">zap</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 3: Business & Growth -->
+        <div class="mb-16">
+            <h2 class="text-2xl font-bold text-brand-secondary mb-6 flex items-center gap-3">
+                <i data-lucide="trending-up"></i> Business & Growth
+            </h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4">
+                <div onclick="copyIcon('trending-up')" class="icon-card bg-white p-4 rounded-xl border border-slate-200 text-center shadow-sm flex flex-col items-center gap-3">
+                    <i data-lucide="trending-up" class="text-brand-primary w-8 h-8"></i>
+                    <div class="text-xs text-slate-400">trending-up</div>
+                </div>
+                <div onclick="copyIcon('target')" class="icon-card bg-white p-4 rounded-xl border border-slate-200 text-center shadow-sm flex flex-col items-center gap-3">
+                    <i data-lucide="target" class="text-brand-primary w-8 h-8"></i>
+                    <div class="text-xs text-slate-400">target</div>
+                </div>
+                <div onclick="copyIcon('award')" class="icon-card bg-white p-4 rounded-xl border border-slate-200 text-center shadow-sm flex flex-col items-center gap-3">
+                    <i data-lucide="award" class="text-brand-primary w-8 h-8"></i>
+                    <div class="text-xs text-slate-400">award</div>
+                </div>
+                <div onclick="copyIcon('briefcase')" class="icon-card bg-white p-4 rounded-xl border border-slate-200 text-center shadow-sm flex flex-col items-center gap-3">
+                    <i data-lucide="briefcase" class="text-brand-primary w-8 h-8"></i>
+                    <div class="text-xs text-slate-400">briefcase</div>
+                </div>
+                <div onclick="copyIcon('users')" class="icon-card bg-white p-4 rounded-xl border border-slate-200 text-center shadow-sm flex flex-col items-center gap-3">
+                    <i data-lucide="users" class="text-brand-primary w-8 h-8"></i>
+                    <div class="text-xs text-slate-400">users</div>
+                </div>
+                <div onclick="copyIcon('presentation')" class="icon-card bg-white p-4 rounded-xl border border-slate-200 text-center shadow-sm flex flex-col items-center gap-3">
+                    <i data-lucide="presentation" class="text-brand-primary w-8 h-8"></i>
+                    <div class="text-xs text-slate-400">presentation</div>
+                </div>
+                <div onclick="copyIcon('lightbulb')" class="icon-card bg-white p-4 rounded-xl border border-slate-200 text-center shadow-sm flex flex-col items-center gap-3">
+                    <i data-lucide="lightbulb" class="text-brand-primary w-8 h-8"></i>
+                    <div class="text-xs text-slate-400">lightbulb</div>
+                </div>
+                <div onclick="copyIcon('rocket')" class="icon-card bg-white p-4 rounded-xl border border-slate-200 text-center shadow-sm flex flex-col items-center gap-3">
+                    <i data-lucide="rocket" class="text-brand-primary w-8 h-8"></i>
+                    <div class="text-xs text-slate-400">rocket</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Initialize Lucide Icons -->
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

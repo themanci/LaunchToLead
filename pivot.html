@@ -23,6 +23,9 @@
 
     <!-- Alpine.js -->
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body class="bg-brand-light text-slate-600 font-sans antialiased">
 
@@ -52,12 +55,8 @@
                 <div class="md:hidden flex items-center">
                     <button @click="open = !open" class="inline-flex items-center justify-center p-2 rounded-md text-slate-400 hover:text-slate-500 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-brand-primary" aria-expanded="false">
                         <span class="sr-only">Open main menu</span>
-                        <svg x-show="!open" class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>
-                        <svg x-show="open" class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                        </svg>
+                        <i x-show="!open" data-lucide="menu" class="block h-6 w-6"></i>
+                        <i x-show="open" data-lucide="x" class="block h-6 w-6"></i>
                     </button>
                 </div>
             </div>
@@ -81,9 +80,9 @@
     <div class="bg-gradient-to-r from-red-500 via-red-600 to-red-500 text-white py-6 sticky top-20 z-40">
         <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-center gap-3 md:gap-6 text-center">
             <div class="flex items-center gap-2">
-                <span class="text-2xl animate-bounce">🎉</span>
+                <i data-lucide="party-popper" class="w-6 h-6 animate-bounce"></i>
                 <span class="font-bold text-lg md:text-xl">Company Launch Special</span>
-                <span class="text-2xl animate-bounce">🎉</span>
+                <i data-lucide="party-popper" class="w-6 h-6 animate-bounce"></i>
             </div>
             <div class="hidden md:block w-px h-6 bg-white/30"></div>
             <p class="text-sm md:text-base">
@@ -128,13 +127,13 @@
                 <h2 class="text-2xl font-bold text-slate-900 mb-8">I've Pivoted 4 Times at a Fortune 100 Company</h2>
                 
                 <div class="flex flex-wrap justify-center items-center gap-4 md:gap-8 mb-8 text-sm md:text-base font-semibold text-slate-700">
-                    <span class="px-4 py-2 bg-slate-50 rounded-lg border border-slate-100">🔧 Mechanical Test</span>
-                    <i class="fa-solid fa-arrow-right text-brand-secondary"></i>
-                    <span class="px-4 py-2 bg-slate-50 rounded-lg border border-slate-100">💻 Software Dev</span>
-                    <i class="fa-solid fa-arrow-right text-brand-secondary"></i>
-                    <span class="px-4 py-2 bg-slate-50 rounded-lg border border-slate-100">📋 Product Owner</span>
-                    <i class="fa-solid fa-arrow-right text-brand-secondary"></i>
-                    <span class="px-4 py-2 bg-slate-50 rounded-lg border border-slate-100">🚀 Leadership</span>
+                    <span class="px-4 py-2 bg-slate-50 rounded-lg border border-slate-100 flex items-center gap-2"><i data-lucide="wrench" class="w-4 h-4 text-brand-primary"></i> Mechanical Test</span>
+                    <i data-lucide="arrow-right" class="w-4 h-4 text-brand-secondary"></i>
+                    <span class="px-4 py-2 bg-slate-50 rounded-lg border border-slate-100 flex items-center gap-2"><i data-lucide="code" class="w-4 h-4 text-brand-primary"></i> Software Dev</span>
+                    <i data-lucide="arrow-right" class="w-4 h-4 text-brand-secondary"></i>
+                    <span class="px-4 py-2 bg-slate-50 rounded-lg border border-slate-100 flex items-center gap-2"><i data-lucide="clipboard-list" class="w-4 h-4 text-brand-primary"></i> Product Owner</span>
+                    <i data-lucide="arrow-right" class="w-4 h-4 text-brand-secondary"></i>
+                    <span class="px-4 py-2 bg-slate-50 rounded-lg border border-slate-100 flex items-center gap-2"><i data-lucide="rocket" class="w-4 h-4 text-brand-primary"></i> Leadership</span>
                 </div>
                 
                 <p class="text-slate-500 text-sm">
@@ -157,9 +156,9 @@
                                 <h4 class="text-brand-accent font-bold mb-2 uppercase tracking-wider text-sm">The Old Way</h4>
                                 <p class="text-slate-300 mb-4">When I pivoted from mechanical to software, I had to:</p>
                                 <ul class="space-y-2 text-slate-300 text-sm">
-                                    <li class="flex items-start gap-2"><i class="fa-solid fa-xmark text-red-400 mt-1"></i> <span>Learn Python by reading books and taking courses</span></li>
-                                    <li class="flex items-start gap-2"><i class="fa-solid fa-xmark text-red-400 mt-1"></i> <span>Build projects slowly, line by line</span></li>
-                                    <li class="flex items-start gap-2"><i class="fa-solid fa-xmark text-red-400 mt-1"></i> <span>Debug errors by Googling and reading Stack Overflow for hours</span></li>
+                                    <li class="flex items-start gap-2"><i data-lucide="x" class="w-4 h-4 text-red-400 mt-1 shrink-0"></i> <span>Learn Python by reading books and taking courses</span></li>
+                                    <li class="flex items-start gap-2"><i data-lucide="x" class="w-4 h-4 text-red-400 mt-1 shrink-0"></i> <span>Build projects slowly, line by line</span></li>
+                                    <li class="flex items-start gap-2"><i data-lucide="x" class="w-4 h-4 text-red-400 mt-1 shrink-0"></i> <span>Debug errors by Googling and reading Stack Overflow for hours</span></li>
                                 </ul>
                             </div>
                             
@@ -167,9 +166,9 @@
                                 <h4 class="text-brand-accent font-bold mb-2 uppercase tracking-wider text-sm">The New Way</h4>
                                 <p class="text-slate-300 mb-4"><strong>You have AI now. That changes everything.</strong></p>
                                 <ul class="space-y-2 text-slate-300 text-sm">
-                                    <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-accent mt-1"></i> <span><strong>Learn faster:</strong> Ask ChatGPT to explain concepts in mechanical terms you already understand</span></li>
-                                    <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-accent mt-1"></i> <span><strong>Build faster:</strong> Use AI to scaffold projects, then customize and learn from the code</span></li>
-                                    <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-accent mt-1"></i> <span><strong>Debug smarter:</strong> Paste error messages into AI, get explanations instantly</span></li>
+                                    <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-accent mt-1 shrink-0"></i> <span><strong>Learn faster:</strong> Ask ChatGPT to explain concepts in mechanical terms you already understand</span></li>
+                                    <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-accent mt-1 shrink-0"></i> <span><strong>Build faster:</strong> Use AI to scaffold projects, then customize and learn from the code</span></li>
+                                    <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-accent mt-1 shrink-0"></i> <span><strong>Debug smarter:</strong> Paste error messages into AI, get explanations instantly</span></li>
                                 </ul>
                             </div>
                         </div>
@@ -178,17 +177,17 @@
                             <h4 class="text-white font-bold mb-4 text-lg">But Here's The Catch</h4>
                             <p class="text-slate-300 text-sm mb-4">You need to know:</p>
                             <ul class="space-y-4 text-slate-300 text-sm mb-8">
-                                <li class="flex items-start gap-2"><i class="fa-solid fa-exclamation-circle text-brand-accent mt-1"></i> <span><strong>WHAT</strong> to learn (AI won't tell you which skills matter for your target role)</span></li>
-                                <li class="flex items-start gap-2"><i class="fa-solid fa-exclamation-circle text-brand-accent mt-1"></i> <span><strong>HOW</strong> to demonstrate competence (AI can't build your portfolio strategy)</span></li>
-                                <li class="flex items-start gap-2"><i class="fa-solid fa-exclamation-circle text-brand-accent mt-1"></i> <span><strong>WHO</strong> to network with (AI can't introduce you to hiring managers)</span></li>
+                                <li class="flex items-start gap-2"><i data-lucide="alert-circle" class="w-4 h-4 text-brand-accent mt-1 shrink-0"></i> <span><strong>WHAT</strong> to learn (AI won't tell you which skills matter for your target role)</span></li>
+                                <li class="flex items-start gap-2"><i data-lucide="alert-circle" class="w-4 h-4 text-brand-accent mt-1 shrink-0"></i> <span><strong>HOW</strong> to demonstrate competence (AI can't build your portfolio strategy)</span></li>
+                                <li class="flex items-start gap-2"><i data-lucide="alert-circle" class="w-4 h-4 text-brand-accent mt-1 shrink-0"></i> <span><strong>WHO</strong> to network with (AI can't introduce you to hiring managers)</span></li>
                             </ul>
                             
                             <div class="pt-6 border-t border-white/10">
                                 <p class="text-brand-accent font-bold mb-2">I'll help you:</p>
                                 <ul class="space-y-2 text-slate-300 text-sm">
-                                    <li class="flex items-center gap-2"><i class="fa-solid fa-arrow-right text-brand-secondary text-xs"></i> Identify exact skills needed</li>
-                                    <li class="flex items-center gap-2"><i class="fa-solid fa-arrow-right text-brand-secondary text-xs"></i> Build AI-accelerated learning plan</li>
-                                    <li class="flex items-center gap-2"><i class="fa-solid fa-arrow-right text-brand-secondary text-xs"></i> Position pivot story effectively</li>
+                                    <li class="flex items-center gap-2"><i data-lucide="arrow-right" class="w-3 h-3 text-brand-secondary"></i> Identify exact skills needed</li>
+                                    <li class="flex items-center gap-2"><i data-lucide="arrow-right" class="w-3 h-3 text-brand-secondary"></i> Build AI-accelerated learning plan</li>
+                                    <li class="flex items-center gap-2"><i data-lucide="arrow-right" class="w-3 h-3 text-brand-secondary"></i> Position pivot story effectively</li>
                                 </ul>
                             </div>
                         </div>
@@ -296,8 +295,8 @@
             <div class="grid md:grid-cols-3 gap-8">
                 <!-- Card 1 -->
                 <div class="bg-white p-8 rounded-3xl shadow-sm border border-emerald-100 hover:shadow-card transition duration-300">
-                    <div class="w-12 h-12 bg-brand-light rounded-xl flex items-center justify-center text-brand-primary text-xl mb-6">
-                        <i class="fa-solid fa-map"></i>
+                    <div class="w-12 h-12 bg-brand-light rounded-xl flex items-center justify-center text-brand-primary shadow-sm mb-6">
+                        <i data-lucide="map" class="w-6 h-6"></i>
                     </div>
                     <h3 class="text-xl font-bold text-slate-900 mb-4">Custom Pivot Roadmap</h3>
                     <p class="text-sm text-slate-600 leading-relaxed">
@@ -307,8 +306,8 @@
 
                 <!-- Card 2 -->
                 <div class="bg-white p-8 rounded-3xl shadow-sm border border-emerald-100 hover:shadow-card transition duration-300">
-                    <div class="w-12 h-12 bg-brand-light rounded-xl flex items-center justify-center text-brand-primary text-xl mb-6">
-                        <i class="fa-solid fa-laptop-code"></i>
+                    <div class="w-12 h-12 bg-brand-light rounded-xl flex items-center justify-center text-brand-primary shadow-sm mb-6">
+                        <i data-lucide="laptop" class="w-6 h-6"></i>
                     </div>
                     <h3 class="text-xl font-bold text-slate-900 mb-4">Strategic Skill Building</h3>
                     <p class="text-sm text-slate-600 leading-relaxed">
@@ -318,8 +317,8 @@
 
                 <!-- Card 3 -->
                 <div class="bg-white p-8 rounded-3xl shadow-sm border border-emerald-100 hover:shadow-card transition duration-300">
-                    <div class="w-12 h-12 bg-brand-light rounded-xl flex items-center justify-center text-brand-primary text-xl mb-6">
-                        <i class="fa-solid fa-crosshairs"></i>
+                    <div class="w-12 h-12 bg-brand-light rounded-xl flex items-center justify-center text-brand-primary shadow-sm mb-6">
+                        <i data-lucide="crosshair" class="w-6 h-6"></i>
                     </div>
                     <h3 class="text-xl font-bold text-slate-900 mb-4">Internal Positioning</h3>
                     <p class="text-sm text-slate-600 leading-relaxed">
@@ -329,8 +328,8 @@
 
                 <!-- Card 4 -->
                 <div class="bg-white p-8 rounded-3xl shadow-sm border border-emerald-100 hover:shadow-card transition duration-300">
-                    <div class="w-12 h-12 bg-brand-light rounded-xl flex items-center justify-center text-brand-primary text-xl mb-6">
-                        <i class="fa-solid fa-hammer"></i>
+                    <div class="w-12 h-12 bg-brand-light rounded-xl flex items-center justify-center text-brand-primary shadow-sm mb-6">
+                        <i data-lucide="hammer" class="w-6 h-6"></i>
                     </div>
                     <h3 class="text-xl font-bold text-slate-900 mb-4">Portfolio Projects</h3>
                     <p class="text-sm text-slate-600 leading-relaxed">
@@ -340,8 +339,8 @@
 
                 <!-- Card 5 -->
                 <div class="bg-white p-8 rounded-3xl shadow-sm border border-emerald-100 hover:shadow-card transition duration-300">
-                    <div class="w-12 h-12 bg-brand-light rounded-xl flex items-center justify-center text-brand-primary text-xl mb-6">
-                        <i class="fa-solid fa-handshake"></i>
+                    <div class="w-12 h-12 bg-brand-light rounded-xl flex items-center justify-center text-brand-primary shadow-sm mb-6">
+                        <i data-lucide="handshake" class="w-6 h-6"></i>
                     </div>
                     <h3 class="text-xl font-bold text-slate-900 mb-4">Leverage Your Background</h3>
                     <p class="text-sm text-slate-600 leading-relaxed">
@@ -351,8 +350,8 @@
 
                 <!-- Card 6 -->
                 <div class="bg-white p-8 rounded-3xl shadow-sm border border-emerald-100 hover:shadow-card transition duration-300">
-                    <div class="w-12 h-12 bg-brand-light rounded-xl flex items-center justify-center text-brand-primary text-xl mb-6">
-                        <i class="fa-solid fa-chart-line"></i>
+                    <div class="w-12 h-12 bg-brand-light rounded-xl flex items-center justify-center text-brand-primary shadow-sm mb-6">
+                        <i data-lucide="trending-up" class="w-6 h-6"></i>
                     </div>
                     <h3 class="text-xl font-bold text-slate-900 mb-4">Prove Your Value Early</h3>
                     <p class="text-sm text-slate-600 leading-relaxed">
@@ -408,7 +407,7 @@
                     Choose from 2, 3, or 4 session packages. All include 60-minute weekly sessions, personalized roadmap, and email support.
                 </p>
                 <div class="mt-6 inline-flex items-center gap-2 px-4 py-2 bg-red-50 border-2 border-red-200 rounded-full">
-                    <span class="text-red-600 font-bold text-lg">🎉 50% OFF All Packages</span>
+                    <span class="text-red-600 font-bold text-lg flex items-center gap-2"><i data-lucide="party-popper" class="w-5 h-5"></i> 50% OFF All Packages</span>
                     <span class="text-red-500 text-sm">• Company Launch Special</span>
                 </div>
             </div>
@@ -430,8 +429,8 @@
 
                 <!-- Standard Package - Most Popular -->
                 <div class="relative bg-gradient-to-br from-emerald-50 to-teal-50 p-8 rounded-3xl border-2 border-brand-secondary hover:shadow-lg transition duration-300 transform md:-translate-y-4">
-                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-brand-secondary text-white px-4 py-1.5 rounded-full text-xs font-bold shadow-lg whitespace-nowrap">
-                        ⭐ MOST POPULAR
+                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-brand-secondary text-white px-4 py-1.5 rounded-full text-xs font-bold shadow-lg whitespace-nowrap flex items-center gap-1">
+                        <i data-lucide="star" class="w-3 h-3 fill-current"></i> MOST POPULAR
                     </div>
                     <h3 class="text-2xl font-bold text-slate-900 mb-3 mt-2">Standard</h3>
                     <p class="text-sm text-slate-600 mb-6">Everything in Starter PLUS internal positioning, resume/LinkedIn rewrite, Trojan Horse project strategy</p>
@@ -523,14 +522,14 @@
             
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <a href="packages.html#pivot-packages" class="px-8 py-4 bg-white text-brand-primary font-bold rounded-full hover:bg-brand-accent transition shadow-lg hover:shadow-fresh hover:-translate-y-1 inline-flex items-center gap-2">
-                    <i class="fa-solid fa-box"></i> View All Packages
+                    <i data-lucide="package" class="w-5 h-5"></i> View All Packages
                 </a>
                 <a href="contact.html" class="px-8 py-4 bg-brand-secondary text-white font-bold rounded-full hover:bg-teal-600 transition shadow-lg hover:shadow-fresh hover:-translate-y-1 inline-flex items-center gap-2">
-                    <i class="fa-regular fa-calendar"></i> Book Discovery Call
+                    <i data-lucide="calendar" class="w-5 h-5"></i> Book Discovery Call
                 </a>
             </div>
-            <p class="text-emerald-200 text-sm mt-6">
-                <i class="fa-solid fa-video mr-1"></i> All sessions are 60 minutes, conducted weekly via video call.
+            <p class="text-emerald-200 text-sm mt-6 flex items-center justify-center gap-2">
+                <i data-lucide="video" class="w-4 h-4"></i> All sessions are 60 minutes, conducted weekly via video call.
             </p>
         </div>
     </div>
@@ -559,7 +558,7 @@
             
             <div class="text-center">
                 <a href="faq.html" class="inline-flex items-center gap-2 text-brand-primary font-bold hover:text-brand-secondary transition">
-                    See All FAQs <i class="fa-solid fa-arrow-right"></i>
+                    See All FAQs <i data-lucide="arrow-right" class="w-4 h-4"></i>
                 </a>
             </div>
         </div>
@@ -609,8 +608,8 @@
                 <div>
                     <h4 class="font-bold text-lg mb-6 text-white uppercase tracking-wider text-sm">Connect</h4>
                     <ul class="space-y-4 text-sm text-emerald-100">
-                        <li><a href="mailto:contact@launchtolead.io" class="hover:text-brand-accent transition inline-flex items-center gap-2"><i class="fa-solid fa-envelope"></i> contact@launchtolead.io</a></li>
-                        <li><a href="https://www.linkedin.com/in/launchtolead" target="_blank" rel="noopener noreferrer" class="hover:text-brand-accent transition inline-flex items-center gap-2"><i class="fa-brands fa-linkedin text-blue-400"></i> LinkedIn</a></li>
+                        <li><a href="mailto:contact@launchtolead.io" class="hover:text-brand-accent transition inline-flex items-center gap-2"><i data-lucide="mail" class="w-4 h-4"></i> contact@launchtolead.io</a></li>
+                        <li><a href="https://www.linkedin.com/in/launchtolead" target="_blank" rel="noopener noreferrer" class="hover:text-brand-accent transition inline-flex items-center gap-2"><i data-lucide="linkedin" class="w-4 h-4"></i> LinkedIn</a></li>
                     </ul>
                 </div>
             </div>
@@ -621,5 +620,8 @@
         </div>
     </footer>
 
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
 </html>

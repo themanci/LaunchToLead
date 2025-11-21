@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 </head>
 <body class="bg-brand-light text-slate-600 font-sans antialiased">
@@ -45,12 +45,8 @@
                 <div class="md:hidden flex items-center">
                     <button @click="open = !open" class="inline-flex items-center justify-center p-2 rounded-md text-slate-400 hover:text-slate-500 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-brand-primary" aria-expanded="false">
                         <span class="sr-only">Open main menu</span>
-                        <svg x-show="!open" class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>
-                        <svg x-show="open" class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                        </svg>
+                        <i data-lucide="menu" class="w-6 h-6" x-show="!open"></i>
+                        <i data-lucide="x" class="w-6 h-6" x-show="open" x-cloak></i>
                     </button>
                 </div>
             </div>
@@ -74,9 +70,9 @@
     <div class="bg-gradient-to-r from-red-500 via-red-600 to-red-500 text-white py-6 sticky top-20 z-40">
         <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-center gap-3 md:gap-6 text-center">
             <div class="flex items-center gap-2">
-                <span class="text-2xl animate-bounce">🎉</span>
+                <i data-lucide="party-popper" class="w-6 h-6 animate-bounce"></i>
                 <span class="font-bold text-lg md:text-xl">Company Launch Special</span>
-                <span class="text-2xl animate-bounce">🎉</span>
+                <i data-lucide="party-popper" class="w-6 h-6 animate-bounce"></i>
             </div>
             <div class="hidden md:block w-px h-6 bg-white/30"></div>
             <p class="text-sm md:text-base">
@@ -107,8 +103,8 @@
                 4 promotions in 7 years. From entry-level engineer to software development leader. Learn the frameworks that drive rapid career growth at a Fortune 100 company.
             </p>
             <div class="flex justify-center gap-4">
-                <a href="#packages" class="px-8 py-4 bg-brand-primary text-white font-bold rounded-full hover:bg-brand-secondary transition shadow-card hover:shadow-fresh hover:-translate-y-1">
-                    View Packages
+                <a href="#packages" class="px-8 py-4 bg-brand-primary text-white font-bold rounded-full hover:bg-brand-secondary transition shadow-card hover:shadow-fresh hover:-translate-y-1 flex items-center gap-2">
+                    View Packages <i data-lucide="arrow-right" class="w-5 h-5"></i>
                 </a>
             </div>
         </div>
@@ -121,36 +117,36 @@
                 <h2 class="text-2xl font-bold text-slate-900 mb-8">The Promotion Framework Nobody Teaches You</h2>
                 
                 <div class="grid md:grid-cols-2 gap-8 text-left">
-                    <div class="flex gap-4">
-                        <div class="w-10 h-10 rounded-full bg-brand-light flex items-center justify-center text-brand-primary flex-shrink-0">
-                            <i class="fa-solid fa-eye"></i>
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-full bg-brand-light flex items-center justify-center text-brand-primary flex-shrink-0 mt-1">
+                            <i data-lucide="eye" class="w-5 h-5"></i>
                         </div>
                         <div>
                             <h3 class="font-bold text-slate-900 mb-2">Visibility Isn't Luck</h3>
                             <p class="text-sm text-slate-600">It's a system: weekly updates with specific metrics, strategic questions in meetings, and documentation of wins.</p>
                         </div>
                     </div>
-                    <div class="flex gap-4">
-                        <div class="w-10 h-10 rounded-full bg-brand-light flex items-center justify-center text-brand-primary flex-shrink-0">
-                            <i class="fa-solid fa-briefcase"></i>
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-full bg-brand-light flex items-center justify-center text-brand-primary flex-shrink-0 mt-1">
+                            <i data-lucide="briefcase" class="w-5 h-5"></i>
                         </div>
                         <div>
                             <h3 class="font-bold text-slate-900 mb-2">Your Manager Needs Ammunition</h3>
                             <p class="text-sm text-slate-600">They want to promote you—but they need to justify it to THEIR boss. I'll teach you how to build that case FOR them.</p>
                         </div>
                     </div>
-                    <div class="flex gap-4">
-                        <div class="w-10 h-10 rounded-full bg-brand-light flex items-center justify-center text-brand-primary flex-shrink-0">
-                            <i class="fa-solid fa-rocket"></i>
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-full bg-brand-light flex items-center justify-center text-brand-primary flex-shrink-0 mt-1">
+                            <i data-lucide="rocket" class="w-5 h-5"></i>
                         </div>
                         <div>
                             <h3 class="font-bold text-slate-900 mb-2">Don't Wait Until You're Overqualified</h3>
                             <p class="text-sm text-slate-600">Most people wait too long. You should push for promotion when you've proved you can handle it, not when you're already doing it.</p>
                         </div>
                     </div>
-                    <div class="flex gap-4">
-                        <div class="w-10 h-10 rounded-full bg-brand-light flex items-center justify-center text-brand-primary flex-shrink-0">
-                            <i class="fa-solid fa-scale-balanced"></i>
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-full bg-brand-light flex items-center justify-center text-brand-primary flex-shrink-0 mt-1">
+                            <i data-lucide="scale" class="w-5 h-5"></i>
                         </div>
                         <div>
                             <h3 class="font-bold text-slate-900 mb-2">The Next Level Work Paradox</h3>
@@ -176,9 +172,9 @@
                                 <p class="text-slate-300 mb-4">"If AI can do the technical work, what makes me promotable?"</p>
                                 <p class="text-slate-300 mb-4"><strong>Answer:</strong> The skills AI can't replace are exactly what gets you promoted:</p>
                                 <ul class="space-y-2 text-slate-300 text-sm">
-                                    <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-accent mt-1"></i> <span><strong>Strategic thinking:</strong> AI executes plans; you create them</span></li>
-                                    <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-accent mt-1"></i> <span><strong>Cross-functional communication:</strong> AI can't align stakeholders</span></li>
-                                    <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-accent mt-1"></i> <span><strong>Mentoring:</strong> AI can't coach your junior engineers</span></li>
+                                    <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-accent mt-1 shrink-0"></i> <span><strong>Strategic thinking:</strong> AI executes plans; you create them</span></li>
+                                    <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-accent mt-1 shrink-0"></i> <span><strong>Cross-functional communication:</strong> AI can't align stakeholders</span></li>
+                                    <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-accent mt-1 shrink-0"></i> <span><strong>Mentoring:</strong> AI can't coach your junior engineers</span></li>
                                 </ul>
                             </div>
                         </div>
@@ -200,8 +196,8 @@
                             <div class="pt-6 mt-6 border-t border-white/10">
                                 <p class="text-brand-accent font-bold mb-2">I'll help you:</p>
                                 <ul class="space-y-2 text-slate-300 text-sm">
-                                    <li class="flex items-center gap-2"><i class="fa-solid fa-arrow-right text-brand-secondary text-xs"></i> Reframe accomplishments to highlight AI leverage</li>
-                                    <li class="flex items-center gap-2"><i class="fa-solid fa-arrow-right text-brand-secondary text-xs"></i> Position yourself as "AI strategy leader"</li>
+                                    <li class="flex items-start gap-2"><i data-lucide="arrow-right" class="w-4 h-4 text-brand-secondary mt-1 shrink-0"></i> <span>Reframe accomplishments to highlight AI leverage</span></li>
+                                    <li class="flex items-start gap-2"><i data-lucide="arrow-right" class="w-4 h-4 text-brand-secondary mt-1 shrink-0"></i> <span>Position yourself as "AI strategy leader"</span></li>
                                 </ul>
                             </div>
                         </div>
@@ -274,7 +270,7 @@
                 <!-- Card 1 -->
                 <div class="bg-white p-8 rounded-3xl shadow-sm border border-emerald-100 hover:shadow-card transition duration-300">
                     <div class="w-12 h-12 bg-brand-light rounded-xl flex items-center justify-center text-brand-primary text-xl mb-6">
-                        <i class="fa-solid fa-eye"></i>
+                        <i data-lucide="eye" class="w-6 h-6"></i>
                     </div>
                     <h3 class="text-xl font-bold text-slate-900 mb-4">Get Noticed by Leadership</h3>
                     <p class="text-sm text-slate-600 leading-relaxed">
@@ -285,7 +281,7 @@
                 <!-- Card 2 -->
                 <div class="bg-white p-8 rounded-3xl shadow-sm border border-emerald-100 hover:shadow-card transition duration-300">
                     <div class="w-12 h-12 bg-brand-light rounded-xl flex items-center justify-center text-brand-primary text-xl mb-6">
-                        <i class="fa-solid fa-chart-line"></i>
+                        <i data-lucide="chart-line" class="w-6 h-6"></i>
                     </div>
                     <h3 class="text-xl font-bold text-slate-900 mb-4">Drive Measurable Results</h3>
                     <p class="text-sm text-slate-600 leading-relaxed">
@@ -296,7 +292,7 @@
                 <!-- Card 3 -->
                 <div class="bg-white p-8 rounded-3xl shadow-sm border border-emerald-100 hover:shadow-card transition duration-300">
                     <div class="w-12 h-12 bg-brand-light rounded-xl flex items-center justify-center text-brand-primary text-xl mb-6">
-                        <i class="fa-solid fa-users"></i>
+                        <i data-lucide="users" class="w-6 h-6"></i>
                     </div>
                     <h3 class="text-xl font-bold text-slate-900 mb-4">Influence Without Authority</h3>
                     <p class="text-sm text-slate-600 leading-relaxed">
@@ -307,7 +303,7 @@
                 <!-- Card 4 -->
                 <div class="bg-white p-8 rounded-3xl shadow-sm border border-emerald-100 hover:shadow-card transition duration-300">
                     <div class="w-12 h-12 bg-brand-light rounded-xl flex items-center justify-center text-brand-primary text-xl mb-6">
-                        <i class="fa-solid fa-compass"></i>
+                        <i data-lucide="compass" class="w-6 h-6"></i>
                     </div>
                     <h3 class="text-xl font-bold text-slate-900 mb-4">Strategic Career Positioning</h3>
                     <p class="text-sm text-slate-600 leading-relaxed">
@@ -318,7 +314,7 @@
                 <!-- Card 5 -->
                 <div class="bg-white p-8 rounded-3xl shadow-sm border border-emerald-100 hover:shadow-card transition duration-300">
                     <div class="w-12 h-12 bg-brand-light rounded-xl flex items-center justify-center text-brand-primary text-xl mb-6">
-                        <i class="fa-solid fa-lightbulb"></i>
+                        <i data-lucide="lightbulb" class="w-6 h-6"></i>
                     </div>
                     <h3 class="text-xl font-bold text-slate-900 mb-4">Build Leadership Skills</h3>
                     <p class="text-sm text-slate-600 leading-relaxed">
@@ -329,7 +325,7 @@
                 <!-- Card 6 -->
                 <div class="bg-white p-8 rounded-3xl shadow-sm border border-emerald-100 hover:shadow-card transition duration-300">
                     <div class="w-12 h-12 bg-brand-light rounded-xl flex items-center justify-center text-brand-primary text-xl mb-6">
-                        <i class="fa-solid fa-rocket"></i>
+                        <i data-lucide="rocket" class="w-6 h-6"></i>
                     </div>
                     <h3 class="text-xl font-bold text-slate-900 mb-4">Make Your Case</h3>
                     <p class="text-sm text-slate-600 leading-relaxed">
@@ -349,7 +345,7 @@
                     Choose from 2, 3, or 4 session packages. All include 60-minute weekly sessions, personalized coaching, and proven frameworks.
                 </p>
                 <div class="mt-6 inline-flex items-center gap-2 px-4 py-2 bg-red-50 border-2 border-red-200 rounded-full">
-                    <span class="text-red-600 font-bold text-lg">🎉 50% OFF All Packages</span>
+                    <span class="text-red-600 font-bold text-lg flex items-center gap-2"><i data-lucide="party-popper" class="w-5 h-5"></i> 50% OFF All Packages</span>
                     <span class="text-red-500 text-sm">• Company Launch Special</span>
                 </div>
             </div>
@@ -371,8 +367,8 @@
 
                 <!-- Standard Package - Most Popular -->
                 <div class="relative bg-gradient-to-br from-emerald-50 to-teal-50 p-8 rounded-3xl border-2 border-brand-secondary hover:shadow-lg transition duration-300 transform md:-translate-y-4">
-                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-brand-secondary text-white px-4 py-1.5 rounded-full text-xs font-bold shadow-lg whitespace-nowrap">
-                        ⭐ MOST POPULAR
+                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-brand-secondary text-white px-4 py-1.5 rounded-full text-xs font-bold shadow-lg whitespace-nowrap flex items-center gap-1">
+                        <i data-lucide="star" class="w-3 h-3 fill-current"></i> MOST POPULAR
                     </div>
                     <h3 class="text-2xl font-bold text-slate-900 mb-3 mt-2">Standard</h3>
                     <div class="mb-4">
@@ -464,14 +460,14 @@
             
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <a href="packages.html#accelerate-packages" class="px-8 py-4 bg-white text-brand-primary font-bold rounded-full hover:bg-brand-accent transition shadow-lg hover:shadow-fresh hover:-translate-y-1 inline-flex items-center gap-2">
-                    <i class="fa-solid fa-box"></i> View All Packages
+                    <i data-lucide="box" class="w-5 h-5"></i> View All Packages
                 </a>
                 <a href="contact.html" class="px-8 py-4 bg-brand-secondary text-white font-bold rounded-full hover:bg-teal-600 transition shadow-lg hover:shadow-fresh hover:-translate-y-1 inline-flex items-center gap-2">
-                    <i class="fa-regular fa-calendar"></i> Book Discovery Call
+                    <i data-lucide="calendar" class="w-5 h-5"></i> Book Discovery Call
                 </a>
             </div>
-            <p class="text-emerald-200 text-sm mt-6">
-                <i class="fa-solid fa-video mr-1"></i> All sessions are 60 minutes, conducted weekly via video call.
+            <p class="text-emerald-200 text-sm mt-6 flex items-center justify-center gap-2">
+                <i data-lucide="video" class="w-4 h-4"></i> All sessions are 60 minutes, conducted weekly via video call.
             </p>
         </div>
     </div>
@@ -500,7 +496,7 @@
             
             <div class="text-center">
                 <a href="faq.html" class="inline-flex items-center gap-2 text-brand-primary font-bold hover:text-brand-secondary transition">
-                    See All FAQs <i class="fa-solid fa-arrow-right"></i>
+                    See All FAQs <i data-lucide="arrow-right" class="w-4 h-4"></i>
                 </a>
             </div>
         </div>
@@ -550,8 +546,8 @@
                 <div>
                     <h4 class="font-bold text-lg mb-6 text-white uppercase tracking-wider text-sm">Connect</h4>
                     <ul class="space-y-4 text-sm text-emerald-100">
-                        <li><a href="mailto:contact@launchtolead.io" class="hover:text-brand-accent transition inline-flex items-center gap-2"><i class="fa-solid fa-envelope"></i> contact@launchtolead.io</a></li>
-                        <li><a href="https://www.linkedin.com/in/launchtolead" target="_blank" rel="noopener noreferrer" class="hover:text-brand-accent transition inline-flex items-center gap-2"><i class="fa-brands fa-linkedin text-blue-400"></i> LinkedIn</a></li>
+                        <li><a href="mailto:contact@launchtolead.io" class="hover:text-brand-accent transition inline-flex items-center gap-2"><i data-lucide="mail" class="w-4 h-4"></i> contact@launchtolead.io</a></li>
+                        <li><a href="https://www.linkedin.com/in/launchtolead" target="_blank" rel="noopener noreferrer" class="hover:text-brand-accent transition inline-flex items-center gap-2"><i data-lucide="linkedin" class="w-4 h-4 text-blue-400"></i> LinkedIn</a></li>
                     </ul>
                 </div>
             </div>
@@ -561,6 +557,10 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
 
 </body>
 </html>

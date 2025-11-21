@@ -23,6 +23,9 @@
 
     <!-- Alpine.js -->
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body class="bg-brand-light text-slate-600 font-sans antialiased">
 
@@ -51,7 +54,7 @@
                 <!-- Mobile menu button -->
                 <div class="md:hidden flex items-center">
                     <button @click="open = !open" class="text-brand-primary focus:outline-none">
-                        <i class="fa-solid fa-bars fa-lg"></i>
+                        <i data-lucide="menu" class="w-6 h-6"></i>
                     </button>
                 </div>
             </div>
@@ -75,9 +78,9 @@
     <div class="bg-gradient-to-r from-red-500 via-red-600 to-red-500 text-white py-6 sticky top-20 z-40">
         <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-center gap-3 md:gap-6 text-center">
             <div class="flex items-center gap-2">
-                <span class="text-2xl animate-bounce">🎉</span>
+                <i data-lucide="party-popper" class="w-6 h-6 animate-bounce"></i>
                 <span class="font-bold text-lg md:text-xl">Company Launch Special</span>
-                <span class="text-2xl animate-bounce">🎉</span>
+                <i data-lucide="party-popper" class="w-6 h-6 animate-bounce"></i>
             </div>
             <div class="hidden md:block w-px h-6 bg-white/30"></div>
             <p class="text-sm md:text-base">
@@ -125,8 +128,8 @@
             <div class="grid md:grid-cols-3 gap-8">
                 <!-- Card 1 -->
                 <div class="bg-white p-8 rounded-3xl shadow-sm border border-emerald-100 hover:shadow-card transition duration-300">
-                    <div class="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center text-brand-primary text-xl mb-6">
-                        <i class="fa-solid fa-file-lines"></i>
+                    <div class="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center text-brand-primary shadow-sm mb-6">
+                        <i data-lucide="file-text" class="w-6 h-6"></i>
                     </div>
                     <h3 class="text-xl font-bold text-slate-900 mb-4">Resume That Stands Out</h3>
                     <p class="text-sm text-slate-600 leading-relaxed">
@@ -136,8 +139,8 @@
 
                 <!-- Card 2 -->
                 <div class="bg-white p-8 rounded-3xl shadow-sm border border-emerald-100 hover:shadow-card transition duration-300">
-                    <div class="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center text-brand-primary text-xl mb-6">
-                        <i class="fa-solid fa-users"></i>
+                    <div class="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center text-brand-primary shadow-sm mb-6">
+                        <i data-lucide="users" class="w-6 h-6"></i>
                     </div>
                     <h3 class="text-xl font-bold text-slate-900 mb-4">Career Fair Strategy</h3>
                     <p class="text-sm text-slate-600 leading-relaxed">
@@ -147,8 +150,8 @@
 
                 <!-- Card 3 -->
                 <div class="bg-white p-8 rounded-3xl shadow-sm border border-emerald-100 hover:shadow-card transition duration-300">
-                    <div class="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center text-brand-primary text-xl mb-6">
-                        <i class="fa-solid fa-paper-plane"></i>
+                    <div class="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center text-brand-primary shadow-sm mb-6">
+                        <i data-lucide="send" class="w-6 h-6"></i>
                     </div>
                     <h3 class="text-xl font-bold text-slate-900 mb-4">Application Strategy</h3>
                     <p class="text-sm text-slate-600 leading-relaxed">
@@ -158,8 +161,8 @@
 
                 <!-- Card 4 -->
                 <div class="bg-white p-8 rounded-3xl shadow-sm border border-emerald-100 hover:shadow-card transition duration-300">
-                    <div class="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center text-brand-primary text-xl mb-6">
-                        <i class="fa-solid fa-comments"></i>
+                    <div class="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center text-brand-primary shadow-sm mb-6">
+                        <i data-lucide="message-square" class="w-6 h-6"></i>
                     </div>
                     <h3 class="text-xl font-bold text-slate-900 mb-4">Interview Preparation</h3>
                     <p class="text-sm text-slate-600 leading-relaxed">
@@ -169,8 +172,8 @@
 
                 <!-- Card 5 -->
                 <div class="bg-white p-8 rounded-3xl shadow-sm border border-emerald-100 hover:shadow-card transition duration-300">
-                    <div class="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center text-brand-primary text-xl mb-6">
-                        <i class="fa-brands fa-linkedin"></i>
+                    <div class="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center text-brand-primary shadow-sm mb-6">
+                        <i data-lucide="linkedin" class="w-6 h-6"></i>
                     </div>
                     <h3 class="text-xl font-bold text-slate-900 mb-4">LinkedIn Optimization</h3>
                     <p class="text-sm text-slate-600 leading-relaxed">
@@ -180,8 +183,8 @@
 
                 <!-- Card 6 -->
                 <div class="bg-white p-8 rounded-3xl shadow-sm border border-emerald-100 hover:shadow-card transition duration-300">
-                    <div class="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center text-brand-primary text-xl mb-6">
-                        <i class="fa-solid fa-handshake"></i>
+                    <div class="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center text-brand-primary shadow-sm mb-6">
+                        <i data-lucide="handshake" class="w-6 h-6"></i>
                     </div>
                     <h3 class="text-xl font-bold text-slate-900 mb-4">Networking Skills</h3>
                     <p class="text-sm text-slate-600 leading-relaxed">
@@ -201,7 +204,7 @@
                     Choose from 2, 3, or 4 session packages. All include 60-minute weekly sessions, personalized feedback, and actionable deliverables.
                 </p>
                 <div class="mt-6 inline-flex items-center gap-2 px-4 py-2 bg-red-50 border-2 border-red-200 rounded-full">
-                    <span class="text-red-600 font-bold text-lg">🎉 50% OFF All Packages</span>
+                    <span class="text-red-600 font-bold text-lg flex items-center gap-2"><i data-lucide="party-popper" class="w-5 h-5"></i> 50% OFF All Packages</span>
                     <span class="text-red-500 text-sm">• Company Launch Special</span>
                 </div>
             </div>
@@ -223,8 +226,8 @@
 
                 <!-- Standard Package - Most Popular -->
                 <div class="relative bg-gradient-to-br from-emerald-50 to-teal-50 p-8 rounded-3xl border-2 border-brand-secondary hover:shadow-lg transition duration-300 transform md:-translate-y-4">
-                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-brand-secondary text-white px-4 py-1.5 rounded-full text-xs font-bold shadow-lg whitespace-nowrap">
-                        ⭐ MOST POPULAR
+                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-brand-secondary text-white px-4 py-1.5 rounded-full text-xs font-bold shadow-lg whitespace-nowrap flex items-center gap-1">
+                        <i data-lucide="star" class="w-3 h-3 fill-current"></i> MOST POPULAR
                     </div>
                     <h3 class="text-2xl font-bold text-slate-900 mb-3 mt-2">Standard</h3>
                     <div class="mb-4">
@@ -253,8 +256,8 @@
                 </div>
             </div>
             
-            <div class="mt-12 p-6 bg-slate-50 rounded-2xl border border-slate-200 text-center text-sm text-slate-500">
-                <i class="fa-regular fa-credit-card mr-2"></i> <strong>Payment:</strong> After your free discovery call, we'll agree on the right package for you. Payment is arranged directly via Venmo or Zelle—simple and secure.
+            <div class="mt-12 p-6 bg-slate-50 rounded-2xl border border-slate-200 text-center text-sm text-slate-500 flex items-center justify-center gap-2">
+                <i data-lucide="credit-card" class="w-4 h-4"></i> <span><strong>Payment:</strong> After your free discovery call, we'll agree on the right package for you. Payment is arranged directly via Venmo or Zelle—simple and secure.</span>
             </div>
         </div>
     </div>
@@ -270,23 +273,23 @@
                 <!-- What You Won't Get -->
                 <div class="bg-white p-8 rounded-3xl shadow-sm border border-red-100">
                     <h3 class="text-xl font-bold text-red-600 mb-6 flex items-center gap-2">
-                        <i class="fa-solid fa-xmark"></i> What You Won't Get
+                        <i data-lucide="x" class="w-6 h-6"></i> What You Won't Get
                     </h3>
                     <ul class="space-y-4 text-slate-600">
                         <li class="flex items-start gap-3">
-                            <i class="fa-solid fa-xmark text-red-400 mt-1"></i>
+                            <i data-lucide="x" class="w-4 h-4 text-red-400 mt-1 shrink-0"></i>
                             <span>"Just apply to more jobs" (useless advice)</span>
                         </li>
                         <li class="flex items-start gap-3">
-                            <i class="fa-solid fa-xmark text-red-400 mt-1"></i>
+                            <i data-lucide="x" class="w-4 h-4 text-red-400 mt-1 shrink-0"></i>
                             <span>Generic resume template everyone uses</span>
                         </li>
                         <li class="flex items-start gap-3">
-                            <i class="fa-solid fa-xmark text-red-400 mt-1"></i>
+                            <i data-lucide="x" class="w-4 h-4 text-red-400 mt-1 shrink-0"></i>
                             <span>"Be yourself" interview prep (too vague)</span>
                         </li>
                         <li class="flex items-start gap-3">
-                            <i class="fa-solid fa-xmark text-red-400 mt-1"></i>
+                            <i data-lucide="x" class="w-4 h-4 text-red-400 mt-1 shrink-0"></i>
                             <span>A PDF course you never finish</span>
                         </li>
                     </ul>
@@ -295,23 +298,23 @@
                 <!-- What You Will Get -->
                 <div class="bg-white p-8 rounded-3xl shadow-sm border border-emerald-100">
                     <h3 class="text-xl font-bold text-brand-primary mb-6 flex items-center gap-2">
-                        <i class="fa-solid fa-check"></i> What You WILL Get
+                        <i data-lucide="check" class="w-6 h-6"></i> What You WILL Get
                     </h3>
                     <ul class="space-y-4 text-slate-600">
                         <li class="flex items-start gap-3">
-                            <i class="fa-solid fa-check text-brand-secondary mt-1"></i>
+                            <i data-lucide="check" class="w-4 h-4 text-brand-secondary mt-1 shrink-0"></i>
                             <span>The exact ATS keywords for YOUR target role</span>
                         </li>
                         <li class="flex items-start gap-3">
-                            <i class="fa-solid fa-check text-brand-secondary mt-1"></i>
+                            <i data-lucide="check" class="w-4 h-4 text-brand-secondary mt-1 shrink-0"></i>
                             <span>Your resume rewritten for YOUR specific experience</span>
                         </li>
                         <li class="flex items-start gap-3">
-                            <i class="fa-solid fa-check text-brand-secondary mt-1"></i>
+                            <i data-lucide="check" class="w-4 h-4 text-brand-secondary mt-1 shrink-0"></i>
                             <span>Mock interview with feedback on YOUR weak spots</span>
                         </li>
                         <li class="flex items-start gap-3">
-                            <i class="fa-solid fa-check text-brand-secondary mt-1"></i>
+                            <i data-lucide="check" class="w-4 h-4 text-brand-secondary mt-1 shrink-0"></i>
                             <span>1-on-1 coaching customized to YOUR situation</span>
                         </li>
                     </ul>
@@ -340,10 +343,10 @@
                                 <h4 class="text-brand-accent font-bold mb-2 uppercase tracking-wider text-sm">But Here's The Truth</h4>
                                 <p class="text-slate-300 mb-4">Companies still need engineers who can:</p>
                                 <ul class="space-y-2 text-slate-300 text-sm">
-                                    <li class="flex items-start gap-2"><i class="fa-solid fa-angle-right text-brand-secondary mt-1"></i> <span><strong>Prompt and validate AI outputs</strong> (AI writes code, but someone needs to verify it works)</span></li>
-                                    <li class="flex items-start gap-2"><i class="fa-solid fa-angle-right text-brand-secondary mt-1"></i> <span><strong>Debug AI-generated solutions</strong> (AI makes mistakes—a lot)</span></li>
-                                    <li class="flex items-start gap-2"><i class="fa-solid fa-angle-right text-brand-secondary mt-1"></i> <span><strong>Design systems</strong> (AI can't architect; it can only execute)</span></li>
-                                    <li class="flex items-start gap-2"><i class="fa-solid fa-angle-right text-brand-secondary mt-1"></i> <span><strong>Communicate with stakeholders</strong> (AI definitely can't do this)</span></li>
+                                    <li class="flex items-start gap-2"><i data-lucide="chevron-right" class="w-4 h-4 text-brand-secondary mt-1 shrink-0"></i> <span><strong>Prompt and validate AI outputs</strong> (AI writes code, but someone needs to verify it works)</span></li>
+                                    <li class="flex items-start gap-2"><i data-lucide="chevron-right" class="w-4 h-4 text-brand-secondary mt-1 shrink-0"></i> <span><strong>Debug AI-generated solutions</strong> (AI makes mistakes—a lot)</span></li>
+                                    <li class="flex items-start gap-2"><i data-lucide="chevron-right" class="w-4 h-4 text-brand-secondary mt-1 shrink-0"></i> <span><strong>Design systems</strong> (AI can't architect; it can only execute)</span></li>
+                                    <li class="flex items-start gap-2"><i data-lucide="chevron-right" class="w-4 h-4 text-brand-secondary mt-1 shrink-0"></i> <span><strong>Communicate with stakeholders</strong> (AI definitely can't do this)</span></li>
                                 </ul>
                             </div>
                         </div>
@@ -351,17 +354,17 @@
                         <div class="bg-white/5 p-8 rounded-2xl border border-white/10">
                             <h4 class="text-white font-bold mb-4 text-lg">What This Means for You</h4>
                             <ul class="space-y-4 text-slate-300 text-sm mb-8">
-                                <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-accent mt-1"></i> <span>Your resume needs to show you can work WITH AI, not compete against it</span></li>
-                                <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-accent mt-1"></i> <span>Highlight projects where you used ChatGPT, GitHub Copilot, or other AI tools effectively</span></li>
-                                <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-accent mt-1"></i> <span>Frame yourself as "AI-augmented engineer" not "entry-level engineer"</span></li>
+                                <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-accent mt-1 shrink-0"></i> <span>Your resume needs to show you can work WITH AI, not compete against it</span></li>
+                                <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-accent mt-1 shrink-0"></i> <span>Highlight projects where you used ChatGPT, GitHub Copilot, or other AI tools effectively</span></li>
+                                <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-accent mt-1 shrink-0"></i> <span>Frame yourself as "AI-augmented engineer" not "entry-level engineer"</span></li>
                             </ul>
                             
                             <div class="pt-6 border-t border-white/10">
                                 <p class="text-brand-accent font-bold mb-2">I'll help you:</p>
                                 <ul class="space-y-2 text-slate-300 text-sm">
-                                    <li class="flex items-center gap-2"><i class="fa-solid fa-arrow-right text-brand-secondary text-xs"></i> Reposition your experience</li>
-                                    <li class="flex items-center gap-2"><i class="fa-solid fa-arrow-right text-brand-secondary text-xs"></i> Build AI-proficient portfolio</li>
-                                    <li class="flex items-center gap-2"><i class="fa-solid fa-arrow-right text-brand-secondary text-xs"></i> Navigate the "AI paradox"</li>
+                                    <li class="flex items-center gap-2"><i data-lucide="arrow-right" class="w-3 h-3 text-brand-secondary"></i> Reposition your experience</li>
+                                    <li class="flex items-center gap-2"><i data-lucide="arrow-right" class="w-3 h-3 text-brand-secondary"></i> Build AI-proficient portfolio</li>
+                                    <li class="flex items-center gap-2"><i data-lucide="arrow-right" class="w-3 h-3 text-brand-secondary"></i> Navigate the "AI paradox"</li>
                                 </ul>
                             </div>
                         </div>
@@ -429,8 +432,8 @@
             </div>
             
             <div class="max-w-3xl mx-auto bg-white p-12 rounded-3xl shadow-sm border border-emerald-100 text-center">
-                <div class="w-16 h-16 bg-emerald-50 rounded-full flex items-center justify-center text-brand-primary text-2xl mx-auto mb-6">
-                    <i class="fa-solid fa-quote-left"></i>
+                <div class="w-16 h-16 bg-emerald-50 rounded-full flex items-center justify-center text-brand-primary mx-auto mb-6">
+                    <i data-lucide="quote" class="w-8 h-8"></i>
                 </div>
                 <p class="text-xl text-slate-600 italic mb-6">"Testimonials coming soon from coaching clients! Be one of the first to share your success story."</p>
                 <div class="font-bold text-slate-900">Future Success Story</div>
@@ -453,14 +456,14 @@
             
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <a href="packages.html#launch-packages" class="px-8 py-4 bg-white text-brand-primary font-bold rounded-full hover:bg-brand-accent transition shadow-lg hover:shadow-fresh hover:-translate-y-1 inline-flex items-center gap-2">
-                    <i class="fa-solid fa-box"></i> View All Packages
+                    <i data-lucide="package" class="w-5 h-5"></i> View All Packages
                 </a>
                 <a href="contact.html" class="px-8 py-4 bg-brand-secondary text-white font-bold rounded-full hover:bg-teal-600 transition shadow-lg hover:shadow-fresh hover:-translate-y-1 inline-flex items-center gap-2">
-                    <i class="fa-regular fa-calendar"></i> Book Discovery Call
+                    <i data-lucide="calendar" class="w-5 h-5"></i> Book Discovery Call
                 </a>
             </div>
-            <p class="text-emerald-200 text-sm mt-6">
-                <i class="fa-solid fa-video mr-1"></i> All sessions are 60 minutes, conducted weekly via video call.
+            <p class="text-emerald-200 text-sm mt-6 flex items-center justify-center gap-2">
+                <i data-lucide="video" class="w-4 h-4"></i> All sessions are 60 minutes, conducted weekly via video call.
             </p>
         </div>
     </div>
@@ -489,7 +492,7 @@
             
             <div class="text-center">
                 <a href="faq.html" class="inline-flex items-center gap-2 text-brand-primary font-bold hover:text-brand-secondary transition">
-                    See All FAQs <i class="fa-solid fa-arrow-right"></i>
+                    See All FAQs <i data-lucide="arrow-right" class="w-4 h-4"></i>
                 </a>
             </div>
         </div>
@@ -539,8 +542,8 @@
                 <div>
                     <h4 class="font-bold text-lg mb-6 text-white uppercase tracking-wider text-sm">Connect</h4>
                     <ul class="space-y-4 text-sm text-emerald-100">
-                        <li><a href="mailto:contact@launchtolead.io" class="hover:text-brand-accent transition inline-flex items-center gap-2"><i class="fa-solid fa-envelope"></i> contact@launchtolead.io</a></li>
-                        <li><a href="https://www.linkedin.com/in/launchtolead" target="_blank" rel="noopener noreferrer" class="hover:text-brand-accent transition inline-flex items-center gap-2"><i class="fa-brands fa-linkedin text-blue-400"></i> LinkedIn</a></li>
+                        <li><a href="mailto:contact@launchtolead.io" class="hover:text-brand-accent transition inline-flex items-center gap-2"><i data-lucide="mail" class="w-4 h-4"></i> contact@launchtolead.io</a></li>
+                        <li><a href="https://www.linkedin.com/in/launchtolead" target="_blank" rel="noopener noreferrer" class="hover:text-brand-accent transition inline-flex items-center gap-2"><i data-lucide="linkedin" class="w-4 h-4"></i> LinkedIn</a></li>
                     </ul>
                 </div>
             </div>
@@ -551,5 +554,8 @@
         </div>
     </footer>
 
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
 </html>
