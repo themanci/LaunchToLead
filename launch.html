@@ -68,6 +68,21 @@
     </nav>
 
     <main>
+    <!-- Company Launch Special Banner -->
+    <div class="bg-gradient-to-r from-red-500 via-red-600 to-red-500 text-white py-6 sticky top-20 z-40">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-center gap-3 md:gap-6 text-center">
+            <div class="flex items-center gap-2">
+                <span class="text-2xl animate-bounce">🎉</span>
+                <span class="font-bold text-lg md:text-xl">Company Launch Special</span>
+                <span class="text-2xl animate-bounce">🎉</span>
+            </div>
+            <div class="hidden md:block w-px h-6 bg-white/30"></div>
+            <p class="text-sm md:text-base">
+                <span class="font-bold text-xl md:text-2xl">50% OFF</span> all packages • Limited time only!
+            </p>
+        </div>
+    </div>
+
     <!-- HERO -->
     <div id="top" class="relative pt-28 pb-20 lg:pt-32 lg:pb-24 bg-white overflow-hidden">
         <!-- Dot Pattern -->
@@ -178,107 +193,59 @@
     <div id="pricing" class="py-24 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-slate-900">Choose Your Package</h2>
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900">Launch Package Options</h2>
                 <p class="mt-4 text-slate-500 max-w-2xl mx-auto">
-                    All packages include 1-on-1 video sessions, personalized feedback, and actionable deliverables.
+                    Choose from 2, 3, or 4 session packages. All include 60-minute weekly sessions, personalized feedback, and actionable deliverables.
                 </p>
+                <div class="mt-6 inline-flex items-center gap-2 px-4 py-2 bg-red-50 border-2 border-red-200 rounded-full">
+                    <span class="text-red-600 font-bold text-lg">🎉 50% OFF All Packages</span>
+                    <span class="text-red-500 text-sm">• Company Launch Special</span>
+                </div>
             </div>
             
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Single Session Package -->
-                <div class="p-8 rounded-3xl bg-white border border-slate-200 hover:border-brand-secondary/50 hover:shadow-card transition duration-300 flex flex-col h-full">
-                    <h3 class="text-xl font-bold text-slate-900 mb-2">Resume & Strategy</h3>
-                    <div class="flex items-baseline gap-1 mb-6">
-                        <span class="text-3xl font-bold text-brand-primary">$65</span>
-                        <span class="text-sm text-slate-400">total</span>
+            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <!-- Starter Package -->
+                <div class="bg-gradient-to-br from-blue-50 to-cyan-50 p-8 rounded-3xl border-2 border-blue-200 hover:shadow-card transition duration-300">
+                    <h3 class="text-2xl font-bold text-slate-900 mb-3">Starter</h3>
+                    <div class="mb-4">
+                        <div class="text-sm text-slate-500 line-through">$1,000</div>
+                        <div class="text-4xl font-bold text-brand-primary">$500</div>
+                        <div class="text-sm text-brand-accent font-semibold">2 Sessions</div>
                     </div>
-                    
-                    <p class="text-slate-500 text-sm mb-6 leading-relaxed">
-                        Get your resume polished and learn to showcase your experience.
-                    </p>
-                    
-                    <div class="bg-slate-50 p-4 rounded-xl mb-6 text-xs text-slate-600">
-                        <strong>Perfect if you:</strong> Have a specific resume/application you need help with RIGHT NOW
-                    </div>
-
-                    <ul class="space-y-3 mb-8 text-sm text-slate-600 flex-grow">
-                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs mt-1"></i> <span>1 hour 1-on-1 session</span></li>
-                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs mt-1"></i> <span>Full resume review and improvement recommendations</span></li>
-                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs mt-1"></i> <span>Learn to dig into college experiences, projects, and internships</span></li>
-                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs mt-1"></i> <span>Craft compelling examples that resonate with employers</span></li>
-                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs mt-1"></i> <span>Strategies to land interviews at target companies</span></li>
-                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs mt-1"></i> <span>Action plan and follow-up resources</span></li>
-                    </ul>
-
-                    <a href="#booking" class="w-full py-3 rounded-xl border border-emerald-200 text-brand-primary font-bold text-center hover:bg-brand-primary hover:text-white transition">
-                        Get Started
+                    <p class="text-sm text-slate-600 mb-6">Resume audit, achievement formula, LinkedIn optimization, ATS strategy</p>
+                    <a href="packages.html#launch-packages" class="block w-full py-3 rounded-xl border-2 border-brand-primary text-brand-primary font-bold text-center hover:bg-brand-primary hover:text-white transition">
+                        View Details
                     </a>
                 </div>
 
-                <!-- Two Session Package -->
-                <div class="relative p-8 rounded-3xl bg-white border-2 border-brand-secondary shadow-card flex flex-col h-full transform md:-translate-y-4">
-                    <div class="absolute top-0 right-0 bg-brand-secondary text-white text-xs font-bold px-3 py-1 rounded-bl-xl rounded-tr-xl uppercase tracking-wider">
-                        Most Popular
+                <!-- Standard Package - Most Popular -->
+                <div class="relative bg-gradient-to-br from-emerald-50 to-teal-50 p-8 rounded-3xl border-2 border-brand-secondary hover:shadow-lg transition duration-300 transform md:-translate-y-4">
+                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-brand-secondary text-white px-4 py-1.5 rounded-full text-xs font-bold shadow-lg whitespace-nowrap">
+                        ⭐ MOST POPULAR
                     </div>
-                    
-                    <h3 class="text-xl font-bold text-slate-900 mb-2">Resume + Interview</h3>
-                    <div class="flex items-baseline gap-1 mb-6">
-                        <span class="text-3xl font-bold text-brand-primary">$120</span>
-                        <span class="text-sm text-slate-400">total</span>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-3 mt-2">Standard</h3>
+                    <div class="mb-4">
+                        <div class="text-sm text-slate-500 line-through">$1,350</div>
+                        <div class="text-4xl font-bold text-brand-primary">$675</div>
+                        <div class="text-sm text-brand-accent font-semibold">3 Sessions</div>
                     </div>
-                    
-                    <p class="text-slate-500 text-sm mb-6 leading-relaxed">
-                        Resume development plus interview preparation to seal the deal.
-                    </p>
-                    
-                    <div class="bg-emerald-50 p-4 rounded-xl mb-6 text-xs text-emerald-800">
-                        <strong>Perfect if you:</strong> Want to completely overhaul your approach and land multiple interviews
-                    </div>
-
-                    <ul class="space-y-3 mb-8 text-sm text-slate-600 flex-grow">
-                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs mt-1"></i> <span>2 sessions (2 hours total)</span></li>
-                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs mt-1"></i> <span><strong>Session 1:</strong> Everything from Resume & Strategy Session</span></li>
-                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs mt-1"></i> <span><strong>Session 2:</strong> Interview preparation and practice</span></li>
-                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs mt-1"></i> <span>Technical and behavioral question strategies</span></li>
-                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs mt-1"></i> <span>Learn the STAR method that actually works</span></li>
-                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs mt-1"></i> <span>Common pitfalls and how to avoid them</span></li>
-                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs mt-1"></i> <span>Confidence-building techniques</span></li>
-                    </ul>
-
-                    <a href="#booking" class="w-full py-3 rounded-xl bg-brand-primary text-white font-bold text-center hover:bg-brand-secondary transition shadow-lg hover:shadow-fresh">
-                        Book Package
+                    <p class="text-sm text-slate-600 mb-6">Everything in Starter PLUS interview prep masterclass, STAR method, confidence techniques</p>
+                    <a href="packages.html#launch-packages" class="block w-full py-3 rounded-xl bg-brand-primary text-white font-bold text-center hover:bg-brand-secondary transition shadow-lg">
+                        View Details
                     </a>
                 </div>
 
-                <!-- Three Session Package -->
-                <div class="p-8 rounded-3xl bg-white border border-slate-200 hover:border-brand-secondary/50 hover:shadow-card transition duration-300 flex flex-col h-full">
-                    <h3 class="text-xl font-bold text-slate-900 mb-2">Complete Launch</h3>
-                    <div class="flex items-baseline gap-1 mb-6">
-                        <span class="text-3xl font-bold text-brand-primary">$165</span>
-                        <span class="text-sm text-slate-400">total</span>
+                <!-- Premium Package -->
+                <div class="bg-gradient-to-br from-slate-50 to-gray-50 p-8 rounded-3xl border-2 border-slate-200 hover:shadow-card transition duration-300">
+                    <h3 class="text-2xl font-bold text-slate-900 mb-3">Premium</h3>
+                    <div class="mb-4">
+                        <div class="text-sm text-slate-500 line-through">$1,600</div>
+                        <div class="text-4xl font-bold text-brand-primary">$800</div>
+                        <div class="text-sm text-brand-accent font-semibold">4 Sessions</div>
                     </div>
-                    
-                    <p class="text-slate-500 text-sm mb-6 leading-relaxed">
-                        Full preparation from resume to mock interview with detailed feedback.
-                    </p>
-                    
-                    <div class="bg-slate-50 p-4 rounded-xl mb-6 text-xs text-slate-600">
-                        <strong>Perfect if you:</strong> Are serious about making a career change and want full support from start to finish
-                    </div>
-
-                    <ul class="space-y-3 mb-8 text-sm text-slate-600 flex-grow">
-                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs mt-1"></i> <span>3 sessions (3 hours total)</span></li>
-                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs mt-1"></i> <span><strong>Sessions 1-2:</strong> Everything from Resume + Interview Prep</span></li>
-                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs mt-1"></i> <span><strong>Session 3:</strong> Full mock interview</span></li>
-                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs mt-1"></i> <span>Complete technical or behavioral interview simulation</span></li>
-                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs mt-1"></i> <span>Recorded session for your review</span></li>
-                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs mt-1"></i> <span>Detailed written feedback on performance</span></li>
-                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs mt-1"></i> <span>Specific improvement recommendations</span></li>
-                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs mt-1"></i> <span>Final polish before your real interviews</span></li>
-                    </ul>
-
-                    <a href="#booking" class="w-full py-3 rounded-xl border border-emerald-200 text-brand-primary font-bold text-center hover:bg-brand-primary hover:text-white transition">
-                        Launch My Career
+                    <p class="text-sm text-slate-600 mb-6">Everything in Standard PLUS full behavioral mock interview with recording and written feedback</p>
+                    <a href="packages.html#launch-packages" class="block w-full py-3 rounded-xl border-2 border-brand-primary text-brand-primary font-bold text-center hover:bg-brand-primary hover:text-white transition">
+                        View Details
                     </a>
                 </div>
             </div>
@@ -476,19 +443,22 @@
         <div class="absolute bottom-0 left-0 -mb-20 -ml-20 w-96 h-96 bg-brand-accent rounded-full blur-3xl opacity-10"></div>
         
         <div class="max-w-4xl mx-auto px-4 relative z-10 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Ready to Get Started?</h2>
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Ready to Launch Your Career?</h2>
             <p class="text-emerald-100 text-lg mb-10 max-w-2xl mx-auto">
-                Schedule a 30-minute call to discuss your goals and see if we're a good fit. No pressure, no hard sell—just an honest conversation about your career.
+                Book a free 15-minute discovery call to discuss your goals, choose the right package, and get started. No pressure—just an honest conversation about your career.
             </p>
             
-            <div class="flex flex-col items-center gap-4">
-                <a href="https://calendar.app.google/uzaLZUWSUH3ZbaGr6" target="_blank" rel="noopener noreferrer" class="px-8 py-4 bg-white text-brand-primary font-bold rounded-full hover:bg-brand-accent hover:text-brand-primary transition shadow-lg hover:shadow-fresh hover:-translate-y-1 inline-flex items-center gap-2">
-                    <i class="fa-regular fa-calendar"></i> Book Your Free Call
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="packages.html#launch-packages" class="px-8 py-4 bg-white text-brand-primary font-bold rounded-full hover:bg-brand-accent transition shadow-lg hover:shadow-fresh hover:-translate-y-1 inline-flex items-center gap-2">
+                    <i class="fa-solid fa-box"></i> View All Packages
                 </a>
-                <p class="text-emerald-200 text-sm mt-4">
-                    <i class="fa-solid fa-video mr-1"></i> All sessions are conducted via Google Meet video call.
-                </p>
+                <a href="contact.html" class="px-8 py-4 bg-brand-secondary text-white font-bold rounded-full hover:bg-teal-600 transition shadow-lg hover:shadow-fresh hover:-translate-y-1 inline-flex items-center gap-2">
+                    <i class="fa-regular fa-calendar"></i> Book Discovery Call
+                </a>
             </div>
+            <p class="text-emerald-200 text-sm mt-6">
+                <i class="fa-solid fa-video mr-1"></i> All sessions are 60 minutes, conducted weekly via video call.
+            </p>
         </div>
     </div>
 
