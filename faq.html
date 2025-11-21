@@ -8,30 +8,7 @@
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            primary: '#0f766e',
-                            secondary: '#0d9488',
-                            accent: '#2dd4bf',
-                            dark: '#111827',
-                            light: '#f0fdfa'
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Plus Jakarta Sans', 'sans-serif'],
-                    },
-                    boxShadow: {
-                        'soft': '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
-                        'fresh': '0 10px 15px -3px rgba(13, 148, 136, 0.1), 0 4px 6px -2px rgba(13, 148, 136, 0.05)',
-                    }
-                }
-            }
-        }
-    </script>
+    <script src="tailwind-config.js"></script>
 
     <!-- FontAwesome -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
@@ -99,12 +76,18 @@
 
     <main>
     <!-- HERO -->
-    <div class="relative pt-28 pb-20 lg:pt-32 lg:pb-24 bg-white overflow-hidden">
-        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 class="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight mb-6">
-                Frequently Asked <span class="text-brand-primary">Questions</span>
+    <div id="top" class="relative pt-28 pb-20 lg:pt-32 lg:pb-24 bg-white overflow-hidden">
+        <div class="absolute inset-0 bg-dots opacity-20" style="background-size: 20px 20px;"></div>
+        
+        <!-- Background blobs -->
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-brand-accent rounded-full blur-3xl opacity-20 pointer-events-none" aria-hidden="true"></div>
+        <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-96 h-96 bg-brand-secondary rounded-full blur-3xl opacity-20 pointer-events-none" aria-hidden="true"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <h1 class="text-5xl md:text-6xl font-extrabold text-slate-900 tracking-tight mb-6">
+                Frequently Asked <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-brand-secondary">Questions</span>
             </h1>
-            <p class="mt-4 max-w-2xl mx-auto text-xl text-slate-500">
+            <p class="mt-4 max-w-2xl mx-auto text-xl text-slate-500 font-light leading-relaxed">
                 Find answers to common questions about Launch to Lead Engineering coaching services.
             </p>
         </div>
@@ -339,60 +322,75 @@
     </section>
 
     <!-- CTA -->
-    <section class="section cta-section">
-        <div class="container">
-            <div class="cta-content">
-                <h2>Still Have Questions?</h2>
-                <p>Book a free discovery call and let's discuss your specific situation.</p>
-                <a href="contact.html" class="btn btn-primary btn-large">Book a Free Call</a>
-            </div>
+    <!-- CTA Section -->
+    <div class="py-24 bg-brand-primary relative overflow-hidden">
+        <!-- Background decoration -->
+        <div class="absolute top-0 right-0 -mt-20 -mr-20 w-96 h-96 bg-brand-secondary rounded-full blur-3xl opacity-20 pointer-events-none" aria-hidden="true"></div>
+        <div class="absolute bottom-0 left-0 -mb-20 -ml-20 w-96 h-96 bg-brand-primary rounded-full blur-3xl opacity-10 pointer-events-none" aria-hidden="true"></div>
+        
+        <div class="max-w-4xl mx-auto px-4 relative z-10 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Still Have Questions?</h2>
+            <p class="text-emerald-100 text-lg mb-10 max-w-2xl mx-auto">
+                Book a free discovery call and let's discuss your specific situation.
+            </p>
+            
+            <a href="contact.html" class="px-8 py-4 bg-white text-brand-primary font-bold rounded-full hover:bg-brand-accent hover:text-brand-primary transition shadow-lg hover:shadow-fresh hover:-translate-y-1 inline-flex items-center gap-2">
+                <i class="fa-regular fa-calendar"></i> Book a Free Discovery Call
+            </a>
         </div>
-    </section>
+    </div>
     </main>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <div class="logo">
-                        <span class="logo-icon">L²</span>
-                        <span class="logo-text">
-                            <strong>Launch to Lead</strong>
-                            <span class="logo-subtitle">Engineering</span>
-                        </span>
-                    </div>
-                    <p class="footer-description">Engineering career coaching that actually works—because it's based on real experience, not theory.</p>
+    <footer class="bg-brand-primary text-white py-16 border-t border-emerald-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-12 mb-12">
+                <!-- Brand -->
+                <div class="col-span-1">
+                    <a href="index.html" class="flex items-center gap-2 mb-6 group">
+                        <div class="bg-brand-accent text-brand-primary w-10 h-10 rounded-lg flex items-center justify-center group-hover:bg-white transition duration-300">
+                            <span class="font-bold text-lg">L²</span>
+                        </div>
+                        <span class="font-bold text-xl text-white tracking-tight">Launch<span class="font-light text-brand-accent">ToLead</span></span>
+                    </a>
+                    <p class="text-emerald-100 text-sm leading-relaxed">
+                        Engineering career coaching for students and professionals.
+                    </p>
                 </div>
-                <div class="footer-links">
-                    <div class="footer-column">
-                        <h4>Services</h4>
-                        <ul>
-                            <li><a href="launch.html">Launch (College/Entry)</a></li>
-                            <li><a href="pivot.html">Pivot (Transitions)</a></li>
-                            <li><a href="accelerate.html">Accelerate (Promotions)</a></li>
-                            <li><a href="packages.html">Packages</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-column">
-                        <h4>Company</h4>
-                        <ul>
-                            <li><a href="about.html">About</a></li>
-                            <li><a href="success-stories.html">Success Stories</a></li>
-                            <li><a href="faq.html">FAQ</a></li>
-                            <li><a href="contact.html">Contact</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-column">
-                        <h4>Connect</h4>
-                        <ul>
-                            <li><a href="mailto:contact@launchtolead.io"><i class="fa-solid fa-envelope"></i> contact@launchtolead.io</a></li>
-                            <li><a href="https://www.linkedin.com/in/launchtolead" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin" style="color: #0077b5;"></i> LinkedIn</a></li>
-                        </ul>
-                    </div>
+
+                <!-- Services -->
+                <div>
+                    <h4 class="font-bold text-lg mb-6 text-white uppercase tracking-wider text-sm">Services</h4>
+                    <ul class="space-y-4 text-sm text-emerald-100">
+                        <li><a href="launch.html" class="hover:text-brand-accent transition">Launch</a></li>
+                        <li><a href="pivot.html" class="hover:text-brand-accent transition">Pivot</a></li>
+                        <li><a href="accelerate.html" class="hover:text-brand-accent transition">Accelerate</a></li>
+                        <li><a href="packages.html" class="hover:text-brand-accent transition">Packages</a></li>
+                    </ul>
+                </div>
+
+                <!-- Company -->
+                <div>
+                    <h4 class="font-bold text-lg mb-6 text-white uppercase tracking-wider text-sm">Company</h4>
+                    <ul class="space-y-4 text-sm text-emerald-100">
+                        <li><a href="about.html" class="hover:text-brand-accent transition">About</a></li>
+                        <li><a href="success-stories.html" class="hover:text-brand-accent transition">Success Stories</a></li>
+                        <li><a href="faq.html" class="text-brand-accent font-bold">FAQ</a></li>
+                        <li><a href="contact.html" class="hover:text-brand-accent transition">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Connect -->
+                <div>
+                    <h4 class="font-bold text-lg mb-6 text-white uppercase tracking-wider text-sm">Connect</h4>
+                    <ul class="space-y-4 text-sm text-emerald-100">
+                        <li><a href="mailto:contact@launchtolead.io" class="hover:text-brand-accent transition inline-flex items-center gap-2"><i class="fa-solid fa-envelope"></i> contact@launchtolead.io</a></li>
+                        <li><a href="https://www.linkedin.com/in/launchtolead" target="_blank" rel="noopener noreferrer" class="hover:text-brand-accent transition inline-flex items-center gap-2"><i class="fa-brands fa-linkedin text-blue-400"></i> LinkedIn</a></li>
+                    </ul>
                 </div>
             </div>
-            <div class="footer-bottom">
+            
+            <div class="border-t border-emerald-800 pt-8 text-center text-emerald-400 text-sm">
                 <p>&copy; 2025 Launch to Lead Engineering. All rights reserved.</p>
             </div>
         </div>
