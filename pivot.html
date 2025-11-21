@@ -16,44 +16,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- Custom Config -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            primary: '#064e3b', /* Emerald 900 */
-                            secondary: '#14b8a6', /* Teal 500 */
-                            accent: '#a3e635', /* Lime 400 */
-                            light: '#ecfdf5', /* Emerald 50 */
-                            surface: '#ffffff'
-                        },
-                        pivot: {
-                            primary: '#b45309', /* Amber 700 */
-                            secondary: '#f59e0b', /* Amber 500 */
-                            light: '#fffbeb', /* Amber 50 */
-                        },
-                        accelerate: {
-                            primary: '#4338ca', /* Indigo 700 */
-                            secondary: '#6366f1', /* Indigo 500 */
-                            light: '#eef2ff', /* Indigo 50 */
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
-                    },
-                    boxShadow: {
-                        'soft': '0 4px 20px -2px rgba(6, 78, 59, 0.1)',
-                        'card': '0 10px 40px -10px rgba(6, 78, 59, 0.15)',
-                        'fresh': '0 0 20px rgba(20, 184, 166, 0.25)'
-                    },
-                    backgroundImage: {
-                        'dots': 'radial-gradient(#14b8a6 1px, transparent 1px)',
-                    }
-                }
-            }
-        }
-    </script>
+    <script src="tailwind-config.js"></script>
 </head>
 <body class="bg-brand-light text-slate-600 font-sans antialiased">
 
@@ -72,8 +35,8 @@
 
                 <div class="hidden md:flex items-center space-x-8">
                     <a href="launch.html" class="text-sm font-medium text-slate-500 hover:text-brand-secondary transition">Launch</a>
-                    <a href="pivot.html" class="text-sm font-bold text-pivot-primary">Pivot</a>
-                    <a href="accelerate.html" class="text-sm font-medium text-slate-500 hover:text-accelerate-secondary transition">Accelerate</a>
+                    <a href="pivot.html" class="text-sm font-bold text-brand-primary">Pivot</a>
+                    <a href="accelerate.html" class="text-sm font-medium text-slate-500 hover:text-brand-secondary transition">Accelerate</a>
                     <a href="packages.html" class="text-sm font-medium text-slate-500 hover:text-brand-secondary transition">Packages</a>
                     <a href="about.html" class="text-sm font-medium text-slate-500 hover:text-brand-secondary transition">About</a>
                     <a href="contact.html" class="bg-brand-primary text-white px-5 py-2 rounded-full font-semibold text-sm hover:bg-brand-secondary transition shadow-soft hover:shadow-fresh">
@@ -95,23 +58,23 @@
         <div class="absolute inset-0 bg-dots opacity-20" style="background-size: 20px 20px;"></div>
 
         <!-- Fresh Background blobs -->
-        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-amber-100 rounded-full blur-3xl opacity-60"></div>
-        <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-96 h-96 bg-orange-100 rounded-full blur-3xl opacity-60"></div>
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-brand-accent rounded-full blur-3xl opacity-20"></div>
+        <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-96 h-96 bg-brand-secondary rounded-full blur-3xl opacity-20"></div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-50 border border-amber-100 text-amber-900 text-xs font-semibold mb-8">
-                <span class="w-2 h-2 rounded-full bg-pivot-secondary"></span>
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-light border border-emerald-100 text-brand-primary text-xs font-semibold mb-8">
+                <span class="w-2 h-2 rounded-full bg-brand-secondary"></span>
                 For Career Transitioners
             </div>
             <h1 class="text-5xl md:text-7xl font-extrabold text-slate-900 tracking-tight mb-8 leading-[1.1]">
                 Pivot Your<br>
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-pivot-primary to-pivot-secondary">Engineering Career.</span>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-brand-secondary">Engineering Career.</span>
             </h1>
             <p class="mt-4 max-w-2xl mx-auto text-xl text-slate-500 mb-10 font-light leading-relaxed">
                 Over 7 years at a Fortune 100 company, I transitioned from a Mechanical Engineer testing engines, to writing software for embedded systems, to leading large embedded software and AI initiatives across the entire company.
             </p>
             <div class="flex justify-center gap-4">
-                <a href="#packages" class="px-8 py-4 bg-pivot-primary text-white font-bold rounded-full hover:bg-pivot-secondary transition shadow-card hover:shadow-fresh hover:-translate-y-1">
+                <a href="#packages" class="px-8 py-4 bg-brand-primary text-white font-bold rounded-full hover:bg-brand-secondary transition shadow-card hover:shadow-fresh hover:-translate-y-1">
                     View Packages
                 </a>
             </div>
@@ -121,16 +84,16 @@
     <!-- Credibility Box -->
     <div class="py-12 bg-brand-light">
         <div class="max-w-5xl mx-auto px-4">
-            <div class="bg-white rounded-3xl p-8 md:p-12 shadow-card border border-amber-100 text-center">
+            <div class="bg-white rounded-3xl p-8 md:p-12 shadow-card border border-emerald-100 text-center">
                 <h2 class="text-2xl font-bold text-slate-900 mb-8">I've Pivoted 4 Times at a Fortune 100 Company</h2>
                 
                 <div class="flex flex-wrap justify-center items-center gap-4 md:gap-8 mb-8 text-sm md:text-base font-semibold text-slate-700">
                     <span class="px-4 py-2 bg-slate-50 rounded-lg border border-slate-100">🔧 Mechanical Test</span>
-                    <i class="fa-solid fa-arrow-right text-pivot-secondary"></i>
+                    <i class="fa-solid fa-arrow-right text-brand-secondary"></i>
                     <span class="px-4 py-2 bg-slate-50 rounded-lg border border-slate-100">💻 Software Dev</span>
-                    <i class="fa-solid fa-arrow-right text-pivot-secondary"></i>
+                    <i class="fa-solid fa-arrow-right text-brand-secondary"></i>
                     <span class="px-4 py-2 bg-slate-50 rounded-lg border border-slate-100">📋 Product Owner</span>
-                    <i class="fa-solid fa-arrow-right text-pivot-secondary"></i>
+                    <i class="fa-solid fa-arrow-right text-brand-secondary"></i>
                     <span class="px-4 py-2 bg-slate-50 rounded-lg border border-slate-100">🚀 Leadership</span>
                 </div>
                 
@@ -142,8 +105,8 @@
             <!-- AI Pivot Advantage -->
             <div id="ai" class="mt-12 bg-slate-900 rounded-3xl p-8 md:p-12 text-white relative overflow-hidden">
                 <!-- Background decoration -->
-                <div class="absolute top-0 right-0 -mt-20 -mr-20 w-80 h-80 bg-pivot-secondary rounded-full blur-3xl opacity-20"></div>
-                <div class="absolute bottom-0 left-0 -mb-20 -ml-20 w-80 h-80 bg-pivot-primary rounded-full blur-3xl opacity-40"></div>
+                <div class="absolute top-0 right-0 -mt-20 -mr-20 w-80 h-80 bg-brand-secondary rounded-full blur-3xl opacity-20"></div>
+                <div class="absolute bottom-0 left-0 -mb-20 -ml-20 w-80 h-80 bg-brand-primary rounded-full blur-3xl opacity-40"></div>
                 
                 <div class="relative z-10">
                     <h3 class="text-2xl md:text-3xl font-bold mb-8 text-center">Why AI Makes Pivoting EASIER (Not Harder)</h3>
@@ -183,9 +146,9 @@
                             <div class="pt-6 border-t border-white/10">
                                 <p class="text-brand-accent font-bold mb-2">I'll help you:</p>
                                 <ul class="space-y-2 text-slate-300 text-sm">
-                                    <li class="flex items-center gap-2"><i class="fa-solid fa-arrow-right text-pivot-secondary text-xs"></i> Identify exact skills needed</li>
-                                    <li class="flex items-center gap-2"><i class="fa-solid fa-arrow-right text-pivot-secondary text-xs"></i> Build AI-accelerated learning plan</li>
-                                    <li class="flex items-center gap-2"><i class="fa-solid fa-arrow-right text-pivot-secondary text-xs"></i> Position pivot story effectively</li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-arrow-right text-brand-secondary text-xs"></i> Identify exact skills needed</li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-arrow-right text-brand-secondary text-xs"></i> Build AI-accelerated learning plan</li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-arrow-right text-brand-secondary text-xs"></i> Position pivot story effectively</li>
                                 </ul>
                             </div>
                         </div>
@@ -214,8 +177,8 @@
 
                 <!-- Item 2 -->
                 <div class="relative pl-8 md:pl-12">
-                    <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-white border-4 border-pivot-secondary"></div>
-                    <div class="text-sm font-bold text-pivot-secondary mb-1">2019</div>
+                    <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-white border-4 border-brand-primary"></div>
+                    <div class="text-sm font-bold text-brand-primary mb-1">2019</div>
                     <h4 class="text-xl font-bold text-slate-900 mb-2">First Major Pivot → Embedded Software</h4>
                     <p class="text-slate-600 text-sm leading-relaxed">Delivered experimental software in under 2 days. Worked on drivetrain software for tractors.</p>
                 </div>
@@ -293,7 +256,7 @@
             <div class="grid md:grid-cols-3 gap-8">
                 <!-- Card 1 -->
                 <div class="bg-white p-8 rounded-3xl shadow-sm border border-emerald-100 hover:shadow-card transition duration-300">
-                    <div class="w-12 h-12 bg-amber-50 rounded-xl flex items-center justify-center text-pivot-primary text-xl mb-6">
+                    <div class="w-12 h-12 bg-brand-light rounded-xl flex items-center justify-center text-brand-primary text-xl mb-6">
                         <i class="fa-solid fa-map"></i>
                     </div>
                     <h3 class="text-xl font-bold text-slate-900 mb-4">Custom Pivot Roadmap</h3>
@@ -304,7 +267,7 @@
 
                 <!-- Card 2 -->
                 <div class="bg-white p-8 rounded-3xl shadow-sm border border-emerald-100 hover:shadow-card transition duration-300">
-                    <div class="w-12 h-12 bg-amber-50 rounded-xl flex items-center justify-center text-pivot-primary text-xl mb-6">
+                    <div class="w-12 h-12 bg-brand-light rounded-xl flex items-center justify-center text-brand-primary text-xl mb-6">
                         <i class="fa-solid fa-laptop-code"></i>
                     </div>
                     <h3 class="text-xl font-bold text-slate-900 mb-4">Strategic Skill Building</h3>
@@ -315,7 +278,7 @@
 
                 <!-- Card 3 -->
                 <div class="bg-white p-8 rounded-3xl shadow-sm border border-emerald-100 hover:shadow-card transition duration-300">
-                    <div class="w-12 h-12 bg-amber-50 rounded-xl flex items-center justify-center text-pivot-primary text-xl mb-6">
+                    <div class="w-12 h-12 bg-brand-light rounded-xl flex items-center justify-center text-brand-primary text-xl mb-6">
                         <i class="fa-solid fa-crosshairs"></i>
                     </div>
                     <h3 class="text-xl font-bold text-slate-900 mb-4">Internal Positioning</h3>
@@ -326,7 +289,7 @@
 
                 <!-- Card 4 -->
                 <div class="bg-white p-8 rounded-3xl shadow-sm border border-emerald-100 hover:shadow-card transition duration-300">
-                    <div class="w-12 h-12 bg-amber-50 rounded-xl flex items-center justify-center text-pivot-primary text-xl mb-6">
+                    <div class="w-12 h-12 bg-brand-light rounded-xl flex items-center justify-center text-brand-primary text-xl mb-6">
                         <i class="fa-solid fa-hammer"></i>
                     </div>
                     <h3 class="text-xl font-bold text-slate-900 mb-4">Portfolio Projects</h3>
@@ -337,7 +300,7 @@
 
                 <!-- Card 5 -->
                 <div class="bg-white p-8 rounded-3xl shadow-sm border border-emerald-100 hover:shadow-card transition duration-300">
-                    <div class="w-12 h-12 bg-amber-50 rounded-xl flex items-center justify-center text-pivot-primary text-xl mb-6">
+                    <div class="w-12 h-12 bg-brand-light rounded-xl flex items-center justify-center text-brand-primary text-xl mb-6">
                         <i class="fa-solid fa-handshake"></i>
                     </div>
                     <h3 class="text-xl font-bold text-slate-900 mb-4">Leverage Your Background</h3>
@@ -348,7 +311,7 @@
 
                 <!-- Card 6 -->
                 <div class="bg-white p-8 rounded-3xl shadow-sm border border-emerald-100 hover:shadow-card transition duration-300">
-                    <div class="w-12 h-12 bg-amber-50 rounded-xl flex items-center justify-center text-pivot-primary text-xl mb-6">
+                    <div class="w-12 h-12 bg-brand-light rounded-xl flex items-center justify-center text-brand-primary text-xl mb-6">
                         <i class="fa-solid fa-chart-line"></i>
                     </div>
                     <h3 class="text-xl font-bold text-slate-900 mb-4">Prove Your Value Early</h3>
@@ -408,10 +371,10 @@
             
             <div class="grid md:grid-cols-3 gap-8">
                 <!-- Single Session Package -->
-                <div class="p-8 rounded-3xl bg-white border border-slate-200 hover:border-pivot-secondary/50 hover:shadow-card transition duration-300 flex flex-col h-full">
+                <div class="p-8 rounded-3xl bg-white border border-slate-200 hover:border-brand-secondary/50 hover:shadow-card transition duration-300 flex flex-col h-full">
                     <h3 class="text-xl font-bold text-slate-900 mb-2">Pivot Assessment</h3>
                     <div class="flex items-baseline gap-1 mb-6">
-                        <span class="text-3xl font-bold text-pivot-primary">$85</span>
+                        <span class="text-3xl font-bold text-brand-primary">$85</span>
                         <span class="text-sm text-slate-400">total</span>
                     </div>
                     
@@ -420,28 +383,28 @@
                     </p>
 
                     <ul class="space-y-3 mb-8 text-sm text-slate-600 flex-grow">
-                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-pivot-secondary text-xs mt-1"></i> <span>1 hour 1-on-1 session</span></li>
-                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-pivot-secondary text-xs mt-1"></i> <span>Assessment of current skills vs target discipline</span></li>
-                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-pivot-secondary text-xs mt-1"></i> <span>Gap analysis: what you need to learn</span></li>
-                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-pivot-secondary text-xs mt-1"></i> <span>High-level strategic roadmap for your transition</span></li>
-                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-pivot-secondary text-xs mt-1"></i> <span>Recommended learning resources and portfolio projects</span></li>
-                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-pivot-secondary text-xs mt-1"></i> <span>Next steps action plan</span></li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs mt-1"></i> <span>1 hour 1-on-1 session</span></li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs mt-1"></i> <span>Assessment of current skills vs target discipline</span></li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs mt-1"></i> <span>Gap analysis: what you need to learn</span></li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs mt-1"></i> <span>High-level strategic roadmap for your transition</span></li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs mt-1"></i> <span>Recommended learning resources and portfolio projects</span></li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs mt-1"></i> <span>Next steps action plan</span></li>
                     </ul>
 
-                    <a href="#booking" class="w-full py-3 rounded-xl border border-amber-200 text-pivot-primary font-bold text-center hover:bg-pivot-primary hover:text-white transition">
+                    <a href="#booking" class="w-full py-3 rounded-xl border border-emerald-200 text-brand-primary font-bold text-center hover:bg-brand-primary hover:text-white transition">
                         Get Started
                     </a>
                 </div>
 
                 <!-- Two Session Package -->
-                <div class="relative p-8 rounded-3xl bg-white border-2 border-pivot-secondary shadow-card flex flex-col h-full transform md:-translate-y-4">
-                    <div class="absolute top-0 right-0 bg-pivot-secondary text-white text-xs font-bold px-3 py-1 rounded-bl-xl rounded-tr-xl uppercase tracking-wider">
+                <div class="relative p-8 rounded-3xl bg-white border-2 border-brand-secondary shadow-card flex flex-col h-full transform md:-translate-y-4">
+                    <div class="absolute top-0 right-0 bg-brand-secondary text-white text-xs font-bold px-3 py-1 rounded-bl-xl rounded-tr-xl uppercase tracking-wider">
                         Most Popular
                     </div>
                     
                     <h3 class="text-xl font-bold text-slate-900 mb-2">Strategic Pivot Plan</h3>
                     <div class="flex items-baseline gap-1 mb-6">
-                        <span class="text-3xl font-bold text-pivot-primary">$160</span>
+                        <span class="text-3xl font-bold text-brand-primary">$160</span>
                         <span class="text-sm text-slate-400">total</span>
                     </div>
                     
@@ -450,25 +413,25 @@
                     </p>
 
                     <ul class="space-y-3 mb-8 text-sm text-slate-600 flex-grow">
-                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-pivot-secondary text-xs mt-1"></i> <span>2 sessions (2 hours total)</span></li>
-                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-pivot-secondary text-xs mt-1"></i> <span><strong>Session 1:</strong> Everything from Pivot Assessment & Roadmap</span></li>
-                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-pivot-secondary text-xs mt-1"></i> <span><strong>Session 2:</strong> Internal positioning and portfolio strategy</span></li>
-                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-pivot-secondary text-xs mt-1"></i> <span>How to leverage current role to gain new skills</span></li>
-                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-pivot-secondary text-xs mt-1"></i> <span>Resume and LinkedIn rewrite for pivot</span></li>
-                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-pivot-secondary text-xs mt-1"></i> <span>Networking strategy to connect with target teams</span></li>
-                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-pivot-secondary text-xs mt-1"></i> <span>Talking points to pitch your transferable skills</span></li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs mt-1"></i> <span>2 sessions (2 hours total)</span></li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs mt-1"></i> <span><strong>Session 1:</strong> Everything from Pivot Assessment & Roadmap</span></li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs mt-1"></i> <span><strong>Session 2:</strong> Internal positioning and portfolio strategy</span></li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs mt-1"></i> <span>How to leverage current role to gain new skills</span></li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs mt-1"></i> <span>Resume and LinkedIn rewrite for pivot</span></li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs mt-1"></i> <span>Networking strategy to connect with target teams</span></li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs mt-1"></i> <span>Talking points to pitch your transferable skills</span></li>
                     </ul>
 
-                    <a href="#booking" class="w-full py-3 rounded-xl bg-pivot-primary text-white font-bold text-center hover:bg-pivot-secondary transition shadow-lg hover:shadow-fresh">
+                    <a href="#booking" class="w-full py-3 rounded-xl bg-brand-primary text-white font-bold text-center hover:bg-brand-secondary transition shadow-lg hover:shadow-fresh">
                         Start Pivot
                     </a>
                 </div>
 
                 <!-- Three Session Package -->
-                <div class="p-8 rounded-3xl bg-white border border-slate-200 hover:border-pivot-secondary/50 hover:shadow-card transition duration-300 flex flex-col h-full">
+                <div class="p-8 rounded-3xl bg-white border border-slate-200 hover:border-brand-secondary/50 hover:shadow-card transition duration-300 flex flex-col h-full">
                     <h3 class="text-xl font-bold text-slate-900 mb-2">Complete Pivot</h3>
                     <div class="flex items-baseline gap-1 mb-6">
-                        <span class="text-3xl font-bold text-pivot-primary">$225</span>
+                        <span class="text-3xl font-bold text-brand-primary">$225</span>
                         <span class="text-sm text-slate-400">total</span>
                     </div>
                     
@@ -477,17 +440,17 @@
                     </p>
 
                     <ul class="space-y-3 mb-8 text-sm text-slate-600 flex-grow">
-                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-pivot-secondary text-xs mt-1"></i> <span>3 sessions (3 hours total)</span></li>
-                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-pivot-secondary text-xs mt-1"></i> <span><strong>Sessions 1-2:</strong> Everything from Strategic Pivot Plan</span></li>
-                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-pivot-secondary text-xs mt-1"></i> <span><strong>Session 3:</strong> Interview prep and role transition</span></li>
-                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-pivot-secondary text-xs mt-1"></i> <span>Mock technical interview for your target discipline</span></li>
-                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-pivot-secondary text-xs mt-1"></i> <span>How to explain your pivot in interviews</span></li>
-                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-pivot-secondary text-xs mt-1"></i> <span>Portfolio project review and feedback</span></li>
-                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-pivot-secondary text-xs mt-1"></i> <span>First 90-day success plan in new role</span></li>
-                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-pivot-secondary text-xs mt-1"></i> <span>Ongoing support as you make the transition</span></li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs mt-1"></i> <span>3 sessions (3 hours total)</span></li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs mt-1"></i> <span><strong>Sessions 1-2:</strong> Everything from Strategic Pivot Plan</span></li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs mt-1"></i> <span><strong>Session 3:</strong> Interview prep and role transition</span></li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs mt-1"></i> <span>Mock technical interview for your target discipline</span></li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs mt-1"></i> <span>How to explain your pivot in interviews</span></li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs mt-1"></i> <span>Portfolio project review and feedback</span></li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs mt-1"></i> <span>First 90-day success plan in new role</span></li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs mt-1"></i> <span>Ongoing support as you make the transition</span></li>
                     </ul>
 
-                    <a href="#booking" class="w-full py-3 rounded-xl border border-amber-200 text-pivot-primary font-bold text-center hover:bg-pivot-primary hover:text-white transition">
+                    <a href="#booking" class="w-full py-3 rounded-xl border border-emerald-200 text-brand-primary font-bold text-center hover:bg-brand-primary hover:text-white transition">
                         Complete Pivot
                     </a>
                 </div>
@@ -509,7 +472,7 @@
             <div class="grid md:grid-cols-4 gap-8 text-center">
                 <!-- Step 1 -->
                 <div>
-                    <div class="w-16 h-16 bg-pivot-primary text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6 shadow-lg shadow-amber-200">1</div>
+                    <div class="w-16 h-16 bg-brand-primary text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6 shadow-lg shadow-emerald-200">1</div>
                     <h3 class="text-xl font-bold text-slate-900 mb-4">Assess Your Pivot Potential</h3>
                     <p class="text-sm text-slate-500 leading-relaxed">
                         We'll map YOUR current skills to your target role—not generic 'transferable skills,' but specific value YOU bring.
@@ -518,7 +481,7 @@
 
                 <!-- Step 2 -->
                 <div>
-                    <div class="w-16 h-16 bg-pivot-primary text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6 shadow-lg shadow-amber-200">2</div>
+                    <div class="w-16 h-16 bg-brand-primary text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6 shadow-lg shadow-emerald-200">2</div>
                     <h3 class="text-xl font-bold text-slate-900 mb-4">Build Your Transition Roadmap</h3>
                     <p class="text-sm text-slate-500 leading-relaxed">
                         Based on YOUR company's structure, YOUR team dynamics, YOUR timeline—not a cookie-cutter plan.
@@ -527,7 +490,7 @@
 
                 <!-- Step 3 -->
                 <div>
-                    <div class="w-16 h-16 bg-pivot-primary text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6 shadow-lg shadow-amber-200">3</div>
+                    <div class="w-16 h-16 bg-brand-primary text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6 shadow-lg shadow-emerald-200">3</div>
                     <h3 class="text-xl font-bold text-slate-900 mb-4">Execute Your Pivot</h3>
                     <p class="text-sm text-slate-500 leading-relaxed">
                         I'll review YOUR positioning emails, YOUR internal applications, YOUR conversations with leadership—with specific feedback.
@@ -536,7 +499,7 @@
 
                 <!-- Step 4 -->
                 <div>
-                    <div class="w-16 h-16 bg-pivot-primary text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6 shadow-lg shadow-amber-200">4</div>
+                    <div class="w-16 h-16 bg-brand-primary text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6 shadow-lg shadow-emerald-200">4</div>
                     <h3 class="text-xl font-bold text-slate-900 mb-4">Land & Excel in Your New Role</h3>
                     <p class="text-sm text-slate-500 leading-relaxed">
                         Apply with a compelling narrative about why your unique background makes you the ideal candidate. Navigate the transition with proven strategies.
@@ -549,8 +512,8 @@
     <!-- Booking Section -->
     <div id="booking" class="py-24 bg-brand-primary relative overflow-hidden">
         <!-- Background decoration -->
-        <div class="absolute top-0 right-0 -mt-20 -mr-20 w-96 h-96 bg-pivot-secondary rounded-full blur-3xl opacity-20"></div>
-        <div class="absolute bottom-0 left-0 -mb-20 -ml-20 w-96 h-96 bg-pivot-primary rounded-full blur-3xl opacity-10"></div>
+        <div class="absolute top-0 right-0 -mt-20 -mr-20 w-96 h-96 bg-brand-secondary rounded-full blur-3xl opacity-20"></div>
+        <div class="absolute bottom-0 left-0 -mb-20 -ml-20 w-96 h-96 bg-brand-primary rounded-full blur-3xl opacity-10"></div>
         
         <div class="max-w-4xl mx-auto px-4 relative z-10 text-center">
             <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Ready to Make Your Pivot?</h2>
