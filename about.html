@@ -27,31 +27,62 @@
 <div id="navigation-container"></div>
 <script src="navigation.js"></script>
 
-
-    <!-- Company Launch Special Banner -->
-    <div class="company-launch-banner bg-gradient-to-r from-red-600 to-orange-500 text-white py-2 shadow-md">
-        <div class="max-w-7xl mx-auto px-4 text-center flex items-center justify-center gap-2">
-            <i data-lucide="party-popper" class="w-4 h-4 text-yellow-200"></i>
-            <p class="text-sm font-bold">
-                <span class="text-yellow-200">Company Launch Special:</span> 50% OFF All Packages!
-            </p>
-        </div>
-    </div>
-
     <!-- HERO (Unified background style) -->
-    <section id="top" class="relative pt-16 pb-16 text-center bg-white overflow-hidden">
+    <section id="top" class="relative bg-white overflow-hidden">
         <!-- Dot Pattern -->
         <div class="absolute inset-0 bg-dots opacity-20" style="background-size: 20px 20px;"></div>
         <!-- Background blobs -->
         <div class="absolute top-0 right-0 -mr-20 -mt-20 w-80 h-80 bg-teal-100 rounded-full blur-3xl opacity-60" aria-hidden="true"></div>
         <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 bg-lime-100 rounded-full blur-3xl opacity-60" aria-hidden="true"></div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <h1 class="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
+        
+        <!-- Mobile: Overlapping photos with content -->
+        <div class="md:hidden relative pt-12 pb-16 px-4 z-10">
+            <!-- Overlapping Photo Cards -->
+            <div class="relative h-48 mb-8">
+                <!-- Professional photo - left, slightly back -->
+                <div class="absolute left-4 top-0 w-36 h-44 transform -rotate-6 shadow-xl rounded-xl overflow-hidden border-4 border-white z-10">
+                    <img src="pictures/mansour/professional_standing.png" alt="Mansour Professional" class="w-full h-full object-cover">
+                </div>
+                <!-- Casual photo - right, slightly forward -->
+                <div class="absolute right-4 top-4 w-36 h-44 transform rotate-6 shadow-xl rounded-xl overflow-hidden border-4 border-white z-20">
+                    <img src="pictures/mansour/casual_roof.jpg" alt="Mansour Casual" class="w-full h-full object-cover">
+                </div>
+            </div>
+            
+            <!-- Content -->
+            <h1 class="text-3xl font-bold text-slate-900 mb-4 text-center">
                 About <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-600">Mansour Manci</span>
             </h1>
-            <p class="text-lg text-slate-600">
+            <p class="text-base text-slate-600 text-center">
                 Software and Systems Engineering Leader | Career Coach | Mechanical Engineer Turned Software Development Expert
             </p>
+        </div>
+        
+        <!-- Desktop: Three column layout with card photos -->
+        <div class="hidden md:flex items-center justify-center gap-8 py-16 px-8 min-h-[500px] relative z-10">
+            <!-- Left Photo Card -->
+            <div class="transform -rotate-3 transition-transform hover:rotate-0 hover:scale-105 duration-300">
+                <div class="w-64 h-80 shadow-2xl rounded-2xl overflow-hidden border-4 border-white">
+                    <img src="pictures/mansour/professional_standing.png" alt="Mansour Professional" class="w-full h-full object-cover">
+                </div>
+            </div>
+            
+            <!-- Center Content -->
+            <div class="flex-1 max-w-2xl px-8">
+                <h1 class="text-4xl md:text-5xl font-bold text-slate-900 mb-4 text-center">
+                    About <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-600">Mansour Manci</span>
+                </h1>
+                <p class="text-lg text-slate-600 text-center">
+                    Software and Systems Engineering Leader | Career Coach | Mechanical Engineer Turned Software Development Expert
+                </p>
+            </div>
+            
+            <!-- Right Photo Card -->
+            <div class="transform rotate-3 transition-transform hover:rotate-0 hover:scale-105 duration-300">
+                <div class="w-64 h-80 shadow-2xl rounded-2xl overflow-hidden border-4 border-white">
+                    <img src="pictures/mansour/casual_roof.jpg" alt="Mansour Casual" class="w-full h-full object-cover">
+                </div>
+            </div>
         </div>
     </section>
 
@@ -59,14 +90,8 @@
 
         <!-- Combined Personal + Professional Story -->
         <section id="my-story" class="mb-16 scroll-mt-32">
-            <div class="grid lg:grid-cols-3 gap-8">
-                <!-- Main Content -->
-                <div class="lg:col-span-2 space-y-6">
+            <div class="space-y-6">
                     <div>
-                        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-900 text-sm font-semibold mb-4">
-                            <i data-lucide="heart" class="w-4 h-4"></i>
-                            Not Just the Resume Version
-                        </div>
                         <h2 class="text-3xl font-bold text-slate-900 mb-6">I'm Not a Career Coach Who Got Lucky Once—I'm an Engineer Who Figured Out The System</h2>
                     </div>
 
@@ -163,45 +188,6 @@
                         <p class="text-emerald-400 font-bold text-sm">Because I remember how lost I felt.</p>
                         <p class="text-slate-300 text-sm">I remember being passed over for promotions, watching peers get ahead, wondering what they knew that I didn't. I want to give you the <strong>map</strong>—not motivation or platitudes, but the specific, tactical frameworks that worked.</p>
                     </div>
-                </div>
-
-                <!-- Sidebar (Stays Similar) -->
-                <div class="lg:col-span-1">
-                    <div class="bg-slate-900 text-white rounded-2xl p-6 sticky top-8 shadow-xl">
-                        <h3 class="text-lg font-bold mb-4 border-b border-slate-700 pb-3">Quick Facts</h3>
-                        <div class="space-y-4 text-sm">
-                            <div>
-                                <p class="text-emerald-400 font-semibold mb-1 flex items-center gap-2">
-                                    <i data-lucide="sparkles" class="w-4 h-4"></i>
-                                    Learning now
-                                </p>
-                                <p class="text-slate-300 text-xs">Using AI to drive productivity in key bottleneck areas</p>
-                            </div>
-                            <div>
-                                <p class="text-emerald-400 font-semibold mb-1 flex items-center gap-2">
-                                    <i data-lucide="book-open" class="w-4 h-4"></i>
-                                    Last book
-                                </p>
-                                <p class="text-slate-300 text-xs">The Phoenix Project</p>
-                            </div>
-                            <div>
-                                <p class="text-emerald-400 font-semibold mb-1 flex items-center gap-2">
-                                    <i data-lucide="map-pin" class="w-4 h-4"></i>
-                                    Based in
-                                </p>
-                                <p class="text-slate-300 text-xs">Moline, IL area</p>
-                            </div>
-                            <div>
-                                <p class="text-emerald-400 font-semibold mb-1 flex items-center gap-2">
-                                    <i data-lucide="message-square" class="w-4 h-4"></i>
-                                    Hot take
-                                </p>
-                                <p class="text-slate-300 text-xs">College isn't becoming irrelevant—we need to change the curriculum to teach more useful skills</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </section>
 
         <!-- Career Timeline (CONDENSED - Grouped) -->

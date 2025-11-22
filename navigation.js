@@ -53,8 +53,10 @@
     
     // Navigation HTML template
     const navigationHTML = `
+<!-- Sticky Navigation + Banner Wrapper -->
+<div class="sticky top-0 z-50 bg-white shadow-sm">
 <!-- Navigation -->
-<nav id="main-nav" class="bg-white/80 backdrop-blur-lg border-b border-emerald-100 w-full relative z-50">
+<nav id="main-nav" class="bg-white/95 backdrop-blur-lg border-b border-emerald-100 w-full">
     <div class="max-w-7xl mx-auto px-4 pt-3 pb-2">
         <div class="flex items-center justify-between">
             <a href="index.html" class="flex items-center gap-2 group">
@@ -103,19 +105,31 @@
         </div>
     </div>
 </nav>
+<!-- Company Launch Special Banner -->
+<div class="company-launch-banner bg-gradient-to-r from-red-600 to-orange-500 text-white py-2">
+    <div class="max-w-7xl mx-auto px-4 text-center flex items-center justify-center gap-2">
+        <i data-lucide="party-popper" class="w-4 h-4 text-yellow-200"></i>
+        <p class="text-sm font-bold">
+            <span class="text-yellow-200">Company Launch Special:</span> 50% OFF All Packages!
+        </p>
+    </div>
+</div>
+</div>
     `.trim();
     
     // Insert navigation into the page
     document.addEventListener('DOMContentLoaded', function() {
         const navContainer = document.getElementById('navigation-container');
         if (navContainer) {
-            navContainer.innerHTML = navigationHTML;
+            // Replace the container entirely so sticky positioning works correctly
+            navContainer.outerHTML = navigationHTML;
 
             // Mobile menu toggle logic (replaces Alpine behavior for dynamically injected nav)
-            const toggleBtn = navContainer.querySelector('[data-mobile-toggle]');
-            const mobileMenu = navContainer.querySelector('#mobile-menu');
-            const iconOpen = navContainer.querySelector('[data-icon-open]');
-            const iconClose = navContainer.querySelector('[data-icon-close]');
+            // Query from document since navContainer was replaced
+            const toggleBtn = document.querySelector('[data-mobile-toggle]');
+            const mobileMenu = document.querySelector('#mobile-menu');
+            const iconOpen = document.querySelector('[data-icon-open]');
+            const iconClose = document.querySelector('[data-icon-close]');
 
             function closeMenu() {
                 // Add hiding classes for animation
@@ -151,7 +165,8 @@
             document.addEventListener('click', (e) => {
                 const isOpen = toggleBtn.getAttribute('aria-expanded') === 'true';
                 if (!isOpen) return;
-                if (!navContainer.contains(e.target)) {
+                const nav = document.querySelector('#main-nav');
+                if (nav && !nav.contains(e.target)) {
                     closeMenu();
                 }
             });
@@ -162,6 +177,11 @@
                     closeMenu();
                 }
             });
+        }
+        
+        // Initialize Lucide icons (for banner icon)
+        if (typeof lucide !== 'undefined') {
+            lucide.createIcons();
         }
     });
 })();
