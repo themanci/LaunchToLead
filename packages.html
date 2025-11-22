@@ -20,36 +20,30 @@
 <body class="bg-brand-light text-slate-600 font-sans antialiased">
 
     <!-- Navigation (sticky global) -->
-    <nav class="bg-white/80 backdrop-blur-lg border-b border-emerald-100 fixed top-0 w-full z-50" x-data="{ open: false }">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-20">
-                <div class="flex items-center">
-                    <a href="index.html" class="flex items-center gap-2 group">
-                        <div class="bg-brand-primary text-white w-8 h-8 rounded-lg flex items-center justify-center group-hover:bg-brand-accent group-hover:text-brand-primary transition duration-300">
-                            <span class="font-bold text-sm">L²</span>
-                        </div>
-                        <span class="font-bold text-xl text-brand-primary tracking-tight">Launch<span class="font-light text-brand-secondary">ToLead</span></span>
-                    </a>
-                </div>
-
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="launch.html" class="text-sm font-medium text-slate-500 hover:text-brand-secondary transition">Launch</a>
-                    <a href="pivot.html" class="text-sm font-medium text-slate-500 hover:text-brand-secondary transition">Pivot</a>
-                    <a href="accelerate.html" class="text-sm font-medium text-slate-500 hover:text-brand-secondary transition">Accelerate</a>
-                    <a href="packages.html" class="text-sm font-medium text-slate-500 hover:text-brand-secondary transition">Packages</a>
-                    <a href="about.html" class="text-sm font-medium text-slate-500 hover:text-brand-secondary transition">About</a>
-                    <a href="contact.html" class="bg-brand-primary text-white px-5 py-2 rounded-full font-semibold text-sm hover:bg-brand-secondary transition shadow-soft hover:shadow-fresh">Get Started</a>
-                </div>
-                
-                <!-- Mobile menu button -->
-                <div class="md:hidden flex items-center">
-                    <button @click="open = !open" class="inline-flex items-center justify-center p-2 rounded-md text-slate-400 hover:text-slate-500 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-brand-primary" aria-expanded="false">
-                        <span class="sr-only">Open main menu</span>
-                        <svg x-show="!open" class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>
-                        <svg x-show="open" class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+<nav class="bg-white/80 backdrop-blur-lg border-b border-emerald-100 fixed top-0 w-full z-50">
+    <div class="max-w-7xl mx-auto px-4 py-4">
+        <div class="flex items-center justify-between">
+            <div class="flex items-center">
+                <a href="index.html" class="flex items-center gap-2">
+                    <div class="bg-brand-primary text-white w-8 h-8 rounded-lg flex items-center justify-center">
+                        <span class="font-bold text-sm">L²</span>
+                    </div>
+                    <span class="font-bold text-xl text-brand-primary tracking-tight">Launch<span class="font-light text-brand-secondary">ToLead</span></span>
+                </a>
+            </div>
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="launch.html" class="text-sm font-medium text-slate-500 hover:text-brand-secondary transition">Launch</a>
+                <a href="pivot.html" class="text-sm font-medium text-slate-500 hover:text-brand-secondary transition">Pivot</a>
+                <a href="accelerate.html" class="text-sm font-medium text-slate-500 hover:text-brand-secondary transition">Accelerate</a>
+                <a href="packages.html" class="text-sm font-medium text-brand-primary font-bold transition">Packages</a>
+                <a href="about.html" class="text-sm font-medium text-slate-500 hover:text-brand-secondary transition">About</a>
+                <a href="contact.html" class="bg-brand-primary text-white px-4 py-2 rounded-full font-semibold text-sm hover:bg-brand-secondary transition shadow-sm">
+                    Get Started
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
                         </svg>
                     </button>
                 </div>
@@ -70,77 +64,70 @@
     </nav>
 
     <main>
-    <!-- HERO -->
-    <div id="top" class="relative pt-28 pb-20 lg:pt-32 lg:pb-24 bg-white overflow-hidden">
+    <!-- Company Launch Special Banner -->
+    <div class="bg-gradient-to-r from-red-600 to-orange-500 text-white py-2 shadow-md">
+        <div class="max-w-7xl mx-auto px-4 text-center flex items-center justify-center gap-2">
+            <i data-lucide="party-popper" class="w-4 h-4 text-yellow-200"></i>
+            <p class="text-sm font-bold">
+                <span class="text-yellow-200">Company Launch Special:</span> 50% OFF All Packages!
+            </p>
+        </div>
+    </div>
+
+    <!-- HERO (CONDENSED) -->
+    <div id="top" class="relative pt-24 pb-16 bg-white overflow-hidden">
         <!-- Dot Pattern -->
         <div class="absolute inset-0 bg-dots opacity-20" style="background-size: 20px 20px;"></div>
         
         <!-- Background blobs -->
-        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-brand-accent rounded-full blur-3xl opacity-20" aria-hidden="true"></div>
-        <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-96 h-96 bg-brand-secondary rounded-full blur-3xl opacity-20" aria-hidden="true"></div>
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-80 h-80 bg-teal-100 rounded-full blur-3xl opacity-60" aria-hidden="true"></div>
+        <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 bg-lime-100 rounded-full blur-3xl opacity-60" aria-hidden="true"></div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-            <h1 class="text-5xl md:text-6xl font-extrabold text-slate-900 tracking-tight mb-6">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight mb-4">
                 Coaching Packages & <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-brand-secondary">Pricing</span>
             </h1>
-            <p class="mt-4 max-w-2xl mx-auto text-xl text-slate-500 font-light leading-relaxed">
+            <p class="max-w-2xl mx-auto text-lg text-slate-500 font-light leading-relaxed">
                 Find the right level of support for your engineering career goals. Transparent pricing, no hidden fees.
             </p>
         </div>
     </div>
 
-    <!-- COMPANY LAUNCH SPECIAL BANNER -->
-    <div class="bg-gradient-to-r from-red-500 via-red-600 to-red-500 text-white py-6 sticky top-20 z-40 shadow-xl border-y-2 border-red-700">
+    <!-- LAUNCH PACKAGES (CONDENSED) -->
+    <div id="launch-packages" class="py-16 bg-brand-light scroll-mt-32">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row items-center justify-center gap-3 md:gap-4 text-center">
-                <div class="flex items-center gap-2">
-                    <i class="fa-solid fa-party-horn text-2xl md:text-3xl animate-bounce"></i>
-                    <span class="font-bold text-xl md:text-2xl">Company Launch Special</span>
-                    <i class="fa-solid fa-party-horn text-2xl md:text-3xl animate-bounce"></i>
-                </div>
-                <div class="hidden md:block w-px h-8 bg-white/30"></div>
-                <p class="text-base md:text-lg font-medium">
-                    <span class="font-bold text-brand-accent">50% OFF</span> all packages across all three paths • Limited time only!
-                </p>
-            </div>
-        </div>
-    </div>
-
-    <!-- LAUNCH PACKAGES -->
-    <div id="launch-packages" class="py-24 bg-brand-light scroll-mt-32">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-600 text-xs font-bold mb-4 uppercase tracking-wider">
+            <div class="text-center mb-12">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-600 text-xs font-bold mb-3 uppercase tracking-wider">
                     For Students & Entry Level
                 </div>
-                <h2 class="text-3xl md:text-4xl font-bold text-slate-900">Launch Your Career</h2>
-                <p class="mt-4 text-slate-500 max-w-2xl mx-auto">Land your first engineering job with confidence. All packages include 60-minute weekly sessions.</p>
+                <h2 class="text-3xl font-bold text-slate-900 mb-2">Launch Your Career</h2>
+                <p class="text-slate-500 max-w-2xl mx-auto text-sm">Land your first engineering job with confidence. All packages include 60-minute weekly sessions.</p>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-8">
+            <div class="grid md:grid-cols-3 gap-6">
                 <!-- Launch Starter (2 Sessions) -->
-                <div class="bg-white p-6 md:p-8 rounded-3xl shadow-sm border-2 border-slate-200 hover:shadow-card transition duration-300 flex flex-col h-full">
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Starter Package</h3>
-                    <div class="mb-4">
-                        <div class="flex items-center gap-2 mb-2">
-                            <span class="text-lg md:text-xl font-bold text-slate-400 line-through">$1,000</span>
+                <div class="bg-white p-5 rounded-2xl shadow-sm border-2 border-slate-200 hover:shadow-card transition duration-300 flex flex-col h-full">
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">Starter Package</h3>
+                    <div class="mb-3">
+                        <div class="flex items-center gap-2 mb-1">
+                            <span class="text-base font-bold text-slate-400 line-through">$1,000</span>
                             <span class="bg-red-500 text-white px-2 py-0.5 rounded-full text-xs font-bold">50% OFF</span>
                         </div>
                         <div class="flex items-baseline gap-2">
-                            <span class="text-3xl md:text-4xl font-bold text-brand-primary">$500</span>
-                            <span class="text-sm text-slate-400">total</span>
+                            <span class="text-3xl font-bold text-brand-primary">$500</span>
+                            <span class="text-xs text-slate-400">total</span>
                         </div>
-                        <p class="text-xs md:text-sm text-brand-accent font-semibold mt-1">Save $500 • 2 Sessions</p>
+                        <p class="text-xs text-brand-accent font-semibold">Save $500 • 2 Sessions</p>
                     </div>
                     
-                    <p class="text-sm text-slate-500 mb-4 leading-relaxed">Resume transformation to start landing interviews</p>
+                    <p class="text-xs text-slate-500 mb-3 leading-relaxed">Resume transformation to start landing interviews</p>
                     
-                    <div class="bg-slate-50 p-3 rounded-lg mb-4">
-                        <p class="text-xs font-bold text-slate-700 mb-1">Perfect if you:</p>
+                    <div class="bg-slate-50 p-2.5 rounded-lg mb-3">
+                        <p class="text-xs font-bold text-slate-700 mb-0.5">Perfect if you:</p>
                         <p class="text-xs text-slate-600">Need focused help getting past ATS systems and landing your first interviews</p>
                     </div>
 
-                    <ul class="space-y-2 mb-6 text-xs md:text-sm text-slate-600 flex-grow">
+                    <ul class="space-y-1.5 mb-4 text-xs text-slate-600 flex-grow">
                         <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs mt-0.5"></i> <span><strong>Session 1:</strong> Resume audit, dig into projects/internships, craft compelling bullet points</span></li>
                         <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs mt-0.5"></i> <span><strong>Session 2:</strong> Resume review, LinkedIn optimization, ATS strategy, application targeting</span></li>
                         <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs mt-0.5"></i> <span>Resume templates & examples</span></li>
@@ -148,35 +135,35 @@
                         <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs mt-0.5"></i> <span>Email support between sessions</span></li>
                     </ul>
 
-                    <a href="contact.html" class="w-full py-3 rounded-xl border-2 border-brand-primary text-brand-primary font-bold text-center text-sm md:text-base hover:bg-brand-primary hover:text-white transition">Get Started</a>
+                    <a href="contact.html" class="w-full py-2.5 rounded-xl border-2 border-brand-primary text-brand-primary font-bold text-center text-sm hover:bg-brand-primary hover:text-white transition">Get Started</a>
                 </div>
 
                 <!-- Launch Standard (3 Sessions - Most Popular) -->
-                <div class="relative bg-white p-6 md:p-8 rounded-3xl border-2 border-brand-secondary shadow-card flex flex-col h-full transform md:-translate-y-4">
-                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-brand-secondary text-white px-4 py-1.5 rounded-full text-xs font-bold shadow-lg whitespace-nowrap flex items-center gap-1">
+                <div class="relative bg-white p-5 rounded-2xl border-2 border-brand-secondary shadow-card flex flex-col h-full transform md:-translate-y-3">
+                    <div class="absolute -top-2.5 left-1/2 -translate-x-1/2 bg-brand-secondary text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg whitespace-nowrap flex items-center gap-1">
                         <i data-lucide="star" class="w-3 h-3 fill-current"></i> MOST POPULAR
                     </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3 mt-2">Standard Package</h3>
-                    <div class="mb-4">
-                        <div class="flex items-center gap-2 mb-2">
-                            <span class="text-lg md:text-xl font-bold text-slate-400 line-through">$1,350</span>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2 mt-1">Standard Package</h3>
+                    <div class="mb-3">
+                        <div class="flex items-center gap-2 mb-1">
+                            <span class="text-base font-bold text-slate-400 line-through">$1,350</span>
                             <span class="bg-red-500 text-white px-2 py-0.5 rounded-full text-xs font-bold">50% OFF</span>
                         </div>
                         <div class="flex items-baseline gap-2">
-                            <span class="text-3xl md:text-4xl font-bold text-brand-primary">$675</span>
-                            <span class="text-sm text-slate-400">total</span>
+                            <span class="text-3xl font-bold text-brand-primary">$675</span>
+                            <span class="text-xs text-slate-400">total</span>
                         </div>
-                        <p class="text-xs md:text-sm text-brand-accent font-semibold mt-1">Save $675 • 3 Sessions</p>
+                        <p class="text-xs text-brand-accent font-semibold">Save $675 • 3 Sessions</p>
                     </div>
                     
-                    <p class="text-sm text-slate-500 mb-4 leading-relaxed">Resume + interview prep to seal the deal</p>
+                    <p class="text-xs text-slate-500 mb-3 leading-relaxed">Resume + interview prep to seal the deal</p>
                     
-                    <div class="bg-emerald-50 p-3 rounded-lg mb-4">
-                        <p class="text-xs font-bold text-emerald-900 mb-1">Perfect if you:</p>
+                    <div class="bg-emerald-50 p-2.5 rounded-lg mb-3">
+                        <p class="text-xs font-bold text-emerald-900 mb-0.5">Perfect if you:</p>
                         <p class="text-xs text-emerald-800">Want complete preparation from resume to interview confidence</p>
                     </div>
 
-                    <ul class="space-y-2 mb-6 text-xs md:text-sm text-slate-600 flex-grow">
+                    <ul class="space-y-1.5 mb-4 text-xs text-slate-600 flex-grow">
                         <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs mt-0.5"></i> <span><strong>Everything in Starter, PLUS:</strong></span></li>
                         <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs mt-0.5"></i> <span><strong>Session 3:</strong> Interview prep masterclass - STAR method, behavioral frameworks, technical strategies</span></li>
                         <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs mt-0.5"></i> <span>AI-augmented engineer positioning</span></li>
@@ -185,32 +172,32 @@
                         <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs mt-0.5"></i> <span>Company research framework</span></li>
                     </ul>
 
-                    <a href="contact.html" class="w-full py-3 rounded-xl bg-brand-primary text-white font-bold text-center text-sm md:text-base hover:bg-brand-secondary transition shadow-lg">Get Started Today</a>
+                    <a href="contact.html" class="w-full py-2.5 rounded-xl bg-brand-primary text-white font-bold text-center text-sm hover:bg-brand-secondary transition shadow-lg">Get Started Today</a>
                 </div>
 
                 <!-- Launch Premium (4 Sessions) -->
-                <div class="bg-white p-6 md:p-8 rounded-3xl shadow-sm border-2 border-slate-200 hover:shadow-card transition duration-300 flex flex-col h-full">
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Premium Package</h3>
-                    <div class="mb-4">
-                        <div class="flex items-center gap-2 mb-2">
-                            <span class="text-lg md:text-xl font-bold text-slate-400 line-through">$1,600</span>
+                <div class="bg-white p-5 rounded-2xl shadow-sm border-2 border-slate-200 hover:shadow-card transition duration-300 flex flex-col h-full">
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">Premium Package</h3>
+                    <div class="mb-3">
+                        <div class="flex items-center gap-2 mb-1">
+                            <span class="text-base font-bold text-slate-400 line-through">$1,600</span>
                             <span class="bg-red-500 text-white px-2 py-0.5 rounded-full text-xs font-bold">50% OFF</span>
                         </div>
                         <div class="flex items-baseline gap-2">
-                            <span class="text-3xl md:text-4xl font-bold text-brand-primary">$800</span>
-                            <span class="text-sm text-slate-400">total</span>
+                            <span class="text-3xl font-bold text-brand-primary">$800</span>
+                            <span class="text-xs text-slate-400">total</span>
                         </div>
-                        <p class="text-xs md:text-sm text-brand-accent font-semibold mt-1">Save $800 • 4 Sessions</p>
+                        <p class="text-xs text-brand-accent font-semibold">Save $800 • 4 Sessions</p>
                     </div>
                     
-                    <p class="text-sm text-slate-500 mb-4 leading-relaxed">Full support from resume to offer negotiation</p>
+                    <p class="text-xs text-slate-500 mb-3 leading-relaxed">Full support from resume to offer negotiation</p>
                     
-                    <div class="bg-slate-50 p-3 rounded-lg mb-4">
-                        <p class="text-xs font-bold text-slate-700 mb-1">Perfect if you:</p>
+                    <div class="bg-slate-50 p-2.5 rounded-lg mb-3">
+                        <p class="text-xs font-bold text-slate-700 mb-0.5">Perfect if you:</p>
                         <p class="text-xs text-slate-600">Serious about landing a top company role and want end-to-end support</p>
                     </div>
 
-                    <ul class="space-y-2 mb-6 text-xs md:text-sm text-slate-600 flex-grow">
+                    <ul class="space-y-1.5 mb-4 text-xs text-slate-600 flex-grow">
                         <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs mt-0.5"></i> <span><strong>Everything in Standard, PLUS:</strong></span></li>
                         <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs mt-0.5"></i> <span><strong>Session 4:</strong> Full behavioral mock interview with recording, detailed written feedback</span></li>
                         <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs mt-0.5"></i> <span>Realistic behavioral interview simulation</span></li>
@@ -219,47 +206,47 @@
                         <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs mt-0.5"></i> <span>Priority email support</span></li>
                     </ul>
 
-                    <a href="contact.html" class="w-full py-3 rounded-xl border-2 border-brand-primary text-brand-primary font-bold text-center text-sm md:text-base hover:bg-brand-primary hover:text-white transition">Complete Launch Program</a>
+                    <a href="contact.html" class="w-full py-2.5 rounded-xl border-2 border-brand-primary text-brand-primary font-bold text-center text-sm hover:bg-brand-primary hover:text-white transition">Complete Launch Program</a>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- PIVOT PACKAGES -->
-    <div id="pivot-packages" class="py-24 bg-white scroll-mt-32">
+    <!-- PIVOT PACKAGES (CONDENSED) -->
+    <div id="pivot-packages" class="py-16 bg-white scroll-mt-32">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-50 border border-amber-200 text-amber-700 text-xs font-bold mb-4 uppercase tracking-wider">
+            <div class="text-center mb-12">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-50 border border-amber-200 text-amber-700 text-xs font-bold mb-3 uppercase tracking-wider">
                     For Career Transitions
                 </div>
-                <h2 class="text-3xl md:text-4xl font-bold text-slate-900">Pivot Your Path</h2>
-                <p class="mt-4 text-slate-500 max-w-2xl mx-auto">Successfully transition to a new engineering discipline. All packages include 60-minute weekly sessions.</p>
+                <h2 class="text-3xl font-bold text-slate-900 mb-2">Pivot Your Path</h2>
+                <p class="text-slate-500 max-w-2xl mx-auto text-sm">Successfully transition to a new engineering discipline. All packages include 60-minute weekly sessions.</p>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-8">
+            <div class="grid md:grid-cols-3 gap-6">
                 <!-- Pivot Starter (2 Sessions) -->
-                <div class="bg-white p-6 md:p-8 rounded-3xl shadow-sm border-2 border-slate-200 hover:shadow-card transition duration-300 flex flex-col h-full">
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Starter Package</h3>
-                    <div class="mb-4">
-                        <div class="flex items-center gap-2 mb-2">
-                            <span class="text-lg md:text-xl font-bold text-slate-400 line-through">$1,200</span>
+                <div class="bg-white p-5 rounded-2xl shadow-sm border-2 border-slate-200 hover:shadow-card transition duration-300 flex flex-col h-full">
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">Starter Package</h3>
+                    <div class="mb-3">
+                        <div class="flex items-center gap-2 mb-1">
+                            <span class="text-base font-bold text-slate-400 line-through">$1,200</span>
                             <span class="bg-red-500 text-white px-2 py-0.5 rounded-full text-xs font-bold">50% OFF</span>
                         </div>
                         <div class="flex items-baseline gap-2">
-                            <span class="text-3xl md:text-4xl font-bold text-brand-primary">$600</span>
-                            <span class="text-sm text-slate-400">total</span>
+                            <span class="text-3xl font-bold text-brand-primary">$600</span>
+                            <span class="text-xs text-slate-400">total</span>
                         </div>
-                        <p class="text-xs md:text-sm text-brand-accent font-semibold mt-1">Save $600 • 2 Sessions</p>
+                        <p class="text-xs text-brand-accent font-semibold">Save $600 • 2 Sessions</p>
                     </div>
                     
-                    <p class="text-sm text-slate-500 mb-4 leading-relaxed">Strategic assessment and pivot roadmap</p>
+                    <p class="text-xs text-slate-500 mb-3 leading-relaxed">Strategic assessment and pivot roadmap</p>
                     
-                    <div class="bg-slate-50 p-3 rounded-lg mb-4">
-                        <p class="text-xs font-bold text-slate-700 mb-1">Perfect if you:</p>
+                    <div class="bg-slate-50 p-2.5 rounded-lg mb-3">
+                        <p class="text-xs font-bold text-slate-700 mb-0.5">Perfect if you:</p>
                         <p class="text-xs text-slate-600">Know you want to pivot and need a clear, actionable roadmap</p>
                     </div>
 
-                    <ul class="space-y-2 mb-6 text-xs md:text-sm text-slate-600 flex-grow">
+                    <ul class="space-y-1.5 mb-4 text-xs text-slate-600 flex-grow">
                         <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs mt-0.5"></i> <span><strong>Session 1:</strong> Skills assessment vs target, gap analysis, transferable skills, strategic roadmap (6-12 months)</span></li>
                         <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs mt-0.5"></i> <span><strong>Session 2:</strong> Prioritize skills to learn first, resources, portfolio ideas, AI leverage strategy</span></li>
                         <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs mt-0.5"></i> <span>Custom pivot timeline</span></li>
@@ -267,35 +254,35 @@
                         <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs mt-0.5"></i> <span>Email support between sessions</span></li>
                     </ul>
 
-                    <a href="contact.html" class="w-full py-3 rounded-xl border-2 border-brand-primary text-brand-primary font-bold text-center text-sm md:text-base hover:bg-brand-primary hover:text-white transition">Start Your Pivot</a>
+                    <a href="contact.html" class="w-full py-2.5 rounded-xl border-2 border-brand-primary text-brand-primary font-bold text-center text-sm hover:bg-brand-primary hover:text-white transition">Start Your Pivot</a>
                 </div>
 
                 <!-- Pivot Standard (3 Sessions - Most Popular) -->
-                <div class="relative bg-white p-6 md:p-8 rounded-3xl border-2 border-brand-secondary shadow-card flex flex-col h-full transform md:-translate-y-4">
-                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-brand-secondary text-white px-4 py-1.5 rounded-full text-xs font-bold shadow-lg whitespace-nowrap flex items-center gap-1">
+                <div class="relative bg-white p-5 rounded-2xl border-2 border-brand-secondary shadow-card flex flex-col h-full transform md:-translate-y-3">
+                    <div class="absolute -top-2.5 left-1/2 -translate-x-1/2 bg-brand-secondary text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg whitespace-nowrap flex items-center gap-1">
                         <i data-lucide="star" class="w-3 h-3 fill-current"></i> MOST POPULAR
                     </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3 mt-2">Standard Package</h3>
-                    <div class="mb-4">
-                        <div class="flex items-center gap-2 mb-2">
-                            <span class="text-lg md:text-xl font-bold text-slate-400 line-through">$1,650</span>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2 mt-1">Standard Package</h3>
+                    <div class="mb-3">
+                        <div class="flex items-center gap-2 mb-1">
+                            <span class="text-base font-bold text-slate-400 line-through">$1,650</span>
                             <span class="bg-red-500 text-white px-2 py-0.5 rounded-full text-xs font-bold">50% OFF</span>
                         </div>
                         <div class="flex items-baseline gap-2">
-                            <span class="text-3xl md:text-4xl font-bold text-brand-primary">$825</span>
-                            <span class="text-sm text-slate-400">total</span>
+                            <span class="text-3xl font-bold text-brand-primary">$825</span>
+                            <span class="text-xs text-slate-400">total</span>
                         </div>
-                        <p class="text-xs md:text-sm text-brand-accent font-semibold mt-1">Save $825 • 3 Sessions</p>
+                        <p class="text-xs text-brand-accent font-semibold">Save $825 • 3 Sessions</p>
                     </div>
                     
-                    <p class="text-sm text-slate-500 mb-4 leading-relaxed">Complete pivot execution with positioning</p>
+                    <p class="text-xs text-slate-500 mb-3 leading-relaxed">Complete pivot execution with positioning</p>
                     
-                    <div class="bg-emerald-50 p-3 rounded-lg mb-4">
-                        <p class="text-xs font-bold text-emerald-900 mb-1">Perfect if you:</p>
+                    <div class="bg-emerald-50 p-2.5 rounded-lg mb-3">
+                        <p class="text-xs font-bold text-emerald-900 mb-0.5">Perfect if you:</p>
                         <p class="text-xs text-emerald-800">Want complete support executing your pivot with strategic positioning</p>
                     </div>
 
-                    <ul class="space-y-2 mb-6 text-xs md:text-sm text-slate-600 flex-grow">
+                    <ul class="space-y-1.5 mb-4 text-xs text-slate-600 flex-grow">
                         <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs mt-0.5"></i> <span><strong>Everything in Starter, PLUS:</strong></span></li>
                         <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs mt-0.5"></i> <span><strong>Session 3:</strong> Internal positioning, resume & LinkedIn rewrite, "Trojan Horse" project strategy</span></li>
                         <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs mt-0.5"></i> <span>Transferable skills storytelling</span></li>
@@ -304,32 +291,32 @@
                         <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs mt-0.5"></i> <span>Cross-functional opportunity mapping</span></li>
                     </ul>
 
-                    <a href="contact.html" class="w-full py-3 rounded-xl bg-brand-primary text-white font-bold text-center text-sm md:text-base hover:bg-brand-secondary transition shadow-lg">Get Started Today</a>
+                    <a href="contact.html" class="w-full py-2.5 rounded-xl bg-brand-primary text-white font-bold text-center text-sm hover:bg-brand-secondary transition shadow-lg">Get Started Today</a>
                 </div>
 
                 <!-- Pivot Premium (4 Sessions) -->
-                <div class="bg-white p-6 md:p-8 rounded-3xl shadow-sm border-2 border-slate-200 hover:shadow-card transition duration-300 flex flex-col h-full">
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Premium Package</h3>
-                    <div class="mb-4">
-                        <div class="flex items-center gap-2 mb-2">
-                            <span class="text-lg md:text-xl font-bold text-slate-400 line-through">$2,000</span>
+                <div class="bg-white p-5 rounded-2xl shadow-sm border-2 border-slate-200 hover:shadow-card transition duration-300 flex flex-col h-full">
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">Premium Package</h3>
+                    <div class="mb-3">
+                        <div class="flex items-center gap-2 mb-1">
+                            <span class="text-base font-bold text-slate-400 line-through">$2,000</span>
                             <span class="bg-red-500 text-white px-2 py-0.5 rounded-full text-xs font-bold">50% OFF</span>
                         </div>
                         <div class="flex items-baseline gap-2">
-                            <span class="text-3xl md:text-4xl font-bold text-brand-primary">$1,000</span>
-                            <span class="text-sm text-slate-400">total</span>
+                            <span class="text-3xl font-bold text-brand-primary">$1,000</span>
+                            <span class="text-xs text-slate-400">total</span>
                         </div>
-                        <p class="text-xs md:text-sm text-brand-accent font-semibold mt-1">Save $1,000 • 4 Sessions</p>
+                        <p class="text-xs text-brand-accent font-semibold">Save $1,000 • 4 Sessions</p>
                     </div>
                     
-                    <p class="text-sm text-slate-500 mb-4 leading-relaxed">Full pivot support from plan to new role</p>
+                    <p class="text-xs text-slate-500 mb-3 leading-relaxed">Full pivot support from plan to new role</p>
                     
-                    <div class="bg-slate-50 p-3 rounded-lg mb-4">
-                        <p class="text-xs font-bold text-slate-700 mb-1">Perfect if you:</p>
+                    <div class="bg-slate-50 p-2.5 rounded-lg mb-3">
+                        <p class="text-xs font-bold text-slate-700 mb-0.5">Perfect if you:</p>
                         <p class="text-xs text-slate-600">Want end-to-end support through your entire career transition</p>
                     </div>
 
-                    <ul class="space-y-2 mb-6 text-xs md:text-sm text-slate-600 flex-grow">
+                    <ul class="space-y-1.5 mb-4 text-xs text-slate-600 flex-grow">
                         <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs mt-0.5"></i> <span><strong>Everything in Standard, PLUS:</strong></span></li>
                         <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs mt-0.5"></i> <span><strong>Session 4:</strong> Interview prep for target discipline, portfolio presentation, first 90-day plan</span></li>
                         <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs mt-0.5"></i> <span>Behavioral mock interview for new discipline</span></li>
@@ -338,47 +325,47 @@
                         <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs mt-0.5"></i> <span>Priority email support (through transition)</span></li>
                     </ul>
 
-                    <a href="contact.html" class="w-full py-3 rounded-xl border-2 border-brand-primary text-brand-primary font-bold text-center text-sm md:text-base hover:bg-brand-primary hover:text-white transition">Complete Pivot Program</a>
+                    <a href="contact.html" class="w-full py-2.5 rounded-xl border-2 border-brand-primary text-brand-primary font-bold text-center text-sm hover:bg-brand-primary hover:text-white transition">Complete Pivot Program</a>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- ACCELERATE PACKAGES -->
-    <div id="accelerate-packages" class="py-24 bg-brand-light scroll-mt-32">
+    <!-- ACCELERATE PACKAGES (CONDENSED) -->
+    <div id="accelerate-packages" class="py-16 bg-brand-light scroll-mt-32">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-50 border border-indigo-200 text-indigo-700 text-xs font-bold mb-4 uppercase tracking-wider">
+            <div class="text-center mb-12">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-50 border border-indigo-200 text-indigo-700 text-xs font-bold mb-3 uppercase tracking-wider">
                     For Promotions & Leadership
                 </div>
-                <h2 class="text-3xl md:text-4xl font-bold text-slate-900">Accelerate Your Growth</h2>
-                <p class="mt-4 text-slate-500">All packages include 60-minute weekly sessions to level up to manager or senior leadership.</p>
+                <h2 class="text-3xl font-bold text-slate-900 mb-2">Accelerate Your Growth</h2>
+                <p class="text-slate-500 text-sm">All packages include 60-minute weekly sessions to level up to manager or senior leadership.</p>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-8">
+            <div class="grid md:grid-cols-3 gap-6">
                 <!-- Accelerate Starter (2 Sessions) -->
-                <div class="bg-white p-6 md:p-8 rounded-3xl shadow-sm border-2 border-slate-200 hover:shadow-card transition duration-300 flex flex-col h-full">
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Starter Package</h3>
-                    <div class="mb-4">
-                        <div class="flex items-center gap-2 mb-2">
-                            <span class="text-lg md:text-xl font-bold text-slate-400 line-through">$1,400</span>
+                <div class="bg-white p-5 rounded-2xl shadow-sm border-2 border-slate-200 hover:shadow-card transition duration-300 flex flex-col h-full">
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">Starter Package</h3>
+                    <div class="mb-3">
+                        <div class="flex items-center gap-2 mb-1">
+                            <span class="text-base font-bold text-slate-400 line-through">$1,400</span>
                             <span class="bg-red-500 text-white px-2 py-0.5 rounded-full text-xs font-bold">50% OFF</span>
                         </div>
                         <div class="flex items-baseline gap-2">
-                            <span class="text-3xl md:text-4xl font-bold text-brand-primary">$700</span>
-                            <span class="text-sm text-slate-400">total</span>
+                            <span class="text-3xl font-bold text-brand-primary">$700</span>
+                            <span class="text-xs text-slate-400">total</span>
                         </div>
-                        <p class="text-xs md:text-sm text-brand-accent font-semibold mt-1">Save $700 • 2 Sessions</p>
+                        <p class="text-xs text-brand-accent font-semibold">Save $700 • 2 Sessions</p>
                     </div>
                     
-                    <p class="text-sm text-slate-500 mb-4 leading-relaxed">Promotion readiness assessment and strategy</p>
+                    <p class="text-xs text-slate-500 mb-3 leading-relaxed">Promotion readiness assessment and strategy</p>
                     
-                    <div class="bg-slate-50 p-3 rounded-lg mb-4">
-                        <p class="text-xs font-bold text-slate-700 mb-1">Perfect if you:</p>
+                    <div class="bg-slate-50 p-2.5 rounded-lg mb-3">
+                        <p class="text-xs font-bold text-slate-700 mb-0.5">Perfect if you:</p>
                         <p class="text-xs text-slate-600">Know promotion is coming and need a strategic visibility plan</p>
                     </div>
 
-                    <ul class="space-y-2 mb-6 text-xs md:text-sm text-slate-600 flex-grow">
+                    <ul class="space-y-1.5 mb-4 text-xs text-slate-600 flex-grow">
                         <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs mt-0.5"></i> <span><strong>Session 1:</strong> Promotion readiness, gap analysis, Visibility Pyramid framework, executive presence</span></li>
                         <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs mt-0.5"></i> <span><strong>Session 2:</strong> Results documentation system, relationship mapping, skip-level strategy</span></li>
                         <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs mt-0.5"></i> <span>Leadership capability assessment</span></li>
@@ -386,35 +373,35 @@
                         <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs mt-0.5"></i> <span>Email support between sessions</span></li>
                     </ul>
 
-                    <a href="contact.html" class="w-full py-3 rounded-xl border-2 border-brand-primary text-brand-primary font-bold text-center text-sm md:text-base hover:bg-brand-primary hover:text-white transition">Start Accelerating</a>
+                    <a href="contact.html" class="w-full py-2.5 rounded-xl border-2 border-brand-primary text-brand-primary font-bold text-center text-sm hover:bg-brand-primary hover:text-white transition">Start Accelerating</a>
                 </div>
 
                 <!-- Accelerate Standard (3 Sessions - Most Popular) -->
-                <div class="relative bg-white p-6 md:p-8 rounded-3xl border-2 border-brand-secondary shadow-card flex flex-col h-full transform md:-translate-y-4">
-                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-brand-secondary text-white px-4 py-1.5 rounded-full text-xs font-bold shadow-lg whitespace-nowrap flex items-center gap-1">
+                <div class="relative bg-white p-5 rounded-2xl border-2 border-brand-secondary shadow-card flex flex-col h-full transform md:-translate-y-3">
+                    <div class="absolute -top-2.5 left-1/2 -translate-x-1/2 bg-brand-secondary text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg whitespace-nowrap flex items-center gap-1">
                         <i data-lucide="star" class="w-3 h-3 fill-current"></i> MOST POPULAR
                     </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3 mt-2">Standard Package</h3>
-                    <div class="mb-4">
-                        <div class="flex items-center gap-2 mb-2">
-                            <span class="text-lg md:text-xl font-bold text-slate-400 line-through">$1,950</span>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2 mt-1">Standard Package</h3>
+                    <div class="mb-3">
+                        <div class="flex items-center gap-2 mb-1">
+                            <span class="text-base font-bold text-slate-400 line-through">$1,950</span>
                             <span class="bg-red-500 text-white px-2 py-0.5 rounded-full text-xs font-bold">50% OFF</span>
                         </div>
                         <div class="flex items-baseline gap-2">
-                            <span class="text-3xl md:text-4xl font-bold text-brand-primary">$975</span>
-                            <span class="text-sm text-slate-400">total</span>
+                            <span class="text-3xl font-bold text-brand-primary">$975</span>
+                            <span class="text-xs text-slate-400">total</span>
                         </div>
-                        <p class="text-xs md:text-sm text-brand-accent font-semibold mt-1">Save $975 • 3 Sessions</p>
+                        <p class="text-xs text-brand-accent font-semibold">Save $975 • 3 Sessions</p>
                     </div>
                     
-                    <p class="text-sm text-slate-500 mb-4 leading-relaxed">Complete promotion case building and execution</p>
+                    <p class="text-xs text-slate-500 mb-3 leading-relaxed">Complete promotion case building and execution</p>
                     
-                    <div class="bg-emerald-50 p-3 rounded-lg mb-4">
-                        <p class="text-xs font-bold text-emerald-900 mb-1">Perfect if you:</p>
+                    <div class="bg-emerald-50 p-2.5 rounded-lg mb-3">
+                        <p class="text-xs font-bold text-emerald-900 mb-0.5">Perfect if you:</p>
                         <p class="text-xs text-emerald-800">Ready to actively pursue promotion with structured support</p>
                     </div>
 
-                    <ul class="space-y-2 mb-6 text-xs md:text-sm text-slate-600 flex-grow">
+                    <ul class="space-y-1.5 mb-4 text-xs text-slate-600 flex-grow">
                         <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs mt-0.5"></i> <span><strong>Everything in Starter, PLUS:</strong></span></li>
                         <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs mt-0.5"></i> <span><strong>Session 3:</strong> Promotion case building, manager conversation script, visibility sprint plan</span></li>
                         <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs mt-0.5"></i> <span>Brag document / promo packet creation</span></li>
@@ -423,32 +410,32 @@
                         <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs mt-0.5"></i> <span>Performance review optimization</span></li>
                     </ul>
 
-                    <a href="contact.html" class="w-full py-3 rounded-xl bg-brand-primary text-white font-bold text-center text-sm md:text-base hover:bg-brand-secondary transition shadow-lg">Get Started Today</a>
+                    <a href="contact.html" class="w-full py-2.5 rounded-xl bg-brand-primary text-white font-bold text-center text-sm hover:bg-brand-secondary transition shadow-lg">Get Started Today</a>
                 </div>
 
                 <!-- Accelerate Premium (4 Sessions) -->
-                <div class="bg-white p-6 md:p-8 rounded-3xl shadow-sm border-2 border-slate-200 hover:shadow-card transition duration-300 flex flex-col h-full">
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Premium Package</h3>
-                    <div class="mb-4">
-                        <div class="flex items-center gap-2 mb-2">
-                            <span class="text-lg md:text-xl font-bold text-slate-400 line-through">$2,400</span>
+                <div class="bg-white p-5 rounded-2xl shadow-sm border-2 border-slate-200 hover:shadow-card transition duration-300 flex flex-col h-full">
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">Premium Package</h3>
+                    <div class="mb-3">
+                        <div class="flex items-center gap-2 mb-1">
+                            <span class="text-base font-bold text-slate-400 line-through">$2,400</span>
                             <span class="bg-red-500 text-white px-2 py-0.5 rounded-full text-xs font-bold">50% OFF</span>
                         </div>
                         <div class="flex items-baseline gap-2">
-                            <span class="text-3xl md:text-4xl font-bold text-brand-primary">$1,200</span>
-                            <span class="text-sm text-slate-400">total</span>
+                            <span class="text-3xl font-bold text-brand-primary">$1,200</span>
+                            <span class="text-xs text-slate-400">total</span>
                         </div>
-                        <p class="text-xs md:text-sm text-brand-accent font-semibold mt-1">Save $1,200 • 4 Sessions</p>
+                        <p class="text-xs text-brand-accent font-semibold">Save $1,200 • 4 Sessions</p>
                     </div>
                     
-                    <p class="text-sm text-slate-500 mb-4 leading-relaxed">Full promotion to leadership transition support</p>
+                    <p class="text-xs text-slate-500 mb-3 leading-relaxed">Full promotion to leadership transition support</p>
                     
-                    <div class="bg-slate-50 p-3 rounded-lg mb-4">
-                        <p class="text-xs font-bold text-slate-700 mb-1">Perfect if you:</p>
+                    <div class="bg-slate-50 p-2.5 rounded-lg mb-3">
+                        <p class="text-xs font-bold text-slate-700 mb-0.5">Perfect if you:</p>
                         <p class="text-xs text-slate-600">Serious about securing promotion and succeeding in new role</p>
                     </div>
 
-                    <ul class="space-y-2 mb-6 text-xs md:text-sm text-slate-600 flex-grow">
+                    <ul class="space-y-1.5 mb-4 text-xs text-slate-600 flex-grow">
                         <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs mt-0.5"></i> <span><strong>Everything in Standard, PLUS:</strong></span></li>
                         <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs mt-0.5"></i> <span><strong>Session 4:</strong> Post-promotion strategy, 90-day leadership plan, team transition roadmap</span></li>
                         <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs mt-0.5"></i> <span>Leadership identity transition coaching</span></li>
@@ -457,78 +444,78 @@
                         <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs mt-0.5"></i> <span>Priority email support (through transition)</span></li>
                     </ul>
 
-                    <a href="contact.html" class="w-full py-3 rounded-xl border-2 border-brand-primary text-brand-primary font-bold text-center text-sm md:text-base hover:bg-brand-primary hover:text-white transition">Complete Accelerate Program</a>
+                    <a href="contact.html" class="w-full py-2.5 rounded-xl border-2 border-brand-primary text-brand-primary font-bold text-center text-sm hover:bg-brand-primary hover:text-white transition">Complete Accelerate Program</a>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- PAYMENT TERMS -->
-    <div class="py-20 bg-white">
+    <!-- PAYMENT TERMS (CONDENSED) -->
+    <div class="py-16 bg-white">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-slate-700 text-xs font-bold mb-4 uppercase tracking-wider">
+            <div class="text-center mb-10">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-slate-700 text-xs font-bold mb-3 uppercase tracking-wider">
                     Payment Options
                 </div>
-                <h2 class="text-3xl md:text-4xl font-bold text-slate-900">Flexible Payment Terms</h2>
-                <p class="mt-4 text-slate-500 max-w-2xl mx-auto">Choose the payment option that works best for you</p>
+                <h2 class="text-3xl font-bold text-slate-900 mb-2">Flexible Payment Terms</h2>
+                <p class="text-slate-500 max-w-2xl mx-auto text-sm">Choose the payment option that works best for you</p>
             </div>
 
-            <div class="grid md:grid-cols-2 gap-8">
+            <div class="grid md:grid-cols-2 gap-6">
                 <!-- Full Payment Option -->
-                <div class="bg-gradient-to-br from-emerald-50 to-teal-50 p-8 rounded-2xl border-2 border-emerald-200">
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="w-12 h-12 bg-brand-primary rounded-xl flex items-center justify-center">
-                            <i class="fa-solid fa-check-double text-white text-xl"></i>
+                <div class="bg-gradient-to-br from-emerald-50 to-teal-50 p-6 rounded-2xl border-2 border-emerald-200">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-10 h-10 bg-brand-primary rounded-xl flex items-center justify-center">
+                            <i class="fa-solid fa-check-double text-white text-lg"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-slate-900">Pay in Full</h3>
+                        <h3 class="text-lg font-bold text-slate-900">Pay in Full</h3>
                     </div>
-                    <p class="text-slate-600 mb-6">Pay the full package price upfront and get immediate access to all sessions.</p>
-                    <ul class="space-y-3 text-sm text-slate-700">
+                    <p class="text-slate-600 mb-4 text-sm">Pay the full package price upfront and get immediate access to all sessions.</p>
+                    <ul class="space-y-2 text-sm text-slate-700">
                         <li class="flex items-start gap-2">
-                            <i class="fa-solid fa-circle-check text-brand-secondary text-lg mt-0.5"></i>
+                            <i class="fa-solid fa-circle-check text-brand-secondary text-base mt-0.5"></i>
                             <span>One simple payment</span>
                         </li>
                         <li class="flex items-start gap-2">
-                            <i class="fa-solid fa-circle-check text-brand-secondary text-lg mt-0.5"></i>
+                            <i class="fa-solid fa-circle-check text-brand-secondary text-base mt-0.5"></i>
                             <span>Schedule all sessions immediately</span>
                         </li>
                         <li class="flex items-start gap-2">
-                            <i class="fa-solid fa-circle-check text-brand-secondary text-lg mt-0.5"></i>
+                            <i class="fa-solid fa-circle-check text-brand-secondary text-base mt-0.5"></i>
                             <span>No payment interruptions</span>
                         </li>
                     </ul>
                 </div>
 
                 <!-- Split Payment Option -->
-                <div class="bg-gradient-to-br from-slate-50 to-gray-50 p-8 rounded-2xl border-2 border-slate-200">
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="w-12 h-12 bg-slate-600 rounded-xl flex items-center justify-center">
-                            <i class="fa-solid fa-credit-card text-white text-xl"></i>
+                <div class="bg-gradient-to-br from-slate-50 to-gray-50 p-6 rounded-2xl border-2 border-slate-200">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-10 h-10 bg-slate-600 rounded-xl flex items-center justify-center">
+                            <i class="fa-solid fa-credit-card text-white text-lg"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-slate-900">Split Payment</h3>
+                        <h3 class="text-lg font-bold text-slate-900">Split Payment</h3>
                     </div>
-                    <p class="text-slate-600 mb-6">Pay 50% upfront, then 50% before your second session begins.</p>
-                    <ul class="space-y-3 text-sm text-slate-700">
+                    <p class="text-slate-600 mb-4 text-sm">Pay 50% upfront, then 50% before your second session begins.</p>
+                    <ul class="space-y-2 text-sm text-slate-700">
                         <li class="flex items-start gap-2">
-                            <i class="fa-solid fa-circle-check text-slate-500 text-lg mt-0.5"></i>
+                            <i class="fa-solid fa-circle-check text-slate-500 text-base mt-0.5"></i>
                             <span><strong>First payment:</strong> 50% to book your first session</span>
                         </li>
                         <li class="flex items-start gap-2">
-                            <i class="fa-solid fa-circle-check text-slate-500 text-lg mt-0.5"></i>
+                            <i class="fa-solid fa-circle-check text-slate-500 text-base mt-0.5"></i>
                             <span><strong>Second payment:</strong> Remaining 50% before session 2</span>
                         </li>
                         <li class="flex items-start gap-2">
-                            <i class="fa-solid fa-circle-check text-slate-500 text-lg mt-0.5"></i>
+                            <i class="fa-solid fa-circle-check text-slate-500 text-base mt-0.5"></i>
                             <span>Easier to budget for larger packages</span>
                         </li>
                     </ul>
                 </div>
             </div>
 
-            <div class="mt-8 p-6 bg-blue-50 border border-blue-200 rounded-xl">
+            <div class="mt-6 p-5 bg-blue-50 border border-blue-200 rounded-xl">
                 <div class="flex items-start gap-3">
-                    <i class="fa-solid fa-info-circle text-blue-600 text-xl mt-1"></i>
+                    <i class="fa-solid fa-info-circle text-blue-600 text-lg mt-0.5"></i>
                     <div>
                         <p class="text-sm text-slate-700"><strong>Session Details:</strong> All sessions are 60 minutes and scheduled once per week until your package is complete. Payment options will be discussed during your free discovery call.</p>
                     </div>
@@ -537,83 +524,82 @@
         </div>
     </div>
 
-    <!-- MOCK INTERVIEW ADD-ON -->
-    <div class="py-20 bg-slate-50">
+    <!-- MOCK INTERVIEW ADD-ON (CONDENSED) -->
+    <div class="py-16 bg-slate-50">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-100 border border-purple-200 text-purple-700 text-xs font-bold mb-4 uppercase tracking-wider">
+            <div class="text-center mb-10">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-100 border border-purple-200 text-purple-700 text-xs font-bold mb-3 uppercase tracking-wider">
                     Premium Add-On
                 </div>
-                <h2 class="text-3xl md:text-4xl font-bold text-slate-900">Mock Interview with Detailed Feedback</h2>
-                <p class="mt-4 text-slate-500 max-w-2xl mx-auto">Level up your interview performance with a recorded practice session and comprehensive written analysis</p>
+                <h2 class="text-3xl font-bold text-slate-900 mb-2">Mock Interview with Detailed Feedback</h2>
+                <p class="text-slate-500 max-w-2xl mx-auto text-sm">Level up your interview performance with a recorded practice session and comprehensive written analysis</p>
             </div>
 
-            <div class="bg-gradient-to-br from-purple-50 via-white to-indigo-50 p-8 md:p-12 rounded-3xl border-2 border-purple-200 shadow-lg">
-                <div class="flex flex-col md:flex-row gap-8 items-start">
+            <div class="bg-gradient-to-br from-purple-50 via-white to-indigo-50 p-8 rounded-3xl border-2 border-purple-200 shadow-lg">
+                <div class="flex flex-col md:flex-row gap-6 items-start">
                     <div class="flex-1">
-                        <h3 class="text-2xl font-bold text-slate-900 mb-4">What's Included</h3>
-                        <ul class="space-y-4 text-sm md:text-base text-slate-700">
+                        <h3 class="text-xl font-bold text-slate-900 mb-4">What's Included</h3>
+                        <ul class="space-y-3 text-sm text-slate-700">
                             <li class="flex items-start gap-3">
-                                <i class="fa-solid fa-video text-purple-600 text-xl mt-1"></i>
+                                <i class="fa-solid fa-video text-purple-600 text-lg mt-0.5"></i>
                                 <div>
                                     <strong>60-90 Minute Behavioral Mock Interview:</strong>
-                                    <p class="text-slate-600 mt-1">Realistic behavioral interview simulation tailored to your target role</p>
+                                    <p class="text-slate-600 mt-0.5">Realistic behavioral interview simulation tailored to your target role</p>
                                 </div>
                             </li>
                             <li class="flex items-start gap-3">
-                                <i class="fa-solid fa-record-vinyl text-purple-600 text-xl mt-1"></i>
+                                <i class="fa-solid fa-record-vinyl text-purple-600 text-lg mt-0.5"></i>
                                 <div>
                                     <strong>Full Recording:</strong>
-                                    <p class="text-slate-600 mt-1">Watch yourself back to identify patterns and areas for improvement</p>
+                                    <p class="text-slate-600 mt-0.5">Watch yourself back to identify patterns and areas for improvement</p>
                                 </div>
                             </li>
                             <li class="flex items-start gap-3">
-                                <i class="fa-solid fa-file-lines text-purple-600 text-xl mt-1"></i>
+                                <i class="fa-solid fa-file-lines text-purple-600 text-lg mt-0.5"></i>
                                 <div>
                                     <strong>Detailed Written Feedback:</strong>
-                                    <p class="text-slate-600 mt-1">Comprehensive analysis covering content, delivery, presence, and specific recommendations</p>
+                                    <p class="text-slate-600 mt-0.5">Comprehensive analysis covering content, delivery, presence, and specific recommendations</p>
                                 </div>
                             </li>
                             <li class="flex items-start gap-3">
-                                <i class="fa-solid fa-lightbulb text-purple-600 text-xl mt-1"></i>
+                                <i class="fa-solid fa-lightbulb text-purple-600 text-lg mt-0.5"></i>
                                 <div>
                                     <strong>Improvement Roadmap:</strong>
-                                    <p class="text-slate-600 mt-1">Prioritized action items to strengthen your interview performance</p>
+                                    <p class="text-slate-600 mt-0.5">Prioritized action items to strengthen your interview performance</p>
                                 </div>
                             </li>
                         </ul>
                     </div>
 
-                    <div class="md:w-80 bg-white p-6 rounded-2xl border-2 border-purple-300 shadow-md">
-                        <div class="text-center mb-4">
-                            <p class="text-sm text-slate-500 mb-2">Add-On Pricing</p>
-                            <div class="text-4xl font-bold text-brand-primary mb-1">$200</div>
+                    <div class="md:w-72 bg-white p-5 rounded-2xl border-2 border-purple-300 shadow-md">
+                        <div class="text-center mb-3">
+                            <p class="text-xs text-slate-500 mb-1">Add-On Pricing</p>
+                            <div class="text-3xl font-bold text-brand-primary mb-1">$200</div>
                             <p class="text-xs text-slate-500">Can be added to any package</p>
                         </div>
-                        <div class="border-t border-slate-200 pt-4 mb-4">
-                            <p class="text-xs text-slate-600 mb-3"><strong>Note:</strong> Premium packages already include a mock interview as Session 4. This add-on is perfect for:</p>
+                        <div class="border-t border-slate-200 pt-3 mb-3">
+                            <p class="text-xs text-slate-600 mb-2"><strong>Note:</strong> Premium packages already include a mock interview as Session 4. This add-on is perfect for:</p>
                             <ul class="text-xs text-slate-600 space-y-1">
                                 <li>• Starter or Standard packages</li>
                                 <li>• Additional practice before big interviews</li>
                                 <li>• Targeting multiple company types</li>
                             </ul>
                         </div>
-                        <a href="contact.html" class="w-full py-3 rounded-xl bg-purple-600 text-white font-bold text-center text-sm hover:bg-purple-700 transition block">Add to Package</a>
+                        <a href="contact.html" class="w-full py-2.5 rounded-xl bg-purple-600 text-white font-bold text-center text-sm hover:bg-purple-700 transition block">Add to Package</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Not Sure CTA -->
-    <div id="cta" class="py-24 bg-brand-primary relative overflow-hidden">
+    <!-- NOT SURE CTA (CONDENSED) -->
+    <div id="cta" class="py-16 bg-gradient-to-br from-emerald-600 to-teal-600 relative overflow-hidden">
         <!-- Background decoration -->
-        <div class="absolute top-0 right-0 -mt-20 -mr-20 w-96 h-96 bg-brand-secondary rounded-full blur-3xl opacity-20"></div>
-        <div class="absolute bottom-0 left-0 -mb-20 -ml-20 w-96 h-96 bg-brand-primary rounded-full blur-3xl opacity-10"></div>
+        <div class="absolute top-0 right-0 -mt-20 -mr-20 w-80 h-80 bg-brand-accent rounded-full blur-3xl opacity-20"></div>
         
         <div class="max-w-4xl mx-auto px-4 relative z-10 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Not Sure Which Package is Right?</h2>
-            <p class="text-emerald-100 text-lg mb-10 max-w-2xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Not Sure Which Package is Right?</h2>
+            <p class="text-emerald-100 text-base mb-8 max-w-2xl mx-auto">
                 Book a free 15-minute discovery call to discuss your goals and find the best fit. No pressure, just clarity.
             </p>
             
@@ -624,13 +610,13 @@
     </div>
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-brand-primary text-white py-16 border-t border-emerald-800">
+    <!-- Footer (CONDENSED) -->
+    <footer class="bg-brand-primary text-white py-12 border-t border-emerald-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-4 gap-12 mb-12">
+            <div class="grid md:grid-cols-4 gap-10 mb-10">
                 <!-- Brand -->
                 <div class="col-span-1">
-                    <a href="index.html" class="flex items-center gap-2 mb-6 group">
+                    <a href="index.html" class="flex items-center gap-2 mb-4 group">
                         <div class="bg-brand-accent text-brand-primary w-10 h-10 rounded-lg flex items-center justify-center group-hover:bg-white transition duration-300">
                             <span class="font-bold text-lg">L²</span>
                         </div>
@@ -643,8 +629,8 @@
 
                 <!-- Services -->
                 <div>
-                    <h4 class="font-bold text-lg mb-6 text-white uppercase tracking-wider text-sm">Services</h4>
-                    <ul class="space-y-4 text-sm text-emerald-100">
+                    <h4 class="font-bold text-base mb-4 text-white uppercase tracking-wider text-sm">Services</h4>
+                    <ul class="space-y-2 text-sm text-emerald-100">
                         <li><a href="launch.html" class="hover:text-brand-accent transition">Launch</a></li>
                         <li><a href="pivot.html" class="hover:text-brand-accent transition">Pivot</a></li>
                         <li><a href="accelerate.html" class="hover:text-brand-accent transition">Accelerate</a></li>
@@ -654,8 +640,8 @@
 
                 <!-- Company -->
                 <div>
-                    <h4 class="font-bold text-lg mb-6 text-white uppercase tracking-wider text-sm">Company</h4>
-                    <ul class="space-y-4 text-sm text-emerald-100">
+                    <h4 class="font-bold text-base mb-4 text-white uppercase tracking-wider text-sm">Company</h4>
+                    <ul class="space-y-2 text-sm text-emerald-100">
                         <li><a href="about.html" class="hover:text-brand-accent transition">About</a></li>
                         <li><a href="success-stories.html" class="hover:text-brand-accent transition">Success Stories</a></li>
                         <li><a href="faq.html" class="hover:text-brand-accent transition">FAQ</a></li>
@@ -665,15 +651,15 @@
 
                 <!-- Connect -->
                 <div>
-                    <h4 class="font-bold text-lg mb-6 text-white uppercase tracking-wider text-sm">Connect</h4>
-                    <ul class="space-y-4 text-sm text-emerald-100">
+                    <h4 class="font-bold text-base mb-4 text-white uppercase tracking-wider text-sm">Connect</h4>
+                    <ul class="space-y-2 text-sm text-emerald-100">
                         <li><a href="mailto:contact@launchtolead.io" class="hover:text-brand-accent transition inline-flex items-center gap-2"><i class="fa-solid fa-envelope"></i> contact@launchtolead.io</a></li>
                         <li><a href="https://www.linkedin.com/in/launchtolead" target="_blank" rel="noopener noreferrer" class="hover:text-brand-accent transition inline-flex items-center gap-2"><i class="fa-brands fa-linkedin text-blue-400"></i> LinkedIn</a></li>
                     </ul>
                 </div>
             </div>
             
-            <div class="border-t border-emerald-800 pt-8 text-center text-emerald-400 text-sm">
+            <div class="border-t border-emerald-800 pt-6 text-center text-emerald-400 text-sm">
                 <p>&copy; 2025 Launch to Lead Engineering. All rights reserved.</p>
             </div>
         </div>
