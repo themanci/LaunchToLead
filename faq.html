@@ -6,21 +6,20 @@
     <title>Frequently Asked Questions | Launch to Lead Engineering</title>
     <meta name="description" content="Find answers to common questions about Launch to Lead Engineering career coaching services.">
     
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="tailwind-config.js"></script>
-
-    <!-- FontAwesome -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
     
-    <!-- Alpine.js -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="tailwind-config.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
     
     <style>
-        /* FAQ Interactive States - Tailwind-compatible custom styles */
+        /* FAQ Interactive States */
         .faq-filter-btn.active {
             background-color: #064e3b;
             color: white;
@@ -34,382 +33,397 @@
         }
     </style>
 </head>
-<body>
-    <!-- Navigation -->
-    <nav class="bg-white/80 backdrop-blur-lg border-b border-emerald-100 fixed top-0 w-full z-50" x-data="{ open: false }">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-20">
-                <div class="flex items-center">
-                    <a href="index.html" class="flex items-center gap-2 group">
-                        <div class="bg-brand-primary text-white w-8 h-8 rounded-lg flex items-center justify-center group-hover:bg-brand-accent group-hover:text-brand-primary transition duration-300">
-                            <span class="font-bold text-sm">L²</span>
-                        </div>
-                        <span class="font-bold text-xl text-brand-primary tracking-tight">Launch<span class="font-light text-brand-secondary">ToLead</span></span>
-                    </a>
+<body class="bg-slate-50 text-slate-600 font-sans antialiased">
+
+<!-- Navigation -->
+<nav class="bg-white/80 backdrop-blur-lg border-b border-emerald-100 fixed top-0 w-full z-50" x-data="{ open: false }">
+    <div class="max-w-7xl mx-auto px-4 py-4">
+        <div class="flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-2 group">
+                <div class="bg-brand-primary text-white w-8 h-8 rounded-lg flex items-center justify-center group-hover:bg-brand-accent group-hover:text-brand-primary transition duration-300">
+                    <span class="font-bold text-sm">L²</span>
                 </div>
-
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="launch.html" class="text-sm font-medium text-slate-500 hover:text-brand-secondary transition">Launch</a>
-                    <a href="pivot.html" class="text-sm font-medium text-slate-500 hover:text-brand-secondary transition">Pivot</a>
-                    <a href="accelerate.html" class="text-sm font-medium text-slate-500 hover:text-brand-secondary transition">Accelerate</a>
-                    <a href="packages.html" class="text-sm font-medium text-slate-500 hover:text-brand-secondary transition">Packages</a>
-                    <a href="about.html" class="text-sm font-medium text-slate-500 hover:text-brand-secondary transition">About</a>
-                    <a href="contact.html" class="bg-brand-primary text-white px-5 py-2 rounded-full font-semibold text-sm hover:bg-brand-secondary transition shadow-soft hover:shadow-fresh">
-                        Get Started
-                    </a>
-                </div>
-                
-                <!-- Mobile menu button -->
-                <div class="md:hidden flex items-center">
-                    <button @click="open = !open" class="inline-flex items-center justify-center p-2 rounded-md text-slate-400 hover:text-slate-500 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-brand-primary" aria-expanded="false">
-                        <span class="sr-only">Open main menu</span>
-                        <svg x-show="!open" class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>
-                        <svg x-show="open" class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                        </svg>
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Mobile menu, show/hide based on menu state. -->
-        <div x-show="open" @click.away="open = false" class="md:hidden absolute top-20 left-0 w-full bg-white border-b border-emerald-100 shadow-lg z-50" id="mobile-menu">
-            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="launch.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-secondary hover:bg-slate-50">Launch</a>
-                <a href="pivot.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-secondary hover:bg-slate-50">Pivot</a>
-                <a href="accelerate.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-secondary hover:bg-slate-50">Accelerate</a>
-                <a href="packages.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-secondary hover:bg-slate-50">Packages</a>
-                <a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-secondary hover:bg-slate-50">About</a>
-                <a href="contact.html" class="block px-3 py-2 rounded-md text-base font-medium text-brand-primary font-bold bg-slate-50">Get Started</a>
-            </div>
-        </div>
-    </nav>
-
-    <main>
-    <!-- HERO -->
-    <div id="top" class="relative pt-28 pb-20 lg:pt-32 lg:pb-24 bg-white overflow-hidden">
-        <div class="absolute inset-0 bg-dots opacity-20" style="background-size: 20px 20px;"></div>
-        
-        <!-- Background blobs -->
-        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-brand-accent rounded-full blur-3xl opacity-20 pointer-events-none" aria-hidden="true"></div>
-        <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-96 h-96 bg-brand-secondary rounded-full blur-3xl opacity-20 pointer-events-none" aria-hidden="true"></div>
-
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-            <h1 class="text-5xl md:text-6xl font-extrabold text-slate-900 tracking-tight mb-6">
-                Frequently Asked <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-brand-secondary">Questions</span>
-            </h1>
-            <p class="mt-4 max-w-2xl mx-auto text-xl text-slate-500 font-light leading-relaxed">
-                Find answers to common questions about Launch to Lead Engineering coaching services.
-            </p>
-        </div>
-    </div>
-
-    <!-- FAQ Content -->
-    <section class="py-16 lg:py-24">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="mb-12">
-                <div class="flex justify-center gap-3 flex-wrap mb-12">
-                    <button class="faq-filter-btn px-5 py-2.5 text-sm font-medium bg-brand-primary text-white border-2 border-brand-primary rounded-full cursor-pointer transition-all duration-200 hover:bg-brand-secondary hover:border-brand-secondary active" data-filter="all">All</button>
-                    <button class="faq-filter-btn px-5 py-2.5 text-sm font-medium bg-white text-brand-primary border-2 border-slate-200 rounded-full cursor-pointer transition-all duration-200 hover:border-brand-primary hover:text-brand-primary" data-filter="getting-started">Getting Started</button>
-                    <button class="faq-filter-btn px-5 py-2.5 text-sm font-medium bg-white text-brand-primary border-2 border-slate-200 rounded-full cursor-pointer transition-all duration-200 hover:border-brand-primary hover:text-brand-primary" data-filter="launch">Launch</button>
-                    <button class="faq-filter-btn px-5 py-2.5 text-sm font-medium bg-white text-brand-primary border-2 border-slate-200 rounded-full cursor-pointer transition-all duration-200 hover:border-brand-primary hover:text-brand-primary" data-filter="pivot">Pivot</button>
-                    <button class="faq-filter-btn px-5 py-2.5 text-sm font-medium bg-white text-brand-primary border-2 border-slate-200 rounded-full cursor-pointer transition-all duration-200 hover:border-brand-primary hover:text-brand-primary" data-filter="accelerate">Accelerate</button>
-                    <button class="faq-filter-btn px-5 py-2.5 text-sm font-medium bg-white text-brand-primary border-2 border-slate-200 rounded-full cursor-pointer transition-all duration-200 hover:border-brand-primary hover:text-brand-primary" data-filter="pricing">Pricing</button>
-                </div>
-            </div>
-
-            <!-- Getting Started FAQs -->
-            <div class="faq-section mb-8" data-category="getting-started">
-                <h2 class="faq-section-title text-2xl text-brand-primary mb-4 pb-2 border-b-2 border-brand-primary">Getting Started</h2>
-                
-                <div class="faq-item bg-white border border-slate-200 rounded-lg mb-3 overflow-hidden transition-shadow duration-200 hover:shadow-sm">
-                    <button class="faq-question w-full py-5 px-6 bg-transparent border-none text-left text-[1.0625rem] font-semibold text-brand-primary cursor-pointer flex justify-between items-center transition-colors duration-200 hover:text-brand-secondary">
-                        <span>How do I know which track is right for me?</span>
-                        <span class="faq-icon text-xl transition-transform duration-300 text-brand-secondary">▼</span>
-                    </button>
-                    <div class="faq-answer max-h-0 overflow-hidden transition-[max-height] duration-300">
-                        <div class="faq-answer-content px-6 pb-5 text-slate-600 leading-relaxed">
-                            <p><strong>Launch:</strong> You're in college or within your first 2 years of your engineering career. You need help landing your first job or switching companies early in your career.</p>
-                            <p><strong>Pivot:</strong> You want to transition engineering disciplines (e.g., mechanical to software, hardware to product management, IC to leadership role). You have experience but want to change direction.</p>
-                            <p><strong>Accelerate:</strong> You're established in your current role and want to earn a promotion, become a manager, or advance to leadership. You know your field—you just need to level up.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="faq-item bg-white border border-slate-200 rounded-lg mb-3 overflow-hidden transition-shadow duration-200 hover:shadow-sm">
-                    <button class="faq-question w-full py-5 px-6 bg-transparent border-none text-left text-[1.0625rem] font-semibold text-brand-primary cursor-pointer flex justify-between items-center transition-colors duration-200 hover:text-brand-secondary">
-                        <span>What's included in a discovery call?</span>
-                        <span class="faq-icon text-xl transition-transform duration-300 text-brand-secondary">▼</span>
-                    </button>
-                    <div class="faq-answer max-h-0 overflow-hidden transition-[max-height] duration-300">
-                        <div class="faq-answer-content px-6 pb-5 text-slate-600 leading-relaxed">
-                            <p>A 15-minute conversation where we'll discuss your current situation, your goals, and whether I can help you get there. There's no sales pitch—just an honest assessment of whether Launch to Lead is a good fit for you.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="faq-item bg-white border border-slate-200 rounded-lg mb-3 overflow-hidden transition-shadow duration-200 hover:shadow-sm">
-                    <button class="faq-question w-full py-5 px-6 bg-transparent border-none text-left text-[1.0625rem] font-semibold text-brand-primary cursor-pointer flex justify-between items-center transition-colors duration-200 hover:text-brand-secondary">
-                        <span>Is coaching really worth it?</span>
-                        <span class="faq-icon text-xl transition-transform duration-300 text-brand-secondary">▼</span>
-                    </button>
-                    <div class="faq-answer max-h-0 overflow-hidden transition-[max-height] duration-300">
-                        <div class="faq-answer-content px-6 pb-5 text-slate-600 leading-relaxed">
-                            <p>Here's how I think about it: Without coaching, you might figure things out in 2-3 years through trial and error. With coaching, you could get there in 6-12 months with a proven strategy. The question isn't whether coaching is worth it—it's whether your time is worth it.</p>
-                            <p>Plus, one promotion typically pays for years of coaching. If I help you get promoted 12 months faster, that's 12 extra months of higher salary.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Launch FAQs -->
-            <div class="faq-section mb-8" data-category="launch">
-                <h2 class="faq-section-title text-2xl text-brand-primary mb-4 pb-2 border-b-2 border-brand-primary">Launch (College & Early Career)</h2>
-                
-                <div class="faq-item bg-white border border-slate-200 rounded-lg mb-3 overflow-hidden transition-shadow duration-200 hover:shadow-sm">
-                    <button class="faq-question w-full py-5 px-6 bg-transparent border-none text-left text-[1.0625rem] font-semibold text-brand-primary cursor-pointer flex justify-between items-center transition-colors duration-200 hover:text-brand-secondary">
-                        <span>I'm still in school—is it too early to work with you?</span>
-                        <span class="faq-icon text-xl transition-transform duration-300 text-brand-secondary">▼</span>
-                    </button>
-                    <div class="faq-answer max-h-0 overflow-hidden transition-[max-height] duration-300">
-                        <div class="faq-answer-content px-6 pb-5 text-slate-600 leading-relaxed">
-                            <p>Not at all. Actually, the earlier you start, the better. Building a strong resume, learning how to interview, and understanding what companies actually look for—these are skills that compound over time. Plus, you'll avoid the common mistakes most students make (like bland resumes or awkward interviews).</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="faq-item bg-white border border-slate-200 rounded-lg mb-3 overflow-hidden transition-shadow duration-200 hover:shadow-sm">
-                    <button class="faq-question w-full py-5 px-6 bg-transparent border-none text-left text-[1.0625rem] font-semibold text-brand-primary cursor-pointer flex justify-between items-center transition-colors duration-200 hover:text-brand-secondary">
-                        <span>How is this different from my university career center?</span>
-                        <span class="faq-icon text-xl transition-transform duration-300 text-brand-secondary">▼</span>
-                    </button>
-                    <div class="faq-answer max-h-0 overflow-hidden transition-[max-height] duration-300">
-                        <div class="faq-answer-content px-6 pb-5 text-slate-600 leading-relaxed">
-                            <p>University career centers give general advice for all students. I give specific, engineering-focused strategies based on what actually works in industry. I've been the hiring manager reviewing resumes—I know exactly what gets you past the ATS and into the interview.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="faq-item bg-white border border-slate-200 rounded-lg mb-3 overflow-hidden transition-shadow duration-200 hover:shadow-sm">
-                    <button class="faq-question w-full py-5 px-6 bg-transparent border-none text-left text-[1.0625rem] font-semibold text-brand-primary cursor-pointer flex justify-between items-center transition-colors duration-200 hover:text-brand-secondary">
-                        <span>Can you help me with AI and the changing job market?</span>
-                        <span class="faq-icon text-xl transition-transform duration-300 text-brand-secondary">▼</span>
-                    </button>
-                    <div class="faq-answer max-h-0 overflow-hidden transition-[max-height] duration-300">
-                        <div class="faq-answer-content px-6 pb-5 text-slate-600 leading-relaxed">
-                            <p>Yes. Entry-level hiring is changing, but engineers who can work WITH AI (not compete against it) are still in demand. I'll help you position yourself as an "AI-augmented engineer" and show you how to demonstrate AI tool proficiency in your resume and interviews.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Pivot FAQs -->
-            <div class="faq-section mb-8" data-category="pivot">
-                <h2 class="faq-section-title text-2xl text-brand-primary mb-4 pb-2 border-b-2 border-brand-primary">Pivot (Career Transitions)</h2>
-                
-                <div class="faq-item bg-white border border-slate-200 rounded-lg mb-3 overflow-hidden transition-shadow duration-200 hover:shadow-sm">
-                    <button class="faq-question w-full py-5 px-6 bg-transparent border-none text-left text-[1.0625rem] font-semibold text-brand-primary cursor-pointer flex justify-between items-center transition-colors duration-200 hover:text-brand-secondary">
-                        <span>Do I need to go back to school to pivot careers?</span>
-                        <span class="faq-icon text-xl transition-transform duration-300 text-brand-secondary">▼</span>
-                    </button>
-                    <div class="faq-answer max-h-0 overflow-hidden transition-[max-height] duration-300">
-                        <div class="faq-answer-content px-6 pb-5 text-slate-600 leading-relaxed">
-                            <p>No. I pivoted 4 times without any additional degrees. Strategic positioning beats credentials. You need to build proof points (projects, adjacent work, certifications) and position your existing experience correctly. That's what I'll teach you.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="faq-item bg-white border border-slate-200 rounded-lg mb-3 overflow-hidden transition-shadow duration-200 hover:shadow-sm">
-                    <button class="faq-question w-full py-5 px-6 bg-transparent border-none text-left text-[1.0625rem] font-semibold text-brand-primary cursor-pointer flex justify-between items-center transition-colors duration-200 hover:text-brand-secondary">
-                        <span>How long does a career pivot typically take?</span>
-                        <span class="faq-icon text-xl transition-transform duration-300 text-brand-secondary">▼</span>
-                    </button>
-                    <div class="faq-answer max-h-0 overflow-hidden transition-[max-height] duration-300">
-                        <div class="faq-answer-content px-6 pb-5 text-slate-600 leading-relaxed">
-                            <p>My first pivot took 8 months with the right strategy. Without a strategy, people spend 2-3 years (or give up). It depends on your target role, current experience, and how much time you can dedicate to building proof points.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="faq-item bg-white border border-slate-200 rounded-lg mb-3 overflow-hidden transition-shadow duration-200 hover:shadow-sm">
-                    <button class="faq-question w-full py-5 px-6 bg-transparent border-none text-left text-[1.0625rem] font-semibold text-brand-primary cursor-pointer flex justify-between items-center transition-colors duration-200 hover:text-brand-secondary">
-                        <span>Can I pivot within my current company or do I need to leave?</span>
-                        <span class="faq-icon text-xl transition-transform duration-300 text-brand-secondary">▼</span>
-                    </button>
-                    <div class="faq-answer max-h-0 overflow-hidden transition-[max-height] duration-300">
-                        <div class="faq-answer-content px-6 pb-5 text-slate-600 leading-relaxed">
-                            <p>I pivoted 4 times within the same company. Internal pivots are often easier because you have credibility, relationships, and inside knowledge. We'll build a strategy that leverages your current position.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Accelerate FAQs -->
-            <div class="faq-section mb-8" data-category="accelerate">
-                <h2 class="faq-section-title text-2xl text-brand-primary mb-4 pb-2 border-b-2 border-brand-primary">Accelerate (Promotions & Leadership)</h2>
-                
-                <div class="faq-item bg-white border border-slate-200 rounded-lg mb-3 overflow-hidden transition-shadow duration-200 hover:shadow-sm">
-                    <button class="faq-question w-full py-5 px-6 bg-transparent border-none text-left text-[1.0625rem] font-semibold text-brand-primary cursor-pointer flex justify-between items-center transition-colors duration-200 hover:text-brand-secondary">
-                        <span>How long does it take to get promoted?</span>
-                        <span class="faq-icon text-xl transition-transform duration-300 text-brand-secondary">▼</span>
-                    </button>
-                    <div class="faq-answer max-h-0 overflow-hidden transition-[max-height] duration-300">
-                        <div class="faq-answer-content px-6 pb-5 text-slate-600 leading-relaxed">
-                            <p>It depends on your company's promotion cycle and your current performance. Most companies have annual or bi-annual promotion windows. With the right strategy, you can position yourself for the next cycle (6-12 months). Without a strategy, it's often 2-3+ years.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="faq-item bg-white border border-slate-200 rounded-lg mb-3 overflow-hidden transition-shadow duration-200 hover:shadow-sm">
-                    <button class="faq-question w-full py-5 px-6 bg-transparent border-none text-left text-[1.0625rem] font-semibold text-brand-primary cursor-pointer flex justify-between items-center transition-colors duration-200 hover:text-brand-secondary">
-                        <span>What if I'm already doing next-level work but not getting promoted?</span>
-                        <span class="faq-icon text-xl transition-transform duration-300 text-brand-secondary">▼</span>
-                    </button>
-                    <div class="faq-answer max-h-0 overflow-hidden transition-[max-height] duration-300">
-                        <div class="faq-answer-content px-6 pb-5 text-slate-600 leading-relaxed">
-                            <p>This is extremely common. The problem isn't your work—it's visibility and positioning. Your manager might not know the full scope of what you're doing, or they don't have the ammunition to justify your promotion to THEIR boss. We'll fix both.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="faq-item bg-white border border-slate-200 rounded-lg mb-3 overflow-hidden transition-shadow duration-200 hover:shadow-sm">
-                    <button class="faq-question w-full py-5 px-6 bg-transparent border-none text-left text-[1.0625rem] font-semibold text-brand-primary cursor-pointer flex justify-between items-center transition-colors duration-200 hover:text-brand-secondary">
-                        <span>How do I get promoted in the AI era?</span>
-                        <span class="faq-icon text-xl transition-transform duration-300 text-brand-secondary">▼</span>
-                    </button>
-                    <div class="faq-answer max-h-0 overflow-hidden transition-[max-height] duration-300">
-                        <div class="faq-answer-content px-6 pb-5 text-slate-600 leading-relaxed">
-                            <p>Focus on skills AI can't replace: strategic thinking, cross-functional communication, mentoring, and decision-making under ambiguity. I'll help you reframe your accomplishments to highlight AI leverage (how you used AI to amplify your impact) rather than just technical output.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Pricing & Packages FAQs -->
-            <div class="faq-section mb-8" data-category="pricing">
-                <h2 class="faq-section-title text-2xl text-brand-primary mb-4 pb-2 border-b-2 border-brand-primary">Pricing & Packages</h2>
-                
-                <div class="faq-item bg-white border border-slate-200 rounded-lg mb-3 overflow-hidden transition-shadow duration-200 hover:shadow-sm">
-                    <button class="faq-question w-full py-5 px-6 bg-transparent border-none text-left text-[1.0625rem] font-semibold text-brand-primary cursor-pointer flex justify-between items-center transition-colors duration-200 hover:text-brand-secondary">
-                        <span>How much do your services cost?</span>
-                        <span class="faq-icon text-xl transition-transform duration-300 text-brand-secondary">▼</span>
-                    </button>
-                    <div class="faq-answer max-h-0 overflow-hidden transition-[max-height] duration-300">
-                        <div class="faq-answer-content px-6 pb-5 text-slate-600 leading-relaxed">
-                            <p><strong>Launch packages:</strong> $65 - $165</p>
-                            <p><strong>Pivot packages:</strong> $85 - $450</p>
-                            <p><strong>Accelerate packages:</strong> $85 - $225</p>
-                            <p>Each track has 3 packages depending on your needs and budget. See the <a href="packages.html">Packages page</a> for full details.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="faq-item bg-white border border-slate-200 rounded-lg mb-3 overflow-hidden transition-shadow duration-200 hover:shadow-sm">
-                    <button class="faq-question w-full py-5 px-6 bg-transparent border-none text-left text-[1.0625rem] font-semibold text-brand-primary cursor-pointer flex justify-between items-center transition-colors duration-200 hover:text-brand-secondary">
-                        <span>Do you offer payment plans?</span>
-                        <span class="faq-icon text-xl transition-transform duration-300 text-brand-secondary">▼</span>
-                    </button>
-                    <div class="faq-answer max-h-0 overflow-hidden transition-[max-height] duration-300">
-                        <div class="faq-answer-content px-6 pb-5 text-slate-600 leading-relaxed">
-                            <p>For multi-month packages (Pivot and Accelerate tracks), we can discuss payment plans during your discovery call.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="faq-item bg-white border border-slate-200 rounded-lg mb-3 overflow-hidden transition-shadow duration-200 hover:shadow-sm">
-                    <button class="faq-question w-full py-5 px-6 bg-transparent border-none text-left text-[1.0625rem] font-semibold text-brand-primary cursor-pointer flex justify-between items-center transition-colors duration-200 hover:text-brand-secondary">
-                        <span>What if I'm not satisfied?</span>
-                        <span class="faq-icon text-xl transition-transform duration-300 text-brand-secondary">▼</span>
-                    </button>
-                    <div class="faq-answer max-h-0 overflow-hidden transition-[max-height] duration-300">
-                        <div class="faq-answer-content px-6 pb-5 text-slate-600 leading-relaxed">
-                            <p>If you're not seeing progress or value after our first session, let me know. I'll work with you to adjust our approach or offer a refund. I only succeed when you succeed.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- CTA -->
-    <!-- CTA Section -->
-    <div class="py-24 bg-brand-primary relative overflow-hidden">
-        <!-- Background decoration -->
-        <div class="absolute top-0 right-0 -mt-20 -mr-20 w-96 h-96 bg-brand-secondary rounded-full blur-3xl opacity-20 pointer-events-none" aria-hidden="true"></div>
-        <div class="absolute bottom-0 left-0 -mb-20 -ml-20 w-96 h-96 bg-brand-primary rounded-full blur-3xl opacity-10 pointer-events-none" aria-hidden="true"></div>
-        
-        <div class="max-w-4xl mx-auto px-4 relative z-10 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Still Have Questions?</h2>
-            <p class="text-emerald-100 text-lg mb-10 max-w-2xl mx-auto">
-                Book a free discovery call and let's discuss your specific situation.
-            </p>
-            
-            <a href="contact.html" class="px-8 py-4 bg-white text-brand-primary font-bold rounded-full hover:bg-brand-accent hover:text-brand-primary transition shadow-lg hover:shadow-fresh hover:-translate-y-1 inline-flex items-center gap-2">
-                <i class="fa-regular fa-calendar"></i> Book a Free Discovery Call
+                <span class="font-bold text-xl text-brand-primary tracking-tight">Launch<span class="font-light text-brand-secondary">ToLead</span></span>
             </a>
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="launch.html" class="text-sm font-medium text-slate-500 hover:text-brand-secondary transition">Launch</a>
+                <a href="pivot.html" class="text-sm font-medium text-slate-500 hover:text-brand-secondary transition">Pivot</a>
+                <a href="accelerate.html" class="text-sm font-medium text-slate-500 hover:text-brand-secondary transition">Accelerate</a>
+                <a href="packages.html" class="text-sm font-medium text-slate-500 hover:text-brand-secondary transition">Packages</a>
+                <a href="faq.html" class="text-sm font-bold text-brand-primary hover:text-brand-secondary transition">FAQ</a>
+                <a href="success-stories.html" class="text-sm font-medium text-slate-500 hover:text-brand-secondary transition">Success Stories</a>
+                <a href="about.html" class="text-sm font-medium text-slate-500 hover:text-brand-secondary transition">About</a>
+                <a href="contact.html" class="bg-brand-primary text-white px-4 py-2 rounded-full font-semibold text-sm hover:bg-brand-secondary transition shadow-sm">
+                    Get Started
+                </a>
+            </div>
+            <!-- Mobile menu button -->
+            <div class="md:hidden flex items-center">
+                <button @click="open = !open" class="inline-flex items-center justify-center p-2 rounded-md text-slate-400 hover:text-slate-500 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-brand-primary">
+                    <span class="sr-only">Open main menu</span>
+                    <svg x-show="!open" class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                    <svg x-show="open" class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
         </div>
     </div>
-    </main>
+    <!-- Mobile menu -->
+    <div x-show="open" @click.away="open = false" class="md:hidden absolute top-full left-0 w-full bg-white border-b border-emerald-100 shadow-lg">
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+            <a href="launch.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-secondary hover:bg-slate-50">Launch</a>
+            <a href="pivot.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-secondary hover:bg-slate-50">Pivot</a>
+            <a href="accelerate.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-secondary hover:bg-slate-50">Accelerate</a>
+            <a href="packages.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-secondary hover:bg-slate-50">Packages</a>
+            <a href="faq.html" class="block px-3 py-2 rounded-md text-base font-bold text-brand-primary bg-slate-50">FAQ</a>
+            <a href="success-stories.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-secondary hover:bg-slate-50">Success Stories</a>
+            <a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-secondary hover:bg-slate-50">About</a>
+            <a href="contact.html" class="block px-3 py-2 rounded-md text-base font-medium text-brand-primary font-bold bg-slate-50">Get Started</a>
+        </div>
+    </div>
+</nav>
 
-    <!-- Footer -->
-    <footer class="bg-brand-primary text-white py-16 border-t border-emerald-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-4 gap-12 mb-12">
-                <!-- Brand -->
-                <div class="col-span-1">
-                    <a href="index.html" class="flex items-center gap-2 mb-6 group">
-                        <div class="bg-brand-accent text-brand-primary w-10 h-10 rounded-lg flex items-center justify-center group-hover:bg-white transition duration-300">
-                            <span class="font-bold text-lg">L²</span>
-                        </div>
-                        <span class="font-bold text-xl text-white tracking-tight">Launch<span class="font-light text-brand-accent">ToLead</span></span>
-                    </a>
-                    <p class="text-emerald-100 text-sm leading-relaxed">
-                        Engineering career coaching for students and professionals.
-                    </p>
-                </div>
+<main>
 
-                <!-- Services -->
-                <div>
-                    <h4 class="font-bold text-lg mb-6 text-white uppercase tracking-wider text-sm">Services</h4>
-                    <ul class="space-y-4 text-sm text-emerald-100">
-                        <li><a href="launch.html" class="hover:text-brand-accent transition">Launch</a></li>
-                        <li><a href="pivot.html" class="hover:text-brand-accent transition">Pivot</a></li>
-                        <li><a href="accelerate.html" class="hover:text-brand-accent transition">Accelerate</a></li>
-                        <li><a href="packages.html" class="hover:text-brand-accent transition">Packages</a></li>
-                    </ul>
-                </div>
+<!-- Company Launch Special Banner -->
+<div class="bg-gradient-to-r from-red-600 to-orange-500 text-white py-2 shadow-md mt-16">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+        <p class="text-sm font-semibold">
+            🚀 <span class="font-bold">Company Launch Special:</span> Book a discovery call and get $200 off your first coaching package! 
+            <a href="contact.html" class="underline hover:text-yellow-200 transition ml-1">Learn More →</a>
+        </p>
+    </div>
+</div>
 
-                <!-- Company -->
-                <div>
-                    <h4 class="font-bold text-lg mb-6 text-white uppercase tracking-wider text-sm">Company</h4>
-                    <ul class="space-y-4 text-sm text-emerald-100">
-                        <li><a href="about.html" class="hover:text-brand-accent transition">About</a></li>
-                        <li><a href="success-stories.html" class="hover:text-brand-accent transition">Success Stories</a></li>
-                        <li><a href="faq.html" class="text-brand-accent font-bold">FAQ</a></li>
-                        <li><a href="contact.html" class="hover:text-brand-accent transition">Contact</a></li>
-                    </ul>
-                </div>
+<!-- HERO - Condensed -->
+<div id="top" class="relative pt-16 pb-12 bg-white overflow-hidden">
+    <!-- Dot Pattern -->
+    <div class="absolute inset-0 bg-dots opacity-20" style="background-size: 20px 20px;"></div>
+    
+    <!-- Background blobs -->
+    <div class="absolute top-0 right-0 -mr-20 -mt-20 w-80 h-80 bg-teal-100 rounded-full blur-3xl opacity-60" aria-hidden="true"></div>
+    <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 bg-lime-100 rounded-full blur-3xl opacity-60" aria-hidden="true"></div>
 
-                <!-- Connect -->
-                <div>
-                    <h4 class="font-bold text-lg mb-6 text-white uppercase tracking-wider text-sm">Connect</h4>
-                    <ul class="space-y-4 text-sm text-emerald-100">
-                        <li><a href="mailto:contact@launchtolead.io" class="hover:text-brand-accent transition inline-flex items-center gap-2"><i class="fa-solid fa-envelope"></i> contact@launchtolead.io</a></li>
-                        <li><a href="https://www.linkedin.com/in/launchtolead" target="_blank" rel="noopener noreferrer" class="hover:text-brand-accent transition inline-flex items-center gap-2"><i class="fa-brands fa-linkedin text-blue-400"></i> LinkedIn</a></li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="border-t border-emerald-800 pt-8 text-center text-emerald-400 text-sm">
-                <p>&copy; 2025 Launch to Lead Engineering. All rights reserved.</p>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+        <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight mb-4">
+            Frequently Asked <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-brand-secondary">Questions</span>
+        </h1>
+        <p class="max-w-2xl mx-auto text-lg text-slate-500 font-light leading-relaxed">
+            Find answers to common questions about Launch to Lead Engineering coaching services.
+        </p>
+    </div>
+</div>
+
+<!-- FAQ Content - Condensed -->
+<section class="py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="mb-10">
+            <div class="flex justify-center gap-2 flex-wrap mb-10">
+                <button class="faq-filter-btn px-4 py-2 text-xs font-medium bg-brand-primary text-white border-2 border-brand-primary rounded-full cursor-pointer transition-all duration-200 hover:bg-brand-secondary hover:border-brand-secondary active" data-filter="all">All</button>
+                <button class="faq-filter-btn px-4 py-2 text-xs font-medium bg-white text-brand-primary border-2 border-slate-200 rounded-full cursor-pointer transition-all duration-200 hover:border-brand-primary hover:text-brand-primary" data-filter="getting-started">Getting Started</button>
+                <button class="faq-filter-btn px-4 py-2 text-xs font-medium bg-white text-brand-primary border-2 border-slate-200 rounded-full cursor-pointer transition-all duration-200 hover:border-brand-primary hover:text-brand-primary" data-filter="launch">Launch</button>
+                <button class="faq-filter-btn px-4 py-2 text-xs font-medium bg-white text-brand-primary border-2 border-slate-200 rounded-full cursor-pointer transition-all duration-200 hover:border-brand-primary hover:text-brand-primary" data-filter="pivot">Pivot</button>
+                <button class="faq-filter-btn px-4 py-2 text-xs font-medium bg-white text-brand-primary border-2 border-slate-200 rounded-full cursor-pointer transition-all duration-200 hover:border-brand-primary hover:text-brand-primary" data-filter="accelerate">Accelerate</button>
+                <button class="faq-filter-btn px-4 py-2 text-xs font-medium bg-white text-brand-primary border-2 border-slate-200 rounded-full cursor-pointer transition-all duration-200 hover:border-brand-primary hover:text-brand-primary" data-filter="pricing">Pricing</button>
             </div>
         </div>
-    </footer>
 
+        <!-- Getting Started FAQs -->
+        <div class="faq-section mb-6" data-category="getting-started">
+            <h2 class="faq-section-title text-xl text-brand-primary mb-3 pb-2 border-b-2 border-brand-primary">Getting Started</h2>
+            
+            <div class="faq-item bg-white border border-slate-200 rounded-lg mb-2 overflow-hidden transition-shadow duration-200 hover:shadow-sm">
+                <button class="faq-question w-full py-4 px-5 bg-transparent border-none text-left text-sm font-semibold text-brand-primary cursor-pointer flex justify-between items-center transition-colors duration-200 hover:text-brand-secondary">
+                    <span>How do I know which track is right for me?</span>
+                    <span class="faq-icon text-lg transition-transform duration-300 text-brand-secondary">▼</span>
+                </button>
+                <div class="faq-answer max-h-0 overflow-hidden transition-[max-height] duration-300">
+                    <div class="faq-answer-content px-5 pb-4 text-slate-600 leading-relaxed text-xs">
+                        <p class="mb-2"><strong>Launch:</strong> You're in college or within your first 2 years of your engineering career. You need help landing your first job or switching companies early in your career.</p>
+                        <p class="mb-2"><strong>Pivot:</strong> You want to transition engineering disciplines (e.g., mechanical to software, hardware to product management, IC to leadership role). You have experience but want to change direction.</p>
+                        <p><strong>Accelerate:</strong> You're established in your current role and want to earn a promotion, become a manager, or advance to leadership. You know your field—you just need to level up.</p>
+                    </div>
+                </div>
+            </div>
 
-    <script src="faq.js"></script>
+            <div class="faq-item bg-white border border-slate-200 rounded-lg mb-2 overflow-hidden transition-shadow duration-200 hover:shadow-sm">
+                <button class="faq-question w-full py-4 px-5 bg-transparent border-none text-left text-sm font-semibold text-brand-primary cursor-pointer flex justify-between items-center transition-colors duration-200 hover:text-brand-secondary">
+                    <span>What's included in a discovery call?</span>
+                    <span class="faq-icon text-lg transition-transform duration-300 text-brand-secondary">▼</span>
+                </button>
+                <div class="faq-answer max-h-0 overflow-hidden transition-[max-height] duration-300">
+                    <div class="faq-answer-content px-5 pb-4 text-slate-600 leading-relaxed text-xs">
+                        <p>A 15-minute conversation where we'll discuss your current situation, your goals, and whether I can help you get there. There's no sales pitch—just an honest assessment of whether Launch to Lead is a good fit for you.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item bg-white border border-slate-200 rounded-lg mb-2 overflow-hidden transition-shadow duration-200 hover:shadow-sm">
+                <button class="faq-question w-full py-4 px-5 bg-transparent border-none text-left text-sm font-semibold text-brand-primary cursor-pointer flex justify-between items-center transition-colors duration-200 hover:text-brand-secondary">
+                    <span>Is coaching really worth it?</span>
+                    <span class="faq-icon text-lg transition-transform duration-300 text-brand-secondary">▼</span>
+                </button>
+                <div class="faq-answer max-h-0 overflow-hidden transition-[max-height] duration-300">
+                    <div class="faq-answer-content px-5 pb-4 text-slate-600 leading-relaxed text-xs">
+                        <p class="mb-2">Here's how I think about it: Without coaching, you might figure things out in 2-3 years through trial and error. With coaching, you could get there in 6-12 months with a proven strategy. The question isn't whether coaching is worth it—it's whether your time is worth it.</p>
+                        <p>Plus, one promotion typically pays for years of coaching. If I help you get promoted 12 months faster, that's 12 extra months of higher salary.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Launch FAQs -->
+        <div class="faq-section mb-6" data-category="launch">
+            <h2 class="faq-section-title text-xl text-brand-primary mb-3 pb-2 border-b-2 border-brand-primary">Launch (College & Early Career)</h2>
+            
+            <div class="faq-item bg-white border border-slate-200 rounded-lg mb-2 overflow-hidden transition-shadow duration-200 hover:shadow-sm">
+                <button class="faq-question w-full py-4 px-5 bg-transparent border-none text-left text-sm font-semibold text-brand-primary cursor-pointer flex justify-between items-center transition-colors duration-200 hover:text-brand-secondary">
+                    <span>I'm still in school—is it too early to work with you?</span>
+                    <span class="faq-icon text-lg transition-transform duration-300 text-brand-secondary">▼</span>
+                </button>
+                <div class="faq-answer max-h-0 overflow-hidden transition-[max-height] duration-300">
+                    <div class="faq-answer-content px-5 pb-4 text-slate-600 leading-relaxed text-xs">
+                        <p>Not at all. Actually, the earlier you start, the better. Building a strong resume, learning how to interview, and understanding what companies actually look for—these are skills that compound over time. Plus, you'll avoid the common mistakes most students make (like bland resumes or awkward interviews).</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item bg-white border border-slate-200 rounded-lg mb-2 overflow-hidden transition-shadow duration-200 hover:shadow-sm">
+                <button class="faq-question w-full py-4 px-5 bg-transparent border-none text-left text-sm font-semibold text-brand-primary cursor-pointer flex justify-between items-center transition-colors duration-200 hover:text-brand-secondary">
+                    <span>How is this different from my university career center?</span>
+                    <span class="faq-icon text-lg transition-transform duration-300 text-brand-secondary">▼</span>
+                </button>
+                <div class="faq-answer max-h-0 overflow-hidden transition-[max-height] duration-300">
+                    <div class="faq-answer-content px-5 pb-4 text-slate-600 leading-relaxed text-xs">
+                        <p>University career centers give general advice for all students. I give specific, engineering-focused strategies based on what actually works in industry. I've been the hiring manager reviewing resumes—I know exactly what gets you past the ATS and into the interview.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item bg-white border border-slate-200 rounded-lg mb-2 overflow-hidden transition-shadow duration-200 hover:shadow-sm">
+                <button class="faq-question w-full py-4 px-5 bg-transparent border-none text-left text-sm font-semibold text-brand-primary cursor-pointer flex justify-between items-center transition-colors duration-200 hover:text-brand-secondary">
+                    <span>Can you help me with AI and the changing job market?</span>
+                    <span class="faq-icon text-lg transition-transform duration-300 text-brand-secondary">▼</span>
+                </button>
+                <div class="faq-answer max-h-0 overflow-hidden transition-[max-height] duration-300">
+                    <div class="faq-answer-content px-5 pb-4 text-slate-600 leading-relaxed text-xs">
+                        <p>Yes. Entry-level hiring is changing, but engineers who can work WITH AI (not compete against it) are still in demand. I'll help you position yourself as an "AI-augmented engineer" and show you how to demonstrate AI tool proficiency in your resume and interviews.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pivot FAQs -->
+        <div class="faq-section mb-6" data-category="pivot">
+            <h2 class="faq-section-title text-xl text-brand-primary mb-3 pb-2 border-b-2 border-brand-primary">Pivot (Career Transitions)</h2>
+            
+            <div class="faq-item bg-white border border-slate-200 rounded-lg mb-2 overflow-hidden transition-shadow duration-200 hover:shadow-sm">
+                <button class="faq-question w-full py-4 px-5 bg-transparent border-none text-left text-sm font-semibold text-brand-primary cursor-pointer flex justify-between items-center transition-colors duration-200 hover:text-brand-secondary">
+                    <span>Do I need to go back to school to pivot careers?</span>
+                    <span class="faq-icon text-lg transition-transform duration-300 text-brand-secondary">▼</span>
+                </button>
+                <div class="faq-answer max-h-0 overflow-hidden transition-[max-height] duration-300">
+                    <div class="faq-answer-content px-5 pb-4 text-slate-600 leading-relaxed text-xs">
+                        <p>No. I pivoted 4 times without any additional degrees. Strategic positioning beats credentials. You need to build proof points (projects, adjacent work, certifications) and position your existing experience correctly. That's what I'll teach you.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item bg-white border border-slate-200 rounded-lg mb-2 overflow-hidden transition-shadow duration-200 hover:shadow-sm">
+                <button class="faq-question w-full py-4 px-5 bg-transparent border-none text-left text-sm font-semibold text-brand-primary cursor-pointer flex justify-between items-center transition-colors duration-200 hover:text-brand-secondary">
+                    <span>How long does a career pivot typically take?</span>
+                    <span class="faq-icon text-lg transition-transform duration-300 text-brand-secondary">▼</span>
+                </button>
+                <div class="faq-answer max-h-0 overflow-hidden transition-[max-height] duration-300">
+                    <div class="faq-answer-content px-5 pb-4 text-slate-600 leading-relaxed text-xs">
+                        <p>My first pivot took 8 months with the right strategy. Without a strategy, people spend 2-3 years (or give up). It depends on your target role, current experience, and how much time you can dedicate to building proof points.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item bg-white border border-slate-200 rounded-lg mb-2 overflow-hidden transition-shadow duration-200 hover:shadow-sm">
+                <button class="faq-question w-full py-4 px-5 bg-transparent border-none text-left text-sm font-semibold text-brand-primary cursor-pointer flex justify-between items-center transition-colors duration-200 hover:text-brand-secondary">
+                    <span>Can I pivot within my current company or do I need to leave?</span>
+                    <span class="faq-icon text-lg transition-transform duration-300 text-brand-secondary">▼</span>
+                </button>
+                <div class="faq-answer max-h-0 overflow-hidden transition-[max-height] duration-300">
+                    <div class="faq-answer-content px-5 pb-4 text-slate-600 leading-relaxed text-xs">
+                        <p>I pivoted 4 times within the same company. Internal pivots are often easier because you have credibility, relationships, and inside knowledge. We'll build a strategy that leverages your current position.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Accelerate FAQs -->
+        <div class="faq-section mb-6" data-category="accelerate">
+            <h2 class="faq-section-title text-xl text-brand-primary mb-3 pb-2 border-b-2 border-brand-primary">Accelerate (Promotions & Leadership)</h2>
+            
+            <div class="faq-item bg-white border border-slate-200 rounded-lg mb-2 overflow-hidden transition-shadow duration-200 hover:shadow-sm">
+                <button class="faq-question w-full py-4 px-5 bg-transparent border-none text-left text-sm font-semibold text-brand-primary cursor-pointer flex justify-between items-center transition-colors duration-200 hover:text-brand-secondary">
+                    <span>How long does it take to get promoted?</span>
+                    <span class="faq-icon text-lg transition-transform duration-300 text-brand-secondary">▼</span>
+                </button>
+                <div class="faq-answer max-h-0 overflow-hidden transition-[max-height] duration-300">
+                    <div class="faq-answer-content px-5 pb-4 text-slate-600 leading-relaxed text-xs">
+                        <p>It depends on your company's promotion cycle and your current performance. Most companies have annual or bi-annual promotion windows. With the right strategy, you can position yourself for the next cycle (6-12 months). Without a strategy, it's often 2-3+ years.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item bg-white border border-slate-200 rounded-lg mb-2 overflow-hidden transition-shadow duration-200 hover:shadow-sm">
+                <button class="faq-question w-full py-4 px-5 bg-transparent border-none text-left text-sm font-semibold text-brand-primary cursor-pointer flex justify-between items-center transition-colors duration-200 hover:text-brand-secondary">
+                    <span>What if I'm already doing next-level work but not getting promoted?</span>
+                    <span class="faq-icon text-lg transition-transform duration-300 text-brand-secondary">▼</span>
+                </button>
+                <div class="faq-answer max-h-0 overflow-hidden transition-[max-height] duration-300">
+                    <div class="faq-answer-content px-5 pb-4 text-slate-600 leading-relaxed text-xs">
+                        <p>This is extremely common. The problem isn't your work—it's visibility and positioning. Your manager might not know the full scope of what you're doing, or they don't have the ammunition to justify your promotion to THEIR boss. We'll fix both.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item bg-white border border-slate-200 rounded-lg mb-2 overflow-hidden transition-shadow duration-200 hover:shadow-sm">
+                <button class="faq-question w-full py-4 px-5 bg-transparent border-none text-left text-sm font-semibold text-brand-primary cursor-pointer flex justify-between items-center transition-colors duration-200 hover:text-brand-secondary">
+                    <span>How do I get promoted in the AI era?</span>
+                    <span class="faq-icon text-lg transition-transform duration-300 text-brand-secondary">▼</span>
+                </button>
+                <div class="faq-answer max-h-0 overflow-hidden transition-[max-height] duration-300">
+                    <div class="faq-answer-content px-5 pb-4 text-slate-600 leading-relaxed text-xs">
+                        <p>Focus on skills AI can't replace: strategic thinking, cross-functional communication, mentoring, and decision-making under ambiguity. I'll help you reframe your accomplishments to highlight AI leverage (how you used AI to amplify your impact) rather than just technical output.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pricing & Packages FAQs -->
+        <div class="faq-section mb-6" data-category="pricing">
+            <h2 class="faq-section-title text-xl text-brand-primary mb-3 pb-2 border-b-2 border-brand-primary">Pricing & Packages</h2>
+            
+            <div class="faq-item bg-white border border-slate-200 rounded-lg mb-2 overflow-hidden transition-shadow duration-200 hover:shadow-sm">
+                <button class="faq-question w-full py-4 px-5 bg-transparent border-none text-left text-sm font-semibold text-brand-primary cursor-pointer flex justify-between items-center transition-colors duration-200 hover:text-brand-secondary">
+                    <span>How much do your services cost?</span>
+                    <span class="faq-icon text-lg transition-transform duration-300 text-brand-secondary">▼</span>
+                </button>
+                <div class="faq-answer max-h-0 overflow-hidden transition-[max-height] duration-300">
+                    <div class="faq-answer-content px-5 pb-4 text-slate-600 leading-relaxed text-xs">
+                        <p class="mb-1"><strong>Launch packages:</strong> $65 - $165</p>
+                        <p class="mb-1"><strong>Pivot packages:</strong> $85 - $450</p>
+                        <p class="mb-2"><strong>Accelerate packages:</strong> $85 - $225</p>
+                        <p>Each track has 3 packages depending on your needs and budget. See the <a href="packages.html" class="text-brand-primary underline">Packages page</a> for full details.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item bg-white border border-slate-200 rounded-lg mb-2 overflow-hidden transition-shadow duration-200 hover:shadow-sm">
+                <button class="faq-question w-full py-4 px-5 bg-transparent border-none text-left text-sm font-semibold text-brand-primary cursor-pointer flex justify-between items-center transition-colors duration-200 hover:text-brand-secondary">
+                    <span>Do you offer payment plans?</span>
+                    <span class="faq-icon text-lg transition-transform duration-300 text-brand-secondary">▼</span>
+                </button>
+                <div class="faq-answer max-h-0 overflow-hidden transition-[max-height] duration-300">
+                    <div class="faq-answer-content px-5 pb-4 text-slate-600 leading-relaxed text-xs">
+                        <p>For multi-month packages (Pivot and Accelerate tracks), we can discuss payment plans during your discovery call.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item bg-white border border-slate-200 rounded-lg mb-2 overflow-hidden transition-shadow duration-200 hover:shadow-sm">
+                <button class="faq-question w-full py-4 px-5 bg-transparent border-none text-left text-sm font-semibold text-brand-primary cursor-pointer flex justify-between items-center transition-colors duration-200 hover:text-brand-secondary">
+                    <span>What if I'm not satisfied?</span>
+                    <span class="faq-icon text-lg transition-transform duration-300 text-brand-secondary">▼</span>
+                </button>
+                <div class="faq-answer max-h-0 overflow-hidden transition-[max-height] duration-300">
+                    <div class="faq-answer-content px-5 pb-4 text-slate-600 leading-relaxed text-xs">
+                        <p>If you're not seeing progress or value after our first session, let me know. I'll work with you to adjust our approach or offer a refund. I only succeed when you succeed.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- CTA - Condensed -->
+<div class="py-16 bg-brand-primary relative overflow-hidden">
+    <!-- Background decoration -->
+    <div class="absolute top-0 right-0 -mt-20 -mr-20 w-80 h-80 bg-brand-secondary rounded-full blur-3xl opacity-20 pointer-events-none" aria-hidden="true"></div>
+    <div class="absolute bottom-0 left-0 -mb-20 -ml-20 w-80 h-80 bg-brand-primary rounded-full blur-3xl opacity-10 pointer-events-none" aria-hidden="true"></div>
+    
+    <div class="max-w-4xl mx-auto px-4 relative z-10 text-center">
+        <h2 class="text-3xl font-bold text-white mb-4">Still Have Questions?</h2>
+        <p class="text-emerald-100 mb-8 max-w-2xl mx-auto text-sm">
+            Book a free discovery call and let's discuss your specific situation.
+        </p>
+        
+        <a href="contact.html" class="px-6 py-3 bg-white text-brand-primary font-bold rounded-full hover:bg-brand-accent hover:text-brand-primary transition shadow-lg hover:shadow-fresh hover:-translate-y-1 inline-flex items-center gap-2 text-sm">
+            <i class="fa-regular fa-calendar"></i> Book a Free Discovery Call
+        </a>
+    </div>
+</div>
+
+</main>
+
+<!-- Footer - Condensed -->
+<footer class="bg-brand-primary text-white py-12 border-t border-emerald-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-4 gap-10 mb-10">
+            <!-- Brand -->
+            <div class="col-span-1">
+                <a href="index.html" class="flex items-center gap-2 mb-4 group">
+                    <div class="bg-brand-accent text-brand-primary w-10 h-10 rounded-lg flex items-center justify-center group-hover:bg-white transition duration-300">
+                        <span class="font-bold text-lg">L²</span>
+                    </div>
+                    <span class="font-bold text-xl text-white tracking-tight">Launch<span class="font-light text-brand-accent">ToLead</span></span>
+                </a>
+                <p class="text-emerald-100 text-sm leading-relaxed">
+                    Engineering career coaching for students and professionals.
+                </p>
+            </div>
+
+            <!-- Services -->
+            <div>
+                <h4 class="font-bold text-base mb-4 text-white uppercase tracking-wider text-sm">Services</h4>
+                <ul class="space-y-2 text-sm text-emerald-100">
+                    <li><a href="launch.html" class="hover:text-brand-accent transition">Launch</a></li>
+                    <li><a href="pivot.html" class="hover:text-brand-accent transition">Pivot</a></li>
+                    <li><a href="accelerate.html" class="hover:text-brand-accent transition">Accelerate</a></li>
+                    <li><a href="packages.html" class="hover:text-brand-accent transition">Packages</a></li>
+                </ul>
+            </div>
+
+            <!-- Company -->
+            <div>
+                <h4 class="font-bold text-base mb-4 text-white uppercase tracking-wider text-sm">Company</h4>
+                <ul class="space-y-2 text-sm text-emerald-100">
+                    <li><a href="about.html" class="hover:text-brand-accent transition">About</a></li>
+                    <li><a href="success-stories.html" class="hover:text-brand-accent transition">Success Stories</a></li>
+                    <li><a href="faq.html" class="text-brand-accent font-bold">FAQ</a></li>
+                    <li><a href="contact.html" class="hover:text-brand-accent transition">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Connect -->
+            <div>
+                <h4 class="font-bold text-base mb-4 text-white uppercase tracking-wider text-sm">Connect</h4>
+                <ul class="space-y-2 text-sm text-emerald-100">
+                    <li><a href="mailto:contact@launchtolead.io" class="hover:text-brand-accent transition inline-flex items-center gap-2"><i class="fa-solid fa-envelope"></i> contact@launchtolead.io</a></li>
+                    <li><a href="https://www.linkedin.com/in/launchtolead" target="_blank" rel="noopener noreferrer" class="hover:text-brand-accent transition inline-flex items-center gap-2"><i class="fa-brands fa-linkedin text-blue-400"></i> LinkedIn</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="border-t border-emerald-800 pt-6 text-center text-emerald-400 text-sm">
+            <p>&copy; 2025 Launch to Lead Engineering. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<script src="faq.js"></script>
+<script>
+    lucide.createIcons();
+</script>
+
 </body>
 </html>
