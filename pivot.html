@@ -12,8 +12,6 @@
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- FontAwesome -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -21,8 +19,6 @@
     <!-- Custom Config -->
     <script src="tailwind-config.js"></script>
 
-    <!-- Alpine.js -->
-    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
     
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -32,57 +28,7 @@
 <div id="navigation-container"></div>
 <script src="navigation.js"></script>
 
-<nav style="display:none;" x-data="{ open: false }">
-    <div class="max-w-7xl mx-auto px-4 py-4">
-        <div class="flex items-center justify-between">
-            <div class="flex items-center">
-                <a href="index.html" class="flex items-center gap-2 group">
-                    <div class="bg-brand-primary text-white w-8 h-8 rounded-lg flex items-center justify-center group-hover:bg-brand-accent group-hover:text-brand-primary transition">
-                        <span class="font-bold text-sm">L²</span>
-                    </div>
-                    <span class="font-bold text-xl text-brand-primary tracking-tight">Launch<span class="font-light text-brand-secondary">ToLead</span></span>
-                </a>
-            </div>
-            <div class="hidden md:flex items-center space-x-6">
-                <a href="launch.html" class="text-sm font-medium text-slate-500 hover:text-brand-secondary transition">Launch</a>
-                <a href="pivot.html" class="text-sm font-bold text-brand-primary hover:text-brand-secondary transition">Pivot</a>
-                <a href="accelerate.html" class="text-sm font-medium text-slate-500 hover:text-brand-secondary transition">Accelerate</a>
-                <a href="packages.html" class="text-sm font-medium text-slate-500 hover:text-brand-secondary transition">Packages</a>
-                <a href="faq.html" class="text-sm font-medium text-slate-500 hover:text-brand-secondary transition">FAQ</a>
-                <a href="success-stories.html" class="text-sm font-medium text-slate-500 hover:text-brand-secondary transition">Success Stories</a>
-                <a href="about.html" class="text-sm font-medium text-slate-500 hover:text-brand-secondary transition">About</a>
-                <a href="contact.html" class="bg-brand-primary text-white px-4 py-2 rounded-full font-semibold text-sm hover:bg-brand-secondary transition shadow-sm">
-                    Get Started
-                </a>
-            </div>
-            <!-- Mobile menu button -->
-            <div class="md:hidden flex items-center">
-                <button @click="open = !open" class="inline-flex items-center justify-center p-2 rounded-md text-slate-400 hover:text-slate-500 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-brand-primary">
-                    <span class="sr-only">Open main menu</span>
-                    <svg x-show="!open" class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                    </svg>
-                    <svg x-show="open" class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                </button>
-            </div>
-        </div>
-    </div>
-    <!-- Mobile menu -->
-    <div x-show="open" @click.away="open = false" class="md:hidden absolute top-full left-0 w-full bg-white border-b border-emerald-100 shadow-lg">
-        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <a href="launch.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-secondary hover:bg-slate-50">Launch</a>
-            <a href="pivot.html" class="block px-3 py-2 rounded-md text-base font-bold text-brand-primary bg-slate-50">Pivot</a>
-            <a href="accelerate.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-secondary hover:bg-slate-50">Accelerate</a>
-            <a href="packages.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-secondary hover:bg-slate-50">Packages</a>
-            <a href="faq.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-secondary hover:bg-slate-50">FAQ</a>
-            <a href="success-stories.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-secondary hover:bg-slate-50">Success Stories</a>
-            <a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-secondary hover:bg-slate-50">About</a>
-            <a href="contact.html" class="block px-3 py-2 rounded-md text-base font-medium text-brand-primary font-bold bg-slate-50">Get Started</a>
-        </div>
-    </div>
-</nav>
+<!-- Removed legacy fallback nav and Alpine/FontAwesome scripts; dynamic navigation.js handles header -->
 
 <main>
 
@@ -134,14 +80,11 @@
             <div class="bg-white rounded-2xl p-6 md:p-8 shadow-card border border-emerald-100 text-center">
                 <h2 class="text-xl md:text-2xl font-bold text-slate-900 mb-6">I've Pivoted 4 Times at a Fortune 100 Company</h2>
                 
-                <div class="flex justify-center items-center gap-2 md:gap-4 mb-6 text-xs md:text-sm font-semibold text-slate-700 overflow-x-auto">
-                    <span class="px-3 py-2 bg-slate-50 rounded-lg border border-slate-100 flex items-center gap-1.5 whitespace-nowrap"><i data-lucide="wrench" class="w-4 h-4 text-brand-primary shrink-0"></i> <span class="hidden sm:inline">Mechanical Test</span><span class="sm:hidden">Mech Test</span></span>
-                    <i data-lucide="arrow-right" class="w-4 h-4 text-brand-secondary shrink-0"></i>
-                    <span class="px-3 py-2 bg-slate-50 rounded-lg border border-slate-100 flex items-center gap-1.5 whitespace-nowrap"><i data-lucide="code" class="w-4 h-4 text-brand-primary shrink-0"></i> <span class="hidden sm:inline">Software Dev</span><span class="sm:hidden">Software</span></span>
-                    <i data-lucide="arrow-right" class="w-4 h-4 text-brand-secondary shrink-0"></i>
-                    <span class="px-3 py-2 bg-slate-50 rounded-lg border border-slate-100 flex items-center gap-1.5 whitespace-nowrap"><i data-lucide="clipboard-list" class="w-4 h-4 text-brand-primary shrink-0"></i> <span class="hidden sm:inline">Product Owner</span><span class="sm:hidden">Product</span></span>
-                    <i data-lucide="arrow-right" class="w-4 h-4 text-brand-secondary shrink-0"></i>
-                    <span class="px-3 py-2 bg-slate-50 rounded-lg border border-slate-100 flex items-center gap-1.5 whitespace-nowrap"><i data-lucide="rocket" class="w-4 h-4 text-brand-primary shrink-0"></i> Leadership</span>
+                <div class="flex flex-col md:flex-row md:flex-wrap justify-center items-stretch gap-3 md:gap-4 mb-6 text-xs md:text-sm font-semibold text-slate-700">
+                    <div class="px-3 py-2 bg-slate-50 rounded-lg border border-slate-100 flex items-center gap-1.5 justify-center text-center md:text-left md:justify-start"><i data-lucide="wrench" class="w-4 h-4 text-brand-primary"></i><span>Mechanical Test</span></div>
+                    <div class="px-3 py-2 bg-slate-50 rounded-lg border border-slate-100 flex items-center gap-1.5 justify-center text-center md:text-left md:justify-start"><i data-lucide="code" class="w-4 h-4 text-brand-primary"></i><span>Software Dev</span></div>
+                    <div class="px-3 py-2 bg-slate-50 rounded-lg border border-slate-100 flex items-center gap-1.5 justify-center text-center md:text-left md:justify-start"><i data-lucide="clipboard-list" class="w-4 h-4 text-brand-primary"></i><span>Product Owner</span></div>
+                    <div class="px-3 py-2 bg-slate-50 rounded-lg border border-slate-100 flex items-center gap-1.5 justify-center text-center md:text-left md:justify-start"><i data-lucide="rocket" class="w-4 h-4 text-brand-primary"></i><span>Leadership</span></div>
                 </div>
                 
                 <p class="text-slate-500 text-sm">
