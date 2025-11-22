@@ -1,596 +1,525 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- SEO Optimization -->
     <title>Launch to Lead Engineering | Career Coaching</title>
     <meta name="description" content="From Mechanical Engineer to Software Leader. The comprehensive coaching ecosystem for engineering careers.">
-    
-    <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
-
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
-
-    <!-- FontAwesome (Legacy support) -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
-
-    <!-- Custom Config -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakob+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="tailwind-config.js"></script>
-
-    <!-- Alpine.js -->
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 </head>
 
-<body class="bg-brand-light text-slate-600 font-sans antialiased">
+<body class="bg-slate-50 text-slate-600 font-sans antialiased">
 
-    <!-- Navigation (sticky global) -->
-    <nav class="bg-white/80 backdrop-blur-lg border-b border-emerald-100 fixed top-0 w-full z-50" x-data="{ open: false }">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-20">
-                <div class="flex items-center">
-                    <a href="index.html" class="flex items-center gap-2 group">
-                        <div class="bg-brand-primary text-white w-8 h-8 rounded-lg flex items-center justify-center group-hover:bg-brand-accent group-hover:text-brand-primary transition duration-300">
-                            <span class="font-bold text-sm">L²</span>
-                        </div>
-                        <span class="font-bold text-xl text-brand-primary tracking-tight">Launch<span class="font-light text-brand-secondary">ToLead</span></span>
-                    </a>
-                </div>
-
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="launch.html" class="text-sm font-medium text-slate-500 hover:text-brand-secondary transition">Launch</a>
-                    <a href="pivot.html" class="text-sm font-medium text-slate-500 hover:text-brand-secondary transition">Pivot</a>
-                    <a href="accelerate.html" class="text-sm font-medium text-slate-500 hover:text-brand-secondary transition">Accelerate</a>
-                    <a href="packages.html" class="text-sm font-medium text-slate-500 hover:text-brand-secondary transition">Packages</a>
-                    <a href="about.html" class="text-sm font-medium text-slate-500 hover:text-brand-secondary transition">About</a>
-                    <a href="contact.html" class="bg-brand-primary text-white px-5 py-2 rounded-full font-semibold text-sm hover:bg-brand-secondary transition shadow-soft hover:shadow-fresh">
-                        Get Started
-                    </a>
-                </div>
-                
-                <!-- Mobile menu button -->
-                <div class="md:hidden flex items-center">
-                    <button @click="open = !open" class="inline-flex items-center justify-center p-2 rounded-md text-slate-400 hover:text-slate-500 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-brand-primary" aria-expanded="false">
-                        <span class="sr-only">Open main menu</span>
-                        <svg x-show="!open" class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>
-                        <svg x-show="open" class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                        </svg>
-                    </button>
-                </div>
+<!-- Navigation -->
+<nav class="bg-white/80 backdrop-blur-lg border-b border-emerald-100 sticky top-0 z-50" x-data="{ open: false }">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16">
+            <div class="flex items-center">
+                <a href="index.html" class="flex items-center gap-2 group">
+                    <div class="bg-brand-primary text-white w-8 h-8 rounded-lg flex items-center justify-center group-hover:bg-brand-accent group-hover:text-brand-primary transition duration-300">
+                        <span class="font-bold text-sm">L²</span>
+                    </div>
+                    <span class="font-bold text-xl text-brand-primary tracking-tight">Launch<span class="font-light text-brand-secondary">ToLead</span></span>
+                </a>
             </div>
-        </div>
-
-        <!-- Mobile menu -->
-        <div x-show="open" @click.away="open = false" class="md:hidden absolute top-20 left-0 w-full bg-white border-b border-emerald-100 shadow-lg z-50" id="mobile-menu">
-            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="launch.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-secondary hover:bg-slate-50">Launch</a>
-                <a href="pivot.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-secondary hover:bg-slate-50">Pivot</a>
-                <a href="accelerate.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-secondary hover:bg-slate-50">Accelerate</a>
-                <a href="packages.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-secondary hover:bg-slate-50">Packages</a>
-                <a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-secondary hover:bg-slate-50">About</a>
-                <a href="contact.html" class="block px-3 py-2 rounded-md text-base font-medium text-brand-primary font-bold bg-slate-50">Get Started</a>
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="launch.html" class="text-sm font-medium text-slate-500 hover:text-brand-secondary transition">Launch</a>
+                <a href="pivot.html" class="text-sm font-medium text-slate-500 hover:text-brand-secondary transition">Pivot</a>
+                <a href="accelerate.html" class="text-sm font-medium text-slate-500 hover:text-brand-secondary transition">Accelerate</a>
+                <a href="packages.html" class="text-sm font-medium text-slate-500 hover:text-brand-secondary transition">Packages</a>
+                <a href="about.html" class="text-sm font-medium text-slate-500 hover:text-brand-secondary transition">About</a>
+                <a href="contact.html" class="bg-brand-primary text-white px-4 py-2 rounded-full font-semibold text-sm hover:text-brand-secondary transition shadow-sm">
+                    Get Started
+                </a>
             </div>
-        </div>
-    </nav>
-
-    <main>
-    
-    <!-- Company Launch Special Banner -->
-    <div class="fixed top-20 left-0 right-0 z-40 bg-gradient-to-r from-red-600 via-red-500 to-orange-500 text-white py-3 shadow-lg border-b-2 border-red-700">
-        <div class="max-w-7xl mx-auto px-4 text-center flex items-center justify-center gap-2">
-            <i data-lucide="party-popper" class="w-5 h-5 text-yellow-200"></i>
-            <p class="text-sm md:text-base font-bold flex items-center gap-1">
-                <span class="text-yellow-200">Company Launch Special:</span> 50% OFF All Packages! 
-                <span class="hidden sm:inline text-red-100">Limited time offer for new clients.</span>
-            </p>
         </div>
     </div>
+</nav>
+
+<main>
+
+<!-- Company Launch Special Banner -->
+<div class="bg-gradient-to-r from-red-600 to-orange-500 text-white py-2 shadow-md">
+    <div class="max-w-7xl mx-auto px-4 text-center flex items-center justify-center gap-2">
+        <i data-lucide="party-popper" class="w-4 h-4 text-yellow-200"></i>
+        <p class="text-sm font-bold">
+            <span class="text-yellow-200">Company Launch Special:</span> 50% OFF All Packages!
+        </p>
+    </div>
+</div>
+
+<!-- HERO - Condensed -->
+<div class="relative pt-16 pb-12 bg-white overflow-hidden">
+    <!-- Dot Pattern -->
+    <div class="absolute inset-0 bg-dots opacity-20" style="background-size: 20px 20px;"></div>
     
-    <!-- HERO -->
-    <div id="top" class="relative pt-28 pb-20 lg:pt-32 lg:pb-24 bg-white overflow-hidden mt-12">
-        <!-- Dot Pattern -->
-        <div class="absolute inset-0 bg-dots opacity-20" style="background-size: 20px 20px;"></div>
+    <!-- Background blobs -->
+    <div class="absolute top-0 right-0 -mr-20 -mt-20 w-80 h-80 bg-teal-100 rounded-full blur-3xl opacity-60" aria-hidden="true"></div>
+    <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 bg-lime-100 rounded-full blur-3xl opacity-60" aria-hidden="true"></div>
+    
+    <div class="max-w-6xl mx-auto px-4 text-center relative z-10">
+        <!-- Badge -->
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-emerald-200 text-emerald-900 text-xs font-semibold mb-4">
+            <span class="w-2 h-2 rounded-full bg-brand-accent"></span>
+            Engineering Career Coaching
+        </div>
+        
+        <!-- Heading -->
+        <h1 class="text-4xl md:text-6xl font-extrabold text-slate-900 tracking-tight mb-4 leading-tight">
+            From Mechanical Engineer to<br>
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-brand-secondary">Software Leader.</span>
+        </h1>
+        
+        <p class="max-w-2xl mx-auto text-lg text-slate-600 mb-6 font-light">
+            I earned 4 promotions and pivoted 4 times in 7 years at a Fortune 100 company. Now I'm sharing the exact frameworks to help you do the same.
+        </p>
+        
+        <!-- CTAs -->
+        <div class="flex justify-center gap-3 mb-8">
+            <a href="#tracks" class="px-6 py-3 bg-brand-primary text-white font-bold rounded-full hover:bg-brand-secondary transition shadow-md hover:shadow-lg hover:-translate-y-0.5">
+                Choose Your Path
+            </a>
+            <a href="contact.html" class="px-6 py-3 bg-white text-brand-primary font-bold rounded-full border-2 border-emerald-200 hover:border-brand-primary transition">
+                Book Strategy Call
+            </a>
+        </div>
 
-        <!-- Fresh Background blobs -->
-        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-teal-100 rounded-full blur-3xl opacity-60 pointer-events-none" aria-hidden="true"></div>
-        <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-96 h-96 bg-lime-100 rounded-full blur-3xl opacity-60 pointer-events-none" aria-hidden="true"></div>
-
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-            <!-- Epic Banner Section -->
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-100 text-emerald-900 text-xs font-semibold mb-6">
-                <span class="w-2 h-2 rounded-full bg-brand-accent"></span>
-                Engineering Career Coaching
-            </div>
-            <h1 class="text-5xl md:text-7xl font-extrabold text-slate-900 tracking-tight mb-6 leading-[1.1]">
-                From Mechanical Engineer to<br>
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-brand-secondary">Software Leader.</span>
-            </h1>
-            <p class="mt-4 max-w-3xl mx-auto text-xl text-slate-500 mb-8 font-light leading-relaxed">
-                I earned 4 promotions and pivoted 4 times in 7 years at a Fortune 100 company. Now I'm sharing the exact frameworks to help you do the same.
-            </p>
-            <div class="flex justify-center gap-4 mb-12">
-                <a href="#tracks"
-                    class="px-8 py-4 bg-brand-primary text-white font-bold rounded-full hover:bg-brand-secondary transition shadow-card hover:shadow-fresh hover:-translate-y-1">
-                    Choose Your Path
-                </a>
-                <a href="contact.html"
-                    class="px-8 py-4 bg-white text-brand-primary font-bold rounded-full border-2 border-emerald-200 hover:border-brand-primary hover:text-brand-secondary transition">
-                    Book Strategy Call
-                </a>
-            </div>
-
-            <!-- Enhanced Center Hero Card -->
-            <div class="max-w-4xl mx-auto mb-12">
-                <div class="bg-white rounded-3xl p-6 md:p-10 border-2 border-emerald-200 shadow-2xl">
-                    <div class="flex flex-col md:flex-row items-start md:items-stretch gap-6 md:gap-8">
-                        <!-- Bigger Headshot -->
-                        <a href="about.html" class="group flex-shrink-0 mx-auto md:mx-0">
-                            <div class="relative">
-                                <div class="w-40 h-40 md:w-48 md:h-48 rounded-3xl overflow-hidden border-4 border-emerald-100 shadow-xl group-hover:scale-105 transition-transform duration-300">
-                                    <!-- Placeholder image -->
-                                    <div class="w-full h-full bg-gradient-to-br from-emerald-100 via-teal-50 to-lime-100 flex items-center justify-center">
-                                        <div class="text-center">
-                                            <i data-lucide="user" class="w-20 h-20 md:w-24 md:h-24 text-emerald-600 mx-auto"></i>
-                                            <p class="text-emerald-800 font-semibold text-xs mt-2">Your Photo</p>
-                                        </div>
+        <!-- Compact Hero Card with Photo Placeholder + Info + Testimonial -->
+        <div class="max-w-4xl mx-auto mb-8">
+            <div class="bg-white rounded-2xl p-6 border-2 border-emerald-200 shadow-xl">
+                <div class="flex flex-col md:flex-row items-center gap-6">
+                    
+                    <!-- USER PHOTO PLACEHOLDER - Image will be provided -->
+                    <div class="flex-shrink-0">
+                        <div class="relative">
+                            <div class="w-32 h-32 md:w-36 md:h-36 rounded-2xl overflow-hidden border-4 border-emerald-100 shadow-lg">
+                                <div class="w-full h-full bg-gradient-to-br from-emerald-100 via-teal-50 to-lime-100 flex items-center justify-center">
+                                    <div class="text-center">
+                                        <i data-lucide="user" class="w-16 h-16 text-emerald-600 mx-auto"></i>
+                                        <p class="text-emerald-800 font-semibold text-xs mt-1">Your Photo</p>
                                     </div>
-                                </div>
-                                <div class="absolute -bottom-3 -right-3 w-10 h-10 bg-emerald-600 rounded-full flex items-center justify-center border-4 border-white shadow-lg">
-                                    <i data-lucide="check" class="w-5 h-5 text-white"></i>
                                 </div>
                             </div>
-                        </a>
-
-                        <!-- Vertical Stack: Your Info + Testimonial -->
-                        <div class="flex-1 flex flex-col justify-between text-center md:text-left space-y-6">
-                            <!-- Your Info Section -->
-                            <div>
-                                <h3 class="text-2xl md:text-3xl font-bold text-slate-900 mb-2">Mansour Manci</h3>
-                                <p class="text-emerald-600 font-bold text-base md:text-lg mb-3">Fortune 100 Engineer → Software Leader</p>
-                                <div class="flex flex-wrap gap-3 justify-center md:justify-start text-sm text-slate-600 mb-4">
-                                    <span class="flex items-center gap-1.5">
-                                        <i data-lucide="map-pin" class="w-4 h-4 text-emerald-600"></i>
-                                        Moline, IL
-                                    </span>
-                                    <span class="flex items-center gap-1.5">
-                                        <i data-lucide="calendar" class="w-4 h-4 text-emerald-600"></i>
-                                        7 years experience
-                                    </span>
-                                    <span class="flex items-center gap-1.5">
-                                        <i data-lucide="trending-up" class="w-4 h-4 text-emerald-600"></i>
-                                        4 promotions
-                                    </span>
-                                </div>
-                                
-                                <div class="flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
-                                    <a href="about.html" class="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-emerald-50 text-emerald-700 font-semibold rounded-lg hover:bg-emerald-100 transition text-sm">
-                                        <i data-lucide="user" class="w-4 h-4"></i>
-                                        <span>Read My Story</span>
-                                    </a>
-                                    <a href="success-stories.html" class="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-amber-50 text-amber-700 font-semibold rounded-lg hover:bg-amber-100 transition text-sm">
-                                        <i data-lucide="star" class="w-4 h-4"></i>
-                                        <span>Success Stories</span>
-                                    </a>
-                                </div>
+                            <div class="absolute -bottom-2 -right-2 w-8 h-8 bg-emerald-600 rounded-full flex items-center justify-center border-4 border-white shadow-md">
+                                <i data-lucide="check" class="w-4 h-4 text-white"></i>
                             </div>
+                        </div>
+                    </div>
 
-                            <!-- Testimonial Section -->
-                            <div class="pt-6 border-t border-slate-100">
-                                <div class="flex items-start gap-3 text-left">
-                                    <div class="flex-shrink-0 w-10 h-10 rounded-lg bg-amber-100 flex items-center justify-center">
-                                        <i data-lucide="quote" class="w-5 h-5 text-amber-600"></i>
-                                    </div>
-                                    <div class="flex-1">
-                                        <p class="text-slate-700 italic text-sm md:text-base leading-relaxed mb-2">
-                                            "[Short impactful testimonial quote from a client - keep it brief and powerful. Something about real results they achieved.]"
-                                        </p>
-                                        <p class="text-xs md:text-sm text-slate-500 font-semibold">
-                                            — Client Name, <span class="text-emerald-600">Previous Role → New Role</span>
-                                        </p>
-                                    </div>
+                    <!-- Info + Testimonial -->
+                    <div class="flex-1 text-center md:text-left">
+                        <!-- Your Info -->
+                        <h3 class="text-xl md:text-2xl font-bold text-slate-900 mb-1">Mansour Manci</h3>
+                        <p class="text-emerald-600 font-bold text-sm md:text-base mb-2">Fortune 100 Engineer → Software Leader</p>
+                        
+                        <div class="flex flex-wrap gap-2 justify-center md:justify-start text-xs text-slate-600 mb-3">
+                            <span class="flex items-center gap-1">
+                                <i data-lucide="map-pin" class="w-3 h-3 text-emerald-600"></i>
+                                Moline, IL
+                            </span>
+                            <span class="flex items-center gap-1">
+                                <i data-lucide="calendar" class="w-3 h-3 text-emerald-600"></i>
+                                7 years
+                            </span>
+                            <span class="flex items-center gap-1">
+                                <i data-lucide="trending-up" class="w-3 h-3 text-emerald-600"></i>
+                                4 promotions
+                            </span>
+                        </div>
+                        
+                        <div class="flex gap-2 justify-center md:justify-start mb-3">
+                            <a href="about.html" class="inline-flex items-center gap-1 px-4 py-2 bg-emerald-50 text-emerald-700 font-semibold rounded-lg hover:bg-emerald-100 transition text-xs">
+                                <i data-lucide="user" class="w-3 h-3"></i> My Story
+                            </a>
+                            <a href="success-stories.html" class="inline-flex items-center gap-1 px-4 py-2 bg-amber-50 text-amber-700 font-semibold rounded-lg hover:bg-amber-100 transition text-xs">
+                                <i data-lucide="star" class="w-3 h-3"></i> Success Stories
+                            </a>
+                        </div>
+
+                        <!-- FEATURED TESTIMONIAL PLACEHOLDER - Text will be provided -->
+                        <div class="pt-3 border-t border-slate-100">
+                            <div class="flex items-start gap-2 text-left">
+                                <div class="flex-shrink-0 w-8 h-8 rounded-lg bg-amber-100 flex items-center justify-center">
+                                    <i data-lucide="quote" class="w-4 h-4 text-amber-600"></i>
+                                </div>
+                                <div>
+                                    <p class="text-slate-700 italic text-sm leading-relaxed mb-1">
+                                        "[Your first testimonial quote will go here - keep it impactful and brief]"
+                                    </p>
+                                    <p class="text-xs text-slate-500 font-semibold">
+                                        — Client Name, <span class="text-emerald-600">Previous Role → New Role</span>
+                                    </p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            
-            <!-- Stats -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 max-w-4xl mx-auto border-t border-slate-200 pt-8">
-                <div class="text-center">
-                    <div class="text-3xl md:text-4xl font-bold text-emerald-600">4</div>
-                    <div class="text-xs md:text-sm text-slate-500 uppercase tracking-wide font-medium">Promotions</div>
-                </div>
-                <div class="text-center">
-                    <div class="text-3xl md:text-4xl font-bold text-emerald-600">7</div>
-                    <div class="text-xs md:text-sm text-slate-500 uppercase tracking-wide font-medium">Years</div>
-                </div>
-                <div class="text-center">
-                    <div class="text-3xl md:text-4xl font-bold text-emerald-600">4</div>
-                    <div class="text-xs md:text-sm text-slate-500 uppercase tracking-wide font-medium">Pivots</div>
-                </div>
-                <div class="text-center">
-                    <div class="text-3xl md:text-4xl font-bold text-emerald-600">75k+</div>
-                    <div class="text-xs md:text-sm text-slate-500 uppercase tracking-wide font-medium">Employees</div>
-                </div>
+        </div>
+
+        <!-- Stats - Compact -->
+        <div class="grid grid-cols-4 gap-4 max-w-3xl mx-auto border-t border-slate-200 pt-6">
+            <div class="text-center">
+                <div class="text-3xl font-bold text-emerald-600">4</div>
+                <div class="text-xs text-slate-500 uppercase tracking-wide font-medium">Promotions</div>
+            </div>
+            <div class="text-center">
+                <div class="text-3xl font-bold text-emerald-600">7</div>
+                <div class="text-xs text-slate-500 uppercase tracking-wide font-medium">Years</div>
+            </div>
+            <div class="text-center">
+                <div class="text-3xl font-bold text-emerald-600">4</div>
+                <div class="text-xs text-slate-500 uppercase tracking-wide font-medium">Pivots</div>
+            </div>
+            <div class="text-center">
+                <div class="text-3xl font-bold text-emerald-600">75k+</div>
+                <div class="text-xs text-slate-500 uppercase tracking-wide font-medium">Employees</div>
             </div>
         </div>
     </div>
+</div>
 
-    <!-- THE PAIN -->
-    <div id="pain-points" class="py-24 bg-brand-light">
-        <div class="max-w-5xl mx-auto px-4">
-            <div class="bg-white rounded-3xl p-12 shadow-card border border-emerald-100">
-                <div class="grid md:grid-cols-2 gap-16 items-center">
+<!-- Pain Points - Condensed to 3 Horizontal Cards -->
+<div class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-4">
+        <h2 class="text-3xl font-bold text-slate-900 mb-2 text-center">You're a talented engineer, but...</h2>
+        <p class="text-slate-500 text-center mb-8">Hope is not a strategy. <strong class="text-brand-primary">You need a system.</strong></p>
+        
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-red-50 p-6 rounded-2xl border-2 border-red-100">
+                <div class="w-10 h-10 rounded-full bg-red-100 flex items-center justify-center mb-3">
+                    <i data-lucide="file-x" class="text-red-500 w-5 h-5"></i>
+                </div>
+                <h3 class="font-bold text-slate-900 mb-2 text-lg">The Resume Black Hole</h3>
+                <p class="text-slate-600 text-sm">You've applied to 100+ jobs and haven't heard back.</p>
+            </div>
+            
+            <div class="bg-orange-50 p-6 rounded-2xl border-2 border-orange-100">
+                <div class="w-10 h-10 rounded-full bg-orange-100 flex items-center justify-center mb-3">
+                    <i data-lucide="refresh-cw" class="text-orange-500 w-5 h-5"></i>
+                </div>
+                <h3 class="font-bold text-slate-900 mb-2 text-lg">The Domain Trap</h3>
+                <p class="text-slate-600 text-sm">You want to switch disciplines but get pigeonholed.</p>
+            </div>
+            
+            <div class="bg-yellow-50 p-6 rounded-2xl border-2 border-yellow-100">
+                <div class="w-10 h-10 rounded-full bg-yellow-100 flex items-center justify-center mb-3">
+                    <i data-lucide="ghost" class="text-yellow-600 w-5 h-5"></i>
+                </div>
+                <h3 class="font-bold text-slate-900 mb-2 text-lg">The Invisible Performer</h3>
+                <p class="text-slate-600 text-sm">Doing next-level work, but not getting the title.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- The Tracks - Slightly More Compact -->
+<div id="tracks" class="py-16 bg-slate-50">
+    <div class="max-w-6xl mx-auto px-4">
+        <div class="text-center mb-12">
+            <span class="text-brand-secondary font-bold uppercase text-xs tracking-widest">The Ecosystem</span>
+            <h2 class="mt-2 text-3xl font-bold text-slate-900">Choose Your <span class="text-brand-secondary">Path</span></h2>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+            <!-- Launch -->
+            <div class="bg-gradient-to-br from-emerald-50 to-teal-50 p-6 rounded-2xl border-2 border-emerald-200 hover:shadow-lg transition">
+                <div class="flex items-center gap-2 mb-3">
+                    <div class="w-10 h-10 bg-brand-primary text-white rounded-xl flex items-center justify-center">
+                        <i data-lucide="rocket" class="w-5 h-5"></i>
+                    </div>
                     <div>
-                        <h2 class="text-3xl font-bold text-slate-900 mb-6">You're a talented engineer, but...</h2>
-                        <ul class="space-y-5">
-                            <li class="flex items-start gap-4">
-                                <div class="flex-shrink-0 w-10 h-10 rounded-full bg-red-50 flex items-center justify-center border border-red-100">
-                                    <i data-lucide="file-x" class="text-red-500 w-5 h-5"></i>
-                                </div>
-                                <p class="text-slate-600 pt-2"><strong>The Resume Black Hole:</strong> You've applied to 100+ jobs and haven't heard a word back.</p>
-                            </li>
-                            <li class="flex items-start gap-4">
-                                <div class="flex-shrink-0 w-10 h-10 rounded-full bg-red-50 flex items-center justify-center border border-red-100">
-                                    <i data-lucide="refresh-cw" class="text-red-500 w-5 h-5"></i>
-                                </div>
-                                <p class="text-slate-600 pt-2"><strong>The Domain Trap:</strong> You want to switch disciplines (e.g., Mech to Software) but get pigeonholed.</p>
-                            </li>
-                            <li class="flex items-start gap-4">
-                                <div class="flex-shrink-0 w-10 h-10 rounded-full bg-red-50 flex items-center justify-center border border-red-100">
-                                    <i data-lucide="ghost" class="text-red-500 w-5 h-5"></i>
-                                </div>
-                                <p class="text-slate-600 pt-2"><strong>The Invisible Performer:</strong> You're doing the work of the next level, but not getting the title.</p>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="text-center">
-                        <div class="w-20 h-20 bg-emerald-50 rounded-2xl flex items-center justify-center mx-auto mb-6 rotate-3 border border-emerald-100 shadow-sm">
-                            <i data-lucide="ban" class="text-emerald-500 w-10 h-10"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-2">Hope is not a strategy.</h3>
-                        <p class="text-slate-500 text-sm leading-relaxed">
-                            Most engineers treat their career like a lottery ticket. They submit and hope.
-                            <br><br>
-                            <strong class="text-brand-primary">You need a system.</strong>
-                        </p>
+                        <h3 class="text-xl font-bold text-slate-900">Launch</h3>
+                        <p class="text-brand-secondary font-medium text-xs uppercase">Students & Grads</p>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- THE TRACKS (SOLUTION) -->
-    <div id="tracks" class="py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-20">
-                <span class="text-brand-secondary font-bold uppercase text-xs tracking-widest">The Ecosystem</span>
-                <h2 class="mt-3 text-4xl font-bold text-slate-900">Choose Your <span
-                        class="text-brand-secondary">Path</span></h2>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Track 1: Launch -->
-                <div class="bg-gradient-to-br from-emerald-50 to-teal-50 p-8 rounded-3xl border-2 border-emerald-200 hover:shadow-card transition duration-300">
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="w-12 h-12 bg-brand-primary text-white rounded-xl flex items-center justify-center shadow-sm">
-                            <i data-lucide="rocket" class="w-6 h-6"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-2xl font-bold text-slate-900">Launch</h3>
-                            <p class="text-brand-secondary font-medium text-xs uppercase tracking-wide">For Students & Grads</p>
-                        </div>
-                    </div>
-                    
-                    <p class="text-sm text-slate-600 mb-6 leading-relaxed">
-                        Stop applying into the void. Learn to extract your "Me-in-We" value, build a visual portfolio, and force the door open.
-                    </p>
-
-                    <div class="mb-6">
-                        <div class="text-sm text-slate-500 line-through">$1,000 - $1,600</div>
-                        <div class="text-4xl font-bold text-brand-primary">$500 - $800</div>
-                        <div class="text-sm text-brand-accent font-semibold">2-4 Sessions • 50% OFF</div>
-                    </div>
-
-                    <a href="launch.html#pricing" class="flex items-center justify-center gap-2 w-full py-3 rounded-xl border-2 border-brand-primary text-brand-primary font-bold text-center hover:bg-brand-primary hover:text-white transition group">
-                        View Packages <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1"></i>
-                    </a>
-                </div>
-
-                <!-- Track 2: Pivot -->
-                <div class="relative bg-gradient-to-br from-amber-50 to-orange-50 p-8 rounded-3xl border-2 border-amber-200 hover:shadow-lg transition duration-300 transform md:-translate-y-4">
-                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-pivot-secondary text-white px-4 py-1.5 rounded-full text-xs font-bold shadow-lg whitespace-nowrap flex items-center gap-1">
-                        <i data-lucide="star" class="w-3 h-3 fill-current"></i> MOST POPULAR
-                    </div>
-                    <div class="flex items-center gap-3 mb-4 mt-2">
-                        <div class="w-12 h-12 bg-pivot-primary text-white rounded-xl flex items-center justify-center shadow-sm">
-                            <i data-lucide="refresh-cw" class="w-6 h-6"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-2xl font-bold text-slate-900">Pivot</h3>
-                            <p class="text-pivot-secondary font-medium text-xs uppercase tracking-wide">For Career Switchers</p>
-                        </div>
-                    </div>
-                    
-                    <p class="text-sm text-slate-600 mb-6 leading-relaxed">
-                        Change careers without quitting. Use the "Trojan Horse" strategy to build a portfolio in your current role and bypass HR.
-                    </p>
-
-                    <div class="mb-6">
-                        <div class="text-sm text-slate-500 line-through">$1,200 - $2,000</div>
-                        <div class="text-4xl font-bold text-pivot-primary">$600 - $1,000</div>
-                        <div class="text-sm text-brand-accent font-semibold">2-4 Sessions • 50% OFF</div>
-                    </div>
-
-                    <a href="pivot.html#packages" class="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-pivot-primary text-white font-bold text-center hover:bg-pivot-secondary transition shadow-lg group">
-                        View Packages <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1"></i>
-                    </a>
-                </div>
-
-                <!-- Track 3: Accelerate -->
-                <div class="bg-gradient-to-br from-indigo-50 to-purple-50 p-8 rounded-3xl border-2 border-indigo-200 hover:shadow-card transition duration-300">
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="w-12 h-12 bg-accelerate-primary text-white rounded-xl flex items-center justify-center shadow-sm">
-                            <i data-lucide="trending-up" class="w-6 h-6"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-2xl font-bold text-slate-900">Accelerate</h3>
-                            <p class="text-accelerate-secondary font-medium text-xs uppercase tracking-wide">For Aspiring Leaders</p>
-                        </div>
-                    </div>
-                    
-                    <p class="text-sm text-slate-600 mb-6 leading-relaxed">
-                        Get promoted in record time. Master the "Visibility Pyramid" and turn your performance into undeniable influence.
-                    </p>
-
-                    <div class="mb-6">
-                        <div class="text-sm text-slate-500 line-through">$1,400 - $2,400</div>
-                        <div class="text-4xl font-bold text-accelerate-primary">$700 - $1,200</div>
-                        <div class="text-sm text-brand-accent font-semibold">2-4 Sessions • 50% OFF</div>
-                    </div>
-
-                    <a href="accelerate.html#packages" class="flex items-center justify-center gap-2 w-full py-3 rounded-xl border-2 border-accelerate-primary text-accelerate-primary font-bold text-center hover:bg-accelerate-primary hover:text-white transition group">
-                        View Packages <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- WHY US -->
-    <div id="why-us" class="py-24 bg-brand-light">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-slate-900">Why Launch to Lead Is Different</h2>
-                <p class="mt-4 text-slate-500 max-w-2xl mx-auto">
-                    Most career advice is so high-level, generic, and broad it's hard to actually see results from it. Here's why mine isn't.
+                <p class="text-sm text-slate-600 mb-4 leading-relaxed">
+                    Stop applying into the void. Learn to extract your "Me-in-We" value and force the door open.
                 </p>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Card 1 -->
-                <div class="bg-white p-8 rounded-3xl shadow-sm border border-emerald-100">
-                    <h3 class="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2"><i data-lucide="check-circle" class="w-5 h-5 text-brand-primary"></i> I've Actually Done It (Multiple Times)</h3>
-                    <ul class="space-y-3 text-sm text-slate-600">
-                        <li class="flex items-start gap-2"><i data-lucide="chevron-right" class="w-4 h-4 text-brand-secondary mt-0.5 shrink-0"></i> 4 promotions in 7 years isn't luck</li>
-                        <li class="flex items-start gap-2"><i data-lucide="chevron-right" class="w-4 h-4 text-brand-secondary mt-0.5 shrink-0"></i> I've replicated these frameworks across different roles</li>
-                        <li class="flex items-start gap-2"><i data-lucide="chevron-right" class="w-4 h-4 text-brand-secondary mt-0.5 shrink-0"></i> Mechanical → Software → Leadership: I've pivoted successfully 4 times</li>
-                        <li class="flex items-start gap-2"><i data-lucide="chevron-right" class="w-4 h-4 text-brand-secondary mt-0.5 shrink-0"></i> At a 180-year-old manufacturing powerhouse that invests $2B annually in R&D—more than most tech startups' entire revenue</li>
-                        <li class="flex items-start gap-2"><i data-lucide="chevron-right" class="w-4 h-4 text-brand-secondary mt-0.5 shrink-0"></i> Real experience, not theory</li>
-                    </ul>
+                <div class="mb-4">
+                    <div class="text-sm text-slate-500 line-through">$1,000 - $1,600</div>
+                    <div class="text-3xl font-bold text-brand-primary">$500 - $800</div>
+                    <div class="text-sm text-brand-accent font-semibold">2-4 Sessions • 50% OFF</div>
                 </div>
-
-                <!-- Card 2 -->
-                <div class="bg-white p-8 rounded-3xl shadow-sm border border-emerald-100">
-                    <h3 class="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2"><i data-lucide="clipboard-list" class="w-5 h-5 text-amber-600"></i> Specific, Not Generic</h3>
-                    <ul class="space-y-3 text-sm text-slate-600">
-                        <li class="flex items-start gap-2"><i data-lucide="chevron-right" class="w-4 h-4 text-brand-secondary mt-0.5 shrink-0"></i> Not "work hard and be visible"—but exactly HOW to be visible</li>
-                        <li class="flex items-start gap-2"><i data-lucide="chevron-right" class="w-4 h-4 text-brand-secondary mt-0.5 shrink-0"></i> Not "network more"—but the 3 types of relationships that matter for promotion</li>
-                        <li class="flex items-start gap-2"><i data-lucide="chevron-right" class="w-4 h-4 text-brand-secondary mt-0.5 shrink-0"></i> Not "improve your resume"—but the 5 ATS keywords hiring managers actually search for</li>
-                        <li class="flex items-start gap-2"><i data-lucide="chevron-right" class="w-4 h-4 text-brand-secondary mt-0.5 shrink-0"></i> Step-by-step frameworks you can use immediately</li>
-                    </ul>
-                </div>
-
-                <!-- Card 3 -->
-                <div class="bg-white p-8 rounded-3xl shadow-sm border border-emerald-100">
-                    <h3 class="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2"><i data-lucide="handshake" class="w-5 h-5 text-indigo-600"></i> Hands-On, Not Hands-Off</h3>
-                    <ul class="space-y-3 text-sm text-slate-600">
-                        <li class="flex items-start gap-2"><i data-lucide="chevron-right" class="w-4 h-4 text-brand-secondary mt-0.5 shrink-0"></i> I don't sell you a course and disappear</li>
-                        <li class="flex items-start gap-2"><i data-lucide="chevron-right" class="w-4 h-4 text-brand-secondary mt-0.5 shrink-0"></i> 1-on-1 sessions where we build YOUR strategy together</li>
-                        <li class="flex items-start gap-2"><i data-lucide="chevron-right" class="w-4 h-4 text-brand-secondary mt-0.5 shrink-0"></i> Between sessions: answer questions, review drafts, provide feedback</li>
-                        <li class="flex items-start gap-2"><i data-lucide="chevron-right" class="w-4 h-4 text-brand-secondary mt-0.5 shrink-0"></i> Partnership, not transaction</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- HOW IT WORKS -->
-    <div id="how-it-works" class="py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-slate-900">How It Works</h2>
-                <p class="text-slate-500 mt-2">Simple process to accelerate your engineering career</p>
-            </div>
-
-            <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-                <!-- Step 1 -->
-                <div class="bg-white p-6 rounded-2xl border-2 border-emerald-100 hover:shadow-md hover:border-emerald-300 transition">
-                    <div class="flex items-start gap-4">
-                        <div class="w-12 h-12 rounded-lg bg-emerald-100 text-emerald-600 flex items-center justify-center flex-shrink-0">
-                            <i data-lucide="calendar" class="w-6 h-6"></i>
-                        </div>
-                        <div class="flex-1">
-                            <span class="inline-block px-2 py-0.5 bg-emerald-100 text-emerald-700 text-xs font-bold rounded-full mb-2">STEP 1</span>
-                            <h3 class="text-lg font-bold text-slate-900 mb-2">Book a Discovery Call</h3>
-                            <p class="text-sm text-slate-600 leading-relaxed">
-                                Real conversation—not a sales pitch. I'll tell you honestly if I can help
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Step 2 -->
-                <div class="bg-white p-6 rounded-2xl border-2 border-emerald-100 hover:shadow-md hover:border-emerald-300 transition">
-                    <div class="flex items-start gap-4">
-                        <div class="w-12 h-12 rounded-lg bg-emerald-100 text-emerald-600 flex items-center justify-center flex-shrink-0">
-                            <i data-lucide="map-pin" class="w-6 h-6"></i>
-                        </div>
-                        <div class="flex-1">
-                            <span class="inline-block px-2 py-0.5 bg-emerald-100 text-emerald-700 text-xs font-bold rounded-full mb-2">STEP 2</span>
-                            <h3 class="text-lg font-bold text-slate-900 mb-2">Choose Your Path</h3>
-                            <p class="text-sm text-slate-600 leading-relaxed">
-                                Pick the package that fits YOUR timeline, budget, and goals
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Step 3 -->
-                <div class="bg-white p-6 rounded-2xl border-2 border-emerald-100 hover:shadow-md hover:border-emerald-300 transition">
-                    <div class="flex items-start gap-4">
-                        <div class="w-12 h-12 rounded-lg bg-emerald-100 text-emerald-600 flex items-center justify-center flex-shrink-0">
-                            <i data-lucide="users" class="w-6 h-6"></i>
-                        </div>
-                        <div class="flex-1">
-                            <span class="inline-block px-2 py-0.5 bg-emerald-100 text-emerald-700 text-xs font-bold rounded-full mb-2">STEP 3</span>
-                            <h3 class="text-lg font-bold text-slate-900 mb-2">Work Together 1-on-1</h3>
-                            <p class="text-sm text-slate-600 leading-relaxed">
-                                Build YOUR resume, visibility strategy, promotion case—not generic templates
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Step 4 -->
-                <div class="bg-white p-6 rounded-2xl border-2 border-emerald-100 hover:shadow-md hover:border-emerald-300 transition">
-                    <div class="flex items-start gap-4">
-                        <div class="w-12 h-12 rounded-lg bg-emerald-100 text-emerald-600 flex items-center justify-center flex-shrink-0">
-                            <i data-lucide="trophy" class="w-6 h-6"></i>
-                        </div>
-                        <div class="flex-1">
-                            <span class="inline-block px-2 py-0.5 bg-emerald-100 text-emerald-700 text-xs font-bold rounded-full mb-2">STEP 4</span>
-                            <h3 class="text-lg font-bold text-slate-900 mb-2">Land Your Goal</h3>
-                            <p class="text-sm text-slate-600 leading-relaxed">
-                                Get the interview, nail the pivot, or earn the promotion
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- CTA Section -->
-    <div id="contact" class="py-24 bg-brand-light">
-        <div class="max-w-4xl mx-auto px-4 text-center">
-            <div class="bg-white rounded-[2rem] p-16 shadow-card border border-emerald-100 relative overflow-hidden">
-                <div class="absolute -left-10 -bottom-10 w-40 h-40 bg-brand-accent/20 rounded-full blur-2xl"></div>
-                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6 relative z-10">Ready to take control?</h2>
-                <p class="text-slate-500 text-lg mb-10 max-w-2xl mx-auto relative z-10">
-                    Whether you're launching, pivoting, or accelerating, the principles are the same: 
-                    <strong>Don't wait to be picked. Pick yourself.</strong>
-                </p>
-                <a href="contact.html"
-                    class="relative z-10 inline-block bg-brand-primary text-white font-bold text-lg px-10 py-4 rounded-full hover:bg-brand-secondary transition shadow-lg hover:shadow-xl hover:-translate-y-1">
-                    Apply for Coaching
+                <a href="launch.html" class="flex items-center justify-center gap-2 w-full py-2.5 rounded-xl border-2 border-brand-primary text-brand-primary font-bold hover:bg-brand-primary hover:text-white transition group">
+                    View Packages <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
                 </a>
-                <p class="text-slate-400 text-xs mt-6">Limited spots available per month.</p>
             </div>
-        </div>
-    </div>
 
-    <!-- TESTIMONIAL -->
-    <div class="py-24 bg-white border-t border-emerald-50">
-        <div class="max-w-4xl mx-auto px-4 text-center">
-            <h2 class="text-3xl font-bold text-slate-900 mb-12">This Actually Works—Because It's Real</h2>
-            
-            <div class="bg-white p-10 rounded-3xl shadow-card border border-emerald-100 relative">
-                <div class="text-brand-secondary absolute top-8 left-8 opacity-20">
-                    <i data-lucide="quote" class="w-10 h-10"></i>
+            <!-- Pivot -->
+            <div class="relative bg-gradient-to-br from-amber-50 to-orange-50 p-6 rounded-2xl border-2 border-amber-200 hover:shadow-lg transition md:-translate-y-2">
+                <div class="absolute -top-2 left-1/2 -translate-x-1/2 bg-pivot-secondary text-white px-3 py-1 rounded-full text-xs font-bold shadow-md flex items-center gap-1">
+                    <i data-lucide="star" class="w-3 h-3 fill-current"></i> MOST POPULAR
                 </div>
-                <p class="text-xl text-slate-600 italic mb-8 relative z-10">
-                    "I followed the exact framework for getting noticed by leadership. Within 8 weeks, I had my first 1-on-1 with the VP. 4 months later, I got promoted."
+                <div class="flex items-center gap-2 mb-3 mt-1">
+                    <div class="w-10 h-10 bg-pivot-primary text-white rounded-xl flex items-center justify-center">
+                        <i data-lucide="refresh-cw" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-900">Pivot</h3>
+                        <p class="text-pivot-secondary font-medium text-xs uppercase">Career Switchers</p>
+                    </div>
+                </div>
+                <p class="text-sm text-slate-600 mb-4 leading-relaxed">
+                    Change careers without quitting. Use the "Trojan Horse" strategy to bypass HR.
                 </p>
-                <div class="font-bold text-brand-primary">— Alex M., Software Engineer</div>
-                <div class="text-xs text-slate-400 mt-4 italic">Placeholder testimonial - Real client testimonials coming soon</div>
+                <div class="mb-4">
+                    <div class="text-sm text-slate-500 line-through">$1,200 - $2,000</div>
+                    <div class="text-3xl font-bold text-pivot-primary">$600 - $1,000</div>
+                    <div class="text-sm text-brand-accent font-semibold">2-4 Sessions • 50% OFF</div>
+                </div>
+                <a href="pivot.html" class="flex items-center justify-center gap-2 w-full py-2.5 rounded-xl bg-pivot-primary text-white font-bold hover:bg-pivot-secondary transition shadow-md group">
+                    View Packages <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                </a>
+            </div>
+
+            <!-- Accelerate -->
+            <div class="bg-gradient-to-br from-indigo-50 to-purple-50 p-6 rounded-2xl border-2 border-indigo-200 hover:shadow-lg transition">
+                <div class="flex items-center gap-2 mb-3">
+                    <div class="w-10 h-10 bg-accelerate-primary text-white rounded-xl flex items-center justify-center">
+                        <i data-lucide="trending-up" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-900">Accelerate</h3>
+                        <p class="text-accelerate-secondary font-medium text-xs uppercase">Aspiring Leaders</p>
+                    </div>
+                </div>
+                <p class="text-sm text-slate-600 mb-4 leading-relaxed">
+                    Get promoted fast. Master the "Visibility Pyramid" and turn performance into influence.
+                </p>
+                <div class="mb-4">
+                    <div class="text-sm text-slate-500 line-through">$1,400 - $2,400</div>
+                    <div class="text-3xl font-bold text-accelerate-primary">$700 - $1,200</div>
+                    <div class="text-sm text-brand-accent font-semibold">2-4 Sessions • 50% OFF</div>
+                </div>
+                <a href="accelerate.html" class="flex items-center justify-center gap-2 w-full py-2.5 rounded-xl border-2 border-accelerate-primary text-accelerate-primary font-bold hover:bg-accelerate-primary hover:text-white transition group">
+                    View Packages <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                </a>
             </div>
         </div>
     </div>
-    </main>
+</div>
 
+<!-- Why Us - Compact 3 Cards -->
+<div class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-4">
+        <div class="text-center mb-10">
+            <h2 class="text-3xl font-bold text-slate-900">Why Launch to Lead Is Different</h2>
+            <p class="mt-2 text-slate-500 max-w-2xl mx-auto">
+                Most career advice is generic. Here's why mine isn't.
+            </p>
+        </div>
 
-    <!-- Footer -->
-    <footer class="bg-brand-primary text-white py-16 border-t border-emerald-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-4 gap-12 mb-12">
-                <!-- Brand -->
-                <div class="col-span-1">
-                    <a href="index.html" class="flex items-center gap-2 mb-6 group">
-                        <div class="bg-brand-accent text-brand-primary w-10 h-10 rounded-lg flex items-center justify-center group-hover:bg-white transition duration-300">
-                            <span class="font-bold text-lg">L²</span>
-                        </div>
-                        <span class="font-bold text-xl text-white tracking-tight">Launch<span class="font-light text-brand-accent">ToLead</span></span>
-                    </a>
-                    <p class="text-emerald-100 text-sm leading-relaxed">
-                        Engineering career coaching for students and professionals.
-                    </p>
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-white p-6 rounded-2xl border-2 border-emerald-100 hover:shadow-md transition">
+                <div class="w-10 h-10 rounded-lg bg-emerald-100 text-emerald-600 flex items-center justify-center mb-3">
+                    <i data-lucide="check-circle" class="w-5 h-5"></i>
                 </div>
-
-                <!-- Services -->
-                <div>
-                    <h4 class="font-bold text-lg mb-6 text-white uppercase tracking-wider text-sm">Services</h4>
-                    <ul class="space-y-4 text-sm text-emerald-100">
-                        <li><a href="launch.html" class="hover:text-brand-accent transition">Launch</a></li>
-                        <li><a href="pivot.html" class="hover:text-brand-accent transition">Pivot</a></li>
-                        <li><a href="accelerate.html" class="hover:text-brand-accent transition">Accelerate</a></li>
-                    </ul>
-                </div>
-
-                <!-- Company -->
-                <div>
-                    <h4 class="font-bold text-lg mb-6 text-white uppercase tracking-wider text-sm">Company</h4>
-                    <ul class="space-y-4 text-sm text-emerald-100">
-                        <li><a href="about.html" class="text-brand-accent font-bold">About</a></li>
-                        <li><a href="success-stories.html" class="hover:text-brand-accent transition">Success Stories</a></li>
-                        <li><a href="faq.html" class="hover:text-brand-accent transition">FAQ</a></li>
-                        <li><a href="contact.html" class="hover:text-brand-accent transition">Contact</a></li>
-                    </ul>
-                </div>
-
-                <!-- Connect -->
-                <div>
-                    <h4 class="font-bold text-lg mb-6 text-white uppercase tracking-wider text-sm">Connect</h4>
-                    <ul class="space-y-4 text-sm text-emerald-100">
-                        <li><a href="mailto:contact@launchtolead.io" class="hover:text-brand-accent transition inline-flex items-center gap-2"><i data-lucide="mail" class="w-4 h-4"></i> contact@launchtolead.io</a></li>
-                        <li><a href="https://www.linkedin.com/in/launchtolead" target="_blank" rel="noopener noreferrer" class="hover:text-brand-accent transition inline-flex items-center gap-2"><i data-lucide="linkedin" class="w-4 h-4"></i> LinkedIn</a></li>
-                    </ul>
-                </div>
+                <h3 class="text-lg font-bold text-slate-900 mb-3">I've Actually Done It</h3>
+                <ul class="space-y-2 text-sm text-slate-600">
+                    <li class="flex items-start gap-2"><i data-lucide="chevron-right" class="w-4 h-4 text-brand-secondary mt-0.5 shrink-0"></i> 4 promotions in 7 years isn't luck</li>
+                    <li class="flex items-start gap-2"><i data-lucide="chevron-right" class="w-4 h-4 text-brand-secondary mt-0.5 shrink-0"></i> Replicated frameworks across roles</li>
+                    <li class="flex items-start gap-2"><i data-lucide="chevron-right" class="w-4 h-4 text-brand-secondary mt-0.5 shrink-0"></i> Mechanical → Software → Leadership: 4 pivots</li>
+                    <li class="flex items-start gap-2"><i data-lucide="chevron-right" class="w-4 h-4 text-brand-secondary mt-0.5 shrink-0"></i> At Fortune 100 manufacturing powerhouse</li>
+                </ul>
             </div>
-            
-            <div class="border-t border-emerald-800 pt-8 text-center text-emerald-400 text-sm">
-                <p>&copy; 2025 Launch to Lead Engineering. All rights reserved.</p>
+
+            <div class="bg-white p-6 rounded-2xl border-2 border-amber-100 hover:shadow-md transition">
+                <div class="w-10 h-10 rounded-lg bg-amber-100 text-amber-600 flex items-center justify-center mb-3">
+                    <i data-lucide="clipboard-list" class="w-5 h-5"></i>
+                </div>
+                <h3 class="text-lg font-bold text-slate-900 mb-3">Specific, Not Generic</h3>
+                <ul class="space-y-2 text-sm text-slate-600">
+                    <li class="flex items-start gap-2"><i data-lucide="chevron-right" class="w-4 h-4 text-brand-secondary mt-0.5 shrink-0"></i> Not "be visible"—but exactly HOW</li>
+                    <li class="flex items-start gap-2"><i data-lucide="chevron-right" class="w-4 h-4 text-brand-secondary mt-0.5 shrink-0"></i> The 3 relationship types for promotion</li>
+                    <li class="flex items-start gap-2"><i data-lucide="chevron-right" class="w-4 h-4 text-brand-secondary mt-0.5 shrink-0"></i> The 5 ATS keywords managers search</li>
+                    <li class="flex items-start gap-2"><i data-lucide="chevron-right" class="w-4 h-4 text-brand-secondary mt-0.5 shrink-0"></i> Step-by-step frameworks you use today</li>
+                </ul>
+            </div>
+
+            <div class="bg-white p-6 rounded-2xl border-2 border-indigo-100 hover:shadow-md transition">
+                <div class="w-10 h-10 rounded-lg bg-indigo-100 text-indigo-600 flex items-center justify-center mb-3">
+                    <i data-lucide="handshake" class="w-5 h-5"></i>
+                </div>
+                <h3 class="text-lg font-bold text-slate-900 mb-3">Hands-On, Not Hands-Off</h3>
+                <ul class="space-y-2 text-sm text-slate-600">
+                    <li class="flex items-start gap-2"><i data-lucide="chevron-right" class="w-4 h-4 text-brand-secondary mt-0.5 shrink-0"></i> I don't sell a course and disappear</li>
+                    <li class="flex items-start gap-2"><i data-lucide="chevron-right" class="w-4 h-4 text-brand-secondary mt-0.5 shrink-0"></i> 1-on-1 sessions, YOUR strategy</li>
+                    <li class="flex items-start gap-2"><i data-lucide="chevron-right" class="w-4 h-4 text-brand-secondary mt-0.5 shrink-0"></i> Between-session support & feedback</li>
+                    <li class="flex items-start gap-2"><i data-lucide="chevron-right" class="w-4 h-4 text-brand-secondary mt-0.5 shrink-0"></i> Partnership, not transaction</li>
+                </ul>
             </div>
         </div>
-    </footer>
+    </div>
+</div>
 
+<!-- How It Works - Keep Compact (Already Good) -->
+<div class="py-16 bg-slate-50">
+    <div class="max-w-5xl mx-auto px-4">
+        <div class="text-center mb-10">
+            <h2 class="text-3xl font-bold text-slate-900">How It Works</h2>
+            <p class="text-slate-500 mt-2">Simple process to accelerate your engineering career</p>
+        </div>
 
-    <script>
-        lucide.createIcons();
-    </script>
+        <div class="grid md:grid-cols-2 gap-4">
+            <div class="bg-white p-5 rounded-xl border-2 border-emerald-100 hover:shadow-md transition">
+                <div class="flex items-start gap-3">
+                    <div class="w-10 h-10 rounded-lg bg-emerald-100 text-emerald-600 flex items-center justify-center flex-shrink-0">
+                        <i data-lucide="calendar" class="w-5 h-5"></i>
+                    </div>
+                    <div class="flex-1">
+                        <span class="inline-block px-2 py-0.5 bg-emerald-100 text-emerald-700 text-xs font-bold rounded-full mb-1">STEP 1</span>
+                        <h3 class="text-base font-bold text-slate-900 mb-1">Book a Discovery Call</h3>
+                        <p class="text-sm text-slate-600">Real conversation—not a sales pitch. I'll tell you honestly if I can help</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white p-5 rounded-xl border-2 border-emerald-100 hover:shadow-md transition">
+                <div class="flex items-start gap-3">
+                    <div class="w-10 h-10 rounded-lg bg-emerald-100 text-emerald-600 flex items-center justify-center flex-shrink-0">
+                        <i data-lucide="map-pin" class="w-5 h-5"></i>
+                    </div>
+                    <div class="flex-1">
+                        <span class="inline-block px-2 py-0.5 bg-emerald-100 text-emerald-700 text-xs font-bold rounded-full mb-1">STEP 2</span>
+                        <h3 class="text-base font-bold text-slate-900 mb-1">Choose Your Path</h3>
+                        <p class="text-sm text-slate-600">Pick the package that fits YOUR timeline, budget, and goals</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white p-5 rounded-xl border-2 border-emerald-100 hover:shadow-md transition">
+                <div class="flex items-start gap-3">
+                    <div class="w-10 h-10 rounded-lg bg-emerald-100 text-emerald-600 flex items-center justify-center flex-shrink-0">
+                        <i data-lucide="users" class="w-5 h-5"></i>
+                    </div>
+                    <div class="flex-1">
+                        <span class="inline-block px-2 py-0.5 bg-emerald-100 text-emerald-700 text-xs font-bold rounded-full mb-1">STEP 3</span>
+                        <h3 class="text-base font-bold text-slate-900 mb-1">Work Together 1-on-1</h3>
+                        <p class="text-sm text-slate-600">Build YOUR resume, visibility strategy, promotion case—not generic templates</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white p-5 rounded-xl border-2 border-emerald-100 hover:shadow-md transition">
+                <div class="flex items-start gap-3">
+                    <div class="w-10 h-10 rounded-lg bg-emerald-100 text-emerald-600 flex items-center justify-center flex-shrink-0">
+                        <i data-lucide="trophy" class="w-5 h-5"></i>
+                    </div>
+                    <div class="flex-1">
+                        <span class="inline-block px-2 py-0.5 bg-emerald-100 text-emerald-700 text-xs font-bold rounded-full mb-1">STEP 4</span>
+                        <h3 class="text-base font-bold text-slate-900 mb-1">Land Your Goal</h3>
+                        <p class="text-sm text-slate-600">Get the interview, nail the pivot, or earn the promotion</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Featured Testimonial - Styled Placeholder -->
+<div class="py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-4">
+        <h2 class="text-3xl font-bold text-slate-900 mb-8 text-center">This Actually Works—Because It's Real</h2>
+        
+        <div class="bg-gradient-to-br from-amber-50 to-orange-50 p-8 rounded-2xl border-2 border-amber-200 shadow-lg relative">
+            <div class="text-amber-400 absolute top-6 left-6 opacity-30">
+                <i data-lucide="quote" class="w-12 h-12"></i>
+            </div>
+            <p class="text-xl text-slate-700 italic mb-6 relative z-10 leading-relaxed">
+                "[Your first client testimonial will go here. Keep it powerful and specific. Include the result they achieved and how long it took. Example: 'I followed the exact framework for getting noticed by leadership. Within 8 weeks, I had my first 1-on-1 with the VP. 4 months later, I got promoted.']"
+            </p>
+            <div class="flex items-center gap-3 relative z-10">
+                <div class="w-12 h-12 rounded-full bg-gradient-to-br from-emerald-100 to-teal-100 flex items-center justify-center border-2 border-white shadow-md">
+                    <i data-lucide="user" class="w-6 h-6 text-emerald-600"></i>
+                </div>
+                <div>
+                    <div class="font-bold text-slate-900">Client Name</div>
+                    <div class="text-sm text-slate-600">Previous Role → <span class="text-emerald-600 font-semibold">New Role</span></div>
+                </div>
+            </div>
+            <div class="text-xs text-slate-400 mt-4 text-center italic">Placeholder - Your real testimonial will replace this</div>
+        </div>
+    </div>
+</div>
+
+<!-- CTA - Compact -->
+<div class="py-16 bg-slate-50">
+    <div class="max-w-3xl mx-auto px-4 text-center">
+        <div class="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl p-10 border-2 border-emerald-200 shadow-lg">
+            <h2 class="text-3xl font-bold text-slate-900 mb-4">Ready to take control?</h2>
+            <p class="text-slate-600 text-lg mb-6 max-w-xl mx-auto">
+                Whether you're launching, pivoting, or accelerating: <strong>Don't wait to be picked. Pick yourself.</strong>
+            </p>
+            <a href="contact.html" class="inline-block bg-brand-primary text-white font-bold text-lg px-8 py-3 rounded-full hover:bg-brand-secondary transition shadow-md hover:shadow-lg hover:-translate-y-0.5">
+                Apply for Coaching
+            </a>
+            <p class="text-slate-400 text-xs mt-4">Limited spots available per month.</p>
+        </div>
+    </div>
+</div>
+
+</main>
+
+<!-- Footer - Compact -->
+<footer class="bg-brand-primary text-white py-12">
+    <div class="max-w-7xl mx-auto px-4">
+        <div class="grid md:grid-cols-4 gap-8 mb-8">
+            <div>
+                <a href="index.html" class="flex items-center gap-2 mb-4">
+                    <div class="bg-brand-accent text-brand-primary w-8 h-8 rounded-lg flex items-center justify-center">
+                        <span class="font-bold">L²</span>
+                    </div>
+                    <span class="font-bold text-lg text-white">Launch<span class="font-light text-brand-accent">ToLead</span></span>
+                </a>
+                <p class="text-emerald-100 text-sm">Engineering career coaching for students and professionals.</p>
+            </div>
+
+            <div>
+                <h4 class="font-bold mb-4 text-sm uppercase tracking-wider">Services</h4>
+                <ul class="space-y-2 text-sm text-emerald-100">
+                    <li><a href="launch.html" class="hover:text-brand-accent transition">Launch</a></li>
+                    <li><a href="pivot.html" class="hover:text-brand-accent transition">Pivot</a></li>
+                    <li><a href="accelerate.html" class="hover:text-brand-accent transition">Accelerate</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-bold mb-4 text-sm uppercase tracking-wider">Company</h4>
+                <ul class="space-y-2 text-sm text-emerald-100">
+                    <li><a href="about.html" class="hover:text-brand-accent transition">About</a></li>
+                    <li><a href="success-stories.html" class="hover:text-brand-accent transition">Success Stories</a></li>
+                    <li><a href="faq.html" class="hover:text-brand-accent transition">FAQ</a></li>
+                    <li><a href="contact.html" class="hover:text-brand-accent transition">Contact</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-bold mb-4 text-sm uppercase tracking-wider">Connect</h4>
+                <ul class="space-y-2 text-sm text-emerald-100">
+                    <li><a href="mailto:contact@launchtolead.io" class="hover:text-brand-accent transition inline-flex items-center gap-2">
+                        <i data-lucide="mail" class="w-4 h-4"></i> Email
+                    </a></li>
+                    <li><a href="#" class="hover:text-brand-accent transition inline-flex items-center gap-2">
+                        <i data-lucide="linkedin" class="w-4 h-4"></i> LinkedIn
+                    </a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="border-t border-emerald-800 pt-6 text-center text-emerald-400 text-sm">
+            <p>&copy; 2025 Launch to Lead Engineering. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    lucide.createIcons();
+</script>
 </body>
 </html>
