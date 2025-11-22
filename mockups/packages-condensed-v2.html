@@ -7,11 +7,10 @@
     <meta name="description" content="Compare all Launch to Lead Engineering coaching packages. Find the right level of support for your career goals.">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <script src="tailwind-config.js"></script>
+    <script src="../tailwind-config.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -20,58 +19,55 @@
 </head>
 <body class="bg-brand-light text-slate-600 font-sans antialiased">
 
-<div id="navigation-container"></div>
-<script src="navigation.js"></script>
+    <!-- MOCKUP STRATEGY HEADER - REMOVE BEFORE PRODUCTION -->
+    <div class="bg-purple-600 text-white p-6 border-b-4 border-purple-800">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-2xl font-bold mb-3">📦 PACKAGES PAGE - CONDENSED MOCKUP V1</h2>
+            <p class="text-sm mb-3"><strong>Strategy:</strong> Apply about page condensing treatment (~30-35% space savings). This is a pricing comparison page - focus on compact cards, tighter spacing, clean grid layouts.</p>
+            <div class="text-xs space-y-1 opacity-90">
+                <p>• <strong>Hero:</strong> Compact version (pt-16 pb-12 vs pt-28 pb-20)</p>
+                <p>• <strong>Company Launch Special Banner:</strong> Simple red-to-orange gradient (matches index/launch/pivot/accelerate)</p>
+                <p>• <strong>Package Cards:</strong> Reduced padding (p-5 vs p-6/p-8), smaller text (text-xs), gap-5 vs gap-8, compact pricing</p>
+                <p>• <strong>Payment Terms:</strong> More compact cards (p-6 vs p-8), smaller text</p>
+                <p>• <strong>Mock Interview Add-On:</strong> Tighter layout (p-8 vs p-12), compact sidebar</p>
+                <p>• <strong>CTA Section:</strong> Reduced padding (py-16 vs py-24)</p>
+                <p>• <strong>Footer:</strong> Compact version (py-12 vs py-16)</p>
+                <p>• <strong>Overall Approach:</strong> Keep all 9 packages (3 per path), all features intact, but make everything tighter and more scannable</p>
+            </div>
+        </div>
+    </div>
 
-<nav style="display:none;" x-data="{ open: false }">
-    <div class="max-w-7xl mx-auto px-4 py-4">
-        <div class="flex items-center justify-between">
-            <a href="index.html" class="flex items-center gap-2 group">
-                <div class="bg-brand-primary text-white w-8 h-8 rounded-lg flex items-center justify-center group-hover:bg-brand-accent group-hover:text-brand-primary transition duration-300">
-                    <span class="font-bold text-sm">L²</span>
+    <!-- Navigation (sticky global) -->
+    <nav class="bg-white/80 backdrop-blur-lg border-b border-emerald-100 fixed top-0 w-full z-50" x-data="{ open: false }">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20">
+                <div class="flex items-center">
+                    <a href="../index.html" class="flex items-center gap-2 group">
+                        <div class="bg-brand-primary text-white w-8 h-8 rounded-lg flex items-center justify-center group-hover:bg-brand-accent group-hover:text-brand-primary transition duration-300">
+                            <span class="font-bold text-sm">L²</span>
+                        </div>
+                        <span class="font-bold text-xl text-brand-primary tracking-tight">Launch<span class="font-light text-brand-secondary">ToLead</span></span>
+                    </a>
                 </div>
-                <span class="font-bold text-xl text-brand-primary tracking-tight">Launch<span class="font-light text-brand-secondary">ToLead</span></span>
-            </a>
-            <div class="hidden md:flex items-center space-x-6">
-                <a href="launch.html" class="text-sm font-medium text-slate-500 hover:text-brand-secondary transition">Launch</a>
-                <a href="pivot.html" class="text-sm font-medium text-slate-500 hover:text-brand-secondary transition">Pivot</a>
-                <a href="accelerate.html" class="text-sm font-medium text-slate-500 hover:text-brand-secondary transition">Accelerate</a>
-                <a href="packages.html" class="text-sm font-bold text-brand-primary hover:text-brand-secondary transition">Packages</a>
-                <a href="faq.html" class="text-sm font-medium text-slate-500 hover:text-brand-secondary transition">FAQ</a>
-                <a href="success-stories.html" class="text-sm font-medium text-slate-500 hover:text-brand-secondary transition">Success Stories</a>
-                <a href="about.html" class="text-sm font-medium text-slate-500 hover:text-brand-secondary transition">About</a>
-                <a href="contact.html" class="bg-brand-primary text-white px-4 py-2 rounded-full font-semibold text-sm hover:bg-brand-secondary transition shadow-sm">
-                    Get Started
-                </a>
-            </div>
-            <!-- Mobile menu button -->
-            <div class="md:hidden flex items-center">
-                <button @click="open = !open" class="inline-flex items-center justify-center p-2 rounded-md text-slate-400 hover:text-slate-500 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-brand-primary">
-                    <span class="sr-only">Open main menu</span>
-                    <svg x-show="!open" class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                    </svg>
-                    <svg x-show="open" class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                </button>
-            </div>
-        </div>
-    </div>
-    <!-- Mobile menu -->
-    <div x-show="open" @click.away="open = false" class="md:hidden absolute top-full left-0 w-full bg-white border-b border-emerald-100 shadow-lg">
-        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <a href="launch.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-secondary hover:bg-slate-50">Launch</a>
-            <a href="pivot.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-secondary hover:bg-slate-50">Pivot</a>
-            <a href="accelerate.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-secondary hover:bg-slate-50">Accelerate</a>
-            <a href="packages.html" class="block px-3 py-2 rounded-md text-base font-bold text-brand-primary bg-slate-50">Packages</a>
-            <a href="faq.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-secondary hover:bg-slate-50">FAQ</a>
-            <a href="success-stories.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-secondary hover:bg-slate-50">Success Stories</a>
-            <a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-secondary hover:bg-slate-50">About</a>
-            <a href="contact.html" class="block px-3 py-2 rounded-md text-base font-medium text-brand-primary font-bold bg-slate-50">Get Started</a>
-        </div>
-    </div>
-</nav>
+
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="../launch.html" class="text-sm font-medium text-slate-500 hover:text-brand-secondary transition">Launch</a>
+                    <a href="../pivot.html" class="text-sm font-medium text-slate-500 hover:text-brand-secondary transition">Pivot</a>
+                    <a href="../accelerate.html" class="text-sm font-medium text-slate-500 hover:text-brand-secondary transition">Accelerate</a>
+                    <a href="../packages.html" class="text-sm font-medium text-slate-500 hover:text-brand-secondary transition">Packages</a>
+                    <a href="../about.html" class="text-sm font-medium text-slate-500 hover:text-brand-secondary transition">About</a>
+                    <a href="../contact.html" class="bg-brand-primary text-white px-5 py-2 rounded-full font-semibold text-sm hover:bg-brand-secondary transition shadow-soft hover:shadow-fresh">Get Started</a>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button @click="open = !open" class="inline-flex items-center justify-center p-2 rounded-md text-slate-400 hover:text-slate-500 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-brand-primary" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg x-show="!open" class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                        <svg x-show="open" class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                         </svg>
                     </button>
                 </div>
@@ -81,20 +77,19 @@
         <!-- Mobile menu, show/hide based on menu state. -->
         <div x-show="open" @click.away="open = false" class="md:hidden absolute top-20 left-0 w-full bg-white border-b border-emerald-100 shadow-lg z-50" id="mobile-menu">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="launch.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-secondary hover:bg-slate-50">Launch</a>
-                <a href="pivot.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-secondary hover:bg-slate-50">Pivot</a>
-                <a href="accelerate.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-secondary hover:bg-slate-50">Accelerate</a>
-                <a href="packages.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-secondary hover:bg-slate-50">Packages</a>
-                <a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-secondary hover:bg-slate-50">About</a>
-                <a href="contact.html" class="block px-3 py-2 rounded-md text-base font-medium text-brand-primary font-bold bg-slate-50">Get Started</a>
+                <a href="../launch.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-secondary hover:bg-slate-50">Launch</a>
+                <a href="../pivot.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-secondary hover:bg-slate-50">Pivot</a>
+                <a href="../accelerate.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-secondary hover:bg-slate-50">Accelerate</a>
+                <a href="../packages.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-secondary hover:bg-slate-50">Packages</a>
+                <a href="../about.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-secondary hover:bg-slate-50">About</a>
+                <a href="../contact.html" class="block px-3 py-2 rounded-md text-base font-medium text-brand-primary font-bold bg-slate-50">Get Started</a>
             </div>
         </div>
     </nav>
 
-<main>
-
-<!-- Company Launch Special Banner -->
-<div class="bg-gradient-to-r from-red-600 to-orange-500 text-white py-2 shadow-md mt-16">
+    <main>
+    <!-- Company Launch Special Banner -->
+    <div class="bg-gradient-to-r from-red-600 to-orange-500 text-white py-2 shadow-md">
         <div class="max-w-7xl mx-auto px-4 text-center flex items-center justify-center gap-2">
             <i data-lucide="party-popper" class="w-4 h-4 text-yellow-200"></i>
             <p class="text-sm font-bold">
@@ -164,7 +159,7 @@
                         <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs mt-0.5"></i> <span>Email support between sessions</span></li>
                     </ul>
 
-                    <a href="contact.html" class="w-full py-2.5 rounded-xl border-2 border-brand-primary text-brand-primary font-bold text-center text-sm hover:bg-brand-primary hover:text-white transition">Get Started</a>
+                    <a href="../contact.html" class="w-full py-2.5 rounded-xl border-2 border-brand-primary text-brand-primary font-bold text-center text-sm hover:bg-brand-primary hover:text-white transition">Get Started</a>
                 </div>
 
                 <!-- Launch Standard (3 Sessions - Most Popular) -->
@@ -201,7 +196,7 @@
                         <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs mt-0.5"></i> <span>Company research framework</span></li>
                     </ul>
 
-                    <a href="contact.html" class="w-full py-2.5 rounded-xl bg-brand-primary text-white font-bold text-center text-sm hover:bg-brand-secondary transition shadow-lg">Get Started Today</a>
+                    <a href="../contact.html" class="w-full py-2.5 rounded-xl bg-brand-primary text-white font-bold text-center text-sm hover:bg-brand-secondary transition shadow-lg">Get Started Today</a>
                 </div>
 
                 <!-- Launch Premium (4 Sessions) -->
@@ -235,7 +230,7 @@
                         <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs mt-0.5"></i> <span>Priority email support</span></li>
                     </ul>
 
-                    <a href="contact.html" class="w-full py-2.5 rounded-xl border-2 border-brand-primary text-brand-primary font-bold text-center text-sm hover:bg-brand-primary hover:text-white transition">Complete Launch Program</a>
+                    <a href="../contact.html" class="w-full py-2.5 rounded-xl border-2 border-brand-primary text-brand-primary font-bold text-center text-sm hover:bg-brand-primary hover:text-white transition">Complete Launch Program</a>
                 </div>
             </div>
         </div>
@@ -283,7 +278,7 @@
                         <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs mt-0.5"></i> <span>Email support between sessions</span></li>
                     </ul>
 
-                    <a href="contact.html" class="w-full py-2.5 rounded-xl border-2 border-brand-primary text-brand-primary font-bold text-center text-sm hover:bg-brand-primary hover:text-white transition">Start Your Pivot</a>
+                    <a href="../contact.html" class="w-full py-2.5 rounded-xl border-2 border-brand-primary text-brand-primary font-bold text-center text-sm hover:bg-brand-primary hover:text-white transition">Start Your Pivot</a>
                 </div>
 
                 <!-- Pivot Standard (3 Sessions - Most Popular) -->
@@ -320,7 +315,7 @@
                         <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs mt-0.5"></i> <span>Cross-functional opportunity mapping</span></li>
                     </ul>
 
-                    <a href="contact.html" class="w-full py-2.5 rounded-xl bg-brand-primary text-white font-bold text-center text-sm hover:bg-brand-secondary transition shadow-lg">Get Started Today</a>
+                    <a href="../contact.html" class="w-full py-2.5 rounded-xl bg-brand-primary text-white font-bold text-center text-sm hover:bg-brand-secondary transition shadow-lg">Get Started Today</a>
                 </div>
 
                 <!-- Pivot Premium (4 Sessions) -->
@@ -354,7 +349,7 @@
                         <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs mt-0.5"></i> <span>Priority email support (through transition)</span></li>
                     </ul>
 
-                    <a href="contact.html" class="w-full py-2.5 rounded-xl border-2 border-brand-primary text-brand-primary font-bold text-center text-sm hover:bg-brand-primary hover:text-white transition">Complete Pivot Program</a>
+                    <a href="../contact.html" class="w-full py-2.5 rounded-xl border-2 border-brand-primary text-brand-primary font-bold text-center text-sm hover:bg-brand-primary hover:text-white transition">Complete Pivot Program</a>
                 </div>
             </div>
         </div>
@@ -402,7 +397,7 @@
                         <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs mt-0.5"></i> <span>Email support between sessions</span></li>
                     </ul>
 
-                    <a href="contact.html" class="w-full py-2.5 rounded-xl border-2 border-brand-primary text-brand-primary font-bold text-center text-sm hover:bg-brand-primary hover:text-white transition">Start Accelerating</a>
+                    <a href="../contact.html" class="w-full py-2.5 rounded-xl border-2 border-brand-primary text-brand-primary font-bold text-center text-sm hover:bg-brand-primary hover:text-white transition">Start Accelerating</a>
                 </div>
 
                 <!-- Accelerate Standard (3 Sessions - Most Popular) -->
@@ -439,7 +434,7 @@
                         <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs mt-0.5"></i> <span>Performance review optimization</span></li>
                     </ul>
 
-                    <a href="contact.html" class="w-full py-2.5 rounded-xl bg-brand-primary text-white font-bold text-center text-sm hover:bg-brand-secondary transition shadow-lg">Get Started Today</a>
+                    <a href="../contact.html" class="w-full py-2.5 rounded-xl bg-brand-primary text-white font-bold text-center text-sm hover:bg-brand-secondary transition shadow-lg">Get Started Today</a>
                 </div>
 
                 <!-- Accelerate Premium (4 Sessions) -->
@@ -473,7 +468,7 @@
                         <li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-secondary text-xs mt-0.5"></i> <span>Priority email support (through transition)</span></li>
                     </ul>
 
-                    <a href="contact.html" class="w-full py-2.5 rounded-xl border-2 border-brand-primary text-brand-primary font-bold text-center text-sm hover:bg-brand-primary hover:text-white transition">Complete Accelerate Program</a>
+                    <a href="../contact.html" class="w-full py-2.5 rounded-xl border-2 border-brand-primary text-brand-primary font-bold text-center text-sm hover:bg-brand-primary hover:text-white transition">Complete Accelerate Program</a>
                 </div>
             </div>
         </div>
@@ -614,7 +609,7 @@
                                 <li>• Targeting multiple company types</li>
                             </ul>
                         </div>
-                        <a href="contact.html" class="w-full py-2.5 rounded-xl bg-purple-600 text-white font-bold text-center text-sm hover:bg-purple-700 transition block">Add to Package</a>
+                        <a href="../contact.html" class="w-full py-2.5 rounded-xl bg-purple-600 text-white font-bold text-center text-sm hover:bg-purple-700 transition block">Add to Package</a>
                     </div>
                 </div>
             </div>
@@ -632,7 +627,7 @@
                 Book a free 15-minute discovery call to discuss your goals and find the best fit. No pressure, just clarity.
             </p>
             
-            <a href="contact.html" class="px-8 py-4 bg-white text-brand-primary font-bold rounded-full hover:bg-brand-accent hover:text-brand-primary transition shadow-lg hover:shadow-fresh hover:-translate-y-1 inline-flex items-center gap-2">
+            <a href="../contact.html" class="px-8 py-4 bg-white text-brand-primary font-bold rounded-full hover:bg-brand-accent hover:text-brand-primary transition shadow-lg hover:shadow-fresh hover:-translate-y-1 inline-flex items-center gap-2">
                 <i class="fa-regular fa-calendar"></i> Book Free Discovery Call
             </a>
         </div>
@@ -645,7 +640,7 @@
             <div class="grid md:grid-cols-4 gap-10 mb-10">
                 <!-- Brand -->
                 <div class="col-span-1">
-                    <a href="index.html" class="flex items-center gap-2 mb-4 group">
+                    <a href="../index.html" class="flex items-center gap-2 mb-4 group">
                         <div class="bg-brand-accent text-brand-primary w-10 h-10 rounded-lg flex items-center justify-center group-hover:bg-white transition duration-300">
                             <span class="font-bold text-lg">L²</span>
                         </div>
@@ -660,10 +655,10 @@
                 <div>
                     <h4 class="font-bold text-base mb-4 text-white uppercase tracking-wider text-sm">Services</h4>
                     <ul class="space-y-2 text-sm text-emerald-100">
-                        <li><a href="launch.html" class="hover:text-brand-accent transition">Launch</a></li>
-                        <li><a href="pivot.html" class="hover:text-brand-accent transition">Pivot</a></li>
-                        <li><a href="accelerate.html" class="hover:text-brand-accent transition">Accelerate</a></li>
-                        <li><a href="packages.html" class="text-brand-accent font-bold">Packages</a></li>
+                        <li><a href="../launch.html" class="hover:text-brand-accent transition">Launch</a></li>
+                        <li><a href="../pivot.html" class="hover:text-brand-accent transition">Pivot</a></li>
+                        <li><a href="../accelerate.html" class="hover:text-brand-accent transition">Accelerate</a></li>
+                        <li><a href="../packages.html" class="text-brand-accent font-bold">Packages</a></li>
                     </ul>
                 </div>
 
@@ -671,10 +666,10 @@
                 <div>
                     <h4 class="font-bold text-base mb-4 text-white uppercase tracking-wider text-sm">Company</h4>
                     <ul class="space-y-2 text-sm text-emerald-100">
-                        <li><a href="about.html" class="hover:text-brand-accent transition">About</a></li>
-                        <li><a href="success-stories.html" class="hover:text-brand-accent transition">Success Stories</a></li>
-                        <li><a href="faq.html" class="hover:text-brand-accent transition">FAQ</a></li>
-                        <li><a href="contact.html" class="hover:text-brand-accent transition">Contact</a></li>
+                        <li><a href="../about.html" class="hover:text-brand-accent transition">About</a></li>
+                        <li><a href="../success-stories.html" class="hover:text-brand-accent transition">Success Stories</a></li>
+                        <li><a href="../faq.html" class="hover:text-brand-accent transition">FAQ</a></li>
+                        <li><a href="../contact.html" class="hover:text-brand-accent transition">Contact</a></li>
                     </ul>
                 </div>
 
@@ -694,8 +689,5 @@
         </div>
     </footer>
 
-    <script>
-        lucide.createIcons();
-    </script>
 </body>
 </html>

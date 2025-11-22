@@ -3,72 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Launch to Lead Engineering | Career Coaching</title>
+    <title>Launch to Lead Engineering | Career Coaching - CONDENSED MOCKUP</title>
     <meta name="description" content="From Mechanical Engineer to Software Leader. The comprehensive coaching ecosystem for engineering careers.">
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakob+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <script src="tailwind-config.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="../tailwind-config.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 </head>
 
 <body class="bg-slate-50 text-slate-600 font-sans antialiased">
 
-<div id="navigation-container"></div>
-<script src="navigation.js"></script>
+<!-- ===================================== -->
+<!-- MOCKUP STRATEGY HEADER -->
+<!-- ===================================== -->
+<div class="bg-gradient-to-r from-purple-600 to-pink-600 text-white py-4 px-6 border-b-4 border-purple-800">
+    <div class="max-w-7xl mx-auto">
+        <h1 class="text-2xl font-bold mb-2">📱 INDEX PAGE - CONDENSED MOCKUP</h1>
+        <p class="text-sm opacity-90 mb-3">This is a mockup showing the condensed homepage design. Same content, ~40% less space.</p>
+        <div class="bg-white/20 rounded-lg p-3 text-sm space-y-1">
+            <p><strong>✅ What Changed:</strong></p>
+            <ul class="list-disc list-inside space-y-1 ml-2 text-xs">
+                <li>Hero: Removed decorative blobs, tighter spacing, kept photo placeholder</li>
+                <li>Hero Card: More compact layout with photo + info + testimonial</li>
+                <li>Pain Points: Condensed to horizontal 3-column cards</li>
+                <li>Path Cards: Tighter spacing, same info</li>
+                <li>Why Us: 3 compact cards instead of large ones</li>
+                <li>How It Works: Already compact, kept as-is</li>
+                <li>Featured Testimonial: Styled placeholder for real quote</li>
+                <li>Stats: Kept prominent</li>
+            </ul>
+            <p class="mt-2"><strong>📸 PHOTO PLACEHOLDER:</strong> Hero section ready for your photo</p>
+            <p><strong>💬 TESTIMONIAL PLACEHOLDER:</strong> Featured testimonial section ready for real quote</p>
+        </div>
+    </div>
+</div>
 
-<nav style="display:none;" x-data="{ open: false }">
-    <div class="max-w-7xl mx-auto px-4 py-4">
-        <div class="flex items-center justify-between">
-            <a href="index.html" class="flex items-center gap-2 group">
-                <div class="bg-brand-primary text-white w-8 h-8 rounded-lg flex items-center justify-center group-hover:bg-brand-accent group-hover:text-brand-primary transition duration-300">
-                    <span class="font-bold text-sm">L²</span>
-                </div>
-                <span class="font-bold text-xl text-brand-primary tracking-tight">Launch<span class="font-light text-brand-secondary">ToLead</span></span>
-            </a>
+<!-- Navigation -->
+<nav class="bg-white/80 backdrop-blur-lg border-b border-emerald-100 sticky top-0 z-50" x-data="{ open: false }">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16">
+            <div class="flex items-center">
+                <a href="../index.html" class="flex items-center gap-2 group">
+                    <div class="bg-brand-primary text-white w-8 h-8 rounded-lg flex items-center justify-center group-hover:bg-brand-accent group-hover:text-brand-primary transition duration-300">
+                        <span class="font-bold text-sm">L²</span>
+                    </div>
+                    <span class="font-bold text-xl text-brand-primary tracking-tight">Launch<span class="font-light text-brand-secondary">ToLead</span></span>
+                </a>
+            </div>
             <div class="hidden md:flex items-center space-x-6">
-                <a href="launch.html" class="text-sm font-medium text-slate-500 hover:text-brand-secondary transition">Launch</a>
-                <a href="pivot.html" class="text-sm font-medium text-slate-500 hover:text-brand-secondary transition">Pivot</a>
-                <a href="accelerate.html" class="text-sm font-medium text-slate-500 hover:text-brand-secondary transition">Accelerate</a>
-                <a href="packages.html" class="text-sm font-medium text-slate-500 hover:text-brand-secondary transition">Packages</a>
-                <a href="faq.html" class="text-sm font-medium text-slate-500 hover:text-brand-secondary transition">FAQ</a>
-                <a href="success-stories.html" class="text-sm font-medium text-slate-500 hover:text-brand-secondary transition">Success Stories</a>
-                <a href="about.html" class="text-sm font-medium text-slate-500 hover:text-brand-secondary transition">About</a>
-                <a href="contact.html" class="bg-brand-primary text-white px-4 py-1.5 rounded-full font-semibold text-sm hover:bg-brand-secondary transition shadow-sm">
+                <a href="../launch.html" class="text-sm font-medium text-slate-500 hover:text-brand-secondary transition">Launch</a>
+                <a href="../pivot.html" class="text-sm font-medium text-slate-500 hover:text-brand-secondary transition">Pivot</a>
+                <a href="../accelerate.html" class="text-sm font-medium text-slate-500 hover:text-brand-secondary transition">Accelerate</a>
+                <a href="../packages.html" class="text-sm font-medium text-slate-500 hover:text-brand-secondary transition">Packages</a>
+                <a href="../about.html" class="text-sm font-medium text-slate-500 hover:text-brand-secondary transition">About</a>
+                <a href="../contact.html" class="bg-brand-primary text-white px-4 py-2 rounded-full font-semibold text-sm hover:bg-brand-secondary transition shadow-sm">
                     Get Started
                 </a>
             </div>
-            <!-- Mobile menu button -->
-            <div class="md:hidden flex items-center">
-                <button @click="open = !open" class="inline-flex items-center justify-center p-2 rounded-md text-slate-400 hover:text-slate-500 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-brand-primary">
-                    <span class="sr-only">Open main menu</span>
-                    <svg x-show="!open" class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                    </svg>
-                    <svg x-show="open" class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                </button>
-            </div>
         </div>
     </div>
-    <!-- Mobile menu -->
-    <div x-show="open" @click.away="open = false" class="md:hidden absolute top-full left-0 w-full bg-white border-b border-emerald-100 shadow-lg">
-        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <a href="launch.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-secondary hover:bg-slate-50">Launch</a>
-            <a href="pivot.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-secondary hover:bg-slate-50">Pivot</a>
-            <a href="accelerate.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-secondary hover:bg-slate-50">Accelerate</a>
-            <a href="packages.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-secondary hover:bg-slate-50">Packages</a>
-            <a href="faq.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-secondary hover:bg-slate-50">FAQ</a>
-            <a href="success-stories.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-secondary hover:bg-slate-50">Success Stories</a>
-            <a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-secondary hover:bg-slate-50">About</a>
 </nav>
 
 <main>
 
 <!-- Company Launch Special Banner -->
-<div class="bg-gradient-to-r from-red-600 to-orange-500 text-white py-2 shadow-md mt-16">
+<div class="bg-gradient-to-r from-red-600 to-orange-500 text-white py-2 shadow-md">
     <div class="max-w-7xl mx-auto px-4 text-center flex items-center justify-center gap-2">
         <i data-lucide="party-popper" class="w-4 h-4 text-yellow-200"></i>
         <p class="text-sm font-bold">
@@ -108,7 +109,7 @@
             <a href="#tracks" class="px-6 py-3 bg-brand-primary text-white font-bold rounded-full hover:bg-brand-secondary transition shadow-md hover:shadow-lg hover:-translate-y-0.5">
                 Choose Your Path
             </a>
-            <a href="contact.html" class="px-6 py-3 bg-white text-brand-primary font-bold rounded-full border-2 border-emerald-200 hover:border-brand-primary transition">
+            <a href="../contact.html" class="px-6 py-3 bg-white text-brand-primary font-bold rounded-full border-2 border-emerald-200 hover:border-brand-primary transition">
                 Book Strategy Call
             </a>
         </div>
@@ -157,10 +158,10 @@
                         </div>
                         
                         <div class="flex gap-2 justify-center md:justify-start mb-3">
-                            <a href="about.html" class="inline-flex items-center gap-1 px-4 py-2 bg-emerald-50 text-emerald-700 font-semibold rounded-lg hover:bg-emerald-100 transition text-xs">
+                            <a href="../about.html" class="inline-flex items-center gap-1 px-4 py-2 bg-emerald-50 text-emerald-700 font-semibold rounded-lg hover:bg-emerald-100 transition text-xs">
                                 <i data-lucide="user" class="w-3 h-3"></i> My Story
                             </a>
-                            <a href="success-stories.html" class="inline-flex items-center gap-1 px-4 py-2 bg-amber-50 text-amber-700 font-semibold rounded-lg hover:bg-amber-100 transition text-xs">
+                            <a href="../success-stories.html" class="inline-flex items-center gap-1 px-4 py-2 bg-amber-50 text-amber-700 font-semibold rounded-lg hover:bg-amber-100 transition text-xs">
                                 <i data-lucide="star" class="w-3 h-3"></i> Success Stories
                             </a>
                         </div>
@@ -270,7 +271,7 @@
                     <div class="text-3xl font-bold text-brand-primary">$500 - $800</div>
                     <div class="text-sm text-brand-accent font-semibold">2-4 Sessions • 50% OFF</div>
                 </div>
-                <a href="launch.html" class="flex items-center justify-center gap-2 w-full py-2.5 rounded-xl border-2 border-brand-primary text-brand-primary font-bold hover:bg-brand-primary hover:text-white transition group">
+                <a href="../launch.html" class="flex items-center justify-center gap-2 w-full py-2.5 rounded-xl border-2 border-brand-primary text-brand-primary font-bold hover:bg-brand-primary hover:text-white transition group">
                     View Packages <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
                 </a>
             </div>
@@ -297,7 +298,7 @@
                     <div class="text-3xl font-bold text-pivot-primary">$600 - $1,000</div>
                     <div class="text-sm text-brand-accent font-semibold">2-4 Sessions • 50% OFF</div>
                 </div>
-                <a href="pivot.html" class="flex items-center justify-center gap-2 w-full py-2.5 rounded-xl bg-pivot-primary text-white font-bold hover:bg-pivot-secondary transition shadow-md group">
+                <a href="../pivot.html" class="flex items-center justify-center gap-2 w-full py-2.5 rounded-xl bg-pivot-primary text-white font-bold hover:bg-pivot-secondary transition shadow-md group">
                     View Packages <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
                 </a>
             </div>
@@ -321,7 +322,7 @@
                     <div class="text-3xl font-bold text-accelerate-primary">$700 - $1,200</div>
                     <div class="text-sm text-brand-accent font-semibold">2-4 Sessions • 50% OFF</div>
                 </div>
-                <a href="accelerate.html" class="flex items-center justify-center gap-2 w-full py-2.5 rounded-xl border-2 border-accelerate-primary text-accelerate-primary font-bold hover:bg-accelerate-primary hover:text-white transition group">
+                <a href="../accelerate.html" class="flex items-center justify-center gap-2 w-full py-2.5 rounded-xl border-2 border-accelerate-primary text-accelerate-primary font-bold hover:bg-accelerate-primary hover:text-white transition group">
                     View Packages <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
                 </a>
             </div>
@@ -480,7 +481,7 @@
             <p class="text-slate-600 text-lg mb-6 max-w-xl mx-auto">
                 Whether you're launching, pivoting, or accelerating: <strong>Don't wait to be picked. Pick yourself.</strong>
             </p>
-            <a href="contact.html" class="inline-block bg-brand-primary text-white font-bold text-lg px-8 py-3 rounded-full hover:bg-brand-secondary transition shadow-md hover:shadow-lg hover:-translate-y-0.5">
+            <a href="../contact.html" class="inline-block bg-brand-primary text-white font-bold text-lg px-8 py-3 rounded-full hover:bg-brand-secondary transition shadow-md hover:shadow-lg hover:-translate-y-0.5">
                 Apply for Coaching
             </a>
             <p class="text-slate-400 text-xs mt-4">Limited spots available per month.</p>
@@ -495,7 +496,7 @@
     <div class="max-w-7xl mx-auto px-4">
         <div class="grid md:grid-cols-4 gap-8 mb-8">
             <div>
-                <a href="index.html" class="flex items-center gap-2 mb-4">
+                <a href="../index.html" class="flex items-center gap-2 mb-4">
                     <div class="bg-brand-accent text-brand-primary w-8 h-8 rounded-lg flex items-center justify-center">
                         <span class="font-bold">L²</span>
                     </div>
@@ -507,19 +508,19 @@
             <div>
                 <h4 class="font-bold mb-4 text-sm uppercase tracking-wider">Services</h4>
                 <ul class="space-y-2 text-sm text-emerald-100">
-                    <li><a href="launch.html" class="hover:text-brand-accent transition">Launch</a></li>
-                    <li><a href="pivot.html" class="hover:text-brand-accent transition">Pivot</a></li>
-                    <li><a href="accelerate.html" class="hover:text-brand-accent transition">Accelerate</a></li>
+                    <li><a href="../launch.html" class="hover:text-brand-accent transition">Launch</a></li>
+                    <li><a href="../pivot.html" class="hover:text-brand-accent transition">Pivot</a></li>
+                    <li><a href="../accelerate.html" class="hover:text-brand-accent transition">Accelerate</a></li>
                 </ul>
             </div>
 
             <div>
                 <h4 class="font-bold mb-4 text-sm uppercase tracking-wider">Company</h4>
                 <ul class="space-y-2 text-sm text-emerald-100">
-                    <li><a href="about.html" class="hover:text-brand-accent transition">About</a></li>
-                    <li><a href="success-stories.html" class="hover:text-brand-accent transition">Success Stories</a></li>
-                    <li><a href="faq.html" class="hover:text-brand-accent transition">FAQ</a></li>
-                    <li><a href="contact.html" class="hover:text-brand-accent transition">Contact</a></li>
+                    <li><a href="../about.html" class="hover:text-brand-accent transition">About</a></li>
+                    <li><a href="../success-stories.html" class="hover:text-brand-accent transition">Success Stories</a></li>
+                    <li><a href="../faq.html" class="hover:text-brand-accent transition">FAQ</a></li>
+                    <li><a href="../contact.html" class="hover:text-brand-accent transition">Contact</a></li>
                 </ul>
             </div>
 

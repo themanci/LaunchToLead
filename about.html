@@ -24,10 +24,12 @@
         }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-600 font-sans antialiased">
+<body class="bg-white text-slate-600 font-sans antialiased">
 
-    <!-- Navigation -->
-    <nav class="bg-white/80 backdrop-blur-lg border-b border-emerald-100 fixed top-0 w-full z-50" x-data="{ open: false }">
+<div id="navigation-container"></div>
+<script src="navigation.js"></script>
+
+    <nav style="display:none;" x-data="{ open: false }">
         <div class="max-w-7xl mx-auto px-4 py-4">
             <div class="flex items-center justify-between">
                 <a href="index.html" class="flex items-center gap-2 group">
