@@ -23,10 +23,10 @@
     // Helper function to get link classes
     function getLinkClasses(pageName, isButton = false) {
         if (isButton) {
-            return 'bg-brand-primary text-white px-4 py-2 rounded-full font-semibold text-sm hover:bg-brand-secondary transition shadow-sm';
+            return 'bg-brand-primary text-white px-4 py-1.5 rounded-full font-semibold text-sm hover:bg-brand-secondary transition shadow-sm';
         }
         const isActive = pageName === currentPageName;
-        const baseClasses = 'text-sm hover:text-brand-secondary transition';
+        const baseClasses = 'text-sm hover:text-brand-secondary transition py-1.5';
         const activeClasses = 'font-bold text-brand-primary';
         const inactiveClasses = 'font-medium text-slate-500';
         return `${baseClasses} ${isActive ? activeClasses : inactiveClasses}`;
@@ -47,8 +47,8 @@
     // Navigation HTML template
     const navigationHTML = `
 <!-- Navigation -->
-<nav class="bg-white/80 backdrop-blur-lg border-b border-emerald-100 fixed top-0 w-full z-50" x-data="{ open: false }">
-    <div class="max-w-7xl mx-auto px-4 py-4">
+<nav id="main-nav" class="bg-white/80 backdrop-blur-lg border-b border-emerald-100 w-full" x-data="{ open: false }">
+    <div class="max-w-7xl mx-auto px-4 pt-3 pb-2">
         <div class="flex items-center justify-between">
             <a href="index.html" class="flex items-center gap-2 group">
                 <div class="bg-brand-primary text-white w-8 h-8 rounded-lg flex items-center justify-center group-hover:bg-brand-accent group-hover:text-brand-primary transition duration-300">
