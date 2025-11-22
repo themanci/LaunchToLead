@@ -14,64 +14,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="tailwind-config.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 </head>
 <body class="bg-slate-50 text-slate-600 font-sans antialiased">
 
 <div id="navigation-container"></div>
 <script src="navigation.js"></script>
 
-<nav style="display:none;" x-data="{ open: false }">
-    <div class="max-w-7xl mx-auto px-4 py-4">
-        <div class="flex items-center justify-between">
-            <a href="index.html" class="flex items-center gap-2 group">
-                <div class="bg-brand-primary text-white w-8 h-8 rounded-lg flex items-center justify-center group-hover:bg-brand-accent group-hover:text-brand-primary transition duration-300">
-                    <span class="font-bold text-sm">L²</span>
-                </div>
-                <span class="font-bold text-xl text-brand-primary tracking-tight">Launch<span class="font-light text-brand-secondary">ToLead</span></span>
-            </a>
-            <div class="hidden md:flex items-center space-x-6">
-                <a href="launch.html" class="text-sm font-medium text-slate-500 hover:text-brand-secondary transition">Launch</a>
-                <a href="pivot.html" class="text-sm font-medium text-slate-500 hover:text-brand-secondary transition">Pivot</a>
-                <a href="accelerate.html" class="text-sm font-medium text-slate-500 hover:text-brand-secondary transition">Accelerate</a>
-                <a href="packages.html" class="text-sm font-medium text-slate-500 hover:text-brand-secondary transition">Packages</a>
-                <a href="faq.html" class="text-sm font-medium text-slate-500 hover:text-brand-secondary transition">FAQ</a>
-                <a href="success-stories.html" class="text-sm font-bold text-brand-primary hover:text-brand-secondary transition">Success Stories</a>
-                <a href="about.html" class="text-sm font-medium text-slate-500 hover:text-brand-secondary transition">About</a>
-                <a href="contact.html" class="bg-brand-primary text-white px-4 py-2 rounded-full font-semibold text-sm hover:bg-brand-secondary transition shadow-sm">
-                    Get Started
-                </a>
-            </div>
-            <!-- Mobile menu button -->
-            <div class="md:hidden flex items-center">
-                <button @click="open = !open" class="inline-flex items-center justify-center p-2 rounded-md text-slate-400 hover:text-slate-500 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-brand-primary">
-                    <span class="sr-only">Open main menu</span>
-                    <svg x-show="!open" class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                    </svg>
-                    <svg x-show="open" class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                </button>
-            </div>
-        </div>
-    </div>
-    <!-- Mobile menu -->
-    <div x-show="open" @click.away="open = false" class="md:hidden absolute top-full left-0 w-full bg-white border-b border-emerald-100 shadow-lg">
-        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <a href="launch.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-secondary hover:bg-slate-50">Launch</a>
-            <a href="pivot.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-secondary hover:bg-slate-50">Pivot</a>
-            <a href="accelerate.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-secondary hover:bg-slate-50">Accelerate</a>
-            <a href="packages.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-secondary hover:bg-slate-50">Packages</a>
-            <a href="faq.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-secondary hover:bg-slate-50">FAQ</a>
-            <a href="success-stories.html" class="block px-3 py-2 rounded-md text-base font-bold text-brand-primary bg-slate-50">Success Stories</a>
-            <a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-secondary hover:bg-slate-50">About</a>
-            <a href="contact.html" class="block px-3 py-2 rounded-md text-base font-medium text-brand-primary font-bold bg-slate-50">Get Started</a>
-        </div>
-    </div>
-</nav>
 
 <main>
 
@@ -116,14 +65,14 @@
                 I'm just launching Launch to Lead Engineering, and I'm excited to start working with engineers like you! This page will soon feature testimonials and case studies from clients who have:
             </p>
             <ul class="space-y-2 text-left max-w-md mx-auto text-slate-600 text-xs mb-6">
-                <li class="flex items-start gap-2"><i class="fa-solid fa-check-circle text-brand-secondary mt-0.5 text-sm"></i> Landed their first engineering role at top companies</li>
-                <li class="flex items-start gap-2"><i class="fa-solid fa-check-circle text-brand-secondary mt-0.5 text-sm"></i> Successfully pivoted from mechanical to software engineering</li>
-                <li class="flex items-start gap-2"><i class="fa-solid fa-check-circle text-brand-secondary mt-0.5 text-sm"></i> Earned promotions using the 4-Promotion Framework</li>
-                <li class="flex items-start gap-2"><i class="fa-solid fa-check-circle text-brand-secondary mt-0.5 text-sm"></i> Transitioned from individual contributor to leadership roles</li>
+                <li class="flex items-start gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-brand-secondary mt-0.5"></i> Landed their first engineering role at top companies</li>
+                <li class="flex items-start gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-brand-secondary mt-0.5"></i> Successfully pivoted from mechanical to software engineering</li>
+                <li class="flex items-start gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-brand-secondary mt-0.5"></i> Earned promotions using the 4-Promotion Framework</li>
+                <li class="flex items-start gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-brand-secondary mt-0.5"></i> Transitioned from individual contributor to leadership roles</li>
             </ul>
             <p class="font-bold text-slate-800 mb-3 text-sm">Want to be one of my first success stories?</p>
             <a href="contact.html" class="px-6 py-3 bg-brand-primary text-white font-bold rounded-full hover:bg-brand-secondary transition shadow-lg hover:shadow-fresh hover:-translate-y-1 inline-flex items-center gap-2 text-sm">
-                <i class="fa-regular fa-calendar"></i> Book a Free Discovery Call
+                <i data-lucide="calendar" class="w-4 h-4"></i> Book a Free Discovery Call
             </a>
         </div>
     </div>
@@ -141,7 +90,7 @@
                 <h3 class="text-lg font-bold text-slate-900 mb-3">Career Progression</h3>
                 <ul class="space-y-3 text-xs text-slate-600">
                     <li class="flex items-start gap-2">
-                        <i class="fa-solid fa-star text-amber-400 text-xs mt-0.5"></i>
+                        <i data-lucide="star" class="w-4 h-4 text-amber-400 mt-0.5"></i>
                         <div class="grid grid-cols-3 gap-x-3 items-center flex-1">
                             <div class="text-center">
                                 <strong class="block font-bold text-slate-800 text-base">4</strong>
@@ -157,27 +106,27 @@
                             </div>
                         </div>
                     </li>
-                    <li class="flex items-start gap-2"><i class="fa-solid fa-star text-amber-400 text-xs mt-0.5"></i> <span>All at a single Fortune 100 organization</span></li>
-                    <li class="flex items-start gap-2"><i class="fa-solid fa-star text-amber-400 text-xs mt-0.5"></i> <span>From <strong>Mechanical Engineer</strong> to <strong>Software Development Leader</strong></span></li>
-                    <li class="flex items-start gap-2"><i class="fa-solid fa-star text-amber-400 text-xs mt-0.5"></i> <span>Led teams of <strong>6-10 engineers</strong> delivering critical software</span></li>
+                    <li class="flex items-start gap-2"><i data-lucide="star" class="w-4 h-4 text-amber-400 mt-0.5"></i> <span>All at a single Fortune 100 organization</span></li>
+                    <li class="flex items-start gap-2"><i data-lucide="star" class="w-4 h-4 text-amber-400 mt-0.5"></i> <span>From <strong>Mechanical Engineer</strong> to <strong>Software Development Leader</strong></span></li>
+                    <li class="flex items-start gap-2"><i data-lucide="star" class="w-4 h-4 text-amber-400 mt-0.5"></i> <span>Led teams of <strong>6-10 engineers</strong> delivering critical software</span></li>
                 </ul>
             </div>
             <div class="bg-white p-6 rounded-2xl shadow-sm border border-emerald-100 hover:shadow-card transition duration-300">
                 <h3 class="text-lg font-bold text-slate-900 mb-3">Measurable Impact</h3>
                 <ul class="space-y-2 text-xs text-slate-600">
-                    <li class="flex items-start gap-2"><i class="fa-solid fa-chart-line text-green-500 text-xs mt-0.5"></i> <strong>30% reduction</strong> in software release errors</li>
-                    <li class="flex items-start gap-2"><i class="fa-solid fa-chart-line text-green-500 text-xs mt-0.5"></i> <strong>50% faster</strong> onboarding for new engineers</li>
-                    <li class="flex items-start gap-2"><i class="fa-solid fa-chart-line text-green-500 text-xs mt-0.5"></i> <strong>90% reduction</strong> in schedule management time</li>
-                    <li class="flex items-start gap-2"><i class="fa-solid fa-chart-line text-green-500 text-xs mt-0.5"></i> <strong>2x capacity</strong> increase during critical delivery cycles</li>
+                    <li class="flex items-start gap-2"><i data-lucide="line-chart" class="w-4 h-4 text-green-500 mt-0.5"></i> <strong>30% reduction</strong> in software release errors</li>
+                    <li class="flex items-start gap-2"><i data-lucide="line-chart" class="w-4 h-4 text-green-500 mt-0.5"></i> <strong>50% faster</strong> onboarding for new engineers</li>
+                    <li class="flex items-start gap-2"><i data-lucide="line-chart" class="w-4 h-4 text-green-500 mt-0.5"></i> <strong>90% reduction</strong> in schedule management time</li>
+                    <li class="flex items-start gap-2"><i data-lucide="line-chart" class="w-4 h-4 text-green-500 mt-0.5"></i> <strong>2x capacity</strong> increase during critical delivery cycles</li>
                 </ul>
             </div>
             <div class="bg-white p-6 rounded-2xl shadow-sm border border-emerald-100 hover:shadow-card transition duration-300">
                 <h3 class="text-lg font-bold text-slate-900 mb-3">Career Pivots</h3>
                 <ul class="space-y-2 text-xs text-slate-600">
-                    <li class="flex items-start gap-2"><i class="fa-solid fa-shuffle text-blue-500 text-xs mt-0.5"></i> Mechanical Engineer → Controls Software</li>
-                    <li class="flex items-start gap-2"><i class="fa-solid fa-shuffle text-blue-500 text-xs mt-0.5"></i> Controls Software → Embedded Software</li>
-                    <li class="flex items-start gap-2"><i class="fa-solid fa-shuffle text-blue-500 text-xs mt-0.5"></i> Individual Contributor → Supervisor → Dev Lead</li>
-                    <li class="flex items-start gap-2"><i class="fa-solid fa-shuffle text-blue-500 text-xs mt-0.5"></i> Technical execution → Strategic enablement</li>
+                    <li class="flex items-start gap-2"><i data-lucide="shuffle" class="w-4 h-4 text-blue-500 mt-0.5"></i> Mechanical Engineer → Controls Software</li>
+                    <li class="flex items-start gap-2"><i data-lucide="shuffle" class="w-4 h-4 text-blue-500 mt-0.5"></i> Controls Software → Embedded Software</li>
+                    <li class="flex items-start gap-2"><i data-lucide="shuffle" class="w-4 h-4 text-blue-500 mt-0.5"></i> Individual Contributor → Supervisor → Dev Lead</li>
+                    <li class="flex items-start gap-2"><i data-lucide="shuffle" class="w-4 h-4 text-blue-500 mt-0.5"></i> Technical execution → Strategic enablement</li>
                 </ul>
             </div>
         </div>
@@ -295,8 +244,8 @@
             <div>
                 <h4 class="font-bold text-base mb-4 text-white uppercase tracking-wider text-sm">Connect</h4>
                 <ul class="space-y-2 text-sm text-emerald-100">
-                    <li><a href="mailto:contact@launchtolead.io" class="hover:text-brand-accent transition inline-flex items-center gap-2"><i class="fa-solid fa-envelope"></i> contact@launchtolead.io</a></li>
-                    <li><a href="https://www.linkedin.com/in/launchtolead" target="_blank" rel="noopener noreferrer" class="hover:text-brand-accent transition inline-flex items-center gap-2"><i class="fa-brands fa-linkedin text-blue-400"></i> LinkedIn</a></li>
+                    <li><a href="mailto:contact@launchtolead.io" class="hover:text-brand-accent transition inline-flex items-center gap-2"><i data-lucide="mail" class="w-4 h-4"></i> contact@launchtolead.io</a></li>
+                    <li><a href="https://www.linkedin.com/in/launchtolead" target="_blank" rel="noopener noreferrer" class="hover:text-brand-accent transition inline-flex items-center gap-2"><i data-lucide="linkedin" class="w-4 h-4 text-blue-400"></i> LinkedIn</a></li>
                 </ul>
             </div>
         </div>

@@ -32,22 +32,29 @@
         return `${baseClasses} ${isActive ? activeClasses : inactiveClasses}`;
     }
     
-    // Helper function for mobile link classes
-    function getMobileLinkClasses(pageName, isButton = false) {
+    // Mobile link classes: highlight ONLY the current page. Contact is a CTA when inactive.
+    function getMobileLinkClasses(pageName, isCTA = false) {
         const isActive = pageName === currentPageName;
-        if (isButton || pageName === 'contact') {
-            return 'block px-3 py-2 rounded-md text-base font-medium text-brand-primary font-bold bg-slate-50';
+        const base = 'block px-3 py-2 rounded-md text-base transition';
+        const active = 'font-bold text-brand-primary bg-slate-50';
+        const inactive = 'font-medium text-slate-700 hover:text-brand-secondary hover:bg-slate-50';
+
+        // Contact (Get Started) special styling only when not active
+        if (pageName === 'contact') {
+            if (isActive) {
+                return `${base} ${active} border border-emerald-200`;
+            }
+            return `${base} font-semibold text-white bg-brand-primary hover:bg-brand-secondary shadow-sm`;
         }
-        const baseClasses = 'block px-3 py-2 rounded-md text-base';
-        const activeClasses = 'font-bold text-brand-primary bg-slate-50';
-        const inactiveClasses = 'font-medium text-slate-700 hover:text-brand-secondary hover:bg-slate-50';
-        return `${baseClasses} ${isActive ? activeClasses : inactiveClasses}`;
+
+        // Generic pages
+        return `${base} ${isActive ? active : inactive}`;
     }
     
     // Navigation HTML template
     const navigationHTML = `
 <!-- Navigation -->
-<nav id="main-nav" class="bg-white/80 backdrop-blur-lg border-b border-emerald-100 w-full" x-data="{ open: false }">
+<nav id="main-nav" class="bg-white/80 backdrop-blur-lg border-b border-emerald-100 w-full relative z-50">
     <div class="max-w-7xl mx-auto px-4 pt-3 pb-2">
         <div class="flex items-center justify-between">
             <a href="index.html" class="flex items-center gap-2 group">
@@ -70,20 +77,20 @@
             </div>
             <!-- Mobile menu button -->
             <div class="md:hidden flex items-center">
-                <button @click="open = !open" class="inline-flex items-center justify-center p-2 rounded-md text-slate-400 hover:text-slate-500 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-brand-primary">
+                <button data-mobile-toggle aria-controls="mobile-menu" aria-expanded="false" class="inline-flex items-center justify-center p-2 rounded-md text-slate-400 hover:text-slate-500 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-brand-primary">
                     <span class="sr-only">Open main menu</span>
-                    <svg x-show="!open" class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg data-icon-open class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                     </svg>
-                    <svg x-show="open" class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg data-icon-close class="h-6 w-6 hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                     </svg>
                 </button>
             </div>
         </div>
     </div>
-    <!-- Mobile menu -->
-    <div x-show="open" @click.away="open = false" class="md:hidden absolute top-full left-0 w-full bg-white border-b border-emerald-100 shadow-lg">
+    <!-- Mobile menu (animated) -->
+    <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-white border-b border-emerald-100 shadow-lg z-50 transform transition-all duration-200 -translate-y-2 opacity-0 pointer-events-none">
         <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             <a href="launch.html" class="${getMobileLinkClasses('launch')}">Launch</a>
             <a href="pivot.html" class="${getMobileLinkClasses('pivot')}">Pivot</a>
@@ -103,6 +110,58 @@
         const navContainer = document.getElementById('navigation-container');
         if (navContainer) {
             navContainer.innerHTML = navigationHTML;
+
+            // Mobile menu toggle logic (replaces Alpine behavior for dynamically injected nav)
+            const toggleBtn = navContainer.querySelector('[data-mobile-toggle]');
+            const mobileMenu = navContainer.querySelector('#mobile-menu');
+            const iconOpen = navContainer.querySelector('[data-icon-open]');
+            const iconClose = navContainer.querySelector('[data-icon-close]');
+
+            function closeMenu() {
+                // Add hiding classes for animation
+                mobileMenu.classList.add('hidden');
+                mobileMenu.classList.remove('translate-y-0','opacity-100','pointer-events-auto');
+                mobileMenu.classList.add('-translate-y-2','opacity-0','pointer-events-none');
+                iconOpen.classList.remove('hidden');
+                iconClose.classList.add('hidden');
+                toggleBtn.setAttribute('aria-expanded', 'false');
+            }
+
+            function openMenu() {
+                // Remove hidden & apply visible animation classes
+                mobileMenu.classList.remove('hidden');
+                mobileMenu.classList.remove('-translate-y-2','opacity-0','pointer-events-none');
+                mobileMenu.classList.add('translate-y-0','opacity-100','pointer-events-auto');
+                iconOpen.classList.add('hidden');
+                iconClose.classList.remove('hidden');
+                toggleBtn.setAttribute('aria-expanded', 'true');
+            }
+
+            toggleBtn?.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const isOpen = toggleBtn.getAttribute('aria-expanded') === 'true';
+                if (isOpen) {
+                    closeMenu();
+                } else {
+                    openMenu();
+                }
+            });
+
+            // Click outside to close
+            document.addEventListener('click', (e) => {
+                const isOpen = toggleBtn.getAttribute('aria-expanded') === 'true';
+                if (!isOpen) return;
+                if (!navContainer.contains(e.target)) {
+                    closeMenu();
+                }
+            });
+
+            // Close on resize to desktop
+            window.addEventListener('resize', () => {
+                if (window.innerWidth >= 768) {
+                    closeMenu();
+                }
+            });
         }
     });
 })();
