@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimonial Callouts Proposal - Launch to Lead</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-slate-50">
+    <!-- Header -->
+    <div class="bg-gradient-to-br from-slate-900 to-slate-800 text-white py-12">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 class="text-4xl font-bold mb-4">Testimonial Callouts Proposal</h1>
+            <p class="text-slate-300 text-lg">Strategic placement of success stories across Launch, Pivot, and Accelerate track pages</p>
+        </div>
+    </div>
+
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-16">
+        
+        <!-- Design Concept Overview -->
+        <section class="bg-white p-8 rounded-2xl shadow-md">
+            <h2 class="text-2xl font-bold text-slate-900 mb-4">Design Concept</h2>
+            <div class="space-y-4 text-slate-700">
+                <p><strong>Goal:</strong> Sprinkle relevant success stories throughout track pages without being intrusive. Catch attention, build trust, and link to full story.</p>
+                
+                <div class="bg-blue-50 p-6 rounded-xl border-2 border-blue-200 mt-6">
+                    <h3 class="font-bold text-slate-900 mb-3">Key Features:</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-start gap-2">
+                            <span class="text-blue-600 font-bold">✓</span>
+                            <span><strong>Compact & Scannable:</strong> 2-3 lines max, profile photo (if available), name, result</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-blue-600 font-bold">✓</span>
+                            <span><strong>Track-Color Coded:</strong> Blue for Launch, Emerald for Pivot, Teal/Purple for Accelerate</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-blue-600 font-bold">✓</span>
+                            <span><strong>Strategic Placement:</strong> After key sections (not interrupting content flow)</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-blue-600 font-bold">✓</span>
+                            <span><strong>Clear CTA:</strong> "Read Full Story →" links to success-stories.html#name-story</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-blue-600 font-bold">✓</span>
+                            <span><strong>Subtle Background:</strong> Light colored bg with thin border, doesn't break page flow</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- LAUNCH PAGE EXAMPLES -->
+        <section class="space-y-8">
+            <div class="bg-gradient-to-r from-blue-600 to-blue-700 p-6 rounded-2xl shadow-lg">
+                <h2 class="text-3xl font-bold text-white mb-2">Launch Page (launch.html)</h2>
+                <p class="text-blue-100">Place 2 testimonials: Mohamed (after "How It Works") and Ebuka (after Hero)</p>
+            </div>
+
+            <!-- Mohamed Callout - Full Width Example -->
+            <div class="bg-white p-6 rounded-xl shadow-sm">
+                <div class="text-xs font-bold text-blue-600 uppercase tracking-wider mb-3">📍 Placement: After "How It Works" Section, Before Pricing</div>
+                
+                <div class="bg-blue-50 border-l-4 border-blue-500 p-5 rounded-lg hover:shadow-md transition-shadow duration-300">
+                    <div class="flex items-start gap-4">
+                        <!-- Text Content -->
+                        <div class="flex-1">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="text-2xl">🎯</span>
+                                <div>
+                                    <h4 class="font-bold text-slate-900 text-base">Mohamed I.</h4>
+                                    <p class="text-xs text-blue-600 font-semibold">LAUNCH SUCCESS</p>
+                                </div>
+                            </div>
+                            <p class="text-sm text-slate-700 mb-2">
+                                <strong>"I went from struggling with interviews to landing permanent role, then pivoting from mechanical CI to software at John Deere"</strong>
+                            </p>
+                            <a href="success-stories.html#mohamed-story" class="inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:text-blue-700 transition-colors">
+                                Read Mohamed's Full Story
+                                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ebuka Callout - With Profile Photo -->
+            <div class="bg-white p-6 rounded-xl shadow-sm">
+                <div class="text-xs font-bold text-lime-600 uppercase tracking-wider mb-3">📍 Placement: After Hero Section, Before Credibility Box</div>
+                
+                <div class="bg-lime-50 border-l-4 border-lime-500 p-5 rounded-lg hover:shadow-md transition-shadow duration-300">
+                    <div class="flex items-start gap-4">
+                        <!-- Profile Photo -->
+                        <div class="w-16 h-16 rounded-full overflow-hidden border-3 border-lime-300 flex-shrink-0 shadow-md">
+                            <img src="../testimonials/pictures/chiebuka_onyejesi.jpg" alt="Chiebuka Onyejesi" class="w-full h-full object-cover">
+                        </div>
+                        <!-- Text Content -->
+                        <div class="flex-1">
+                            <div class="mb-2">
+                                <h4 class="font-bold text-slate-900 text-base">Chiebuka "Ebuka" O.</h4>
+                                <p class="text-xs text-lime-600 font-semibold">LAUNCH SUCCESS</p>
+                            </div>
+                            <p class="text-sm text-slate-700 mb-2">
+                                <strong>"As a John Deere intern, I learned to think beyond just one company and maximize my internship impact"</strong>
+                            </p>
+                            <a href="success-stories.html#ebuka-story" class="inline-flex items-center gap-1 text-sm font-semibold text-lime-600 hover:text-lime-700 transition-colors">
+                                Read Ebuka's Full Story
+                                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PIVOT PAGE EXAMPLES -->
+        <section class="space-y-8">
+            <div class="bg-gradient-to-r from-emerald-600 to-emerald-700 p-6 rounded-2xl shadow-lg">
+                <h2 class="text-3xl font-bold text-white mb-2">Pivot Page (pivot.html)</h2>
+                <p class="text-emerald-100">Place 1 testimonial: Jonah (after "Master Lateral Moves")</p>
+            </div>
+
+            <!-- Jonah Callout -->
+            <div class="bg-white p-6 rounded-xl shadow-sm">
+                <div class="text-xs font-bold text-emerald-600 uppercase tracking-wider mb-3">📍 Placement: After "Master Lateral Moves" Section, Before "How It Works"</div>
+                
+                <div class="bg-emerald-50 border-l-4 border-emerald-500 p-5 rounded-lg hover:shadow-md transition-shadow duration-300">
+                    <div class="flex items-start gap-4">
+                        <!-- Text Content -->
+                        <div class="flex-1">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="text-2xl">🎯</span>
+                                <div>
+                                    <h4 class="font-bold text-slate-900 text-base">Jonah B.</h4>
+                                    <p class="text-xs text-emerald-600 font-semibold">PIVOT SUCCESS</p>
+                                </div>
+                            </div>
+                            <p class="text-sm text-slate-700 mb-2">
+                                <strong>"I successfully pivoted from Mechanical Engineering to Software Test Engineer at John Deere — without leaving my company"</strong>
+                            </p>
+                            <a href="success-stories.html#jonah-story" class="inline-flex items-center gap-1 text-sm font-semibold text-emerald-600 hover:text-emerald-700 transition-colors">
+                                Read Jonah's Full Story
+                                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ACCELERATE PAGE EXAMPLES -->
+        <section class="space-y-8">
+            <div class="bg-gradient-to-r from-teal-600 to-purple-700 p-6 rounded-2xl shadow-lg">
+                <h2 class="text-3xl font-bold text-white mb-2">Accelerate Page (accelerate.html)</h2>
+                <p class="text-teal-100">Place 2 testimonials: Cole (after Stats+Myths) and Gavin (after Pricing)</p>
+            </div>
+
+            <!-- Cole Callout -->
+            <div class="bg-white p-6 rounded-xl shadow-sm">
+                <div class="text-xs font-bold text-teal-600 uppercase tracking-wider mb-3">📍 Placement: After Stats+Myths Section, Before "How It Works"</div>
+                
+                <div class="bg-teal-50 border-l-4 border-teal-500 p-5 rounded-lg hover:shadow-md transition-shadow duration-300">
+                    <div class="flex items-start gap-4">
+                        <!-- Text Content -->
+                        <div class="flex-1">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="text-2xl">🚀</span>
+                                <div>
+                                    <h4 class="font-bold text-slate-900 text-base">Cole H.</h4>
+                                    <p class="text-xs text-teal-600 font-semibold">ACCELERATE SUCCESS</p>
+                                </div>
+                            </div>
+                            <p class="text-sm text-slate-700 mb-2">
+                                <strong>"I broke through my promotion plateau at John Deere and positioned myself 1-2 years ahead of schedule"</strong>
+                            </p>
+                            <a href="success-stories.html#cole-story" class="inline-flex items-center gap-1 text-sm font-semibold text-teal-600 hover:text-teal-700 transition-colors">
+                                Read Cole's Full Story
+                                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gavin Callout - With Profile Photo -->
+            <div class="bg-white p-6 rounded-xl shadow-sm">
+                <div class="text-xs font-bold text-purple-600 uppercase tracking-wider mb-3">📍 Placement: After Pricing Section, Before Booking CTA</div>
+                
+                <div class="bg-purple-50 border-l-4 border-purple-500 p-5 rounded-lg hover:shadow-md transition-shadow duration-300">
+                    <div class="flex items-start gap-4">
+                        <!-- Profile Photo -->
+                        <div class="w-16 h-16 rounded-full overflow-hidden border-3 border-purple-300 flex-shrink-0 shadow-md">
+                            <img src="../testimonials/pictures/gavin_patel.jpg" alt="Gavin Patel" class="w-full h-full object-cover">
+                        </div>
+                        <!-- Text Content -->
+                        <div class="flex-1">
+                            <div class="mb-2">
+                                <h4 class="font-bold text-slate-900 text-base">Gavin P.</h4>
+                                <p class="text-xs text-purple-600 font-semibold">LAUNCH + ACCELERATE SUCCESS</p>
+                            </div>
+                            <p class="text-sm text-slate-700 mb-2">
+                                <strong>"From intern to Software Engineer at Fortune 500 ($8.6B+ revenue) in national security tech"</strong>
+                            </p>
+                            <a href="success-stories.html#gavin-story" class="inline-flex items-center gap-1 text-sm font-semibold text-purple-600 hover:text-purple-700 transition-colors">
+                                Read Gavin's Full Story
+                                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PLACEMENT SUMMARY -->
+        <section class="bg-white p-8 rounded-2xl shadow-md border-2 border-slate-200">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6">Placement Summary</h2>
+            
+            <div class="space-y-6">
+                <!-- Launch Page -->
+                <div class="border-l-4 border-blue-500 pl-4">
+                    <h3 class="font-bold text-lg text-slate-900 mb-2">📘 Launch Page (launch.html)</h3>
+                    <ul class="space-y-2 text-sm text-slate-700">
+                        <li class="flex items-start gap-2">
+                            <span class="text-lime-600 font-bold">1.</span>
+                            <span><strong>Ebuka O.</strong> — After Hero Section, Before Credibility Box (with profile photo)</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-blue-600 font-bold">2.</span>
+                            <span><strong>Mohamed I.</strong> — After "How It Works" Section, Before Pricing</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Pivot Page -->
+                <div class="border-l-4 border-emerald-500 pl-4">
+                    <h3 class="font-bold text-lg text-slate-900 mb-2">🔄 Pivot Page (pivot.html)</h3>
+                    <ul class="space-y-2 text-sm text-slate-700">
+                        <li class="flex items-start gap-2">
+                            <span class="text-emerald-600 font-bold">1.</span>
+                            <span><strong>Jonah B.</strong> — After "Master Lateral Moves" Section, Before "How It Works"</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Accelerate Page -->
+                <div class="border-l-4 border-teal-500 pl-4">
+                    <h3 class="font-bold text-lg text-slate-900 mb-2">🚀 Accelerate Page (accelerate.html)</h3>
+                    <ul class="space-y-2 text-sm text-slate-700">
+                        <li class="flex items-start gap-2">
+                            <span class="text-teal-600 font-bold">1.</span>
+                            <span><strong>Cole H.</strong> — After Stats+Myths Section, Before "How It Works"</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-purple-600 font-bold">2.</span>
+                            <span><strong>Gavin P.</strong> — After Pricing Section, Before Booking CTA (with profile photo)</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-8 p-4 bg-slate-100 rounded-lg">
+                <p class="text-sm text-slate-700">
+                    <strong>Total:</strong> 5 testimonial callouts placed strategically across 3 track pages. Each callout is visually subtle, quick to scan, and directly relevant to the track's audience.
+                </p>
+            </div>
+        </section>
+
+        <!-- DESIGN NOTES -->
+        <section class="bg-gradient-to-br from-slate-800 to-slate-900 p-8 rounded-2xl shadow-md text-white">
+            <h2 class="text-2xl font-bold mb-4">📝 Implementation Notes</h2>
+            <ul class="space-y-3 text-slate-200 text-sm">
+                <li class="flex items-start gap-2">
+                    <span class="text-emerald-400 font-bold">✓</span>
+                    <span><strong>Mobile Responsive:</strong> Stack photo and text vertically on small screens, maintain readability</span>
+                </li>
+                <li class="flex items-start gap-2">
+                    <span class="text-emerald-400 font-bold">✓</span>
+                    <span><strong>Hover Effects:</strong> Subtle shadow increase on hover to signal clickability</span>
+                </li>
+                <li class="flex items-start gap-2">
+                    <span class="text-emerald-400 font-bold">✓</span>
+                    <span><strong>Consistent Spacing:</strong> Add same margin (mt-12 mb-12) as other sections for visual consistency</span>
+                </li>
+                <li class="flex items-start gap-2">
+                    <span class="text-emerald-400 font-bold">✓</span>
+                    <span><strong>Link Behavior:</strong> All callouts link to success-stories.html with #anchor to specific story</span>
+                </li>
+                <li class="flex items-start gap-2">
+                    <span class="text-emerald-400 font-bold">✓</span>
+                    <span><strong>Profile Photos:</strong> Only Gavin and Ebuka have photos currently, others use emoji icons</span>
+                </li>
+                <li class="flex items-start gap-2">
+                    <span class="text-emerald-400 font-bold">✓</span>
+                    <span><strong>Quote Selection:</strong> Use most impactful 1-sentence quote that captures transformation</span>
+                </li>
+            </ul>
+        </section>
+
+    </div>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
