@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Article Layouts V2 - LaunchToLead</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#064e3b',
+                        secondary: '#14b8a6',
+                        accent: '#a3e635'
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .prose h2 { margin-top: 2rem; margin-bottom: 1rem; font-weight: 700; font-size: 1.5rem; color: #0f172a; }
+        .prose h3 { margin-top: 1.5rem; margin-bottom: 0.75rem; font-weight: 600; font-size: 1.25rem; color: #0f172a; }
+        .prose p { margin-bottom: 1.25rem; line-height: 1.75; color: #334155; }
+        .prose ul { margin-bottom: 1.25rem; list-style-type: disc; padding-left: 1.5rem; color: #334155; }
+        .prose li { margin-bottom: 0.5rem; }
+        .prose blockquote { border-left: 4px solid #14b8a6; padding-left: 1rem; margin: 1.5rem 0; font-style: italic; color: #475569; background: #f0fdfa; padding: 1rem; border-radius: 0 0.5rem 0.5rem 0; }
+        
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-slate-100">
+
+    <!-- LAYOUT SWITCHER -->
+    <div class="fixed bottom-8 left-1/2 -translate-x-1/2 z-[100] bg-slate-900/90 backdrop-blur text-white p-2 rounded-full shadow-2xl flex gap-1 border border-slate-700 overflow-x-auto max-w-[90vw]">
+        <button onclick="switchLayout(1)" class="layout-btn px-4 py-2 rounded-full hover:bg-slate-700 transition text-sm font-medium whitespace-nowrap bg-lime-500 text-emerald-900" data-id="1">1. The Standard Overlap</button>
+        <button onclick="switchLayout(2)" class="layout-btn px-4 py-2 rounded-full hover:bg-slate-700 transition text-sm font-medium whitespace-nowrap" data-id="2">2. The Unified Paper</button>
+        <button onclick="switchLayout(3)" class="layout-btn px-4 py-2 rounded-full hover:bg-slate-700 transition text-sm font-medium whitespace-nowrap" data-id="3">3. The Staggered Grid</button>
+        <button onclick="switchLayout(4)" class="layout-btn px-4 py-2 rounded-full hover:bg-slate-700 transition text-sm font-medium whitespace-nowrap" data-id="4">4. The Glass Sidebar</button>
+        <button onclick="switchLayout(5)" class="layout-btn px-4 py-2 rounded-full hover:bg-slate-700 transition text-sm font-medium whitespace-nowrap" data-id="5">5. The Hero Split</button>
+    </div>
+
+    <!-- SHARED NAV -->
+    <nav class="fixed top-0 w-full bg-emerald-900/90 backdrop-blur text-white z-50 shadow-lg transition-all duration-300" id="main-nav">
+        <div class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
+            <a href="#" class="text-xl font-bold">Launch<span class="text-lime-400">To</span>Lead</a>
+            <div class="hidden md:flex items-center gap-6 text-sm">
+                <a href="#" class="hover:text-lime-300">Home</a>
+                <a href="#" class="hover:text-lime-300">About</a>
+                <a href="#" class="hover:text-lime-300">Methods</a>
+                <a href="#" class="text-lime-300 font-semibold">Blog</a>
+                <a href="#" class="bg-lime-400 text-emerald-900 px-4 py-2 rounded-lg font-semibold hover:bg-lime-300">Get Started</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ========================================== -->
+    <!-- OPTION 1: THE STANDARD OVERLAP            -->
+    <!-- (Classic Cinematic + Boxed Content + Sidebar) -->
+    <!-- ========================================== -->
+    <div id="layout-1" class="layout-view">
+        <!-- Cinematic Header -->
+        <div class="relative h-[60vh] w-full">
+            <img src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=1600&h=900&fit=crop" class="absolute inset-0 w-full h-full object-cover">
+            <div class="absolute inset-0 bg-slate-900/70"></div>
+            <div class="absolute inset-0 flex items-center justify-center pb-12">
+                <div class="max-w-4xl px-6 text-center text-white">
+                    <div class="inline-block px-4 py-1 border border-lime-400/50 rounded-full text-lime-300 text-sm font-bold mb-6 uppercase tracking-widest">Launch Method</div>
+                    <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">The Resume Bullet Formula That Got Me Hired at John Deere</h1>
+                    <div class="flex items-center justify-center gap-4 text-slate-300">
+                        <span>Nov 25, 2025</span>
+                        <span>•</span>
+                        <span>8 min read</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Overlapping Grid -->
+        <div class="max-w-7xl mx-auto px-6 -mt-32 relative z-10 pb-24">
+            <div class="grid lg:grid-cols-[1fr_350px] gap-8">
+                <!-- Main Content Box -->
+                <main class="bg-white rounded-xl shadow-xl p-8 md:p-12">
+                    <!-- Author Header inside box -->
+                    <div class="flex items-center gap-4 mb-8 pb-8 border-b border-slate-100">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face" class="w-12 h-12 rounded-full object-cover">
+                        <div>
+                            <p class="font-bold text-slate-900">Tyler Sheppard</p>
+                            <p class="text-sm text-slate-500">Career Coach</p>
+                        </div>
+                        <div class="ml-auto flex gap-2">
+                            <button class="p-2 text-slate-400 hover:text-emerald-600"><i data-lucide="share-2" class="w-5 h-5"></i></button>
+                        </div>
+                    </div>
+                    <div class="article-content prose max-w-none prose-lg"></div>
+                </main>
+
+                <!-- Sidebar (Separate Cards) -->
+                <aside class="space-y-6">
+                    <!-- TOC Card -->
+                    <div class="bg-white rounded-xl shadow-lg p-6 sticky top-24">
+                        <h3 class="font-bold text-slate-900 mb-4 text-sm uppercase tracking-wider">Table of Contents</h3>
+                        <ul class="space-y-3 text-sm text-slate-600">
+                            <li><a href="#" class="hover:text-emerald-600 flex items-center gap-2"><i data-lucide="chevron-right" class="w-4 h-4 text-emerald-400"></i> The Problem with Bullets</a></li>
+                            <li><a href="#" class="hover:text-emerald-600 flex items-center gap-2"><i data-lucide="chevron-right" class="w-4 h-4 text-emerald-400"></i> The Impact Equation</a></li>
+                            <li><a href="#" class="hover:text-emerald-600 flex items-center gap-2"><i data-lucide="chevron-right" class="w-4 h-4 text-emerald-400"></i> Before & After Examples</a></li>
+                            <li><a href="#" class="hover:text-emerald-600 flex items-center gap-2"><i data-lucide="chevron-right" class="w-4 h-4 text-emerald-400"></i> Common Mistakes</a></li>
+                        </ul>
+                        <div class="mt-6 pt-6 border-t border-slate-100">
+                            <div class="bg-emerald-50 rounded-lg p-4">
+                                <h4 class="font-bold text-emerald-900 text-sm mb-1">Free Resource</h4>
+                                <p class="text-xs text-emerald-700 mb-3">Get the cheat sheet PDF.</p>
+                                <button class="w-full py-2 bg-emerald-600 text-white rounded-lg text-sm font-bold hover:bg-emerald-700">Download Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- OPTION 2: THE UNIFIED PAPER               -->
+    <!-- (Single Large Container with Internal Sidebar) -->
+    <!-- ========================================== -->
+    <div id="layout-2" class="layout-view hidden">
+        <div class="relative h-[50vh] w-full bg-emerald-900">
+            <img src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=1600&h=900&fit=crop" class="absolute inset-0 w-full h-full object-cover opacity-40 mix-blend-overlay">
+            <div class="absolute inset-0 flex items-center justify-center">
+                <h1 class="text-4xl md:text-5xl font-bold text-white text-center max-w-4xl px-6 leading-tight">The Resume Bullet Formula That Got Me Hired at John Deere</h1>
+            </div>
+        </div>
+
+        <div class="max-w-6xl mx-auto px-4 -mt-20 relative z-10 pb-24">
+            <div class="bg-white rounded-t-2xl shadow-2xl overflow-hidden grid lg:grid-cols-[1fr_320px] min-h-screen">
+                <!-- Main Content -->
+                <main class="p-8 md:p-12">
+                    <div class="flex items-center gap-3 mb-8 text-sm text-slate-500">
+                        <span class="bg-emerald-100 text-emerald-700 px-2 py-1 rounded font-bold">Launch Method</span>
+                        <span>•</span>
+                        <span>Nov 25, 2025</span>
+                    </div>
+                    <div class="article-content prose max-w-none"></div>
+                </main>
+
+                <!-- Internal Sidebar (Gray Background) -->
+                <aside class="bg-slate-50 border-l border-slate-100 p-8">
+                    <div class="sticky top-8 space-y-8">
+                        <!-- Author -->
+                        <div class="text-center">
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face" class="w-20 h-20 rounded-full object-cover mx-auto mb-3 ring-4 ring-white shadow-sm">
+                            <h3 class="font-bold text-slate-900">Tyler Sheppard</h3>
+                            <p class="text-xs text-slate-500 mb-4">Helping engineers get hired.</p>
+                            <button class="text-emerald-600 text-sm font-semibold hover:underline">View Profile</button>
+                        </div>
+
+                        <hr class="border-slate-200">
+
+                        <!-- TOC -->
+                        <div>
+                            <h4 class="font-bold text-slate-900 text-xs uppercase tracking-wider mb-4">Contents</h4>
+                            <ul class="space-y-2 text-sm text-slate-600 border-l-2 border-slate-200 pl-4">
+                                <li class="border-l-2 border-emerald-500 -ml-[18px] pl-4 text-emerald-700 font-medium">Introduction</li>
+                                <li><a href="#" class="hover:text-emerald-600">The Problem</a></li>
+                                <li><a href="#" class="hover:text-emerald-600">The Formula</a></li>
+                                <li><a href="#" class="hover:text-emerald-600">Examples</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- CTA -->
+                        <div class="bg-emerald-900 rounded-xl p-6 text-center text-white">
+                            <i data-lucide="download" class="w-8 h-8 text-lime-400 mx-auto mb-3"></i>
+                            <h4 class="font-bold mb-2">Free Guide</h4>
+                            <p class="text-xs text-emerald-200 mb-4">Get the Impact Equation PDF.</p>
+                            <button class="w-full py-2 bg-lime-400 text-emerald-900 rounded font-bold text-sm hover:bg-lime-300">Download</button>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- OPTION 3: THE STAGGERED GRID              -->
+    <!-- (Asymmetric Overlap)                      -->
+    <!-- ========================================== -->
+    <div id="layout-3" class="layout-view hidden">
+        <div class="relative h-[55vh] w-full">
+            <img src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=1600&h=900&fit=crop" class="absolute inset-0 w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-b from-slate-900/60 to-slate-900/90"></div>
+            <div class="absolute bottom-0 left-0 w-full p-6 pb-32">
+                <div class="max-w-7xl mx-auto grid lg:grid-cols-[1fr_350px] gap-8 items-end">
+                    <div>
+                        <span class="text-lime-400 font-bold tracking-widest uppercase text-sm mb-2 block">Launch Method</span>
+                        <h1 class="text-4xl md:text-5xl font-bold text-white leading-tight mb-4">The Resume Bullet Formula That Got Me Hired at John Deere</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 relative z-10 pb-24">
+            <div class="grid lg:grid-cols-[1fr_350px] gap-8">
+                <!-- Main Content (High Overlap) -->
+                <main class="bg-white rounded-xl shadow-xl p-8 md:p-12 -mt-20">
+                    <div class="article-content prose max-w-none prose-lg"></div>
+                </main>
+
+                <!-- Sidebar (Low Overlap / Staggered) -->
+                <aside class="space-y-6 -mt-10 lg:mt-0">
+                    <!-- Author Card -->
+                    <div class="bg-white rounded-xl shadow-lg p-6 border-t-4 border-lime-400">
+                        <div class="flex items-center gap-4">
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face" class="w-12 h-12 rounded-full object-cover">
+                            <div>
+                                <p class="font-bold text-slate-900">Tyler Sheppard</p>
+                                <p class="text-xs text-slate-500">Career Coach</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sticky TOC -->
+                    <div class="bg-white rounded-xl shadow-lg p-6 sticky top-24">
+                        <h3 class="font-bold text-slate-900 mb-4">In this article</h3>
+                        <ul class="space-y-2 text-sm text-slate-600">
+                            <li><a href="#" class="block p-2 rounded hover:bg-slate-50 text-emerald-600 font-medium">1. The Problem</a></li>
+                            <li><a href="#" class="block p-2 rounded hover:bg-slate-50">2. The Impact Equation</a></li>
+                            <li><a href="#" class="block p-2 rounded hover:bg-slate-50">3. Examples</a></li>
+                            <li><a href="#" class="block p-2 rounded hover:bg-slate-50">4. Action Plan</a></li>
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- OPTION 4: THE GLASS SIDEBAR               -->
+    <!-- (Boxed Content + Floating Transparent Sidebar) -->
+    <!-- ========================================== -->
+    <div id="layout-4" class="layout-view hidden">
+        <div class="fixed inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=1600&h=900&fit=crop" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-slate-900/80 backdrop-blur-sm"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-6 py-24">
+            <!-- Header Text -->
+            <div class="text-center mb-12">
+                <span class="bg-lime-400 text-emerald-900 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-4 inline-block">Launch Method</span>
+                <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 max-w-4xl mx-auto leading-tight">The Resume Bullet Formula That Got Me Hired at John Deere</h1>
+            </div>
+
+            <div class="grid lg:grid-cols-[1fr_300px] gap-8 items-start">
+                <!-- Main Content Box -->
+                <main class="bg-white rounded-2xl shadow-2xl p-8 md:p-16">
+                    <div class="article-content prose max-w-none prose-lg"></div>
+                </main>
+
+                <!-- Glass Sidebar -->
+                <aside class="sticky top-24 space-y-6">
+                    <div class="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 text-white">
+                        <div class="flex items-center gap-4 mb-4">
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face" class="w-12 h-12 rounded-full object-cover ring-2 ring-lime-400">
+                            <div>
+                                <p class="font-bold">Tyler Sheppard</p>
+                                <p class="text-xs text-emerald-200">Author</p>
+                            </div>
+                        </div>
+                        <p class="text-sm text-emerald-100 mb-4">I help engineers land their dream jobs without applying to 100s of roles.</p>
+                        <button class="w-full py-2 bg-white text-emerald-900 rounded-lg text-sm font-bold hover:bg-lime-300 transition">Follow</button>
+                    </div>
+
+                    <div class="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 text-white">
+                        <h3 class="font-bold mb-4 text-lime-300">Table of Contents</h3>
+                        <ul class="space-y-2 text-sm text-emerald-100">
+                            <li><a href="#" class="hover:text-white flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-lime-400"></span> The Problem</a></li>
+                            <li><a href="#" class="hover:text-white flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-white/50"></span> The Formula</a></li>
+                            <li><a href="#" class="hover:text-white flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-white/50"></span> Examples</a></li>
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- OPTION 5: THE HERO SPLIT                  -->
+    <!-- (Sidebar starts IN the header)            -->
+    <!-- ========================================== -->
+    <div id="layout-5" class="layout-view hidden">
+        <div class="bg-emerald-900 text-white pb-32">
+            <div class="max-w-7xl mx-auto px-6 pt-32 pb-12 grid lg:grid-cols-[1fr_350px] gap-12">
+                <div>
+                    <div class="flex items-center gap-2 mb-6">
+                        <span class="w-8 h-[2px] bg-lime-400"></span>
+                        <span class="text-lime-400 font-bold uppercase tracking-widest text-sm">Launch Method</span>
+                    </div>
+                    <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">The Resume Bullet Formula That Got Me Hired at John Deere</h1>
+                    <p class="text-xl text-emerald-100 max-w-2xl">Transform boring task descriptions into compelling impact statements with this 4-part formula.</p>
+                </div>
+                <!-- Sidebar Starts Here (Transparent) -->
+                <div class="hidden lg:block pt-8">
+                    <div class="flex items-center gap-4 mb-2">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face" class="w-14 h-14 rounded-full object-cover ring-2 ring-lime-400">
+                        <div>
+                            <p class="font-bold text-lg">Tyler Sheppard</p>
+                            <p class="text-sm text-emerald-300">Nov 25 • 8 min read</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 -mt-24 relative z-10 pb-24">
+            <div class="grid lg:grid-cols-[1fr_350px] gap-12">
+                <!-- Main Content Box -->
+                <main class="bg-white rounded-t-xl shadow-xl p-8 md:p-12 min-h-screen">
+                    <div class="article-content prose max-w-none prose-lg"></div>
+                </main>
+
+                <!-- Sidebar Continues Here -->
+                <aside class="space-y-6 pt-8">
+                    <div class="bg-white rounded-xl shadow-lg p-6 sticky top-24 border-t-4 border-emerald-500">
+                        <h3 class="font-bold text-slate-900 mb-4">Contents</h3>
+                        <ul class="space-y-3 text-sm text-slate-600">
+                            <li><a href="#" class="hover:text-emerald-600 font-medium text-emerald-700">1. Introduction</a></li>
+                            <li><a href="#" class="hover:text-emerald-600">2. The Impact Equation</a></li>
+                            <li><a href="#" class="hover:text-emerald-600">3. Before & After</a></li>
+                            <li><a href="#" class="hover:text-emerald-600">4. Conclusion</a></li>
+                        </ul>
+                        
+                        <div class="mt-8 p-4 bg-slate-100 rounded-lg">
+                            <p class="font-bold text-slate-900 text-sm mb-2">Need help?</p>
+                            <p class="text-xs text-slate-500 mb-3">Book a 1:1 strategy call.</p>
+                            <button class="w-full py-2 bg-white border border-slate-300 rounded text-sm font-semibold hover:bg-slate-50">Book Now</button>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTENT TEMPLATE -->
+    <template id="article-body-source">
+        <p class="lead text-xl text-slate-600 mb-8">
+            Most engineers treat their resume like a technical specification document. They list every tool, language, and responsibility they've ever touched. But hiring managers aren't looking for a spec sheet—they're looking for a sales brochure.
+        </p>
+
+        <h2>The Problem with Most Resume Bullets</h2>
+        <p>
+            I've reviewed over 500 engineering resumes in the last two years. The #1 mistake? <strong>Task-based bullet points.</strong>
+        </p>
+        <p>
+            You know the ones:
+        </p>
+        <ul>
+            <li>"Responsible for testing software applications."</li>
+            <li>"Worked with Python and SQL to manage data."</li>
+            <li>"Attended daily standup meetings."</li>
+        </ul>
+        <p>
+            These bullets describe <em>what you did</em>, but they fail to explain <em>why it mattered</em>. They pass the "Truth Test" (yes, you did those things), but they fail the "So What? Test."
+        </p>
+
+        <blockquote>
+            "A strong bullet point doesn't describe what you did—it proves what you're capable of doing again."
+        </blockquote>
+
+        <h2>The Impact Equation: 4-Part Formula</h2>
+        <p>
+            To fix this, I developed the <strong>Impact Equation</strong>. It's a simple structure that forces you to focus on results rather than responsibilities.
+        </p>
+
+        <div class="not-prose my-8 bg-emerald-50 border border-emerald-200 rounded-xl p-6">
+            <div class="flex items-start gap-4">
+                <div class="flex-shrink-0 w-10 h-10 bg-emerald-600 rounded-lg flex items-center justify-center">
+                    <i data-lucide="lightbulb" class="w-5 h-5 text-white"></i>
+                </div>
+                <div>
+                    <h4 class="font-bold text-emerald-900 mb-2">The Impact Equation</h4>
+                    <p class="text-emerald-800 mb-0 font-mono text-sm md:text-base">
+                        [Action Verb] + [Specific Task] + [Quantified Result] + [Business Impact]
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <h3>Before & After Examples</h3>
+        <p>
+            Let's see how this transforms a real resume bullet.
+        </p>
+
+        <div class="not-prose my-8 grid md:grid-cols-2 gap-4">
+            <div class="bg-red-50 border border-red-200 rounded-xl p-5">
+                <div class="flex items-center gap-2 text-red-700 font-semibold mb-3">
+                    <i data-lucide="x-circle" class="w-5 h-5"></i>
+                    Before (Boring)
+                </div>
+                <p class="text-red-900 text-sm italic">
+                    "Responsible for testing software applications and documenting bugs."
+                </p>
+            </div>
+            <div class="bg-green-50 border border-green-200 rounded-xl p-5">
+                <div class="flex items-center gap-2 text-green-700 font-semibold mb-3">
+                    <i data-lucide="check-circle" class="w-5 h-5"></i>
+                    After (Booming)
+                </div>
+                <p class="text-green-900 text-sm italic">
+                    "Developed automated testing framework that reduced QA cycle time by 40%, enabling 2 additional product releases per quarter."
+                </p>
+            </div>
+        </div>
+
+        <h2>How I Used This at John Deere</h2>
+        <p>
+            When I applied to John Deere, I was coming from a construction background. I didn't have a CS degree. My resume had to work double-time to prove I could handle enterprise software.
+        </p>
+        <p>
+            Instead of listing "Used Python for data analysis," I wrote:
+        </p>
+        <p class="pl-4 border-l-2 border-slate-300 italic text-slate-600">
+            "Built Python automation scripts to process 5,000+ daily sensor logs, reducing manual data entry time by 15 hours per week."
+        </p>
+        <p>
+            That bullet point was the first thing the hiring manager asked me about. It showed I understood efficiency, not just syntax.
+        </p>
+    </template>
+
+    <script>
+        // Initialize Icons
+        lucide.createIcons();
+
+        // Inject Content
+        const contentTemplate = document.getElementById('article-body-source').innerHTML;
+        document.querySelectorAll('.article-content').forEach(el => {
+            el.innerHTML = contentTemplate;
+        });
+
+        // Layout Switcher Logic
+        function switchLayout(id) {
+            // Hide all layouts
+            document.querySelectorAll('.layout-view').forEach(el => el.classList.add('hidden'));
+            
+            // Show selected layout
+            document.getElementById(`layout-${id}`).classList.remove('hidden');
+            
+            // Update buttons
+            document.querySelectorAll('.layout-btn').forEach(btn => {
+                btn.classList.remove('bg-lime-500', 'text-emerald-900');
+                btn.classList.add('text-white');
+                if(btn.dataset.id == id) {
+                    btn.classList.add('bg-lime-500', 'text-emerald-900');
+                    btn.classList.remove('text-white');
+                }
+            });
+
+            // Re-init icons
+            lucide.createIcons();
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+    </script>
+</body>
+</html>
