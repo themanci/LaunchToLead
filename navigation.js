@@ -15,6 +15,7 @@
         'faq.html': { name: 'faq', displayName: 'FAQ' },
         'success-stories.html': { name: 'success-stories', displayName: 'Success Stories' },
         'about.html': { name: 'about', displayName: 'About' },
+        'blog.html': { name: 'blog', displayName: 'Blog' },
         'contact.html': { name: 'contact', displayName: 'Contact' }
     };
     
@@ -73,6 +74,7 @@
                 <a href="faq.html" class="${getLinkClasses('faq')}">FAQ</a>
                 <a href="success-stories.html" class="${getLinkClasses('success-stories')}">Success Stories</a>
                 <a href="about.html" class="${getLinkClasses('about')}">About</a>
+                <a href="blog.html" class="${getLinkClasses('blog')}">Blog</a>
                 <a href="contact.html" class="${getLinkClasses('contact', true)}">
                     Get Started
                 </a>
@@ -101,6 +103,7 @@
             <a href="faq.html" class="${getMobileLinkClasses('faq')}">FAQ</a>
             <a href="success-stories.html" class="${getMobileLinkClasses('success-stories')}">Success Stories</a>
             <a href="about.html" class="${getMobileLinkClasses('about')}">About</a>
+            <a href="blog.html" class="${getMobileLinkClasses('blog')}">Blog</a>
             <a href="contact.html" class="${getMobileLinkClasses('contact', true)}">Get Started</a>
         </div>
     </div>
