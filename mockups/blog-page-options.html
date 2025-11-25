@@ -1,0 +1,1261 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Page Design Options | Launch to Lead</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            primary: '#064e3b',
+                            secondary: '#14b8a6',
+                            accent: '#a3e635',
+                            light: '#ecfdf5',
+                            surface: '#ffffff'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .option-divider {
+            border-top: 4px dashed #064e3b;
+            margin: 60px 0;
+            position: relative;
+        }
+        .option-divider::before {
+            content: attr(data-option);
+            position: absolute;
+            top: -16px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #064e3b;
+            color: white;
+            padding: 4px 24px;
+            border-radius: 9999px;
+            font-weight: 700;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body class="bg-slate-100">
+
+<!-- Navigation for mockup selection -->
+<div class="sticky top-0 z-50 bg-white border-b border-slate-200 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 py-3">
+        <div class="flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="w-10 h-10">
+                    <rect width="100" height="100" rx="20" fill="#064e3b"/>
+                    <text x="50" y="70" font-family="Plus Jakarta Sans, Arial, sans-serif" font-size="48" font-weight="800" fill="white" text-anchor="middle">L²</text>
+                </svg>
+                <span class="font-bold text-slate-900">Blog Page Mockups</span>
+            </div>
+            <div class="flex gap-2 flex-wrap">
+                <a href="#option1" class="px-3 py-1 bg-emerald-100 text-emerald-800 rounded-full text-sm font-semibold hover:bg-emerald-200">1</a>
+                <a href="#option2" class="px-3 py-1 bg-emerald-100 text-emerald-800 rounded-full text-sm font-semibold hover:bg-emerald-200">2</a>
+                <a href="#option3" class="px-3 py-1 bg-emerald-100 text-emerald-800 rounded-full text-sm font-semibold hover:bg-emerald-200">3</a>
+                <a href="#option4" class="px-3 py-1 bg-emerald-100 text-emerald-800 rounded-full text-sm font-semibold hover:bg-emerald-200">4</a>
+                <a href="#option5" class="px-3 py-1 bg-emerald-100 text-emerald-800 rounded-full text-sm font-semibold hover:bg-emerald-200">5</a>
+                <a href="#option6" class="px-3 py-1 bg-teal-100 text-teal-800 rounded-full text-sm font-semibold hover:bg-teal-200">6</a>
+                <a href="#option7" class="px-3 py-1 bg-teal-100 text-teal-800 rounded-full text-sm font-semibold hover:bg-teal-200">7</a>
+                <a href="#option8" class="px-3 py-1 bg-teal-100 text-teal-800 rounded-full text-sm font-semibold hover:bg-teal-200">8</a>
+                <a href="#option9" class="px-3 py-1 bg-teal-100 text-teal-800 rounded-full text-sm font-semibold hover:bg-teal-200">9</a>
+                <a href="#option10" class="px-3 py-1 bg-teal-100 text-teal-800 rounded-full text-sm font-semibold hover:bg-teal-200">10</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ==================== OPTION 1: Magazine Featured Layout ==================== -->
+<div id="option1" class="option-divider" data-option="Option 1: Magazine Featured Layout"></div>
+
+<div class="bg-slate-50">
+    <!-- Hero -->
+    <div class="relative pt-20 pb-16 bg-white overflow-hidden">
+        <div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(#14b8a6 1px, transparent 1px); background-size: 20px 20px;"></div>
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-80 h-80 bg-teal-100 rounded-full blur-3xl opacity-60"></div>
+        <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 bg-lime-100 rounded-full blur-3xl opacity-60"></div>
+        
+        <div class="max-w-6xl mx-auto px-4 relative z-10">
+            <div class="text-center mb-12">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-emerald-200 text-emerald-900 text-xs font-semibold mb-4">
+                    <span class="w-2 h-2 rounded-full bg-lime-400"></span>
+                    Engineering Insights
+                </div>
+                <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight mb-4">
+                    The Launch to Lead <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-900 to-teal-500">Blog</span>
+                </h1>
+                <p class="max-w-2xl mx-auto text-lg text-slate-600">
+                    Career strategies, AI insights, and engineering wisdom to accelerate your professional growth.
+                </p>
+            </div>
+
+            <!-- Featured Post - Large -->
+            <div class="bg-white rounded-2xl overflow-hidden border-2 border-emerald-200 shadow-xl mb-8">
+                <div class="grid md:grid-cols-2">
+                    <div class="bg-gradient-to-br from-emerald-600 to-teal-600 p-8 flex items-center justify-center min-h-[300px]">
+                        <div class="text-center text-white">
+                            <i data-lucide="brain-circuit" class="w-24 h-24 mx-auto mb-4 opacity-80"></i>
+                            <span class="text-sm font-semibold opacity-75">Featured Article</span>
+                        </div>
+                    </div>
+                    <div class="p-8 flex flex-col justify-center">
+                        <div class="flex gap-2 mb-4">
+                            <span class="px-3 py-1 bg-emerald-100 text-emerald-800 rounded-full text-xs font-semibold">AI & Engineering</span>
+                            <span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-full text-xs font-semibold">10 min read</span>
+                        </div>
+                        <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-4">
+                            The AI Bubble vs Dot Com: Why Your Skills Won't Become Obsolete
+                        </h2>
+                        <p class="text-slate-600 mb-6">
+                            History repeats itself. The internet didn't disappear after 2000, and AI won't disappear either. Here's why you should start learning AI now, not later.
+                        </p>
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center">
+                                <span class="text-emerald-800 font-bold text-sm">MM</span>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-slate-900 text-sm">Mansour Manci</p>
+                                <p class="text-slate-500 text-xs">Nov 25, 2025</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Posts Grid -->
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-white rounded-xl p-6 border border-slate-200 hover:border-emerald-300 hover:shadow-lg transition">
+                    <div class="w-full h-32 bg-gradient-to-br from-amber-100 to-amber-200 rounded-lg mb-4 flex items-center justify-center">
+                        <i data-lucide="git-branch" class="w-12 h-12 text-amber-600"></i>
+                    </div>
+                    <span class="px-2 py-1 bg-amber-100 text-amber-800 rounded text-xs font-semibold">Career Pivot</span>
+                    <h3 class="text-lg font-bold text-slate-900 mt-3 mb-2">From Mechanical to Software: My 4-Step Framework</h3>
+                    <p class="text-slate-600 text-sm mb-4">The exact process I used to transition disciplines at a Fortune 100 company.</p>
+                    <p class="text-slate-400 text-xs">Nov 20, 2025 • 8 min read</p>
+                </div>
+
+                <div class="bg-white rounded-xl p-6 border border-slate-200 hover:border-emerald-300 hover:shadow-lg transition">
+                    <div class="w-full h-32 bg-gradient-to-br from-blue-100 to-blue-200 rounded-lg mb-4 flex items-center justify-center">
+                        <i data-lucide="briefcase" class="w-12 h-12 text-blue-600"></i>
+                    </div>
+                    <span class="px-2 py-1 bg-blue-100 text-blue-800 rounded text-xs font-semibold">Job Search</span>
+                    <h3 class="text-lg font-bold text-slate-900 mt-3 mb-2">5 Resume Mistakes That Cost Engineers Interviews</h3>
+                    <p class="text-slate-600 text-sm mb-4">Common pitfalls I see reviewing engineering resumes—and how to fix them.</p>
+                    <p class="text-slate-400 text-xs">Nov 15, 2025 • 6 min read</p>
+                </div>
+
+                <div class="bg-white rounded-xl p-6 border border-slate-200 hover:border-emerald-300 hover:shadow-lg transition">
+                    <div class="w-full h-32 bg-gradient-to-br from-purple-100 to-purple-200 rounded-lg mb-4 flex items-center justify-center">
+                        <i data-lucide="trending-up" class="w-12 h-12 text-purple-600"></i>
+                    </div>
+                    <span class="px-2 py-1 bg-purple-100 text-purple-800 rounded text-xs font-semibold">Leadership</span>
+                    <h3 class="text-lg font-bold text-slate-900 mt-3 mb-2">How I Earned 4 Promotions in 7 Years</h3>
+                    <p class="text-slate-600 text-sm mb-4">The visibility strategies that accelerated my career at John Deere.</p>
+                    <p class="text-slate-400 text-xs">Nov 10, 2025 • 12 min read</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- ==================== OPTION 2: Clean Minimal Cards ==================== -->
+<div id="option2" class="option-divider" data-option="Option 2: Clean Minimal Cards"></div>
+
+<div class="bg-white">
+    <!-- Hero -->
+    <div class="pt-20 pb-12 border-b border-slate-200">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h1 class="text-5xl font-extrabold text-slate-900 tracking-tight mb-4">Blog</h1>
+            <p class="text-xl text-slate-500 font-light">Insights on engineering careers, AI, and professional growth.</p>
+        </div>
+    </div>
+
+    <!-- Category Filter -->
+    <div class="border-b border-slate-200 bg-slate-50">
+        <div class="max-w-4xl mx-auto px-4 py-4">
+            <div class="flex gap-2 justify-center flex-wrap">
+                <button class="px-4 py-2 bg-emerald-900 text-white rounded-full text-sm font-semibold">All Posts</button>
+                <button class="px-4 py-2 bg-white text-slate-600 rounded-full text-sm font-semibold border border-slate-200 hover:border-emerald-300">AI & Tech</button>
+                <button class="px-4 py-2 bg-white text-slate-600 rounded-full text-sm font-semibold border border-slate-200 hover:border-emerald-300">Career Pivot</button>
+                <button class="px-4 py-2 bg-white text-slate-600 rounded-full text-sm font-semibold border border-slate-200 hover:border-emerald-300">Job Search</button>
+                <button class="px-4 py-2 bg-white text-slate-600 rounded-full text-sm font-semibold border border-slate-200 hover:border-emerald-300">Leadership</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Posts List -->
+    <div class="max-w-4xl mx-auto px-4 py-12">
+        <div class="space-y-8">
+            <!-- Post 1 -->
+            <article class="group cursor-pointer">
+                <div class="flex gap-6 items-start">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="text-emerald-600 font-semibold text-sm">AI & Tech</span>
+                            <span class="text-slate-300">•</span>
+                            <span class="text-slate-400 text-sm">Nov 25, 2025</span>
+                        </div>
+                        <h2 class="text-2xl font-bold text-slate-900 group-hover:text-emerald-700 transition mb-2">
+                            The AI Bubble vs Dot Com: Why Your Skills Won't Become Obsolete
+                        </h2>
+                        <p class="text-slate-600 mb-3">
+                            History repeats itself. The internet didn't disappear after 2000, and AI won't disappear either. Here's why you should start learning now.
+                        </p>
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 rounded-full bg-emerald-100 flex items-center justify-center">
+                                <span class="text-emerald-800 font-bold text-xs">MM</span>
+                            </div>
+                            <span class="text-slate-500 text-sm">Mansour Manci</span>
+                            <span class="text-slate-300">•</span>
+                            <span class="text-slate-400 text-sm">10 min read</span>
+                        </div>
+                    </div>
+                    <div class="w-48 h-32 bg-gradient-to-br from-emerald-100 to-teal-200 rounded-xl flex-shrink-0 hidden md:flex items-center justify-center">
+                        <i data-lucide="brain-circuit" class="w-12 h-12 text-emerald-600"></i>
+                    </div>
+                </div>
+            </article>
+
+            <div class="border-t border-slate-100"></div>
+
+            <!-- Post 2 -->
+            <article class="group cursor-pointer">
+                <div class="flex gap-6 items-start">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="text-amber-600 font-semibold text-sm">Career Pivot</span>
+                            <span class="text-slate-300">•</span>
+                            <span class="text-slate-400 text-sm">Nov 20, 2025</span>
+                        </div>
+                        <h2 class="text-2xl font-bold text-slate-900 group-hover:text-emerald-700 transition mb-2">
+                            From Mechanical to Software: My 4-Step Framework
+                        </h2>
+                        <p class="text-slate-600 mb-3">
+                            The exact process I used to transition disciplines at a Fortune 100 company without going back to school.
+                        </p>
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 rounded-full bg-emerald-100 flex items-center justify-center">
+                                <span class="text-emerald-800 font-bold text-xs">MM</span>
+                            </div>
+                            <span class="text-slate-500 text-sm">Mansour Manci</span>
+                            <span class="text-slate-300">•</span>
+                            <span class="text-slate-400 text-sm">8 min read</span>
+                        </div>
+                    </div>
+                    <div class="w-48 h-32 bg-gradient-to-br from-amber-100 to-amber-200 rounded-xl flex-shrink-0 hidden md:flex items-center justify-center">
+                        <i data-lucide="git-branch" class="w-12 h-12 text-amber-600"></i>
+                    </div>
+                </div>
+            </article>
+
+            <div class="border-t border-slate-100"></div>
+
+            <!-- Post 3 -->
+            <article class="group cursor-pointer">
+                <div class="flex gap-6 items-start">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="text-blue-600 font-semibold text-sm">Job Search</span>
+                            <span class="text-slate-300">•</span>
+                            <span class="text-slate-400 text-sm">Nov 15, 2025</span>
+                        </div>
+                        <h2 class="text-2xl font-bold text-slate-900 group-hover:text-emerald-700 transition mb-2">
+                            5 Resume Mistakes That Cost Engineers Interviews
+                        </h2>
+                        <p class="text-slate-600 mb-3">
+                            Common pitfalls I see reviewing engineering resumes—and the simple fixes that get callbacks.
+                        </p>
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 rounded-full bg-emerald-100 flex items-center justify-center">
+                                <span class="text-emerald-800 font-bold text-xs">MM</span>
+                            </div>
+                            <span class="text-slate-500 text-sm">Mansour Manci</span>
+                            <span class="text-slate-300">•</span>
+                            <span class="text-slate-400 text-sm">6 min read</span>
+                        </div>
+                    </div>
+                    <div class="w-48 h-32 bg-gradient-to-br from-blue-100 to-blue-200 rounded-xl flex-shrink-0 hidden md:flex items-center justify-center">
+                        <i data-lucide="file-text" class="w-12 h-12 text-blue-600"></i>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <!-- Load More -->
+        <div class="text-center mt-12">
+            <button class="px-8 py-3 bg-emerald-900 text-white font-bold rounded-full hover:bg-emerald-800 transition">
+                Load More Articles
+            </button>
+        </div>
+    </div>
+</div>
+
+
+<!-- ==================== OPTION 3: Card Grid with Sidebar ==================== -->
+<div id="option3" class="option-divider" data-option="Option 3: Card Grid with Sidebar"></div>
+
+<div class="bg-slate-50">
+    <!-- Hero -->
+    <div class="relative pt-20 pb-12 bg-gradient-to-br from-emerald-900 to-teal-800 overflow-hidden">
+        <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(white 1px, transparent 1px); background-size: 30px 30px;"></div>
+        <div class="max-w-6xl mx-auto px-4 relative z-10">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-white tracking-tight mb-4">
+                Insights & Resources
+            </h1>
+            <p class="text-xl text-emerald-100 max-w-2xl">
+                Practical advice for engineers navigating career transitions, embracing AI, and climbing to leadership.
+            </p>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="max-w-6xl mx-auto px-4 py-12">
+        <div class="grid lg:grid-cols-[1fr_300px] gap-8">
+            <!-- Posts Grid -->
+            <div>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <!-- Post Card 1 -->
+                    <article class="bg-white rounded-2xl overflow-hidden border border-slate-200 hover:shadow-xl hover:border-emerald-300 transition group">
+                        <div class="h-48 bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center">
+                            <i data-lucide="brain-circuit" class="w-16 h-16 text-white/80"></i>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex gap-2 mb-3">
+                                <span class="px-2 py-1 bg-emerald-100 text-emerald-800 rounded text-xs font-semibold">AI & Tech</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-emerald-700 transition mb-2">
+                                The AI Bubble vs Dot Com
+                            </h3>
+                            <p class="text-slate-600 text-sm mb-4">Why your skills won't become obsolete when the bubble bursts.</p>
+                            <div class="flex items-center justify-between">
+                                <span class="text-slate-400 text-xs">Nov 25, 2025</span>
+                                <span class="text-emerald-600 text-xs font-semibold">10 min read →</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Post Card 2 -->
+                    <article class="bg-white rounded-2xl overflow-hidden border border-slate-200 hover:shadow-xl hover:border-emerald-300 transition group">
+                        <div class="h-48 bg-gradient-to-br from-amber-400 to-orange-500 flex items-center justify-center">
+                            <i data-lucide="git-branch" class="w-16 h-16 text-white/80"></i>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex gap-2 mb-3">
+                                <span class="px-2 py-1 bg-amber-100 text-amber-800 rounded text-xs font-semibold">Career Pivot</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-emerald-700 transition mb-2">
+                                From Mechanical to Software
+                            </h3>
+                            <p class="text-slate-600 text-sm mb-4">My 4-step framework for switching engineering disciplines.</p>
+                            <div class="flex items-center justify-between">
+                                <span class="text-slate-400 text-xs">Nov 20, 2025</span>
+                                <span class="text-emerald-600 text-xs font-semibold">8 min read →</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Post Card 3 -->
+                    <article class="bg-white rounded-2xl overflow-hidden border border-slate-200 hover:shadow-xl hover:border-emerald-300 transition group">
+                        <div class="h-48 bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center">
+                            <i data-lucide="file-text" class="w-16 h-16 text-white/80"></i>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex gap-2 mb-3">
+                                <span class="px-2 py-1 bg-blue-100 text-blue-800 rounded text-xs font-semibold">Job Search</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-emerald-700 transition mb-2">
+                                5 Resume Mistakes
+                            </h3>
+                            <p class="text-slate-600 text-sm mb-4">Common pitfalls that cost engineers interviews.</p>
+                            <div class="flex items-center justify-between">
+                                <span class="text-slate-400 text-xs">Nov 15, 2025</span>
+                                <span class="text-emerald-600 text-xs font-semibold">6 min read →</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Post Card 4 -->
+                    <article class="bg-white rounded-2xl overflow-hidden border border-slate-200 hover:shadow-xl hover:border-emerald-300 transition group">
+                        <div class="h-48 bg-gradient-to-br from-purple-500 to-violet-600 flex items-center justify-center">
+                            <i data-lucide="trending-up" class="w-16 h-16 text-white/80"></i>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex gap-2 mb-3">
+                                <span class="px-2 py-1 bg-purple-100 text-purple-800 rounded text-xs font-semibold">Leadership</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-emerald-700 transition mb-2">
+                                4 Promotions in 7 Years
+                            </h3>
+                            <p class="text-slate-600 text-sm mb-4">Visibility strategies that accelerated my career.</p>
+                            <div class="flex items-center justify-between">
+                                <span class="text-slate-400 text-xs">Nov 10, 2025</span>
+                                <span class="text-emerald-600 text-xs font-semibold">12 min read →</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <aside class="space-y-6">
+                <!-- About -->
+                <div class="bg-white rounded-xl p-6 border border-slate-200">
+                    <h3 class="font-bold text-slate-900 mb-4">About the Author</h3>
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-12 h-12 rounded-full bg-emerald-100 flex items-center justify-center">
+                            <span class="text-emerald-800 font-bold">MM</span>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-slate-900">Mansour Manci</p>
+                            <p class="text-sm text-slate-500">Engineering Career Coach</p>
+                        </div>
+                    </div>
+                    <p class="text-sm text-slate-600">From Mechanical Engineer to Software Leader. 4 promotions. 4 pivots. 7 years at John Deere.</p>
+                </div>
+
+                <!-- Categories -->
+                <div class="bg-white rounded-xl p-6 border border-slate-200">
+                    <h3 class="font-bold text-slate-900 mb-4">Categories</h3>
+                    <div class="space-y-2">
+                        <a href="#" class="flex justify-between items-center text-slate-600 hover:text-emerald-700">
+                            <span>AI & Tech</span>
+                            <span class="bg-slate-100 px-2 py-1 rounded text-xs">8</span>
+                        </a>
+                        <a href="#" class="flex justify-between items-center text-slate-600 hover:text-emerald-700">
+                            <span>Career Pivot</span>
+                            <span class="bg-slate-100 px-2 py-1 rounded text-xs">12</span>
+                        </a>
+                        <a href="#" class="flex justify-between items-center text-slate-600 hover:text-emerald-700">
+                            <span>Job Search</span>
+                            <span class="bg-slate-100 px-2 py-1 rounded text-xs">6</span>
+                        </a>
+                        <a href="#" class="flex justify-between items-center text-slate-600 hover:text-emerald-700">
+                            <span>Leadership</span>
+                            <span class="bg-slate-100 px-2 py-1 rounded text-xs">10</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Newsletter -->
+                <div class="bg-emerald-900 rounded-xl p-6 text-white">
+                    <h3 class="font-bold mb-2">Get Career Tips</h3>
+                    <p class="text-sm text-emerald-100 mb-4">Weekly insights delivered to your inbox.</p>
+                    <input type="email" placeholder="your@email.com" class="w-full px-4 py-2 rounded-lg text-slate-900 mb-3">
+                    <button class="w-full bg-lime-400 text-emerald-900 font-bold py-2 rounded-lg hover:bg-lime-300 transition">
+                        Subscribe
+                    </button>
+                </div>
+            </aside>
+        </div>
+    </div>
+</div>
+
+
+<!-- ==================== OPTION 4: Timeline/Journal Style ==================== -->
+<div id="option4" class="option-divider" data-option="Option 4: Timeline / Journal Style"></div>
+
+<div class="bg-white">
+    <!-- Hero -->
+    <div class="pt-20 pb-12 bg-slate-50 border-b border-slate-200">
+        <div class="max-w-3xl mx-auto px-4 text-center">
+            <div class="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                <i data-lucide="book-open" class="w-8 h-8 text-emerald-700"></i>
+            </div>
+            <h1 class="text-4xl font-extrabold text-slate-900 tracking-tight mb-4">Engineering Journal</h1>
+            <p class="text-lg text-slate-500">Thoughts, lessons, and frameworks from my engineering career journey.</p>
+        </div>
+    </div>
+
+    <!-- Timeline Posts -->
+    <div class="max-w-3xl mx-auto px-4 py-12">
+        <div class="relative">
+            <!-- Timeline Line -->
+            <div class="absolute left-8 top-0 bottom-0 w-0.5 bg-emerald-200"></div>
+
+            <!-- Year Marker -->
+            <div class="relative flex items-center mb-8">
+                <div class="w-16 h-16 rounded-full bg-emerald-900 flex items-center justify-center text-white font-bold z-10">
+                    2025
+                </div>
+            </div>
+
+            <!-- Post 1 -->
+            <article class="relative pl-24 pb-12">
+                <div class="absolute left-6 w-4 h-4 rounded-full bg-emerald-500 border-4 border-white"></div>
+                <div class="bg-slate-50 rounded-xl p-6 border border-slate-200 hover:border-emerald-300 transition cursor-pointer">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="text-slate-400 text-sm">November 25</span>
+                        <span class="px-2 py-1 bg-emerald-100 text-emerald-800 rounded text-xs font-semibold">AI & Tech</span>
+                    </div>
+                    <h2 class="text-xl font-bold text-slate-900 mb-2">The AI Bubble vs Dot Com: Why Your Skills Won't Become Obsolete</h2>
+                    <p class="text-slate-600 mb-4">History repeats itself. The internet didn't disappear after 2000, and AI won't disappear either...</p>
+                    <a href="#" class="text-emerald-600 font-semibold text-sm hover:text-emerald-700">Read full post →</a>
+                </div>
+            </article>
+
+            <!-- Post 2 -->
+            <article class="relative pl-24 pb-12">
+                <div class="absolute left-6 w-4 h-4 rounded-full bg-amber-500 border-4 border-white"></div>
+                <div class="bg-slate-50 rounded-xl p-6 border border-slate-200 hover:border-emerald-300 transition cursor-pointer">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="text-slate-400 text-sm">November 20</span>
+                        <span class="px-2 py-1 bg-amber-100 text-amber-800 rounded text-xs font-semibold">Career Pivot</span>
+                    </div>
+                    <h2 class="text-xl font-bold text-slate-900 mb-2">From Mechanical to Software: My 4-Step Framework</h2>
+                    <p class="text-slate-600 mb-4">The exact process I used to transition engineering disciplines at a Fortune 100 company...</p>
+                    <a href="#" class="text-emerald-600 font-semibold text-sm hover:text-emerald-700">Read full post →</a>
+                </div>
+            </article>
+
+            <!-- Post 3 -->
+            <article class="relative pl-24 pb-12">
+                <div class="absolute left-6 w-4 h-4 rounded-full bg-blue-500 border-4 border-white"></div>
+                <div class="bg-slate-50 rounded-xl p-6 border border-slate-200 hover:border-emerald-300 transition cursor-pointer">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="text-slate-400 text-sm">November 15</span>
+                        <span class="px-2 py-1 bg-blue-100 text-blue-800 rounded text-xs font-semibold">Job Search</span>
+                    </div>
+                    <h2 class="text-xl font-bold text-slate-900 mb-2">5 Resume Mistakes That Cost Engineers Interviews</h2>
+                    <p class="text-slate-600 mb-4">Common pitfalls I see reviewing engineering resumes—and how to fix them...</p>
+                    <a href="#" class="text-emerald-600 font-semibold text-sm hover:text-emerald-700">Read full post →</a>
+                </div>
+            </article>
+
+            <!-- Post 4 -->
+            <article class="relative pl-24 pb-12">
+                <div class="absolute left-6 w-4 h-4 rounded-full bg-purple-500 border-4 border-white"></div>
+                <div class="bg-slate-50 rounded-xl p-6 border border-slate-200 hover:border-emerald-300 transition cursor-pointer">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="text-slate-400 text-sm">November 10</span>
+                        <span class="px-2 py-1 bg-purple-100 text-purple-800 rounded text-xs font-semibold">Leadership</span>
+                    </div>
+                    <h2 class="text-xl font-bold text-slate-900 mb-2">How I Earned 4 Promotions in 7 Years</h2>
+                    <p class="text-slate-600 mb-4">The visibility strategies that accelerated my career at John Deere...</p>
+                    <a href="#" class="text-emerald-600 font-semibold text-sm hover:text-emerald-700">Read full post →</a>
+                </div>
+            </article>
+        </div>
+    </div>
+</div>
+
+
+<!-- ==================== OPTION 5: Full-Width Hero Cards ==================== -->
+<div id="option5" class="option-divider" data-option="Option 5: Full-Width Hero Cards"></div>
+
+<div class="bg-slate-50">
+    <!-- Hero -->
+    <div class="relative pt-20 pb-16 bg-white overflow-hidden">
+        <div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(#14b8a6 1px, transparent 1px); background-size: 20px 20px;"></div>
+        <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
+            <h1 class="text-5xl md:text-6xl font-extrabold text-slate-900 tracking-tight mb-4">
+                The L² <span class="text-emerald-600">Blog</span>
+            </h1>
+            <p class="text-xl text-slate-500 font-light">Engineering insights • Career frameworks • AI strategy</p>
+        </div>
+    </div>
+
+    <!-- Posts -->
+    <div class="max-w-5xl mx-auto px-4 py-12 space-y-8">
+        <!-- Featured Post - Full Width -->
+        <article class="bg-white rounded-3xl overflow-hidden shadow-xl border border-slate-200 hover:shadow-2xl transition cursor-pointer">
+            <div class="grid md:grid-cols-2">
+                <div class="bg-gradient-to-br from-emerald-600 via-teal-600 to-emerald-700 p-12 flex items-center justify-center min-h-[350px]">
+                    <div class="text-center">
+                        <i data-lucide="brain-circuit" class="w-24 h-24 text-white/80 mx-auto mb-4"></i>
+                        <span class="inline-block px-4 py-1 bg-white/20 text-white rounded-full text-sm font-semibold">Featured</span>
+                    </div>
+                </div>
+                <div class="p-12 flex flex-col justify-center">
+                    <div class="flex items-center gap-2 mb-4">
+                        <span class="px-3 py-1 bg-emerald-100 text-emerald-800 rounded-full text-sm font-semibold">AI & Tech</span>
+                        <span class="text-slate-400 text-sm">10 min read</span>
+                    </div>
+                    <h2 class="text-3xl font-bold text-slate-900 mb-4">The AI Bubble vs Dot Com: Why Your Skills Won't Become Obsolete</h2>
+                    <p class="text-slate-600 text-lg mb-6">History repeats itself. The internet didn't disappear after 2000, and AI won't disappear either. Here's why you should start learning AI now.</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-emerald-100 flex items-center justify-center">
+                            <span class="text-emerald-800 font-bold">MM</span>
+                        </div>
+                        <div>
+                            <p class="font-bold text-slate-900">Mansour Manci</p>
+                            <p class="text-slate-500 text-sm">Nov 25, 2025</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- Two Column Posts -->
+        <div class="grid md:grid-cols-2 gap-8">
+            <article class="bg-white rounded-2xl overflow-hidden shadow-lg border border-slate-200 hover:shadow-xl transition cursor-pointer group">
+                <div class="h-48 bg-gradient-to-br from-amber-400 to-orange-500 flex items-center justify-center">
+                    <i data-lucide="git-branch" class="w-16 h-16 text-white/80"></i>
+                </div>
+                <div class="p-8">
+                    <span class="px-3 py-1 bg-amber-100 text-amber-800 rounded-full text-sm font-semibold">Career Pivot</span>
+                    <h3 class="text-2xl font-bold text-slate-900 mt-4 mb-3 group-hover:text-emerald-700 transition">From Mechanical to Software: My 4-Step Framework</h3>
+                    <p class="text-slate-600 mb-4">The exact process I used to transition disciplines at a Fortune 100 company.</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-slate-400 text-sm">Nov 20, 2025</span>
+                        <span class="text-emerald-600 font-semibold">8 min →</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="bg-white rounded-2xl overflow-hidden shadow-lg border border-slate-200 hover:shadow-xl transition cursor-pointer group">
+                <div class="h-48 bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center">
+                    <i data-lucide="file-text" class="w-16 h-16 text-white/80"></i>
+                </div>
+                <div class="p-8">
+                    <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-semibold">Job Search</span>
+                    <h3 class="text-2xl font-bold text-slate-900 mt-4 mb-3 group-hover:text-emerald-700 transition">5 Resume Mistakes That Cost Engineers Interviews</h3>
+                    <p class="text-slate-600 mb-4">Common pitfalls I see reviewing engineering resumes—and how to fix them.</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-slate-400 text-sm">Nov 15, 2025</span>
+                        <span class="text-emerald-600 font-semibold">6 min →</span>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <!-- Load More -->
+        <div class="text-center pt-8">
+            <button class="px-8 py-4 bg-emerald-900 text-white font-bold rounded-full hover:bg-emerald-800 transition shadow-lg hover:shadow-xl">
+                View All Articles →
+            </button>
+        </div>
+    </div>
+</div>
+
+
+<!-- ==================== OPTION 6: Bento Grid Layout ==================== -->
+<div id="option6" class="option-divider" data-option="Option 6: Bento Grid Layout"></div>
+
+<div class="bg-white">
+    <!-- Hero -->
+    <div class="pt-20 pb-12 bg-slate-50">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex items-center gap-4 mb-6">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="w-14 h-14">
+                    <rect width="100" height="100" rx="20" fill="#064e3b"/>
+                    <text x="50" y="70" font-family="Plus Jakarta Sans, Arial, sans-serif" font-size="48" font-weight="800" fill="white" text-anchor="middle">L²</text>
+                </svg>
+                <div>
+                    <h1 class="text-4xl font-extrabold text-slate-900">Blog</h1>
+                    <p class="text-slate-500">Engineering career insights</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bento Grid -->
+    <div class="max-w-6xl mx-auto px-4 py-12">
+        <div class="grid grid-cols-4 grid-rows-3 gap-4 auto-rows-[200px]">
+            <!-- Large Featured - Spans 2x2 -->
+            <article class="col-span-2 row-span-2 bg-gradient-to-br from-emerald-600 to-teal-600 rounded-3xl p-8 flex flex-col justify-between cursor-pointer hover:scale-[1.02] transition group">
+                <div>
+                    <span class="inline-block px-3 py-1 bg-white/20 text-white rounded-full text-sm font-semibold mb-4">Featured</span>
+                    <h2 class="text-3xl font-bold text-white mb-3">The AI Bubble vs Dot Com: Why Your Skills Won't Become Obsolete</h2>
+                    <p class="text-emerald-100">History repeats itself. Learn why AI skills will survive the crash.</p>
+                </div>
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center">
+                        <span class="text-white font-bold text-sm">MM</span>
+                    </div>
+                    <div class="text-white/80 text-sm">Nov 25, 2025 • 10 min</div>
+                </div>
+            </article>
+
+            <!-- Medium Card -->
+            <article class="col-span-2 bg-amber-50 rounded-3xl p-6 cursor-pointer hover:bg-amber-100 transition border border-amber-200">
+                <span class="px-2 py-1 bg-amber-200 text-amber-800 rounded text-xs font-semibold">Career Pivot</span>
+                <h3 class="text-xl font-bold text-slate-900 mt-3 mb-2">From Mechanical to Software: My 4-Step Framework</h3>
+                <p class="text-slate-600 text-sm">The exact process I used to transition disciplines.</p>
+            </article>
+
+            <!-- Small Cards -->
+            <article class="bg-blue-50 rounded-3xl p-6 cursor-pointer hover:bg-blue-100 transition border border-blue-200">
+                <span class="px-2 py-1 bg-blue-200 text-blue-800 rounded text-xs font-semibold">Job Search</span>
+                <h3 class="text-lg font-bold text-slate-900 mt-3">5 Resume Mistakes</h3>
+            </article>
+
+            <article class="bg-purple-50 rounded-3xl p-6 cursor-pointer hover:bg-purple-100 transition border border-purple-200">
+                <span class="px-2 py-1 bg-purple-200 text-purple-800 rounded text-xs font-semibold">Leadership</span>
+                <h3 class="text-lg font-bold text-slate-900 mt-3">4 Promotions in 7 Years</h3>
+            </article>
+
+            <!-- Wide Card -->
+            <article class="col-span-2 bg-slate-900 rounded-3xl p-6 cursor-pointer hover:bg-slate-800 transition flex items-center gap-6">
+                <i data-lucide="sparkles" class="w-12 h-12 text-lime-400"></i>
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-1">How to Use ChatGPT for Technical Interviews</h3>
+                    <p class="text-slate-400 text-sm">AI tools that will help you prepare smarter.</p>
+                </div>
+            </article>
+
+            <!-- Stats Card -->
+            <article class="bg-emerald-900 rounded-3xl p-6 flex flex-col justify-center items-center text-center">
+                <div class="text-4xl font-black text-lime-400">25+</div>
+                <div class="text-emerald-100 text-sm">Articles Published</div>
+            </article>
+
+            <!-- CTA Card -->
+            <article class="bg-gradient-to-br from-teal-400 to-emerald-500 rounded-3xl p-6 flex flex-col justify-center items-center text-center cursor-pointer hover:scale-105 transition">
+                <i data-lucide="mail" class="w-8 h-8 text-white mb-2"></i>
+                <div class="text-white font-bold">Subscribe</div>
+                <div class="text-emerald-100 text-xs">Weekly tips</div>
+            </article>
+        </div>
+    </div>
+</div>
+
+
+<!-- ==================== OPTION 7: Newsletter/Substack Style ==================== -->
+<div id="option7" class="option-divider" data-option="Option 7: Newsletter / Substack Style"></div>
+
+<div class="bg-white">
+    <!-- Hero with Subscribe -->
+    <div class="pt-20 pb-16 bg-gradient-to-b from-emerald-50 to-white border-b border-slate-200">
+        <div class="max-w-2xl mx-auto px-4 text-center">
+            <div class="w-20 h-20 bg-emerald-900 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-xl">
+                <span class="text-white font-extrabold text-3xl">L²</span>
+            </div>
+            <h1 class="text-4xl font-extrabold text-slate-900 mb-3">The Engineering Edge</h1>
+            <p class="text-xl text-slate-500 mb-8">Weekly insights on AI, career pivots, and engineering leadership</p>
+            
+            <div class="flex gap-2 max-w-md mx-auto">
+                <input type="email" placeholder="your@email.com" class="flex-1 px-5 py-3 rounded-full border-2 border-slate-200 focus:border-emerald-500 focus:outline-none">
+                <button class="px-6 py-3 bg-emerald-900 text-white font-bold rounded-full hover:bg-emerald-800 transition">
+                    Subscribe
+                </button>
+            </div>
+            <p class="text-slate-400 text-sm mt-3">Join 1,200+ engineers. Free forever.</p>
+        </div>
+    </div>
+
+    <!-- Posts -->
+    <div class="max-w-2xl mx-auto px-4 py-12">
+        <div class="space-y-12">
+            <!-- Post 1 -->
+            <article class="cursor-pointer group">
+                <div class="flex items-center gap-2 text-sm text-slate-400 mb-3">
+                    <span>Nov 25, 2025</span>
+                    <span>•</span>
+                    <span class="text-emerald-600 font-semibold">AI & Tech</span>
+                </div>
+                <h2 class="text-2xl font-bold text-slate-900 group-hover:text-emerald-700 transition mb-3">
+                    The AI Bubble vs Dot Com: Why Your Skills Won't Become Obsolete
+                </h2>
+                <p class="text-slate-600 leading-relaxed mb-4">
+                    The dot com bubble peaked in March 2000. Did it burst? Yes. Did the internet vanish off the face of the earth forever? No. Is AI in a bubble right now? Probably. Is it going to burst? Probably. When it bursts is AI going to disappear off the face of the earth forever?...
+                </p>
+                <a href="#" class="text-emerald-600 font-semibold hover:text-emerald-700">Continue reading →</a>
+            </article>
+
+            <hr class="border-slate-200">
+
+            <!-- Post 2 -->
+            <article class="cursor-pointer group">
+                <div class="flex items-center gap-2 text-sm text-slate-400 mb-3">
+                    <span>Nov 20, 2025</span>
+                    <span>•</span>
+                    <span class="text-amber-600 font-semibold">Career Pivot</span>
+                </div>
+                <h2 class="text-2xl font-bold text-slate-900 group-hover:text-emerald-700 transition mb-3">
+                    From Mechanical to Software: My 4-Step Framework
+                </h2>
+                <p class="text-slate-600 leading-relaxed mb-4">
+                    When I decided to switch from Mechanical Engineering to Software at John Deere, everyone told me I'd need to go back to school. They were wrong. Here's the exact 4-step framework I used to make the transition without any formal CS degree...
+                </p>
+                <a href="#" class="text-emerald-600 font-semibold hover:text-emerald-700">Continue reading →</a>
+            </article>
+
+            <hr class="border-slate-200">
+
+            <!-- Post 3 -->
+            <article class="cursor-pointer group">
+                <div class="flex items-center gap-2 text-sm text-slate-400 mb-3">
+                    <span>Nov 15, 2025</span>
+                    <span>•</span>
+                    <span class="text-blue-600 font-semibold">Job Search</span>
+                </div>
+                <h2 class="text-2xl font-bold text-slate-900 group-hover:text-emerald-700 transition mb-3">
+                    5 Resume Mistakes That Cost Engineers Interviews
+                </h2>
+                <p class="text-slate-600 leading-relaxed mb-4">
+                    I've reviewed over 200 engineering resumes in the past year. The same mistakes keep showing up. Here are the top 5 issues that are costing you interviews—and exactly how to fix them...
+                </p>
+                <a href="#" class="text-emerald-600 font-semibold hover:text-emerald-700">Continue reading →</a>
+            </article>
+        </div>
+
+        <!-- Pagination -->
+        <div class="flex justify-center gap-2 mt-12">
+            <button class="w-10 h-10 rounded-full bg-emerald-900 text-white font-bold">1</button>
+            <button class="w-10 h-10 rounded-full bg-slate-100 text-slate-600 font-bold hover:bg-slate-200">2</button>
+            <button class="w-10 h-10 rounded-full bg-slate-100 text-slate-600 font-bold hover:bg-slate-200">3</button>
+            <button class="w-10 h-10 rounded-full bg-slate-100 text-slate-600 font-bold hover:bg-slate-200">→</button>
+        </div>
+    </div>
+</div>
+
+
+<!-- ==================== OPTION 8: Category Tabs Design ==================== -->
+<div id="option8" class="option-divider" data-option="Option 8: Category Tabs Design"></div>
+
+<div class="bg-slate-50">
+    <!-- Hero -->
+    <div class="pt-20 pb-8 bg-white border-b border-slate-200">
+        <div class="max-w-6xl mx-auto px-4">
+            <h1 class="text-4xl font-extrabold text-slate-900 mb-2">Resources & Insights</h1>
+            <p class="text-lg text-slate-500">Actionable frameworks for engineering career growth</p>
+        </div>
+    </div>
+
+    <!-- Category Tabs -->
+    <div class="bg-white border-b border-slate-200 sticky top-16 z-40">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex gap-1 overflow-x-auto py-4">
+                <button class="px-5 py-2 bg-emerald-900 text-white rounded-lg font-semibold whitespace-nowrap">All Posts</button>
+                <button class="px-5 py-2 bg-emerald-50 text-emerald-800 rounded-lg font-semibold whitespace-nowrap hover:bg-emerald-100 flex items-center gap-2">
+                    <i data-lucide="brain-circuit" class="w-4 h-4"></i> AI & Tech
+                </button>
+                <button class="px-5 py-2 bg-amber-50 text-amber-800 rounded-lg font-semibold whitespace-nowrap hover:bg-amber-100 flex items-center gap-2">
+                    <i data-lucide="git-branch" class="w-4 h-4"></i> Career Pivot
+                </button>
+                <button class="px-5 py-2 bg-blue-50 text-blue-800 rounded-lg font-semibold whitespace-nowrap hover:bg-blue-100 flex items-center gap-2">
+                    <i data-lucide="briefcase" class="w-4 h-4"></i> Job Search
+                </button>
+                <button class="px-5 py-2 bg-purple-50 text-purple-800 rounded-lg font-semibold whitespace-nowrap hover:bg-purple-100 flex items-center gap-2">
+                    <i data-lucide="trending-up" class="w-4 h-4"></i> Leadership
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Posts Grid -->
+    <div class="max-w-6xl mx-auto px-4 py-12">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Card 1 -->
+            <article class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition group cursor-pointer">
+                <div class="h-40 bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center relative">
+                    <i data-lucide="brain-circuit" class="w-16 h-16 text-white/60"></i>
+                    <div class="absolute top-4 left-4">
+                        <span class="px-2 py-1 bg-white/90 text-emerald-800 rounded text-xs font-bold">AI & Tech</span>
+                    </div>
+                </div>
+                <div class="p-5">
+                    <h3 class="font-bold text-slate-900 group-hover:text-emerald-700 transition mb-2">The AI Bubble vs Dot Com</h3>
+                    <p class="text-slate-600 text-sm mb-3">Why your skills won't become obsolete when the bubble bursts.</p>
+                    <div class="flex justify-between items-center text-xs text-slate-400">
+                        <span>Nov 25, 2025</span>
+                        <span>10 min read</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 2 -->
+            <article class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition group cursor-pointer">
+                <div class="h-40 bg-gradient-to-br from-amber-400 to-orange-500 flex items-center justify-center relative">
+                    <i data-lucide="git-branch" class="w-16 h-16 text-white/60"></i>
+                    <div class="absolute top-4 left-4">
+                        <span class="px-2 py-1 bg-white/90 text-amber-800 rounded text-xs font-bold">Career Pivot</span>
+                    </div>
+                </div>
+                <div class="p-5">
+                    <h3 class="font-bold text-slate-900 group-hover:text-emerald-700 transition mb-2">From Mechanical to Software</h3>
+                    <p class="text-slate-600 text-sm mb-3">My 4-step framework for switching disciplines.</p>
+                    <div class="flex justify-between items-center text-xs text-slate-400">
+                        <span>Nov 20, 2025</span>
+                        <span>8 min read</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 3 -->
+            <article class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition group cursor-pointer">
+                <div class="h-40 bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center relative">
+                    <i data-lucide="file-text" class="w-16 h-16 text-white/60"></i>
+                    <div class="absolute top-4 left-4">
+                        <span class="px-2 py-1 bg-white/90 text-blue-800 rounded text-xs font-bold">Job Search</span>
+                    </div>
+                </div>
+                <div class="p-5">
+                    <h3 class="font-bold text-slate-900 group-hover:text-emerald-700 transition mb-2">5 Resume Mistakes</h3>
+                    <p class="text-slate-600 text-sm mb-3">Common pitfalls that cost engineers interviews.</p>
+                    <div class="flex justify-between items-center text-xs text-slate-400">
+                        <span>Nov 15, 2025</span>
+                        <span>6 min read</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 4 -->
+            <article class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition group cursor-pointer">
+                <div class="h-40 bg-gradient-to-br from-purple-500 to-violet-600 flex items-center justify-center relative">
+                    <i data-lucide="trending-up" class="w-16 h-16 text-white/60"></i>
+                    <div class="absolute top-4 left-4">
+                        <span class="px-2 py-1 bg-white/90 text-purple-800 rounded text-xs font-bold">Leadership</span>
+                    </div>
+                </div>
+                <div class="p-5">
+                    <h3 class="font-bold text-slate-900 group-hover:text-emerald-700 transition mb-2">4 Promotions in 7 Years</h3>
+                    <p class="text-slate-600 text-sm mb-3">Visibility strategies that accelerated my career.</p>
+                    <div class="flex justify-between items-center text-xs text-slate-400">
+                        <span>Nov 10, 2025</span>
+                        <span>12 min read</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 5 -->
+            <article class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition group cursor-pointer">
+                <div class="h-40 bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center relative">
+                    <i data-lucide="message-square" class="w-16 h-16 text-white/60"></i>
+                    <div class="absolute top-4 left-4">
+                        <span class="px-2 py-1 bg-white/90 text-emerald-800 rounded text-xs font-bold">AI & Tech</span>
+                    </div>
+                </div>
+                <div class="p-5">
+                    <h3 class="font-bold text-slate-900 group-hover:text-emerald-700 transition mb-2">ChatGPT for Interview Prep</h3>
+                    <p class="text-slate-600 text-sm mb-3">How to use AI to prepare smarter, not harder.</p>
+                    <div class="flex justify-between items-center text-xs text-slate-400">
+                        <span>Nov 5, 2025</span>
+                        <span>7 min read</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 6 -->
+            <article class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition group cursor-pointer">
+                <div class="h-40 bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center relative">
+                    <i data-lucide="users" class="w-16 h-16 text-white/60"></i>
+                    <div class="absolute top-4 left-4">
+                        <span class="px-2 py-1 bg-white/90 text-blue-800 rounded text-xs font-bold">Job Search</span>
+                    </div>
+                </div>
+                <div class="p-5">
+                    <h3 class="font-bold text-slate-900 group-hover:text-emerald-700 transition mb-2">Networking for Introverts</h3>
+                    <p class="text-slate-600 text-sm mb-3">Building connections without the awkwardness.</p>
+                    <div class="flex justify-between items-center text-xs text-slate-400">
+                        <span>Nov 1, 2025</span>
+                        <span>5 min read</span>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+</div>
+
+
+<!-- ==================== OPTION 9: Dark Theme Modern ==================== -->
+<div id="option9" class="option-divider" data-option="Option 9: Dark Theme Modern"></div>
+
+<div class="bg-slate-900">
+    <!-- Hero -->
+    <div class="pt-20 pb-16 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(#14b8a6 1px, transparent 1px); background-size: 30px 30px;"></div>
+        <div class="absolute top-0 right-0 w-96 h-96 bg-emerald-500 rounded-full blur-3xl opacity-10"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-teal-500 rounded-full blur-3xl opacity-10"></div>
+        
+        <div class="max-w-6xl mx-auto px-4 relative z-10">
+            <div class="flex items-center gap-4 mb-6">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="w-14 h-14">
+                    <rect width="100" height="100" rx="20" fill="#10b981"/>
+                    <text x="50" y="70" font-family="Plus Jakarta Sans, Arial, sans-serif" font-size="48" font-weight="800" fill="#064e3b" text-anchor="middle">L²</text>
+                </svg>
+                <div>
+                    <h1 class="text-4xl font-extrabold text-white">The Engineering Edge</h1>
+                    <p class="text-slate-400">Career insights • AI strategy • Leadership frameworks</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Featured -->
+    <div class="max-w-6xl mx-auto px-4 pb-12">
+        <article class="bg-gradient-to-r from-emerald-900/50 to-teal-900/50 rounded-3xl p-8 md:p-12 border border-emerald-500/30 cursor-pointer hover:border-emerald-400/50 transition">
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <span class="inline-block px-3 py-1 bg-emerald-500/20 text-emerald-400 rounded-full text-sm font-semibold mb-4">Featured Post</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">The AI Bubble vs Dot Com: Why Your Skills Won't Become Obsolete</h2>
+                    <p class="text-slate-300 text-lg mb-6">History repeats itself. The internet didn't disappear after 2000, and AI won't disappear either.</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center">
+                            <span class="text-emerald-400 font-bold">MM</span>
+                        </div>
+                        <div>
+                            <p class="text-white font-semibold">Mansour Manci</p>
+                            <p class="text-slate-400 text-sm">Nov 25, 2025 • 10 min read</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex justify-center">
+                    <div class="w-64 h-64 rounded-3xl bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center">
+                        <i data-lucide="brain-circuit" class="w-24 h-24 text-white/80"></i>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </div>
+
+    <!-- Posts Grid -->
+    <div class="max-w-6xl mx-auto px-4 pb-16">
+        <h3 class="text-xl font-bold text-white mb-6">Recent Posts</h3>
+        <div class="grid md:grid-cols-3 gap-6">
+            <!-- Card 1 -->
+            <article class="bg-slate-800/50 rounded-2xl p-6 border border-slate-700 hover:border-emerald-500/50 transition cursor-pointer group">
+                <div class="w-12 h-12 rounded-xl bg-amber-500/20 flex items-center justify-center mb-4">
+                    <i data-lucide="git-branch" class="w-6 h-6 text-amber-400"></i>
+                </div>
+                <span class="text-amber-400 text-sm font-semibold">Career Pivot</span>
+                <h4 class="text-xl font-bold text-white mt-2 mb-2 group-hover:text-emerald-400 transition">From Mechanical to Software</h4>
+                <p class="text-slate-400 text-sm mb-4">My 4-step framework for switching disciplines.</p>
+                <div class="text-slate-500 text-xs">Nov 20, 2025 • 8 min</div>
+            </article>
+
+            <!-- Card 2 -->
+            <article class="bg-slate-800/50 rounded-2xl p-6 border border-slate-700 hover:border-emerald-500/50 transition cursor-pointer group">
+                <div class="w-12 h-12 rounded-xl bg-blue-500/20 flex items-center justify-center mb-4">
+                    <i data-lucide="file-text" class="w-6 h-6 text-blue-400"></i>
+                </div>
+                <span class="text-blue-400 text-sm font-semibold">Job Search</span>
+                <h4 class="text-xl font-bold text-white mt-2 mb-2 group-hover:text-emerald-400 transition">5 Resume Mistakes</h4>
+                <p class="text-slate-400 text-sm mb-4">Common pitfalls that cost engineers interviews.</p>
+                <div class="text-slate-500 text-xs">Nov 15, 2025 • 6 min</div>
+            </article>
+
+            <!-- Card 3 -->
+            <article class="bg-slate-800/50 rounded-2xl p-6 border border-slate-700 hover:border-emerald-500/50 transition cursor-pointer group">
+                <div class="w-12 h-12 rounded-xl bg-purple-500/20 flex items-center justify-center mb-4">
+                    <i data-lucide="trending-up" class="w-6 h-6 text-purple-400"></i>
+                </div>
+                <span class="text-purple-400 text-sm font-semibold">Leadership</span>
+                <h4 class="text-xl font-bold text-white mt-2 mb-2 group-hover:text-emerald-400 transition">4 Promotions in 7 Years</h4>
+                <p class="text-slate-400 text-sm mb-4">Visibility strategies that accelerated my career.</p>
+                <div class="text-slate-500 text-xs">Nov 10, 2025 • 12 min</div>
+            </article>
+        </div>
+    </div>
+
+    <!-- Newsletter -->
+    <div class="max-w-6xl mx-auto px-4 pb-16">
+        <div class="bg-gradient-to-r from-emerald-600 to-teal-600 rounded-3xl p-8 md:p-12 text-center">
+            <h3 class="text-3xl font-bold text-white mb-3">Get Career Tips Weekly</h3>
+            <p class="text-emerald-100 mb-6 max-w-xl mx-auto">Join 1,200+ engineers getting actionable insights every Tuesday.</p>
+            <div class="flex gap-3 max-w-md mx-auto">
+                <input type="email" placeholder="your@email.com" class="flex-1 px-5 py-3 rounded-full text-slate-900">
+                <button class="px-6 py-3 bg-emerald-900 text-white font-bold rounded-full hover:bg-emerald-800 transition">
+                    Subscribe
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- ==================== OPTION 10: Compact Professional ==================== -->
+<div id="option10" class="option-divider" data-option="Option 10: Compact Professional"></div>
+
+<div class="bg-white">
+    <!-- Hero -->
+    <div class="pt-20 pb-8 border-b border-slate-200">
+        <div class="max-w-5xl mx-auto px-4 flex items-center justify-between">
+            <div class="flex items-center gap-4">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="w-12 h-12">
+                    <rect width="100" height="100" rx="20" fill="#064e3b"/>
+                    <text x="50" y="70" font-family="Plus Jakarta Sans, Arial, sans-serif" font-size="48" font-weight="800" fill="white" text-anchor="middle">L²</text>
+                </svg>
+                <div>
+                    <h1 class="text-2xl font-extrabold text-slate-900">Blog</h1>
+                    <p class="text-slate-500 text-sm">Engineering Career Insights</p>
+                </div>
+            </div>
+            <div class="hidden md:flex gap-4">
+                <a href="#" class="text-slate-600 hover:text-emerald-700 font-semibold text-sm">AI & Tech</a>
+                <a href="#" class="text-slate-600 hover:text-emerald-700 font-semibold text-sm">Career Pivot</a>
+                <a href="#" class="text-slate-600 hover:text-emerald-700 font-semibold text-sm">Job Search</a>
+                <a href="#" class="text-slate-600 hover:text-emerald-700 font-semibold text-sm">Leadership</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Posts Table -->
+    <div class="max-w-5xl mx-auto px-4 py-8">
+        <table class="w-full">
+            <thead>
+                <tr class="border-b border-slate-200 text-left">
+                    <th class="py-3 text-slate-400 font-semibold text-sm">Date</th>
+                    <th class="py-3 text-slate-400 font-semibold text-sm">Title</th>
+                    <th class="py-3 text-slate-400 font-semibold text-sm hidden md:table-cell">Category</th>
+                    <th class="py-3 text-slate-400 font-semibold text-sm hidden md:table-cell text-right">Read Time</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="border-b border-slate-100 hover:bg-slate-50 cursor-pointer group">
+                    <td class="py-4 text-slate-500 text-sm whitespace-nowrap">Nov 25</td>
+                    <td class="py-4">
+                        <span class="font-semibold text-slate-900 group-hover:text-emerald-700 transition">The AI Bubble vs Dot Com: Why Your Skills Won't Become Obsolete</span>
+                    </td>
+                    <td class="py-4 hidden md:table-cell">
+                        <span class="px-2 py-1 bg-emerald-100 text-emerald-800 rounded text-xs font-semibold">AI & Tech</span>
+                    </td>
+                    <td class="py-4 text-slate-500 text-sm text-right hidden md:table-cell">10 min</td>
+                </tr>
+                <tr class="border-b border-slate-100 hover:bg-slate-50 cursor-pointer group">
+                    <td class="py-4 text-slate-500 text-sm whitespace-nowrap">Nov 20</td>
+                    <td class="py-4">
+                        <span class="font-semibold text-slate-900 group-hover:text-emerald-700 transition">From Mechanical to Software: My 4-Step Framework</span>
+                    </td>
+                    <td class="py-4 hidden md:table-cell">
+                        <span class="px-2 py-1 bg-amber-100 text-amber-800 rounded text-xs font-semibold">Career Pivot</span>
+                    </td>
+                    <td class="py-4 text-slate-500 text-sm text-right hidden md:table-cell">8 min</td>
+                </tr>
+                <tr class="border-b border-slate-100 hover:bg-slate-50 cursor-pointer group">
+                    <td class="py-4 text-slate-500 text-sm whitespace-nowrap">Nov 15</td>
+                    <td class="py-4">
+                        <span class="font-semibold text-slate-900 group-hover:text-emerald-700 transition">5 Resume Mistakes That Cost Engineers Interviews</span>
+                    </td>
+                    <td class="py-4 hidden md:table-cell">
+                        <span class="px-2 py-1 bg-blue-100 text-blue-800 rounded text-xs font-semibold">Job Search</span>
+                    </td>
+                    <td class="py-4 text-slate-500 text-sm text-right hidden md:table-cell">6 min</td>
+                </tr>
+                <tr class="border-b border-slate-100 hover:bg-slate-50 cursor-pointer group">
+                    <td class="py-4 text-slate-500 text-sm whitespace-nowrap">Nov 10</td>
+                    <td class="py-4">
+                        <span class="font-semibold text-slate-900 group-hover:text-emerald-700 transition">How I Earned 4 Promotions in 7 Years</span>
+                    </td>
+                    <td class="py-4 hidden md:table-cell">
+                        <span class="px-2 py-1 bg-purple-100 text-purple-800 rounded text-xs font-semibold">Leadership</span>
+                    </td>
+                    <td class="py-4 text-slate-500 text-sm text-right hidden md:table-cell">12 min</td>
+                </tr>
+                <tr class="border-b border-slate-100 hover:bg-slate-50 cursor-pointer group">
+                    <td class="py-4 text-slate-500 text-sm whitespace-nowrap">Nov 5</td>
+                    <td class="py-4">
+                        <span class="font-semibold text-slate-900 group-hover:text-emerald-700 transition">ChatGPT for Technical Interview Prep</span>
+                    </td>
+                    <td class="py-4 hidden md:table-cell">
+                        <span class="px-2 py-1 bg-emerald-100 text-emerald-800 rounded text-xs font-semibold">AI & Tech</span>
+                    </td>
+                    <td class="py-4 text-slate-500 text-sm text-right hidden md:table-cell">7 min</td>
+                </tr>
+                <tr class="border-b border-slate-100 hover:bg-slate-50 cursor-pointer group">
+                    <td class="py-4 text-slate-500 text-sm whitespace-nowrap">Nov 1</td>
+                    <td class="py-4">
+                        <span class="font-semibold text-slate-900 group-hover:text-emerald-700 transition">Networking for Introverted Engineers</span>
+                    </td>
+                    <td class="py-4 hidden md:table-cell">
+                        <span class="px-2 py-1 bg-blue-100 text-blue-800 rounded text-xs font-semibold">Job Search</span>
+                    </td>
+                    <td class="py-4 text-slate-500 text-sm text-right hidden md:table-cell">5 min</td>
+                </tr>
+                <tr class="border-b border-slate-100 hover:bg-slate-50 cursor-pointer group">
+                    <td class="py-4 text-slate-500 text-sm whitespace-nowrap">Oct 28</td>
+                    <td class="py-4">
+                        <span class="font-semibold text-slate-900 group-hover:text-emerald-700 transition">The Myth of "Not Ready" for Promotion</span>
+                    </td>
+                    <td class="py-4 hidden md:table-cell">
+                        <span class="px-2 py-1 bg-purple-100 text-purple-800 rounded text-xs font-semibold">Leadership</span>
+                    </td>
+                    <td class="py-4 text-slate-500 text-sm text-right hidden md:table-cell">9 min</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Pagination -->
+        <div class="flex justify-center gap-2 mt-8">
+            <button class="px-4 py-2 bg-emerald-900 text-white rounded-lg font-semibold text-sm">1</button>
+            <button class="px-4 py-2 bg-slate-100 text-slate-600 rounded-lg font-semibold text-sm hover:bg-slate-200">2</button>
+            <button class="px-4 py-2 bg-slate-100 text-slate-600 rounded-lg font-semibold text-sm hover:bg-slate-200">3</button>
+            <button class="px-4 py-2 bg-slate-100 text-slate-600 rounded-lg font-semibold text-sm hover:bg-slate-200">Next →</button>
+        </div>
+    </div>
+
+    <!-- Subscribe Banner -->
+    <div class="max-w-5xl mx-auto px-4 pb-12">
+        <div class="bg-slate-50 rounded-xl p-6 flex items-center justify-between gap-4 flex-wrap">
+            <div>
+                <h3 class="font-bold text-slate-900">Get weekly career insights</h3>
+                <p class="text-slate-500 text-sm">Join 1,200+ engineers getting tips every Tuesday.</p>
+            </div>
+            <div class="flex gap-2">
+                <input type="email" placeholder="your@email.com" class="px-4 py-2 rounded-lg border border-slate-200 text-sm">
+                <button class="px-5 py-2 bg-emerald-900 text-white font-bold rounded-lg text-sm hover:bg-emerald-800 transition">Subscribe</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Summary Section -->
+<div class="bg-emerald-900 py-16">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+        <h2 class="text-3xl font-bold text-white mb-6">Summary of All 10 Options</h2>
+        <div class="grid md:grid-cols-2 gap-4 text-left">
+            <div class="bg-white/10 rounded-xl p-4">
+                <span class="text-emerald-300 font-bold">1. Magazine Featured</span>
+                <p class="text-emerald-100 text-sm">Large hero featured post + 3-column grid</p>
+            </div>
+            <div class="bg-white/10 rounded-xl p-4">
+                <span class="text-emerald-300 font-bold">2. Clean Minimal</span>
+                <p class="text-emerald-100 text-sm">Simple list layout with category filters</p>
+            </div>
+            <div class="bg-white/10 rounded-xl p-4">
+                <span class="text-emerald-300 font-bold">3. Grid + Sidebar</span>
+                <p class="text-emerald-100 text-sm">Card grid with author bio & newsletter</p>
+            </div>
+            <div class="bg-white/10 rounded-xl p-4">
+                <span class="text-emerald-300 font-bold">4. Timeline Journal</span>
+                <p class="text-emerald-100 text-sm">Chronological journal-style with year markers</p>
+            </div>
+            <div class="bg-white/10 rounded-xl p-4">
+                <span class="text-emerald-300 font-bold">5. Full-Width Hero</span>
+                <p class="text-emerald-100 text-sm">Large featured cards with bold gradients</p>
+            </div>
+            <div class="bg-white/10 rounded-xl p-4">
+                <span class="text-emerald-300 font-bold">6. Bento Grid</span>
+                <p class="text-emerald-100 text-sm">Modern asymmetric grid layout</p>
+            </div>
+            <div class="bg-white/10 rounded-xl p-4">
+                <span class="text-emerald-300 font-bold">7. Newsletter/Substack</span>
+                <p class="text-emerald-100 text-sm">Focused on reading, subscribe-first</p>
+            </div>
+            <div class="bg-white/10 rounded-xl p-4">
+                <span class="text-emerald-300 font-bold">8. Category Tabs</span>
+                <p class="text-emerald-100 text-sm">Sticky tabs for filtering by category</p>
+            </div>
+            <div class="bg-white/10 rounded-xl p-4">
+                <span class="text-emerald-300 font-bold">9. Dark Theme</span>
+                <p class="text-emerald-100 text-sm">Modern dark mode with glowing accents</p>
+            </div>
+            <div class="bg-white/10 rounded-xl p-4">
+                <span class="text-emerald-300 font-bold">10. Compact Table</span>
+                <p class="text-emerald-100 text-sm">Professional table-style listing</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    lucide.createIcons();
+</script>
+
+</body>
+</html>
