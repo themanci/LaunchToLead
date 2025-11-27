@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedIn Export - The Checklist (1080x1350)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#064e3b', // Emerald 900
+                        secondary: '#10b981', // Emerald 500
+                        accent: '#a3e635', // Lime 400
+                        dark: '#0f172a', // Slate 900
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            background: #1e293b; 
+            margin: 0; 
+            padding: 40px; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            min-height: 100vh;
+        }
+
+        /* 
+           LinkedIn Portrait Dimensions: 1080x1350 (4:5 aspect ratio)
+        */
+        .export-container {
+            width: 1080px;
+            height: 1350px;
+            background-color: #0f172a; /* Slate 900 */
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 100px; /* Increased padding for breathing room */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="export-container">
+        <!-- Logo Mark -->
+        <div class="absolute top-12 right-12 flex items-center gap-3">
+            <div class="bg-accent text-primary w-16 h-16 rounded-xl flex items-center justify-center text-3xl font-bold shadow-lg shadow-accent/20">L²</div>
+        </div>
+        
+        <!-- Headline -->
+        <h2 class="text-7xl font-extrabold text-white mb-20 leading-tight tracking-tight">
+            Don't Replace Your Brain.<br>
+            <span class="text-accent">Supercharge It.</span>
+        </h2>
+
+        <!-- Checklist Items -->
+        <div class="space-y-16"> <!-- Increased vertical spacing -->
+            
+            <!-- Item 1 -->
+            <div class="flex gap-8 items-start">
+                <div class="w-20 h-20 rounded-full bg-accent/20 flex items-center justify-center shrink-0 mt-2 border border-accent/20">
+                    <i data-lucide="check" class="w-12 h-12 text-accent stroke-[3]"></i>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold text-5xl mb-4">Organize the Chaos</h4>
+                    <p class="text-slate-400 text-3xl leading-relaxed font-medium">Brain dump raw thoughts. Let AI sort, prioritize, and structure them.</p>
+                </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="flex gap-8 items-start">
+                <div class="w-20 h-20 rounded-full bg-accent/20 flex items-center justify-center shrink-0 mt-2 border border-accent/20">
+                    <i data-lucide="check" class="w-12 h-12 text-accent stroke-[3]"></i>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold text-5xl mb-4">Visual Brainstorming</h4>
+                    <p class="text-slate-400 text-3xl leading-relaxed font-medium">Generate design options for slides and visual aids instantly.</p>
+                </div>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="flex gap-8 items-start">
+                <div class="w-20 h-20 rounded-full bg-accent/20 flex items-center justify-center shrink-0 mt-2 border border-accent/20">
+                    <i data-lucide="check" class="w-12 h-12 text-accent stroke-[3]"></i>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold text-5xl mb-4">Technical Shortcuts</h4>
+                    <p class="text-slate-400 text-3xl leading-relaxed font-medium">Explain complex APIs without reading the 300-page manual.</p>
+                </div>
+            </div>
+
+        </div>
+        
+        <!-- Footer -->
+        <div class="absolute bottom-0 left-0 w-full px-12 pb-12 pt-12 border-t border-slate-800/50 flex justify-between items-center bg-slate-900/50 backdrop-blur-sm">
+            <span class="text-slate-500 text-3xl font-semibold tracking-wide">LaunchToLead.io</span>
+            <span class="text-accent text-3xl font-bold tracking-wide">AI as an Assistant, not the CEO.</span>
+        </div>
+    </div>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

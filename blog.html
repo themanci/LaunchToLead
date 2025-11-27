@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="scroll-smooth scroll-pt-32">
 <head>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-L8V47TR52C"></script>
@@ -62,28 +62,33 @@
         </div>
 
         <!-- Featured Post - Large -->
-        <a href="blog-post-1.html" class="block bg-white rounded-2xl overflow-hidden border-2 border-emerald-200 shadow-xl mb-8 hover:shadow-2xl hover:border-emerald-300 transition-all group">
+        <a href="blog-post-intro.html" class="block bg-white rounded-2xl overflow-hidden border-2 border-emerald-200 shadow-xl mb-8 hover:shadow-2xl hover:border-emerald-300 transition-all group">
             <div class="grid md:grid-cols-2">
-                <div class="bg-gradient-to-br from-emerald-600 to-teal-600 p-8 flex items-center justify-center min-h-[300px]">
-                    <div class="text-center text-white">
-                        <i data-lucide="file-text" class="w-24 h-24 mx-auto mb-4 opacity-80 group-hover:scale-110 transition-transform"></i>
-                        <span class="text-sm font-semibold opacity-75">Featured Article</span>
+                <div class="bg-gradient-to-br from-emerald-600 to-teal-600 p-8 flex items-center justify-center min-h-[300px] relative overflow-hidden">
+                    <!-- Background Pattern -->
+                    <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#fff 1px, transparent 1px); background-size: 20px 20px;"></div>
+                    
+                    <div class="text-center text-white relative z-10">
+                        <div class="w-32 h-32 mx-auto mb-6 rounded-full border-4 border-white/30 overflow-hidden shadow-lg group-hover:scale-105 transition-transform duration-500">
+                            <img src="pictures/mansour/professional_standing.png" alt="Mansour Manci" class="w-full h-full object-cover">
+                        </div>
+                        <span class="inline-block px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-xs font-semibold border border-white/30">Start Here</span>
                     </div>
                 </div>
                 <div class="p-8 flex flex-col justify-center">
                     <div class="flex gap-2 mb-4">
-                        <span class="px-3 py-1 bg-emerald-100 text-emerald-800 rounded-full text-xs font-semibold">Job Search</span>
-                        <span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-full text-xs font-semibold">10 min read</span>
+                        <span class="px-3 py-1 bg-emerald-100 text-emerald-800 rounded-full text-xs font-semibold">My Story</span>
+                        <span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-full text-xs font-semibold">5 min read</span>
                     </div>
                     <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-4 group-hover:text-emerald-800 transition-colors">
-                        The Resume Bullet Formula That Got Me Hired at John Deere
+                        Who Am I? How Did I Get Here? And Why You Should Hire Me?
                     </h2>
                     <p class="text-slate-600 mb-6">
-                        Transform boring task descriptions into compelling impact statements using the 4-part bullet framework. Includes before/after examples.
+                        I'm not a career coach who got lucky once. I'm an engineer who reverse-engineered the system. Here is my story—from mechanical engineer to software leader—and why I can help you do the same.
                     </p>
                     <div class="flex items-center gap-4">
-                        <div class="w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center">
-                            <span class="text-emerald-800 font-bold text-sm">MM</span>
+                        <div class="w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center overflow-hidden">
+                            <img src="pictures/mansour/professional_standing.png" alt="Mansour" class="w-full h-full object-cover">
                         </div>
                         <div>
                             <p class="font-semibold text-slate-900 text-sm">Mansour Manci</p>
@@ -110,79 +115,37 @@
 
         <!-- Recent Posts Grid -->
         <div class="grid md:grid-cols-3 gap-6">
-            <!-- Post 1: Resume Bullet Formula -->
-            <a href="blog-post-1.html" class="bg-white rounded-xl p-6 border border-slate-200 hover:border-emerald-300 hover:shadow-lg transition cursor-pointer group">
+            <!-- Coming Soon Card 1 -->
+            <div class="bg-white rounded-xl p-6 border border-slate-200 opacity-60">
                 <div class="w-full h-32 bg-gradient-to-br from-emerald-100 to-teal-200 rounded-lg mb-4 flex items-center justify-center">
-                    <i data-lucide="file-text" class="w-12 h-12 text-emerald-600"></i>
+                    <i data-lucide="file-text" class="w-12 h-12 text-emerald-400"></i>
                 </div>
-                <span class="px-2 py-1 bg-emerald-100 text-emerald-800 rounded text-xs font-semibold">Launch Method</span>
-                <h3 class="text-lg font-bold text-slate-900 mt-3 mb-2 group-hover:text-emerald-700">The Resume Bullet Formula That Got Me Hired at John Deere</h3>
-                <p class="text-slate-600 text-sm mb-4">Transform boring task descriptions into compelling impact statements using the 4-part bullet framework.</p>
-                <p class="text-slate-400 text-xs">Nov 25, 2025 • 10 min read</p>
-            </a>
+                <span class="px-2 py-1 bg-slate-100 text-slate-600 rounded text-xs font-semibold">Coming Soon</span>
+                <h3 class="text-lg font-bold text-slate-500 mt-3 mb-2">More Blog Posts Coming Soon</h3>
+                <p class="text-slate-400 text-sm mb-4">New career strategies and insights on the way.</p>
+                <p class="text-slate-400 text-xs">Coming Dec 2025</p>
+            </div>
 
-            <!-- Post 2: Trojan Horse Pivot -->
-            <a href="blog-post-2.html" class="bg-white rounded-xl p-6 border border-slate-200 hover:border-amber-300 hover:shadow-lg transition cursor-pointer group">
+            <!-- Coming Soon Card 2 -->
+            <div class="bg-white rounded-xl p-6 border border-slate-200 opacity-60">
                 <div class="w-full h-32 bg-gradient-to-br from-amber-100 to-orange-200 rounded-lg mb-4 flex items-center justify-center">
-                    <i data-lucide="git-branch" class="w-12 h-12 text-amber-600"></i>
+                    <i data-lucide="git-branch" class="w-12 h-12 text-amber-400"></i>
                 </div>
-                <span class="px-2 py-1 bg-amber-100 text-amber-800 rounded text-xs font-semibold">Pivot Method</span>
-                <h3 class="text-lg font-bold text-slate-900 mt-3 mb-2 group-hover:text-amber-700">The Trojan Horse Career Pivot: Switch Roles Without Quitting</h3>
-                <p class="text-slate-600 text-sm mb-4">Test a new career path and build proof of capability—all while keeping your current paycheck.</p>
-                <p class="text-slate-400 text-xs">Nov 25, 2025 • 12 min read</p>
-            </a>
+                <span class="px-2 py-1 bg-slate-100 text-slate-600 rounded text-xs font-semibold">Coming Soon</span>
+                <h3 class="text-lg font-bold text-slate-500 mt-3 mb-2">More Blog Posts Coming Soon</h3>
+                <p class="text-slate-400 text-sm mb-4">New career strategies and insights on the way.</p>
+                <p class="text-slate-400 text-xs">Coming Dec 2025</p>
+            </div>
 
-            <!-- Post 3: Visibility Pyramid -->
-            <a href="blog-post-3.html" class="bg-white rounded-xl p-6 border border-slate-200 hover:border-indigo-300 hover:shadow-lg transition cursor-pointer group">
+            <!-- Coming Soon Card 3 -->
+            <div class="bg-white rounded-xl p-6 border border-slate-200 opacity-60">
                 <div class="w-full h-32 bg-gradient-to-br from-indigo-100 to-purple-200 rounded-lg mb-4 flex items-center justify-center">
-                    <i data-lucide="trending-up" class="w-12 h-12 text-indigo-600"></i>
-                </div>
-                <span class="px-2 py-1 bg-indigo-100 text-indigo-800 rounded text-xs font-semibold">Accelerate Method</span>
-                <h3 class="text-lg font-bold text-slate-900 mt-3 mb-2 group-hover:text-indigo-700">Why Your Boss Doesn't Know Your Name</h3>
-                <p class="text-slate-600 text-sm mb-4">The 4-level Visibility Pyramid for building influence and creating your own promotion.</p>
-                <p class="text-slate-400 text-xs">Nov 25, 2025 • 14 min read</p>
-            </a>
-
-            <!-- Coming Soon Cards -->
-            <div class="bg-white rounded-xl p-6 border border-slate-200 opacity-60">
-                <div class="w-full h-32 bg-gradient-to-br from-slate-100 to-slate-200 rounded-lg mb-4 flex items-center justify-center">
-                    <i data-lucide="brain-circuit" class="w-12 h-12 text-slate-400"></i>
+                    <i data-lucide="trending-up" class="w-12 h-12 text-indigo-400"></i>
                 </div>
                 <span class="px-2 py-1 bg-slate-100 text-slate-600 rounded text-xs font-semibold">Coming Soon</span>
-                <h3 class="text-lg font-bold text-slate-500 mt-3 mb-2">The STAR Method Is Dead</h3>
-                <p class="text-slate-400 text-sm mb-4">A better framework for behavioral interviews that actually works.</p>
+                <h3 class="text-lg font-bold text-slate-500 mt-3 mb-2">More Blog Posts Coming Soon</h3>
+                <p class="text-slate-400 text-sm mb-4">New career strategies and insights on the way.</p>
                 <p class="text-slate-400 text-xs">Coming Dec 2025</p>
-            </div>
-
-            <div class="bg-white rounded-xl p-6 border border-slate-200 opacity-60">
-                <div class="w-full h-32 bg-gradient-to-br from-slate-100 to-slate-200 rounded-lg mb-4 flex items-center justify-center">
-                    <i data-lucide="message-square" class="w-12 h-12 text-slate-400"></i>
-                </div>
-                <span class="px-2 py-1 bg-slate-100 text-slate-600 rounded text-xs font-semibold">Coming Soon</span>
-                <h3 class="text-lg font-bold text-slate-500 mt-3 mb-2">How to Network Without Being Awkward</h3>
-                <p class="text-slate-400 text-sm mb-4">The introvert's guide to building genuine professional relationships.</p>
-                <p class="text-slate-400 text-xs">Coming Dec 2025</p>
-            </div>
-
-            <div class="bg-white rounded-xl p-6 border border-slate-200 opacity-60">
-                <div class="w-full h-32 bg-gradient-to-br from-slate-100 to-slate-200 rounded-lg mb-4 flex items-center justify-center">
-                    <i data-lucide="users" class="w-12 h-12 text-slate-400"></i>
-                </div>
-                <span class="px-2 py-1 bg-slate-100 text-slate-600 rounded text-xs font-semibold">Coming Soon</span>
-                <h3 class="text-lg font-bold text-slate-500 mt-3 mb-2">From IC to Manager: What No One Tells You</h3>
-                <p class="text-slate-400 text-sm mb-4">The mindset shifts that made my leadership transition successful.</p>
-                <p class="text-slate-400 text-xs">Coming Dec 2025</p>
-            </div>
-        </div>
-
-        <!-- Coming Soon Notice -->
-        <div class="mt-12 text-center">
-            <div class="inline-flex items-center gap-3 px-6 py-4 bg-emerald-50 border border-emerald-200 rounded-2xl">
-                <i data-lucide="rocket" class="w-6 h-6 text-emerald-600"></i>
-                <div class="text-left">
-                    <p class="font-semibold text-emerald-900">Full Blog Coming Soon!</p>
-                    <p class="text-sm text-emerald-700">Subscribe above to be notified when new articles drop.</p>
-                </div>
             </div>
         </div>
     </div>
@@ -242,85 +205,8 @@
     </div>
 </footer>
 
-<!-- Sticky Bottom Email Signup Bar (unsticks when hitting footer) -->
-<div id="signup-bar" class="fixed bottom-0 left-0 right-0 z-50 bg-emerald-900 py-3 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)] transition-all">
-    <div class="max-w-6xl mx-auto px-4">
-        <div class="flex flex-col sm:flex-row items-center justify-between gap-3">
-            <div class="flex items-center gap-3 text-white">
-                <i data-lucide="mail" class="w-5 h-5 text-lime-400"></i>
-                <span class="font-semibold">Get Weekly Career Tips</span>
-                <span class="hidden sm:inline text-emerald-200 text-sm">— Join 1,200+ engineers</span>
-            </div>
-            <script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
-            <form action="https://app.kit.com/forms/8811119/subscriptions" class="seva-form formkit-form flex gap-2 w-full sm:w-auto" method="post" data-sv-form="8811119" data-uid="8c593c193d" data-format="inline" data-version="5" data-options="{&quot;settings&quot;:{&quot;after_subscribe&quot;:{&quot;action&quot;:&quot;message&quot;,&quot;success_message&quot;:&quot;Success! Now check your email to confirm your subscription.&quot;,&quot;redirect_url&quot;:&quot;&quot;},&quot;analytics&quot;:{&quot;google&quot;:null,&quot;fathom&quot;:null,&quot;facebook&quot;:null,&quot;segment&quot;:null,&quot;pinterest&quot;:null,&quot;sparkloop&quot;:null,&quot;googletagmanager&quot;:null},&quot;modal&quot;:{&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15},&quot;powered_by&quot;:{&quot;show&quot;:true,&quot;url&quot;:&quot;https://kit.com/features/forms?utm_campaign=poweredby&amp;utm_content=form&amp;utm_medium=referral&amp;utm_source=dynamic&quot;},&quot;recaptcha&quot;:{&quot;enabled&quot;:false},&quot;return_visitor&quot;:{&quot;action&quot;:&quot;show&quot;,&quot;custom_content&quot;:&quot;&quot;},&quot;slide_in&quot;:{&quot;display_in&quot;:&quot;bottom_right&quot;,&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15},&quot;sticky_bar&quot;:{&quot;display_in&quot;:&quot;top&quot;,&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15}},&quot;version&quot;:&quot;5&quot;}">
-                <div data-element="success" class="formkit-alert formkit-alert-success w-full bg-emerald-800 text-white p-2 rounded-lg text-center mb-2" style="display: none;">Success! Now check your email to confirm your subscription.</div>
-                <ul class="formkit-alert formkit-alert-error text-red-500 text-xs absolute -top-8 left-0" data-element="errors" data-group="alert" style="display: none;"></ul>
-                <div data-element="fields" data-stacked="false" class="seva-fields formkit-fields flex gap-2 w-full sm:w-auto">
-                    <input class="formkit-input flex-1 sm:w-32 px-3 py-2 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-lime-400 text-slate-900" name="fields[first_name]" aria-label="First Name" placeholder="First Name" required type="text">
-                    <input class="formkit-input flex-1 sm:w-48 px-3 py-2 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-lime-400 text-slate-900" name="email_address" aria-label="Email Address" placeholder="Email Address" required type="email">
-                    <button data-element="submit" class="formkit-submit px-4 py-2 bg-lime-400 text-emerald-900 font-bold rounded-lg hover:bg-lime-300 transition text-sm whitespace-nowrap">
-                        <span class="">Subscribe</span>
-                        <div class="formkit-spinner" style="display: none;"><div></div><div></div><div></div></div>
-                    </button>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
-
 <script>
     lucide.createIcons();
-    
-    // Unstick signup bar when it reaches footer
-    const signupBar = document.getElementById('signup-bar');
-    const footer = document.querySelector('footer');
-    
-    function updateSignupBarPosition() {
-        const footerRect = footer.getBoundingClientRect();
-        const barHeight = signupBar.offsetHeight;
-        const windowHeight = window.innerHeight;
-        
-        // If footer is visible (its top is within the viewport)
-        if (footerRect.top < windowHeight) {
-            // Calculate how much the bar should move up
-            const overlap = windowHeight - footerRect.top;
-            signupBar.style.transform = `translateY(-${overlap}px)`;
-        } else {
-            signupBar.style.transform = 'translateY(0)';
-        }
-    }
-    
-    window.addEventListener('scroll', updateSignupBarPosition);
-    window.addEventListener('resize', updateSignupBarPosition);
-    updateSignupBarPosition();
-</script>
-
-<!-- ConvertKit Custom Success Handler -->
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const form = document.querySelector('form[data-sv-form]');
-    if (!form) return;
-
-    const successDiv = form.querySelector('[data-element="success"]');
-    const fieldsDiv = form.querySelector('[data-element="fields"]');
-    
-    // Intercept the fetch to detect success and force UI update
-    const originalFetch = window.fetch;
-    window.fetch = function() {
-        return originalFetch.apply(this, arguments)
-            .then(response => {
-                if (response.url.includes('subscriptions')) {
-                    response.clone().json().then(data => {
-                        if (data.status === 'success' && successDiv) {
-                            successDiv.style.display = 'block';
-                            if (fieldsDiv) fieldsDiv.style.display = 'none';
-                        }
-                    }).catch(e => {});
-                }
-                return response;
-            });
-    };
-  });
 </script>
 </body>
 </html>

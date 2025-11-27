@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="scroll-smooth scroll-pt-32">
 <head>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-L8V47TR52C"></script>
@@ -97,8 +97,9 @@
                     <p class="text-sm text-slate-500">Career Coach & Engineering Leader</p>
                 </div>
                 <div class="ml-auto flex gap-2">
-                    <button class="p-2 text-slate-400 hover:text-emerald-600 transition"><i data-lucide="share-2" class="w-5 h-5"></i></button>
-                    <button class="p-2 text-slate-400 hover:text-emerald-600 transition"><i data-lucide="bookmark" class="w-5 h-5"></i></button>
+                    <button onclick="shareTo('linkedin')" class="p-2 text-slate-400 hover:text-emerald-600 transition" title="Share on LinkedIn"><i data-lucide="linkedin" class="w-5 h-5"></i></button>
+                    <button onclick="shareTo('facebook')" class="p-2 text-slate-400 hover:text-emerald-600 transition" title="Share on Facebook"><i data-lucide="facebook" class="w-5 h-5"></i></button>
+                    <button onclick="shareTo('copy')" class="p-2 text-slate-400 hover:text-emerald-600 transition" title="Copy Link"><i data-lucide="link" class="w-5 h-5"></i></button>
                 </div>
             </div>
 
@@ -421,86 +422,9 @@
     </div>
 </footer>
 
-<!-- Sticky Bottom Email Signup Bar (unsticks when hitting footer) -->
-<div id="signup-bar" class="fixed bottom-0 left-0 right-0 z-50 bg-emerald-900 py-3 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)] transition-all">
-    <div class="max-w-6xl mx-auto px-4">
-        <div class="flex flex-col sm:flex-row items-center justify-between gap-3">
-            <div class="flex items-center gap-3 text-white">
-                <i data-lucide="mail" class="w-5 h-5 text-lime-400"></i>
-                <span class="font-semibold">Get Weekly Career Tips</span>
-                <span class="hidden sm:inline text-emerald-200 text-sm">— Join 1,200+ engineers</span>
-            </div>
-            <script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
-            <form action="https://app.kit.com/forms/8811119/subscriptions" class="seva-form formkit-form flex gap-2 w-full sm:w-auto" method="post" data-sv-form="8811119" data-uid="8c593c193d" data-format="inline" data-version="5" data-options="{&quot;settings&quot;:{&quot;after_subscribe&quot;:{&quot;action&quot;:&quot;message&quot;,&quot;success_message&quot;:&quot;Success! Now check your email to confirm your subscription.&quot;,&quot;redirect_url&quot;:&quot;&quot;},&quot;analytics&quot;:{&quot;google&quot;:null,&quot;fathom&quot;:null,&quot;facebook&quot;:null,&quot;segment&quot;:null,&quot;pinterest&quot;:null,&quot;sparkloop&quot;:null,&quot;googletagmanager&quot;:null},&quot;modal&quot;:{&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15},&quot;powered_by&quot;:{&quot;show&quot;:true,&quot;url&quot;:&quot;https://kit.com/features/forms?utm_campaign=poweredby&amp;utm_content=form&amp;utm_medium=referral&amp;utm_source=dynamic&quot;},&quot;recaptcha&quot;:{&quot;enabled&quot;:false},&quot;return_visitor&quot;:{&quot;action&quot;:&quot;show&quot;,&quot;custom_content&quot;:&quot;&quot;},&quot;slide_in&quot;:{&quot;display_in&quot;:&quot;bottom_right&quot;,&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15},&quot;sticky_bar&quot;:{&quot;display_in&quot;:&quot;top&quot;,&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15}},&quot;version&quot;:&quot;5&quot;}">
-                <div data-element="success" class="formkit-alert formkit-alert-success w-full bg-emerald-800 text-white p-2 rounded-lg text-center mb-2" style="display: none;">Success! Now check your email to confirm your subscription.</div>
-                <ul class="formkit-alert formkit-alert-error text-red-500 text-xs absolute -top-8 left-0" data-element="errors" data-group="alert" style="display: none;"></ul>
-                <div data-element="fields" data-stacked="false" class="seva-fields formkit-fields flex gap-2 w-full sm:w-auto">
-                    <input class="formkit-input flex-1 sm:w-32 px-3 py-2 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-lime-400 text-slate-900" name="fields[first_name]" aria-label="First Name" placeholder="First Name" required type="text">
-                    <input class="formkit-input flex-1 sm:w-48 px-3 py-2 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-lime-400 text-slate-900" name="email_address" aria-label="Email Address" placeholder="Email Address" required type="email">
-                    <button data-element="submit" class="formkit-submit px-4 py-2 bg-lime-400 text-emerald-900 font-bold rounded-lg hover:bg-lime-300 transition text-sm whitespace-nowrap">
-                        <span class="">Subscribe</span>
-                        <div class="formkit-spinner" style="display: none;"><div></div><div></div><div></div></div>
-                    </button>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
-
 <script>
     lucide.createIcons();
-    
-    // Unstick signup bar when it reaches footer
-    const signupBar = document.getElementById('signup-bar');
-    const footer = document.querySelector('footer');
-    
-    function updateSignupBarPosition() {
-        if (!signupBar || !footer) return;
-        const footerRect = footer.getBoundingClientRect();
-        const barHeight = signupBar.offsetHeight;
-        const windowHeight = window.innerHeight;
-        
-        // If footer is visible (its top is within the viewport)
-        if (footerRect.top < windowHeight) {
-            // Calculate how much the bar should move up
-            const overlap = windowHeight - footerRect.top;
-            signupBar.style.transform = `translateY(-${overlap}px)`;
-        } else {
-            signupBar.style.transform = 'translateY(0)';
-        }
-    }
-    
-    window.addEventListener('scroll', updateSignupBarPosition);
-    window.addEventListener('resize', updateSignupBarPosition);
-    updateSignupBarPosition();
 </script>
-
-<!-- ConvertKit Custom Success Handler -->
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const form = document.querySelector('form[data-sv-form]');
-    if (!form) return;
-
-    const successDiv = form.querySelector('[data-element="success"]');
-    const fieldsDiv = form.querySelector('[data-element="fields"]');
-    
-    // Intercept the fetch to detect success and force UI update
-    const originalFetch = window.fetch;
-    window.fetch = function() {
-        return originalFetch.apply(this, arguments)
-            .then(response => {
-                if (response.url.includes('subscriptions')) {
-                    response.clone().json().then(data => {
-                        if (data.status === 'success' && successDiv) {
-                            successDiv.style.display = 'block';
-                            if (fieldsDiv) fieldsDiv.style.display = 'none';
-                        }
-                    }).catch(e => {});
-                }
-                return response;
-            });
-    };
-  });
-</script>
+<script src="share.js"></script>
 </body>
 </html>
