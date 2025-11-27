@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Impact Equation Quick Start Guide | LaunchToLead</title>
+    <title>The Impact Equation Launch Guide | LaunchToLead</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="../tailwind-config.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,7 +22,7 @@
     <!-- PAGE 1: Cover & Introduction -->
     <div class="min-h-screen flex items-center justify-center p-8 bg-gradient-to-br from-emerald-900 via-teal-700 to-emerald-600">
         <div class="max-w-3xl text-center text-white">
-            <!-- Logo Badge -->
+            <!-- Logo -->
             <div class="mb-8">
                 <div class="inline-flex items-center gap-3 mb-6">
                     <div class="bg-white text-emerald-900 w-12 h-12 rounded-xl flex items-center justify-center font-bold text-lg shadow-lg">
@@ -31,18 +31,36 @@
                     <span class="text-2xl font-bold">Launch<span class="font-light text-lime-300">ToLead</span></span>
                 </div>
             </div>
-            <div class="inline-block bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full border border-white/20 mb-6">
-                <span class="text-sm font-medium tracking-wide uppercase text-lime-200">Free Career Resource</span>
+            
+            <!-- Path Badge -->
+            <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-5 py-2 rounded-full border border-white/20 mb-6">
+                <svg class="w-5 h-5 text-lime-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path>
+                </svg>
+                <span class="text-sm font-semibold tracking-wide uppercase text-lime-200">Launch Path</span>
+                <span class="text-white/50">•</span>
+                <span class="text-sm text-white/80">Free Strategy Guide</span>
             </div>
-            <h1 class="text-6xl font-bold mb-6 leading-tight">The Impact Equation<br/>Quick Start Guide</h1>
+            
+            <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">The Impact Equation<br/>Launch Guide</h1>
             <p class="text-2xl text-emerald-100 mb-8 font-light">Transform Your Resume Bullets in 30 Minutes</p>
             <div class="w-24 h-1 bg-lime-400 mx-auto mb-8"></div>
             <p class="text-lg text-emerald-50 max-w-2xl mx-auto leading-relaxed">
                 Stop writing vague responsibilities. Start showcasing measurable impact that makes hiring managers stop scrolling and start calling.
             </p>
-            <div class="mt-16 text-emerald-200">
-                <p class="text-sm uppercase tracking-wider mb-2">From the Career Coaching Framework</p>
-                <p class="text-xl font-semibold">Launch • Pivot • Accelerate</p>
+            
+            <!-- Author Section -->
+            <div class="mt-12 flex items-center justify-center gap-4">
+                <img src="../pictures/mansour/professional_standing.png" alt="Mansour Manci" class="w-32 h-32 rounded-full border-2 border-white/30 object-cover object-top">
+                <div class="text-left">
+                    <p class="text-white font-semibold">Mansour Manci</p>
+                    <p class="text-emerald-200 text-sm">Career Coach & Founder, LaunchToLead</p>
+                </div>
+            </div>
+            
+            <!-- Footer -->
+            <div class="mt-10 pt-6 border-t border-white/20">
+                <p class="text-emerald-200 text-sm">LaunchToLead.io</p>
             </div>
         </div>
     </div>
@@ -120,41 +138,57 @@
                 </div>
             </div>
 
-            <div class="grid grid-cols-1 gap-6">
-                <div class="bg-white rounded-xl p-8 border-l-4 border-blue-500 shadow-md">
-                    <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 bg-blue-500 text-white rounded-lg flex items-center justify-center text-2xl font-bold mr-4">1</div>
-                        <h3 class="text-2xl font-bold text-brand-primary">Task</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-white rounded-xl p-6 border-l-4 border-blue-500 shadow-md">
+                    <div class="flex items-center mb-3">
+                        <div class="w-10 h-10 bg-blue-500 text-white rounded-lg flex items-center justify-center text-xl font-bold mr-3">1</div>
+                        <h3 class="text-xl font-bold text-brand-primary">Task</h3>
                     </div>
-                    <p class="text-lg text-slate-700 mb-2"><strong>What you did</strong> (the action)</p>
-                    <p class="text-slate-600">Example: "Redesigned API architecture"</p>
+                    <p class="text-slate-700 mb-2"><strong>What you did</strong> (the action)</p>
+                    <div class="text-sm text-slate-500 space-y-1">
+                        <p>• "Redesigned manufacturing workflow"</p>
+                        <p>• "Automated testing process"</p>
+                        <p>• "Led safety protocol revision"</p>
+                    </div>
                 </div>
 
-                <div class="bg-white rounded-xl p-8 border-l-4 border-brand-secondary shadow-md">
-                    <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 bg-brand-secondary text-white rounded-lg flex items-center justify-center text-2xl font-bold mr-4">2</div>
-                        <h3 class="text-2xl font-bold text-brand-primary">Metric</h3>
+                <div class="bg-white rounded-xl p-6 border-l-4 border-brand-secondary shadow-md">
+                    <div class="flex items-center mb-3">
+                        <div class="w-10 h-10 bg-brand-secondary text-white rounded-lg flex items-center justify-center text-xl font-bold mr-3">2</div>
+                        <h3 class="text-xl font-bold text-brand-primary">Metric</h3>
                     </div>
-                    <p class="text-lg text-slate-700 mb-2"><strong>Quantifiable result</strong> (the number)</p>
-                    <p class="text-slate-600">Example: "Reduced response time by 60%"</p>
+                    <p class="text-slate-700 mb-2"><strong>Quantifiable result</strong> (the number)</p>
+                    <div class="text-sm text-slate-500 space-y-1">
+                        <p>• "Reduced cycle time by 35%"</p>
+                        <p>• "Cut defect rate from 8% to 2%"</p>
+                        <p>• "Saved $120K annually"</p>
+                    </div>
                 </div>
 
-                <div class="bg-white rounded-xl p-8 border-l-4 border-teal-500 shadow-md">
-                    <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 bg-teal-500 text-white rounded-lg flex items-center justify-center text-2xl font-bold mr-4">3</div>
-                        <h3 class="text-2xl font-bold text-brand-primary">How</h3>
+                <div class="bg-white rounded-xl p-6 border-l-4 border-teal-500 shadow-md">
+                    <div class="flex items-center mb-3">
+                        <div class="w-10 h-10 bg-teal-500 text-white rounded-lg flex items-center justify-center text-xl font-bold mr-3">3</div>
+                        <h3 class="text-xl font-bold text-brand-primary">How</h3>
                     </div>
-                    <p class="text-lg text-slate-700 mb-2"><strong>Your approach</strong> (the method)</p>
-                    <p class="text-slate-600">Example: "By implementing GraphQL and Redis caching"</p>
+                    <p class="text-slate-700 mb-2"><strong>Your approach</strong> (the method)</p>
+                    <div class="text-sm text-slate-500 space-y-1">
+                        <p>• "Using Lean Six Sigma principles"</p>
+                        <p>• "By implementing automated CI/CD"</p>
+                        <p>• "Through cross-functional workshops"</p>
+                    </div>
                 </div>
 
-                <div class="bg-white rounded-xl p-8 border-l-4 border-brand-accent shadow-md">
-                    <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 bg-brand-accent text-brand-primary rounded-lg flex items-center justify-center text-2xl font-bold mr-4">4</div>
-                        <h3 class="text-2xl font-bold text-brand-primary">Why</h3>
+                <div class="bg-white rounded-xl p-6 border-l-4 border-brand-accent shadow-md">
+                    <div class="flex items-center mb-3">
+                        <div class="w-10 h-10 bg-brand-accent text-brand-primary rounded-lg flex items-center justify-center text-xl font-bold mr-3">4</div>
+                        <h3 class="text-xl font-bold text-brand-primary">Why</h3>
                     </div>
-                    <p class="text-lg text-slate-700 mb-2"><strong>Business impact</strong> (the value)</p>
-                    <p class="text-slate-600">Example: "Enabling real-time features for 50K+ concurrent users"</p>
+                    <p class="text-slate-700 mb-2"><strong>Business impact</strong> (the value)</p>
+                    <div class="text-sm text-slate-500 space-y-1">
+                        <p>• "Enabling on-time delivery for 12 clients"</p>
+                        <p>• "Supporting company's ISO certification"</p>
+                        <p>• "Freeing team for higher-value projects"</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -162,7 +196,172 @@
 
     <div class="page-break"></div>
 
-    <!-- PAGE 4: Before & After Example -->
+    <!-- PAGE 4: Examples by Engineering Discipline -->
+    <div class="min-h-screen p-12 bg-white">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-10">
+                <span class="text-brand-secondary font-semibold text-sm uppercase tracking-wider">Real Examples</span>
+                <h2 class="text-4xl font-bold text-brand-primary mt-4 mb-4">Impact Bullets by Discipline</h2>
+                <p class="text-lg text-slate-600">See how the formula works across different engineering fields</p>
+            </div>
+
+            <div class="space-y-6">
+                <!-- Mechanical Engineering -->
+                <div class="bg-slate-50 rounded-xl p-6 border-2 border-slate-200">
+                    <h3 class="text-lg font-bold text-slate-800 mb-3 flex items-center gap-2">
+                        <span class="w-8 h-8 bg-blue-500 text-white rounded-lg flex items-center justify-center text-sm">⚙️</span>
+                        Mechanical Engineering
+                    </h3>
+                    <div class="bg-red-50 rounded-lg p-3 mb-3">
+                        <p class="text-red-700 text-sm"><strong>Before:</strong> "Worked on improving assembly line efficiency"</p>
+                    </div>
+                    <div class="bg-emerald-50 rounded-lg p-3">
+                        <p class="text-emerald-800 text-sm"><strong>After:</strong> "Redesigned conveyor belt alignment system using SolidWorks FEA analysis, reducing assembly line downtime by 40% and saving $85K in annual maintenance costs"</p>
+                    </div>
+                </div>
+
+                <!-- Electrical Engineering -->
+                <div class="bg-slate-50 rounded-xl p-6 border-2 border-slate-200">
+                    <h3 class="text-lg font-bold text-slate-800 mb-3 flex items-center gap-2">
+                        <span class="w-8 h-8 bg-yellow-500 text-white rounded-lg flex items-center justify-center text-sm">⚡</span>
+                        Electrical Engineering
+                    </h3>
+                    <div class="bg-red-50 rounded-lg p-3 mb-3">
+                        <p class="text-red-700 text-sm"><strong>Before:</strong> "Designed circuit boards for new products"</p>
+                    </div>
+                    <div class="bg-emerald-50 rounded-lg p-3">
+                        <p class="text-emerald-800 text-sm"><strong>After:</strong> "Designed 4-layer PCB for IoT sensor module using Altium Designer, improving signal integrity by 25% and enabling UL certification on first submission"</p>
+                    </div>
+                </div>
+
+                <!-- Civil Engineering -->
+                <div class="bg-slate-50 rounded-xl p-6 border-2 border-slate-200">
+                    <h3 class="text-lg font-bold text-slate-800 mb-3 flex items-center gap-2">
+                        <span class="w-8 h-8 bg-orange-500 text-white rounded-lg flex items-center justify-center text-sm">🏗️</span>
+                        Civil Engineering
+                    </h3>
+                    <div class="bg-red-50 rounded-lg p-3 mb-3">
+                        <p class="text-red-700 text-sm"><strong>Before:</strong> "Managed construction project timelines"</p>
+                    </div>
+                    <div class="bg-emerald-50 rounded-lg p-3">
+                        <p class="text-emerald-800 text-sm"><strong>After:</strong> "Led scheduling optimization for $2.4M bridge renovation using Primavera P6, completing project 3 weeks ahead of deadline and avoiding $45K in penalty fees"</p>
+                    </div>
+                </div>
+
+                <!-- Software Engineering -->
+                <div class="bg-slate-50 rounded-xl p-6 border-2 border-slate-200">
+                    <h3 class="text-lg font-bold text-slate-800 mb-3 flex items-center gap-2">
+                        <span class="w-8 h-8 bg-purple-500 text-white rounded-lg flex items-center justify-center text-sm">💻</span>
+                        Software Engineering
+                    </h3>
+                    <div class="bg-red-50 rounded-lg p-3 mb-3">
+                        <p class="text-red-700 text-sm"><strong>Before:</strong> "Developed features for web application"</p>
+                    </div>
+                    <div class="bg-emerald-50 rounded-lg p-3">
+                        <p class="text-emerald-800 text-sm"><strong>After:</strong> "Rebuilt checkout API using Node.js and Redis caching, reducing page load time by 60% and increasing conversion rate by 12% ($340K additional annual revenue)"</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- PAGE 5: Finding Metrics -->
+    <div class="min-h-screen p-12 bg-gradient-to-br from-slate-50 to-emerald-50">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-10">
+                <span class="text-brand-secondary font-semibold text-sm uppercase tracking-wider">Common Question</span>
+                <h2 class="text-4xl font-bold text-brand-primary mt-4 mb-4">"But I Don't Have Access to Metrics!"</h2>
+                <p class="text-lg text-slate-600">Here's how to find or estimate impact numbers</p>
+            </div>
+
+            <div class="space-y-6">
+                <div class="bg-white rounded-xl p-6 shadow-md border-2 border-emerald-200">
+                    <h3 class="text-xl font-bold text-brand-primary mb-4">5 Ways to Find Hidden Metrics</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-4">
+                            <div class="w-8 h-8 bg-emerald-500 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">1</div>
+                            <div>
+                                <p class="font-semibold text-slate-800">Ask your manager or team lead</p>
+                                <p class="text-slate-600 text-sm">"What was the business impact of [project]?" — They often have data you don't.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-8 h-8 bg-emerald-500 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">2</div>
+                            <div>
+                                <p class="font-semibold text-slate-800">Check company dashboards/reports</p>
+                                <p class="text-slate-600 text-sm">Look at quarterly reports, Jira/project stats, or internal KPI dashboards.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-8 h-8 bg-emerald-500 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">3</div>
+                            <div>
+                                <p class="font-semibold text-slate-800">Calculate time savings</p>
+                                <p class="text-slate-600 text-sm">"Saved X hours/week × Y weeks × $Z hourly rate = $Total saved"</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-8 h-8 bg-emerald-500 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">4</div>
+                            <div>
+                                <p class="font-semibold text-slate-800">Use conservative estimates with qualifiers</p>
+                                <p class="text-slate-600 text-sm">"Reduced processing time by approximately 30%" — Better than no number at all.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-8 h-8 bg-emerald-500 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">5</div>
+                            <div>
+                                <p class="font-semibold text-slate-800">Count scope and scale</p>
+                                <p class="text-slate-600 text-sm">"Served 500+ users" or "Deployed across 3 facilities" — Scale is a metric too.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-amber-50 border-2 border-amber-300 rounded-xl p-6">
+                    <h4 class="font-bold text-amber-900 mb-3">📊 Common Metrics by Category</h4>
+                    <div class="grid grid-cols-2 gap-4 text-sm">
+                        <div>
+                            <p class="font-semibold text-amber-800 mb-2">Time & Efficiency</p>
+                            <ul class="text-amber-700 space-y-1">
+                                <li>• Hours saved per week/month</li>
+                                <li>• Cycle time reduction %</li>
+                                <li>• Projects completed ahead of schedule</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-amber-800 mb-2">Quality & Reliability</p>
+                            <ul class="text-amber-700 space-y-1">
+                                <li>• Defect/error rate reduction</li>
+                                <li>• Uptime/availability %</li>
+                                <li>• Customer satisfaction scores</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-amber-800 mb-2">Cost & Revenue</p>
+                            <ul class="text-amber-700 space-y-1">
+                                <li>• Cost savings ($)</li>
+                                <li>• Revenue generated/protected</li>
+                                <li>• Budget managed</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-amber-800 mb-2">Scale & Scope</p>
+                            <ul class="text-amber-700 space-y-1">
+                                <li>• Users/customers served</li>
+                                <li>• Team size led</li>
+                                <li>• Systems/facilities impacted</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- PAGE 6: Before & After Example -->
     <div class="min-h-screen flex items-center justify-center p-12 bg-white">
         <div class="max-w-4xl w-full">
             <div class="text-center mb-12">
@@ -333,19 +532,19 @@
             </div>
 
             <div class="mb-12">
-                <a href="https://launchtolead.com/contact.html" class="inline-block bg-lime-400 hover:bg-lime-300 text-emerald-900 font-bold text-xl px-12 py-5 rounded-full transition-all duration-300 transform hover:scale-105 shadow-xl">
+                <a href="https://launchtolead.io/contact.html" class="inline-block bg-lime-400 hover:bg-lime-300 text-emerald-900 font-bold text-xl px-12 py-5 rounded-full transition-all duration-300 transform hover:scale-105 shadow-xl">
                     Book a Free Strategy Call
                 </a>
             </div>
 
             <div class="text-emerald-200 space-y-2">
                 <p class="text-lg">Questions? We're here to help.</p>
-                <p class="text-sm">www.launchtolead.com/contact</p>
+                <p class="text-sm">www.launchtolead.io/contact</p>
             </div>
 
             <div class="mt-16 pt-8 border-t border-white/20">
                 <p class="text-sm text-emerald-300">
-                    © 2024 LaunchToLead. Part of The Launch Method™ curriculum.
+                    © 2025 LaunchToLead. Part of The Launch Method™ curriculum.
                 </p>
             </div>
         </div>
