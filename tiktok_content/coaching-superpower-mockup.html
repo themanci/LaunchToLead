@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TikTok Video Mockup - Coaching is a Superpower</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: #1a1a1a;
+            min-height: 100vh;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        h1 {
+            color: white;
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 28px;
+        }
+        
+        .subtitle {
+            color: #888;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+        
+        .mockup-container {
+            display: flex;
+            gap: 40px;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: flex-start;
+        }
+        
+        .phone-frame {
+            background: #000;
+            border-radius: 40px;
+            padding: 12px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+        }
+        
+        .phone-screen {
+            width: 360px;
+            height: 640px;
+            border-radius: 30px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        /* ===== FRAME 1: HOOK ===== */
+        .frame-hook {
+            background: linear-gradient(135deg, #064e3b 0%, #065f46 50%, #047857 100%);
+            position: relative;
+        }
+        
+        .frame-hook::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(rgba(20, 184, 166, 0.3) 1px, transparent 1px);
+            background-size: 20px 20px;
+            opacity: 0.4;
+        }
+        
+        .hook-content {
+            position: relative;
+            z-index: 10;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 30px;
+            text-align: center;
+        }
+        
+        .hook-emoji {
+            font-size: 80px;
+            margin-bottom: 20px;
+        }
+        
+        .hook-text {
+            font-size: 36px;
+            font-weight: 800;
+            color: white;
+            line-height: 1.2;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+        
+        .hook-highlight {
+            background: linear-gradient(135deg, #14b8a6 0%, #a3e635 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        /* ===== FRAME 2: PROBLEM ===== */
+        .frame-problem {
+            background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
+        }
+        
+        .problem-content {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 40px 25px;
+        }
+        
+        .problem-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #ef4444;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .problem-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .problem-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background: rgba(239, 68, 68, 0.1);
+            padding: 16px 20px;
+            border-radius: 16px;
+            border: 1px solid rgba(239, 68, 68, 0.2);
+        }
+        
+        .problem-icon {
+            font-size: 28px;
+        }
+        
+        .problem-text {
+            color: white;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 1.4;
+        }
+        
+        /* ===== FRAME 3: SOLUTION ===== */
+        .frame-solution {
+            background: linear-gradient(135deg, #064e3b 0%, #065f46 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .frame-solution::before {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(163, 230, 53, 0.2) 0%, transparent 70%);
+            border-radius: 50%;
+            top: -100px;
+            right: -100px;
+        }
+        
+        .solution-content {
+            position: relative;
+            z-index: 10;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 40px 25px;
+        }
+        
+        .solution-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: #a3e635;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        
+        .solution-box {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 25px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .solution-quote {
+            font-size: 18px;
+            color: white;
+            font-weight: 600;
+            line-height: 1.5;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .solution-highlight {
+            color: #a3e635;
+            font-weight: 800;
+        }
+        
+        .comparison {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 20px;
+        }
+        
+        .comparison-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 16px;
+            border-radius: 12px;
+        }
+        
+        .comparison-row.without {
+            background: rgba(239, 68, 68, 0.2);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+        }
+        
+        .comparison-row.with {
+            background: rgba(163, 230, 53, 0.2);
+            border: 1px solid rgba(163, 230, 53, 0.3);
+        }
+        
+        .comparison-label {
+            font-size: 12px;
+            font-weight: 700;
+            color: white;
+            width: 80px;
+        }
+        
+        .comparison-text {
+            font-size: 13px;
+            color: rgba(255,255,255,0.9);
+            flex: 1;
+        }
+        
+        /* ===== FRAME 4: CTA ===== */
+        .frame-cta {
+            background: linear-gradient(135deg, #064e3b 0%, #065f46 50%, #047857 100%);
+            position: relative;
+        }
+        
+        .frame-cta::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(rgba(20, 184, 166, 0.3) 1px, transparent 1px);
+            background-size: 20px 20px;
+            opacity: 0.3;
+        }
+        
+        .cta-content {
+            position: relative;
+            z-index: 10;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 30px;
+            text-align: center;
+        }
+        
+        .cta-logo {
+            background: white;
+            color: #064e3b;
+            width: 80px;
+            height: 80px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 36px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+            margin-bottom: 20px;
+        }
+        
+        .cta-brand {
+            font-size: 28px;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 8px;
+        }
+        
+        .cta-brand-accent {
+            font-weight: 300;
+            color: #a3e635;
+        }
+        
+        .cta-tagline {
+            font-size: 16px;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 30px;
+        }
+        
+        .cta-message {
+            font-size: 22px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 25px;
+            line-height: 1.4;
+        }
+        
+        .cta-button {
+            background: linear-gradient(135deg, #14b8a6 0%, #a3e635 100%);
+            color: #064e3b;
+            font-size: 18px;
+            font-weight: 800;
+            padding: 16px 40px;
+            border-radius: 999px;
+            box-shadow: 0 8px 30px rgba(163, 230, 53, 0.3);
+            margin-bottom: 20px;
+        }
+        
+        .cta-url {
+            font-size: 20px;
+            font-weight: 700;
+            color: #a3e635;
+            letter-spacing: 0.5px;
+        }
+        
+        /* Frame labels */
+        .frame-label {
+            color: #666;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+            text-align: center;
+        }
+        
+        .frame-time {
+            color: #444;
+            font-size: 11px;
+            margin-top: 10px;
+            text-align: center;
+        }
+        
+        /* Script section */
+        .script-section {
+            max-width: 800px;
+            margin-top: 60px;
+            background: #222;
+            border-radius: 20px;
+            padding: 40px;
+        }
+        
+        .script-title {
+            color: #a3e635;
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .script-block {
+            margin-bottom: 30px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #333;
+        }
+        
+        .script-block:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .script-label {
+            color: #14b8a6;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+        
+        .script-text {
+            color: white;
+            font-size: 16px;
+            line-height: 1.7;
+        }
+        
+        .script-note {
+            color: #888;
+            font-size: 13px;
+            font-style: italic;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>TikTok Video Mockup: "Coaching is a Superpower"</h1>
+    <p class="subtitle">60-second video concept with key frames and full script</p>
+    
+    <div class="mockup-container">
+        <!-- FRAME 1: HOOK (0-5 sec) -->
+        <div>
+            <p class="frame-label">Frame 1: Hook</p>
+            <div class="phone-frame">
+                <div class="phone-screen frame-hook">
+                    <div class="hook-content">
+                        <div class="hook-emoji">🦸‍♂️</div>
+                        <div class="hook-text">
+                            Getting a coach is a <span class="hook-highlight">SUPERPOWER</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class="frame-time">0:00 - 0:05</p>
+        </div>
+        
+        <!-- FRAME 2: PROBLEM (5-20 sec) -->
+        <div>
+            <p class="frame-label">Frame 2: The Problem</p>
+            <div class="phone-frame">
+                <div class="phone-screen frame-problem">
+                    <div class="problem-content">
+                        <div class="problem-title">❌ What coaching is NOT:</div>
+                        <div class="problem-list">
+                            <div class="problem-item">
+                                <span class="problem-icon">🫘</span>
+                                <span class="problem-text">Magic beans that make everything easy</span>
+                            </div>
+                            <div class="problem-item">
+                                <span class="problem-icon">🐍</span>
+                                <span class="problem-text">Snake oil promising overnight success</span>
+                            </div>
+                            <div class="problem-item">
+                                <span class="problem-icon">🎮</span>
+                                <span class="problem-text">A cheat code that skips the work</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class="frame-time">0:05 - 0:20</p>
+        </div>
+        
+        <!-- FRAME 3: SOLUTION (20-45 sec) -->
+        <div>
+            <p class="frame-label">Frame 3: The Truth</p>
+            <div class="phone-frame">
+                <div class="phone-screen frame-solution">
+                    <div class="solution-content">
+                        <div class="solution-title">✅ What the RIGHT coach actually is:</div>
+                        <div class="solution-box">
+                            <div class="solution-quote">
+                                Someone who's <span class="solution-highlight">been where you are</span> and can tell you what <span class="solution-highlight">actually works</span>
+                            </div>
+                            <div class="comparison">
+                                <div class="comparison-row without">
+                                    <span class="comparison-label">❌ Without:</span>
+                                    <span class="comparison-text">Try → fail → learn → try again (2-3 years)</span>
+                                </div>
+                                <div class="comparison-row with">
+                                    <span class="comparison-label">✅ With:</span>
+                                    <span class="comparison-text">Try → feedback → adjust → succeed (6-12 mo)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class="frame-time">0:20 - 0:45</p>
+        </div>
+        
+        <!-- FRAME 4: CTA (45-60 sec) -->
+        <div>
+            <p class="frame-label">Frame 4: CTA</p>
+            <div class="phone-frame">
+                <div class="phone-screen frame-cta">
+                    <div class="cta-content">
+                        <div class="cta-logo">L²</div>
+                        <div class="cta-brand">Launch<span class="cta-brand-accent">to</span>Lead</div>
+                        <div class="cta-tagline">Engineering Career Coaching</div>
+                        <div class="cta-message">
+                            Coaching isn't a cheat code.<br>
+                            It's a <span class="hook-highlight">shortcut</span>.
+                        </div>
+                        <div class="cta-button">Book a Free Discovery Call</div>
+                        <div class="cta-url">LaunchToLead.io</div>
+                    </div>
+                </div>
+            </div>
+            <p class="frame-time">0:45 - 0:60</p>
+        </div>
+    </div>
+    
+    <!-- FULL SCRIPT -->
+    <div class="script-section">
+        <div class="script-title">📝 Full 60-Second Script</div>
+        
+        <div class="script-block">
+            <div class="script-label">Hook (0-5 sec)</div>
+            <div class="script-text">
+                "Getting a coach is a superpower."
+            </div>
+            <div class="script-note">Visual: Bold text animation, eye contact with camera</div>
+        </div>
+        
+        <div class="script-block">
+            <div class="script-label">The Problem (5-20 sec)</div>
+            <div class="script-text">
+                "But hear me out—I'm not talking about some magic bean or snake oil that makes everything easy. And it's definitely not a cheat code that lets you skip the work."
+            </div>
+            <div class="script-note">Visual: Dismissive hand gestures, shake head on "magic bean"</div>
+        </div>
+        
+        <div class="script-block">
+            <div class="script-label">The Truth (20-45 sec)</div>
+            <div class="script-text">
+                "The right coach—and this is key—has to be someone who's actually done what you want to do. Someone who's been where you are. They can tell you what doesn't work because they've tried it. They can tell you what DOES work because they've lived it.<br><br>
+                Without that? You're spending 2-3 years figuring it out through trial and error.<br><br>
+                With the right coach? You compress that into 6-12 months."
+            </div>
+            <div class="script-note">Visual: Lean in, emphasize "right coach", count on fingers for timeline comparison</div>
+        </div>
+        
+        <div class="script-block">
+            <div class="script-label">CTA (45-60 sec)</div>
+            <div class="script-text">
+                "Coaching isn't a cheat code. But if you get the right coach? It's absolutely a shortcut.<br><br>
+                I help engineers navigate promotions, career pivots, and leadership transitions—because I've done all three.<br><br>
+                Link in bio."
+            </div>
+            <div class="script-note">Visual: Point at camera, show branding, confident smile</div>
+        </div>
+    </div>
+</body>
+</html>

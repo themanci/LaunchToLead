@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frame 4 - CTA | Export Ready</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        
+        .frame {
+            width: 1080px;
+            height: 1920px;
+            background: linear-gradient(135deg, #064e3b 0%, #065f46 50%, #047857 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .frame::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(rgba(20, 184, 166, 0.3) 1px, transparent 1px);
+            background-size: 30px 30px;
+            opacity: 0.3;
+        }
+        
+        /* Decorative blobs */
+        .blob-1 {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(20, 184, 166, 0.25) 0%, transparent 70%);
+            border-radius: 50%;
+            top: -150px;
+            right: -150px;
+            filter: blur(60px);
+        }
+        
+        .blob-2 {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(163, 230, 53, 0.2) 0%, transparent 70%);
+            border-radius: 50%;
+            top: 500px;
+            left: -100px;
+            filter: blur(60px);
+        }
+        
+        /* Main content - pushed up */
+        .content {
+            position: absolute;
+            top: 80px;
+            left: 0;
+            right: 0;
+            bottom: 500px; /* Leave space for greenscreen */
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 60px;
+            text-align: center;
+        }
+        
+        .cta-logo {
+            background: white;
+            color: #064e3b;
+            width: 140px;
+            height: 140px;
+            border-radius: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 64px;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.4);
+            margin-bottom: 30px;
+        }
+        
+        .cta-brand {
+            font-size: 56px;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 10px;
+        }
+        
+        .cta-brand-accent {
+            font-weight: 300;
+            color: #a3e635;
+        }
+        
+        .cta-tagline {
+            font-size: 32px;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 50px;
+            font-weight: 500;
+        }
+        
+        .cta-message {
+            font-size: 48px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 50px;
+            line-height: 1.35;
+            max-width: 900px;
+        }
+        
+        .cta-highlight {
+            background: linear-gradient(135deg, #14b8a6 0%, #a3e635 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .cta-button {
+            background: linear-gradient(135deg, #14b8a6 0%, #a3e635 100%);
+            color: #064e3b;
+            font-size: 36px;
+            font-weight: 800;
+            padding: 30px 70px;
+            border-radius: 999px;
+            box-shadow: 0 15px 50px rgba(163, 230, 53, 0.35);
+            margin-bottom: 35px;
+        }
+        
+        .cta-url {
+            font-size: 44px;
+            font-weight: 700;
+            color: #a3e635;
+            letter-spacing: 1px;
+        }
+        
+        /* Bottom left area left open for greenscreen - no visual indicator */
+    </style>
+</head>
+<body>
+    <div class="frame">
+        <div class="blob-1"></div>
+        <div class="blob-2"></div>
+        
+        <!-- Main content -->
+        <div class="content">
+            <div class="cta-logo">L²</div>
+            <div class="cta-brand">Launch<span class="cta-brand-accent">to</span>Lead</div>
+            <div class="cta-tagline">Engineering Career Coaching</div>
+            <div class="cta-message">
+                Coaching isn't a cheat code.<br>
+                It's a <span class="cta-highlight">shortcut</span>.
+            </div>
+            <div class="cta-button">Book a Free Discovery Call</div>
+            <div class="cta-url">LaunchToLead.io</div>
+        </div>
+    </div>
+</body>
+</html>

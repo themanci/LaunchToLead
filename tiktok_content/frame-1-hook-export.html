@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frame 1 - Hook | Export Ready</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        
+        .frame {
+            width: 1080px;
+            height: 1920px;
+            background: linear-gradient(135deg, #064e3b 0%, #065f46 50%, #047857 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .frame::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(rgba(20, 184, 166, 0.3) 1px, transparent 1px);
+            background-size: 30px 30px;
+            opacity: 0.4;
+        }
+        
+        /* Decorative blobs */
+        .blob-1 {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(20, 184, 166, 0.25) 0%, transparent 70%);
+            border-radius: 50%;
+            top: -150px;
+            right: -150px;
+            filter: blur(60px);
+        }
+        
+        .blob-2 {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(163, 230, 53, 0.2) 0%, transparent 70%);
+            border-radius: 50%;
+            top: 400px;
+            left: -100px;
+            filter: blur(60px);
+        }
+        
+        /* Website URL at top */
+        .website-header {
+            position: absolute;
+            top: 60px;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            text-align: center;
+        }
+        
+        .website-url {
+            display: inline-flex;
+            align-items: center;
+            gap: 16px;
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(20px);
+            padding: 16px 40px;
+            border-radius: 999px;
+            border: 2px solid rgba(255,255,255,0.25);
+        }
+        
+        .website-logo {
+            background: white;
+            color: #064e3b;
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 22px;
+        }
+        
+        .website-text {
+            font-size: 32px;
+            font-weight: 700;
+            color: white;
+            letter-spacing: 0.5px;
+        }
+        
+        /* Main content - pushed up */
+        .content {
+            position: absolute;
+            top: 200px;
+            left: 0;
+            right: 0;
+            bottom: 500px; /* Leave space for greenscreen */
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 60px;
+            text-align: center;
+        }
+        
+        .hook-emoji {
+            font-size: 180px;
+            margin-bottom: 50px;
+            filter: drop-shadow(0 10px 30px rgba(0,0,0,0.3));
+        }
+        
+        .hook-text {
+            font-size: 82px;
+            font-weight: 800;
+            color: white;
+            line-height: 1.15;
+            text-shadow: 0 8px 40px rgba(0,0,0,0.4);
+            max-width: 900px;
+        }
+        
+        .hook-highlight {
+            background: linear-gradient(135deg, #14b8a6 0%, #a3e635 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        /* Bottom left area left open for greenscreen - no visual indicator */
+    </style>
+</head>
+<body>
+    <div class="frame">
+        <div class="blob-1"></div>
+        <div class="blob-2"></div>
+        
+        <!-- Website URL at top -->
+        <div class="website-header">
+            <div class="website-url">
+                <div class="website-logo">L²</div>
+                <span class="website-text">LaunchToLead.io</span>
+            </div>
+        </div>
+        
+        <!-- Main content -->
+        <div class="content">
+            <div class="hook-emoji">🦸‍♂️</div>
+            <div class="hook-text">
+                Getting a coach is a <span class="hook-highlight">SUPERPOWER</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

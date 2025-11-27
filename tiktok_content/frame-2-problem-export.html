@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frame 2 - The Problem | Export Ready</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        
+        .frame {
+            width: 1080px;
+            height: 1920px;
+            background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Subtle grid pattern */
+        .frame::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: 
+                linear-gradient(rgba(239, 68, 68, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(239, 68, 68, 0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+        
+        /* Website URL at top */
+        .website-header {
+            position: absolute;
+            top: 60px;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            text-align: center;
+        }
+        
+        .website-url {
+            display: inline-flex;
+            align-items: center;
+            gap: 16px;
+            background: rgba(255,255,255,0.08);
+            backdrop-filter: blur(20px);
+            padding: 16px 40px;
+            border-radius: 999px;
+            border: 2px solid rgba(255,255,255,0.15);
+        }
+        
+        .website-logo {
+            background: white;
+            color: #064e3b;
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 22px;
+        }
+        
+        .website-text {
+            font-size: 32px;
+            font-weight: 700;
+            color: white;
+            letter-spacing: 0.5px;
+        }
+        
+        /* Main content - pushed up */
+        .content {
+            position: absolute;
+            top: 200px;
+            left: 0;
+            right: 0;
+            bottom: 500px; /* Leave space for greenscreen */
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            padding: 60px 70px;
+            padding-top: 80px;
+        }
+        
+        .problem-title {
+            font-size: 58px;
+            font-weight: 800;
+            color: #ef4444;
+            margin-bottom: 60px;
+            text-align: center;
+            text-shadow: 0 4px 30px rgba(239, 68, 68, 0.3);
+        }
+        
+        .problem-list {
+            display: flex;
+            flex-direction: column;
+            gap: 35px;
+        }
+        
+        .problem-item {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            background: rgba(239, 68, 68, 0.08);
+            padding: 35px 45px;
+            border-radius: 30px;
+            border: 2px solid rgba(239, 68, 68, 0.2);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+        
+        .problem-icon {
+            font-size: 70px;
+            flex-shrink: 0;
+        }
+        
+        .problem-text {
+            color: white;
+            font-size: 38px;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+        
+        /* Bottom left area left open for greenscreen - no visual indicator */
+    </style>
+</head>
+<body>
+    <div class="frame">
+        <!-- Website URL at top -->
+        <div class="website-header">
+            <div class="website-url">
+                <div class="website-logo">L²</div>
+                <span class="website-text">LaunchToLead.io</span>
+            </div>
+        </div>
+        
+        <!-- Main content -->
+        <div class="content">
+            <div class="problem-title">❌ What coaching is NOT:</div>
+            <div class="problem-list">
+                <div class="problem-item">
+                    <span class="problem-icon">🫘</span>
+                    <span class="problem-text">Magic beans that make everything easy</span>
+                </div>
+                <div class="problem-item">
+                    <span class="problem-icon">🐍</span>
+                    <span class="problem-text">Snake oil promising overnight success</span>
+                </div>
+                <div class="problem-item">
+                    <span class="problem-icon">🎮</span>
+                    <span class="problem-text">A cheat code that skips the work</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
