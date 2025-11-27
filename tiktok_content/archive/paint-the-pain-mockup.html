@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paint the Pain TikTok Graphics - LaunchToLead</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#064e3b',
+                        secondary: '#14b8a6',
+                        accent: '#a3e635'
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background: #0f172a; }
+        
+        /* TikTok dimensions: 1080x1920 (9:16) - scaled for preview */
+        .tiktok-frame {
+            width: 270px;
+            height: 480px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Full size for export (actual TikTok dimensions) */
+        .tiktok-export {
+            width: 1080px;
+            height: 1920px;
+            position: relative;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body class="p-8">
+
+    <div class="max-w-7xl mx-auto">
+        <h1 class="text-2xl font-bold text-white mb-2">"Paint the Pain" Interview Strategy</h1>
+        <p class="text-slate-400 mb-2">Concept: Stop glossing over the 'Situation' in STAR method. Make the monster big so the hero looks strong.</p>
+        <p class="text-slate-500 text-sm mb-8">Content positioned for Green Screen (Face in bottom-left/center)</p>
+
+        <!-- Preview Size -->
+        <h2 class="text-lg font-semibold text-lime-400 mb-4">Preview (scaled down)</h2>
+        <div class="flex gap-6 mb-16 flex-wrap">
+            
+            <!-- Scene 1: The Mistake -->
+            <div class="text-center">
+                <p class="text-slate-400 text-xs mb-2">Scene 1: The "Weak" Story</p>
+                <div class="tiktok-frame bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl border border-slate-700">
+                    <!-- Logo -->
+                    <div class="absolute top-4 right-4 flex items-center gap-1">
+                        <div class="bg-lime-400 text-emerald-900 w-6 h-6 rounded-md flex items-center justify-center text-xs font-bold">L²</div>
+                        <span class="text-white text-xs font-semibold">Launch<span class="text-lime-400">ToLead</span></span>
+                    </div>
+                    <!-- Content -->
+                    <div class="absolute top-14 right-4 left-4">
+                        <div class="flex items-center gap-2 mb-3">
+                            <div class="w-8 h-8 rounded-full bg-red-500/20 flex items-center justify-center">
+                                <i data-lucide="x" class="w-5 h-5 text-red-400"></i>
+                            </div>
+                            <span class="text-red-400 text-xs font-bold uppercase tracking-wider">The Mistake</span>
+                        </div>
+                        <div class="bg-slate-800/80 border border-red-500/30 rounded-xl p-4 mb-2">
+                            <p class="text-slate-400 text-xs uppercase font-bold mb-1">Situation:</p>
+                            <p class="text-white text-sm leading-relaxed">"We had a bug in the code."</p>
+                        </div>
+                        <div class="bg-slate-800/80 border border-red-500/30 rounded-xl p-4">
+                            <p class="text-slate-400 text-xs uppercase font-bold mb-1">Task:</p>
+                            <p class="text-white text-sm leading-relaxed">"I needed to fix it."</p>
+                        </div>
+                        <div class="mt-4 flex items-center gap-2 text-slate-500 text-xs justify-center">
+                            <i data-lucide="thumbs-down" class="w-4 h-4"></i>
+                            <span>Boring. Low Stakes. Who cares?</span>
+                        </div>
+                    </div>
+                    <!-- Head Space Marker -->
+                    <div class="absolute bottom-0 left-0 w-32 h-32 bg-lime-400/5 border-t border-r border-lime-400/20 rounded-tr-3xl flex items-end justify-start p-3">
+                        <span class="text-lime-400/40 text-[10px] font-bold uppercase tracking-widest">Head Space</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Scene 2: The Fix -->
+            <div class="text-center">
+                <p class="text-slate-400 text-xs mb-2">Scene 2: Paint the Pain</p>
+                <div class="tiktok-frame bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl border border-slate-700">
+                    <div class="absolute top-4 right-4 flex items-center gap-1">
+                        <div class="bg-lime-400 text-emerald-900 w-6 h-6 rounded-md flex items-center justify-center text-xs font-bold">L²</div>
+                        <span class="text-white text-xs font-semibold">Launch<span class="text-lime-400">ToLead</span></span>
+                    </div>
+                    <!-- Content -->
+                    <div class="absolute top-14 right-4 left-4">
+                        <div class="flex items-center gap-2 mb-3">
+                            <div class="w-8 h-8 rounded-full bg-lime-500/20 flex items-center justify-center">
+                                <i data-lucide="check" class="w-5 h-5 text-lime-400"></i>
+                            </div>
+                            <span class="text-lime-400 text-xs font-bold uppercase tracking-wider">High Contrast Story</span>
+                        </div>
+                        <div class="bg-emerald-900/40 border border-emerald-500/30 rounded-xl p-4 shadow-lg shadow-emerald-900/20">
+                            <p class="text-emerald-400 text-xs uppercase font-bold mb-1">Situation:</p>
+                            <p class="text-white text-sm leading-relaxed font-medium">"A critical latency bug threatened a <span class="text-lime-400 font-bold">$50k contract</span> penalty just <span class="text-lime-400 font-bold">48 hours</span> before launch."</p>
+                        </div>
+                        <div class="mt-4 grid grid-cols-3 gap-2">
+                            <div class="bg-slate-800 p-2 rounded text-center">
+                                <i data-lucide="dollar-sign" class="w-4 h-4 text-red-400 mx-auto mb-1"></i>
+                                <span class="text-[10px] text-slate-300">Cost</span>
+                            </div>
+                            <div class="bg-slate-800 p-2 rounded text-center">
+                                <i data-lucide="clock" class="w-4 h-4 text-orange-400 mx-auto mb-1"></i>
+                                <span class="text-[10px] text-slate-300">Urgency</span>
+                            </div>
+                            <div class="bg-slate-800 p-2 rounded text-center">
+                                <i data-lucide="alert-triangle" class="w-4 h-4 text-yellow-400 mx-auto mb-1"></i>
+                                <span class="text-[10px] text-slate-300">Risk</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Head Space Marker -->
+                    <div class="absolute bottom-0 left-0 w-32 h-32 bg-lime-400/5 border-t border-r border-lime-400/20 rounded-tr-3xl flex items-end justify-start p-3">
+                        <span class="text-lime-400/40 text-[10px] font-bold uppercase tracking-widest">Head Space</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Scene 3: The Psychology -->
+            <div class="text-center">
+                <p class="text-slate-400 text-xs mb-2">Scene 3: The Psychology</p>
+                <div class="tiktok-frame bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl border border-slate-700">
+                    <div class="absolute top-4 right-4 flex items-center gap-1">
+                        <div class="bg-lime-400 text-emerald-900 w-6 h-6 rounded-md flex items-center justify-center text-xs font-bold">L²</div>
+                        <span class="text-white text-xs font-semibold">Launch<span class="text-lime-400">ToLead</span></span>
+                    </div>
+                    <!-- Content -->
+                    <div class="absolute top-14 right-4 left-4">
+                        <h3 class="text-white font-bold text-center mb-6 text-lg">Why This Works</h3>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-lg bg-slate-800 flex items-center justify-center border border-slate-600">
+                                    <i data-lucide="skull" class="w-6 h-6 text-slate-400"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="text-slate-400 text-xs uppercase font-bold">Small Monster</p>
+                                    <p class="text-white text-sm">"I fixed a bug"</p>
+                                </div>
+                                <div class="text-right">
+                                    <span class="text-slate-500 text-xs font-bold">Meh.</span>
+                                </div>
+                            </div>
+
+                            <div class="flex justify-center">
+                                <i data-lucide="arrow-down" class="w-6 h-6 text-slate-600"></i>
+                            </div>
+
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-lg bg-emerald-900 flex items-center justify-center border border-lime-400 shadow-[0_0_15px_rgba(163,230,53,0.3)]">
+                                    <i data-lucide="sword" class="w-6 h-6 text-lime-400"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="text-lime-400 text-xs uppercase font-bold">Big Monster</p>
+                                    <p class="text-white text-sm">"I saved the launch"</p>
+                                </div>
+                                <div class="text-right">
+                                    <span class="text-lime-400 text-xs font-bold">HERO.</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-4 bg-slate-800/50 p-3 rounded-lg border border-slate-700 text-center">
+                            <p class="text-slate-300 text-xs italic">"The bigger the problem, the more valuable the solution."</p>
+                        </div>
+                    </div>
+                    <!-- Head Space Marker -->
+                    <div class="absolute bottom-0 left-0 w-32 h-32 bg-lime-400/5 border-t border-r border-lime-400/20 rounded-tr-3xl flex items-end justify-start p-3">
+                        <span class="text-lime-400/40 text-[10px] font-bold uppercase tracking-widest">Head Space</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Script Section -->
+        <div class="max-w-2xl mx-auto bg-slate-800 rounded-xl p-8 border border-slate-700">
+            <h2 class="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                <i data-lucide="mic" class="w-5 h-5 text-lime-400"></i>
+                Suggested Script
+            </h2>
+            
+            <div class="space-y-6 text-slate-300">
+                <div>
+                    <p class="text-lime-400 text-xs font-bold uppercase mb-1">Hook (0:00-0:05)</p>
+                    <p>"Stop glossing over the 'Situation' in your interviews. You are killing your own story before it even starts."</p>
+                </div>
+
+                <div>
+                    <p class="text-lime-400 text-xs font-bold uppercase mb-1">The Mistake (0:05-0:15)</p>
+                    <p>"Most engineers do this: 'Situation: We had a bug. Task: I had to fix it.' <br><span class="italic text-slate-500">(Shake head)</span> Boring. Low stakes. I'm already checking my email."</p>
+                </div>
+
+                <div>
+                    <p class="text-lime-400 text-xs font-bold uppercase mb-1">The Fix (0:15-0:30)</p>
+                    <p>"You need to Paint the Pain. Don't lie, but emphasize the stakes. <br>Try this instead: 'Situation: A critical latency bug was threatening a $50k contract penalty just 48 hours before launch.'"</p>
+                </div>
+
+                <div>
+                    <p class="text-lime-400 text-xs font-bold uppercase mb-1">The Psychology (0:30-0:45)</p>
+                    <p>"See the difference? Risk. Money. Urgency. Now I'm listening. <br>Remember: The bigger the monster, the bigger the hero. If the problem sounds small, your solution feels cheap."</p>
+                </div>
+
+                <div>
+                    <p class="text-lime-400 text-xs font-bold uppercase mb-1">CTA (0:45-0:60)</p>
+                    <p>"I have a full guide on how to structure these stories in my bio. Go grab the 'Launch Method' cheat sheet."</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

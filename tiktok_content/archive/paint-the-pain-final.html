@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paint the Pain - Final Export (1080x1920)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#064e3b',
+                        secondary: '#14b8a6',
+                        accent: '#a3e635'
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            background: #0f172a; 
+            margin: 0; 
+            padding: 40px; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            gap: 60px; 
+        }
+        
+        .scene-wrapper {
+            text-align: center;
+        }
+
+        .scene-label {
+            color: #94a3b8;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        /* The container that represents the full 1080x1920 canvas */
+        .tiktok-export {
+            width: 1080px;
+            height: 1920px;
+            position: relative;
+            overflow: hidden;
+            background: #1e293b;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        /* 
+           The content scaler. 
+           The design was built for 270x480.
+           1080 / 270 = 4.
+           We scale the content by 4x to fill the 1080x1920 container.
+        */
+        .content-scaler {
+            width: 270px;
+            height: 480px;
+            transform: scale(4);
+            transform-origin: top left;
+            /* Ensure the background covers the scaled area */
+            background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
+        }
+    </style>
+</head>
+<body>
+
+    <div class="text-center mb-8">
+        <h1 class="text-4xl font-bold text-white mb-4">Paint the Pain - Final Export Assets</h1>
+        <p class="text-slate-400 text-xl">Full HD (1080x1920) • Bottom-Left Space Preserved • No Markers</p>
+    </div>
+
+    <!-- Scene 1 -->
+    <div class="scene-wrapper">
+        <div class="scene-label">Scene 1: The Mistake</div>
+        <div class="tiktok-export rounded-3xl">
+            <div class="content-scaler bg-gradient-to-br from-slate-900 to-slate-800 relative">
+                <!-- Logo -->
+                <div class="absolute top-4 right-4 flex items-center gap-1">
+                    <div class="bg-lime-400 text-emerald-900 w-6 h-6 rounded-md flex items-center justify-center text-xs font-bold">L²</div>
+                    <span class="text-white text-xs font-semibold">Launch<span class="text-lime-400">ToLead</span></span>
+                </div>
+                <!-- Content -->
+                <div class="absolute top-14 right-4 left-4">
+                    <div class="flex items-center gap-2 mb-3">
+                        <div class="w-8 h-8 rounded-full bg-red-500/20 flex items-center justify-center">
+                            <i data-lucide="x" class="w-5 h-5 text-red-400"></i>
+                        </div>
+                        <span class="text-red-400 text-xs font-bold uppercase tracking-wider">The Mistake</span>
+                    </div>
+                    <div class="bg-slate-800/80 border border-red-500/30 rounded-xl p-4 mb-2">
+                        <p class="text-slate-400 text-xs uppercase font-bold mb-1">Situation:</p>
+                        <p class="text-white text-sm leading-relaxed">"We had a bug in the code."</p>
+                    </div>
+                    <div class="bg-slate-800/80 border border-red-500/30 rounded-xl p-4">
+                        <p class="text-slate-400 text-xs uppercase font-bold mb-1">Task:</p>
+                        <p class="text-white text-sm leading-relaxed">"I needed to fix it."</p>
+                    </div>
+                    <div class="mt-4 flex items-center gap-2 text-slate-500 text-xs justify-center">
+                        <i data-lucide="thumbs-down" class="w-4 h-4"></i>
+                        <span>Boring. Low Stakes. Who cares?</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scene 2 -->
+    <div class="scene-wrapper">
+        <div class="scene-label">Scene 2: The Fix</div>
+        <div class="tiktok-export rounded-3xl">
+            <div class="content-scaler bg-gradient-to-br from-slate-900 to-slate-800 relative">
+                <!-- Logo -->
+                <div class="absolute top-4 right-4 flex items-center gap-1">
+                    <div class="bg-lime-400 text-emerald-900 w-6 h-6 rounded-md flex items-center justify-center text-xs font-bold">L²</div>
+                    <span class="text-white text-xs font-semibold">Launch<span class="text-lime-400">ToLead</span></span>
+                </div>
+                <!-- Content -->
+                <div class="absolute top-14 right-4 left-4">
+                    <div class="flex items-center gap-2 mb-3">
+                        <div class="w-8 h-8 rounded-full bg-lime-500/20 flex items-center justify-center">
+                            <i data-lucide="check" class="w-5 h-5 text-lime-400"></i>
+                        </div>
+                        <span class="text-lime-400 text-xs font-bold uppercase tracking-wider">High Contrast Story</span>
+                    </div>
+                    <div class="bg-emerald-900/40 border border-emerald-500/30 rounded-xl p-4 shadow-lg shadow-emerald-900/20">
+                        <p class="text-emerald-400 text-xs uppercase font-bold mb-1">Situation:</p>
+                        <p class="text-white text-sm leading-relaxed font-medium">"A critical latency bug threatened a <span class="text-lime-400 font-bold">$50k contract</span> penalty just <span class="text-lime-400 font-bold">48 hours</span> before launch."</p>
+                    </div>
+                    <div class="mt-4 grid grid-cols-3 gap-2">
+                        <div class="bg-slate-800 p-2 rounded text-center">
+                            <i data-lucide="dollar-sign" class="w-4 h-4 text-red-400 mx-auto mb-1"></i>
+                            <span class="text-[10px] text-slate-300">Cost</span>
+                        </div>
+                        <div class="bg-slate-800 p-2 rounded text-center">
+                            <i data-lucide="clock" class="w-4 h-4 text-orange-400 mx-auto mb-1"></i>
+                            <span class="text-[10px] text-slate-300">Urgency</span>
+                        </div>
+                        <div class="bg-slate-800 p-2 rounded text-center">
+                            <i data-lucide="alert-triangle" class="w-4 h-4 text-yellow-400 mx-auto mb-1"></i>
+                            <span class="text-[10px] text-slate-300">Risk</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scene 3 -->
+    <div class="scene-wrapper">
+        <div class="scene-label">Scene 3: The Psychology</div>
+        <div class="tiktok-export rounded-3xl">
+            <div class="content-scaler bg-gradient-to-br from-slate-900 to-slate-800 relative">
+                <!-- Logo -->
+                <div class="absolute top-4 right-4 flex items-center gap-1">
+                    <div class="bg-lime-400 text-emerald-900 w-6 h-6 rounded-md flex items-center justify-center text-xs font-bold">L²</div>
+                    <span class="text-white text-xs font-semibold">Launch<span class="text-lime-400">ToLead</span></span>
+                </div>
+                <!-- Content -->
+                <div class="absolute top-14 right-4 left-4">
+                    <h3 class="text-white font-bold text-center mb-6 text-lg">Why This Works</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-lg bg-slate-800 flex items-center justify-center border border-slate-600">
+                                <i data-lucide="skull" class="w-6 h-6 text-slate-400"></i>
+                            </div>
+                            <div class="flex-1">
+                                <p class="text-slate-400 text-xs uppercase font-bold">Small Monster</p>
+                                <p class="text-white text-sm">"I fixed a bug"</p>
+                            </div>
+                            <div class="text-right">
+                                <span class="text-slate-500 text-xs font-bold">Meh.</span>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-center">
+                            <i data-lucide="arrow-down" class="w-6 h-6 text-slate-600"></i>
+                        </div>
+
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-lg bg-emerald-900 flex items-center justify-center border border-lime-400 shadow-[0_0_15px_rgba(163,230,53,0.3)]">
+                                <i data-lucide="sword" class="w-6 h-6 text-lime-400"></i>
+                            </div>
+                            <div class="flex-1">
+                                <p class="text-lime-400 text-xs uppercase font-bold">Big Monster</p>
+                                <p class="text-white text-sm">"I saved the launch"</p>
+                            </div>
+                            <div class="text-right">
+                                <span class="text-lime-400 text-xs font-bold">HERO.</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4 bg-slate-800/50 p-3 rounded-lg border border-slate-700 text-center">
+                        <p class="text-slate-300 text-xs italic">"The bigger the problem, the more valuable the solution."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
