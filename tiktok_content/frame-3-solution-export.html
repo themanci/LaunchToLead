@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frame 3 - The Truth | Export Ready</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        
+        .frame {
+            width: 1080px;
+            height: 1920px;
+            background: linear-gradient(135deg, #064e3b 0%, #065f46 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Decorative elements */
+        .blob-1 {
+            position: absolute;
+            width: 700px;
+            height: 700px;
+            background: radial-gradient(circle, rgba(163, 230, 53, 0.2) 0%, transparent 70%);
+            border-radius: 50%;
+            top: -200px;
+            right: -200px;
+            filter: blur(80px);
+        }
+        
+        .blob-2 {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(20, 184, 166, 0.2) 0%, transparent 70%);
+            border-radius: 50%;
+            top: 600px;
+            left: -150px;
+            filter: blur(60px);
+        }
+        
+        /* Website URL at top */
+        .website-header {
+            position: absolute;
+            top: 60px;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            text-align: center;
+        }
+        
+        .website-url {
+            display: inline-flex;
+            align-items: center;
+            gap: 16px;
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(20px);
+            padding: 16px 40px;
+            border-radius: 999px;
+            border: 2px solid rgba(255,255,255,0.25);
+        }
+        
+        .website-logo {
+            background: white;
+            color: #064e3b;
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 22px;
+        }
+        
+        .website-text {
+            font-size: 32px;
+            font-weight: 700;
+            color: white;
+            letter-spacing: 0.5px;
+        }
+        
+        /* Main content - pushed up */
+        .content {
+            position: absolute;
+            top: 200px;
+            left: 0;
+            right: 0;
+            bottom: 500px; /* Leave space for greenscreen */
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            padding: 60px 60px;
+        }
+        
+        .solution-title {
+            font-size: 52px;
+            font-weight: 800;
+            color: #a3e635;
+            margin-bottom: 50px;
+            text-align: center;
+            text-shadow: 0 4px 30px rgba(163, 230, 53, 0.3);
+        }
+        
+        .solution-box {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(20px);
+            border-radius: 40px;
+            padding: 50px;
+            border: 2px solid rgba(255,255,255,0.2);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        
+        .solution-quote {
+            font-size: 42px;
+            color: white;
+            font-weight: 600;
+            line-height: 1.4;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .solution-highlight {
+            color: #a3e635;
+            font-weight: 800;
+        }
+        
+        .comparison {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+        
+        .comparison-row {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 28px 35px;
+            border-radius: 20px;
+        }
+        
+        .comparison-row.without {
+            background: rgba(239, 68, 68, 0.2);
+            border: 2px solid rgba(239, 68, 68, 0.35);
+        }
+        
+        .comparison-row.with {
+            background: rgba(163, 230, 53, 0.2);
+            border: 2px solid rgba(163, 230, 53, 0.35);
+        }
+        
+        .comparison-label {
+            font-size: 28px;
+            font-weight: 800;
+            color: white;
+            width: 180px;
+            flex-shrink: 0;
+        }
+        
+        .comparison-text {
+            font-size: 30px;
+            color: rgba(255,255,255,0.95);
+            font-weight: 500;
+        }
+        
+        /* Bottom left area left open for greenscreen - no visual indicator */
+    </style>
+</head>
+<body>
+    <div class="frame">
+        <div class="blob-1"></div>
+        <div class="blob-2"></div>
+        
+        <!-- Website URL at top -->
+        <div class="website-header">
+            <div class="website-url">
+                <div class="website-logo">L²</div>
+                <span class="website-text">LaunchToLead.io</span>
+            </div>
+        </div>
+        
+        <!-- Main content -->
+        <div class="content">
+            <div class="solution-title">✅ What the RIGHT coach actually is:</div>
+            <div class="solution-box">
+                <div class="solution-quote">
+                    Someone who's <span class="solution-highlight">been where you are</span> and can tell you what <span class="solution-highlight">actually works</span>
+                </div>
+                <div class="comparison">
+                    <div class="comparison-row without">
+                        <span class="comparison-label">❌ Without:</span>
+                        <span class="comparison-text">Try → fail → learn → try again (2-3 years)</span>
+                    </div>
+                    <div class="comparison-row with">
+                        <span class="comparison-label">✅ With:</span>
+                        <span class="comparison-text">Try → feedback → adjust → succeed (6-12 mo)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -16,6 +16,7 @@
         'success-stories.html': { name: 'success-stories', displayName: 'Success Stories' },
         'about.html': { name: 'about', displayName: 'About' },
         'blog.html': { name: 'blog', displayName: 'Blog' },
+        'vault.html': { name: 'vault', displayName: 'The L² Vault' },
         'contact.html': { name: 'contact', displayName: 'Contact' }
     };
     
@@ -75,6 +76,7 @@
                 <a href="success-stories.html" class="${getLinkClasses('success-stories')}">Success Stories</a>
                 <a href="about.html" class="${getLinkClasses('about')}">About</a>
                 <a href="blog.html" class="${getLinkClasses('blog')}">Blog</a>
+                <a href="vault.html" class="${getLinkClasses('vault')}">The L² Vault</a>
                 <a href="contact.html" class="${getLinkClasses('contact', true)}">
                     Get Started
                 </a>
@@ -104,6 +106,7 @@
             <a href="success-stories.html" class="${getMobileLinkClasses('success-stories')}">Success Stories</a>
             <a href="about.html" class="${getMobileLinkClasses('about')}">About</a>
             <a href="blog.html" class="${getMobileLinkClasses('blog')}">Blog</a>
+            <a href="vault.html" class="${getMobileLinkClasses('vault')}">The L² Vault</a>
             <a href="contact.html" class="${getMobileLinkClasses('contact', true)}">Get Started</a>
         </div>
     </div>
