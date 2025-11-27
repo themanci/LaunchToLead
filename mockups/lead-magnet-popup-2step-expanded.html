@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Two-Step Popup Expanded - Launch to Lead</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .popup-container {
+            position: relative;
+            width: 100%;
+            height: 700px;
+            background: linear-gradient(135deg, #f0fdf4 0%, #ccfbf1 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        .popup-backdrop {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(4px);
+        }
+        .step-indicator {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        .step-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #d1d5db;
+        }
+        .step-dot.active {
+            background: #059669;
+            width: 24px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 p-8">
+    <div class="max-w-7xl mx-auto">
+        <div class="mb-12 text-center">
+            <h1 class="text-4xl font-bold text-emerald-900 mb-4">Two-Step Personalized Popup - 10 Variations</h1>
+            <p class="text-lg text-gray-600">Expanded Concept 3 with path selection → roadblock selection → personalized content</p>
+            <div class="mt-4 bg-emerald-50 border-2 border-emerald-200 rounded-lg p-4 max-w-3xl mx-auto">
+                <p class="text-sm text-emerald-900"><strong>User Flow:</strong> Step 1: Choose career path (Launch/Pivot/Accelerate) → Step 2: Choose biggest roadblock (4 options per path) → Step 3: Email capture + personalized guide delivery</p>
+            </div>
+        </div>
+
+        <!-- Variation 1: Clean Cards with Icons -->
+        <div class="mb-16">
+            <h2 class="text-2xl font-bold text-emerald-900 mb-4">Variation 1: Clean Card Selection</h2>
+            <p class="text-gray-600 mb-4">Simple, clear cards with icons. Two steps clearly indicated.</p>
+            
+            <!-- Step 1 -->
+            <div class="popup-container mb-4">
+                <div class="popup-backdrop"></div>
+                <div class="relative z-10 bg-white rounded-2xl shadow-2xl p-8 max-w-2xl mx-4">
+                    <button class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 text-2xl">×</button>
+                    
+                    <div class="step-indicator mb-6">
+                        <div class="step-dot active"></div>
+                        <div class="step-dot"></div>
+                    </div>
+
+                    <div class="text-center mb-6">
+                        <h3 class="text-2xl font-bold text-emerald-900 mb-2">Where are you in your career?</h3>
+                        <p class="text-gray-600">Choose your path to get personalized guidance</p>
+                    </div>
+                    
+                    <div class="space-y-3">
+                        <button class="w-full p-5 border-2 border-gray-200 rounded-xl hover:border-emerald-500 hover:bg-emerald-50 transition text-left group">
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 rounded-lg bg-emerald-100 group-hover:bg-emerald-200 flex items-center justify-center mr-4 flex-shrink-0">
+                                    <span class="text-2xl">🎓</span>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="font-semibold text-emerald-900 text-lg">College Student or Early Career</div>
+                                    <div class="text-sm text-gray-600">Looking for my first engineering role or just started</div>
+                                </div>
+                            </div>
+                        </button>
+                        
+                        <button class="w-full p-5 border-2 border-gray-200 rounded-xl hover:border-lime-500 hover:bg-lime-50 transition text-left group">
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 rounded-lg bg-lime-100 group-hover:bg-lime-200 flex items-center justify-center mr-4 flex-shrink-0">
+                                    <span class="text-2xl">🔄</span>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="font-semibold text-lime-900 text-lg">Ready for a Career Transition</div>
+                                    <div class="text-sm text-gray-600">Coming from another field, pivoting into engineering</div>
+                                </div>
+                            </div>
+                        </button>
+                        
+                        <button class="w-full p-5 border-2 border-gray-200 rounded-xl hover:border-teal-500 hover:bg-teal-50 transition text-left group">
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 rounded-lg bg-teal-100 group-hover:bg-teal-200 flex items-center justify-center mr-4 flex-shrink-0">
+                                    <span class="text-2xl">📈</span>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="font-semibold text-teal-900 text-lg">Looking for a Promotion</div>
+                                    <div class="text-sm text-gray-600">Want to level up and accelerate my career growth</div>
+                                </div>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 2 (Example: Launch Path) -->
+            <div class="popup-container">
+                <div class="popup-backdrop"></div>
+                <div class="relative z-10 bg-white rounded-2xl shadow-2xl p-8 max-w-2xl mx-4">
+                    <button class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 text-2xl">×</button>
+                    <button class="absolute top-4 left-4 text-gray-400 hover:text-gray-600">← Back</button>
+                    
+                    <div class="step-indicator mb-6">
+                        <div class="step-dot"></div>
+                        <div class="step-dot active"></div>
+                    </div>
+
+                    <div class="text-center mb-6">
+                        <div class="inline-block px-3 py-1 bg-emerald-100 text-emerald-800 rounded-full text-sm font-semibold mb-3">🎓 College Student / Early Career</div>
+                        <h3 class="text-2xl font-bold text-emerald-900 mb-2">What's your biggest roadblock?</h3>
+                        <p class="text-gray-600">We'll send you a personalized guide for your situation</p>
+                    </div>
+                    
+                    <div class="space-y-3 mb-6">
+                        <button class="w-full p-4 border-2 border-gray-200 rounded-xl hover:border-emerald-500 hover:bg-emerald-50 transition text-left">
+                            <div class="font-semibold text-emerald-900">Getting past resume screening / ATS systems</div>
+                        </button>
+                        
+                        <button class="w-full p-4 border-2 border-gray-200 rounded-xl hover:border-emerald-500 hover:bg-emerald-50 transition text-left">
+                            <div class="font-semibold text-emerald-900">Not getting interview responses</div>
+                        </button>
+                        
+                        <button class="w-full p-4 border-2 border-gray-200 rounded-xl hover:border-emerald-500 hover:bg-emerald-50 transition text-left">
+                            <div class="font-semibold text-emerald-900">Preparing for technical interviews</div>
+                        </button>
+                        
+                        <button class="w-full p-4 border-2 border-gray-200 rounded-xl hover:border-emerald-500 hover:bg-emerald-50 transition text-left">
+                            <div class="font-semibold text-emerald-900">Knowing where to apply / finding opportunities</div>
+                        </button>
+                    </div>
+
+                    <div class="bg-emerald-50 rounded-lg p-4 text-center">
+                        <p class="text-sm text-emerald-900">After selecting, you'll enter your email to receive your personalized guide</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Variation 2: Colorful Gradient Cards -->
+        <div class="mb-16">
+            <h2 class="text-2xl font-bold text-emerald-900 mb-4">Variation 2: Bold Gradient Cards</h2>
+            <p class="text-gray-600 mb-4">Eye-catching gradients matching each path's branding.</p>
+            
+            <div class="popup-container">
+                <div class="popup-backdrop"></div>
+                <div class="relative z-10 bg-white rounded-2xl shadow-2xl p-8 max-w-2xl mx-4">
+                    <button class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 text-2xl">×</button>
+                    
+                    <div class="text-center mb-8">
+                        <h3 class="text-3xl font-bold text-gray-900 mb-2">Choose Your Career Stage</h3>
+                        <p class="text-gray-600">Get a free guide tailored to exactly where you are</p>
+                    </div>
+                    
+                    <div class="grid gap-4">
+                        <button class="bg-gradient-to-r from-emerald-500 to-emerald-600 text-white p-6 rounded-xl hover:shadow-xl transition text-left">
+                            <div class="text-3xl mb-2">🎓</div>
+                            <div class="font-bold text-xl mb-1">College Student / Early Career</div>
+                            <div class="text-emerald-100 text-sm">Land your first engineering role</div>
+                        </button>
+                        
+                        <button class="bg-gradient-to-r from-lime-500 to-lime-600 text-white p-6 rounded-xl hover:shadow-xl transition text-left">
+                            <div class="text-3xl mb-2">🔄</div>
+                            <div class="font-bold text-xl mb-1">Career Transition</div>
+                            <div class="text-lime-100 text-sm">Break into engineering from another field</div>
+                        </button>
+                        
+                        <button class="bg-gradient-to-r from-teal-500 to-teal-600 text-white p-6 rounded-xl hover:shadow-xl transition text-left">
+                            <div class="text-3xl mb-2">📈</div>
+                            <div class="font-bold text-xl mb-1">Looking for Promotion</div>
+                            <div class="text-teal-100 text-sm">Accelerate to senior engineer faster</div>
+                        </button>
+                    </div>
+
+                    <div class="mt-6 text-center">
+                        <div class="step-indicator">
+                            <div class="step-dot active"></div>
+                            <div class="step-dot"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Variation 3: Minimal Buttons with Progress Bar -->
+        <div class="mb-16">
+            <h2 class="text-2xl font-bold text-emerald-900 mb-4">Variation 3: Clean Progress Bar</h2>
+            <p class="text-gray-600 mb-4">Step 2 showing roadblocks for Pivot path with top progress bar.</p>
+            
+            <div class="popup-container">
+                <div class="popup-backdrop"></div>
+                <div class="relative z-10 bg-white rounded-2xl shadow-2xl max-w-2xl mx-4 overflow-hidden">
+                    <!-- Progress Bar -->
+                    <div class="h-2 bg-gray-200">
+                        <div class="h-full bg-lime-500 w-1/2 transition-all"></div>
+                    </div>
+                    
+                    <div class="p-8">
+                        <button class="absolute top-6 right-6 text-gray-400 hover:text-gray-600 text-xl">×</button>
+                        <button class="absolute top-6 left-6 text-gray-400 hover:text-gray-600">← Back</button>
+                        
+                        <div class="text-center mb-6 mt-8">
+                            <div class="inline-flex items-center px-4 py-2 bg-lime-100 text-lime-800 rounded-full text-sm font-semibold mb-4">
+                                <span class="mr-2">🔄</span>
+                                Career Transition
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-2">What's holding you back?</h3>
+                            <p class="text-gray-600">Select your biggest challenge</p>
+                        </div>
+                        
+                        <div class="space-y-3">
+                            <button class="w-full p-4 bg-gray-50 hover:bg-lime-50 border-2 border-transparent hover:border-lime-500 rounded-lg transition text-left font-medium text-gray-900">
+                                Lack of technical experience or portfolio projects
+                            </button>
+                            
+                            <button class="w-full p-4 bg-gray-50 hover:bg-lime-50 border-2 border-transparent hover:border-lime-500 rounded-lg transition text-left font-medium text-gray-900">
+                                Overcoming the "no CS degree" barrier
+                            </button>
+                            
+                            <button class="w-full p-4 bg-gray-50 hover:bg-lime-50 border-2 border-transparent hover:border-lime-500 rounded-lg transition text-left font-medium text-gray-900">
+                                How to position my previous career as an advantage
+                            </button>
+                            
+                            <button class="w-full p-4 bg-gray-50 hover:bg-lime-50 border-2 border-transparent hover:border-lime-500 rounded-lg transition text-left font-medium text-gray-900">
+                                Finding companies open to career changers
+                            </button>
+                        </div>
+
+                        <div class="mt-6 text-center text-sm text-gray-500">
+                            Step 2 of 2 • Next: Enter email for your guide
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Variation 4: Large Icons with Numbers -->
+        <div class="mb-16">
+            <h2 class="text-2xl font-bold text-emerald-900 mb-4">Variation 4: Numbered Steps with Icons</h2>
+            <p class="text-gray-600 mb-4">Step 2 for Accelerate path showing roadblocks with clear numbering.</p>
+            
+            <div class="popup-container">
+                <div class="popup-backdrop"></div>
+                <div class="relative z-10 bg-white rounded-2xl shadow-2xl p-8 max-w-2xl mx-4">
+                    <button class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 text-2xl">×</button>
+                    
+                    <div class="flex items-center justify-between mb-8">
+                        <button class="text-gray-400 hover:text-gray-600 flex items-center">
+                            <span class="mr-2">←</span> Back
+                        </button>
+                        <div class="flex items-center space-x-2">
+                            <div class="w-8 h-8 rounded-full bg-teal-600 text-white flex items-center justify-center text-sm font-bold">✓</div>
+                            <div class="w-12 h-1 bg-teal-600"></div>
+                            <div class="w-8 h-8 rounded-full bg-teal-600 text-white flex items-center justify-center text-sm font-bold">2</div>
+                        </div>
+                    </div>
+
+                    <div class="text-center mb-6">
+                        <div class="text-5xl mb-3">📈</div>
+                        <h3 class="text-2xl font-bold text-teal-900 mb-2">What's blocking your promotion?</h3>
+                        <p class="text-gray-600">Choose the challenge you're facing right now</p>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 gap-4">
+                        <button class="p-5 border-2 border-gray-200 rounded-xl hover:border-teal-500 hover:bg-teal-50 transition text-center group">
+                            <div class="text-3xl mb-2">🎯</div>
+                            <div class="font-semibold text-gray-900 text-sm">Not sure what skills to focus on</div>
+                        </button>
+                        
+                        <button class="p-5 border-2 border-gray-200 rounded-xl hover:border-teal-500 hover:bg-teal-50 transition text-center group">
+                            <div class="text-3xl mb-2">👀</div>
+                            <div class="font-semibold text-gray-900 text-sm">Getting visibility with leadership</div>
+                        </button>
+                        
+                        <button class="p-5 border-2 border-gray-200 rounded-xl hover:border-teal-500 hover:bg-teal-50 transition text-center group">
+                            <div class="text-3xl mb-2">💬</div>
+                            <div class="font-semibold text-gray-900 text-sm">Communicating my impact effectively</div>
+                        </button>
+                        
+                        <button class="p-5 border-2 border-gray-200 rounded-xl hover:border-teal-500 hover:bg-teal-50 transition text-center group">
+                            <div class="text-3xl mb-2">⏰</div>
+                            <div class="font-semibold text-gray-900 text-sm">Knowing when to make strategic moves</div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Variation 5: Radio Button Style -->
+        <div class="mb-16">
+            <h2 class="text-2xl font-bold text-emerald-900 mb-4">Variation 5: Radio Button Selection</h2>
+            <p class="text-gray-600 mb-4">Traditional form-like approach with radio buttons and continue button.</p>
+            
+            <div class="popup-container">
+                <div class="popup-backdrop"></div>
+                <div class="relative z-10 bg-white rounded-2xl shadow-2xl p-8 max-w-xl mx-4">
+                    <button class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 text-2xl">×</button>
+                    
+                    <div class="mb-6">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-sm font-semibold text-emerald-600">Step 1 of 2</span>
+                            <span class="text-sm text-gray-500">50% complete</span>
+                        </div>
+                        <div class="h-2 bg-gray-200 rounded-full">
+                            <div class="h-full bg-emerald-600 rounded-full w-1/2"></div>
+                        </div>
+                    </div>
+
+                    <h3 class="text-2xl font-bold text-gray-900 mb-2">First, tell us about your career stage</h3>
+                    <p class="text-gray-600 mb-6">This helps us personalize your free guide</p>
+                    
+                    <div class="space-y-3 mb-6">
+                        <label class="flex items-center p-4 border-2 border-gray-200 rounded-lg hover:border-emerald-500 hover:bg-emerald-50 cursor-pointer transition">
+                            <input type="radio" name="stage" class="w-5 h-5 text-emerald-600" />
+                            <div class="ml-4">
+                                <div class="font-semibold text-gray-900">🎓 College Student / Early Career</div>
+                                <div class="text-sm text-gray-600">Looking for my first engineering role</div>
+                            </div>
+                        </label>
+                        
+                        <label class="flex items-center p-4 border-2 border-gray-200 rounded-lg hover:border-lime-500 hover:bg-lime-50 cursor-pointer transition">
+                            <input type="radio" name="stage" class="w-5 h-5 text-lime-600" />
+                            <div class="ml-4">
+                                <div class="font-semibold text-gray-900">🔄 Career Transition</div>
+                                <div class="text-sm text-gray-600">Pivoting into engineering from another field</div>
+                            </div>
+                        </label>
+                        
+                        <label class="flex items-center p-4 border-2 border-gray-200 rounded-lg hover:border-teal-500 hover:bg-teal-50 cursor-pointer transition">
+                            <input type="radio" name="stage" class="w-5 h-5 text-teal-600" />
+                            <div class="ml-4">
+                                <div class="font-semibold text-gray-900">📈 Looking for Promotion</div>
+                                <div class="text-sm text-gray-600">Accelerating my career growth</div>
+                            </div>
+                        </label>
+                    </div>
+
+                    <button class="w-full bg-emerald-600 text-white font-bold py-3 rounded-lg hover:bg-emerald-700 transition">
+                        Continue →
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Variation 6: Split Screen Design -->
+        <div class="mb-16">
+            <h2 class="text-2xl font-bold text-emerald-900 mb-4">Variation 6: Split Screen with Visual</h2>
+            <p class="text-gray-600 mb-4">Left side has illustration/info, right side has selection options.</p>
+            
+            <div class="popup-container">
+                <div class="popup-backdrop"></div>
+                <div class="relative z-10 bg-white rounded-2xl shadow-2xl max-w-4xl mx-4 overflow-hidden flex">
+                    <button class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 text-2xl z-10">×</button>
+                    
+                    <!-- Left Side -->
+                    <div class="w-2/5 bg-gradient-to-br from-emerald-500 to-teal-600 p-8 text-white flex flex-col justify-center">
+                        <div class="text-6xl mb-4">🎯</div>
+                        <h3 class="text-2xl font-bold mb-3">Get Your Personalized Career Guide</h3>
+                        <p class="text-emerald-100 mb-4">Answer 2 quick questions and receive a custom guide for your exact situation.</p>
+                        <div class="space-y-2 text-sm text-emerald-100">
+                            <div class="flex items-center">
+                                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                </svg>
+                                Personalized to your career stage
+                            </div>
+                            <div class="flex items-center">
+                                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                </svg>
+                                Focused on your specific challenges
+                            </div>
+                            <div class="flex items-center">
+                                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                </svg>
+                                100% free, instant delivery
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Right Side -->
+                    <div class="flex-1 p-8">
+                        <div class="mb-6">
+                            <span class="text-sm font-semibold text-gray-500">Question 1 of 2</span>
+                        </div>
+                        
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">What describes you best?</h3>
+                        
+                        <div class="space-y-3">
+                            <button class="w-full p-4 text-left border-2 border-gray-200 rounded-lg hover:border-emerald-500 hover:shadow-md transition">
+                                <div class="flex items-center">
+                                    <span class="text-2xl mr-3">🎓</span>
+                                    <div>
+                                        <div class="font-semibold text-gray-900">College Student / Early Career</div>
+                                        <div class="text-xs text-gray-600">New to the field</div>
+                                    </div>
+                                </div>
+                            </button>
+                            
+                            <button class="w-full p-4 text-left border-2 border-gray-200 rounded-lg hover:border-lime-500 hover:shadow-md transition">
+                                <div class="flex items-center">
+                                    <span class="text-2xl mr-3">🔄</span>
+                                    <div>
+                                        <div class="font-semibold text-gray-900">Career Transition</div>
+                                        <div class="text-xs text-gray-600">Changing careers</div>
+                                    </div>
+                                </div>
+                            </button>
+                            
+                            <button class="w-full p-4 text-left border-2 border-gray-200 rounded-lg hover:border-teal-500 hover:shadow-md transition">
+                                <div class="flex items-center">
+                                    <span class="text-2xl mr-3">📈</span>
+                                    <div>
+                                        <div class="font-semibold text-gray-900">Looking for Promotion</div>
+                                        <div class="text-xs text-gray-600">Ready to level up</div>
+                                    </div>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Variation 7: Card Flip Animation Style -->
+        <div class="mb-16">
+            <h2 class="text-2xl font-bold text-emerald-900 mb-4">Variation 7: Stacked Cards Visual</h2>
+            <p class="text-gray-600 mb-4">Shows all 3 paths as stacked visual cards with hover effect.</p>
+            
+            <div class="popup-container">
+                <div class="popup-backdrop"></div>
+                <div class="relative z-10 bg-white rounded-2xl shadow-2xl p-8 max-w-3xl mx-4">
+                    <button class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 text-2xl">×</button>
+                    
+                    <div class="text-center mb-8">
+                        <h3 class="text-3xl font-bold text-gray-900 mb-2">Pick Your Path</h3>
+                        <p class="text-gray-600">Which journey are you on?</p>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-3 gap-4">
+                        <button class="group relative">
+                            <div class="absolute inset-0 bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-xl rotate-3 group-hover:rotate-0 transition"></div>
+                            <div class="relative bg-white border-2 border-emerald-500 rounded-xl p-6 hover:shadow-xl transition">
+                                <div class="text-4xl mb-3">🎓</div>
+                                <div class="font-bold text-lg text-emerald-900 mb-2">Launch</div>
+                                <div class="text-sm text-gray-600">Student or early career engineer</div>
+                            </div>
+                        </button>
+                        
+                        <button class="group relative">
+                            <div class="absolute inset-0 bg-gradient-to-br from-lime-400 to-lime-600 rounded-xl rotate-3 group-hover:rotate-0 transition"></div>
+                            <div class="relative bg-white border-2 border-lime-500 rounded-xl p-6 hover:shadow-xl transition">
+                                <div class="text-4xl mb-3">🔄</div>
+                                <div class="font-bold text-lg text-lime-900 mb-2">Pivot</div>
+                                <div class="text-sm text-gray-600">Career changer breaking in</div>
+                            </div>
+                        </button>
+                        
+                        <button class="group relative">
+                            <div class="absolute inset-0 bg-gradient-to-br from-teal-400 to-teal-600 rounded-xl rotate-3 group-hover:rotate-0 transition"></div>
+                            <div class="relative bg-white border-2 border-teal-500 rounded-xl p-6 hover:shadow-xl transition">
+                                <div class="text-4xl mb-3">📈</div>
+                                <div class="font-bold text-lg text-teal-900 mb-2">Accelerate</div>
+                                <div class="text-sm text-gray-600">Engineer leveling up fast</div>
+                            </div>
+                        </button>
+                    </div>
+
+                    <div class="mt-6 flex justify-center">
+                        <div class="step-indicator">
+                            <div class="step-dot active"></div>
+                            <div class="step-dot"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Variation 8: Compact Inline Style -->
+        <div class="mb-16">
+            <h2 class="text-2xl font-bold text-emerald-900 mb-4">Variation 8: Compact Inline Roadblocks</h2>
+            <p class="text-gray-600 mb-4">Step 2 showing roadblocks as compact chips/pills for Launch path.</p>
+            
+            <div class="popup-container">
+                <div class="popup-backdrop"></div>
+                <div class="relative z-10 bg-white rounded-2xl shadow-2xl p-8 max-w-lg mx-4">
+                    <button class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 text-2xl">×</button>
+                    
+                    <div class="mb-6">
+                        <button class="text-sm text-gray-500 hover:text-gray-700 flex items-center">
+                            ← Change path
+                        </button>
+                    </div>
+
+                    <div class="text-center mb-6">
+                        <div class="inline-flex items-center px-4 py-2 bg-emerald-100 rounded-full mb-4">
+                            <span class="text-2xl mr-2">🎓</span>
+                            <span class="font-semibold text-emerald-900">Early Career</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">What's your #1 challenge?</h3>
+                        <p class="text-gray-600 text-sm">Tap one to get your personalized guide</p>
+                    </div>
+                    
+                    <div class="flex flex-wrap gap-3 justify-center mb-6">
+                        <button class="px-5 py-3 bg-emerald-50 hover:bg-emerald-600 hover:text-white border-2 border-emerald-200 hover:border-emerald-600 rounded-full font-medium text-sm transition">
+                            Resume not getting past ATS
+                        </button>
+                        
+                        <button class="px-5 py-3 bg-emerald-50 hover:bg-emerald-600 hover:text-white border-2 border-emerald-200 hover:border-emerald-600 rounded-full font-medium text-sm transition">
+                            No interview responses
+                        </button>
+                        
+                        <button class="px-5 py-3 bg-emerald-50 hover:bg-emerald-600 hover:text-white border-2 border-emerald-200 hover:border-emerald-600 rounded-full font-medium text-sm transition">
+                            Interview preparation
+                        </button>
+                        
+                        <button class="px-5 py-3 bg-emerald-50 hover:bg-emerald-600 hover:text-white border-2 border-emerald-200 hover:border-emerald-600 rounded-full font-medium text-sm transition">
+                            Where to apply
+                        </button>
+                    </div>
+
+                    <div class="flex justify-center">
+                        <div class="flex items-center space-x-2 text-xs text-gray-500">
+                            <div class="w-6 h-6 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold">✓</div>
+                            <span>—</span>
+                            <div class="w-6 h-6 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold">2</div>
+                            <span>—</span>
+                            <div class="w-6 h-6 rounded-full bg-gray-300 text-gray-600 flex items-center justify-center font-bold">3</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Variation 9: Question Mark Style -->
+        <div class="mb-16">
+            <h2 class="text-2xl font-bold text-emerald-900 mb-4">Variation 9: Conversational Question Format</h2>
+            <p class="text-gray-600 mb-4">More casual, conversational tone. Step 2 for Pivot path.</p>
+            
+            <div class="popup-container">
+                <div class="popup-backdrop"></div>
+                <div class="relative z-10 bg-white rounded-2xl shadow-2xl p-8 max-w-xl mx-4">
+                    <button class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 text-2xl">×</button>
+                    
+                    <div class="flex items-center mb-6">
+                        <button class="text-gray-400 hover:text-gray-600 mr-4">←</button>
+                        <div class="flex-1 bg-gray-200 h-2 rounded-full">
+                            <div class="bg-lime-500 h-full w-2/3 rounded-full"></div>
+                        </div>
+                    </div>
+
+                    <div class="mb-8">
+                        <div class="inline-flex items-center px-3 py-1 bg-lime-100 text-lime-800 rounded-full text-sm font-semibold mb-4">
+                            🔄 Career Transition
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3">So, what's the biggest thing stopping you from making the switch?</h3>
+                        <p class="text-gray-600">Be honest—we've helped 100+ people in your exact situation.</p>
+                    </div>
+                    
+                    <div class="space-y-3">
+                        <button class="w-full p-4 text-left bg-gray-50 hover:bg-lime-50 border-2 border-transparent hover:border-lime-500 rounded-xl transition group">
+                            <div class="flex items-start">
+                                <span class="text-xl mr-3">💼</span>
+                                <div>
+                                    <div class="font-semibold text-gray-900 mb-1">I don't have technical projects or experience</div>
+                                    <div class="text-xs text-gray-600 group-hover:text-lime-800">How do I build a portfolio from scratch?</div>
+                                </div>
+                            </div>
+                        </button>
+                        
+                        <button class="w-full p-4 text-left bg-gray-50 hover:bg-lime-50 border-2 border-transparent hover:border-lime-500 rounded-xl transition group">
+                            <div class="flex items-start">
+                                <span class="text-xl mr-3">🎓</span>
+                                <div>
+                                    <div class="font-semibold text-gray-900 mb-1">I don't have a CS degree</div>
+                                    <div class="text-xs text-gray-600 group-hover:text-lime-800">Will companies even look at me?</div>
+                                </div>
+                            </div>
+                        </button>
+                        
+                        <button class="w-full p-4 text-left bg-gray-50 hover:bg-lime-50 border-2 border-transparent hover:border-lime-500 rounded-xl transition group">
+                            <div class="flex items-start">
+                                <span class="text-xl mr-3">💡</span>
+                                <div>
+                                    <div class="font-semibold text-gray-900 mb-1">Selling my previous career as valuable</div>
+                                    <div class="text-xs text-gray-600 group-hover:text-lime-800">How do I make it an advantage?</div>
+                                </div>
+                            </div>
+                        </button>
+                        
+                        <button class="w-full p-4 text-left bg-gray-50 hover:bg-lime-50 border-2 border-transparent hover:border-lime-500 rounded-xl transition group">
+                            <div class="flex items-start">
+                                <span class="text-xl mr-3">🔍</span>
+                                <div>
+                                    <div class="font-semibold text-gray-900 mb-1">Finding companies open to career changers</div>
+                                    <div class="text-xs text-gray-600 group-hover:text-lime-800">Where do I even start looking?</div>
+                                </div>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Variation 10: Minimal Modern -->
+        <div class="mb-16">
+            <h2 class="text-2xl font-bold text-emerald-900 mb-4">Variation 10: Ultra-Minimal Single Column</h2>
+            <p class="text-gray-600 mb-4">Simplest design. Step 2 for Accelerate path with minimal decoration.</p>
+            
+            <div class="popup-container">
+                <div class="popup-backdrop"></div>
+                <div class="relative z-10 bg-white rounded-2xl shadow-2xl p-10 max-w-md mx-4">
+                    <button class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 text-xl">×</button>
+                    
+                    <div class="text-center mb-8">
+                        <div class="w-12 h-12 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-2xl">📈</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">What's blocking your promotion?</h3>
+                    </div>
+                    
+                    <div class="space-y-2 mb-8">
+                        <button class="w-full py-3 px-4 text-left hover:bg-teal-50 rounded-lg transition font-medium text-gray-900">
+                            Skills gaps or technical depth
+                        </button>
+                        <div class="border-b border-gray-100"></div>
+                        
+                        <button class="w-full py-3 px-4 text-left hover:bg-teal-50 rounded-lg transition font-medium text-gray-900">
+                            Visibility with leadership
+                        </button>
+                        <div class="border-b border-gray-100"></div>
+                        
+                        <button class="w-full py-3 px-4 text-left hover:bg-teal-50 rounded-lg transition font-medium text-gray-900">
+                            Showing my impact clearly
+                        </button>
+                        <div class="border-b border-gray-100"></div>
+                        
+                        <button class="w-full py-3 px-4 text-left hover:bg-teal-50 rounded-lg transition font-medium text-gray-900">
+                            Timing my career moves
+                        </button>
+                    </div>
+
+                    <div class="flex justify-center space-x-2">
+                        <div class="w-2 h-2 rounded-full bg-teal-600"></div>
+                        <div class="w-2 h-2 rounded-full bg-teal-600"></div>
+                        <div class="w-2 h-2 rounded-full bg-gray-300"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Summary Section -->
+        <div class="bg-emerald-900 text-white rounded-xl p-8">
+            <h2 class="text-2xl font-bold mb-4">✅ 10 Two-Step Popup Variations Complete!</h2>
+            <div class="grid md:grid-cols-2 gap-6 text-emerald-50 mb-6">
+                <div>
+                    <h3 class="font-semibold text-lime-400 mb-3">Path Options (Step 1):</h3>
+                    <ul class="space-y-1 text-sm">
+                        <li>• 🎓 College Student / Early Career (Launch Method)</li>
+                        <li>• 🔄 Career Transition (Pivot Method)</li>
+                        <li>• 📈 Looking for Promotion (Accelerate Method)</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-semibold text-lime-400 mb-3">Roadblocks by Path (Step 2):</h3>
+                    <div class="text-sm space-y-2">
+                        <div><strong>Launch:</strong> Resume/ATS, No responses, Interview prep, Where to apply</div>
+                        <div><strong>Pivot:</strong> No tech experience, No CS degree, Position prev career, Find open companies</div>
+                        <div><strong>Accelerate:</strong> Skills gaps, Visibility, Show impact, Timing moves</div>
+                    </div>
+                </div>
+            </div>
+            <div class="p-4 bg-emerald-800 rounded-lg">
+                <h3 class="font-semibold text-lime-400 mb-2">💡 Design Recommendations:</h3>
+                <ul class="space-y-2 text-sm text-emerald-50">
+                    <li><strong>Most Engaging:</strong> Variation 1 (Clean Cards) or Variation 6 (Split Screen)</li>
+                    <li><strong>Best Conversion:</strong> Variation 2 (Gradient Cards) or Variation 9 (Conversational)</li>
+                    <li><strong>Cleanest UX:</strong> Variation 5 (Radio Buttons) or Variation 10 (Ultra-Minimal)</li>
+                    <li><strong>Most Visual:</strong> Variation 7 (Stacked Cards) or Variation 4 (Numbered Icons)</li>
+                    <li><strong>Quickest to Build:</strong> Variation 3 (Progress Bar) or Variation 8 (Compact Pills)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
