@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TikTok Green Screen - Visibility Pyramid | LaunchToLead</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: #1a1a1a;
+            min-height: 100vh;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        h1 {
+            color: white;
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 28px;
+        }
+        
+        .subtitle {
+            color: #888;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+        
+        .instructions {
+            background: #2a2a2a;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 30px;
+            max-width: 800px;
+            color: #ccc;
+        }
+        
+        .instructions h3 {
+            color: #14b8a6;
+            margin-bottom: 10px;
+        }
+        
+        .instructions ul {
+            list-style: none;
+            font-size: 14px;
+        }
+        
+        .instructions li {
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .instructions li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: #14b8a6;
+        }
+        
+        .mockup-container {
+            display: flex;
+            gap: 40px;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: flex-start;
+        }
+        
+        .frame-label {
+            color: #888;
+            font-size: 14px;
+            text-align: center;
+            margin-top: 15px;
+            font-weight: 500;
+        }
+        
+        .frame-timing {
+            color: #14b8a6;
+            font-size: 12px;
+            text-align: center;
+            margin-top: 5px;
+        }
+        
+        .phone-frame {
+            background: #000;
+            border-radius: 40px;
+            padding: 12px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+        }
+        
+        .phone-screen {
+            width: 360px;
+            height: 640px;
+            border-radius: 30px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        /* ===== GREEN SCREEN FRAME ===== */
+        .frame-greenscreen {
+            background: #00ff00;
+            position: relative;
+        }
+        
+        .greenscreen-content {
+            position: relative;
+            z-index: 10;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 0;
+        }
+        
+        /* Top Section - Branding & Hook */
+        .top-section {
+            background: linear-gradient(135deg, #064e3b 0%, #065f46 50%, #047857 100%);
+            padding: 25px 20px 30px;
+            position: relative;
+        }
+        
+        .top-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(rgba(20, 184, 166, 0.3) 1px, transparent 1px);
+            background-size: 15px 15px;
+            opacity: 0.4;
+        }
+        
+        .top-section-inner {
+            position: relative;
+            z-index: 2;
+        }
+        
+        /* Logo Row */
+        .logo-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .logo-icon {
+            width: 36px;
+            height: 36px;
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 14px;
+            color: white;
+        }
+        
+        .logo-text {
+            font-size: 16px;
+            font-weight: 700;
+            color: white;
+        }
+        
+        .logo-text span {
+            font-weight: 400;
+            color: #a3e635;
+        }
+        
+        .website {
+            font-size: 11px;
+            color: rgba(255,255,255,0.8);
+            background: rgba(255,255,255,0.1);
+            padding: 5px 10px;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        /* Path Badge */
+        .path-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            padding: 6px 14px;
+            border-radius: 20px;
+            margin-bottom: 15px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .path-badge-icon {
+            font-size: 14px;
+        }
+        
+        .path-badge-text {
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #a3e635;
+        }
+        
+        /* Hook Text */
+        .hook-main {
+            font-size: 26px;
+            font-weight: 800;
+            color: white;
+            line-height: 1.2;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+        
+        .hook-highlight {
+            background: linear-gradient(135deg, #14b8a6 0%, #a3e635 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        /* Green Screen Area */
+        .greenscreen-area {
+            flex: 1;
+            background: #00ff00;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .greenscreen-label {
+            font-size: 14px;
+            color: #006600;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Export-ready single frame */
+        .export-frame {
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 1px solid #333;
+        }
+        
+        .export-frame h2 {
+            color: white;
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+        
+        /* Alternative Hooks */
+        .alt-hooks {
+            background: #2a2a2a;
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 40px;
+            max-width: 800px;
+        }
+        
+        .alt-hooks h3 {
+            color: #a3e635;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+        
+        .alt-hooks ul {
+            list-style: none;
+            color: #ccc;
+            font-size: 14px;
+        }
+        
+        .alt-hooks li {
+            margin-bottom: 10px;
+            padding: 10px 15px;
+            background: #333;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <h1>TikTok Green Screen: Visibility Pyramid</h1>
+    <p class="subtitle">60-second video - "Grinding Won't Get You Promoted"</p>
+    
+    <div class="instructions">
+        <h3>How to Use This</h3>
+        <ul>
+            <li>Screenshot or export this frame for your green screen background</li>
+            <li>Top section has branding, website, and hook - stays visible while you talk</li>
+            <li>Green area is where you'll appear in the video</li>
+            <li>Key message: Working hard alone won't get you promoted - you need visibility with decision-makers</li>
+        </ul>
+    </div>
+    
+    <div class="mockup-container">
+        <!-- Main Green Screen Frame -->
+        <div>
+            <div class="phone-frame">
+                <div class="phone-screen frame-greenscreen">
+                    <div class="greenscreen-content">
+                        <!-- Top Branded Section -->
+                        <div class="top-section">
+                            <div class="top-section-inner">
+                                <!-- Logo Row -->
+                                <div class="logo-row">
+                                    <div class="logo">
+                                        <div class="logo-icon">L²</div>
+                                        <div class="logo-text">Launch<span>ToLead</span></div>
+                                    </div>
+                                    <div class="website">LaunchToLead.io</div>
+                                </div>
+                                
+                                <!-- Path Badge -->
+                                <div class="path-badge">
+                                    <span class="path-badge-icon">📈</span>
+                                    <span class="path-badge-text">Accelerate Path</span>
+                                </div>
+                                
+                                <!-- Hook -->
+                                <div class="hook-main">
+                                    Working harder<br/>
+                                    <span class="hook-highlight">won't get you promoted</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Green Screen Area -->
+                        <div class="greenscreen-area">
+                            <div class="greenscreen-label">[ You appear here ]</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class="frame-label">Green Screen Frame</p>
+            <p class="frame-timing">Full 60 seconds</p>
+        </div>
+    </div>
+    
+    <div class="alt-hooks">
+        <h3>Alternative Hook Options (swap out the text)</h3>
+        <ul>
+            <li><strong>"Your manager isn't fighting for you"</strong> — if they don't know your impact, they can't sell it</li>
+            <li><strong>"Good work doesn't speak for itself"</strong> — you have to make the right people aware</li>
+            <li><strong>"Promotions don't come to those who wait"</strong> — they go to those who are visible</li>
+            <li><strong>"You're invisible to decision-makers"</strong> — and that's why you keep getting passed over</li>
+        </ul>
+    </div>
+    
+    <div class="export-frame">
+        <h2>Export-Ready Frame (Right-click → Save Image As)</h2>
+        
+        <div class="mockup-container">
+            <!-- Clean Export Version -->
+            <div>
+                <div class="phone-frame">
+                    <div class="phone-screen frame-greenscreen">
+                        <div class="greenscreen-content">
+                            <div class="top-section">
+                                <div class="top-section-inner">
+                                    <div class="logo-row">
+                                        <div class="logo">
+                                            <div class="logo-icon">L²</div>
+                                            <div class="logo-text">Launch<span>ToLead</span></div>
+                                        </div>
+                                        <div class="website">LaunchToLead.io</div>
+                                    </div>
+                                    <div class="path-badge">
+                                        <span class="path-badge-icon">📈</span>
+                                        <span class="path-badge-text">Accelerate Path</span>
+                                    </div>
+                                    <div class="hook-main">
+                                        Working harder<br/>
+                                        <span class="hook-highlight">won't get you promoted</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="greenscreen-area">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p class="frame-label">Clean Export (no label)</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="instructions" style="margin-top: 40px;">
+        <h3>Talking Points for 60 Seconds</h3>
+        <ul>
+            <li><strong>0-10s (Hook):</strong> "Stop putting your head down and grinding thinking it'll get you promoted. It won't."</li>
+            <li><strong>10-25s (Problem):</strong> "Performance is the prerequisite, not the differentiator. Everyone at your level is performing. The question isn't 'am I good enough?' It's 'do the RIGHT PEOPLE know I'm good enough?'"</li>
+            <li><strong>25-45s (Solution):</strong> "You need visibility with decision-makers. That means: 1) Building professional relationships with people above your manager. 2) Making sure your work is SEEN, not just done. 3) Having sponsors who advocate for you when you're not in the room."</li>
+            <li><strong>45-60s (CTA):</strong> "If you're stuck at the same level watching less skilled people get promoted, DM me 'visibility' and I'll send you my free Visibility Pyramid guide."</li>
+        </ul>
+    </div>
+
+</body>
+</html>
