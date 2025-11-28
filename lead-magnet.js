@@ -386,6 +386,16 @@
      */
     function selectPath(pathKey) {
         selectedPath = pathKey;
+        
+        // Track click in Google Analytics
+        if (typeof gtag === 'function') {
+            gtag('event', 'lead_magnet_click', {
+                'event_label': CONFIG.paths[pathKey].toolkitName,
+                'path': pathKey,
+                'source': 'index_popup'
+            });
+        }
+        
         goToStep2();
     }
 
@@ -485,10 +495,10 @@
             
             // Track in Google Analytics
             if (typeof gtag === 'function') {
-                gtag('event', 'lead_magnet_download', {
-                    'event_category': 'Lead Generation',
-                    'event_label': CONFIG.paths[path].pathName + ' Guide',
-                    'path': path
+                gtag('event', 'lead_magnet_submit', {
+                    'event_label': CONFIG.paths[path].toolkitName,
+                    'path': path,
+                    'source': 'index_popup'
                 });
             }
             
