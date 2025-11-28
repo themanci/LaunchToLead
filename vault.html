@@ -455,7 +455,11 @@ const VaultPopup = (function() {
         
         // GA4 tracking
         if (typeof gtag === 'function') {
-            gtag('event', 'lead_magnet_click', { playbook: path + '_path_starter' });
+            gtag('event', 'lead_magnet_click', { 
+                'event_label': config.name,
+                'path': path,
+                'source': 'vault_page'
+            });
         }
 
         // Update modal styling
@@ -516,8 +520,9 @@ const VaultPopup = (function() {
                 // GA4 conversion tracking
                 if (typeof gtag === 'function') {
                     gtag('event', 'lead_magnet_submit', { 
-                        playbook: currentPath + '_path_starter',
-                        email: email 
+                        'event_label': PATH_CONFIG[currentPath].name,
+                        'path': currentPath,
+                        'source': 'vault_page'
                     });
                 }
 
