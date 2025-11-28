@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Export: Visibility Pyramid Green Screen | LaunchToLead</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: #1a1a1a;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .instructions {
+            color: #888;
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 14px;
+            max-width: 600px;
+        }
+        
+        .instructions strong {
+            color: #14b8a6;
+        }
+        
+        /* TikTok Frame - 1080x1920 (9:16) */
+        .tiktok-frame {
+            width: 1080px;
+            height: 1920px;
+            position: relative;
+            background: #00ff00;
+        }
+        
+        /* Top Branded Section */
+        .top-section {
+            background: linear-gradient(135deg, #064e3b 0%, #065f46 50%, #047857 100%);
+            padding: 60px 50px 70px;
+            position: relative;
+        }
+        
+        .top-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(rgba(20, 184, 166, 0.3) 1px, transparent 1px);
+            background-size: 25px 25px;
+            opacity: 0.4;
+        }
+        
+        .top-section-inner {
+            position: relative;
+            z-index: 2;
+        }
+        
+        /* Logo Row */
+        .logo-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 50px;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .logo-icon {
+            width: 90px;
+            height: 90px;
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+            border-radius: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 36px;
+            color: white;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+        
+        .logo-text {
+            font-size: 42px;
+            font-weight: 700;
+            color: white;
+        }
+        
+        .logo-text span {
+            font-weight: 400;
+            color: #a3e635;
+        }
+        
+        .website {
+            font-size: 28px;
+            color: rgba(255,255,255,0.9);
+            background: rgba(255,255,255,0.15);
+            padding: 14px 28px;
+            border-radius: 50px;
+            border: 2px solid rgba(255,255,255,0.25);
+            font-weight: 600;
+        }
+        
+        /* Path Badge */
+        .path-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 16px;
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            padding: 16px 32px;
+            border-radius: 50px;
+            margin-bottom: 40px;
+            border: 2px solid rgba(255,255,255,0.25);
+        }
+        
+        .path-badge-icon {
+            font-size: 36px;
+        }
+        
+        .path-badge-text {
+            font-size: 28px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #a3e635;
+        }
+        
+        /* Hook Text */
+        .hook-main {
+            font-size: 72px;
+            font-weight: 800;
+            color: white;
+            line-height: 1.15;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+        
+        .hook-highlight {
+            background: linear-gradient(135deg, #14b8a6 0%, #a3e635 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        /* Green Screen Area */
+        .greenscreen-area {
+            flex: 1;
+            background: #00ff00;
+            min-height: 1200px;
+        }
+    </style>
+</head>
+<body>
+    <p class="instructions">
+        <strong>Right-click the frame below → "Save image as..." or screenshot it</strong><br>
+        Full resolution: 1080x1920px (TikTok/Reels/Shorts format)
+    </p>
+    
+    <!-- Full Resolution TikTok Frame -->
+    <div class="tiktok-frame">
+        <!-- Top Branded Section -->
+        <div class="top-section">
+            <div class="top-section-inner">
+                <!-- Logo Row -->
+                <div class="logo-row">
+                    <div class="logo">
+                        <div class="logo-icon">L²</div>
+                        <div class="logo-text">Launch<span>ToLead</span></div>
+                    </div>
+                    <div class="website">LaunchToLead.io</div>
+                </div>
+                
+                <!-- Path Badge -->
+                <div class="path-badge">
+                    <span class="path-badge-icon">📈</span>
+                    <span class="path-badge-text">Accelerate Path</span>
+                </div>
+                
+                <!-- Hook -->
+                <div class="hook-main">
+                    Working harder<br>
+                    <span class="hook-highlight">won't get you promoted</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Green Screen Area -->
+        <div class="greenscreen-area"></div>
+    </div>
+
+</body>
+</html>
