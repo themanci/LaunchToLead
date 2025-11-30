@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedIn Featured Section Drafts - Launch to Lead</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 15px;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: linear-gradient(135deg, #ecfdf5 0%, #f0fdfa 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            font-size: 32px;
+            font-weight: 800;
+            color: #064e3b;
+            margin-bottom: 8px;
+        }
+
+        .header .subtitle {
+            font-size: 16px;
+            color: #14b8a6;
+            font-weight: 500;
+        }
+
+        /* Section Cards */
+        .section-card {
+            background: white;
+            border-radius: 16px;
+            padding: 32px;
+            margin-bottom: 24px;
+            box-shadow: 0 4px 20px rgba(6, 78, 59, 0.1);
+        }
+
+        .section-card h2 {
+            font-size: 20px;
+            font-weight: 700;
+            color: #064e3b;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #d1fae5;
+        }
+
+        .section-card h3 {
+            font-size: 16px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin: 20px 0 12px 0;
+        }
+
+        .section-card h4 {
+            font-size: 14px;
+            font-weight: 600;
+            color: #14b8a6;
+            margin: 16px 0 8px 0;
+        }
+
+        /* Featured Item Badge */
+        .featured-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #064e3b 0%, #065f46 100%);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+        }
+
+        .featured-badge.lead-magnet {
+            background: linear-gradient(135deg, #0891b2 0%, #06b6d4 100%);
+        }
+
+        .featured-badge.case-study {
+            background: linear-gradient(135deg, #7c3aed 0%, #8b5cf6 100%);
+        }
+
+        .featured-badge.booking {
+            background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);
+        }
+
+        .featured-badge.bonus {
+            background: linear-gradient(135deg, #d97706 0%, #f59e0b 100%);
+        }
+
+        /* LinkedIn Post Preview */
+        .linkedin-preview {
+            background: #f8fffe;
+            border: 1px solid #e5e5e5;
+            border-radius: 12px;
+            padding: 24px;
+            margin: 16px 0;
+        }
+
+        .linkedin-preview .post-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #064e3b;
+            margin-bottom: 12px;
+        }
+
+        .linkedin-preview .post-content {
+            font-size: 14px;
+            line-height: 1.7;
+            color: #333;
+            white-space: pre-line;
+        }
+
+        .linkedin-preview .post-content strong {
+            color: #064e3b;
+        }
+
+        /* Article Preview - Full Width */
+        .article-preview {
+            background: white;
+            border: 2px solid #064e3b;
+            border-radius: 12px;
+            padding: 32px;
+            margin: 16px 0;
+        }
+
+        .article-preview h2 {
+            font-size: 24px;
+            font-weight: 800;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+            border: none;
+            padding: 0;
+        }
+
+        .article-preview .article-subtitle {
+            font-size: 16px;
+            color: #666;
+            font-style: italic;
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        .article-preview .article-body {
+            font-size: 15px;
+            line-height: 1.8;
+            color: #333;
+        }
+
+        .article-preview .article-body p {
+            margin-bottom: 16px;
+        }
+
+        .article-preview .article-body hr {
+            border: none;
+            border-top: 1px solid #e5e5e5;
+            margin: 24px 0;
+        }
+
+        .article-preview .article-body h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #064e3b;
+            margin: 24px 0 12px 0;
+        }
+
+        .article-preview .highlight-box {
+            background: #ecfdf5;
+            border-left: 4px solid #14b8a6;
+            padding: 16px 20px;
+            margin: 16px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .article-preview .results-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin: 16px 0;
+        }
+
+        .article-preview .result-item {
+            background: #f0fdfa;
+            padding: 12px 16px;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+
+        .article-preview .result-item .emoji {
+            margin-right: 8px;
+        }
+
+        /* Summary Table */
+        .summary-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+            margin: 16px 0;
+        }
+
+        .summary-table th {
+            background: #064e3b;
+            color: white;
+            padding: 12px 16px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .summary-table td {
+            padding: 12px 16px;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        .summary-table tr:nth-child(even) {
+            background: #f8fffe;
+        }
+
+        /* Instructions Box */
+        .instructions-box {
+            background: #fef3c7;
+            border: 1px solid #f59e0b;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 16px 0;
+        }
+
+        .instructions-box h4 {
+            color: #92400e;
+            margin-bottom: 12px;
+        }
+
+        .instructions-box ol {
+            margin-left: 20px;
+            color: #78350f;
+        }
+
+        .instructions-box li {
+            margin-bottom: 8px;
+        }
+
+        /* Copy Button */
+        .copy-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #064e3b;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            margin-top: 12px;
+        }
+
+        .copy-btn:hover {
+            background: #065f46;
+            transform: translateY(-1px);
+        }
+
+        /* Divider */
+        .divider {
+            height: 2px;
+            background: linear-gradient(to right, #14b8a6, #a3e635);
+            margin: 40px 0;
+            border-radius: 2px;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #666;
+            font-size: 13px;
+        }
+
+        /* Hormozi Principles */
+        .principles-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin: 16px 0;
+        }
+
+        .principle-item {
+            background: #f0fdfa;
+            padding: 12px 16px;
+            border-radius: 8px;
+            border-left: 3px solid #14b8a6;
+        }
+
+        .principle-item .check {
+            color: #14b8a6;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        .principle-item .name {
+            font-weight: 600;
+            color: #064e3b;
+        }
+
+        .principle-item .desc {
+            font-size: 13px;
+            color: #666;
+            margin-top: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>📌 LinkedIn Featured Section Drafts</h1>
+            <div class="subtitle">Hormozi-Style Content for Launch to Lead</div>
+        </header>
+
+        <!-- Overview -->
+        <div class="section-card">
+            <h2>Overview</h2>
+            <p>LinkedIn's Featured section appears right below your About section and is prime real estate. You can feature posts, articles, links, and media (PDFs, images).</p>
+            
+            <h3>Recommended Featured Items:</h3>
+            <table class="summary-table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Type</th>
+                        <th>Title</th>
+                        <th>Purpose</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Link/Post</td>
+                        <td>FREE: The Impact Equation Quick-Start Guide</td>
+                        <td>Lead capture</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Article</td>
+                        <td>How I Got 4 Promotions in 7 Years</td>
+                        <td>Social proof</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Link</td>
+                        <td>Book a Free 15-Minute Strategy Call</td>
+                        <td>Conversion</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Featured Item #1: Lead Magnet -->
+        <div class="section-card">
+            <span class="featured-badge lead-magnet">Featured Item #1</span>
+            <h2>FREE: The Impact Equation Quick-Start Guide</h2>
+            <h4>Post to share with link to lead magnet:</h4>
+            
+            <div class="linkedin-preview">
+                <div class="post-content">🎯 Your resume bullets are probably costing you interviews.
+
+Here's why:
+
+Most engineers write bullets like this:
+❌ "Maintained spreadsheets for test results"
+
+That's a TASK. Not an IMPACT.
+
+Hiring managers see 500 of these. They blur together.
+
+The fix? <strong>The Impact Equation:</strong>
+
+[Accomplishment] + [Evidence/Metric] + [How] + [Why It Matters]
+
+Same experience, transformed:
+✅ "Solely managed data for 3 major programs across a 10-person team. Wrote a custom Python script touching the Azure DevOps API to automate tracking—cutting maintenance time by 85% and enabling daily executive reporting."
+
+One tells them what you did.
+The other tells them what you're WORTH.
+
+I put together a free quick-start guide that walks you through exactly how to transform your bullets.
+
+🔗 Grab it free: LaunchToLead.io
+
+---
+Who needs this?
+→ Engineering students applying to internships/full-time
+→ Engineers stuck in the "Application Black Hole"
+→ Anyone whose resume isn't getting callbacks
+
+#engineering #careeradvice #resume #jobsearch #engineers</div>
+            </div>
+
+            <p><strong>Link:</strong> LaunchToLead.io/impact-equation (or wherever your lead magnet lives)</p>
+        </div>
+
+        <!-- Featured Item #2: Case Study -->
+        <div class="section-card">
+            <span class="featured-badge case-study">Featured Item #2</span>
+            <h2>How I Got 4 Promotions in 7 Years (The System)</h2>
+            <h4>LinkedIn Article Preview:</h4>
+            
+            <div class="article-preview">
+                <h2>How I Got 4 Promotions in 7 Years at a Fortune 100</h2>
+                <div class="article-subtitle">(Without being the smartest coder in the room)</div>
+                
+                <div class="article-body">
+                    <p>In 2018, I started at John Deere as a Mechanical Development Engineer.</p>
+                    
+                    <p>By 2025, I was leading enterprise initiatives impacting 2,000+ engineers globally.</p>
+                    
+                    <p><strong>4 promotions. 3 major pivots. 7 years.</strong></p>
+                    
+                    <p>Here's exactly how I did it—and why most engineers get stuck.</p>
+
+                    <hr>
+
+                    <h3>THE PROBLEM</h3>
+                    
+                    <p>Universities teach you to calculate.<br>They don't teach you to navigate.</p>
+                    
+                    <p>So you:</p>
+                    <ul>
+                        <li>Work hard</li>
+                        <li>Hit your deadlines</li>
+                        <li>Hope your boss notices</li>
+                        <li>Watch others get promoted</li>
+                    </ul>
+                    
+                    <p>Sound familiar?</p>
+                    
+                    <p>I was stuck there too. Until I realized:</p>
+                    
+                    <div class="highlight-box">
+                        <strong>Performance is not the differentiator.<br>Performance is the ENTRY FEE.</strong>
+                    </div>
+
+                    <hr>
+
+                    <h3>THE SYSTEM I BUILT</h3>
+                    
+                    <p>I started treating my career like an engineering problem:</p>
+                    <ul>
+                        <li>Identify the variables (Visibility, Impact, Sponsorship)</li>
+                        <li>Optimize the constraints</li>
+                        <li>Solve for X (Velocity)</li>
+                    </ul>
+                    
+                    <p>Here's what I learned:</p>
+
+                    <h3>1. THE IMPACT EQUATION</h3>
+                    <p>Stop listing tasks. Start proving value.</p>
+                    <p><strong>Old:</strong> "Maintained spreadsheets"<br>
+                    <strong>New:</strong> "Automated tracking for 3 programs, cutting time by 85%, enabling daily executive visibility"</p>
+                    <p>Same work. Different story. Different outcome.</p>
+
+                    <h3>2. THE VISIBILITY PYRAMID</h3>
+                    <p>Being good is Level 1.<br>Being known for being good is Level 4.</p>
+                    <p>I made sure my skip-level (my boss's boss) knew my name. How? Volunteered for the demo. Sent the summary email that got forwarded up.</p>
+                    <div class="highlight-box">
+                        If your boss gets hit by a bus, does the VP know your name?<br>
+                        If not, you're invisible.
+                    </div>
+
+                    <h3>3. THE TROJAN HORSE</h3>
+                    <p>I wanted to pivot from Mechanical to Software. But I had zero software experience.</p>
+                    <p>So I didn't ASK for a software project. I TOOK a Mechanical problem and solved it with Software.</p>
+                    <p>I automated my own job. Then showed the software team what I built.</p>
+                    <p><strong>Old Problem + New Tool = Pivot Portfolio.</strong></p>
+
+                    <h3>4. THE SERVICE-BASED ASK</h3>
+                    <p>When I wanted promotion, I never said "I want more money."</p>
+                    <p>I said: "I feel I've mastered my current scope. I'm looking for more responsibility so I can solve [Bigger Problem] for the team. What does the gap look like?"</p>
+                    <p>This shifts the conversation from GREED to GROWTH.</p>
+
+                    <hr>
+
+                    <h3>THE RESULTS</h3>
+                    
+                    <div class="results-grid">
+                        <div class="result-item"><span class="emoji">📈</span> 4 Promotions in 7 years (IC → Leadership)</div>
+                        <div class="result-item"><span class="emoji">🔄</span> 3 Major Pivots (Civil → Mech → SW → Leader)</div>
+                        <div class="result-item"><span class="emoji">🚀</span> Currently impacting 2,000+ engineers</div>
+                        <div class="result-item"><span class="emoji">💰</span> Delivered $1B+ in programs to market</div>
+                    </div>
+
+                    <hr>
+
+                    <h3>THE LESSON</h3>
+                    
+                    <p><strong>Your career is an engineering problem.</strong></p>
+                    <p>Most people hope and wait.<br>Engineers identify variables and optimize.</p>
+                    <p>I built a system. It worked for me.<br>Now I teach it to other engineers.</p>
+
+                    <hr>
+
+                    <p>If you're stuck in the "Application Black Hole" or the "Mid-Career Plateau," I can help.</p>
+                    <p>I open limited coaching spots each month.<br><strong>Book a free strategy call: LaunchToLead.io</strong></p>
+
+                    <hr>
+
+                    <p><em>What's ONE thing you wish you'd known earlier in your career?<br>Drop it in the comments. 👇</em></p>
+                    
+                    <p>#engineering #careeradvice #promotion #leadership #softwareengineering</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Featured Item #3: Strategy Call -->
+        <div class="section-card">
+            <span class="featured-badge booking">Featured Item #3</span>
+            <h2>Book a Free 15-Minute Strategy Call</h2>
+            <h4>Post to share with booking link:</h4>
+            
+            <div class="linkedin-preview">
+                <div class="post-content">🎯 Are you a "High-Potential" Engineer feeling stuck?
+
+Maybe you're:
+→ Applying to jobs and hearing nothing back
+→ Doing great work but watching others get promoted
+→ Stuck in a domain you hate but afraid to switch
+
+I've been there. And I found the way out.
+
+4 promotions in 7 years.
+3 major pivots.
+$1B+ programs delivered.
+
+Now I help other engineers do the same.
+
+I open a limited number of FREE strategy calls each month.
+
+In 15 minutes, we'll:
+✅ Identify what's actually holding you back
+✅ Map out your fastest path forward
+✅ See if coaching is the right fit
+
+No pressure. No pitch. Just clarity.
+
+🔗 Book your call: LaunchToLead.io
+
+---
+
+<strong>Who this is for:</strong>
+• Engineering students/grads struggling to land offers
+• Engineers stuck in a domain they want to escape
+• Senior engineers ready for leadership but overlooked
+
+<strong>Who this is NOT for:</strong>
+• People looking for generic advice (Google that)
+• People not willing to put in the work
+• People happy with "hoping for the best"
+
+If you're ready to engineer your career like you engineer everything else—let's talk.
+
+#engineering #careercoaching #jobsearch #promotion #careeradvice</div>
+            </div>
+
+            <p><strong>Link:</strong> LaunchToLead.io (or Calendly link)</p>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Bonus Posts -->
+        <div class="section-card">
+            <span class="featured-badge bonus">Bonus Content</span>
+            <h2>High-Engagement Post Ideas</h2>
+            <p>These can be regular posts that you later feature if they perform well:</p>
+
+            <h3>Post Idea 1: "The Interview Pause"</h3>
+            <div class="linkedin-preview">
+                <div class="post-content">The most confident thing you can do in an interview:
+
+"That's a great question. Can I take a moment to think?"
+
+Why it works:
+- Shows you're thoughtful, not reactive
+- Proves confidence, not nervousness
+- Gives you time to find your BEST example
+
+The interviewer isn't timing you.
+They're evaluating you.
+
+Rushed answers sound desperate.
+Paused answers sound executive.
+
+Try it next time.
+
+#interviews #engineering #careeradvice #jobsearch</div>
+            </div>
+
+            <h3>Post Idea 2: "The Boring to Booming Transformation"</h3>
+            <div class="linkedin-preview">
+                <div class="post-content">Your resume bullet: "Maintained spreadsheets for test results."
+
+My reaction: 😴
+
+Let me fix that in 30 seconds:
+
+"Solely managed data for 3 major programs across a 10-person team, handling 100 daily tests. Wrote a custom Python script touching the Azure DevOps API to automate tracking, cutting maintenance time by 85% and enabling daily executive reporting."
+
+Same experience.
+Completely different impression.
+
+The formula:
+[What you did] + [Scale/Metric] + [How] + [Why it matters]
+
+I call it The Impact Equation.
+
+Your resume is not a job description.
+It's a highlight reel.
+
+Write like it.
+
+#resume #engineering #jobsearch #careeradvice</div>
+            </div>
+
+            <h3>Post Idea 3: "The Application Black Hole"</h3>
+            <div class="linkedin-preview">
+                <div class="post-content">You've applied to 50 jobs.
+You've heard back from 2.
+Both were rejections.
+
+Welcome to the Application Black Hole.
+
+Here's why it happens:
+
+1. Your bullets read like job descriptions (boring)
+2. Your resume uses YOUR industry jargon (confusing)
+3. You're competing with 500 other "did the job" resumes
+
+The fix isn't applying MORE.
+The fix is applying BETTER.
+
+I went from 5% callback rate to 40% using 3 changes:
+→ Impact Equation (outcomes, not tasks)
+→ Universal Translator (remove jargon)
+→ Pattern Interrupt (confidence, not desperation)
+
+Stop spraying and praying.
+Start engineering your applications.
+
+More on this in my free guide: LaunchToLead.io
+
+#jobsearch #engineering #resume #careeradvice</div>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- How To Add -->
+        <div class="section-card">
+            <h2>📝 How To Add Featured Items on LinkedIn</h2>
+            
+            <div class="instructions-box">
+                <h4>Step-by-Step:</h4>
+                <ol>
+                    <li>Go to your LinkedIn profile</li>
+                    <li>Click <strong>"Add profile section"</strong></li>
+                    <li>Select <strong>"Recommended" → "Add featured"</strong></li>
+                    <li>Choose: Post, Article, Link, or Media</li>
+                    <li>For links: Paste URL, add custom title/description</li>
+                    <li>Drag to reorder (most important = first)</li>
+                </ol>
+            </div>
+
+            <h3>Recommended Order:</h3>
+            <ol>
+                <li><strong>Lead Magnet</strong> (Impact Equation Guide) - Captures leads</li>
+                <li><strong>Case Study</strong> (4 Promotions Article) - Builds credibility</li>
+                <li><strong>Strategy Call</strong> (Booking Link) - Converts interest</li>
+            </ol>
+        </div>
+
+        <!-- Hormozi Principles -->
+        <div class="section-card">
+            <h2>🎯 Hormozi Principles Applied</h2>
+            
+            <div class="principles-grid">
+                <div class="principle-item">
+                    <span class="check">✅</span>
+                    <span class="name">Specificity > Vagueness</span>
+                    <div class="desc">"4 promotions in 7 years" beats "career growth"</div>
+                </div>
+                <div class="principle-item">
+                    <span class="check">✅</span>
+                    <span class="name">Outcomes > Activities</span>
+                    <div class="desc">"$1B+ programs delivered" beats "led projects"</div>
+                </div>
+                <div class="principle-item">
+                    <span class="check">✅</span>
+                    <span class="name">Social Proof</span>
+                    <div class="desc">Director recognition, 2,000+ engineers, autonomous vehicles</div>
+                </div>
+                <div class="principle-item">
+                    <span class="check">✅</span>
+                    <span class="name">Scarcity</span>
+                    <div class="desc">"Limited coaching spots each month"</div>
+                </div>
+                <div class="principle-item">
+                    <span class="check">✅</span>
+                    <span class="name">Risk Reversal</span>
+                    <div class="desc">"Free 15-minute strategy call"</div>
+                </div>
+                <div class="principle-item">
+                    <span class="check">✅</span>
+                    <span class="name">Pattern Interrupt</span>
+                    <div class="desc">Short lines. Bold claims. Different format.</div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            Launch to Lead - LinkedIn Featured Section Drafts<br>
+            Created: November 30, 2025
+        </footer>
+    </div>
+</body>
+</html>
