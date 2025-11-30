@@ -53,8 +53,16 @@
 
 <main>
 
-<!-- HERO - Condensed -->
-<div id="top" class="relative pt-16 pb-12 bg-white overflow-hidden">
+<!-- Scarcity Banner -->
+<div class="bg-red-600 text-white py-3 text-center text-sm font-bold">
+    <div class="max-w-7xl mx-auto px-4 flex items-center justify-center gap-2">
+        <i data-lucide="alert-circle" class="w-4 h-4"></i>
+        <span>Only 10 spots available per month — These engineers took action. Will you?</span>
+    </div>
+</div>
+
+<!-- HERO - Pain-First -->
+<div id="top" class="relative pt-12 pb-10 bg-white overflow-hidden">
     <!-- Dot Pattern -->
     <div class="absolute inset-0 bg-dots opacity-20" style="background-size: 20px 20px;"></div>
     
@@ -63,147 +71,494 @@
     <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 bg-lime-100 rounded-full blur-3xl opacity-60" aria-hidden="true"></div>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+        <p class="text-emerald-600 font-bold text-sm uppercase tracking-wider mb-3">Real Transformations, Real Results</p>
         <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight mb-4">
-            Real Client Success Stories
+            From 200+ Applications & Zero Callbacks<br class="hidden md:block"> to <span class="text-emerald-600">Fortune 500 Offers</span>
         </h1>
-        <p class="max-w-2xl mx-auto text-lg text-slate-500 font-light leading-relaxed">
-            Real results from engineers who launched careers, pivoted disciplines, and accelerated to leadership.
+        <p class="max-w-2xl mx-auto text-lg text-slate-600 font-medium leading-relaxed mb-6">
+            These engineers were exactly where you are. Here's how they escaped.
         </p>
+        
+        <!-- Pain Validation Box -->
+        <div class="max-w-3xl mx-auto bg-slate-900 rounded-2xl p-6 text-left">
+            <p class="text-slate-300 text-sm mb-3">If any of these sound familiar, you're not alone:</p>
+            <div class="grid md:grid-cols-2 gap-3">
+                <div class="flex items-start gap-2">
+                    <i data-lucide="check" class="w-4 h-4 text-red-400 mt-0.5 flex-shrink-0"></i>
+                    <span class="text-slate-200 text-sm">Sent 50+ applications with nothing to show for it</span>
+                </div>
+                <div class="flex items-start gap-2">
+                    <i data-lucide="check" class="w-4 h-4 text-red-400 mt-0.5 flex-shrink-0"></i>
+                    <span class="text-slate-200 text-sm">Questioning if your $40,000 degree was worth it</span>
+                </div>
+                <div class="flex items-start gap-2">
+                    <i data-lucide="check" class="w-4 h-4 text-red-400 mt-0.5 flex-shrink-0"></i>
+                    <span class="text-slate-200 text-sm">Dreading "how's the job hunt going?" at family dinners</span>
+                </div>
+                <div class="flex items-start gap-2">
+                    <i data-lucide="check" class="w-4 h-4 text-red-400 mt-0.5 flex-shrink-0"></i>
+                    <span class="text-slate-200 text-sm">Worried AI will take entry-level jobs before you get one</span>
+                </div>
+            </div>
+            <p class="text-emerald-400 font-bold text-sm mt-4">Every engineer below felt the exact same way. Then they took action.</p>
+        </div>
     </div>
 </div>
 
 <!-- Client Testimonials -->
-<div class="py-16 bg-brand-light">
+<div class="py-12 bg-brand-light">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <!-- Overview Cards - Quick Scan -->
-        <div class="grid md:grid-cols-3 gap-6 mb-12">
-            <!-- Jonah B. - Pivot Success -->
-            <a href="#jonah-story" class="block bg-white p-6 rounded-2xl shadow-sm border-2 border-emerald-200 hover:shadow-lg hover:border-emerald-300 transition duration-300 cursor-pointer">
-                <div class="flex items-start gap-3 mb-3">
-                    <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-emerald-300 flex-shrink-0">
-                        <img src="testimonials/pictures/jonah_brehm.jpeg" alt="Jonah Brehm" class="w-full h-full object-cover">
-                    </div>
-                    <div class="flex-1">
-                        <h4 class="font-bold text-slate-800 text-base">Jonah B.</h4>
-                        <p class="text-xs text-emerald-600 font-semibold">PIVOT SUCCESS</p>
-                    </div>
-                </div>
-                <p class="text-sm text-slate-700 font-medium mb-2">Mechanical Engineer → Software Test Engineer</p>
-                <p class="text-xs text-slate-600 mb-3">Breaking into software with a Mechanical Engineering degree at John Deere</p>
-                <div class="bg-emerald-50 p-3 rounded-lg border border-emerald-100">
-                    <p class="text-xs font-bold text-emerald-800">Result:</p>
-                    <p class="text-xs text-emerald-700">Successfully pivoted to permanent Software role within the same company</p>
-                </div>
-            </a>
+        
+        <!-- Section Label -->
+        <div class="text-center mb-8">
+            <p class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Launch Path Success Stories</p>
+            <h2 class="text-2xl font-bold text-slate-900">Engineers Who Landed Their First Role</h2>
+        </div>
 
-            <!-- Mohamed I. - Launch Success -->
-            <a href="#mohamed-story" class="block bg-white p-6 rounded-2xl shadow-sm border-2 border-blue-200 hover:shadow-lg hover:border-blue-300 transition duration-300 cursor-pointer">
-                <div class="flex items-start gap-3 mb-3">
-                    <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-blue-300 flex-shrink-0">
-                        <img src="testimonials/pictures/mohamed_ibrahim.jpg" alt="Mohamed Ibrahim" class="w-full h-full object-cover">
-                    </div>
-                    <div class="flex-1">
-                        <h4 class="font-bold text-slate-800 text-base">Mohamed I.</h4>
-                        <p class="text-xs text-blue-600 font-semibold">LAUNCH SUCCESS</p>
-                    </div>
-                </div>
-                <p class="text-sm text-slate-700 font-medium mb-2">Contract Engineer → Permanent Software Engineer</p>
-                <p class="text-xs text-slate-600 mb-3">Mastering interviews and pivoting from mechanical CI to software at John Deere</p>
-                <div class="bg-blue-50 p-3 rounded-lg border border-blue-100">
-                    <p class="text-xs font-bold text-blue-800">Result:</p>
-                    <p class="text-xs text-blue-700">Landed permanent role, then pivoted from mechanical CI to software within company</p>
-                </div>
-            </a>
-
-            <!-- Gavin P. - Launch/Accelerate Success -->
-            <a href="#gavin-story" class="block bg-white p-6 rounded-2xl shadow-sm border-2 border-purple-200 hover:shadow-lg hover:border-purple-300 transition duration-300 cursor-pointer">
-                <div class="flex items-start gap-3 mb-3">
-                    <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-purple-300 flex-shrink-0">
+        <!-- Overview Cards - Launch Path First -->
+        <div class="grid md:grid-cols-3 gap-6 mb-8">
+            <!-- Gavin P. - Launch Success (LEAD STORY) -->
+            <a href="#gavin-story" class="block bg-white p-6 rounded-2xl shadow-md border-2 border-emerald-400 hover:shadow-xl hover:border-emerald-500 transition duration-300 cursor-pointer relative overflow-hidden">
+                <div class="absolute top-0 right-0 bg-emerald-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg">LAUNCH PATH</div>
+                <div class="flex items-start gap-3 mb-3 mt-4">
+                    <div class="w-14 h-14 rounded-full overflow-hidden border-3 border-emerald-400 flex-shrink-0">
                         <img src="testimonials/pictures/gavin_patel.jpg" alt="Gavin Patel" class="w-full h-full object-cover">
                     </div>
                     <div class="flex-1">
                         <h4 class="font-bold text-slate-800 text-base">Gavin P.</h4>
-                        <p class="text-xs text-purple-600 font-semibold">LAUNCH + ACCELERATE</p>
+                        <p class="text-xs text-emerald-600 font-semibold">NEW GRAD → FORTUNE 500</p>
                     </div>
                 </div>
-                <p class="text-sm text-slate-700 font-medium mb-2">Intern → Software Engineer at Fortune 500</p>
-                <p class="text-xs text-slate-600 mb-3">Building early-career foundations and navigating first engineering role</p>
-                <div class="bg-purple-50 p-3 rounded-lg border border-purple-100">
-                    <p class="text-xs font-bold text-purple-800">Result:</p>
-                    <p class="text-xs text-purple-700">Software Engineer at $8.6B+ Fortune 500 company in national security tech</p>
-                </div>
-            </a>
-
-            <!-- Cole H. - Accelerate Success -->
-            <a href="#cole-story" class="block bg-white p-6 rounded-2xl shadow-sm border-2 border-teal-200 hover:shadow-lg hover:border-teal-300 transition duration-300 cursor-pointer">
-                <div class="flex items-start gap-3 mb-3">
-                    <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-teal-300 flex-shrink-0">
-                        <img src="testimonials/pictures/cole_hunzeker.jpeg" alt="Cole Hunzeker" class="w-full h-full object-cover">
-                    </div>
-                    <div class="flex-1">
-                        <h4 class="font-bold text-slate-800 text-base">Cole H.</h4>
-                        <p class="text-xs text-teal-600 font-semibold">ACCELERATE SUCCESS</p>
-                    </div>
-                </div>
-                <p class="text-sm text-slate-700 font-medium mb-2">Breaking Through the Promotion Plateau</p>
-                <p class="text-xs text-slate-600 mb-3">Overcoming repeated promotion pass-overs and positioning for leadership advancement at John Deere</p>
-                <div class="bg-teal-50 p-3 rounded-lg border border-teal-100">
-                    <p class="text-xs font-bold text-teal-800">Result:</p>
-                    <p class="text-xs text-teal-700">Received promotion interview with excellent feedback, gained team recognition, positioned 1-2 years ahead</p>
+                <p class="text-sm text-slate-800 font-bold mb-2">Zero Industry Experience → $75K+ Software Role</p>
+                <p class="text-xs text-slate-600 mb-3">New grad with no connections, no internships at target company — landed Fortune 500 offer</p>
+                <div class="bg-emerald-50 p-3 rounded-lg border border-emerald-200">
+                    <p class="text-xs font-bold text-emerald-800 mb-1">💰 THE MATH:</p>
+                    <p class="text-xs text-emerald-700">$0/month → ~$6,250/month ($75K+ salary)</p>
                 </div>
             </a>
 
-            <!-- Murilo B. - Accelerate Success -->
-            <a href="#murilo-story" class="block bg-white p-6 rounded-2xl shadow-sm border-2 border-indigo-200 hover:shadow-lg hover:border-indigo-300 transition duration-300 cursor-pointer">
-                <div class="flex items-start gap-3 mb-3">
-                    <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-indigo-300 flex-shrink-0">
-                        <img src="testimonials/pictures/murilo_baptistella.jpg" alt="Murilo Baptistella" class="w-full h-full object-cover">
+            <!-- Mohamed I. - Launch Success -->
+            <a href="#mohamed-story" class="block bg-white p-6 rounded-2xl shadow-md border-2 border-emerald-400 hover:shadow-xl hover:border-emerald-500 transition duration-300 cursor-pointer relative overflow-hidden">
+                <div class="absolute top-0 right-0 bg-emerald-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg">LAUNCH PATH</div>
+                <div class="flex items-start gap-3 mb-3 mt-4">
+                    <div class="w-14 h-14 rounded-full overflow-hidden border-3 border-emerald-400 flex-shrink-0">
+                        <img src="testimonials/pictures/mohamed_ibrahim.jpg" alt="Mohamed Ibrahim" class="w-full h-full object-cover">
                     </div>
                     <div class="flex-1">
-                        <h4 class="font-bold text-slate-800 text-base">Murilo B.</h4>
-                        <p class="text-xs text-indigo-600 font-semibold">ACCELERATE SUCCESS</p>
+                        <h4 class="font-bold text-slate-800 text-base">Mohamed I.</h4>
+                        <p class="text-xs text-emerald-600 font-semibold">CONTRACT → PERMANENT</p>
                     </div>
                 </div>
-                <p class="text-sm text-slate-700 font-medium mb-2">From Stuck to Strategically Positioned</p>
-                <p class="text-xs text-slate-600 mb-3">Senior engineer breaking through career stagnation: accelerated software transition, gained pre-promotion leadership proof, mastered AI</p>
-                <div class="bg-indigo-50 p-3 rounded-lg border border-indigo-100">
-                    <p class="text-xs font-bold text-indigo-800">Result:</p>
-                    <p class="text-xs text-indigo-700">Gained direct report before promotion, accelerated software transition, improved productivity with AI mastery, positioned for advancement</p>
+                <p class="text-sm text-slate-800 font-bold mb-2">Stuck in Contract Hell → Permanent + Software Pivot</p>
+                <p class="text-xs text-slate-600 mb-3">Struggling with interviews, trapped in contract role — broke through to permanent</p>
+                <div class="bg-emerald-50 p-3 rounded-lg border border-emerald-200">
+                    <p class="text-xs font-bold text-emerald-800 mb-1">💰 THE MATH:</p>
+                    <p class="text-xs text-emerald-700">Contract (no security) → Permanent salary + benefits</p>
                 </div>
             </a>
 
             <!-- Ebuka O. - Launch Success -->
-            <a href="#ebuka-story" class="block bg-white p-6 rounded-2xl shadow-sm border-2 border-lime-200 hover:shadow-lg hover:border-lime-300 transition duration-300 cursor-pointer">
-                <div class="flex items-start gap-3 mb-3">
-                    <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-lime-300 flex-shrink-0">
+            <a href="#ebuka-story" class="block bg-white p-6 rounded-2xl shadow-md border-2 border-emerald-400 hover:shadow-xl hover:border-emerald-500 transition duration-300 cursor-pointer relative overflow-hidden">
+                <div class="absolute top-0 right-0 bg-emerald-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg">LAUNCH PATH</div>
+                <div class="flex items-start gap-3 mb-3 mt-4">
+                    <div class="w-14 h-14 rounded-full overflow-hidden border-3 border-emerald-400 flex-shrink-0">
                         <img src="testimonials/pictures/chiebuka_onyejesi.jpg" alt="Chiebuka Onyejesi" class="w-full h-full object-cover">
                     </div>
                     <div class="flex-1">
-                        <h4 class="font-bold text-slate-800 text-base">Chiebuka "Ebuka" O.</h4>
-                        <p class="text-xs text-lime-600 font-semibold">LAUNCH SUCCESS</p>
+                        <h4 class="font-bold text-slate-800 text-base">Ebuka O.</h4>
+                        <p class="text-xs text-emerald-600 font-semibold">INTERN → POSITIONED</p>
                     </div>
                 </div>
-                <p class="text-sm text-slate-700 font-medium mb-2">Intern → Return Offer Strategy</p>
-                <p class="text-xs text-slate-600 mb-3">Maximizing internship impact, building connections, and securing career foundation at John Deere</p>
-                <div class="bg-lime-50 p-3 rounded-lg border border-lime-100">
-                    <p class="text-xs font-bold text-lime-800">Result:</p>
-                    <p class="text-xs text-lime-700">Connected deeply across Deere, broadened career mindset beyond one company, positioned for strong full-time launch</p>
+                <p class="text-sm text-slate-800 font-bold mb-2">Lost & Directionless → Strategic Career Launch</p>
+                <p class="text-xs text-slate-600 mb-3">Didn't know how to maximize internship — built network & expanded vision</p>
+                <div class="bg-emerald-50 p-3 rounded-lg border border-emerald-200">
+                    <p class="text-xs font-bold text-emerald-800 mb-1">💰 THE MATH:</p>
+                    <p class="text-xs text-emerald-700">Random intern → Strategic positioning for full-time</p>
                 </div>
             </a>
         </div>
 
+        <!-- Pivot Success Card -->
+        <div class="mb-8">
+            <p class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-4 text-center">Pivot Success Story</p>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="md:col-start-2">
+                    <!-- Jonah B. - Pivot Success -->
+                    <a href="#jonah-story" class="block bg-white p-6 rounded-2xl shadow-md border-2 border-blue-300 hover:shadow-xl hover:border-blue-400 transition duration-300 cursor-pointer relative overflow-hidden">
+                        <div class="absolute top-0 right-0 bg-blue-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg">PIVOT PATH</div>
+                        <div class="flex items-start gap-3 mb-3 mt-4">
+                            <div class="w-14 h-14 rounded-full overflow-hidden border-3 border-blue-300 flex-shrink-0">
+                                <img src="testimonials/pictures/jonah_brehm.jpeg" alt="Jonah Brehm" class="w-full h-full object-cover">
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="font-bold text-slate-800 text-base">Jonah B.</h4>
+                                <p class="text-xs text-blue-600 font-semibold">MECHANICAL → SOFTWARE</p>
+                            </div>
+                        </div>
+                        <p class="text-sm text-slate-800 font-bold mb-2">"0% Chance of Breaking In" → Software Engineer</p>
+                        <p class="text-xs text-slate-600 mb-3">ME degree, felt powerless — pivoted to software at same company</p>
+                        <div class="bg-blue-50 p-3 rounded-lg border border-blue-200">
+                            <p class="text-xs font-bold text-blue-800 mb-1">🎯 KEY QUOTE:</p>
+                            <p class="text-xs text-blue-700 italic">"There is a 0% chance I would have broken into my current role without you."</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Accelerate Success Cards (Grayed) -->
+        <div class="mb-8">
+            <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4 text-center">Accelerate Path Stories (Coming Soon)</p>
+            <div class="grid md:grid-cols-2 gap-6 opacity-60">
+                <!-- Cole H. - Accelerate Success -->
+                <a href="#cole-story" class="block bg-white p-6 rounded-2xl shadow-sm border-2 border-slate-200 hover:shadow-md transition duration-300 cursor-pointer relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-slate-400 text-white text-xs font-bold px-3 py-1 rounded-bl-lg">ACCELERATE</div>
+                    <div class="flex items-start gap-3 mb-3 mt-4">
+                        <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-slate-300 flex-shrink-0">
+                            <img src="testimonials/pictures/cole_hunzeker.jpeg" alt="Cole Hunzeker" class="w-full h-full object-cover">
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="font-bold text-slate-700 text-base">Cole H.</h4>
+                            <p class="text-xs text-slate-500 font-semibold">PASSED OVER → PROMOTION READY</p>
+                        </div>
+                    </div>
+                    <p class="text-sm text-slate-700 font-medium mb-2">Passed Over 3 Times → Promotion-Ready in 90 Days</p>
+                    <p class="text-xs text-slate-500">"I believe I will get a promotion a year or 2 earlier than without the help."</p>
+                </a>
+
+                <!-- Murilo B. - Accelerate Success -->
+                <a href="#murilo-story" class="block bg-white p-6 rounded-2xl shadow-sm border-2 border-slate-200 hover:shadow-md transition duration-300 cursor-pointer relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-slate-400 text-white text-xs font-bold px-3 py-1 rounded-bl-lg">ACCELERATE</div>
+                    <div class="flex items-start gap-3 mb-3 mt-4">
+                        <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-slate-300 flex-shrink-0">
+                            <img src="testimonials/pictures/murilo_baptistella.jpg" alt="Murilo Baptistella" class="w-full h-full object-cover">
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="font-bold text-slate-700 text-base">Murilo B.</h4>
+                            <p class="text-xs text-slate-500 font-semibold">STUCK → STRATEGICALLY POSITIONED</p>
+                        </div>
+                    </div>
+                    <p class="text-sm text-slate-700 font-medium mb-2">Career Stagnation → Leadership Proof + Software Pivot</p>
+                    <p class="text-xs text-slate-500">Gained direct report before promotion, accelerated software transition</p>
+                </a>
+            </div>
+        </div>
+
+        <!-- Money Quotes Banner -->
+        <div class="bg-slate-900 rounded-2xl p-6 mb-12">
+            <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4 text-center">What They Said After Working With Me</p>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="text-center">
+                    <p class="text-white text-lg font-bold italic mb-2">"There is a 0% chance I would have broken into my current role without you."</p>
+                    <p class="text-emerald-400 text-sm font-semibold">— Jonah B.</p>
+                </div>
+                <div class="text-center">
+                    <p class="text-white text-lg font-bold italic mb-2">"I will get a promotion 1-2 years earlier than I would have without the help."</p>
+                    <p class="text-emerald-400 text-sm font-semibold">— Cole H.</p>
+                </div>
+                <div class="text-center">
+                    <p class="text-white text-lg font-bold italic mb-2">"Mansour is passionate and caring about other's success."</p>
+                    <p class="text-emerald-400 text-sm font-semibold">— Mohamed I.</p>
+                </div>
+            </div>
+        </div>
+
         <!-- Detailed Success Stories -->
         <div class="space-y-8">
-            <!-- Jonah's Full Story -->
-            <div id="jonah-story" class="bg-white p-8 rounded-2xl shadow-md border-l-4 border-emerald-500">
+
+            <!-- Skeptic Callout -->
+            <div class="bg-amber-50 border-2 border-amber-300 rounded-2xl p-6 text-center">
+                <p class="text-amber-800 font-bold text-lg mb-2">💭 "But my situation is different..."</p>
+                <p class="text-amber-700 text-sm">Gavin had ZERO industry experience. Mohamed was stuck in contract hell. Jonah had a Mechanical Engineering degree trying to break into Software. Whatever your "but," someone here probably had it worse — and still succeeded.</p>
+            </div>
+
+            <!-- Gavin's Full Story (LEAD - Launch Path) -->
+            <div id="gavin-story" class="bg-white p-8 rounded-2xl shadow-lg border-l-4 border-emerald-500 relative">
+                <div class="absolute top-4 right-4 bg-emerald-500 text-white text-xs font-bold px-3 py-1 rounded-full">LAUNCH PATH</div>
+                
                 <div class="flex items-start gap-6 mb-6">
-                    <div class="w-20 h-20 rounded-full overflow-hidden border-4 border-emerald-300 flex-shrink-0 shadow-lg">
+                    <div class="w-20 h-20 rounded-full overflow-hidden border-4 border-emerald-400 flex-shrink-0 shadow-lg">
+                        <img src="testimonials/pictures/gavin_patel.jpg" alt="Gavin Patel" class="w-full h-full object-cover">
+                    </div>
+                    <div class="flex-1">
+                        <h3 class="text-2xl font-bold text-slate-900 mb-2">Gavin P. — Zero Experience to Fortune 500</h3>
+                        <p class="text-sm text-emerald-600 font-semibold uppercase tracking-wide">New Grad → Software Engineer at $8.6B Company</p>
+                    </div>
+                </div>
+
+                <!-- The Math Box -->
+                <div class="bg-emerald-900 text-white p-4 rounded-xl mb-6">
+                    <p class="text-xs font-bold text-emerald-300 uppercase tracking-wider mb-2">📊 THE TRANSFORMATION</p>
+                    <div class="grid md:grid-cols-3 gap-4 text-center">
+                        <div>
+                            <p class="text-2xl font-bold text-red-400">$0</p>
+                            <p class="text-xs text-emerald-200">Monthly income BEFORE</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl font-bold text-emerald-400">→</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl font-bold text-emerald-400">~$6,250</p>
+                            <p class="text-xs text-emerald-200">Monthly income AFTER ($75K+/yr)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-6">
+                    <!-- Challenge -->
+                    <div>
+                        <h4 class="text-lg font-bold text-slate-800 mb-2 flex items-center gap-2">
+                            <i data-lucide="alert-circle" class="w-5 h-5 text-red-500"></i>
+                            The Challenge
+                        </h4>
+                        <p class="text-slate-700 leading-relaxed mb-3">
+                            <strong>New grad with no industry experience at his target company.</strong>
+                        </p>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            As an engineering intern, Gavin was facing the same fears every new grad faces: How do I stand out with no real experience? How do I navigate interviews when I've never done this before? How do I even know what to ask for help with? He needed guidance on advocating for himself and learning the unwritten rules that engineering school never taught.
+                        </p>
+                    </div>
+
+                    <!-- Breakthrough -->
+                    <div>
+                        <h4 class="text-lg font-bold text-slate-800 mb-2 flex items-center gap-2">
+                            <i data-lucide="lightbulb" class="w-5 h-5 text-amber-500"></i>
+                            The Breakthrough
+                        </h4>
+                        <blockquote class="border-l-4 border-emerald-500 pl-4 italic text-slate-700 leading-relaxed">
+                            "Mansour took the time to share thoughtful early-career advice, covering everything from navigating interviews to advocating for myself. What stood out most was how open he was about his own career journey—the honest ups and downs made his guidance feel real, grounded, and genuinely motivating."
+                        </blockquote>
+                        <p class="text-slate-600 mt-3 text-sm leading-relaxed">
+                            Through coaching, Gavin received authentic career guidance that went beyond generic advice. We covered practical strategies for interviews, self-advocacy, and the strategic thinking that separates engineers who get stuck from those who accelerate. The transparent, experience-based approach helped him build a foundation for long-term success.
+                        </p>
+                    </div>
+
+                    <!-- Result -->
+                    <div>
+                        <h4 class="text-lg font-bold text-slate-800 mb-2 flex items-center gap-2">
+                            <i data-lucide="trophy" class="w-5 h-5 text-green-500"></i>
+                            The Result
+                        </h4>
+                        <div class="bg-emerald-50 p-4 rounded-lg border border-emerald-200">
+                            <p class="text-emerald-900 font-bold text-lg mb-2">
+                                Software Engineer at Fortune 500 Company ($8.6B+ annual revenue)
+                            </p>
+                            <p class="text-emerald-800 text-sm leading-relaxed">
+                                Gavin successfully transitioned from intern to full-time Software Engineer at a Fortune 500 company in the national security technology sector — armed with the foundational skills and mindset to continue accelerating his career.
+                            </p>
+                        </div>
+                        <blockquote class="mt-4 border-l-4 border-emerald-500 pl-4 italic text-slate-700 font-medium">
+                            "Anyone who works with him will be getting a coach who truly listens, shares generously, and believes in helping people reach their full potential."
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mohamed's Full Story -->
+            <div id="mohamed-story" class="bg-white p-8 rounded-2xl shadow-lg border-l-4 border-emerald-500 relative">
+                <div class="absolute top-4 right-4 bg-emerald-500 text-white text-xs font-bold px-3 py-1 rounded-full">LAUNCH PATH</div>
+                
+                <div class="flex items-start gap-6 mb-6">
+                    <div class="w-20 h-20 rounded-full overflow-hidden border-4 border-emerald-400 flex-shrink-0 shadow-lg">
+                        <img src="testimonials/pictures/mohamed_ibrahim.jpg" alt="Mohamed Ibrahim" class="w-full h-full object-cover">
+                    </div>
+                    <div class="flex-1">
+                        <h3 class="text-2xl font-bold text-slate-900 mb-2">Mohamed I. — From Contract Hell to Permanent + Pivot</h3>
+                        <p class="text-sm text-emerald-600 font-semibold uppercase tracking-wide">Contract Engineer → Permanent Salaried + Software Transition</p>
+                    </div>
+                </div>
+
+                <!-- The Math Box -->
+                <div class="bg-emerald-900 text-white p-4 rounded-xl mb-6">
+                    <p class="text-xs font-bold text-emerald-300 uppercase tracking-wider mb-2">📊 THE TRANSFORMATION</p>
+                    <div class="grid md:grid-cols-2 gap-4 text-center">
+                        <div>
+                            <p class="text-lg font-bold text-red-400">Contract Role</p>
+                            <p class="text-xs text-emerald-200">No job security, no benefits, no path forward</p>
+                        </div>
+                        <div>
+                            <p class="text-lg font-bold text-emerald-400">Permanent + Software Pivot</p>
+                            <p class="text-xs text-emerald-200">Full salary, benefits, career trajectory</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-6">
+                    <!-- Challenge -->
+                    <div>
+                        <h4 class="text-lg font-bold text-slate-800 mb-2 flex items-center gap-2">
+                            <i data-lucide="alert-circle" class="w-5 h-5 text-red-500"></i>
+                            The Challenge
+                        </h4>
+                        <p class="text-slate-700 leading-relaxed">
+                            <strong>"Struggling with interviews."</strong>
+                        </p>
+                        <p class="text-slate-600 mt-2 text-sm leading-relaxed">
+                            Mohamed was an entry-level contract engineer at John Deere who couldn't convert interviews into job offers. His interview performance was limiting his potential opportunities, keeping him trapped in contract roles when he wanted permanent employment and a path to software engineering. Every failed interview meant more months of uncertainty.
+                        </p>
+                    </div>
+
+                    <!-- Breakthrough -->
+                    <div>
+                        <h4 class="text-lg font-bold text-slate-800 mb-2 flex items-center gap-2">
+                            <i data-lucide="lightbulb" class="w-5 h-5 text-amber-500"></i>
+                            The Breakthrough
+                        </h4>
+                        <blockquote class="border-l-4 border-emerald-500 pl-4 italic text-slate-700 leading-relaxed">
+                            "The most valuable advice was to have a mock interview."
+                        </blockquote>
+                        <p class="text-slate-600 mt-2 text-sm leading-relaxed">
+                            Through dedicated mock interview sessions and personalized feedback, Mohamed developed the skills and confidence to succeed in real interviews. We covered technical interview preparation, behavioral question frameworks, and strategies for showcasing his potential. Over years of working together, we tackled interview preparation, software skill development, and strategic career positioning.
+                        </p>
+                    </div>
+
+                    <!-- Result -->
+                    <div>
+                        <h4 class="text-lg font-bold text-slate-800 mb-2 flex items-center gap-2">
+                            <i data-lucide="trophy" class="w-5 h-5 text-green-500"></i>
+                            The Result
+                        </h4>
+                        <div class="bg-emerald-50 p-4 rounded-lg border border-emerald-200">
+                            <p class="text-emerald-900 font-bold text-lg mb-2">
+                                Contract → Permanent Salaried → Software Pivot (Triple Win)
+                            </p>
+                            <ul class="space-y-2 text-emerald-800 text-sm">
+                                <li class="flex items-start gap-2">
+                                    <i data-lucide="check-circle" class="w-4 h-4 text-emerald-600 mt-0.5"></i>
+                                    <span><strong>Step 1:</strong> Converted from contract to permanent salaried engineering role</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i data-lucide="check-circle" class="w-4 h-4 text-emerald-600 mt-0.5"></i>
+                                    <span><strong>Step 2:</strong> Successfully pivoted from mechanical CI to software engineering</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i data-lucide="check-circle" class="w-4 h-4 text-emerald-600 mt-0.5"></i>
+                                    <span><strong>Step 3:</strong> Developed competitive software skills to thrive long-term</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <blockquote class="mt-4 border-l-4 border-emerald-500 pl-4 italic text-slate-700 font-medium">
+                            "My interview skills got better and felt more confident... Mansour is passionate and caring about other's success."
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mid-Page CTA -->
+            <div class="bg-gradient-to-r from-emerald-600 to-teal-600 rounded-2xl p-8 text-center">
+                <div class="inline-flex items-center gap-2 bg-red-500/20 text-red-100 px-4 py-2 rounded-full text-sm font-bold mb-4">
+                    <i data-lucide="alert-circle" class="w-4 h-4"></i>
+                    Only 10 spots available per month
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-3">These Engineers Took Action. Will You?</h3>
+                <p class="text-emerald-100 mb-4 text-sm max-w-2xl mx-auto">
+                    Every month you wait = $6,000-$7,000 in lost income. Gavin and Mohamed were exactly where you are. They decided to stop doing it alone.
+                </p>
+                <a href="https://calendar.app.google/uzaLZUWSUH3ZbaGr6" target="_blank" class="inline-block bg-white text-emerald-700 font-bold px-8 py-4 rounded-full hover:bg-emerald-50 transition shadow-lg hover:shadow-2xl hover:-translate-y-1">
+                    Book Your Free Discovery Call →
+                </a>
+                <p class="text-emerald-200 text-xs mt-3">No commitment. No sales pitch. Just an honest conversation.</p>
+            </div>
+
+            <!-- Ebuka's Full Story -->
+            <div id="ebuka-story" class="bg-white p-8 rounded-2xl shadow-lg border-l-4 border-emerald-500 relative">
+                <div class="absolute top-4 right-4 bg-emerald-500 text-white text-xs font-bold px-3 py-1 rounded-full">LAUNCH PATH</div>
+                
+                <div class="flex items-start gap-6 mb-6">
+                    <div class="w-20 h-20 rounded-full overflow-hidden border-4 border-emerald-400 flex-shrink-0 shadow-lg">
+                        <img src="testimonials/pictures/chiebuka_onyejesi.jpg" alt="Chiebuka Onyejesi" class="w-full h-full object-cover">
+                    </div>
+                    <div class="flex-1">
+                        <h3 class="text-2xl font-bold text-slate-900 mb-2">Ebuka O. — From Lost Intern to Strategic Launcher</h3>
+                        <p class="text-sm text-emerald-600 font-semibold uppercase tracking-wide">Directionless Intern → Positioned for Full-Time Success</p>
+                    </div>
+                </div>
+
+                <div class="space-y-6">
+                    <!-- Challenge -->
+                    <div>
+                        <h4 class="text-lg font-bold text-slate-800 mb-2 flex items-center gap-2">
+                            <i data-lucide="alert-circle" class="w-5 h-5 text-red-500"></i>
+                            The Challenge
+                        </h4>
+                        <p class="text-slate-700 leading-relaxed mb-2">
+                            <strong>"I was starting out as an intern at John Deere and needed to know how to maximize my internship to get a return offer and overall make an impact at the company."</strong>
+                        </p>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            As a new intern, Ebuka lacked knowledge about networking, building reputation, and strategically positioning himself for a return offer. He felt lost and knew coaching would help him overcome barriers faster.
+                        </p>
+                        <blockquote class="mt-3 border-l-4 border-emerald-500 pl-4 italic text-slate-700 text-sm">
+                            "I felt kinda lost and it was something I wanted to overcome. I felt like getting a coach would make it easier to cross that barrier and achieve my plans for the summer faster."
+                        </blockquote>
+                    </div>
+
+                    <!-- Breakthrough -->
+                    <div>
+                        <h4 class="text-lg font-bold text-slate-800 mb-2 flex items-center gap-2">
+                            <i data-lucide="lightbulb" class="w-5 h-5 text-amber-500"></i>
+                            The Breakthrough
+                        </h4>
+                        <blockquote class="border-l-4 border-emerald-500 pl-4 italic text-slate-700 leading-relaxed">
+                            "You told me not to put myself in a box and just limit my experience/career to John Deere. That's something I was shocked to hear because most people will try to convince you to work for their company but you said there's a lot of opportunities everywhere."
+                        </blockquote>
+                        <p class="text-slate-600 mt-3 text-sm leading-relaxed">
+                            Through coaching, Ebuka learned to think beyond just securing a single return offer. We covered networking authentically, building relationships with his manager and peers, maximizing intern project impact, and—most importantly—thinking broadly about his career path. The coaching was raw and genuine, digging deeper before giving advice.
+                        </p>
+                    </div>
+
+                    <!-- Result -->
+                    <div>
+                        <h4 class="text-lg font-bold text-slate-800 mb-2 flex items-center gap-2">
+                            <i data-lucide="trophy" class="w-5 h-5 text-green-500"></i>
+                            The Result
+                        </h4>
+                        <div class="bg-emerald-50 p-4 rounded-lg border border-emerald-200">
+                            <p class="text-emerald-900 font-bold text-lg mb-2">
+                                Maximized Internship + Career-Launching Mindset
+                            </p>
+                            <ul class="space-y-2 text-emerald-800 text-sm">
+                                <li class="flex items-start gap-2">
+                                    <span class="text-emerald-600 font-bold">✓</span>
+                                    <span><strong>Built Strong Network:</strong> Connected with people across John Deere strategically</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-emerald-600 font-bold">✓</span>
+                                    <span><strong>Maximized Project Impact:</strong> Made the most of intern summer project through manager engagement</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-emerald-600 font-bold">✓</span>
+                                    <span><strong>Broadened Vision:</strong> Started thinking beyond one company, focusing on personal growth</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-emerald-600 font-bold">✓</span>
+                                    <span><strong>Positioned for Launch:</strong> Now back in school with solid tools for full-time opportunities</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <blockquote class="mt-4 border-l-4 border-emerald-500 pl-4 italic text-slate-700 font-medium">
+                            "I think more deeply and broadly about things related to my career now and try not to limit myself or get stuck up on a specific role/company."
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Jonah's Full Story -->
+            <div id="jonah-story" class="bg-white p-8 rounded-2xl shadow-lg border-l-4 border-blue-500 relative">
+                <div class="absolute top-4 right-4 bg-blue-500 text-white text-xs font-bold px-3 py-1 rounded-full">PIVOT PATH</div>
+                
+                <div class="flex items-start gap-6 mb-6">
+                    <div class="w-20 h-20 rounded-full overflow-hidden border-4 border-blue-400 flex-shrink-0 shadow-lg">
                         <img src="testimonials/pictures/jonah_brehm.jpeg" alt="Jonah Brehm" class="w-full h-full object-cover">
                     </div>
                     <div class="flex-1">
-                        <h3 class="text-2xl font-bold text-slate-900 mb-2">Jonah B. - The Mechanical-to-Software Pivot</h3>
-                        <p class="text-sm text-emerald-600 font-semibold uppercase tracking-wide">Pivot Success at John Deere</p>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-2">Jonah B. — "0% Chance" to Software Engineer</h3>
+                        <p class="text-sm text-blue-600 font-semibold uppercase tracking-wide">Mechanical Engineer → Software Test Engineer at John Deere</p>
                     </div>
+                </div>
+
+                <!-- Key Quote Highlight -->
+                <div class="bg-blue-900 text-white p-4 rounded-xl mb-6 text-center">
+                    <p class="text-xl font-bold italic">"There is a 0% chance I would have broken into my current role without you."</p>
                 </div>
 
                 <div class="space-y-6">
@@ -227,73 +582,11 @@
                             <i data-lucide="lightbulb" class="w-5 h-5 text-amber-500"></i>
                             The Breakthrough
                         </h4>
-                        <blockquote class="border-l-4 border-emerald-500 pl-4 italic text-slate-700 leading-relaxed">
+                        <blockquote class="border-l-4 border-blue-500 pl-4 italic text-slate-700 leading-relaxed">
                             "Hard work alone will not do the trick, it is important to be cognizant of all the other moving pieces."
                         </blockquote>
                         <p class="text-slate-600 mt-2 text-sm leading-relaxed">
-                            Through our coaching sessions, Jonah discovered that career transitions require more than technical skills. We focused on strategic positioning, understanding internal mobility systems, building the right relationships, and communicating his transferable skills effectively. The coaching was raw and genuine—not a one-size-fits-all prescription.
-                        </p>
-                    </div>
-
-                    <!-- Result -->
-                    <div>
-                        <h4 class="text-lg font-bold text-slate-800 mb-2 flex items-center gap-2">
-                            <i data-lucide="trophy" class="w-5 h-5 text-green-500"></i>
-                            The Result
-                        </h4>
-                        <div class="bg-emerald-50 p-4 rounded-lg border border-emerald-200">
-                            <p class="text-emerald-900 font-bold text-lg mb-2">
-                                Successfully pivoted to a permanent Software Test Engineer role at John Deere
-                            </p>
-                            <p class="text-emerald-800 text-sm leading-relaxed">
-                                Jonah made the mechanical-to-software transition within the same company, leveraging strategic coaching to navigate internal systems and position himself as the ideal candidate.
-                            </p>
-                        </div>
-                        <blockquote class="mt-4 border-l-4 border-emerald-500 pl-4 italic text-slate-700 font-medium">
-                            "There is a 0% chance I would have broken into my current role without you."
-                        </blockquote>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Mohamed's Full Story -->
-            <div id="mohamed-story" class="bg-white p-8 rounded-2xl shadow-md border-l-4 border-blue-500">
-                <div class="flex items-start gap-6 mb-6">
-                    <div class="w-20 h-20 rounded-full overflow-hidden border-4 border-blue-300 flex-shrink-0 shadow-lg">
-                        <img src="testimonials/pictures/mohamed_ibrahim.jpg" alt="Mohamed Ibrahim" class="w-full h-full object-cover">
-                    </div>
-                    <div class="flex-1">
-                        <h3 class="text-2xl font-bold text-slate-900 mb-2">Mohamed I. - From Contract to Permanent to Software</h3>
-                        <p class="text-sm text-blue-600 font-semibold uppercase tracking-wide">Launch Success at John Deere</p>
-                    </div>
-                </div>
-
-                <div class="space-y-6">
-                    <!-- Challenge -->
-                    <div>
-                        <h4 class="text-lg font-bold text-slate-800 mb-2 flex items-center gap-2">
-                            <i data-lucide="alert-circle" class="w-5 h-5 text-red-500"></i>
-                            The Challenge
-                        </h4>
-                        <p class="text-slate-700 leading-relaxed">
-                            <strong>"Struggling with interviews."</strong>
-                        </p>
-                        <p class="text-slate-600 mt-2 text-sm leading-relaxed">
-                            Mohamed was an entry-level contract engineer at John Deere who struggled to convert interviews into job offers. His interview performance was limiting his potential opportunities, keeping him in contract roles when he wanted permanent employment and a path to software engineering.
-                        </p>
-                    </div>
-
-                    <!-- Breakthrough -->
-                    <div>
-                        <h4 class="text-lg font-bold text-slate-800 mb-2 flex items-center gap-2">
-                            <i data-lucide="lightbulb" class="w-5 h-5 text-amber-500"></i>
-                            The Breakthrough
-                        </h4>
-                        <blockquote class="border-l-4 border-blue-500 pl-4 italic text-slate-700 leading-relaxed">
-                            "The most valuable advice was to have a mock interview."
-                        </blockquote>
-                        <p class="text-slate-600 mt-2 text-sm leading-relaxed">
-                            Through dedicated mock interview sessions and personalized feedback, Mohamed developed the skills and confidence to succeed in real interviews. Our coaching covered technical interview preparation, behavioral question frameworks, and strategies for showcasing his potential. Over the years of working together, we tackled interview preparation, software skill development, and strategic career positioning.
+                            Through coaching, Jonah discovered that career transitions require more than technical skills. We focused on strategic positioning, understanding internal mobility systems, building the right relationships, and communicating his transferable skills effectively. The coaching was raw and genuine—not a one-size-fits-all prescription.
                         </p>
                     </div>
 
@@ -305,99 +598,43 @@
                         </h4>
                         <div class="bg-blue-50 p-4 rounded-lg border border-blue-200">
                             <p class="text-blue-900 font-bold text-lg mb-2">
-                                Landed permanent salaried engineering role, then pivoted from mechanical CI to software
+                                Successfully pivoted to permanent Software Test Engineer role at John Deere
                             </p>
-                            <p class="text-blue-800 text-sm leading-relaxed mb-2">
-                                Mohamed transformed his career trajectory in three major steps:
+                            <p class="text-blue-800 text-sm leading-relaxed">
+                                Jonah made the mechanical-to-software transition within the same company, leveraging strategic coaching to navigate internal systems and position himself as the ideal candidate.
                             </p>
-                            <ul class="space-y-1 text-blue-800 text-sm">
-                                <li class="flex items-start gap-2">
-                                    <i data-lucide="check-circle" class="w-4 h-4 text-blue-600 mt-0.5"></i>
-                                    <span><strong>Step 1:</strong> Converted from contract to permanent salaried engineering role at John Deere</span>
-                                </li>
-                                <li class="flex items-start gap-2">
-                                    <i data-lucide="check-circle" class="w-4 h-4 text-blue-600 mt-0.5"></i>
-                                    <span><strong>Step 2:</strong> Successfully pivoted from mechanical continuous improvement to software engineering</span>
-                                </li>
-                                <li class="flex items-start gap-2">
-                                    <i data-lucide="check-circle" class="w-4 h-4 text-blue-600 mt-0.5"></i>
-                                    <span><strong>Step 3:</strong> Developed competitive software skills to thrive in the corporate landscape</span>
-                                </li>
-                            </ul>
                         </div>
-                        <blockquote class="mt-4 border-l-4 border-blue-500 pl-4 italic text-slate-700 font-medium">
-                            "My interview skills got better and felt more confident... Mansour is passionate and caring about other's success."
+                        <blockquote class="mt-4 border-l-4 border-blue-500 pl-4 italic text-slate-700 font-medium text-lg">
+                            "There is a 0% chance I would have broken into my current role without you."
                         </blockquote>
                     </div>
                 </div>
             </div>
 
-            <!-- Gavin's Full Story -->
-            <div id="gavin-story" class="bg-white p-8 rounded-2xl shadow-md border-l-4 border-purple-500">
-                <div class="flex items-start gap-6 mb-6">
-                    <div class="w-20 h-20 rounded-full overflow-hidden border-4 border-purple-300 flex-shrink-0 shadow-lg">
-                        <img src="testimonials/pictures/gavin_patel.jpg" alt="Gavin Patel" class="w-full h-full object-cover">
-                    </div>
-                    <div class="flex-1">
-                        <h3 class="text-2xl font-bold text-slate-900 mb-2">Gavin P. - Building Early-Career Foundations</h3>
-                        <p class="text-sm text-purple-600 font-semibold uppercase tracking-wide">Launch + Accelerate Success at Fortune 500</p>
-                    </div>
-                </div>
-
-                <div class="space-y-6">
-                    <!-- Challenge -->
-                    <div>
-                        <h4 class="text-lg font-bold text-slate-800 mb-2 flex items-center gap-2">
-                            <i data-lucide="alert-circle" class="w-5 h-5 text-red-500"></i>
-                            The Challenge
-                        </h4>
-                        <p class="text-slate-600 text-sm leading-relaxed">
-                            As an engineering intern, Gavin needed guidance on how to navigate the early stages of his career effectively. Like many students and early-career engineers, he needed help understanding how to advocate for himself, navigate interviews, and learn in ways that would accelerate his career trajectory.
-                        </p>
-                    </div>
-
-                    <!-- Breakthrough -->
-                    <div>
-                        <h4 class="text-lg font-bold text-slate-800 mb-2 flex items-center gap-2">
-                            <i data-lucide="lightbulb" class="w-5 h-5 text-amber-500"></i>
-                            The Breakthrough
-                        </h4>
-                        <blockquote class="border-l-4 border-purple-500 pl-4 italic text-slate-700 leading-relaxed">
-                            "Mansour took the time to share thoughtful early-career advice, covering everything from navigating interviews to advocating for myself. What stood out most was how open he was about his own career journey—the honest ups and downs made his guidance feel real, grounded, and genuinely motivating."
-                        </blockquote>
-                        <p class="text-slate-600 mt-2 text-sm leading-relaxed">
-                            During his internship, Gavin received authentic career guidance that went beyond generic advice. The coaching covered practical strategies for interviews, self-advocacy, and learning approaches that many early-career engineers never think to ask about. The honest, transparent approach to career development helped Gavin build a solid foundation for long-term success.
-                        </p>
-                    </div>
-
-                    <!-- Result -->
-                    <div>
-                        <h4 class="text-lg font-bold text-slate-800 mb-2 flex items-center gap-2">
-                            <i data-lucide="trophy" class="w-5 h-5 text-green-500"></i>
-                            The Result
-                        </h4>
-                        <div class="bg-purple-50 p-4 rounded-lg border border-purple-200">
-                            <p class="text-purple-900 font-bold text-lg mb-2">
-                                Software Engineer at Fortune 500 Company ($8.6B+ annual revenue)
-                            </p>
-                            <p class="text-purple-800 text-sm leading-relaxed">
-                                Gavin successfully transitioned from intern to full-time Software Engineer at a Fortune 500 company in the national security technology sector, armed with the foundational skills and mindset to accelerate his career trajectory.
-                            </p>
-                        </div>
-                    </div>
-                </div>
+            <!-- Accelerate Stories Section Header -->
+            <div class="text-center py-6">
+                <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Accelerate Path Stories</p>
+                <p class="text-sm text-slate-500">These engineers used Accelerate coaching to break through promotion plateaus</p>
+                <p class="text-xs text-amber-600 font-semibold mt-2">Accelerate Path coming soon — Join the waitlist on our <a href="accelerate.html" class="underline">Accelerate page</a></p>
             </div>
 
             <!-- Cole's Full Story -->
-            <div id="cole-story" class="bg-white p-8 rounded-2xl shadow-md border-l-4 border-teal-500">
+            <div id="cole-story" class="bg-white p-8 rounded-2xl shadow-md border-l-4 border-slate-400 relative opacity-90">
+                <div class="absolute top-4 right-4 bg-slate-500 text-white text-xs font-bold px-3 py-1 rounded-full">ACCELERATE PATH</div>
+                
                 <div class="flex items-start gap-6 mb-6">
-                    <div class="w-20 h-20 rounded-full overflow-hidden border-4 border-teal-300 flex-shrink-0 shadow-lg">
+                    <div class="w-20 h-20 rounded-full overflow-hidden border-4 border-slate-300 flex-shrink-0 shadow-lg">
                         <img src="testimonials/pictures/cole_hunzeker.jpeg" alt="Cole Hunzeker" class="w-full h-full object-cover">
                     </div>
                     <div class="flex-1">
-                        <h3 class="text-2xl font-bold text-slate-900 mb-2">Cole H. - Breaking Through the Promotion Plateau</h3>
-                        <p class="text-sm text-teal-600 font-semibold uppercase tracking-wide">Accelerate Success at John Deere</p>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-2">Cole H. — Passed Over 3x to Promotion-Ready</h3>
+                        <p class="text-sm text-slate-600 font-semibold uppercase tracking-wide">Stuck Engineer → Positioned 1-2 Years Ahead</p>
                     </div>
+                </div>
+
+                <!-- Key Quote Highlight -->
+                <div class="bg-slate-800 text-white p-4 rounded-xl mb-6 text-center">
+                    <p class="text-lg font-bold italic">"I believe I will get a promotion a year or 2 earlier than I would have without the help and advice."</p>
                 </div>
 
                 <div class="space-y-6">
@@ -456,129 +693,36 @@
                             <ul class="space-y-2 text-teal-800 text-sm">
                                 <li class="flex items-start gap-2">
                                     <span class="text-teal-600 font-bold">✓</span>
-                                    <span><strong>Landed Promotion Interview:</strong> Received interview for advancement opportunity with excellent feedback on interviewing skills</span>
+                                    <span><strong>Landed Promotion Interview:</strong> Received interview with excellent feedback</span>
                                 </li>
                                 <li class="flex items-start gap-2">
                                     <span class="text-teal-600 font-bold">✓</span>
-                                    <span><strong>Increased Team Recognition:</strong> Gained visibility and acknowledgment from leadership for contributions</span>
+                                    <span><strong>Increased Visibility:</strong> Gained recognition from leadership</span>
                                 </li>
                                 <li class="flex items-start gap-2">
                                     <span class="text-teal-600 font-bold">✓</span>
-                                    <span><strong>Strategic Positioning:</strong> Now equipped to capitalize on the next promotion opportunity that arises</span>
-                                </li>
-                                <li class="flex items-start gap-2">
-                                    <span class="text-teal-600 font-bold">✓</span>
-                                    <span><strong>Career Acceleration:</strong> On track to achieve promotion 1-2 years earlier than without coaching</span>
+                                    <span><strong>Strategic Positioning:</strong> Ready to capitalize on next opportunity</span>
                                 </li>
                             </ul>
                         </div>
                         <blockquote class="mt-4 border-l-4 border-teal-500 pl-4 italic text-slate-700 font-medium">
-                            "I believe I will get a promotion a year or 2 earlier than I would have without the help and advice. I now feel positioned well for the future."
-                        </blockquote>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Ebuka's Full Story -->
-            <div id="ebuka-story" class="bg-white p-8 rounded-2xl shadow-md border-l-4 border-lime-500">
-                <div class="flex items-start gap-6 mb-6">
-                    <div class="w-20 h-20 rounded-full overflow-hidden border-4 border-lime-300 flex-shrink-0 shadow-lg">
-                        <img src="testimonials/pictures/chiebuka_onyejesi.jpg" alt="Chiebuka Onyejesi" class="w-full h-full object-cover">
-                    </div>
-                    <div class="flex-1">
-                        <h3 class="text-2xl font-bold text-slate-900 mb-2">Chiebuka "Ebuka" O. - The Strategic Intern</h3>
-                        <p class="text-sm text-lime-600 font-semibold uppercase tracking-wide">Launch Success at John Deere Internship</p>
-                    </div>
-                </div>
-
-                <div class="space-y-6">
-                    <!-- Challenge -->
-                    <div>
-                        <h4 class="text-lg font-bold text-slate-800 mb-2 flex items-center gap-2">
-                            <i data-lucide="alert-circle" class="w-5 h-5 text-red-500"></i>
-                            The Challenge
-                        </h4>
-                        <p class="text-slate-700 leading-relaxed mb-2">
-                            <strong>"I was starting out as an intern at John Deere and needed to know how to maximize my internship to get a return offer and overall make an impact at the company."</strong>
-                        </p>
-                        <p class="text-slate-600 text-sm leading-relaxed">
-                            As a new intern at John Deere, Ebuka (Chiebuka) lacked knowledge about networking, building reputation, and strategically positioning himself for a return offer. He felt lost and knew that getting coaching would help him overcome barriers faster and achieve his summer goals more effectively.
-                        </p>
-                        <blockquote class="mt-3 border-l-4 border-lime-500 pl-4 italic text-slate-700 text-sm">
-                            "I felt kinda lost and it was something I wanted to overcome at the time. I felt like getting a coach would make it easier to cross that barrier and achieve my plans for the summer faster."
-                        </blockquote>
-                    </div>
-
-                    <!-- Breakthrough -->
-                    <div>
-                        <h4 class="text-lg font-bold text-slate-800 mb-2 flex items-center gap-2">
-                            <i data-lucide="lightbulb" class="w-5 h-5 text-amber-500"></i>
-                            The Breakthrough
-                        </h4>
-                        <blockquote class="border-l-4 border-lime-500 pl-4 italic text-slate-700 leading-relaxed">
-                            "You told me not to put myself in a box and just limit my experience/career to John Deere. That's something I was shocked to hear because most people will try to convince you to work for their company but you said there's a lot of opportunities everywhere and I should really try to find what really resonates with me."
-                        </blockquote>
-                        <p class="text-slate-600 mt-3 text-sm leading-relaxed">
-                            Through our Launch coaching, Ebuka learned to think beyond just securing a single return offer. We covered Launch framework fundamentals: networking authentically, building relationships with his manager and peers, maximizing his intern project impact, and—most importantly—thinking broadly about his career path. The coaching was raw and genuine, digging deeper before giving advice rather than offering surface-level platitudes.
-                        </p>
-                        <div class="mt-3 bg-lime-50 p-4 rounded-lg">
-                            <p class="text-xs font-semibold text-lime-900 mb-2">What Made the Difference:</p>
-                            <ul class="text-xs text-lime-800 space-y-1">
-                                <li>• <strong>Raw, Not Generic:</strong> "I felt like you were more raw and didn't just say generic stuff. You said things and gave feedback that was actually applicable and not just fluff."</li>
-                                <li>• <strong>Thoughtful, Not Rushed:</strong> "I like how you also didn't just jump into giving advice you kind of dug a bit deeper before your responses."</li>
-                                <li>• <strong>Career-Expanding Mindset:</strong> Encouraged thinking beyond one company and finding what truly resonates</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- Result -->
-                    <div>
-                        <h4 class="text-lg font-bold text-slate-800 mb-2 flex items-center gap-2">
-                            <i data-lucide="trophy" class="w-5 h-5 text-green-500"></i>
-                            The Result
-                        </h4>
-                        <div class="bg-lime-50 p-4 rounded-lg border border-lime-200">
-                            <p class="text-lime-900 font-bold text-lg mb-2">
-                                Maximized internship impact and developed career-launching mindset
-                            </p>
-                            <p class="text-lime-800 text-sm leading-relaxed mb-3">
-                                Ebuka's transformation during his John Deere internship:
-                            </p>
-                            <ul class="space-y-2 text-lime-800 text-sm">
-                                <li class="flex items-start gap-2">
-                                    <span class="text-lime-600 font-bold">✓</span>
-                                    <span><strong>Built Strong Connections:</strong> Connected with more people across John Deere, expanding his professional network strategically</span>
-                                </li>
-                                <li class="flex items-start gap-2">
-                                    <span class="text-lime-600 font-bold">✓</span>
-                                    <span><strong>Maximized Project Impact:</strong> Made the most of his intern summer project through direct manager engagement</span>
-                                </li>
-                                <li class="flex items-start gap-2">
-                                    <span class="text-lime-600 font-bold">✓</span>
-                                    <span><strong>Broadened Career Vision:</strong> Started thinking beyond John Deere, focusing on personal app development and broader opportunities</span>
-                                </li>
-                                <li class="flex items-start gap-2">
-                                    <span class="text-lime-600 font-bold">✓</span>
-                                    <span><strong>Positioned for Strong Launch:</strong> Now back in school with solid tools and positioning for excellent full-time opportunities upon graduation</span>
-                                </li>
-                            </ul>
-                        </div>
-                        <blockquote class="mt-4 border-l-4 border-lime-500 pl-4 italic text-slate-700 font-medium">
-                            "I would say there has been in fact an impact in my career trajectory. I have had some changes in mindset. I think more deeply and broadly about things related to my career now and try not to limit myself or get stuck up on a specific role/company."
+                            "I now feel positioned well for the future."
                         </blockquote>
                     </div>
                 </div>
             </div>
 
             <!-- Murilo's Full Story -->
-            <div id="murilo-story" class="bg-white p-8 rounded-2xl shadow-md border-l-4 border-indigo-500">
+            <div id="murilo-story" class="bg-white p-8 rounded-2xl shadow-md border-l-4 border-slate-400 relative opacity-90">
+                <div class="absolute top-4 right-4 bg-slate-500 text-white text-xs font-bold px-3 py-1 rounded-full">ACCELERATE PATH</div>
+                
                 <div class="flex items-start gap-6 mb-6">
-                    <div class="w-20 h-20 rounded-full overflow-hidden border-4 border-indigo-300 flex-shrink-0 shadow-lg">
+                    <div class="w-20 h-20 rounded-full overflow-hidden border-4 border-slate-300 flex-shrink-0 shadow-lg">
                         <img src="testimonials/pictures/murilo_baptistella.jpg" alt="Murilo Baptistella" class="w-full h-full object-cover">
                     </div>
                     <div class="flex-1">
-                        <h3 class="text-2xl font-bold text-slate-900 mb-2">Murilo B. - From Stuck to Strategically Positioned</h3>
-                        <p class="text-sm text-indigo-600 font-semibold uppercase tracking-wide">Accelerate Success at John Deere</p>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-2">Murilo B. — From Career Stagnation to Leadership</h3>
+                        <p class="text-sm text-slate-600 font-semibold uppercase tracking-wide">Senior Engineer → Leadership Proof + Software Pivot</p>
                     </div>
                 </div>
 
@@ -665,16 +809,48 @@
     </div>
 </div>
 
-<!-- Final CTA -->
-<div class="bg-gradient-to-br from-emerald-600 to-teal-700 py-16">
+<!-- Final CTA - Urgency Amplified -->
+<div class="bg-gradient-to-br from-slate-900 to-emerald-900 py-16">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 class="text-3xl font-extrabold text-white mb-3">Your Turn to Transform Your Career</h2>
+        <!-- Scarcity Badge -->
+        <div class="inline-flex items-center gap-2 bg-red-500/20 text-red-300 px-4 py-2 rounded-full text-sm font-bold mb-6">
+            <i data-lucide="alert-circle" class="w-4 h-4"></i>
+            Only 10 spots available per month
+        </div>
+        
+        <h2 class="text-3xl font-extrabold text-white mb-4">The Clock Is Ticking</h2>
+        
+        <!-- Cost of Inaction -->
+        <div class="max-w-2xl mx-auto mb-6">
+            <p class="text-slate-300 text-sm mb-4">Every month you spend:</p>
+            <div class="grid md:grid-cols-3 gap-4 text-center mb-6">
+                <div class="bg-red-900/30 rounded-xl p-4">
+                    <p class="text-red-400 font-bold text-lg">$6,000-$7,000</p>
+                    <p class="text-slate-400 text-xs">LOST INCOME per month unemployed</p>
+                </div>
+                <div class="bg-red-900/30 rounded-xl p-4">
+                    <p class="text-red-400 font-bold text-lg">Confidence</p>
+                    <p class="text-slate-400 text-xs">DESTROYED with every rejection</p>
+                </div>
+                <div class="bg-red-900/30 rounded-xl p-4">
+                    <p class="text-red-400 font-bold text-lg">$40K Degree</p>
+                    <p class="text-slate-400 text-xs">QUESTIONED every sleepless night</p>
+                </div>
+            </div>
+        </div>
+        
         <p class="text-emerald-100 text-lg mb-6 max-w-2xl mx-auto">
-            Join engineers like Jonah, Mohamed, Gavin, Cole, Murilo, and Ebuka who have successfully launched, pivoted, and accelerated their careers with strategic coaching.
+            Gavin, Mohamed, Jonah, and Ebuka were exactly where you are.<br>
+            <strong class="text-emerald-400">They decided to stop doing it alone.</strong>
         </p>
-        <a href="https://calendar.app.google/uzaLZUWSUH3ZbaGr6" target="_blank" class="inline-block bg-white text-brand-primary font-bold px-8 py-4 rounded-full hover:bg-emerald-50 transition shadow-lg hover:shadow-2xl hover:-translate-y-1">
-            Book Your Free Discovery Call
+        
+        <a href="https://calendar.app.google/uzaLZUWSUH3ZbaGr6" target="_blank" class="inline-block bg-emerald-500 text-white font-bold px-10 py-5 rounded-full hover:bg-emerald-400 transition shadow-lg hover:shadow-2xl hover:-translate-y-1 text-lg">
+            Book Your Free Discovery Call Now →
         </a>
+        
+        <p class="text-slate-400 text-sm mt-4">
+            No commitment. No sales pitch. Just an honest conversation about whether the 21-Day Blueprint is right for you.
+        </p>
     </div>
 </div>
 
