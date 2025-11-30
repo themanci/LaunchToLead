@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth scroll-pt-32">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simplified Packages | Launch to Lead Engineering</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="../tailwind-config.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-600 font-sans antialiased">
+
+<!-- Shared Navigation -->
+<div id="navigation-container"></div>
+
+<main>
+
+    <!-- HERO -->
+    <div id="top" class="relative pt-16 pb-12 bg-white overflow-hidden">
+        <!-- Background elements -->
+        <div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(circle, #94a3b8 1px, transparent 1px); background-size: 20px 20px;"></div>
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-80 h-80 bg-teal-100 rounded-full blur-3xl opacity-60"></div>
+        <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 bg-lime-100 rounded-full blur-3xl opacity-60"></div>
+
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            
+            <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight mb-4">
+                Simple Pricing. <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-500 to-emerald-600">Real Results.</span>
+            </h1>
+            <p class="max-w-2xl mx-auto text-lg text-slate-500 font-light leading-relaxed mb-2">
+                One focused package per career path. 3 sessions. Everything you need to succeed.
+            </p>
+            <p class="text-sm text-slate-400">
+                No confusion. No upsells. Just transformation.
+            </p>
+        </div>
+    </div>
+
+    <!-- THREE PACKAGES -->
+    <div class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-slate-900 mb-3">Choose Your Path</h2>
+                <p class="text-slate-500 max-w-xl mx-auto">Each package includes 3 one-hour coaching sessions, email support, and all materials.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                
+                <!-- LAUNCH PATH -->
+                <div class="bg-white rounded-2xl border-2 border-emerald-200 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col">
+                    <!-- Header -->
+                    <div class="bg-gradient-to-br from-emerald-500 to-teal-600 p-6 text-white text-center">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/20 text-white text-xs font-bold mb-3 uppercase tracking-wider">
+                            For Students & Entry Level
+                        </div>
+                        <h3 class="text-2xl font-bold mb-1">Launch Path</h3>
+                        <p class="text-emerald-100 text-sm">Land your first engineering role</p>
+                    </div>
+                    
+                    <!-- Pricing -->
+                    <div class="p-6 text-center border-b border-slate-100">
+                        <div class="flex items-center justify-center gap-3 mb-1">
+                            <span class="text-2xl font-bold text-slate-400 line-through">$1,200</span>
+                            <span class="bg-red-500 text-white px-2 py-0.5 rounded-full text-xs font-bold">50% OFF</span>
+                        </div>
+                        <div class="flex items-baseline justify-center gap-1">
+                            <span class="text-5xl font-extrabold text-slate-900">$600</span>
+                        </div>
+                        <p class="text-sm text-slate-500 mt-1">3 sessions × 1 hour each</p>
+                    </div>
+                    
+                    <!-- Sessions -->
+                    <div class="p-6 flex-grow">
+                        <h4 class="font-bold text-slate-800 mb-4 text-sm uppercase tracking-wide">Your 3 Sessions:</h4>
+                        
+                        <div class="space-y-4">
+                            <div class="flex gap-3">
+                                <div class="flex-shrink-0 w-8 h-8 bg-emerald-100 rounded-lg flex items-center justify-center">
+                                    <span class="text-emerald-600 font-bold text-sm">1</span>
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-slate-800 text-sm">Discovery & Strategy</p>
+                                    <p class="text-xs text-slate-500">Resume audit, Impact Equation framework, career targeting</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex gap-3">
+                                <div class="flex-shrink-0 w-8 h-8 bg-emerald-100 rounded-lg flex items-center justify-center">
+                                    <span class="text-emerald-600 font-bold text-sm">2</span>
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-slate-800 text-sm">Build & Position</p>
+                                    <p class="text-xs text-slate-500">Resume rewrite, LinkedIn optimization, ATS strategy</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex gap-3">
+                                <div class="flex-shrink-0 w-8 h-8 bg-emerald-100 rounded-lg flex items-center justify-center">
+                                    <span class="text-emerald-600 font-bold text-sm">3</span>
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-slate-800 text-sm">Interview Mastery</p>
+                                    <p class="text-xs text-slate-500">STAR method, behavioral prep, confidence building</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Includes -->
+                        <div class="mt-6 pt-4 border-t border-slate-100">
+                            <p class="text-xs font-semibold text-slate-600 mb-2">Also includes:</p>
+                            <ul class="space-y-1.5 text-xs text-slate-500">
+                                <li class="flex items-center gap-2">
+                                    <i data-lucide="check" class="w-3 h-3 text-emerald-500"></i>
+                                    Resume templates & examples
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i data-lucide="check" class="w-3 h-3 text-emerald-500"></i>
+                                    Email support between sessions
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i data-lucide="check" class="w-3 h-3 text-emerald-500"></i>
+                                    Career fair pitch framework
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- CTA -->
+                    <div class="p-6 pt-0">
+                        <a href="https://calendar.app.google/uzaLZUWSUH3ZbaGr6" target="_blank" 
+                           class="block w-full py-3 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-bold text-center hover:from-emerald-600 hover:to-teal-700 transition-all shadow-lg">
+                            Start Your Launch
+                        </a>
+                    </div>
+                </div>
+
+                <!-- PIVOT PATH (No longer elevated) -->
+                <div class="bg-white rounded-2xl border-2 border-amber-300 shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden flex flex-col relative">
+                    
+                    <!-- Header -->
+                    <div class="bg-gradient-to-br from-amber-500 to-orange-600 p-6 text-white text-center rounded-t-2xl">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/20 text-white text-xs font-bold mb-3 uppercase tracking-wider">
+                            For Career Changers
+                        </div>
+                        <h3 class="text-2xl font-bold mb-1">Pivot Path</h3>
+                        <p class="text-amber-100 text-sm">Transition to a new engineering discipline</p>
+                    </div>
+                    
+                    <!-- Pricing -->
+                    <div class="p-6 text-center border-b border-slate-100">
+                        <div class="flex items-center justify-center gap-3 mb-1">
+                            <span class="text-2xl font-bold text-slate-400 line-through">$1,800</span>
+                            <span class="bg-red-500 text-white px-2 py-0.5 rounded-full text-xs font-bold">50% OFF</span>
+                        </div>
+                        <div class="flex items-baseline justify-center gap-1">
+                            <span class="text-5xl font-extrabold text-slate-900">$900</span>
+                        </div>
+                        <p class="text-sm text-slate-500 mt-1">3 sessions × 1 hour each</p>
+                    </div>
+                    
+                    <!-- Sessions -->
+                    <div class="p-6 flex-grow">
+                        <h4 class="font-bold text-slate-800 mb-4 text-sm uppercase tracking-wide">Your 3 Sessions:</h4>
+                        
+                        <div class="space-y-4">
+                            <div class="flex gap-3">
+                                <div class="flex-shrink-0 w-8 h-8 bg-amber-100 rounded-lg flex items-center justify-center">
+                                    <span class="text-amber-600 font-bold text-sm">1</span>
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-slate-800 text-sm">Gap Analysis & Roadmap</p>
+                                    <p class="text-xs text-slate-500">Skills assessment, transferable skills mapping, pivot timeline</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex gap-3">
+                                <div class="flex-shrink-0 w-8 h-8 bg-amber-100 rounded-lg flex items-center justify-center">
+                                    <span class="text-amber-600 font-bold text-sm">2</span>
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-slate-800 text-sm">Trojan Horse Strategy</p>
+                                    <p class="text-xs text-slate-500">Internal positioning, resume pivot, portfolio projects</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex gap-3">
+                                <div class="flex-shrink-0 w-8 h-8 bg-amber-100 rounded-lg flex items-center justify-center">
+                                    <span class="text-amber-600 font-bold text-sm">3</span>
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-slate-800 text-sm">Execute & Interview</p>
+                                    <p class="text-xs text-slate-500">Networking strategy, cross-functional positioning, interview prep</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Includes -->
+                        <div class="mt-6 pt-4 border-t border-slate-100">
+                            <p class="text-xs font-semibold text-slate-600 mb-2">Also includes:</p>
+                            <ul class="space-y-1.5 text-xs text-slate-500">
+                                <li class="flex items-center gap-2">
+                                    <i data-lucide="check" class="w-3 h-3 text-amber-500"></i>
+                                    Custom pivot timeline document
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i data-lucide="check" class="w-3 h-3 text-amber-500"></i>
+                                    Email support between sessions
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i data-lucide="check" class="w-3 h-3 text-amber-500"></i>
+                                    Portfolio project guidance
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- CTA -->
+                    <div class="p-6 pt-0">
+                        <a href="https://calendar.app.google/uzaLZUWSUH3ZbaGr6" target="_blank" 
+                           class="block w-full py-3 rounded-xl bg-gradient-to-r from-amber-500 to-orange-600 text-white font-bold text-center hover:from-amber-600 hover:to-orange-700 transition-all shadow-lg">
+                            Start Your Pivot
+                        </a>
+                    </div>
+                </div>
+
+                <!-- ACCELERATE PATH -->
+                <div class="bg-white rounded-2xl border-2 border-indigo-200 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col">
+                    <!-- Header -->
+                    <div class="bg-gradient-to-br from-indigo-500 to-purple-600 p-6 text-white text-center">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/20 text-white text-xs font-bold mb-3 uppercase tracking-wider">
+                            For Promotions & Leadership
+                        </div>
+                        <h3 class="text-2xl font-bold mb-1">Accelerate Path</h3>
+                        <p class="text-indigo-100 text-sm">Get promoted to senior or management</p>
+                    </div>
+                    
+                    <!-- Pricing -->
+                    <div class="p-6 text-center border-b border-slate-100">
+                        <div class="flex items-center justify-center gap-3 mb-1">
+                            <span class="text-2xl font-bold text-slate-400 line-through">$2,400</span>
+                            <span class="bg-red-500 text-white px-2 py-0.5 rounded-full text-xs font-bold">50% OFF</span>
+                        </div>
+                        <div class="flex items-baseline justify-center gap-1">
+                            <span class="text-5xl font-extrabold text-slate-900">$1,200</span>
+                        </div>
+                        <p class="text-sm text-slate-500 mt-1">3 sessions × 1 hour each</p>
+                    </div>
+                    
+                    <!-- Sessions -->
+                    <div class="p-6 flex-grow">
+                        <h4 class="font-bold text-slate-800 mb-4 text-sm uppercase tracking-wide">Your 3 Sessions:</h4>
+                        
+                        <div class="space-y-4">
+                            <div class="flex gap-3">
+                                <div class="flex-shrink-0 w-8 h-8 bg-indigo-100 rounded-lg flex items-center justify-center">
+                                    <span class="text-indigo-600 font-bold text-sm">1</span>
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-slate-800 text-sm">Visibility Diagnostic</p>
+                                    <p class="text-xs text-slate-500">Promotion readiness, gap analysis, Visibility Pyramid framework</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex gap-3">
+                                <div class="flex-shrink-0 w-8 h-8 bg-indigo-100 rounded-lg flex items-center justify-center">
+                                    <span class="text-indigo-600 font-bold text-sm">2</span>
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-slate-800 text-sm">Build Your Case</p>
+                                    <p class="text-xs text-slate-500">Brag document, stakeholder mapping, influence strategy</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex gap-3">
+                                <div class="flex-shrink-0 w-8 h-8 bg-indigo-100 rounded-lg flex items-center justify-center">
+                                    <span class="text-indigo-600 font-bold text-sm">3</span>
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-slate-800 text-sm">Execute & Negotiate</p>
+                                    <p class="text-xs text-slate-500">Manager conversation script, compensation negotiation, 90-day plan</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Includes -->
+                        <div class="mt-6 pt-4 border-t border-slate-100">
+                            <p class="text-xs font-semibold text-slate-600 mb-2">Also includes:</p>
+                            <ul class="space-y-1.5 text-xs text-slate-500">
+                                <li class="flex items-center gap-2">
+                                    <i data-lucide="check" class="w-3 h-3 text-indigo-500"></i>
+                                    Promotion case template
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i data-lucide="check" class="w-3 h-3 text-indigo-500"></i>
+                                    Email support between sessions
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i data-lucide="check" class="w-3 h-3 text-indigo-500"></i>
+                                    Performance review optimization
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- CTA -->
+                    <div class="p-6 pt-0">
+                        <a href="https://calendar.app.google/uzaLZUWSUH3ZbaGr6" target="_blank" 
+                           class="block w-full py-3 rounded-xl bg-gradient-to-r from-indigo-500 to-purple-600 text-white font-bold text-center hover:from-indigo-600 hover:to-purple-700 transition-all shadow-lg">
+                            Start Your Acceleration
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- MOCK INTERVIEW ADD-ON -->
+    <div class="py-12 bg-slate-50 border-t border-slate-200">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-2xl border-2 border-slate-200 shadow-lg overflow-hidden">
+                <div class="md:flex">
+                    <div class="md:w-2/3 p-6">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 text-slate-700 text-xs font-bold mb-3 uppercase tracking-wider">
+                            <i data-lucide="plus-circle" class="w-3 h-3"></i>
+                            Optional Add-On
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Intense Mock Interview + Feedback</h3>
+                        <p class="text-slate-600 text-sm mb-4">
+                            A dedicated 60-minute behavioral mock interview session with detailed written feedback. 
+                            Perfect for final preparation before your real interviews.
+                        </p>
+                        <ul class="space-y-2 text-sm text-slate-600">
+                            <li class="flex items-center gap-2">
+                                <i data-lucide="check" class="w-4 h-4 text-teal-500"></i>
+                                Realistic behavioral interview simulation
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i data-lucide="check" class="w-4 h-4 text-teal-500"></i>
+                                Session recording for self-review
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i data-lucide="check" class="w-4 h-4 text-teal-500"></i>
+                                Detailed written feedback within 24 hours
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="md:w-1/3 bg-gradient-to-br from-slate-100 to-slate-50 p-6 flex flex-col items-center justify-center text-center border-t md:border-t-0 md:border-l border-slate-200">
+                        <div class="flex items-center gap-2 mb-1">
+                            <span class="text-lg font-bold text-slate-400 line-through">$400</span>
+                            <span class="bg-red-500 text-white px-2 py-0.5 rounded-full text-xs font-bold">50% OFF</span>
+                        </div>
+                        <div class="text-4xl font-extrabold text-slate-900 mb-1">$200</div>
+                        <p class="text-xs text-slate-500 mb-4">Add to any package</p>
+                        <a href="https://calendar.app.google/uzaLZUWSUH3ZbaGr6" target="_blank" 
+                           class="px-6 py-2.5 rounded-xl border-2 border-slate-800 text-slate-800 font-bold text-sm hover:bg-slate-800 hover:text-white transition-all">
+                            Add Mock Interview
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PAYMENT OPTIONS (from original packages.html) -->
+    <div class="py-12 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-8">
+                <h2 class="text-2xl font-bold text-slate-900 mb-2">Flexible Payment Options</h2>
+                <p class="text-slate-500 text-sm">Choose what works best for you</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- Full Payment Option -->
+                <div class="bg-gradient-to-br from-emerald-50 to-teal-50 p-6 rounded-2xl border-2 border-emerald-200">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-10 h-10 bg-brand-primary rounded-xl flex items-center justify-center">
+                            <i data-lucide="check" class="w-5 h-5 text-white"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900">Pay in Full</h3>
+                    </div>
+                    <p class="text-slate-600 mb-4 text-sm">Pay the full package price upfront and get immediate access to all sessions.</p>
+                    <ul class="space-y-2 text-sm text-slate-700">
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="check-circle" class="w-4 h-4 text-brand-secondary mt-0.5"></i>
+                            <span>One simple payment</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="check-circle" class="w-4 h-4 text-brand-secondary mt-0.5"></i>
+                            <span>Schedule all sessions immediately</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="check-circle" class="w-4 h-4 text-brand-secondary mt-0.5"></i>
+                            <span>No payment interruptions</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Split Payment Option -->
+                <div class="bg-gradient-to-br from-slate-50 to-gray-50 p-6 rounded-2xl border-2 border-slate-200">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-10 h-10 bg-slate-600 rounded-xl flex items-center justify-center">
+                            <i data-lucide="credit-card" class="w-5 h-5 text-white"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900">Split Payment</h3>
+                    </div>
+                    <p class="text-slate-600 mb-4 text-sm">Pay 50% upfront, then 50% before your second session begins.</p>
+                    <ul class="space-y-2 text-sm text-slate-700">
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="check-circle" class="w-4 h-4 text-slate-500 mt-0.5"></i>
+                            <span><strong>First payment:</strong> 50% to book your first session</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="check-circle" class="w-4 h-4 text-slate-500 mt-0.5"></i>
+                            <span><strong>Second payment:</strong> Remaining 50% before session 2</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="check-circle" class="w-4 h-4 text-slate-500 mt-0.5"></i>
+                            <span>Easier to budget for larger packages</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-6 p-5 bg-blue-50 border border-blue-200 rounded-xl">
+                <div class="flex items-start gap-3">
+                    <i data-lucide="info" class="w-5 h-5 text-blue-600 mt-0.5"></i>
+                    <div>
+                        <p class="text-sm text-slate-700"><strong>Session Details:</strong> All sessions are 60 minutes and scheduled once per week until your package is complete. Payment options will be discussed during your free discovery call.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+    
+
+    <!-- NOT SURE CTA (from original packages.html) -->
+    <div id="cta" class="py-16 bg-gradient-to-br from-emerald-600 to-teal-600 relative overflow-hidden">
+        <!-- Background decoration -->
+        <div class="absolute top-0 right-0 -mt-20 -mr-20 w-80 h-80 bg-brand-accent rounded-full blur-3xl opacity-20"></div>
+        
+        <div class="max-w-4xl mx-auto px-4 relative z-10 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Not Sure Which Package is Right?</h2>
+            <p class="text-emerald-100 text-base mb-8 max-w-2xl mx-auto">
+                Book a free 15-minute discovery call to discuss your goals and find the best fit. No pressure, just clarity.
+            </p>
+            
+            <a href="https://calendar.app.google/uzaLZUWSUH3ZbaGr6" target="_blank" class="px-8 py-4 bg-white text-brand-primary font-bold rounded-full hover:bg-brand-accent hover:text-brand-primary transition shadow-lg hover:shadow-fresh hover:-translate-y-1 inline-flex items-center gap-2">
+                <i data-lucide="calendar" class="w-4 h-4"></i> Book Free Discovery Call
+            </a>
+        </div>
+    </div>
+
+</main>
+
+<!-- Footer (Common) -->
+<footer class="bg-brand-primary text-white py-12 border-t border-emerald-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-4 gap-10 mb-10">
+            <!-- Brand -->
+            <div class="col-span-1">
+                <a href="../index.html" class="flex items-center gap-2 mb-4 group">
+                    <div class="bg-brand-accent text-brand-primary w-10 h-10 rounded-lg flex items-center justify-center group-hover:bg-white transition duration-300">
+                        <span class="font-bold text-lg">L²</span>
+                    </div>
+                    <span class="font-bold text-xl text-white tracking-tight">Launch<span class="font-light text-brand-accent">ToLead</span></span>
+                </a>
+                <p class="text-emerald-100 text-sm leading-relaxed">
+                    Engineering career coaching for students and professionals.
+                </p>
+            </div>
+
+            <!-- Services -->
+            <div>
+                <h4 class="font-bold text-base mb-4 text-white uppercase tracking-wider text-sm">Services</h4>
+                <ul class="space-y-2 text-sm text-emerald-100">
+                    <li><a href="../launch.html" class="hover:text-brand-accent transition">Launch</a></li>
+                    <li><a href="../pivot.html" class="hover:text-brand-accent transition">Pivot</a></li>
+                    <li><a href="../accelerate.html" class="hover:text-brand-accent transition">Accelerate</a></li>
+                    <li><a href="../packages.html" class="text-brand-accent font-bold">Packages</a></li>
+                </ul>
+            </div>
+
+            <!-- Company -->
+            <div>
+                <h4 class="font-bold text-base mb-4 text-white uppercase tracking-wider text-sm">Company</h4>
+                <ul class="space-y-2 text-sm text-emerald-100">
+                    <li><a href="../about.html" class="hover:text-brand-accent transition">About</a></li>
+                    <li><a href="../blog.html" class="hover:text-brand-accent transition">Blog</a></li>
+                    <li><a href="../vault.html" class="hover:text-brand-accent transition">The L² Vault</a></li>
+                    <li><a href="../success-stories.html" class="hover:text-brand-accent transition">Success Stories</a></li>
+                    <li><a href="../faq.html" class="hover:text-brand-accent transition">FAQ</a></li>
+                    <li><a href="../contact.html" class="hover:text-brand-accent transition">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Connect -->
+            <div>
+                <h4 class="font-bold text-base mb-4 text-white uppercase tracking-wider text-sm">Connect</h4>
+                <ul class="space-y-2 text-sm text-emerald-100">
+                    <li><a href="mailto:contact@launchtolead.io" class="hover:text-brand-accent transition inline-flex items-center gap-2"><i data-lucide="mail" class="w-4 h-4"></i> contact@launchtolead.io</a></li>
+                    <li><a href="https://www.linkedin.com/in/launchtolead" target="_blank" rel="noopener noreferrer" class="hover:text-brand-accent transition inline-flex items-center gap-2"><i data-lucide="linkedin" class="w-4 h-4 text-blue-400"></i> LinkedIn</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="border-t border-emerald-800 pt-6 text-center text-emerald-400 text-sm">
+            <p>&copy; 2025 Launch to Lead Engineering. All rights reserved. | <a href="../legal.html" class="hover:text-brand-accent transition">Legal & Privacy</a></p>
+        </div>
+    </div>
+</footer>
+
+<script src="../navigation.js"></script>
+<script>
+    lucide.createIcons();
+</script>
+
+</body>
+</html>
