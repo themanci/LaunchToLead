@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mansour Manci - Resume - Ford V&V Manager</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @page {
+            size: letter;
+            margin: 0.5in;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 10pt;
+            line-height: 1.4;
+            color: #1a1a1a;
+            background: #f5f5f5;
+        }
+
+        .resume-container {
+            max-width: 8.5in;
+            margin: 0 auto;
+            background: white;
+            padding: 0.5in;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            border-bottom: 2px solid #064e3b;
+            padding-bottom: 12px;
+            margin-bottom: 16px;
+        }
+
+        .name {
+            font-size: 24pt;
+            font-weight: 700;
+            color: #064e3b;
+            margin-bottom: 4px;
+            letter-spacing: -0.5px;
+        }
+
+        .title {
+            font-size: 11pt;
+            font-weight: 500;
+            color: #14b8a6;
+            margin-bottom: 8px;
+        }
+
+        .contact-info {
+            font-size: 9pt;
+            color: #4a4a4a;
+        }
+
+        .contact-info a {
+            color: #064e3b;
+            text-decoration: none;
+        }
+
+        /* Section Styling */
+        .section {
+            margin-bottom: 14px;
+        }
+
+        .section-title {
+            font-size: 11pt;
+            font-weight: 700;
+            color: #064e3b;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1px solid #e5e5e5;
+            padding-bottom: 4px;
+            margin-bottom: 10px;
+        }
+
+        /* Summary */
+        .summary {
+            font-size: 9.5pt;
+            color: #333;
+            margin-bottom: 10px;
+            text-align: justify;
+        }
+
+        .competencies {
+            font-size: 9pt;
+            color: #4a4a4a;
+        }
+
+        .competencies strong {
+            color: #064e3b;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6px;
+            font-size: 9pt;
+        }
+
+        .skill-row {
+            display: flex;
+        }
+
+        .skill-label {
+            font-weight: 600;
+            color: #064e3b;
+            min-width: 140px;
+        }
+
+        .skill-value {
+            color: #333;
+        }
+
+        /* Experience */
+        .job {
+            margin-bottom: 12px;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 6px;
+        }
+
+        .job-title {
+            font-size: 10.5pt;
+            font-weight: 700;
+            color: #1a1a1a;
+        }
+
+        .job-company {
+            font-weight: 500;
+            color: #14b8a6;
+        }
+
+        .job-date {
+            font-size: 9pt;
+            color: #666;
+            font-style: italic;
+        }
+
+        .job-bullets {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .job-bullets li {
+            font-size: 9.5pt;
+            color: #333;
+            margin-bottom: 4px;
+            padding-left: 14px;
+            position: relative;
+            text-align: justify;
+        }
+
+        .job-bullets li::before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #14b8a6;
+            font-size: 10pt;
+        }
+
+        /* Education */
+        .education-item {
+            margin-bottom: 6px;
+        }
+
+        .degree {
+            font-weight: 600;
+            color: #1a1a1a;
+            font-size: 9.5pt;
+        }
+
+        .school {
+            color: #666;
+            font-size: 9pt;
+        }
+
+        /* Achievements Table */
+        .achievements-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 9pt;
+        }
+
+        .achievements-table th {
+            background: #064e3b;
+            color: white;
+            padding: 6px 8px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .achievements-table td {
+            padding: 5px 8px;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        .achievements-table tr:nth-child(even) {
+            background: #f8fffe;
+        }
+
+        .achievements-table .impact {
+            font-weight: 600;
+            color: #064e3b;
+        }
+
+        .achievements-table .result {
+            color: #1a1a1a;
+        }
+
+        .achievements-table .method {
+            color: #666;
+            font-size: 8.5pt;
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                background: white;
+            }
+
+            .resume-container {
+                box-shadow: none;
+                padding: 0;
+                max-width: none;
+            }
+
+            .section {
+                page-break-inside: avoid;
+            }
+
+            .job {
+                page-break-inside: avoid;
+            }
+        }
+
+        /* Compact mode for fitting on one page */
+        .compact .section {
+            margin-bottom: 10px;
+        }
+
+        .compact .job {
+            margin-bottom: 8px;
+        }
+
+        .compact .job-bullets li {
+            margin-bottom: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div class="resume-container">
+        <!-- Header -->
+        <header class="header">
+            <h1 class="name">Mansour Manci</h1>
+            <div class="title">Software Engineering Leader | Embedded Systems V&V Specialist</div>
+            <div class="contact-info">
+                Cordova, IL 61242 &nbsp;|&nbsp; 515-708-8981 &nbsp;|&nbsp; 
+                <a href="mailto:TheManci@gmail.com">TheManci@gmail.com</a> &nbsp;|&nbsp; 
+                <a href="https://linkedin.com/in/mancimansour">LinkedIn: mancimansour</a>
+            </div>
+        </header>
+
+        <!-- Professional Summary -->
+        <section class="section">
+            <h2 class="section-title">Professional Summary</h2>
+            <p class="summary">
+                Senior Software V&V Leader with 7+ years optimizing verification and validation processes for embedded systems in heavy equipment and autonomous vehicle applications. Led cross-functional teams of 6-10 V&V engineers, achieving 30% reduction in overtime and 90% reduction in weekend work while delivering high-quality software on schedule. Expertise in test strategy development, CI/CD pipelines (Jenkins, Azure DevOps), and HIL/SIL testing methodologies. Proven track record driving process improvements that reduced release errors by 25-30% and cut test execution time by 99.9%.
+            </p>
+            <p class="competencies">
+                <strong>Core Competencies:</strong> V&V Leadership • Test Strategy & Execution • HIL/SIL/MIL Testing • CI/CD Pipelines • Root Cause Analysis • Agile/Scrum • Team Development • Process Optimization
+            </p>
+        </section>
+
+        <!-- Technical Skills -->
+        <section class="section">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-row">
+                    <span class="skill-label">Languages:</span>
+                    <span class="skill-value">C, Python, MATLAB, Simulink, VBScript</span>
+                </div>
+                <div class="skill-row">
+                    <span class="skill-label">V&V Tools:</span>
+                    <span class="skill-value">CANalyzer, TractorSim, DIAdem, HIL, SIL, MIL</span>
+                </div>
+                <div class="skill-row">
+                    <span class="skill-label">DevOps & CI/CD:</span>
+                    <span class="skill-value">Azure DevOps, Git, Jenkins, Subversion</span>
+                </div>
+                <div class="skill-row">
+                    <span class="skill-label">Methodologies:</span>
+                    <span class="skill-value">V&V, Systems Eng., Agile/Scrum, Root Cause Analysis</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Professional Experience -->
+        <section class="section">
+            <h2 class="section-title">Professional Experience</h2>
+
+            <!-- Current Role -->
+            <div class="job">
+                <div class="job-header">
+                    <div>
+                        <span class="job-title">Software Development Enablement Lead</span>
+                        <span class="job-company"> | John Deere</span>
+                    </div>
+                    <span class="job-date">May 2025 – Present</span>
+                </div>
+                <ul class="job-bullets">
+                    <li>Partner with 50+ software engineers across multiple product lines to identify and eliminate inefficiencies in development tools, processes, and architectures—targeting 20% improvement in development cycle time.</li>
+                    <li>Champion adoption of new technologies and tooling to enhance embedded developer experience, driving continuous improvement initiatives across engineering teams.</li>
+                    <li>Conduct and analyze biannual developer surveys (200+ responses) to identify pain points and inform strategic improvements to the software development lifecycle.</li>
+                </ul>
+            </div>
+
+            <!-- Supervisor Role -->
+            <div class="job">
+                <div class="job-header">
+                    <div>
+                        <span class="job-title">Supervisor, Crop Care Software V&V Engineering</span>
+                        <span class="job-company"> | John Deere</span>
+                    </div>
+                    <span class="job-date">June 2023 – May 2025</span>
+                </div>
+                <ul class="job-bullets">
+                    <li><strong>V&V Team Leadership:</strong> Led team of 6-10 V&V engineers in on-time delivery of safety-critical embedded software for planting, seeding, tillage, and autonomous vehicle systems—zero missed release deadlines across 8 major product launches.</li>
+                    <li><strong>Operational Excellence:</strong> Achieved 30% reduction in overtime and 90% reduction in weekend work by implementing data-driven resource planning and burndown tracking—improving team retention and sustainable delivery pace.</li>
+                    <li><strong>Quality Improvement:</strong> Reduced software release errors by 25-30% by transitioning from informal handoffs to structured release process with formal audits and traceability documentation.</li>
+                    <li><strong>Test Capacity Scaling:</strong> Doubled testing capacity during critical delivery cycle by orchestrating cross-departmental, two-shift testing effort across 3 teams—ensuring on-time completion without quality compromise.</li>
+                    <li><strong>Test Automation Infrastructure:</strong> Reduced HIL test schedule management time by 90% by developing shared scheduling system—freeing engineers to focus on test development.</li>
+                    <li><strong>Talent Development:</strong> Cut onboarding time for new V&V engineers by 50% through targeted mentoring program and cross-platform training curriculum.</li>
+                </ul>
+            </div>
+
+            <!-- Embedded Software Engineer -->
+            <div class="job">
+                <div class="job-header">
+                    <div>
+                        <span class="job-title">Embedded Software Engineer</span>
+                        <span class="job-company"> | John Deere</span>
+                    </div>
+                    <span class="job-date">June 2022 – June 2023</span>
+                </div>
+                <ul class="job-bullets">
+                    <li>Spearheaded team's adoption of Rally Agile management tool within first month, serving as Scrum Master and establishing standardized user story templates—improving sprint predictability by 25%.</li>
+                    <li>Designed comprehensive system test plan for vehicle Immobilizer security feature, validating RFID transponder and vehicle control unit interactions—ensuring security against unauthorized operation.</li>
+                </ul>
+            </div>
+
+            <!-- Engine Control Systems Engineer -->
+            <div class="job">
+                <div class="job-header">
+                    <div>
+                        <span class="job-title">Engine Control Systems Engineer</span>
+                        <span class="job-company"> | John Deere</span>
+                    </div>
+                    <span class="job-date">May 2020 – June 2022</span>
+                </div>
+                <ul class="job-bullets">
+                    <li><strong>Test Optimization:</strong> Decreased C code unit test execution time from 33,000ms to 25ms (99.9% improvement) by optimizing diagnostic test logic—enabling full test suite runs in seconds instead of minutes.</li>
+                    <li><strong>CI/CD Pipeline:</strong> Resolved critical build errors in Jenkins CI/CD server by authoring functional requirements specifications—restoring automated build reliability for 15-person team.</li>
+                    <li><strong>Root Cause Analysis:</strong> Investigated and resolved multiple system defects through structured analysis, code implementation, MATLAB model updates, and HIL test validation.</li>
+                </ul>
+            </div>
+
+            <!-- Drivetrain -->
+            <div class="job">
+                <div class="job-header">
+                    <div>
+                        <span class="job-title">Drivetrain Embedded Software Engineer</span>
+                        <span class="job-company"> | John Deere</span>
+                    </div>
+                    <span class="job-date">Oct 2019 – May 2020</span>
+                </div>
+                <ul class="job-bullets">
+                    <li>Implemented embedded code for direction and shaft speed sensing in 8R IVT tractors, validated through CANalyzer diagnostics and TractorSim virtual testing.</li>
+                    <li>Eliminated "stuck in park" defect affecting 8R tractor line by modifying controller command alignment, validated via SIL testing—resolving field issue impacting customer operations.</li>
+                </ul>
+            </div>
+
+            <!-- CI Software Engineer -->
+            <div class="job">
+                <div class="job-header">
+                    <div>
+                        <span class="job-title">Controls Continuous Improvement Software Engineer</span>
+                        <span class="job-company"> | John Deere</span>
+                    </div>
+                    <span class="job-date">Mar 2019 – Oct 2019</span>
+                </div>
+                <ul class="job-bullets">
+                    <li>Delivered experimental software fix for aftertreatment regen issues in under 48 hours, releasing critical warehouse hold affecting 50+ units.</li>
+                    <li>Decreased turnaround time for engine payload releases by 15-20% by designing new de-tier release process with support team.</li>
+                </ul>
+            </div>
+
+            <!-- PVV Mechanical -->
+            <div class="job">
+                <div class="job-header">
+                    <div>
+                        <span class="job-title">V&V Mechanical Development Engineer</span>
+                        <span class="job-company"> | John Deere</span>
+                    </div>
+                    <span class="job-date">May 2018 – Mar 2019</span>
+                </div>
+                <ul class="job-bullets">
+                    <li>Reduced post-test data processing time by 75%+ by authoring 8-10 automation scripts in VBScript and Python for DIAdem—transforming hours of manual work into minutes.</li>
+                    <li>Created software request tool for test engineers that decreased payload lead times and reduced risk of incorrect software builds.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Education -->
+        <section class="section">
+            <h2 class="section-title">Education & Certifications</h2>
+            <div class="education-item">
+                <span class="degree">Master of Engineering, Mechanical Engineering</span>
+                <span class="school"> | Iowa State University, Ames, IA</span>
+            </div>
+            <div class="education-item">
+                <span class="degree">Bachelor of Science, Mechanical Engineering</span>
+                <span class="school"> | Iowa State University, Ames, IA</span>
+            </div>
+            <div class="education-item">
+                <span class="degree">Systems Engineering Certificate</span>
+                <span class="school"> | California Institute of Technology (Caltech)</span>
+            </div>
+        </section>
+
+        <!-- Key Achievements -->
+        <section class="section">
+            <h2 class="section-title">Key Achievements</h2>
+            <table class="achievements-table">
+                <thead>
+                    <tr>
+                        <th>Impact Area</th>
+                        <th>Result</th>
+                        <th>Method</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="impact">Test Performance</td>
+                        <td class="result">99.9% improvement in unit test execution (33s → 25ms)</td>
+                        <td class="method">Diagnostic test logic optimization</td>
+                    </tr>
+                    <tr>
+                        <td class="impact">Team Efficiency</td>
+                        <td class="result">30% overtime reduction, 90% weekend elimination</td>
+                        <td class="method">Data-driven resource planning</td>
+                    </tr>
+                    <tr>
+                        <td class="impact">Quality</td>
+                        <td class="result">25-30% reduction in software release errors</td>
+                        <td class="method">Structured release process with audits</td>
+                    </tr>
+                    <tr>
+                        <td class="impact">Automation</td>
+                        <td class="result">75%+ reduction in data processing time</td>
+                        <td class="method">Custom Python/VBScript automation</td>
+                    </tr>
+                    <tr>
+                        <td class="impact">Infrastructure</td>
+                        <td class="result">90% reduction in test schedule management</td>
+                        <td class="method">Shared HIL scheduling system</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </div>
+</body>
+</html>

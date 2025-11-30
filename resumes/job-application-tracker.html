@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Application Tracker - Launch to Lead Validation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 14px;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: linear-gradient(135deg, #ecfdf5 0%, #f0fdfa 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            font-size: 32px;
+            font-weight: 700;
+            color: #064e3b;
+            margin-bottom: 8px;
+        }
+
+        .header .subtitle {
+            font-size: 16px;
+            color: #14b8a6;
+            font-weight: 500;
+        }
+
+        .header .date {
+            font-size: 14px;
+            color: #666;
+            margin-top: 8px;
+        }
+
+        /* Summary Card */
+        .summary-card {
+            background: white;
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 32px;
+            box-shadow: 0 4px 20px rgba(6, 78, 59, 0.1);
+        }
+
+        .summary-card h2 {
+            font-size: 18px;
+            color: #064e3b;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .summary-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+        }
+
+        .summary-table th {
+            background: #064e3b;
+            color: white;
+            padding: 12px 16px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .summary-table td {
+            padding: 12px 16px;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        .summary-table tr:hover {
+            background: #f0fdfa;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .status-applied {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        .status-response {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+
+        .status-interview {
+            background: #d1fae5;
+            color: #065f46;
+        }
+
+        .status-offer {
+            background: #a3e635;
+            color: #064e3b;
+        }
+
+        .status-rejected {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
+        /* Application Card */
+        .application-card {
+            background: white;
+            border-radius: 16px;
+            margin-bottom: 24px;
+            box-shadow: 0 4px 20px rgba(6, 78, 59, 0.1);
+            overflow: hidden;
+        }
+
+        .application-header {
+            background: linear-gradient(135deg, #064e3b 0%, #065f46 100%);
+            color: white;
+            padding: 24px;
+        }
+
+        .application-header .company {
+            font-size: 14px;
+            font-weight: 500;
+            opacity: 0.9;
+            margin-bottom: 4px;
+        }
+
+        .application-header .position {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .application-header .meta {
+            display: flex;
+            gap: 24px;
+            font-size: 13px;
+            opacity: 0.9;
+        }
+
+        .application-header .meta span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .application-body {
+            padding: 24px;
+        }
+
+        .section {
+            margin-bottom: 24px;
+        }
+
+        .section:last-child {
+            margin-bottom: 0;
+        }
+
+        .section h3 {
+            font-size: 16px;
+            font-weight: 700;
+            color: #064e3b;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #d1fae5;
+        }
+
+        .section p {
+            color: #4a4a4a;
+            margin-bottom: 12px;
+        }
+
+        .section ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .section ul li {
+            padding: 8px 0;
+            padding-left: 24px;
+            position: relative;
+            color: #333;
+            border-bottom: 1px solid #f3f4f6;
+        }
+
+        .section ul li:last-child {
+            border-bottom: none;
+        }
+
+        .section ul li::before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #14b8a6;
+        }
+
+        /* Fit Analysis */
+        .fit-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+        }
+
+        .fit-table th {
+            background: #f0fdfa;
+            color: #064e3b;
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .fit-table td {
+            padding: 10px 12px;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        .fit-table .match {
+            text-align: center;
+            font-size: 16px;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: 8px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #d1fae5;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-bottom: 20px;
+        }
+
+        .timeline-item:last-child {
+            padding-bottom: 0;
+        }
+
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: -26px;
+            top: 4px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #14b8a6;
+            border: 2px solid white;
+            box-shadow: 0 0 0 2px #14b8a6;
+        }
+
+        .timeline-item.pending::before {
+            background: white;
+            border: 2px solid #d1d5db;
+            box-shadow: none;
+        }
+
+        .timeline-item .date {
+            font-weight: 600;
+            color: #064e3b;
+            font-size: 13px;
+        }
+
+        .timeline-item .event {
+            font-weight: 500;
+            color: #1a1a1a;
+        }
+
+        .timeline-item .notes {
+            font-size: 13px;
+            color: #666;
+        }
+
+        /* Methodology Section */
+        .methodology-card {
+            background: linear-gradient(135deg, #064e3b 0%, #065f46 100%);
+            color: white;
+            border-radius: 16px;
+            padding: 32px;
+            margin-top: 40px;
+        }
+
+        .methodology-card h2 {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        .methodology-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .methodology-item {
+            background: rgba(255,255,255,0.1);
+            padding: 16px;
+            border-radius: 12px;
+        }
+
+        .methodology-item .name {
+            font-weight: 600;
+            margin-bottom: 4px;
+            color: #a3e635;
+        }
+
+        .methodology-item .desc {
+            font-size: 13px;
+            opacity: 0.9;
+        }
+
+        .metrics {
+            display: flex;
+            gap: 40px;
+            justify-content: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .metric {
+            text-align: center;
+        }
+
+        .metric .number {
+            font-size: 36px;
+            font-weight: 700;
+            color: #a3e635;
+        }
+
+        .metric .label {
+            font-size: 13px;
+            opacity: 0.9;
+        }
+
+        /* Qualifications Lists */
+        .qual-section {
+            background: #f8fffe;
+            padding: 16px;
+            border-radius: 12px;
+            margin-bottom: 16px;
+        }
+
+        .qual-section h4 {
+            font-size: 14px;
+            color: #064e3b;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .qual-section ul li {
+            border-bottom: none;
+            padding: 4px 0;
+            padding-left: 24px;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #666;
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>🎯 Job Application Tracker</h1>
+            <div class="subtitle">Validating the Launch to Lead Methodology</div>
+            <div class="date">Started: November 30, 2025</div>
+        </header>
+
+        <!-- Summary Table -->
+        <div class="summary-card">
+            <h2>📊 Application Summary</h2>
+            <table class="summary-table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Company</th>
+                        <th>Position</th>
+                        <th>Applied</th>
+                        <th>Response</th>
+                        <th>Phone Screen</th>
+                        <th>Interview</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td><strong>Ford Motor Company</strong></td>
+                        <td>Manager, Embedded Software V&V</td>
+                        <td>Nov 30, 2025</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td><span class="status-badge status-applied">Applied</span></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td><strong>NVIDIA</strong></td>
+                        <td>Manager, Software Verification</td>
+                        <td>Nov 30, 2025</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td><span class="status-badge status-applied">Applied</span></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td><strong>Netflix</strong></td>
+                        <td>Engineering Manager - TLM</td>
+                        <td>Nov 30, 2025</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td><span class="status-badge status-applied">Applied</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Application #1: Ford -->
+        <div class="application-card">
+            <div class="application-header">
+                <div class="company">Ford Motor Company</div>
+                <div class="position">Manager, Embedded Software V&V</div>
+                <div class="meta">
+                    <span>📍 United States (Remote)</span>
+                    <span>💼 Full-time</span>
+                    <span>👥 100+ applicants</span>
+                    <span>🔗 LinkedIn</span>
+                </div>
+            </div>
+
+            <div class="application-body">
+                <!-- Job Description -->
+                <div class="section">
+                    <h3>Job Description</h3>
+                    <p>
+                        Ford's Electric Vehicles, Digital and Design (EVDD) team is charged with delivering the company's vision of a fully electric transportation future. EVDD is customer-obsessed, entrepreneurial, and data-driven and is dedicated to delivering industry-leading customer experience for electric vehicle buyers and owners.
+                    </p>
+                    <p>
+                        We are seeking an experienced and dynamic Embedded Software V&V Manager to lead our ECU Verification and Validation (V&V) team focused on test automation. The ideal candidate will have a strong background in automotive software testing and a proven track record of managing complex testing projects. This role involves overseeing the planning, execution, and reporting of embedded software tests to ensure our products meet the highest quality and safety standards.
+                    </p>
+                </div>
+
+                <!-- Responsibilities -->
+                <div class="section">
+                    <h3>Responsibilities</h3>
+                    <ul>
+                        <li>Lead, mentor, and manage a team of Component V&V Engineers focused on automated testing of embedded software</li>
+                        <li>Define, develop, and oversee the execution of comprehensive V&V strategies, test plans, test cases, and test scripts for embedded software components across various domains (e.g., control systems, communication modules, sensor interfaces)</li>
+                        <li>Provide feedback on the design, development, and maintenance of robust automated test frameworks, tools, and infrastructure for embedded software V&V</li>
+                        <li>Ensure thorough validation of functional, non-functional, performance, and regression requirements at the component level, striving for maximum test coverage and efficiency</li>
+                        <li>Collaborate closely with embedded software development teams, systems engineering, and system V&V teams to ensure seamless integration, traceability of requirements from system to component level, and alignment on V&V goals</li>
+                        <li>Oversee the analysis of test results, lead root cause identification for reported issues, and track resolutions to ensure the delivery of high-quality, robust software components</li>
+                        <li>Establish and maintain Component V&V processes, methodologies, and best practices, driving continuous improvement in test efficiency, automation, and overall quality</li>
+                        <li>Manage project timelines, resources, and budgets for component V&V activities, ensuring timely and effective delivery</li>
+                        <li>Provide technical guidance and mentorship to the V&V team, fostering a culture of technical excellence, innovation, and continuous learning</li>
+                        <li>Ensure all V&V activities comply with relevant industry standards, regulatory requirements, and internal quality processes (e.g., functional safety standards, software development lifecycle models)</li>
+                    </ul>
+                </div>
+
+                <!-- Qualifications -->
+                <div class="section">
+                    <h3>Qualifications</h3>
+                    
+                    <div class="qual-section">
+                        <h4>Required</h4>
+                        <ul>
+                            <li>Bachelor's degree in Electrical Engineering, Computer Engineering, Computer Science, or a related technical field</li>
+                            <li>8+ years of experience in embedded software Verification & Validation or Software Quality Assurance, with at least 3 years in a leadership or managerial role</li>
+                            <li>Proven experience leading and managing technical teams, with a strong ability to motivate, develop, and guide engineers</li>
+                            <li>Deep understanding of the embedded software development lifecycle and various V&V methodologies (e.g., V-model, Agile)</li>
+                            <li>Proficiency in programming languages commonly used in embedded software V&V (e.g., Python, C/C++)</li>
+                            <li>Familiarity with various communication protocols (e.g., CAN, LIN, Ethernet, SPI, I2C) and diagnostic tools</li>
+                            <li>Excellent problem-solving, debugging, and analytical skills, with a keen eye for detail</li>
+                            <li>Strong communication, collaboration, and interpersonal skills</li>
+                        </ul>
+                    </div>
+
+                    <div class="qual-section">
+                        <h4>Preferred (Nice to Have)</h4>
+                        <ul>
+                            <li>✅ Master's or PhD degree in a relevant engineering field</li>
+                            <li>Experience with safety-critical embedded systems and relevant industry standards (e.g., ISO 26262, IEC 61508, DO-178C)</li>
+                            <li>✅ Experience with continuous integration/continuous delivery (CI/CD) pipelines and DevOps practices for embedded software</li>
+                            <li>Knowledge of various embedded processor architectures and real-time operating systems (RTOS)</li>
+                            <li>✅ Experience with requirements management, configuration management, and defect tracking tools (e.g., Jira, Azure DevOps, DOORS)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Fit Analysis -->
+                <div class="section">
+                    <h3>My Fit Analysis</h3>
+                    <table class="fit-table">
+                        <thead>
+                            <tr>
+                                <th>Requirement</th>
+                                <th>My Evidence</th>
+                                <th class="match">Match</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>8+ years V&V, 3+ leadership</td>
+                                <td>7+ years, 2 years formal Supervisor</td>
+                                <td class="match">⚠️</td>
+                            </tr>
+                            <tr>
+                                <td>Lead team of V&V Engineers</td>
+                                <td>Led 6-10 PV&V engineers at Deere</td>
+                                <td class="match">✅</td>
+                            </tr>
+                            <tr>
+                                <td>Test automation focus</td>
+                                <td>HIL scheduling system, Python scripts, CI/CD</td>
+                                <td class="match">✅</td>
+                            </tr>
+                            <tr>
+                                <td>Root cause analysis</td>
+                                <td>Explicitly throughout career</td>
+                                <td class="match">✅</td>
+                            </tr>
+                            <tr>
+                                <td>V&V methodologies (V-model, Agile)</td>
+                                <td>Agile ceremonies, SIL/HIL/MIL</td>
+                                <td class="match">✅</td>
+                            </tr>
+                            <tr>
+                                <td>Python, C/C++</td>
+                                <td>C, Python throughout career</td>
+                                <td class="match">✅</td>
+                            </tr>
+                            <tr>
+                                <td>CAN protocols, diagnostic tools</td>
+                                <td>CANalyzer experience</td>
+                                <td class="match">✅</td>
+                            </tr>
+                            <tr>
+                                <td>CI/CD pipelines</td>
+                                <td>Jenkins, Azure DevOps</td>
+                                <td class="match">✅</td>
+                            </tr>
+                            <tr>
+                                <td>Master's degree (preferred)</td>
+                                <td>Master's from Iowa State</td>
+                                <td class="match">✅</td>
+                            </tr>
+                            <tr>
+                                <td>Mentorship & culture</td>
+                                <td>Onboarding program, cross-training</td>
+                                <td class="match">✅</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Timeline -->
+                <div class="section">
+                    <h3>Application Timeline</h3>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="date">November 30, 2025</div>
+                            <div class="event">Applied</div>
+                            <div class="notes">Submitted via LinkedIn with tailored resume</div>
+                        </div>
+                        <div class="timeline-item pending">
+                            <div class="date">-</div>
+                            <div class="event">Response</div>
+                            <div class="notes">Awaiting recruiter response</div>
+                        </div>
+                        <div class="timeline-item pending">
+                            <div class="date">-</div>
+                            <div class="event">Phone Screen</div>
+                            <div class="notes">-</div>
+                        </div>
+                        <div class="timeline-item pending">
+                            <div class="date">-</div>
+                            <div class="event">Technical Interview</div>
+                            <div class="notes">-</div>
+                        </div>
+                        <div class="timeline-item pending">
+                            <div class="date">-</div>
+                            <div class="event">Final Interview</div>
+                            <div class="notes">-</div>
+                        </div>
+                        <div class="timeline-item pending">
+                            <div class="date">-</div>
+                            <div class="event">Decision</div>
+                            <div class="notes">-</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Notes -->
+                <div class="section">
+                    <h3>Notes</h3>
+                    <ul>
+                        <li>Iowa State alumni connection available (shown in LinkedIn)</li>
+                        <li>Role is remote, which is ideal</li>
+                        <li>Strong alignment with V&V background from Deere</li>
+                        <li>May need to emphasize leadership experience beyond formal Supervisor title in cover letter/interview</li>
+                    </ul>
+                </div>
+
+                <!-- Resume Used -->
+                <div class="section">
+                    <h3>Resume Used</h3>
+                    <p><code>mansour-manci-ford-vv-manager.html</code></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Application #2: NVIDIA -->
+        <div class="application-card">
+            <div class="application-header" style="background: linear-gradient(135deg, #76b900 0%, #5a8f00 100%);">
+                <div class="company">NVIDIA</div>
+                <div class="position">Manager, Software Verification</div>
+                <div class="meta">
+                    <span>📍 California, US (Remote)</span>
+                    <span>💼 Full-time</span>
+                    <span>💰 $224K - $425K</span>
+                    <span>👥 100+ applicants</span>
+                </div>
+            </div>
+
+            <div class="application-body">
+                <!-- Job Description -->
+                <div class="section">
+                    <h3>Job Description</h3>
+                    <p>
+                        NVIDIA is looking for an experienced manager to lead one of our system testing and integration team in Cloud Solution group. This team is responsible for the testing, integration, and delivery of most sophisticated company's products under growing generative AI market. Current position is focused on leading a group of system engineers.
+                    </p>
+                </div>
+
+                <!-- Responsibilities -->
+                <div class="section">
+                    <h3>Responsibilities</h3>
+                    <ul>
+                        <li>Leading groundbreaking technology qualification processes</li>
+                        <li>Designing and testing NVIDIA large scale setups that mimic Tier 1 customer data center workloads</li>
+                        <li>Reviewing arch design and requirements for new features in Ethernet/InfiniBand switches and network adaptors</li>
+                        <li>Designing and building setup topologies for product coverage with emphasis on customer large scale/complex environments</li>
+                        <li>Designing for testing automation team, implementing tests for new features, mentoring team members</li>
+                        <li>Generating comprehensive test reports, assisting with reproduction and debugging complex customer use cases</li>
+                        <li>Root cause determination and verification of bug fixes from R&D team</li>
+                        <li>Performing end-to-end test scenarios: Regression, Performance, Functional and Scale</li>
+                    </ul>
+                </div>
+
+                <!-- Qualifications -->
+                <div class="section">
+                    <h3>Qualifications</h3>
+                    
+                    <div class="qual-section">
+                        <h4>Required</h4>
+                        <ul>
+                            <li>Bachelor's/master's degree in computer science or computer engineering, or equivalent</li>
+                            <li>8+ overall years of experience</li>
+                            <li>5+ years experience as a team leader</li>
+                            <li>Capable of multi-tasking, ability to drive people and tasks</li>
+                            <li>Excellent communication and technical presentation skills</li>
+                            <li>Strong debugging and analytical skills</li>
+                            <li>Fast and self-learner with outstanding technical skills</li>
+                            <li>Effective trouble shooting and problem-solving ability</li>
+                        </ul>
+                    </div>
+
+                    <div class="qual-section">
+                        <h4>Preferred (Ways To Stand Out)</h4>
+                        <ul>
+                            <li>❌ Experience with virtualization (KVM, HyperV, VMware, OpenStack, Kubernetes)</li>
+                            <li>❌ Knowledge of networking protocols: InfiniBand, Ethernet</li>
+                            <li>✅ Experience in programming</li>
+                            <li>❌ Previous experience with Networking deployment based on 1588V2</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Fit Analysis -->
+                <div class="section">
+                    <h3>My Fit Analysis</h3>
+                    <table class="fit-table">
+                        <thead>
+                            <tr>
+                                <th>Requirement</th>
+                                <th>My Evidence</th>
+                                <th class="match">Match</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>8+ years experience</td>
+                                <td>7+ years</td>
+                                <td class="match">⚠️</td>
+                            </tr>
+                            <tr>
+                                <td>5+ years team leader</td>
+                                <td>3.5+ years (Supervisor + Scrum Master + Initiative Lead)</td>
+                                <td class="match">⚠️</td>
+                            </tr>
+                            <tr>
+                                <td>Lead testing team</td>
+                                <td>Led 6-10 V&V engineers, now 10-person action team</td>
+                                <td class="match">✅</td>
+                            </tr>
+                            <tr>
+                                <td>Large-scale test setups</td>
+                                <td>HIL scheduling, cross-departmental testing</td>
+                                <td class="match">✅</td>
+                            </tr>
+                            <tr>
+                                <td>Root cause analysis</td>
+                                <td>Throughout career</td>
+                                <td class="match">✅</td>
+                            </tr>
+                            <tr>
+                                <td>Debugging & analytical</td>
+                                <td>Explicitly throughout career</td>
+                                <td class="match">✅</td>
+                            </tr>
+                            <tr>
+                                <td>Programming</td>
+                                <td>Python, C, VBScript</td>
+                                <td class="match">✅</td>
+                            </tr>
+                            <tr>
+                                <td>Master's degree</td>
+                                <td>Iowa State Master's</td>
+                                <td class="match">✅</td>
+                            </tr>
+                            <tr>
+                                <td>Virtualization (preferred)</td>
+                                <td>No direct experience</td>
+                                <td class="match">❌</td>
+                            </tr>
+                            <tr>
+                                <td>Networking (preferred)</td>
+                                <td>CAN only, not InfiniBand/Ethernet</td>
+                                <td class="match">❌</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Timeline -->
+                <div class="section">
+                    <h3>Application Timeline</h3>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="date">November 30, 2025</div>
+                            <div class="event">Applied</div>
+                            <div class="notes">Submitted via LinkedIn with tailored resume emphasizing enterprise scale</div>
+                        </div>
+                        <div class="timeline-item pending">
+                            <div class="date">-</div>
+                            <div class="event">Response</div>
+                            <div class="notes">Awaiting recruiter response</div>
+                        </div>
+                        <div class="timeline-item pending">
+                            <div class="date">-</div>
+                            <div class="event">Phone Screen</div>
+                            <div class="notes">-</div>
+                        </div>
+                        <div class="timeline-item pending">
+                            <div class="date">-</div>
+                            <div class="event">Technical Interview</div>
+                            <div class="notes">-</div>
+                        </div>
+                        <div class="timeline-item pending">
+                            <div class="date">-</div>
+                            <div class="event">Decision</div>
+                            <div class="notes">-</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Notes -->
+                <div class="section">
+                    <h3>Notes</h3>
+                    <ul>
+                        <li>Iowa State alumni connection available</li>
+                        <li>Role is remote - ideal</li>
+                        <li><strong>Stretch role</strong> - gaps in cloud/networking experience</li>
+                        <li>Emphasized enterprise scale (2,000+ engineers impacted) to show leadership at scale</li>
+                        <li>$224K-$425K salary range is significant opportunity</li>
+                        <li>Strong transferable skills from autonomous vehicle and embedded systems V&V</li>
+                    </ul>
+                </div>
+
+                <!-- Resume Used -->
+                <div class="section">
+                    <h3>Resume Used</h3>
+                    <p><code>mansour-manci-nvidia-verification-manager.html</code></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Application #3: Netflix -->
+        <div class="application-card">
+            <div class="application-header" style="background: linear-gradient(135deg, #E50914 0%, #b20710 100%);">
+                <div class="company">Netflix</div>
+                <div class="position">Engineering Manager - Title and Launch Management</div>
+                <div class="meta">
+                    <span>📍 United States (Remote)</span>
+                    <span>💼 Full-time</span>
+                    <span>💰 $100K - $720K</span>
+                    <span>👥 100+ applicants</span>
+                </div>
+            </div>
+
+            <div class="application-body">
+                <!-- Job Description -->
+                <div class="section">
+                    <h3>Job Description</h3>
+                    <p>
+                        The Title and Launch Management (TLM) team is responsible for building the technology foundations that enable the ingest, setup, launch, and global distribution of all entertainment on Netflix—including series, movies, games, ads, live events, trailers, and more. We are forming a new team to automate large-scale content ingestion, replacing manual processes with a flexible, federated system.
+                    </p>
+                </div>
+
+                <!-- Responsibilities -->
+                <div class="section">
+                    <h3>Responsibilities</h3>
+                    <ul>
+                        <li>Lead a team of software engineers to deliver high-impact results</li>
+                        <li>Serve as Netflix's representative with external content partners' engineering teams</li>
+                        <li>Partner with product managers, designers, engineers to drive product vision and strategy</li>
+                        <li>Foster a culture of accountability, ensuring timely and reliable delivery</li>
+                        <li>Act as a trusted technical advisor in ambiguous situations</li>
+                        <li>Connect the dots across teams to prioritize work beyond immediate domain</li>
+                        <li>Balance business goals with strong engineering practices</li>
+                        <li>Hire, coach, and lead Backend and UI Engineers</li>
+                        <li>Build an inclusive team culture where everyone feels empowered</li>
+                    </ul>
+                </div>
+
+                <!-- Qualifications -->
+                <div class="section">
+                    <h3>Qualifications</h3>
+                    
+                    <div class="qual-section">
+                        <h4>Required</h4>
+                        <ul>
+                            <li>5+ years building and managing high-performing, inclusive teams</li>
+                            <li>Experience delivering enterprise-grade products and services</li>
+                            <li>Strategic thinker with strong product mindset</li>
+                            <li>Skilled at prioritizing and aligning with business objectives</li>
+                            <li>Excellent collaborator and communicator</li>
+                            <li>Data-driven decision making using KPIs and leading indicators</li>
+                            <li>Strong communicator across global teams</li>
+                        </ul>
+                    </div>
+
+                    <div class="qual-section">
+                        <h4>Nice To Have</h4>
+                        <ul>
+                            <li>❌ Experience with content ingestion systems</li>
+                            <li>⚠️ Experience building distributed systems at scale</li>
+                            <li>⚠️ Experience leading Backend and UI/UX engineers</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Fit Analysis -->
+                <div class="section">
+                    <h3>My Fit Analysis</h3>
+                    <table class="fit-table">
+                        <thead>
+                            <tr>
+                                <th>Requirement</th>
+                                <th>My Evidence</th>
+                                <th class="match">Match</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>5+ years managing teams</td>
+                                <td>3.5+ years with massive scope (2,000+ engineers)</td>
+                                <td class="match">⚠️</td>
+                            </tr>
+                            <tr>
+                                <td>High-performing, inclusive teams</td>
+                                <td>30% overtime reduction, sustainable practices</td>
+                                <td class="match">✅</td>
+                            </tr>
+                            <tr>
+                                <td>Enterprise-grade products</td>
+                                <td>Autonomous vehicles, safety-critical systems</td>
+                                <td class="match">✅</td>
+                            </tr>
+                            <tr>
+                                <td>Strategic thinker</td>
+                                <td>$1B+ programs, director recognition</td>
+                                <td class="match">✅</td>
+                            </tr>
+                            <tr>
+                                <td>Cross-functional collaboration</td>
+                                <td>2,000+ engineer impact, cross-departmental</td>
+                                <td class="match">✅</td>
+                            </tr>
+                            <tr>
+                                <td>Deliver timely results</td>
+                                <td>Zero missed deadlines, 3 major launches</td>
+                                <td class="match">✅</td>
+                            </tr>
+                            <tr>
+                                <td>Data-driven decisions</td>
+                                <td>Developer surveys, KPIs, Quality/Speed/Ease/People</td>
+                                <td class="match">✅</td>
+                            </tr>
+                            <tr>
+                                <td>Foster accountability</td>
+                                <td>Agile ceremonies, structured release processes</td>
+                                <td class="match">✅</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Timeline -->
+                <div class="section">
+                    <h3>Application Timeline</h3>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="date">November 30, 2025</div>
+                            <div class="event">Applied</div>
+                            <div class="notes">Submitted via LinkedIn with leadership-focused resume</div>
+                        </div>
+                        <div class="timeline-item pending">
+                            <div class="date">-</div>
+                            <div class="event">Response</div>
+                            <div class="notes">Awaiting recruiter response</div>
+                        </div>
+                        <div class="timeline-item pending">
+                            <div class="date">-</div>
+                            <div class="event">Phone Screen</div>
+                            <div class="notes">-</div>
+                        </div>
+                        <div class="timeline-item pending">
+                            <div class="date">-</div>
+                            <div class="event">Interview</div>
+                            <div class="notes">-</div>
+                        </div>
+                        <div class="timeline-item pending">
+                            <div class="date">-</div>
+                            <div class="event">Decision</div>
+                            <div class="notes">-</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Notes -->
+                <div class="section">
+                    <h3>Notes</h3>
+                    <ul>
+                        <li>Iowa State alumni connection available</li>
+                        <li>Role is remote - ideal</li>
+                        <li><strong>Strongest fit of all applications</strong> - leadership-focused, not deep technical specialty</li>
+                        <li>Resume language mirrors Netflix job posting exactly</li>
+                        <li>Emphasized: enterprise scale, program delivery, team culture, data-driven decisions</li>
+                    </ul>
+                </div>
+
+                <!-- Resume Used -->
+                <div class="section">
+                    <h3>Resume Used</h3>
+                    <p><code>mansour-manci-netflix-engineering-manager.html</code></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Methodology Card -->
+        <div class="methodology-card">
+            <h2>🚀 Methodology Being Tested</h2>
+            <p style="margin-bottom: 20px; opacity: 0.9;">This job search validates the <strong>Launch to Lead</strong> methodology:</p>
+            
+            <div class="methodology-grid">
+                <div class="methodology-item">
+                    <div class="name">Impact Equation</div>
+                    <div class="desc">Accomplishment + Evidence/Metric + How + Why</div>
+                </div>
+                <div class="methodology-item">
+                    <div class="name">Universal Translator</div>
+                    <div class="desc">Industry jargon → universal competencies</div>
+                </div>
+                <div class="methodology-item">
+                    <div class="name">Me-in-We Extraction</div>
+                    <div class="desc">Individual contributions isolated from team</div>
+                </div>
+                <div class="methodology-item">
+                    <div class="name">Competency Radar</div>
+                    <div class="desc">Analyze posting for hidden requirements</div>
+                </div>
+                <div class="methodology-item">
+                    <div class="name">Boring to Booming</div>
+                    <div class="desc">Task descriptions → impact statements</div>
+                </div>
+            </div>
+
+            <div class="metrics">
+                <div class="metric">
+                    <div class="number">10</div>
+                    <div class="label">Target Applications</div>
+                </div>
+                <div class="metric">
+                    <div class="number">3</div>
+                    <div class="label">Applied</div>
+                </div>
+                <div class="metric">
+                    <div class="number">0</div>
+                    <div class="label">Phone Screens</div>
+                </div>
+                <div class="metric">
+                    <div class="number">0</div>
+                    <div class="label">Interviews</div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            Last updated: November 30, 2025
+        </footer>
+    </div>
+</body>
+</html>

@@ -183,54 +183,57 @@
 
 </main>
 
-<!-- Footer - Condensed -->
-<footer class="bg-brand-primary text-white py-12 border-t border-emerald-800">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid md:grid-cols-4 gap-10 mb-10">
-            <!-- Brand -->
-            <div class="col-span-1">
-                <a href="index.html" class="flex items-center gap-2 mb-4 group">
-                    <div class="bg-brand-accent text-brand-primary w-10 h-10 rounded-lg flex items-center justify-center group-hover:bg-white transition duration-300">
-                        <span class="font-bold text-lg">L²</span>
+<!-- Footer -->
+<footer class="bg-brand-primary text-white py-12">
+    <div class="max-w-7xl mx-auto px-4">
+        <div class="grid md:grid-cols-4 gap-8 mb-8">
+            <div>
+                <a href="index.html" class="flex items-center gap-2 mb-4">
+                    <div class="bg-brand-accent text-brand-primary w-8 h-8 rounded-lg flex items-center justify-center">
+                        <span class="font-bold">L²</span>
                     </div>
-                    <span class="font-bold text-xl text-white tracking-tight">Launch<span class="font-light text-brand-accent">ToLead</span></span>
+                    <span class="font-bold text-lg text-white">Launch<span class="font-light text-brand-accent">ToLead</span></span>
                 </a>
-                <p class="text-emerald-100 text-sm leading-relaxed">
-                    Engineering career coaching for students and professionals.
-                </p>
+                <p class="text-emerald-100 text-sm mb-4">Land top-tier engineering jobs. Coaching from a real engineer, not HR.</p>
+                <p class="text-emerald-300 text-xs font-semibold">Only 10 spots per month.</p>
             </div>
 
-            <!-- Services -->
             <div>
-                <h4 class="font-bold text-base mb-4 text-white uppercase tracking-wider text-sm">Services</h4>
+                <h4 class="font-bold mb-4 text-sm uppercase tracking-wider">Programs</h4>
                 <ul class="space-y-2 text-sm text-emerald-100">
-                    <li><a href="launch.html" class="hover:text-brand-accent transition">Launch</a></li>
-                    <li><a href="pivot.html" class="hover:text-brand-accent transition">Pivot</a></li>
-                    <li><a href="accelerate.html" class="hover:text-brand-accent transition">Accelerate</a></li>
-                    <li><a href="packages.html" class="hover:text-brand-accent transition">Packages</a></li>
+                    <li><a href="launch.html" class="hover:text-brand-accent transition font-bold text-brand-accent">Launch Path (Available Now)</a></li>
+                    <li><a href="pivot.html" class="hover:text-brand-accent transition">Pivot Path (Coming Soon)</a></li>
+                    <li><a href="accelerate.html" class="hover:text-brand-accent transition">Accelerate Path (Coming Soon)</a></li>
                 </ul>
             </div>
 
-            <!-- Company -->
             <div>
-                <h4 class="font-bold text-base mb-4 text-white uppercase tracking-wider text-sm">Company</h4>
+                <h4 class="font-bold mb-4 text-sm uppercase tracking-wider">Company</h4>
                 <ul class="space-y-2 text-sm text-emerald-100">
                     <li><a href="about.html" class="hover:text-brand-accent transition">About</a></li>
                     <li><a href="blog.html" class="hover:text-brand-accent transition">Blog</a></li>
                     <li><a href="vault.html" class="hover:text-brand-accent transition">The L² Vault</a></li>
                     <li><a href="success-stories.html" class="hover:text-brand-accent transition">Success Stories</a></li>
                     <li><a href="faq.html" class="hover:text-brand-accent transition">FAQ</a></li>
-                    <li><a href="contact.html" class="text-brand-accent font-bold">Contact</a></li>
+                    <li><a href="contact.html" class="hover:text-brand-accent transition">Contact</a></li>
                 </ul>
             </div>
 
-            <!-- Connect -->
             <div>
-                <h4 class="font-bold text-base mb-4 text-white uppercase tracking-wider text-sm">Connect</h4>
+                <h4 class="font-bold mb-4 text-sm uppercase tracking-wider">Connect</h4>
                 <ul class="space-y-2 text-sm text-emerald-100">
-                    <li><a href="mailto:contact@launchtolead.io" class="hover:text-brand-accent transition inline-flex items-center gap-2"><i data-lucide="mail" class="w-4 h-4"></i> contact@launchtolead.io</a></li>
-                    <li><a href="https://www.linkedin.com/in/launchtolead" target="_blank" rel="noopener noreferrer" class="hover:text-brand-accent transition inline-flex items-center gap-2"><i data-lucide="linkedin" class="w-4 h-4 text-blue-400"></i> LinkedIn</a></li>
+                    <li><a href="mailto:contact@launchtolead.io" class="hover:text-brand-accent transition inline-flex items-center gap-2">
+                        <i data-lucide="mail" class="w-4 h-4"></i> Email
+                    </a></li>
+                    <li><a href="https://www.linkedin.com/in/launchtolead" target="_blank" rel="noopener noreferrer" class="hover:text-brand-accent transition inline-flex items-center gap-2" onclick="window.open(this.href,'_blank'); return false;">
+                        <i data-lucide="linkedin" class="w-4 h-4"></i> LinkedIn
+                    </a></li>
                 </ul>
+                <div class="mt-6">
+                    <a href="https://calendar.app.google/uzaLZUWSUH3ZbaGr6" target="_blank" class="inline-block px-4 py-2 bg-brand-accent text-brand-primary font-bold rounded-lg text-sm hover:bg-white transition">
+                        Book Discovery Call
+                    </a>
+                </div>
             </div>
         </div>
         
@@ -244,5 +247,7 @@
     lucide.createIcons();
 </script>
 
+<!-- Lead Magnet Popup -->
+<script src="lead-magnet.js"></script>
 </body>
 </html>

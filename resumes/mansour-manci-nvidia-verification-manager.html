@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mansour Manci - Resume - NVIDIA Software Verification Manager</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @page {
+            size: letter;
+            margin: 0.4in;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 9.5pt;
+            line-height: 1.35;
+            color: #1a1a1a;
+            background: #f5f5f5;
+        }
+
+        .resume-container {
+            max-width: 8.5in;
+            margin: 0 auto;
+            background: white;
+            padding: 0.4in;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            border-bottom: 2px solid #76b900; /* NVIDIA green */
+            padding-bottom: 10px;
+            margin-bottom: 12px;
+        }
+
+        .name {
+            font-size: 22pt;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 2px;
+            letter-spacing: -0.5px;
+        }
+
+        .title {
+            font-size: 10pt;
+            font-weight: 500;
+            color: #76b900;
+            margin-bottom: 6px;
+        }
+
+        .contact-info {
+            font-size: 8.5pt;
+            color: #4a4a4a;
+        }
+
+        .contact-info a {
+            color: #333;
+            text-decoration: none;
+        }
+
+        /* Section Styling */
+        .section {
+            margin-bottom: 10px;
+        }
+
+        .section-title {
+            font-size: 10pt;
+            font-weight: 700;
+            color: #1a1a1a;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1px solid #e5e5e5;
+            padding-bottom: 3px;
+            margin-bottom: 8px;
+        }
+
+        /* Summary */
+        .summary {
+            font-size: 9pt;
+            color: #333;
+            margin-bottom: 8px;
+            text-align: justify;
+        }
+
+        .competencies {
+            font-size: 8.5pt;
+            color: #4a4a4a;
+        }
+
+        .competencies strong {
+            color: #1a1a1a;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4px;
+            font-size: 8.5pt;
+        }
+
+        .skill-row {
+            display: flex;
+        }
+
+        .skill-label {
+            font-weight: 600;
+            color: #333;
+            min-width: 120px;
+        }
+
+        .skill-value {
+            color: #4a4a4a;
+        }
+
+        /* Experience */
+        .job {
+            margin-bottom: 10px;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 2px;
+        }
+
+        .job-title {
+            font-size: 10pt;
+            font-weight: 700;
+            color: #1a1a1a;
+        }
+
+        .job-company {
+            font-weight: 500;
+            color: #76b900;
+        }
+
+        .job-date {
+            font-size: 8.5pt;
+            color: #666;
+            font-style: italic;
+        }
+
+        .job-subtitle {
+            font-size: 8.5pt;
+            color: #666;
+            font-style: italic;
+            margin-bottom: 4px;
+        }
+
+        .job-bullets {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .job-bullets li {
+            font-size: 9pt;
+            color: #333;
+            margin-bottom: 3px;
+            padding-left: 12px;
+            position: relative;
+            text-align: justify;
+        }
+
+        .job-bullets li::before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #76b900;
+            font-size: 9pt;
+        }
+
+        .job-bullets li strong {
+            color: #1a1a1a;
+        }
+
+        /* Education */
+        .education-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 8px;
+        }
+
+        .education-item {
+            font-size: 8.5pt;
+        }
+
+        .degree {
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+
+        .school {
+            color: #666;
+            font-size: 8pt;
+        }
+
+        /* Achievements */
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 8px;
+            font-size: 8pt;
+        }
+
+        .achievement-item {
+            background: #f8f9fa;
+            padding: 8px;
+            border-radius: 6px;
+            text-align: center;
+            border-left: 3px solid #76b900;
+        }
+
+        .achievement-item .number {
+            font-size: 12pt;
+            font-weight: 700;
+            color: #76b900;
+            display: block;
+        }
+
+        .achievement-item .label {
+            font-size: 7.5pt;
+            color: #666;
+            line-height: 1.2;
+        }
+
+        /* Leadership Summary */
+        .leadership-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 8.5pt;
+        }
+
+        .leadership-table th {
+            background: #f8f9fa;
+            color: #333;
+            padding: 5px 8px;
+            text-align: left;
+            font-weight: 600;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        .leadership-table td {
+            padding: 4px 8px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .leadership-total {
+            background: #76b900;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 9pt;
+            display: inline-block;
+            margin-top: 6px;
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                background: white;
+            }
+
+            .resume-container {
+                box-shadow: none;
+                padding: 0;
+                max-width: none;
+            }
+
+            .section {
+                page-break-inside: avoid;
+            }
+
+            .job {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="resume-container">
+        <!-- Header -->
+        <header class="header">
+            <h1 class="name">Mansour Manci</h1>
+            <div class="title">Software Engineering Leader | Verification & Test Strategy Expert</div>
+            <div class="contact-info">
+                Cordova, IL 61242 &nbsp;|&nbsp; 515-708-8981 &nbsp;|&nbsp; 
+                <a href="mailto:TheManci@gmail.com">TheManci@gmail.com</a> &nbsp;|&nbsp; 
+                <a href="https://linkedin.com/in/mancimansour">LinkedIn: mancimansour</a>
+            </div>
+        </header>
+
+        <!-- Professional Summary -->
+        <section class="section">
+            <h2 class="section-title">Professional Summary</h2>
+            <p class="summary">
+                Software Engineering Leader with 7+ years driving verification strategy and test execution for complex embedded systems, including autonomous vehicle and precision agriculture platforms. <strong>3.5+ years in leadership roles</strong>—currently leading enterprise transformation initiatives impacting 2,000+ engineers globally, previously Engineering Manager directly leading teams through $1B+ program deliveries with director-level recognition. Delivered 3 major product programs to market on time and on budget, earning direct recognition from department directors. Proven ability to build high-performing teams, establish scalable processes, and drive continuous improvement that reduced release errors by 25-30% while cutting team overtime by 30%.
+            </p>
+            <p class="competencies">
+                <strong>Core Competencies:</strong> Engineering Leadership • Test Strategy & Execution • Program Delivery • Root Cause Analysis • CI/CD Pipelines • Agile/Scrum • Cross-Functional Collaboration • Process Optimization • Team Development
+            </p>
+        </section>
+
+        <!-- Key Achievements - Visual -->
+        <section class="section">
+            <h2 class="section-title">Key Achievements</h2>
+            <div class="achievements-grid">
+                <div class="achievement-item">
+                    <span class="number">2,000+</span>
+                    <span class="label">Engineers Impacted<br>by Current Initiatives</span>
+                </div>
+                <div class="achievement-item">
+                    <span class="number">$1B+</span>
+                    <span class="label">Market Impact<br>3 Programs Delivered</span>
+                </div>
+                <div class="achievement-item">
+                    <span class="number">0</span>
+                    <span class="label">Missed Deadlines<br>Director Recognition</span>
+                </div>
+                <div class="achievement-item">
+                    <span class="number">25-30%</span>
+                    <span class="label">Release Error<br>Reduction</span>
+                </div>
+                <div class="achievement-item">
+                    <span class="number">2x</span>
+                    <span class="label">Test Capacity<br>During Critical Cycles</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Skills -->
+        <section class="section">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-row">
+                    <span class="skill-label">Languages:</span>
+                    <span class="skill-value">C, Python, MATLAB, Simulink, VBScript</span>
+                </div>
+                <div class="skill-row">
+                    <span class="skill-label">Test Infrastructure:</span>
+                    <span class="skill-value">HIL, SIL, MIL, Automated Test Frameworks</span>
+                </div>
+                <div class="skill-row">
+                    <span class="skill-label">DevOps & CI/CD:</span>
+                    <span class="skill-value">Azure DevOps, Git, Jenkins, Subversion</span>
+                </div>
+                <div class="skill-row">
+                    <span class="skill-label">Methodologies:</span>
+                    <span class="skill-value">Agile/Scrum, V-Model, Root Cause Analysis, CI</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Professional Experience -->
+        <section class="section">
+            <h2 class="section-title">Professional Experience</h2>
+
+            <!-- Current Role -->
+            <div class="job">
+                <div class="job-header">
+                    <div>
+                        <span class="job-title">Software Development Enablement Lead</span>
+                        <span class="job-company"> | John Deere</span>
+                    </div>
+                    <span class="job-date">May 2025 – Present</span>
+                </div>
+                <div class="job-subtitle">Leading enterprise-wide transformation initiatives impacting 2,000+ embedded software engineers globally</div>
+                <ul class="job-bullets">
+                    <li><strong>Enterprise Initiative Leadership:</strong> Lead team of 10 action team members driving company-wide improvements across Quality, Speed, Ease, and People pillars—directly impacting productivity and efficiency for 2,000+ embedded software engineers globally.</li>
+                    <li><strong>Strategic Transformation:</strong> Own end-to-end execution of enterprise improvement initiatives across all embedded software delivery organizations, from survey analysis through implementation and change management.</li>
+                    <li><strong>Data-Driven Strategy:</strong> Conduct and analyze biannual developer surveys (200+ responses) to identify systemic inefficiencies, then lead cross-functional teams to implement solutions at scale.</li>
+                    <li><strong>Stakeholder Management:</strong> Present initiative progress and recommendations to director-level stakeholders, driving alignment and resource allocation for transformation programs.</li>
+                </ul>
+            </div>
+
+            <!-- Supervisor Role -->
+            <div class="job">
+                <div class="job-header">
+                    <div>
+                        <span class="job-title">Supervisor, Crop Care Software V&V Engineering</span>
+                        <span class="job-company"> | John Deere</span>
+                    </div>
+                    <span class="job-date">June 2023 – May 2025</span>
+                </div>
+                <div class="job-subtitle">Engineering Manager leading team through delivery of 3 major product programs with $1B+ market impact</div>
+                <ul class="job-bullets">
+                    <li><strong>Autonomous Systems:</strong> Led V&V team for John Deere's first autonomous tillage program, delivering safety-critical software for AI-powered tractors with 16-camera + LiDAR systems—part of Deere's $1.5B autonomous agriculture initiative.</li>
+                    <li><strong>Precision Planting:</strong> Managed verification for SS5 planter with ExactShot technology, enabling 60% fertilizer reduction and projected $650M annual farmer savings—received direct recognition from department directors for on-time, on-budget delivery.</li>
+                    <li><strong>Seeding Systems:</strong> Oversaw V&V for C-Series Air Cart launch, delivering 8x precision improvement to capture share in $2-3B global market.</li>
+                    <li><strong>Team Leadership:</strong> Directly managed 6-10 V&V engineers, achieving zero missed deadlines across all 3 launches while improving sustainability (30% overtime reduction, 90% weekend elimination).</li>
+                    <li><strong>Quality Transformation:</strong> Reduced release errors by 25-30% via structured release process with formal audits and traceability documentation.</li>
+                    <li><strong>Capacity Scaling:</strong> Doubled testing capacity during critical cycles by orchestrating cross-departmental, two-shift testing effort across 3 teams.</li>
+                </ul>
+            </div>
+
+            <!-- Scrum Master Role -->
+            <div class="job">
+                <div class="job-header">
+                    <div>
+                        <span class="job-title">Embedded Software Engineer (Scrum Master / Product Owner)</span>
+                        <span class="job-company"> | John Deere</span>
+                    </div>
+                    <span class="job-date">June 2022 – June 2023</span>
+                </div>
+                <ul class="job-bullets">
+                    <li><strong>Agile Leadership:</strong> Served as Scrum Master and Product Owner, leading all ceremonies and driving 25% improvement in sprint predictability.</li>
+                    <li><strong>Process Transformation:</strong> Spearheaded Rally adoption within first month, establishing templates that improved documentation quality and team alignment.</li>
+                    <li><strong>Test Strategy:</strong> Designed comprehensive system test plans for vehicle security features, validating complex hardware/software interactions.</li>
+                </ul>
+            </div>
+
+            <!-- Engine Control -->
+            <div class="job">
+                <div class="job-header">
+                    <div>
+                        <span class="job-title">Engine Control Systems Engineer</span>
+                        <span class="job-company"> | John Deere</span>
+                    </div>
+                    <span class="job-date">May 2020 – June 2022</span>
+                </div>
+                <ul class="job-bullets">
+                    <li><strong>Test Optimization:</strong> Achieved 99.9% improvement in unit test execution (33,000ms → 25ms)—enabling rapid iteration critical for embedded development.</li>
+                    <li><strong>CI/CD Reliability:</strong> Resolved critical Jenkins build errors by authoring functional requirements—restoring automated builds for 15-person team.</li>
+                    <li><strong>Root Cause Analysis:</strong> Led structured investigation of system defects, implementing fixes via code, model updates, and comprehensive test validation.</li>
+                </ul>
+            </div>
+
+            <!-- Earlier Roles - Condensed -->
+            <div class="job">
+                <div class="job-header">
+                    <div>
+                        <span class="job-title">Drivetrain / Controls CI / V&V Development Engineer</span>
+                        <span class="job-company"> | John Deere</span>
+                    </div>
+                    <span class="job-date">May 2018 – May 2020</span>
+                </div>
+                <ul class="job-bullets">
+                    <li>Delivered experimental software fix for critical production issue in under 48 hours, releasing warehouse hold affecting 50+ units.</li>
+                    <li>Eliminated "stuck in park" defect affecting tractor production line through root cause analysis and controller command alignment fix.</li>
+                    <li>Reduced post-test data processing time by 75%+ by developing automation scripts in Python and VBScript.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Leadership Summary -->
+        <section class="section">
+            <h2 class="section-title">Leadership Experience Summary</h2>
+            <table class="leadership-table">
+                <thead>
+                    <tr>
+                        <th>Period</th>
+                        <th>Role</th>
+                        <th>Leadership Type</th>
+                        <th>Scope</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2025–Present</td>
+                        <td>Enablement Lead</td>
+                        <td>Initiative Leadership</td>
+                        <td>10-person team, 2,000+ engineer impact</td>
+                    </tr>
+                    <tr>
+                        <td>2023–2025</td>
+                        <td>Engineering Manager</td>
+                        <td>Direct Reports</td>
+                        <td>6-10 engineers, $1B+ programs</td>
+                    </tr>
+                    <tr>
+                        <td>2022–2023</td>
+                        <td>Scrum Master / PO</td>
+                        <td>Team Leadership</td>
+                        <td>Agile process ownership</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="leadership-total">Total Leadership Experience: 3.5+ Years</div>
+        </section>
+
+        <!-- Education -->
+        <section class="section">
+            <h2 class="section-title">Education & Certifications</h2>
+            <div class="education-grid">
+                <div class="education-item">
+                    <div class="degree">Master of Engineering</div>
+                    <div class="school">Mechanical Engineering<br>Iowa State University</div>
+                </div>
+                <div class="education-item">
+                    <div class="degree">Bachelor of Science</div>
+                    <div class="school">Mechanical Engineering<br>Iowa State University</div>
+                </div>
+                <div class="education-item">
+                    <div class="degree">Systems Engineering Certificate</div>
+                    <div class="school">California Institute of Technology (Caltech)</div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
