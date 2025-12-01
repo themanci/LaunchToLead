@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedIn Banner - Launch to Lead (Final)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #1a1a1a;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+
+        h1 {
+            color: white;
+            margin-bottom: 8px;
+            font-size: 24px;
+        }
+
+        .instructions {
+            color: #888;
+            font-size: 14px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        /* LinkedIn Banner: 1584 x 396 pixels (4:1 ratio) */
+        .banner {
+            width: 1584px;
+            height: 396px;
+            background: linear-gradient(135deg, #064e3b 0%, #065f46 50%, #047857 100%);
+            display: flex;
+            align-items: center;
+            padding: 0 80px 0 220px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Subtle texture overlay */
+        .banner::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 80% 20%, rgba(255,255,255,0.08) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .content {
+            flex: 1;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: white;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 16px;
+            color: #064e3b;
+        }
+
+        .logo-text {
+            font-size: 22px;
+            font-weight: 700;
+            color: white;
+        }
+
+        .logo-text span {
+            color: #a7f3d0;
+        }
+
+        h2 {
+            font-size: 48px;
+            font-weight: 800;
+            color: white;
+            line-height: 1.1;
+            margin-bottom: 16px;
+        }
+
+        h2 .highlight {
+            color: #fcd34d;
+        }
+
+        .subtext {
+            font-size: 20px;
+            color: #a7f3d0;
+            margin-bottom: 28px;
+        }
+
+        .cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: white;
+            color: #064e3b;
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+        }
+
+
+
+        .download-note {
+            color: #666;
+            font-size: 12px;
+            margin-top: 24px;
+            text-align: center;
+        }
+
+        .download-note strong {
+            color: #14b8a6;
+        }
+    </style>
+</head>
+<body>
+    <h1>LinkedIn Banner - Final Version</h1>
+    <p class="instructions">Right-click the banner below and "Save image as..." or take a screenshot at 1584x396px</p>
+
+    <div class="banner">
+        <div class="content">
+            <div class="logo">
+                <div class="logo-icon">L2</div>
+                <div class="logo-text">Launch<span>ToLead</span></div>
+            </div>
+            <h2>Stop Sending <span class="highlight">250 Applications</span><br>Into the Void</h2>
+            <p class="subtext">21-Day Blueprint to Become Interview-Ready</p>
+            <div class="cta">Book a Free Strategy Call</div>
+        </div>
+    </div>
+
+    <p class="download-note">
+        <strong>To export:</strong> Open in Chrome → Right-click → Inspect → Select the .banner element → Right-click → "Capture node screenshot"<br>
+        Or use a screenshot tool to capture exactly 1584x396 pixels.
+    </p>
+</body>
+</html>
