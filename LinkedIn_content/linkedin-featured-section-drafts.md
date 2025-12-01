@@ -18,39 +18,25 @@ I recommend 3 featured items:
 
 ### Description (for LinkedIn post that links to it):
 ```
-🎯 Your resume bullets are probably costing you interviews.
+Your resume bullets are probably costing you interviews.
 
-Here's why:
+"Maintained spreadsheets for test results"
 
-Most engineers write bullets like this:
-❌ "Maintained spreadsheets for test results"
+That's a task. Not an impact. Hiring managers see 500 of these.
 
-That's a TASK. Not an IMPACT.
-
-Hiring managers see 500 of these. They blur together.
-
-The fix? The Impact Equation:
-
-[Accomplishment] + [Evidence/Metric] + [How] + [Why It Matters]
+The fix is what I call The Impact Equation:
+[What you did] + [Evidence] + [How] + [Why it matters]
 
 Same experience, transformed:
-✅ "Solely managed data for 3 major programs across a 10-person team. Wrote a custom Python script touching the Azure DevOps API to automate tracking—cutting maintenance time by 85% and enabling daily executive reporting."
+"Automated data tracking for 3 programs across a 10-person team. Built a Python script using the Azure DevOps API—cut maintenance time 85%, enabled daily executive reporting."
 
-One tells them what you did.
-The other tells them what you're WORTH.
+One tells them what you did. The other tells them what you're worth.
 
-I put together a free quick-start guide that walks you through exactly how to transform your bullets.
+Free guide: LaunchToLead.io
 
-🔗 Grab it free: [LINK TO LEAD MAGNET]
-
----
-Who needs this?
-→ Engineering students applying to internships/full-time
-→ Engineers stuck in the "Application Black Hole"
-→ Anyone whose resume isn't getting callbacks
-
-#engineering #careeradvice #resume #jobsearch #engineers
+#engineering #resume #jobsearch
 ```
+**Character count: ~490**
 
 ### Link:
 LaunchToLead.io/impact-equation (or wherever your lead magnet lives)
@@ -153,11 +139,11 @@ This shifts the conversation from GREED to GROWTH.
 
 THE RESULTS
 
-📈 4 Promotions in 7 years
-🔄 3 Major Pivots (Civil → Mechanical → Software → Leadership)
-🚀 Currently impacting 2,000+ engineers
-💰 Delivered $1B+ in programs to market
-🏆 Direct recognition from department directors
+- 4 Promotions in 7 years
+- 3 Major Pivots (Civil to Mechanical to Software to Leadership)
+- Currently impacting 2,000+ engineers
+- Delivered $1B+ in programs to market
+- Direct recognition from department directors
 
 ---
 
@@ -181,7 +167,7 @@ Book a free strategy call: LaunchToLead.io
 ---
 
 What's ONE thing you wish you'd known earlier in your career?
-Drop it in the comments. 👇
+Drop it in the comments.
 
 #engineering #careeradvice #promotion #leadership #softwareengineering
 ```
@@ -195,48 +181,25 @@ Drop it in the comments. 👇
 
 ### Description (for LinkedIn post):
 ```
-🎯 Are you a "High-Potential" Engineer feeling stuck?
+High-potential engineer feeling stuck?
 
-Maybe you're:
-→ Applying to jobs and hearing nothing back
-→ Doing great work but watching others get promoted
-→ Stuck in a domain you hate but afraid to switch
+You're applying to jobs and hearing nothing. Doing great work but watching others get promoted. Trapped in a domain you hate.
 
-I've been there. And I found the way out.
+I've been there. Found the way out.
 
-4 promotions in 7 years.
-3 major pivots.
-$1B+ programs delivered.
+4 promotions in 7 years. 3 major pivots. $1B+ programs shipped.
 
 Now I help other engineers do the same.
 
-I open a limited number of FREE strategy calls each month.
+I open a few free strategy calls each month. 15 minutes. We identify what's actually holding you back and map your fastest path forward.
 
-In 15 minutes, we'll:
-✅ Identify what's actually holding you back
-✅ Map out your fastest path forward
-✅ See if coaching is the right fit
+Not for people looking for generic advice or hoping someone else does the work. For engineers ready to treat their career like an engineering problem.
 
-No pressure. No pitch. Just clarity.
+Book: LaunchToLead.io
 
-🔗 Book your call: LaunchToLead.io
-
----
-
-Who this is for:
-• Engineering students/grads struggling to land offers
-• Engineers stuck in a domain they want to escape
-• Senior engineers ready for leadership but overlooked
-
-Who this is NOT for:
-• People looking for generic advice (Google that)
-• People not willing to put in the work
-• People happy with "hoping for the best"
-
-If you're ready to engineer your career like you engineer everything else—let's talk.
-
-#engineering #careercoaching #jobsearch #promotion #careeradvice
+#engineering #careercoaching #jobsearch
 ```
+**Character count: ~495**
 
 ### Link:
 LaunchToLead.io (or Calendly link if you have one)
@@ -251,77 +214,57 @@ The most confident thing you can do in an interview:
 
 "That's a great question. Can I take a moment to think?"
 
-Why it works:
-- Shows you're thoughtful, not reactive
-- Proves confidence, not nervousness
-- Gives you time to find your BEST example
+Shows you're thoughtful, not reactive. Proves confidence, not nervousness. Gives you time to find your best example.
 
-The interviewer isn't timing you.
-They're evaluating you.
+The interviewer isn't timing you. They're evaluating you.
 
-Rushed answers sound desperate.
-Paused answers sound executive.
+Rushed answers sound desperate. Paused answers sound executive.
 
-Try it next time.
-
-#interviews #engineering #careeradvice #jobsearch
+#interviews #engineering #jobsearch
 ```
+**Character count: ~340**
 
 ### Post Idea 2: "The Boring to Booming Transformation"
 ```
 Your resume bullet: "Maintained spreadsheets for test results."
 
-My reaction: 😴
+Let me fix that:
 
-Let me fix that in 30 seconds:
+"Managed data for 3 programs across a 10-person team, 100 daily tests. Built a Python script using Azure DevOps API to automate tracking—cut maintenance 85%, enabled daily executive reporting."
 
-"Solely managed data for 3 major programs across a 10-person team, handling 100 daily tests. Wrote a custom Python script touching the Azure DevOps API to automate tracking, cutting maintenance time by 85% and enabling daily executive reporting."
+Same experience. Completely different impression.
 
-Same experience.
-Completely different impression.
+The formula: [What you did] + [Scale] + [How] + [Why it matters]
 
-The formula:
-[What you did] + [Scale/Metric] + [How] + [Why it matters]
+Your resume is not a job description. It's a highlight reel.
 
-I call it The Impact Equation.
-
-Your resume is not a job description.
-It's a highlight reel.
-
-Write like it.
-
-#resume #engineering #jobsearch #careeradvice
+#resume #engineering #jobsearch
 ```
+**Character count: ~420**
 
 ### Post Idea 3: "The Application Black Hole"
 ```
-You've applied to 50 jobs.
-You've heard back from 2.
-Both were rejections.
+Applied to 50 jobs. Heard back from 2. Both rejections.
 
 Welcome to the Application Black Hole.
 
-Here's why it happens:
+Why it happens:
+- Your bullets read like job descriptions
+- Your resume uses industry jargon recruiters don't understand
+- You're competing with 500 other "did the job" resumes
 
-1. Your bullets read like job descriptions (boring)
-2. Your resume uses YOUR industry jargon (confusing)
-3. You're competing with 500 other "did the job" resumes
-
-The fix isn't applying MORE.
-The fix is applying BETTER.
+The fix isn't applying more. It's applying better.
 
 I went from 5% callback rate to 40% using 3 changes:
-→ Impact Equation (outcomes, not tasks)
-→ Universal Translator (remove jargon)
-→ Pattern Interrupt (confidence, not desperation)
+- Impact Equation (outcomes, not tasks)
+- Universal Translator (remove jargon)
+- Pattern Interrupt (confidence, not desperation)
 
-Stop spraying and praying.
-Start engineering your applications.
+Free guide: LaunchToLead.io
 
-More on this in my free guide: [LINK]
-
-#jobsearch #engineering #resume #careeradvice
+#jobsearch #engineering #resume
 ```
+**Character count: ~490**
 
 ---
 

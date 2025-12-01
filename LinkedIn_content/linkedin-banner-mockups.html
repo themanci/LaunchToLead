@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedIn Banner Mockups - Launch to Lead</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #1a1a1a;
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: white;
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 28px;
+        }
+
+        .subtitle {
+            color: #888;
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 14px;
+        }
+
+        .banner-section {
+            margin-bottom: 60px;
+        }
+
+        .banner-label {
+            color: #14b8a6;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .banner-description {
+            color: #888;
+            font-size: 13px;
+            margin-bottom: 16px;
+            max-width: 600px;
+        }
+
+        /* LinkedIn Banner: 1584 x 396 pixels (4:1 ratio) */
+        .banner {
+            width: 100%;
+            max-width: 1584px;
+            aspect-ratio: 4 / 1;
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+        }
+
+        /* Profile photo circle indicator */
+        .profile-zone {
+            position: absolute;
+            bottom: -40px;
+            left: 40px;
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            border: 3px dashed rgba(255,255,255,0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255,255,255,0.4);
+            font-size: 10px;
+            text-align: center;
+            background: rgba(0,0,0,0.2);
+        }
+
+        /* ==================== */
+        /* OPTION 1: Clean Minimal */
+        /* ==================== */
+        .banner-v1 {
+            background: linear-gradient(135deg, #064e3b 0%, #065f46 50%, #047857 100%);
+            display: flex;
+            align-items: center;
+            padding: 0 80px 0 220px;
+        }
+
+        .banner-v1 .content {
+            flex: 1;
+            text-align: center;
+        }
+
+        .banner-v1 .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .banner-v1 .logo-icon {
+            width: 36px;
+            height: 36px;
+            background: white;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 14px;
+            color: #064e3b;
+        }
+
+        .banner-v1 .logo-text {
+            font-size: 20px;
+            font-weight: 700;
+            color: white;
+        }
+
+        .banner-v1 .logo-text span {
+            color: #a7f3d0;
+        }
+
+        .banner-v1 h2 {
+            font-size: 42px;
+            font-weight: 800;
+            color: white;
+            line-height: 1.1;
+            margin-bottom: 12px;
+        }
+
+        .banner-v1 h2 .highlight {
+            color: #fcd34d;
+        }
+
+        .banner-v1 .subtext {
+            font-size: 18px;
+            color: #a7f3d0;
+            margin-bottom: 24px;
+        }
+
+        .banner-v1 .cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: white;
+            color: #064e3b;
+            padding: 12px 28px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 15px;
+        }
+
+        /* ==================== */
+        /* OPTION 2: Bold Dark */
+        /* ==================== */
+        .banner-v2 {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            display: flex;
+            align-items: center;
+            padding: 0 60px 0 240px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .banner-v2::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, #14b8a6 0%, transparent 70%);
+            opacity: 0.15;
+        }
+
+        .banner-v2 .content {
+            flex: 1;
+            position: relative;
+            z-index: 1;
+        }
+
+        .banner-v2 .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 16px;
+        }
+
+        .banner-v2 .logo-icon {
+            width: 32px;
+            height: 32px;
+            background: #14b8a6;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 12px;
+            color: white;
+        }
+
+        .banner-v2 .logo-text {
+            font-size: 18px;
+            font-weight: 700;
+            color: white;
+        }
+
+        .banner-v2 h2 {
+            font-size: 46px;
+            font-weight: 800;
+            color: white;
+            line-height: 1.05;
+            margin-bottom: 16px;
+        }
+
+        .banner-v2 h2 .strike {
+            text-decoration: line-through;
+            color: #ef4444;
+            opacity: 0.8;
+        }
+
+        .banner-v2 .subtext {
+            font-size: 20px;
+            color: #94a3b8;
+            margin-bottom: 20px;
+            line-height: 1.4;
+        }
+
+        .banner-v2 .subtext strong {
+            color: #14b8a6;
+        }
+
+        .banner-v2 .cta-row {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .banner-v2 .cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #14b8a6;
+            color: white;
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 15px;
+        }
+
+        .banner-v2 .url {
+            color: #64748b;
+            font-size: 14px;
+        }
+
+        /* ==================== */
+        /* OPTION 3: Gradient Pop */
+        /* ==================== */
+        .banner-v3 {
+            background: linear-gradient(135deg, #064e3b 0%, #0d9488 50%, #14b8a6 100%);
+            display: flex;
+            align-items: center;
+            padding: 0 80px 0 220px;
+            position: relative;
+        }
+
+        .banner-v3::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            width: 40%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1));
+        }
+
+        .banner-v3 .content {
+            flex: 1;
+            position: relative;
+            z-index: 1;
+        }
+
+        .banner-v3 .eyebrow {
+            display: inline-block;
+            background: rgba(0,0,0,0.2);
+            color: #a7f3d0;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+        }
+
+        .banner-v3 h2 {
+            font-size: 44px;
+            font-weight: 800;
+            color: white;
+            line-height: 1.1;
+            margin-bottom: 12px;
+        }
+
+        .banner-v3 .subtext {
+            font-size: 18px;
+            color: rgba(255,255,255,0.85);
+            margin-bottom: 20px;
+            max-width: 600px;
+        }
+
+        .banner-v3 .cta-row {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .banner-v3 .cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: white;
+            color: #064e3b;
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 15px;
+        }
+
+        .banner-v3 .url {
+            color: rgba(255,255,255,0.7);
+            font-size: 14px;
+        }
+
+        /* ==================== */
+        /* OPTION 4: Stats Focus */
+        /* ==================== */
+        .banner-v4 {
+            background: linear-gradient(135deg, #18181b 0%, #27272a 100%);
+            display: flex;
+            align-items: center;
+            padding: 0 60px 0 240px;
+            position: relative;
+        }
+
+        .banner-v4 .content {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .banner-v4 .left {
+            flex: 1;
+        }
+
+        .banner-v4 .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 16px;
+        }
+
+        .banner-v4 .logo-icon {
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, #14b8a6, #a3e635);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 12px;
+            color: white;
+        }
+
+        .banner-v4 .logo-text {
+            font-size: 18px;
+            font-weight: 700;
+            color: white;
+        }
+
+        .banner-v4 h2 {
+            font-size: 38px;
+            font-weight: 800;
+            color: white;
+            line-height: 1.15;
+            margin-bottom: 12px;
+        }
+
+        .banner-v4 .subtext {
+            font-size: 16px;
+            color: #a1a1aa;
+            line-height: 1.5;
+        }
+
+        .banner-v4 .stats {
+            display: flex;
+            gap: 40px;
+        }
+
+        .banner-v4 .stat {
+            text-align: center;
+        }
+
+        .banner-v4 .stat-number {
+            font-size: 48px;
+            font-weight: 800;
+            color: #14b8a6;
+            line-height: 1;
+        }
+
+        .banner-v4 .stat-label {
+            font-size: 13px;
+            color: #71717a;
+            margin-top: 4px;
+        }
+
+        /* ==================== */
+        /* OPTION 5: Simple & Direct */
+        /* ==================== */
+        .banner-v5 {
+            background: #064e3b;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 240px;
+        }
+
+        .banner-v5 .content {
+            max-width: 900px;
+        }
+
+        .banner-v5 .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .banner-v5 .logo-icon {
+            width: 36px;
+            height: 36px;
+            background: white;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 14px;
+            color: #064e3b;
+        }
+
+        .banner-v5 .logo-text {
+            font-size: 20px;
+            font-weight: 700;
+            color: white;
+        }
+
+        .banner-v5 h2 {
+            font-size: 52px;
+            font-weight: 800;
+            color: white;
+            line-height: 1.1;
+            margin-bottom: 16px;
+        }
+
+        .banner-v5 .subtext {
+            font-size: 20px;
+            color: #a7f3d0;
+        }
+
+        /* Recommended badge */
+        .recommended {
+            display: inline-block;
+            background: #14b8a6;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-left: 12px;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>LinkedIn Banner Mockups</h1>
+        <p class="subtitle">Dimensions: 1584 x 396px (4:1 ratio) • Dashed circle shows where your profile photo will overlap</p>
+
+        <!-- OPTION 1 -->
+        <div class="banner-section">
+            <div class="banner-label">Option 1: Clean Minimal</div>
+            <p class="banner-description">Classic green gradient, centered layout, clear CTA button.</p>
+            <div class="banner banner-v1">
+                <div class="profile-zone">Profile<br>Photo<br>Zone</div>
+                <div class="content">
+                    <div class="logo">
+                        <div class="logo-icon">L2</div>
+                        <div class="logo-text">Launch<span>ToLead</span></div>
+                    </div>
+                    <h2>Stop Sending <span class="highlight">250 Applications</span><br>Into the Void</h2>
+                    <p class="subtext">21-Day Blueprint to Become Interview-Ready</p>
+                    <div class="cta">Book a Free Strategy Call</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- OPTION 2 -->
+        <div class="banner-section">
+            <div class="banner-label">Option 2: Bold Dark <span class="recommended">Recommended</span></div>
+            <p class="banner-description">High contrast dark background, teal accents, professional and aggressive feel.</p>
+            <div class="banner banner-v2">
+                <div class="profile-zone">Profile<br>Photo<br>Zone</div>
+                <div class="content">
+                    <div class="logo">
+                        <div class="logo-icon">L2</div>
+                        <div class="logo-text">LaunchToLead</div>
+                    </div>
+                    <h2>Stop Sending <span class="strike">250 Applications</span><br>Into the Void</h2>
+                    <p class="subtext">21-Day Blueprint to Become Interview-Ready.<br><strong>From an engineer who's been on both sides of the table.</strong></p>
+                    <div class="cta-row">
+                        <div class="cta">Book a Free Strategy Call</div>
+                        <div class="url">LaunchToLead.io</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- OPTION 3 -->
+        <div class="banner-section">
+            <div class="banner-label">Option 3: Gradient Pop</div>
+            <p class="banner-description">Vibrant teal gradient, eyebrow tag for credibility, energetic feel.</p>
+            <div class="banner banner-v3">
+                <div class="profile-zone">Profile<br>Photo<br>Zone</div>
+                <div class="content">
+                    <div class="eyebrow">Engineering Career Coach</div>
+                    <h2>Stop Applying Into the Void.<br>Start Getting Callbacks.</h2>
+                    <p class="subtext">The system I used to land at John Deere with zero connections.<br>Now I teach it to other engineers.</p>
+                    <div class="cta-row">
+                        <div class="cta">Free Strategy Call</div>
+                        <div class="url">LaunchToLead.io</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- OPTION 4 -->
+        <div class="banner-section">
+            <div class="banner-label">Option 4: Stats Focus</div>
+            <p class="banner-description">Dark background with prominent statistics for social proof.</p>
+            <div class="banner banner-v4">
+                <div class="profile-zone">Profile<br>Photo<br>Zone</div>
+                <div class="content">
+                    <div class="left">
+                        <div class="logo">
+                            <div class="logo-icon">L2</div>
+                            <div class="logo-text">LaunchToLead</div>
+                        </div>
+                        <h2>I Help Engineers<br>Get Hired.</h2>
+                        <p class="subtext">Not "career advice." Not "resume tips."<br>The actual system. LaunchToLead.io</p>
+                    </div>
+                    <div class="stats">
+                        <div class="stat">
+                            <div class="stat-number">21</div>
+                            <div class="stat-label">Day Blueprint</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">90</div>
+                            <div class="stat-label">Days to Hired</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- OPTION 5 -->
+        <div class="banner-section">
+            <div class="banner-label">Option 5: Simple & Direct</div>
+            <p class="banner-description">Minimalist approach, big bold headline, no distractions.</p>
+            <div class="banner banner-v5">
+                <div class="profile-zone">Profile<br>Photo<br>Zone</div>
+                <div class="content">
+                    <div class="logo">
+                        <div class="logo-icon">L2</div>
+                        <div class="logo-text">LaunchToLead</div>
+                    </div>
+                    <h2>I Help Engineers Get Hired.</h2>
+                    <p class="subtext">The system. Not the fluff. LaunchToLead.io</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedIn Post Image - Your Resume Isn't The Problem</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #1a1a1a;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+
+        h1 {
+            color: white;
+            margin-bottom: 8px;
+            font-size: 24px;
+        }
+
+        .instructions {
+            color: #888;
+            font-size: 14px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        /* LinkedIn Post Image: 1200 x 1200 pixels (1:1 square) */
+        .post-image {
+            width: 1200px;
+            height: 1200px;
+            background: linear-gradient(135deg, #064e3b 0%, #065f46 50%, #047857 100%);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            padding: 80px;
+        }
+
+        /* Subtle texture overlay */
+        .post-image::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 90% 10%, rgba(255,255,255,0.1) 0%, transparent 40%),
+                        radial-gradient(circle at 10% 90%, rgba(0,0,0,0.15) 0%, transparent 40%);
+            pointer-events: none;
+        }
+
+        /* Logo at top */
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 60px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo-icon {
+            width: 56px;
+            height: 56px;
+            background: white;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 22px;
+            color: #064e3b;
+        }
+
+        .logo-text {
+            font-size: 28px;
+            font-weight: 700;
+            color: white;
+        }
+
+        .logo-text span {
+            color: #a7f3d0;
+        }
+
+        /* Main content */
+        .content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .eyebrow {
+            display: inline-block;
+            background: rgba(252, 211, 77, 0.2);
+            color: #fcd34d;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-size: 18px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 30px;
+            width: fit-content;
+        }
+
+        h2 {
+            font-size: 72px;
+            font-weight: 800;
+            color: white;
+            line-height: 1.1;
+            margin-bottom: 30px;
+        }
+
+        h2 .highlight {
+            color: #fcd34d;
+        }
+
+        .subtitle {
+            font-size: 32px;
+            color: #a7f3d0;
+            line-height: 1.4;
+            max-width: 900px;
+        }
+
+        /* Bottom section */
+        .bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            position: relative;
+            z-index: 1;
+            margin-top: 60px;
+        }
+
+        .package-badge {
+            background: rgba(255,255,255,0.15);
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 16px;
+            padding: 20px 28px;
+        }
+
+        .package-badge .label {
+            font-size: 14px;
+            color: #a7f3d0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 6px;
+        }
+
+        .package-badge .name {
+            font-size: 24px;
+            font-weight: 700;
+            color: white;
+        }
+
+        .website {
+            font-size: 28px;
+            font-weight: 700;
+            color: white;
+            background: rgba(0,0,0,0.2);
+            padding: 16px 32px;
+            border-radius: 50px;
+        }
+
+        .download-note {
+            color: #666;
+            font-size: 12px;
+            margin-top: 24px;
+            text-align: center;
+        }
+
+        .download-note strong {
+            color: #14b8a6;
+        }
+    </style>
+</head>
+<body>
+    <h1>LinkedIn Post Image - Square Format (1200x1200)</h1>
+    <p class="instructions">Export using Chrome DevTools: Right-click → Inspect → Select .post-image → Right-click → "Capture node screenshot"</p>
+
+    <div class="post-image">
+        <!-- Logo -->
+        <div class="logo">
+            <div class="logo-icon">L²</div>
+            <div class="logo-text">Launch<span>ToLead</span></div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="content">
+            <div class="eyebrow">Hot Take</div>
+            <h2>Your Resume<br>Isn't The <span class="highlight">Problem.</span></h2>
+            <p class="subtitle">It's a symptom. The real problem is you don't know how to talk about your own work.</p>
+        </div>
+
+        <!-- Bottom -->
+        <div class="bottom">
+            <div class="package-badge">
+                <div class="label">The System</div>
+                <div class="name">21-Day Launch Blueprint</div>
+            </div>
+            <div class="website">LaunchToLead.io</div>
+        </div>
+    </div>
+
+    <p class="download-note">
+        <strong>To export:</strong> Open in Chrome → Right-click → Inspect → Select the .post-image element → Right-click → "Capture node screenshot"
+    </p>
+</body>
+</html>
