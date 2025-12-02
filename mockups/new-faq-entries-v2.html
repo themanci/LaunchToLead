@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mockup V2: New FAQ Entries</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-primary': '#10847e',
+                        'brand-secondary': '#f4a836',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-100 min-h-screen">
+    
+    <!-- Mockup Header -->
+    <div class="bg-slate-800 text-white py-4 px-6 sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto flex items-center justify-between">
+            <div>
+                <h1 class="font-bold text-lg">FINAL: New FAQ Entries</h1>
+                <p class="text-slate-400 text-sm">Location: faq.html — New questions for "Is This Right For Me?" category</p>
+            </div>
+            <span class="bg-green-500 text-white px-3 py-1 rounded-full text-xs font-bold">APPROVED</span>
+        </div>
+    </div>
+
+    <!-- New FAQ Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-3xl mx-auto px-4">
+
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold text-slate-900 mb-3">Is This Right For Me?</h2>
+                <p class="text-slate-500">Common questions about timing, eligibility, and fit</p>
+            </div>
+
+            <!-- FAQ Items -->
+            <div class="space-y-4">
+                
+                <!-- FAQ 1: Graduating Soon -->
+                <div class="bg-white border-2 border-slate-200 rounded-2xl overflow-hidden hover:border-brand-primary transition">
+                    <button class="w-full p-6 text-left flex items-center justify-between gap-4">
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 bg-emerald-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="graduation-cap" class="w-5 h-5 text-emerald-600"></i>
+                            </div>
+                            <h3 class="font-bold text-slate-900">I'm graduating in 6 months—is it too early to start?</h3>
+                        </div>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400"></i>
+                    </button>
+                    <div class="px-6 pb-6">
+                        <div class="pl-14 text-slate-600 space-y-3">
+                            <p><strong class="text-brand-primary">No—this is actually the perfect time.</strong></p>
+                            <p>Most students wait until the last minute and then panic. Starting 3-6 months before graduation gives you time to:</p>
+                            <ul class="list-disc pl-5 space-y-1">
+                                <li>Build a resume that actually gets interviews</li>
+                                <li>Optimize your LinkedIn before recruiters see it</li>
+                                <li>Practice interviewing before the pressure is real</li>
+                                <li>Apply strategically instead of desperately</li>
+                            </ul>
+                            <p>The students who land multiple offers by graduation are the ones who started early. Don't be the person scrambling in their last semester.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ 2: Graduated Long Ago -->
+                <div class="bg-white border-2 border-slate-200 rounded-2xl overflow-hidden hover:border-brand-primary transition">
+                    <button class="w-full p-6 text-left flex items-center justify-between gap-4">
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 bg-orange-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="clock" class="w-5 h-5 text-orange-600"></i>
+                            </div>
+                            <h3 class="font-bold text-slate-900">I graduated over a year ago and still haven't found a job—is it too late?</h3>
+                        </div>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400"></i>
+                    </button>
+                    <div class="px-6 pb-6">
+                        <div class="pl-14 text-slate-600 space-y-3">
+                            <p><strong class="text-brand-primary">Absolutely not. In fact, you might need this the most.</strong></p>
+                            <p>Here's the reality: the longer your gap, the more important your strategy becomes. You need to:</p>
+                            <ul class="list-disc pl-5 space-y-1">
+                                <li>Reframe the gap as intentional (not desperation)</li>
+                                <li>Show what you've been doing (projects, learning, etc.)</li>
+                                <li>Make your application 10x stronger to overcome bias</li>
+                            </ul>
+                            <p>I've helped engineers with 12+ month gaps land offers. The gap isn't the problem—your positioning is. We fix that in 21 days.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ 3: International Student -->
+                <div class="bg-white border-2 border-slate-200 rounded-2xl overflow-hidden hover:border-brand-primary transition">
+                    <button class="w-full p-6 text-left flex items-center justify-between gap-4">
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="globe" class="w-5 h-5 text-blue-600"></i>
+                            </div>
+                            <h3 class="font-bold text-slate-900">I'm an international student who needs sponsorship—will this work for me?</h3>
+                        </div>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400"></i>
+                    </button>
+                    <div class="px-6 pb-6">
+                        <div class="pl-14 text-slate-600 space-y-3">
+                            <p><strong class="text-brand-primary">Yes, and here's why it matters even more for you.</strong></p>
+                            <p>Companies don't sponsor "average" candidates. Sponsorship is a hassle and expense—they only do it for people who are clearly worth it.</p>
+                            <p>That means you need to be <strong>undeniably good</strong> on paper. Your resume, LinkedIn, and interview skills need to be so strong that sponsorship becomes a non-issue.</p>
+                            <p>The Launch Path makes you that candidate. When you're clearly the best person for the job, visa status becomes paperwork—not a dealbreaker.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ 4: Gift Purchase -->
+                <div class="bg-white border-2 border-slate-200 rounded-2xl overflow-hidden hover:border-brand-primary transition">
+                    <button class="w-full p-6 text-left flex items-center justify-between gap-4">
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 bg-amber-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="gift" class="w-5 h-5 text-amber-600"></i>
+                            </div>
+                            <h3 class="font-bold text-slate-900">Can I buy this as a gift for my son/daughter?</h3>
+                        </div>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400"></i>
+                    </button>
+                    <div class="px-6 pb-6">
+                        <div class="pl-14 text-slate-600 space-y-3">
+                            <p><strong class="text-brand-primary">Absolutely—and many parents do.</strong></p>
+                            <p>You invested $40k+ in their education. This is the $1,997 that helps turn that investment into a $70k+ salary.</p>
+                            <p>Here's how to get started:</p>
+                            <ul class="list-disc pl-5 space-y-1">
+                                <li>Schedule your son or daughter for a free 15-minute strategy call</li>
+                                <li>We'll assess their situation and make sure it's the right fit</li>
+                                <li>If it is, you can purchase and they get immediate access</li>
+                            </ul>
+                            <p>It's the most valuable graduation gift you can give—and a lot cheaper than another year of them on your couch.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ 5: Different Major -->
+                <div class="bg-white border-2 border-slate-200 rounded-2xl overflow-hidden hover:border-brand-primary transition">
+                    <button class="w-full p-6 text-left flex items-center justify-between gap-4">
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 bg-purple-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="help-circle" class="w-5 h-5 text-purple-600"></i>
+                            </div>
+                            <h3 class="font-bold text-slate-900">I'm not a mechanical engineer—will this still work for me?</h3>
+                        </div>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400"></i>
+                    </button>
+                    <div class="px-6 pb-6">
+                        <div class="pl-14 text-slate-600 space-y-3">
+                            <p><strong class="text-brand-primary">Yes. The system works for all engineering disciplines.</strong></p>
+                            <p>While I'm a mechanical engineer by background, the methods I teach are universal:</p>
+                            <ul class="list-disc pl-5 space-y-1">
+                                <li>How to write impact-driven resume bullets</li>
+                                <li>How to optimize LinkedIn for recruiter visibility</li>
+                                <li>How to answer behavioral interview questions</li>
+                                <li>How to negotiate salary confidently</li>
+                            </ul>
+                            <p>I've worked with electrical, civil, chemical, software, and industrial engineers—all with success. The principles are the same; only the technical details differ.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ 6: Already Have a Job -->
+                <div class="bg-white border-2 border-slate-200 rounded-2xl overflow-hidden hover:border-brand-primary transition">
+                    <button class="w-full p-6 text-left flex items-center justify-between gap-4">
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 bg-slate-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="briefcase" class="w-5 h-5 text-slate-600"></i>
+                            </div>
+                            <h3 class="font-bold text-slate-900">I already have a job but want a better one—is this for me?</h3>
+                        </div>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400"></i>
+                    </button>
+                    <div class="px-6 pb-6">
+                        <div class="pl-14 text-slate-600 space-y-3">
+                            <p><strong class="text-brand-primary">The Launch Path is designed for first-job seekers.</strong></p>
+                            <p>If you're currently employed and looking to make a strategic move, you might be better served by a different approach. Here's the difference:</p>
+                            <ul class="list-disc pl-5 space-y-1">
+                                <li><strong>Launch Path:</strong> For students/new grads landing their first engineering role</li>
+                                <li><strong>Employed engineers:</strong> You have different leverage, different positioning needs, and different negotiation dynamics</li>
+                            </ul>
+                            <p>That said, the core resume and interview methods still apply. If you want to talk through your situation, <a href="#" class="text-brand-primary underline">book a free strategy call</a> and we'll figure out the best path for you.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Summary -->
+    <section class="py-12 bg-slate-50">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="bg-slate-100 rounded-2xl p-8">
+                <h3 class="font-bold text-slate-900 text-xl mb-6">New FAQ Entries Summary</h3>
+                <div class="space-y-4">
+                    <div class="flex items-start gap-3">
+                        <div class="w-6 h-6 bg-brand-primary rounded-full flex items-center justify-center text-white text-xs font-bold flex-shrink-0 mt-0.5">1</div>
+                        <div>
+                            <p class="font-semibold text-slate-900">I'm graduating in 6 months—is it too early to start?</p>
+                            <p class="text-sm text-slate-500">Answer: No, perfect time. Start early = graduate with offers.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <div class="w-6 h-6 bg-brand-primary rounded-full flex items-center justify-center text-white text-xs font-bold flex-shrink-0 mt-0.5">2</div>
+                        <div>
+                            <p class="font-semibold text-slate-900">I graduated over a year ago—is it too late?</p>
+                            <p class="text-sm text-slate-500">Answer: No. Gap isn't the problem, positioning is. We fix that.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <div class="w-6 h-6 bg-brand-primary rounded-full flex items-center justify-center text-white text-xs font-bold flex-shrink-0 mt-0.5">3</div>
+                        <div>
+                            <p class="font-semibold text-slate-900">I'm an international student needing sponsorship—will this work?</p>
+                            <p class="text-sm text-slate-500">Answer: Yes. You need to be undeniable. This makes you undeniable.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <div class="w-6 h-6 bg-brand-primary rounded-full flex items-center justify-center text-white text-xs font-bold flex-shrink-0 mt-0.5">4</div>
+                        <div>
+                            <p class="font-semibold text-slate-900">Can I buy this as a gift for my son/daughter?</p>
+                            <p class="text-sm text-slate-500">Answer: Yes. Schedule them for a free strategy call to get started.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <div class="w-6 h-6 bg-brand-primary rounded-full flex items-center justify-center text-white text-xs font-bold flex-shrink-0 mt-0.5">5</div>
+                        <div>
+                            <p class="font-semibold text-slate-900">I'm not a mechanical engineer—will this work?</p>
+                            <p class="text-sm text-slate-500">Answer: Yes. Methods are universal across engineering disciplines.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <div class="w-6 h-6 bg-brand-primary rounded-full flex items-center justify-center text-white text-xs font-bold flex-shrink-0 mt-0.5">6</div>
+                        <div>
+                            <p class="font-semibold text-slate-900">I already have a job but want a better one—is this for me?</p>
+                            <p class="text-sm text-slate-500">Answer: Launch Path is for first jobs. Book a call to discuss alternatives.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

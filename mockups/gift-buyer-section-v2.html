@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mockup V2: Gift Buyer Section - Launch Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-primary': '#10847e',
+                        'brand-secondary': '#f4a836',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-100 min-h-screen">
+    
+    <!-- Mockup Header -->
+    <div class="bg-slate-800 text-white py-4 px-6 sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto flex items-center justify-between">
+            <div>
+                <h1 class="font-bold text-lg">FINAL: Gift Buyer Section</h1>
+                <p class="text-slate-400 text-sm">Location: launch.html — Dedicated section for parents & gift buyers</p>
+            </div>
+            <span class="bg-green-500 text-white px-3 py-1 rounded-full text-xs font-bold">APPROVED</span>
+        </div>
+    </div>
+
+    <!-- Gift Buyer Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+
+            <div class="text-center mb-10">
+                <p class="text-brand-secondary font-bold text-sm uppercase tracking-wider mb-2">Investing In Someone You Love?</p>
+                <h2 class="text-3xl font-bold text-slate-900">Give Them The Edge They Never Got In School</h2>
+                <p class="text-slate-500 mt-3 max-w-2xl mx-auto">Engineering programs teach theory. They don't teach how to land a job. This does.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-10">
+                <!-- Parents -->
+                <div class="bg-gradient-to-br from-amber-50 to-yellow-50 rounded-2xl p-6 border-2 border-amber-200 hover:border-brand-secondary hover:shadow-lg transition">
+                    <div class="w-14 h-14 bg-brand-secondary rounded-2xl flex items-center justify-center mb-4">
+                        <i data-lucide="users" class="w-7 h-7 text-white"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-lg mb-2">For Parents</h3>
+                    <p class="text-slate-600 text-sm mb-4">Your kid has the degree but not the job. You've already spent $40k+ on their education—this is the $1,997 that actually gets them hired.</p>
+                    <p class="text-xs text-slate-500 italic">"Way cheaper than another year of them on my couch."</p>
+                </div>
+
+                <!-- Spouses -->
+                <div class="bg-gradient-to-br from-pink-50 to-rose-50 rounded-2xl p-6 border-2 border-pink-200 hover:border-pink-400 hover:shadow-lg transition">
+                    <div class="w-14 h-14 bg-pink-500 rounded-2xl flex items-center justify-center mb-4">
+                        <i data-lucide="heart" class="w-7 h-7 text-white"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-lg mb-2">For Spouses & Partners</h3>
+                    <p class="text-slate-600 text-sm mb-4">You're tired of the nightly stress about applications and rejections. This investment ends the job search—not extends it.</p>
+                    <p class="text-xs text-slate-500 italic">"Two incomes beats one. Get there faster."</p>
+                </div>
+
+                <!-- Grandparents -->
+                <div class="bg-gradient-to-br from-purple-50 to-indigo-50 rounded-2xl p-6 border-2 border-purple-200 hover:border-purple-400 hover:shadow-lg transition">
+                    <div class="w-14 h-14 bg-purple-500 rounded-2xl flex items-center justify-center mb-4">
+                        <i data-lucide="award" class="w-7 h-7 text-white"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-lg mb-2">For Grandparents</h3>
+                    <p class="text-slate-600 text-sm mb-4">Skip the forgettable check. Give them a graduation gift that launches their entire career—something they'll remember for decades.</p>
+                    <p class="text-xs text-slate-500 italic">"The gift that keeps paying dividends."</p>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <a href="#" class="px-8 py-4 bg-brand-secondary text-white font-bold rounded-full hover:bg-amber-500 transition shadow-lg inline-flex items-center gap-2 text-lg">
+                    <i data-lucide="gift" class="w-6 h-6"></i>
+                    Gift the Launch Path
+                </a>
+                <p class="text-sm text-slate-400 mt-4">Schedule a free 15-minute strategy call for your grad</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

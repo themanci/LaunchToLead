@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mockup V2: "Perfect For" Section - Launch Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-primary': '#10847e',
+                        'brand-secondary': '#f4a836',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-100 min-h-screen">
+    
+    <!-- Mockup Header -->
+    <div class="bg-slate-800 text-white py-4 px-6 sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto flex items-center justify-between">
+            <div>
+                <h1 class="font-bold text-lg">FINAL: "Perfect For" Section</h1>
+                <p class="text-slate-400 text-sm">Location: launch.html — After hero, before "23 Proprietary Methods"</p>
+            </div>
+            <span class="bg-green-500 text-white px-3 py-1 rounded-full text-xs font-bold">APPROVED</span>
+        </div>
+    </div>
+
+    <!-- Perfect For Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+
+            <!-- Section Header -->
+            <div class="text-center mb-10">
+                <p class="text-brand-secondary font-bold text-sm uppercase tracking-wider mb-2">Is This For You?</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900">The Launch Path is Perfect For...</h2>
+                <p class="text-slate-500 mt-3 max-w-2xl mx-auto">If any of these sound like you, this program was built for your exact situation.</p>
+            </div>
+
+            <!-- Situation Cards Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+                
+                <!-- Card 1: Graduating Soon -->
+                <div class="group bg-gradient-to-br from-emerald-50 to-teal-50 border-2 border-emerald-200 rounded-2xl p-6 hover:border-brand-primary hover:shadow-xl transition-all duration-300 cursor-pointer">
+                    <div class="w-14 h-14 bg-brand-primary rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                        <i data-lucide="graduation-cap" class="w-7 h-7 text-white"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-lg mb-2">Graduating in 3-6 Months</h3>
+                    <p class="text-slate-600 text-sm mb-4">Cap & gown ready, but zero interviews lined up?</p>
+                    <div class="hidden group-hover:block text-sm text-slate-700 border-t border-emerald-200 pt-4 mt-4">
+                        <p class="mb-3">Your classmates are signing offers. You're refreshing Indeed hoping for a miracle.</p>
+                        <p class="font-semibold text-brand-primary">In 21 days, you'll graduate with offers—not anxiety.</p>
+                    </div>
+                    <div class="flex items-center text-brand-primary font-semibold text-sm group-hover:hidden">
+                        <span>This is for you</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                    </div>
+                </div>
+
+                <!-- Card 2: Recent Graduate Struggling -->
+                <div class="group bg-gradient-to-br from-orange-50 to-amber-50 border-2 border-orange-200 rounded-2xl p-6 hover:border-orange-400 hover:shadow-xl transition-all duration-300 cursor-pointer">
+                    <div class="w-14 h-14 bg-orange-500 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                        <i data-lucide="clock" class="w-7 h-7 text-white"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-lg mb-2">6+ Months & Still Nothing</h3>
+                    <p class="text-slate-600 text-sm mb-4">Friends getting promoted while you're still hunting?</p>
+                    <div class="hidden group-hover:block text-sm text-slate-700 border-t border-orange-200 pt-4 mt-4">
+                        <p class="mb-3">The gap on your resume is growing. Your confidence is shrinking. Parents are giving you "that look."</p>
+                        <p class="font-semibold text-orange-600">This isn't a motivation problem. It's a strategy problem.</p>
+                    </div>
+                    <div class="flex items-center text-orange-600 font-semibold text-sm group-hover:hidden">
+                        <span>This is for you</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                    </div>
+                </div>
+
+                <!-- Card 3: International Student -->
+                <div class="group bg-gradient-to-br from-blue-50 to-indigo-50 border-2 border-blue-200 rounded-2xl p-6 hover:border-blue-400 hover:shadow-xl transition-all duration-300 cursor-pointer">
+                    <div class="w-14 h-14 bg-blue-500 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                        <i data-lucide="globe" class="w-7 h-7 text-white"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-lg mb-2">International Student</h3>
+                    <p class="text-slate-600 text-sm mb-4">Need sponsorship and competing against citizens?</p>
+                    <div class="hidden group-hover:block text-sm text-slate-700 border-t border-blue-200 pt-4 mt-4">
+                        <p class="mb-3">Companies don't sponsor "average." You need to be undeniable.</p>
+                        <p class="font-semibold text-blue-600">We'll make sponsorship a non-issue.</p>
+                    </div>
+                    <div class="flex items-center text-blue-600 font-semibold text-sm group-hover:hidden">
+                        <span>This is for you</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                    </div>
+                </div>
+
+                <!-- Card 4: Applied Everywhere -->
+                <div class="group bg-gradient-to-br from-purple-50 to-pink-50 border-2 border-purple-200 rounded-2xl p-6 hover:border-purple-400 hover:shadow-xl transition-all duration-300 cursor-pointer">
+                    <div class="w-14 h-14 bg-purple-500 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                        <i data-lucide="inbox" class="w-7 h-7 text-white"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-lg mb-2">Applied to 50+ Jobs</h3>
+                    <p class="text-slate-600 text-sm mb-4">Sending resumes into the void and hearing crickets?</p>
+                    <div class="hidden group-hover:block text-sm text-slate-700 border-t border-purple-200 pt-4 mt-4">
+                        <p class="mb-3">Your resume isn't bad. It's invisible. Same with your LinkedIn.</p>
+                        <p class="font-semibold text-purple-600">We rebuild both so recruiters can't ignore you.</p>
+                    </div>
+                    <div class="flex items-center text-purple-600 font-semibold text-sm group-hover:hidden">
+                        <span>This is for you</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gift Buyer Callout -->
+            <div class="bg-gradient-to-r from-brand-secondary/10 to-amber-100 border-2 border-brand-secondary rounded-2xl p-8 relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-brand-secondary/20 rounded-full -translate-y-1/2 translate-x-1/2"></div>
+                <div class="relative flex flex-col md:flex-row items-center gap-6">
+                    <div class="w-20 h-20 bg-brand-secondary rounded-2xl flex items-center justify-center flex-shrink-0">
+                        <i data-lucide="gift" class="w-10 h-10 text-white"></i>
+                    </div>
+                    <div class="flex-1 text-center md:text-left">
+                        <h3 class="font-bold text-slate-900 text-xl mb-2">Investing In Someone You Love?</h3>
+                        <p class="text-slate-700 mb-3">Your kid graduated with an engineering degree. So why are they still unemployed?</p>
+                        <p class="text-slate-600 text-sm">You already invested $40k+ in their education. This is the $1,997 that turns that investment into a $70k+ salary. <span class="font-semibold text-slate-800">Way cheaper than another year of them on your couch.</span></p>
+                    </div>
+                    <a href="#" class="px-6 py-3 bg-brand-secondary text-white font-bold rounded-full hover:bg-amber-500 transition shadow-lg flex-shrink-0 inline-flex items-center gap-2">
+                        <i data-lucide="gift" class="w-5 h-5"></i>
+                        Gift the Launch Path
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
