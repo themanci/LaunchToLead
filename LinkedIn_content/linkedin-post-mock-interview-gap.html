@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedIn Post - The Mock Interview Gap</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #1a1a1a;
+            min-height: 100vh;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+        }
+
+        h1 {
+            color: white;
+            font-size: 28px;
+            text-align: center;
+        }
+
+        .subtitle {
+            color: #888;
+            font-size: 14px;
+            text-align: center;
+            margin-top: 8px;
+        }
+
+        /* Post Preview Container */
+        .post-section {
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .section-label {
+            color: #14b8a6;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+        }
+
+        /* LinkedIn Post Mockup */
+        .linkedin-post {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+
+        .post-header {
+            padding: 16px;
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+        }
+
+        .avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #064e3b, #14b8a6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 800;
+            font-size: 14px;
+            flex-shrink: 0;
+        }
+
+        .post-meta {
+            flex: 1;
+        }
+
+        .post-name {
+            font-weight: 700;
+            color: #191919;
+            font-size: 14px;
+        }
+
+        .post-headline {
+            color: #666;
+            font-size: 12px;
+            margin-top: 2px;
+        }
+
+        .post-time {
+            color: #888;
+            font-size: 12px;
+            margin-top: 2px;
+        }
+
+        .post-content {
+            padding: 0 16px 16px;
+            font-size: 14px;
+            line-height: 1.5;
+            color: #191919;
+            white-space: pre-line;
+        }
+
+        .post-engagement {
+            padding: 12px 16px;
+            border-top: 1px solid #e5e5e5;
+            display: flex;
+            justify-content: space-between;
+            color: #666;
+            font-size: 12px;
+        }
+
+        .post-actions {
+            display: flex;
+            border-top: 1px solid #e5e5e5;
+        }
+
+        .post-action {
+            flex: 1;
+            padding: 12px;
+            text-align: center;
+            color: #666;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        /* Copy Box */
+        .copy-section {
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .copy-box {
+            background: #0f172a;
+            border: 1px solid #334155;
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .copy-box pre {
+            color: #e2e8f0;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 14px;
+            line-height: 1.6;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .char-count {
+            margin-top: 12px;
+            color: #64748b;
+            font-size: 12px;
+            text-align: right;
+        }
+
+        .char-count.good {
+            color: #22c55e;
+        }
+
+        /* Tips Box */
+        .tips-box {
+            max-width: 600px;
+            width: 100%;
+            background: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .tips-box h3 {
+            color: #f59e0b;
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+
+        .tips-box ul {
+            color: #94a3b8;
+            font-size: 13px;
+            margin-left: 20px;
+        }
+
+        .tips-box li {
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>LinkedIn Post Ready to Schedule</h1>
+        <p class="subtitle">December 2, 2025 • The Mock Interview Gap</p>
+    </div>
+
+    <!-- LinkedIn Preview -->
+    <div class="post-section">
+        <div class="section-label">Preview</div>
+        <div class="linkedin-post">
+            <div class="post-header">
+                <div class="avatar">MM</div>
+                <div class="post-meta">
+                    <div class="post-name">Mansour Manci</div>
+                    <div class="post-headline">Engineering Leader @ John Deere | I help engineers land jobs</div>
+                    <div class="post-time">Just now • 🌐</div>
+                </div>
+            </div>
+            <div class="post-content">Most people do 1 mock interview before the real thing.
+
+That's like doing 1 practice rep before the Olympics.
+
+Here's what I've noticed after coaching dozens of engineers:
+
+Everyone thinks they're a better interviewer than they are.
+
+They know their projects inside and out. They assume that means they can talk about them clearly under pressure.
+
+They can't.
+
+The first mock interview is usually rough. Rambling. Missing key details. Running out of time. Freezing on "negative" questions.
+
+By mock interview 5? Completely different person.
+
+The answers are tighter. The confidence is real. The examples flow like muscle memory.
+
+Interviewing is a skill. It improves with reps.
+
+The problem is most people don't get enough reps before it counts.
+
+Find anyone—friend, classmate, family member, coworker. Ask them to sit across from you for 30 minutes with a list of behavioral questions from Google.
+
+It doesn't matter if they're not in your field. You'll still learn:
+• Are you rambling?
+• Are you clear?
+• Did you actually answer the question?
+
+Do that 5-7 times before your next interview.
+
+You'll walk in feeling like you've already done this before.
+
+Because you have.
+
+#engineering #interviewtips #careeradvice #jobsearch</div>
+            <div class="post-engagement">
+                <span>👍 ❤️ 47</span>
+                <span>12 comments • 3 reposts</span>
+            </div>
+            <div class="post-actions">
+                <div class="post-action">👍 Like</div>
+                <div class="post-action">💬 Comment</div>
+                <div class="post-action">🔁 Repost</div>
+                <div class="post-action">📤 Send</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Copy-Paste Version -->
+    <div class="copy-section">
+        <div class="section-label">Copy & Paste</div>
+        <div class="copy-box">
+            <pre>Most people do 1 mock interview before the real thing.
+
+That's like doing 1 practice rep before the Olympics.
+
+Here's what I've noticed after coaching dozens of engineers:
+
+Everyone thinks they're a better interviewer than they are.
+
+They know their projects inside and out. They assume that means they can talk about them clearly under pressure.
+
+They can't.
+
+The first mock interview is usually rough. Rambling. Missing key details. Running out of time. Freezing on "negative" questions.
+
+By mock interview 5? Completely different person.
+
+The answers are tighter. The confidence is real. The examples flow like muscle memory.
+
+Interviewing is a skill. It improves with reps.
+
+The problem is most people don't get enough reps before it counts.
+
+Find anyone—friend, classmate, family member, coworker. Ask them to sit across from you for 30 minutes with a list of behavioral questions from Google.
+
+It doesn't matter if they're not in your field. You'll still learn:
+• Are you rambling?
+• Are you clear?
+• Did you actually answer the question?
+
+Do that 5-7 times before your next interview.
+
+You'll walk in feeling like you've already done this before.
+
+Because you have.
+
+#engineering #interviewtips #careeradvice #jobsearch</pre>
+            <div class="char-count good">~1,350 characters (good length for LinkedIn)</div>
+        </div>
+    </div>
+
+    <!-- Posting Tips -->
+    <div class="tips-box">
+        <h3>Posting Tips</h3>
+        <ul>
+            <li><strong>Best time:</strong> Tuesday-Thursday, 7-8am or 12pm your timezone</li>
+            <li><strong>Engage immediately:</strong> Reply to every comment in the first hour</li>
+            <li><strong>Add a comment:</strong> Drop a follow-up question like "How many mock interviews have you done for your last interview?"</li>
+            <li><strong>No link in post:</strong> LinkedIn suppresses posts with external links—keep it clean</li>
+            <li><strong>Personal story option:</strong> Consider adding "When I interviewed at Deere, I did 1-2 mock interviews every day for a week" for credibility</li>
+        </ul>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mockup V2: "Is This For You?" Section - Homepage</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-primary': '#10847e',
+                        'brand-secondary': '#f4a836',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-100 min-h-screen">
+    
+    <!-- Mockup Header -->
+    <div class="bg-slate-800 text-white py-4 px-6 sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto flex items-center justify-between">
+            <div>
+                <h1 class="font-bold text-lg">FINAL: "Is This For You?" Section</h1>
+                <p class="text-slate-400 text-sm">Location: index.html — After hero/video, before path overview</p>
+            </div>
+            <span class="bg-green-500 text-white px-3 py-1 rounded-full text-xs font-bold">APPROVED</span>
+        </div>
+    </div>
+
+    <!-- Is This For You Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+
+            <div class="max-w-4xl mx-auto text-center">
+                <div class="mb-12">
+                    <p class="text-brand-secondary font-bold text-sm uppercase tracking-wider mb-4">Does This Sound Like You?</p>
+                    <div class="relative">
+                        <i data-lucide="quote" class="w-16 h-16 text-slate-200 absolute -top-4 -left-4"></i>
+                        <h2 class="text-2xl md:text-3xl font-bold text-slate-900 leading-relaxed relative z-10">
+                            "I've been applying to jobs for months. <br class="hidden md:block">
+                            My friends are getting hired. <br class="hidden md:block">
+                            <span class="text-brand-primary">I'm starting to wonder if something is wrong with me."</span>
+                        </h2>
+                    </div>
+                </div>
+
+                <div class="bg-slate-50 rounded-2xl p-8 mb-8">
+                    <p class="text-lg text-slate-600 mb-6">There's nothing wrong with you. Engineering school taught you to solve equations—not to sell yourself.</p>
+                    <p class="text-lg text-slate-900 font-semibold">The Launch Path teaches you exactly how to sell yourself. In 21 days.</p>
+                </div>
+
+                <div class="flex flex-wrap justify-center gap-3 mb-10">
+                    <span class="px-4 py-2 bg-emerald-100 text-emerald-700 rounded-full text-sm font-medium">Graduating seniors</span>
+                    <span class="px-4 py-2 bg-orange-100 text-orange-700 rounded-full text-sm font-medium">Recent grads struggling</span>
+                    <span class="px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">International students</span>
+                    <span class="px-4 py-2 bg-amber-100 text-amber-700 rounded-full text-sm font-medium">Parents who want to help</span>
+                </div>
+
+                <a href="#" class="inline-flex items-center gap-2 px-8 py-4 bg-brand-primary text-white font-bold rounded-full hover:bg-brand-secondary transition shadow-lg">
+                    <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                    Show Me The System
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
