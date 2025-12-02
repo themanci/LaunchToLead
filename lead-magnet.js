@@ -172,6 +172,15 @@
             if (!storedData || !JSON.parse(storedData).submitted) {
                 markPopupClosed();
             }
+            
+            // Auto-play the hero video when popup closes
+            var heroVideo = document.querySelector('#video video');
+            if (heroVideo) {
+                heroVideo.play().catch(function(e) {
+                    // Autoplay may be blocked by browser, that's okay
+                    console.log('Video autoplay blocked by browser');
+                });
+            }
         }
     }
 
