@@ -13,6 +13,9 @@
 | 1 | Ford Motor Company | Manager, Embedded Software V&V | 2025-11-30 | - | - | - | - | Applied |
 | 2 | NVIDIA | Manager, Software Verification | 2025-11-30 | - | - | - | - | Applied |
 | 3 | Netflix | Engineering Manager - TLM | 2025-11-30 | - | - | - | - | Applied |
+| 4 | Meta (BigBox) | Software Engineering Manager | 2025-12-03 | - | - | - | - | Applied |
+| 5 | Waymo | Technical Program Manager, Release | 2025-12-03 | - | - | - | - | Applied |
+| 6 | NVIDIA | Senior TPM - Developer Programs | 2025-12-03 | - | - | - | - | Applied |
 
 ---
 
@@ -278,7 +281,255 @@ To support Netflix's growing content offerings and partnerships, we are forming 
 
 ---
 
-## Application #4: [Pending]
+## Application #4: Meta (BigBox / POPULATION: ONE)
+
+### Position Details
+- **Title:** Software Engineering Manager
+- **Company:** Meta (BigBox - team behind POPULATION: ONE)
+- **Location:** United States (Remote)
+- **Type:** Full-time
+- **Salary Range:** $177K/yr - $251K/yr + bonus + equity + benefits
+- **Posted:** ~1 week ago (as of Dec 3, 2025)
+- **Applicants:** Over 100 people clicked apply
+- **Source:** LinkedIn (Promoted by hirer)
+
+### Job Description
+
+BigBox, the team behind POPULATION: ONE, is seeking an Engineering Manager who can help build the future of AI powered games. We're exploring a new frontier where AI is core to making games and we're looking for engineering leaders to discover that future. The ideal candidate has their own AI side projects and enjoys discovering the latest AI development tools to increase productivity.
+
+Autonomy, cutting-edge technology, and talented teams are some of the reasons engineering leaders enjoy working at BigBox. Our bottom up way of working is a cornerstone of how we work, and our empowered engineers are solving technical challenges at an unprecedented scale.
+
+As an engineering manager you will support, enable and empower your team, managing high-output engineers to make a meaningful impact on millions of people around the world.
+
+### Responsibilities
+- Engineering Coach: Provide specific and balanced feedback, regular one-on-ones
+- Results-Oriented Execution: Help team achieve goals by removing obstacles, work with leadership on high-level goals
+- Communication: Active listening, share information transparently, coordinate across all disciplines
+- Have a clear roadmap and strategy: Set clear goals, provide direction, ensure team understands larger picture
+- Leverage technical skills to steer team: Understand challenges team faces and provide informed guidance
+- Support career development: Help team members with career paths, growth opportunities, regular performance discussions
+
+### Qualifications (Required)
+- Bachelor's Degree in Computer Science, or equivalent experience
+- Experience building software with LLM's and AI powered agents as core product
+- Experience with AI coding tools such as Cursor, Claude Code, Co-Pilot, Codex, etc.
+- 6+ years as an engineering manager with at least 5 direct reports in game development or multiple shipped games
+- Wide knowledge of software development practices and how to apply them to teams
+- In depth experience adapting to various communication and work styles
+- Demonstrated history of working well with cross-functional teams and organizations
+- Experience organizing and leading meetings for planning, scheduling, and/or discussion
+- Working knowledge of 3D math and game foundation technologies (Transforms, Lerp, etc)
+- Experience growing and mentoring teams
+
+### Qualifications (Preferred)
+- Demonstrated expertise managing Graphics Engineers or Server Engineers
+- Experience working in C++ source code of 3D Game Engines
+
+### My Fit Analysis
+
+| Requirement | My Evidence | Match |
+|-------------|-------------|-------|
+| Experience with LLMs/AI agents as product | Use AI tools daily (Copilot, Claude, Gemini, Grok) for development | ⚠️ User, not product builder |
+| AI coding tools (Copilot, Claude, etc.) | GitHub Copilot, Claude, Gemini, Grok - daily use | ✅ Strong |
+| 6+ years as engineering manager | 7+ years total, 3.5+ years leadership | ⚠️ Close on manager years |
+| 5+ direct reports | 6-10 direct reports as Supervisor | ✅ |
+| Game development / shipped games | No game development experience | ❌ Gap |
+| Cross-functional teams | Extensive - 2,000+ engineer impact | ✅ Strong |
+| Organizing and leading meetings | Scrum Master, all Agile ceremonies | ✅ Strong |
+| 3D math/game foundations (Transforms, Lerp) | No direct experience | ❌ Gap |
+| Growing and mentoring teams | 50% faster onboarding, career development | ✅ Strong |
+| Bachelor's degree | Master's degree (Iowa State) | ✅ Exceeds |
+| Fast-paced environment | 48-hour critical fixes, rapid delivery | ✅ Strong |
+
+### Timeline
+
+| Date | Event | Notes |
+|------|-------|-------|
+| 2025-12-03 | Applied | Submitted via LinkedIn, AI-forward resume |
+| - | Response | - |
+| - | Phone Screen | - |
+| - | Technical Interview | - |
+| - | Final Interview | - |
+| - | Decision | - |
+
+### Resume Used
+`mansour-manci-meta-engineering-manager.html`
+
+### Notes
+- **Stretch role** - game development experience is a significant gap
+- Strong AI tool experience is a differentiator - they explicitly want AI practitioners
+- Leadership experience and team culture building align well
+- Fast-paced delivery experience (48-hour fixes) shows ability to thrive in startup-like environment
+- Remote role is ideal
+- $177K-$251K + bonus + equity is solid compensation
+- BigBox is focused on AI-powered games future - emerging space
+
+### Honest Assessment
+This is a stretch application. The game development and 3D math requirements are clear gaps. However:
+1. They emphasize AI tools experience heavily - which I have
+2. The leadership and team culture aspects are strong matches
+3. They mention "equivalent experience" for degree - transferable skills matter
+4. Worst case: good practice for articulating AI experience
+
+---
+
+## Application #5: Waymo
+
+### Position Details
+- **Title:** Technical Program Manager, Release
+- **Company:** Waymo (Alphabet/Google)
+- **Location:** United States (Remote)
+- **Type:** Full-time
+- **Salary Range:** $196K/yr - $248K/yr + bonus + equity + benefits
+- **Posted:** 12 hours ago (as of Dec 3, 2025)
+- **Applicants:** Over 100 people clicked apply
+- **Source:** LinkedIn (Promoted by hirer)
+- **Reports To:** Lead TPM, Release Management
+
+### About Waymo
+
+Waymo is an autonomous driving technology company with the mission to be the world's most trusted driver. Since its start as the Google Self-Driving Car Project in 2009, Waymo has focused on building the Waymo Driver—The World's Most Experienced Driver™—to improve access to mobility while saving thousands of lives now lost to traffic crashes. The Waymo Driver powers Waymo's fully autonomous ride-hail service and can also be applied to a range of vehicle platforms and product use cases. The Waymo Driver has provided over ten million rider-only trips, enabled by its experience autonomously driving over 100 million miles on public roads and tens of billions in simulation across 15+ U.S. states.
+
+### Job Description
+
+Waymo's Technical Program Managers are accountable for Waymo's roadmap execution by providing thoughtful cross-functional planning, clarity, and proactive risk management. In the face of complex technical and operational challenges with no established playbooks to follow, we act with thoughtful urgency, driving conversations, discussions, and outcomes. Our team partners closely with every function of Waymo to structure, own and drive work towards real-world deployments of the Waymo Driver across platforms and geographies.
+
+### Responsibilities (You Will)
+- Ensure release tasks are followed and on track
+- Communicate and facilitate resolution of potential issues as we become aware of them
+- Continuously improve processes to ensure more efficient releases
+
+### Qualifications (Required - You Have)
+- 2+ years of experience with managing software releases
+- 2+ years of experience managing technical projects
+- Bachelor's Degree
+- Experience working within the context of Software Development Lifecycle
+- Good understanding of system architecture and design principles
+- Quality Assurance, validating quality of software
+- Demonstrated ability to interpret and analyze source code for understanding system behavior and requirements
+
+### Qualifications (Preferred - We Prefer)
+- Technical Program Management experience
+- Knowledge of CI/CD pipelines and workflows
+- Expertise in computer programming
+- Understanding and ability to perform as a Release Engineer
+
+### My Fit Analysis
+
+| Requirement | My Evidence | Match |
+|-------------|-------------|-------|
+| 2+ years managing software releases | 7+ years, formal release process for 8 releases | ✅ Strong |
+| 2+ years managing technical projects | 7+ years technical projects | ✅ Strong |
+| Bachelor's Degree | Master's degree (Iowa State) | ✅ Exceeds |
+| Software Development Lifecycle | Extensive SDLC experience | ✅ Strong |
+| System architecture understanding | FRS authoring, systems engineering cert | ✅ Strong |
+| Quality Assurance | V&V leadership, 25-30% error reduction | ✅ Strong |
+| Interpret/analyze source code | C, Python, debugging, root cause analysis | ✅ Strong |
+| TPM experience (preferred) | Leading team of 10, $1B+ programs | ✅ Strong |
+| CI/CD pipelines (preferred) | Jenkins, Azure DevOps | ✅ Strong |
+| Programming expertise (preferred) | C, Python, VBScript, MATLAB | ✅ Strong |
+| Release Engineer ability (preferred) | Release process improvement, 15-20% faster | ✅ Strong |
+
+### Timeline
+
+| Date | Event | Notes |
+|------|-------|-------|
+| 2025-12-03 | Applied | Submitted via LinkedIn, release-focused resume |
+| - | Response | - |
+| - | Phone Screen | - |
+| - | Technical Interview | - |
+| - | Final Interview | - |
+| - | Decision | - |
+
+### Resume Used
+`mansour-manci-waymo-tpm-release.html`
+
+### Notes
+- **STRONG FIT** - LinkedIn AI assessment says "top applicant"
+- Iowa State alumni connection available - can reach out!
+- Autonomous vehicle experience from John Deere transfers directly
+- Release management experience is core strength
+- Role requires 2+ years, I have 7+ years - significantly exceeds
+- $196K-$248K + bonus + equity is strong compensation
+- Waymo is premiere autonomous vehicle company - great brand
+- "No established playbooks" matches my ambiguity navigation experience
+
+### ATS Keywords Included
+- Software Release Management
+- Technical Program Management
+- Cross-Functional Planning
+- CI/CD Pipelines
+- Quality Assurance
+- Risk Management
+- Software Development Lifecycle
+- Process Improvement
+- Release Engineering
+- Source Code Analysis
+- System Architecture
+
+---
+
+## Application #6: NVIDIA - Developer Programs
+
+### Position Details
+- **Title:** Senior Technical Project Manager – Developer Programs
+- **Company:** NVIDIA
+- **Location:** United States (Remote)
+- **Type:** Full-time
+- **Salary Range:** TBD
+- **Posted:** Recent (as of Dec 3, 2025)
+- **Applicants:** Over 100 people clicked apply
+- **Source:** LinkedIn
+
+### Job Description
+
+NVIDIA is seeking a Senior Technical Project Manager for Developer Programs. The role focuses on developer experience (DevEx), leading cross-functional teams, and driving process improvements for developer-facing initiatives.
+
+### Key Requirements
+- 8+ years leading projects
+- Agile/Jira experience
+- Cross-functional team leadership
+- Developer Experience (DevEx) focus
+- Process improvement
+- Ambiguity navigation
+- Scrum Master experience
+
+### My Fit Analysis
+
+| Requirement | My Evidence | Match |
+|-------------|-------------|-------|
+| 8+ years leading projects | 7+ years | ⚠️ Close |
+| Agile/Jira | Rally, Scrum Master | ✅ Strong |
+| Cross-functional teams | 2,000+ engineers impacted | ✅ Strong |
+| DevEx focus | Current role is DevEx Lead | ✅ Strong |
+| Process improvement | 90% schedule reduction, 25-30% error reduction | ✅ Strong |
+| Ambiguity navigation | Throughout career | ✅ Strong |
+| Scrum Master experience | Formal Scrum Master role | ✅ Strong |
+
+### Timeline
+
+| Date | Event | Notes |
+|------|-------|-------|
+| 2025-12-03 | Applied | Submitted via LinkedIn, DevEx-focused resume |
+| - | Response | - |
+| - | Phone Screen | - |
+| - | Technical Interview | - |
+| - | Final Interview | - |
+| - | Decision | - |
+
+### Resume Used
+`mansour-manci-nvidia-tpm-developer-programs.html`
+
+### Notes
+- Strong fit - DevEx is my current role
+- $1B+ program delivery experience highlighted
+- AI/LLM skills included (GitHub Copilot, Claude, Gemini, Grok)
+- 2,000+ engineers impacted globally
+- Zero missed deadlines across 3 major launches
+
+---
+
+## Application #7: [Pending]
 
 *Add next application here*
 
@@ -301,4 +552,4 @@ This job search is validating the **Launch to Lead** methodology:
 
 ---
 
-*Last updated: November 30, 2025*
+*Last updated: December 3, 2025*
