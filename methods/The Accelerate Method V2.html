@@ -1,0 +1,2165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Accelerate Method V2 - Complete Methodology</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #10b981;
+            --accent: #f59e0b;
+            --danger: #ef4444;
+            --dark: #1f2937;
+            --light: #f9fafb;
+            --gray: #6b7280;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.7;
+            color: var(--dark);
+            background: var(--light);
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            border-bottom: 4px solid var(--primary);
+            padding-bottom: 1rem;
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            color: var(--primary-dark);
+            margin: 2.5rem 0 1rem;
+            padding: 0.5rem 1rem;
+            background: linear-gradient(90deg, #dbeafe, transparent);
+            border-left: 4px solid var(--primary);
+        }
+        
+        h3 {
+            font-size: 1.4rem;
+            color: var(--dark);
+            margin: 2rem 0 1rem;
+        }
+        
+        h4 {
+            font-size: 1.1rem;
+            color: var(--gray);
+            margin: 1.5rem 0 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        p {
+            margin-bottom: 1rem;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 3rem 2rem;
+            margin: -2rem -2rem 2rem;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            color: white;
+            border: none;
+            margin-bottom: 1rem;
+        }
+        
+        .hero .tagline {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .callout {
+            background: #dbeafe;
+            border-left: 4px solid var(--primary);
+            padding: 1rem 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .callout.philosophy {
+            background: linear-gradient(135deg, #fef3c7, #fde68a);
+            border-left-color: var(--accent);
+        }
+        
+        .callout.warning {
+            background: #fee2e2;
+            border-left-color: var(--danger);
+        }
+        
+        .callout.success {
+            background: #d1fae5;
+            border-left-color: var(--secondary);
+        }
+        
+        .phase-header {
+            background: var(--dark);
+            color: white;
+            padding: 2rem;
+            margin: 3rem -2rem 2rem;
+            text-align: center;
+        }
+        
+        .phase-header h2 {
+            color: white;
+            background: none;
+            border: none;
+            margin: 0;
+            padding: 0;
+            font-size: 2rem;
+        }
+        
+        .phase-header .subtitle {
+            font-style: italic;
+            opacity: 0.8;
+            margin-top: 0.5rem;
+        }
+        
+        .method-card {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        
+        .method-card h3 {
+            color: var(--primary);
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .method-card h3::before {
+            content: "™";
+            font-size: 0.7em;
+            vertical-align: super;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        
+        th, td {
+            padding: 0.75rem 1rem;
+            text-align: left;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        th {
+            background: var(--dark);
+            color: white;
+            font-weight: 600;
+        }
+        
+        tr:hover {
+            background: #f9fafb;
+        }
+        
+        .green-light {
+            background: #d1fae5;
+        }
+        
+        .red-light {
+            background: #fee2e2;
+        }
+        
+        ul, ol {
+            margin: 1rem 0 1rem 2rem;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+        }
+        
+        blockquote {
+            background: #f3f4f6;
+            border-left: 4px solid var(--gray);
+            padding: 1rem 1.5rem;
+            margin: 1rem 0;
+            font-style: italic;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .script {
+            background: #1f2937;
+            color: #10b981;
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 999px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .badge-complete {
+            background: #d1fae5;
+            color: #065f46;
+        }
+        
+        .badge-pending {
+            background: #fef3c7;
+            color: #92400e;
+        }
+        
+        .emoji-list {
+            list-style: none;
+            margin-left: 0;
+        }
+        
+        .emoji-list li {
+            padding-left: 2rem;
+            position: relative;
+        }
+        
+        .emoji-list li::before {
+            position: absolute;
+            left: 0;
+        }
+        
+        .avoid-list li::before {
+            content: "❌";
+        }
+        
+        .do-list li::before {
+            content: "✅";
+        }
+        
+        hr {
+            border: none;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #e5e7eb, transparent);
+            margin: 3rem 0;
+        }
+        
+        .level-header {
+            background: linear-gradient(90deg, #dbeafe, transparent);
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            margin: 2rem 0 1rem;
+        }
+        
+        .level-header h3 {
+            margin: 0;
+            color: var(--primary-dark);
+        }
+        
+        .toc {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .toc h3 {
+            margin-top: 0;
+        }
+        
+        .toc ul {
+            columns: 2;
+            gap: 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            .hero {
+                margin: -1rem -1rem 1rem;
+                padding: 2rem 1rem;
+            }
+            
+            .phase-header {
+                margin: 2rem -1rem 1rem;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            h2 {
+                font-size: 1.4rem;
+            }
+            
+            .toc ul {
+                columns: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="hero">
+            <h1>The Accelerate Method V2</h1>
+            <p class="tagline">Complete Methodology for Mid-Career Engineers Seeking Promotion</p>
+        </div>
+
+        <div class="callout">
+            <strong>Target Audience:</strong> Mid-career engineers (3-10+ years) stuck at Individual Contributor level, seeking promotion to senior/lead/management roles.
+        </div>
+
+        <h2>Overview</h2>
+        <p>The Accelerate Method is a comprehensive framework for getting promoted faster. It addresses the reality that promotions don't go to the hardest workers—they go to people who are <strong>visible to decision-makers</strong> and have <strong>advocates in the room</strong>.</p>
+
+        <div class="callout philosophy">
+            <strong>Core Philosophy:</strong> Performance is the prerequisite. Visibility is the multiplier. Advocacy is the accelerant.
+        </div>
+
+        <!-- PHASE 1 -->
+        <div class="phase-header">
+            <h2>PHASE 1: THE VISIBILITY PYRAMID</h2>
+            <p class="subtitle">We teach clients that promotion is not a reward for hard work; it is a byproduct of Influence.</p>
+        </div>
+
+        <div class="level-header">
+            <h3>Level 1: The "Competence Entry Fee"</h3>
+        </div>
+
+        <h4>Core Concept</h4>
+        <p>Performance is not the differentiator; it is the prerequisite. Before any visibility tactics, you must be bulletproof in your core role.</p>
+
+        <div class="method-card">
+            <h3>The Green Light Audit</h3>
+            <p>A self-assessment to determine if you're ready to pursue visibility tactics. Be brutally honest.</p>
+
+            <h4>🟢 GREEN LIGHT Indicators (You're Ready):</h4>
+            <table>
+                <tr class="green-light">
+                    <th>Criterion</th>
+                    <th>What It Looks Like</th>
+                </tr>
+                <tr>
+                    <td><strong>Role Mastery</strong></td>
+                    <td>You can do your day-to-day job with very little help. You're not asking senior engineers "how do I do X, Y, Z?" for fundamental tasks.</td>
+                </tr>
+                <tr>
+                    <td><strong>Go-To Status</strong></td>
+                    <td>People come to YOU asking how to do things—not the other way around.</td>
+                </tr>
+                <tr>
+                    <td><strong>Review Performance</strong></td>
+                    <td>Your last yearly review was "Exceeds Expectations" or equivalent.</td>
+                </tr>
+                <tr>
+                    <td><strong>Manager Signals</strong></td>
+                    <td>Your manager is giving you more responsibility and praising you for above-and-beyond work.</td>
+                </tr>
+                <tr>
+                    <td><strong>Teaching Ability</strong></td>
+                    <td>You can train others on work tasks.</td>
+                </tr>
+                <tr>
+                    <td><strong>Onboarding Capability</strong></td>
+                    <td>You can onboard new team members onto the team.</td>
+                </tr>
+                <tr>
+                    <td><strong>Presentation Ready</strong></td>
+                    <td>You can present to others what your role does and what your team does.</td>
+                </tr>
+            </table>
+
+            <h4>🔴 RED LIGHT Indicators (Not Ready Yet):</h4>
+            <table>
+                <tr class="red-light">
+                    <th>Warning Sign</th>
+                    <th>What It Means</th>
+                </tr>
+                <tr>
+                    <td><strong>Still Learning Fundamentals</strong></td>
+                    <td>You're still asking senior/staff engineers about how to do basic role responsibilities.</td>
+                </tr>
+                <tr>
+                    <td><strong>Review Below Exceeds</strong></td>
+                    <td>Your last review was "Meets Expectations" or lower.</td>
+                </tr>
+                <tr>
+                    <td><strong>No Increased Responsibility</strong></td>
+                    <td>Manager isn't giving you more scope or responsibility.</td>
+                </tr>
+                <tr>
+                    <td><strong>No Praise for Extra Work</strong></td>
+                    <td>Manager hasn't praised you for going above and beyond.</td>
+                </tr>
+                <tr>
+                    <td><strong>Can't Train Others</strong></td>
+                    <td>You wouldn't be comfortable training someone on your core work.</td>
+                </tr>
+                <tr>
+                    <td><strong>Can't Onboard</strong></td>
+                    <td>You wouldn't be able to onboard a new teammate effectively.</td>
+                </tr>
+            </table>
+
+            <div class="callout warning">
+                <strong>The Rule:</strong> If you have RED LIGHT indicators, focus on Phase 1 Level 1 first. Fix these before pursuing visibility tactics. Level 2-4 tactics are pointless if Level 1 isn't solid.
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="level-header">
+            <h3>Level 2: The "Skip-Level Echo"</h3>
+        </div>
+
+        <h4>Core Concept</h4>
+        <p>Your direct manager might be busy, incompetent, or threatened by you. You need the "Manager's Manager" (Grand-boss) to know your name and your value independently.</p>
+
+        <div class="callout">
+            <strong>The Bus Test:</strong> If your direct manager got hit by a bus tomorrow, would your skip-level manager know your name and your value? If no, you are invisible.
+        </div>
+
+        <div class="method-card">
+            <h3>Organic Broadcasting</h3>
+            <p>You don't brag; you "update." Strategic visibility without self-promotion.</p>
+            <h4>Tactics:</h4>
+            <ul>
+                <li>Volunteer to present at team meetings that include skip-level leadership</li>
+                <li>Volunteer to give demos to stakeholders (sprint reviews, product demos, etc.)</li>
+                <li>Write summary emails that naturally get forwarded up the chain</li>
+                <li>Ask strategic questions in town halls that demonstrate you're thinking at a higher level</li>
+            </ul>
+        </div>
+
+        <div class="method-card">
+            <h3>The Echo Email</h3>
+            <p>The summary email structure designed to be forwarded up the chain—or to create visibility directly.</p>
+
+            <h4>Core Principles:</h4>
+            <ol>
+                <li><strong>Keep it SHORT.</strong> Managers get tons of emails. Don't make it long.</li>
+                <li><strong>Share credit with others.</strong> The best visibility comes from recognizing others while being part of the story.</li>
+                <li><strong>Don't brag directly.</strong> Never self-praise. Get credit through giving credit.</li>
+            </ol>
+
+            <h4>Template 1: The Team Win</h4>
+            <p><em>When to use:</em> After completing something notable with teammates.</p>
+            <blockquote>
+                <strong>To:</strong> Your Manager<br>
+                <strong>CC:</strong> Zach, Kyle (teammates who helped)<br><br>
+                Hey [Manager],<br><br>
+                Just wanted to let you know that we had a major bug come in yesterday late, and we were able to get it resolved. Wanted to give some recognition to Zach and Kyle on our team who really helped me, especially getting it tested so fast after I got the code committed.<br><br>
+                Great teamwork all around.
+            </blockquote>
+
+            <h4>Template 2: The Value-Add Tool</h4>
+            <p><em>When to use:</em> When you've built something useful beyond your normal scope.</p>
+            <blockquote>
+                Hey [Manager],<br><br>
+                Just wanted to share that I built a new tool that can automate pulling test case reports from our Azure DevOps projects. Thought it might be useful for you when you're tracking progress on projects.<br><br>
+                I can set up a quick 1-on-1 to go over it if you're interested. Here's the link: [link]
+            </blockquote>
+
+            <h4>Template 3: The Big Team Recognition (Skip-Level Visibility)</h4>
+            <p><em>When to use:</em> After a major team accomplishment.</p>
+            <blockquote>
+                <strong>To:</strong> Skip-Level Manager<br>
+                <strong>CC:</strong> Your Manager, Parallel Team Managers, Team Members<br><br>
+                Hey [Skip-Level],<br><br>
+                Just wanted to take a moment to stop and recognize the team for delivering [Project X]. It was a huge effort, and so many people played a key part—especially [Name], [Name], and [Name].<br><br>
+                A lot of times, critical feedback surfaces quickly, so wanted to give a quick positive shout-out to everyone involved. Great work everyone.
+            </blockquote>
+            <p><strong>Why it works:</strong> You get credit for the accomplishment AND for recognizing everyone. <strong>Double win.</strong></p>
+
+            <h4>What to AVOID:</h4>
+            <ul class="emoji-list avoid-list">
+                <li>Self-praising directly ("I did this amazing thing...")</li>
+                <li>Making it long (keep it to 3-5 sentences max)</li>
+                <li>Leaving out others who contributed</li>
+                <li>Sending too frequently (becomes noise)</li>
+            </ul>
+        </div>
+
+        <div class="method-card">
+            <h3>The Strategic Question Bank</h3>
+            <p>Pre-prepared questions to ask at town halls, all-hands, or leadership Q&As that get you noticed for the right reasons.</p>
+
+            <h4>The Goal:</h4>
+            <p>Demonstrate that you think strategically, care about the company's performance, are bought in to company goals, and have done your homework.</p>
+
+            <h4>What to AVOID:</h4>
+            <ul class="emoji-list avoid-list">
+                <li><strong>Gotcha questions</strong> that make leadership look bad</li>
+                <li><strong>Challenging questions</strong> that hold their feet to the fire publicly</li>
+                <li><strong>Tactical/small-level questions</strong> that should go to your manager</li>
+                <li><strong>Questions that make your manager look bad</strong> or bypass them</li>
+            </ul>
+
+            <div class="callout warning">
+                <strong>This is NOT the time to challenge senior leaders hard. That will backfire.</strong>
+            </div>
+
+            <h4>Example Strategic Questions:</h4>
+            <p><strong>Competition & Market:</strong></p>
+            <blockquote>"I recently read that our competition is releasing [X technology]. It seems like this could be a market gap for us. Do we have plans to address this or develop our own solution so we don't lose market share?"</blockquote>
+
+            <p><strong>Organizational Change:</strong></p>
+            <blockquote>"I know we just had a reorg in our department to improve [X]. It seems like there's been improvement, but we've also experienced some [Y consequences]. I'm trying to understand what we can do to help mitigate that—because the results on [X] are amazing and helping us so much."</blockquote>
+
+            <p><strong>Vision & Future:</strong></p>
+            <blockquote>"Where do you see the future of [X area] for the company over the next 2-3 years?"</blockquote>
+            <blockquote>"What keeps you up at night when you think about our competitive position?"</blockquote>
+
+            <div class="callout philosophy">
+                <strong>The Golden Rule:</strong> You don't ask the CEO why the bathroom urinals don't work. Match the question to the leader's level.
+            </div>
+        </div>
+
+        <div class="method-card">
+            <h3>The Alignment Signal</h3>
+            <p><strong>The Problem:</strong> Some employees publicly bash company leadership, goals, or initiatives in circles where it can get back to leadership.</p>
+            <p><strong>The Rule:</strong> You cannot be perceived as someone who isn't bought into company direction. Even if you have concerns, there's a time and place.</p>
+
+            <h4>The Tactic:</h4>
+            <ul>
+                <li>In public forums (meetings, Slack, town halls), demonstrate genuine engagement with company initiatives</li>
+                <li>Ask clarifying questions instead of dismissive ones</li>
+                <li>Save critical feedback for appropriate 1-on-1 channels with your direct manager</li>
+                <li>If you disagree with a direction, frame it as "help me understand" not "this is wrong"</li>
+            </ul>
+
+            <div class="callout warning">
+                <strong>The Risk:</strong> Word travels. If you're known as someone who bashes leadership, that reputation will reach the people who decide promotions.
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="level-header">
+            <h3>Level 3: The "Bias Lever" (The Human Element)</h3>
+        </div>
+
+        <h4>Core Concept</h4>
+        <p>"People hire people, not resumes." When your name comes up in a calibration meeting, they don't picture a spreadsheet—they picture YOU. This triggers the "affinity bias" in your favor.</p>
+
+        <div class="callout">
+            <strong>The Goal:</strong> Convert "Professional Awareness" (they know your work) into "Personal Attachment" (they like you as a person and want to advocate for you).
+        </div>
+
+        <div class="method-card">
+            <h3>The Value-First Connection</h3>
+            <p><strong>The Mindset Flip:</strong> Most people approach skip-levels wanting to GET from them. You flip this by showing genuine interest in THEM and finding ways to ADD value to their lives.</p>
+
+            <h4>Topics That Build Connection:</h4>
+            <ul>
+                <li>Family (spouse, kids, parents)</li>
+                <li>Hobbies and interests (motorcycles, reading, sports, music)</li>
+                <li>Personal challenges you might be able to help with</li>
+            </ul>
+
+            <h4>Examples of Adding Value:</h4>
+            <ul>
+                <li>They're a motorcycle enthusiast, you are too → shared interest, potential riding invite</li>
+                <li>They love a certain band, that band is playing nearby → share the info</li>
+                <li>They like reading about X topic → you have book recommendations</li>
+                <li>They're having issues with a property manager → you know a good one and connect them</li>
+            </ul>
+
+            <h4>What NOT to Do:</h4>
+            <ul class="emoji-list avoid-list">
+                <li>Cliché shallow questions ("What's your favorite song?")</li>
+                <li>Making it transactional or obvious</li>
+                <li>Expecting immediate payback</li>
+                <li>Overdoing it to the point of seeming sycophantic</li>
+            </ul>
+        </div>
+
+        <div class="method-card">
+            <h3>The Skip-Level Request Protocol</h3>
+
+            <h4>Step 1: Clear It With Your Manager First</h4>
+            <div class="script">
+                "I find it really useful to have skip-level meetings to hear about company goals, initiatives, and pain points from a higher level. And it's useful for [Skip-Level Name] to get some perspectives from closer to the ground. I wanted to run it by you first—would you be comfortable with me setting that up?"
+            </div>
+
+            <h4>Critical Reassurance:</h4>
+            <div class="script">
+                "You're not going to hear anything from me that would surprise you. I'm not going there to complain or drop any bombshells."
+            </div>
+
+            <h4>Step 2: The Outreach</h4>
+            <p>Two options (let your manager choose):</p>
+            <ol>
+                <li>Manager reaches out to skip-level, CCs you</li>
+                <li>You reach out directly, CC your manager</li>
+            </ol>
+        </div>
+
+        <div class="method-card">
+            <h3>The Skip-Level Meeting Playbook</h3>
+            <p><strong>The Balance:</strong> You need to weave personal AND business topics. Pure personal = you run out of things to talk about. Pure business = you're just another meeting.</p>
+
+            <h4>First Meeting Strategy:</h4>
+            <ul>
+                <li>Keep it MOSTLY work/project/strategy focused</li>
+                <li>Feel them out—if they're happy chatting personally, lean into it</li>
+                <li>Have a specific topic or question to anchor the conversation</li>
+                <li>Share a valuable perspective from "closer to the ground"</li>
+            </ul>
+
+            <h4>If You Discuss Career Growth:</h4>
+            <p>Frame it as improvement, not title-chasing:</p>
+            <ul class="emoji-list do-list">
+                <li>"I know I have gaps in [area]. How would you suggest I develop there?"</li>
+                <li>"What skills do you think differentiate people who succeed at the next level?"</li>
+            </ul>
+            <ul class="emoji-list avoid-list">
+                <li>"What do I need to do to get promoted?"</li>
+                <li>"I've been here X years, when do I get promoted?"</li>
+            </ul>
+        </div>
+
+        <div class="method-card">
+            <h3>The Manager Amplification Tactic</h3>
+            <p><strong>The Concept:</strong> When meeting with skip-level leadership, make your manager look good (assuming you have a healthy relationship).</p>
+
+            <h4>Why This Works:</h4>
+            <ol>
+                <li>Skip-level tells your manager "I heard good things about you from [Your Name]"</li>
+                <li>Your manager's trust in you grows</li>
+                <li>Your manager feels safer giving you more exposure to other leaders</li>
+                <li>Skip-level sees you as mature, strategic, and trustworthy</li>
+                <li>Everyone wins → more exposure → more opportunity</li>
+            </ol>
+
+            <div class="callout warning">
+                <strong>The Maturity Signal:</strong> A mature employee raises concerns with their manager directly, not by going over their head. If you complain about your manager to skip-levels, you look immature, unstrategic, and untrustworthy.
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="level-header">
+            <h3>Level 4: The "Genesis Protocol" (Making Roles Exist)</h3>
+        </div>
+
+        <h4>Core Concept</h4>
+        <p>The God Tier. You don't wait for job openings; you influence leaders to create roles—even if you don't take them yourself.</p>
+
+        <div class="method-card">
+            <h3>The Gap Pioneer Framework</h3>
+            <p><strong>The Mindset:</strong> You're not just an order-taker executing commands. You're a builder, a pioneer who sees what the company needs before anyone asks.</p>
+
+            <h4>Step 1: Identify Gaps Worth Proposing</h4>
+            <p><strong>Good gaps to propose:</strong></p>
+            <ul>
+                <li>Causing real pain in the current system</li>
+                <li>Everyone knows it's a problem</li>
+                <li>Not fully owned by anyone</li>
+                <li>You know of solutions from other companies/industries</li>
+            </ul>
+
+            <p><strong>Bad gaps to propose:</strong></p>
+            <ul>
+                <li>Pie-in-the-sky theories pulled from left field</li>
+                <li>Problems only you see or care about</li>
+                <li>Things that are clearly someone else's territory</li>
+            </ul>
+
+            <h4>Step 2: Research Solutions</h4>
+            <ul>
+                <li>How do other companies solve this?</li>
+                <li>What's the industry best practice?</li>
+                <li>What's the minimum viable approach to start?</li>
+            </ul>
+
+            <h4>Step 3: Volunteer to Own It</h4>
+            <ul>
+                <li>Pitch the problem and a proposed solution</li>
+                <li>Offer to get things started</li>
+                <li>Demonstrate early progress and results</li>
+            </ul>
+
+            <h4>Step 4: Evolve Into a Role</h4>
+            <p>As workload grows, discuss with manager/skip about formalizing it. Could become a promotion for you—or a new role that establishes you as a visionary.</p>
+        </div>
+
+        <hr>
+
+        <!-- PHASE 2 -->
+        <div class="phase-header">
+            <h2>PHASE 2: THE PROMOTION PROTOCOL</h2>
+            <p class="subtitle">We teach clients that a promotion is not something you "get"; it is a new contract you negotiate by offering more value.</p>
+        </div>
+
+        <div class="method-card">
+            <h3>The Role Saturation Threshold (The 85% Rule)</h3>
+
+            <h4>The Distinction from Phase 1</h4>
+            <p><strong>Phase 1 Level 1 (Green Light Audit™)</strong> asks: "Am I performing well? Am I self-sufficient? Am I helping others?"</p>
+            <p><strong>Phase 2 (Role Saturation Threshold™)</strong> asks: "Have I extracted 85% of what this role has to offer in terms of learning, influence, impact, and improvement?"</p>
+
+            <h4>Signs You're NOT at 85%:</h4>
+            <ul>
+                <li>There's still plenty you could do to improve your area</li>
+                <li>You haven't mastered core aspects of the role</li>
+                <li>You're still learning fundamental skills</li>
+                <li>There are obvious improvements you haven't made yet</li>
+            </ul>
+
+            <h4>Signs You ARE at 85%:</h4>
+            <ul>
+                <li>You've absorbed, mastered, and benefited from most of what the role offers</li>
+                <li>Continued growth will be slow, diminishing returns</li>
+                <li>You're hungry for more and this role is "running dry"</li>
+                <li>You're ready to drink from a new firehose</li>
+            </ul>
+        </div>
+
+        <div class="method-card">
+            <h3>The Service-Based Ask (Conversation Framework)</h3>
+
+            <h4>The Problem: The "Greed Pitch"</h4>
+            <p>Bad approaches:</p>
+            <ul class="emoji-list avoid-list">
+                <li>"I want more money"</li>
+                <li>"I want a promotion"</li>
+                <li>"I've been here X years, I deserve this"</li>
+                <li>"My peers got promoted, why not me?"</li>
+            </ul>
+
+            <h4>The Reframe: Impact Over Title</h4>
+            <p>Frame it as a desire for more responsibility, greater impact, bigger problems to solve, continued growth.</p>
+
+            <div class="callout philosophy">
+                <strong>Ban the word "Promotion" from the initial conversation.</strong>
+            </div>
+        </div>
+
+        <div class="method-card">
+            <h3>The Optimal Timing Strategy</h3>
+
+            <h4>Best Time: Annual Review (with "Exceeds Expectations")</h4>
+            <p>Why this is ideal:</p>
+            <ul>
+                <li>Your manager has already admitted you're performing at a high level</li>
+                <li>You likely have evidence of hitting the 85% threshold</li>
+                <li>Role, performance, future, and potential are already on the table</li>
+            </ul>
+
+            <h4>The One-Month Notice Rule:</h4>
+            <p>Give your manager at least one month notice that you want to discuss your future in an upcoming 1-on-1.</p>
+
+            <h4>What NOT to do:</h4>
+            <ul class="emoji-list avoid-list">
+                <li>Bring it up casually in passing</li>
+                <li>Spring it on them unexpectedly</li>
+                <li>Mention it repeatedly as a sidenote (becomes unserious)</li>
+            </ul>
+        </div>
+
+        <div class="method-card">
+            <h3>The Evidence Arsenal</h3>
+            <p><strong>Come Prepared With:</strong></p>
+            <ol>
+                <li><strong>360 Feedback</strong> - Positive feedback from your ecosystem</li>
+                <li><strong>Performance Reviews</strong> - Your yearly reviews showing strong performance</li>
+                <li><strong>Accomplishments List</strong> - Documented impacts, problems solved, value added</li>
+                <li><strong>Role Saturation Evidence</strong> - Why the role doesn't have much more juice to squeeze</li>
+            </ol>
+        </div>
+
+        <div class="method-card">
+            <h3>The Service-Based Script Library</h3>
+
+            <h4>The Core Script:</h4>
+            <div class="script">
+                "I feel I've mastered my current scope. I'm looking for more responsibility so I can solve [Bigger Problem] for the team. What does the gap between my current output and that level look like?"
+            </div>
+
+            <h4>Annual Review Context:</h4>
+            <div class="script">
+                "Thank you for the feedback on my performance this year. Based on what we've discussed, I feel I've gotten to a place where I've absorbed most of what this role has to offer. I'm hungry to take on more responsibility and continue growing. Can we talk about what the path to the next level looks like?"
+            </div>
+
+            <h4>Guiding Principles:</h4>
+            <ol>
+                <li><strong>Respectful</strong> — Always professional, never confrontational</li>
+                <li><strong>Empathetic</strong> — Acknowledge their position and constraints</li>
+                <li><strong>Professional</strong> — Keep emotions in check</li>
+                <li><strong>Fact-Seeking</strong> — Push for tangible, actionable feedback</li>
+                <li><strong>Accountability-Creating</strong> — Make it hard for them to give vague responses</li>
+            </ol>
+        </div>
+
+        <div class="method-card">
+            <h3>The Objection Playbook</h3>
+
+            <h4>Objection 1: "We're not doing promotions right now"</h4>
+            <div class="script">
+                "I understand there are constraints right now. Can you give me a date or timeframe when we can revisit this after those constraints are removed?"
+            </div>
+
+            <h4>Objection 2: "You're doing great, keep it up"</h4>
+            <div class="script">
+                "Thanks for the positive feedback! Can you be more specific about what I'm doing great at? And what other things would I need to be doing great at 6 months from now to have this discussion again?"
+            </div>
+
+            <h4>Objection 3: "You're not ready yet"</h4>
+            <div class="script">
+                "I appreciate the honesty. Can we go into more detail about what would make me ready? What specific things can I work on and improve over the next 6-12 months so that I would be ready?"
+            </div>
+
+            <h4>Objection 4: "I don't control that, it's HR/leadership"</h4>
+            <div class="script">
+                "Good to know. If I pursue an opportunity with HR or leadership, do I have your support? If they reached out to you about your opinion, would you be in my corner?"
+            </div>
+
+            <h4>Objection 5: "Let's revisit this at annual review"</h4>
+            <div class="script">
+                "Sounds good. Can you give me specifics I can work on between now and then? I'd like to have a picture of what I'd need to accomplish or improve so I know I'm working towards tangible goals."
+            </div>
+        </div>
+
+        <div class="method-card">
+            <h3>The Gap Analysis Contract</h3>
+            <p>Get your manager to articulate specific gaps you need to close to be considered for promotion.</p>
+
+            <h4>The Right Frame:</h4>
+            <div class="script">
+                "I know this isn't a guarantee—I'm not asking for a checklist that automatically gets me promoted. I'm asking for your guidance on my weaknesses and gaps so I can be a serious contender in the future. I want to focus on adding value and growing, and I need your experience and knowledge to help me get there."
+            </div>
+
+            <h4>Monthly Check-Ins:</h4>
+            <ul>
+                <li>Review progress on the agreed items in monthly 1-on-1s</li>
+                <li>Have something to show each month (demonstrates seriousness)</li>
+                <li>Wait until the list is mostly complete before raising promotion again</li>
+            </ul>
+
+            <div class="callout warning">
+                <strong>The Moving Goalpost Problem:</strong> You complete the agreed list, they give you a new list. You complete that, they give you a third list. This means you likely have a toxic manager stringing you along. Develop an exit strategy.
+            </div>
+        </div>
+
+        <div class="method-card">
+            <h3>The Continuous Campaign</h3>
+
+            <h4>The Cadence:</h4>
+            <ul>
+                <li><strong>Monthly:</strong> Update your manager on progress toward agreed initiatives. Don't mention promotion—just demonstrate progress.</li>
+                <li><strong>Quarterly/When List is Complete:</strong> Re-raise the promotion conversation with evidence.</li>
+            </ul>
+
+            <h4>The Balance:</h4>
+            <p><strong>Too Frequent = Annoying</strong> — Don't hound them monthly, don't seem desperate</p>
+            <p><strong>Too Infrequent = Forgotten</strong> — Don't wait years, don't let momentum die</p>
+        </div>
+
+        <div class="method-card">
+            <h3>The Promotion Positioning Philosophy</h3>
+
+            <h4>The Core Insight:</h4>
+            <p>The promotion conversation shouldn't be one giant, high-stakes conversation.</p>
+
+            <p><strong>We are NOT pursuing:</strong> Some salesman tactic where you play 3D chess with your manager to convince them to say "yes" in a single moment.</p>
+
+            <p><strong>We ARE pursuing:</strong> Slowly painting yourself as the obvious candidate. Gradually tipping the balance in your favor. Building so much evidence that people feel dumb for even questioning whether you deserve a promotion.</p>
+
+            <div class="callout philosophy">
+                <strong>The 600-Pound Gorilla Strategy:</strong> Build a body of work and evidence that becomes so overwhelming it's the 600-pound gorilla in the room. It can't be ignored. If it IS ignored, it's just ridiculous.
+            </div>
+        </div>
+
+        <div class="method-card">
+            <h3>The Promotion Binder</h3>
+            <p>A private resource YOU keep to build your case. Evidence of what you've done, impact you've had, value you've added, feedback received, metrics improved, problems solved.</p>
+
+            <h4>How to Use It:</h4>
+            <p><strong>Primary Use:</strong> Personal tracking. Know what you're doing and if you're on track.</p>
+
+            <div class="callout warning">
+                <strong>Generally: DON'T bring this to meetings.</strong> Bringing a binder of accomplishments early makes you look petty, like you're "counting points." You don't want to tally the score—you want to build a mountain of evidence that gets undeniable.
+            </div>
+
+            <p><strong>Exception:</strong> Last resort only—if your manager has strung you along twice already and still refuses to consider you.</p>
+        </div>
+
+        <div class="method-card">
+            <h3>The Compensation Negotiation at Promotion</h3>
+
+            <h4>The Empowerment Principle:</h4>
+            <p><strong>By getting the offer, you are empowered.</strong> They chose YOU. You are the candidate they want. By default, you have leverage. Don't sell yourself short.</p>
+
+            <h4>The Fear to Abandon:</h4>
+            <p>Never think that negotiating will make you look greedy or hurt you. The worst that can happen: They say no, and you take it or leave it.</p>
+
+            <h4>The Preparation:</h4>
+            <ol>
+                <li>Get data from other companies about what that role/level is worth</li>
+                <li>Ask colleagues if they're willing to share</li>
+                <li>Use open-source salary data (levels.fyi, Glassdoor, Blind, etc.)</li>
+                <li>Do your homework before the conversation</li>
+            </ol>
+
+            <div class="callout philosophy">
+                <strong>The Tactic:</strong> Go big first. Negotiate down. If you ask for less than you want, you leave money on the table.
+            </div>
+        </div>
+
+        <hr>
+
+        <h3>Phase 2 Summary: Methods Inventory</h3>
+        <table>
+            <tr>
+                <th>Method Name</th>
+                <th>Status</th>
+            </tr>
+            <tr>
+                <td>The Role Saturation Threshold™ (85% Rule)</td>
+                <td><span class="badge badge-complete">🟢 Complete</span></td>
+            </tr>
+            <tr>
+                <td>The Optimal Timing Strategy™</td>
+                <td><span class="badge badge-complete">🟢 Complete</span></td>
+            </tr>
+            <tr>
+                <td>The Evidence Arsenal™</td>
+                <td><span class="badge badge-complete">🟢 Complete</span></td>
+            </tr>
+            <tr>
+                <td>The Service-Based Script Library™</td>
+                <td><span class="badge badge-complete">🟢 Complete</span></td>
+            </tr>
+            <tr>
+                <td>The Objection Playbook™</td>
+                <td><span class="badge badge-complete">🟢 Complete</span></td>
+            </tr>
+            <tr>
+                <td>The Gap Analysis Contract™</td>
+                <td><span class="badge badge-complete">🟢 Complete</span></td>
+            </tr>
+            <tr>
+                <td>The Continuous Campaign™</td>
+                <td><span class="badge badge-complete">🟢 Complete</span></td>
+            </tr>
+            <tr>
+                <td>The Promotion Positioning Philosophy™</td>
+                <td><span class="badge badge-complete">🟢 Complete</span></td>
+            </tr>
+            <tr>
+                <td>The Promotion Binder™</td>
+                <td><span class="badge badge-complete">🟢 Complete</span></td>
+            </tr>
+            <tr>
+                <td>The Compensation Negotiation at Promotion™</td>
+                <td><span class="badge badge-complete">🟢 Complete</span></td>
+            </tr>
+        </table>
+
+        <!-- Phases 3-6 will be added in subsequent updates -->
+
+    </div>
+    <!-- ========================================== -->
+    <!-- PHASE 3: THE STRATEGIC EXPANSION -->
+    <!-- ========================================== -->
+    <section class="phase-section" id="phase-3">
+        <div class="phase-header">
+            <span class="phase-number">PHASE 3</span>
+            <h2 class="phase-title">THE STRATEGIC EXPANSION</h2>
+            <p class="phase-description">We teach clients to expand their impact beyond their job description while protecting their core performance.</p>
+        </div>
+
+        <!-- 3.1 The "Not My Job" Funeral -->
+        <div class="method-block" id="not-my-job-funeral">
+            <h3 class="method-title">3.1 The "Not My Job" Funeral™</h3>
+            
+            <h4>The Mindset Shift</h4>
+            <p><strong>The phrase "that's not my job" must die.</strong></p>
+            <p>High performers see extra work as opportunity, not burden. When nobody else is stepping up, that's your opening.</p>
+            
+            <h4>Why Extra Work = Promotion Fuel</h4>
+            <ul>
+                <li><strong>It shows initiative</strong> — You don't wait to be asked</li>
+                <li><strong>It builds trust</strong> — Management knows you're reliable beyond your role</li>
+                <li><strong>It expands your network</strong> — You meet new people and stakeholders</li>
+                <li><strong>It creates evidence</strong> — You have more impact to document for promotions</li>
+            </ul>
+            
+            <h4>The Frame</h4>
+            <p>When asked to do something extra, mentally frame it as: <em>"What a great opportunity to add value and be visible."</em></p>
+            
+            <div class="warning-box">
+                <strong>⚠️ CRITICAL CAVEAT:</strong> Always apply The Opportunity Filter™ and The Quality Firewall™ (next sections) before blindly saying yes to everything.
+            </div>
+        </div>
+
+        <!-- 3.2 The Opportunity Filter -->
+        <div class="method-block" id="opportunity-filter">
+            <h3 class="method-title">3.2 The Opportunity Filter™</h3>
+            
+            <h4>The Three Questions</h4>
+            <p>Before taking on extra work, run it through this filter:</p>
+            
+            <table class="styled-table">
+                <thead>
+                    <tr><th>Question</th><th>Why It Matters</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>1. Is it valuable?</strong></td><td>Does it add real value to the business?</td></tr>
+                    <tr><td><strong>2. Is it visible?</strong></td><td>Will the right people know you did it?</td></tr>
+                    <tr><td><strong>3. Is it achievable?</strong></td><td>Can you actually complete it successfully?</td></tr>
+                </tbody>
+            </table>
+            
+            <h4>The Filter in Action</h4>
+            <p>If the opportunity passes all three: <strong>GO FOR IT</strong></p>
+            <p>If it fails one or more:</p>
+            <ul>
+                <li>Fails <strong>visibility</strong>: Can you make it visible? (The Scope Beacon™)</li>
+                <li>Fails <strong>achievability</strong>: Can you scale it down or get support?</li>
+                <li>Fails <strong>value</strong>: Probably skip it</li>
+            </ul>
+            
+            <div class="key-insight">
+                <strong>💡 Key Insight:</strong> Not all extra work is created equal. Strategic expansion means choosing the RIGHT opportunities, not every opportunity.
+            </div>
+        </div>
+
+        <!-- 3.3 The Quality Firewall -->
+        <div class="method-block" id="quality-firewall">
+            <h3 class="method-title">3.3 The Quality Firewall™</h3>
+            
+            <h4>The Non-Negotiable</h4>
+            <p><strong>Extra work cannot harm your core job performance.</strong></p>
+            <p>Your main responsibilities must still be:</p>
+            <ul>
+                <li>On time</li>
+                <li>High quality</li>
+                <li>First priority</li>
+            </ul>
+            
+            <h4>Why This Matters</h4>
+            <p>If extra work hurts your core performance:</p>
+            <ul>
+                <li>You look irresponsible, not impressive</li>
+                <li>You've just failed at your primary job</li>
+                <li>Extra credit doesn't offset failing the test</li>
+            </ul>
+            
+            <h4>The Warning Signs</h4>
+            <table class="styled-table">
+                <thead>
+                    <tr><th>Red Flag</th><th>Response</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Core deadlines slipping</td><td>Pull back on extra work immediately</td></tr>
+                    <tr><td>Manager asking about priorities</td><td>Re-assess and realign</td></tr>
+                    <tr><td>Quality complaints on main work</td><td>Extra work is hurting you—stop</td></tr>
+                    <tr><td>Working unsustainable hours</td><td>You've overcommitted—scale back</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- 3.4 The Early Warning System -->
+        <div class="method-block" id="early-warning-system">
+            <h3 class="method-title">3.4 The Early Warning System™</h3>
+            
+            <h4>The Principle</h4>
+            <p><strong>Communicate risk early. Always.</strong></p>
+            
+            <h4>The Two Protocols</h4>
+            
+            <h5>The Bad News Early Protocol™</h5>
+            <p>The moment you see risk to a deadline or deliverable:</p>
+            <ol>
+                <li>Assess the situation</li>
+                <li>Communicate to stakeholders IMMEDIATELY</li>
+                <li>Don't wait hoping it will resolve itself</li>
+            </ol>
+            
+            <h5>Why Early Matters</h5>
+            <ul>
+                <li><strong>Early warning</strong> = problem can be addressed, prioritized, resolved</li>
+                <li><strong>Late warning</strong> = you just blew a deadline and blindsided everyone</li>
+                <li><strong>No warning</strong> = career damage</li>
+            </ul>
+            
+            <div class="callout-box">
+                <strong>The Rule:</strong> The instant you see smoke, call the fire department. Don't wait for flames.
+            </div>
+        </div>
+
+        <!-- 3.5 The Collaborative Problem-Solving Approach -->
+        <div class="method-block" id="collaborative-problem-solving">
+            <h3 class="method-title">3.5 The Collaborative Problem-Solving Approach™</h3>
+            
+            <h4>The Script</h4>
+            <p>When delivering bad news, always pair it with a solution attempt:</p>
+            <div class="script-example">
+                "Hey, I wanted to flag something. I'm seeing [risk/problem]. Here's what I'm thinking we could do about it: [potential solutions]. What do you think?"
+            </div>
+            
+            <h4>Why This Works</h4>
+            <ul>
+                <li>You're not just dumping problems on people</li>
+                <li>You've already thought about solutions</li>
+                <li>You're being proactive, not reactive</li>
+                <li>You're inviting collaboration, not just reporting failure</li>
+            </ul>
+            
+            <h4>The Silent Martyr Prevention</h4>
+            <p>Don't suffer in silence. If you're struggling, SAY SO. Ask for help. Escalate if needed.</p>
+            <p><strong>Silent martyrdom</strong> = you fail alone and no one knew you were struggling</p>
+            <p><strong>Proactive communication</strong> = you get help and succeed together</p>
+        </div>
+
+        <!-- 3.6 The Scope Beacon -->
+        <div class="method-block" id="scope-beacon">
+            <h3 class="method-title">3.6 The Scope Beacon™</h3>
+            
+            <h4>The Problem</h4>
+            <p>You're expanding your scope, taking on extra work, adding value beyond your role... <strong>but no one knows.</strong></p>
+            
+            <h4>The Solution</h4>
+            <p><strong>Shine a beacon on your expanded scope.</strong> Make the value visible without being braggy.</p>
+            
+            <h4>Example Situations</h4>
+            
+            <h5>The Firefighter:</h5>
+            <p>You noticed a problem and fixed it before it became a crisis.</p>
+            <div class="script-example">
+                "I noticed the database was lagging, so I jumped in and optimized the index to ensure the team hits the Friday deadline."
+            </div>
+            <p><strong>Signals:</strong> I saw a problem → I took ownership → I saved the team</p>
+            
+            <h5>The Tool Builder:</h5>
+            <ul>
+                <li>Tell your manager about it</li>
+                <li>Ask if you can share at the next employee meeting or lunch-and-learn</li>
+                <li>Demo it to the team</li>
+            </ul>
+            
+            <h4>Scope Beacon Channels</h4>
+            <table class="styled-table">
+                <thead>
+                    <tr><th>Channel</th><th>When to Use</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>1-on-1 with manager</strong></td><td>Always — they'll often tell others</td></tr>
+                    <tr><td><strong>Team meeting mention</strong></td><td>Quick updates, small wins</td></tr>
+                    <tr><td><strong>Demo to team</strong></td><td>Tools, technical solutions</td></tr>
+                    <tr><td><strong>Lunch-and-learn</strong></td><td>Knowledge sharing, training takeaways</td></tr>
+                    <tr><td><strong>Recognition email</strong></td><td>See The Recognition Boomerang™</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- 3.7 The Recognition Boomerang -->
+        <div class="method-block" id="recognition-boomerang">
+            <h3 class="method-title">3.7 The Recognition Boomerang™</h3>
+            
+            <h4>One of the most powerful visibility tactics.</h4>
+            
+            <h4>How It Works</h4>
+            <ol>
+                <li>Work on a project with others (even outside your core team)</li>
+                <li>When it's complete, send a recognition email to a large group</li>
+                <li>Thank and congratulate everyone else on the project for their accomplishment</li>
+                <li>CC your manager</li>
+            </ol>
+            
+            <h4>Why It Works</h4>
+            <ul>
+                <li>You're highlighting OTHERS for great work (generous, not self-promoting)</li>
+                <li>But by initiating the email, you reveal your own involvement</li>
+                <li>Your manager sees you're contributing beyond core scope</li>
+                <li>You look like a team player and leader</li>
+            </ul>
+            
+            <div class="key-insight">
+                <strong>💡 Reality:</strong> Some of the best recognition you'll ever get comes on the back of recognizing others.
+            </div>
+        </div>
+
+        <!-- 3.8 The Cross-Functional Expansion Protocol -->
+        <div class="method-block" id="cross-functional-expansion">
+            <h3 class="method-title">3.8 The Cross-Functional Expansion Protocol™</h3>
+            
+            <h4>The Opportunity</h4>
+            <p>Cross-functional projects (tiger teams, task forces, initiatives outside your team) provide visibility across the organization.</p>
+            
+            <h4>Apply All the Same Rules</h4>
+            <ul>
+                <li><strong>Opportunity Filter</strong> — Is this valuable, visible, achievable?</li>
+                <li><strong>Quality Firewall</strong> — Don't let it hurt your core performance</li>
+                <li><strong>Scope Beacon</strong> — Make sure your manager knows and give updates</li>
+                <li><strong>Silent Martyr Prevention</strong> — Don't do tons of work invisibly for other teams</li>
+            </ul>
+            
+            <div class="warning-box">
+                <strong>⚠️ The Finish Factor:</strong> When you volunteer to help outside teams, you MUST do a good job and follow through to completion. The risk is your external-facing reputation becomes "he starts but doesn't finish." This is career poison.
+            </div>
+        </div>
+
+        <!-- 3.9 The Support Role Entry -->
+        <div class="method-block" id="support-role-entry">
+            <h3 class="method-title">3.9 The Support Role Entry™</h3>
+            
+            <h4>The Problem</h4>
+            <p>When you step into someone else's project or area, you risk:</p>
+            <ul>
+                <li>Stepping on toes</li>
+                <li>Being seen as a glory-seeker</li>
+                <li>Making people defensive</li>
+            </ul>
+            
+            <h4>The Solution: Always Enter as Support</h4>
+            <p><strong>Scripts for entering:</strong></p>
+            <ul>
+                <li>"Is there any way I can help support?"</li>
+                <li>"Can I add any value here?"</li>
+                <li>"Anything I can help take some workload off of?"</li>
+            </ul>
+            
+            <h4>The Progression</h4>
+            <ul>
+                <li><strong>Early:</strong> "I'm pretty new to this project. I'd have to defer to you guys who've been on this much longer."</li>
+                <li><strong>Later:</strong> Others say "No, it's okay, we really want your input."</li>
+                <li><strong>Finally:</strong> You can weigh in with a still-humble attitude, adding value without stepping on toes.</li>
+            </ul>
+        </div>
+
+        <!-- 3.10 The Strategic No -->
+        <div class="method-block" id="strategic-no">
+            <h3 class="method-title">3.10 The Strategic No™</h3>
+            
+            <h4>The Problem</h4>
+            <p>You can't say yes to everything. But saying "no" wrong makes you look like you're not a team player.</p>
+            
+            <h4>The Script</h4>
+            <div class="script-example">
+                "I would absolutely love to get involved in that and help out—I think it has a ton of value. But I just have too much on my plate right now."
+            </div>
+            
+            <h4>Follow-Up Options</h4>
+            <ul>
+                <li><strong>Offer a future timeline:</strong> "If I had some capacity after [X time], would I still be able to join?"</li>
+                <li><strong>Test the priority:</strong> "Do you think this is more value-added than what I currently have?"</li>
+                <li><strong>Suggest a delay:</strong> "Could we delay this until I'm free so I can work on it properly?"</li>
+            </ul>
+            
+            <div class="key-insight">
+                <strong>💡 The Flush-Out:</strong> If they say "yeah, it can wait 3 months," then it's not really high priority. You've dodged low-value work gracefully.
+            </div>
+        </div>
+
+        <!-- Phase 3 Summary -->
+        <div class="phase-summary">
+            <h3>Phase 3 Methods Inventory</h3>
+            <table class="styled-table">
+                <thead>
+                    <tr><th>Method Name</th><th>Status</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>The "Not My Job" Funeral™</td><td>🟢 Complete</td></tr>
+                    <tr><td>The Opportunity Filter™</td><td>🟢 Complete</td></tr>
+                    <tr><td>The Quality Firewall™</td><td>🟢 Complete</td></tr>
+                    <tr><td>The Early Warning System™</td><td>🟢 Complete</td></tr>
+                    <tr><td>The Bad News Early Protocol™</td><td>🟢 Complete</td></tr>
+                    <tr><td>The Collaborative Problem-Solving Approach™</td><td>🟢 Complete</td></tr>
+                    <tr><td>The Scope Beacon™</td><td>🟢 Complete</td></tr>
+                    <tr><td>The Recognition Boomerang™</td><td>🟢 Complete</td></tr>
+                    <tr><td>The Cross-Functional Expansion Protocol™</td><td>🟢 Complete</td></tr>
+                    <tr><td>The Support Role Entry™</td><td>🟢 Complete</td></tr>
+                    <tr><td>The Strategic No™</td><td>🟢 Complete</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- PHASE 4: THE REPUTATION WILDFIRE -->
+    <!-- ========================================== -->
+    <section class="phase-section" id="phase-4">
+        <div class="phase-header">
+            <span class="phase-number">PHASE 4</span>
+            <h2 class="phase-title">THE REPUTATION WILDFIRE</h2>
+            <p class="phase-description">We teach clients how to build a reputation that enters the room before they do.</p>
+        </div>
+
+        <!-- 4.1 The Gravity Audit -->
+        <div class="method-block" id="gravity-audit">
+            <h3 class="method-title">4.1 The Gravity Audit™</h3>
+            
+            <h4>The Problem</h4>
+            <p>Not all senior leaders are created equal. Some are loud but lack real influence. Others quietly set the direction of the entire organization.</p>
+            <p><strong>The Mistake:</strong> Sucking up to the wrong people—the loudest manager instead of the most respected one.</p>
+            
+            <h4>How to Identify Gravity Leaders</h4>
+            <table class="styled-table">
+                <thead>
+                    <tr><th>Question</th><th>What It Reveals</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Who sets the vision?</td><td>Whose speeches translate into actual goals?</td></tr>
+                    <tr><td>Who has cross-functional respect?</td><td>Who do leaders in OTHER departments look up to?</td></tr>
+                    <tr><td>Who has a track record?</td><td>Who has led major initiatives that succeeded?</td></tr>
+                    <tr><td>Who has organic admiration?</td><td>Who do people speak highly of at the lunch table, 2 levels down?</td></tr>
+                    <tr><td>Who inspires you?</td><td>Who are the people at high levels you feel happy are there?</td></tr>
+                </tbody>
+            </table>
+            
+            <div class="key-insight">
+                <strong>💡 Key Insight:</strong> These are the people to build relationships with. These are the wagons to hitch yours to.
+            </div>
+        </div>
+
+        <!-- 4.2 The Cross-Functional Bridge Builder -->
+        <div class="method-block" id="cross-functional-bridge-builder">
+            <h3 class="method-title">4.2 The Cross-Functional Bridge Builder™</h3>
+            
+            <h4>The Opportunity</h4>
+            <p>Engineering work naturally involves cross-functional teams: design, software, testing, product owners, program managers, factory, etc. <strong>This is a golden opportunity.</strong></p>
+            
+            <h4>The Mistake</h4>
+            <p>Being the person who only speaks up when your little part comes up, then zones out for the rest.</p>
+            
+            <h4>The Progression: Peer to Manager</h4>
+            <ol>
+                <li><strong>Build peer relationships</strong> — Start with people at your level in other functions</li>
+                <li><strong>Learn about their managers</strong> — Ask your cross-functional peers about their managers</li>
+                <li><strong>Get your foot in the door</strong> — Once you have strong relationships with 2+ people who report to a target manager, request a meeting</li>
+                <li><strong>Continue climbing</strong> — Keep looking for loose strings you can grab onto and climb</li>
+            </ol>
+            
+            <div class="callout-box">
+                <strong>The Key Insight:</strong> You're building a network that extends beyond your direct org. Every cross-functional relationship is a potential bridge to new visibility and new advocates.
+            </div>
+        </div>
+
+        <!-- 4.3 The Business Value Principle -->
+        <div class="method-block" id="business-value-principle">
+            <h3 class="method-title">4.3 The Business Value Principle™</h3>
+            
+            <h4>The Balance</h4>
+            <p>Personal interaction is good, necessary, and key. But if it's ALL personal, you're just an acquaintance, not a professional asset.</p>
+            
+            <h4>The Rule</h4>
+            <p>You need to be seen as someone who <strong>brings value to the business.</strong></p>
+            
+            <h4>Best Activities for Cross-Functional Visibility</h4>
+            <ul>
+                <li>Cross-functional project teams</li>
+                <li>Company-wide initiatives</li>
+                <li>Process improvement efforts that span orgs</li>
+                <li>Task forces and tiger teams</li>
+                <li>Presenting at cross-org meetings</li>
+            </ul>
+            
+            <p><strong>Personal relationship builds ON TOP of business value, not instead of it.</strong></p>
+        </div>
+
+        <!-- 4.4 The Reference Nudge -->
+        <div class="method-block" id="reference-nudge">
+            <h3 class="method-title">4.4 The Reference Nudge™ (Internal & External)</h3>
+            
+            <h4>The Problem</h4>
+            <p>Asking a leader to "go put in a good word for me" is weak, desperate, and puts them in an awkward position.</p>
+            
+            <h4>The Solution: Let Them Be Discovered</h4>
+            <p>Instead of asking people to advocate for you directly, <strong>make them available</strong> for the hiring/promotion team to discover.</p>
+            
+            <h4>The Script (In Thank-You Email)</h4>
+            <div class="script-example">
+                "Thank you again for your time discussing the [role]. If it would help to get a clearer picture of my past performance and working style, here are some people I've worked with who could share their perspective:
+                <br><br>
+                • [Name, Title, Relationship context]<br>
+                • [Name, Title, Relationship context]<br>
+                • [Name, Title, Relationship context]"
+            </div>
+            
+            <h4>Prerequisites</h4>
+            <ol>
+                <li><strong>Clear it with them first</strong> — Make sure each person is okay being listed</li>
+                <li><strong>They actually worked with you</strong> — Professional/business context, not just personal friendship</li>
+                <li><strong>They would speak highly of you</strong> — Strong relationships only</li>
+            </ol>
+        </div>
+
+        <!-- 4.5 The Wildfire Detection -->
+        <div class="method-block" id="wildfire-detection">
+            <h3 class="method-title">4.5 The Wildfire Detection™</h3>
+            
+            <h4>How Do You Know Your Reputation Precedes You?</h4>
+            
+            <table class="styled-table">
+                <thead>
+                    <tr><th>Signal</th><th>What It Means</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>High yearly ratings that persist</strong></td><td>Managers up the chain have to approve these; you become known as a high performer</td></tr>
+                    <tr><td><strong>Direct feedback</strong></td><td>People start telling you directly that you have a good reputation</td></tr>
+                    <tr><td><strong>Retention conversations</strong></td><td>Your manager asks about your goals, what would keep you engaged—they're worried about losing you</td></tr>
+                    <tr><td><strong>The "don't leave" vibe</strong></td><td>If you sense leadership doesn't want you to leave, you're a high performer</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- 4.6 The Wildfire Maintenance Protocol -->
+        <div class="method-block" id="wildfire-maintenance">
+            <h3 class="method-title">4.6 The Wildfire Maintenance Protocol™</h3>
+            
+            <h4>How to Keep the Fire Burning</h4>
+            <ol>
+                <li><strong>Keep delivery high</strong> — Continue doing excellent work</li>
+                <li><strong>Spread credit generously</strong> — Share recognition with others</li>
+                <li><strong>Stay humble</strong> — Know you always have more to learn</li>
+                <li><strong>Keep a growth mindset</strong> — Always look for ways to improve</li>
+                <li><strong>Give more than you get</strong> — Be known as someone who contributes</li>
+            </ol>
+            
+            <h4>Wildfire Killers</h4>
+            <ul>
+                <li>🔥❌ <strong>Complacency</strong> — Coasting on past success</li>
+                <li>🔥❌ <strong>Arrogance</strong> — Acting like you've "made it"</li>
+                <li>🔥❌ <strong>Taking without giving</strong> — Only extracting value from relationships</li>
+                <li>🔥❌ <strong>Resting on reputation</strong> — Assuming the wildfire sustains itself</li>
+                <li>🔥❌ <strong>Quality drops</strong> — Letting your work product decline</li>
+            </ul>
+        </div>
+
+        <!-- 4.7 The Reputation Recovery Protocol -->
+        <div class="method-block" id="reputation-recovery">
+            <h3 class="method-title">4.7 The Reputation Recovery Protocol™</h3>
+            
+            <h4>The Hard Truth</h4>
+            <p><strong>It takes far longer to restore a reputation than to destroy it.</strong></p>
+            
+            <h4>Recovery Paths by Severity</h4>
+            <table class="styled-table">
+                <thead>
+                    <tr><th>Severity</th><th>Recovery Path</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>Minor Slip-Up</strong></td><td>Dedicate yourself to the principles in this methodology. Consistent excellent performance over time can rebuild trust.</td></tr>
+                    <tr><td><strong>Medium Slip-Up</strong></td><td>Consider a new department or division within the company. A fresh start in a new area can be a reset.</td></tr>
+                    <tr><td><strong>Major Slip-Up</strong></td><td>If influential leaders and gatekeepers were affected, seriously assess whether moving to a new company is the right path.</td></tr>
+                </tbody>
+            </table>
+            
+            <div class="warning-box">
+                <strong>⚠️ The Key Factor:</strong> Who was affected matters more than what happened. Damaged reputation with Gravity Leaders and gatekeepers = major issue requiring serious reassessment.
+            </div>
+        </div>
+
+        <!-- 4.8 The External Reputation Builder -->
+        <div class="method-block" id="external-reputation-builder">
+            <h3 class="method-title">4.8 The External Reputation Builder™</h3>
+            
+            <h4>Why External Reputation Matters</h4>
+            <p>Your internal reputation can translate to external opportunities. Building visibility outside your company opens doors you can't see yet.</p>
+            
+            <h4>Tactics for External Visibility</h4>
+            <ol>
+                <li><strong>Present at industry events</strong> — Tech expos, conferences, seminars</li>
+                <li><strong>Actually network at events</strong> — Don't just stick with company colleagues</li>
+                <li><strong>Be active on professional platforms</strong> — LinkedIn, share insights, engage with industry content</li>
+                <li><strong>Engage with visiting speakers/trainers</strong> — Make sure they know you</li>
+                <li><strong>Leverage joint projects</strong> — Build relationships with other companies you collaborate with</li>
+                <li><strong>Build vendor relationships</strong> — Get to know your 3rd party vendors as people</li>
+                <li><strong>Participate in recruiting</strong> — You'll meet recruiters from other companies</li>
+            </ol>
+            
+            <div class="key-insight">
+                <strong>💡 The Principle:</strong> Find any way to interact professionally with people outside your company. Build business relationships first, then layer personal relationships on top.
+            </div>
+        </div>
+
+        <!-- Phase 4 Summary -->
+        <div class="phase-summary">
+            <h3>Phase 4 Methods Inventory</h3>
+            <table class="styled-table">
+                <thead>
+                    <tr><th>Method Name</th><th>Status</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>The Gravity Audit™</td><td>🟢 Complete</td></tr>
+                    <tr><td>The Cross-Functional Bridge Builder™</td><td>🟢 Complete</td></tr>
+                    <tr><td>The Business Value Principle™</td><td>🟢 Complete</td></tr>
+                    <tr><td>The Reference Nudge™</td><td>🟢 Complete</td></tr>
+                    <tr><td>The Wildfire Detection™</td><td>🟢 Complete</td></tr>
+                    <tr><td>The Wildfire Maintenance Protocol™</td><td>🟢 Complete</td></tr>
+                    <tr><td>The Reputation Recovery Protocol™</td><td>🟢 Complete</td></tr>
+                    <tr><td>The External Reputation Builder™</td><td>🟢 Complete</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- PHASE 5: THE SOFT SKILLS ENGINE -->
+    <!-- ========================================== -->
+    <section class="phase-section" id="phase-5">
+        <div class="phase-header">
+            <span class="phase-number">PHASE 5</span>
+            <h2 class="phase-title">THE SOFT SKILLS ENGINE</h2>
+            <p class="phase-description">We teach clients that technical skills get you in the door, but soft skills determine how high you climb.</p>
+            <p><strong>The Core Truth:</strong> Most engineers hit a ceiling not because they lack technical ability, but because they can't navigate the human dynamics of organizations. This is THE bottleneck for promotion.</p>
+        </div>
+
+        <!-- 5.1 The Audience Awareness Principle -->
+        <div class="method-block" id="audience-awareness">
+            <h3 class="method-title">5.1 The Audience Awareness Principle™</h3>
+            
+            <h4>The Master Key</h4>
+            <p><strong>Everything in soft skills comes back to one question: Who is your audience?</strong></p>
+            
+            <p>Before you speak, write, or act, ask:</p>
+            <ol>
+                <li>Who am I communicating with?</li>
+                <li>What do they care about?</li>
+                <li>What do they need to know?</li>
+                <li>What's the best way to deliver this to THEM?</li>
+            </ol>
+            
+            <h4>The Audience Calibration</h4>
+            <table class="styled-table">
+                <thead>
+                    <tr><th>Audience</th><th>What They Care About</th><th>Communication Style</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>Senior Leadership</strong></td><td>Business impact, decisions needed, risks</td><td>Ultra-concise, bottom-line up front</td></tr>
+                    <tr><td><strong>Your Manager</strong></td><td>Progress, blockers, what they need to know</td><td>Regular, no surprises, clear asks</td></tr>
+                    <tr><td><strong>Peers</strong></td><td>Collaboration, shared goals, mutual help</td><td>Collaborative, detailed when needed</td></tr>
+                    <tr><td><strong>New Team Members</strong></td><td>Learning, context, not being overwhelmed</td><td>Patient, foundational, check understanding</td></tr>
+                    <tr><td><strong>Cross-Functional</strong></td><td>Their priorities, how you impact them</td><td>Translate to their language</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- 5.2 The Written Communication Protocol -->
+        <div class="method-block" id="written-communication">
+            <h3 class="method-title">5.2 The Written Communication Protocol™</h3>
+            
+            <h4>The Email Hierarchy Rule</h4>
+            <p><strong>The higher up the ladder, the more your email must be:</strong> Serious, Concise, Value-dense per square inch</p>
+            
+            <h4>The TL;DR Structure™</h4>
+            <p><strong>Top of Email:</strong> The main gravy—the key points, the ask, the bottom line</p>
+            <p><strong>Below:</strong> "See more detail below" → then include the supporting detail</p>
+            
+            <h4>The CC Discipline</h4>
+            <p>Before adding someone to CC, ask: Why am I including this person? What do I hope they get from this?</p>
+            <div class="warning-box">
+                <strong>⚠️ The Risk:</strong> If you become known as someone who CCs everyone on everything, you become <strong>noise</strong>. People start ignoring your emails.
+            </div>
+        </div>
+
+        <!-- 5.3 The Verbal Communication Protocol -->
+        <div class="method-block" id="verbal-communication">
+            <h3 class="method-title">5.3 The Verbal Communication Protocol™</h3>
+            
+            <h4>Presenting to Leadership</h4>
+            <ul>
+                <li>Practice. Take it seriously.</li>
+                <li>Do a dry run with a small audience if possible.</li>
+                <li>Know your nervous habits and plan around them.</li>
+                <li><strong>Be concise. Cut unnecessary detail.</strong></li>
+            </ul>
+            
+            <h4>The Clear Ask Principle™</h4>
+            <p><strong>One of the worst mistakes when presenting to senior leaders:</strong></p>
+            <p>You present a problem. Maybe even a solution. The senior leader asks: <em>"So what are you asking for? What do you want us to do?"</em> ...blank stare.</p>
+            
+            <div class="callout-box">
+                <strong>Before presenting to leadership, know:</strong>
+                <ul>
+                    <li>What are you hoping they will do in an ideal world?</li>
+                    <li>What decision do you need from them?</li>
+                    <li>What resources, support, or action are you requesting?</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 5.4 The Technical Translation Engine -->
+        <div class="method-block" id="technical-translation">
+            <h3 class="method-title">5.4 The Technical Translation Engine™</h3>
+            
+            <h4>The Core Skill</h4>
+            <p>Translating technical complexity into language your audience understands.</p>
+            
+            <h4>Translation Examples</h4>
+            <table class="styled-table">
+                <thead>
+                    <tr><th>Technical Issue</th><th>Bad Translation</th><th>Good Translation</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Database performance regression</td><td>"The query optimization is causing N+1 problems in the ORM layer"</td><td>"Software delivery to the factory will be delayed by 2 weeks"</td></tr>
+                    <tr><td>Technical debt slowing development</td><td>"We have significant coupling in our microservices architecture"</td><td>"New features are taking 3x longer than they should. We need to invest in cleanup."</td></tr>
+                    <tr><td>Testing bottleneck</td><td>"Our CI/CD pipeline has insufficient parallel test execution"</td><td>"Can we get 3 more test engineers to help? We're behind on testing."</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- 5.5 The Influence Without Authority Framework -->
+        <div class="method-block" id="influence-without-authority">
+            <h3 class="method-title">5.5 The Influence Without Authority Framework™</h3>
+            
+            <h4>The Core Challenge</h4>
+            <p>Getting people who don't report to you to give time and effort to help you achieve your goals—<strong>without seeming like a pushy asshole.</strong></p>
+            
+            <h4>The Buy-In Builder™</h4>
+            <ol>
+                <li><strong>Show the value</strong> — "Wouldn't it be awesome if we could automate these tests?"</li>
+                <li><strong>Offer value in return</strong> — "We could have someone on my team help you with that."</li>
+                <li><strong>Make them part of the vision</strong> — "If we pull this off together, we'll both look great."</li>
+            </ol>
+            
+            <h4>The Social Credit Account™</h4>
+            <p>Influence is like a bank account. You deposit social credit, and later you can withdraw it.</p>
+            <ul>
+                <li><strong>Deposits:</strong> Do things for others, help when you don't have to, share credit</li>
+                <li><strong>Withdrawals:</strong> Ask for help on your initiative, request resources</li>
+            </ul>
+            
+            <h4>The Honey Principle™</h4>
+            <p><strong>When you have no authority, you must use honey to attract people.</strong> If you're pushy, bossy, or a jerk about it—they won't help. You have no leverage.</p>
+        </div>
+
+        <!-- 5.6 The Executive Presence Blueprint -->
+        <div class="method-block" id="executive-presence">
+            <h3 class="method-title">5.6 The Executive Presence Blueprint™</h3>
+            
+            <h4>What Is Executive Presence?</h4>
+            <p>It's not one thing—it's the overall impression you create: How you show up in meetings, how you carry yourself under pressure, whether people take you seriously.</p>
+            
+            <h4>The Say/Do Ratio™</h4>
+            <ul>
+                <li>Don't commit to more than you can do</li>
+                <li>Do what you said you would do</li>
+                <li>Get things done well and fast</li>
+                <li>Move on to the next thing</li>
+            </ul>
+            
+            <h4>Presence Killers</h4>
+            <ul>
+                <li>🔴 <strong>Too much joking</strong> — Makes you seem unserious</li>
+                <li>🔴 <strong>Being the naysayer</strong> — Always criticizing company direction</li>
+                <li>🔴 <strong>Complaining in group settings</strong> — Airing grievances publicly</li>
+                <li>🔴 <strong>Criticizing leadership publicly</strong> — Undermines your image</li>
+            </ul>
+            
+            <h4>The Blame/Credit Distribution</h4>
+            <p><strong>A good leader:</strong> Takes all the blame when things go wrong. Gives all the credit when things go right.</p>
+        </div>
+
+        <!-- 5.7 The Managing Up Masterclass -->
+        <div class="method-block" id="managing-up">
+            <h3 class="method-title">5.7 The Managing Up Masterclass™</h3>
+            
+            <h4>The Core Principle</h4>
+            <p><strong>Make your manager look good to THEIR manager, and they will be happy with you.</strong></p>
+            
+            <h4>The No Surprises Policy™</h4>
+            <p>Communicate bad news clearly and fast. As soon as you see risk, communicate it. Don't wait until things blow up.</p>
+            
+            <h4>The Headache Fixer Strategy™</h4>
+            <p>One of the most powerful managing-up tactics:</p>
+            <p>Find out what your manager's biggest headaches are. Then fix them.</p>
+            <ul>
+                <li>Listen in 1-on-1s for frustrations</li>
+                <li>Build a script that automates something they do manually</li>
+                <li>Create a tool that solves their problem</li>
+            </ul>
+            <p><strong>This is HUGE.</strong> You become invaluable.</p>
+        </div>
+
+        <!-- 5.8 The Difficult Conversations Framework -->
+        <div class="method-block" id="difficult-conversations">
+            <h3 class="method-title">5.8 The Difficult Conversations Framework™</h3>
+            
+            <h4>Opening the Feedback Channel</h4>
+            <p><strong>The Preemptive Declaration:</strong></p>
+            <div class="script-example">
+                "If I find out 6 months from now that you had feedback you could have given me today—something that could have helped me improve—I'll be more upset that you didn't share it than I would ever be about hearing it now."
+            </div>
+            
+            <h4>Receiving Feedback You Disagree With</h4>
+            <ol>
+                <li><strong>Wait to respond</strong> — Don't react immediately</li>
+                <li><strong>Internalize it</strong> — Sit with it. Play devil's advocate.</li>
+                <li><strong>Assume they're right first</strong> — Then look for evidence it isn't</li>
+                <li><strong>Look for partial truth</strong> — Even "wrong" feedback might illuminate something</li>
+            </ol>
+        </div>
+
+        <!-- 5.9 The Emotional Intelligence Upgrade -->
+        <div class="method-block" id="emotional-intelligence">
+            <h3 class="method-title">5.9 The Emotional Intelligence Upgrade™</h3>
+            
+            <h4>The Importance</h4>
+            <p>Emotional intelligence is critical for promotion. The higher you go, the more you're managing people and relationships, not just technical problems.</p>
+            
+            <h4>The Empathy Factor</h4>
+            <p><strong>Having empathy for managers is huge.</strong></p>
+            <ul>
+                <li>Managers have huge pressure on them</li>
+                <li>They have deadlines they need to meet</li>
+                <li>They're accountable to higher-up managers</li>
+                <li>They're often stressed and stretched thin</li>
+            </ul>
+            
+            <div class="key-insight">
+                <strong>💡 Result:</strong> When you show that you appreciate the pressure they're under and want to help them succeed, you start to get into their circle. They trust you more.
+            </div>
+        </div>
+
+        <!-- Phase 5 Summary -->
+        <div class="phase-summary">
+            <h3>Phase 5 Methods Inventory</h3>
+            <table class="styled-table">
+                <thead>
+                    <tr><th>Method Name</th><th>Status</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>The Audience Awareness Principle™</td><td>🟢 Complete</td></tr>
+                    <tr><td>The Written Communication Protocol™</td><td>🟢 Complete</td></tr>
+                    <tr><td>The TL;DR Structure™</td><td>🟢 Complete</td></tr>
+                    <tr><td>The Verbal Communication Protocol™</td><td>🟢 Complete</td></tr>
+                    <tr><td>The Clear Ask Principle™</td><td>🟢 Complete</td></tr>
+                    <tr><td>The Technical Translation Engine™</td><td>🟢 Complete</td></tr>
+                    <tr><td>The Influence Without Authority Framework™</td><td>🟢 Complete</td></tr>
+                    <tr><td>The Buy-In Builder™</td><td>🟢 Complete</td></tr>
+                    <tr><td>The Social Credit Account™</td><td>🟢 Complete</td></tr>
+                    <tr><td>The Honey Principle™</td><td>🟢 Complete</td></tr>
+                    <tr><td>The Executive Presence Blueprint™</td><td>🟢 Complete</td></tr>
+                    <tr><td>The Say/Do Ratio™</td><td>🟢 Complete</td></tr>
+                    <tr><td>The Managing Up Masterclass™</td><td>🟢 Complete</td></tr>
+                    <tr><td>The No Surprises Policy™</td><td>🟢 Complete</td></tr>
+                    <tr><td>The Headache Fixer Strategy™</td><td>🟢 Complete</td></tr>
+                    <tr><td>The Difficult Conversations Framework™</td><td>🟢 Complete</td></tr>
+                    <tr><td>The Emotional Intelligence Upgrade™</td><td>🟢 Complete</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- PHASE 6: THE MINDSET FORGE -->
+    <!-- ========================================== -->
+    <section class="phase-section" id="phase-6">
+        <div class="phase-header">
+            <span class="phase-number">PHASE 6</span>
+            <h2 class="phase-title">THE MINDSET FORGE</h2>
+            <p class="phase-description">We teach clients that tactics without mindset are like building on sand. The right mental foundation is what makes everything else work.</p>
+            <p><strong>The Core Truth:</strong> Most engineers who get stuck aren't missing skills—they're trapped by limiting beliefs. This phase is about burning away what holds you back and installing what propels you forward.</p>
+        </div>
+
+        <!-- PART A: MINDSETS TO LOSE -->
+        <div class="part-header">
+            <h3>PART A: MINDSETS TO LOSE</h3>
+            <p>These are the mental models that silently sabotage careers. They feel comfortable, even righteous. But they're anchors.</p>
+        </div>
+
+        <!-- 6.1 The "Hard Work = Reward" Fallacy -->
+        <div class="method-block" id="hard-work-fallacy">
+            <h3 class="method-title">6.1 The "Hard Work = Reward" Fallacy™</h3>
+            
+            <h4>The Belief</h4>
+            <p>"If I just put my head down, work hard, and deliver great results, I'll get promoted."</p>
+            
+            <h4>The Reality</h4>
+            <p>You work hard but don't seek visibility. You don't seem to care about advancement. Management assumes you're happy where you are. Over time, you get labeled "the X guy who loves that work."</p>
+            
+            <h4>The Math That Should Scare You</h4>
+            <ul>
+                <li><strong>Promotion every 8 years:</strong> Maybe 4-5 promotions total over a career</li>
+                <li><strong>Promotion every 2-3 years:</strong> 10-15+ promotions or level jumps</li>
+            </ul>
+            <p>The difference in compensation, influence, and impact over a career is <strong>massive</strong>.</p>
+            
+            <div class="key-insight">
+                <strong>💡 The New Belief:</strong> Hard work is the prerequisite, not the differentiator. Visibility and intentionality are what accelerate the timeline.
+            </div>
+        </div>
+
+        <!-- 6.2 The "I Shouldn't Have to Self-Promote" Delusion -->
+        <div class="method-block" id="self-promote-delusion">
+            <h3 class="method-title">6.2 The "I Shouldn't Have to Self-Promote" Delusion™</h3>
+            
+            <h4>The Belief</h4>
+            <p>"My work should speak for itself. Self-promotion is sleazy."</p>
+            
+            <h4>The Reframe</h4>
+            <p>Ask yourself: <strong>Who cares about your career advancement more than you do?</strong></p>
+            <p>Maybe your grandma. But not anyone at work. This isn't evil or sleazy—it's human nature.</p>
+            
+            <h4>The Virtuous Cycle</h4>
+            <p>More visibility → More recognition → Promotion → More influence → More impact → More value to the company → Higher compensation</p>
+            <p><strong>That's not sleazy. That's fair.</strong></p>
+            
+            <h4>The Rules</h4>
+            <ul>
+                <li>✅ Be your own biggest advocate</li>
+                <li>✅ Make people aware of your genuine value</li>
+                <li>❌ Never misrepresent what you accomplished</li>
+                <li>❌ Never lie or stretch the truth</li>
+            </ul>
+        </div>
+
+        <!-- 6.3-6.8 abbreviated for space -->
+        <div class="method-block" id="politics-dirty">
+            <h3 class="method-title">6.3 The "Politics is Dirty" Misconception™</h3>
+            <p><strong>The Belief:</strong> "I don't want to play politics. Politics is manipulative and dirty."</p>
+            <p><strong>The Reality:</strong> Politics is dirty <em>if you play dirty</em>. Politics done ethically is simply: getting visibility on your value, building relationships that matter, and positioning yourself for more influence.</p>
+        </div>
+
+        <div class="method-block" id="manager-should-notice">
+            <h3 class="method-title">6.4 The "My Manager Should Notice" Fantasy™</h3>
+            <p><strong>The Math:</strong> Your manager gives maybe 20% of their time to managing people. You're 1 of 15-20 reports. You get about 1% of their attention. It's mathematically impossible for them to fully appreciate everything you're doing.</p>
+            <p><strong>The Takeaway:</strong> YOU need to tell them. And their manager. And other managers.</p>
+        </div>
+
+        <div class="method-block" id="title-years">
+            <h3 class="method-title">6.5 The "Title/Years = Promotion" Antiquity™</h3>
+            <p><strong>The Belief:</strong> "I've been here 5 years. I deserve a promotion."</p>
+            <p><strong>The Key:</strong> Proving you have the value and skills to get to the next level—through evidence, track record, and demonstrated capability. Not by counting calendar days.</p>
+        </div>
+
+        <div class="method-block" id="just-an-ic">
+            <h3 class="method-title">6.6 The "I'm Just an IC" Limitation™</h3>
+            <p><strong>The Paradox:</strong> The BEST way to prove you're ready for a promotion is to do the work at the next level BEFORE you have the title.</p>
+            <p><strong>The Rule:</strong> Never limit yourself with "I'm just an X." You've given up before starting.</p>
+        </div>
+
+        <div class="method-block" id="companies-evil">
+            <h3 class="method-title">6.7 The "Companies Are Evil" Cynicism™</h3>
+            <p><strong>The Damage:</strong> If you let this mentality seep in, you will never climb. You won't give 100% to a company you think is just a shill.</p>
+            <p><strong>The Reframe:</strong> Companies should be moral, ethical, and fair. But a company's goal is to maximize value for shareholders. That's not evil—it's the point of a company.</p>
+        </div>
+
+        <div class="method-block" id="victim-mentality">
+            <h3 class="method-title">6.8 The Victim Mentality Trap™</h3>
+            <p><strong>The Guarantee:</strong> When you give up and play the victim, you guarantee you won't get the promotion.</p>
+            <p><strong>The Fighter's Response:</strong> Every failed attempt is fuel for the next attempt. Work harder. Prepare more. Make it undeniable that you deserve the promotion.</p>
+            <p><strong>Always keep fighting.</strong></p>
+        </div>
+
+        <!-- PART B: MINDSETS TO GAIN -->
+        <div class="part-header">
+            <h3>PART B: MINDSETS TO GAIN</h3>
+            <p>These are the mental models that accelerate careers. They may feel uncomfortable at first. But they're rocket fuel.</p>
+        </div>
+
+        <div class="method-block" id="ownership-mentality">
+            <h3 class="method-title">6.9 The Ownership Mentality™</h3>
+            <p><strong>The Principle:</strong> Take on as much responsibility and ownership as your manager will allow. All you have to do is ask.</p>
+            <ul>
+                <li>"Can I lead our standup?"</li>
+                <li>"Can I run our team sync meeting?"</li>
+                <li>"Is there something I can take off your plate?"</li>
+                <li>"Can I own training and onboarding new team members?"</li>
+            </ul>
+        </div>
+
+        <div class="method-block" id="value-first">
+            <h3 class="method-title">6.10 The Value-First Mentality™</h3>
+            <p><strong>The Principle:</strong> Always add value first. Before asking for anything in return.</p>
+            <p><strong>The Paradox:</strong> If you add value consistently, the return comes by itself—even without asking.</p>
+        </div>
+
+        <div class="method-block" id="long-game">
+            <h3 class="method-title">6.11 The Long-Game Mentality™</h3>
+            <p><strong>The Vision:</strong> You need a dream. A vision. What you want to accomplish in 5 years. 10 years. Keep that in view.</p>
+            <p><strong>The Bank Account:</strong> Every investment you make in yourself and your career goes into a bank account. It's in the bank. It's only a matter of time until you can withdraw it.</p>
+        </div>
+
+        <div class="method-block" id="relationship-investment">
+            <h3 class="method-title">6.12 The Relationship Investment Mentality™</h3>
+            <p><strong>The Seed Metaphor:</strong> View relationships as planting seeds. Some produce fruit in 2 months. Some in 2 years. Some in 20 years.</p>
+            <p><strong>The Rule:</strong> Plant as many seeds as you can. Everywhere. All the time. You never know when your paths will recross.</p>
+        </div>
+
+        <div class="method-block" id="feedback-satellite">
+            <h3 class="method-title">6.13 The Feedback Satellite Mentality™</h3>
+            <p><strong>The Mode:</strong> Convince yourself that you are in constant satellite receiving mode for feedback. Always scanning. Always open. Always processing.</p>
+            <p><strong>The Tom Brady Principle:</strong> To be the best, you have to always believe you have huge room to improve.</p>
+        </div>
+
+        <div class="method-block" id="leader-before-title">
+            <h3 class="method-title">6.14 The Leader-Before-Title Mentality™</h3>
+            <p><strong>The Principle:</strong> Take initiative and lead things—before you have the title.</p>
+            <p><strong>The Vacuum:</strong> Most people don't want to be the leader in a situation. Jump on it. The first time you'll fumble. That's fine. It's a muscle.</p>
+            <p><strong>Perception creates reality.</strong> When people see you as a leader, they treat you like a leader.</p>
+        </div>
+
+        <div class="method-block" id="humble-student">
+            <h3 class="method-title">6.15 The Humble Student Mentality™</h3>
+            <ol>
+                <li><strong>Never think you're the smartest person in the room.</strong> Always assume you're the dumbest person there. Result: You now have something to learn from every other person.</li>
+                <li><strong>Stop being afraid to look dumb.</strong> It's better to look dumb for 2 months, then pass everyone... than to try to "never look dumb" and stay dumb forever.</li>
+            </ol>
+        </div>
+
+        <!-- PART C: IC TO MANAGER -->
+        <div class="part-header">
+            <h3>PART C: THE IC TO MANAGER TRANSITION</h3>
+            <p>The fundamental shifts required when moving from Individual Contributor to Manager.</p>
+        </div>
+
+        <div class="method-block" id="accountability-elevation">
+            <h3 class="method-title">6.16 The Accountability Elevation™</h3>
+            <p><strong>The Fundamental Change:</strong> You are now responsible and accountable to produce results. The buck stops with you.</p>
+            <p><strong>The Shield Principle:</strong> Your team does their best work when you shield them from pressure and absorb it yourself. That's being a manager—you take on a lot and don't get thanked for it.</p>
+        </div>
+
+        <div class="method-block" id="coach-transformation">
+            <h3 class="method-title">6.17 The Coach Transformation™</h3>
+            <p><strong>The Fundamental Shift:</strong> You are no longer a first-line, hands-on doer. You're going from star player to coach.</p>
+            <p><strong>The Outcome-First Approach:</strong> Ask your team to deliver what you WANT, but give them freedom on the HOW.</p>
+            <p><strong>The Trust Requirement:</strong> The coach never subs in for the quarterback. If you don't trust the team, it won't work.</p>
+        </div>
+
+        <div class="method-block" id="metrics-mindset">
+            <h3 class="method-title">6.18 The Metrics Mindset™</h3>
+            <p><strong>The New Requirement:</strong> You need to care about metrics a lot more as a manager. You must have a way to measure: Is the team delivering results? Are we on track? Are we behind?</p>
+            <p><strong>The Eventual Appreciation:</strong> When metrics get the team on track and delivering well, they start to appreciate them. Metrics shift from "surveillance" to "validation."</p>
+        </div>
+
+        <div class="method-block" id="relationship-recalibration">
+            <h3 class="method-title">6.19 The Relationship Recalibration™</h3>
+            <p><strong>The Peer-to-Manager Dynamic:</strong> If you manage former peers, handle it with humility, grace, empathy—BUT still authority. You ARE the manager.</p>
+            <p><strong>The Complaining Rule:</strong> Never complain about things to people who report to you. Complaining down makes you seem amateur and weak. <strong>Complain UP. Vent UP. Never down.</strong></p>
+        </div>
+
+        <div class="method-block" id="time-reallocation">
+            <h3 class="method-title">6.20 The Time Reallocation Protocol™</h3>
+            <p><strong>Where Manager Time Goes:</strong></p>
+            <ol>
+                <li>Enabling the team to succeed</li>
+                <li>Removing roadblocks</li>
+                <li>Ensuring people have the skills they need</li>
+                <li>Training when skills are missing</li>
+                <li>Building processes and practices for team success</li>
+            </ol>
+            <p><strong>You are the coach, not the star player.</strong> Know your role. Stick to it.</p>
+        </div>
+
+        <!-- Phase 6 Summary -->
+        <div class="phase-summary">
+            <h3>Phase 6 Methods Inventory</h3>
+            <table class="styled-table">
+                <thead>
+                    <tr><th>Method Name</th><th>Category</th><th>Status</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>The "Hard Work = Reward" Fallacy™</td><td>Mindset to Lose</td><td>🟢 Complete</td></tr>
+                    <tr><td>The "I Shouldn't Have to Self-Promote" Delusion™</td><td>Mindset to Lose</td><td>🟢 Complete</td></tr>
+                    <tr><td>The "Politics is Dirty" Misconception™</td><td>Mindset to Lose</td><td>🟢 Complete</td></tr>
+                    <tr><td>The "My Manager Should Notice" Fantasy™</td><td>Mindset to Lose</td><td>🟢 Complete</td></tr>
+                    <tr><td>The "Title/Years = Promotion" Antiquity™</td><td>Mindset to Lose</td><td>🟢 Complete</td></tr>
+                    <tr><td>The "I'm Just an IC" Limitation™</td><td>Mindset to Lose</td><td>🟢 Complete</td></tr>
+                    <tr><td>The "Companies Are Evil" Cynicism™</td><td>Mindset to Lose</td><td>🟢 Complete</td></tr>
+                    <tr><td>The Victim Mentality Trap™</td><td>Mindset to Lose</td><td>🟢 Complete</td></tr>
+                    <tr><td>The Ownership Mentality™</td><td>Mindset to Gain</td><td>🟢 Complete</td></tr>
+                    <tr><td>The Value-First Mentality™</td><td>Mindset to Gain</td><td>🟢 Complete</td></tr>
+                    <tr><td>The Long-Game Mentality™</td><td>Mindset to Gain</td><td>🟢 Complete</td></tr>
+                    <tr><td>The Relationship Investment Mentality™</td><td>Mindset to Gain</td><td>🟢 Complete</td></tr>
+                    <tr><td>The Feedback Satellite Mentality™</td><td>Mindset to Gain</td><td>🟢 Complete</td></tr>
+                    <tr><td>The Leader-Before-Title Mentality™</td><td>Mindset to Gain</td><td>🟢 Complete</td></tr>
+                    <tr><td>The Humble Student Mentality™</td><td>Mindset to Gain</td><td>🟢 Complete</td></tr>
+                    <tr><td>The Accountability Elevation™</td><td>IC → Manager</td><td>🟢 Complete</td></tr>
+                    <tr><td>The Coach Transformation™</td><td>IC → Manager</td><td>🟢 Complete</td></tr>
+                    <tr><td>The Metrics Mindset™</td><td>IC → Manager</td><td>🟢 Complete</td></tr>
+                    <tr><td>The Relationship Recalibration™</td><td>IC → Manager</td><td>🟢 Complete</td></tr>
+                    <tr><td>The Time Reallocation Protocol™</td><td>IC → Manager</td><td>🟢 Complete</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- COMPLETE METHODS INVENTORY -->
+    <!-- ========================================== -->
+    <section class="phase-section" id="complete-inventory">
+        <div class="phase-header">
+            <h2 class="phase-title">COMPLETE METHODS INVENTORY</h2>
+            <p class="phase-description">All 76 proprietary methods across 6 phases</p>
+        </div>
+
+        <div class="method-block">
+            <h3>Phase 1: The Visibility Pyramid (10 Methods)</h3>
+            <table class="styled-table">
+                <tbody>
+                    <tr><td>The Green Light Audit™</td><td>🟢</td></tr>
+                    <tr><td>Organic Broadcasting™</td><td>🟢</td></tr>
+                    <tr><td>The Echo Email™</td><td>🟢</td></tr>
+                    <tr><td>The Strategic Question Bank™</td><td>🟢</td></tr>
+                    <tr><td>The Alignment Signal™</td><td>🟢</td></tr>
+                    <tr><td>The Value-First Connection™</td><td>🟢</td></tr>
+                    <tr><td>The Skip-Level Request Protocol™</td><td>🟢</td></tr>
+                    <tr><td>The Skip-Level Meeting Playbook™</td><td>🟢</td></tr>
+                    <tr><td>The Manager Amplification Tactic™</td><td>🟢</td></tr>
+                    <tr><td>The Gap Pioneer Framework™</td><td>🟢</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="method-block">
+            <h3>Phase 2: The Promotion Protocol (10 Methods)</h3>
+            <table class="styled-table">
+                <tbody>
+                    <tr><td>The Role Saturation Threshold™ (85% Rule)</td><td>🟢</td></tr>
+                    <tr><td>The Optimal Timing Strategy™</td><td>🟢</td></tr>
+                    <tr><td>The Evidence Arsenal™</td><td>🟢</td></tr>
+                    <tr><td>The Service-Based Script Library™</td><td>🟢</td></tr>
+                    <tr><td>The Objection Playbook™</td><td>🟢</td></tr>
+                    <tr><td>The Gap Analysis Contract™</td><td>🟢</td></tr>
+                    <tr><td>The Continuous Campaign™</td><td>🟢</td></tr>
+                    <tr><td>The Promotion Positioning Philosophy™</td><td>🟢</td></tr>
+                    <tr><td>The Promotion Binder™</td><td>🟢</td></tr>
+                    <tr><td>The Compensation Negotiation at Promotion™</td><td>🟢</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="method-block">
+            <h3>Phase 3: The Strategic Expansion (11 Methods)</h3>
+            <table class="styled-table">
+                <tbody>
+                    <tr><td>The "Not My Job" Funeral™</td><td>🟢</td></tr>
+                    <tr><td>The Opportunity Filter™</td><td>🟢</td></tr>
+                    <tr><td>The Quality Firewall™</td><td>🟢</td></tr>
+                    <tr><td>The Early Warning System™</td><td>🟢</td></tr>
+                    <tr><td>The Bad News Early Protocol™</td><td>🟢</td></tr>
+                    <tr><td>The Collaborative Problem-Solving Approach™</td><td>🟢</td></tr>
+                    <tr><td>The Scope Beacon™</td><td>🟢</td></tr>
+                    <tr><td>The Recognition Boomerang™</td><td>🟢</td></tr>
+                    <tr><td>The Cross-Functional Expansion Protocol™</td><td>🟢</td></tr>
+                    <tr><td>The Support Role Entry™</td><td>🟢</td></tr>
+                    <tr><td>The Strategic No™</td><td>🟢</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="method-block">
+            <h3>Phase 4: The Reputation Wildfire (8 Methods)</h3>
+            <table class="styled-table">
+                <tbody>
+                    <tr><td>The Gravity Audit™</td><td>🟢</td></tr>
+                    <tr><td>The Cross-Functional Bridge Builder™</td><td>🟢</td></tr>
+                    <tr><td>The Business Value Principle™</td><td>🟢</td></tr>
+                    <tr><td>The Reference Nudge™</td><td>🟢</td></tr>
+                    <tr><td>The Wildfire Detection™</td><td>🟢</td></tr>
+                    <tr><td>The Wildfire Maintenance Protocol™</td><td>🟢</td></tr>
+                    <tr><td>The Reputation Recovery Protocol™</td><td>🟢</td></tr>
+                    <tr><td>The External Reputation Builder™</td><td>🟢</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="method-block">
+            <h3>Phase 5: The Soft Skills Engine (17 Methods)</h3>
+            <table class="styled-table">
+                <tbody>
+                    <tr><td>The Audience Awareness Principle™</td><td>🟢</td></tr>
+                    <tr><td>The Written Communication Protocol™</td><td>🟢</td></tr>
+                    <tr><td>The TL;DR Structure™</td><td>🟢</td></tr>
+                    <tr><td>The Verbal Communication Protocol™</td><td>🟢</td></tr>
+                    <tr><td>The Clear Ask Principle™</td><td>🟢</td></tr>
+                    <tr><td>The Technical Translation Engine™</td><td>🟢</td></tr>
+                    <tr><td>The Influence Without Authority Framework™</td><td>🟢</td></tr>
+                    <tr><td>The Buy-In Builder™</td><td>🟢</td></tr>
+                    <tr><td>The Social Credit Account™</td><td>🟢</td></tr>
+                    <tr><td>The Honey Principle™</td><td>🟢</td></tr>
+                    <tr><td>The Executive Presence Blueprint™</td><td>🟢</td></tr>
+                    <tr><td>The Say/Do Ratio™</td><td>🟢</td></tr>
+                    <tr><td>The Managing Up Masterclass™</td><td>🟢</td></tr>
+                    <tr><td>The No Surprises Policy™</td><td>🟢</td></tr>
+                    <tr><td>The Headache Fixer Strategy™</td><td>🟢</td></tr>
+                    <tr><td>The Difficult Conversations Framework™</td><td>🟢</td></tr>
+                    <tr><td>The Emotional Intelligence Upgrade™</td><td>🟢</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="method-block">
+            <h3>Phase 6: The Mindset Forge (20 Methods)</h3>
+            <table class="styled-table">
+                <thead>
+                    <tr><th>Method</th><th>Category</th><th>Status</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>The "Hard Work = Reward" Fallacy™</td><td>Mindset to Lose</td><td>🟢</td></tr>
+                    <tr><td>The "I Shouldn't Have to Self-Promote" Delusion™</td><td>Mindset to Lose</td><td>🟢</td></tr>
+                    <tr><td>The "Politics is Dirty" Misconception™</td><td>Mindset to Lose</td><td>🟢</td></tr>
+                    <tr><td>The "My Manager Should Notice" Fantasy™</td><td>Mindset to Lose</td><td>🟢</td></tr>
+                    <tr><td>The "Title/Years = Promotion" Antiquity™</td><td>Mindset to Lose</td><td>🟢</td></tr>
+                    <tr><td>The "I'm Just an IC" Limitation™</td><td>Mindset to Lose</td><td>🟢</td></tr>
+                    <tr><td>The "Companies Are Evil" Cynicism™</td><td>Mindset to Lose</td><td>🟢</td></tr>
+                    <tr><td>The Victim Mentality Trap™</td><td>Mindset to Lose</td><td>🟢</td></tr>
+                    <tr><td>The Ownership Mentality™</td><td>Mindset to Gain</td><td>🟢</td></tr>
+                    <tr><td>The Value-First Mentality™</td><td>Mindset to Gain</td><td>🟢</td></tr>
+                    <tr><td>The Long-Game Mentality™</td><td>Mindset to Gain</td><td>🟢</td></tr>
+                    <tr><td>The Relationship Investment Mentality™</td><td>Mindset to Gain</td><td>🟢</td></tr>
+                    <tr><td>The Feedback Satellite Mentality™</td><td>Mindset to Gain</td><td>🟢</td></tr>
+                    <tr><td>The Leader-Before-Title Mentality™</td><td>Mindset to Gain</td><td>🟢</td></tr>
+                    <tr><td>The Humble Student Mentality™</td><td>Mindset to Gain</td><td>🟢</td></tr>
+                    <tr><td>The Accountability Elevation™</td><td>IC → Manager</td><td>🟢</td></tr>
+                    <tr><td>The Coach Transformation™</td><td>IC → Manager</td><td>🟢</td></tr>
+                    <tr><td>The Metrics Mindset™</td><td>IC → Manager</td><td>🟢</td></tr>
+                    <tr><td>The Relationship Recalibration™</td><td>IC → Manager</td><td>🟢</td></tr>
+                    <tr><td>The Time Reallocation Protocol™</td><td>IC → Manager</td><td>🟢</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Totals -->
+        <div class="phase-summary">
+            <h3>TOTALS</h3>
+            <table class="styled-table">
+                <tbody>
+                    <tr><td><strong>Total Methods</strong></td><td><strong>76</strong></td></tr>
+                    <tr><td>Complete</td><td>76 (100%)</td></tr>
+                    <tr><td>Pending Refinement</td><td>0 (0%)</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="text-align: center; padding: 40px; background: #1e3a5f; color: white; margin-top: 40px;">
+        <p><strong>Version 2.0</strong> - Last Updated: December 2025</p>
+        <p>© LaunchToLead</p>
+    </footer>
+
+</body>
+</html>
