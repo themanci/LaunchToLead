@@ -285,18 +285,85 @@
             padding: 2rem;
             border-radius: 12px;
             margin: 2rem 0;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 1rem;
         }
         
         .toc h3 {
             margin-top: 0;
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+            color: var(--primary);
         }
         
-        .toc ul {
-            columns: 2;
-            gap: 2rem;
+        .toc-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
         }
         
+        .toc-phase {
+            background: #f8fafc;
+            padding: 1rem;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .toc-phase-link {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--primary);
+        }
+        
+        .toc-phase-link:hover {
+            color: var(--primary);
+        }
+        
+        .toc-num {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 1.75rem;
+            height: 1.75rem;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            font-size: 0.9rem;
+            font-weight: 700;
+        }
+        
+        .toc-title {
+            font-size: 0.95rem;
+        }
+        
+        .toc-methods {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .toc-methods li {
+            margin: 0.35rem 0;
+        }
+        
+        .toc-methods a {
+            color: var(--gray);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: color 0.2s;
+        }
+        
+        .toc-methods a:hover {
+            color: var(--primary);
+        }
+
         @media (max-width: 768px) {
             .container {
                 padding: 1rem;
@@ -319,8 +386,12 @@
                 font-size: 1.4rem;
             }
             
-            .toc ul {
-                columns: 1;
+            .toc-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .toc {
+                position: static;
             }
         }
     </style>
@@ -343,7 +414,99 @@
             <strong>Core Philosophy:</strong> Performance is the prerequisite. Visibility is the multiplier. Advocacy is the accelerant.
         </div>
 
+        <!-- TABLE OF CONTENTS -->
+        <nav class="toc" id="toc">
+            <h3>📚 Quick Navigation</h3>
+            <div class="toc-grid">
+                <div class="toc-phase">
+                    <a href="#phase-1" class="toc-phase-link">
+                        <span class="toc-num">1</span>
+                        <span class="toc-title">The Visibility Pyramid</span>
+                    </a>
+                    <ul class="toc-methods">
+                        <li><a href="#green-light-audit">Green Light Audit™</a></li>
+                        <li><a href="#skip-level-request">Skip-Level Request Protocol™</a></li>
+                        <li><a href="#skip-level-meeting">Skip-Level Meeting Playbook™</a></li>
+                        <li><a href="#echo-email">Echo Email™</a></li>
+                        <li><a href="#recognition-boomerang">Recognition Boomerang™</a></li>
+                        <li><a href="#organic-broadcasting">Organic Broadcasting™</a></li>
+                        <li><a href="#visibility-pyramid-model">The Visibility Pyramid™ Model</a></li>
+                    </ul>
+                </div>
+                
+                <div class="toc-phase">
+                    <a href="#phase-2" class="toc-phase-link">
+                        <span class="toc-num">2</span>
+                        <span class="toc-title">The Promotion Protocol</span>
+                    </a>
+                    <ul class="toc-methods">
+                        <li><a href="#role-saturation">Role Saturation Threshold™</a></li>
+                        <li><a href="#evidence-arsenal">Evidence Arsenal™</a></li>
+                        <li><a href="#promotion-ladder">Promotion Ladder Audit™</a></li>
+                        <li><a href="#strategic-question-bank">Strategic Question Bank™</a></li>
+                        <li><a href="#alignment-signal">Alignment Signal™</a></li>
+                        <li><a href="#service-based-script">Service-Based Script Library™</a></li>
+                    </ul>
+                </div>
+                
+                <div class="toc-phase">
+                    <a href="#phase-3" class="toc-phase-link">
+                        <span class="toc-num">3</span>
+                        <span class="toc-title">The Strategic Expansion</span>
+                    </a>
+                    <ul class="toc-methods">
+                        <li><a href="#not-my-job">The "Not My Job" Funeral™</a></li>
+                        <li><a href="#gap-spotter">Gap Spotter Protocol™</a></li>
+                        <li><a href="#pilot-offer">The Pilot Offer™</a></li>
+                        <li><a href="#ownership-creep">Ownership Creep™</a></li>
+                        <li><a href="#scope-shield">Scope Shield™</a></li>
+                    </ul>
+                </div>
+                
+                <div class="toc-phase">
+                    <a href="#phase-4" class="toc-phase-link">
+                        <span class="toc-num">4</span>
+                        <span class="toc-title">The Reputation Wildfire</span>
+                    </a>
+                    <ul class="toc-methods">
+                        <li><a href="#gravity-audit">Gravity Audit™</a></li>
+                        <li><a href="#reputation-investment">Reputation Investment Protocol™</a></li>
+                        <li><a href="#whisper-network">Whisper Network Activation™</a></li>
+                    </ul>
+                </div>
+                
+                <div class="toc-phase">
+                    <a href="#phase-5" class="toc-phase-link">
+                        <span class="toc-num">5</span>
+                        <span class="toc-title">The Soft Skills Engine</span>
+                    </a>
+                    <ul class="toc-methods">
+                        <li><a href="#audience-awareness">Audience Awareness Principle™</a></li>
+                        <li><a href="#leadership-lens">Leadership Lens™</a></li>
+                        <li><a href="#executive-presence">Executive Presence Framework™</a></li>
+                        <li><a href="#conflict-compass">Conflict Compass™</a></li>
+                        <li><a href="#feedback-filter">Feedback Filter™</a></li>
+                    </ul>
+                </div>
+                
+                <div class="toc-phase">
+                    <a href="#phase-6" class="toc-phase-link">
+                        <span class="toc-num">6</span>
+                        <span class="toc-title">The Mindset Forge</span>
+                    </a>
+                    <ul class="toc-methods">
+                        <li><a href="#hard-work-fallacy">"Hard Work = Reward" Fallacy™</a></li>
+                        <li><a href="#self-promote-delusion">"I Shouldn't Have to Self-Promote" Delusion™</a></li>
+                        <li><a href="#politics-misconception">"Politics is Dirty" Misconception™</a></li>
+                        <li><a href="#ownership-identity">Ownership Identity™</a></li>
+                        <li><a href="#abundance-lens">Abundance Lens™</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
         <!-- PHASE 1 -->
+        <section id="phase-1">
         <div class="phase-header">
             <h2>PHASE 1: THE VISIBILITY PYRAMID</h2>
             <p class="subtitle">We teach clients that promotion is not a reward for hard work; it is a byproduct of Influence.</p>
@@ -356,7 +519,7 @@
         <h4>Core Concept</h4>
         <p>Performance is not the differentiator; it is the prerequisite. Before any visibility tactics, you must be bulletproof in your core role.</p>
 
-        <div class="method-card">
+        <div class="method-card" id="green-light-audit">
             <h3>The Green Light Audit</h3>
             <p>A self-assessment to determine if you're ready to pursue visibility tactics. Be brutally honest.</p>
 
@@ -601,7 +764,7 @@
             </ul>
         </div>
 
-        <div class="method-card">
+        <div class="method-card" id="skip-level-request">
             <h3>The Skip-Level Request Protocol</h3>
 
             <h4>Step 1: Clear It With Your Manager First</h4>
@@ -714,12 +877,13 @@
         <hr>
 
         <!-- PHASE 2 -->
+        <section id="phase-2">
         <div class="phase-header">
             <h2>PHASE 2: THE PROMOTION PROTOCOL</h2>
             <p class="subtitle">We teach clients that a promotion is not something you "get"; it is a new contract you negotiate by offering more value.</p>
         </div>
 
-        <div class="method-card">
+        <div class="method-card" id="role-saturation">
             <h3>The Role Saturation Threshold (The 85% Rule)</h3>
 
             <h4>The Distinction from Phase 1</h4>
