@@ -786,5 +786,19 @@
         });
     </script>
 
+    <!-- PRINT REMINDER (No Print) -->
+    <div class="no-print fixed bottom-6 right-6 z-50">
+        <div class="bg-emerald-600 text-white px-6 py-4 rounded-xl shadow-2xl flex items-center gap-4 max-w-sm">
+            <div class="text-3xl">🖨️</div>
+            <div>
+                <p class="font-bold text-sm">Ready to print?</p>
+                <p class="text-xs text-emerald-100">Complete the audit, then save as PDF or print to bring to Session 1.</p>
+                <button onclick="window.print()" class="mt-2 bg-white text-emerald-600 px-3 py-1 rounded-lg text-xs font-bold hover:bg-emerald-50 transition">
+                    Print / Save PDF
+                </button>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>
