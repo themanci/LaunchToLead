@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedIn Post - Engineering Degree Series: Decisions Without All The Data</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #0f172a;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: white;
+            margin-bottom: 8px;
+            font-size: 28px;
+            text-align: center;
+        }
+
+        .subtitle {
+            color: #64748b;
+            font-size: 16px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .section-title {
+            color: #10b981;
+            font-size: 20px;
+            font-weight: 700;
+            margin: 40px 0 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Post Copy Section */
+        .post-copy {
+            background: #1e293b;
+            border-radius: 16px;
+            padding: 32px;
+            margin-bottom: 40px;
+            border: 1px solid #334155;
+        }
+
+        .post-copy h3 {
+            color: #10b981;
+            font-size: 18px;
+            margin-bottom: 16px;
+        }
+
+        .post-text {
+            color: #e2e8f0;
+            font-size: 16px;
+            line-height: 1.8;
+            white-space: pre-wrap;
+        }
+
+        .hashtags {
+            color: #3b82f6;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        /* Graphics Grid */
+        .graphics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .graphic-option {
+            background: #1e293b;
+            border-radius: 16px;
+            padding: 24px;
+            border: 2px solid #334155;
+            transition: all 0.3s;
+        }
+
+        .graphic-option:hover {
+            border-color: #10b981;
+        }
+
+        .option-label {
+            color: #fbbf24;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+        }
+
+        .option-description {
+            color: #94a3b8;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        /* LinkedIn Post Image: 1200 x 1200 pixels (1:1 square) - Scaled down for preview */
+        .post-image {
+            width: 600px;
+            height: 600px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            padding: 40px;
+            margin: 0 auto;
+            border-radius: 12px;
+        }
+
+        /* Logo at top */
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo-icon {
+            width: 36px;
+            height: 36px;
+            background: white;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 14px;
+            color: #064e3b;
+        }
+
+        .logo-text {
+            font-size: 18px;
+            font-weight: 700;
+            color: white;
+        }
+
+        .logo-text span {
+            color: #a7f3d0;
+        }
+
+        /* Content styling */
+        .content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .series-badge {
+            display: inline-block;
+            background: rgba(99, 102, 241, 0.3);
+            color: #a5b4fc;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+            width: fit-content;
+            border: 1px solid rgba(99, 102, 241, 0.5);
+        }
+
+        .bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            position: relative;
+            z-index: 1;
+            margin-top: 20px;
+        }
+
+        .tagline {
+            font-size: 12px;
+            color: rgba(255,255,255,0.6);
+            font-style: italic;
+        }
+
+        .website {
+            font-size: 14px;
+            font-weight: 700;
+            color: white;
+            background: rgba(0,0,0,0.3);
+            padding: 10px 20px;
+            border-radius: 30px;
+        }
+
+        /* ============================================
+           OPTION 1: The Optimization Curve
+           ============================================ */
+        .option1 .post-image {
+            background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 100%);
+        }
+
+        .option1 .post-image::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.15) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .curve-container {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            margin: 20px 0;
+        }
+
+        .curve-graph {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .axis-label {
+            position: absolute;
+            font-size: 11px;
+            font-weight: 600;
+            color: rgba(255,255,255,0.7);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .axis-label.x-axis {
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .axis-label.y-axis {
+            left: -10px;
+            top: 50%;
+            transform: rotate(-90deg) translateX(-50%);
+            transform-origin: left center;
+        }
+
+        .curve-line {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            width: calc(100% - 40px);
+            height: calc(100% - 40px);
+            border-left: 2px solid rgba(255,255,255,0.3);
+            border-bottom: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .curve-svg {
+            position: absolute;
+            inset: 0;
+        }
+
+        .sweet-spot {
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            background: #fbbf24;
+            border-radius: 50%;
+            border: 3px solid white;
+            top: 45%;
+            left: 55%;
+            animation: pulse 2s infinite;
+            box-shadow: 0 0 20px rgba(251, 191, 36, 0.5);
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+
+        .sweet-label {
+            position: absolute;
+            top: 30%;
+            left: 62%;
+            background: rgba(251, 191, 36, 0.2);
+            color: #fbbf24;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: 700;
+            border: 1px solid rgba(251, 191, 36, 0.4);
+        }
+
+        .option1 h2 {
+            font-size: 32px;
+            font-weight: 800;
+            color: white;
+            line-height: 1.2;
+            margin-bottom: 12px;
+        }
+
+        .option1 h2 .highlight {
+            color: #fbbf24;
+        }
+
+        .option1 .subtext {
+            font-size: 14px;
+            color: rgba(255,255,255,0.7);
+            line-height: 1.5;
+        }
+
+        /* ============================================
+           OPTION 2: The Puzzle Pieces
+           ============================================ */
+        .option2 .post-image {
+            background: linear-gradient(135deg, #064e3b 0%, #065f46 50%, #047857 100%);
+        }
+
+        .puzzle-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin: 20px 0;
+            max-width: 280px;
+        }
+
+        .puzzle-piece {
+            width: 80px;
+            height: 80px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 800;
+        }
+
+        .puzzle-piece.filled {
+            background: rgba(255,255,255,0.2);
+            border: 2px solid rgba(255,255,255,0.4);
+            color: white;
+        }
+
+        .puzzle-piece.missing {
+            background: rgba(239, 68, 68, 0.15);
+            border: 2px dashed rgba(239, 68, 68, 0.5);
+            color: rgba(239, 68, 68, 0.7);
+        }
+
+        .puzzle-piece.decision {
+            background: linear-gradient(135deg, #fbbf24, #f59e0b);
+            border: 2px solid #fcd34d;
+            color: #1e293b;
+            box-shadow: 0 4px 20px rgba(251, 191, 36, 0.4);
+        }
+
+        .option2 h2 {
+            font-size: 30px;
+            font-weight: 800;
+            color: white;
+            line-height: 1.2;
+            margin-bottom: 10px;
+        }
+
+        .option2 h2 .highlight {
+            color: #fbbf24;
+        }
+
+        .option2 .equation {
+            font-size: 18px;
+            color: #a7f3d0;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+
+        /* ============================================
+           OPTION 3: The Timer/Scale Balance
+           ============================================ */
+        .option3 .post-image {
+            background: linear-gradient(135deg, #3730a3 0%, #4338ca 50%, #4f46e5 100%);
+        }
+
+        .balance-container {
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            gap: 40px;
+            margin: 30px 0;
+        }
+
+        .balance-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .balance-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+        }
+
+        .balance-icon.time {
+            background: rgba(239, 68, 68, 0.2);
+            border: 2px solid rgba(239, 68, 68, 0.5);
+        }
+
+        .balance-icon.data {
+            background: rgba(34, 197, 94, 0.2);
+            border: 2px solid rgba(34, 197, 94, 0.5);
+        }
+
+        .balance-label {
+            font-size: 14px;
+            font-weight: 700;
+            color: rgba(255,255,255,0.8);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .balance-arrow {
+            font-size: 48px;
+            color: #fbbf24;
+            font-weight: 800;
+        }
+
+        .option3 h2 {
+            font-size: 28px;
+            font-weight: 800;
+            color: white;
+            line-height: 1.3;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .option3 h2 .highlight {
+            color: #fbbf24;
+        }
+
+        .option3 .key-message {
+            background: rgba(251, 191, 36, 0.15);
+            border: 2px solid rgba(251, 191, 36, 0.3);
+            border-radius: 12px;
+            padding: 14px 20px;
+            margin-top: 15px;
+        }
+
+        .option3 .key-message p {
+            font-size: 14px;
+            font-weight: 600;
+            color: #fbbf24;
+            text-align: center;
+        }
+
+        /* ============================================
+           OPTION 4: The Fog/Clarity Visual
+           ============================================ */
+        .option4 .post-image {
+            background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+        }
+
+        .fog-container {
+            position: relative;
+            margin: 25px 0;
+            height: 160px;
+        }
+
+        .fog-visual {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .fog-side {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .fog-circle {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: 700;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .fog-circle.foggy {
+            background: linear-gradient(135deg, rgba(100,100,100,0.3), rgba(50,50,50,0.5));
+            border: 2px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.4);
+            filter: blur(1px);
+        }
+
+        .fog-circle.clear {
+            background: linear-gradient(135deg, #10b981, #059669);
+            border: 3px solid #34d399;
+            color: white;
+            box-shadow: 0 0 30px rgba(16, 185, 129, 0.4);
+        }
+
+        .fog-arrow {
+            font-size: 36px;
+            color: #fbbf24;
+        }
+
+        .fog-label {
+            font-size: 12px;
+            font-weight: 600;
+            color: rgba(255,255,255,0.5);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .option4 h2 {
+            font-size: 30px;
+            font-weight: 800;
+            color: white;
+            line-height: 1.2;
+            margin-bottom: 10px;
+        }
+
+        .option4 h2 .highlight {
+            color: #10b981;
+        }
+
+        .option4 .subtext {
+            font-size: 14px;
+            color: rgba(255,255,255,0.6);
+            font-style: italic;
+        }
+
+        /* ============================================
+           OPTION 5: The 80/20 Bar
+           ============================================ */
+        .option5 .post-image {
+            background: linear-gradient(135deg, #7c2d12 0%, #9a3412 50%, #c2410c 100%);
+        }
+
+        .bar-container {
+            margin: 25px 0;
+        }
+
+        .bar-label-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .bar-label-item {
+            font-size: 12px;
+            font-weight: 600;
+            color: rgba(255,255,255,0.7);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .progress-bar {
+            height: 50px;
+            background: rgba(0,0,0,0.3);
+            border-radius: 25px;
+            overflow: hidden;
+            display: flex;
+            position: relative;
+        }
+
+        .progress-fill {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 18px;
+        }
+
+        .progress-fill.data {
+            width: 80%;
+            background: linear-gradient(90deg, #fbbf24, #f59e0b);
+            color: #1e293b;
+        }
+
+        .progress-fill.gap {
+            width: 20%;
+            background: rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.5);
+            border-left: 2px dashed rgba(255,255,255,0.3);
+        }
+
+        .bar-insight {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .checkmark {
+            width: 28px;
+            height: 28px;
+            background: #10b981;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            color: white;
+        }
+
+        .bar-insight-text {
+            font-size: 14px;
+            color: rgba(255,255,255,0.8);
+            font-weight: 500;
+        }
+
+        .option5 h2 {
+            font-size: 28px;
+            font-weight: 800;
+            color: white;
+            line-height: 1.2;
+            margin-bottom: 10px;
+        }
+
+        .option5 h2 .highlight {
+            color: #fbbf24;
+        }
+
+        .option5 .subtext {
+            font-size: 13px;
+            color: rgba(255,255,255,0.7);
+        }
+
+        /* Notes section */
+        .notes {
+            background: #1e293b;
+            border-radius: 16px;
+            padding: 24px;
+            margin-top: 40px;
+            border: 1px solid #334155;
+        }
+
+        .notes h3 {
+            color: #f59e0b;
+            font-size: 16px;
+            margin-bottom: 16px;
+        }
+
+        .notes ul {
+            color: #94a3b8;
+            font-size: 14px;
+            line-height: 1.8;
+            padding-left: 20px;
+        }
+
+        .notes li {
+            margin-bottom: 8px;
+        }
+
+        .download-note {
+            color: #64748b;
+            font-size: 12px;
+            margin-top: 24px;
+            text-align: center;
+            background: #1e293b;
+            padding: 16px;
+            border-radius: 8px;
+        }
+
+        .download-note strong {
+            color: #10b981;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎓 Engineering Degree Series: What It ACTUALLY Teaches You</h1>
+        <p class="subtitle">Episode 1: Making Decisions Without All The Information</p>
+
+        <!-- POST COPY -->
+        <div class="section-title">📝 Post Copy</div>
+        <div class="post-copy">
+            <h3>LinkedIn Post Text:</h3>
+            <div class="post-text">What an engineering degree ACTUALLY teaches you:
+
+𝗘𝗽𝗶𝘀𝗼𝗱𝗲 𝟭: 𝗠𝗮𝗸𝗶𝗻𝗴 𝗱𝗲𝗰𝗶𝘀𝗶𝗼𝗻𝘀 𝘄𝗶𝘁𝗵𝗼𝘂𝘁 𝗮𝗹𝗹 𝘁𝗵𝗲 𝗶𝗻𝗳𝗼𝗿𝗺𝗮𝘁𝗶𝗼𝗻.
+
+Here's the trap engineering school sets:
+
+You're taught that the BEST decisions come from having ALL the data.
+
+But here's what they don't tell you explicitly:
+
+Getting all that data takes ALL the time.
+
+So you learn to optimize.
+
+↳ How much data do I actually NEED?
+↳ What's the cost of waiting for more?
+↳ What's the cost of being wrong?
+
+This is the real skill:
+
+Making good-enough decisions with good-enough information, in good-enough time.
+
+Not perfect. Not reckless.
+
+Calibrated.
+
+This skill transfers everywhere:
+
+✅ Career moves
+✅ Negotiations  
+✅ Relationships
+✅ Investments
+✅ Life decisions
+
+Most people are paralyzed waiting for certainty.
+
+Engineers learn to move with calculated uncertainty.
+
+That's the edge.
+
+---
+
+What's something your engineering degree taught you that nobody talks about?
+
+Drop it below 👇</div>
+            <div class="hashtags">#engineering #careeradvice #decisionmaking #engineeringdegree #softskills #launchtolead</div>
+        </div>
+
+        <!-- GRAPHIC OPTIONS -->
+        <div class="section-title">🎨 Graphic Options (Choose One)</div>
+        
+        <div class="graphics-grid">
+            <!-- OPTION 1: The Optimization Curve -->
+            <div class="graphic-option option1">
+                <div class="option-label">Option 1: The Optimization Curve</div>
+                <div class="option-description">Shows the trade-off curve between time spent and decision quality, with a "sweet spot" highlighted. Data-driven, analytical feel.</div>
+                
+                <div class="post-image">
+                    <div class="logo">
+                        <div class="logo-icon">L²</div>
+                        <div class="logo-text">Launch<span>ToLead</span></div>
+                    </div>
+                    
+                    <div class="content">
+                        <div class="series-badge">🎓 Engineering Degree Series</div>
+                        <h2>The <span class="highlight">Sweet Spot</span><br>of Decision Making</h2>
+                        
+                        <div class="curve-container">
+                            <div class="curve-graph">
+                                <div class="curve-line">
+                                    <svg class="curve-svg" viewBox="0 0 500 160" preserveAspectRatio="none">
+                                        <path d="M 20 140 Q 150 130, 200 80 Q 250 40, 350 35 Q 450 30, 480 28" 
+                                              stroke="#3b82f6" stroke-width="4" fill="none" stroke-linecap="round"/>
+                                    </svg>
+                                </div>
+                                <div class="sweet-spot"></div>
+                                <div class="sweet-label">DECIDE HERE</div>
+                                <div class="axis-label x-axis">Time Spent Gathering Data →</div>
+                                <div class="axis-label y-axis">Decision Quality →</div>
+                            </div>
+                        </div>
+                        
+                        <p class="subtext">More data helps... until it doesn't.<br>Engineers learn to find the inflection point.</p>
+                    </div>
+                    
+                    <div class="bottom">
+                        <div class="tagline">Good enough data. Good enough time.</div>
+                        <div class="website">LaunchToLead.io</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- OPTION 2: The Puzzle Pieces -->
+            <div class="graphic-option option2">
+                <div class="option-label">Option 2: The Missing Pieces</div>
+                <div class="option-description">Visual puzzle with some pieces filled, some missing, and a golden "DECIDE" piece. Shows you never have the complete picture.</div>
+                
+                <div class="post-image">
+                    <div class="logo">
+                        <div class="logo-icon">L²</div>
+                        <div class="logo-text">Launch<span>ToLead</span></div>
+                    </div>
+                    
+                    <div class="content">
+                        <div class="series-badge">🎓 Engineering Degree Series</div>
+                        <h2>You'll <span class="highlight">Never</span> Have<br>All The Pieces</h2>
+                        
+                        <div class="puzzle-container">
+                            <div class="puzzle-piece filled">✓</div>
+                            <div class="puzzle-piece filled">✓</div>
+                            <div class="puzzle-piece missing">?</div>
+                            <div class="puzzle-piece filled">✓</div>
+                            <div class="puzzle-piece decision">GO</div>
+                            <div class="puzzle-piece missing">?</div>
+                            <div class="puzzle-piece missing">?</div>
+                            <div class="puzzle-piece filled">✓</div>
+                            <div class="puzzle-piece filled">✓</div>
+                        </div>
+                        
+                        <p class="equation">80% data + good judgment = better than<br>waiting for 100%</p>
+                    </div>
+                    
+                    <div class="bottom">
+                        <div class="tagline">Decide with what you have.</div>
+                        <div class="website">LaunchToLead.io</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- OPTION 3: The Timer/Scale Balance -->
+            <div class="graphic-option option3">
+                <div class="option-label">Option 3: Time vs. Data Balance</div>
+                <div class="option-description">Two icons (clock + database) showing the eternal trade-off. Clean and conceptual.</div>
+                
+                <div class="post-image">
+                    <div class="logo">
+                        <div class="logo-icon">L²</div>
+                        <div class="logo-text">Launch<span>ToLead</span></div>
+                    </div>
+                    
+                    <div class="content">
+                        <div class="series-badge">🎓 Engineering Degree Series</div>
+                        <h2>The Eternal<br><span class="highlight">Trade-Off</span></h2>
+                        
+                        <div class="balance-container">
+                            <div class="balance-item">
+                                <div class="balance-icon time">⏱️</div>
+                                <div class="balance-label">Time</div>
+                            </div>
+                            <div class="balance-arrow">⚖️</div>
+                            <div class="balance-item">
+                                <div class="balance-icon data">📊</div>
+                                <div class="balance-label">Data</div>
+                            </div>
+                        </div>
+                        
+                        <div class="key-message">
+                            <p>All the data requires all the time.<br>Engineers learn to optimize.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bottom">
+                        <div class="tagline">Calibrated, not perfect.</div>
+                        <div class="website">LaunchToLead.io</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- OPTION 4: The Fog/Clarity Visual -->
+            <div class="graphic-option option4">
+                <div class="option-label">Option 4: Through The Fog</div>
+                <div class="option-description">Foggy uncertainty on one side, clear action on the other. Emotional, story-driven visual.</div>
+                
+                <div class="post-image">
+                    <div class="logo">
+                        <div class="logo-icon">L²</div>
+                        <div class="logo-text">Launch<span>ToLead</span></div>
+                    </div>
+                    
+                    <div class="content">
+                        <div class="series-badge">🎓 Engineering Degree Series</div>
+                        <h2>Move Through<br>The <span class="highlight">Uncertainty</span></h2>
+                        
+                        <div class="fog-container">
+                            <div class="fog-visual">
+                                <div class="fog-side">
+                                    <div class="fog-circle foggy">Waiting for clarity...</div>
+                                    <div class="fog-label">Paralysis</div>
+                                </div>
+                                <div class="fog-arrow">→</div>
+                                <div class="fog-side">
+                                    <div class="fog-circle clear">DECIDE</div>
+                                    <div class="fog-label">Action</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <p class="subtext">"Most people wait for certainty.<br>Engineers move with calculated uncertainty."</p>
+                    </div>
+                    
+                    <div class="bottom">
+                        <div class="tagline">That's the edge.</div>
+                        <div class="website">LaunchToLead.io</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- OPTION 5: The 80/20 Bar -->
+            <div class="graphic-option option5">
+                <div class="option-label">Option 5: The 80% Rule</div>
+                <div class="option-description">Progress bar showing 80% data is enough to decide. Simple, bold, memorable number.</div>
+                
+                <div class="post-image">
+                    <div class="logo">
+                        <div class="logo-icon">L²</div>
+                        <div class="logo-text">Launch<span>ToLead</span></div>
+                    </div>
+                    
+                    <div class="content">
+                        <div class="series-badge">🎓 Engineering Degree Series</div>
+                        <h2><span class="highlight">80%</span> Is Enough<br>To Decide</h2>
+                        
+                        <div class="bar-container">
+                            <div class="bar-label-row">
+                                <span class="bar-label-item">Information Available</span>
+                                <span class="bar-label-item">The Gap</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill data">80%</div>
+                                <div class="progress-fill gap">20%</div>
+                            </div>
+                            <div class="bar-insight">
+                                <div class="checkmark">✓</div>
+                                <span class="bar-insight-text">Good enough data + good judgment = GO</span>
+                            </div>
+                        </div>
+                        
+                        <p class="subtext">Waiting for 100% costs you 100% of the opportunity.</p>
+                    </div>
+                    
+                    <div class="bottom">
+                        <div class="tagline">Decide with confidence, not perfection.</div>
+                        <div class="website">LaunchToLead.io</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- NOTES -->
+        <div class="notes">
+            <h3>📋 Mockup Notes</h3>
+            <ul>
+                <li><strong>Series Concept:</strong> "What an Engineering Degree ACTUALLY Teaches You" - this can be a recurring series</li>
+                <li><strong>Episode 1:</strong> Making decisions without all the information</li>
+                <li><strong>Future Episode Ideas:</strong> Estimation, breaking down complex problems, debugging/troubleshooting mindset, working with constraints, documentation, etc.</li>
+                <li><strong>Graphics are 600x600 preview</strong> - actual export should be 1200x1200 for LinkedIn</li>
+                <li><strong>Color schemes:</strong> Options use different palettes - pick what feels right for the series identity</li>
+                <li><strong>Recommendation:</strong> Option 2 (Puzzle) or Option 5 (80% Bar) are most scroll-stopping and memorable</li>
+            </ul>
+        </div>
+
+        <p class="download-note">
+            <strong>To export full-size graphic:</strong> Open in Chrome → Right-click → Inspect → Select the .post-image element → Right-click → "Capture node screenshot"<br>
+            (Scale the CSS width/height to 1200px x 1200px before exporting)
+        </p>
+    </div>
+</body>
+</html>

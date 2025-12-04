@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedIn Post Image - Engineering Degree Series: Decisions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #1a1a1a;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+
+        h1 {
+            color: white;
+            margin-bottom: 8px;
+            font-size: 24px;
+        }
+
+        .instructions {
+            color: #888;
+            font-size: 14px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        /* LinkedIn Post Image: 1200 x 1200 pixels (1:1 square) */
+        .post-image {
+            width: 1200px;
+            height: 1200px;
+            background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 100%);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            padding: 80px;
+        }
+
+        /* Subtle texture overlay */
+        .post-image::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
+                        radial-gradient(circle at 20% 80%, rgba(16, 185, 129, 0.1) 0%, transparent 40%);
+            pointer-events: none;
+        }
+
+        /* Logo at top */
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 50px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo-icon {
+            width: 56px;
+            height: 56px;
+            background: white;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 22px;
+            color: #064e3b;
+        }
+
+        .logo-text {
+            font-size: 28px;
+            font-weight: 700;
+            color: white;
+        }
+
+        .logo-text span {
+            color: #a7f3d0;
+        }
+
+        /* Main content */
+        .content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .series-badge {
+            display: inline-block;
+            background: rgba(99, 102, 241, 0.3);
+            color: #a5b4fc;
+            padding: 14px 28px;
+            border-radius: 40px;
+            font-size: 18px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 30px;
+            width: fit-content;
+            border: 2px solid rgba(99, 102, 241, 0.5);
+        }
+
+        h2 {
+            font-size: 72px;
+            font-weight: 800;
+            color: white;
+            line-height: 1.15;
+            margin-bottom: 40px;
+        }
+
+        h2 .highlight {
+            color: #fbbf24;
+        }
+
+        /* Curve visualization */
+        .curve-container {
+            position: relative;
+            width: 100%;
+            height: 340px;
+            margin: 30px 0;
+        }
+
+        .curve-graph {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .axis-label {
+            position: absolute;
+            font-size: 16px;
+            font-weight: 600;
+            color: rgba(255,255,255,0.6);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .axis-label.x-axis {
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .axis-label.y-axis {
+            left: -20px;
+            top: 50%;
+            transform: rotate(-90deg) translateX(-50%);
+            transform-origin: left center;
+        }
+
+        .curve-line {
+            position: absolute;
+            bottom: 40px;
+            left: 40px;
+            width: calc(100% - 80px);
+            height: calc(100% - 60px);
+            border-left: 3px solid rgba(255,255,255,0.3);
+            border-bottom: 3px solid rgba(255,255,255,0.3);
+        }
+
+        .curve-svg {
+            position: absolute;
+            inset: 0;
+        }
+
+        .sweet-spot {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background: #fbbf24;
+            border-radius: 50%;
+            border: 4px solid white;
+            top: 38%;
+            left: 52%;
+            animation: pulse 2s infinite;
+            box-shadow: 0 0 40px rgba(251, 191, 36, 0.6);
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.15); }
+        }
+
+        .sweet-label {
+            position: absolute;
+            top: 24%;
+            left: 58%;
+            background: rgba(251, 191, 36, 0.25);
+            color: #fbbf24;
+            padding: 12px 24px;
+            border-radius: 12px;
+            font-size: 18px;
+            font-weight: 800;
+            border: 2px solid rgba(251, 191, 36, 0.5);
+            letter-spacing: 1px;
+        }
+
+        .subtext {
+            font-size: 26px;
+            color: rgba(255,255,255,0.75);
+            line-height: 1.5;
+            margin-top: 20px;
+        }
+
+        /* Bottom section */
+        .bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            position: relative;
+            z-index: 1;
+            margin-top: 40px;
+        }
+
+        .tagline {
+            font-size: 24px;
+            color: rgba(255,255,255,0.6);
+            font-style: italic;
+        }
+
+        .website {
+            font-size: 28px;
+            font-weight: 700;
+            color: white;
+            background: rgba(0,0,0,0.3);
+            padding: 18px 36px;
+            border-radius: 50px;
+        }
+
+        .download-note {
+            color: #666;
+            font-size: 12px;
+            margin-top: 24px;
+            text-align: center;
+        }
+
+        .download-note strong {
+            color: #14b8a6;
+        }
+    </style>
+</head>
+<body>
+    <h1>LinkedIn Post Image - Square Format (1200x1200)</h1>
+    <p class="instructions">Export using Chrome DevTools: Right-click → Inspect → Select .post-image → Right-click → "Capture node screenshot"</p>
+
+    <div class="post-image">
+        <!-- Logo -->
+        <div class="logo">
+            <div class="logo-icon">L²</div>
+            <div class="logo-text">Launch<span>ToLead</span></div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="content">
+            <div class="series-badge">🎓 Engineering Degree Series</div>
+            <h2>The <span class="highlight">Sweet Spot</span><br>of Decision Making</h2>
+            
+            <!-- Curve Visualization -->
+            <div class="curve-container">
+                <div class="curve-graph">
+                    <div class="curve-line">
+                        <svg class="curve-svg" viewBox="0 0 1000 280" preserveAspectRatio="none">
+                            <!-- The curve showing diminishing returns -->
+                            <path d="M 40 250 Q 200 240, 300 160 Q 400 80, 550 55 Q 700 35, 900 30" 
+                                  stroke="url(#curveGradient)" stroke-width="6" fill="none" stroke-linecap="round"/>
+                            <!-- Gradient definition -->
+                            <defs>
+                                <linearGradient id="curveGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                    <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+                                    <stop offset="50%" style="stop-color:#10b981;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#6366f1;stop-opacity:0.5" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                    <div class="sweet-spot"></div>
+                    <div class="sweet-label">DECIDE HERE</div>
+                    <div class="axis-label x-axis">Time Spent Gathering Data →</div>
+                    <div class="axis-label y-axis">Decision Quality →</div>
+                </div>
+            </div>
+            
+            <p class="subtext">More data helps... until it doesn't.<br>Engineers learn to find the inflection point.</p>
+        </div>
+
+        <!-- Bottom -->
+        <div class="bottom">
+            <div class="tagline">Good enough data. Good enough time.</div>
+            <div class="website">LaunchToLead.io</div>
+        </div>
+    </div>
+
+    <p class="download-note">
+        <strong>To export:</strong> Open in Chrome → Right-click → Inspect → Select the .post-image element → Right-click → "Capture node screenshot"
+    </p>
+</body>
+</html>
