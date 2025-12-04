@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>The Green Light Audit™ | LaunchToLead</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        
+        /* Custom Radio Styling */
+        .radio-option {
+            transition: all 0.2s ease;
+        }
+        .radio-option:has(input:checked) {
+            border-color: #10b981;
+            background: rgba(16, 185, 129, 0.1);
+        }
+        .radio-option:has(input:checked) .radio-dot {
+            background: #10b981;
+        }
+        .radio-option:hover {
+            border-color: #6b7280;
+        }
+        
+        /* Progress Bar */
+        .progress-fill {
+            transition: width 0.3s ease;
+        }
+        
+        /* Print Styles */
+        @media print {
+            body { 
+                -webkit-print-color-adjust: exact; 
+                print-color-adjust: exact;
+            }
+            .no-print { display: none !important; }
+            .print-break { page-break-after: always; }
+            @page { margin: 0.5in; }
+        }
+        
+        /* Fade in animation */
+        .fade-in {
+            animation: fadeIn 0.3s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-100 min-h-screen">
+    
+    <!-- Header -->
+    <header class="bg-gradient-to-r from-emerald-900 to-gray-900 py-8 border-b border-emerald-500/30">
+        <div class="max-w-3xl mx-auto px-6">
+            <div class="flex justify-between items-center">
+                <div>
+                    <p class="text-emerald-400 text-sm font-semibold mb-1">ACCELERATE PATH • PRE-SESSION 1</p>
+                    <h1 class="text-3xl font-bold text-white">The Green Light Audit™</h1>
+                    <p class="text-gray-400 mt-1">Are you ready for visibility tactics?</p>
+                </div>
+                <div class="text-right">
+                    <div class="inline-flex items-center gap-2 bg-gray-800 px-4 py-2 rounded-full">
+                        <span class="text-2xl font-bold">L²</span>
+                        <span class="text-sm text-gray-400">LaunchToLead</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Progress Bar -->
+    <div class="bg-gray-800 py-3 sticky top-0 z-50 no-print">
+        <div class="max-w-3xl mx-auto px-6">
+            <div class="flex items-center justify-between mb-2">
+                <span class="text-sm text-gray-400">Progress</span>
+                <span id="progressText" class="text-sm text-emerald-400 font-medium">0 of 14 questions</span>
+            </div>
+            <div class="w-full bg-gray-700 rounded-full h-2">
+                <div id="progressBar" class="progress-fill bg-emerald-500 h-2 rounded-full" style="width: 0%"></div>
+            </div>
+        </div>
+    </div>
+
+    <main class="max-w-3xl mx-auto px-6 py-10">
+
+        <!-- Introduction -->
+        <section id="intro" class="mb-12">
+            <div class="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
+                <h2 class="text-xl font-bold text-white mb-4">📋 Before You Begin</h2>
+                <p class="text-gray-300 mb-4">This self-assessment determines if you're ready to pursue <strong class="text-white">visibility and promotion tactics</strong>—or if there's foundational work needed first.</p>
+                
+                <div class="bg-emerald-500/10 rounded-lg p-4 border border-emerald-500/30 mb-4">
+                    <p class="text-emerald-400 font-semibold mb-2">🎯 The Core Principle</p>
+                    <p class="text-gray-300 text-sm">Performance is not the differentiator—it's the <em>prerequisite</em>. Before any visibility tactics work, you must be bulletproof in your core role. This audit checks that foundation.</p>
+                </div>
+                
+                <p class="text-gray-400 text-sm"><strong class="text-white">Be brutally honest.</strong> This isn't about feeling good—it's about knowing where you stand so we can build the right strategy for you.</p>
+            </div>
+        </section>
+
+        <!-- Assessment Form -->
+        <form id="auditForm">
+            
+            <!-- SECTION 1: Role Mastery (The Green Light Audit) -->
+            <section class="mb-12">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-10 h-10 bg-emerald-500 rounded-full flex items-center justify-center text-white font-bold">1</div>
+                    <div>
+                        <h2 class="text-xl font-bold text-white">Role Mastery</h2>
+                        <p class="text-gray-400 text-sm">The "Competence Entry Fee"</p>
+                    </div>
+                </div>
+
+                <!-- Q1: Day-to-Day Mastery -->
+                <div class="bg-gray-800/50 rounded-xl p-6 mb-4 border border-gray-700" data-question="1">
+                    <p class="text-white font-medium mb-4">1. Can you do your day-to-day job with very little help?</p>
+                    <p class="text-gray-400 text-sm mb-4">You're not asking senior engineers "how do I do X, Y, Z?" for fundamental tasks.</p>
+                    <div class="space-y-2">
+                        <label class="radio-option flex items-center gap-3 p-3 rounded-lg border border-gray-700 cursor-pointer">
+                            <input type="radio" name="q1" value="3" class="hidden">
+                            <div class="radio-dot w-5 h-5 rounded-full border-2 border-gray-500 flex items-center justify-center">
+                                <div class="w-2.5 h-2.5 rounded-full"></div>
+                            </div>
+                            <span class="text-gray-300">Yes, I'm fully self-sufficient on all core responsibilities</span>
+                        </label>
+                        <label class="radio-option flex items-center gap-3 p-3 rounded-lg border border-gray-700 cursor-pointer">
+                            <input type="radio" name="q1" value="2" class="hidden">
+                            <div class="radio-dot w-5 h-5 rounded-full border-2 border-gray-500 flex items-center justify-center">
+                                <div class="w-2.5 h-2.5 rounded-full"></div>
+                            </div>
+                            <span class="text-gray-300">Mostly yes, but I occasionally need help on edge cases</span>
+                        </label>
+                        <label class="radio-option flex items-center gap-3 p-3 rounded-lg border border-gray-700 cursor-pointer">
+                            <input type="radio" name="q1" value="1" class="hidden">
+                            <div class="radio-dot w-5 h-5 rounded-full border-2 border-gray-500 flex items-center justify-center">
+                                <div class="w-2.5 h-2.5 rounded-full"></div>
+                            </div>
+                            <span class="text-gray-300">I still regularly ask for help on fundamental tasks</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Q2: Go-To Status -->
+                <div class="bg-gray-800/50 rounded-xl p-6 mb-4 border border-gray-700" data-question="2">
+                    <p class="text-white font-medium mb-4">2. Do people come to YOU for help?</p>
+                    <p class="text-gray-400 text-sm mb-4">Others ask how to do things—you're not the one always asking.</p>
+                    <div class="space-y-2">
+                        <label class="radio-option flex items-center gap-3 p-3 rounded-lg border border-gray-700 cursor-pointer">
+                            <input type="radio" name="q2" value="3" class="hidden">
+                            <div class="radio-dot w-5 h-5 rounded-full border-2 border-gray-500 flex items-center justify-center">
+                                <div class="w-2.5 h-2.5 rounded-full"></div>
+                            </div>
+                            <span class="text-gray-300">Yes, I'm a go-to person on my team for my area</span>
+                        </label>
+                        <label class="radio-option flex items-center gap-3 p-3 rounded-lg border border-gray-700 cursor-pointer">
+                            <input type="radio" name="q2" value="2" class="hidden">
+                            <div class="radio-dot w-5 h-5 rounded-full border-2 border-gray-500 flex items-center justify-center">
+                                <div class="w-2.5 h-2.5 rounded-full"></div>
+                            </div>
+                            <span class="text-gray-300">Sometimes—it depends on the topic</span>
+                        </label>
+                        <label class="radio-option flex items-center gap-3 p-3 rounded-lg border border-gray-700 cursor-pointer">
+                            <input type="radio" name="q2" value="1" class="hidden">
+                            <div class="radio-dot w-5 h-5 rounded-full border-2 border-gray-500 flex items-center justify-center">
+                                <div class="w-2.5 h-2.5 rounded-full"></div>
+                            </div>
+                            <span class="text-gray-300">Not really—I'm still the one asking others more often</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Q3: Review Performance -->
+                <div class="bg-gray-800/50 rounded-xl p-6 mb-4 border border-gray-700" data-question="3">
+                    <p class="text-white font-medium mb-4">3. What was your last yearly performance review rating?</p>
+                    <div class="space-y-2">
+                        <label class="radio-option flex items-center gap-3 p-3 rounded-lg border border-gray-700 cursor-pointer">
+                            <input type="radio" name="q3" value="3" class="hidden">
+                            <div class="radio-dot w-5 h-5 rounded-full border-2 border-gray-500 flex items-center justify-center">
+                                <div class="w-2.5 h-2.5 rounded-full"></div>
+                            </div>
+                            <span class="text-gray-300">"Exceeds Expectations" or equivalent</span>
+                        </label>
+                        <label class="radio-option flex items-center gap-3 p-3 rounded-lg border border-gray-700 cursor-pointer">
+                            <input type="radio" name="q3" value="2" class="hidden">
+                            <div class="radio-dot w-5 h-5 rounded-full border-2 border-gray-500 flex items-center justify-center">
+                                <div class="w-2.5 h-2.5 rounded-full"></div>
+                            </div>
+                            <span class="text-gray-300">"Meets Expectations" or equivalent</span>
+                        </label>
+                        <label class="radio-option flex items-center gap-3 p-3 rounded-lg border border-gray-700 cursor-pointer">
+                            <input type="radio" name="q3" value="1" class="hidden">
+                            <div class="radio-dot w-5 h-5 rounded-full border-2 border-gray-500 flex items-center justify-center">
+                                <div class="w-2.5 h-2.5 rounded-full"></div>
+                            </div>
+                            <span class="text-gray-300">Below expectations, or I haven't had a review yet</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Q4: Manager Signals - Responsibility -->
+                <div class="bg-gray-800/50 rounded-xl p-6 mb-4 border border-gray-700" data-question="4">
+                    <p class="text-white font-medium mb-4">4. Is your manager giving you MORE responsibility over time?</p>
+                    <p class="text-gray-400 text-sm mb-4">Increased scope, bigger projects, more autonomy.</p>
+                    <div class="space-y-2">
+                        <label class="radio-option flex items-center gap-3 p-3 rounded-lg border border-gray-700 cursor-pointer">
+                            <input type="radio" name="q4" value="3" class="hidden">
+                            <div class="radio-dot w-5 h-5 rounded-full border-2 border-gray-500 flex items-center justify-center">
+                                <div class="w-2.5 h-2.5 rounded-full"></div>
+                            </div>
+                            <span class="text-gray-300">Yes, I'm consistently getting bigger/more complex work</span>
+                        </label>
+                        <label class="radio-option flex items-center gap-3 p-3 rounded-lg border border-gray-700 cursor-pointer">
+                            <input type="radio" name="q4" value="2" class="hidden">
+                            <div class="radio-dot w-5 h-5 rounded-full border-2 border-gray-500 flex items-center justify-center">
+                                <div class="w-2.5 h-2.5 rounded-full"></div>
+                            </div>
+                            <span class="text-gray-300">Somewhat—occasional stretch assignments</span>
+                        </label>
+                        <label class="radio-option flex items-center gap-3 p-3 rounded-lg border border-gray-700 cursor-pointer">
+                            <input type="radio" name="q4" value="1" class="hidden">
+                            <div class="radio-dot w-5 h-5 rounded-full border-2 border-gray-500 flex items-center justify-center">
+                                <div class="w-2.5 h-2.5 rounded-full"></div>
+                            </div>
+                            <span class="text-gray-300">No, my scope has stayed the same or decreased</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Q5: Manager Signals - Praise -->
+                <div class="bg-gray-800/50 rounded-xl p-6 mb-4 border border-gray-700" data-question="5">
+                    <p class="text-white font-medium mb-4">5. Has your manager praised you for going above and beyond?</p>
+                    <p class="text-gray-400 text-sm mb-4">Recognition for extra effort, not just doing your job.</p>
+                    <div class="space-y-2">
+                        <label class="radio-option flex items-center gap-3 p-3 rounded-lg border border-gray-700 cursor-pointer">
+                            <input type="radio" name="q5" value="3" class="hidden">
+                            <div class="radio-dot w-5 h-5 rounded-full border-2 border-gray-500 flex items-center justify-center">
+                                <div class="w-2.5 h-2.5 rounded-full"></div>
+                            </div>
+                            <span class="text-gray-300">Yes, I've received specific recognition for extra work</span>
+                        </label>
+                        <label class="radio-option flex items-center gap-3 p-3 rounded-lg border border-gray-700 cursor-pointer">
+                            <input type="radio" name="q5" value="2" class="hidden">
+                            <div class="radio-dot w-5 h-5 rounded-full border-2 border-gray-500 flex items-center justify-center">
+                                <div class="w-2.5 h-2.5 rounded-full"></div>
+                            </div>
+                            <span class="text-gray-300">Some general positive feedback, nothing specific</span>
+                        </label>
+                        <label class="radio-option flex items-center gap-3 p-3 rounded-lg border border-gray-700 cursor-pointer">
+                            <input type="radio" name="q5" value="1" class="hidden">
+                            <div class="radio-dot w-5 h-5 rounded-full border-2 border-gray-500 flex items-center justify-center">
+                                <div class="w-2.5 h-2.5 rounded-full"></div>
+                            </div>
+                            <span class="text-gray-300">No, or I haven't gone above and beyond recently</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Q6: Teaching Ability -->
+                <div class="bg-gray-800/50 rounded-xl p-6 mb-4 border border-gray-700" data-question="6">
+                    <p class="text-white font-medium mb-4">6. Could you train someone else on your core work tasks?</p>
+                    <div class="space-y-2">
+                        <label class="radio-option flex items-center gap-3 p-3 rounded-lg border border-gray-700 cursor-pointer">
+                            <input type="radio" name="q6" value="3" class="hidden">
+                            <div class="radio-dot w-5 h-5 rounded-full border-2 border-gray-500 flex items-center justify-center">
+                                <div class="w-2.5 h-2.5 rounded-full"></div>
+                            </div>
+                            <span class="text-gray-300">Yes, I've done it or could confidently do it</span>
+                        </label>
+                        <label class="radio-option flex items-center gap-3 p-3 rounded-lg border border-gray-700 cursor-pointer">
+                            <input type="radio" name="q6" value="2" class="hidden">
+                            <div class="radio-dot w-5 h-5 rounded-full border-2 border-gray-500 flex items-center justify-center">
+                                <div class="w-2.5 h-2.5 rounded-full"></div>
+                            </div>
+                            <span class="text-gray-300">Probably, but I'd need to prepare</span>
+                        </label>
+                        <label class="radio-option flex items-center gap-3 p-3 rounded-lg border border-gray-700 cursor-pointer">
+                            <input type="radio" name="q6" value="1" class="hidden">
+                            <div class="radio-dot w-5 h-5 rounded-full border-2 border-gray-500 flex items-center justify-center">
+                                <div class="w-2.5 h-2.5 rounded-full"></div>
+                            </div>
+                            <span class="text-gray-300">No, I'm still learning too much myself</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Q7: Onboarding Capability -->
+                <div class="bg-gray-800/50 rounded-xl p-6 mb-4 border border-gray-700" data-question="7">
+                    <p class="text-white font-medium mb-4">7. Could you onboard a new team member effectively?</p>
+                    <p class="text-gray-400 text-sm mb-4">Show them the ropes, introduce them to stakeholders, explain team processes.</p>
+                    <div class="space-y-2">
+                        <label class="radio-option flex items-center gap-3 p-3 rounded-lg border border-gray-700 cursor-pointer">
+                            <input type="radio" name="q7" value="3" class="hidden">
+                            <div class="radio-dot w-5 h-5 rounded-full border-2 border-gray-500 flex items-center justify-center">
+                                <div class="w-2.5 h-2.5 rounded-full"></div>
+                            </div>
+                            <span class="text-gray-300">Yes, I've done it or am fully capable</span>
+                        </label>
+                        <label class="radio-option flex items-center gap-3 p-3 rounded-lg border border-gray-700 cursor-pointer">
+                            <input type="radio" name="q7" value="2" class="hidden">
+                            <div class="radio-dot w-5 h-5 rounded-full border-2 border-gray-500 flex items-center justify-center">
+                                <div class="w-2.5 h-2.5 rounded-full"></div>
+                            </div>
+                            <span class="text-gray-300">Partially—I could help but not lead the whole process</span>
+                        </label>
+                        <label class="radio-option flex items-center gap-3 p-3 rounded-lg border border-gray-700 cursor-pointer">
+                            <input type="radio" name="q7" value="1" class="hidden">
+                            <div class="radio-dot w-5 h-5 rounded-full border-2 border-gray-500 flex items-center justify-center">
+                                <div class="w-2.5 h-2.5 rounded-full"></div>
+                            </div>
+                            <span class="text-gray-300">No, I'm still getting onboarded myself in many ways</span>
+                        </label>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 2: Role Saturation (The 85% Rule) -->
+            <section class="mb-12">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold">2</div>
+                    <div>
+                        <h2 class="text-xl font-bold text-white">Role Saturation</h2>
+                        <p class="text-gray-400 text-sm">The 85% Threshold</p>
+                    </div>
+                </div>
+
+                <div class="bg-blue-500/10 rounded-lg p-4 border border-blue-500/30 mb-6">
+                    <p class="text-blue-400 font-semibold mb-2">🎯 What We're Measuring</p>
+                    <p class="text-gray-300 text-sm">Have you extracted 85% of what this role offers in terms of <strong class="text-white">learning, influence, impact, and improvement</strong>? If not, you may be asking for promotion prematurely.</p>
+                </div>
+
+                <!-- Q8: Learning Saturation -->
+                <div class="bg-gray-800/50 rounded-xl p-6 mb-4 border border-gray-700" data-question="8">
+                    <p class="text-white font-medium mb-4">8. How much more can you LEARN from this role?</p>
+                    <div class="space-y-2">
+                        <label class="radio-option flex items-center gap-3 p-3 rounded-lg border border-gray-700 cursor-pointer">
+                            <input type="radio" name="q8" value="3" class="hidden">
+                            <div class="radio-dot w-5 h-5 rounded-full border-2 border-gray-500 flex items-center justify-center">
+                                <div class="w-2.5 h-2.5 rounded-full"></div>
+                            </div>
+                            <span class="text-gray-300">Not much—I've absorbed most of what this role offers</span>
+                        </label>
+                        <label class="radio-option flex items-center gap-3 p-3 rounded-lg border border-gray-700 cursor-pointer">
+                            <input type="radio" name="q8" value="2" class="hidden">
+                            <div class="radio-dot w-5 h-5 rounded-full border-2 border-gray-500 flex items-center justify-center">
+                                <div class="w-2.5 h-2.5 rounded-full"></div>
+                            </div>
+                            <span class="text-gray-300">Some things, but I've learned the major skills</span>
+                        </label>
+                        <label class="radio-option flex items-center gap-3 p-3 rounded-lg border border-gray-700 cursor-pointer">
+                            <input type="radio" name="q8" value="1" class="hidden">
+                            <div class="radio-dot w-5 h-5 rounded-full border-2 border-gray-500 flex items-center justify-center">
+                                <div class="w-2.5 h-2.5 rounded-full"></div>
+                            </div>
+                            <span class="text-gray-300">A lot—I'm still learning fundamental aspects</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Q9: Influence Saturation -->
+                <div class="bg-gray-800/50 rounded-xl p-6 mb-4 border border-gray-700" data-question="9">
+                    <p class="text-white font-medium mb-4">9. Have you maximized your INFLUENCE in this role?</p>
+                    <p class="text-gray-400 text-sm mb-4">Built relationships, established credibility, become a trusted voice.</p>
+                    <div class="space-y-2">
+                        <label class="radio-option flex items-center gap-3 p-3 rounded-lg border border-gray-700 cursor-pointer">
+                            <input type="radio" name="q9" value="3" class="hidden">
+                            <div class="radio-dot w-5 h-5 rounded-full border-2 border-gray-500 flex items-center justify-center">
+                                <div class="w-2.5 h-2.5 rounded-full"></div>
+                            </div>
+                            <span class="text-gray-300">Yes, I've built strong influence within my scope</span>
+                        </label>
+                        <label class="radio-option flex items-center gap-3 p-3 rounded-lg border border-gray-700 cursor-pointer">
+                            <input type="radio" name="q9" value="2" class="hidden">
+                            <div class="radio-dot w-5 h-5 rounded-full border-2 border-gray-500 flex items-center justify-center">
+                                <div class="w-2.5 h-2.5 rounded-full"></div>
+                            </div>
+                            <span class="text-gray-300">Partially—I could still expand my influence more</span>
+                        </label>
+                        <label class="radio-option flex items-center gap-3 p-3 rounded-lg border border-gray-700 cursor-pointer">
+                            <input type="radio" name="q9" value="1" class="hidden">
+                            <div class="radio-dot w-5 h-5 rounded-full border-2 border-gray-500 flex items-center justify-center">
+                                <div class="w-2.5 h-2.5 rounded-full"></div>
+                            </div>
+                            <span class="text-gray-300">Not really—I haven't focused on building influence yet</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Q10: Impact Saturation -->
+                <div class="bg-gray-800/50 rounded-xl p-6 mb-4 border border-gray-700" data-question="10">
+                    <p class="text-white font-medium mb-4">10. Have you made the major IMPACT improvements available to you?</p>
+                    <p class="text-gray-400 text-sm mb-4">Fixed obvious problems, improved processes, delivered major wins.</p>
+                    <div class="space-y-2">
+                        <label class="radio-option flex items-center gap-3 p-3 rounded-lg border border-gray-700 cursor-pointer">
+                            <input type="radio" name="q10" value="3" class="hidden">
+                            <div class="radio-dot w-5 h-5 rounded-full border-2 border-gray-500 flex items-center justify-center">
+                                <div class="w-2.5 h-2.5 rounded-full"></div>
+                            </div>
+                            <span class="text-gray-300">Yes, I've captured the major wins available in this role</span>
+                        </label>
+                        <label class="radio-option flex items-center gap-3 p-3 rounded-lg border border-gray-700 cursor-pointer">
+                            <input type="radio" name="q10" value="2" class="hidden">
+                            <div class="radio-dot w-5 h-5 rounded-full border-2 border-gray-500 flex items-center justify-center">
+                                <div class="w-2.5 h-2.5 rounded-full"></div>
+                            </div>
+                            <span class="text-gray-300">Some—there are still clear improvements I could make</span>
+                        </label>
+                        <label class="radio-option flex items-center gap-3 p-3 rounded-lg border border-gray-700 cursor-pointer">
+                            <input type="radio" name="q10" value="1" class="hidden">
+                            <div class="radio-dot w-5 h-5 rounded-full border-2 border-gray-500 flex items-center justify-center">
+                                <div class="w-2.5 h-2.5 rounded-full"></div>
+                            </div>
+                            <span class="text-gray-300">Not yet—there's significant low-hanging fruit I haven't addressed</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Q11: Diminishing Returns -->
+                <div class="bg-gray-800/50 rounded-xl p-6 mb-4 border border-gray-700" data-question="11">
+                    <p class="text-white font-medium mb-4">11. Are you hitting diminishing returns in this role?</p>
+                    <p class="text-gray-400 text-sm mb-4">The role is "running dry"—you're hungry for more and this isn't satisfying anymore.</p>
+                    <div class="space-y-2">
+                        <label class="radio-option flex items-center gap-3 p-3 rounded-lg border border-gray-700 cursor-pointer">
+                            <input type="radio" name="q11" value="3" class="hidden">
+                            <div class="radio-dot w-5 h-5 rounded-full border-2 border-gray-500 flex items-center justify-center">
+                                <div class="w-2.5 h-2.5 rounded-full"></div>
+                            </div>
+                            <span class="text-gray-300">Yes, I'm ready to drink from a new firehose</span>
+                        </label>
+                        <label class="radio-option flex items-center gap-3 p-3 rounded-lg border border-gray-700 cursor-pointer">
+                            <input type="radio" name="q11" value="2" class="hidden">
+                            <div class="radio-dot w-5 h-5 rounded-full border-2 border-gray-500 flex items-center justify-center">
+                                <div class="w-2.5 h-2.5 rounded-full"></div>
+                            </div>
+                            <span class="text-gray-300">Somewhat—I'm getting restless but still learning</span>
+                        </label>
+                        <label class="radio-option flex items-center gap-3 p-3 rounded-lg border border-gray-700 cursor-pointer">
+                            <input type="radio" name="q11" value="1" class="hidden">
+                            <div class="radio-dot w-5 h-5 rounded-full border-2 border-gray-500 flex items-center justify-center">
+                                <div class="w-2.5 h-2.5 rounded-full"></div>
+                            </div>
+                            <span class="text-gray-300">No, there's still plenty of juice to squeeze from this role</span>
+                        </label>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 3: Visibility Readiness -->
+            <section class="mb-12">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-10 h-10 bg-amber-500 rounded-full flex items-center justify-center text-white font-bold">3</div>
+                    <div>
+                        <h2 class="text-xl font-bold text-white">Visibility Readiness</h2>
+                        <p class="text-gray-400 text-sm">Skip-Level Access & Presentation Ability</p>
+                    </div>
+                </div>
+
+                <!-- Q12: Presentation Ability -->
+                <div class="bg-gray-800/50 rounded-xl p-6 mb-4 border border-gray-700" data-question="12">
+                    <p class="text-white font-medium mb-4">12. Could you present to stakeholders what your role/team does?</p>
+                    <p class="text-gray-400 text-sm mb-4">Explain your work clearly to people outside your immediate team.</p>
+                    <div class="space-y-2">
+                        <label class="radio-option flex items-center gap-3 p-3 rounded-lg border border-gray-700 cursor-pointer">
+                            <input type="radio" name="q12" value="3" class="hidden">
+                            <div class="radio-dot w-5 h-5 rounded-full border-2 border-gray-500 flex items-center justify-center">
+                                <div class="w-2.5 h-2.5 rounded-full"></div>
+                            </div>
+                            <span class="text-gray-300">Yes, I've done it or could confidently do it</span>
+                        </label>
+                        <label class="radio-option flex items-center gap-3 p-3 rounded-lg border border-gray-700 cursor-pointer">
+                            <input type="radio" name="q12" value="2" class="hidden">
+                            <div class="radio-dot w-5 h-5 rounded-full border-2 border-gray-500 flex items-center justify-center">
+                                <div class="w-2.5 h-2.5 rounded-full"></div>
+                            </div>
+                            <span class="text-gray-300">Probably, with some preparation</span>
+                        </label>
+                        <label class="radio-option flex items-center gap-3 p-3 rounded-lg border border-gray-700 cursor-pointer">
+                            <input type="radio" name="q12" value="1" class="hidden">
+                            <div class="radio-dot w-5 h-5 rounded-full border-2 border-gray-500 flex items-center justify-center">
+                                <div class="w-2.5 h-2.5 rounded-full"></div>
+                            </div>
+                            <span class="text-gray-300">No, I'd struggle to present to stakeholders</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Q13: Skip-Level Awareness -->
+                <div class="bg-gray-800/50 rounded-xl p-6 mb-4 border border-gray-700" data-question="13">
+                    <p class="text-white font-medium mb-4">13. Does your skip-level (manager's manager) know your name and value?</p>
+                    <p class="text-gray-400 text-sm mb-4">If your manager got hit by a bus, would the skip-level know who you are?</p>
+                    <div class="space-y-2">
+                        <label class="radio-option flex items-center gap-3 p-3 rounded-lg border border-gray-700 cursor-pointer">
+                            <input type="radio" name="q13" value="3" class="hidden">
+                            <div class="radio-dot w-5 h-5 rounded-full border-2 border-gray-500 flex items-center justify-center">
+                                <div class="w-2.5 h-2.5 rounded-full"></div>
+                            </div>
+                            <span class="text-gray-300">Yes, they know me and my contributions</span>
+                        </label>
+                        <label class="radio-option flex items-center gap-3 p-3 rounded-lg border border-gray-700 cursor-pointer">
+                            <input type="radio" name="q13" value="2" class="hidden">
+                            <div class="radio-dot w-5 h-5 rounded-full border-2 border-gray-500 flex items-center justify-center">
+                                <div class="w-2.5 h-2.5 rounded-full"></div>
+                            </div>
+                            <span class="text-gray-300">They know my name but not my specific value</span>
+                        </label>
+                        <label class="radio-option flex items-center gap-3 p-3 rounded-lg border border-gray-700 cursor-pointer">
+                            <input type="radio" name="q13" value="1" class="hidden">
+                            <div class="radio-dot w-5 h-5 rounded-full border-2 border-gray-500 flex items-center justify-center">
+                                <div class="w-2.5 h-2.5 rounded-full"></div>
+                            </div>
+                            <span class="text-gray-300">No, I'm invisible to my skip-level</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Q14: Evidence Documentation -->
+                <div class="bg-gray-800/50 rounded-xl p-6 mb-4 border border-gray-700" data-question="14">
+                    <p class="text-white font-medium mb-4">14. Do you have documented evidence of your accomplishments?</p>
+                    <p class="text-gray-400 text-sm mb-4">Specific wins with metrics, positive feedback, impact statements.</p>
+                    <div class="space-y-2">
+                        <label class="radio-option flex items-center gap-3 p-3 rounded-lg border border-gray-700 cursor-pointer">
+                            <input type="radio" name="q14" value="3" class="hidden">
+                            <div class="radio-dot w-5 h-5 rounded-full border-2 border-gray-500 flex items-center justify-center">
+                                <div class="w-2.5 h-2.5 rounded-full"></div>
+                            </div>
+                            <span class="text-gray-300">Yes, I track my wins with specific metrics/evidence</span>
+                        </label>
+                        <label class="radio-option flex items-center gap-3 p-3 rounded-lg border border-gray-700 cursor-pointer">
+                            <input type="radio" name="q14" value="2" class="hidden">
+                            <div class="radio-dot w-5 h-5 rounded-full border-2 border-gray-500 flex items-center justify-center">
+                                <div class="w-2.5 h-2.5 rounded-full"></div>
+                            </div>
+                            <span class="text-gray-300">I have some examples but nothing organized</span>
+                        </label>
+                        <label class="radio-option flex items-center gap-3 p-3 rounded-lg border border-gray-700 cursor-pointer">
+                            <input type="radio" name="q14" value="1" class="hidden">
+                            <div class="radio-dot w-5 h-5 rounded-full border-2 border-gray-500 flex items-center justify-center">
+                                <div class="w-2.5 h-2.5 rounded-full"></div>
+                            </div>
+                            <span class="text-gray-300">No, I don't track or document my accomplishments</span>
+                        </label>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Submit Button -->
+            <div class="text-center no-print">
+                <button type="submit" id="submitBtn" class="bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-4 px-12 rounded-xl text-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed">
+                    Calculate My Results
+                </button>
+                <p id="submitError" class="text-red-400 text-sm mt-3 hidden">Please answer all 14 questions to see your results.</p>
+            </div>
+        </form>
+
+        <!-- RESULTS SECTION (Hidden until form submitted) -->
+        <section id="results" class="hidden fade-in">
+            <div class="bg-gradient-to-r from-gray-800 to-gray-900 rounded-2xl p-8 border border-gray-700 mb-8">
+                <h2 class="text-2xl font-bold text-white mb-6 text-center">📊 Your Green Light Audit Results</h2>
+                
+                <!-- Overall Score -->
+                <div id="overallResult" class="text-center mb-8">
+                    <!-- Filled by JavaScript -->
+                </div>
+
+                <!-- Section Scores -->
+                <div class="grid md:grid-cols-3 gap-4 mb-8">
+                    <div class="bg-gray-800/50 rounded-xl p-4 text-center border border-gray-700">
+                        <p class="text-gray-400 text-sm mb-1">Role Mastery</p>
+                        <p id="section1Score" class="text-2xl font-bold text-emerald-400">--/21</p>
+                        <p id="section1Percent" class="text-sm text-gray-500">--%</p>
+                    </div>
+                    <div class="bg-gray-800/50 rounded-xl p-4 text-center border border-gray-700">
+                        <p class="text-gray-400 text-sm mb-1">Role Saturation</p>
+                        <p id="section2Score" class="text-2xl font-bold text-blue-400">--/12</p>
+                        <p id="section2Percent" class="text-sm text-gray-500">--%</p>
+                    </div>
+                    <div class="bg-gray-800/50 rounded-xl p-4 text-center border border-gray-700">
+                        <p class="text-gray-400 text-sm mb-1">Visibility Readiness</p>
+                        <p id="section3Score" class="text-2xl font-bold text-amber-400">--/9</p>
+                        <p id="section3Percent" class="text-sm text-gray-500">--%</p>
+                    </div>
+                </div>
+
+                <!-- Interpretation -->
+                <div id="interpretation" class="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
+                    <!-- Filled by JavaScript -->
+                </div>
+            </div>
+
+            <!-- Next Steps -->
+            <div id="nextSteps" class="bg-emerald-500/10 rounded-xl p-6 border border-emerald-500/30 mb-8">
+                <!-- Filled by JavaScript -->
+            </div>
+
+            <!-- Print/Save Button -->
+            <div class="text-center no-print">
+                <div class="bg-amber-500/10 rounded-xl p-6 border border-amber-500/30 mb-6">
+                    <p class="text-amber-400 font-bold text-lg mb-2">⚠️ Important: Save Your Results!</p>
+                    <p class="text-gray-300 text-sm mb-4">Your answers are NOT saved automatically. Click the button below to print or save as PDF before closing this page.</p>
+                    <button onclick="window.print()" class="bg-amber-500 hover:bg-amber-600 text-white font-bold py-4 px-10 rounded-xl text-lg transition-all">
+                        📄 Print / Save as PDF
+                    </button>
+                    <p class="text-gray-400 text-sm mt-4">Bring this completed audit to your first coaching session.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 py-6 border-t border-gray-700 mt-12">
+        <div class="max-w-3xl mx-auto px-6 text-center">
+            <p class="text-gray-400 text-sm">The Green Light Audit™ | LaunchToLead Accelerate Path</p>
+            <p class="text-gray-500 text-xs mt-1">© 2025 LaunchToLead. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Track answered questions for progress
+        const totalQuestions = 14;
+        const form = document.getElementById('auditForm');
+        const progressBar = document.getElementById('progressBar');
+        const progressText = document.getElementById('progressText');
+        const submitBtn = document.getElementById('submitBtn');
+        const submitError = document.getElementById('submitError');
+
+        // Update progress on any radio change
+        form.addEventListener('change', function() {
+            const answered = document.querySelectorAll('input[type="radio"]:checked').length;
+            const percent = (answered / totalQuestions) * 100;
+            progressBar.style.width = percent + '%';
+            progressText.textContent = answered + ' of ' + totalQuestions + ' questions';
+            
+            if (answered === totalQuestions) {
+                submitBtn.disabled = false;
+                submitBtn.classList.remove('opacity-50');
+            }
+        });
+
+        // Form submission
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Check all questions answered
+            const answered = document.querySelectorAll('input[type="radio"]:checked').length;
+            if (answered < totalQuestions) {
+                submitError.classList.remove('hidden');
+                return;
+            }
+            submitError.classList.add('hidden');
+
+            // Calculate scores
+            let section1 = 0; // Q1-7 (Role Mastery) - max 21
+            let section2 = 0; // Q8-11 (Role Saturation) - max 12
+            let section3 = 0; // Q12-14 (Visibility Readiness) - max 9
+
+            for (let i = 1; i <= 7; i++) {
+                const val = document.querySelector(`input[name="q${i}"]:checked`);
+                if (val) section1 += parseInt(val.value);
+            }
+            for (let i = 8; i <= 11; i++) {
+                const val = document.querySelector(`input[name="q${i}"]:checked`);
+                if (val) section2 += parseInt(val.value);
+            }
+            for (let i = 12; i <= 14; i++) {
+                const val = document.querySelector(`input[name="q${i}"]:checked`);
+                if (val) section3 += parseInt(val.value);
+            }
+
+            const totalScore = section1 + section2 + section3;
+            const maxScore = 42;
+            const percent = Math.round((totalScore / maxScore) * 100);
+
+            // Determine overall status
+            let status, statusColor, statusIcon, statusMessage;
+            
+            // Check for critical red flags
+            const q3Value = parseInt(document.querySelector('input[name="q3"]:checked').value);
+            const hasReviewRedFlag = q3Value === 1;
+            
+            if (hasReviewRedFlag || percent < 50) {
+                status = "🔴 RED LIGHT";
+                statusColor = "text-red-400";
+                statusMessage = "Focus on Level 1 foundation first. Visibility tactics won't work until your base is solid.";
+            } else if (percent < 70) {
+                status = "🟡 YELLOW LIGHT";
+                statusColor = "text-yellow-400";
+                statusMessage = "You're getting close. Some foundation work needed before full visibility push.";
+            } else {
+                status = "🟢 GREEN LIGHT";
+                statusColor = "text-emerald-400";
+                statusMessage = "You're ready for visibility and promotion tactics. Let's accelerate.";
+            }
+
+            // Update UI
+            document.getElementById('overallResult').innerHTML = `
+                <div class="text-6xl font-bold ${statusColor} mb-2">${percent}%</div>
+                <div class="text-3xl font-bold ${statusColor} mb-2">${status}</div>
+                <p class="text-gray-300">${statusMessage}</p>
+                <p class="text-gray-500 text-sm mt-2">Score: ${totalScore} / ${maxScore}</p>
+            `;
+
+            // Section scores
+            document.getElementById('section1Score').textContent = section1 + '/21';
+            document.getElementById('section1Percent').textContent = Math.round((section1/21)*100) + '%';
+            document.getElementById('section2Score').textContent = section2 + '/12';
+            document.getElementById('section2Percent').textContent = Math.round((section2/12)*100) + '%';
+            document.getElementById('section3Score').textContent = section3 + '/9';
+            document.getElementById('section3Percent').textContent = Math.round((section3/9)*100) + '%';
+
+            // Detailed interpretation
+            let interpretation = '<h3 class="text-lg font-bold text-white mb-4">📋 Detailed Analysis</h3><div class="space-y-4">';
+            
+            // Section 1 interpretation
+            if (section1 >= 18) {
+                interpretation += '<div class="flex items-start gap-3"><span class="text-emerald-400 text-xl">✓</span><div><p class="text-white font-medium">Role Mastery: Excellent</p><p class="text-gray-400 text-sm">You\'ve paid the "Competence Entry Fee." You\'re self-sufficient, a go-to person, and your manager sees your value.</p></div></div>';
+            } else if (section1 >= 14) {
+                interpretation += '<div class="flex items-start gap-3"><span class="text-yellow-400 text-xl">!</span><div><p class="text-white font-medium">Role Mastery: Good with Gaps</p><p class="text-gray-400 text-sm">You\'re solid but have some areas to shore up. Address these before going heavy on visibility.</p></div></div>';
+            } else {
+                interpretation += '<div class="flex items-start gap-3"><span class="text-red-400 text-xl">✗</span><div><p class="text-white font-medium">Role Mastery: Needs Work</p><p class="text-gray-400 text-sm">Focus here first. Visibility tactics are pointless if you\'re not bulletproof in your core role.</p></div></div>';
+            }
+
+            // Section 2 interpretation
+            if (section2 >= 10) {
+                interpretation += '<div class="flex items-start gap-3"><span class="text-emerald-400 text-xl">✓</span><div><p class="text-white font-medium">Role Saturation: Ready to Move</p><p class="text-gray-400 text-sm">You\'ve hit the 85% threshold. You\'ve extracted most value from this role—time to grow.</p></div></div>';
+            } else if (section2 >= 7) {
+                interpretation += '<div class="flex items-start gap-3"><span class="text-yellow-400 text-xl">!</span><div><p class="text-white font-medium">Role Saturation: Getting Close</p><p class="text-gray-400 text-sm">You\'re approaching saturation but may be leaving value on the table. Consider what big wins remain.</p></div></div>';
+            } else {
+                interpretation += '<div class="flex items-start gap-3"><span class="text-red-400 text-xl">✗</span><div><p class="text-white font-medium">Role Saturation: Not Yet</p><p class="text-gray-400 text-sm">There\'s still significant juice to squeeze. Asking for promotion now may signal immaturity.</p></div></div>';
+            }
+
+            // Section 3 interpretation
+            if (section3 >= 7) {
+                interpretation += '<div class="flex items-start gap-3"><span class="text-emerald-400 text-xl">✓</span><div><p class="text-white font-medium">Visibility Readiness: Strong</p><p class="text-gray-400 text-sm">You can present, your skip-level knows you, and you track your wins. Ready for advanced tactics.</p></div></div>';
+            } else if (section3 >= 5) {
+                interpretation += '<div class="flex items-start gap-3"><span class="text-yellow-400 text-xl">!</span><div><p class="text-white font-medium">Visibility Readiness: Building</p><p class="text-gray-400 text-sm">You have some visibility foundation but gaps to fill—especially skip-level awareness.</p></div></div>';
+            } else {
+                interpretation += '<div class="flex items-start gap-3"><span class="text-red-400 text-xl">✗</span><div><p class="text-white font-medium">Visibility Readiness: Low</p><p class="text-gray-400 text-sm">You\'re invisible to decision-makers. This is exactly what the Accelerate Path will fix.</p></div></div>';
+            }
+
+            interpretation += '</div>';
+            document.getElementById('interpretation').innerHTML = interpretation;
+
+            // Next steps based on status
+            let nextSteps = '<h3 class="text-lg font-bold text-emerald-400 mb-4">🎯 What This Means for Session 1</h3>';
+            
+            if (percent >= 70) {
+                nextSteps += `
+                    <p class="text-gray-300 mb-4">Great news—you have a solid foundation. In Session 1, we'll focus on:</p>
+                    <ul class="space-y-2 text-gray-300">
+                        <li class="flex items-start gap-2"><span class="text-emerald-400">→</span> Building your Visibility Strategy (skip-level access, Echo Emails)</li>
+                        <li class="flex items-start gap-2"><span class="text-emerald-400">→</span> Creating your Evidence Arsenal for the promotion conversation</li>
+                        <li class="flex items-start gap-2"><span class="text-emerald-400">→</span> Identifying your Gravity Leaders and influence expansion opportunities</li>
+                    </ul>
+                `;
+            } else if (percent >= 50) {
+                nextSteps += `
+                    <p class="text-gray-300 mb-4">You're close but have some gaps to address. In Session 1, we'll:</p>
+                    <ul class="space-y-2 text-gray-300">
+                        <li class="flex items-start gap-2"><span class="text-yellow-400">→</span> Review your specific gaps and create a quick-fix plan</li>
+                        <li class="flex items-start gap-2"><span class="text-yellow-400">→</span> Start building visibility foundations while shoring up weaknesses</li>
+                        <li class="flex items-start gap-2"><span class="text-yellow-400">→</span> Prioritize which gaps are most critical for your promotion timeline</li>
+                    </ul>
+                `;
+            } else {
+                nextSteps += `
+                    <p class="text-gray-300 mb-4">We need to focus on your foundation first. In Session 1, we'll:</p>
+                    <ul class="space-y-2 text-gray-300">
+                        <li class="flex items-start gap-2"><span class="text-red-400">→</span> Diagnose what's causing your Level 1 gaps</li>
+                        <li class="flex items-start gap-2"><span class="text-red-400">→</span> Create a 30-day plan to become bulletproof in your core role</li>
+                        <li class="flex items-start gap-2"><span class="text-red-400">→</span> Identify quick wins to improve your manager relationship</li>
+                    </ul>
+                `;
+            }
+
+            document.getElementById('nextSteps').innerHTML = nextSteps;
+
+            // Show results, hide form
+            document.getElementById('results').classList.remove('hidden');
+            document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+
+</body>
+</html>
