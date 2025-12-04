@@ -103,9 +103,6 @@
             '<div class="absolute inset-0 bg-black/70 backdrop-blur-sm" onclick="window.LeadMagnetPopup.close()"></div>' +
             '<div class="absolute inset-0 flex items-center justify-center p-4 pointer-events-none">' +
                 '<div class="bg-white rounded-2xl shadow-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto relative pointer-events-auto">' +
-                    '<button onclick="window.LeadMagnetPopup.close()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 transition-colors z-10">' +
-                        '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">' +
-                            '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></button>' +
                     '<div id="popup-main" class="p-6 md:p-8">' +
                         '<div class="bg-amber-50 border border-amber-200 rounded-lg px-4 py-2 mb-6 text-center">' +
                             '<p class="text-amber-800 text-sm font-medium">' +
@@ -126,7 +123,8 @@
                             '<input type="text" id="lead-first-name" name="first_name" required class="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition-all text-sm" placeholder="First Name">' +
                             '<input type="email" id="lead-email" name="email" required class="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition-all text-sm" placeholder="Email Address">' +
                             '<button type="submit" id="popup-submit-btn" class="w-full py-4 bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white rounded-xl font-bold text-lg transition-all shadow-lg hover:shadow-xl">Send Me the Free Guide →</button></form>' +
-                        '<p class="text-center text-xs text-slate-400 mt-4">' + lm.guarantee + '</p></div>' +
+                        '<p class="text-center text-xs text-slate-400 mt-4">' + lm.guarantee + '</p>' +
+                        '<button onclick="window.LeadMagnetPopup.close()" class="w-full mt-4 py-3 px-4 border-2 border-red-300 text-red-500 hover:bg-red-50 hover:border-red-400 hover:text-red-600 rounded-xl text-sm font-medium transition-all">No thanks, I don\'t like useful free stuff</button></div>' +
                     '<div id="popup-success" class="p-8 text-center hidden">' +
                         '<div class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-full mb-6">' +
                             '<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">' +
