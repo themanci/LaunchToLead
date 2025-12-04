@@ -25,6 +25,61 @@
             background: #E0E7FF;
             color: #4338CA;
             font-weight: 600;
+            cursor: pointer;
+            position: relative;
+            text-decoration: none;
+        }
+        
+        .method-tag:hover {
+            background: #C7D2FE;
+        }
+        
+        .method-tooltip {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .method-tooltip .tooltip-content {
+            visibility: hidden;
+            opacity: 0;
+            width: 320px;
+            background-color: #1F2937;
+            color: #fff;
+            text-align: left;
+            border-radius: 8px;
+            padding: 12px;
+            position: absolute;
+            z-index: 100;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -160px;
+            transition: opacity 0.2s, visibility 0.2s;
+            font-size: 0.75rem;
+            font-weight: normal;
+            line-height: 1.4;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+        
+        .method-tooltip .tooltip-content::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -6px;
+            border-width: 6px;
+            border-style: solid;
+            border-color: #1F2937 transparent transparent transparent;
+        }
+        
+        .method-tooltip:hover .tooltip-content {
+            visibility: visible;
+            opacity: 1;
+        }
+        
+        .tooltip-title {
+            font-weight: 700;
+            color: #A5B4FC;
+            margin-bottom: 4px;
         }
         
         .talking-point::before {
@@ -75,42 +130,249 @@
             <div class="inline-block bg-indigo-100 text-indigo-700 px-4 py-1 rounded-full text-sm font-semibold mb-4">
                 FACILITATOR GUIDE
             </div>
-            <h1 class="text-4xl font-bold text-gray-900 mb-2">Session 1: The Foundation</h1>
+            <h1 class="text-4xl font-bold text-gray-900 mb-2">Session 1: The Visibility Activation</h1>
             <p class="text-xl text-gray-600">Accelerate Path | 90 Minutes</p>
+            <p class="text-lg text-indigo-600 italic mt-2">"You're invisible. Let's fix that. And you'll leave feeling like you've already started."</p>
         </div>
 
-        <!-- Session Overview Card -->
-        <div class="bg-white rounded-xl shadow-lg p-6 mb-8">
+        <!-- SESSION OVERVIEW (MOVED TO TOP) -->
+        <div class="bg-white rounded-xl shadow-lg p-6 mb-8 border-2 border-indigo-300">
             <h2 class="text-xl font-bold text-gray-900 mb-4">📋 Session Overview</h2>
             
             <div class="grid md:grid-cols-2 gap-6">
                 <div>
-                    <h3 class="font-semibold text-gray-700 mb-2">Pre-Session Materials (Client Should Have Completed):</h3>
+                    <h3 class="font-semibold text-gray-700 mb-2">Pre-Session 1 Materials (Client Completed):</h3>
                     <ul class="space-y-1 text-sm">
                         <li class="flex items-center gap-2">
-                            <span class="text-green-500">✓</span> Green Light Audit (14 questions)
+                            <span class="text-green-500">✓</span> <strong>Green Light Audit</strong> — 14-question self-assessment
                         </li>
                         <li class="flex items-center gap-2">
-                            <span class="text-green-500">✓</span> Visibility Pyramid Overview (read + scored)
+                            <span class="text-green-500">✓</span> <strong>Visibility Pyramid Overview</strong> — 4 levels + scoring + Echo Email intro
                         </li>
                         <li class="flex items-center gap-2">
-                            <span class="text-green-500">✓</span> Hard Work Mindset Reset (read + reflection)
+                            <span class="text-green-500">✓</span> <strong>Hard Work Mindset Reset</strong> — 7-page mindset shift + 5 reflection Qs
                         </li>
                         <li class="flex items-center gap-2">
-                            <span class="text-green-500">✓</span> Current Situation Assessment (all sections)
+                            <span class="text-green-500">✓</span> <strong>Current Situation Assessment</strong> — 7 sections including skip-level, Gravity Leaders, 5 accomplishments
                         </li>
                     </ul>
                 </div>
                 <div>
-                    <h3 class="font-semibold text-gray-700 mb-2">Session Goals:</h3>
+                    <h3 class="font-semibold text-gray-700 mb-2">Session 1 Goals → Bridging to Session 2:</h3>
                     <ul class="space-y-1 text-sm">
-                        <li>✅ Validate mindset shift from "work hard" to "work visible"</li>
-                        <li>✅ Review Green Light Audit gaps</li>
-                        <li>✅ Establish skip-level meeting strategy</li>
-                        <li>✅ Set up Echo Email system</li>
-                        <li>✅ Map Gravity Leaders</li>
-                        <li>✅ Practice one visibility tactic</li>
+                        <li>✅ Validate mindset shift → <em>Sets foundation for Gap Analysis</em></li>
+                        <li>✅ Review Green Light gaps → <em>Feeds into Evidence Arsenal</em></li>
+                        <li>✅ Commit to skip-level request → <em>Relationship for Promotion Conversation</em></li>
+                        <li>✅ Set up Echo Email system → <em>Becomes weekly wins tracker</em></li>
+                        <li>✅ Map Gravity Leaders → <em>Targets for Headache Fixer Strategy</em></li>
+                        <li>✅ Practice 1-2 visibility tactics → <em>Builds confidence for Session 2 mocks</em></li>
                     </ul>
+                </div>
+            </div>
+            
+            <div class="mt-4 pt-4 border-t border-gray-200">
+                <h3 class="font-semibold text-gray-700 mb-2">What This Session Sets Up:</h3>
+                <p class="text-sm text-gray-600">By the end of Session 1, the client has <strong>visibility systems running</strong> (Echo Email, skip-level relationship, Gravity Leader connections). In Pre-Session 2, they'll receive materials on building their <strong>Evidence Arsenal</strong> and preparing for the <strong>Promotion Conversation</strong>. Session 2 focuses on mastering that conversation and handling objections.</p>
+            </div>
+        </div>
+
+        <!-- PRE-SESSION HOMEWORK MAPPING -->
+        <div class="bg-gradient-to-r from-emerald-500 to-teal-600 rounded-xl p-6 mb-8 text-white">
+            <h2 class="text-xl font-bold mb-4">📥 Pre-Session Homework → Where It Feeds In</h2>
+            <p class="text-emerald-100 mb-4">The client completed 4 pieces of homework. Here's exactly where each one gets used in this session:</p>
+            
+            <div class="grid md:grid-cols-2 gap-4">
+                <div class="bg-white/10 rounded-lg p-4">
+                    <h3 class="font-bold text-white mb-2">1. Hard Work Mindset Reset</h3>
+                    <p class="text-sm text-emerald-100 mb-2">Their reflection answers on the mindset shift document.</p>
+                    <div class="flex items-center gap-2 text-sm">
+                        <span class="bg-white/20 px-2 py-1 rounded">→</span>
+                        <a href="#block-1" class="underline hover:text-white">Block 1: The Hard Truth Check-In</a>
+                    </div>
+                    <p class="text-xs text-emerald-200 mt-1">We'll review their reactions, surface resistance, and validate buy-in.</p>
+                </div>
+                
+                <div class="bg-white/10 rounded-lg p-4">
+                    <h3 class="font-bold text-white mb-2">2. Green Light Audit</h3>
+                    <p class="text-sm text-emerald-100 mb-2">Their 14-question self-assessment with yes/no answers.</p>
+                    <div class="flex items-center gap-2 text-sm">
+                        <span class="bg-white/20 px-2 py-1 rounded">→</span>
+                        <a href="#block-2" class="underline hover:text-white">Block 2: The Green Light Review</a>
+                    </div>
+                    <p class="text-xs text-emerald-200 mt-1">We'll identify gaps and prioritize which to fix first.</p>
+                </div>
+                
+                <div class="bg-white/10 rounded-lg p-4">
+                    <h3 class="font-bold text-white mb-2">3. Current Situation Assessment</h3>
+                    <p class="text-sm text-emerald-100 mb-2">Skip-level info, Gravity Leaders list, 5 accomplishments.</p>
+                    <div class="flex items-center gap-2 text-sm flex-wrap">
+                        <span class="bg-white/20 px-2 py-1 rounded">→</span>
+                        <a href="#block-3" class="underline hover:text-white">Block 3: Skip-Level</a>,
+                        <a href="#block-5" class="underline hover:text-white">Block 5: Gravity Map</a>,
+                        <a href="#block-6" class="underline hover:text-white">Block 6: Mock Practice</a>
+                    </div>
+                    <p class="text-xs text-emerald-200 mt-1">Their skip-level manager name feeds the request script. Gravity Leaders become the connection plan. Accomplishments fuel the Value Articulation practice.</p>
+                </div>
+                
+                <div class="bg-white/10 rounded-lg p-4">
+                    <h3 class="font-bold text-white mb-2">4. Visibility Pyramid Overview</h3>
+                    <p class="text-sm text-emerald-100 mb-2">Their self-scored pyramid levels + Echo Email template.</p>
+                    <div class="flex items-center gap-2 text-sm">
+                        <span class="bg-white/20 px-2 py-1 rounded">→</span>
+                        <a href="#block-4" class="underline hover:text-white">Block 4: Echo Email System</a>
+                    </div>
+                    <p class="text-xs text-emerald-200 mt-1">We'll review their scores, refine understanding, and commit to first Echo Email.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- METHODS REFERENCE -->
+        <div class="bg-white rounded-xl shadow-lg p-6 mb-8 border-2 border-indigo-200">
+            <h2 class="text-xl font-bold text-gray-900 mb-2">🧠 Methods Covered in Session 1 (11 Total)</h2>
+            <p class="text-gray-600 mb-4">Click any method to jump to where it's used. Hover over method tags in the blocks below to see the full definition.</p>
+            
+            <div class="space-y-4">
+                <!-- Method 1 -->
+                <div id="method-hard-work" class="border-l-4 border-purple-500 pl-4 py-2">
+                    <div class="flex items-start justify-between">
+                        <div>
+                            <a href="#block-1" class="text-lg font-semibold text-purple-700 hover:underline">The "Hard Work = Reward" Fallacy™</a>
+                            <span class="ml-2 text-xs bg-purple-100 text-purple-600 px-2 py-0.5 rounded-full">Block 1</span>
+                        </div>
+                    </div>
+                    <p class="text-sm text-gray-600 mt-1"><strong>The Belief:</strong> "If I just put my head down, work hard, and deliver great results, I'll get promoted."</p>
+                    <p class="text-sm text-gray-600 mt-1"><strong>The Reality:</strong> Engineers who grind for 5-10 years without seeking visibility get labeled as "the X guy who loves that work" and passed over. Hard work is the prerequisite, not the differentiator. Consider: promotion every 8 years = 4-5 promotions over a career. Promotion every 2-3 years = 10-15+. The difference in compensation and influence is massive.</p>
+                    <p class="text-sm text-gray-700 mt-1"><strong>The New Belief:</strong> Visibility and intentionality accelerate the timeline. Hard work alone is necessary but not sufficient.</p>
+                </div>
+                
+                <!-- Method 2 -->
+                <div id="method-self-promote" class="border-l-4 border-purple-500 pl-4 py-2">
+                    <div class="flex items-start justify-between">
+                        <div>
+                            <a href="#block-1" class="text-lg font-semibold text-purple-700 hover:underline">The "I Shouldn't Have to Self-Promote" Delusion™</a>
+                            <span class="ml-2 text-xs bg-purple-100 text-purple-600 px-2 py-0.5 rounded-full">Block 1</span>
+                        </div>
+                    </div>
+                    <p class="text-sm text-gray-600 mt-1"><strong>The Belief:</strong> "My work should speak for itself. Self-promotion is sleazy."</p>
+                    <p class="text-sm text-gray-600 mt-1"><strong>The Reframe:</strong> Who cares about your career advancement more than you do? Maybe your grandma—but not anyone at work. Nobody else will be as consistent or emotionally invested in YOUR visibility as you. This isn't sleazy politician behavior—it's making influential people aware of your abilities so you can add MORE value with broader influence.</p>
+                    <p class="text-sm text-gray-700 mt-1"><strong>The Rules:</strong> ✅ Be your own biggest advocate. ✅ Make people aware of genuine value. ❌ Never misrepresent or stretch the truth.</p>
+                </div>
+                
+                <!-- Method 3 -->
+                <div id="method-politics" class="border-l-4 border-purple-500 pl-4 py-2">
+                    <div class="flex items-start justify-between">
+                        <div>
+                            <a href="#block-1" class="text-lg font-semibold text-purple-700 hover:underline">The "Politics is Dirty" Misconception™</a>
+                            <span class="ml-2 text-xs bg-purple-100 text-purple-600 px-2 py-0.5 rounded-full">Block 1</span>
+                        </div>
+                    </div>
+                    <p class="text-sm text-gray-600 mt-1"><strong>The Belief:</strong> "I don't want to play politics. Politics is manipulative and dirty."</p>
+                    <p class="text-sm text-gray-600 mt-1"><strong>The Reality:</strong> Politics is dirty IF you play dirty—lying, slandering, manipulating. Politics itself is simply: getting visibility on your value, building relationships that matter, and positioning yourself for more influence. You can refuse to "play politics" and stay stuck, or play strategically, ethically, and morally—and advance.</p>
+                    <p class="text-sm text-gray-700 mt-1"><strong>The Choice:</strong> The game exists whether you play or not. Choosing not to play just means you lose by default.</p>
+                </div>
+                
+                <!-- Method 4 -->
+                <div id="method-green-light" class="border-l-4 border-green-500 pl-4 py-2">
+                    <div class="flex items-start justify-between">
+                        <div>
+                            <a href="#block-2" class="text-lg font-semibold text-green-700 hover:underline">The Green Light Audit™</a>
+                            <span class="ml-2 text-xs bg-green-100 text-green-600 px-2 py-0.5 rounded-full">Block 2</span>
+                        </div>
+                    </div>
+                    <p class="text-sm text-gray-600 mt-1"><strong>What It Is:</strong> A 14-question diagnostic that reveals whether you have the "green light" conditions for promotion.</p>
+                    <p class="text-sm text-gray-600 mt-1"><strong>What It Checks:</strong> Manager relationship quality, skip-level visibility, career goal clarity, promotion conversation recency, perception as go-to person, cross-functional visibility, next-level work demonstration, and more.</p>
+                    <p class="text-sm text-gray-700 mt-1"><strong>How We Use It:</strong> Review their yes/no answers, identify the 2-3 biggest gaps, and prioritize which to fix first. Most common gap: no skip-level relationship.</p>
+                </div>
+                
+                <!-- Method 5 -->
+                <div id="method-saturation" class="border-l-4 border-green-500 pl-4 py-2">
+                    <div class="flex items-start justify-between">
+                        <div>
+                            <a href="#block-2" class="text-lg font-semibold text-green-700 hover:underline">The Role Saturation Threshold™ (85% Rule)</a>
+                            <span class="ml-2 text-xs bg-green-100 text-green-600 px-2 py-0.5 rounded-full">Block 2</span>
+                        </div>
+                    </div>
+                    <p class="text-sm text-gray-600 mt-1"><strong>The Principle:</strong> You should already be doing 85% of the next level's work BEFORE asking for promotion.</p>
+                    <p class="text-sm text-gray-600 mt-1"><strong>Why It Matters:</strong> If you're only doing 50% of next-level work, you're asking for a bet. At 85%, you're asking for recognition of reality. This is the paradox: prove you're at the next level to GET to the next level.</p>
+                    <p class="text-sm text-gray-700 mt-1"><strong>How We Use It:</strong> Assess where they stand. If below 85%, identify what's missing and what opportunities exist to close the gap.</p>
+                </div>
+                
+                <!-- Method 6 -->
+                <div id="method-skip-request" class="border-l-4 border-blue-500 pl-4 py-2">
+                    <div class="flex items-start justify-between">
+                        <div>
+                            <a href="#block-3" class="text-lg font-semibold text-blue-700 hover:underline">The Skip-Level Request Protocol™</a>
+                            <span class="ml-2 text-xs bg-blue-100 text-blue-600 px-2 py-0.5 rounded-full">Block 3</span>
+                        </div>
+                    </div>
+                    <p class="text-sm text-gray-600 mt-1"><strong>What It Is:</strong> The exact script and approach for requesting a meeting with your manager's manager—without seeming like you're going over your boss's head.</p>
+                    <p class="text-sm text-gray-600 mt-1"><strong>Key Elements:</strong> (1) Loop in your direct manager first for transparency. (2) Frame the ask around learning and adding value, not career advancement. (3) Request 20-30 minutes—low commitment. (4) Suggest flexibility on timing.</p>
+                    <p class="text-sm text-gray-700 mt-1"><strong>Why It Works:</strong> Most skip-levels say yes. They want to know who's on their team. The ask itself signals ambition and initiative.</p>
+                </div>
+                
+                <!-- Method 7 -->
+                <div id="method-skip-playbook" class="border-l-4 border-blue-500 pl-4 py-2">
+                    <div class="flex items-start justify-between">
+                        <div>
+                            <a href="#block-3" class="text-lg font-semibold text-blue-700 hover:underline">The Skip-Level Meeting Playbook™</a>
+                            <span class="ml-2 text-xs bg-blue-100 text-blue-600 px-2 py-0.5 rounded-full">Block 3</span>
+                        </div>
+                    </div>
+                    <p class="text-sm text-gray-600 mt-1"><strong>What to Do:</strong> Once you're in the meeting, execute this playbook for maximum impact.</p>
+                    <p class="text-sm text-gray-600 mt-1"><strong>The Agenda:</strong> (1) Ask about their priorities—what keeps them up at night? (2) Share one thing you're working on that aligns. (3) Ask: "What would make someone at my level really stand out to you?" (4) End with: "I'd love to do this periodically if you're open to it."</p>
+                    <p class="text-sm text-gray-700 mt-1"><strong>The Goal:</strong> Plant a seed. Make them remember your name. Get permission to do it again. One meeting becomes a relationship.</p>
+                </div>
+                
+                <!-- Method 8 -->
+                <div id="method-echo" class="border-l-4 border-amber-500 pl-4 py-2">
+                    <div class="flex items-start justify-between">
+                        <div>
+                            <a href="#block-4" class="text-lg font-semibold text-amber-700 hover:underline">The Echo Email™</a>
+                            <span class="ml-2 text-xs bg-amber-100 text-amber-600 px-2 py-0.5 rounded-full">Block 4</span>
+                        </div>
+                    </div>
+                    <p class="text-sm text-gray-600 mt-1"><strong>What It Is:</strong> A weekly email to your manager (and eventually skip-level) that broadcasts wins, progress, and blockers. The core recurring visibility system.</p>
+                    <p class="text-sm text-gray-600 mt-1"><strong>The Format:</strong> Subject: "Weekly Update - [Name] - [Date]". Body: Wins (accomplished this week), In Progress (working on), Blockers (need help with), Next Week (focused on). Send Friday afternoon.</p>
+                    <p class="text-sm text-gray-700 mt-1"><strong>Why It Works:</strong> (1) Creates a paper trail of your contributions. (2) Makes your manager's job easier—they report up too. (3) Becomes raw material for performance reviews and promotion cases.</p>
+                </div>
+                
+                <!-- Method 9 -->
+                <div id="method-boomerang" class="border-l-4 border-amber-500 pl-4 py-2">
+                    <div class="flex items-start justify-between">
+                        <div>
+                            <a href="#block-4" class="text-lg font-semibold text-amber-700 hover:underline">The Recognition Boomerang™</a>
+                            <span class="ml-2 text-xs bg-amber-100 text-amber-600 px-2 py-0.5 rounded-full">Block 4</span>
+                        </div>
+                    </div>
+                    <p class="text-sm text-gray-600 mt-1"><strong>The Principle:</strong> A good leader takes all the blame when things go wrong and gives all the credit when things go right.</p>
+                    <p class="text-sm text-gray-600 mt-1"><strong>How It Works:</strong> When you publicly defer credit to others, you actually look BETTER. People know who did what. By not verbally claiming credit, you avoid arrogance while still being associated with the win. The credit "boomerangs" back to you.</p>
+                    <p class="text-sm text-gray-700 mt-1"><strong>Application:</strong> In Echo Emails and public communications, highlight others' contributions. Tag teammates. Share credit broadly. This builds social capital and paradoxically increases YOUR reputation.</p>
+                </div>
+                
+                <!-- Method 10 -->
+                <div id="method-broadcasting" class="border-l-4 border-amber-500 pl-4 py-2">
+                    <div class="flex items-start justify-between">
+                        <div>
+                            <a href="#block-4" class="text-lg font-semibold text-amber-700 hover:underline">Organic Broadcasting™</a>
+                            <span class="ml-2 text-xs bg-amber-100 text-amber-600 px-2 py-0.5 rounded-full">Block 4</span>
+                        </div>
+                    </div>
+                    <p class="text-sm text-gray-600 mt-1"><strong>What It Is:</strong> Sharing wins in a way that feels natural, not braggy. Weaving accomplishments into normal conversation and documentation without sounding like you're selling yourself.</p>
+                    <p class="text-sm text-gray-600 mt-1"><strong>Techniques:</strong> (1) Attach wins to status updates—"While working on X, we also achieved Y." (2) Frame as learning—"Interesting finding from the project..." (3) CC strategically—include relevant stakeholders naturally. (4) Use Slack/Teams for quick visibility hits.</p>
+                    <p class="text-sm text-gray-700 mt-1"><strong>The Test:</strong> If it feels uncomfortable, you're probably in the right zone. Most people under-broadcast, not over.</p>
+                </div>
+                
+                <!-- Method 11 -->
+                <div id="method-gravity" class="border-l-4 border-pink-500 pl-4 py-2">
+                    <div class="flex items-start justify-between">
+                        <div>
+                            <a href="#block-5" class="text-lg font-semibold text-pink-700 hover:underline">The Gravity Audit™</a>
+                            <span class="ml-2 text-xs bg-pink-100 text-pink-600 px-2 py-0.5 rounded-full">Block 5</span>
+                        </div>
+                    </div>
+                    <p class="text-sm text-gray-600 mt-1"><strong>What It Is:</strong> Identifying the 3-5 "Gravity Leaders"—people who have outsized influence over your promotion, reputation, or career trajectory.</p>
+                    <p class="text-sm text-gray-600 mt-1"><strong>Who Qualifies:</strong> Skip-level managers, leaders of high-visibility projects, cross-functional partners who influence your domain, executives who run key initiatives, respected senior ICs who have the ear of leadership.</p>
+                    <p class="text-sm text-gray-700 mt-1"><strong>The Strategy:</strong> For each Gravity Leader: (1) Identify an entry point—how to get on their radar. (2) Determine value-add—what can you offer them? (3) Set a timeline—when will you make first contact? One meaningful interaction per month is enough.</p>
                 </div>
             </div>
         </div>
@@ -121,47 +383,72 @@
             <div class="grid grid-cols-6 gap-2 text-center text-sm">
                 <div class="bg-white/20 rounded-lg p-2">
                     <div class="font-bold">0-15</div>
-                    <div class="text-xs opacity-80">Mindset Check</div>
+                    <div class="text-xs opacity-80">Hard Truth</div>
                 </div>
                 <div class="bg-white/20 rounded-lg p-2">
                     <div class="font-bold">15-30</div>
                     <div class="text-xs opacity-80">Green Light</div>
                 </div>
                 <div class="bg-white/20 rounded-lg p-2">
-                    <div class="font-bold">30-45</div>
+                    <div class="font-bold">30-50</div>
                     <div class="text-xs opacity-80">Skip-Level</div>
                 </div>
                 <div class="bg-white/20 rounded-lg p-2">
-                    <div class="font-bold">45-60</div>
+                    <div class="font-bold">50-65</div>
                     <div class="text-xs opacity-80">Echo Email</div>
                 </div>
                 <div class="bg-white/20 rounded-lg p-2">
-                    <div class="font-bold">60-75</div>
+                    <div class="font-bold">65-70</div>
                     <div class="text-xs opacity-80">Gravity Map</div>
                 </div>
                 <div class="bg-white/20 rounded-lg p-2">
-                    <div class="font-bold">75-90</div>
-                    <div class="text-xs opacity-80">Practice</div>
+                    <div class="font-bold">70-90</div>
+                    <div class="text-xs opacity-80">Mock Practice</div>
                 </div>
             </div>
         </div>
 
         <!-- BLOCK 1: Mindset Check-In -->
-        <div class="time-block mindset bg-white rounded-xl shadow-lg p-6 mb-6 pl-8">
+        <div id="block-1" class="time-block mindset bg-white rounded-xl shadow-lg p-6 mb-6 pl-8">
             <div class="flex items-center justify-between mb-4">
                 <div>
                     <span class="bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-sm font-semibold">0-15 min</span>
-                    <h2 class="text-2xl font-bold text-gray-900 mt-2">Block 1: The Hard Truth Check-In</h2>
+                    <h2 class="text-2xl font-bold text-gray-900 mt-2">Block 1: The Hard Truth + Your Story</h2>
                 </div>
                 <div class="text-right">
-                    <span class="method-tag">The "Hard Work = Reward" Fallacy™</span><br>
-                    <span class="method-tag mt-1">The "My Manager Should Notice" Fantasy™</span>
+                    <div class="method-tooltip">
+                        <a href="#method-hard-work" class="method-tag">Hard Work Fallacy™</a>
+                        <div class="tooltip-content">
+                            <div class="tooltip-title">The "Hard Work = Reward" Fallacy™</div>
+                            The belief that hard work alone leads to promotion. Reality: Hard work is the prerequisite, not the differentiator. Visibility and intentionality accelerate the timeline.
+                        </div>
+                    </div><br>
+                    <div class="method-tooltip mt-1">
+                        <a href="#method-self-promote" class="method-tag">Self-Promote Delusion™</a>
+                        <div class="tooltip-content">
+                            <div class="tooltip-title">The "I Shouldn't Have to Self-Promote" Delusion™</div>
+                            The misguided belief that "my work should speak for itself." Honest self-promotion is essential career advocacy, not sleazy behavior.
+                        </div>
+                    </div><br>
+                    <div class="method-tooltip mt-1">
+                        <a href="#method-politics" class="method-tag">Politics Misconception™</a>
+                        <div class="tooltip-content">
+                            <div class="tooltip-title">The "Politics is Dirty" Misconception™</div>
+                            Politics is only dirty if you play dirty. Strategic, ethical positioning is how careers advance. Refusing to play means you lose by default.
+                        </div>
+                    </div>
                 </div>
             </div>
 
             <div class="bg-purple-50 rounded-lg p-4 mb-4">
                 <h3 class="font-semibold text-purple-800 mb-2">🎯 Goal</h3>
-                <p class="text-gray-700">Validate that the client has internalized the mindset shift. Surface any lingering resistance. Set the tone that this program is about intentional action, not passive waiting.</p>
+                <p class="text-gray-700">Validate that the client has internalized the mindset shift from the pre-work. Surface any lingering resistance. Set the tone that this program is about intentional action, not passive waiting.</p>
+            </div>
+
+            <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-4 mb-4">
+                <h3 class="font-semibold text-emerald-800 mb-2">📥 Homework Input</h3>
+                <p class="text-gray-700"><strong>From:</strong> Hard Work Mindset Reset → Their reflection answers on the 5 questions</p>
+                <p class="text-gray-600 text-sm mt-1">Have them pull up their completed document or share their screen.</p>
             </div>
 
             <div class="space-y-4">
@@ -199,20 +486,39 @@
         </div>
 
         <!-- BLOCK 2: Green Light Review -->
-        <div class="time-block audit bg-white rounded-xl shadow-lg p-6 mb-6 pl-8">
+        <div id="block-2" class="time-block audit bg-white rounded-xl shadow-lg p-6 mb-6 pl-8">
             <div class="flex items-center justify-between mb-4">
                 <div>
                     <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-semibold">15-30 min</span>
-                    <h2 class="text-2xl font-bold text-gray-900 mt-2">Block 2: Green Light Review</h2>
+                    <h2 class="text-2xl font-bold text-gray-900 mt-2">Block 2: The Green Light Review</h2>
                 </div>
                 <div class="text-right">
-                    <span class="method-tag">The Green Light Audit™</span>
+                    <div class="method-tooltip">
+                        <a href="#method-green-light" class="method-tag">Green Light Audit™</a>
+                        <div class="tooltip-content">
+                            <div class="tooltip-title">The Green Light Audit™</div>
+                            14-question diagnostic revealing whether you have "green light" conditions for promotion. Checks manager relationship, skip-level visibility, career goal clarity, and more.
+                        </div>
+                    </div><br>
+                    <div class="method-tooltip mt-1">
+                        <a href="#method-saturation" class="method-tag">Role Saturation Threshold™</a>
+                        <div class="tooltip-content">
+                            <div class="tooltip-title">The Role Saturation Threshold™ (85% Rule)</div>
+                            You should already be doing 85% of next-level work BEFORE asking for promotion. At 85%, you're asking for recognition of reality, not a bet.
+                        </div>
+                    </div>
                 </div>
             </div>
 
             <div class="bg-green-50 rounded-lg p-4 mb-4">
                 <h3 class="font-semibold text-green-800 mb-2">🎯 Goal</h3>
-                <p class="text-gray-700">Review their 14-question audit. Identify the 2-3 biggest gaps. Prioritize what to fix first. Give them a clear sense of where they stand.</p>
+                <p class="text-gray-700">Review their 14-question audit. Identify the 2-3 biggest gaps. Prioritize what to fix first. Introduce the 85% Rule to assess if they're already doing next-level work.</p>
+            </div>
+
+            <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-4 mb-4">
+                <h3 class="font-semibold text-emerald-800 mb-2">📥 Homework Input</h3>
+                <p class="text-gray-700"><strong>From:</strong> Green Light Audit → Their yes/no answers on 14 questions</p>
+                <p class="text-gray-600 text-sm mt-1">Have them share their screen showing the completed audit.</p>
             </div>
 
             <div class="space-y-4">
@@ -257,21 +563,39 @@
         </div>
 
         <!-- BLOCK 3: Skip-Level Strategy -->
-        <div class="time-block skip bg-white rounded-xl shadow-lg p-6 mb-6 pl-8">
+        <div id="block-3" class="time-block skip bg-white rounded-xl shadow-lg p-6 mb-6 pl-8">
             <div class="flex items-center justify-between mb-4">
                 <div>
-                    <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm font-semibold">30-45 min</span>
+                    <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm font-semibold">30-50 min</span>
                     <h2 class="text-2xl font-bold text-gray-900 mt-2">Block 3: Skip-Level Strategy</h2>
                 </div>
                 <div class="text-right">
-                    <span class="method-tag">The Skip-Level Request Protocol™</span><br>
-                    <span class="method-tag mt-1">The Skip-Level Meeting Playbook™</span>
+                    <div class="method-tooltip">
+                        <a href="#method-skip-request" class="method-tag">Skip-Level Request Protocol™</a>
+                        <div class="tooltip-content">
+                            <div class="tooltip-title">The Skip-Level Request Protocol™</div>
+                            Exact script for requesting a meeting with your manager's manager. Loop in your manager first, frame around learning, request 20-30 min.
+                        </div>
+                    </div><br>
+                    <div class="method-tooltip mt-1">
+                        <a href="#method-skip-playbook" class="method-tag">Skip-Level Meeting Playbook™</a>
+                        <div class="tooltip-content">
+                            <div class="tooltip-title">The Skip-Level Meeting Playbook™</div>
+                            What to say in the meeting: ask about their priorities, share aligned work, ask what makes someone stand out, request recurring meetings.
+                        </div>
+                    </div>
                 </div>
             </div>
 
             <div class="bg-blue-50 rounded-lg p-4 mb-4">
                 <h3 class="font-semibold text-blue-800 mb-2">🎯 Goal</h3>
                 <p class="text-gray-700">Get them committed to requesting a skip-level meeting this week. Walk through exactly how to ask and what to say in the meeting. Remove all friction.</p>
+            </div>
+
+            <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-4 mb-4">
+                <h3 class="font-semibold text-emerald-800 mb-2">📥 Homework Input</h3>
+                <p class="text-gray-700"><strong>From:</strong> Current Situation Assessment → Skip-level manager name, relationship status, comfort level</p>
+                <p class="text-gray-600 text-sm mt-1">Reference their answers to personalize the request script with their skip-level's actual name.</p>
             </div>
 
             <div class="space-y-4">
@@ -323,21 +647,47 @@
         </div>
 
         <!-- BLOCK 4: Echo Email System -->
-        <div class="time-block echo bg-white rounded-xl shadow-lg p-6 mb-6 pl-8">
+        <div id="block-4" class="time-block echo bg-white rounded-xl shadow-lg p-6 mb-6 pl-8">
             <div class="flex items-center justify-between mb-4">
                 <div>
-                    <span class="bg-amber-100 text-amber-700 px-3 py-1 rounded-full text-sm font-semibold">45-60 min</span>
+                    <span class="bg-amber-100 text-amber-700 px-3 py-1 rounded-full text-sm font-semibold">50-65 min</span>
                     <h2 class="text-2xl font-bold text-gray-900 mt-2">Block 4: The Echo Email System</h2>
                 </div>
                 <div class="text-right">
-                    <span class="method-tag">The Echo Email™</span><br>
-                    <span class="method-tag mt-1">Organic Broadcasting™</span>
+                    <div class="method-tooltip">
+                        <a href="#method-echo" class="method-tag">Echo Email™</a>
+                        <div class="tooltip-content">
+                            <div class="tooltip-title">The Echo Email™</div>
+                            Weekly email to manager: Wins, In Progress, Blockers, Next Week. Creates paper trail, makes manager's job easier, becomes promotion evidence.
+                        </div>
+                    </div><br>
+                    <div class="method-tooltip mt-1">
+                        <a href="#method-boomerang" class="method-tag">Recognition Boomerang™</a>
+                        <div class="tooltip-content">
+                            <div class="tooltip-title">The Recognition Boomerang™</div>
+                            Give credit to others publicly. By deferring credit, you avoid arrogance while still being associated with wins. Credit boomerangs back.
+                        </div>
+                    </div><br>
+                    <div class="method-tooltip mt-1">
+                        <a href="#method-broadcasting" class="method-tag">Organic Broadcasting™</a>
+                        <div class="tooltip-content">
+                            <div class="tooltip-title">Organic Broadcasting™</div>
+                            Sharing wins naturally without sounding braggy. Attach to status updates, frame as learning, CC strategically. Most people under-broadcast.
+                        </div>
+                    </div>
                 </div>
             </div>
 
             <div class="bg-amber-50 rounded-lg p-4 mb-4">
                 <h3 class="font-semibold text-amber-800 mb-2">🎯 Goal</h3>
-                <p class="text-gray-700">Set up their recurring visibility system. Get them committed to sending their first Echo Email this week. Make it feel natural, not salesy.</p>
+                <p class="text-gray-700">Set up their recurring visibility system. Get them committed to sending their first Echo Email this week. Teach them to give credit (Boomerang) and share wins naturally (Broadcasting).</p>
+            </div>
+
+            <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-4 mb-4">
+                <h3 class="font-semibold text-emerald-800 mb-2">📥 Homework Input</h3>
+                <p class="text-gray-700"><strong>From:</strong> Visibility Pyramid Overview → Their self-scored pyramid levels + Echo Email template they read</p>
+                <p class="text-gray-700 mt-1"><strong>From:</strong> Current Situation Assessment → Their 5 Most Impactful Accomplishments (fuel for Echo Email content)</p>
+                <p class="text-gray-600 text-sm mt-1">Use their accomplishments to help them draft their first Echo Email on the spot.</p>
             </div>
 
             <div class="space-y-4">
@@ -391,120 +741,165 @@
         </div>
 
         <!-- BLOCK 5: Gravity Leaders Mapping -->
-        <div class="time-block gravity bg-white rounded-xl shadow-lg p-6 mb-6 pl-8">
+        <div id="block-5" class="time-block gravity bg-white rounded-xl shadow-lg p-6 mb-6 pl-8">
             <div class="flex items-center justify-between mb-4">
                 <div>
-                    <span class="bg-pink-100 text-pink-700 px-3 py-1 rounded-full text-sm font-semibold">60-75 min</span>
-                    <h2 class="text-2xl font-bold text-gray-900 mt-2">Block 5: Gravity Leaders Mapping</h2>
+                    <span class="bg-pink-100 text-pink-700 px-3 py-1 rounded-full text-sm font-semibold">65-70 min</span>
+                    <h2 class="text-2xl font-bold text-gray-900 mt-2">Block 5: The Gravity Map</h2>
                 </div>
                 <div class="text-right">
-                    <span class="method-tag">The Gravity Audit™</span><br>
-                    <span class="method-tag mt-1">The Cross-Functional Bridge Builder™</span>
+                    <div class="method-tooltip">
+                        <a href="#method-gravity" class="method-tag">Gravity Audit™</a>
+                        <div class="tooltip-content">
+                            <div class="tooltip-title">The Gravity Audit™</div>
+                            Identify 3-5 "Gravity Leaders" with outsized influence on your career. Create entry points, determine value-add, set contact timelines.
+                        </div>
+                    </div>
                 </div>
             </div>
 
             <div class="bg-pink-50 rounded-lg p-4 mb-4">
                 <h3 class="font-semibold text-pink-800 mb-2">🎯 Goal</h3>
-                <p class="text-gray-700">Review the 3-5 Gravity Leaders they identified. Validate choices. Create a connection plan for at least 2 of them.</p>
+                <p class="text-gray-700">Quick review of the 3-5 Gravity Leaders they identified. Validate choices. Ensure they have at least 2 cross-functional leaders. Set up for mock practice.</p>
+            </div>
+
+            <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-4 mb-4">
+                <h3 class="font-semibold text-emerald-800 mb-2">📥 Homework Input</h3>
+                <p class="text-gray-700"><strong>From:</strong> Current Situation Assessment → Gravity Leaders section (3-5 names + current relationship status)</p>
+                <p class="text-gray-600 text-sm mt-1">Have them share their list. We'll validate and refine in 5 minutes, then use in mock practice.</p>
             </div>
 
             <div class="space-y-4">
                 <div>
-                    <h3 class="font-semibold text-gray-800 mb-2">Review Their List</h3>
+                    <h3 class="font-semibold text-gray-800 mb-2">Quick Review (5 min max)</h3>
                     <ul class="space-y-2 text-gray-700">
-                        <li class="question">"Walk me through the 3-5 Gravity Leaders you identified. Why each one?"</li>
-                        <li class="question">"For each: What's your current relationship? Have you ever spoken 1-on-1?"</li>
+                        <li class="question">"Read me your 3-5 Gravity Leaders. Who are they?"</li>
+                        <li class="question">"Are any of these outside your immediate department?"</li>
                         <li class="question">"Who on this list has the most influence over your promotion?"</li>
                     </ul>
                 </div>
 
                 <div>
-                    <h3 class="font-semibold text-gray-800 mb-2">Validate & Adjust</h3>
+                    <h3 class="font-semibold text-gray-800 mb-2">Quick Validation</h3>
                     <ul class="space-y-2 text-gray-700">
-                        <li class="watch-for"><strong>All same department:</strong> Push them to think cross-functionally.</li>
-                        <li class="watch-for"><strong>Too junior:</strong> "These are peers. Who has actual promotion influence?"</li>
-                        <li class="watch-for"><strong>Missing obvious ones:</strong> "What about the person who runs [key initiative]?"</li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h3 class="font-semibold text-gray-800 mb-2">Create Connection Plan</h3>
-                    <div class="bg-white border border-pink-200 rounded-lg p-4">
-                        <p class="font-semibold text-gray-800 mb-2">For each priority Gravity Leader:</p>
-                        <ul class="text-sm text-gray-700 ml-4 list-disc">
-                            <li><strong>Entry Point:</strong> How will you get on their radar? (Ask to help on a project, request a coffee chat, contribute to their initiative)</li>
-                            <li><strong>Value Add:</strong> What can you offer them? (Skill, insight, help with their problem)</li>
-                            <li><strong>Timeline:</strong> When will you make first contact?</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div>
-                    <h3 class="font-semibold text-gray-800 mb-2">Key Coaching Points</h3>
-                    <ul class="space-y-2 text-gray-700">
-                        <li class="talking-point">"You don't need to become best friends. You need to be known and respected."</li>
-                        <li class="talking-point">"One meaningful interaction per month with each Gravity Leader is enough."</li>
-                        <li class="talking-point">"Lead with value. 'How can I help?' not 'Can you promote me?'"</li>
+                        <li class="watch-for"><strong>All same department:</strong> "Add at least one cross-functional leader before next session."</li>
+                        <li class="watch-for"><strong>Too junior:</strong> "These are peers. Who actually influences promotions?"</li>
+                        <li class="watch-for"><strong>Good mix:</strong> "Great list. Let's use one of these for mock practice."</li>
                     </ul>
                 </div>
 
                 <div class="bg-gray-100 rounded-lg p-4">
-                    <p class="transition font-medium text-gray-700">"Great. You've got your map. Now let's practice—I want to make sure you feel confident actually doing this..."</p>
+                    <p class="transition font-medium text-gray-700">"Good—you've got your targets. Now let's practice making these connections real. We have 20 minutes for mock practice..."</p>
                 </div>
             </div>
         </div>
 
         <!-- BLOCK 6: Mock Practice -->
-        <div class="time-block practice bg-white rounded-xl shadow-lg p-6 mb-6 pl-8">
+        <div id="block-6" class="time-block practice bg-white rounded-xl shadow-lg p-6 mb-6 pl-8">
             <div class="flex items-center justify-between mb-4">
                 <div>
-                    <span class="bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-sm font-semibold">75-90 min</span>
-                    <h2 class="text-2xl font-bold text-gray-900 mt-2">Block 6: Mock Practice + Homework</h2>
+                    <span class="bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-sm font-semibold">70-90 min</span>
+                    <h2 class="text-2xl font-bold text-gray-900 mt-2">Block 6: Mock Practice (20 min)</h2>
                 </div>
             </div>
 
             <div class="bg-indigo-50 rounded-lg p-4 mb-4">
                 <h3 class="font-semibold text-indigo-800 mb-2">🎯 Goal</h3>
-                <p class="text-gray-700">Practice 1-2 scenarios to build confidence. Assign homework with clear deadlines. End with momentum.</p>
+                <p class="text-gray-700">Client chooses 1-2 of the following to practice live. Build confidence through roleplay. End with clear homework and momentum.</p>
+            </div>
+
+            <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-4 mb-4">
+                <h3 class="font-semibold text-emerald-800 mb-2">📥 Homework Inputs Used</h3>
+                <p class="text-gray-700"><strong>Scenario A:</strong> Current Situation → Skip-level manager name</p>
+                <p class="text-gray-700"><strong>Scenario B:</strong> Current Situation → Gravity Leaders list</p>
+                <p class="text-gray-700"><strong>Scenario C:</strong> Current Situation → 5 Accomplishments + Echo Email draft</p>
+                <p class="text-gray-700"><strong>Scenario D:</strong> Current Situation → 5 Accomplishments (for value pitch)</p>
             </div>
 
             <div class="space-y-4">
                 <div>
-                    <h3 class="font-semibold text-gray-800 mb-2">Pick One Scenario to Practice</h3>
+                    <h3 class="font-semibold text-gray-800 mb-3">Choose 1-2 Scenarios to Practice</h3>
                     <div class="grid md:grid-cols-2 gap-4">
-                        <div class="bg-white border border-indigo-200 rounded-lg p-4">
-                            <h4 class="font-semibold text-indigo-700 mb-2">Scenario A: Skip-Level Request</h4>
-                            <p class="text-sm text-gray-600 mb-2"><strong>Setup:</strong> You play the skip-level manager. Client practices the ask.</p>
-                            <p class="text-sm text-gray-600 mb-2"><strong>Goal:</strong> Client confidently requests a 20-30 min meeting.</p>
-                            <p class="text-sm text-gray-600"><strong>Outcome:</strong> They can articulate why they want to meet without sounding needy.</p>
+                        <div class="bg-white border-2 border-indigo-200 rounded-lg p-4">
+                            <h4 class="font-semibold text-indigo-700 mb-2">A. The Skip-Level Request</h4>
+                            <p class="text-sm text-gray-600 mb-3">Practice asking your manager for permission to meet with your skip-level leader. We'll roleplay the exact conversation you'll have, addressing potential concerns about "going over their head." You'll walk away with confidence and the exact words to use.</p>
+                            <div class="bg-gray-50 p-2 rounded text-xs">
+                                <p><strong>Setup:</strong> You play their direct manager. They practice the ask.</p>
+                                <p><strong>Goal:</strong> Get manager buy-in without seeming threatening.</p>
+                            </div>
                         </div>
-                        <div class="bg-white border border-indigo-200 rounded-lg p-4">
-                            <h4 class="font-semibold text-indigo-700 mb-2">Scenario B: Gravity Leader Intro</h4>
-                            <p class="text-sm text-gray-600 mb-2"><strong>Setup:</strong> You play a Gravity Leader they want to connect with.</p>
-                            <p class="text-sm text-gray-600 mb-2"><strong>Goal:</strong> Client makes a warm introduction and offers value.</p>
-                            <p class="text-sm text-gray-600"><strong>Outcome:</strong> They can start a relationship-building conversation naturally.</p>
+                        <div class="bg-white border-2 border-indigo-200 rounded-lg p-4">
+                            <h4 class="font-semibold text-indigo-700 mb-2">B. The Strategic Question</h4>
+                            <p class="text-sm text-gray-600 mb-3">Practice asking a thoughtful, strategic question at an all-hands or town hall meeting. We'll craft a question that demonstrates your business acumen and gets you noticed by senior leadership. You'll learn how to stand out without seeming like you're showing off.</p>
+                            <div class="bg-gray-50 p-2 rounded text-xs">
+                                <p><strong>Setup:</strong> You play the executive running the all-hands.</p>
+                                <p><strong>Goal:</strong> Ask a question that makes leadership remember their name.</p>
+                            </div>
+                        </div>
+                        <div class="bg-white border-2 border-indigo-200 rounded-lg p-4">
+                            <h4 class="font-semibold text-indigo-700 mb-2">C. The Echo Email Read-Through</h4>
+                            <p class="text-sm text-gray-600 mb-3">Read your draft Echo Email out loud and get real-time feedback on tone, length, and impact. We'll refine it together so it's optimized to get forwarded up the chain. You'll leave with a polished email ready to send within 24 hours.</p>
+                            <div class="bg-gray-50 p-2 rounded text-xs">
+                                <p><strong>Setup:</strong> They read their draft. You give live feedback.</p>
+                                <p><strong>Goal:</strong> Email is polished and ready to send Friday.</p>
+                            </div>
+                        </div>
+                        <div class="bg-white border-2 border-indigo-200 rounded-lg p-4">
+                            <h4 class="font-semibold text-indigo-700 mb-2">D. The Value Articulation</h4>
+                            <p class="text-sm text-gray-600 mb-3">Practice articulating your unique value in 60 seconds to a senior leader who asks "What do you do?" We'll craft your personal pitch that highlights impact, not just job duties. You'll be ready for any elevator conversation or networking opportunity.</p>
+                            <div class="bg-gray-50 p-2 rounded text-xs">
+                                <p><strong>Setup:</strong> You play a VP at a company event asking "So what do you do?"</p>
+                                <p><strong>Goal:</strong> 60-second pitch that makes them want to learn more.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <div>
-                    <h3 class="font-semibold text-gray-800 mb-2">Practice Flow</h3>
+                    <h3 class="font-semibold text-gray-800 mb-2">Practice Flow (per scenario)</h3>
                     <ol class="list-decimal ml-6 text-gray-700 space-y-1">
                         <li>Set the scene (30 seconds)</li>
                         <li>Client role-plays (2-3 minutes)</li>
                         <li>Feedback: What worked? What to adjust? (2 minutes)</li>
-                        <li>If time, run it again with adjustments</li>
+                        <li>Run it again with adjustments if time permits</li>
                     </ol>
                 </div>
 
                 <div class="bg-amber-50 border-l-4 border-amber-400 p-4 rounded-r-lg">
-                    <h3 class="font-semibold text-amber-800 mb-2">📝 Session 1 Homework</h3>
-                    <ul class="space-y-2 text-gray-700">
-                        <li class="homework"><strong>Send skip-level meeting request</strong> — By [specific day, e.g., Wednesday]</li>
-                        <li class="homework"><strong>Send first Echo Email to manager</strong> — This Friday</li>
-                        <li class="homework"><strong>Make contact with 1 Gravity Leader</strong> — By next session</li>
-                        <li class="homework"><strong>Review Visibility Pyramid</strong> — Check off 2 more boxes before next session</li>
+                    <h3 class="font-semibold text-amber-800 mb-2">📝 Session 1 Homework → Bridging to Pre-Session 2 & Session 2</h3>
+                    <p class="text-sm text-gray-600 mb-3">These assignments build on Session 1 and prepare the client for Pre-Session 2 materials and Session 2 content.</p>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="homework">
+                            <strong>Send skip-level meeting request</strong> — By [specific day]
+                            <p class="text-xs text-gray-500 ml-6 mt-1">→ Builds relationship needed for Session 2's promotion conversation strategy</p>
+                        </li>
+                        <li class="homework">
+                            <strong>Send first Echo Email to manager</strong> — This Friday
+                            <p class="text-xs text-gray-500 ml-6 mt-1">→ Starts paper trail; feeds into Pre-Session 2's Evidence Arsenal™ Tracker</p>
+                        </li>
+                        <li class="homework">
+                            <strong>Make contact with 1 Gravity Leader</strong> — By next session
+                            <p class="text-xs text-gray-500 ml-6 mt-1">→ Builds network for Session 2's Headache Fixer Strategy™</p>
+                        </li>
+                        <li class="homework">
+                            <strong>Complete 2 more Visibility Pyramid boxes</strong> — By next session
+                            <p class="text-xs text-gray-500 ml-6 mt-1">→ Maintains momentum; progress reviewed in Session 2 opening</p>
+                        </li>
                     </ul>
+                </div>
+                
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mt-4">
+                    <h3 class="font-semibold text-blue-800 mb-2">📚 Pre-Session 2 Materials (Client Will Receive)</h3>
+                    <p class="text-sm text-gray-600 mb-2">Between Session 1 and Session 2, the client will receive these materials to study:</p>
+                    <ul class="text-sm text-gray-700 ml-4 list-disc space-y-1">
+                        <li><strong>The Strategic Question Bank™</strong> — Questions to ask in all-hands, town halls, skip-levels</li>
+                        <li><strong>The Echo Email™ Templates</strong> — Advanced templates for different situations</li>
+                        <li><strong>The Alignment Signal™ Guide</strong> — How to signal alignment with leadership priorities</li>
+                        <li><strong>The Recognition Boomerang™ Templates</strong> — Scripts for giving credit strategically</li>
+                        <li><strong>The Evidence Arsenal™ Tracker Template</strong> — Spreadsheet to track wins for promotion case</li>
+                        <li><strong>The Service-Based Script Library™ Intro</strong> — Preview of promotion conversation scripts</li>
+                    </ul>
+                    <p class="text-xs text-gray-500 mt-2 italic">These materials prepare them for Session 2: The Promotion Conversation Mastery</p>
                 </div>
 
                 <div>
@@ -532,32 +927,62 @@
 
         <!-- Quick Reference Card -->
         <div class="bg-gray-800 text-white rounded-xl p-6 mb-8">
-            <h2 class="text-xl font-bold mb-4">🚀 Quick Reference: Methods Covered in Session 1</h2>
-            <div class="grid md:grid-cols-3 gap-4 text-sm">
+            <h2 class="text-xl font-bold mb-4">🚀 Session 1 Complete Method Reference (11 Methods)</h2>
+            <div class="grid md:grid-cols-2 gap-6 text-sm">
                 <div>
-                    <h3 class="font-semibold text-indigo-300 mb-2">Phase 1: Visibility Pyramid</h3>
-                    <ul class="space-y-1 text-gray-300">
-                        <li>• The Green Light Audit™</li>
-                        <li>• The Echo Email™</li>
-                        <li>• Organic Broadcasting™</li>
-                        <li>• The Skip-Level Request Protocol™</li>
-                        <li>• The Skip-Level Meeting Playbook™</li>
+                    <h3 class="font-semibold text-purple-300 mb-2">Block 1: Mindset Foundation (3 methods)</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li>• <strong>Hard Work Fallacy™</strong> — Hard work is prerequisite, not differentiator</li>
+                        <li>• <strong>Self-Promote Delusion™</strong> — Honest self-advocacy is essential</li>
+                        <li>• <strong>Politics Misconception™</strong> — Ethical politics = strategic positioning</li>
                     </ul>
                 </div>
                 <div>
-                    <h3 class="font-semibold text-indigo-300 mb-2">Phase 4: Reputation Wildfire</h3>
-                    <ul class="space-y-1 text-gray-300">
-                        <li>• The Gravity Audit™</li>
-                        <li>• The Cross-Functional Bridge Builder™</li>
+                    <h3 class="font-semibold text-green-300 mb-2">Block 2: Assessment (2 methods)</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li>• <strong>Green Light Audit™</strong> — 14-question promotion readiness check</li>
+                        <li>• <strong>Role Saturation Threshold™</strong> — 85% of next-level work first</li>
                     </ul>
                 </div>
                 <div>
-                    <h3 class="font-semibold text-indigo-300 mb-2">Phase 6: Mindset Forge</h3>
-                    <ul class="space-y-1 text-gray-300">
-                        <li>• The "Hard Work = Reward" Fallacy™</li>
-                        <li>• The "My Manager Should Notice" Fantasy™</li>
-                        <li>• The "I Shouldn't Have to Self-Promote" Delusion™</li>
+                    <h3 class="font-semibold text-blue-300 mb-2">Block 3: Skip-Level (2 methods)</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li>• <strong>Skip-Level Request Protocol™</strong> — Script to request the meeting</li>
+                        <li>• <strong>Skip-Level Meeting Playbook™</strong> — What to say in the meeting</li>
                     </ul>
+                </div>
+                <div>
+                    <h3 class="font-semibold text-amber-300 mb-2">Block 4: Visibility System (3 methods)</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li>• <strong>Echo Email™</strong> — Weekly wins email to manager</li>
+                        <li>• <strong>Recognition Boomerang™</strong> — Give credit, get credit back</li>
+                        <li>• <strong>Organic Broadcasting™</strong> — Share wins naturally</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-semibold text-pink-300 mb-2">Block 5: Network (1 method)</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li>• <strong>Gravity Audit™</strong> — Map 3-5 influential leaders + connection plan</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-semibold text-indigo-300 mb-2">Block 6: Mock Practice (4 options)</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li>• Skip-Level Request — Practice asking manager for permission</li>
+                        <li>• Strategic Question — Craft all-hands question</li>
+                        <li>• Echo Email Read-Through — Live feedback on draft</li>
+                        <li>• Value Articulation — 60-second "what do you do?" pitch</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-6 pt-4 border-t border-gray-600">
+                <div class="flex justify-between items-center">
+                    <div>
+                        <p class="text-gray-400">Total Methods: <span class="text-white font-bold">11</span> | Mock Practice Options: <span class="text-white font-bold">4</span></p>
+                    </div>
+                    <div class="text-right">
+                        <p class="text-gray-400 text-xs">Bridges to → <span class="text-blue-300">Pre-Session 2 Materials</span> → <span class="text-green-300">Session 2: Promotion Mastery</span></p>
+                    </div>
                 </div>
             </div>
         </div>
