@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedIn Post Image - Engineering Degree Series: Priorities</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #1a1a1a;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+
+        h1 {
+            color: white;
+            margin-bottom: 8px;
+            font-size: 24px;
+        }
+
+        .instructions {
+            color: #888;
+            font-size: 14px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        /* LinkedIn Post Image: 1200 x 1200 pixels (1:1 square) */
+        .post-image {
+            width: 1200px;
+            height: 1200px;
+            background: linear-gradient(135deg, #064e3b 0%, #065f46 50%, #047857 100%);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            padding: 80px;
+        }
+
+        /* Subtle texture overlay */
+        .post-image::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 90% 10%, rgba(255,255,255,0.1) 0%, transparent 40%),
+                        radial-gradient(circle at 10% 90%, rgba(0,0,0,0.15) 0%, transparent 40%);
+            pointer-events: none;
+        }
+
+        /* Logo at top */
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 50px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo-icon {
+            width: 56px;
+            height: 56px;
+            background: white;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 22px;
+            color: #064e3b;
+        }
+
+        .logo-text {
+            font-size: 28px;
+            font-weight: 700;
+            color: white;
+        }
+
+        .logo-text span {
+            color: #a7f3d0;
+        }
+
+        /* Main content */
+        .content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .series-badge {
+            display: inline-block;
+            background: rgba(99, 102, 241, 0.3);
+            color: #a5b4fc;
+            padding: 14px 28px;
+            border-radius: 40px;
+            font-size: 16px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 16px;
+            width: fit-content;
+            border: 2px solid rgba(99, 102, 241, 0.5);
+        }
+
+        .series-title {
+            font-size: 32px;
+            font-weight: 700;
+            color: #a7f3d0;
+            margin-bottom: 24px;
+            letter-spacing: -0.5px;
+        }
+
+        h2 {
+            font-size: 64px;
+            font-weight: 800;
+            color: white;
+            line-height: 1.1;
+            margin-bottom: 40px;
+        }
+
+        h2 .highlight {
+            color: #fcd34d;
+        }
+
+        h2 .strikethrough {
+            text-decoration: line-through;
+            text-decoration-color: #ef4444;
+            text-decoration-thickness: 6px;
+            color: rgba(255,255,255,0.5);
+        }
+
+        /* Priority visualization */
+        .priority-container {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-bottom: 30px;
+        }
+
+        .priority-row {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 16px 24px;
+            border-radius: 16px;
+            background: rgba(255,255,255,0.05);
+        }
+
+        .priority-row.real {
+            background: rgba(251, 191, 36, 0.1);
+            border: 2px solid rgba(251, 191, 36, 0.3);
+        }
+
+        .priority-row.fake {
+            background: rgba(239, 68, 68, 0.08);
+            border: 2px dashed rgba(239, 68, 68, 0.3);
+        }
+
+        .priority-number {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            font-weight: 800;
+            flex-shrink: 0;
+        }
+
+        .priority-number.one {
+            background: linear-gradient(135deg, #fbbf24, #f59e0b);
+            color: #1e293b;
+            box-shadow: 0 0 30px rgba(251, 191, 36, 0.4);
+            border: 3px solid #fcd34d;
+        }
+
+        .priority-number.crossed {
+            background: rgba(239, 68, 68, 0.2);
+            border: 3px dashed rgba(239, 68, 68, 0.5);
+            color: rgba(239, 68, 68, 0.6);
+            position: relative;
+        }
+
+        .priority-number.crossed::after {
+            content: '✗';
+            position: absolute;
+            font-size: 40px;
+            color: #ef4444;
+        }
+
+        .priority-content {
+            flex: 1;
+        }
+
+        .priority-text {
+            font-size: 24px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 4px;
+        }
+
+        .priority-text.faded {
+            color: rgba(255,255,255,0.4);
+            text-decoration: line-through;
+        }
+
+        .priority-subtext {
+            font-size: 15px;
+            color: rgba(255,255,255,0.6);
+        }
+
+        .priority-subtext.red {
+            color: rgba(239, 68, 68, 0.7);
+        }
+
+        /* Word origin box */
+        .word-origin {
+            background: rgba(99, 102, 241, 0.15);
+            border: 2px solid rgba(99, 102, 241, 0.3);
+            border-radius: 12px;
+            padding: 20px 28px;
+            margin-bottom: 24px;
+        }
+
+        .word-origin-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: #a5b4fc;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+
+        .word-origin-text {
+            font-size: 20px;
+            color: white;
+        }
+
+        .word-origin-text .latin {
+            font-style: italic;
+            color: #c4b5fd;
+        }
+
+        .word-origin-text .meaning {
+            color: #fcd34d;
+            font-weight: 700;
+        }
+
+        .key-message {
+            background: rgba(251, 191, 36, 0.15);
+            border: 2px solid rgba(251, 191, 36, 0.4);
+            border-radius: 16px;
+            padding: 24px 32px;
+        }
+
+        .key-message p {
+            font-size: 24px;
+            font-weight: 600;
+            color: #fcd34d;
+            text-align: center;
+            line-height: 1.4;
+        }
+
+        /* Bottom section */
+        .bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            position: relative;
+            z-index: 1;
+            margin-top: 40px;
+        }
+
+        .tagline {
+            font-size: 24px;
+            color: rgba(255,255,255,0.6);
+            font-style: italic;
+        }
+
+        .website {
+            font-size: 28px;
+            font-weight: 700;
+            color: white;
+            background: rgba(0,0,0,0.2);
+            padding: 18px 36px;
+            border-radius: 50px;
+        }
+
+        .download-note {
+            color: #666;
+            font-size: 12px;
+            margin-top: 24px;
+            text-align: center;
+        }
+
+        .download-note strong {
+            color: #14b8a6;
+        }
+
+        /* Post copy section */
+        .post-copy {
+            background: #1e293b;
+            border-radius: 16px;
+            padding: 32px;
+            margin-top: 40px;
+            max-width: 1200px;
+            border: 1px solid #334155;
+        }
+
+        .post-copy h3 {
+            color: #10b981;
+            font-size: 18px;
+            margin-bottom: 16px;
+        }
+
+        .post-text {
+            color: #e2e8f0;
+            font-size: 15px;
+            line-height: 1.8;
+            white-space: pre-wrap;
+        }
+
+        .hashtags {
+            color: #3b82f6;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <h1>LinkedIn Post Image - Square Format (1200x1200)</h1>
+    <p class="instructions">Export using Chrome DevTools: Right-click → Inspect → Select .post-image → Right-click → "Capture node screenshot"</p>
+
+    <div class="post-image">
+        <!-- Logo -->
+        <div class="logo">
+            <div class="logo-icon">L²</div>
+            <div class="logo-text">Launch<span>ToLead</span></div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="content">
+            <div class="series-badge">🎓 Episode 2</div>
+            <div class="series-title">What an Engineering Degree REALLY Teaches You</div>
+            <h2>You Can't Have<br>Two <span class="strikethrough">#1</span> <span class="highlight">Priorities</span></h2>
+            
+            <!-- Word Origin -->
+            <div class="word-origin">
+                <div class="word-origin-title">📖 Word Origin</div>
+                <div class="word-origin-text">
+                    <span class="latin">"Prior"</span> (Latin) → <span class="meaning">"first, before all others"</span>
+                </div>
+            </div>
+
+            <!-- Priority Visualization -->
+            <div class="priority-container">
+                <div class="priority-row real">
+                    <div class="priority-number one">#1</div>
+                    <div class="priority-content">
+                        <div class="priority-text">Your actual priority</div>
+                        <div class="priority-subtext">The ONE thing that comes before everything else</div>
+                    </div>
+                </div>
+                <div class="priority-row fake">
+                    <div class="priority-number crossed">#1</div>
+                    <div class="priority-content">
+                        <div class="priority-text faded">"Also my #1 priority"</div>
+                        <div class="priority-subtext red">That's just a list you haven't ranked yet</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="key-message">
+                <p>Impossible deadlines and endless demands force you to choose.<br>This skill stays with you—in your career and in life.</p>
+            </div>
+        </div>
+
+        <!-- Bottom -->
+        <div class="bottom">
+            <div class="tagline">Engineering school forces you to choose.</div>
+            <div class="website">LaunchToLead.io</div>
+        </div>
+    </div>
+
+    <p class="download-note">
+        <strong>To export:</strong> Open in Chrome → Right-click → Inspect → Select the .post-image element → Right-click → "Capture node screenshot"
+    </p>
+
+    <!-- POST COPY -->
+    <div class="post-copy">
+        <h3>📝 LinkedIn Post Text:</h3>
+        <div class="post-text">What an engineering degree ACTUALLY teaches you:
+
+𝗘𝗽𝗶𝘀𝗼𝗱𝗲 𝟮: 𝗛𝗼𝘄 𝘁𝗼 𝗽𝗿𝗶𝗼𝗿𝗶𝘁𝗶𝘇𝗲.
+
+Here's a word that's been corrupted:
+
+"Priority."
+
+Somewhere along the way, someone sneaky slipped an "s" at the end.
+
+And now we all talk about our "priorities" like we can have five #1s.
+
+That's not how it works.
+
+Priority = the ONE thing that takes precedence over everything else.
+
+By definition, you can't have two #1 priorities.
+
+That's just a list of things you haven't ranked yet.
+
+Engineering school teaches you this whether you realize it or not:
+
+↳ 5 exams in one week
+↳ 3 projects due Friday
+↳ Labs, homework, group work
+↳ Sleep? Social life? Pick one.
+
+You learn fast:
+
+Something has to come first.
+Something has to wait.
+Something might not happen at all.
+
+And that's okay.
+
+This skill transfers everywhere:
+
+✅ Career decisions
+✅ Time management
+✅ Relationships
+✅ Health
+✅ Building a business
+
+Most people pretend everything is equally important.
+
+Engineers learn to be honest about what actually comes first.
+
+That's the edge.
+
+---
+
+What did your engineering degree teach you that nobody talks about?
+
+Drop it below 👇</div>
+        <div class="hashtags">#engineering #careeradvice #priorities #timemanagement #engineeringdegree #productivity #launchtolead</div>
+    </div>
+</body>
+</html>
