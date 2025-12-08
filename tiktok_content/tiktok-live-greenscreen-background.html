@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TikTok Live Green Screen Background - Engineering Q&A</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #1a1a1a;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+
+        h1 {
+            color: white;
+            margin-bottom: 8px;
+            font-size: 24px;
+        }
+
+        .instructions {
+            color: #888;
+            font-size: 14px;
+            margin-bottom: 30px;
+            text-align: center;
+            max-width: 600px;
+        }
+
+        /* TikTok Live Desktop Background: 1920 x 1080 pixels (16:9) */
+        .live-background {
+            width: 1920px;
+            height: 1080px;
+            background: linear-gradient(135deg, #064e3b 0%, #065f46 50%, #047857 100%);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Subtle texture overlay */
+        .live-background::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 90% 20%, rgba(255,255,255,0.08) 0%, transparent 40%),
+                        radial-gradient(circle at 10% 80%, rgba(0,0,0,0.15) 0%, transparent 40%);
+            pointer-events: none;
+        }
+
+        /* Top Banner */
+        .top-banner {
+            background: linear-gradient(135deg, #064e3b 0%, #065f46 50%, #047857 100%);
+            padding: 30px 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 4px 30px rgba(0,0,0,0.3);
+            position: relative;
+            z-index: 10;
+        }
+
+        .top-banner::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #fbbf24, #f59e0b, #fbbf24);
+        }
+
+        /* Logo */
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo-icon {
+            width: 70px;
+            height: 70px;
+            background: white;
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 28px;
+            color: #064e3b;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+        }
+
+        .logo-text {
+            font-size: 36px;
+            font-weight: 700;
+            color: white;
+        }
+
+        .logo-text span {
+            color: #a7f3d0;
+        }
+
+        /* Title */
+        .title-section {
+            text-align: center;
+            flex: 1;
+        }
+
+        .live-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(239, 68, 68, 0.9);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+            animation: pulse-live 2s infinite;
+        }
+
+        .live-badge::before {
+            content: '';
+            width: 12px;
+            height: 12px;
+            background: white;
+            border-radius: 50%;
+            animation: blink 1s infinite;
+        }
+
+        @keyframes pulse-live {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0.3; }
+        }
+
+        .main-title {
+            font-size: 42px;
+            font-weight: 800;
+            color: white;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .main-title .highlight {
+            color: #fcd34d;
+        }
+
+        /* Website */
+        .website {
+            font-size: 28px;
+            font-weight: 700;
+            color: white;
+            background: rgba(0,0,0,0.3);
+            padding: 16px 32px;
+            border-radius: 50px;
+        }
+
+        /* Main content area */
+        .main-area {
+            flex: 1;
+            display: flex;
+            align-items: flex-start;
+            padding: 40px 60px;
+        }
+
+        /* Left side info stack */
+        .left-info {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            background: rgba(0,0,0,0.3);
+            padding: 16px 28px;
+            border-radius: 16px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .info-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(255,255,255,0.15);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+
+        .info-text {
+            color: white;
+            font-size: 22px;
+            font-weight: 600;
+        }
+
+        .download-note {
+            color: #666;
+            font-size: 12px;
+            margin-top: 24px;
+            text-align: center;
+        }
+
+        .download-note strong {
+            color: #14b8a6;
+        }
+
+        /* Variations */
+        .variations {
+            margin-top: 40px;
+            color: #888;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        .variations h3 {
+            color: #10b981;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>TikTok Live Green Screen Background (1920x1080)</h1>
+    <p class="instructions">
+        Export this as an image, then use it as your green screen background in OBS or TikTok Live Studio. 
+        The green area is where you'll appear on camera.
+    </p>
+
+    <div class="live-background">
+        <!-- Top Banner -->
+        <div class="top-banner">
+            <div class="logo">
+                <div class="logo-icon">L²</div>
+                <div class="logo-text">Launch<span>ToLead</span></div>
+            </div>
+            
+            <div class="title-section">
+                <div class="live-badge">🔴 Live</div>
+                <h2 class="main-title">Engineering Career Help: <span class="highlight">Resumes, Interviews & More</span></h2>
+            </div>
+
+            <div class="website">LaunchToLead.io</div>
+        </div>
+
+        <!-- Main Area with Left Info -->
+        <div class="main-area">
+            <div class="left-info">
+                <div class="info-item">
+                    <div class="info-icon">💬</div>
+                    <span class="info-text">Drop your questions in chat!</span>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon">🎯</div>
+                    <span class="info-text">Resumes • Interviews • Career Advice</span>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon">🔔</div>
+                    <span class="info-text">Follow for more!</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <p class="download-note">
+        <strong>To export:</strong> Open in Chrome → Right-click → Inspect → Select the .live-background element → Right-click → "Capture node screenshot"
+    </p>
+
+    <div class="variations">
+        <h3>💡 Title Variations to Test:</h3>
+        <p>• "Engineering Q&A: Ask an Engineer Anything" (current)</p>
+        <p>• "Live Career Q&A: Ask a Fortune 500 Engineer"</p>
+        <p>• "Engineering Career Help: Resumes, Interviews & More"</p>
+        <p>• "Breaking Into Tech: Ask Me Anything"</p>
+    </div>
+</body>
+</html>

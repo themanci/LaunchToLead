@@ -306,155 +306,258 @@ To create a "Grand Slam Offer" that makes prospects feel stupid saying no, we ne
 
 ---
 
-# PROPRIETARY METHOD NAMES (Complete List)
+# COMPLETE PROPRIETARY METHOD NAMES (52)
 
-## V1 Methods (From Original Grand Slam Offer)
+All techniques branded with proprietary names for differentiation and marketing. Organized by category.
 
-| Old Name | Proprietary Name |
-|----------|------------------|
-| Impact Equation | **The Impact Bullet Builder™** |
-| Me-in-We Extraction | **The Me-in-We Extractor™** |
-| Pyramid of Value | **The Résumé Value Ladder™** |
-| Universal Translator + ATS | **The Universal Translator + ATS Pass™** |
-| Passion Proof Indicator | **The Passion Proof Finder™** |
-| Passion Proof 30-Day Sprint | **The 30-Day Signature Project™** |
-| Pattern Interrupt Mindset | **The Asset Mindset Shift™** |
-| Resume Tailoring Strategy | **The 4-Minute Tailored Bullet System™** |
-| Boring to Booming Transformation | **The Boring-to-Standout Bullet Upgrade™** |
-| Universal Translator (domain) | **The Domain Translator™** |
-| Iceberg Protocol / Master Manuscript | **The Master Story Vault™** |
-| Competency Matrix | **The Competency Story Map™** |
-| Visual Aid Binder | **The Visual Aid Binder™** |
-| 5-Star Story Filter | **The Interview Binder System™** |
-| Spaced Repetition Practice | **The Daily Story Practice™** |
-| Power Pause + Deep Memorization | **The Power Pause + Story Arsenal™** |
-| Paint the Pain / High-Contrast | **The High-Impact Story Framework™** |
-| The Cheat Sheet | **The Interview Cheat Sheet™** |
-| Entry-Level Negotiation Basics | **The Entry-Level Negotiation Scripts™** |
-| Offer Evaluation Framework | **The Offer Comparison Tool™** |
-| Negotiation Mindset Shift | **The Negotiation Confidence Shift™** |
-| First 90 Days Playbook | **The First 90-Day Success Plan™** |
+## 🔍 Job Sourcing (5)
+| Method |
+|--------|
+| The Job Sourcing Strategy™ |
+| The Job Board Hierarchy™ |
+| The Application Timing Strategy™ |
+| The Application Pipeline™ |
+| The New Grad Friendly Company List™ |
 
-## V2 Methods (NEW - Added in This Version)
+## 🤝 Networking (6)
+| Method |
+|--------|
+| The Warm Intro Protocol™ |
+| The Resource Activation System™ |
+| The Networking Mindset Shift™ |
+| The Referral Request Script™ |
+| The Career Center Activation Checklist™ |
+| The Company Research Deep Dive™ |
 
-| Category | Proprietary Name | Description |
-|----------|------------------|-------------|
-| Job Sourcing | **The Job Sourcing Strategy™** | Where to find jobs, timing, hidden market |
-| Job Sourcing | **The Job Board Hierarchy™** | Ranked list of where to find postings |
-| Job Sourcing | **The Application Timing Strategy™** | When to apply for maximum response |
-| Job Sourcing | **The Application Pipeline™** | Tracking system, follow-up cadence |
-| Networking | **The Warm Intro Protocol™** | Alumni leverage, advice-to-referral |
-| Networking | **The Resource Activation System™** | University/alumni/societies |
-| Networking | **The Networking Mindset Shift™** | Seek advice, not favors |
-| Networking | **The Referral Request Script™** | How to get referrals naturally |
-| Networking | **The Career Center Activation Checklist™** | Using free university resources |
-| Resume | **The Hidden Metrics Finder™** | 5 ways to find quantifiable results |
-| Resume | **The Companion Cover Letter™** | 3-paragraph cover letter structure |
-| Interview | **The Technical Gauntlet™** | Discipline-specific technical prep |
-| Interview | **The Digital Stage Presence™** | Remote interview protocol |
-| Interview | **The Numbered Roadmap™** | Structured answer delivery |
-| Interview | **The Interview Types Guide™** | Panel, full-day, lunch, presentation |
-| Interview | **The Human Element Questions™** | Questions to ask interviewers |
-| Offer | **The Research Your Worth System™** | Salary research and negotiation prep |
-| Offer | **The Offer Timeline Management Scripts™** | Handling exploding offers |
-| Resilience | **The Rejection Reframe System™** | Mental framework for rejections |
-| Resilience | **The Burnout Prevention System™** | Pacing and sustainability |
-| Resilience | **The Ghosting Response Protocol™** | Follow-up scripts for ghosting |
-| Bonus | **The 24-48 Hour Follow-Up Protocol™** | Post-interaction follow-up |
-| Bonus | **The Career Fair Prep Checklist™** | Pre-fair research and planning |
-| Bonus | **The Company Research Deep Dive™** | Advanced company research |
-| Bonus | **The New Grad Friendly Company List™** | Companies that hire entry-level |
-| Bonus | **The Managing External Pressure Scripts™** | Family/friend conversation scripts |
-| Bonus | **The Comparison Trap Escape™** | Mental framework for peer comparison |
-| Bonus | **The Gap Explanation Scripts™** | Addressing resume gaps |
-| Bonus | **The Digital Footprint Audit™** | Cleaning up online presence |
+## 📄 Resume (9)
+| Method |
+|--------|
+| The Me-in-We Extractor™ |
+| The Impact Bullet Builder™ |
+| The Boring-to-Standout Bullet Upgrade™ |
+| The Universal Translator + ATS Pass™ |
+| The Passion Proof Finder™ |
+| The Hidden Metrics Finder™ |
+| The Domain Translator™ |
+| The 4-Minute Tailored Bullet System™ |
+| The Asset Mindset Shift™ |
+
+## ✉️ Cover Letter (1)
+| Method |
+|--------|
+| The Companion Cover Letter™ |
+
+## 🎯 Interview Prep (12)
+| Method |
+|--------|
+| The Master Story Vault™ |
+| The Competency Story Map™ |
+| The Power Pause + Story Arsenal™ |
+| The High-Impact Story Framework™ |
+| The Numbered Roadmap™ |
+| The 3-Tier Impact Ladder™ |
+| The Daily Story Practice™ |
+| The Interview Cheat Sheet™ |
+| The Visual Aid Binder™ |
+| The Human Element Questions™ |
+| The Technical Gauntlet™ |
+| The Interview Types Guide™ |
+
+## 💻 Remote Interview (1)
+| Method |
+|--------|
+| The Digital Stage Presence™ |
+
+## 🎪 Career Fair (3)
+| Method |
+|--------|
+| The 60-90 Second Pitch Structure™ |
+| The 24-48 Hour Follow-Up Protocol™ |
+| The Career Fair Prep Checklist™ |
+
+## 📞 Phone Screen (3)
+| Method |
+|--------|
+| The Phone Screen Prep Guide™ |
+| The Human Element™ |
+| The Phone Screen Questions to Ask™ |
+
+## 💰 Offer & Negotiation (5)
+| Method |
+|--------|
+| The Research Your Worth System™ |
+| The Offer Comparison Tool™ |
+| The Entry-Level Negotiation Scripts™ |
+| The Offer Timeline Management Scripts™ |
+| The First 90-Day Success Plan™ |
+
+## ❤️ Mental Resilience (5)
+| Method |
+|--------|
+| The Rejection Reframe System™ |
+| The Burnout Prevention System™ |
+| The Ghosting Response Protocol™ |
+| The Managing External Pressure Scripts™ |
+| The Comparison Trap Escape™ |
+
+## ⚠️ Special Circumstances (2)
+| Method |
+|--------|
+| The Gap Explanation Scripts™ |
+| The Digital Footprint Audit™ |
 
 ---
 
 # VALUE / COST ANALYSIS SUMMARY
 
-## 🟢 INCLUDE - High Value, Low Cost (22 items)
+## 🟣 CORE CURRICULUM (36 items)
 
-These are CORE CURRICULUM - teach in live sessions or essential pre-work.
+These are taught in live sessions or essential pre-work.
 
-| Method | Category |
-|--------|----------|
-| The Impact Bullet Builder™ | Resume |
-| The Me-in-We Extractor™ | Resume |
-| The Boring-to-Standout Bullet Upgrade™ | Resume |
-| The Hidden Metrics Finder™ | Resume |
-| The Passion Proof Finder™ | Resume |
-| The Asset Mindset Shift™ | Mindset |
-| The Domain Translator™ | Resume |
-| The Universal Translator + ATS Pass™ | Resume |
-| The 4-Minute Tailored Bullet System™ | Resume |
-| The Companion Cover Letter™ | Resume |
-| The Resource Activation System™ | Networking |
-| The Networking Mindset Shift™ | Networking |
-| The Referral Request Script™ | Networking |
-| The Career Center Activation Checklist™ | Networking |
-| The Application Pipeline™ | Job Search |
-| The Application Timing Strategy™ | Job Search |
-| The Job Board Hierarchy™ | Job Search |
-| The Power Pause + Story Arsenal™ | Interview |
-| The Numbered Roadmap™ | Interview |
-| The High-Impact Story Framework™ | Interview |
-| The Competency Story Map™ | Interview |
-| The Interview Cheat Sheet™ | Interview |
-| The Daily Story Practice™ | Interview |
-| The Digital Stage Presence™ | Interview |
-| The Human Element Questions™ | Interview |
-| The Phone Screen Prep Guide™ | Interview |
-| The Common Phone Screen Questions™ | Interview |
-| The 60-90 Second Pitch Structure™ | Career Fair |
-| The Research Your Worth System™ | Offer |
-| The Rejection Reframe System™ | Resilience |
-| The Burnout Prevention System™ | Resilience |
+### Job Sourcing (4 Core)
+| Method |
+|--------|
+| The Job Sourcing Strategy™ |
+| The Job Board Hierarchy™ |
+| The Application Timing Strategy™ |
+| The Application Pipeline™ |
 
-## 🟡 INCLUDE - High Value, High Cost (5 items)
+### Networking (6 Core)
+| Method |
+|--------|
+| The Warm Intro Protocol™ |
+| The Resource Activation System™ |
+| The Networking Mindset Shift™ |
+| The Referral Request Script™ |
+| The Career Center Activation Checklist™ |
+| The Company Research Deep Dive™ |
 
-These require more time but are essential differentiators.
+### Resume (9 Core)
+| Method |
+|--------|
+| The Me-in-We Extractor™ |
+| The Impact Bullet Builder™ |
+| The Boring-to-Standout Bullet Upgrade™ |
+| The Universal Translator + ATS Pass™ |
+| The Passion Proof Finder™ |
+| The Hidden Metrics Finder™ |
+| The Domain Translator™ |
+| The 4-Minute Tailored Bullet System™ |
+| The Asset Mindset Shift™ |
 
-| Method | Category | Why High Cost |
-|--------|----------|---------------|
-| The Job Sourcing Strategy™ | Job Search | Comprehensive teaching required |
-| The Warm Intro Protocol™ | Networking | Full system with scripts |
-| The Master Story Vault™ | Interview | Deep work, review their examples |
-| The Technical Gauntlet™ | Interview | Discipline-specific content |
-| The Visual Aid Binder™ | Interview | Physical creation guidance |
+### Cover Letter (1 Core)
+| Method |
+|--------|
+| The Companion Cover Letter™ |
 
-## 🔵 BONUS - Medium Value, Low Cost (15 items)
+### Interview Prep (9 Core)
+| Method |
+|--------|
+| The Master Story Vault™ |
+| The Competency Story Map™ |
+| The Power Pause + Story Arsenal™ |
+| The High-Impact Story Framework™ |
+| The Numbered Roadmap™ |
+| The 3-Tier Impact Ladder™ |
+| The Daily Story Practice™ |
+| The Interview Cheat Sheet™ |
+| The Visual Aid Binder™ |
+
+### Remote Interview (1 Core)
+| Method |
+|--------|
+| The Digital Stage Presence™ |
+
+### Career Fair (1 Core)
+| Method |
+|--------|
+| The 60-90 Second Pitch Structure™ |
+
+### Phone Screen (2 Core)
+| Method |
+|--------|
+| The Phone Screen Prep Guide™ |
+| The Human Element™ |
+
+### Offer & Negotiation (1 Core)
+| Method |
+|--------|
+| The Research Your Worth System™ |
+
+### Mental Resilience (2 Core)
+| Method |
+|--------|
+| The Rejection Reframe System™ |
+| The Burnout Prevention System™ |
+
+---
+
+## 🔵 BONUS PDF DELIVERABLES (16 items)
 
 These are PDF deliverables or quick add-ons.
 
-| Method | Category |
-|--------|----------|
-| The Company Research Deep Dive™ | Job Search |
-| The New Grad Friendly Company List™ | Job Search |
-| The Interview Types Guide™ | Interview |
-| The Phone Screen Questions to Ask™ | Interview |
-| The 24-48 Hour Follow-Up Protocol™ | Career Fair |
-| The Career Fair Prep Checklist™ | Career Fair |
-| The Entry-Level Negotiation Scripts™ | Offer |
-| The Offer Comparison Tool™ | Offer |
-| The Offer Timeline Management Scripts™ | Offer |
-| The First 90-Day Success Plan™ | Offer |
-| The Ghosting Response Protocol™ | Resilience |
-| The Managing External Pressure Scripts™ | Resilience |
-| The Comparison Trap Escape™ | Resilience |
-| The Gap Explanation Scripts™ | Resume |
-| The Digital Footprint Audit™ | Online |
+### Job Sourcing (1 Bonus)
+| Method |
+|--------|
+| The New Grad Friendly Company List™ |
 
-## ⚪ CONSIDER - Medium Value, Medium Cost (4 items)
+### Interview Prep (3 Bonus)
+| Method |
+|--------|
+| The Human Element Questions™ |
+| The Technical Gauntlet™ |
+| The Interview Types Guide™ |
 
-Add if time permits or for specific client needs.
+### Career Fair (2 Bonus)
+| Method |
+|--------|
+| The 24-48 Hour Follow-Up Protocol™ |
+| The Career Fair Prep Checklist™ |
 
-| Method | Category | Notes |
-|--------|----------|-------|
-| The 30-Day Signature Project™ | Resume | For clients with zero experience |
-| The Visa & Sponsorship Strategy™ | Special | For international students only |
-| The Defense Industry Guide™ | Special | For defense-focused clients only |
-| Online Presence Beyond LinkedIn | Online | GitHub, portfolio sites |
+### Phone Screen (1 Bonus)
+| Method |
+|--------|
+| The Phone Screen Questions to Ask™ |
+
+### Offer & Negotiation (4 Bonus)
+| Method |
+|--------|
+| The Offer Comparison Tool™ |
+| The Entry-Level Negotiation Scripts™ |
+| The Offer Timeline Management Scripts™ |
+| The First 90-Day Success Plan™ |
+
+### Mental Resilience (3 Bonus)
+| Method |
+|--------|
+| The Ghosting Response Protocol™ |
+| The Managing External Pressure Scripts™ |
+| The Comparison Trap Escape™ |
+
+### Special Circumstances (2 Bonus)
+| Method |
+|--------|
+| The Gap Explanation Scripts™ |
+| The Digital Footprint Audit™ |
+
+---
+
+## 📊 TOTAL: 52 PROPRIETARY METHODS
+
+| Category | Core | Bonus | Total |
+|----------|------|-------|-------|
+| Job Sourcing | 4 | 1 | 5 |
+| Networking | 6 | 0 | 6 |
+| Resume | 9 | 0 | 9 |
+| Cover Letter | 1 | 0 | 1 |
+| Interview Prep | 9 | 3 | 12 |
+| Remote Interview | 1 | 0 | 1 |
+| Career Fair | 1 | 2 | 3 |
+| Phone Screen | 2 | 1 | 3 |
+| Offer & Negotiation | 1 | 4 | 5 |
+| Mental Resilience | 2 | 3 | 5 |
+| Special Circumstances | 0 | 2 | 2 |
+| **TOTAL** | **36** | **16** | **52** |
 
 ---
 
@@ -471,8 +574,7 @@ Based on the expanded problem/solution mapping, here's the revised session struc
 | 🎁 The Impact Bullet Builder™ Quick Start Guide | Introduces the 4-part bullet formula |
 | 🎁 The Boring-to-Standout Bullet Upgrade™ Examples Sheet | Before/after bullets by discipline |
 | 🎁 Resume Self-Assessment Checklist | They audit their own resume |
-| 🎁 The Résumé Value Ladder™ Visual | Shows the 3 tiers of resume quality |
-| 🎁 The Resource Activation Checklist™ | University/alumni resources to leverage |
+| 🎁 The Resource Activation System™ Checklist | University/alumni resources to leverage |
 | 🎁 The Application Pipeline™ Template | Tracking spreadsheet template |
 
 **Homework Assignment:**
@@ -505,7 +607,6 @@ Based on the expanded problem/solution mapping, here's the revised session struc
 | 🎁 The Warm Intro Protocol™ Full Guide | Alumni outreach scripts and process |
 | 🎁 The Companion Cover Letter™ Template | Fill-in-the-blank cover letter |
 | 🎁 The Competency Story Map™ Template | They fill this out before Session 2 |
-| 🎁 The Interview Binder System™ Guide | How to rate examples 1-5 stars |
 | 🎁 The Master Story Vault™ Template | Brain dump template for each example |
 | 🎁 The 4-Minute Tailored Bullet System™ Checklist | Customizing per job posting |
 
@@ -525,7 +626,7 @@ Based on the expanded problem/solution mapping, here's the revised session struc
 | 0-10 min | **Review Homework** | Check Competency Story Map, Warm Intro progress, identify gaps |
 | 10-25 min | **The Master Story Vault™ Deep Dive** | Pick TOP 3 examples, flesh out in extreme detail |
 | 25-40 min | **The High-Impact Story Framework™** | Paint the Pain + Numbered Roadmap, practice on 1-2 examples |
-| 40-50 min | **3-Tier Impact Ladder** | Upgrade Results from Level 1 → Level 2-3 |
+| 40-50 min | **The 3-Tier Impact Ladder™** | Upgrade Results from Level 1 → Level 2-3 |
 | 50-55 min | **The Technical Gauntlet™ Overview** | Discipline-specific prep guidance (what to practice) |
 | 55-60 min | **Homework & Next Steps** | Daily Story Practice schedule, mock interview prep |
 
@@ -539,10 +640,10 @@ Based on the expanded problem/solution mapping, here's the revised session struc
 | 🎁 The Interview Cheat Sheet™ Template | For interview day reference |
 | 🎁 The Digital Stage Presence™ Checklist | Remote interview setup guide |
 | 🎁 The Technical Gauntlet™ Discipline Guide | LeetCode/first-principles/CAD resources by discipline |
-| 🎁 Phone Screen Prep Guide | Questions to expect + how to handle |
-| 🎁 Questions to Ask Interviewers | Smart questions that impress |
+| 🎁 The Phone Screen Prep Guide™ | Questions to expect + how to handle |
+| 🎁 The Human Element Questions™ | Smart questions that impress |
 | 🎁 The Daily Story Practice™ Schedule | Daily/weekly practice calendar |
-| 🎁 60-90 Second Pitch Structure | For career fairs and networking |
+| 🎁 The 60-90 Second Pitch Structure™ | For career fairs and networking |
 
 **Homework Assignment:**
 - Practice ALL 15 examples daily (morning/noon/night)
@@ -586,44 +687,44 @@ Based on the expanded problem/solution mapping, here's the revised session struc
 
 # COMPLETE BONUS LIST (31 Items) 🎁
 
-## Pre-Session 1 (6 items)
+## Pre-Session 1 (5 items)
 1. The Impact Bullet Builder™ Quick Start Guide
 2. The Boring-to-Standout Bullet Upgrade™ Examples Sheet
 3. Resume Self-Assessment Checklist
-4. The Résumé Value Ladder™ Visual
-5. The Resource Activation Checklist™
-6. The Application Pipeline™ Template
+4. The Resource Activation System™ Checklist
+5. The Application Pipeline™ Template
 
-## Pre-Session 2 (6 items)
-7. The Warm Intro Protocol™ Full Guide
-8. The Companion Cover Letter™ Template
-9. The Competency Story Map™ Template
-10. The Interview Binder System™ Guide
-11. The Master Story Vault™ Template
-12. The 4-Minute Tailored Bullet System™ Checklist
+## Pre-Session 2 (5 items)
+6. The Warm Intro Protocol™ Full Guide
+7. The Companion Cover Letter™ Template
+8. The Competency Story Map™ Template
+9. The Master Story Vault™ Template
+10. The 4-Minute Tailored Bullet System™ Checklist
 
 ## Pre-Session 3 (8 items)
-13. The Visual Aid Binder™ Blueprint
-14. The Interview Cheat Sheet™ Template
-15. The Digital Stage Presence™ Checklist
-16. The Technical Gauntlet™ Discipline Guide
-17. Phone Screen Prep Guide
-18. Questions to Ask Interviewers
-19. The Daily Story Practice™ Schedule
-20. 60-90 Second Pitch Structure
+11. The Visual Aid Binder™ Blueprint
+12. The Interview Cheat Sheet™ Template
+13. The Digital Stage Presence™ Checklist
+14. The Technical Gauntlet™ Discipline Guide
+15. The Phone Screen Prep Guide™
+16. The Human Element Questions™
+17. The Daily Story Practice™ Schedule
+18. The 60-90 Second Pitch Structure™
 
-## Post-Session 3 (11 items)
-21. Post-Interview Follow-Up Templates
-22. The 24-48 Hour Follow-Up Protocol™
-23. The Entry-Level Negotiation Scripts™
-24. The Offer Comparison Tool™
-25. The Research Your Worth System™ Guide
-26. The Offer Timeline Management Scripts™
-27. The First 90-Day Success Plan™
-28. Career Fair Strategy Checklist
-29. The Ghosting Response Protocol™
-30. The Managing External Pressure Scripts™
-31. The Company Research Deep Dive™ Checklist
+## Post-Session 3 (13 items)
+19. Post-Interview Follow-Up Templates
+20. The 24-48 Hour Follow-Up Protocol™
+21. The Entry-Level Negotiation Scripts™
+22. The Offer Comparison Tool™
+23. The Research Your Worth System™ Guide
+24. The Offer Timeline Management Scripts™
+25. The First 90-Day Success Plan™
+26. The Career Fair Prep Checklist™
+27. The Ghosting Response Protocol™
+28. The Managing External Pressure Scripts™
+29. The Company Research Deep Dive™ Checklist
+30. The Gap Explanation Scripts™
+31. The Digital Footprint Audit™
 
 ---
 
@@ -652,7 +753,7 @@ Also, in a market where job openings are more scarce, there is more competition,
 1. **Testimonials** - Real clients who landed real jobs
 2. **The Launch Blueprint Guarantee™** - De-risks the purchase entirely
 3. **Your Engineer Background** - Not a "career coach," an actual engineer
-4. **Specificity** - 45+ proprietary frameworks sound proven and systematic
+4. **Specificity** - 52 proprietary frameworks sound proven and systematic
 5. **Clear Process** - 3 sessions, specific outcomes, no vague promises
 6. **Complete Coverage** - We address the FULL journey, not just resumes
 
@@ -766,7 +867,7 @@ Complete all 3 sessions and do the homework, and I **guarantee** you will walk a
 |----------|----|----|
 | **Problem Categories** | 5 | 9 |
 | **Total Problems Addressed** | ~30 | 50+ |
-| **Proprietary Methods** | 22 | 45+ |
+| **Proprietary Methods** | 22 | 52 |
 | **Bonus Materials** | 23 | 31 |
 | **Job Search Strategy** | ❌ Missing | ✅ Comprehensive |
 | **Networking/Referrals** | ❌ Missing | ✅ Full Warm Intro Protocol |

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedIn Graphic - Interview the Company (1200x1200)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #1a1a1a;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+        }
+
+        h1 {
+            color: white;
+            margin-bottom: 8px;
+            font-size: 24px;
+        }
+
+        .instructions {
+            color: #888;
+            font-size: 14px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .instructions strong {
+            color: #10b981;
+        }
+
+        /* Full-size graphic - 1200x1200 */
+        .graphic-container {
+            width: 1200px;
+            height: 1200px;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #064e3b 0%, #065f46 50%, #047857 100%);
+        }
+
+        .graphic-container::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 20% 20%, rgba(255,255,255,0.1) 0%, transparent 40%),
+                        radial-gradient(circle at 80% 80%, rgba(0,0,0,0.15) 0%, transparent 40%);
+        }
+
+        .graphic-content {
+            position: relative;
+            z-index: 10;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 80px;
+        }
+
+        .graphic-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,255,255,0.15);
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 600;
+            color: white;
+            width: fit-content;
+            margin-bottom: 40px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .graphic-title {
+            font-size: 72px;
+            font-weight: 800;
+            color: white;
+            line-height: 1.15;
+            margin-bottom: 50px;
+        }
+
+        .graphic-title .highlight {
+            color: #fcd34d;
+        }
+
+        .graphic-divider {
+            width: 120px;
+            height: 6px;
+            background: linear-gradient(90deg, #fbbf24, #f59e0b);
+            border-radius: 3px;
+            margin-bottom: 50px;
+        }
+
+        .graphic-questions {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .question-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            background: rgba(0,0,0,0.25);
+            padding: 24px 32px;
+            border-radius: 16px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .question-bullet {
+            width: 16px;
+            height: 16px;
+            background: #fcd34d;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .question-text {
+            font-size: 28px;
+            font-weight: 600;
+            color: white;
+        }
+
+        .graphic-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 40px;
+        }
+
+        .graphic-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-icon {
+            width: 56px;
+            height: 56px;
+            background: white;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 22px;
+            color: #064e3b;
+        }
+
+        .logo-text {
+            font-size: 28px;
+            font-weight: 700;
+            color: white;
+        }
+
+        .logo-text span {
+            color: #a7f3d0;
+        }
+
+        .graphic-url {
+            font-size: 24px;
+            font-weight: 600;
+            color: rgba(255,255,255,0.7);
+        }
+    </style>
+</head>
+<body>
+    <h1>LinkedIn Graphic: Interview the Company (1200x1200)</h1>
+    <p class="instructions">
+        <strong>To export:</strong> Right-click the graphic below > Inspect > Select the .graphic-container element > Right-click > "Capture node screenshot"
+    </p>
+
+    <div class="graphic-container">
+        <div class="graphic-content">
+            <div class="graphic-badge">Career Advice</div>
+            
+            <h1 class="graphic-title">
+                Interview <span class="highlight">THEM</span><br>
+                As Hard As They<br>
+                Interview You
+            </h1>
+
+            <div class="graphic-divider"></div>
+
+            <div class="graphic-questions">
+                <div class="question-item">
+                    <div class="question-bullet"></div>
+                    <span class="question-text">What challenges is the team solving right now?</span>
+                </div>
+                <div class="question-item">
+                    <div class="question-bullet"></div>
+                    <span class="question-text">How does this role contribute to the bigger picture?</span>
+                </div>
+                <div class="question-item">
+                    <div class="question-bullet"></div>
+                    <span class="question-text">How has the team grown or changed recently?</span>
+                </div>
+                <div class="question-item">
+                    <div class="question-bullet"></div>
+                    <span class="question-text">How do you celebrate wins on the team?</span>
+                </div>
+                <div class="question-item">
+                    <div class="question-bullet"></div>
+                    <span class="question-text">What are the biggest gaps in knowledge or tools?</span>
+                </div>
+            </div>
+
+            <div class="graphic-footer">
+                <div class="graphic-logo">
+                    <div class="logo-icon">L2</div>
+                    <div class="logo-text">Launch<span>ToLead</span></div>
+                </div>
+                <div class="graphic-url">LaunchToLead.io</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
