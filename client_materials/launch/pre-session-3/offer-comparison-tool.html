@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Offer Comparison Tool™ | Launch to Lead</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { font-family: 'Plus Jakarta Sans', sans-serif; }
+        @media print {
+            .no-print { display: none; }
+            .page-break { page-break-before: always; }
+        }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen">
+
+    <!-- Cover Page -->
+    <div class="min-h-screen bg-gradient-to-br from-teal-600 via-teal-500 to-emerald-500 flex flex-col items-center justify-center p-8 text-white">
+        <div class="text-center mb-8">
+            <span class="text-6xl font-bold tracking-tight">L²</span>
+            <p class="text-teal-100 mt-2 text-lg">Launch to Lead</p>
+        </div>
+        
+        <h1 class="text-4xl md:text-5xl font-bold text-center mb-4">
+            The Offer Comparison Tool™
+        </h1>
+        <p class="text-xl text-teal-100 text-center max-w-2xl mb-8">
+            Compare offers objectively. Make decisions with data, not gut feelings.
+        </p>
+        
+        <div class="w-64 h-64 rounded-full overflow-hidden border-4 border-white/30 shadow-2xl mb-8">
+            <img src="../../../pictures/mansour/professional_standing.png" alt="Coach" class="w-full h-full object-cover">
+        </div>
+        
+        <p class="text-teal-100 text-center">
+            Pre-Session 3 Material | The Launch Path Blueprint™
+        </p>
+    </div>
+
+    <!-- Main Content -->
+    <div class="max-w-4xl mx-auto p-8">
+        
+        <!-- The Problem Section -->
+        <section class="bg-white rounded-2xl shadow-lg p-8 mb-8">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center">
+                    <svg class="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l4-4 4 4m0 6l-4 4-4-4"/>
+                    </svg>
+                </div>
+                <h2 class="text-2xl font-bold text-gray-900">The Problem</h2>
+            </div>
+            
+            <div class="space-y-4 text-gray-700">
+                <p class="text-lg">
+                    When you have multiple offers, comparison gets emotional fast.
+                </p>
+                <p>
+                    Company A offers $85K. Company B offers $78K but has better benefits. Company C offers $82K and is fully remote. Company A has a toxic Glassdoor review. Company B is in your dream city. How do you choose?
+                </p>
+                
+                <div class="bg-red-50 border-l-4 border-red-400 p-4 mt-6">
+                    <p class="font-semibold text-red-800">The Confusion Spiral:</p>
+                    <p class="text-red-700 mt-2">
+                        Too many factors → Analysis paralysis → Decide based on what feels easiest → Regret 6 months later
+                    </p>
+                </div>
+                
+                <p class="mt-4">
+                    You need a <strong>systematic framework</strong> to compare offers objectively.
+                </p>
+            </div>
+        </section>
+
+        <!-- The Solution Section -->
+        <section class="bg-white rounded-2xl shadow-lg p-8 mb-8">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center">
+                    <svg class="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                </div>
+                <h2 class="text-2xl font-bold text-gray-900">The Solution: Weighted Scoring</h2>
+            </div>
+            
+            <p class="text-gray-700 mb-6">
+                The Offer Comparison Tool™ uses weighted scoring to turn subjective "feels" into objective numbers. You'll assign weights to what matters most to YOU, then score each offer.
+            </p>
+
+            <div class="bg-gradient-to-r from-teal-50 to-emerald-50 rounded-xl p-6 border border-teal-200">
+                <h3 class="font-bold text-teal-800 mb-4">How It Works:</h3>
+                <ol class="space-y-3 text-gray-700">
+                    <li><strong>1. Identify factors</strong> — What matters to you in a job?</li>
+                    <li><strong>2. Assign weights</strong> — How important is each factor? (1-10)</li>
+                    <li><strong>3. Score each offer</strong> — How does each offer perform? (1-10)</li>
+                    <li><strong>4. Calculate weighted scores</strong> — Factor weight × Offer score</li>
+                    <li><strong>5. Compare totals</strong> — Highest score wins objectively</li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- Comparison Categories -->
+        <section class="bg-white rounded-2xl shadow-lg p-8 mb-8">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">Comparison Categories</h2>
+            
+            <p class="text-gray-700 mb-6">
+                Consider these categories when evaluating offers. Not all matter equally to everyone.
+            </p>
+
+            <div class="grid md:grid-cols-2 gap-4">
+                <div class="bg-teal-50 rounded-xl p-5 border border-teal-200">
+                    <p class="font-semibold text-teal-800">💰 Base Salary</p>
+                    <p class="text-gray-600 text-sm">Annual compensation before taxes</p>
+                </div>
+                <div class="bg-teal-50 rounded-xl p-5 border border-teal-200">
+                    <p class="font-semibold text-teal-800">🎁 Signing Bonus</p>
+                    <p class="text-gray-600 text-sm">One-time payment on start</p>
+                </div>
+                <div class="bg-teal-50 rounded-xl p-5 border border-teal-200">
+                    <p class="font-semibold text-teal-800">📈 Stock/Equity</p>
+                    <p class="text-gray-600 text-sm">RSUs, options, vesting schedule</p>
+                </div>
+                <div class="bg-teal-50 rounded-xl p-5 border border-teal-200">
+                    <p class="font-semibold text-teal-800">🏥 Benefits</p>
+                    <p class="text-gray-600 text-sm">Health, dental, 401k match</p>
+                </div>
+                <div class="bg-teal-50 rounded-xl p-5 border border-teal-200">
+                    <p class="font-semibold text-teal-800">📍 Location/Remote</p>
+                    <p class="text-gray-600 text-sm">Where you'll work, commute time</p>
+                </div>
+                <div class="bg-teal-50 rounded-xl p-5 border border-teal-200">
+                    <p class="font-semibold text-teal-800">🚀 Growth Potential</p>
+                    <p class="text-gray-600 text-sm">Promotion paths, learning opportunities</p>
+                </div>
+                <div class="bg-teal-50 rounded-xl p-5 border border-teal-200">
+                    <p class="font-semibold text-teal-800">🏢 Company Culture</p>
+                    <p class="text-gray-600 text-sm">Values, team vibe, management style</p>
+                </div>
+                <div class="bg-teal-50 rounded-xl p-5 border border-teal-200">
+                    <p class="font-semibold text-teal-800">⚖️ Work-Life Balance</p>
+                    <p class="text-gray-600 text-sm">Hours, flexibility, PTO</p>
+                </div>
+                <div class="bg-teal-50 rounded-xl p-5 border border-teal-200">
+                    <p class="font-semibold text-teal-800">📚 Learning & Development</p>
+                    <p class="text-gray-600 text-sm">Training, mentorship, skill growth</p>
+                </div>
+                <div class="bg-teal-50 rounded-xl p-5 border border-teal-200">
+                    <p class="font-semibold text-teal-800">🎯 Role Fit</p>
+                    <p class="text-gray-600 text-sm">Day-to-day work alignment</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sample Comparison Table -->
+        <section class="bg-white rounded-2xl shadow-lg p-8 mb-8">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">Sample Comparison</h2>
+            
+            <p class="text-gray-700 mb-6">
+                Here's an example comparing two offers:
+            </p>
+
+            <div class="overflow-x-auto">
+                <table class="w-full text-sm">
+                    <thead>
+                        <tr class="border-b-2 border-gray-200">
+                            <th class="text-left py-3 px-2 font-semibold text-gray-900">Factor</th>
+                            <th class="text-center py-3 px-2 font-semibold text-gray-900">Weight<br><span class="text-xs font-normal">(1-10)</span></th>
+                            <th class="text-center py-3 px-2 font-semibold text-teal-700 bg-teal-50">Offer A<br><span class="text-xs font-normal">Score</span></th>
+                            <th class="text-center py-3 px-2 font-semibold text-teal-700 bg-teal-50">Weighted</th>
+                            <th class="text-center py-3 px-2 font-semibold text-emerald-700 bg-emerald-50">Offer B<br><span class="text-xs font-normal">Score</span></th>
+                            <th class="text-center py-3 px-2 font-semibold text-emerald-700 bg-emerald-50">Weighted</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-100">
+                        <tr>
+                            <td class="py-3 px-2 text-gray-700">Base Salary</td>
+                            <td class="py-3 px-2 text-center font-semibold">9</td>
+                            <td class="py-3 px-2 text-center bg-teal-50">8</td>
+                            <td class="py-3 px-2 text-center bg-teal-50 font-semibold">72</td>
+                            <td class="py-3 px-2 text-center bg-emerald-50">6</td>
+                            <td class="py-3 px-2 text-center bg-emerald-50 font-semibold">54</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 px-2 text-gray-700">Growth Potential</td>
+                            <td class="py-3 px-2 text-center font-semibold">8</td>
+                            <td class="py-3 px-2 text-center bg-teal-50">5</td>
+                            <td class="py-3 px-2 text-center bg-teal-50 font-semibold">40</td>
+                            <td class="py-3 px-2 text-center bg-emerald-50">9</td>
+                            <td class="py-3 px-2 text-center bg-emerald-50 font-semibold">72</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 px-2 text-gray-700">Work-Life Balance</td>
+                            <td class="py-3 px-2 text-center font-semibold">7</td>
+                            <td class="py-3 px-2 text-center bg-teal-50">4</td>
+                            <td class="py-3 px-2 text-center bg-teal-50 font-semibold">28</td>
+                            <td class="py-3 px-2 text-center bg-emerald-50">8</td>
+                            <td class="py-3 px-2 text-center bg-emerald-50 font-semibold">56</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 px-2 text-gray-700">Location</td>
+                            <td class="py-3 px-2 text-center font-semibold">6</td>
+                            <td class="py-3 px-2 text-center bg-teal-50">7</td>
+                            <td class="py-3 px-2 text-center bg-teal-50 font-semibold">42</td>
+                            <td class="py-3 px-2 text-center bg-emerald-50">9</td>
+                            <td class="py-3 px-2 text-center bg-emerald-50 font-semibold">54</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 px-2 text-gray-700">Company Culture</td>
+                            <td class="py-3 px-2 text-center font-semibold">6</td>
+                            <td class="py-3 px-2 text-center bg-teal-50">6</td>
+                            <td class="py-3 px-2 text-center bg-teal-50 font-semibold">36</td>
+                            <td class="py-3 px-2 text-center bg-emerald-50">8</td>
+                            <td class="py-3 px-2 text-center bg-emerald-50 font-semibold">48</td>
+                        </tr>
+                        <tr class="border-t-2 border-gray-300 bg-gray-50">
+                            <td class="py-3 px-2 font-bold text-gray-900" colspan="2">TOTAL</td>
+                            <td class="py-3 px-2 text-center bg-teal-100"></td>
+                            <td class="py-3 px-2 text-center bg-teal-100 font-bold text-lg">218</td>
+                            <td class="py-3 px-2 text-center bg-emerald-100"></td>
+                            <td class="py-3 px-2 text-center bg-emerald-100 font-bold text-lg text-emerald-700">284 ✓</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="mt-6 bg-emerald-50 border border-emerald-200 rounded-xl p-5">
+                <p class="font-semibold text-emerald-800 mb-2">💡 Result Analysis</p>
+                <p class="text-gray-700">
+                    Even though Offer A has higher base salary, Offer B scores higher overall because the candidate weighted growth, balance, and culture highly—areas where B excels.
+                </p>
+            </div>
+        </section>
+
+        <!-- The One Offer Problem -->
+        <section class="bg-white rounded-2xl shadow-lg p-8 mb-8">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">The "One Offer" Problem</h2>
+            
+            <p class="text-gray-700 mb-6">
+                What if you only have one offer? Use the same framework differently:
+            </p>
+
+            <div class="space-y-4">
+                <div class="bg-gray-50 rounded-xl p-6 border border-gray-200">
+                    <h3 class="font-bold text-gray-900 mb-3">Compare Against Your Ideal</h3>
+                    <p class="text-gray-700">
+                        Before you get any offers, define your "ideal job" criteria. When an offer comes, compare it against your ideal—not against nothing.
+                    </p>
+                </div>
+                
+                <div class="bg-gray-50 rounded-xl p-6 border border-gray-200">
+                    <h3 class="font-bold text-gray-900 mb-3">Set a Threshold</h3>
+                    <p class="text-gray-700">
+                        Decide in advance: "If an offer scores above 70% of my ideal, I'll accept. Below 50%, I'll decline. Between 50-70%, I'll negotiate or wait for other options."
+                    </p>
+                </div>
+                
+                <div class="bg-gray-50 rounded-xl p-6 border border-gray-200">
+                    <h3 class="font-bold text-gray-900 mb-3">Consider "No Offer" as an Option</h3>
+                    <p class="text-gray-700">
+                        Sometimes the right choice is to keep looking. A bad first job can set your career back. Don't accept out of desperation unless you truly have no other choice.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Red Flags -->
+        <section class="bg-white rounded-2xl shadow-lg p-8 mb-8">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">Red Flags to Watch For</h2>
+            
+            <p class="text-gray-700 mb-6">
+                Some factors should be automatic disqualifiers, regardless of score:
+            </p>
+
+            <div class="grid md:grid-cols-2 gap-4">
+                <div class="bg-red-50 rounded-xl p-5 border border-red-200">
+                    <p class="font-semibold text-red-800">🚩 Pressure to decide immediately</p>
+                    <p class="text-gray-600 text-sm">"This offer expires in 24 hours"</p>
+                </div>
+                <div class="bg-red-50 rounded-xl p-5 border border-red-200">
+                    <p class="font-semibold text-red-800">🚩 Vague job description</p>
+                    <p class="text-gray-600 text-sm">Can't explain your actual daily work</p>
+                </div>
+                <div class="bg-red-50 rounded-xl p-5 border border-red-200">
+                    <p class="font-semibold text-red-800">🚩 High turnover signals</p>
+                    <p class="text-gray-600 text-sm">"Everyone here is new"</p>
+                </div>
+                <div class="bg-red-50 rounded-xl p-5 border border-red-200">
+                    <p class="font-semibold text-red-800">🚩 Toxic Glassdoor reviews</p>
+                    <p class="text-gray-600 text-sm">Consistent patterns across reviews</p>
+                </div>
+                <div class="bg-red-50 rounded-xl p-5 border border-red-200">
+                    <p class="font-semibold text-red-800">🚩 Unwilling to put offer in writing</p>
+                    <p class="text-gray-600 text-sm">"We'll figure out the details later"</p>
+                </div>
+                <div class="bg-red-50 rounded-xl p-5 border border-red-200">
+                    <p class="font-semibold text-red-800">🚩 Bait-and-switch tactics</p>
+                    <p class="text-gray-600 text-sm">Offer differs from interview discussions</p>
+                </div>
+            </div>
+
+            <div class="mt-6 bg-amber-50 border border-amber-200 rounded-xl p-5">
+                <p class="font-semibold text-amber-800 mb-2">⚠️ Trust Your Gut (Sometimes)</p>
+                <p class="text-gray-700">
+                    If something feels off but doesn't show up in the numbers, investigate more. Ask additional questions. Talk to current employees. Don't ignore persistent bad feelings—but also don't let fear stop you from good opportunities.
+                </p>
+            </div>
+        </section>
+
+        <!-- Blank Comparison Template -->
+        <section class="bg-white rounded-2xl shadow-lg p-8 mb-8 page-break">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">Your Comparison Worksheet</h2>
+            
+            <p class="text-gray-700 mb-6">
+                Fill this out when comparing your offers:
+            </p>
+
+            <div class="overflow-x-auto">
+                <table class="w-full text-sm border border-gray-200">
+                    <thead>
+                        <tr class="border-b-2 border-gray-200">
+                            <th class="text-left py-3 px-2 font-semibold text-gray-900">Factor</th>
+                            <th class="text-center py-3 px-2 font-semibold text-gray-900 w-20">Weight</th>
+                            <th class="text-center py-3 px-2 font-semibold text-gray-700 bg-gray-50 w-16">Offer A</th>
+                            <th class="text-center py-3 px-2 font-semibold text-gray-700 bg-gray-50 w-16">Wtd</th>
+                            <th class="text-center py-3 px-2 font-semibold text-gray-700 bg-gray-50 w-16">Offer B</th>
+                            <th class="text-center py-3 px-2 font-semibold text-gray-700 bg-gray-50 w-16">Wtd</th>
+                            <th class="text-center py-3 px-2 font-semibold text-gray-700 bg-gray-50 w-16">Offer C</th>
+                            <th class="text-center py-3 px-2 font-semibold text-gray-700 bg-gray-50 w-16">Wtd</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-100">
+                        <tr>
+                            <td class="py-4 px-2 text-gray-700">Base Salary</td>
+                            <td class="py-4 px-2 text-center border border-gray-200"></td>
+                            <td class="py-4 px-2 text-center border border-gray-200 bg-gray-50"></td>
+                            <td class="py-4 px-2 text-center border border-gray-200 bg-gray-50"></td>
+                            <td class="py-4 px-2 text-center border border-gray-200 bg-gray-50"></td>
+                            <td class="py-4 px-2 text-center border border-gray-200 bg-gray-50"></td>
+                            <td class="py-4 px-2 text-center border border-gray-200 bg-gray-50"></td>
+                            <td class="py-4 px-2 text-center border border-gray-200 bg-gray-50"></td>
+                        </tr>
+                        <tr>
+                            <td class="py-4 px-2 text-gray-700">Signing Bonus/Stock</td>
+                            <td class="py-4 px-2 text-center border border-gray-200"></td>
+                            <td class="py-4 px-2 text-center border border-gray-200 bg-gray-50"></td>
+                            <td class="py-4 px-2 text-center border border-gray-200 bg-gray-50"></td>
+                            <td class="py-4 px-2 text-center border border-gray-200 bg-gray-50"></td>
+                            <td class="py-4 px-2 text-center border border-gray-200 bg-gray-50"></td>
+                            <td class="py-4 px-2 text-center border border-gray-200 bg-gray-50"></td>
+                            <td class="py-4 px-2 text-center border border-gray-200 bg-gray-50"></td>
+                        </tr>
+                        <tr>
+                            <td class="py-4 px-2 text-gray-700">Benefits</td>
+                            <td class="py-4 px-2 text-center border border-gray-200"></td>
+                            <td class="py-4 px-2 text-center border border-gray-200 bg-gray-50"></td>
+                            <td class="py-4 px-2 text-center border border-gray-200 bg-gray-50"></td>
+                            <td class="py-4 px-2 text-center border border-gray-200 bg-gray-50"></td>
+                            <td class="py-4 px-2 text-center border border-gray-200 bg-gray-50"></td>
+                            <td class="py-4 px-2 text-center border border-gray-200 bg-gray-50"></td>
+                            <td class="py-4 px-2 text-center border border-gray-200 bg-gray-50"></td>
+                        </tr>
+                        <tr>
+                            <td class="py-4 px-2 text-gray-700">Location/Remote</td>
+                            <td class="py-4 px-2 text-center border border-gray-200"></td>
+                            <td class="py-4 px-2 text-center border border-gray-200 bg-gray-50"></td>
+                            <td class="py-4 px-2 text-center border border-gray-200 bg-gray-50"></td>
+                            <td class="py-4 px-2 text-center border border-gray-200 bg-gray-50"></td>
+                            <td class="py-4 px-2 text-center border border-gray-200 bg-gray-50"></td>
+                            <td class="py-4 px-2 text-center border border-gray-200 bg-gray-50"></td>
+                            <td class="py-4 px-2 text-center border border-gray-200 bg-gray-50"></td>
+                        </tr>
+                        <tr>
+                            <td class="py-4 px-2 text-gray-700">Growth Potential</td>
+                            <td class="py-4 px-2 text-center border border-gray-200"></td>
+                            <td class="py-4 px-2 text-center border border-gray-200 bg-gray-50"></td>
+                            <td class="py-4 px-2 text-center border border-gray-200 bg-gray-50"></td>
+                            <td class="py-4 px-2 text-center border border-gray-200 bg-gray-50"></td>
+                            <td class="py-4 px-2 text-center border border-gray-200 bg-gray-50"></td>
+                            <td class="py-4 px-2 text-center border border-gray-200 bg-gray-50"></td>
+                            <td class="py-4 px-2 text-center border border-gray-200 bg-gray-50"></td>
+                        </tr>
+                        <tr>
+                            <td class="py-4 px-2 text-gray-700">Company Culture</td>
+                            <td class="py-4 px-2 text-center border border-gray-200"></td>
+                            <td class="py-4 px-2 text-center border border-gray-200 bg-gray-50"></td>
+                            <td class="py-4 px-2 text-center border border-gray-200 bg-gray-50"></td>
+                            <td class="py-4 px-2 text-center border border-gray-200 bg-gray-50"></td>
+                            <td class="py-4 px-2 text-center border border-gray-200 bg-gray-50"></td>
+                            <td class="py-4 px-2 text-center border border-gray-200 bg-gray-50"></td>
+                            <td class="py-4 px-2 text-center border border-gray-200 bg-gray-50"></td>
+                        </tr>
+                        <tr>
+                            <td class="py-4 px-2 text-gray-700">Work-Life Balance</td>
+                            <td class="py-4 px-2 text-center border border-gray-200"></td>
+                            <td class="py-4 px-2 text-center border border-gray-200 bg-gray-50"></td>
+                            <td class="py-4 px-2 text-center border border-gray-200 bg-gray-50"></td>
+                            <td class="py-4 px-2 text-center border border-gray-200 bg-gray-50"></td>
+                            <td class="py-4 px-2 text-center border border-gray-200 bg-gray-50"></td>
+                            <td class="py-4 px-2 text-center border border-gray-200 bg-gray-50"></td>
+                            <td class="py-4 px-2 text-center border border-gray-200 bg-gray-50"></td>
+                        </tr>
+                        <tr>
+                            <td class="py-4 px-2 text-gray-700">Learning & Dev</td>
+                            <td class="py-4 px-2 text-center border border-gray-200"></td>
+                            <td class="py-4 px-2 text-center border border-gray-200 bg-gray-50"></td>
+                            <td class="py-4 px-2 text-center border border-gray-200 bg-gray-50"></td>
+                            <td class="py-4 px-2 text-center border border-gray-200 bg-gray-50"></td>
+                            <td class="py-4 px-2 text-center border border-gray-200 bg-gray-50"></td>
+                            <td class="py-4 px-2 text-center border border-gray-200 bg-gray-50"></td>
+                            <td class="py-4 px-2 text-center border border-gray-200 bg-gray-50"></td>
+                        </tr>
+                        <tr>
+                            <td class="py-4 px-2 text-gray-700">Role Fit</td>
+                            <td class="py-4 px-2 text-center border border-gray-200"></td>
+                            <td class="py-4 px-2 text-center border border-gray-200 bg-gray-50"></td>
+                            <td class="py-4 px-2 text-center border border-gray-200 bg-gray-50"></td>
+                            <td class="py-4 px-2 text-center border border-gray-200 bg-gray-50"></td>
+                            <td class="py-4 px-2 text-center border border-gray-200 bg-gray-50"></td>
+                            <td class="py-4 px-2 text-center border border-gray-200 bg-gray-50"></td>
+                            <td class="py-4 px-2 text-center border border-gray-200 bg-gray-50"></td>
+                        </tr>
+                        <tr>
+                            <td class="py-4 px-2 text-gray-700">Other: ___________</td>
+                            <td class="py-4 px-2 text-center border border-gray-200"></td>
+                            <td class="py-4 px-2 text-center border border-gray-200 bg-gray-50"></td>
+                            <td class="py-4 px-2 text-center border border-gray-200 bg-gray-50"></td>
+                            <td class="py-4 px-2 text-center border border-gray-200 bg-gray-50"></td>
+                            <td class="py-4 px-2 text-center border border-gray-200 bg-gray-50"></td>
+                            <td class="py-4 px-2 text-center border border-gray-200 bg-gray-50"></td>
+                            <td class="py-4 px-2 text-center border border-gray-200 bg-gray-50"></td>
+                        </tr>
+                        <tr class="border-t-2 border-gray-300 bg-gray-100">
+                            <td class="py-4 px-2 font-bold text-gray-900" colspan="2">TOTAL</td>
+                            <td class="py-4 px-2 text-center border border-gray-300 bg-gray-100"></td>
+                            <td class="py-4 px-2 text-center border border-gray-300 bg-gray-100 font-bold"></td>
+                            <td class="py-4 px-2 text-center border border-gray-300 bg-gray-100"></td>
+                            <td class="py-4 px-2 text-center border border-gray-300 bg-gray-100 font-bold"></td>
+                            <td class="py-4 px-2 text-center border border-gray-300 bg-gray-100"></td>
+                            <td class="py-4 px-2 text-center border border-gray-300 bg-gray-100 font-bold"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Key Insight -->
+        <section class="bg-gradient-to-br from-teal-600 to-emerald-500 rounded-2xl shadow-lg p-8 mb-8 text-white">
+            <div class="text-center">
+                <div class="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                    </svg>
+                </div>
+                <h2 class="text-2xl font-bold mb-4">The Key Insight</h2>
+                <p class="text-lg max-w-2xl mx-auto">
+                    <strong>Weighted scoring turns "I don't know what to choose" into clarity.</strong> Your priorities are unique. By weighting factors yourself, you make decisions aligned with YOUR values—not someone else's advice.
+                </p>
+                <p class="text-teal-100 mt-4 italic">
+                    "The right choice isn't always the highest-paying one. It's the one that scores highest on what matters to you."
+                </p>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="text-center py-8 border-t border-gray-200">
+            <p class="text-2xl font-bold text-teal-600 mb-2">L²</p>
+            <p class="text-gray-600">Launch to Lead | The Launch Path Blueprint™</p>
+            <p class="text-gray-400 text-sm mt-2">Pre-Session 3 Material</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
