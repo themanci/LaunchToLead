@@ -18,8 +18,9 @@
             flex-direction: column;
             justify-content: center;
             padding: 4rem;
+            padding-left: 18rem;
             position: relative;
-            page-break-after: always;
+            scroll-margin-top: 0;
         }
         
         .slide-number {
@@ -33,45 +34,78 @@
         .slide-logo {
             position: absolute;
             top: 2rem;
-            left: 2rem;
+            left: 18rem;
             display: flex;
             align-items: center;
             gap: 0.5rem;
             opacity: 0.7;
         }
         
-        .nav-controls {
+        /* Sticky Sidebar Navigation */
+        .slide-nav {
             position: fixed;
-            bottom: 2rem;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 1rem;
+            top: 0;
+            left: 0;
+            width: 15rem;
+            height: 100vh;
+            background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+            border-right: 1px solid rgba(255,255,255,0.1);
+            padding: 1.5rem 1rem;
+            overflow-y: auto;
             z-index: 100;
-            background: rgba(0,0,0,0.8);
-            padding: 0.5rem 1rem;
-            border-radius: 9999px;
         }
         
-        .nav-controls button {
-            background: white;
-            color: black;
-            border: none;
-            padding: 0.5rem 1rem;
-            border-radius: 9999px;
-            cursor: pointer;
-            font-weight: 600;
+        .slide-nav::-webkit-scrollbar {
+            width: 4px;
+        }
+        
+        .slide-nav::-webkit-scrollbar-thumb {
+            background: rgba(255,255,255,0.2);
+            border-radius: 4px;
+        }
+        
+        .nav-item {
+            display: block;
+            padding: 0.5rem 0.75rem;
+            margin-bottom: 0.25rem;
+            border-radius: 0.5rem;
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.6);
+            text-decoration: none;
             transition: all 0.2s;
+            border-left: 2px solid transparent;
         }
         
-        .nav-controls button:hover {
-            background: #10b981;
+        .nav-item:hover {
+            background: rgba(16, 185, 129, 0.2);
             color: white;
+            border-left-color: #10b981;
+        }
+        
+        .nav-item.active {
+            background: rgba(16, 185, 129, 0.3);
+            color: white;
+            border-left-color: #10b981;
+        }
+        
+        .nav-section {
+            font-size: 0.625rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: rgba(255,255,255,0.4);
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+            padding-left: 0.75rem;
         }
         
         @media print {
-            .nav-controls { display: none !important; }
-            .slide { min-height: 100vh; page-break-after: always; }
+            .slide-nav { display: none !important; }
+            .slide { 
+                min-height: 100vh; 
+                page-break-after: always;
+                padding-left: 4rem;
+            }
+            .slide-logo { left: 2rem; }
         }
         
         .method-tag {
@@ -100,16 +134,69 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
+        
+        html {
+            scroll-behavior: smooth;
+        }
     </style>
 </head>
 <body class="bg-gray-900 text-white">
 
-    <!-- Navigation Controls -->
-    <div class="nav-controls">
-        <button onclick="prevSlide()">← Prev</button>
-        <button onclick="nextSlide()">Next →</button>
-        <button onclick="window.print()">🖨️ Print</button>
-    </div>
+    <!-- Sticky Sidebar Navigation -->
+    <nav class="slide-nav">
+        <div class="flex items-center gap-2 mb-6 px-2">
+            <div class="w-8 h-8 bg-emerald-600 rounded-lg flex items-center justify-center">
+                <span class="text-sm font-bold">L²</span>
+            </div>
+            <div>
+                <div class="text-sm font-bold text-white">Session 1</div>
+                <div class="text-xs text-gray-400">Resume Transformation</div>
+            </div>
+        </div>
+        
+        <div class="nav-section">Overview</div>
+        <a href="#slide-1" class="nav-item">1. Title</a>
+        <a href="#slide-2" class="nav-item">2. Program Overview</a>
+        <a href="#slide-3" class="nav-item">3. Today's Agenda</a>
+        
+        <div class="nav-section">Method 1: Mindset</div>
+        <a href="#slide-4" class="nav-item">4. Asset Mindset Shift</a>
+        <a href="#slide-5" class="nav-item">5. The Shift Framework</a>
+        
+        <div class="nav-section">Method 2: Me-in-We</div>
+        <a href="#slide-6" class="nav-item">6. Me-in-We Extractor</a>
+        <a href="#slide-7" class="nav-item">7. 5 Extraction Techniques</a>
+        
+        <div class="nav-section">Method 3: Impact Bullets</div>
+        <a href="#slide-8" class="nav-item">8. Impact Bullet Builder</a>
+        <a href="#slide-9" class="nav-item">9. The 4-Part Formula</a>
+        
+        <div class="nav-section">Method 4: Boring-to-Standout</div>
+        <a href="#slide-10" class="nav-item">10. Boring-to-Standout</a>
+        
+        <div class="nav-section">Method 5: Hidden Metrics</div>
+        <a href="#slide-11" class="nav-item">11. Hidden Metrics Finder</a>
+        
+        <div class="nav-section">Method 6: Universal Translator</div>
+        <a href="#slide-12" class="nav-item">12. Universal Translator</a>
+        
+        <div class="nav-section">Method 7: Passion Proof</div>
+        <a href="#slide-13" class="nav-item">13. Passion Proof Finder</a>
+        <a href="#slide-14" class="nav-item">14. Domain Translator</a>
+        
+        <div class="nav-section">Method 8: 4-Min Tailoring</div>
+        <a href="#slide-15" class="nav-item">15. 4-Minute Tailoring</a>
+        
+        <div class="nav-section">Wrap Up</div>
+        <a href="#slide-16" class="nav-item">16. Homework</a>
+        <a href="#slide-17" class="nav-item">17. Key Takeaways</a>
+        
+        <div class="mt-6 px-2">
+            <button onclick="window.print()" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white text-sm py-2 px-3 rounded-lg transition">
+                🖨️ Print Slides
+            </button>
+        </div>
+    </nav>
 
     <!-- ============================================ -->
     <!-- SLIDE 1: Title Slide -->
@@ -142,9 +229,138 @@
     </div>
 
     <!-- ============================================ -->
-    <!-- SLIDE 2: Session Agenda -->
+    <!-- SLIDE 2: Program Overview (NEW) -->
     <!-- ============================================ -->
     <div class="slide bg-gray-900" id="slide-2">
+        <div class="slide-logo">
+            <div class="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center">
+                <span class="text-sm font-bold">L²</span>
+            </div>
+            <span class="text-sm font-semibold">LaunchToLead</span>
+        </div>
+        
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-4xl font-bold mb-4 text-center">The Launch Path: 21-Day Blueprint</h2>
+            <p class="text-gray-400 text-center mb-10">Your complete roadmap from resume to offer</p>
+            
+            <div class="grid grid-cols-3 gap-6">
+                <!-- Session 1 -->
+                <div class="bg-gradient-to-br from-emerald-900/50 to-emerald-800/30 border-2 border-emerald-500 rounded-2xl p-6 relative">
+                    <div class="absolute -top-3 left-4 bg-emerald-500 text-white text-xs font-bold px-3 py-1 rounded-full">
+                        YOU ARE HERE
+                    </div>
+                    <div class="text-emerald-400 text-sm font-semibold mb-2">SESSION 1 • Days 4-5</div>
+                    <h3 class="text-xl font-bold text-white mb-3">Deep Resume Transformation</h3>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li class="flex items-start gap-2">
+                            <span class="text-emerald-400 mt-1">✓</span>
+                            <span>8 proven methods</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-emerald-400 mt-1">✓</span>
+                            <span>Impact bullet formula</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-emerald-400 mt-1">✓</span>
+                            <span>ATS optimization</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-emerald-400 mt-1">✓</span>
+                            <span>4-minute tailoring</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Session 2 -->
+                <div class="bg-gray-800/50 border border-gray-700 rounded-2xl p-6">
+                    <div class="text-teal-400 text-sm font-semibold mb-2">SESSION 2 • Days 10-11</div>
+                    <h3 class="text-xl font-bold text-white mb-3">Interview Strategy & Story Mastery</h3>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li class="flex items-start gap-2">
+                            <span class="text-teal-400 mt-1">○</span>
+                            <span>Master Story Vault</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-teal-400 mt-1">○</span>
+                            <span>High-Impact Story Framework</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-teal-400 mt-1">○</span>
+                            <span>Behavioral interview prep</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-teal-400 mt-1">○</span>
+                            <span>Power Pause technique</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Session 3 -->
+                <div class="bg-gray-800/50 border border-gray-700 rounded-2xl p-6">
+                    <div class="text-lime-400 text-sm font-semibold mb-2">SESSION 3 • Days 17-18</div>
+                    <h3 class="text-xl font-bold text-white mb-3">Negotiation & Closing</h3>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li class="flex items-start gap-2">
+                            <span class="text-lime-400 mt-1">○</span>
+                            <span>Total comp calculator</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-lime-400 mt-1">○</span>
+                            <span>BATNA strategy</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-lime-400 mt-1">○</span>
+                            <span>Offer evaluation</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-lime-400 mt-1">○</span>
+                            <span>Counter-offer scripts</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Timeline -->
+            <div class="mt-10 relative">
+                <div class="absolute top-1/2 left-0 right-0 h-1 bg-gray-700 -translate-y-1/2"></div>
+                <div class="absolute top-1/2 left-0 w-1/3 h-1 bg-emerald-500 -translate-y-1/2"></div>
+                <div class="flex justify-between relative">
+                    <div class="text-center">
+                        <div class="w-4 h-4 bg-emerald-500 rounded-full mx-auto mb-2"></div>
+                        <div class="text-xs text-gray-400">Day 1</div>
+                        <div class="text-xs text-emerald-400 font-semibold">Pre-Work</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-6 h-6 bg-emerald-500 rounded-full mx-auto mb-2 flex items-center justify-center text-xs font-bold">1</div>
+                        <div class="text-xs text-gray-400">Day 5</div>
+                        <div class="text-xs text-emerald-400 font-semibold">Session 1</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-6 h-6 bg-gray-600 rounded-full mx-auto mb-2 flex items-center justify-center text-xs font-bold">2</div>
+                        <div class="text-xs text-gray-400">Day 11</div>
+                        <div class="text-xs text-gray-500">Session 2</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-6 h-6 bg-gray-600 rounded-full mx-auto mb-2 flex items-center justify-center text-xs font-bold">3</div>
+                        <div class="text-xs text-gray-400">Day 18</div>
+                        <div class="text-xs text-gray-500">Session 3</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-4 h-4 bg-gray-600 rounded-full mx-auto mb-2"></div>
+                        <div class="text-xs text-gray-400">Day 21</div>
+                        <div class="text-xs text-gray-500">Complete</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="slide-number">2</div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- SLIDE 3: Session Agenda -->
+    <!-- ============================================ -->
+    <div class="slide bg-gray-900" id="slide-3">
         <div class="slide-logo">
             <div class="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center">
                 <span class="text-sm font-bold">L²</span>
@@ -222,13 +438,13 @@
             </div>
         </div>
         
-        <div class="slide-number">2</div>
+        <div class="slide-number">3</div>
     </div>
 
     <!-- ============================================ -->
-    <!-- SLIDE 3: Asset Mindset Shift -->
+    <!-- SLIDE 4: Asset Mindset Shift -->
     <!-- ============================================ -->
-    <div class="slide bg-gradient-to-br from-gray-900 to-emerald-900" id="slide-3">
+    <div class="slide bg-gradient-to-br from-gray-900 to-emerald-900" id="slide-4">
         <div class="slide-logo">
             <div class="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center">
                 <span class="text-sm font-bold">L²</span>
@@ -255,13 +471,13 @@
             </div>
         </div>
         
-        <div class="slide-number">3</div>
+        <div class="slide-number">4</div>
     </div>
 
     <!-- ============================================ -->
-    <!-- SLIDE 4: Beggar vs Asset Table -->
+    <!-- SLIDE 5: Beggar vs Asset Table -->
     <!-- ============================================ -->
-    <div class="slide bg-gray-900" id="slide-4">
+    <div class="slide bg-gray-900" id="slide-5">
         <div class="slide-logo">
             <div class="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center">
                 <span class="text-sm font-bold">L²</span>
@@ -331,13 +547,13 @@
             </p>
         </div>
         
-        <div class="slide-number">4</div>
+        <div class="slide-number">5</div>
     </div>
 
     <!-- ============================================ -->
-    <!-- SLIDE 5: Me-in-We Extractor -->
+    <!-- SLIDE 6: Me-in-We Extractor -->
     <!-- ============================================ -->
-    <div class="slide bg-gradient-to-br from-gray-900 to-teal-900" id="slide-5">
+    <div class="slide bg-gradient-to-br from-gray-900 to-teal-900" id="slide-6">
         <div class="slide-logo">
             <div class="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center">
                 <span class="text-sm font-bold">L²</span>
@@ -374,13 +590,65 @@
             </div>
         </div>
         
-        <div class="slide-number">5</div>
+        <div class="slide-number">6</div>
     </div>
 
     <!-- ============================================ -->
-    <!-- SLIDE 6: Impact Bullet Builder -->
+    <!-- SLIDE 7: Me-in-We 5 Extraction Techniques -->
     <!-- ============================================ -->
-    <div class="slide bg-gray-900" id="slide-6">
+    <div class="slide bg-gray-900" id="slide-7">
+        <div class="slide-logo">
+            <div class="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center">
+                <span class="text-sm font-bold">L²</span>
+            </div>
+            <span class="text-sm font-semibold">LaunchToLead</span>
+        </div>
+        
+        <div class="max-w-5xl mx-auto">
+            <span class="method-tag mb-6 inline-block">METHOD 2</span>
+            <h2 class="text-4xl font-bold mb-8">5 Extraction Techniques</h2>
+            
+            <div class="grid grid-cols-2 gap-6">
+                <div class="bg-emerald-900/30 p-6 rounded-xl border border-emerald-700/50">
+                    <p class="text-emerald-400 font-bold text-lg mb-2">1. The Responsibility Split</p>
+                    <p class="text-gray-300">"We built the feature" → "I owned the frontend while my teammate handled backend"</p>
+                </div>
+                
+                <div class="bg-teal-900/30 p-6 rounded-xl border border-teal-700/50">
+                    <p class="text-teal-400 font-bold text-lg mb-2">2. The Initiative Claim</p>
+                    <p class="text-gray-300">"We improved testing" → "I initiated automated testing protocols"</p>
+                </div>
+                
+                <div class="bg-cyan-900/30 p-6 rounded-xl border border-cyan-700/50">
+                    <p class="text-cyan-400 font-bold text-lg mb-2">3. The Decision Driver</p>
+                    <p class="text-gray-300">"We chose React" → "I evaluated 3 frameworks and recommended React"</p>
+                </div>
+                
+                <div class="bg-lime-900/30 p-6 rounded-xl border border-lime-700/50">
+                    <p class="text-lime-400 font-bold text-lg mb-2">4. The Problem Solver</p>
+                    <p class="text-gray-300">"We fixed the bug" → "I identified root cause in the API layer"</p>
+                </div>
+                
+                <div class="col-span-2 bg-purple-900/30 p-6 rounded-xl border border-purple-700/50">
+                    <p class="text-purple-400 font-bold text-lg mb-2">5. The Delivery Owner</p>
+                    <p class="text-gray-300">"We launched the product" → "I coordinated cross-team launch including QA sign-off and deployment"</p>
+                </div>
+            </div>
+            
+            <div class="mt-8 highlight-box text-center">
+                <p class="text-lg text-emerald-100">
+                    <strong>Pro Tip:</strong> If you can't extract your individual contribution, it probably shouldn't be on your resume.
+                </p>
+            </div>
+        </div>
+        
+        <div class="slide-number">7</div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- SLIDE 8: Impact Bullet Builder -->
+    <!-- ============================================ -->
+    <div class="slide bg-gray-900" id="slide-8">
         <div class="slide-logo">
             <div class="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center">
                 <span class="text-sm font-bold">L²</span>
@@ -430,13 +698,64 @@
             </div>
         </div>
         
-        <div class="slide-number">6</div>
+        <div class="slide-number">8</div>
     </div>
 
     <!-- ============================================ -->
-    <!-- SLIDE 7: Boring-to-Standout Examples -->
+    <!-- SLIDE 9: The 4-Part Formula Deep Dive -->
     <!-- ============================================ -->
-    <div class="slide bg-gradient-to-br from-gray-900 to-emerald-900" id="slide-7">
+    <div class="slide bg-gradient-to-br from-gray-900 to-teal-900" id="slide-9">
+        <div class="slide-logo">
+            <div class="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center">
+                <span class="text-sm font-bold">L²</span>
+            </div>
+            <span class="text-sm font-semibold">LaunchToLead</span>
+        </div>
+        
+        <div class="max-w-5xl mx-auto">
+            <span class="method-tag mb-6 inline-block">METHOD 3</span>
+            <h2 class="text-4xl font-bold mb-8">The 4-Part Formula: Deep Dive</h2>
+            
+            <div class="space-y-6">
+                <div class="bg-emerald-900/30 p-6 rounded-xl border-l-4 border-emerald-500">
+                    <p class="text-emerald-400 font-bold text-xl mb-2">📋 TASK — What You Accomplished</p>
+                    <p class="text-gray-300 mb-2">Start with an action verb. Be specific about what you delivered.</p>
+                    <p class="text-sm text-gray-400 italic">"Designed", "Built", "Led", "Created", "Developed", "Implemented"</p>
+                </div>
+                
+                <div class="bg-teal-900/30 p-6 rounded-xl border-l-4 border-teal-500">
+                    <p class="text-teal-400 font-bold text-xl mb-2">📊 METRIC — Quantifiable Proof</p>
+                    <p class="text-gray-300 mb-2">Numbers make impact concrete. Use %, $, time saved, scale handled.</p>
+                    <p class="text-sm text-gray-400 italic">"40% improvement", "$50K savings", "10x faster", "500+ users"</p>
+                </div>
+                
+                <div class="bg-cyan-900/30 p-6 rounded-xl border-l-4 border-cyan-500">
+                    <p class="text-cyan-400 font-bold text-xl mb-2">🔧 HOW — Your Specific Approach</p>
+                    <p class="text-gray-300 mb-2">Show your technical skills and methodology. Name the tools.</p>
+                    <p class="text-sm text-gray-400 italic">"using Python and Pandas", "via SolidWorks FEA", "through agile sprints"</p>
+                </div>
+                
+                <div class="bg-lime-900/30 p-6 rounded-xl border-l-4 border-lime-500">
+                    <p class="text-lime-400 font-bold text-xl mb-2">🎯 WHY — Business Impact</p>
+                    <p class="text-gray-300 mb-2">Connect to business outcomes. Why should the company care?</p>
+                    <p class="text-sm text-gray-400 italic">"enabling faster product launches", "reducing customer churn", "supporting compliance"</p>
+                </div>
+            </div>
+            
+            <div class="mt-8 bg-gray-800/50 p-4 rounded-xl text-center">
+                <p class="text-lg text-gray-300">
+                    <strong class="text-emerald-400">Not every bullet needs all 4.</strong> Aim for 2-3 elements minimum.
+                </p>
+            </div>
+        </div>
+        
+        <div class="slide-number">9</div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- SLIDE 10: Boring-to-Standout Examples -->
+    <!-- ============================================ -->
+    <div class="slide bg-gradient-to-br from-gray-900 to-emerald-900" id="slide-10">
         <div class="slide-logo">
             <div class="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center">
                 <span class="text-sm font-bold">L²</span>
@@ -475,13 +794,13 @@
             </div>
         </div>
         
-        <div class="slide-number">7</div>
+        <div class="slide-number">10</div>
     </div>
 
     <!-- ============================================ -->
-    <!-- SLIDE 8: Hidden Metrics Finder -->
+    <!-- SLIDE 11: Hidden Metrics Finder -->>
     <!-- ============================================ -->
-    <div class="slide bg-gray-900" id="slide-8">
+    <div class="slide bg-gray-900" id="slide-11">
         <div class="slide-logo">
             <div class="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center">
                 <span class="text-sm font-bold">L²</span>
@@ -537,13 +856,13 @@
             </div>
         </div>
         
-        <div class="slide-number">8</div>
+        <div class="slide-number">11</div>
     </div>
 
     <!-- ============================================ -->
-    <!-- SLIDE 9: Universal Translator -->
+    <!-- SLIDE 12: Universal Translator -->>
     <!-- ============================================ -->
-    <div class="slide bg-gradient-to-br from-gray-900 to-teal-900" id="slide-9">
+    <div class="slide bg-gradient-to-br from-gray-900 to-teal-900" id="slide-12">
         <div class="slide-logo">
             <div class="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center">
                 <span class="text-sm font-bold">L²</span>
@@ -594,13 +913,13 @@
             </p>
         </div>
         
-        <div class="slide-number">9</div>
+        <div class="slide-number">12</div>
     </div>
 
     <!-- ============================================ -->
-    <!-- SLIDE 10: Passion Proof Finder -->
+    <!-- SLIDE 13: Passion Proof Finder -->
     <!-- ============================================ -->
-    <div class="slide bg-gray-900" id="slide-10">
+    <div class="slide bg-gray-900" id="slide-13">
         <div class="slide-logo">
             <div class="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center">
                 <span class="text-sm font-bold">L²</span>
@@ -645,13 +964,13 @@
             </div>
         </div>
         
-        <div class="slide-number">10</div>
+        <div class="slide-number">13</div>
     </div>
 
     <!-- ============================================ -->
-    <!-- SLIDE 11: Domain Translator -->
+    <!-- SLIDE 14: Domain Translator -->
     <!-- ============================================ -->
-    <div class="slide bg-gradient-to-br from-gray-900 to-emerald-900" id="slide-11">
+    <div class="slide bg-gradient-to-br from-gray-900 to-emerald-900" id="slide-14">
         <div class="slide-logo">
             <div class="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center">
                 <span class="text-sm font-bold">L²</span>
@@ -694,13 +1013,13 @@
             </div>
         </div>
         
-        <div class="slide-number">11</div>
+        <div class="slide-number">14</div>
     </div>
 
     <!-- ============================================ -->
-    <!-- SLIDE 12: 4-Minute Tailored Bullet System -->
+    <!-- SLIDE 15: 4-Minute Tailored Bullet System -->
     <!-- ============================================ -->
-    <div class="slide bg-gray-900" id="slide-12">
+    <div class="slide bg-gray-900" id="slide-15">
         <div class="slide-logo">
             <div class="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center">
                 <span class="text-sm font-bold">L²</span>
@@ -760,13 +1079,13 @@
             </div>
         </div>
         
-        <div class="slide-number">12</div>
+        <div class="slide-number">15</div>
     </div>
 
     <!-- ============================================ -->
-    <!-- SLIDE 13: Homework & Next Steps -->
+    <!-- SLIDE 16: Homework & Next Steps -->
     <!-- ============================================ -->
-    <div class="slide bg-gradient-to-br from-gray-900 via-emerald-900 to-teal-900" id="slide-13">
+    <div class="slide bg-gradient-to-br from-gray-900 via-emerald-900 to-teal-900" id="slide-16">
         <div class="slide-logo">
             <div class="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center">
                 <span class="text-sm font-bold">L²</span>
@@ -805,13 +1124,13 @@
             </div>
         </div>
         
-        <div class="slide-number">13</div>
+        <div class="slide-number">16</div>
     </div>
 
     <!-- ============================================ -->
-    <!-- SLIDE 14: Closing -->
+    <!-- SLIDE 17: Closing -->
     <!-- ============================================ -->
-    <div class="slide bg-gradient-to-br from-emerald-900 via-teal-800 to-emerald-700" id="slide-14">
+    <div class="slide bg-gradient-to-br from-emerald-900 via-teal-800 to-emerald-700" id="slide-17">
         <div class="slide-logo">
             <div class="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center">
                 <span class="text-sm font-bold">L²</span>
@@ -853,37 +1172,32 @@
             </div>
         </div>
         
-        <div class="slide-number">14</div>
+        <div class="slide-number">17</div>
     </div>
 
     <script>
-        let currentSlide = 1;
-        const totalSlides = 14;
+        // Scroll-based active navigation
+        const navItems = document.querySelectorAll('.nav-item');
+        const slides = document.querySelectorAll('.slide');
         
-        function showSlide(n) {
-            if (n < 1) n = 1;
-            if (n > totalSlides) n = totalSlides;
-            currentSlide = n;
+        function updateActiveNav() {
+            const scrollPos = window.scrollY + 100;
             
-            document.querySelectorAll('.slide').forEach((slide, index) => {
-                slide.style.display = (index + 1 === currentSlide) ? 'flex' : 'none';
+            slides.forEach((slide, index) => {
+                const slideTop = slide.offsetTop;
+                const slideBottom = slideTop + slide.offsetHeight;
+                
+                if (scrollPos >= slideTop && scrollPos < slideBottom) {
+                    navItems.forEach(item => item.classList.remove('active'));
+                    if (navItems[index]) {
+                        navItems[index].classList.add('active');
+                    }
+                }
             });
         }
         
-        function nextSlide() {
-            showSlide(currentSlide + 1);
-        }
-        
-        function prevSlide() {
-            showSlide(currentSlide - 1);
-        }
-        
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowRight' || e.key === ' ') nextSlide();
-            if (e.key === 'ArrowLeft') prevSlide();
-        });
-        
-        showSlide(1);
+        window.addEventListener('scroll', updateActiveNav);
+        updateActiveNav();
     </script>
 
 </body>
