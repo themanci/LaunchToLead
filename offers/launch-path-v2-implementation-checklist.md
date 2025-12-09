@@ -3,7 +3,7 @@
 
 **Created:** December 8, 2025  
 **Status:** 🟡 In Progress  
-**Total Items:** 59 (23 complete)
+**Total Items:** 59 (25 complete)
 
 ---
 
@@ -133,8 +133,8 @@ client_materials/
 
 | # | Material Name | File Location | Status |
 |---|---------------|---------------|--------|
-| 24 | Session 2 Slides | `session_materials/launch/session-2/slides.html` | ⬜ Not Started |
-| 25 | Session 2 Facilitator Guide | `session_materials/launch/session-2/facilitator-guide.html` | ⬜ Not Started |
+| 24 | Session 2 Slides | `session_materials/launch/session-2/slides.html` | ✅ Complete |
+| 25 | Session 2 Facilitator Guide | `session_materials/launch/session-2/facilitator-guide.html` | ✅ Complete |
 
 ## Session 2 Methods to Include in Facilitator Guide (8 methods, 90 min)
 
