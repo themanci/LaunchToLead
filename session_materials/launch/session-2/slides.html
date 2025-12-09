@@ -1,0 +1,1169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Session 2 Slides | Interview Strategy & Story Mastery | Launch Path</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        
+        .slide {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 4rem;
+            padding-left: 18rem;
+            position: relative;
+            scroll-margin-top: 0;
+        }
+        
+        .slide-number {
+            position: absolute;
+            bottom: 2rem;
+            right: 2rem;
+            font-size: 0.875rem;
+            opacity: 0.5;
+        }
+        
+        .slide-logo {
+            position: absolute;
+            top: 2rem;
+            left: 18rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            opacity: 0.7;
+        }
+        
+        /* Sticky Sidebar Navigation */
+        .slide-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 15rem;
+            height: 100vh;
+            background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+            border-right: 1px solid rgba(255,255,255,0.1);
+            padding: 1.5rem 1rem;
+            overflow-y: auto;
+            z-index: 100;
+        }
+        
+        .slide-nav::-webkit-scrollbar {
+            width: 4px;
+        }
+        
+        .slide-nav::-webkit-scrollbar-thumb {
+            background: rgba(255,255,255,0.2);
+            border-radius: 4px;
+        }
+        
+        .nav-item {
+            display: block;
+            padding: 0.5rem 0.75rem;
+            margin-bottom: 0.25rem;
+            border-radius: 0.5rem;
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.6);
+            text-decoration: none;
+            transition: all 0.2s;
+            border-left: 2px solid transparent;
+        }
+        
+        .nav-item:hover {
+            background: rgba(20, 184, 166, 0.2);
+            color: white;
+            border-left-color: #14b8a6;
+        }
+        
+        .nav-item.active {
+            background: rgba(20, 184, 166, 0.3);
+            color: white;
+            border-left-color: #14b8a6;
+        }
+        
+        .nav-section {
+            font-size: 0.625rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: rgba(255,255,255,0.4);
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+            padding-left: 0.75rem;
+        }
+        
+        @media print {
+            .slide-nav { display: none !important; }
+            .slide { 
+                min-height: 100vh; 
+                page-break-after: always;
+                padding-left: 4rem;
+            }
+            .slide-logo { left: 2rem; }
+        }
+        
+        .method-tag {
+            display: inline-block;
+            background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%);
+            color: white;
+            padding: 0.25rem 1rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(20, 184, 166, 0.1) 0%, rgba(13, 148, 136, 0.1) 100%);
+            border: 2px solid rgba(20, 184, 166, 0.3);
+            border-radius: 1rem;
+            padding: 2rem;
+        }
+        
+        .big-quote {
+            font-size: 2.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+            background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+
+    <!-- Sticky Sidebar Navigation -->
+    <nav class="slide-nav">
+        <div class="flex items-center gap-2 mb-6 px-2">
+            <div class="w-8 h-8 bg-teal-600 rounded-lg flex items-center justify-center">
+                <span class="text-sm font-bold">L²</span>
+            </div>
+            <div>
+                <div class="text-sm font-bold text-white">Session 2</div>
+                <div class="text-xs text-gray-400">Interview & Story Mastery</div>
+            </div>
+        </div>
+        
+        <div class="nav-section">Overview</div>
+        <a href="#slide-1" class="nav-item">1. Title</a>
+        <a href="#slide-2" class="nav-item">2. Program Overview</a>
+        <a href="#slide-3" class="nav-item">3. Session 1 Recap</a>
+        <a href="#slide-4" class="nav-item">4. Today's Agenda</a>
+        
+        <div class="nav-section">Method 1: Story Vault</div>
+        <a href="#slide-5" class="nav-item">5. Master Story Vault</a>
+        <a href="#slide-6" class="nav-item">6. Brain Dump Process</a>
+        
+        <div class="nav-section">Method 2: High-Impact Stories</div>
+        <a href="#slide-7" class="nav-item">7. High-Impact Framework</a>
+        <a href="#slide-8" class="nav-item">8. Paint the Pain</a>
+        
+        <div class="nav-section">Method 3: Numbered Roadmap</div>
+        <a href="#slide-9" class="nav-item">9. Numbered Roadmap</a>
+        
+        <div class="nav-section">Method 4: Impact Ladder</div>
+        <a href="#slide-10" class="nav-item">10. 3-Tier Impact Ladder</a>
+        
+        <div class="nav-section">Method 5: Power Pause</div>
+        <a href="#slide-11" class="nav-item">11. Power Pause + Arsenal</a>
+        
+        <div class="nav-section">Method 6: Cheat Sheet</div>
+        <a href="#slide-12" class="nav-item">12. Interview Cheat Sheet</a>
+        
+        <div class="nav-section">Method 7: Human Element</div>
+        <a href="#slide-13" class="nav-item">13. Human Element Questions</a>
+        
+        <div class="nav-section">Method 8: Daily Practice</div>
+        <a href="#slide-14" class="nav-item">14. Daily Story Practice</a>
+        
+        <div class="nav-section">Wrap Up</div>
+        <a href="#slide-15" class="nav-item">15. Homework</a>
+        <a href="#slide-16" class="nav-item">16. Key Takeaways</a>
+        
+        <div class="mt-6 px-2">
+            <button onclick="window.print()" class="w-full bg-teal-600 hover:bg-teal-700 text-white text-sm py-2 px-3 rounded-lg transition">
+                🖨️ Print Slides
+            </button>
+        </div>
+    </nav>
+
+    <!-- ============================================ -->
+    <!-- SLIDE 1: Title Slide -->
+    <!-- ============================================ -->
+    <div class="slide bg-gradient-to-br from-gray-900 via-teal-900 to-emerald-900" id="slide-1">
+        <div class="slide-logo">
+            <div class="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center">
+                <span class="text-sm font-bold">L²</span>
+            </div>
+            <span class="text-sm font-semibold">LaunchToLead</span>
+        </div>
+        
+        <div class="text-center">
+            <div class="inline-block bg-teal-500/30 text-teal-300 px-6 py-2 rounded-full text-lg font-semibold mb-8">
+                LAUNCH PATH — SESSION 2
+            </div>
+            
+            <h1 class="text-6xl font-black mb-6 bg-gradient-to-r from-white via-teal-200 to-emerald-200 bg-clip-text text-transparent">
+                Interview Strategy & Story Mastery
+            </h1>
+            
+            <p class="text-2xl text-teal-200 mb-8">90 Minutes to Build Your Story Bank & Master Any Interview</p>
+            
+            <div class="text-xl text-gray-400 italic mt-12">
+                "The bigger the monster, the bigger the hero."
+            </div>
+        </div>
+        
+        <div class="slide-number">1</div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- SLIDE 2: Program Overview -->
+    <!-- ============================================ -->
+    <div class="slide bg-gray-900" id="slide-2">
+        <div class="slide-logo">
+            <div class="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center">
+                <span class="text-sm font-bold">L²</span>
+            </div>
+            <span class="text-sm font-semibold">LaunchToLead</span>
+        </div>
+        
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-4xl font-bold mb-4 text-center">The Launch Path: 21-Day Blueprint</h2>
+            <p class="text-gray-400 text-center mb-10">Your complete roadmap from resume to offer</p>
+            
+            <div class="grid grid-cols-3 gap-6">
+                <!-- Session 1 -->
+                <div class="bg-gray-800/50 border border-emerald-700 rounded-2xl p-6">
+                    <div class="text-emerald-400 text-sm font-semibold mb-2">SESSION 1 • Days 4-5 ✓</div>
+                    <h3 class="text-xl font-bold text-white mb-3">Deep Resume Transformation</h3>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li class="flex items-start gap-2">
+                            <span class="text-emerald-400 mt-1">✓</span>
+                            <span>8 proven methods</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-emerald-400 mt-1">✓</span>
+                            <span>Impact bullet formula</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-emerald-400 mt-1">✓</span>
+                            <span>ATS optimization</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-emerald-400 mt-1">✓</span>
+                            <span>4-minute tailoring</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Session 2 -->
+                <div class="bg-gradient-to-br from-teal-900/50 to-teal-800/30 border-2 border-teal-500 rounded-2xl p-6 relative">
+                    <div class="absolute -top-3 left-4 bg-teal-500 text-white text-xs font-bold px-3 py-1 rounded-full">
+                        YOU ARE HERE
+                    </div>
+                    <div class="text-teal-400 text-sm font-semibold mb-2">SESSION 2 • Days 10-11</div>
+                    <h3 class="text-xl font-bold text-white mb-3">Interview Strategy & Story Mastery</h3>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li class="flex items-start gap-2">
+                            <span class="text-teal-400 mt-1">→</span>
+                            <span>Master Story Vault</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-teal-400 mt-1">→</span>
+                            <span>High-Impact Story Framework</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-teal-400 mt-1">→</span>
+                            <span>Power Pause technique</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-teal-400 mt-1">→</span>
+                            <span>Interview Cheat Sheet</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Session 3 -->
+                <div class="bg-gray-800/50 border border-gray-700 rounded-2xl p-6">
+                    <div class="text-lime-400 text-sm font-semibold mb-2">SESSION 3 • Days 17-18</div>
+                    <h3 class="text-xl font-bold text-white mb-3">Negotiation & Closing</h3>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li class="flex items-start gap-2">
+                            <span class="text-lime-400 mt-1">○</span>
+                            <span>Total comp calculator</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-lime-400 mt-1">○</span>
+                            <span>BATNA strategy</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-lime-400 mt-1">○</span>
+                            <span>Offer evaluation</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-lime-400 mt-1">○</span>
+                            <span>Counter-offer scripts</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Timeline -->
+            <div class="mt-10 relative">
+                <div class="absolute top-1/2 left-0 right-0 h-1 bg-gray-700 -translate-y-1/2"></div>
+                <div class="absolute top-1/2 left-0 w-2/3 h-1 bg-gradient-to-r from-emerald-500 to-teal-500 -translate-y-1/2"></div>
+                <div class="flex justify-between relative">
+                    <div class="text-center">
+                        <div class="w-4 h-4 bg-emerald-500 rounded-full mx-auto mb-2"></div>
+                        <div class="text-xs text-gray-400">Day 1</div>
+                        <div class="text-xs text-emerald-400 font-semibold">Pre-Work ✓</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-6 h-6 bg-emerald-500 rounded-full mx-auto mb-2 flex items-center justify-center text-xs font-bold">✓</div>
+                        <div class="text-xs text-gray-400">Day 5</div>
+                        <div class="text-xs text-emerald-400 font-semibold">Session 1 ✓</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-6 h-6 bg-teal-500 rounded-full mx-auto mb-2 flex items-center justify-center text-xs font-bold ring-4 ring-teal-500/30">2</div>
+                        <div class="text-xs text-gray-400">Day 11</div>
+                        <div class="text-xs text-teal-400 font-semibold">Session 2</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-6 h-6 bg-gray-600 rounded-full mx-auto mb-2 flex items-center justify-center text-xs font-bold">3</div>
+                        <div class="text-xs text-gray-400">Day 18</div>
+                        <div class="text-xs text-gray-500">Session 3</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-4 h-4 bg-gray-600 rounded-full mx-auto mb-2"></div>
+                        <div class="text-xs text-gray-400">Day 21</div>
+                        <div class="text-xs text-gray-500">Offer Ready</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="slide-number">2</div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- SLIDE 3: Session 1 Recap -->
+    <!-- ============================================ -->
+    <div class="slide bg-gray-900" id="slide-3">
+        <div class="slide-logo">
+            <div class="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center">
+                <span class="text-sm font-bold">L²</span>
+            </div>
+            <span class="text-sm font-semibold">LaunchToLead</span>
+        </div>
+        
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-4xl font-bold mb-4 text-center">Session 1 Recap</h2>
+            <p class="text-gray-400 text-center mb-10">What you've already accomplished</p>
+            
+            <div class="grid grid-cols-2 gap-6">
+                <div class="highlight-box">
+                    <h3 class="text-xl font-bold text-teal-400 mb-4">✅ Resume Transformation</h3>
+                    <ul class="space-y-3 text-gray-300">
+                        <li class="flex items-start gap-3">
+                            <span class="text-emerald-400">✓</span>
+                            <span>Asset Mindset Shift — You're a value creator</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-emerald-400">✓</span>
+                            <span>Me-in-We Extractor — Your individual impact</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-emerald-400">✓</span>
+                            <span>Impact Bullet Builder — Action + Context + Result</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-emerald-400">✓</span>
+                            <span>Hidden Metrics Finder — Numbers without access</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="highlight-box">
+                    <h3 class="text-xl font-bold text-teal-400 mb-4">✅ Homework Progress Check</h3>
+                    <ul class="space-y-3 text-gray-300">
+                        <li class="flex items-start gap-3">
+                            <input type="checkbox" class="w-5 h-5 mt-0.5 accent-teal-500">
+                            <span>Finalized resume with all feedback?</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <input type="checkbox" class="w-5 h-5 mt-0.5 accent-teal-500">
+                            <span>Applied to 10+ jobs?</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <input type="checkbox" class="w-5 h-5 mt-0.5 accent-teal-500">
+                            <span>Completed Competency Story Map?</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <input type="checkbox" class="w-5 h-5 mt-0.5 accent-teal-500">
+                            <span>Reviewed Pre-Session 2 materials?</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="mt-8 text-center">
+                <p class="text-xl text-teal-300 font-semibold">Now let's turn those resume bullets into interview-winning stories.</p>
+            </div>
+        </div>
+        
+        <div class="slide-number">3</div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- SLIDE 4: Today's Agenda -->
+    <!-- ============================================ -->
+    <div class="slide bg-gray-900" id="slide-4">
+        <div class="slide-logo">
+            <div class="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center">
+                <span class="text-sm font-bold">L²</span>
+            </div>
+            <span class="text-sm font-semibold">LaunchToLead</span>
+        </div>
+        
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-4xl font-bold mb-4 text-center">Today's Agenda</h2>
+            <p class="text-gray-400 text-center mb-10">90 minutes • 8 methods • Interview mastery</p>
+            
+            <div class="space-y-4">
+                <div class="flex items-center gap-4 p-4 bg-gray-800/50 rounded-xl border border-gray-700">
+                    <div class="text-sm text-gray-500 w-20">0-10 min</div>
+                    <div class="flex-1">
+                        <span class="text-teal-400 font-semibold">Recap & Check-in</span>
+                        <span class="text-gray-400"> — Review homework, Competency Story Map progress</span>
+                    </div>
+                </div>
+                
+                <div class="flex items-center gap-4 p-4 bg-teal-900/30 rounded-xl border border-teal-700">
+                    <div class="text-sm text-gray-500 w-20">10-30 min</div>
+                    <div class="flex-1">
+                        <span class="method-tag">Method 1</span>
+                        <span class="text-white font-semibold ml-2">The Master Story Vault™</span>
+                        <span class="text-gray-400"> — Deep dive on TOP 5 stories</span>
+                    </div>
+                </div>
+                
+                <div class="flex items-center gap-4 p-4 bg-teal-900/30 rounded-xl border border-teal-700">
+                    <div class="text-sm text-gray-500 w-20">30-45 min</div>
+                    <div class="flex-1">
+                        <span class="method-tag">Method 2</span>
+                        <span class="text-white font-semibold ml-2">The High-Impact Story Framework™</span>
+                        <span class="text-gray-400"> — Paint the Pain technique</span>
+                    </div>
+                </div>
+                
+                <div class="flex items-center gap-4 p-4 bg-teal-900/30 rounded-xl border border-teal-700">
+                    <div class="text-sm text-gray-500 w-20">45-55 min</div>
+                    <div class="flex-1">
+                        <span class="method-tag">Methods 3-4</span>
+                        <span class="text-white font-semibold ml-2">Numbered Roadmap + 3-Tier Impact Ladder™</span>
+                    </div>
+                </div>
+                
+                <div class="flex items-center gap-4 p-4 bg-teal-900/30 rounded-xl border border-teal-700">
+                    <div class="text-sm text-gray-500 w-20">55-70 min</div>
+                    <div class="flex-1">
+                        <span class="method-tag">Methods 5-6</span>
+                        <span class="text-white font-semibold ml-2">Power Pause + Interview Cheat Sheet™</span>
+                    </div>
+                </div>
+                
+                <div class="flex items-center gap-4 p-4 bg-teal-900/30 rounded-xl border border-teal-700">
+                    <div class="text-sm text-gray-500 w-20">70-82 min</div>
+                    <div class="flex-1">
+                        <span class="method-tag">Methods 7-8</span>
+                        <span class="text-white font-semibold ml-2">Human Element Questions + Daily Story Practice™</span>
+                    </div>
+                </div>
+                
+                <div class="flex items-center gap-4 p-4 bg-gray-800/50 rounded-xl border border-gray-700">
+                    <div class="text-sm text-gray-500 w-20">82-90 min</div>
+                    <div class="flex-1">
+                        <span class="text-teal-400 font-semibold">Homework & Next Steps</span>
+                        <span class="text-gray-400"> — Mock interview prep for Session 3</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="slide-number">4</div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- SLIDE 5: Master Story Vault -->
+    <!-- ============================================ -->
+    <div class="slide bg-gray-900" id="slide-5">
+        <div class="slide-logo">
+            <div class="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center">
+                <span class="text-sm font-bold">L²</span>
+            </div>
+            <span class="text-sm font-semibold">LaunchToLead</span>
+        </div>
+        
+        <div class="max-w-4xl mx-auto">
+            <div class="method-tag mb-6">METHOD 1</div>
+            <h2 class="text-5xl font-bold mb-4">The Master Story Vault™</h2>
+            <p class="text-xl text-gray-400 mb-8">Write everything down BEFORE you edit</p>
+            
+            <div class="grid grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold text-red-400 mb-4">❌ The Problem</h3>
+                    <div class="bg-red-900/20 border border-red-800 rounded-xl p-6">
+                        <p class="text-gray-300">Candidates rely on <strong class="text-red-400">memory and vague bullet points</strong>. They forget details under pressure.</p>
+                        <p class="text-gray-400 mt-4 italic">"Uh... I think I did something with data analysis... let me try to remember..."</p>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-2xl font-bold text-teal-400 mb-4">✅ The Method</h3>
+                    <div class="bg-teal-900/20 border border-teal-700 rounded-xl p-6">
+                        <p class="text-gray-300">Write every detail in <strong class="text-teal-400">extreme depth</strong> before you ever practice speaking it.</p>
+                        <p class="text-teal-300 mt-4 font-semibold">Brain dump first → Structure second</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-8 text-center">
+                <p class="text-2xl font-bold text-white">Your stories live in a vault, not your head.</p>
+            </div>
+        </div>
+        
+        <div class="slide-number">5</div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- SLIDE 6: Brain Dump Process -->
+    <!-- ============================================ -->
+    <div class="slide bg-gray-900" id="slide-6">
+        <div class="slide-logo">
+            <div class="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center">
+                <span class="text-sm font-bold">L²</span>
+            </div>
+            <span class="text-sm font-semibold">LaunchToLead</span>
+        </div>
+        
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-4xl font-bold mb-4">The Brain Dump Process</h2>
+            <p class="text-gray-400 mb-8">For every significant experience, capture ALL of this:</p>
+            
+            <div class="grid grid-cols-2 gap-4">
+                <div class="bg-gray-800/50 rounded-xl p-5 border-l-4 border-teal-500">
+                    <div class="text-teal-400 font-bold mb-2">📋 Full Context & Background</div>
+                    <p class="text-gray-400 text-sm">What was the situation? What was at stake? Timeline?</p>
+                </div>
+                
+                <div class="bg-gray-800/50 rounded-xl p-5 border-l-4 border-teal-500">
+                    <div class="text-teal-400 font-bold mb-2">⚡ Every Action You Took</div>
+                    <p class="text-gray-400 text-sm">In order. What did YOU specifically do?</p>
+                </div>
+                
+                <div class="bg-gray-800/50 rounded-xl p-5 border-l-4 border-teal-500">
+                    <div class="text-teal-400 font-bold mb-2">🔧 Tools, Methods, Resources</div>
+                    <p class="text-gray-400 text-sm">Software, frameworks, equipment, techniques</p>
+                </div>
+                
+                <div class="bg-gray-800/50 rounded-xl p-5 border-l-4 border-teal-500">
+                    <div class="text-teal-400 font-bold mb-2">📊 Every Result & Outcome</div>
+                    <p class="text-gray-400 text-sm">Numbers, improvements, feedback received</p>
+                </div>
+                
+                <div class="bg-gray-800/50 rounded-xl p-5 border-l-4 border-teal-500">
+                    <div class="text-teal-400 font-bold mb-2">💡 Lessons Learned</div>
+                    <p class="text-gray-400 text-sm">What would you do differently? What surprised you?</p>
+                </div>
+                
+                <div class="bg-gray-800/50 rounded-xl p-5 border-l-4 border-teal-500">
+                    <div class="text-teal-400 font-bold mb-2">👥 People Involved</div>
+                    <p class="text-gray-400 text-sm">Who did you work with? What were your interactions?</p>
+                </div>
+            </div>
+            
+            <div class="mt-8 highlight-box text-center">
+                <p class="text-xl text-white"><strong>Target:</strong> 10-15 stories with full brain dumps</p>
+                <p class="text-gray-400 mt-2">Each story = 1-2 pages of raw notes</p>
+            </div>
+        </div>
+        
+        <div class="slide-number">6</div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- SLIDE 7: High-Impact Story Framework -->
+    <!-- ============================================ -->
+    <div class="slide bg-gray-900" id="slide-7">
+        <div class="slide-logo">
+            <div class="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center">
+                <span class="text-sm font-bold">L²</span>
+            </div>
+            <span class="text-sm font-semibold">LaunchToLead</span>
+        </div>
+        
+        <div class="max-w-4xl mx-auto">
+            <div class="method-tag mb-6">METHOD 2</div>
+            <h2 class="text-5xl font-bold mb-4">The High-Impact Story Framework™</h2>
+            <p class="text-xl text-gray-400 mb-8">Emphasize the pain to make the cure look valuable</p>
+            
+            <div class="highlight-box text-center mb-8">
+                <p class="big-quote">"The bigger the monster, the bigger the hero."</p>
+            </div>
+            
+            <div class="grid grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold text-red-400 mb-4">❌ Weak Situation</h3>
+                    <div class="space-y-4">
+                        <div class="bg-red-900/20 border border-red-800 rounded-xl p-4">
+                            <p class="text-gray-400">"The code was slow"</p>
+                        </div>
+                        <div class="bg-red-900/20 border border-red-800 rounded-xl p-4">
+                            <p class="text-gray-400">"We had a tight deadline"</p>
+                        </div>
+                        <div class="bg-red-900/20 border border-red-800 rounded-xl p-4">
+                            <p class="text-gray-400">"There was a bug"</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-2xl font-bold text-teal-400 mb-4">✅ Strong Situation</h3>
+                    <div class="space-y-4">
+                        <div class="bg-teal-900/20 border border-teal-700 rounded-xl p-4">
+                            <p class="text-teal-300">"The code latency was threatening our SLA with a major client, risking a <strong>$50K contract penalty</strong>"</p>
+                        </div>
+                        <div class="bg-teal-900/20 border border-teal-700 rounded-xl p-4">
+                            <p class="text-teal-300">"We had <strong>3 weeks to deliver a 3-month project</strong> after scope tripled mid-sprint"</p>
+                        </div>
+                        <div class="bg-teal-900/20 border border-teal-700 rounded-xl p-4">
+                            <p class="text-teal-300">"A critical bug was <strong>blocking 2,000 daily users</strong> from accessing the platform"</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="slide-number">7</div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- SLIDE 8: Paint the Pain -->
+    <!-- ============================================ -->
+    <div class="slide bg-gray-900" id="slide-8">
+        <div class="slide-logo">
+            <div class="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center">
+                <span class="text-sm font-bold">L²</span>
+            </div>
+            <span class="text-sm font-semibold">LaunchToLead</span>
+        </div>
+        
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-4xl font-bold mb-4">Paint the Pain: High-Contrast Storytelling</h2>
+            <p class="text-gray-400 mb-8">Ask yourself: "What would have happened if I DIDN'T solve this?"</p>
+            
+            <div class="highlight-box mb-8">
+                <h3 class="text-xl font-bold text-teal-400 mb-4">🎨 The Paint the Pain Formula</h3>
+                <div class="space-y-4 text-gray-300">
+                    <div class="flex items-start gap-4">
+                        <span class="bg-teal-500 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold flex-shrink-0">1</span>
+                        <div>
+                            <strong class="text-white">Quantify the stakes</strong>
+                            <p class="text-gray-400">Revenue at risk? Users affected? Timeline pressure?</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <span class="bg-teal-500 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold flex-shrink-0">2</span>
+                        <div>
+                            <strong class="text-white">Name the consequences</strong>
+                            <p class="text-gray-400">What was the worst-case scenario if this failed?</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <span class="bg-teal-500 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold flex-shrink-0">3</span>
+                        <div>
+                            <strong class="text-white">Create emotional contrast</strong>
+                            <p class="text-gray-400">The bigger the problem sounds, the more impressive your solution becomes</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-gray-800 rounded-xl p-6">
+                <h4 class="text-lg font-bold text-white mb-3">🎯 Exercise: Upgrade Your Top 3 Stories</h4>
+                <p class="text-gray-400">Take your 3 strongest stories and rewrite the Situation using Paint the Pain.</p>
+                <p class="text-teal-400 mt-2 font-semibold">Before: "We had a problem" → After: "The entire project was at risk of..."</p>
+            </div>
+        </div>
+        
+        <div class="slide-number">8</div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- SLIDE 9: Numbered Roadmap -->
+    <!-- ============================================ -->
+    <div class="slide bg-gray-900" id="slide-9">
+        <div class="slide-logo">
+            <div class="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center">
+                <span class="text-sm font-bold">L²</span>
+            </div>
+            <span class="text-sm font-semibold">LaunchToLead</span>
+        </div>
+        
+        <div class="max-w-4xl mx-auto">
+            <div class="method-tag mb-6">METHOD 3</div>
+            <h2 class="text-5xl font-bold mb-4">The Numbered Roadmap™</h2>
+            <p class="text-xl text-gray-400 mb-8">Give interviewers a map before you speak</p>
+            
+            <div class="grid grid-cols-2 gap-8 mb-8">
+                <div>
+                    <h3 class="text-2xl font-bold text-red-400 mb-4">❌ The Problem</h3>
+                    <div class="bg-red-900/20 border border-red-800 rounded-xl p-6">
+                        <p class="text-gray-300">Rambling, jumping back and forth in time. Interviewers lose track.</p>
+                        <p class="text-gray-400 mt-4 italic">"So I started with the design, but actually first I had to... wait, let me back up..."</p>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-2xl font-bold text-teal-400 mb-4">✅ The Method</h3>
+                    <div class="bg-teal-900/20 border border-teal-700 rounded-xl p-6">
+                        <p class="text-gray-300">Open your Action section with a <strong class="text-teal-400">number</strong>.</p>
+                        <p class="text-teal-300 mt-4 font-semibold">"I took 4 key actions to address this..."</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="highlight-box">
+                <h3 class="text-xl font-bold text-teal-400 mb-4">📝 The Script</h3>
+                <div class="bg-gray-800 rounded-lg p-6 text-xl">
+                    <p class="text-white">"I took <strong class="text-teal-400">5 key actions</strong> to address this.</p>
+                    <p class="text-gray-300 mt-2"><strong>First</strong>, I... <strong>Second</strong>, I... <strong>Third</strong>..."</p>
+                </div>
+                <div class="mt-4 text-gray-400">
+                    <p><strong>Why it works:</strong> Forces the interviewer to listen for structure • Keeps YOU from getting lost • Shows organized thinking</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="slide-number">9</div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- SLIDE 10: 3-Tier Impact Ladder -->
+    <!-- ============================================ -->
+    <div class="slide bg-gray-900" id="slide-10">
+        <div class="slide-logo">
+            <div class="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center">
+                <span class="text-sm font-bold">L²</span>
+            </div>
+            <span class="text-sm font-semibold">LaunchToLead</span>
+        </div>
+        
+        <div class="max-w-4xl mx-auto">
+            <div class="method-tag mb-6">METHOD 4</div>
+            <h2 class="text-5xl font-bold mb-4">The 3-Tier Impact Ladder™</h2>
+            <p class="text-xl text-gray-400 mb-8">Push your Results beyond "I solved it"</p>
+            
+            <div class="space-y-4">
+                <!-- Level 3 -->
+                <div class="bg-gradient-to-r from-teal-900/50 to-teal-800/30 border-2 border-teal-500 rounded-xl p-6">
+                    <div class="flex items-center gap-4">
+                        <div class="bg-teal-500 text-white w-12 h-12 rounded-full flex items-center justify-center font-bold text-xl">3</div>
+                        <div class="flex-1">
+                            <div class="text-teal-400 font-bold text-lg">LEVEL 3: Leadership Impact</div>
+                            <p class="text-white">"I trained the team and evangelized the solution"</p>
+                            <p class="text-gray-400 text-sm mt-1">Signals: "I am a future leader and force multiplier"</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Level 2 -->
+                <div class="bg-gray-800/50 border border-gray-600 rounded-xl p-6">
+                    <div class="flex items-center gap-4">
+                        <div class="bg-gray-600 text-white w-12 h-12 rounded-full flex items-center justify-center font-bold text-xl">2</div>
+                        <div class="flex-1">
+                            <div class="text-gray-300 font-bold text-lg">LEVEL 2: Process Impact</div>
+                            <p class="text-white">"I automated it so it won't happen again"</p>
+                            <p class="text-gray-400 text-sm mt-1">Signals: "I think about efficiency and process"</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Level 1 -->
+                <div class="bg-gray-800/30 border border-gray-700 rounded-xl p-6">
+                    <div class="flex items-center gap-4">
+                        <div class="bg-gray-700 text-gray-400 w-12 h-12 rounded-full flex items-center justify-center font-bold text-xl">1</div>
+                        <div class="flex-1">
+                            <div class="text-gray-500 font-bold text-lg">LEVEL 1: Task Completion</div>
+                            <p class="text-gray-400">"I solved the problem"</p>
+                            <p class="text-gray-500 text-sm mt-1">Signals: "I am a competent worker" — this is the minimum</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-6 bg-gray-800 rounded-xl p-4">
+                <p class="text-gray-400"><strong class="text-white">Example Progression:</strong></p>
+                <p class="text-gray-500 mt-2">L1: "I fixed the manufacturing defect."</p>
+                <p class="text-gray-400 mt-1">L2: "I fixed the defect and created a checklist so it wouldn't happen again."</p>
+                <p class="text-teal-400 mt-1">L3: "I fixed the defect, created a checklist, presented it to quality team, and it became the new SOP."</p>
+            </div>
+        </div>
+        
+        <div class="slide-number">10</div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- SLIDE 11: Power Pause + Story Arsenal -->
+    <!-- ============================================ -->
+    <div class="slide bg-gray-900" id="slide-11">
+        <div class="slide-logo">
+            <div class="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center">
+                <span class="text-sm font-bold">L²</span>
+            </div>
+            <span class="text-sm font-semibold">LaunchToLead</span>
+        </div>
+        
+        <div class="max-w-4xl mx-auto">
+            <div class="method-tag mb-6">METHOD 5</div>
+            <h2 class="text-5xl font-bold mb-4">The Power Pause + Story Arsenal™</h2>
+            <p class="text-xl text-gray-400 mb-8">Silence is a power move, not confusion</p>
+            
+            <div class="grid grid-cols-2 gap-8 mb-8">
+                <div>
+                    <h3 class="text-2xl font-bold text-red-400 mb-4">❌ The Problem</h3>
+                    <div class="bg-red-900/20 border border-red-800 rounded-xl p-6">
+                        <p class="text-gray-300">Nervous candidates talk to fill silence. They answer the literal question rather than the subtext.</p>
+                        <p class="text-gray-400 mt-4 italic">"Um, well, let me think... I guess there was this one time..."</p>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-2xl font-bold text-teal-400 mb-4">✅ The Method</h3>
+                    <div class="bg-teal-900/20 border border-teal-700 rounded-xl p-6">
+                        <p class="text-gray-300">Take <strong class="text-teal-400">1-2 minutes to "scan"</strong> for the hidden competency before speaking.</p>
+                        <p class="text-teal-300 mt-4 font-semibold">Pause with purpose → Pick best example</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="space-y-4">
+                <div class="highlight-box">
+                    <h4 class="text-lg font-bold text-teal-400 mb-2">📝 The Opening Script</h4>
+                    <p class="text-xl text-white italic">"That's a great question. Let me take a moment to think of the most relevant example."</p>
+                </div>
+                
+                <div class="highlight-box">
+                    <h4 class="text-lg font-bold text-teal-400 mb-2">📝 The Wrap-Around Script (After Answering)</h4>
+                    <p class="text-xl text-white italic">"Does that answer your question? Or would you like me to go deeper on any part?"</p>
+                    <p class="text-gray-400 mt-2">Shows self-awareness and invites dialogue</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="slide-number">11</div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- SLIDE 12: Interview Cheat Sheet -->
+    <!-- ============================================ -->
+    <div class="slide bg-gray-900" id="slide-12">
+        <div class="slide-logo">
+            <div class="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center">
+                <span class="text-sm font-bold">L²</span>
+            </div>
+            <span class="text-sm font-semibold">LaunchToLead</span>
+        </div>
+        
+        <div class="max-w-4xl mx-auto">
+            <div class="method-tag mb-6">METHOD 6</div>
+            <h2 class="text-5xl font-bold mb-4">The Interview Cheat Sheet™</h2>
+            <p class="text-xl text-gray-400 mb-8">You can't memorize everything perfectly — and you don't have to</p>
+            
+            <div class="highlight-box mb-8">
+                <h3 class="text-xl font-bold text-teal-400 mb-4">📋 The Tactic</h3>
+                <p class="text-gray-300 text-lg">Bring a <strong class="text-teal-400">transparent, bulleted list</strong> of your prepared examples. One page. Glance at it to jog memory, don't read from it.</p>
+            </div>
+            
+            <div class="bg-gray-800 rounded-xl p-6 mb-6">
+                <h4 class="text-lg font-bold text-white mb-4">📝 The Permission Script</h4>
+                <p class="text-xl text-teal-300 italic">"I've prepared some notes with key projects and metrics to make sure I give you thorough answers. Would it be okay if I reference them during our conversation?"</p>
+                <p class="text-gray-400 mt-4"><strong>Reality:</strong> 99% of interviewers say yes. The ask itself signals preparation.</p>
+            </div>
+            
+            <div class="grid grid-cols-3 gap-4">
+                <div class="bg-gray-800/50 rounded-xl p-4 text-center">
+                    <div class="text-3xl mb-2">📄</div>
+                    <p class="text-gray-300 text-sm">One page max</p>
+                </div>
+                <div class="bg-gray-800/50 rounded-xl p-4 text-center">
+                    <div class="text-3xl mb-2">🎯</div>
+                    <p class="text-gray-300 text-sm">5-7 stories with key metrics</p>
+                </div>
+                <div class="bg-gray-800/50 rounded-xl p-4 text-center">
+                    <div class="text-3xl mb-2">👀</div>
+                    <p class="text-gray-300 text-sm">Glance, don't read</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="slide-number">12</div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- SLIDE 13: Human Element Questions -->
+    <!-- ============================================ -->
+    <div class="slide bg-gray-900" id="slide-13">
+        <div class="slide-logo">
+            <div class="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center">
+                <span class="text-sm font-bold">L²</span>
+            </div>
+            <span class="text-sm font-semibold">LaunchToLead</span>
+        </div>
+        
+        <div class="max-w-4xl mx-auto">
+            <div class="method-tag mb-6">METHOD 7</div>
+            <h2 class="text-5xl font-bold mb-4">The Human Element Questions™</h2>
+            <p class="text-xl text-gray-400 mb-8">People don't want to hire someone they don't want to work with</p>
+            
+            <div class="grid grid-cols-2 gap-8 mb-8">
+                <div class="highlight-box">
+                    <h3 class="text-xl font-bold text-teal-400 mb-4">💬 Questions to Ask Interviewers</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start gap-3 text-gray-300">
+                            <span class="text-teal-400">→</span>
+                            <span>"What brought you to [Company]?"</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-gray-300">
+                            <span class="text-teal-400">→</span>
+                            <span>"What's your favorite part about working here?"</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-gray-300">
+                            <span class="text-teal-400">→</span>
+                            <span>"What does success look like for someone in this role?"</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-gray-300">
+                            <span class="text-teal-400">→</span>
+                            <span>"What's a project you're excited about right now?"</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bg-gray-800 rounded-xl p-6">
+                    <h3 class="text-xl font-bold text-white mb-4">✉️ Follow-Up Email Template</h3>
+                    <div class="text-sm text-gray-400 space-y-2">
+                        <p><strong class="text-gray-300">Subject:</strong> Thank you – [Role] Interview</p>
+                        <p class="mt-3">Hi [Interviewer Name],</p>
+                        <p>Thank you for taking the time to speak with me about the [Role] position. I really enjoyed learning about <strong class="text-teal-400">[specific topic discussed]</strong>.</p>
+                        <p>Our conversation reinforced my excitement about contributing to [Company]. I'm particularly drawn to <strong class="text-teal-400">[specific aspect]</strong>.</p>
+                        <p>Best regards,<br>[Your Name]</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center text-gray-400">
+                <p><strong class="text-white">The principle:</strong> Turn the interview into a conversation, not an interrogation.</p>
+            </div>
+        </div>
+        
+        <div class="slide-number">13</div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- SLIDE 14: Daily Story Practice -->
+    <!-- ============================================ -->
+    <div class="slide bg-gray-900" id="slide-14">
+        <div class="slide-logo">
+            <div class="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center">
+                <span class="text-sm font-bold">L²</span>
+            </div>
+            <span class="text-sm font-semibold">LaunchToLead</span>
+        </div>
+        
+        <div class="max-w-4xl mx-auto">
+            <div class="method-tag mb-6">METHOD 8</div>
+            <h2 class="text-5xl font-bold mb-4">The Daily Story Practice™</h2>
+            <p class="text-xl text-gray-400 mb-8">Cramming doesn't work — frequency beats duration</p>
+            
+            <div class="highlight-box mb-8 text-center">
+                <p class="big-quote">Frequency > Duration</p>
+                <p class="text-gray-400 mt-2">10 minutes 3x per day beats 30 minutes 1x</p>
+            </div>
+            
+            <div class="grid grid-cols-2 gap-8">
+                <div class="bg-gray-800 rounded-xl p-6">
+                    <h3 class="text-xl font-bold text-teal-400 mb-4">📅 Week 1-2: Story Drilling</h3>
+                    <ul class="space-y-3 text-gray-300">
+                        <li class="flex items-start gap-3">
+                            <span class="text-teal-400">☀️</span>
+                            <span><strong>Morning:</strong> Go through all 10-15 stories mentally</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-teal-400">🌤️</span>
+                            <span><strong>Noon:</strong> Practice 3 stories out loud</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-teal-400">🌙</span>
+                            <span><strong>Night:</strong> Review weakest stories</span>
+                        </li>
+                    </ul>
+                    <p class="text-gray-500 text-sm mt-4">Goal: Details become ingrained, not memorized</p>
+                </div>
+                
+                <div class="bg-gray-800 rounded-xl p-6">
+                    <h3 class="text-xl font-bold text-teal-400 mb-4">📅 Week 2+: Mock Interviews</h3>
+                    <ul class="space-y-3 text-gray-300">
+                        <li class="flex items-start gap-3">
+                            <span class="text-teal-400">🎯</span>
+                            <span>1-2 full mock interviews per day</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-teal-400">📹</span>
+                            <span>Record yourself and review</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-teal-400">👥</span>
+                            <span>Practice with friends, family, or coaching</span>
+                        </li>
+                    </ul>
+                    <p class="text-gray-500 text-sm mt-4">Goal: Answers feel natural, not scripted</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="slide-number">14</div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- SLIDE 15: Homework -->
+    <!-- ============================================ -->
+    <div class="slide bg-gray-900" id="slide-15">
+        <div class="slide-logo">
+            <div class="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center">
+                <span class="text-sm font-bold">L²</span>
+            </div>
+            <span class="text-sm font-semibold">LaunchToLead</span>
+        </div>
+        
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-4xl font-bold mb-4 text-center">📋 Your Homework</h2>
+            <p class="text-gray-400 text-center mb-10">Complete before Session 3 (Days 12-17)</p>
+            
+            <div class="grid grid-cols-2 gap-6">
+                <div class="highlight-box">
+                    <h3 class="text-xl font-bold text-teal-400 mb-4">✏️ Story Development</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start gap-3 text-gray-300">
+                            <input type="checkbox" class="w-5 h-5 mt-0.5 accent-teal-500">
+                            <span>Complete brain dumps for your top 10 stories</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-gray-300">
+                            <input type="checkbox" class="w-5 h-5 mt-0.5 accent-teal-500">
+                            <span>Apply Paint the Pain to all Situation sections</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-gray-300">
+                            <input type="checkbox" class="w-5 h-5 mt-0.5 accent-teal-500">
+                            <span>Push all Results to Level 2 or 3</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-gray-300">
+                            <input type="checkbox" class="w-5 h-5 mt-0.5 accent-teal-500">
+                            <span>Create your 1-page Interview Cheat Sheet</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="highlight-box">
+                    <h3 class="text-xl font-bold text-teal-400 mb-4">🎯 Practice & Applications</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start gap-3 text-gray-300">
+                            <input type="checkbox" class="w-5 h-5 mt-0.5 accent-teal-500">
+                            <span>Practice Daily Story Routine (3x/day)</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-gray-300">
+                            <input type="checkbox" class="w-5 h-5 mt-0.5 accent-teal-500">
+                            <span>Apply to 10 more jobs (30 total)</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-gray-300">
+                            <input type="checkbox" class="w-5 h-5 mt-0.5 accent-teal-500">
+                            <span>Complete 2 informational interviews</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-gray-300">
+                            <input type="checkbox" class="w-5 h-5 mt-0.5 accent-teal-500">
+                            <span>Review Post-Session 2 materials</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="mt-8 bg-gray-800 rounded-xl p-6 text-center">
+                <h4 class="text-lg font-bold text-white mb-2">📧 Post-Session 2 Resources Coming Your Way</h4>
+                <p class="text-gray-400">Visual Aid Binder • Digital Stage Presence • Technical Gauntlet • Career Fair Prep • and more</p>
+            </div>
+        </div>
+        
+        <div class="slide-number">15</div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- SLIDE 16: Key Takeaways -->
+    <!-- ============================================ -->
+    <div class="slide bg-gradient-to-br from-gray-900 via-teal-900 to-emerald-900" id="slide-16">
+        <div class="slide-logo">
+            <div class="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center">
+                <span class="text-sm font-bold">L²</span>
+            </div>
+            <span class="text-sm font-semibold">LaunchToLead</span>
+        </div>
+        
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-4xl font-bold mb-10">🎯 Key Takeaways</h2>
+            
+            <div class="grid grid-cols-2 gap-6 text-left mb-10">
+                <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6">
+                    <div class="text-3xl mb-3">📝</div>
+                    <h3 class="text-xl font-bold text-white mb-2">Master Story Vault</h3>
+                    <p class="text-gray-300">Brain dump first, structure second. Your stories live in a vault, not your head.</p>
+                </div>
+                
+                <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6">
+                    <div class="text-3xl mb-3">🎨</div>
+                    <h3 class="text-xl font-bold text-white mb-2">Paint the Pain</h3>
+                    <p class="text-gray-300">The bigger the monster, the bigger the hero. Emphasize stakes.</p>
+                </div>
+                
+                <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6">
+                    <div class="text-3xl mb-3">🔢</div>
+                    <h3 class="text-xl font-bold text-white mb-2">Numbered Roadmap</h3>
+                    <p class="text-gray-300">"I took 4 key actions..." — Structure prevents rambling.</p>
+                </div>
+                
+                <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6">
+                    <div class="text-3xl mb-3">🪜</div>
+                    <h3 class="text-xl font-bold text-white mb-2">3-Tier Impact Ladder</h3>
+                    <p class="text-gray-300">Push beyond "I solved it" to "I trained the team."</p>
+                </div>
+            </div>
+            
+            <div class="highlight-box">
+                <p class="text-2xl font-bold text-white mb-4">Session 3 Preview: Negotiation & Closing</p>
+                <p class="text-gray-300">Total Comp Calculator • BATNA Strategy • Offer Evaluation • Counter-Offer Scripts</p>
+                <p class="text-teal-400 mt-4 font-semibold">This is where you turn interviews into offers — and offers into great compensation.</p>
+            </div>
+        </div>
+        
+        <div class="slide-number">16</div>
+    </div>
+
+</body>
+</html>
