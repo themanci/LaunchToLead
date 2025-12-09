@@ -561,170 +561,340 @@ These are PDF deliverables or quick add-ons.
 
 ---
 
-# UPDATED SESSION STRUCTURE
+# THE 21-DAY LAUNCH BLUEPRINT PROGRAM STRUCTURE
 
-Based on the expanded problem/solution mapping, here's the revised session structure.
-
----
-
-## 📋 PRE-SESSION 1 MATERIALS (Sent 3-5 days before)
-
-| Material | Purpose |
-|----------|---------|
-| 🎁 The Impact Bullet Builder™ Quick Start Guide | Introduces the 4-part bullet formula |
-| 🎁 The Boring-to-Standout Bullet Upgrade™ Examples Sheet | Before/after bullets by discipline |
-| 🎁 Resume Self-Assessment Checklist | They audit their own resume |
-| 🎁 The Resource Activation System™ Checklist | University/alumni resources to leverage |
-| 🎁 The Application Pipeline™ Template | Tracking spreadsheet template |
-
-**Homework Assignment:**
-- Bring current resume
-- Bring 1-2 job postings they're targeting
-- Complete the self-assessment checklist
-- Set up application tracking spreadsheet
-- Identify 3-5 alumni at target companies (LinkedIn search)
+Three 90-minute 1:1 coaching sessions with comprehensive bonus materials delivered before, between, and after sessions.
 
 ---
 
-## 🎯 SESSION 1: The Invisible-to-Irresistible Resume Rebuild + Job Search Foundation (60 min)
+## 📅 PROGRAM TIMELINE OVERVIEW
 
-| Time | Topic | What You Cover |
-|------|-------|----------------|
-| 0-10 min | **The Asset Mindset Shift™** | Your John Deere story, reframe their confidence |
-| 10-15 min | **The Job Sourcing Strategy™ Overview** | Where to find jobs, the hidden market, why referrals matter |
-| 15-25 min | **The Me-in-We Extractor™** | Review THEIR resume live, identify "we" language, fix 2-3 bullets |
-| 25-40 min | **The Impact Bullet Builder™ Applied** | Transform 3-5 of their weakest bullets using 4-part formula |
-| 40-50 min | **The Universal Translator + ATS Pass™** | Jargon audit OR ATS keyword alignment |
-| 50-55 min | **The Companion Cover Letter™ Intro** | Quick 3-paragraph structure overview |
-| 55-60 min | **Homework & Next Steps** | Finish bullets, start Warm Intro outreach, prep for Session 2 |
-
----
-
-## 📋 POST-SESSION 1 / PRE-SESSION 2 MATERIALS
-
-| Material | Purpose |
-|----------|---------|
-| 🎁 The Warm Intro Protocol™ Full Guide | Alumni outreach scripts and process |
-| 🎁 The Companion Cover Letter™ Template | Fill-in-the-blank cover letter |
-| 🎁 The Competency Story Map™ Template | They fill this out before Session 2 |
-| 🎁 The Master Story Vault™ Template | Brain dump template for each example |
-| 🎁 The 4-Minute Tailored Bullet System™ Checklist | Customizing per job posting |
-
-**Homework Assignment:**
-- Finish transforming ALL resume bullets
-- Send 3-5 Warm Intro outreach messages to alumni
-- Identify 10-15 potential STAR examples from experience
-- Rate each example 1-5 stars
-- Fill out Competency Story Map draft
+| Phase | Days | Focus |
+|-------|------|-------|
+| **Phase 0: Pre-Session 1** | Days 1-3 | Lay the Groundwork (Job Sourcing + Networking Prep) |
+| **Session 1** | Day 4-5 | Deep Resume Transformation |
+| **Phase 1: Post-Session 1** | Days 5-7 | Apply What You Built |
+| **Phase 2: Pre-Session 2** | Days 8-10 | Prepare Your Story Arsenal |
+| **Session 2** | Day 11-12 | Interview Strategy & Story Mastery |
+| **Phase 2: Post-Session 2** | Days 12-14 | Practice Until Automatic |
+| **Phase 3: Pre-Session 3** | Days 15-17 | Final Prep Before the Gauntlet |
+| **Session 3** | Day 18-19 | Live Mock Interview & Refinement |
+| **Phase 3: Post-Session 3** | Days 19-21+ | Launch Into the Market |
 
 ---
 
-## 🎯 SESSION 2: The High Contrast Interview Weaponization (60 min)
+## 🚀 PHASE 0: PRE-SESSION 1 (Days 1-3)
+**Theme:** "Lay the Groundwork"
 
-| Time | Topic | What You Cover |
-|------|-------|----------------|
-| 0-10 min | **Review Homework** | Check Competency Story Map, Warm Intro progress, identify gaps |
-| 10-25 min | **The Master Story Vault™ Deep Dive** | Pick TOP 3 examples, flesh out in extreme detail |
-| 25-40 min | **The High-Impact Story Framework™** | Paint the Pain + Numbered Roadmap, practice on 1-2 examples |
-| 40-50 min | **The 3-Tier Impact Ladder™** | Upgrade Results from Level 1 → Level 2-3 |
-| 50-55 min | **The Technical Gauntlet™ Overview** | Discipline-specific prep guidance (what to practice) |
-| 55-60 min | **Homework & Next Steps** | Daily Story Practice schedule, mock interview prep |
+### Bonus Materials (Self-Study)
 
----
+| Material | Purpose | Format |
+|----------|---------|--------|
+| 🎁 The Job Sourcing Strategy™ | Where to find jobs beyond LinkedIn/Indeed | HTML Guide |
+| 🎁 The Job Board Hierarchy™ | Prioritized ranking of job boards by response rate | HTML PDF |
+| 🎁 The Application Pipeline™ | Tracking spreadsheet template | HTML Template |
+| 🎁 The Application Timing Strategy™ | When to apply for maximum visibility | HTML Guide |
+| 🎁 The Warm Intro Protocol™ | Alumni outreach scripts and process | HTML Guide |
+| 🎁 The Resource Activation System™ | Map your entire network | HTML Worksheet |
+| 🎁 The Networking Mindset Shift™ | Reframe networking from awkward to valuable | HTML PDF |
+| 🎁 The Career Center Activation Checklist™ | Extract maximum value from university resources | HTML Checklist |
+| 🎁 The Asset Mindset Shift™ | Mindset prep before resume work | HTML PDF |
 
-## 📋 POST-SESSION 2 / PRE-SESSION 3 MATERIALS
+### Actions Before Session 1
 
-| Material | Purpose |
-|----------|---------|
-| 🎁 The Visual Aid Binder™ Blueprint | Step-by-step guide to build their binder |
-| 🎁 The Interview Cheat Sheet™ Template | For interview day reference |
-| 🎁 The Digital Stage Presence™ Checklist | Remote interview setup guide |
-| 🎁 The Technical Gauntlet™ Discipline Guide | LeetCode/first-principles/CAD resources by discipline |
-| 🎁 The Phone Screen Prep Guide™ | Questions to expect + how to handle |
-| 🎁 The Human Element Questions™ | Smart questions that impress |
-| 🎁 The Daily Story Practice™ Schedule | Daily/weekly practice calendar |
-| 🎁 The 60-90 Second Pitch Structure™ | For career fairs and networking |
-
-**Homework Assignment:**
-- Practice ALL 15 examples daily (morning/noon/night)
-- Do 1-2 mock interviews with friends/family
-- Set up remote interview environment (lighting, audio, background)
-- Start building Visual Aid Binder (optional but recommended)
-- Continue Warm Intro follow-ups
-- Come to Session 3 ready for live mock interview
+- [ ] Complete the Resource Activation System worksheet (map your network)
+- [ ] Set up Application Pipeline spreadsheet
+- [ ] Identify 10-15 target companies
+- [ ] Send 3-5 LinkedIn connection requests to alumni at target companies
+- [ ] Schedule career center appointment (if still in school)
+- [ ] Gather all resume materials (old resume, job descriptions, project notes)
+- [ ] Bring current resume to Session 1
+- [ ] Bring 1-2 job postings you're targeting to Session 1
 
 ---
 
-## 🎯 SESSION 3: The Live Roast & Offer Machine (60 min)
+## 🎯 SESSION 1: Deep Resume Transformation (90 min)
+**Theme:** "Build a Resume That Gets Interviews"
 
-| Time | Topic | What You Cover |
-|------|-------|----------------|
-| 0-5 min | **Quick Check-in** | Practice progress, Warm Intro results, any concerns |
-| 5-10 min | **The Digital Stage Presence™ + Power Pause** | Remote interview tips, stalling techniques, being personable |
-| 10-40 min | **LIVE Mock Interview** | 4-5 behavioral questions, full STAR format |
-| 40-50 min | **Feedback & Coaching** | Specific, actionable feedback on performance |
-| 50-55 min | **The Rejection Reframe + Burnout Prevention** | Mental resilience for the journey ahead |
-| 55-60 min | **Final Prep & Send-off** | Interview day reminders, confidence boost, next steps |
+### Pre-Session 1 Material Review
+- Review their current resume
+- Review job descriptions they're targeting
+- Review Resource Activation System progress
+
+### Session 1 Methods (LIVE)
+
+| Time | Method | What We Cover |
+|------|--------|---------------|
+| 0-10 min | **The Asset Mindset Shift™** | Your John Deere story, reframe their confidence, you're an asset not a beggar |
+| 10-25 min | **The Me-in-We Extractor™** | Review THEIR resume live, identify "we" language, isolate YOUR contributions |
+| 25-45 min | **The Impact Bullet Builder™** | 4-part formula applied to 5-7 of their weakest bullets |
+| 45-55 min | **The Boring-to-Standout Bullet Upgrade™** | Before/after transformations, patterns that win |
+| 55-65 min | **The Hidden Metrics Finder™** | Find numbers when you "don't have access to metrics" |
+| 65-75 min | **The Universal Translator + ATS Pass™** | Jargon audit, keyword alignment, ATS optimization |
+| 75-82 min | **The Passion Proof Finder™** + **The Domain Translator™** (if applicable) | Highlight proof of passion, translate across domains |
+| 82-87 min | **The 4-Minute Tailored Bullet System™** | Quick customization for each application |
+| 87-90 min | **Homework & Next Steps** | Set expectations for post-session work |
+
+### Session 1 Deliverables
+- ✅ Fully transformed resume (before/after)
+- ✅ Modular bullet library for tailoring
+- ✅ ATS-optimized version
+- ✅ Clear understanding of what makes bullets stand out
 
 ---
 
-## 📋 POST-SESSION 3 MATERIALS (Final Bonus Package)
+## 📋 PHASE 1: POST-SESSION 1 (Days 5-7)
+**Theme:** "Apply What You Built"
 
-| Material | Purpose |
-|----------|---------|
-| 🎁 Post-Interview Follow-Up Templates | Thank you email scripts |
-| 🎁 The 24-48 Hour Follow-Up Protocol™ | When and how to follow up |
-| 🎁 The Entry-Level Negotiation Scripts™ | How to ask for more |
-| 🎁 The Offer Comparison Tool™ | Compare multiple offers |
-| 🎁 The Research Your Worth System™ Guide | Salary research sources |
-| 🎁 The Offer Timeline Management Scripts™ | Handling exploding offers |
-| 🎁 The First 90-Day Success Plan™ | Hit the ground running |
-| 🎁 Career Fair Strategy Checklist | For ongoing networking |
-| 🎁 The Ghosting Response Protocol™ | Follow-up scripts when ghosted |
-| 🎁 The Managing External Pressure Scripts™ | Family conversation scripts |
+### Bonus Materials
+
+| Material | Purpose | Format |
+|----------|---------|--------|
+| 🎁 The Companion Cover Letter™ | 3-paragraph template | HTML Template |
+| 🎁 The Company Research Deep Dive™ | Go beyond Glassdoor reviews | HTML Guide |
+| 🎁 The New Grad Friendly Company List™ | Companies known for hiring new grads | HTML PDF |
+
+### Action Items
+
+- [ ] Finalize resume with all feedback incorporated
+- [ ] Create 3 tailored resume versions for different job types
+- [ ] Apply to 10 jobs using the Application Timing Strategy
+- [ ] Send 3 follow-up messages to networking contacts
+- [ ] Complete cover letter template (if required by target jobs)
+- [ ] Continue warm intro outreach (aim for 3-5 more connections)
 
 ---
 
-# COMPLETE BONUS LIST (31 Items) 🎁
+## 📋 PHASE 2: PRE-SESSION 2 (Days 8-10)
+**Theme:** "Prepare Your Story Arsenal"
 
-## Pre-Session 1 (5 items)
-1. The Impact Bullet Builder™ Quick Start Guide
-2. The Boring-to-Standout Bullet Upgrade™ Examples Sheet
-3. Resume Self-Assessment Checklist
-4. The Resource Activation System™ Checklist
-5. The Application Pipeline™ Template
+### Bonus Materials (Self-Study)
 
-## Pre-Session 2 (5 items)
-6. The Warm Intro Protocol™ Full Guide
-7. The Companion Cover Letter™ Template
-8. The Competency Story Map™ Template
-9. The Master Story Vault™ Template
-10. The 4-Minute Tailored Bullet System™ Checklist
+| Material | Purpose | Format |
+|----------|---------|--------|
+| 🎁 The Competency Story Map™ | Map stories to competencies | HTML Worksheet |
+| 🎁 The High-Impact Story Framework™ | "Paint the Pain" technique | HTML Guide |
+| 🎁 The Numbered Roadmap™ | Structure answers to prevent rambling | HTML PDF |
+| 🎁 The 3-Tier Impact Ladder™ | Elevate results from individual to business impact | HTML Guide |
+| 🎁 The Interview Types Guide™ | Different formats and how to handle each | HTML PDF |
+| 🎁 The Phone Screen Prep Guide™ | What recruiters look for, common questions | HTML Guide |
 
-## Pre-Session 3 (8 items)
-11. The Visual Aid Binder™ Blueprint
-12. The Interview Cheat Sheet™ Template
-13. The Digital Stage Presence™ Checklist
-14. The Technical Gauntlet™ Discipline Guide
-15. The Phone Screen Prep Guide™
-16. The Human Element Questions™
-17. The Daily Story Practice™ Schedule
-18. The 60-90 Second Pitch Structure™
+### Actions Before Session 2
 
-## Post-Session 3 (13 items)
-19. Post-Interview Follow-Up Templates
-20. The 24-48 Hour Follow-Up Protocol™
-21. The Entry-Level Negotiation Scripts™
-22. The Offer Comparison Tool™
-23. The Research Your Worth System™ Guide
-24. The Offer Timeline Management Scripts™
-25. The First 90-Day Success Plan™
-26. The Career Fair Prep Checklist™
-27. The Ghosting Response Protocol™
-28. The Managing External Pressure Scripts™
-29. The Company Research Deep Dive™ Checklist
-30. The Gap Explanation Scripts™
-31. The Digital Footprint Audit™
+- [ ] Draft 10-15 STAR stories using the Competency Story Map worksheet
+- [ ] Identify gaps in story coverage (what competencies are missing?)
+- [ ] Practice the "Paint the Pain" framework on 3 stories
+- [ ] Apply to 10 more jobs (20 total)
+- [ ] Schedule 1-2 informational interviews
+- [ ] Research 5 target companies deeply using Company Research Deep Dive
+
+---
+
+## 🎯 SESSION 2: Interview Strategy & Story Mastery (90 min)
+**Theme:** "Master the Interview Before the Interview"
+
+### Pre-Session 2 Material Review
+- Review their drafted STAR stories
+- Review Competency Story Map for gaps
+- Check networking progress
+
+### Session 2 Methods (LIVE)
+
+| Time | Method | What We Cover |
+|------|--------|---------------|
+| 0-10 min | **Review Homework** | Check Competency Story Map, application progress, identify gaps |
+| 10-30 min | **The Master Story Vault™** | Deep dive into TOP 5 examples, flesh out in extreme detail |
+| 30-45 min | **The High-Impact Story Framework™** | Paint the Pain technique, practice on 2-3 examples live |
+| 45-55 min | **The Power Pause + Story Arsenal™** | How to pause without panic, retrieve stories instantly |
+| 55-65 min | **The 3-Tier Impact Ladder™** | Upgrade every Result from Level 1 → Level 2-3 |
+| 65-75 min | **The Interview Cheat Sheet™** | Build their 1-page reference sheet together |
+| 75-82 min | **The Human Element Questions™** | Questions that create connection and impress |
+| 82-87 min | **The Daily Story Practice™** | Set up their practice schedule |
+| 87-90 min | **Homework & Next Steps** | Mock interview prep expectations |
+
+### Session 2 Deliverables
+- ✅ Polished Master Story Vault (15 stories)
+- ✅ Interview Cheat Sheet (1-pager)
+- ✅ Daily practice schedule
+- ✅ Stories upgraded with 3-Tier Impact
+
+---
+
+## 📋 PHASE 2: POST-SESSION 2 (Days 12-14)
+**Theme:** "Practice Until Automatic"
+
+### Bonus Materials
+
+| Material | Purpose | Format |
+|----------|---------|--------|
+| 🎁 The Visual Aid Binder™ | Build a portfolio of visual evidence | HTML Blueprint |
+| 🎁 The Digital Stage Presence™ | Video interview setup optimization | HTML Checklist |
+| 🎁 The Technical Gauntlet™ | Discipline-specific technical prep resources | HTML Guide |
+| 🎁 The Referral Request Script™ | Convert informational interviews to referrals | HTML PDF |
+| 🎁 The 60-90 Second Pitch Structure™ | Elevator pitch for networking | HTML Guide |
+| 🎁 The 24-48 Hour Follow-Up Protocol™ | Follow up after career fairs/networking | HTML Template |
+| 🎁 The Career Fair Prep Checklist™ | Pre-event preparation | HTML Checklist |
+| 🎁 The Phone Screen Questions to Ask™ | Smart questions for recruiter calls | HTML PDF |
+| 🎁 The Human Element™ | Build rapport over the phone | HTML Guide |
+
+### Action Items
+
+- [ ] Practice all 15 stories using Daily Story Practice (5 AM / 5 lunch / 5 PM)
+- [ ] Record yourself answering 5 questions, review and improve
+- [ ] Apply to 10 more jobs (30 total)
+- [ ] Follow up on all applications from week 1
+- [ ] Conduct at least 1 informational interview
+- [ ] Complete phone screen prep for any callbacks
+- [ ] Set up remote interview environment (lighting, audio, background)
+- [ ] Start building Visual Aid Binder (optional but recommended)
+
+---
+
+## 📋 PHASE 3: PRE-SESSION 3 (Days 15-17)
+**Theme:** "Final Prep Before the Gauntlet"
+
+### Bonus Materials (Self-Study)
+
+| Material | Purpose | Format |
+|----------|---------|--------|
+| 🎁 The Rejection Reframe System™ | Process rejection without losing confidence | HTML Guide |
+| 🎁 The Burnout Prevention System™ | Sustainable job search habits | HTML Guide |
+| 🎁 The Research Your Worth System™ | Salary benchmarking and research | HTML Guide |
+| 🎁 The Offer Comparison Tool™ | Decision matrix for comparing offers | HTML Worksheet |
+| 🎁 The Entry-Level Negotiation Scripts™ | Scripts for negotiating as new grad | HTML PDF |
+
+### Actions Before Session 3
+
+- [ ] Practice stories so they're automatic (not memorized-sounding)
+- [ ] Prepare for mock interview as if it's real (dress professionally)
+- [ ] Research salary ranges for target roles
+- [ ] Apply to 10 more jobs (40 total)
+- [ ] Complete any pending informational interviews
+- [ ] Prepare questions for mock interviewer (me)
+- [ ] Have Interview Cheat Sheet ready to reference
+
+---
+
+## 🎯 SESSION 3: Live Mock Interview & Refinement (90 min)
+**Theme:** "Pressure Test Everything"
+
+### Session 3 Structure
+
+| Time | Segment | What Happens |
+|------|---------|--------------|
+| 0-10 min | **Pre-Interview Briefing** | Set the stage, review target role, quick check-in on progress |
+| 10-55 min | **Full Mock Interview** | Behavioral questions (STAR stories), technical questions (if applicable), "Tell me about yourself," "Why this company?", "Questions for me?" |
+| 55-75 min | **Immediate Debrief** | What worked well, specific improvements needed, answer refinements, body language / presence notes |
+| 75-82 min | **The Rejection Reframe + Burnout Prevention** | Mental resilience for the journey ahead |
+| 82-87 min | **Offer & Negotiation Overview** | Preview of scripts, First 90-Day Success preview |
+| 87-90 min | **Final Prep & Send-off** | Interview day reminders, confidence boost, ongoing support |
+
+### Session 3 Deliverables
+- ✅ Full mock interview experience
+- ✅ Detailed feedback on interview performance
+- ✅ Specific refinements to answers
+- ✅ Mental resilience framework for the journey
+- ✅ Ready to crush real interviews
+
+---
+
+## 📋 PHASE 3: POST-SESSION 3 & BEYOND (Days 19-21+)
+**Theme:** "Launch Into the Market"
+
+### Final Bonus Package
+
+| Material | Purpose | Format |
+|----------|---------|--------|
+| 🎁 The Offer Timeline Management Scripts™ | Handle exploding offers, request extensions | HTML PDF |
+| 🎁 The First 90-Day Success Plan™ | Crush your first 3 months on the job | HTML Guide |
+| 🎁 The Ghosting Response Protocol™ | What to do when companies disappear | HTML Guide |
+| 🎁 The Managing External Pressure Scripts™ | Handle family questions gracefully | HTML PDF |
+| 🎁 The Comparison Trap Escape™ | Stop comparing to peers who have offers | HTML PDF |
+| 🎁 The Gap Explanation Scripts™ | Address resume gaps honestly | HTML PDF |
+| 🎁 The Digital Footprint Audit™ | Clean up online presence | HTML Checklist |
+| 🎁 Post-Interview Follow-Up Templates | Thank you email scripts | HTML Template |
+
+### Final Action Items
+
+- [ ] Incorporate all mock interview feedback
+- [ ] Apply to 10 more jobs (50 total by day 21)
+- [ ] Continue Daily Story Practice until first real interview
+- [ ] Follow up on all pending applications
+- [ ] Negotiate any offers received
+- [ ] Celebrate wins along the way!
+
+---
+
+# METHOD DISTRIBUTION SUMMARY
+
+| Phase | # Methods | Type |
+|-------|-----------|------|
+| **Pre-Session 1** | 9 methods | Bonus HTMLs (Job Sourcing + Networking + Mindset) |
+| **Session 1** | 8 methods | Live Teaching (Resume Focus) |
+| **Post-Session 1** | 3 methods | Bonus HTMLs (Cover Letter + Research) |
+| **Pre-Session 2** | 6 methods | Bonus HTMLs (Interview Prep Intro) |
+| **Session 2** | 8 methods | Live Teaching (Interview Focus) |
+| **Post-Session 2** | 9 methods | Bonus HTMLs (Practice + Technical + Networking) |
+| **Pre-Session 3** | 5 methods | Bonus HTMLs (Offer + Mindset) |
+| **Session 3** | 2 methods | Live Mock + Coaching |
+| **Post-Session 3** | 8 methods | Bonus HTMLs (Post-Interview + Reference) |
+| **TOTAL** | **52 methods** | ✅ All covered |
+
+---
+
+# COMPLETE BONUS LIST (38 HTML Resources) 🎁
+
+## Pre-Session 1 (9 items)
+1. The Job Sourcing Strategy™
+2. The Job Board Hierarchy™
+3. The Application Pipeline™
+4. The Application Timing Strategy™
+5. The Warm Intro Protocol™
+6. The Resource Activation System™
+7. The Networking Mindset Shift™
+8. The Career Center Activation Checklist™
+9. The Asset Mindset Shift™
+
+## Post-Session 1 (3 items)
+10. The Companion Cover Letter™
+11. The Company Research Deep Dive™
+12. The New Grad Friendly Company List™
+
+## Pre-Session 2 (6 items)
+13. The Competency Story Map™
+14. The High-Impact Story Framework™
+15. The Numbered Roadmap™
+16. The 3-Tier Impact Ladder™
+17. The Interview Types Guide™
+18. The Phone Screen Prep Guide™
+
+## Post-Session 2 (9 items)
+19. The Visual Aid Binder™
+20. The Digital Stage Presence™
+21. The Technical Gauntlet™
+22. The Referral Request Script™
+23. The 60-90 Second Pitch Structure™
+24. The 24-48 Hour Follow-Up Protocol™
+25. The Career Fair Prep Checklist™
+26. The Phone Screen Questions to Ask™
+27. The Human Element™
+
+## Pre-Session 3 (5 items)
+28. The Rejection Reframe System™
+29. The Burnout Prevention System™
+30. The Research Your Worth System™
+31. The Offer Comparison Tool™
+32. The Entry-Level Negotiation Scripts™
+
+## Post-Session 3 (8 items)
+33. The Offer Timeline Management Scripts™
+34. The First 90-Day Success Plan™
+35. The Ghosting Response Protocol™
+36. The Managing External Pressure Scripts™
+37. The Comparison Trap Escape™
+38. The Gap Explanation Scripts™
+39. The Digital Footprint Audit™
+40. Post-Interview Follow-Up Templates
 
 ---
 
@@ -754,8 +924,9 @@ Also, in a market where job openings are more scarce, there is more competition,
 2. **The Launch Blueprint Guarantee™** - De-risks the purchase entirely
 3. **Your Engineer Background** - Not a "career coach," an actual engineer
 4. **Specificity** - 52 proprietary frameworks sound proven and systematic
-5. **Clear Process** - 3 sessions, specific outcomes, no vague promises
+5. **Clear Process** - 3 sessions × 90 minutes, specific outcomes, no vague promises
 6. **Complete Coverage** - We address the FULL journey, not just resumes
+7. **40 Bonus Resources** - Comprehensive support materials
 
 ---
 
@@ -766,20 +937,20 @@ Also, in a market where job openings are more scarce, there is more competition,
 ### How We Deliver Results FAST
 
 **Immediate Value (Before First Call):**
-From the prep work leading up to our first 15 minute discovery call you will already start getting things in order.
+From the pre-session materials and prep work leading up to our first session, you will already start getting things in order. The job sourcing and networking bonus materials alone will transform how you approach the job search.
 
 **Session 1 Transformation:**
-After our first 1 hour coaching session, you will already have actionable things you will do and advice/systems that you can put into practice immediately.
+After our first 90-minute coaching session, you will leave with a completely transformed resume and actionable systems you can put into practice immediately.
 
 **Tangible, Not Theoretical:**
 This isn't some hoodoo voodoo self confidence garbage, this is tangible actionable things that I will teach you and we will walk through together.
 
 **21 Days, Not 6 Months:**
-Give me 3 one hour meetings and you will be a completely different candidate on the other side, guaranteed.
+Give me 3 ninety-minute meetings and you will be a completely different candidate on the other side, guaranteed.
 
 ### Time Compression Techniques Used:
-1. **Prep Work** - Client starts working BEFORE first call
-2. **Homework Between Sessions** - Transformation happens between meetings
+1. **Pre-Work Phase** - Client starts working 3 days BEFORE first call
+2. **Aggressive Homework** - Apply to 50 jobs by day 21
 3. **Actionable Frameworks** - Each session produces usable deliverables
 4. **21-Day Timeline** - Compressed enough to feel urgent
 5. **"Different Candidate" Promise** - Measurable transformation in 3 weeks
@@ -792,22 +963,22 @@ Give me 3 one hour meetings and you will be a completely different candidate on 
 
 ### What We Ask of the Client
 
-**Minimal Commitment:**
-There will be effort involved, but this is why you are hiring me. You just need to attend the 3 meetings, and do a little bit of homework before coming.
+**Meaningful Commitment:**
+There will be effort involved, but this is why you are hiring me. You need to attend the 3 ninety-minute sessions, and complete the homework assignments between sessions. This is aggressive by design—if you don't do the work, you can't blame the results on me.
 
 **We Do the Heavy Lifting:**
-In the meetings I will walk you through things in detail and give you specific examples and specific things we will do together.
+In the sessions I will walk you through things in detail and give you specific examples and specific things we will do together live.
 
-**Simple Requirements:**
-The main effort and sacrifice you need to make is to attend the live 1:1s, do a little homework, and pay attention.
+**Clear Requirements:**
+The main effort and sacrifice you need to make is to attend the live 1:1s, complete the action items, apply to 50 jobs, and practice your stories daily.
 
 ### How We Minimize Effort & Sacrifice:
 1. **Only 3 Sessions** - Not a 12-week bootcamp
-2. **1:1 Live Coaching** - No self-paced modules
-3. **Done-With-You** - We work on their materials TOGETHER
-4. **Templates & Scripts** - They fill in blanks, not create from scratch
-5. **Bite-Sized Homework** - Small tasks between sessions
-6. **31 Bonus Resources** - They don't have to create anything from scratch
+2. **1:1 Live Coaching** - No self-paced modules to get lost in
+3. **Done-With-You** - We work on their materials TOGETHER in session
+4. **40 HTML Templates & Scripts** - They fill in blanks, not create from scratch
+5. **Clear Action Items** - Know exactly what to do between sessions
+6. **Structured Timeline** - 21 days keeps momentum high
 
 ### What They DON'T Have to Do:
 - ❌ Watch 40 hours of course videos
@@ -846,14 +1017,16 @@ The main effort and sacrifice you need to make is to attend the live 1:1s, do a 
 
 # THE LAUNCH BLUEPRINT GUARANTEE™
 
-Complete all 3 sessions and do the homework, and I **guarantee** you will walk away with:
+Complete all 3 sessions, do the homework, and apply to 50+ jobs, and I **guarantee** you will walk away with:
 
 ✅ A fully transformed resume using The Impact Bullet Builder™  
-✅ A Warm Intro strategy with alumni outreach templates  
-✅ A completed Competency Story Map with 15+ STAR examples  
+✅ A complete job search strategy with 50+ applications submitted  
+✅ A networking system with Warm Intro outreach in progress  
+✅ A completed Master Story Vault with 15+ polished STAR stories  
 ✅ At least one live mock interview with personalized feedback  
 ✅ 10x more confidence in your interviewing abilities  
-✅ A complete job search system (not just hope)
+✅ A complete job search system (not just hope)  
+✅ 40 bonus HTML resources for ongoing reference
 
 **If we don't achieve all of these together, I'll continue working with you at no additional charge until we do.**
 
@@ -865,26 +1038,35 @@ Complete all 3 sessions and do the homework, and I **guarantee** you will walk a
 
 | Category | V1 | V2 |
 |----------|----|----|
+| **Session Length** | 60 min | 90 min |
 | **Problem Categories** | 5 | 9 |
 | **Total Problems Addressed** | ~30 | 50+ |
 | **Proprietary Methods** | 22 | 52 |
-| **Bonus Materials** | 23 | 31 |
-| **Job Search Strategy** | ❌ Missing | ✅ Comprehensive |
-| **Networking/Referrals** | ❌ Missing | ✅ Full Warm Intro Protocol |
+| **Bonus Materials** | 23 | 40 |
+| **Job Search Strategy** | ❌ Missing | ✅ Comprehensive (Pre-Session 1) |
+| **Networking/Referrals** | ❌ Missing | ✅ Full Warm Intro Protocol (Pre-Session 1) |
 | **University Resources** | ❌ Missing | ✅ Resource Activation System |
 | **Technical Interviews** | ❌ Missing | ✅ The Technical Gauntlet |
 | **Remote Interviews** | ❌ Missing | ✅ Digital Stage Presence |
 | **Cover Letters** | ❌ Missing | ✅ Companion Cover Letter |
 | **Mental Resilience** | ❌ Missing | ✅ Rejection/Burnout Systems |
 | **Application Tracking** | ❌ Missing | ✅ Application Pipeline |
+| **Program Structure** | Loose | ✅ 21-Day Blueprint with phases |
+| **Action Items** | Vague | ✅ Aggressive (50 apps by day 21) |
 
 ## Session Structure Changes
 
 | Session | V1 Focus | V2 Focus |
 |---------|----------|----------|
-| Session 1 | Resume only | Resume + Job Search Foundation + Networking Intro |
-| Session 2 | Interview prep only | Interview prep + Technical overview |
-| Session 3 | Mock interview only | Mock interview + Resilience coaching |
+| Pre-Session 1 | None | Job Sourcing + Networking + Mindset (9 methods) |
+| Session 1 | Resume only (60 min) | Deep Resume Transformation (90 min, 8 methods) |
+| Post-Session 1 | None | Cover Letter + Research (3 methods) |
+| Pre-Session 2 | None | Interview Prep Intro (6 methods) |
+| Session 2 | Interview prep (60 min) | Interview Strategy & Story Mastery (90 min, 8 methods) |
+| Post-Session 2 | None | Practice + Technical + Networking (9 methods) |
+| Pre-Session 3 | None | Offer + Mindset Prep (5 methods) |
+| Session 3 | Mock interview (60 min) | Live Mock Interview + Refinement (90 min) |
+| Post-Session 3 | None | Post-Interview Reference Materials (8 methods) |
 
 ---
 
@@ -893,16 +1075,18 @@ Complete all 3 sessions and do the homework, and I **guarantee** you will walk a
 - [x] Map ALL problems to solutions
 - [x] Categorize by Value/Cost
 - [x] Add new V2 methods
-- [x] Update session structure
-- [x] Expand bonus list
+- [x] Update session structure (90 min sessions)
+- [x] Design comprehensive 21-day blueprint with phases
+- [x] Expand bonus list (40 HTML resources)
 - [x] Update guarantee
-- [ ] Create Launch Method V3 to match
-- [ ] Create all 31 bonus PDFs
-- [ ] Update website
-- [ ] Create session protocols
-- [ ] Test offer messaging
+- [x] Create Launch Method V3 (52 methods complete)
+- [ ] Create all 40 bonus HTML resources
+- [ ] Update website with new program structure
+- [ ] Create session protocols for each session
+- [ ] Test offer messaging with clients
+- [ ] Sync HTML version of Grand Slam Offer
 
 ---
 
-*Last Updated: December 4, 2025*
-*Version: 2.0*
+*Last Updated: December 8, 2025*
+*Version: 2.1 - Updated Session Structure (90 min sessions, comprehensive 21-day blueprint)*
