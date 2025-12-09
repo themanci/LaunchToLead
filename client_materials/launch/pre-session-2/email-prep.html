@@ -11,164 +11,260 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Plus Jakarta Sans', sans-serif; }
-        @media print {
-            .no-print { display: none !important; }
-        }
+        .copy-btn:hover { transform: scale(1.05); }
         .copy-btn:active { transform: scale(0.95); }
+        .email-content {
+            white-space: pre-wrap;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
     </style>
 </head>
-<body class="bg-slate-50 min-h-screen">
+<body class="bg-slate-100 min-h-screen p-8">
 
-    <!-- Header -->
-    <div class="bg-gradient-to-r from-emerald-600 to-teal-600 text-white">
-        <div class="max-w-4xl mx-auto px-6 py-8">
+    <div class="max-w-4xl mx-auto">
+        <!-- Header -->
+        <div class="bg-gradient-to-r from-emerald-600 to-teal-600 text-white rounded-t-2xl p-6">
             <div class="flex items-center gap-3 mb-2">
-                <div class="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center">
+                <div class="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-lg flex items-center justify-center">
                     <span class="text-lg font-bold">L²</span>
                 </div>
-                <div>
-                    <span class="text-emerald-200 text-sm font-medium">EMAIL TEMPLATE</span>
-                    <h1 class="text-2xl font-bold">Pre-Session 2 Prep Email</h1>
-                </div>
+                <span class="text-lg font-semibold">LaunchToLead</span>
             </div>
-            <p class="text-emerald-100">Send 48-72 hours before Session 2</p>
+            <h1 class="text-2xl font-bold">Pre-Session 2 Prep Email</h1>
+            <p class="text-emerald-100 text-sm mt-1">Send 48-72 hours before Session 2 (Day 8-10)</p>
         </div>
-    </div>
 
-    <div class="max-w-4xl mx-auto px-6 py-8">
-        
         <!-- Instructions -->
-        <div class="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-6 no-print">
-            <p class="text-amber-800 text-sm">
-                <strong>📋 Instructions:</strong> Personalize the bracketed sections, then copy the email content below.
-            </p>
+        <div class="bg-amber-50 border-l-4 border-amber-400 p-4">
+            <p class="text-amber-800 text-sm"><strong>Instructions:</strong> Copy the email below and personalize the bracketed sections [like this]. Send 48-72 hours before Session 2 to give the client time to complete the pre-work.</p>
         </div>
 
-        <!-- Email Content -->
-        <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+        <!-- Email Preview -->
+        <div class="bg-white rounded-b-2xl shadow-lg overflow-hidden">
             
-            <!-- Email Header -->
-            <div class="bg-slate-50 px-6 py-4 border-b border-slate-200">
-                <div class="space-y-2 text-sm">
-                    <div class="flex gap-2">
-                        <span class="font-semibold text-slate-500 w-16">To:</span>
-                        <span class="text-slate-700">[Client Name]</span>
-                    </div>
-                    <div class="flex gap-2">
-                        <span class="font-semibold text-slate-500 w-16">Subject:</span>
-                        <span class="text-slate-700">Prep for Session 2: Interview Mastery 🎯</span>
-                    </div>
+            <!-- Email Header Fields -->
+            <div class="border-b border-slate-200 p-4 space-y-2">
+                <div class="flex items-center gap-2">
+                    <span class="text-slate-500 text-sm w-16">To:</span>
+                    <span class="text-slate-700">[Client Email]</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <span class="text-slate-500 text-sm w-16">Subject:</span>
+                    <span class="text-slate-900 font-medium">🎯 Prep for Session 2: Interview Mastery</span>
                 </div>
             </div>
 
             <!-- Email Body -->
-            <div class="px-6 py-6" id="email-content">
-                <div class="prose prose-slate max-w-none">
-                    <p>Hey [First Name],</p>
+            <div class="p-6">
+                <div id="emailContent" class="email-content text-slate-700 leading-relaxed">Hi [First Name],
 
-                    <p>Looking forward to Session 2! This is where we turn your polished resume into interview-winning stories.</p>
+Looking forward to Session 2! This is where we turn your polished resume into interview-winning stories.
 
-                    <p><strong>What we'll cover in Session 2:</strong></p>
-                    <ul>
-                        <li>The STAR Method done RIGHT (most people do it wrong)</li>
-                        <li>Building your Story Bank with 5-7 versatile stories</li>
-                        <li>Phone screen mastery and interview formats</li>
-                        <li>Question frameworks that make you memorable</li>
-                    </ul>
+<strong>What we'll cover in Session 2:</strong>
+• The STAR Method done RIGHT (most people do it wrong)
+• Building your Story Bank with 5-7 versatile stories
+• Phone screen mastery and interview formats
+• Question frameworks that make you memorable
 
-                    <p>📚 <strong>Review these before we meet:</strong></p>
-                    <ol>
-                        <li><a href="competency-story-map.html" style="color: #059669; text-decoration: underline;">Competency Story Map</a> — Start thinking about which experiences map to which competencies</li>
-                        <li><a href="high-impact-story-framework.html" style="color: #059669; text-decoration: underline;">High-Impact Story Framework</a> — The "Paint-the-Pain" technique for memorable stories</li>
-                        <li><a href="numbered-roadmap.html" style="color: #059669; text-decoration: underline;">Numbered Roadmap</a> — How to structure your Action in 5 clear steps</li>
-                        <li><a href="three-tier-impact-ladder.html" style="color: #059669; text-decoration: underline;">The 3-Tier Impact Ladder</a> — Push your Results beyond "I solved it"</li>
-                        <li><a href="interview-types-guide.html" style="color: #059669; text-decoration: underline;">Interview Types Guide</a> — Know what each format tests</li>
-                        <li><a href="phone-screen-prep-guide.html" style="color: #059669; text-decoration: underline;">Phone Screen Prep Guide</a> — Nail your first impression</li>
-                    </ol>
+📚 <strong>YOUR PRE-SESSION 2 CHECKLIST (Complete before we meet):</strong>
 
-                    <p>🎯 <strong>Optional Pre-Work (will speed up our session):</strong></p>
-                    <ul>
-                        <li>Identify 3-5 experiences from your resume you could turn into stories</li>
-                        <li>For each, jot down: What was the Situation? What was your specific Action? What was the Result?</li>
-                    </ul>
+<strong>STORY BUILDING (30 min)</strong>
 
-                    <p>See you on [Day] at [Time]!</p>
+<strong>1. The Competency Story Map™</strong> (10 min)
+Map your stories to the competencies interviewers actually test for.
+→ <a href="https://launchtolead.io/client_materials/launch/pre-session-2/competency-story-map.html" class="text-emerald-600 underline">https://launchtolead.io/client_materials/launch/pre-session-2/competency-story-map.html</a>
 
-                    <p>
-                        Best,<br>
-                        Mansour
-                    </p>
+<strong>2. The High-Impact Story Framework™</strong> (10 min)
+The "Paint-the-Pain" technique that makes stories memorable.
+→ <a href="https://launchtolead.io/client_materials/launch/pre-session-2/high-impact-story-framework.html" class="text-emerald-600 underline">https://launchtolead.io/client_materials/launch/pre-session-2/high-impact-story-framework.html</a>
 
-                    <p style="color: #64748b; font-size: 0.875rem;">
-                        P.S. If you haven't already, make sure you've completed the action items from Session 1—especially finalizing your resume and sending out those first applications!
-                    </p>
-                </div>
+<strong>3. The Numbered Roadmap™</strong> (5 min)
+Stop rambling—give interviewers a map before you speak.
+→ <a href="https://launchtolead.io/client_materials/launch/pre-session-2/numbered-roadmap.html" class="text-emerald-600 underline">https://launchtolead.io/client_materials/launch/pre-session-2/numbered-roadmap.html</a>
+
+<strong>4. The 3-Tier Impact Ladder™</strong> (5 min)
+Push your Results beyond "I solved it" to leadership-level answers.
+→ <a href="https://launchtolead.io/client_materials/launch/pre-session-2/three-tier-impact-ladder.html" class="text-emerald-600 underline">https://launchtolead.io/client_materials/launch/pre-session-2/three-tier-impact-ladder.html</a>
+
+<strong>INTERVIEW FORMATS (30 min)</strong>
+
+<strong>5. The Interview Types Guide™</strong> (15 min)
+Know what each format tests and the traps to avoid.
+→ <a href="https://launchtolead.io/client_materials/launch/pre-session-2/interview-types-guide.html" class="text-emerald-600 underline">https://launchtolead.io/client_materials/launch/pre-session-2/interview-types-guide.html</a>
+
+<strong>6. The Phone Screen Prep Guide™</strong> (15 min)
+Your first impression—master the 15-30 minute phone screen.
+→ <a href="https://launchtolead.io/client_materials/launch/pre-session-2/phone-screen-prep-guide.html" class="text-emerald-600 underline">https://launchtolead.io/client_materials/launch/pre-session-2/phone-screen-prep-guide.html</a>
+
+📌 <strong>WHAT TO BRING TO SESSION 2:</strong>
+✅ Your Competency Story Map (with 5+ stories mapped)
+✅ 3 experiences from your resume you want to turn into stories
+✅ Questions about interview formats you're facing
+
+💡 <strong>PRO TIP:</strong>
+For each story you're considering, jot down: What was the Situation? What was your specific Action? What was the Result?
+
+<strong>WHAT HAPPENS IN SESSION 2:</strong>
+We'll spend 90 minutes building your Story Bank with STAR stories that can flex across multiple competencies. You'll walk out ready to answer any behavioral question.
+
+This is where interviews go from scary to second nature!
+
+Questions? Just reply to this email.
+
+See you on [Day] at [Time]! 🎯
+
+Mansour
+LaunchToLead
+<a href="https://launchtolead.io" class="text-emerald-600 underline">launchtolead.io</a>
+
+P.S. Make sure you've completed the action items from Session 1—especially finalizing your resume and sending those first applications!</div>
             </div>
 
             <!-- Copy Button -->
-            <div class="px-6 py-4 bg-slate-50 border-t border-slate-200 no-print">
-                <button 
-                    onclick="copyEmail()" 
-                    class="copy-btn w-full bg-emerald-600 text-white py-3 px-6 rounded-xl font-semibold hover:bg-emerald-700 transition flex items-center justify-center gap-2"
-                >
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
-                    </svg>
-                    Copy Email to Clipboard
+            <div class="border-t border-slate-200 p-4 bg-slate-50 flex justify-between items-center">
+                <p class="text-slate-500 text-sm">💡 Tip: Complete story map before session for faster progress</p>
+                <button onclick="copyEmail()" class="copy-btn bg-emerald-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-emerald-700 transition flex items-center gap-2">
+                    <span>📋</span>
+                    <span id="copyText">Copy Email Text</span>
                 </button>
-                <p id="copy-feedback" class="text-center text-emerald-600 text-sm mt-2 hidden">✓ Copied to clipboard!</p>
             </div>
         </div>
 
-        <!-- Checklist -->
-        <div class="mt-8 bg-white rounded-2xl shadow-sm border border-slate-200 p-6">
-            <h3 class="font-bold text-slate-800 mb-4">✅ Before Sending</h3>
-            <div class="space-y-3">
-                <label class="flex items-center gap-3 cursor-pointer">
-                    <input type="checkbox" class="w-5 h-5 border-2 border-emerald-600 rounded flex-shrink-0 accent-emerald-600 cursor-pointer">
-                    <span class="text-slate-700">Replace [First Name] with client's name</span>
-                </label>
-                <label class="flex items-center gap-3 cursor-pointer">
-                    <input type="checkbox" class="w-5 h-5 border-2 border-emerald-600 rounded flex-shrink-0 accent-emerald-600 cursor-pointer">
-                    <span class="text-slate-700">Replace [Day] and [Time] with session details</span>
-                </label>
-                <label class="flex items-center gap-3 cursor-pointer">
-                    <input type="checkbox" class="w-5 h-5 border-2 border-emerald-600 rounded flex-shrink-0 accent-emerald-600 cursor-pointer">
-                    <span class="text-slate-700">Update resource links to use full URLs for deployed site</span>
-                </label>
-                <label class="flex items-center gap-3 cursor-pointer">
-                    <input type="checkbox" class="w-5 h-5 border-2 border-emerald-600 rounded flex-shrink-0 accent-emerald-600 cursor-pointer">
-                    <span class="text-slate-700">Send 48-72 hours before Session 2</span>
-                </label>
+        <!-- Plain Text Version -->
+        <div class="mt-8 bg-white rounded-2xl shadow-lg overflow-hidden">
+            <div class="bg-slate-800 text-white p-4">
+                <h2 class="font-bold">📝 Plain Text Version (for copying)</h2>
+                <p class="text-slate-300 text-sm">Use this if the formatted version doesn't paste correctly</p>
+            </div>
+            <div class="p-6">
+                <pre id="plainTextEmail" class="text-slate-700 text-sm whitespace-pre-wrap font-mono bg-slate-50 p-4 rounded-lg overflow-x-auto">Subject: 🎯 Prep for Session 2: Interview Mastery
+
+Hi [First Name],
+
+Looking forward to Session 2! This is where we turn your polished resume into interview-winning stories.
+
+What we'll cover in Session 2:
+• The STAR Method done RIGHT (most people do it wrong)
+• Building your Story Bank with 5-7 versatile stories
+• Phone screen mastery and interview formats
+• Question frameworks that make you memorable
+
+📚 YOUR PRE-SESSION 2 CHECKLIST (Complete before we meet):
+
+STORY BUILDING (30 min)
+
+1. The Competency Story Map™ (10 min)
+Map your stories to the competencies interviewers actually test for.
+→ https://launchtolead.io/client_materials/launch/pre-session-2/competency-story-map.html
+
+2. The High-Impact Story Framework™ (10 min)
+The "Paint-the-Pain" technique that makes stories memorable.
+→ https://launchtolead.io/client_materials/launch/pre-session-2/high-impact-story-framework.html
+
+3. The Numbered Roadmap™ (5 min)
+Stop rambling—give interviewers a map before you speak.
+→ https://launchtolead.io/client_materials/launch/pre-session-2/numbered-roadmap.html
+
+4. The 3-Tier Impact Ladder™ (5 min)
+Push your Results beyond "I solved it" to leadership-level answers.
+→ https://launchtolead.io/client_materials/launch/pre-session-2/three-tier-impact-ladder.html
+
+INTERVIEW FORMATS (30 min)
+
+5. The Interview Types Guide™ (15 min)
+Know what each format tests and the traps to avoid.
+→ https://launchtolead.io/client_materials/launch/pre-session-2/interview-types-guide.html
+
+6. The Phone Screen Prep Guide™ (15 min)
+Your first impression—master the 15-30 minute phone screen.
+→ https://launchtolead.io/client_materials/launch/pre-session-2/phone-screen-prep-guide.html
+
+📌 WHAT TO BRING TO SESSION 2:
+✅ Your Competency Story Map (with 5+ stories mapped)
+✅ 3 experiences from your resume you want to turn into stories
+✅ Questions about interview formats you're facing
+
+💡 PRO TIP:
+For each story you're considering, jot down: What was the Situation? What was your specific Action? What was the Result?
+
+WHAT HAPPENS IN SESSION 2:
+We'll spend 90 minutes building your Story Bank with STAR stories that can flex across multiple competencies. You'll walk out ready to answer any behavioral question.
+
+This is where interviews go from scary to second nature!
+
+Questions? Just reply to this email.
+
+See you on [Day] at [Time]! 🎯
+
+Mansour
+LaunchToLead
+launchtolead.io
+
+P.S. Make sure you've completed the action items from Session 1—especially finalizing your resume and sending those first applications!</pre>
+            </div>
+            <div class="p-4 bg-slate-50 border-t border-slate-200">
+                <button onclick="copyPlainText()" class="copy-btn bg-slate-700 text-white px-6 py-2 rounded-lg font-semibold hover:bg-slate-800 transition flex items-center gap-2">
+                    <span>📋</span>
+                    <span id="copyPlainText">Copy Plain Text</span>
+                </button>
             </div>
         </div>
 
-        <!-- Footer -->
-        <div class="text-center text-slate-500 text-sm mt-8 no-print">
-            <div class="flex items-center justify-center gap-2 mb-2">
-                <div class="w-8 h-8 bg-emerald-100 rounded-lg flex items-center justify-center">
-                    <span class="text-emerald-600 font-bold text-sm">L²</span>
+        <!-- Timing Reference -->
+        <div class="mt-8 bg-white rounded-2xl shadow-lg overflow-hidden">
+            <div class="bg-emerald-700 text-white p-4">
+                <h2 class="font-bold">📅 21-Day Blueprint Timeline</h2>
+            </div>
+            <div class="p-6">
+                <div class="space-y-4">
+                    <div class="flex items-center gap-4">
+                        <div class="w-24 text-sm font-bold text-slate-400">Days 5-7</div>
+                        <div class="flex-1 bg-slate-50 p-3 rounded-lg border-l-4 border-slate-300">
+                            Post-Session 1: Client completes homework + applies to jobs
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="w-24 text-sm font-bold text-emerald-600">Day 8-10</div>
+                        <div class="flex-1 bg-emerald-50 p-3 rounded-lg border-l-4 border-emerald-500">
+                            <strong>Send This Email</strong> — Client receives 48-72 hours before Session 2
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="w-24 text-sm font-bold text-teal-600">Day 11-12</div>
+                        <div class="flex-1 bg-teal-50 p-3 rounded-lg border-l-4 border-teal-500">
+                            <strong>Session 2:</strong> Interview Strategy & Story Mastery (90 min)
+                        </div>
+                    </div>
                 </div>
-                <span class="font-semibold text-slate-700">LaunchToLead</span>
             </div>
-            <p>Launch Path V2.1 — Pre-Session 2</p>
+        </div>
+
+        <!-- Back Link -->
+        <div class="mt-8 text-center">
+            <a href="../../../launch.html" class="text-emerald-600 hover:text-emerald-700 font-medium">← Back to Launch Path</a>
         </div>
     </div>
 
     <script>
         function copyEmail() {
-            const emailContent = document.getElementById('email-content');
-            const textContent = emailContent.innerText;
-            
-            navigator.clipboard.writeText(textContent).then(() => {
-                const feedback = document.getElementById('copy-feedback');
-                feedback.classList.remove('hidden');
+            const emailContent = document.getElementById('emailContent').innerText;
+            navigator.clipboard.writeText(emailContent).then(() => {
+                const btn = document.getElementById('copyText');
+                btn.textContent = '✓ Copied!';
                 setTimeout(() => {
-                    feedback.classList.add('hidden');
+                    btn.textContent = 'Copy Email Text';
                 }, 2000);
-            }).catch(err => {
-                console.error('Failed to copy: ', err);
-                alert('Failed to copy. Please select and copy manually.');
+            });
+        }
+
+        function copyPlainText() {
+            const plainText = document.getElementById('plainTextEmail').innerText;
+            navigator.clipboard.writeText(plainText).then(() => {
+                const btn = document.getElementById('copyPlainText');
+                btn.textContent = '✓ Copied!';
+                setTimeout(() => {
+                    btn.textContent = 'Copy Plain Text';
+                }, 2000);
             });
         }
     </script>
