@@ -66,20 +66,20 @@
         <div class="absolute top-0 right-0 -mr-20 -mt-20 w-80 h-80 bg-teal-100 rounded-full blur-3xl opacity-60" aria-hidden="true"></div>
         <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 bg-lime-100 rounded-full blur-3xl opacity-60" aria-hidden="true"></div>
         
-        <!-- Desktop: Two column - Video + Content -->
-        <div class="hidden md:block relative z-10 py-16 px-8">
+        <!-- Single unified layout -->
+        <div class="relative z-10 py-12 md:py-16 px-4 md:px-8">
             <div class="max-w-6xl mx-auto">
-                <div class="grid lg:grid-cols-2 gap-12 items-center">
-                    <!-- Left: Video -->
-                    <div class="relative flex justify-center">
+                <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+                    <!-- Video - responsive order -->
+                    <div id="video" class="relative flex justify-center scroll-mt-24 order-1 lg:order-2 mb-8 lg:mb-0">
                         <div class="bg-slate-900 rounded-2xl overflow-hidden border-4 border-slate-800 shadow-2xl w-full max-w-[320px]" style="aspect-ratio: 9/16;">
-                            <video autoplay loop playsinline controls class="w-full h-full object-cover">
+                            <video controls controlslist="nofullscreen" disablepictureinpicture class="w-full h-full object-cover">
                                 <source src="video_scripts/about_page.mp4" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
                         </div>
                         
-                        <!-- Trust indicators below video -->
+                        <!-- Trust Indicator Below Video -->
                         <div class="absolute -bottom-10 left-1/2 -translate-x-1/2 flex items-center gap-6 text-sm text-slate-500 whitespace-nowrap">
                             <div class="flex items-center gap-1">
                                 <i data-lucide="briefcase" class="w-4 h-4 text-emerald-600"></i>
@@ -92,20 +92,20 @@
                         </div>
                     </div>
                     
-                    <!-- Right: Pain-First Headline -->
-                    <div class="text-left">
+                    <!-- Content - responsive order -->
+                    <div class="text-left order-2 lg:order-1">
                         <!-- Pain Hook -->
                         <p class="text-red-600 font-bold text-sm uppercase tracking-wider mb-3">
                             I Know What It's Like to Feel Invisible to Employers
                         </p>
                         
                         <!-- Dream Outcome Headline -->
-                        <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight mb-6 leading-tight">
+                        <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight mb-6 leading-tight">
                             I Help Engineers Land Jobs at 
                             <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-600">Companies They're Proud Of</span>
                         </h1>
                         
-                        <p class="text-lg text-slate-600 mb-6">
+                        <p class="text-base md:text-lg text-slate-600 mb-6">
                             Not a recruiter. Not HR. I'm an engineer who's been on both sides—applying to jobs AND hiring engineers. I know exactly what gets you noticed.
                         </p>
                         
@@ -122,43 +122,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        
-        <!-- Mobile: Stacked layout with video first -->
-        <div class="md:hidden relative pt-12 pb-16 px-4 z-10">
-            <!-- Video -->
-            <div class="mb-12 flex justify-center">
-                <div class="bg-slate-900 rounded-xl overflow-hidden border-2 border-slate-800 shadow-xl w-full max-w-[280px]" style="aspect-ratio: 9/16;">
-                    <video autoplay loop playsinline controls class="w-full h-full object-cover">
-                        <source src="video_scripts/about_page.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-            </div>
-            
-            <!-- Pain Hook -->
-            <p class="text-red-600 font-bold text-xs uppercase tracking-wider mb-2 text-center">
-                I Know What It's Like to Feel Invisible
-            </p>
-            
-            <!-- Content -->
-            <h1 class="text-2xl font-bold text-slate-900 mb-4 text-center leading-tight">
-                I Help Engineers Land Jobs at 
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-600">Companies They're Proud Of</span>
-            </h1>
-            <p class="text-sm text-slate-600 text-center mb-6">
-                Not a recruiter. Not HR. An engineer who's been on both sides of the hiring table.
-            </p>
-            <div class="flex flex-col gap-3">
-                <a href="launch.html" class="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-emerald-600 text-white font-bold rounded-full text-sm">
-                    <i data-lucide="rocket" class="w-4 h-4"></i>
-                    See The 21-Day Blueprint
-                </a>
-                <a href="https://calendar.app.google/uzaLZUWSUH3ZbaGr6" target="_blank" class="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-white text-emerald-600 font-bold rounded-full text-sm border-2 border-emerald-200">
-                    <i data-lucide="calendar" class="w-4 h-4"></i>
-                    Book Free Call
-                </a>
             </div>
         </div>
     </section>
