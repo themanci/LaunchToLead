@@ -125,17 +125,33 @@
                             '<button type="submit" id="popup-submit-btn" class="w-full py-4 bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white rounded-xl font-bold text-lg transition-all shadow-lg hover:shadow-xl">Send Me the Free Guide →</button></form>' +
                         '<p class="text-center text-xs text-slate-400 mt-4">' + lm.guarantee + '</p>' +
                         '<button onclick="window.LeadMagnetPopup.close()" class="w-full mt-4 py-3 px-4 border-2 border-red-300 text-red-500 hover:bg-red-50 hover:border-red-400 hover:text-red-600 rounded-xl text-sm font-medium transition-all">No thanks, I don\'t like useful free stuff</button></div>' +
-                    '<div id="popup-success" class="p-8 text-center hidden">' +
-                        '<div class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-full mb-6">' +
+                    '<div id="popup-success" class="p-6 md:p-8 text-center hidden">' +
+                        '<div class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-full mb-4">' +
                             '<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">' +
                                 '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></div>' +
                         '<h2 class="text-2xl font-bold text-slate-800 mb-2">Check Your Inbox!</h2>' +
-                        '<p class="text-slate-600 mb-4 text-sm">Your ' + lm.name + ' is on its way to <span id="submitted-email" class="font-semibold">your email</span></p>' +
-                        '<div class="bg-emerald-50 rounded-xl p-4 mb-6 text-left">' +
-                            '<p class="font-semibold text-emerald-800 text-sm mb-2">🎯 Next Step:</p>' +
-                            '<p class="text-emerald-700 text-sm">Book a free 15-minute strategy call to see how we can accelerate your job search.</p></div>' +
-                        '<a href="https://calendar.app.google/uzaLZUWSUH3ZbaGr6" target="_blank" class="inline-block px-6 py-3 bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white rounded-xl font-semibold transition-all">Book Free Strategy Call</a>' +
-                        '<p class="mt-4"><button onclick="window.LeadMagnetPopup.close()" class="text-slate-400 hover:text-slate-600 text-sm underline">I\'ll explore on my own for now</button></p></div>' +
+                        '<p class="text-slate-600 mb-6 text-sm">Your ' + lm.name + ' is on its way to <span id="submitted-email" class="font-semibold">your email</span></p>' +
+                        '<div class="bg-red-50 border-2 border-red-200 rounded-xl p-4 mb-6">' +
+                            '<div class="flex items-center justify-center gap-2 mb-2">' +
+                                '<span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>' +
+                                '<p class="font-bold text-red-700 text-sm">Only 10 Coaching Spots Per Month</p></div>' +
+                            '<p class="text-red-600 text-xs">Limited availability • High-touch 1-on-1 coaching</p></div>' +
+                        '<div class="bg-white border-2 border-emerald-200 rounded-xl p-5 mb-6 text-left">' +
+                            '<h3 class="font-bold text-slate-800 text-base mb-3 text-center">🎯 Book Your Free 15-Min Strategy Call</h3>' +
+                            '<p class="text-slate-600 text-sm mb-4 text-center">On this call, we\'ll:</p>' +
+                            '<ul class="space-y-2 text-sm text-slate-700 mb-5">' +
+                                '<li class="flex items-start gap-2">' +
+                                    '<svg class="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>' +
+                                    '<span><strong>Audit your resume</strong> and identify what\'s keeping you invisible</span></li>' +
+                                '<li class="flex items-start gap-2">' +
+                                    '<svg class="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>' +
+                                    '<span><strong>Map your 21-day roadmap</strong> to interview-ready status</span></li>' +
+                                '<li class="flex items-start gap-2">' +
+                                    '<svg class="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>' +
+                                    '<span><strong>See if you qualify</strong> for The Launch Path program</span></li></ul>' +
+                            '<a href="https://calendar.app.google/uzaLZUWSUH3ZbaGr6" target="_blank" class="block w-full text-center px-6 py-4 bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white rounded-xl font-bold text-lg transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">' +
+                                '📅 Book My Free Strategy Call Now</a></div>' +
+                        '<p class="mt-4"><button onclick="window.LeadMagnetPopup.close()" class="text-slate-400 hover:text-slate-600 text-sm underline">I\'ll explore the guide first</button></p></div>' +
                 '</div></div></div>';
     }
 
