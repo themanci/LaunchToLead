@@ -56,9 +56,31 @@
     <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 bg-lime-100 rounded-full blur-3xl opacity-60" aria-hidden="true"></div>
     
     <div class="max-w-6xl mx-auto px-4 relative z-10">
-        <div class="grid lg:grid-cols-2 gap-12 items-center">
-            <!-- Left Column - Text -->
-            <div class="text-center lg:text-left">
+        <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            <!-- Video - Left side on desktop -->
+            <div id="video" class="relative flex justify-center scroll-mt-24 order-1 lg:order-1 mb-8 lg:mb-0">
+                <div class="bg-slate-900 rounded-2xl overflow-hidden border-4 border-slate-800 shadow-2xl w-full max-w-[320px]" style="aspect-ratio: 9/16;">
+                    <video controls controlslist="nofullscreen" disablepictureinpicture class="w-full h-full object-cover">
+                        <source src="video_scripts/launch_page.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                
+                <!-- Trust Indicator Below Video -->
+                <div class="absolute -bottom-10 left-1/2 -translate-x-1/2 flex items-center gap-6 text-sm text-slate-500 whitespace-nowrap">
+                    <div class="flex items-center gap-1">
+                        <i data-lucide="briefcase" class="w-4 h-4 text-brand-secondary"></i>
+                        <span>7 Years at John Deere</span>
+                    </div>
+                    <div class="flex items-center gap-1">
+                        <i data-lucide="users" class="w-4 h-4 text-brand-secondary"></i>
+                        <span>Hired Engineers</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Content - Right side on desktop -->
+            <div class="text-center lg:text-left order-2 lg:order-2">
                 <!-- Scarcity Badge -->
                 <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-red-50 border border-red-200 text-red-700 text-xs font-bold mb-4">
                     <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
@@ -102,37 +124,7 @@
                     Or 3 payments of $699 • 100% satisfaction guarantee
                 </p>
             </div>
-            
-            <!-- Right Column - Video Placeholder -->
-            <div class="relative">
-                <div class="bg-slate-900 rounded-2xl aspect-video flex items-center justify-center relative overflow-hidden shadow-2xl border-4 border-slate-800">
-                    <!-- Placeholder Content -->
-                    <div class="absolute inset-0 bg-gradient-to-br from-emerald-900/20 to-teal-900/20"></div>
-                    <div class="text-center z-10 p-8">
-                        <div class="w-20 h-20 mx-auto mb-4 rounded-full bg-white/10 border-2 border-white/30 flex items-center justify-center">
-                            <i data-lucide="play" class="w-8 h-8 text-white fill-white"></i>
-                        </div>
-                        <p class="text-white font-bold text-lg mb-1">Watch: Why 250 Applications Get You Nowhere</p>
-                        <p class="text-slate-400 text-sm">60-second breakdown from an engineer who's been on both sides</p>
-                    </div>
-                    <!-- Video Duration Badge -->
-                    <div class="absolute bottom-3 right-3 bg-black/70 text-white text-xs px-2 py-1 rounded">
-                        1:30
-                    </div>
-                </div>
-                
-                <!-- Trust Indicator Below Video -->
-                <div class="mt-4 flex items-center justify-center gap-6 text-sm text-slate-500">
-                    <div class="flex items-center gap-1">
-                        <i data-lucide="briefcase" class="w-4 h-4 text-brand-secondary"></i>
-                        <span>7 Years at John Deere</span>
-                    </div>
-                    <div class="flex items-center gap-1">
-                        <i data-lucide="users" class="w-4 h-4 text-brand-secondary"></i>
-                        <span>Hired Engineers</span>
-                    </div>
-                </div>
-            </div>
+
         </div>
     </div>
 </div>
