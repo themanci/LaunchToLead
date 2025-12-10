@@ -71,22 +71,16 @@
             <div class="max-w-6xl mx-auto">
                 <div class="grid lg:grid-cols-2 gap-12 items-center">
                     <!-- Left: Video -->
-                    <div class="relative">
-                        <div class="bg-slate-900 rounded-2xl aspect-video flex items-center justify-center relative overflow-hidden shadow-2xl border-4 border-slate-800">
-                            <div class="absolute inset-0 bg-gradient-to-br from-emerald-900/20 to-teal-900/20"></div>
-                            <div class="text-center z-10 p-6">
-                                <div class="w-20 h-20 mx-auto mb-4 rounded-full bg-white/10 border-2 border-white/30 flex items-center justify-center cursor-pointer hover:bg-white/20 transition">
-                                    <i data-lucide="play" class="w-8 h-8 text-white fill-white"></i>
-                                </div>
-                                <p class="text-white font-bold text-lg mb-1">Meet Mansour (3 min)</p>
-                                <p class="text-slate-400 text-sm">Why I help engineers land jobs</p>
-                            </div>
-                            <div class="absolute bottom-3 right-3 bg-black/70 text-white text-xs px-2 py-1 rounded">
-                                3:24
-                            </div>
+                    <div class="relative flex justify-center">
+                        <div class="bg-slate-900 rounded-2xl overflow-hidden border-4 border-slate-800 shadow-2xl w-full max-w-[320px]" style="aspect-ratio: 9/16;">
+                            <video autoplay muted loop playsinline class="w-full h-full object-cover">
+                                <source src="video_scripts/about_page.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
                         </div>
+                        
                         <!-- Trust indicators below video -->
-                        <div class="mt-4 flex items-center justify-center gap-6 text-sm text-slate-500">
+                        <div class="absolute -bottom-10 left-1/2 -translate-x-1/2 flex items-center gap-6 text-sm text-slate-500 whitespace-nowrap">
                             <div class="flex items-center gap-1">
                                 <i data-lucide="briefcase" class="w-4 h-4 text-emerald-600"></i>
                                 <span>7 Years at John Deere</span>
@@ -134,18 +128,12 @@
         <!-- Mobile: Stacked layout with video first -->
         <div class="md:hidden relative pt-12 pb-16 px-4 z-10">
             <!-- Video -->
-            <div class="mb-8">
-                <div class="bg-slate-900 rounded-xl aspect-video flex items-center justify-center relative overflow-hidden shadow-xl border-2 border-slate-800">
-                    <div class="absolute inset-0 bg-gradient-to-br from-emerald-900/20 to-teal-900/20"></div>
-                    <div class="text-center z-10 p-4">
-                        <div class="w-14 h-14 mx-auto mb-2 rounded-full bg-white/10 border-2 border-white/30 flex items-center justify-center">
-                            <i data-lucide="play" class="w-6 h-6 text-white fill-white"></i>
-                        </div>
-                        <p class="text-white font-bold text-sm">Meet Mansour (3 min)</p>
-                    </div>
-                    <div class="absolute bottom-2 right-2 bg-black/70 text-white text-xs px-2 py-1 rounded">
-                        3:24
-                    </div>
+            <div class="mb-12 flex justify-center">
+                <div class="bg-slate-900 rounded-xl overflow-hidden border-2 border-slate-800 shadow-xl w-full max-w-[280px]" style="aspect-ratio: 9/16;">
+                    <video autoplay muted loop playsinline class="w-full h-full object-cover">
+                        <source src="video_scripts/about_page.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
                 </div>
             </div>
             
