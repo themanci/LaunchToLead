@@ -14,7 +14,7 @@
     'use strict';
 
     const CONFIG = {
-        popupDelay: 3000,
+        popupDelay: 500,
         alwaysShow: true,
         storageKey: 'ltl_lead_popup_shown',
         showAgainDays: 7,
