@@ -3,757 +3,1424 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Session 3: Live Mock Interview & Refinement | Launch to Lead</title>
+    <meta name="robots" content="noindex, nofollow">
+    <title>Session 3 Slides | Mock Interview & Final Prep | Launch Path</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        * { font-family: 'Plus Jakarta Sans', sans-serif; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        
         .slide {
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
+            padding: 4rem;
+            padding-left: 18rem;
+            position: relative;
+            scroll-margin-top: 0;
+        }
+        
+        .slide-number {
+            position: absolute;
+            bottom: 2rem;
+            right: 2rem;
+            font-size: 0.875rem;
+            opacity: 0.5;
+        }
+        
+        .slide-logo {
+            position: absolute;
+            top: 2rem;
+            left: 18rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            opacity: 0.7;
+        }
+        
+        /* Sticky Sidebar Navigation */
+        .slide-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 15rem;
+            height: 100vh;
+            background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+            border-right: 1px solid rgba(255,255,255,0.1);
+            padding: 1.5rem 1rem;
+            overflow-y: auto;
+            z-index: 100;
+        }
+        
+        .slide-nav::-webkit-scrollbar {
+            width: 4px;
+        }
+        
+        .slide-nav::-webkit-scrollbar-thumb {
+            background: rgba(255,255,255,0.2);
+            border-radius: 4px;
+        }
+        
+        .nav-item {
+            display: block;
+            padding: 0.5rem 0.75rem;
+            margin-bottom: 0.25rem;
+            border-radius: 0.5rem;
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.6);
+            text-decoration: none;
+            transition: all 0.2s;
+            border-left: 2px solid transparent;
+        }
+        
+        .nav-item:hover {
+            background: rgba(132, 204, 22, 0.2);
+            color: white;
+            border-left-color: #84cc16;
+        }
+        
+        .nav-item.active {
+            background: rgba(132, 204, 22, 0.3);
+            color: white;
+            border-left-color: #84cc16;
+        }
+        
+        .nav-section {
+            font-size: 0.625rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: rgba(255,255,255,0.4);
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+            padding-left: 0.75rem;
+        }
+        
+        @media print {
+            .slide-nav { display: none !important; }
+            .slide { 
+                min-height: 100vh; 
+                page-break-after: always;
+                padding-left: 4rem;
+            }
+            .slide-logo { left: 2rem; }
+        }
+        
+        .method-tag {
+            display: inline-block;
+            background: linear-gradient(135deg, #84cc16 0%, #65a30d 100%);
+            color: white;
+            padding: 0.25rem 1rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(132, 204, 22, 0.1) 0%, rgba(101, 163, 13, 0.1) 100%);
+            border: 2px solid rgba(132, 204, 22, 0.3);
+            border-radius: 1rem;
             padding: 2rem;
         }
-        @media print {
-            .slide { page-break-after: always; }
-            .no-print { display: none; }
+        
+        .big-quote {
+            font-size: 2.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+            background: linear-gradient(135deg, #84cc16 0%, #65a30d 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        html {
+            scroll-behavior: smooth;
         }
     </style>
 </head>
-<body class="bg-gray-900">
+<body class="bg-gray-900 text-white">
 
-    <!-- Slide 1: Title Slide -->
-    <div class="slide bg-gradient-to-br from-teal-600 via-teal-500 to-emerald-500 text-white">
-        <div class="max-w-5xl mx-auto text-center">
-            <div class="mb-8">
-                <span class="text-7xl font-bold tracking-tight">L²</span>
-                <p class="text-teal-100 mt-2 text-xl">Launch to Lead</p>
+    <!-- Sticky Sidebar Navigation -->
+    <nav class="slide-nav">
+        <div class="flex items-center gap-2 mb-6 px-2">
+            <div class="w-8 h-8 bg-lime-600 rounded-lg flex items-center justify-center">
+                <span class="text-sm font-bold">L²</span>
             </div>
-            <h1 class="text-5xl md:text-6xl font-bold mb-6">
-                Session 3
-            </h1>
-            <p class="text-3xl text-teal-100 mb-4">
-                Live Mock Interview & Refinement
-            </p>
-            <p class="text-xl text-teal-200 mt-8">
-                The Launch Path Blueprint™
-            </p>
+            <div>
+                <div class="text-sm font-bold text-white">Session 3</div>
+                <div class="text-xs text-gray-400">Mock Interview & Final Prep</div>
+            </div>
         </div>
-    </div>
+        
+        <div class="nav-section">Overview</div>
+        <a href="#slide-1" class="nav-item">1. Title</a>
+        <a href="#slide-2" class="nav-item">2. Program Overview</a>
+        <a href="#slide-3" class="nav-item">3. Session 2 Recap</a>
+        <a href="#slide-4" class="nav-item">4. Today's Agenda</a>
+        
+        <div class="nav-section">Segment 1: Pre-Interview</div>
+        <a href="#slide-5" class="nav-item">5. Mindset Reset</a>
+        <a href="#slide-6" class="nav-item">6. Interview Persona</a>
+        <a href="#slide-7" class="nav-item">7. Pre-Interview Checklist</a>
+        
+        <div class="nav-section">Segment 2: Mock Interview</div>
+        <a href="#slide-8" class="nav-item">8. Mock Interview Setup</a>
+        <a href="#slide-9" class="nav-item">9. Competency Categories</a>
+        <a href="#slide-10" class="nav-item">10. Interview Begins</a>
+        <a href="#slide-11" class="nav-item">11. Your Questions</a>
+        
+        <div class="nav-section">Segment 3: Debrief</div>
+        <a href="#slide-12" class="nav-item">12. Debrief Overview</a>
+        <a href="#slide-13" class="nav-item">13. What Went Well</a>
+        <a href="#slide-14" class="nav-item">14. Growth Areas</a>
+        
+        <div class="nav-section">Segment 4: Mental Resilience</div>
+        <a href="#slide-15" class="nav-item">15. Reframing Rejection</a>
+        <a href="#slide-16" class="nav-item">16. Burnout Prevention</a>
+        
+        <div class="nav-section">Segment 5: Negotiation</div>
+        <a href="#slide-17" class="nav-item">17. Negotiation Basics</a>
+        <a href="#slide-18" class="nav-item">18. Key Strategies</a>
+        
+        <div class="nav-section">Wrap Up</div>
+        <a href="#slide-19" class="nav-item">19. Homework</a>
+        <a href="#slide-20" class="nav-item">20. Key Takeaways</a>
+        
+        <div class="mt-6 px-2">
+            <button onclick="window.print()" class="w-full bg-lime-600 hover:bg-lime-700 text-white text-sm py-2 px-3 rounded-lg transition">
+                🖨️ Print Slides
+            </button>
+        </div>
+    </nav>
 
-    <!-- Slide 2: Session Objectives -->
-    <div class="slide bg-white">
-        <div class="max-w-4xl mx-auto">
-            <p class="text-teal-600 font-semibold text-lg mb-4">SESSION 3 OBJECTIVES</p>
-            <h2 class="text-4xl font-bold text-gray-900 mb-8">What We'll Accomplish Today</h2>
+    <!-- ============================================ -->
+    <!-- SLIDE 1: Title Slide -->
+    <!-- ============================================ -->
+    <div class="slide bg-gradient-to-br from-gray-900 via-lime-900 to-emerald-900" id="slide-1">
+        <div class="slide-logo">
+            <div class="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center">
+                <span class="text-sm font-bold">L²</span>
+            </div>
+            <span class="text-sm font-semibold">LaunchToLead</span>
+        </div>
+        
+        <div class="text-center">
+            <div class="inline-block bg-lime-500/30 text-lime-300 px-6 py-2 rounded-full text-lg font-semibold mb-8">
+                LAUNCH PATH — SESSION 3
+            </div>
             
-            <div class="space-y-6">
-                <div class="flex items-start gap-4">
-                    <div class="w-12 h-12 bg-teal-600 text-white rounded-xl flex items-center justify-center font-bold flex-shrink-0">1</div>
-                    <div>
-                        <h3 class="text-xl font-bold text-gray-900">Experience a realistic mock interview</h3>
-                        <p class="text-gray-600">Put all your preparation to the test in a simulated interview</p>
-                    </div>
+            <h1 class="text-6xl font-black mb-6 bg-gradient-to-r from-white via-lime-200 to-emerald-200 bg-clip-text text-transparent">
+                Mock Interview & Final Prep
+            </h1>
+            
+            <p class="text-2xl text-lime-200 mb-8">90 Minutes to Master Your Interview Performance</p>
+            
+            <div class="text-xl text-gray-400 italic mt-12">
+                "This isn't a test—it's practice. Every stumble here saves you from stumbling when it counts."
+            </div>
+        </div>
+        
+        <div class="slide-number">1</div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- SLIDE 2: Program Overview -->
+    <!-- ============================================ -->
+    <div class="slide bg-gray-900" id="slide-2">
+        <div class="slide-logo">
+            <div class="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center">
+                <span class="text-sm font-bold">L²</span>
+            </div>
+            <span class="text-sm font-semibold">LaunchToLead</span>
+        </div>
+        
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-4xl font-bold mb-4 text-center">The Launch Path: 21-Day Blueprint</h2>
+            <p class="text-gray-400 text-center mb-10">Your complete roadmap from resume to offer</p>
+            
+            <div class="grid grid-cols-3 gap-6">
+                <!-- Session 1 -->
+                <div class="bg-gray-800/50 border border-emerald-700 rounded-2xl p-6">
+                    <div class="text-emerald-400 text-sm font-semibold mb-2">SESSION 1 • Days 4-5 ✓</div>
+                    <h3 class="text-xl font-bold text-white mb-3">Deep Resume Transformation</h3>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li class="flex items-start gap-2">
+                            <span class="text-emerald-400 mt-1">✓</span>
+                            <span>8 proven methods</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-emerald-400 mt-1">✓</span>
+                            <span>Impact bullet formula</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-emerald-400 mt-1">✓</span>
+                            <span>ATS optimization</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-emerald-400 mt-1">✓</span>
+                            <span>4-minute tailoring</span>
+                        </li>
+                    </ul>
                 </div>
-                <div class="flex items-start gap-4">
-                    <div class="w-12 h-12 bg-teal-600 text-white rounded-xl flex items-center justify-center font-bold flex-shrink-0">2</div>
-                    <div>
-                        <h3 class="text-xl font-bold text-gray-900">Get specific, actionable feedback</h3>
-                        <p class="text-gray-600">Know exactly what to refine before your real interviews</p>
-                    </div>
+                
+                <!-- Session 2 -->
+                <div class="bg-gray-800/50 border border-teal-700 rounded-2xl p-6">
+                    <div class="text-teal-400 text-sm font-semibold mb-2">SESSION 2 • Days 10-11 ✓</div>
+                    <h3 class="text-xl font-bold text-white mb-3">Interview Strategy & Story Mastery</h3>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li class="flex items-start gap-2">
+                            <span class="text-teal-400 mt-1">✓</span>
+                            <span>Master Story Vault</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-teal-400 mt-1">✓</span>
+                            <span>High-Impact Story Framework</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-teal-400 mt-1">✓</span>
+                            <span>Power Pause technique</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-teal-400 mt-1">✓</span>
+                            <span>Interview Cheat Sheet</span>
+                        </li>
+                    </ul>
                 </div>
-                <div class="flex items-start gap-4">
-                    <div class="w-12 h-12 bg-teal-600 text-white rounded-xl flex items-center justify-center font-bold flex-shrink-0">3</div>
-                    <div>
-                        <h3 class="text-xl font-bold text-gray-900">Build mental resilience</h3>
-                        <p class="text-gray-600">Prepare for rejection and burnout before they happen</p>
+                
+                <!-- Session 3 -->
+                <div class="bg-gradient-to-br from-lime-900/50 to-lime-800/30 border-2 border-lime-500 rounded-2xl p-6 relative">
+                    <div class="absolute -top-3 left-4 bg-lime-500 text-white text-xs font-bold px-3 py-1 rounded-full">
+                        YOU ARE HERE
                     </div>
+                    <div class="text-lime-400 text-sm font-semibold mb-2">SESSION 3 • Days 17-18</div>
+                    <h3 class="text-xl font-bold text-white mb-3">Mock Interview & Final Prep</h3>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li class="flex items-start gap-2">
+                            <span class="text-lime-400 mt-1">→</span>
+                            <span>Live mock interview</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-lime-400 mt-1">→</span>
+                            <span>Real-time feedback</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-lime-400 mt-1">→</span>
+                            <span>Mental resilience</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-lime-400 mt-1">→</span>
+                            <span>Negotiation basics</span>
+                        </li>
+                    </ul>
                 </div>
-                <div class="flex items-start gap-4">
-                    <div class="w-12 h-12 bg-teal-600 text-white rounded-xl flex items-center justify-center font-bold flex-shrink-0">4</div>
-                    <div>
-                        <h3 class="text-xl font-bold text-gray-900">Preview negotiation strategies</h3>
-                        <p class="text-gray-600">Be ready when the offer comes</p>
+            </div>
+            
+            <!-- Timeline -->
+            <div class="mt-10 relative">
+                <div class="absolute top-1/2 left-0 right-0 h-1 bg-gray-700 -translate-y-1/2"></div>
+                <div class="absolute top-1/2 left-0 w-full h-1 bg-gradient-to-r from-emerald-500 via-teal-500 to-lime-500 -translate-y-1/2"></div>
+                <div class="flex justify-between relative">
+                    <div class="text-center">
+                        <div class="w-4 h-4 bg-emerald-500 rounded-full mx-auto mb-2"></div>
+                        <div class="text-xs text-gray-400">Day 1</div>
+                        <div class="text-xs text-emerald-400 font-semibold">Pre-Work ✓</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-6 h-6 bg-emerald-500 rounded-full mx-auto mb-2 flex items-center justify-center text-xs font-bold">✓</div>
+                        <div class="text-xs text-gray-400">Day 5</div>
+                        <div class="text-xs text-emerald-400 font-semibold">Session 1 ✓</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-6 h-6 bg-teal-500 rounded-full mx-auto mb-2 flex items-center justify-center text-xs font-bold">✓</div>
+                        <div class="text-xs text-gray-400">Day 11</div>
+                        <div class="text-xs text-teal-400 font-semibold">Session 2 ✓</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-6 h-6 bg-lime-500 rounded-full mx-auto mb-2 flex items-center justify-center text-xs font-bold ring-4 ring-lime-500/30">3</div>
+                        <div class="text-xs text-gray-400">Day 18</div>
+                        <div class="text-xs text-lime-400 font-semibold">Session 3</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-4 h-4 bg-lime-600 rounded-full mx-auto mb-2"></div>
+                        <div class="text-xs text-gray-400">Day 21</div>
+                        <div class="text-xs text-lime-400 font-semibold">Offer Ready!</div>
                     </div>
                 </div>
             </div>
         </div>
+        
+        <div class="slide-number">2</div>
     </div>
 
-    <!-- Slide 3: Session Agenda -->
-    <div class="slide bg-gray-50">
+    <!-- ============================================ -->
+    <!-- SLIDE 3: Session 2 Recap -->
+    <!-- ============================================ -->
+    <div class="slide bg-gray-900" id="slide-3">
+        <div class="slide-logo">
+            <div class="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center">
+                <span class="text-sm font-bold">L²</span>
+            </div>
+            <span class="text-sm font-semibold">LaunchToLead</span>
+        </div>
+        
         <div class="max-w-4xl mx-auto">
-            <p class="text-teal-600 font-semibold text-lg mb-4">TODAY'S AGENDA</p>
-            <h2 class="text-4xl font-bold text-gray-900 mb-8">90 Minutes to Interview Ready</h2>
+            <h2 class="text-4xl font-bold mb-4 text-center">Quick Recap: Session 2</h2>
+            <p class="text-gray-400 text-center mb-10">The story-building foundation you've mastered</p>
+            
+            <div class="grid grid-cols-2 gap-6">
+                <div class="bg-teal-900/20 border border-teal-700 rounded-xl p-6">
+                    <div class="text-3xl mb-3">📝</div>
+                    <h3 class="text-xl font-bold text-white mb-2">Master Story Vault™</h3>
+                    <p class="text-gray-400">Brain dump first, structure second. Your stories live in a vault.</p>
+                </div>
+                
+                <div class="bg-teal-900/20 border border-teal-700 rounded-xl p-6">
+                    <div class="text-3xl mb-3">🎨</div>
+                    <h3 class="text-xl font-bold text-white mb-2">Paint the Pain™</h3>
+                    <p class="text-gray-400">The bigger the monster, the bigger the hero.</p>
+                </div>
+                
+                <div class="bg-teal-900/20 border border-teal-700 rounded-xl p-6">
+                    <div class="text-3xl mb-3">⏸️</div>
+                    <h3 class="text-xl font-bold text-white mb-2">Power Pause™</h3>
+                    <p class="text-gray-400">"Let me think of the best example..." — Silence is power.</p>
+                </div>
+                
+                <div class="bg-teal-900/20 border border-teal-700 rounded-xl p-6">
+                    <div class="text-3xl mb-3">🪜</div>
+                    <h3 class="text-xl font-bold text-white mb-2">3-Tier Impact Ladder™</h3>
+                    <p class="text-gray-400">Push beyond "I solved it" to "I trained the team."</p>
+                </div>
+            </div>
+            
+            <div class="mt-8 text-center">
+                <p class="text-xl text-lime-400 font-semibold">Today: We put it all into practice.</p>
+            </div>
+        </div>
+        
+        <div class="slide-number">3</div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- SLIDE 4: Today's Agenda -->
+    <!-- ============================================ -->
+    <div class="slide bg-gray-900" id="slide-4">
+        <div class="slide-logo">
+            <div class="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center">
+                <span class="text-sm font-bold">L²</span>
+            </div>
+            <span class="text-sm font-semibold">LaunchToLead</span>
+        </div>
+        
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-4xl font-bold mb-4 text-center">Today's Agenda</h2>
+            <p class="text-gray-400 text-center mb-10">90 minutes to interview mastery</p>
+            
+            <div class="space-y-3">
+                <div class="flex items-center gap-4 p-4 bg-lime-900/30 rounded-xl border border-lime-700">
+                    <div class="text-sm text-gray-500 w-20">0-10 min</div>
+                    <div class="flex-1">
+                        <span class="method-tag">Segment 1</span>
+                        <span class="text-white font-semibold ml-2">Pre-Interview Briefing</span>
+                        <span class="text-gray-400"> — Mindset & persona</span>
+                    </div>
+                </div>
+                
+                <div class="flex items-center gap-4 p-4 bg-lime-900/30 rounded-xl border border-lime-700">
+                    <div class="text-sm text-gray-500 w-20">10-75 min</div>
+                    <div class="flex-1">
+                        <span class="method-tag">Segment 2</span>
+                        <span class="text-white font-semibold ml-2">Full Mock Interview</span>
+                        <span class="text-gray-400"> — 65 minutes of real interview practice</span>
+                    </div>
+                </div>
+                
+                <div class="flex items-center gap-4 p-4 bg-lime-900/30 rounded-xl border border-lime-700">
+                    <div class="text-sm text-gray-500 w-20">75-90 min</div>
+                    <div class="flex-1">
+                        <span class="method-tag">Segment 3</span>
+                        <span class="text-white font-semibold ml-2">Debrief & Feedback</span>
+                        <span class="text-gray-400"> — What worked, what to refine, next steps</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-8 bg-gray-800/50 rounded-xl p-6 text-center">
+                <p class="text-gray-400">
+                    <strong class="text-white">Note:</strong> Mental resilience, negotiation basics, and homework are covered in your post-session materials and touched on during debrief.
+                </p>
+            </div>
+        </div>
+        
+        <div class="slide-number">4</div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- SLIDE 5: Mindset Reset -->
+    <!-- ============================================ -->
+    <div class="slide bg-gradient-to-br from-gray-900 to-lime-900" id="slide-5">
+        <div class="slide-logo">
+            <div class="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center">
+                <span class="text-sm font-bold">L²</span>
+            </div>
+            <span class="text-sm font-semibold">LaunchToLead</span>
+        </div>
+        
+        <div class="max-w-4xl mx-auto">
+            <span class="method-tag mb-6 inline-block">SEGMENT 1</span>
+            <h2 class="text-5xl font-bold mb-8">Mindset Reset</h2>
+            
+            <div class="big-quote mb-8">
+                "This isn't a test—it's practice."
+            </div>
+            
+            <p class="text-xl text-gray-300 mb-8">
+                Every stumble here saves you from stumbling when it counts. This is your safe space to make mistakes, get feedback, and grow.
+            </p>
+            
+            <div class="highlight-box">
+                <h3 class="text-xl font-bold text-lime-400 mb-4">Today's Mindset:</h3>
+                <ul class="space-y-3 text-lg text-gray-300">
+                    <li class="flex items-start gap-3">
+                        <span class="text-lime-400">✓</span>
+                        <span>This is a <strong>safe space</strong> to make mistakes</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-lime-400">✓</span>
+                        <span>Feedback is a <strong>gift</strong>, not criticism</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-lime-400">✓</span>
+                        <span>Discomfort means <strong>growth</strong></span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-lime-400">✓</span>
+                        <span>You're <strong>more prepared</strong> than you think</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="slide-number">5</div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- SLIDE 6: Interview Persona -->
+    <!-- ============================================ -->
+    <div class="slide bg-gray-900" id="slide-6">
+        <div class="slide-logo">
+            <div class="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center">
+                <span class="text-sm font-bold">L²</span>
+            </div>
+            <span class="text-sm font-semibold">LaunchToLead</span>
+        </div>
+        
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-4xl font-bold mb-4 text-center">Your Interview Persona</h2>
+            <p class="text-gray-400 text-center mb-10">The best version of you in an interview</p>
+            
+            <div class="grid grid-cols-2 gap-8">
+                <div class="bg-lime-900/30 border border-lime-700/50 rounded-2xl p-8">
+                    <div class="text-4xl mb-4">😌</div>
+                    <h3 class="text-2xl font-bold text-lime-400 mb-3">Calm & Confident</h3>
+                    <p class="text-gray-300">You've prepared. Trust your preparation. Speak with conviction, not arrogance.</p>
+                </div>
+                
+                <div class="bg-lime-900/30 border border-lime-700/50 rounded-2xl p-8">
+                    <div class="text-4xl mb-4">🧐</div>
+                    <h3 class="text-2xl font-bold text-lime-400 mb-3">Curious & Engaged</h3>
+                    <p class="text-gray-300">Show genuine interest. Ask thoughtful questions. Listen actively and respond thoughtfully.</p>
+                </div>
+                
+                <div class="bg-lime-900/30 border border-lime-700/50 rounded-2xl p-8">
+                    <div class="text-4xl mb-4">💡</div>
+                    <h3 class="text-2xl font-bold text-lime-400 mb-3">Clear & Concise</h3>
+                    <p class="text-gray-300">Answer directly. Use structure (STAR). Don't ramble—make every word count.</p>
+                </div>
+                
+                <div class="bg-lime-900/30 border border-lime-700/50 rounded-2xl p-8">
+                    <div class="text-4xl mb-4">🤝</div>
+                    <h3 class="text-2xl font-bold text-lime-400 mb-3">Professional & Personable</h3>
+                    <p class="text-gray-300">Balance warmth with professionalism. Be authentically you—that's your superpower.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="slide-number">6</div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- SLIDE 7: Pre-Interview Checklist -->
+    <!-- ============================================ -->
+    <div class="slide bg-gray-900" id="slide-7">
+        <div class="slide-logo">
+            <div class="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center">
+                <span class="text-sm font-bold">L²</span>
+            </div>
+            <span class="text-sm font-semibold">LaunchToLead</span>
+        </div>
+        
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-4xl font-bold mb-4 text-center">Pre-Interview Checklist</h2>
+            <p class="text-gray-400 text-center mb-10">Your 15-minute prep routine before every interview</p>
+            
+            <div class="grid grid-cols-2 gap-8">
+                <div class="highlight-box">
+                    <h3 class="text-xl font-bold text-lime-400 mb-4">🖥️ Technical Setup</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start gap-3 text-gray-300">
+                            <span class="w-5 h-5 rounded border-2 border-gray-600 flex items-center justify-center text-xs flex-shrink-0 mt-0.5">✓</span>
+                            <span>Camera at eye level</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-gray-300">
+                            <span class="w-5 h-5 rounded border-2 border-gray-600 flex items-center justify-center text-xs flex-shrink-0 mt-0.5">✓</span>
+                            <span>Good lighting on face (window in front, not behind)</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-gray-300">
+                            <span class="w-5 h-5 rounded border-2 border-gray-600 flex items-center justify-center text-xs flex-shrink-0 mt-0.5">✓</span>
+                            <span>Clean, professional background</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-gray-300">
+                            <span class="w-5 h-5 rounded border-2 border-gray-600 flex items-center justify-center text-xs flex-shrink-0 mt-0.5">✓</span>
+                            <span>Audio tested, headphones ready</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="highlight-box">
+                    <h3 class="text-xl font-bold text-lime-400 mb-4">🧠 Mental Prep</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start gap-3 text-gray-300">
+                            <span class="w-5 h-5 rounded border-2 border-gray-600 flex items-center justify-center text-xs flex-shrink-0 mt-0.5">✓</span>
+                            <span>Top 5 stories refreshed in mind</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-gray-300">
+                            <span class="w-5 h-5 rounded border-2 border-gray-600 flex items-center justify-center text-xs flex-shrink-0 mt-0.5">✓</span>
+                            <span>3-5 questions for interviewer ready</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-gray-300">
+                            <span class="w-5 h-5 rounded border-2 border-gray-600 flex items-center justify-center text-xs flex-shrink-0 mt-0.5">✓</span>
+                            <span>Water nearby, phone silenced</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-gray-300">
+                            <span class="w-5 h-5 rounded border-2 border-gray-600 flex items-center justify-center text-xs flex-shrink-0 mt-0.5">✓</span>
+                            <span>Cheat sheet & resume accessible (not visible)</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="mt-8 bg-gray-800/50 rounded-xl p-6 text-center">
+                <h4 class="text-lg font-bold text-white mb-2">💨 The 3-Breath Reset</h4>
+                <p class="text-gray-400">Before joining: Take 3 slow, deep breaths. This activates your parasympathetic nervous system and calms interview nerves.</p>
+            </div>
+        </div>
+        
+        <div class="slide-number">7</div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- SLIDE 8: Mock Interview Setup -->
+    <!-- ============================================ -->
+    <div class="slide bg-gradient-to-br from-gray-900 to-lime-900" id="slide-8">
+        <div class="slide-logo">
+            <div class="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center">
+                <span class="text-sm font-bold">L²</span>
+            </div>
+            <span class="text-sm font-semibold">LaunchToLead</span>
+        </div>
+        
+        <div class="max-w-4xl mx-auto">
+            <span class="method-tag mb-6 inline-block">SEGMENT 2</span>
+            <h2 class="text-5xl font-bold mb-8">Mock Interview Setup</h2>
+            
+            <div class="highlight-box mb-8">
+                <h3 class="text-xl font-bold text-lime-400 mb-4">Ground Rules:</h3>
+                <ul class="space-y-3 text-lg text-gray-300">
+                    <li class="flex items-start gap-3">
+                        <span class="text-lime-400">🎭</span>
+                        <span>Treat this like a <strong>real interview</strong></span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-lime-400">📵</span>
+                        <span>No phones, minimize distractions</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-lime-400">⏱️</span>
+                        <span>~65 minutes of focused practice</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-lime-400">✋</span>
+                        <span>I may pause to coach in real-time</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
+                <h3 class="font-semibold text-white mb-4">Interview Flow:</h3>
+                <div class="grid grid-cols-5 gap-4 text-center text-sm">
+                    <div class="bg-lime-900/30 rounded-lg p-3 border border-lime-700/50">
+                        <div class="text-lime-400 font-bold">5 min</div>
+                        <div class="text-gray-400">Opening & Small Talk</div>
+                    </div>
+                    <div class="bg-lime-900/30 rounded-lg p-3 border border-lime-700/50">
+                        <div class="text-lime-400 font-bold">5 min</div>
+                        <div class="text-gray-400">Background / "Tell Me About Yourself"</div>
+                    </div>
+                    <div class="bg-lime-900/30 rounded-lg p-3 border border-lime-700/50">
+                        <div class="text-lime-400 font-bold">45 min</div>
+                        <div class="text-gray-400">Behavioral Questions</div>
+                    </div>
+                    <div class="bg-lime-900/30 rounded-lg p-3 border border-lime-700/50">
+                        <div class="text-lime-400 font-bold">5 min</div>
+                        <div class="text-gray-400">General Job Fit</div>
+                    </div>
+                    <div class="bg-lime-900/30 rounded-lg p-3 border border-lime-700/50">
+                        <div class="text-lime-400 font-bold">5 min</div>
+                        <div class="text-gray-400">Your Questions</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="slide-number">8</div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- SLIDE 9: Competency Categories -->
+    <!-- ============================================ -->
+    <div class="slide bg-gradient-to-br from-gray-900 to-slate-900" id="slide-9">
+        <div class="slide-logo">
+            <div class="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center">
+                <span class="text-sm font-bold">L²</span>
+            </div>
+            <span class="text-sm font-semibold">LaunchToLead</span>
+        </div>
+        
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-4xl font-bold mb-4 text-center">What Interviewers Are Evaluating</h2>
+            <p class="text-xl text-gray-400 mb-8 text-center">7 Core Competencies for Engineering Behavioral Interviews</p>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+                <div class="bg-emerald-900/40 border border-emerald-600/50 rounded-xl p-4 text-center">
+                    <div class="text-2xl mb-2">🚀</div>
+                    <div class="font-bold text-emerald-400">Leadership & Initiative</div>
+                    <div class="text-xs text-gray-400 mt-1">Taking ownership, stepping up</div>
+                </div>
+                <div class="bg-blue-900/40 border border-blue-600/50 rounded-xl p-4 text-center">
+                    <div class="text-2xl mb-2">🧩</div>
+                    <div class="font-bold text-blue-400">Problem-Solving</div>
+                    <div class="text-xs text-gray-400 mt-1">Analytical thinking, debugging</div>
+                </div>
+                <div class="bg-purple-900/40 border border-purple-600/50 rounded-xl p-4 text-center">
+                    <div class="text-2xl mb-2">🤝</div>
+                    <div class="font-bold text-purple-400">Teamwork</div>
+                    <div class="text-xs text-gray-400 mt-1">Collaboration, supporting others</div>
+                </div>
+                <div class="bg-amber-900/40 border border-amber-600/50 rounded-xl p-4 text-center">
+                    <div class="text-2xl mb-2">💬</div>
+                    <div class="font-bold text-amber-400">Communication</div>
+                    <div class="text-xs text-gray-400 mt-1">Explaining, persuading</div>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-3 gap-4 mb-8">
+                <div class="bg-teal-900/40 border border-teal-600/50 rounded-xl p-4 text-center">
+                    <div class="text-2xl mb-2">🔄</div>
+                    <div class="font-bold text-teal-400">Adaptability</div>
+                    <div class="text-xs text-gray-400 mt-1">Handling change, learning quickly</div>
+                </div>
+                <div class="bg-red-900/40 border border-red-600/50 rounded-xl p-4 text-center">
+                    <div class="text-2xl mb-2">🪞</div>
+                    <div class="font-bold text-red-400">Self-Awareness</div>
+                    <div class="text-xs text-gray-400 mt-1">Failures, growth mindset</div>
+                </div>
+                <div class="bg-lime-900/40 border border-lime-600/50 rounded-xl p-4 text-center">
+                    <div class="text-2xl mb-2">🔥</div>
+                    <div class="font-bold text-lime-400">Drive & Motivation</div>
+                    <div class="text-xs text-gray-400 mt-1">Passion, career goals</div>
+                </div>
+            </div>
+            
+            <div class="bg-gray-800/60 rounded-xl p-6 border border-gray-700">
+                <h3 class="font-bold text-white mb-3 text-center">📋 What Strong Answers Demonstrate</h3>
+                <div class="grid grid-cols-2 gap-4 text-sm">
+                    <ul class="space-y-2 text-gray-300">
+                        <li class="flex items-start gap-2"><span class="text-lime-400">✓</span> Specific situations with clear context</li>
+                        <li class="flex items-start gap-2"><span class="text-lime-400">✓</span> Your personal actions and decisions</li>
+                        <li class="flex items-start gap-2"><span class="text-lime-400">✓</span> Measurable results and impact</li>
+                    </ul>
+                    <ul class="space-y-2 text-gray-300">
+                        <li class="flex items-start gap-2"><span class="text-lime-400">✓</span> Lessons learned and growth</li>
+                        <li class="flex items-start gap-2"><span class="text-lime-400">✓</span> Honest self-reflection (especially on failures)</li>
+                        <li class="flex items-start gap-2"><span class="text-lime-400">✓</span> Connection to the role you're pursuing</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="slide-number">9</div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- SLIDE 10: Interview Begins -->
+    <!-- ============================================ -->
+    <div class="slide bg-gradient-to-br from-gray-900 via-lime-900 to-emerald-900" id="slide-10">
+        <div class="slide-logo">
+            <div class="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center">
+                <span class="text-sm font-bold">L²</span>
+            </div>
+            <span class="text-sm font-semibold">LaunchToLead</span>
+        </div>
+        
+        <div class="text-center max-w-3xl mx-auto">
+            <div class="text-8xl mb-8">🎬</div>
+            <h2 class="text-5xl font-bold mb-6">Interview Begins</h2>
+            <p class="text-2xl text-gray-300 mb-8">Game time. You've got this.</p>
+            
+            <div class="highlight-box inline-block">
+                <p class="text-xl text-lime-400 font-semibold">Remember: Breathe → Pause → Think → Speak</p>
+            </div>
+            
+            <div class="mt-12 text-gray-500 italic">
+                [Live mock interview begins]
+            </div>
+        </div>
+        
+        <div class="slide-number">10</div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- SLIDE 11: Your Questions -->
+    <!-- ============================================ -->
+    <div class="slide bg-gray-900" id="slide-11">
+        <div class="slide-logo">
+            <div class="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center">
+                <span class="text-sm font-bold">L²</span>
+            </div>
+            <span class="text-sm font-semibold">LaunchToLead</span>
+        </div>
+        
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-4xl font-bold mb-4 text-center">Your Turn: Questions for Them</h2>
+            <p class="text-gray-400 text-center mb-10">Strong candidates interview the company too</p>
+            
+            <div class="grid grid-cols-2 gap-6">
+                <div class="bg-lime-900/20 border border-lime-700 rounded-xl p-6">
+                    <h3 class="text-xl font-bold text-lime-400 mb-4">✅ High-Impact Questions</h3>
+                    <ul class="space-y-3 text-gray-300">
+                        <li class="flex items-start gap-3">
+                            <span class="text-lime-400">→</span>
+                            <span>"What does success look like in the first 90 days?"</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-lime-400">→</span>
+                            <span>"What's the biggest challenge the team is facing right now?"</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-lime-400">→</span>
+                            <span>"How would you describe the team culture?"</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-lime-400">→</span>
+                            <span>"What do you enjoy most about working here?"</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bg-red-900/20 border border-red-800 rounded-xl p-6">
+                    <h3 class="text-xl font-bold text-red-400 mb-4">❌ Avoid These</h3>
+                    <ul class="space-y-3 text-gray-400">
+                        <li class="flex items-start gap-3">
+                            <span class="text-red-400">✗</span>
+                            <span>"What does your company do?" (You should know)</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-red-400">✗</span>
+                            <span>"How much does this pay?" (Wait for offer)</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-red-400">✗</span>
+                            <span>"How soon can I take vacation?" (Comes across poorly)</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-red-400">✗</span>
+                            <span>"Did I get the job?" (Too eager)</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="mt-8 text-center">
+                <p class="text-lg text-gray-400">
+                    <strong class="text-white">Pro Tip:</strong> Have 5+ questions ready. Some will be answered during the interview.
+                </p>
+            </div>
+        </div>
+        
+        <div class="slide-number">11</div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- SLIDE 12: Debrief Overview -->
+    <!-- ============================================ -->
+    <div class="slide bg-gradient-to-br from-gray-900 to-lime-900" id="slide-12">
+        <div class="slide-logo">
+            <div class="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center">
+                <span class="text-sm font-bold">L²</span>
+            </div>
+            <span class="text-sm font-semibold">LaunchToLead</span>
+        </div>
+        
+        <div class="max-w-4xl mx-auto">
+            <span class="method-tag mb-6 inline-block">SEGMENT 3</span>
+            <h2 class="text-5xl font-bold mb-8">Debrief Time</h2>
+            
+            <div class="big-quote mb-8">
+                "The goal isn't perfection—it's awareness."
+            </div>
+            
+            <p class="text-xl text-gray-300 mb-8">
+                Once you see it, you can fix it. Let's break down what just happened.
+            </p>
+            
+            <div class="grid grid-cols-3 gap-6">
+                <div class="text-center p-6 bg-lime-900/30 rounded-2xl border border-lime-700/50">
+                    <div class="text-4xl mb-4">✅</div>
+                    <h3 class="text-xl font-bold text-white mb-2">What Worked</h3>
+                    <p class="text-gray-400">Celebrate your wins</p>
+                </div>
+                <div class="text-center p-6 bg-lime-900/30 rounded-2xl border border-lime-700/50">
+                    <div class="text-4xl mb-4">📈</div>
+                    <h3 class="text-xl font-bold text-white mb-2">Growth Areas</h3>
+                    <p class="text-gray-400">Identify opportunities</p>
+                </div>
+                <div class="text-center p-6 bg-lime-900/30 rounded-2xl border border-lime-700/50">
+                    <div class="text-4xl mb-4">🎯</div>
+                    <h3 class="text-xl font-bold text-white mb-2">Action Items</h3>
+                    <p class="text-gray-400">Specific next steps</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="slide-number">12</div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- SLIDE 13: What Went Well -->
+    <!-- ============================================ -->
+    <div class="slide bg-gray-900" id="slide-13">
+        <div class="slide-logo">
+            <div class="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center">
+                <span class="text-sm font-bold">L²</span>
+            </div>
+            <span class="text-sm font-semibold">LaunchToLead</span>
+        </div>
+        
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-4xl font-bold mb-4 text-center">What Went Well</h2>
+            <p class="text-gray-400 text-center mb-10">Your strengths are your foundation—build on them</p>
+            
+            <div class="highlight-box mb-8">
+                <h3 class="text-xl font-bold text-lime-400 mb-4">Reflection Questions:</h3>
+                <ul class="space-y-4 text-lg text-gray-300">
+                    <li class="flex items-start gap-3">
+                        <span class="text-lime-400 font-bold">1.</span>
+                        <span>What felt <strong>natural and confident</strong>?</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-lime-400 font-bold">2.</span>
+                        <span>Which answers were you <strong>proud of</strong>?</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-lime-400 font-bold">3.</span>
+                        <span>What feedback did your <strong>body language</strong> give?</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-lime-400 font-bold">4.</span>
+                        <span>Where did you use <strong>structure effectively</strong>?</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="bg-gray-800/50 rounded-xl p-6 text-center">
+                <p class="text-lg text-gray-300">
+                    <span class="text-lime-400 font-bold">Remember:</span> These strengths are your foundation. Lean into them during real interviews.
+                </p>
+            </div>
+        </div>
+        
+        <div class="slide-number">13</div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- SLIDE 14: Growth Areas -->
+    <!-- ============================================ -->
+    <div class="slide bg-gray-900" id="slide-14">
+        <div class="slide-logo">
+            <div class="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center">
+                <span class="text-sm font-bold">L²</span>
+            </div>
+            <span class="text-sm font-semibold">LaunchToLead</span>
+        </div>
+        
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-4xl font-bold mb-4 text-center">Growth Areas</h2>
+            <p class="text-gray-400 text-center mb-10">Honest reflection leads to rapid improvement</p>
+            
+            <div class="grid grid-cols-2 gap-8">
+                <div class="bg-amber-900/20 border border-amber-700 rounded-xl p-6">
+                    <h3 class="text-xl font-bold text-amber-400 mb-4">⚠️ Common Patterns</h3>
+                    <ul class="space-y-3 text-gray-300">
+                        <li class="flex items-start gap-3">
+                            <span class="text-amber-400">•</span>
+                            <span>Speaking too fast when nervous</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-amber-400">•</span>
+                            <span>Answers too long or rambling</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-amber-400">•</span>
+                            <span>Not enough specific examples</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-amber-400">•</span>
+                            <span>Filler words ("um", "like", "you know")</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-amber-400">•</span>
+                            <span>Not pausing to think before answering</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bg-lime-900/20 border border-lime-700 rounded-xl p-6">
+                    <h3 class="text-xl font-bold text-lime-400 mb-4">🎯 Quick Fixes</h3>
+                    <ul class="space-y-3 text-gray-300">
+                        <li class="flex items-start gap-3">
+                            <span class="text-lime-400">→</span>
+                            <span><strong>Slow down:</strong> Pause between sentences</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-lime-400">→</span>
+                            <span><strong>Use STAR:</strong> Keep answers under 2 minutes</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-lime-400">→</span>
+                            <span><strong>Add specifics:</strong> Names, numbers, tools</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-lime-400">→</span>
+                            <span><strong>Replace fillers:</strong> With silence (it's powerful)</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-lime-400">→</span>
+                            <span><strong>Power Pause:</strong> "Great question, let me think..."</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="slide-number">14</div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- SLIDE 15: Reframing Rejection -->
+    <!-- ============================================ -->
+    <div class="slide bg-gradient-to-br from-gray-900 to-lime-900" id="slide-15">
+        <div class="slide-logo">
+            <div class="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center">
+                <span class="text-sm font-bold">L²</span>
+            </div>
+            <span class="text-sm font-semibold">LaunchToLead</span>
+        </div>
+        
+        <div class="max-w-4xl mx-auto">
+            <span class="method-tag mb-6 inline-block">SEGMENT 4</span>
+            <h2 class="text-5xl font-bold mb-8">Reframing Rejection</h2>
+            
+            <div class="big-quote mb-8">
+                "Rejection isn't failure—it's redirection."
+            </div>
+            
+            <div class="grid grid-cols-2 gap-8 mb-8">
+                <div class="bg-red-900/30 border border-red-700/50 rounded-2xl p-6">
+                    <h3 class="text-xl font-bold text-red-400 mb-4">❌ Unhelpful Thoughts</h3>
+                    <ul class="space-y-3 text-gray-300">
+                        <li>"I'm not good enough"</li>
+                        <li>"I'll never find a job"</li>
+                        <li>"They didn't like me"</li>
+                        <li>"I should give up"</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-lime-900/30 border border-lime-700/50 rounded-2xl p-6">
+                    <h3 class="text-xl font-bold text-lime-400 mb-4">✅ Empowering Reframes</h3>
+                    <ul class="space-y-3 text-gray-300">
+                        <li>"That wasn't the right fit—and that's okay"</li>
+                        <li>"Each interview is practice for THE one"</li>
+                        <li>"I'm learning what works and what doesn't"</li>
+                        <li>"My perfect role is still out there"</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="highlight-box text-center">
+                <p class="text-xl text-white">
+                    <strong>The Reality:</strong> Even top candidates get rejected frequently. Many rejections have nothing to do with you. <span class="text-lime-400 font-bold">You only need ONE yes.</span>
+                </p>
+            </div>
+        </div>
+        
+        <div class="slide-number">15</div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- SLIDE 16: Burnout Prevention -->
+    <!-- ============================================ -->
+    <div class="slide bg-gray-900" id="slide-16">
+        <div class="slide-logo">
+            <div class="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center">
+                <span class="text-sm font-bold">L²</span>
+            </div>
+            <span class="text-sm font-semibold">LaunchToLead</span>
+        </div>
+        
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-4xl font-bold mb-4 text-center">Preventing Job Search Burnout</h2>
+            <p class="text-gray-400 text-center mb-10">Protect your energy for the marathon, not just the sprint</p>
+            
+            <div class="grid grid-cols-2 gap-8">
+                <div class="bg-red-900/20 border border-red-800 rounded-xl p-6">
+                    <h3 class="text-xl font-bold text-red-400 mb-4">⚠️ Warning Signs</h3>
+                    <ul class="space-y-3 text-gray-300">
+                        <li class="flex items-start gap-3">
+                            <span class="text-red-400">•</span>
+                            <span>Dreading opening job boards</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-red-400">•</span>
+                            <span>Doom-scrolling LinkedIn endlessly</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-red-400">•</span>
+                            <span>Comparing yourself to others constantly</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-red-400">•</span>
+                            <span>Losing motivation to apply</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-red-400">•</span>
+                            <span>Feeling exhausted despite not "doing much"</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bg-lime-900/20 border border-lime-700 rounded-xl p-6">
+                    <h3 class="text-xl font-bold text-lime-400 mb-4">🛡️ Prevention Strategies</h3>
+                    <ul class="space-y-3 text-gray-300">
+                        <li class="flex items-start gap-3">
+                            <span class="text-lime-400">→</span>
+                            <span><strong>Set limits:</strong> 2 hours/day max on job search</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-lime-400">→</span>
+                            <span><strong>Schedule breaks:</strong> No job search on Sundays</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-lime-400">→</span>
+                            <span><strong>Celebrate progress:</strong> Not just outcomes</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-lime-400">→</span>
+                            <span><strong>Stay connected:</strong> Friends, family, support</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-lime-400">→</span>
+                            <span><strong>Move your body:</strong> Exercise clears mental fog</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="mt-8 bg-gray-800/50 rounded-xl p-6 text-center">
+                <p class="text-lg text-gray-300">
+                    <span class="text-lime-400 font-bold">Hard Stop Rule:</span> No job search after 6pm. Protect your evenings for rest and recharge.
+                </p>
+            </div>
+        </div>
+        
+        <div class="slide-number">16</div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- SLIDE 17: Negotiation Basics -->
+    <!-- ============================================ -->
+    <div class="slide bg-gradient-to-br from-gray-900 to-lime-900" id="slide-17">
+        <div class="slide-logo">
+            <div class="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center">
+                <span class="text-sm font-bold">L²</span>
+            </div>
+            <span class="text-sm font-semibold">LaunchToLead</span>
+        </div>
+        
+        <div class="max-w-4xl mx-auto">
+            <span class="method-tag mb-6 inline-block">SEGMENT 5</span>
+            <h2 class="text-5xl font-bold mb-8">Negotiation Basics</h2>
+            
+            <div class="big-quote mb-8">
+                "You don't get what you deserve. You get what you negotiate."
+            </div>
+            
+            <div class="highlight-box">
+                <h3 class="text-xl font-bold text-lime-400 mb-4">Key Principles:</h3>
+                <ul class="space-y-4 text-lg text-gray-300">
+                    <li class="flex items-start gap-3">
+                        <span class="text-lime-400 font-bold">1.</span>
+                        <span>Negotiation is <strong>expected</strong>—companies budget for it</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-lime-400 font-bold">2.</span>
+                        <span>Wait until you have an <strong>offer in writing</strong></span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-lime-400 font-bold">3.</span>
+                        <span>Always negotiate <strong>respectfully and professionally</strong></span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-lime-400 font-bold">4.</span>
+                        <span>Know your <strong>worth</strong> and your <strong>walk-away number</strong></span>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="mt-8 text-center">
+                <p class="text-lg text-gray-400">
+                    Detailed negotiation tactics are covered in your post-session materials.
+                </p>
+            </div>
+        </div>
+        
+        <div class="slide-number">17</div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- SLIDE 18: Key Strategies -->
+    <!-- ============================================ -->
+    <div class="slide bg-gray-900" id="slide-18">
+        <div class="slide-logo">
+            <div class="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center">
+                <span class="text-sm font-bold">L²</span>
+            </div>
+            <span class="text-sm font-semibold">LaunchToLead</span>
+        </div>
+        
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-4xl font-bold mb-4 text-center">Negotiation Strategies</h2>
+            <p class="text-gray-400 text-center mb-10">When the offer comes, be ready</p>
             
             <div class="space-y-4">
-                <div class="bg-white rounded-xl p-5 shadow-sm flex items-center gap-4">
-                    <div class="text-teal-600 font-bold w-24 text-right">0-10 min</div>
-                    <div class="flex-1">
-                        <p class="font-semibold text-gray-900">Pre-Interview Briefing</p>
-                        <p class="text-gray-500 text-sm">Mindset, target role review, final questions</p>
+                <div class="flex items-center gap-4 bg-lime-900/30 p-5 rounded-xl border border-lime-700/50">
+                    <div class="w-12 h-12 bg-lime-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <span class="text-xl font-black">1</span>
+                    </div>
+                    <div>
+                        <p class="font-bold text-lime-400 text-lg">Express Enthusiasm First</p>
+                        <p class="text-gray-300">"I'm really excited about this opportunity. I'd love to discuss the compensation package."</p>
                     </div>
                 </div>
-                <div class="bg-teal-600 rounded-xl p-5 shadow-sm flex items-center gap-4 text-white">
-                    <div class="font-bold w-24 text-right">10-55 min</div>
-                    <div class="flex-1">
-                        <p class="font-semibold">Full Mock Interview</p>
-                        <p class="text-teal-100 text-sm">Behavioral, technical, Q&A — the real deal</p>
+                
+                <div class="flex items-center gap-4 bg-lime-900/30 p-5 rounded-xl border border-lime-700/50">
+                    <div class="w-12 h-12 bg-lime-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <span class="text-xl font-black">2</span>
+                    </div>
+                    <div>
+                        <p class="font-bold text-lime-400 text-lg">Ask, Don't Demand</p>
+                        <p class="text-gray-300">"Is there flexibility in the base salary?" works better than stating a hard number first.</p>
                     </div>
                 </div>
-                <div class="bg-white rounded-xl p-5 shadow-sm flex items-center gap-4">
-                    <div class="text-teal-600 font-bold w-24 text-right">55-75 min</div>
-                    <div class="flex-1">
-                        <p class="font-semibold text-gray-900">Immediate Debrief</p>
-                        <p class="text-gray-500 text-sm">What worked, what to polish, specific feedback</p>
+                
+                <div class="flex items-center gap-4 bg-lime-900/30 p-5 rounded-xl border border-lime-700/50">
+                    <div class="w-12 h-12 bg-lime-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <span class="text-xl font-black">3</span>
+                    </div>
+                    <div>
+                        <p class="font-bold text-lime-400 text-lg">Consider the Full Package</p>
+                        <p class="text-gray-300">Bonus, equity, PTO, flexibility, signing bonus, start date—it's not just base salary.</p>
                     </div>
                 </div>
-                <div class="bg-white rounded-xl p-5 shadow-sm flex items-center gap-4">
-                    <div class="text-teal-600 font-bold w-24 text-right">75-82 min</div>
-                    <div class="flex-1">
-                        <p class="font-semibold text-gray-900">Rejection Reframe + Burnout Prevention</p>
-                        <p class="text-gray-500 text-sm">Mental resilience for the long game</p>
+                
+                <div class="flex items-center gap-4 bg-lime-900/30 p-5 rounded-xl border border-lime-700/50">
+                    <div class="w-12 h-12 bg-lime-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <span class="text-xl font-black">4</span>
                     </div>
-                </div>
-                <div class="bg-white rounded-xl p-5 shadow-sm flex items-center gap-4">
-                    <div class="text-teal-600 font-bold w-24 text-right">82-87 min</div>
-                    <div class="flex-1">
-                        <p class="font-semibold text-gray-900">Offer & Negotiation Overview</p>
-                        <p class="text-gray-500 text-sm">Preview of what comes when you get the offer</p>
-                    </div>
-                </div>
-                <div class="bg-white rounded-xl p-5 shadow-sm flex items-center gap-4">
-                    <div class="text-teal-600 font-bold w-24 text-right">87-90 min</div>
-                    <div class="flex-1">
-                        <p class="font-semibold text-gray-900">Final Prep & Send-off</p>
-                        <p class="text-gray-500 text-sm">Interview day reminders, you're ready!</p>
+                    <div>
+                        <p class="font-bold text-lime-400 text-lg">Get It in Writing</p>
+                        <p class="text-gray-300">Always get the final offer documented before accepting. Verbal agreements aren't binding.</p>
                     </div>
                 </div>
             </div>
         </div>
+        
+        <div class="slide-number">18</div>
     </div>
 
-    <!-- Slide 4: Pre-Interview Briefing -->
-    <div class="slide bg-gradient-to-br from-teal-600 to-emerald-500 text-white">
+    <!-- ============================================ -->
+    <!-- SLIDE 19: Homework -->
+    <!-- ============================================ -->
+    <div class="slide bg-gray-900" id="slide-19">
+        <div class="slide-logo">
+            <div class="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center">
+                <span class="text-sm font-bold">L²</span>
+            </div>
+            <span class="text-sm font-semibold">LaunchToLead</span>
+        </div>
+        
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-4xl font-bold mb-4 text-center">📋 Your Next Steps</h2>
+            <p class="text-gray-400 text-center mb-10">Keep the momentum going (Days 18-21)</p>
+            
+            <div class="grid grid-cols-2 gap-6">
+                <div class="highlight-box">
+                    <h3 class="text-xl font-bold text-lime-400 mb-4">🎯 Immediate Actions</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start gap-3 text-gray-300">
+                            <input type="checkbox" class="w-5 h-5 mt-0.5 accent-lime-500">
+                            <span>Refine answers based on today's feedback</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-gray-300">
+                            <input type="checkbox" class="w-5 h-5 mt-0.5 accent-lime-500">
+                            <span>Practice your "Tell me about yourself" 5x</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-gray-300">
+                            <input type="checkbox" class="w-5 h-5 mt-0.5 accent-lime-500">
+                            <span>Record yourself answering 2 behavioral questions</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-gray-300">
+                            <input type="checkbox" class="w-5 h-5 mt-0.5 accent-lime-500">
+                            <span>Continue applying (target: 50 total by Day 21)</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="highlight-box">
+                    <h3 class="text-xl font-bold text-lime-400 mb-4">📚 Review Materials</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start gap-3 text-gray-300">
+                            <input type="checkbox" class="w-5 h-5 mt-0.5 accent-lime-500">
+                            <span>Post-Session 3 resources (coming via email)</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-gray-300">
+                            <input type="checkbox" class="w-5 h-5 mt-0.5 accent-lime-500">
+                            <span>Negotiation tactics deep-dive</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-gray-300">
+                            <input type="checkbox" class="w-5 h-5 mt-0.5 accent-lime-500">
+                            <span>Offer evaluation framework</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-gray-300">
+                            <input type="checkbox" class="w-5 h-5 mt-0.5 accent-lime-500">
+                            <span>First 90 days success guide</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="mt-8 bg-gray-800 rounded-xl p-6 text-center">
+                <h4 class="text-lg font-bold text-white mb-2">📧 Post-Session 3 Resources Coming Your Way</h4>
+                <p class="text-gray-400">Negotiation Scripts • Offer Evaluation • First 90 Days Guide • and more</p>
+            </div>
+        </div>
+        
+        <div class="slide-number">19</div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- SLIDE 20: Key Takeaways -->
+    <!-- ============================================ -->
+    <div class="slide bg-gradient-to-br from-lime-900 via-emerald-800 to-lime-700" id="slide-20">
+        <div class="slide-logo">
+            <div class="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center">
+                <span class="text-sm font-bold">L²</span>
+            </div>
+            <span class="text-sm font-semibold">LaunchToLead</span>
+        </div>
+        
         <div class="max-w-4xl mx-auto text-center">
-            <p class="text-teal-200 font-semibold text-lg mb-4">SEGMENT 1</p>
-            <h2 class="text-5xl font-bold mb-6">Pre-Interview Briefing</h2>
-            <p class="text-2xl text-teal-100">Setting the Stage</p>
-            <p class="text-xl text-teal-200 mt-4">10 minutes</p>
-        </div>
-    </div>
-
-    <!-- Slide 5: Mindset Check -->
-    <div class="slide bg-white">
-        <div class="max-w-4xl mx-auto">
-            <p class="text-teal-600 font-semibold text-lg mb-4">PRE-INTERVIEW BRIEFING</p>
-            <h2 class="text-4xl font-bold text-gray-900 mb-8">Mindset Check</h2>
+            <h2 class="text-4xl font-bold mb-10">🎯 Key Takeaways</h2>
             
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="bg-red-50 rounded-2xl p-6 border border-red-200">
-                    <h3 class="font-bold text-red-800 text-xl mb-4">❌ Don't Think</h3>
-                    <ul class="space-y-3 text-gray-700">
-                        <li>"I need to prove I'm good enough"</li>
-                        <li>"I can't make any mistakes"</li>
-                        <li>"They're judging every word"</li>
-                        <li>"If I mess up, I'm done"</li>
-                    </ul>
+            <div class="grid grid-cols-2 gap-6 text-left mb-10">
+                <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6">
+                    <div class="text-3xl mb-3">🎭</div>
+                    <h3 class="text-xl font-bold text-white mb-2">Practice = Preparedness</h3>
+                    <p class="text-gray-300">Mock interviews remove the mystery. You've now felt real interview pressure.</p>
                 </div>
                 
-                <div class="bg-emerald-50 rounded-2xl p-6 border border-emerald-200">
-                    <h3 class="font-bold text-emerald-800 text-xl mb-4">✅ Do Think</h3>
-                    <ul class="space-y-3 text-gray-700">
-                        <li>"This is a conversation, not a test"</li>
-                        <li>"I'm evaluating them too"</li>
-                        <li>"I have stories ready—I'm prepared"</li>
-                        <li>"Mistakes are recoverable"</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="mt-8 bg-teal-50 rounded-2xl p-6 border border-teal-200 text-center">
-                <p class="text-xl text-gray-800 font-semibold">
-                    "You're not begging for a job. You're exploring a mutual fit."
-                </p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Slide 6: Quick Prep Review -->
-    <div class="slide bg-gray-50">
-        <div class="max-w-4xl mx-auto">
-            <p class="text-teal-600 font-semibold text-lg mb-4">PRE-INTERVIEW BRIEFING</p>
-            <h2 class="text-4xl font-bold text-gray-900 mb-8">Quick Prep Checklist</h2>
-            
-            <div class="grid md:grid-cols-2 gap-6">
-                <div class="bg-white rounded-xl p-6 shadow-sm">
-                    <h3 class="font-bold text-gray-900 text-lg mb-4">📋 Before Every Interview</h3>
-                    <ul class="space-y-3 text-gray-700">
-                        <li>✅ Research the company (mission, news, culture)</li>
-                        <li>✅ Research the interviewer (LinkedIn)</li>
-                        <li>✅ Review the job posting keywords</li>
-                        <li>✅ Prepare 2-3 questions to ask</li>
-                        <li>✅ Have your stories ready (STAR format)</li>
-                    </ul>
+                <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6">
+                    <div class="text-3xl mb-3">🔄</div>
+                    <h3 class="text-xl font-bold text-white mb-2">Rejection = Redirection</h3>
+                    <p class="text-gray-300">Every "no" gets you closer to the right "yes." You only need one.</p>
                 </div>
                 
-                <div class="bg-white rounded-xl p-6 shadow-sm">
-                    <h3 class="font-bold text-gray-900 text-lg mb-4">🎯 Day-Of Reminders</h3>
-                    <ul class="space-y-3 text-gray-700">
-                        <li>✅ Test your tech (camera, mic, internet)</li>
-                        <li>✅ Clean background, good lighting</li>
-                        <li>✅ Dress professionally (full outfit)</li>
-                        <li>✅ Water nearby, notes visible</li>
-                        <li>✅ Join 5 minutes early</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Slide 7: Mock Interview Start -->
-    <div class="slide bg-gradient-to-br from-teal-600 to-emerald-500 text-white">
-        <div class="max-w-4xl mx-auto text-center">
-            <p class="text-teal-200 font-semibold text-lg mb-4">SEGMENT 2</p>
-            <h2 class="text-5xl font-bold mb-6">Full Mock Interview</h2>
-            <p class="text-2xl text-teal-100">Let's do this for real.</p>
-            <p class="text-xl text-teal-200 mt-4">45 minutes</p>
-            
-            <div class="mt-12 bg-white/10 rounded-2xl p-6 max-w-xl mx-auto">
-                <p class="text-lg">
-                    From this point on, we're in interview mode. Treat this like the real thing.
-                </p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Slide 8: Mock Interview Structure -->
-    <div class="slide bg-white">
-        <div class="max-w-4xl mx-auto">
-            <p class="text-teal-600 font-semibold text-lg mb-4">MOCK INTERVIEW</p>
-            <h2 class="text-4xl font-bold text-gray-900 mb-8">Interview Flow</h2>
-            
-            <div class="space-y-6">
-                <div class="flex items-start gap-4">
-                    <div class="w-16 h-16 bg-teal-100 text-teal-700 rounded-xl flex items-center justify-center font-bold text-xl flex-shrink-0">5m</div>
-                    <div class="pt-2">
-                        <h3 class="text-xl font-bold text-gray-900">Opening & "Tell Me About Yourself"</h3>
-                        <p class="text-gray-600">Your chance to set the narrative</p>
-                    </div>
-                </div>
-                <div class="flex items-start gap-4">
-                    <div class="w-16 h-16 bg-teal-100 text-teal-700 rounded-xl flex items-center justify-center font-bold text-xl flex-shrink-0">25m</div>
-                    <div class="pt-2">
-                        <h3 class="text-xl font-bold text-gray-900">Behavioral Questions</h3>
-                        <p class="text-gray-600">STAR stories, leadership, challenges, teamwork</p>
-                    </div>
-                </div>
-                <div class="flex items-start gap-4">
-                    <div class="w-16 h-16 bg-teal-100 text-teal-700 rounded-xl flex items-center justify-center font-bold text-xl flex-shrink-0">10m</div>
-                    <div class="pt-2">
-                        <h3 class="text-xl font-bold text-gray-900">Technical/Role-Specific Questions</h3>
-                        <p class="text-gray-600">Industry knowledge, problem-solving, skills</p>
-                    </div>
-                </div>
-                <div class="flex items-start gap-4">
-                    <div class="w-16 h-16 bg-teal-100 text-teal-700 rounded-xl flex items-center justify-center font-bold text-xl flex-shrink-0">5m</div>
-                    <div class="pt-2">
-                        <h3 class="text-xl font-bold text-gray-900">"Do You Have Any Questions?"</h3>
-                        <p class="text-gray-600">Demonstrate engagement and research</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Slide 9: [INTERVIEW HAPPENS HERE] -->
-    <div class="slide bg-gray-900 text-white">
-        <div class="max-w-4xl mx-auto text-center">
-            <div class="w-24 h-24 bg-teal-600 rounded-full flex items-center justify-center mx-auto mb-8">
-                <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
-                </svg>
-            </div>
-            <h2 class="text-5xl font-bold mb-6">Mock Interview In Progress</h2>
-            <p class="text-2xl text-gray-400">
-                [Facilitator conducts 45-minute interview simulation]
-            </p>
-            
-            <div class="mt-12 grid md:grid-cols-3 gap-6 text-left max-w-3xl mx-auto">
-                <div class="bg-gray-800 rounded-xl p-5">
-                    <p class="text-teal-400 font-semibold mb-2">Observe</p>
-                    <p class="text-gray-400 text-sm">Body language, eye contact, energy, confidence</p>
-                </div>
-                <div class="bg-gray-800 rounded-xl p-5">
-                    <p class="text-teal-400 font-semibold mb-2">Note</p>
-                    <p class="text-gray-400 text-sm">Strong moments, areas to improve, specific examples</p>
-                </div>
-                <div class="bg-gray-800 rounded-xl p-5">
-                    <p class="text-teal-400 font-semibold mb-2">Challenge</p>
-                    <p class="text-gray-400 text-sm">Follow-up questions, curve balls, stress test</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Slide 10: Debrief Section -->
-    <div class="slide bg-gradient-to-br from-teal-600 to-emerald-500 text-white">
-        <div class="max-w-4xl mx-auto text-center">
-            <p class="text-teal-200 font-semibold text-lg mb-4">SEGMENT 3</p>
-            <h2 class="text-5xl font-bold mb-6">Immediate Debrief</h2>
-            <p class="text-2xl text-teal-100">What worked. What to refine.</p>
-            <p class="text-xl text-teal-200 mt-4">20 minutes</p>
-        </div>
-    </div>
-
-    <!-- Slide 11: Self-Assessment First -->
-    <div class="slide bg-white">
-        <div class="max-w-4xl mx-auto">
-            <p class="text-teal-600 font-semibold text-lg mb-4">DEBRIEF</p>
-            <h2 class="text-4xl font-bold text-gray-900 mb-8">How Did That Feel?</h2>
-            
-            <p class="text-xl text-gray-700 mb-8">
-                Before I share my feedback, let's hear from you:
-            </p>
-            
-            <div class="grid md:grid-cols-2 gap-6">
-                <div class="bg-emerald-50 rounded-2xl p-6 border border-emerald-200">
-                    <h3 class="font-bold text-emerald-800 text-lg mb-4">What went well?</h3>
-                    <p class="text-gray-600">Which moments felt strong? What are you proud of?</p>
+                <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6">
+                    <div class="text-3xl mb-3">🛡️</div>
+                    <h3 class="text-xl font-bold text-white mb-2">Protect Your Energy</h3>
+                    <p class="text-gray-300">Set limits. Take breaks. This is a marathon, not a sprint.</p>
                 </div>
                 
-                <div class="bg-amber-50 rounded-2xl p-6 border border-amber-200">
-                    <h3 class="font-bold text-amber-800 text-lg mb-4">What was challenging?</h3>
-                    <p class="text-gray-600">Where did you feel uncertain? What caught you off guard?</p>
+                <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6">
+                    <div class="text-3xl mb-3">💰</div>
+                    <h3 class="text-xl font-bold text-white mb-2">Negotiate with Confidence</h3>
+                    <p class="text-gray-300">When the offer comes, you're ready. Know your worth.</p>
                 </div>
             </div>
             
-            <div class="mt-8 bg-gray-50 rounded-2xl p-6 border border-gray-200 text-center">
-                <p class="text-gray-700 italic">
-                    "Self-awareness is the first step to improvement."
-                </p>
+            <div class="highlight-box">
+                <p class="text-2xl font-bold text-white mb-4">You're Ready. 🚀</p>
+                <p class="text-gray-300">You've built your resume. You've mastered your stories. You've practiced under pressure.</p>
+                <p class="text-lime-400 mt-4 font-semibold">Now go land that role. I'm rooting for you!</p>
+            </div>
+            
+            <div class="mt-12 inline-flex items-center gap-3">
+                <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center">
+                    <span class="text-xl font-bold">L²</span>
+                </div>
+                <span class="text-2xl font-bold">LaunchToLead</span>
             </div>
         </div>
+        
+        <div class="slide-number">20</div>
     </div>
 
-    <!-- Slide 12: Feedback Framework -->
-    <div class="slide bg-gray-50">
-        <div class="max-w-4xl mx-auto">
-            <p class="text-teal-600 font-semibold text-lg mb-4">DEBRIEF</p>
-            <h2 class="text-4xl font-bold text-gray-900 mb-8">Feedback Categories</h2>
+    <script>
+        // Scroll-based active navigation
+        const navItems = document.querySelectorAll('.nav-item');
+        const slides = document.querySelectorAll('.slide');
+        
+        function updateActiveNav() {
+            const scrollPos = window.scrollY + 100;
             
-            <div class="grid md:grid-cols-2 gap-6">
-                <div class="bg-white rounded-xl p-6 shadow-sm">
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
-                            <span class="text-blue-600 text-xl">🎯</span>
-                        </div>
-                        <h3 class="font-bold text-gray-900">Content</h3>
-                    </div>
-                    <ul class="text-gray-600 space-y-2 text-sm">
-                        <li>• Story selection and relevance</li>
-                        <li>• STAR structure execution</li>
-                        <li>• Technical accuracy</li>
-                        <li>• Answer completeness</li>
-                    </ul>
-                </div>
+            slides.forEach((slide, index) => {
+                const slideTop = slide.offsetTop;
+                const slideBottom = slideTop + slide.offsetHeight;
                 
-                <div class="bg-white rounded-xl p-6 shadow-sm">
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center">
-                            <span class="text-purple-600 text-xl">🎤</span>
-                        </div>
-                        <h3 class="font-bold text-gray-900">Delivery</h3>
-                    </div>
-                    <ul class="text-gray-600 space-y-2 text-sm">
-                        <li>• Clarity and conciseness</li>
-                        <li>• Pacing and pauses</li>
-                        <li>• Confidence and energy</li>
-                        <li>• Filler words</li>
-                    </ul>
-                </div>
-                
-                <div class="bg-white rounded-xl p-6 shadow-sm">
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
-                            <span class="text-green-600 text-xl">👤</span>
-                        </div>
-                        <h3 class="font-bold text-gray-900">Presence</h3>
-                    </div>
-                    <ul class="text-gray-600 space-y-2 text-sm">
-                        <li>• Eye contact (camera)</li>
-                        <li>• Body language</li>
-                        <li>• Facial expressions</li>
-                        <li>• Professional appearance</li>
-                    </ul>
-                </div>
-                
-                <div class="bg-white rounded-xl p-6 shadow-sm">
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center">
-                            <span class="text-orange-600 text-xl">🤝</span>
-                        </div>
-                        <h3 class="font-bold text-gray-900">Connection</h3>
-                    </div>
-                    <ul class="text-gray-600 space-y-2 text-sm">
-                        <li>• Rapport building</li>
-                        <li>• Listening skills</li>
-                        <li>• Questions asked</li>
-                        <li>• Enthusiasm shown</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Slide 13: Top 3 Action Items -->
-    <div class="slide bg-white">
-        <div class="max-w-4xl mx-auto">
-            <p class="text-teal-600 font-semibold text-lg mb-4">DEBRIEF</p>
-            <h2 class="text-4xl font-bold text-gray-900 mb-8">Your Top 3 Focus Areas</h2>
-            
-            <p class="text-xl text-gray-700 mb-8">
-                Based on the interview, these are the highest-impact areas to refine:
-            </p>
-            
-            <div class="space-y-6">
-                <div class="flex items-start gap-4 bg-gray-50 rounded-xl p-6">
-                    <div class="w-12 h-12 bg-teal-600 text-white rounded-xl flex items-center justify-center font-bold flex-shrink-0">1</div>
-                    <div class="flex-1">
-                        <p class="text-lg text-gray-800 font-semibold">[Specific feedback point #1]</p>
-                        <p class="text-gray-600 mt-1">[How to improve it]</p>
-                    </div>
-                </div>
-                <div class="flex items-start gap-4 bg-gray-50 rounded-xl p-6">
-                    <div class="w-12 h-12 bg-teal-600 text-white rounded-xl flex items-center justify-center font-bold flex-shrink-0">2</div>
-                    <div class="flex-1">
-                        <p class="text-lg text-gray-800 font-semibold">[Specific feedback point #2]</p>
-                        <p class="text-gray-600 mt-1">[How to improve it]</p>
-                    </div>
-                </div>
-                <div class="flex items-start gap-4 bg-gray-50 rounded-xl p-6">
-                    <div class="w-12 h-12 bg-teal-600 text-white rounded-xl flex items-center justify-center font-bold flex-shrink-0">3</div>
-                    <div class="flex-1">
-                        <p class="text-lg text-gray-800 font-semibold">[Specific feedback point #3]</p>
-                        <p class="text-gray-600 mt-1">[How to improve it]</p>
-                    </div>
-                </div>
-            </div>
-            
-            <p class="text-gray-500 text-center mt-8 italic">
-                [Facilitator fills these in during the debrief]
-            </p>
-        </div>
-    </div>
-
-    <!-- Slide 14: Mental Resilience Section -->
-    <div class="slide bg-gradient-to-br from-teal-600 to-emerald-500 text-white">
-        <div class="max-w-4xl mx-auto text-center">
-            <p class="text-teal-200 font-semibold text-lg mb-4">SEGMENT 4</p>
-            <h2 class="text-5xl font-bold mb-6">Mental Resilience</h2>
-            <p class="text-2xl text-teal-100">Rejection Reframe + Burnout Prevention</p>
-            <p class="text-xl text-teal-200 mt-4">7 minutes</p>
-        </div>
-    </div>
-
-    <!-- Slide 15: Rejection Reframe -->
-    <div class="slide bg-white">
-        <div class="max-w-4xl mx-auto">
-            <p class="text-teal-600 font-semibold text-lg mb-4">MENTAL RESILIENCE</p>
-            <h2 class="text-4xl font-bold text-gray-900 mb-8">The Rejection Reframe System™</h2>
-            
-            <div class="grid md:grid-cols-2 gap-8 mb-8">
-                <div class="bg-red-50 rounded-2xl p-6 border border-red-200">
-                    <h3 class="font-bold text-red-800 text-lg mb-4">❌ Without Tracking</h3>
-                    <p class="text-gray-700">
-                        Rejected → "I'm not good enough" → Apply less → Spiral
-                    </p>
-                </div>
-                
-                <div class="bg-emerald-50 rounded-2xl p-6 border border-emerald-200">
-                    <h3 class="font-bold text-emerald-800 text-lg mb-4">✅ With Tracking</h3>
-                    <p class="text-gray-700">
-                        Rejected → Update tracker → Analyze data → Improve
-                    </p>
-                </div>
-            </div>
-            
-            <div class="bg-teal-50 rounded-2xl p-6 border border-teal-200 text-center">
-                <p class="text-xl text-gray-800 font-semibold">
-                    "Tracking decouples your self-worth from the outcome."
-                </p>
-                <p class="text-gray-600 mt-2">
-                    You're not hoping. You're debugging.
-                </p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Slide 16: Burnout Prevention -->
-    <div class="slide bg-gray-50">
-        <div class="max-w-4xl mx-auto">
-            <p class="text-teal-600 font-semibold text-lg mb-4">MENTAL RESILIENCE</p>
-            <h2 class="text-4xl font-bold text-gray-900 mb-8">The Burnout Prevention System™</h2>
-            
-            <div class="bg-white rounded-2xl p-8 shadow-sm mb-8">
-                <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">Set Daily Goals. Then STOP.</h3>
-                
-                <div class="grid md:grid-cols-3 gap-6 text-center">
-                    <div>
-                        <div class="w-16 h-16 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <span class="text-3xl">🎯</span>
-                        </div>
-                        <p class="font-semibold text-gray-900">Set a Goal</p>
-                        <p class="text-gray-600 text-sm">"5 applications today"</p>
-                    </div>
-                    <div>
-                        <div class="w-16 h-16 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <span class="text-3xl">✅</span>
-                        </div>
-                        <p class="font-semibold text-gray-900">Hit the Goal</p>
-                        <p class="text-gray-600 text-sm">Mark your streak</p>
-                    </div>
-                    <div>
-                        <div class="w-16 h-16 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <span class="text-3xl">🛑</span>
-                        </div>
-                        <p class="font-semibold text-gray-900">STOP</p>
-                        <p class="text-gray-600 text-sm">Guilt-free. Done for today.</p>
-                    </div>
-                </div>
-            </div>
-            
-            <p class="text-center text-gray-600 text-lg">
-                The job search is a marathon. You can't sprint for months.
-            </p>
-        </div>
-    </div>
-
-    <!-- Slide 17: Negotiation Preview -->
-    <div class="slide bg-gradient-to-br from-teal-600 to-emerald-500 text-white">
-        <div class="max-w-4xl mx-auto text-center">
-            <p class="text-teal-200 font-semibold text-lg mb-4">SEGMENT 5</p>
-            <h2 class="text-5xl font-bold mb-6">Offer & Negotiation</h2>
-            <p class="text-2xl text-teal-100">Be ready when it comes.</p>
-            <p class="text-xl text-teal-200 mt-4">5 minutes</p>
-        </div>
-    </div>
-
-    <!-- Slide 18: You CAN Negotiate -->
-    <div class="slide bg-white">
-        <div class="max-w-4xl mx-auto">
-            <p class="text-teal-600 font-semibold text-lg mb-4">NEGOTIATION</p>
-            <h2 class="text-4xl font-bold text-gray-900 mb-8">Yes, Entry-Level CAN Negotiate</h2>
-            
-            <div class="bg-amber-50 border-l-4 border-amber-400 p-6 rounded-r-xl mb-8">
-                <p class="text-lg text-gray-800">
-                    <strong>Myth:</strong> "Entry-level candidates can't negotiate."
-                </p>
-                <p class="text-gray-700 mt-2">
-                    <strong>Reality:</strong> Companies expect it. They rarely offer their best number first. And even if salary is fixed, other things are negotiable.
-                </p>
-            </div>
-            
-            <h3 class="text-xl font-bold text-gray-900 mb-4">What You Can Negotiate:</h3>
-            <div class="grid md:grid-cols-4 gap-4">
-                <div class="bg-gray-50 rounded-xl p-4 text-center">
-                    <p class="font-semibold text-gray-800">🎁 Signing Bonus</p>
-                </div>
-                <div class="bg-gray-50 rounded-xl p-4 text-center">
-                    <p class="font-semibold text-gray-800">📅 Start Date</p>
-                </div>
-                <div class="bg-gray-50 rounded-xl p-4 text-center">
-                    <p class="font-semibold text-gray-800">🏖️ PTO</p>
-                </div>
-                <div class="bg-gray-50 rounded-xl p-4 text-center">
-                    <p class="font-semibold text-gray-800">🏠 Remote Work</p>
-                </div>
-                <div class="bg-gray-50 rounded-xl p-4 text-center">
-                    <p class="font-semibold text-gray-800">🏠 Relocation</p>
-                </div>
-                <div class="bg-gray-50 rounded-xl p-4 text-center">
-                    <p class="font-semibold text-gray-800">📚 Dev Budget</p>
-                </div>
-                <div class="bg-gray-50 rounded-xl p-4 text-center">
-                    <p class="font-semibold text-gray-800">💻 Equipment</p>
-                </div>
-                <div class="bg-gray-50 rounded-xl p-4 text-center">
-                    <p class="font-semibold text-gray-800">📊 Early Review</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Slide 19: Know Your Numbers -->
-    <div class="slide bg-gray-50">
-        <div class="max-w-4xl mx-auto">
-            <p class="text-teal-600 font-semibold text-lg mb-4">NEGOTIATION</p>
-            <h2 class="text-4xl font-bold text-gray-900 mb-8">The Three Numbers Strategy</h2>
-            
-            <div class="space-y-6">
-                <div class="bg-white rounded-xl p-6 shadow-sm flex items-center gap-6">
-                    <div class="w-16 h-16 bg-red-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                        <span class="text-3xl">🚫</span>
-                    </div>
-                    <div>
-                        <h3 class="font-bold text-gray-900 text-lg">Walk-Away Number</h3>
-                        <p class="text-gray-600">Below this, you decline. Non-negotiable floor.</p>
-                    </div>
-                </div>
-                
-                <div class="bg-white rounded-xl p-6 shadow-sm flex items-center gap-6">
-                    <div class="w-16 h-16 bg-teal-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                        <span class="text-3xl">🎯</span>
-                    </div>
-                    <div>
-                        <h3 class="font-bold text-gray-900 text-lg">Target Number</h3>
-                        <p class="text-gray-600">What you'd be genuinely happy with. Fair market rate.</p>
-                    </div>
-                </div>
-                
-                <div class="bg-white rounded-xl p-6 shadow-sm flex items-center gap-6">
-                    <div class="w-16 h-16 bg-emerald-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                        <span class="text-3xl">⭐</span>
-                    </div>
-                    <div>
-                        <h3 class="font-bold text-gray-900 text-lg">Bolstering Number</h3>
-                        <p class="text-gray-600">The high-end ask. Where you start the negotiation.</p>
-                    </div>
-                </div>
-            </div>
-            
-            <p class="text-center text-gray-600 mt-8">
-                Research these numbers BEFORE you get an offer. Materials provided!
-            </p>
-        </div>
-    </div>
-
-    <!-- Slide 20: Final Send-Off -->
-    <div class="slide bg-gradient-to-br from-teal-600 to-emerald-500 text-white">
-        <div class="max-w-4xl mx-auto text-center">
-            <p class="text-teal-200 font-semibold text-lg mb-4">SEGMENT 6</p>
-            <h2 class="text-5xl font-bold mb-6">Final Prep & Send-Off</h2>
-            <p class="text-2xl text-teal-100">You're ready.</p>
-            <p class="text-xl text-teal-200 mt-4">3 minutes</p>
-        </div>
-    </div>
-
-    <!-- Slide 21: Interview Day Reminders -->
-    <div class="slide bg-white">
-        <div class="max-w-4xl mx-auto">
-            <p class="text-teal-600 font-semibold text-lg mb-4">FINAL PREP</p>
-            <h2 class="text-4xl font-bold text-gray-900 mb-8">Interview Day Reminders</h2>
-            
-            <div class="grid md:grid-cols-2 gap-6">
-                <div class="bg-teal-50 rounded-xl p-6 border border-teal-200">
-                    <h3 class="font-bold text-teal-800 text-lg mb-4">Before the Interview</h3>
-                    <ul class="space-y-2 text-gray-700">
-                        <li>✅ Test tech 30 minutes before</li>
-                        <li>✅ Review your notes and stories</li>
-                        <li>✅ Take a few deep breaths</li>
-                        <li>✅ Power pose for 2 minutes</li>
-                        <li>✅ Join 5 minutes early</li>
-                    </ul>
-                </div>
-                
-                <div class="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                    <h3 class="font-bold text-emerald-800 text-lg mb-4">During the Interview</h3>
-                    <ul class="space-y-2 text-gray-700">
-                        <li>✅ Look at the camera, not the screen</li>
-                        <li>✅ Pause before answering—it's okay</li>
-                        <li>✅ Use STAR for behavioral questions</li>
-                        <li>✅ Show enthusiasm genuinely</li>
-                        <li>✅ Ask your prepared questions</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="mt-8 bg-gray-50 rounded-xl p-6 border border-gray-200 text-center">
-                <p class="text-lg text-gray-800">
-                    <strong>After the interview:</strong> Send a thank-you email within 24 hours. Reference something specific from the conversation.
-                </p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Slide 22: You've Got This -->
-    <div class="slide bg-gray-900 text-white">
-        <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-5xl font-bold mb-8">You've Got This</h2>
-            
-            <div class="space-y-4 text-2xl text-gray-300 mb-12">
-                <p>✓ You have a targeted resume</p>
-                <p>✓ You have powerful stories</p>
-                <p>✓ You have interview frameworks</p>
-                <p>✓ You have negotiation scripts</p>
-                <p>✓ You have a resilience system</p>
-            </div>
-            
-            <p class="text-3xl font-bold text-teal-400">
-                Now go get that offer.
-            </p>
-        </div>
-    </div>
-
-    <!-- Slide 23: What's Next -->
-    <div class="slide bg-white">
-        <div class="max-w-4xl mx-auto">
-            <p class="text-teal-600 font-semibold text-lg mb-4">NEXT STEPS</p>
-            <h2 class="text-4xl font-bold text-gray-900 mb-8">What Happens Now</h2>
-            
-            <div class="space-y-6">
-                <div class="flex items-start gap-4">
-                    <div class="w-12 h-12 bg-teal-600 text-white rounded-xl flex items-center justify-center font-bold flex-shrink-0">1</div>
-                    <div>
-                        <h3 class="text-xl font-bold text-gray-900">Apply consistently</h3>
-                        <p class="text-gray-600">Use your daily goal system. Quality over quantity.</p>
-                    </div>
-                </div>
-                <div class="flex items-start gap-4">
-                    <div class="w-12 h-12 bg-teal-600 text-white rounded-xl flex items-center justify-center font-bold flex-shrink-0">2</div>
-                    <div>
-                        <h3 class="text-xl font-bold text-gray-900">Track everything</h3>
-                        <p class="text-gray-600">Update your tracker. Treat rejections as data.</p>
-                    </div>
-                </div>
-                <div class="flex items-start gap-4">
-                    <div class="w-12 h-12 bg-teal-600 text-white rounded-xl flex items-center justify-center font-bold flex-shrink-0">3</div>
-                    <div>
-                        <h3 class="text-xl font-bold text-gray-900">Practice your stories</h3>
-                        <p class="text-gray-600">Keep them sharp. Review before each interview.</p>
-                    </div>
-                </div>
-                <div class="flex items-start gap-4">
-                    <div class="w-12 h-12 bg-teal-600 text-white rounded-xl flex items-center justify-center font-bold flex-shrink-0">4</div>
-                    <div>
-                        <h3 class="text-xl font-bold text-gray-900">Reach out when you get an offer</h3>
-                        <p class="text-gray-600">We'll review the negotiation scripts together.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Slide 24: Closing -->
-    <div class="slide bg-gradient-to-br from-teal-600 via-teal-500 to-emerald-500 text-white">
-        <div class="max-w-4xl mx-auto text-center">
-            <div class="mb-8">
-                <span class="text-7xl font-bold tracking-tight">L²</span>
-            </div>
-            <h2 class="text-4xl font-bold mb-6">
-                Thank You
-            </h2>
-            <p class="text-2xl text-teal-100 mb-4">
-                You're ready to launch.
-            </p>
-            <p class="text-xl text-teal-200 mt-8">
-                The Launch Path Blueprint™ | Session 3 Complete
-            </p>
-        </div>
-    </div>
+                if (scrollPos >= slideTop && scrollPos < slideBottom) {
+                    navItems.forEach(item => item.classList.remove('active'));
+                    if (navItems[index]) {
+                        navItems[index].classList.add('active');
+                    }
+                }
+            });
+        }
+        
+        window.addEventListener('scroll', updateActiveNav);
+        updateActiveNav();
+    </script>
 
 </body>
 </html>
