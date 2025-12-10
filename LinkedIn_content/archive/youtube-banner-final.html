@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Banner - Launch to Lead</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #1a1a1a;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+
+        h1 {
+            color: white;
+            margin-bottom: 8px;
+            font-size: 24px;
+        }
+
+        .instructions {
+            color: #888;
+            font-size: 14px;
+            margin-bottom: 30px;
+            text-align: center;
+            max-width: 800px;
+        }
+
+        /* YouTube Banner: 2048 x 1152 pixels */
+        .banner {
+            width: 2048px;
+            height: 1152px;
+            background: linear-gradient(135deg, #064e3b 0%, #065f46 50%, #047857 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Subtle texture overlay */
+        .banner::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 80% 20%, rgba(255,255,255,0.08) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            padding: 0 100px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .logo-icon {
+            width: 44px;
+            height: 44px;
+            background: white;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 18px;
+            color: #064e3b;
+        }
+
+        .logo-text {
+            font-size: 28px;
+            font-weight: 700;
+            color: white;
+        }
+
+        .logo-text span {
+            color: #a7f3d0;
+        }
+
+        h2 {
+            font-size: 56px;
+            font-weight: 800;
+            color: white;
+            line-height: 1.1;
+            margin-bottom: 12px;
+        }
+
+        h2 .highlight {
+            color: #fcd34d;
+        }
+
+        .subtext {
+            font-size: 24px;
+            color: #a7f3d0;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 80px;
+            margin-top: 0;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 42px;
+            font-weight: 800;
+            color: #fcd34d;
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 16px;
+            color: #a7f3d0;
+            margin-top: 4px;
+        }
+
+        .download-note {
+            color: #666;
+            font-size: 12px;
+            margin-top: 24px;
+            text-align: center;
+            max-width: 800px;
+        }
+
+        .download-note strong {
+            color: #14b8a6;
+        }
+
+        .size-info {
+            color: #888;
+            font-size: 11px;
+            margin-top: 12px;
+        }
+    </style>
+</head>
+<body>
+    <h1>YouTube Channel Banner</h1>
+    <p class="instructions">
+        YouTube banner is 2048x1152px. The safe area (always visible) is shown with guides.<br>
+        Use Chrome DevTools to capture: Right-click .banner → Inspect → Right-click element → "Capture node screenshot"
+    </p>
+
+    <div class="banner">
+        <div class="content">
+            <div class="logo">
+                <div class="logo-icon">L²</div>
+                <div class="logo-text">Launch<span>ToLead</span></div>
+            </div>
+            <h2>Stop Sending <span class="highlight">250 Applications</span><br>Into the Void</h2>
+            <p class="subtext">The 21-Day Engineering Career Launch Blueprint</p>
+            
+            <div class="stats">
+                <div class="stat">
+                    <div class="stat-number">21</div>
+                    <div class="stat-label">Days</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">52</div>
+                    <div class="stat-label">Methods</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">3</div>
+                    <div class="stat-label">Sessions</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <p class="download-note">
+        <strong>To export at full resolution (2048x1152):</strong><br>
+        1. Open in Chrome → Press F12 (DevTools)<br>
+        2. Click "Select Element" tool → Click the banner<br>
+        3. Right-click the highlighted element in DevTools → "Capture node screenshot"<br>
+        4. File will be saved as PNG (usually under 1MB)
+    </p>
+    <p class="size-info">
+        Note: Banner displays at full 2048x1152 resolution. Scroll to see the entire banner, then use DevTools to capture.
+    </p>
+</body>
+</html>
