@@ -80,78 +80,115 @@
     }
 
     function createPopupHTML() {
-        const lm = CONFIG.leadMagnet;
-        
-        let painHTML = '';
-        lm.painPoints.forEach(function(pain) {
-            painHTML += '<li class="flex items-start gap-2 text-red-700 text-sm">' +
-                '<span class="text-red-500 mt-0.5">✗</span>' +
-                '<span>' + pain + '</span></li>';
-        });
-        
-        let includesHTML = '';
-        lm.includes.forEach(function(item) {
-            includesHTML += '<li class="flex items-start gap-3">' +
-                '<div class="w-5 h-5 rounded-full bg-emerald-100 flex items-center justify-center flex-shrink-0 mt-0.5">' +
-                '<svg class="w-3 h-3 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">' +
-                '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></div>' +
-                '<div><p class="font-semibold text-slate-800 text-sm">' + item.text + '</p>' +
-                '<p class="text-slate-500 text-xs">' + item.desc + '</p></div></li>';
-        });
-
         return '<div id="lead-magnet-popup" class="fixed inset-0 z-50 hidden">' +
             '<div class="absolute inset-0 bg-black/70 backdrop-blur-sm" onclick="window.LeadMagnetPopup.close()"></div>' +
             '<div class="absolute inset-0 flex items-center justify-center p-4 pointer-events-none">' +
-                '<div class="bg-white rounded-2xl shadow-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto relative pointer-events-auto">' +
-                    '<div id="popup-main" class="p-6 md:p-8">' +
-                        '<div class="bg-amber-50 border border-amber-200 rounded-lg px-4 py-2 mb-6 text-center">' +
-                            '<p class="text-amber-800 text-sm font-medium">' +
-                                '<span class="inline-block w-2 h-2 bg-amber-500 rounded-full mr-2 animate-pulse"></span>' + lm.scarcity + '</p></div>' +
-                        '<div class="text-center mb-6">' +
-                            '<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs font-semibold mb-3">' +
-                                '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">' +
-                                    '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>FREE DOWNLOAD</div>' +
-                            '<h2 class="text-2xl md:text-3xl font-bold text-slate-800 mb-2">' + lm.tagline + '</h2>' +
-                            '<p class="text-slate-600 text-sm">' + lm.subtitle + '</p></div>' +
-                        '<div class="bg-red-50 border-l-4 border-red-400 rounded-r-lg p-4 mb-6">' +
-                            '<p class="text-red-800 font-semibold text-sm mb-2">Sound familiar?</p>' +
-                            '<ul class="space-y-1">' + painHTML + '</ul></div>' +
+                '<div class="bg-gradient-to-br from-emerald-900 via-emerald-800 to-slate-900 rounded-2xl shadow-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto relative pointer-events-auto border border-emerald-700/50">' +
+                    '<div id="popup-main" class="p-8">' +
+                        '<!-- Main content -->' +
+                        '<div class="text-center mb-8">' +
+                            '<h2 class="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">The Resume Formula that landed me John Deere</h2>' +
+                            '<p class="text-emerald-100 text-base mb-4">Completely FREE PDF Download — Transform your resume like I did</p>' +
+                            '<div class="bg-red-950/50 border-2 border-red-800/70 rounded-xl px-4 py-3 inline-block">' +
+                                '<p class="text-red-200 text-sm font-semibold">Your resume has 6 seconds to impress, you\'re wasting those 6 seconds without this formula.</p>' +
+                            '</div>' +
+                        '</div>' +
+                        '<!-- What\'s Included - Shortened -->' +
                         '<div class="mb-6">' +
-                            '<p class="font-bold text-slate-800 mb-3 text-sm uppercase tracking-wide">What\'s Inside:</p>' +
-                            '<ul class="space-y-3">' + includesHTML + '</ul></div>' +
+                            '<ul class="space-y-3 text-white text-sm">' +
+                                '<li class="flex items-start gap-3">' +
+                                    '<div class="w-5 h-5 rounded-full bg-emerald-600 flex items-center justify-center flex-shrink-0 mt-0.5">' +
+                                        '<svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">' +
+                                            '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></div>' +
+                                    '<div><p class="font-semibold text-white">The Formula — transform your boring bullets</p></div>' +
+                                '</li>' +
+                                '<li class="flex items-start gap-3">' +
+                                    '<div class="w-5 h-5 rounded-full bg-emerald-600 flex items-center justify-center flex-shrink-0 mt-0.5">' +
+                                        '<svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">' +
+                                            '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></div>' +
+                                    '<div><p class="font-semibold text-white">Before/After — See it in action</p></div>' +
+                                '</li>' +
+                                '<li class="flex items-start gap-3">' +
+                                    '<div class="w-5 h-5 rounded-full bg-emerald-600 flex items-center justify-center flex-shrink-0 mt-0.5">' +
+                                        '<svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">' +
+                                            '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></div>' +
+                                    '<div><p class="font-semibold text-white">Metrics, metrics, metrics — how to get them</p></div>' +
+                                '</li>' +
+                                '<li class="flex items-start gap-3">' +
+                                    '<div class="w-5 h-5 rounded-full bg-emerald-600 flex items-center justify-center flex-shrink-0 mt-0.5">' +
+                                        '<svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">' +
+                                            '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></div>' +
+                                    '<div><p class="font-semibold text-white">Template — use on your bullets immediately</p></div>' +
+                                '</li>' +
+                            '</ul>' +
+                        '</div>' +
+                        '<!-- Form -->' +
                         '<form id="lead-magnet-form" onsubmit="window.LeadMagnetPopup.submitForm(event)" class="space-y-3">' +
-                            '<input type="text" id="lead-first-name" name="first_name" required class="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition-all text-sm" placeholder="First Name">' +
-                            '<input type="email" id="lead-email" name="email" required class="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition-all text-sm" placeholder="Email Address">' +
-                            '<button type="submit" id="popup-submit-btn" class="w-full py-4 bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white rounded-xl font-bold text-lg transition-all shadow-lg hover:shadow-xl">Send Me the Free Guide →</button></form>' +
-                        '<p class="text-center text-xs text-slate-400 mt-4">' + lm.guarantee + '</p>' +
-                        '<button onclick="window.LeadMagnetPopup.close()" class="w-full mt-4 py-3 px-4 border-2 border-red-300 text-red-500 hover:bg-red-50 hover:border-red-400 hover:text-red-600 rounded-xl text-sm font-medium transition-all">No thanks, I don\'t like useful free stuff</button></div>' +
-                    '<div id="popup-success" class="p-6 md:p-8 text-center hidden">' +
-                        '<div class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-full mb-4">' +
-                            '<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">' +
-                                '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></div>' +
-                        '<h2 class="text-2xl font-bold text-slate-800 mb-2">Check Your Inbox!</h2>' +
-                        '<p class="text-slate-600 mb-6 text-sm">Your ' + lm.name + ' is on its way to <span id="submitted-email" class="font-semibold">your email</span></p>' +
-                        '<div class="bg-red-50 border-2 border-red-200 rounded-xl p-4 mb-6">' +
+                            '<input type="text" id="lead-first-name" name="first_name" required class="w-full px-5 py-4 bg-slate-900 border-2 border-emerald-700/50 rounded-xl text-white placeholder-slate-400 focus:border-emerald-600 focus:ring-2 focus:ring-emerald-600/50 outline-none transition-all" placeholder="First Name">' +
+                            '<input type="email" id="lead-email" name="email" required class="w-full px-5 py-4 bg-slate-900 border-2 border-emerald-700/50 rounded-xl text-white placeholder-slate-400 focus:border-emerald-600 focus:ring-2 focus:ring-emerald-600/50 outline-none transition-all" placeholder="Email Address">' +
+                            '<button type="submit" id="popup-submit-btn" class="w-full py-4 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-lg rounded-xl transition-all shadow-lg">Download Formula Now!</button>' +
+                            '<button type="button" onclick="window.LeadMagnetPopup.close()" class="w-full py-3 bg-transparent border-2 border-slate-700 hover:border-slate-600 text-slate-400 hover:text-slate-300 rounded-xl transition-all text-sm">I hate free valuable stuff</button>' +
+                        '</form>' +
+                        '<p class="text-center text-xs text-emerald-300 mt-4">Absolutely free, no spam, no fluff</p>' +
+                    '</div>' +
+                    '<div id="popup-success" class="p-8 text-center hidden">' +
+                        '<!-- Success Icon with Animation -->' +
+                        '<div class="text-center mb-6">' +
+                            '<div class="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-full mb-4 shadow-lg">' +
+                                '<svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">' +
+                                    '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg></div>' +
+                            '<h2 class="text-3xl font-bold text-white mb-3">Check Your Inbox!</h2>' +
+                            '<p class="text-emerald-200 text-base">Your Impact Bullet Builder Free Guide is on its way to</p>' +
+                            '<p class="text-white font-semibold text-lg mb-4"><span id="submitted-email">your email</span></p>' +
+                            '<!-- Immediate next step -->' +
+                            '<div class="inline-flex items-center gap-2 px-4 py-2 bg-emerald-950/60 border border-emerald-700 rounded-full text-emerald-300 text-sm">' +
+                                '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">' +
+                                    '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>' +
+                                '<span>While you wait, let\'s get you interview-ready faster...</span>' +
+                            '</div>' +
+                        '</div>' +
+                        '<!-- Scarcity Banner -->' +
+                        '<div class="bg-gradient-to-r from-red-950/80 to-orange-950/80 border-2 border-red-700/70 rounded-xl p-4 mb-6">' +
                             '<div class="flex items-center justify-center gap-2 mb-2">' +
                                 '<span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>' +
-                                '<p class="font-bold text-red-700 text-sm">Only 10 Coaching Spots Per Month</p></div>' +
-                            '<p class="text-red-600 text-xs">Limited availability • High-touch 1-on-1 coaching</p></div>' +
-                        '<div class="bg-white border-2 border-emerald-200 rounded-xl p-5 mb-6 text-left">' +
-                            '<h3 class="font-bold text-slate-800 text-base mb-3 text-center">🎯 Book Your Free 15-Min Strategy Call</h3>' +
-                            '<p class="text-slate-600 text-sm mb-4 text-center">On this call, we\'ll:</p>' +
-                            '<ul class="space-y-2 text-sm text-slate-700 mb-5">' +
-                                '<li class="flex items-start gap-2">' +
-                                    '<svg class="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>' +
-                                    '<span><strong>Audit your resume</strong> and identify what\'s keeping you invisible</span></li>' +
-                                '<li class="flex items-start gap-2">' +
-                                    '<svg class="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>' +
-                                    '<span><strong>Map your 21-day roadmap</strong> to interview-ready status</span></li>' +
-                                '<li class="flex items-start gap-2">' +
-                                    '<svg class="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>' +
-                                    '<span><strong>See if you qualify</strong> for The Launch Path program</span></li></ul>' +
-                            '<a href="https://calendar.app.google/uzaLZUWSUH3ZbaGr6" target="_blank" class="block w-full text-center px-6 py-4 bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white rounded-xl font-bold text-lg transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">' +
-                                '📅 Book My Free Strategy Call Now</a></div>' +
-                        '<p class="mt-4"><button onclick="window.LeadMagnetPopup.close()" class="text-slate-400 hover:text-slate-600 text-sm underline">I\'ll explore the guide first</button></p></div>' +
+                                '<p class="font-bold text-red-200 text-sm">Only 10 Coaching Spots Available Per Month</p></div>' +
+                            '<p class="text-red-300 text-xs text-center">Limited availability • High-touch 1-on-1 coaching</p>' +
+                        '</div>' +
+                        '<!-- Strategy Call CTA Box -->' +
+                        '<div class="bg-gradient-to-br from-emerald-950/40 to-teal-950/40 border-2 border-emerald-600/50 rounded-xl p-6 mb-6">' +
+                            '<div class="text-center mb-4">' +
+                                '<h3 class="text-xl font-bold text-white mb-2">🎯 Book Your Free 15-Minute Strategy Call</h3>' +
+                                '<p class="text-emerald-200 text-sm">Let\'s identify what\'s holding you back and how we can help</p>' +
+                            '</div>' +
+                            '<!-- What happens on the call -->' +
+                            '<div class="bg-slate-900/50 rounded-lg p-4 mb-5">' +
+                                '<p class="text-emerald-300 text-xs font-semibold mb-3 uppercase tracking-wide">On this call, we\'ll:</p>' +
+                                '<ul class="space-y-2 text-sm text-white">' +
+                                    '<li class="flex items-start gap-2">' +
+                                        '<span class="text-emerald-500 mt-0.5">→</span>' +
+                                        '<span><strong class="text-emerald-300">Walk through our 21-Day Launch Blueprint</strong> program</span></li>' +
+                                    '<li class="flex items-start gap-2">' +
+                                        '<span class="text-emerald-500 mt-0.5">→</span>' +
+                                        '<span><strong class="text-emerald-300">Identify your key pain points</strong> in the job search</span></li>' +
+                                    '<li class="flex items-start gap-2">' +
+                                        '<span class="text-emerald-500 mt-0.5">→</span>' +
+                                        '<span><strong class="text-emerald-300">See if we can help</strong> you reach interview-ready status</span></li>' +
+                                '</ul>' +
+                            '</div>' +
+                            '<!-- Cost of waiting -->' +
+                            '<div class="bg-amber-950/30 border border-amber-800/50 rounded-lg p-3 mb-4">' +
+                                '<p class="text-amber-200 text-xs text-center"><strong class="text-amber-300">The math:</strong> Investing $1,997 for help vs. losing $6-8K <strong>every month</strong> you wait to land your job</p>' +
+                                '<p class="text-amber-300 text-xs text-center mt-2 font-semibold">You\'ve already waited long enough.</p>' +
+                            '</div>' +
+                            '<!-- Calendar link -->' +
+                            '<p class="text-emerald-300 text-xs text-center mb-3 font-semibold">📅 See available slots on Google Calendar now</p>' +
+                            '<a href="https://calendar.app.google/uzaLZUWSUH3ZbaGr6" target="_blank" class="block w-full py-4 bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 text-white font-bold text-lg rounded-xl transition-all shadow-xl mb-2 text-center">Book My Free Strategy Call Now</a>' +
+                            '<!-- Reassurance -->' +
+                            '<p class="text-center text-emerald-400 text-xs mt-2">No pressure. No pitch. Just clarity.</p>' +
+                        '</div>' +
+                        '<!-- Soft Close -->' +
+                        '<p class="text-center text-slate-600 text-xs hover:text-slate-500 cursor-pointer transition-colors" onclick="window.LeadMagnetPopup.close()">I\'ll read the guide first</p>' +
+                    '</div>' +
                 '</div></div></div>';
     }
 
