@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Testimonial Instructions - LaunchToLead</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+            padding: 60px 40px;
+            line-height: 1.6;
+            color: #064e3b;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 24px;
+            padding: 60px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 48px;
+            padding-bottom: 32px;
+            border-bottom: 3px solid #a3e635;
+        }
+        
+        .logo {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+        
+        .logo-icon {
+            background: linear-gradient(135deg, #064e3b 0%, #047857 100%);
+            color: #a3e635;
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 24px;
+        }
+        
+        .logo-text {
+            font-size: 32px;
+            font-weight: 700;
+        }
+        
+        .launch {
+            color: #064e3b;
+        }
+        
+        .tolead {
+            color: #14b8a6;
+        }
+        
+        h1 {
+            font-size: 36px;
+            font-weight: 800;
+            color: #064e3b;
+            margin-bottom: 12px;
+        }
+        
+        .subtitle {
+            font-size: 18px;
+            color: #047857;
+            font-weight: 500;
+        }
+        
+        h2 {
+            font-size: 28px;
+            font-weight: 700;
+            color: #064e3b;
+            margin-top: 48px;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .emoji {
+            font-size: 32px;
+        }
+        
+        h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: #047857;
+            margin-top: 32px;
+            margin-bottom: 16px;
+        }
+        
+        p {
+            font-size: 16px;
+            color: #065f46;
+            margin-bottom: 16px;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+            border-left: 4px solid #14b8a6;
+            border-radius: 12px;
+            padding: 24px;
+            margin: 24px 0;
+        }
+        
+        .highlight-box strong {
+            color: #064e3b;
+            font-size: 18px;
+        }
+        
+        ul {
+            margin: 16px 0;
+            padding-left: 24px;
+        }
+        
+        li {
+            font-size: 16px;
+            color: #065f46;
+            margin-bottom: 12px;
+            line-height: 1.6;
+        }
+        
+        li strong {
+            color: #064e3b;
+            font-weight: 700;
+        }
+        
+        .checklist {
+            background: #f0fdf4;
+            border-radius: 12px;
+            padding: 24px;
+            margin: 24px 0;
+        }
+        
+        .checklist li {
+            list-style: none;
+            padding-left: 32px;
+            position: relative;
+        }
+        
+        .checklist li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #14b8a6;
+            font-weight: 800;
+            font-size: 20px;
+        }
+        
+        .example {
+            background: #fefce8;
+            border-left: 4px solid #eab308;
+            border-radius: 12px;
+            padding: 24px;
+            margin: 24px 0;
+        }
+        
+        .example-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #854d0e;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .example p {
+            color: #713f12;
+            font-style: italic;
+            margin-bottom: 8px;
+        }
+        
+        .tip {
+            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+            border-left: 4px solid #3b82f6;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 24px 0;
+        }
+        
+        .tip-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #1e40af;
+            margin-bottom: 8px;
+        }
+        
+        .tip p {
+            color: #1e3a8a;
+            margin-bottom: 0;
+        }
+        
+        .footer {
+            margin-top: 48px;
+            padding-top: 32px;
+            border-top: 2px solid #d1fae5;
+            text-align: center;
+        }
+        
+        .contact {
+            font-size: 16px;
+            color: #047857;
+            font-weight: 600;
+        }
+        
+        .contact a {
+            color: #14b8a6;
+            text-decoration: none;
+        }
+        
+        .contact a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Print styles for clean page breaks */
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            
+            .container {
+                box-shadow: none;
+                padding: 40px;
+                max-width: 100%;
+            }
+            
+            .page-break {
+                page-break-after: always;
+            }
+            
+            .no-break {
+                page-break-inside: avoid;
+            }
+            
+            h2 {
+                page-break-after: avoid;
+            }
+            
+            .highlight-box, .example, .tip, .checklist {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">
+                <div class="logo-icon">L²</div>
+                <div class="logo-text">
+                    <span class="launch">Launch</span><span class="tolead">ToLead</span>
+                </div>
+            </div>
+            <h1>Video Testimonial Instructions</h1>
+            <p class="subtitle">Thank you for sharing your success story!</p>
+        </div>
+
+        <div class="highlight-box">
+            <strong>🎯 Your Story Matters</strong>
+            <p style="margin-top: 12px;">Your video testimonial will help other engineers see what's possible when they invest in their career acceleration. Thank you for taking the time to share your journey!</p>
+        </div>
+
+        <h2><span class="emoji">📹</span> Video Format & Technical Requirements</h2>
+        
+        <h3>Recording Setup:</h3>
+        <ul>
+            <li><strong>Orientation:</strong> Horizontal/landscape (NOT vertical like TikTok)</li>
+            <li><strong>Resolution:</strong> 1080p minimum (most smartphones default to this)</li>
+            <li><strong>Length:</strong> 2-4 minutes ideal (max 5 minutes)</li>
+            <li><strong>Format:</strong> MP4, MOV, or similar standard video format</li>
+        </ul>
+
+        <h3>Lighting & Audio:</h3>
+        <ul>
+            <li><strong>Natural lighting:</strong> Face a window if possible, or use a well-lit room</li>
+            <li><strong>Avoid backlighting:</strong> Don't have bright lights/windows behind you</li>
+            <li><strong>Quiet space:</strong> Minimize background noise (no fans, AC, traffic)</li>
+            <li><strong>Clear audio:</strong> Speak clearly and at normal conversational volume</li>
+            <li><strong>Test first:</strong> Record a 10-second test to check lighting and sound</li>
+        </ul>
+
+        <h3>Camera Position:</h3>
+        <ul>
+            <li><strong>Eye level:</strong> Camera should be at your eye level (stack books under laptop if needed)</li>
+            <li><strong>Distance:</strong> Position yourself so your head and shoulders fill most of the frame</li>
+            <li><strong>Centered:</strong> Keep yourself centered in the frame with a little headroom</li>
+            <li><strong>Background:</strong> Clean, simple background (home office, living room, nothing distracting)</li>
+        </ul>
+
+        <div class="tip">
+            <div class="tip-title">💡 Pro Tip:</div>
+            <p>Use your smartphone on a tripod or propped up securely. Phone cameras are usually better than laptop webcams! If using your phone, make sure it's in landscape mode.</p>
+        </div>
+
+        <div class="page-break"></div>
+
+        <h2><span class="emoji">🎤</span> What to Talk About</h2>
+        
+        <p>Think of this as telling your story to a friend who's considering career coaching. Be natural, authentic, and conversational!</p>
+
+        <h3>1. Where You Started (30-45 seconds)</h3>
+        <ul>
+            <li><strong>Your situation before coaching:</strong> What was your role? How long had you been there?</li>
+            <li><strong>What you were struggling with:</strong> Job search not working? Interviews but no offers? Stuck in current role?</li>
+            <li><strong>What made you decide to get coaching:</strong> What was the tipping point?</li>
+        </ul>
+
+        <div class="example">
+            <div class="example-title">Example Opening:</div>
+            <p>"I'm [Name], and I'm a [Your Engineering Discipline]. Before working with Mansour, I had been applying to roles for [X months] and was getting nowhere. I was sending out dozens of applications, getting maybe 1-2 interviews, but no offers. I was really frustrated and didn't know what I was doing wrong..."</p>
+        </div>
+
+        <h3>2. The Transformation (60-90 seconds)</h3>
+        <ul>
+            <li><strong>What you worked on together:</strong> Resume? LinkedIn? Interview prep? Networking strategy?</li>
+            <li><strong>What surprised you:</strong> What insights or changes made the biggest difference?</li>
+            <li><strong>Specific examples:</strong> Did you rewrite your resume bullets? Learn how to network effectively? Practice behavioral interviews?</li>
+            <li><strong>The turning point:</strong> When did you start seeing results? What changed?</li>
+        </ul>
+
+        <div class="example">
+            <div class="example-title">Example Transformation Story:</div>
+            <p>"Mansour completely rebuilt my resume using his Impact Bullet Formula. Instead of just listing my responsibilities, I was showing measurable results. We also worked on my LinkedIn strategy and how to network without feeling awkward. Within 3 weeks of implementing these changes, I started getting recruiter messages and interview requests. The quality of conversations completely changed..."</p>
+        </div>
+
+        <h3>3. The Results (45-60 seconds)</h3>
+        <ul>
+            <li><strong>Concrete outcomes:</strong> How many interviews? How many offers? Which companies?</li>
+            <li><strong>Timeline:</strong> How long did it take to see results?</li>
+            <li><strong>Your SpaceX offer:</strong> This is huge—share the story! How did that opportunity come about?</li>
+            <li><strong>Other opportunities:</strong> Mention the other interviews/offers you received</li>
+        </ul>
+
+        <div class="example">
+            <div class="example-title">Example Results:</div>
+            <p>"After working with Mansour for [X weeks/months], I went from 0 interviews to multiple interviews with top-tier companies. I got offers from [mention 1-2 companies if comfortable], and ultimately accepted a role at SpaceX—which was literally my dream company. This was all within [X months] of starting the coaching program..."</p>
+        </div>
+
+        <h3>4. Who This Is For (30-45 seconds)</h3>
+        <ul>
+            <li><strong>Who would benefit most:</strong> Engineers in similar situations to where you were</li>
+            <li><strong>What makes it different:</strong> What did LaunchToLead offer that you couldn't find elsewhere?</li>
+            <li><strong>Your recommendation:</strong> Would you recommend it? Why?</li>
+        </ul>
+
+        <div class="example">
+            <div class="example-title">Example Closing:</div>
+            <p>"If you're an engineer who's been applying to jobs and not getting traction, or you're getting interviews but no offers, I can't recommend Mansour enough. This isn't generic career advice—it's a specific, proven system for engineers. The Launch Path gave me the exact tools and strategies I needed. Best investment I've made in my career."</p>
+        </div>
+
+        <div class="page-break"></div>
+
+        <h2><span class="emoji">✅</span> Before You Record - Checklist</h2>
+        
+        <div class="checklist">
+            <ul>
+                <li>Test your lighting and audio with a 10-second recording</li>
+                <li>Make sure your phone/camera is stable (tripod, stack of books, propped securely)</li>
+                <li>Position camera at eye level in landscape/horizontal mode</li>
+                <li>Check your background—clean and not distracting</li>
+                <li>Review the talking points above so you remember what to cover</li>
+                <li>Silence your phone notifications (or use airplane mode if recording on computer)</li>
+                <li>Take a deep breath and be yourself—authenticity > perfection!</li>
+            </ul>
+        </div>
+
+        <h2><span class="emoji">💬</span> Tips for a Great Testimonial</h2>
+        
+        <ul>
+            <li><strong>Be conversational:</strong> Imagine you're talking to a friend, not reading a script</li>
+            <li><strong>Use specific examples:</strong> "I got 5 interviews in 2 weeks" is better than "I got lots of interviews"</li>
+            <li><strong>Show emotion:</strong> It's okay to show excitement about your SpaceX offer—that's a huge deal!</li>
+            <li><strong>Don't worry about perfection:</strong> If you stumble or need to pause, that's fine—it makes it more authentic</li>
+            <li><strong>Look at the camera:</strong> This creates "eye contact" with viewers</li>
+            <li><strong>Smile naturally:</strong> Your energy and enthusiasm are contagious</li>
+        </ul>
+
+        <div class="tip">
+            <div class="tip-title">⚡ Optional: Do Multiple Takes</div>
+            <p>Feel free to record 2-3 versions and send me your favorite. Sometimes the second or third take feels more natural. But don't overthink it—your first authentic take is often the best!</p>
+        </div>
+
+        <div class="page-break"></div>
+
+        <h2><span class="emoji">📤</span> How to Send Your Video</h2>
+        
+        <p><strong>Choose the easiest method for you:</strong></p>
+        <ul>
+            <li><strong>Google Drive:</strong> Upload to Google Drive and share the link (set to "anyone with link can view")</li>
+            <li><strong>Dropbox:</strong> Upload to Dropbox and share the link</li>
+            <li><strong>WeTransfer:</strong> Free for files up to 2GB (wetransfer.com)</li>
+            <li><strong>Email:</strong> If file is small enough (under 25MB), email directly to contact@LaunchToLead.io</li>
+        </ul>
+
+        <div class="highlight-box">
+            <strong>🙏 Thank You!</strong>
+            <p style="margin-top: 12px;">Your story will inspire other engineers to take action on their careers. I'm incredibly proud of your success at SpaceX and grateful you're willing to share your journey. If you have any questions while recording, just reach out!</p>
+        </div>
+
+        <div class="footer">
+            <p class="contact">Questions? Email me at <a href="mailto:contact@LaunchToLead.io">contact@LaunchToLead.io</a></p>
+            <p class="contact" style="margin-top: 12px;">— Mansour Manci, LaunchToLead</p>
+        </div>
+    </div>
+</body>
+</html>
