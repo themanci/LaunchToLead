@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skool Course Cover - My Exact Roadmap</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 40px;
+            gap: 20px;
+        }
+        
+        .instructions {
+            background: white;
+            padding: 20px 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            max-width: 600px;
+            text-align: center;
+        }
+
+        .instructions h2 {
+            color: #064e3b;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .instructions p {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        
+        .cover-container {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        
+        /* Skool course cover dimensions: 1460x752 */
+        .cover {
+            width: 1460px;
+            height: 752px;
+            background: linear-gradient(135deg, #064e3b 0%, #0f766e 50%, #059669 100%);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        /* Background decorative elements */
+        .bg-blob-1 {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(20, 184, 166, 0.25) 0%, transparent 70%);
+            border-radius: 50%;
+            top: -200px;
+            right: -150px;
+            filter: blur(60px);
+        }
+        
+        .bg-blob-2 {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(163, 230, 53, 0.2) 0%, transparent 70%);
+            border-radius: 50%;
+            bottom: -150px;
+            left: -100px;
+            filter: blur(60px);
+        }
+
+        .bg-blob-3 {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(20, 184, 166, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            top: 50%;
+            left: 30%;
+            transform: translate(-50%, -50%);
+            filter: blur(80px);
+        }
+        
+        /* Dots pattern overlay */
+        .bg-dots {
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(rgba(20, 184, 166, 0.3) 1px, transparent 1px);
+            background-size: 28px 28px;
+            opacity: 0.4;
+        }
+
+        /* Decorative path lines */
+        .path-line-1 {
+            position: absolute;
+            top: 120px;
+            left: -100px;
+            width: 500px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent 0%, rgba(163, 230, 53, 0.5) 50%, rgba(20, 184, 166, 0.8) 100%);
+            transform: rotate(-8deg);
+            filter: blur(1px);
+        }
+
+        .path-line-1::after {
+            content: '';
+            position: absolute;
+            right: -15px;
+            top: -12px;
+            width: 28px;
+            height: 28px;
+            background: #a3e635;
+            border-radius: 50%;
+            box-shadow: 0 0 25px #a3e635, 0 0 50px rgba(163, 230, 53, 0.5);
+        }
+
+        .path-line-2 {
+            position: absolute;
+            bottom: 100px;
+            right: -80px;
+            width: 400px;
+            height: 2px;
+            background: linear-gradient(270deg, transparent 0%, rgba(20, 184, 166, 0.6) 50%, rgba(163, 230, 53, 0.4) 100%);
+            transform: rotate(12deg);
+            filter: blur(1px);
+        }
+
+        .path-line-3 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 800px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.1) 30%, rgba(255,255,255,0.1) 70%, transparent 100%);
+        }
+
+        /* Roadmap dots decoration */
+        .roadmap-dots {
+            position: absolute;
+            top: 50%;
+            left: 80px;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .roadmap-dot {
+            width: 16px;
+            height: 16px;
+            background: rgba(163, 230, 53, 0.6);
+            border-radius: 50%;
+            position: relative;
+        }
+
+        .roadmap-dot::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 8px;
+            height: 8px;
+            background: #a3e635;
+            border-radius: 50%;
+        }
+
+        .roadmap-dot::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 100%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 40px;
+            background: linear-gradient(180deg, rgba(163, 230, 53, 0.4) 0%, transparent 100%);
+        }
+
+        .roadmap-dot:last-child::after {
+            display: none;
+        }
+
+        /* Roadmap dots right side */
+        .roadmap-dots-right {
+            position: absolute;
+            top: 50%;
+            right: 80px;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+        }
+
+        .roadmap-dot-right {
+            width: 12px;
+            height: 12px;
+            background: rgba(20, 184, 166, 0.5);
+            border-radius: 50%;
+            position: relative;
+        }
+
+        .roadmap-dot-right::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 6px;
+            height: 6px;
+            background: #14b8a6;
+            border-radius: 50%;
+        }
+        
+        /* Content container */
+        .content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            padding: 0 100px;
+        }
+        
+        /* Logo/Badge */
+        .logo-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 28px;
+        }
+        
+        .logo-icon {
+            background: white;
+            color: #064e3b;
+            width: 56px;
+            height: 56px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 22px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+        }
+        
+        .logo-text {
+            font-size: 32px;
+            font-weight: 800;
+            color: white;
+            letter-spacing: -0.5px;
+        }
+        
+        .logo-text-accent {
+            font-weight: 300;
+            color: #a3e635;
+        }
+
+        /* Badge pill */
+        .badge-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(10px);
+            padding: 10px 24px;
+            border-radius: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            margin-bottom: 24px;
+        }
+
+        .badge-pill svg {
+            width: 20px;
+            height: 20px;
+            color: #a3e635;
+        }
+
+        .badge-pill span {
+            color: #bef264;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .badge-pill .divider {
+            color: rgba(255,255,255,0.3);
+        }
+
+        .badge-pill .sub {
+            color: rgba(255,255,255,0.8);
+            text-transform: none;
+            font-weight: 400;
+            letter-spacing: 0;
+        }
+        
+        /* Main heading */
+        h1 {
+            font-size: 82px;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 24px;
+            line-height: 1.0;
+            letter-spacing: -3px;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #14b8a6 0%, #a3e635 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        /* Tagline */
+        .tagline {
+            font-size: 28px;
+            color: rgba(255, 255, 255, 0.95);
+            font-weight: 400;
+            margin-bottom: 36px;
+            letter-spacing: -0.3px;
+        }
+
+        .tagline strong {
+            color: #a3e635;
+            font-weight: 600;
+        }
+        
+        /* Feature badges */
+        .features {
+            display: flex;
+            gap: 24px;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .feature-badge {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 14px 28px;
+            border-radius: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+        
+        .feature-badge .icon {
+            font-size: 24px;
+        }
+        
+        .feature-badge span {
+            color: white;
+            font-size: 17px;
+            font-weight: 500;
+        }
+
+        /* Website badge */
+        .website-badge {
+            position: absolute;
+            bottom: 35px;
+            right: 50px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            padding: 12px 24px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+        .website-badge span {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 16px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        /* Author badge */
+        .author-badge {
+            position: absolute;
+            bottom: 35px;
+            left: 50px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            padding: 10px 20px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+        .author-badge .avatar {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #14b8a6 0%, #a3e635 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #064e3b;
+            font-weight: 700;
+            font-size: 16px;
+        }
+
+        .author-badge .info {
+            text-align: left;
+        }
+
+        .author-badge .name {
+            color: white;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .author-badge .title {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="instructions">
+        <h2>Skool Course Cover (1460×752)</h2>
+        <p>Screenshot this cover for your "My Exact Roadmap" course. Dimensions are exactly 1460×752 pixels for Skool's course cover requirements.</p>
+    </div>
+
+    <div class="cover-container">
+        <div class="cover">
+            <!-- Background decorations -->
+            <div class="bg-blob-1"></div>
+            <div class="bg-blob-2"></div>
+            <div class="bg-blob-3"></div>
+            <div class="bg-dots"></div>
+            <div class="path-line-1"></div>
+            <div class="path-line-2"></div>
+            <div class="path-line-3"></div>
+
+            <!-- Roadmap dots left -->
+            <div class="roadmap-dots">
+                <div class="roadmap-dot"></div>
+                <div class="roadmap-dot"></div>
+                <div class="roadmap-dot"></div>
+                <div class="roadmap-dot"></div>
+                <div class="roadmap-dot"></div>
+            </div>
+
+            <!-- Roadmap dots right -->
+            <div class="roadmap-dots-right">
+                <div class="roadmap-dot-right"></div>
+                <div class="roadmap-dot-right"></div>
+                <div class="roadmap-dot-right"></div>
+                <div class="roadmap-dot-right"></div>
+            </div>
+            
+            <!-- Main content -->
+            <div class="content">
+                <!-- Logo badge -->
+                <div class="logo-badge">
+                    <div class="logo-icon">L²</div>
+                    <div class="logo-text">Launch<span class="logo-text-accent">To</span>Lead</div>
+                </div>
+
+                <!-- Badge pill -->
+                <div class="badge-pill">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"></path>
+                    </svg>
+                    <span>Launch Path</span>
+                    <span class="divider">•</span>
+                    <span class="sub">Free Starter Guide</span>
+                </div>
+                
+                <!-- Main headline -->
+                <h1>My <span class="gradient-text">Exact</span> Roadmap</h1>
+                
+                <!-- Tagline -->
+                <p class="tagline">The step-by-step strategy I used to land my first role at <strong>John Deere</strong></p>
+                
+                <!-- Feature badges -->
+                <div class="features">
+                    <div class="feature-badge">
+                        <span class="icon">📋</span>
+                        <span>Complete Playbook</span>
+                    </div>
+                    <div class="feature-badge">
+                        <span class="icon">🎯</span>
+                        <span>Proven System</span>
+                    </div>
+                    <div class="feature-badge">
+                        <span class="icon">✅</span>
+                        <span>Action Checklists</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Author badge -->
+            <div class="author-badge">
+                <div class="avatar">M</div>
+                <div class="info">
+                    <div class="name">Mansour Manci</div>
+                    <div class="title">Career Coach & Founder</div>
+                </div>
+            </div>
+
+            <!-- Website badge -->
+            <div class="website-badge">
+                <span>LaunchToLead.io</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

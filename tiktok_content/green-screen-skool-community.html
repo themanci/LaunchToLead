@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TikTok Green Screen - Skool Community</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: #1a1a1a;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px;
+            gap: 60px;
+        }
+
+        h1 {
+            color: white;
+            font-size: 28px;
+            text-align: center;
+        }
+
+        .subtitle {
+            color: #888;
+            font-size: 14px;
+            text-align: center;
+            margin-top: 10px;
+        }
+        
+        .screen-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .screen-label {
+            color: #a3e635;
+            font-size: 16px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        /* TikTok vertical format: 1080x1920 FULL RESOLUTION */
+        .screen {
+            width: 1080px;
+            height: 1920px;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(160deg, #064e3b 0%, #065f46 40%, #047857 100%);
+        }
+
+        .bg-blob-1 {
+            position: absolute;
+            width: 900px;
+            height: 900px;
+            background: radial-gradient(circle, rgba(20, 184, 166, 0.3) 0%, transparent 70%);
+            border-radius: 50%;
+            top: -240px;
+            right: -240px;
+            filter: blur(120px);
+        }
+
+        .bg-blob-2 {
+            position: absolute;
+            width: 750px;
+            height: 750px;
+            background: radial-gradient(circle, rgba(163, 230, 53, 0.25) 0%, transparent 70%);
+            border-radius: 50%;
+            bottom: -180px;
+            left: -180px;
+            filter: blur(120px);
+        }
+
+        .bg-blob-3 {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(20, 184, 166, 0.2) 0%, transparent 70%);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            filter: blur(100px);
+        }
+
+        .bg-dots {
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(rgba(20, 184, 166, 0.25) 2px, transparent 2px);
+            background-size: 60px 60px;
+            opacity: 0.5;
+        }
+
+        /* Content */
+        .content {
+            position: relative;
+            z-index: 10;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 120px 72px;
+            text-align: center;
+        }
+
+        .logo-mini {
+            display: inline-flex;
+            align-items: center;
+            gap: 24px;
+            margin-bottom: 60px;
+        }
+
+        .logo-mini .icon {
+            background: white;
+            color: #064e3b;
+            width: 108px;
+            height: 108px;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 42px;
+            box-shadow: 0 12px 45px rgba(0, 0, 0, 0.2);
+        }
+
+        .logo-mini span {
+            font-size: 54px;
+            font-weight: 700;
+            color: white;
+        }
+
+        .logo-mini .accent {
+            font-weight: 300;
+            color: #a3e635;
+        }
+
+        /* FREE + OPEN badges */
+        .badge-row {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 72px;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 18px;
+            background: rgba(163, 230, 53, 0.2);
+            border: 3px solid rgba(163, 230, 53, 0.5);
+            padding: 24px 48px;
+            border-radius: 100px;
+        }
+
+        .badge span {
+            color: #a3e635;
+            font-size: 42px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .badge.open {
+            background: rgba(20, 184, 166, 0.2);
+            border-color: rgba(20, 184, 166, 0.5);
+        }
+
+        .badge.open span {
+            color: #14b8a6;
+        }
+
+        .main-text {
+            color: white;
+            font-size: 90px;
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 60px;
+            letter-spacing: -2px;
+        }
+
+        .main-text .highlight {
+            color: #a3e635;
+        }
+
+        .main-text .gradient {
+            background: linear-gradient(135deg, #14b8a6 0%, #a3e635 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .community-box {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 6px solid rgba(255, 255, 255, 0.2);
+            border-radius: 48px;
+            padding: 60px 84px;
+            margin-bottom: 60px;
+        }
+
+        .community-box .label {
+            font-size: 36px;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+        }
+
+        .community-box .name {
+            font-size: 72px;
+            font-weight: 800;
+            color: white;
+            letter-spacing: -1px;
+        }
+
+        .community-box .name .accent {
+            color: #a3e635;
+        }
+
+        .arrow-down {
+            font-size: 96px;
+            color: #a3e635;
+            margin-bottom: 48px;
+            animation: bounce 1s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(24px); }
+        }
+
+        .cta-text {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 48px;
+            font-weight: 500;
+            line-height: 1.4;
+            max-width: 900px;
+        }
+
+        .cta-text strong {
+            color: #a3e635;
+            font-weight: 700;
+        }
+
+        /* Features list */
+        .features-list {
+            display: flex;
+            flex-direction: column;
+            gap: 36px;
+            margin-top: 72px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(8px);
+            padding: 30px 48px;
+            border-radius: 24px;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .feature-item .icon {
+            font-size: 48px;
+        }
+
+        .feature-item span {
+            font-size: 42px;
+            font-weight: 600;
+            color: white;
+        }
+
+        /* Decorative elements */
+        .decoration-line {
+            position: absolute;
+            width: 300px;
+            height: 6px;
+            background: linear-gradient(90deg, transparent, rgba(163, 230, 53, 0.5), transparent);
+        }
+
+        .decoration-line.top {
+            top: 120px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .decoration-line.bottom {
+            bottom: 120px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Instructions */
+        .instructions {
+            background: #2a2a2a;
+            padding: 20px 30px;
+            border-radius: 12px;
+            max-width: 700px;
+            text-align: center;
+        }
+
+        .instructions h3 {
+            color: #a3e635;
+            font-size: 16px;
+            margin-bottom: 12px;
+        }
+
+        .instructions p {
+            color: #888;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>TikTok Green Screen - Skool Community</h1>
+        <p class="subtitle">Full 1080×1920 resolution • Screenshot for green screen use</p>
+    </div>
+
+    <div class="screen-wrapper">
+        <div class="screen-label">🎓 Skool Community Promo</div>
+        <div class="screen">
+            <div class="bg-blob-1"></div>
+            <div class="bg-blob-2"></div>
+            <div class="bg-blob-3"></div>
+            <div class="bg-dots"></div>
+            <div class="decoration-line top"></div>
+            <div class="decoration-line bottom"></div>
+            
+            <div class="content">
+                <div class="logo-mini">
+                    <div class="icon">L²</div>
+                    <span>Launch<span class="accent">To</span>Lead</span>
+                </div>
+
+                <!-- FREE + OPEN badges -->
+                <div class="badge-row">
+                    <div class="badge">
+                        <span>✨ 100% FREE</span>
+                    </div>
+                    <div class="badge open">
+                        <span>🚀 NOW OPEN</span>
+                    </div>
+                </div>
+
+                <p class="main-text">
+                    Join My <span class="gradient">Free</span><br/>
+                    <span class="highlight">Community</span>
+                </p>
+
+                <div class="community-box">
+                    <div class="label">On Skool</div>
+                    <div class="name">Launch<span class="accent">To</span>Lead</div>
+                </div>
+
+                <div class="arrow-down">👇</div>
+
+                <p class="cta-text">
+                    <strong>Link in bio</strong> to join
+                </p>
+
+                <div class="features-list">
+                    <div class="feature-item">
+                        <span class="icon">📚</span>
+                        <span>52 Proven Job Search Methods</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="icon">👥</span>
+                        <span>Community of Young Engineers</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="icon">🎯</span>
+                        <span>Land Your Dream Job</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="instructions">
+        <h3>📱 How to Use</h3>
+        <p>Right-click the screen → Inspect → Select .screen element → Right-click → "Capture node screenshot" for a perfect 1080×1920 PNG. Use as TikTok green screen background and point to "Link in bio"!</p>
+    </div>
+</body>
+</html>

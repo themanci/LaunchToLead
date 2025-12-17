@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedIn Video Slides - Skool Community Announcement</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html, body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: #000;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        
+        /* LinkedIn video format: Full viewport, 16:9 aspect ratio */
+        .slide {
+            width: 100vw;
+            height: 100vh;
+            position: absolute;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+            background: linear-gradient(135deg, #064e3b 0%, #065f46 50%, #047857 100%);
+            display: none;
+        }
+
+        .slide.active {
+            display: block;
+        }
+
+        /* Navigation button */
+        .nav-btn {
+            position: absolute;
+            bottom: 50px;
+            left: 80px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.25);
+            color: white;
+            padding: 20px 50px;
+            border-radius: 60px;
+            font-size: 24px;
+            font-weight: 600;
+            cursor: pointer;
+            z-index: 100;
+            transition: all 0.3s ease;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .nav-btn:hover {
+            background: rgba(163, 230, 53, 0.3);
+            border-color: rgba(163, 230, 53, 0.5);
+            transform: scale(1.05);
+        }
+
+        .nav-btn.hidden {
+            display: none;
+        }
+
+        /* Background elements */
+        .bg-blob-1 {
+            position: absolute;
+            width: 42vw;
+            height: 42vw;
+            background: radial-gradient(circle, rgba(20, 184, 166, 0.25) 0%, transparent 70%);
+            border-radius: 50%;
+            top: -15vw;
+            right: -10vw;
+            filter: blur(5vw);
+        }
+
+        .bg-blob-2 {
+            position: absolute;
+            width: 36vw;
+            height: 36vw;
+            background: radial-gradient(circle, rgba(163, 230, 53, 0.2) 0%, transparent 70%);
+            border-radius: 50%;
+            bottom: -13vw;
+            left: -8vw;
+            filter: blur(5vw);
+        }
+
+        .bg-dots {
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(rgba(20, 184, 166, 0.2) 2px, transparent 2px);
+            background-size: 2.6vw 2.6vw;
+            opacity: 0.5;
+        }
+
+        /* Content container */
+        .content {
+            position: relative;
+            z-index: 10;
+            height: 80%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2vh 6.25vw 0;
+            text-align: center;
+        }
+
+        /* Shared elements */
+        .logo-bar {
+            position: absolute;
+            top: 4.6vh;
+            left: 4.2vw;
+            display: flex;
+            align-items: center;
+            gap: 1vw;
+        }
+
+        .logo-bar .icon {
+            background: white;
+            color: #064e3b;
+            width: 3.6vw;
+            height: 3.6vw;
+            border-radius: 0.9vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.45vw;
+            box-shadow: 0 0.4vw 1.5vw rgba(0, 0, 0, 0.2);
+        }
+
+        .logo-bar span {
+            font-size: 1.875vw;
+            font-weight: 700;
+            color: white;
+        }
+
+        .logo-bar .accent {
+            font-weight: 300;
+            color: #a3e635;
+        }
+
+        /* Slide number removed - using next button in top right instead */
+
+        .website {
+            position: absolute;
+            bottom: 22vh;
+            right: 4.2vw;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.45vw;
+            font-weight: 500;
+        }
+
+        /* ===== SLIDE 1: Announcement ===== */
+        .slide-1 .badge-row {
+            display: flex;
+            gap: 1.25vw;
+            margin-bottom: 4.6vh;
+        }
+
+        .slide-1 .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.625vw;
+            background: rgba(163, 230, 53, 0.2);
+            border: 0.156vw solid rgba(163, 230, 53, 0.5);
+            padding: 1.67vh 1.875vw;
+            border-radius: 3.125vw;
+        }
+
+        .slide-1 .badge span {
+            color: #a3e635;
+            font-size: 1.46vw;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1vw;
+        }
+
+        .slide-1 .badge.teal {
+            background: rgba(20, 184, 166, 0.2);
+            border-color: rgba(20, 184, 166, 0.5);
+        }
+
+        .slide-1 .badge.teal span {
+            color: #14b8a6;
+        }
+
+        .slide-1 .main-headline {
+            font-size: 4.5vw;
+            font-weight: 800;
+            color: white;
+            line-height: 1.15;
+            margin-bottom: 4.5vh;
+            letter-spacing: -0.1vw;
+        }
+
+        .slide-1 .main-headline .gradient {
+            background: linear-gradient(135deg, #14b8a6 0%, #a3e635 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .slide-1 .sub-headline {
+            font-size: 2vw;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 62.5vw;
+            line-height: 1.5;
+        }
+
+        .slide-1 .sub-headline strong {
+            color: #a3e635;
+            font-weight: 600;
+        }
+
+        .slide-1 .community-name {
+            margin-top: 4vh;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 0.21vw solid rgba(255, 255, 255, 0.2);
+            border-radius: 1.56vw;
+            padding: 3.7vh 4.2vw;
+        }
+
+        .slide-1 .community-name .on {
+            font-size: 1.25vw;
+            color: rgba(255, 255, 255, 0.6);
+            text-transform: uppercase;
+            letter-spacing: 0.21vw;
+            margin-bottom: 0.74vh;
+        }
+
+        .slide-1 .community-name .name {
+            font-size: 2.9vw;
+            font-weight: 800;
+            color: white;
+        }
+
+        .slide-1 .community-name .name .accent {
+            color: #a3e635;
+        }
+
+        /* ===== SLIDE 2: Purpose & Aim ===== */
+        .slide-2 .section-title {
+            font-size: 1.67vw;
+            font-weight: 600;
+            color: #a3e635;
+            text-transform: uppercase;
+            letter-spacing: 0.21vw;
+            margin-bottom: 2.8vh;
+        }
+
+        .slide-2 .main-headline {
+            font-size: 3.5vw;
+            font-weight: 800;
+            color: white;
+            line-height: 1.15;
+            margin-bottom: 4vh;
+            letter-spacing: -0.1vw;
+        }
+
+        .slide-2 .main-headline .highlight {
+            color: #a3e635;
+        }
+
+        .slide-2 .purpose-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2.1vw;
+            max-width: 78vw;
+        }
+
+        .slide-2 .purpose-card {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            border: 0.1vw solid rgba(255, 255, 255, 0.1);
+            border-radius: 1.2vw;
+            padding: 2.5vh 2vw;
+            text-align: left;
+        }
+
+        .slide-2 .purpose-card .icon {
+            font-size: 2.5vw;
+            margin-bottom: 1.5vh;
+        }
+
+        .slide-2 .purpose-card h3 {
+            font-size: 1.5vw;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 1vh;
+        }
+
+        .slide-2 .purpose-card p {
+            font-size: 1.1vw;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.4;
+        }
+
+        /* ===== SLIDE 3: Benefits & CTA ===== */
+        .slide-3 .section-title {
+            font-size: 1.67vw;
+            font-weight: 600;
+            color: #a3e635;
+            text-transform: uppercase;
+            letter-spacing: 0.21vw;
+            margin-bottom: 2.8vh;
+        }
+
+        .slide-3 .main-headline {
+            font-size: 3.2vw;
+            font-weight: 800;
+            color: white;
+            line-height: 1.15;
+            margin-bottom: 4vh;
+            letter-spacing: -0.1vw;
+        }
+
+        .slide-3 .main-headline .gradient {
+            background: linear-gradient(135deg, #14b8a6 0%, #a3e635 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .slide-3 .benefits-row {
+            display: flex;
+            gap: 1.5vw;
+            margin-bottom: 3.5vh;
+        }
+
+        .slide-3 .benefit-item {
+            display: flex;
+            align-items: center;
+            gap: 0.8vw;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            padding: 1.8vh 1.8vw;
+            border-radius: 0.8vw;
+            border: 0.1vw solid rgba(255, 255, 255, 0.1);
+        }
+
+        .slide-3 .benefit-item .icon {
+            font-size: 2vw;
+        }
+
+        .slide-3 .benefit-item span {
+            font-size: 1.3vw;
+            font-weight: 600;
+            color: white;
+        }
+
+        .slide-3 .cta-box {
+            background: rgba(163, 230, 53, 0.15);
+            border: 0.15vw solid rgba(163, 230, 53, 0.4);
+            border-radius: 1.2vw;
+            padding: 3vh 4vw;
+            margin-top: 1vh;
+        }
+
+        .slide-3 .cta-box .cta-text {
+            font-size: 2vw;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 1.2vh;
+        }
+
+        .slide-3 .cta-box .cta-sub {
+            font-size: 1.4vw;
+            color: #a3e635;
+            font-weight: 500;
+        }
+
+        .slide-3 .free-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6vw;
+            background: #a3e635;
+            color: #064e3b;
+            padding: 1.5vh 2.5vw;
+            border-radius: 2.5vw;
+            font-weight: 800;
+            font-size: 1.5vw;
+            margin-top: 2.5vh;
+            box-shadow: 0 0.5vw 2vw rgba(163, 230, 53, 0.4);
+        }
+
+        /* Navigation Buttons */
+        .next-btn {
+            position: absolute;
+            top: 4.6vh;
+            right: 4.2vw;
+            background: rgba(163, 230, 53, 0.95);
+            color: #064e3b;
+            border: none;
+            padding: 1.2vh 1.8vw;
+            border-radius: 0.52vw;
+            font-size: 1.1vw;
+            font-weight: 700;
+            cursor: pointer;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            transition: all 0.2s ease;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            gap: 0.5vw;
+        }
+
+        .next-btn:hover {
+            background: #a3e635;
+            transform: scale(1.05);
+        }
+
+        /* Slide indicator removed */
+    </style>
+</head>
+<body>
+    <!-- ===== SLIDE 1: Announcement ===== -->
+    <div class="slide slide-1">
+        <div class="bg-blob-1"></div>
+        <div class="bg-blob-2"></div>
+        <div class="bg-dots"></div>
+
+        <div class="logo-bar">
+            <div class="icon">L²</div>
+            <span>Launch<span class="accent">To</span>Lead</span>
+        </div>
+
+        <div class="content">
+            <div class="badge-row">
+                <div class="badge">
+                    <span>🎉 Announcing</span>
+                </div>
+                <div class="badge teal">
+                    <span>🚀 Now Open</span>
+                </div>
+            </div>
+
+            <h1 class="main-headline">
+                I'm Launching a <span class="gradient">Free</span><br/>Community
+            </h1>
+
+            <p class="sub-headline">
+                A place for <strong>young engineers</strong> to learn the exact system<br/>I used to land my dream job at John Deere
+            </p>
+
+            <div class="community-name">
+                <div class="on">On Skool.com</div>
+                <div class="name">Launch<span class="accent">To</span>Lead</div>
+            </div>
+        </div>
+
+        <div class="website">LaunchToLead.io</div>
+
+        <button class="next-btn" onclick="showSlide(2)">Next Slide →</button>
+    </div>
+    <div class="slide slide-2">
+        <div class="bg-blob-1"></div>
+        <div class="bg-blob-2"></div>
+        <div class="bg-dots"></div>
+
+        <div class="logo-bar">
+            <div class="icon">L²</div>
+            <span>Launch<span class="accent">To</span>Lead</span>
+        </div>
+
+        <div class="content">
+            <div class="section-title">Why I Built This</div>
+
+            <h1 class="main-headline">
+                Because the job search is <span class="highlight">broken</span>
+            </h1>
+
+            <div class="purpose-grid">
+                <div class="purpose-card">
+                    <div class="icon">😤</div>
+                    <h3>The Problem</h3>
+                    <p>New grads send 100+ applications, hear nothing back, and have no idea what they're doing wrong.</p>
+                </div>
+                <div class="purpose-card">
+                    <div class="icon">🎯</div>
+                    <h3>The Solution</h3>
+                    <p>A proven, step-by-step system with 52 methods that actually work — plus a community to support you.</p>
+                </div>
+                <div class="purpose-card">
+                    <div class="icon">👥</div>
+                    <h3>Who It's For</h3>
+                    <p>New grads and early-career engineers who are tired of guessing and ready to follow a real playbook.</p>
+                </div>
+                <div class="purpose-card">
+                    <div class="icon">🚀</div>
+                    <h3>The Goal</h3>
+                    <p>Help you go from "still applying" to "offer accepted" — faster than you thought possible.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="website">LaunchToLead.io</div>
+
+        <button class="next-btn" onclick="showSlide(3)">Next Slide →</button>
+    </div>
+
+    <!-- ===== SLIDE 3: Benefits & CTA ===== -->
+    <div class="slide slide-3">
+        <div class="bg-blob-1"></div>
+        <div class="bg-blob-2"></div>
+        <div class="bg-dots"></div>
+
+        <div class="logo-bar">
+            <div class="icon">L²</div>
+            <span>Launch<span class="accent">To</span>Lead</span>
+        </div>
+
+        <div class="content">
+            <div class="section-title">What You Get</div>
+
+            <h1 class="main-headline">
+                Everything you need to <span class="gradient">land your dream job</span>
+            </h1>
+
+            <div class="benefits-row">
+                <div class="benefit-item">
+                    <span class="icon">📚</span>
+                    <span>52 Proven Methods</span>
+                </div>
+                <div class="benefit-item">
+                    <span class="icon">🎥</span>
+                    <span>Video Lessons</span>
+                </div>
+                <div class="benefit-item">
+                    <span class="icon">👥</span>
+                    <span>Supportive Community</span>
+                </div>
+                <div class="benefit-item">
+                    <span class="icon">📄</span>
+                    <span>Resume Reviews</span>
+                </div>
+            </div>
+
+            <div class="cta-box">
+                <div class="cta-text">Join the community today</div>
+                <div class="cta-sub">Link in comments • Search "Launch to Lead" on Skool</div>
+            </div>
+
+            <div class="free-badge">
+                ✨ 100% FREE TO JOIN
+            </div>
+        </div>
+
+        <div class="website">LaunchToLead.io</div>
+    </div>
+
+    <script>
+        let currentSlide = 1;
+        const totalSlides = 3;
+
+        function showSlide(n) {
+            const slides = document.querySelectorAll('.slide');
+            
+            if (n > totalSlides) n = 1;
+            if (n < 1) n = totalSlides;
+            
+            currentSlide = n;
+            
+            // Hide all slides
+            slides.forEach(slide => slide.style.display = 'none');
+            
+            // Show current slide
+            slides[currentSlide - 1].style.display = 'block';
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ') {
+                showSlide(currentSlide + 1);
+            } else if (e.key === 'ArrowLeft') {
+                showSlide(currentSlide - 1);
+            }
+        });
+
+        // Initialize - show only first slide
+        document.addEventListener('DOMContentLoaded', () => {
+            showSlide(1);
+        });
+    </script>
+</body>
+</html>
