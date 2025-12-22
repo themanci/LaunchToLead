@@ -825,7 +825,119 @@
     <div class="max-w-4xl mx-auto text-center py-8 text-slate-400 text-sm">
         <p>Launch Path Client Tracker Template | LaunchToLead.io</p>
         <p class="mt-1">Copy this file and rename to [ClientName].html for each new client</p>
+        <button onclick="clearAllData()" class="no-print mt-4 px-4 py-2 bg-red-500 text-white rounded-lg text-xs hover:bg-red-600">Clear All Data</button>
     </div>
+
+    <script>
+        // Auto-save functionality using localStorage
+        const STORAGE_KEY = 'launch-client-tracker-' + window.location.pathname;
+
+        // Save all form data
+        function saveData() {
+            const data = {
+                checkboxes: {},
+                inputs: {},
+                textareas: {}
+            };
+
+            // Save all checkboxes
+            document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+                data.checkboxes[checkbox.id] = checkbox.checked;
+            });
+
+            // Save all text inputs
+            document.querySelectorAll('input[type="text"]').forEach(input => {
+                if (input.id || input.className.includes('client-name-input')) {
+                    const key = input.id || 'client-name';
+                    data.inputs[key] = input.value;
+                }
+            });
+
+            // Save all date inputs
+            document.querySelectorAll('input[type="date"]').forEach(input => {
+                const key = input.parentElement.querySelector('.text-xs')?.textContent || 'date-' + Math.random();
+                data.inputs[key] = input.value;
+            });
+
+            // Save all textareas
+            document.querySelectorAll('textarea').forEach(textarea => {
+                const label = textarea.closest('div').querySelector('h4, h3, label')?.textContent || 'notes-' + Math.random();
+                data.textareas[label] = textarea.value;
+            });
+
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+        }
+
+        // Load all form data
+        function loadData() {
+            const saved = localStorage.getItem(STORAGE_KEY);
+            if (!saved) return;
+
+            const data = JSON.parse(saved);
+
+            // Restore checkboxes
+            Object.entries(data.checkboxes || {}).forEach(([id, checked]) => {
+                const checkbox = document.getElementById(id);
+                if (checkbox) checkbox.checked = checked;
+            });
+
+            // Restore text inputs
+            Object.entries(data.inputs || {}).forEach(([key, value]) => {
+                if (key === 'client-name') {
+                    const input = document.querySelector('.client-name-input');
+                    if (input) input.value = value;
+                } else {
+                    const input = document.getElementById(key);
+                    if (input) input.value = value;
+                }
+            });
+
+            // Restore date inputs by matching labels
+            const dateInputs = document.querySelectorAll('input[type="date"]');
+            dateInputs.forEach(input => {
+                const label = input.parentElement.querySelector('.text-xs')?.textContent;
+                if (label && data.inputs[label]) {
+                    input.value = data.inputs[label];
+                }
+            });
+
+            // Restore textareas by matching labels
+            document.querySelectorAll('textarea').forEach(textarea => {
+                const label = textarea.closest('div').querySelector('h4, h3, label')?.textContent;
+                if (label && data.textareas[label]) {
+                    textarea.value = data.textareas[label];
+                }
+            });
+        }
+
+        // Clear all data
+        function clearAllData() {
+            if (confirm('Are you sure you want to clear all data? This cannot be undone.')) {
+                localStorage.removeItem(STORAGE_KEY);
+                location.reload();
+            }
+        }
+
+        // Initialize: Load data on page load
+        window.addEventListener('DOMContentLoaded', loadData);
+
+        // Auto-save on any change
+        document.addEventListener('change', saveData);
+        document.addEventListener('input', saveData);
+
+        // Visual feedback for saved state
+        let saveTimeout;
+        function showSaveIndicator() {
+            clearTimeout(saveTimeout);
+            const indicator = document.createElement('div');
+            indicator.textContent = '✓ Saved';
+            indicator.className = 'fixed bottom-4 right-4 bg-green-500 text-white px-4 py-2 rounded-lg shadow-lg text-sm no-print';
+            document.body.appendChild(indicator);
+            saveTimeout = setTimeout(() => indicator.remove(), 1000);
+        }
+
+        document.addEventListener('change', showSaveIndicator);
+    </script>
 
 </body>
 </html>

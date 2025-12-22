@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Me-in-We Extractor - Launch Method V3</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: #1a1a1a;
+            overflow-x: hidden;
+            overflow-y: auto;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .slide {
+            display: flex;
+            flex-direction: column;
+            width: 1920px;
+            height: 1080px;
+            position: relative;
+            background: linear-gradient(160deg, #064e3b 0%, #065f46 40%, #047857 100%);
+            margin: 0 auto 40px auto;
+            page-break-after: always;
+            page-break-inside: avoid;
+            overflow: hidden;
+        }
+        
+        .slide:last-child {
+            margin-bottom: 0;
+        }
+        
+        @media print {
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            
+            body {
+                background: white;
+                padding: 0;
+                margin: 0;
+            }
+            
+            .slide {
+                margin: 0;
+                page-break-after: always;
+                overflow: hidden;
+                position: relative;
+            }
+            
+            .slide:last-child {
+                page-break-after: auto;
+            }
+            
+            .bg-blob-1,
+            .bg-blob-2 {
+                filter: blur(80px) !important;
+            }
+        }
+        
+        /* Background effects */
+        .bg-blob-1 {
+            position: absolute;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(20, 184, 166, 0.3) 0%, transparent 70%);
+            border-radius: 50%;
+            top: -200px;
+            right: -200px;
+            filter: blur(100px);
+        }
+        
+        .bg-blob-2 {
+            position: absolute;
+            width: 700px;
+            height: 700px;
+            background: radial-gradient(circle, rgba(163, 230, 53, 0.25) 0%, transparent 70%);
+            border-radius: 50%;
+            bottom: -150px;
+            left: -150px;
+            filter: blur(100px);
+        }
+        
+        .bg-dots {
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(rgba(20, 184, 166, 0.25) 2px, transparent 2px);
+            background-size: 60px 60px;
+            opacity: 0.5;
+        }
+        
+        /* Header with logo */
+        .header {
+            position: absolute;
+            top: 60px;
+            left: 80px;
+            right: 80px;
+            z-index: 20;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+        
+        .logo-icon {
+            background: white;
+            color: #064e3b;
+            width: 96px;
+            height: 96px;
+            border-radius: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 42px;
+            box-shadow: 0 12px 45px rgba(0, 0, 0, 0.2);
+        }
+        
+        .logo-text {
+            font-size: 54px;
+            font-weight: 700;
+            color: white;
+        }
+        
+        .logo-text .accent {
+            font-weight: 300;
+            color: #a3e635;
+        }
+        
+        .slide-number {
+            font-size: 36px;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.5);
+        }
+        
+        /* Content area */
+        .content {
+            position: relative;
+            z-index: 10;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            padding: 200px 120px 320px 120px;
+            max-width: 1400px;
+        }
+        
+        /* Reserved space for PIP video (bottom right) */
+        .pip-reserved {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 500px;
+            height: 350px;
+            z-index: 5;
+            pointer-events: none;
+        }
+        
+        /* Title slide */
+        .title-main {
+            font-size: 96px;
+            font-weight: 900;
+            color: white;
+            line-height: 1.1;
+            margin-bottom: 36px;
+            text-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+        }
+        
+        .title-sub {
+            font-size: 48px;
+            font-weight: 600;
+            color: #a3e635;
+            margin-bottom: 20px;
+        }
+        
+        .title-description {
+            font-size: 36px;
+            font-weight: 500;
+            color: #d1fae5;
+            line-height: 1.5;
+            max-width: 1200px;
+        }
+        
+        /* Section headers */
+        .section-title {
+            font-size: 72px;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 48px;
+            line-height: 1.2;
+        }
+        
+        .section-subtitle {
+            font-size: 44px;
+            font-weight: 600;
+            color: #a3e635;
+            margin-bottom: 48px;
+            line-height: 1.3;
+        }
+        
+        /* Content blocks */
+        .content-box {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(20px);
+            border-radius: 30px;
+            padding: 48px;
+            margin-bottom: 36px;
+            border: 4px solid rgba(163, 230, 53, 0.3);
+        }
+        
+        .content-box-title {
+            font-size: 44px;
+            font-weight: 700;
+            color: #a3e635;
+            margin-bottom: 28px;
+        }
+        
+        .content-text {
+            font-size: 36px;
+            font-weight: 500;
+            color: white;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .content-text:last-child {
+            margin-bottom: 0;
+        }
+        
+        .highlight {
+            color: #a3e635;
+            font-weight: 700;
+        }
+        
+        /* Lists */
+        .big-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .big-list li {
+            font-size: 40px;
+            font-weight: 600;
+            color: white;
+            line-height: 1.5;
+            margin-bottom: 36px;
+            padding-left: 60px;
+            position: relative;
+        }
+        
+        .big-list li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #a3e635;
+            font-weight: 800;
+            font-size: 48px;
+        }
+        
+        /* Before/After boxes */
+        .before-after {
+            display: flex;
+            gap: 40px;
+            margin-top: 36px;
+        }
+        
+        .before-box, .after-box {
+            flex: 1;
+            border-radius: 30px;
+            padding: 40px;
+        }
+        
+        .before-box {
+            background: rgba(239, 68, 68, 0.15);
+            border: 4px solid rgba(239, 68, 68, 0.4);
+        }
+        
+        .after-box {
+            background: rgba(163, 230, 53, 0.15);
+            border: 4px solid rgba(163, 230, 53, 0.4);
+        }
+        
+        .before-label {
+            font-size: 32px;
+            font-weight: 800;
+            color: #ef4444;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .after-label {
+            font-size: 32px;
+            font-weight: 800;
+            color: #a3e635;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .example-text {
+            font-size: 32px;
+            font-weight: 500;
+            color: white;
+            line-height: 1.6;
+        }
+        
+        /* Steps */
+        .steps {
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+        }
+        
+        .step {
+            display: flex;
+            align-items: flex-start;
+            gap: 28px;
+        }
+        
+        .step-number {
+            flex-shrink: 0;
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #a3e635 0%, #14b8a6 100%);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            font-weight: 900;
+            color: #064e3b;
+        }
+        
+        .step-content {
+            flex: 1;
+        }
+        
+        .step-title {
+            font-size: 44px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 14px;
+        }
+        
+        .step-description {
+            font-size: 36px;
+            font-weight: 500;
+            color: #d1fae5;
+            line-height: 1.5;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Slide 1: Title -->
+    <div class="slide">
+        <div class="bg-blob-1"></div>
+        <div class="bg-blob-2"></div>
+        <div class="bg-dots"></div>
+        
+        <div class="header">
+            <div class="logo">
+                <div class="logo-icon">L²</div>
+                <div class="logo-text">Launch<span class="accent">ToLead</span></div>
+            </div>
+            <div class="slide-number">1 / 7</div>
+        </div>
+        
+        <div class="content">
+            <div class="title-main">The Me-in-We<br>Extractor™</div>
+            <div class="title-sub">Stop Hiding Behind Team Projects</div>
+            <div class="title-description">Extract YOUR specific contributions from group work and showcase your individual value</div>
+        </div>
+    </div>
+
+    <!-- Slide 2: The Problem -->
+    <div class="slide">
+        <div class="bg-blob-1"></div>
+        <div class="bg-blob-2"></div>
+        <div class="bg-dots"></div>
+        
+        <div class="header">
+            <div class="logo">
+                <div class="logo-icon">L²</div>
+                <div class="logo-text">Launch<span class="accent">ToLead</span></div>
+            </div>
+            <div class="slide-number">2 / 7</div>
+        </div>
+        
+        <div class="content">
+            <div class="section-title">The Problem</div>
+            <div class="section-subtitle">Most students hide behind "we" language</div>
+            
+            <div class="content-box">
+                <div class="content-text">
+                    You list <span class="highlight">"Team Capstone Project"</span> and describe what the team built.
+                </div>
+                <div class="content-text">
+                    You use <span class="highlight">"we" language</span> throughout your resume.
+                </div>
+                <div class="content-text">
+                    The recruiter has <span class="highlight">no idea what YOU actually did.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 3: The Method -->
+    <div class="slide">
+        <div class="bg-blob-1"></div>
+        <div class="bg-blob-2"></div>
+        <div class="bg-dots"></div>
+        
+        <div class="header">
+            <div class="logo">
+                <div class="logo-icon">L²</div>
+                <div class="logo-text">Launch<span class="accent">ToLead</span></div>
+            </div>
+            <div class="slide-number">3 / 7</div>
+        </div>
+        
+        <div class="content">
+            <div class="section-title">The Method</div>
+            <div class="section-subtitle">Force a distinction between the project's success and YOUR contribution</div>
+            
+            <div class="content-box">
+                <div class="content-box-title">Strip Away the "We"</div>
+                <div class="content-text">
+                    Even if it was a team effort, every resume bullet point must describe YOUR specific contribution.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 4: What to Focus On -->
+    <div class="slide">
+        <div class="bg-blob-1"></div>
+        <div class="bg-blob-2"></div>
+        <div class="bg-dots"></div>
+        
+        <div class="header">
+            <div class="logo">
+                <div class="logo-icon">L²</div>
+                <div class="logo-text">Launch<span class="accent">ToLead</span></div>
+            </div>
+            <div class="slide-number">4 / 7</div>
+        </div>
+        
+        <div class="content">
+            <div class="section-title">What YOU Did</div>
+            <div class="section-subtitle">Focus on these specific contributions:</div>
+            
+            <ul class="big-list">
+                <li>The specific <span class="highlight">gear YOU designed</span></li>
+                <li>The <span class="highlight">code YOU committed</span></li>
+                <li>The <span class="highlight">analysis YOU ran</span></li>
+                <li>The <span class="highlight">decision YOU influenced</span></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Slide 5: Example Transformation -->
+    <div class="slide">
+        <div class="bg-blob-1"></div>
+        <div class="bg-blob-2"></div>
+        <div class="bg-dots"></div>
+        
+        <div class="header">
+            <div class="logo">
+                <div class="logo-icon">L²</div>
+                <div class="logo-text">Launch<span class="accent">ToLead</span></div>
+            </div>
+            <div class="slide-number">5 / 7</div>
+        </div>
+        
+        <div class="content">
+            <div class="section-title">Example: Before & After</div>
+            
+            <div class="before-after">
+                <div class="before-box">
+                    <div class="before-label">❌ Before (We-Language)</div>
+                    <div class="example-text">
+                        "We developed a mobile app for campus navigation"
+                    </div>
+                </div>
+                
+                <div class="after-box">
+                    <div class="after-label">✅ After (Me-Language)</div>
+                    <div class="example-text">
+                        "Designed and implemented the GPS tracking module using Swift, reducing location accuracy errors by 40%"
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 6: How to Apply It -->
+    <div class="slide">
+        <div class="bg-blob-1"></div>
+        <div class="bg-blob-2"></div>
+        <div class="bg-dots"></div>
+        
+        <div class="header">
+            <div class="logo">
+                <div class="logo-icon">L²</div>
+                <div class="logo-text">Launch<span class="accent">ToLead</span></div>
+            </div>
+            <div class="slide-number">6 / 7</div>
+        </div>
+        
+        <div class="content">
+            <div class="section-title">How to Apply It</div>
+            
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <div class="step-title">Find all "we" statements</div>
+                        <div class="step-description">Search your resume for words like "we", "our team", "the group"</div>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <div class="step-title">Ask: What did I personally do?</div>
+                        <div class="step-description">Identify your specific tasks, decisions, and deliverables</div>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <div class="step-title">Rewrite with "I" language</div>
+                        <div class="step-description">Use action verbs that start with "I": Designed, Implemented, Analyzed, Led</div>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <div class="step-title">Add specificity</div>
+                        <div class="step-description">Include tools used, metrics achieved, and technical details</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 7: Key Takeaway -->
+    <div class="slide">
+        <div class="bg-blob-1"></div>
+        <div class="bg-blob-2"></div>
+        <div class="bg-dots"></div>
+        
+        <div class="header">
+            <div class="logo">
+                <div class="logo-icon">L²</div>
+                <div class="logo-text">Launch<span class="accent">ToLead</span></div>
+            </div>
+            <div class="slide-number">7 / 7</div>
+        </div>
+        
+        <div class="content">
+            <div class="section-title">Key Takeaway</div>
+            
+            <div class="content-box">
+                <div class="content-text" style="font-size: 48px; line-height: 1.6;">
+                    <span class="highlight">"We built an app"</span> tells the recruiter nothing.
+                </div>
+                <div class="content-text" style="font-size: 48px; line-height: 1.6; margin-top: 40px;">
+                    <span class="highlight">"I designed the GPS module using Swift"</span> shows exactly what you contributed.
+                </div>
+                <div class="content-text" style="font-size: 48px; line-height: 1.6; margin-top: 60px; color: #a3e635;">
+                    Your resume is about YOU, not the team.
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
