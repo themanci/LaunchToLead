@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Progress Tracker | [CLIENT NAME]</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { font-family: 'Plus Jakarta Sans', sans-serif; }
+        @media print {
+            .no-print { display: none; }
+            body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .page-break { page-break-before: always; }
+        }
+        input[type="checkbox"] {
+            width: 1.25rem;
+            height: 1.25rem;
+            cursor: pointer;
+        }
+        input[type="checkbox"]:checked + label {
+            text-decoration: line-through;
+            opacity: 0.6;
+        }
+        .completed-section {
+            background-color: #fef3c7 !important;
+            border-color: #f59e0b !important;
+        }
+        input[type="text"], input[type="date"] {
+            background: transparent;
+            border: none;
+            border-bottom: 1px dashed rgba(255,255,255,0.4);
+            color: inherit;
+            font-weight: bold;
+            text-align: center;
+            width: 100%;
+            outline: none;
+        }
+        input[type="text"]:focus, input[type="date"]:focus {
+            border-bottom-color: rgba(255,255,255,0.8);
+        }
+        .client-name-input {
+            font-size: 2.25rem;
+            line-height: 2.5rem;
+            background: transparent;
+            border: none;
+            border-bottom: 2px dashed rgba(255,255,255,0.3);
+            color: white;
+            font-weight: bold;
+            width: 100%;
+            outline: none;
+        }
+        .client-name-input:focus {
+            border-bottom-color: rgba(255,255,255,0.7);
+        }
+        .client-name-input::placeholder {
+            color: rgba(255,255,255,0.5);
+        }
+        textarea.notes-field {
+            width: 100%;
+            min-height: 80px;
+            border: 1px dashed #cbd5e1;
+            border-radius: 0.5rem;
+            padding: 0.75rem;
+            font-size: 0.875rem;
+            color: #475569;
+            background: white;
+            resize: vertical;
+            outline: none;
+        }
+        textarea.notes-field:focus {
+            border-color: #94a3b8;
+            box-shadow: 0 0 0 2px rgba(148, 163, 184, 0.2);
+        }
+        textarea.notes-field::placeholder {
+            color: #94a3b8;
+        }
+    </style>
+</head>
+<body class="bg-slate-100 min-h-screen p-8">
+
+    <!-- Header -->
+    <div class="max-w-4xl mx-auto mb-8">
+        <div class="bg-gradient-to-r from-amber-500 to-orange-500 rounded-2xl p-8 text-white">
+            <div class="flex justify-between items-start">
+                <div class="flex-1">
+                    <p class="text-amber-100 text-sm mb-1">Accelerate Path Client</p>
+                    <input type="text" class="client-name-input mb-2" placeholder="Enter Client Name" value="">
+                    <p class="text-amber-50">The 21-Day Promotion Acceleration Blueprint</p>
+                </div>
+                <div class="text-right">
+                    <div class="inline-flex items-center gap-2 bg-white/10 px-4 py-2 rounded-lg">
+                        <span class="text-2xl font-bold text-white">L²</span>
+                        <span class="text-white font-medium">LaunchToLead</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Quick Info -->
+            <div class="grid grid-cols-4 gap-4 mt-8 text-center">
+                <div class="bg-white/10 rounded-lg p-3">
+                    <p class="text-xs text-amber-100 uppercase">Start Date</p>
+                    <input type="date" class="text-lg font-bold text-white">
+                </div>
+                <div class="bg-white/10 rounded-lg p-3">
+                    <p class="text-xs text-amber-100 uppercase">Session 1</p>
+                    <input type="date" class="text-lg font-bold text-white">
+                </div>
+                <div class="bg-white/10 rounded-lg p-3">
+                    <p class="text-xs text-amber-100 uppercase">Session 2</p>
+                    <input type="date" class="text-lg font-bold text-white">
+                </div>
+                <div class="bg-white/10 rounded-lg p-3">
+                    <p class="text-xs text-amber-100 uppercase">Session 3</p>
+                    <input type="date" class="text-lg font-bold text-white">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Progress Overview -->
+    <div class="max-w-4xl mx-auto mb-8">
+        <div class="bg-white rounded-xl p-6 shadow-sm border border-slate-200">
+            <h2 class="text-lg font-bold text-slate-800 mb-4">Progress Overview</h2>
+            <div class="flex gap-2">
+                <div class="flex-1 h-3 bg-amber-100 rounded-full overflow-hidden">
+                    <div class="h-full bg-amber-500 rounded-full" style="width: 0%"></div>
+                </div>
+            </div>
+            <div class="flex justify-between text-xs text-slate-500 mt-2">
+                <span>Discovery</span>
+                <span>Pre-S1</span>
+                <span>Session 1</span>
+                <span>Post-S1</span>
+                <span>Pre-S2</span>
+                <span>Session 2</span>
+                <span>Post-S2</span>
+                <span>Pre-S3</span>
+                <span>Session 3</span>
+                <span>Post-S3</span>
+                <span>Complete</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- PHASE 0: Discovery & Onboarding -->
+    <div class="max-w-4xl mx-auto mb-6">
+        <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+            <div class="bg-amber-500 text-white px-6 py-4">
+                <h2 class="text-xl font-bold">📋 Phase 0: Discovery & Onboarding</h2>
+                <p class="text-amber-100 text-sm">Before Day 1</p>
+            </div>
+            <div class="p-6 space-y-4">
+                <!-- Discovery Call Prep -->
+                <div class="border border-slate-200 rounded-lg p-4">
+                    <h3 class="font-bold text-slate-700 mb-3">Discovery Call Prep</h3>
+                    <div class="space-y-2">
+                        <div class="flex items-start gap-3">
+                            <input type="checkbox" id="d1" class="mt-1">
+                            <label for="d1" class="text-slate-600">Review client's situation (current role, years stuck, promotion attempts)</label>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <input type="checkbox" id="d2" class="mt-1">
+                            <label for="d2" class="text-slate-600">Research their company structure (skip-level, visibility opportunities)</label>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <input type="checkbox" id="d3" class="mt-1">
+                            <label for="d3" class="text-slate-600">Prepare questions about manager relationship and performance reviews</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 15-Minute Strategy Call -->
+                <div class="border border-slate-200 rounded-lg p-4">
+                    <h3 class="font-bold text-slate-700 mb-3">15-Minute Strategy Call</h3>
+                    <div class="space-y-2">
+                        <div class="flex items-start gap-3">
+                            <input type="checkbox" id="d4" class="mt-1">
+                            <label for="d4" class="text-slate-600">Conduct discovery call</label>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <input type="checkbox" id="d5" class="mt-1">
+                            <label for="d5" class="text-slate-600">Understand their biggest pain points (invisible, stuck, passed over)</label>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <input type="checkbox" id="d6" class="mt-1">
+                            <label for="d6" class="text-slate-600">Confirm fit for Accelerate Path program</label>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <input type="checkbox" id="d7" class="mt-1">
+                            <label for="d7" class="text-slate-600">Close the sale / Send payment link</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Payment & Scheduling -->
+                <div class="border border-slate-200 rounded-lg p-4">
+                    <h3 class="font-bold text-slate-700 mb-3">Payment & Scheduling</h3>
+                    <div class="space-y-2">
+                        <div class="flex items-start gap-3">
+                            <input type="checkbox" id="d8" class="mt-1">
+                            <label for="d8" class="text-slate-600">Payment received</label>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <input type="checkbox" id="d9" class="mt-1">
+                            <label for="d9" class="text-slate-600">Send calendar invite (3 recurring 90-min sessions)</label>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <input type="checkbox" id="d10" class="mt-1">
+                            <label for="d10" class="text-slate-600">Send welcome email with onboarding package PDF</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Onboarding Package Creation -->
+                <div class="border border-slate-200 rounded-lg p-4">
+                    <h3 class="font-bold text-slate-700 mb-3">Onboarding Package Creation</h3>
+                    <div class="space-y-2">
+                        <div class="flex items-start gap-3">
+                            <input type="checkbox" id="d11" class="mt-1">
+                            <label for="d11" class="text-slate-600">Create strategy call notes document</label>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <input type="checkbox" id="d12" class="mt-1">
+                            <label for="d12" class="text-slate-600">Create personalized onboarding-package.html (from template)</label>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <input type="checkbox" id="d13" class="mt-1">
+                            <label for="d13" class="text-slate-600">Print onboarding package to PDF</label>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <input type="checkbox" id="d14" class="mt-1">
+                            <label for="d14" class="text-slate-600">Create Client Progress Tracker HTML (this file)</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Strategy Call Notes -->
+                <div class="border border-amber-200 rounded-lg p-4 bg-amber-50">
+                    <h4 class="font-bold text-amber-700 mb-2">Strategy Call Notes:</h4>
+                    <textarea class="notes-field" placeholder="Current role, years stuck, promotion attempts, manager relationship, skip-level visibility, biggest pain points, target promotion level..."></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PHASE 1: Pre-Session 1 -->
+    <div class="max-w-4xl mx-auto mb-6">
+        <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+            <div class="bg-orange-500 text-white px-6 py-4">
+                <h2 class="text-xl font-bold">🎁 Phase 1: Pre-Session 1 Materials</h2>
+                <p class="text-orange-100 text-sm">Days 1-3 | "The Quick Win Package"</p>
+            </div>
+            <div class="p-6 space-y-4">
+                <!-- Send Pre-Session Materials -->
+                <div class="border border-slate-200 rounded-lg p-4">
+                    <h3 class="font-bold text-slate-700 mb-3">📧 Send Pre-Session 1 Materials (48-72 hours before Session 1)</h3>
+                    <div class="space-y-2">
+                        <div class="flex items-start gap-3">
+                            <input type="checkbox" id="pre1-1" class="mt-1">
+                            <label for="pre1-1" class="text-slate-600">🎁 The Green Light Audit™ Self-Assessment</label>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <input type="checkbox" id="pre1-2" class="mt-1">
+                            <label for="pre1-2" class="text-slate-600">🎁 The Visibility Pyramid Overview (PDF)</label>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <input type="checkbox" id="pre1-3" class="mt-1">
+                            <label for="pre1-3" class="text-slate-600">🎁 The "Hard Work ≠ Promotion" Mindset Reset</label>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <input type="checkbox" id="pre1-4" class="mt-1">
+                            <label for="pre1-4" class="text-slate-600">🎁 Current Situation Assessment</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Client Homework Checklist -->
+                <div class="border border-orange-200 rounded-lg p-4 bg-orange-50">
+                    <h4 class="font-bold text-orange-700 mb-3">✅ Client Should Complete Before Session 1:</h4>
+                    <div class="space-y-2 text-sm text-slate-600">
+                        <p>☐ Complete The Green Light Audit™ self-assessment</p>
+                        <p>☐ Complete Current Situation Assessment</p>
+                        <p>☐ List 5 most impactful accomplishments from last 12 months</p>
+                        <p>☐ Identify skip-level manager (manager's manager)</p>
+                        <p>☐ Identify 2-3 "Gravity Leaders" they want relationships with</p>
+                        <p class="text-amber-600">☐ <strong>BONUS:</strong> Send 1 Echo Email recognizing a teammate</p>
+                    </div>
+                </div>
+
+                <!-- Pre-Session 1 Notes -->
+                <div class="border border-slate-200 rounded-lg p-4">
+                    <h4 class="font-bold text-slate-700 mb-2">📝 Pre-Session 1 Preparation Notes:</h4>
+                    <textarea class="notes-field" placeholder="Review their Green Light Audit, prep skip-level strategy, identify visibility gaps..."></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SESSION 1: Visibility Activation -->
+    <div class="max-w-4xl mx-auto mb-6">
+        <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+            <div class="bg-gradient-to-r from-amber-600 to-orange-600 text-white px-6 py-4">
+                <h2 class="text-xl font-bold">🎯 Session 1: The Visibility Activation (90 min)</h2>
+                <p class="text-amber-100 text-sm">Week 1 | Theme: "You're invisible. Let's fix that."</p>
+            </div>
+            <div class="p-6 space-y-4">
+                <!-- Session Structure -->
+                <div class="border border-slate-200 rounded-lg p-4">
+                    <h3 class="font-bold text-slate-700 mb-3">Session 1 Agenda</h3>
+                    <div class="space-y-3">
+                        <div class="bg-slate-50 rounded p-3">
+                            <div class="flex items-start gap-3">
+                                <input type="checkbox" id="s1-1" class="mt-1">
+                                <div class="flex-1">
+                                    <label for="s1-1" class="text-slate-700 font-medium">0-15 min: The Hard Truth + Your Story</label>
+                                    <p class="text-xs text-slate-500 mt-1">Review their situation. Performance ≠ Promotion. Share 4 promotions in 7 years story. Hard Work Fallacy™, Self-Promote Delusion™</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-slate-50 rounded p-3">
+                            <div class="flex items-start gap-3">
+                                <input type="checkbox" id="s1-2" class="mt-1">
+                                <div class="flex-1">
+                                    <label for="s1-2" class="text-slate-700 font-medium">15-30 min: The Green Light Review</label>
+                                    <p class="text-xs text-slate-500 mt-1">Review their self-assessment. Are they ready for visibility tactics? Confirm 85% saturation. Green Light Audit™, Role Saturation Threshold™</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-slate-50 rounded p-3">
+                            <div class="flex items-start gap-3">
+                                <input type="checkbox" id="s1-3" class="mt-1">
+                                <div class="flex-1">
+                                    <label for="s1-3" class="text-slate-700 font-medium">30-50 min: Skip-Level Strategy</label>
+                                    <p class="text-xs text-slate-500 mt-1">How to request skip-level meetings. What to talk about. Build the request script. Skip-Level Request Protocol™, Skip-Level Meeting Playbook™, Manager Amplification Tactic™</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-slate-50 rounded p-3">
+                            <div class="flex items-start gap-3">
+                                <input type="checkbox" id="s1-4" class="mt-1">
+                                <div class="flex-1">
+                                    <label for="s1-4" class="text-slate-700 font-medium">50-65 min: The Echo Email System</label>
+                                    <p class="text-xs text-slate-500 mt-1">Templates for visibility emails. Recognition Boomerang. Echo Email™, Organic Broadcasting™</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-slate-50 rounded p-3">
+                            <div class="flex items-start gap-3">
+                                <input type="checkbox" id="s1-5" class="mt-1">
+                                <div class="flex-1">
+                                    <label for="s1-5" class="text-slate-700 font-medium">65-70 min: The Gravity Map</label>
+                                    <p class="text-xs text-slate-500 mt-1">Identify Gravity Leaders. Who are the influential people? Gravity Audit™</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mock Practice (20 min) -->
+                <div class="border border-amber-200 rounded-lg p-4 bg-amber-50">
+                    <h3 class="font-bold text-amber-700 mb-3">🎭 Mock Practice (20 min) - Client Chose:</h3>
+                    <div class="space-y-2">
+                        <div class="flex items-start gap-3">
+                            <input type="checkbox" id="s1-mock-a" class="mt-1">
+                            <label for="s1-mock-a" class="text-slate-600">A. The Skip-Level Request (practice asking manager for permission)</label>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <input type="checkbox" id="s1-mock-b" class="mt-1">
+                            <label for="s1-mock-b" class="text-slate-600">B. The Strategic Question (practice town hall question)</label>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <input type="checkbox" id="s1-mock-c" class="mt-1">
+                            <label for="s1-mock-c" class="text-slate-600">C. The Echo Email Read-Through (feedback on draft)</label>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <input type="checkbox" id="s1-mock-d" class="mt-1">
+                            <label for="s1-mock-d" class="text-slate-600">D. The Value Articulation (60-second pitch to senior leader)</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Session 1 Notes -->
+                <div class="border border-slate-200 rounded-lg p-4">
+                    <h4 class="font-bold text-slate-700 mb-2">📝 Session 1 Notes & Key Takeaways:</h4>
+                    <textarea class="notes-field" placeholder="What went well, client aha moments, action items assigned, follow-up needed..."></textarea>
+                </div>
+
+                <!-- Homework Assigned -->
+                <div class="border border-orange-200 rounded-lg p-4 bg-orange-50">
+                    <h4 class="font-bold text-orange-700 mb-3">✅ Homework Assigned (Post-Session 1):</h4>
+                    <div class="space-y-2 text-sm text-slate-600">
+                        <p>☐ Send 2+ Echo Emails (team win or value-add)</p>
+                        <p>☐ Request a skip-level meeting (using the protocol built)</p>
+                        <p>☐ Begin building Evidence Arsenal (add 10+ accomplishments with impact metrics)</p>
+                        <p>☐ Identify 1-2 problems manager complains about (Headache Fixer prep)</p>
+                        <p>☐ Write down every piece of positive feedback received in last 12 months</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PHASE 2: Post-Session 1 / Pre-Session 2 -->
+    <div class="max-w-4xl mx-auto mb-6">
+        <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+            <div class="bg-orange-500 text-white px-6 py-4">
+                <h2 class="text-xl font-bold">🎁 Phase 2: Post-Session 1 / Pre-Session 2 Materials</h2>
+                <p class="text-orange-100 text-sm">Days 8-10 | Prepare for Promotion Conversation</p>
+            </div>
+            <div class="p-6 space-y-4">
+                <!-- Send Materials -->
+                <div class="border border-slate-200 rounded-lg p-4">
+                    <h3 class="font-bold text-slate-700 mb-3">📧 Send Post-S1 / Pre-S2 Materials</h3>
+                    <div class="space-y-2">
+                        <div class="flex items-start gap-3">
+                            <input type="checkbox" id="pre2-1" class="mt-1">
+                            <label for="pre2-1" class="text-slate-600">🎁 The Strategic Question Bank™</label>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <input type="checkbox" id="pre2-2" class="mt-1">
+                            <label for="pre2-2" class="text-slate-600">🎁 The Echo Email Templates</label>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <input type="checkbox" id="pre2-3" class="mt-1">
+                            <label for="pre2-3" class="text-slate-600">🎁 The Alignment Signal Guide</label>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <input type="checkbox" id="pre2-4" class="mt-1">
+                            <label for="pre2-4" class="text-slate-600">🎁 The Recognition Boomerang Templates</label>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <input type="checkbox" id="pre2-5" class="mt-1">
+                            <label for="pre2-5" class="text-slate-600">🎁 The Evidence Arsenal Tracker Template</label>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <input type="checkbox" id="pre2-6" class="mt-1">
+                            <label for="pre2-6" class="text-slate-600">🎁 The Service-Based Script Library Intro</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Check Homework Progress -->
+                <div class="border border-amber-200 rounded-lg p-4 bg-amber-50">
+                    <h4 class="font-bold text-amber-700 mb-2">📊 Check Client Homework Progress:</h4>
+                    <textarea class="notes-field" placeholder="Did they send Echo Emails? Skip-level request made? Evidence Arsenal started? Manager pain points identified?"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SESSION 2: Promotion Conversation Mastery -->
+    <div class="max-w-4xl mx-auto mb-6">
+        <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+            <div class="bg-gradient-to-r from-amber-600 to-orange-600 text-white px-6 py-4">
+                <h2 class="text-xl font-bold">🎯 Session 2: The Promotion Conversation Mastery (90 min)</h2>
+                <p class="text-amber-100 text-sm">Week 2 | Theme: "How to ask without seeming desperate"</p>
+            </div>
+            <div class="p-6 space-y-4">
+                <!-- Session Structure -->
+                <div class="border border-slate-200 rounded-lg p-4">
+                    <h3 class="font-bold text-slate-700 mb-3">Session 2 Agenda</h3>
+                    <div class="space-y-3">
+                        <div class="bg-slate-50 rounded p-3">
+                            <div class="flex items-start gap-3">
+                                <input type="checkbox" id="s2-1" class="mt-1">
+                                <div class="flex-1">
+                                    <label for="s2-1" class="text-slate-700 font-medium">0-15 min: Homework Review + Wins</label>
+                                    <p class="text-xs text-slate-500 mt-1">Echo Emails feedback? Skip-level request progress? Evidence Arsenal draft review. Celebrate wins.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-slate-50 rounded p-3">
+                            <div class="flex items-start gap-3">
+                                <input type="checkbox" id="s2-2" class="mt-1">
+                                <div class="flex-1">
+                                    <label for="s2-2" class="text-slate-700 font-medium">15-35 min: The Gap Analysis Contract</label>
+                                    <p class="text-xs text-slate-500 mt-1">Get manager to articulate gaps. Track agreement. Monthly check-ins. Build their script. Gap Analysis Contract™, Continuous Campaign™, Service-Based Script Library™</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-slate-50 rounded p-3">
+                            <div class="flex items-start gap-3">
+                                <input type="checkbox" id="s2-3" class="mt-1">
+                                <div class="flex-1">
+                                    <label for="s2-3" class="text-slate-700 font-medium">35-55 min: The Objection Playbook</label>
+                                    <p class="text-xs text-slate-500 mt-1">Walk through every objection: "Not doing promos," "You're not ready," "Keep it up," "HR controls that." Practice responses. Objection Playbook™</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-slate-50 rounded p-3">
+                            <div class="flex items-start gap-3">
+                                <input type="checkbox" id="s2-4" class="mt-1">
+                                <div class="flex-1">
+                                    <label for="s2-4" class="text-slate-700 font-medium">55-65 min: The Headache Fixer Strategy</label>
+                                    <p class="text-xs text-slate-500 mt-1">Identify manager's pain points. Fix them without being asked. Build specific plan. Headache Fixer Strategy™, Managing Up Masterclass™</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-slate-50 rounded p-3">
+                            <div class="flex items-start gap-3">
+                                <input type="checkbox" id="s2-5" class="mt-1">
+                                <div class="flex-1">
+                                    <label for="s2-5" class="text-slate-700 font-medium">65-70 min: Executive Presence Intro</label>
+                                    <p class="text-xs text-slate-500 mt-1">What makes someone "seem like a leader." Say/Do Ratio. Seriousness quotient. Executive Presence Blueprint™, Say/Do Ratio™</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mock Practice (20 min) -->
+                <div class="border border-amber-200 rounded-lg p-4 bg-amber-50">
+                    <h3 class="font-bold text-amber-700 mb-3">🎭 Mock Practice (20 min) - Client Chose:</h3>
+                    <div class="space-y-2">
+                        <div class="flex items-start gap-3">
+                            <input type="checkbox" id="s2-mock-a" class="mt-1">
+                            <label for="s2-mock-a" class="text-slate-600">A. The Promotion Conversation (full script practice)</label>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <input type="checkbox" id="s2-mock-b" class="mt-1">
+                            <label for="s2-mock-b" class="text-slate-600">B. Objection Handling (live responses to pushback)</label>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <input type="checkbox" id="s2-mock-c" class="mt-1">
+                            <label for="s2-mock-c" class="text-slate-600">C. The Gap Analysis Ask (push for specific gaps)</label>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <input type="checkbox" id="s2-mock-d" class="mt-1">
+                            <label for="s2-mock-d" class="text-slate-600">D. Managing Up Conversation (difficult conversation practice)</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Session 2 Notes -->
+                <div class="border border-slate-200 rounded-lg p-4">
+                    <h4 class="font-bold text-slate-700 mb-2">📝 Session 2 Notes & Key Takeaways:</h4>
+                    <textarea class="notes-field" placeholder="Promotion conversation readiness, objection handling improvements, manager pain points identified, next steps..."></textarea>
+                </div>
+
+                <!-- Homework Assigned -->
+                <div class="border border-orange-200 rounded-lg p-4 bg-orange-50">
+                    <h4 class="font-bold text-orange-700 mb-3">✅ Homework Assigned (Post-Session 2):</h4>
+                    <div class="space-y-2 text-sm text-slate-600">
+                        <p>☐ Have the Gap Analysis conversation with manager (or schedule it)</p>
+                        <p>☐ Implement 1 Headache Fixer action</p>
+                        <p>☐ Practice 2 promotion scripts out loud (record yourself)</p>
+                        <p>☐ Identify 1 cross-functional relationship to build</p>
+                        <p>☐ Review and update Evidence Arsenal (add 5+ more items)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PHASE 3: Post-Session 2 / Pre-Session 3 -->
+    <div class="max-w-4xl mx-auto mb-6">
+        <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+            <div class="bg-orange-500 text-white px-6 py-4">
+                <h2 class="text-xl font-bold">🎁 Phase 3: Post-Session 2 / Pre-Session 3 Materials</h2>
+                <p class="text-orange-100 text-sm">Days 15-17 | Prepare for Soft Skills Mastery</p>
+            </div>
+            <div class="p-6 space-y-4">
+                <!-- Send Materials -->
+                <div class="border border-slate-200 rounded-lg p-4">
+                    <h3 class="font-bold text-slate-700 mb-3">📧 Send Post-S2 / Pre-S3 Materials</h3>
+                    <div class="space-y-2">
+                        <div class="flex items-start gap-3">
+                            <input type="checkbox" id="pre3-1" class="mt-1">
+                            <label for="pre3-1" class="text-slate-600">🎁 The Objection Response Cheat Sheet</label>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <input type="checkbox" id="pre3-2" class="mt-1">
+                            <label for="pre3-2" class="text-slate-600">🎁 The Promotion Binder™ Template</label>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <input type="checkbox" id="pre3-3" class="mt-1">
+                            <label for="pre3-3" class="text-slate-600">🎁 The TL;DR Email Structure Guide</label>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <input type="checkbox" id="pre3-4" class="mt-1">
+                            <label for="pre3-4" class="text-slate-600">🎁 The Technical Translation Guide</label>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <input type="checkbox" id="pre3-5" class="mt-1">
+                            <label for="pre3-5" class="text-slate-600">🎁 The Influence Without Authority Cheat Sheet</label>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <input type="checkbox" id="pre3-6" class="mt-1">
+                            <label for="pre3-6" class="text-slate-600">🎁 The Social Credit Account Tracker</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Check Homework Progress -->
+                <div class="border border-amber-200 rounded-lg p-4 bg-amber-50">
+                    <h4 class="font-bold text-amber-700 mb-2">📊 Check Client Homework Progress:</h4>
+                    <textarea class="notes-field" placeholder="Gap Analysis conversation results? Headache Fixer action taken? Promotion scripts practiced? Cross-functional relationship progress?"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SESSION 3: Soft Skills Mastery & Implementation -->
+    <div class="max-w-4xl mx-auto mb-6">
+        <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+            <div class="bg-gradient-to-r from-amber-600 to-orange-600 text-white px-6 py-4">
+                <h2 class="text-xl font-bold">🎯 Session 3: The Soft Skills Mastery & Implementation Plan (90 min)</h2>
+                <p class="text-amber-100 text-sm">Week 3 | Theme: "Soft skills get you promoted"</p>
+            </div>
+            <div class="p-6 space-y-4">
+                <!-- Session Structure -->
+                <div class="border border-slate-200 rounded-lg p-4">
+                    <h3 class="font-bold text-slate-700 mb-3">Session 3 Agenda</h3>
+                    <div class="space-y-3">
+                        <div class="bg-slate-50 rounded p-3">
+                            <div class="flex items-start gap-3">
+                                <input type="checkbox" id="s3-1" class="mt-1">
+                                <div class="flex-1">
+                                    <label for="s3-1" class="text-slate-700 font-medium">0-15 min: Homework Review + Gap Analysis Results</label>
+                                    <p class="text-xs text-slate-500 mt-1">How did Gap Analysis go? Headache Fixer progress? Evidence Arsenal update.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-slate-50 rounded p-3">
+                            <div class="flex items-start gap-3">
+                                <input type="checkbox" id="s3-2" class="mt-1">
+                                <div class="flex-1">
+                                    <label for="s3-2" class="text-slate-700 font-medium">15-35 min: Communication Excellence</label>
+                                    <p class="text-xs text-slate-500 mt-1">Audience awareness. TL;DR structure. Clear Ask. Technical translation. Audience Awareness Principle™, TL;DR Structure™, Clear Ask Principle™, Technical Translation Engine™</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-slate-50 rounded p-3">
+                            <div class="flex items-start gap-3">
+                                <input type="checkbox" id="s3-3" class="mt-1">
+                                <div class="flex-1">
+                                    <label for="s3-3" class="text-slate-700 font-medium">35-50 min: The Expansion Strategy</label>
+                                    <p class="text-xs text-slate-500 mt-1">"Not My Job" Funeral. Opportunity Filter. Strategic work. Social Credit Account. "Not My Job" Funeral™, Opportunity Filter™, Quality Firewall™, Scope Beacon™</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-slate-50 rounded p-3">
+                            <div class="flex items-start gap-3">
+                                <input type="checkbox" id="s3-4" class="mt-1">
+                                <div class="flex-1">
+                                    <label for="s3-4" class="text-slate-700 font-medium">50-65 min: Building Your Network</label>
+                                    <p class="text-xs text-slate-500 mt-1">Cross-functional relationships. Value-First. Review Gravity Leaders. Cross-Functional Bridge Builder™, Value-First Connection™, Relationship Investment Mentality™</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-slate-50 rounded p-3">
+                            <div class="flex items-start gap-3">
+                                <input type="checkbox" id="s3-5" class="mt-1">
+                                <div class="flex-1">
+                                    <label for="s3-5" class="text-slate-700 font-medium">65-70 min: Final Mindset Installation</label>
+                                    <p class="text-xs text-slate-500 mt-1">Ownership Mentality. Leader-Before-Title. Feedback Satellite. Ownership Mentality™, Leader-Before-Title Mentality™, Feedback Satellite Mentality™</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mock Practice (20 min) -->
+                <div class="border border-amber-200 rounded-lg p-4 bg-amber-50">
+                    <h3 class="font-bold text-amber-700 mb-3">🎭 Mock Practice (20 min) - Client Chose:</h3>
+                    <div class="space-y-2">
+                        <div class="flex items-start gap-3">
+                            <input type="checkbox" id="s3-mock-a" class="mt-1">
+                            <label for="s3-mock-a" class="text-slate-600">A. The Difficult Conversation (boundary-setting, pushback, feedback)</label>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <input type="checkbox" id="s3-mock-b" class="mt-1">
+                            <label for="s3-mock-b" class="text-slate-600">B. Technical Translation Presentation (present tech topic to non-tech leader)</label>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <input type="checkbox" id="s3-mock-c" class="mt-1">
+                            <label for="s3-mock-c" class="text-slate-600">C. Influence Without Authority (get buy-in from resistant peer)</label>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <input type="checkbox" id="s3-mock-d" class="mt-1">
+                            <label for="s3-mock-d" class="text-slate-600">D. The Strategic No (decline low-value work gracefully)</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Session 3 Notes -->
+                <div class="border border-slate-200 rounded-lg p-4">
+                    <h4 class="font-bold text-slate-700 mb-2">📝 Session 3 Notes & Key Takeaways:</h4>
+                    <textarea class="notes-field" placeholder="Communication improvements, expansion opportunities identified, network building plan, 90-day action plan overview..."></textarea>
+                </div>
+
+                <!-- 90-Day Implementation Plan -->
+                <div class="border border-orange-200 rounded-lg p-4 bg-orange-50">
+                    <h4 class="font-bold text-orange-700 mb-3">🗓️ 90-Day Implementation Plan Created:</h4>
+                    <div class="space-y-2 text-sm text-slate-600">
+                        <p>☐ Visibility tactics (Echo Emails, skip-levels, strategic questions)</p>
+                        <p>☐ Promotion conversation timeline (Gap Analysis follow-ups)</p>
+                        <p>☐ Evidence Arsenal updates (monthly accomplishment tracking)</p>
+                        <p>☐ Network building (Gravity Leader meetings, cross-functional projects)</p>
+                        <p>☐ Soft skills practice (communication, influence, difficult conversations)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PHASE 4: Post-Session 3 / Final Package -->
+    <div class="max-w-4xl mx-auto mb-6">
+        <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+            <div class="bg-orange-500 text-white px-6 py-4">
+                <h2 class="text-xl font-bold">🎁 Phase 4: Post-Session 3 Materials (Final Bonus Package)</h2>
+                <p class="text-orange-100 text-sm">After Session 3 | Ongoing Implementation</p>
+            </div>
+            <div class="p-6 space-y-4">
+                <!-- Send Final Materials -->
+                <div class="border border-slate-200 rounded-lg p-4">
+                    <h3 class="font-bold text-slate-700 mb-3">📧 Send Post-Session 3 Final Bonuses</h3>
+                    <div class="space-y-2">
+                        <div class="flex items-start gap-3">
+                            <input type="checkbox" id="post3-1" class="mt-1">
+                            <label for="post3-1" class="text-slate-600">🎁 The 90-Day Promotion Action Plan</label>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <input type="checkbox" id="post3-2" class="mt-1">
+                            <label for="post3-2" class="text-slate-600">🎁 The Strategic No Scripts</label>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <input type="checkbox" id="post3-3" class="mt-1">
+                            <label for="post3-3" class="text-slate-600">🎁 The Difficult Conversations Toolkit</label>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <input type="checkbox" id="post3-4" class="mt-1">
+                            <label for="post3-4" class="text-slate-600">🎁 The Compensation Negotiation Guide</label>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <input type="checkbox" id="post3-5" class="mt-1">
+                            <label for="post3-5" class="text-slate-600">🎁 The External Reputation Builder</label>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <input type="checkbox" id="post3-6" class="mt-1">
+                            <label for="post3-6" class="text-slate-600">🎁 The Mindset Mastery Cheat Sheet</label>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <input type="checkbox" id="post3-7" class="mt-1">
+                            <label for="post3-7" class="text-slate-600">🎁 The IC → Manager Transition Guide (if applicable)</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Follow-up Plan -->
+                <div class="border border-amber-200 rounded-lg p-4 bg-amber-50">
+                    <h4 class="font-bold text-amber-700 mb-2">📅 Follow-Up Plan:</h4>
+                    <textarea class="notes-field" placeholder="30-day check-in? 60-day check-in? 90-day promotion update? Stay in touch strategy..."></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PHASE 5: Program Completion & Success -->
+    <div class="max-w-4xl mx-auto mb-6">
+        <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+            <div class="bg-emerald-600 text-white px-6 py-4">
+                <h2 class="text-xl font-bold">✨ Phase 5: Program Completion & Success Tracking</h2>
+                <p class="text-emerald-100 text-sm">90+ Days Post-Program</p>
+            </div>
+            <div class="p-6 space-y-4">
+                <!-- Success Milestones -->
+                <div class="border border-slate-200 rounded-lg p-4">
+                    <h3 class="font-bold text-slate-700 mb-3">🎯 Track Success Milestones</h3>
+                    <div class="space-y-2">
+                        <div class="flex items-start gap-3">
+                            <input type="checkbox" id="done-1" class="mt-1">
+                            <label for="done-1" class="text-slate-600">Skip-level meeting completed</label>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <input type="checkbox" id="done-2" class="mt-1">
+                            <label for="done-2" class="text-slate-600">Gap Analysis conversation had with manager</label>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <input type="checkbox" id="done-3" class="mt-1">
+                            <label for="done-3" class="text-slate-600">Evidence Arsenal fully built (20+ accomplishments)</label>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <input type="checkbox" id="done-4" class="mt-1">
+                            <label for="done-4" class="text-slate-600">Promotion conversation initiated</label>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <input type="checkbox" id="done-5" class="mt-1">
+                            <label for="done-5" class="text-slate-600">Promotion received! 🎉</label>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <input type="checkbox" id="done-6" class="mt-1">
+                            <label for="done-6" class="text-slate-600">Request testimonial/feedback</label>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <input type="checkbox" id="done-7" class="mt-1">
+                            <label for="done-7" class="text-slate-600">Add to success stories</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Final Outcome -->
+                <div class="border border-emerald-200 rounded-lg p-4 bg-emerald-50">
+                    <h4 class="font-bold text-emerald-700 mb-2">🎉 Final Outcome:</h4>
+                    <textarea class="notes-field" placeholder="Promotion level achieved, timeline, compensation increase, testimonial received?"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="max-w-4xl mx-auto text-center py-8 text-slate-400 text-sm">
+        <p>Accelerate Path Client Tracker Template | LaunchToLead.io</p>
+        <p class="mt-1">Copy this file and rename to [ClientName].html for each new client</p>
+        <button onclick="clearAllData()" class="no-print mt-4 px-4 py-2 bg-red-500 text-white rounded-lg text-xs hover:bg-red-600">Clear All Data</button>
+    </div>
+
+    <script>
+        // Auto-save functionality using localStorage
+        const STORAGE_KEY = 'accelerate-client-tracker-' + window.location.pathname;
+
+        // Save all form data
+        function saveData() {
+            const data = {
+                checkboxes: {},
+                inputs: {},
+                textareas: {}
+            };
+
+            // Save all checkboxes
+            document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+                data.checkboxes[checkbox.id] = checkbox.checked;
+            });
+
+            // Save all text inputs
+            document.querySelectorAll('input[type="text"]').forEach(input => {
+                if (input.id || input.className.includes('client-name-input')) {
+                    const key = input.id || 'client-name';
+                    data.inputs[key] = input.value;
+                }
+            });
+
+            // Save all date inputs
+            document.querySelectorAll('input[type="date"]').forEach(input => {
+                const key = input.parentElement.querySelector('.text-xs')?.textContent || 'date-' + Math.random();
+                data.inputs[key] = input.value;
+            });
+
+            // Save all textareas
+            document.querySelectorAll('textarea').forEach(textarea => {
+                const label = textarea.closest('div').querySelector('h4, h3, label')?.textContent || 'notes-' + Math.random();
+                data.textareas[label] = textarea.value;
+            });
+
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+        }
+
+        // Load all form data
+        function loadData() {
+            const saved = localStorage.getItem(STORAGE_KEY);
+            if (!saved) return;
+
+            const data = JSON.parse(saved);
+
+            // Restore checkboxes
+            Object.entries(data.checkboxes || {}).forEach(([id, checked]) => {
+                const checkbox = document.getElementById(id);
+                if (checkbox) checkbox.checked = checked;
+            });
+
+            // Restore text inputs
+            Object.entries(data.inputs || {}).forEach(([key, value]) => {
+                if (key === 'client-name') {
+                    const input = document.querySelector('.client-name-input');
+                    if (input) input.value = value;
+                } else {
+                    const input = document.getElementById(key);
+                    if (input) input.value = value;
+                }
+            });
+
+            // Restore date inputs by matching labels
+            const dateInputs = document.querySelectorAll('input[type="date"]');
+            dateInputs.forEach(input => {
+                const label = input.parentElement.querySelector('.text-xs')?.textContent;
+                if (label && data.inputs[label]) {
+                    input.value = data.inputs[label];
+                }
+            });
+
+            // Restore textareas by matching labels
+            document.querySelectorAll('textarea').forEach(textarea => {
+                const label = textarea.closest('div').querySelector('h4, h3, label')?.textContent;
+                if (label && data.textareas[label]) {
+                    textarea.value = data.textareas[label];
+                }
+            });
+        }
+
+        // Clear all data
+        function clearAllData() {
+            if (confirm('Are you sure you want to clear all data? This cannot be undone.')) {
+                localStorage.removeItem(STORAGE_KEY);
+                location.reload();
+            }
+        }
+
+        // Initialize: Load data on page load
+        window.addEventListener('DOMContentLoaded', loadData);
+
+        // Auto-save on any change
+        document.addEventListener('change', saveData);
+        document.addEventListener('input', saveData);
+
+        // Visual feedback for saved state
+        let saveTimeout;
+        function showSaveIndicator() {
+            clearTimeout(saveTimeout);
+            const indicator = document.createElement('div');
+            indicator.textContent = '✓ Saved';
+            indicator.className = 'fixed bottom-4 right-4 bg-green-500 text-white px-4 py-2 rounded-lg shadow-lg text-sm no-print';
+            document.body.appendChild(indicator);
+            saveTimeout = setTimeout(() => indicator.remove(), 1000);
+        }
+
+        document.addEventListener('change', showSaveIndicator);
+    </script>
+
+</body>
+</html>

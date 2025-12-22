@@ -1,6 +1,6 @@
 # Launch Method V3 - Classroom Lectures Progress
 
-**Last Updated:** December 17, 2025
+**Last Updated:** December 22, 2025
 
 ---
 
@@ -26,12 +26,16 @@
 - [ ] 1.4 The Target List Builder™
 - [ ] 1.5 The Hidden Job Market Timeline™
 
-### Section 3: Resume Engineering (5 Methods)
-- [ ] 3.1 The Impact Bullet Formula™
-- [ ] 3.2 The Results Amplifier™
-- [ ] 3.3 The ATS Optimization Protocol™
-- [ ] 3.4 The Project Showcase Framework™
-- [ ] 3.5 The Skills Architecture System™
+### Section 3: Resume Engineering (9 Methods)
+- [x] **3.1 The Me-in-We Extractor™** - PDF slides created
+- [x] **3.2 The Impact Bullet Builder™** - PDF slides created
+- [ ] 3.3 The Boring-to-Standout Upgrade™
+- [ ] 3.4 The Universal Translator + ATS Pass™
+- [ ] 3.5 The Passion Proof Finder™
+- [ ] 3.6 The Hidden Metrics Finder™
+- [ ] 3.7 The Domain Translator™
+- [ ] 3.8 The 4-Minute Tailored Bullet System™
+- [ ] 3.9 The Asset Mindset Shift™
 
 ### Section 4: LinkedIn Optimization (5 Methods)
 - [ ] 4.1 The LinkedIn Headline Formula™
