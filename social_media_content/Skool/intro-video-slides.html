@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skool Intro Video Slides</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: #064e3b;
+            overflow: hidden;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        .slide {
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #064e3b 0%, #065f46 50%, #047857 100%);
+        }
+
+        /* Background elements */
+        .bg-blob-1 {
+            position: absolute;
+            width: 42vw;
+            height: 42vw;
+            background: radial-gradient(circle, rgba(20, 184, 166, 0.25) 0%, transparent 70%);
+            border-radius: 50%;
+            top: -15vw;
+            right: -10vw;
+            filter: blur(5vw);
+        }
+
+        .bg-blob-2 {
+            position: absolute;
+            width: 36vw;
+            height: 36vw;
+            background: radial-gradient(circle, rgba(163, 230, 53, 0.2) 0%, transparent 70%);
+            border-radius: 50%;
+            bottom: -13vw;
+            left: -8vw;
+            filter: blur(5vw);
+        }
+
+        .bg-dots {
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(rgba(20, 184, 166, 0.2) 2px, transparent 2px);
+            background-size: 2.6vw 2.6vw;
+            opacity: 0.5;
+        }
+
+        /* Content container - top 80% for subtitle/camera space */
+        .content {
+            position: relative;
+            z-index: 10;
+            height: 80%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2vh 6.25vw 0;
+            text-align: center;
+        }
+
+        /* Shared elements */
+        .logo-bar {
+            position: absolute;
+            top: 4.6vh;
+            left: 4.2vw;
+            display: flex;
+            align-items: center;
+            gap: 1vw;
+        }
+
+        .logo-bar .icon {
+            background: white;
+            color: #064e3b;
+            width: 3.6vw;
+            height: 3.6vw;
+            border-radius: 0.9vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.45vw;
+            box-shadow: 0 0.4vw 1.5vw rgba(0, 0, 0, 0.2);
+        }
+
+        .logo-bar span {
+            font-size: 1.875vw;
+            font-weight: 700;
+            color: white;
+        }
+
+        .logo-bar .accent {
+            font-weight: 300;
+            color: #a3e635;
+        }
+
+        .website {
+            position: absolute;
+            bottom: 22vh;
+            right: 4.2vw;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.45vw;
+            font-weight: 500;
+        }
+
+        /* Section title badge */
+        .section-title {
+            font-size: 1.4vw;
+            font-weight: 600;
+            color: #a3e635;
+            text-transform: uppercase;
+            letter-spacing: 0.2vw;
+            margin-bottom: 2.5vh;
+        }
+
+        /* Main headline */
+        .main-headline {
+            font-size: 4vw;
+            font-weight: 800;
+            color: white;
+            line-height: 1.15;
+            margin-bottom: 3.5vh;
+            letter-spacing: -0.1vw;
+        }
+
+        .main-headline .gradient {
+            background: linear-gradient(135deg, #14b8a6 0%, #a3e635 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .main-headline .highlight {
+            color: #a3e635;
+        }
+
+        /* Sub headline */
+        .sub-headline {
+            font-size: 1.8vw;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 60vw;
+            line-height: 1.5;
+        }
+
+        .sub-headline strong {
+            color: #a3e635;
+            font-weight: 600;
+        }
+
+        /* ===== SLIDE 1: Welcome/Hook ===== */
+        .slide-1 .role-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8vw;
+            background: rgba(163, 230, 53, 0.2);
+            border: 0.15vw solid rgba(163, 230, 53, 0.5);
+            padding: 1.2vh 2vw;
+            border-radius: 3vw;
+            margin-bottom: 3vh;
+        }
+
+        .slide-1 .role-badge span {
+            color: #a3e635;
+            font-size: 1.3vw;
+            font-weight: 600;
+        }
+
+        .slide-1 .welcome-text {
+            font-size: 2vw;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 2vh;
+        }
+
+        .slide-1 .name {
+            font-size: 5vw;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 2vh;
+        }
+
+        .slide-1 .tagline {
+            font-size: 1.8vw;
+            color: rgba(255, 255, 255, 0.85);
+            max-width: 55vw;
+            line-height: 1.5;
+        }
+
+        .slide-1 .tagline strong {
+            color: #a3e635;
+        }
+
+        /* ===== SLIDE 2: The Problem ===== */
+        .slide-2 .problem-grid {
+            display: flex;
+            gap: 2vw;
+            margin-top: 2vh;
+        }
+
+        .slide-2 .problem-card {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            border: 0.1vw solid rgba(255, 255, 255, 0.1);
+            border-radius: 1.2vw;
+            padding: 3vh 2.5vw;
+            text-align: center;
+            flex: 1;
+            max-width: 22vw;
+        }
+
+        .slide-2 .problem-card .icon {
+            font-size: 3vw;
+            margin-bottom: 1.5vh;
+        }
+
+        .slide-2 .problem-card h3 {
+            font-size: 1.4vw;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 1vh;
+        }
+
+        .slide-2 .problem-card p {
+            font-size: 1.1vw;
+            color: rgba(255, 255, 255, 0.75);
+            line-height: 1.4;
+        }
+
+        /* ===== SLIDE 3: Credibility ===== */
+        .slide-3 .cred-row {
+            display: flex;
+            gap: 2vw;
+            margin-top: 2vh;
+        }
+
+        .slide-3 .cred-item {
+            display: flex;
+            align-items: center;
+            gap: 1vw;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            padding: 2.5vh 2.5vw;
+            border-radius: 1vw;
+            border: 0.1vw solid rgba(255, 255, 255, 0.1);
+        }
+
+        .slide-3 .cred-item .icon {
+            font-size: 2.5vw;
+        }
+
+        .slide-3 .cred-item span {
+            font-size: 1.4vw;
+            font-weight: 600;
+            color: white;
+        }
+
+        .slide-3 .cred-item .number {
+            color: #a3e635;
+            font-weight: 800;
+        }
+
+        /* ===== SLIDE 4: What's Inside ===== */
+        .slide-4 .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5vw;
+            margin-top: 2vh;
+            max-width: 75vw;
+        }
+
+        .slide-4 .feature-card {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            border: 0.1vw solid rgba(255, 255, 255, 0.1);
+            border-radius: 1vw;
+            padding: 2.5vh 1.8vw;
+            text-align: left;
+        }
+
+        .slide-4 .feature-card .icon {
+            font-size: 2.2vw;
+            margin-bottom: 1.2vh;
+        }
+
+        .slide-4 .feature-card h3 {
+            font-size: 1.3vw;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 0.8vh;
+        }
+
+        .slide-4 .feature-card p {
+            font-size: 1vw;
+            color: rgba(255, 255, 255, 0.75);
+            line-height: 1.4;
+        }
+
+        /* ===== SLIDE 5: CTA ===== */
+        .slide-5 .cta-box {
+            background: rgba(163, 230, 53, 0.15);
+            border: 0.2vw solid rgba(163, 230, 53, 0.4);
+            border-radius: 1.5vw;
+            padding: 4vh 5vw;
+            margin-top: 2vh;
+        }
+
+        .slide-5 .cta-box .cta-text {
+            font-size: 2.2vw;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 1.5vh;
+        }
+
+        .slide-5 .cta-box .cta-sub {
+            font-size: 1.5vw;
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .slide-5 .cta-box .cta-sub strong {
+            color: #a3e635;
+        }
+
+        .slide-5 .free-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6vw;
+            background: #a3e635;
+            color: #064e3b;
+            padding: 1.8vh 3vw;
+            border-radius: 3vw;
+            font-weight: 800;
+            font-size: 1.6vw;
+            margin-top: 3vh;
+            box-shadow: 0 0.5vw 2vw rgba(163, 230, 53, 0.4);
+        }
+
+        .slide-5 .action-row {
+            display: flex;
+            gap: 1.5vw;
+            margin-top: 3vh;
+        }
+
+        .slide-5 .action-item {
+            display: flex;
+            align-items: center;
+            gap: 0.6vw;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.2vh 1.8vw;
+            border-radius: 0.8vw;
+            color: white;
+            font-size: 1.2vw;
+            font-weight: 500;
+        }
+
+        /* Navigation Buttons */
+        .next-btn {
+            position: absolute;
+            top: 4.6vh;
+            right: 4.2vw;
+            background: rgba(163, 230, 53, 0.95);
+            color: #064e3b;
+            border: none;
+            padding: 1.2vh 1.8vw;
+            border-radius: 0.52vw;
+            font-size: 1.1vw;
+            font-weight: 700;
+            cursor: pointer;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            transition: all 0.2s ease;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            gap: 0.5vw;
+        }
+
+        .next-btn:hover {
+            background: #a3e635;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <!-- ===== SLIDE 1: Welcome/Hook ===== -->
+    <div class="slide slide-1">
+        <div class="bg-blob-1"></div>
+        <div class="bg-blob-2"></div>
+        <div class="bg-dots"></div>
+
+        <div class="logo-bar">
+            <div class="icon">L²</div>
+            <span>Launch<span class="accent">To</span>Lead</span>
+        </div>
+
+        <div class="content">
+            <div class="welcome-text">Welcome to the community! I'm</div>
+            
+            <h1 class="name">Mansour Manci</h1>
+            
+            <div class="role-badge">
+                <span>🚜 Software Development Enablement Lead at John Deere</span>
+            </div>
+
+            <p class="tagline">
+                I'm here to help you <strong>land your dream engineering job</strong><br/>
+                using the exact system that worked for me.
+            </p>
+        </div>
+
+        <div class="website">LaunchToLead.io</div>
+
+        <button class="next-btn" onclick="showSlide(2)">Next Slide →</button>
+    </div>
+
+    <!-- ===== SLIDE 2: My Background ===== -->
+    <div class="slide slide-2">
+        <div class="bg-blob-1"></div>
+        <div class="bg-blob-2"></div>
+        <div class="bg-dots"></div>
+
+        <div class="logo-bar">
+            <div class="icon">L²</div>
+            <span>Launch<span class="accent">To</span>Lead</span>
+        </div>
+
+        <div class="content">
+            <div class="section-title">My Background</div>
+
+            <h1 class="main-headline">
+                I've been <span class="highlight">exactly where you are</span>
+            </h1>
+
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <div class="icon">🎓</div>
+                    <h3>Engineering Grad</h3>
+                    <p>I graduated with an engineering degree and had no clue how to land a job.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="icon">📨</div>
+                    <h3>The Struggle</h3>
+                    <p>Applied everywhere, heard nothing. Had to figure it out the hard way.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="icon">🚀</div>
+                    <h3>Found What Works</h3>
+                    <p>Built a system that actually got results — and landed my dream job.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="website">LaunchToLead.io</div>
+
+        <button class="next-btn" onclick="showSlide(3)">Next Slide →</button>
+    </div>
+
+    <!-- ===== SLIDE 3: Why I'm Qualified ===== -->
+    <div class="slide slide-3">
+        <div class="bg-blob-1"></div>
+        <div class="bg-blob-2"></div>
+        <div class="bg-dots"></div>
+
+        <div class="logo-bar">
+            <div class="icon">L²</div>
+            <span>Launch<span class="accent">To</span>Lead</span>
+        </div>
+
+        <div class="content">
+            <div class="section-title">Why I Can Help</div>
+
+            <h1 class="main-headline">
+                I've done the <span class="gradient">research & testing</span>
+            </h1>
+
+            <p class="sub-headline">
+                So you don't have to figure it out alone.
+            </p>
+
+            <div class="cred-row">
+                <div class="cred-item">
+                    <span class="icon">📈</span>
+                    <span><span class="number">4 promotions</span> in 7 years</span>
+                </div>
+                <div class="cred-item">
+                    <span class="icon">🔄</span>
+                    <span>Pivoted <span class="number">Mechanical → Software</span></span>
+                </div>
+            </div>
+
+            <div class="cred-row" style="margin-top: 1.5vh;">
+                <div class="cred-item">
+                    <span class="icon">🎯</span>
+                    <span>Landed my dream job at <span class="number">Deere</span></span>
+                </div>
+                <div class="cred-item">
+                    <span class="icon">📋</span>
+                    <span>Developed a <span class="number">repeatable system</span></span>
+                </div>
+                <div class="cred-item">
+                    <span class="icon">🤝</span>
+                    <span>Helped others <span class="number">get results</span></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="website">LaunchToLead.io</div>
+
+        <button class="next-btn" onclick="showSlide(4)">Next Slide →</button>
+    </div>
+
+    <!-- ===== SLIDE 4: The Value You Get ===== -->
+    <div class="slide slide-4">
+        <div class="bg-blob-1"></div>
+        <div class="bg-blob-2"></div>
+        <div class="bg-dots"></div>
+
+        <div class="logo-bar">
+            <div class="icon">L²</div>
+            <span>Launch<span class="accent">To</span>Lead</span>
+        </div>
+
+        <div class="content">
+            <div class="section-title">What You Get</div>
+
+            <h1 class="main-headline">
+                A complete roadmap to <span class="highlight">getting hired</span>
+            </h1>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="icon">🗺️</div>
+                    <h3>Step-by-Step System</h3>
+                    <p>No more guessing — follow a proven path from application to offer</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">🎥</div>
+                    <h3>Video Walkthroughs</h3>
+                    <p>Watch me explain exactly what to do at each step</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">📄</div>
+                    <h3>Resume Feedback</h3>
+                    <p>Get real eyes on your resume so you know what's working</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">👥</div>
+                    <h3>Community Support</h3>
+                    <p>You're not alone — connect with others on the same journey</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">💬</div>
+                    <h3>Direct Access to Me</h3>
+                    <p>Ask questions and get answers from someone who's been there</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">⚡</div>
+                    <h3>Faster Results</h3>
+                    <p>Skip the trial and error — use what's already proven to work</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="website">LaunchToLead.io</div>
+
+        <button class="next-btn" onclick="showSlide(5)">Next Slide →</button>
+    </div>
+
+    <!-- ===== SLIDE 5: CTA ===== -->
+    <div class="slide slide-5">
+        <div class="bg-blob-1"></div>
+        <div class="bg-blob-2"></div>
+        <div class="bg-dots"></div>
+
+        <div class="logo-bar">
+            <div class="icon">L²</div>
+            <span>Launch<span class="accent">To</span>Lead</span>
+        </div>
+
+        <div class="content">
+            <div class="section-title">Let's Do This</div>
+
+            <h1 class="main-headline">
+                Let's get you that <span class="gradient">dream job</span>
+            </h1>
+
+            <div class="cta-box">
+                <div class="cta-text">Here's what to do next:</div>
+                <div class="cta-sub">
+                    <strong>Explore the Classroom</strong> • Introduce yourself • Start taking action
+                </div>
+            </div>
+
+            <div class="free-badge">
+                ✨ I'm glad you're here — let's make it happen
+            </div>
+
+            <div class="action-row">
+                <div class="action-item">📚 Dive into the lessons</div>
+                <div class="action-item">👋 Say hi in the community</div>
+                <div class="action-item">🚀 Take your first step</div>
+            </div>
+        </div>
+
+        <div class="website">LaunchToLead.io</div>
+    </div>
+
+    <script>
+        let currentSlide = 1;
+        const totalSlides = 5;
+
+        function showSlide(n) {
+            const slides = document.querySelectorAll('.slide');
+            
+            if (n > totalSlides) n = 1;
+            if (n < 1) n = totalSlides;
+            
+            currentSlide = n;
+            
+            // Hide all slides
+            slides.forEach(slide => slide.style.display = 'none');
+            
+            // Show current slide
+            slides[currentSlide - 1].style.display = 'block';
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ') {
+                showSlide(currentSlide + 1);
+            } else if (e.key === 'ArrowLeft') {
+                showSlide(currentSlide - 1);
+            }
+        });
+
+        // Initialize - show only first slide
+        document.addEventListener('DOMContentLoaded', () => {
+            showSlide(1);
+        });
+    </script>
+</body>
+</html>

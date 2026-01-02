@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TikTok Green Screen Backgrounds - Lead Magnets</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: #1a1a1a;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px;
+            gap: 60px;
+        }
+
+        h1 {
+            color: white;
+            font-size: 28px;
+            text-align: center;
+        }
+
+        .subtitle {
+            color: #888;
+            font-size: 14px;
+            text-align: center;
+            margin-top: 10px;
+        }
+        
+        .screens-container {
+            display: flex;
+            gap: 60px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .screen-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .screen-label {
+            color: #a3e635;
+            font-size: 16px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        /* TikTok vertical format: 1080x1920 FULL RESOLUTION */
+        .screen {
+            width: 1080px;
+            height: 1920px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 0;
+            box-shadow: none;
+        }
+
+        /* ===== SCREEN 1: Resume Formula ===== */
+        .screen-resume {
+            background: linear-gradient(160deg, #064e3b 0%, #065f46 40%, #047857 100%);
+        }
+
+        .screen-resume .bg-blob-1 {
+            position: absolute;
+            width: 900px;
+            height: 900px;
+            background: radial-gradient(circle, rgba(20, 184, 166, 0.3) 0%, transparent 70%);
+            border-radius: 50%;
+            top: -240px;
+            right: -240px;
+            filter: blur(120px);
+        }
+
+        .screen-resume .bg-blob-2 {
+            position: absolute;
+            width: 750px;
+            height: 750px;
+            background: radial-gradient(circle, rgba(163, 230, 53, 0.25) 0%, transparent 70%);
+            border-radius: 50%;
+            bottom: -180px;
+            left: -180px;
+            filter: blur(120px);
+        }
+
+        .screen-resume .bg-dots {
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(rgba(20, 184, 166, 0.25) 2px, transparent 2px);
+            background-size: 60px 60px;
+            opacity: 0.5;
+        }
+
+        /* ===== SCREEN 2: Vault Playbook ===== */
+        .screen-vault {
+            background: linear-gradient(160deg, #064e3b 0%, #065f46 40%, #047857 100%);
+        }
+
+        .screen-vault .bg-blob-1 {
+            position: absolute;
+            width: 900px;
+            height: 900px;
+            background: radial-gradient(circle, rgba(163, 230, 53, 0.3) 0%, transparent 70%);
+            border-radius: 50%;
+            top: -240px;
+            left: -240px;
+            filter: blur(120px);
+        }
+
+        .screen-vault .bg-blob-2 {
+            position: absolute;
+            width: 750px;
+            height: 750px;
+            background: radial-gradient(circle, rgba(20, 184, 166, 0.25) 0%, transparent 70%);
+            border-radius: 50%;
+            bottom: -180px;
+            right: -180px;
+            filter: blur(120px);
+        }
+
+        .screen-vault .bg-dots {
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(rgba(163, 230, 53, 0.25) 2px, transparent 2px);
+            background-size: 60px 60px;
+            opacity: 0.5;
+        }
+
+        /* ===== Shared Content Styles ===== */
+        .content {
+            position: relative;
+            z-index: 10;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 120px 72px;
+            text-align: center;
+        }
+
+        .logo-mini {
+            display: inline-flex;
+            align-items: center;
+            gap: 24px;
+            margin-bottom: 72px;
+        }
+
+        .logo-mini .icon {
+            background: white;
+            color: #064e3b;
+            width: 108px;
+            height: 108px;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 42px;
+            box-shadow: 0 12px 45px rgba(0, 0, 0, 0.2);
+        }
+
+        .logo-mini span {
+            font-size: 54px;
+            font-weight: 700;
+            color: white;
+        }
+
+        .logo-mini .accent {
+            font-weight: 300;
+            color: #a3e635;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 18px;
+            background: rgba(163, 230, 53, 0.2);
+            border: 3px solid rgba(163, 230, 53, 0.4);
+            padding: 24px 48px;
+            border-radius: 100px;
+            margin-bottom: 60px;
+        }
+
+        .badge span {
+            color: #a3e635;
+            font-size: 36px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .main-text {
+            color: white;
+            font-size: 84px;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 72px;
+        }
+
+        .main-text .highlight {
+            color: #a3e635;
+        }
+
+        .main-text .gradient {
+            background: linear-gradient(135deg, #14b8a6 0%, #a3e635 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .arrow-down {
+            font-size: 96px;
+            color: #a3e635;
+            margin-bottom: 60px;
+            animation: bounce 1s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(24px); }
+        }
+
+        .url-box {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 6px solid rgba(255, 255, 255, 0.2);
+            border-radius: 48px;
+            padding: 60px 84px;
+            margin-bottom: 60px;
+        }
+
+        .url-box .url {
+            font-size: 78px;
+            font-weight: 800;
+            color: white;
+            letter-spacing: -1.5px;
+        }
+
+        .url-box .url .tld {
+            color: #a3e635;
+        }
+
+        .url-box .path {
+            font-size: 66px;
+            font-weight: 700;
+            color: #a3e635;
+            margin-top: 12px;
+        }
+
+        .subtitle-text {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 42px;
+            line-height: 1.5;
+            max-width: 840px;
+        }
+
+        .subtitle-text strong {
+            color: white;
+        }
+
+        /* Free callout */
+        .free-callout {
+            display: inline-flex;
+            align-items: center;
+            gap: 18px;
+            background: #a3e635;
+            color: #064e3b;
+            padding: 24px 60px;
+            border-radius: 100px;
+            font-weight: 700;
+            font-size: 42px;
+            margin-top: 48px;
+            box-shadow: 0 12px 60px rgba(163, 230, 53, 0.4);
+        }
+
+        /* Decorative elements */
+        .decoration-line {
+            position: absolute;
+            width: 300px;
+            height: 6px;
+            background: linear-gradient(90deg, transparent, rgba(163, 230, 53, 0.5), transparent);
+        }
+
+        .decoration-line.top {
+            top: 180px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .decoration-line.bottom {
+            bottom: 180px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Instructions */
+        .instructions {
+            background: #2a2a2a;
+            padding: 20px 30px;
+            border-radius: 12px;
+            max-width: 700px;
+            text-align: center;
+        }
+
+        .instructions h3 {
+            color: #a3e635;
+            font-size: 16px;
+            margin-bottom: 12px;
+        }
+
+        .instructions p {
+            color: #888;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .instructions ol {
+            color: #ccc;
+            font-size: 14px;
+            text-align: left;
+            margin-top: 12px;
+            padding-left: 20px;
+        }
+
+        .instructions li {
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>TikTok Green Screen Backgrounds</h1>
+        <p class="subtitle">Screenshot each screen separately for your green screen videos</p>
+    </div>
+
+    <div class="screens-container">
+        <!-- SCREEN 1: Resume Formula (Main Site) -->
+        <div class="screen-wrapper">
+            <div class="screen-label">📄 Resume Formula</div>
+            <div class="screen screen-resume">
+                <div class="bg-blob-1"></div>
+                <div class="bg-blob-2"></div>
+                <div class="bg-dots"></div>
+                <div class="decoration-line top"></div>
+                <div class="decoration-line bottom"></div>
+                
+                <div class="content">
+                    <div class="logo-mini">
+                        <div class="icon">L²</div>
+                        <span>Launch<span class="accent">To</span>Lead</span>
+                    </div>
+
+                    <div class="badge">
+                        <span>🎯 Free Download</span>
+                    </div>
+
+                    <p class="main-text">
+                        The <span class="gradient">Resume Formula</span><br/>
+                        That Landed Me<br/>
+                        <span class="highlight">John Deere</span>
+                    </p>
+
+                    <div class="arrow-down">👇</div>
+
+                    <div class="url-box">
+                        <div class="url">LaunchToLead<span class="tld">.io</span></div>
+                    </div>
+
+                    <p class="subtitle-text">
+                        The <strong>4-part bullet formula</strong> I used to transform my resume and finally get callbacks
+                    </p>
+
+                    <div class="free-callout">
+                        ✨ 100% FREE
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SCREEN 2: Vault Playbook -->
+        <div class="screen-wrapper">
+            <div class="screen-label">🔐 Full Playbook</div>
+            <div class="screen screen-vault">
+                <div class="bg-blob-1"></div>
+                <div class="bg-blob-2"></div>
+                <div class="bg-dots"></div>
+                <div class="decoration-line top"></div>
+                <div class="decoration-line bottom"></div>
+                
+                <div class="content">
+                    <div class="logo-mini">
+                        <div class="icon">L²</div>
+                        <span>Launch<span class="accent">To</span>Lead</span>
+                    </div>
+
+                    <div class="badge">
+                        <span>🔐 The Vault</span>
+                    </div>
+
+                    <p class="main-text">
+                        The <span class="gradient">Full Playbook</span><br/>
+                        of How I Got Hired at<br/>
+                        <span class="highlight">John Deere</span>
+                    </p>
+
+                    <div class="arrow-down">👇</div>
+
+                    <div class="url-box">
+                        <div class="url">LaunchToLead<span class="tld">.io</span></div>
+                        <div class="path">/vault</div>
+                    </div>
+
+                    <p class="subtitle-text">
+                        <strong>Step-by-step</strong> — the whole story from struggling grad to offer accepted
+                    </p>
+
+                    <div class="free-callout">
+                        ✨ 100% FREE
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="instructions">
+        <h3>📱 How to Use These</h3>
+        <ol>
+            <li>Screenshot each screen individually (just the phone-shaped area)</li>
+            <li>Open TikTok → Create video → Effects → Green Screen</li>
+            <li>Upload the screenshot as your background</li>
+            <li>Record yourself talking, pointing at the URL, etc.</li>
+            <li>The background stays static while you're in front of it</li>
+        </ol>
+        <p style="margin-top: 16px;">💡 <strong>Tip:</strong> Position yourself to the side so the URL is clearly visible!</p>
+    </div>
+</body>
+</html>

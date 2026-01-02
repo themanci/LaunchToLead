@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook Carousel - Me-in-We Extraction Techniques</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+            background: #1a1a2e;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+        }
+        
+        .instructions {
+            color: #94a3b8;
+            text-align: center;
+            max-width: 800px;
+            margin-bottom: 20px;
+        }
+        
+        .instructions h1 {
+            color: #a3e635;
+            margin-bottom: 10px;
+        }
+        
+        .slide-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+        }
+        
+        .slide-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .slide-label {
+            color: #64748b;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        
+        /* Facebook Carousel: 1080x1080px */
+        .slide {
+            width: 1080px;
+            height: 1080px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+        }
+        
+        /* Slide 1: Hook */
+        .slide-1 {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        }
+        
+        .slide-1 .bg-element {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.06;
+        }
+        
+        .slide-1 .bg-1 {
+            width: 600px;
+            height: 600px;
+            background: #dc2626;
+            top: -200px;
+            right: -200px;
+        }
+        
+        .slide-1 .bg-2 {
+            width: 400px;
+            height: 400px;
+            background: #a3e635;
+            bottom: -150px;
+            left: -100px;
+        }
+        
+        .slide-1 .content {
+            position: relative;
+            z-index: 1;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 80px;
+        }
+        
+        .slide-1 .eyebrow {
+            color: #a3e635;
+            font-size: 24px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 40px;
+        }
+        
+        .slide-1 .main-text {
+            color: white;
+            font-size: 84px;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 50px;
+        }
+        
+        .slide-1 .highlight {
+            color: #dc2626;
+            display: block;
+        }
+        
+        .slide-1 .subtext {
+            color: #94a3b8;
+            font-size: 32px;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+        
+        .slide-1 .swipe-hint {
+            position: absolute;
+            bottom: 60px;
+            right: 80px;
+            color: #a3e635;
+            font-size: 24px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        /* Slide 2: The Problem */
+        .slide-2 {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        }
+        
+        .slide-2 .content {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 80px;
+        }
+        
+        .slide-2 .quote-mark {
+            font-size: 200px;
+            color: #dc2626;
+            opacity: 0.3;
+            line-height: 0.5;
+            margin-bottom: 20px;
+        }
+        
+        .slide-2 .problem-word {
+            font-size: 180px;
+            font-weight: 900;
+            color: #dc2626;
+            margin-bottom: 50px;
+            text-shadow: 0 0 60px rgba(220, 38, 38, 0.4);
+        }
+        
+        .slide-2 .explanation {
+            color: white;
+            font-size: 42px;
+            font-weight: 700;
+            line-height: 1.4;
+            max-width: 800px;
+            margin-bottom: 40px;
+        }
+        
+        .slide-2 .sub-explanation {
+            color: #94a3b8;
+            font-size: 28px;
+            font-weight: 500;
+        }
+        
+        /* Technique Slides (3-7) */
+        .technique-slide {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        }
+        
+        .technique-slide .content {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 80px;
+        }
+        
+        .technique-slide .number-badge {
+            width: 100px;
+            height: 100px;
+            border-radius: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            font-weight: 900;
+            margin-bottom: 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+        
+        .technique-slide .technique-name {
+            color: white;
+            font-size: 56px;
+            font-weight: 800;
+            margin-bottom: 60px;
+            line-height: 1.2;
+        }
+        
+        .technique-slide .example-box {
+            border-radius: 24px;
+            padding: 40px;
+            margin-bottom: 30px;
+        }
+        
+        .technique-slide .example-label {
+            font-size: 20px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+        }
+        
+        .technique-slide .example-text {
+            font-size: 32px;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+        
+        .technique-slide .before-box {
+            background: rgba(220, 38, 38, 0.15);
+            border: 2px solid rgba(220, 38, 38, 0.4);
+        }
+        
+        .technique-slide .before-box .example-label {
+            color: #f87171;
+        }
+        
+        .technique-slide .before-box .example-text {
+            color: #fca5a5;
+        }
+        
+        .technique-slide .after-box {
+            background: rgba(16, 185, 129, 0.15);
+            border: 2px solid rgba(16, 185, 129, 0.4);
+        }
+        
+        .technique-slide .after-box .example-label {
+            color: #34d399;
+        }
+        
+        .technique-slide .after-box .example-text {
+            color: #a7f3d0;
+        }
+        
+        .technique-slide .arrow {
+            color: #a3e635;
+            font-size: 40px;
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        /* Color variations for each technique */
+        .slide-3 .number-badge { background: linear-gradient(135deg, #047857 0%, #065f46 100%); color: #a3e635; }
+        .slide-3 .technique-name .keyword { color: #10b981; }
+        
+        .slide-4 .number-badge { background: linear-gradient(135deg, #0d9488 0%, #0f766e 100%); color: #5eead4; }
+        .slide-4 .technique-name .keyword { color: #14b8a6; }
+        
+        .slide-5 .number-badge { background: linear-gradient(135deg, #0891b2 0%, #0e7490 100%); color: #67e8f9; }
+        .slide-5 .technique-name .keyword { color: #06b6d4; }
+        
+        .slide-6 .number-badge { background: linear-gradient(135deg, #65a30d 0%, #4d7c0f 100%); color: #d9f99d; }
+        .slide-6 .technique-name .keyword { color: #84cc16; }
+        
+        .slide-7 .number-badge { background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%); color: #c4b5fd; }
+        .slide-7 .technique-name .keyword { color: #a78bfa; }
+        
+        /* Slide 8: Pro Tip / CTA */
+        .slide-8 {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        }
+        
+        .slide-8 .bg-glow {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(163, 230, 53, 0.15) 0%, transparent 70%);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .slide-8 .content {
+            position: relative;
+            z-index: 1;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 80px;
+        }
+        
+        .slide-8 .tip-badge {
+            background: linear-gradient(135deg, #047857 0%, #065f46 100%);
+            color: #a3e635;
+            font-size: 24px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            padding: 16px 40px;
+            border-radius: 50px;
+            margin-bottom: 50px;
+            box-shadow: 0 15px 40px rgba(4, 120, 87, 0.4);
+        }
+        
+        .slide-8 .tip-text {
+            color: white;
+            font-size: 52px;
+            font-weight: 800;
+            line-height: 1.3;
+            max-width: 850px;
+            margin-bottom: 60px;
+        }
+        
+        .slide-8 .tip-text .highlight {
+            color: #a3e635;
+        }
+        
+        .slide-8 .cta-box {
+            background: rgba(163, 230, 53, 0.1);
+            border: 3px solid #a3e635;
+            border-radius: 24px;
+            padding: 40px 60px;
+        }
+        
+        .slide-8 .cta-text {
+            color: white;
+            font-size: 32px;
+            font-weight: 700;
+        }
+        
+        .slide-8 .cta-text .action {
+            color: #a3e635;
+            font-weight: 800;
+        }
+        
+        .slide-8 .brand {
+            position: absolute;
+            bottom: 60px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        
+        .slide-8 .logo {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #a3e635 0%, #84cc16 100%);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            font-weight: 900;
+            color: #0f172a;
+        }
+        
+        .slide-8 .brand-name {
+            color: white;
+            font-size: 28px;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+    <div class="instructions">
+        <h1>Facebook Carousel: Me-in-We Extraction Techniques</h1>
+        <p>Screenshot each slide at 1080x1080px for your Facebook carousel post.<br>
+        Right-click → "Inspect" → Toggle device toolbar → Set to 1080x1080 to capture each slide.</p>
+    </div>
+
+    <div class="slide-container">
+        
+        <!-- SLIDE 1: Hook -->
+        <div class="slide-wrapper">
+            <div class="slide-label">Slide 1 - Hook</div>
+            <div class="slide slide-1">
+                <div class="bg-element bg-1"></div>
+                <div class="bg-element bg-2"></div>
+                <div class="content">
+                    <div class="eyebrow">Resume Reality Check</div>
+                    <div class="main-text">
+                        Your Resume<br>Is Failing Because<br>Of <span class="highlight">One Word</span>
+                    </div>
+                    <div class="subtext">And you probably don't even realize it.</div>
+                </div>
+                <div class="swipe-hint">Swipe to see →</div>
+            </div>
+        </div>
+
+        <!-- SLIDE 2: The Problem -->
+        <div class="slide-wrapper">
+            <div class="slide-label">Slide 2 - The Problem</div>
+            <div class="slide slide-2">
+                <div class="content">
+                    <div class="quote-mark">"</div>
+                    <div class="problem-word">WE</div>
+                    <div class="explanation">Hiring managers don't hire teams.<br>They hire <strong>individuals.</strong></div>
+                    <div class="sub-explanation">Here are 5 ways to extract YOUR contribution →</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 3: Technique 1 -->
+        <div class="slide-wrapper">
+            <div class="slide-label">Slide 3 - Technique 1</div>
+            <div class="slide slide-3 technique-slide">
+                <div class="content">
+                    <div class="number-badge">1</div>
+                    <div class="technique-name">The <span class="keyword">Responsibility Split</span></div>
+                    
+                    <div class="example-box before-box">
+                        <div class="example-label">❌ Before</div>
+                        <div class="example-text">"We built the feature"</div>
+                    </div>
+                    
+                    <div class="arrow">↓</div>
+                    
+                    <div class="example-box after-box">
+                        <div class="example-label">✅ After</div>
+                        <div class="example-text">"I owned the frontend while my teammate handled backend"</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 4: Technique 2 -->
+        <div class="slide-wrapper">
+            <div class="slide-label">Slide 4 - Technique 2</div>
+            <div class="slide slide-4 technique-slide">
+                <div class="content">
+                    <div class="number-badge">2</div>
+                    <div class="technique-name">The <span class="keyword">Initiative Claim</span></div>
+                    
+                    <div class="example-box before-box">
+                        <div class="example-label">❌ Before</div>
+                        <div class="example-text">"We improved testing"</div>
+                    </div>
+                    
+                    <div class="arrow">↓</div>
+                    
+                    <div class="example-box after-box">
+                        <div class="example-label">✅ After</div>
+                        <div class="example-text">"I initiated automated testing protocols"</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 5: Technique 3 -->
+        <div class="slide-wrapper">
+            <div class="slide-label">Slide 5 - Technique 3</div>
+            <div class="slide slide-5 technique-slide">
+                <div class="content">
+                    <div class="number-badge">3</div>
+                    <div class="technique-name">The <span class="keyword">Decision Driver</span></div>
+                    
+                    <div class="example-box before-box">
+                        <div class="example-label">❌ Before</div>
+                        <div class="example-text">"We chose React"</div>
+                    </div>
+                    
+                    <div class="arrow">↓</div>
+                    
+                    <div class="example-box after-box">
+                        <div class="example-label">✅ After</div>
+                        <div class="example-text">"I evaluated 3 frameworks and recommended React"</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 6: Technique 4 -->
+        <div class="slide-wrapper">
+            <div class="slide-label">Slide 6 - Technique 4</div>
+            <div class="slide slide-6 technique-slide">
+                <div class="content">
+                    <div class="number-badge">4</div>
+                    <div class="technique-name">The <span class="keyword">Problem Solver</span></div>
+                    
+                    <div class="example-box before-box">
+                        <div class="example-label">❌ Before</div>
+                        <div class="example-text">"We fixed the bug"</div>
+                    </div>
+                    
+                    <div class="arrow">↓</div>
+                    
+                    <div class="example-box after-box">
+                        <div class="example-label">✅ After</div>
+                        <div class="example-text">"I identified root cause in the API layer"</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 7: Technique 5 -->
+        <div class="slide-wrapper">
+            <div class="slide-label">Slide 7 - Technique 5</div>
+            <div class="slide slide-7 technique-slide">
+                <div class="content">
+                    <div class="number-badge">5</div>
+                    <div class="technique-name">The <span class="keyword">Delivery Owner</span></div>
+                    
+                    <div class="example-box before-box">
+                        <div class="example-label">❌ Before</div>
+                        <div class="example-text">"We launched the product"</div>
+                    </div>
+                    
+                    <div class="arrow">↓</div>
+                    
+                    <div class="example-box after-box">
+                        <div class="example-label">✅ After</div>
+                        <div class="example-text">"I coordinated cross-team launch including QA sign-off and deployment"</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 8: Pro Tip / CTA -->
+        <div class="slide-wrapper">
+            <div class="slide-label">Slide 8 - CTA</div>
+            <div class="slide slide-8">
+                <div class="bg-glow"></div>
+                <div class="content">
+                    <div class="tip-badge">💡 Pro Tip</div>
+                    <div class="tip-text">
+                        If you can't extract your <span class="highlight">individual contribution</span>, it probably shouldn't be on your resume.
+                    </div>
+                    <div class="cta-box">
+                        <div class="cta-text"><span class="action">Save this post</span> for your next resume update!</div>
+                    </div>
+                </div>
+                <div class="brand">
+                    <div class="logo">L²</div>
+                    <div class="brand-name">LaunchToLead</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

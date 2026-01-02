@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warm Intro Protocol - Launch Method V3</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: #1a1a1a;
+            overflow-x: hidden;
+            overflow-y: auto;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .slide {
+            display: flex;
+            flex-direction: column;
+            width: 1920px;
+            height: 1080px;
+            position: relative;
+            background: linear-gradient(160deg, #064e3b 0%, #065f46 40%, #047857 100%);
+            margin: 0 auto 40px auto;
+            page-break-after: always;
+            page-break-inside: avoid;
+            overflow: hidden;
+        }
+        
+        .slide:last-child {
+            margin-bottom: 0;
+        }
+        
+        @media print {
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            
+            body {
+                background: white;
+                padding: 0;
+                margin: 0;
+            }
+            
+            .slide {
+                margin: 0;
+                page-break-after: always;
+                overflow: hidden;
+                position: relative;
+            }
+            
+            .slide:last-child {
+                page-break-after: auto;
+            }
+            
+            .bg-blob-1,
+            .bg-blob-2 {
+                filter: blur(80px) !important;
+            }
+        }
+        
+        /* Background effects */
+        .bg-blob-1 {
+            position: absolute;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(20, 184, 166, 0.3) 0%, transparent 70%);
+            border-radius: 50%;
+            top: -200px;
+            right: -200px;
+            filter: blur(100px);
+        }
+        
+        .bg-blob-2 {
+            position: absolute;
+            width: 700px;
+            height: 700px;
+            background: radial-gradient(circle, rgba(163, 230, 53, 0.25) 0%, transparent 70%);
+            border-radius: 50%;
+            bottom: -150px;
+            left: -150px;
+            filter: blur(100px);
+        }
+        
+        .bg-dots {
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(rgba(20, 184, 166, 0.25) 2px, transparent 2px);
+            background-size: 60px 60px;
+            opacity: 0.5;
+        }
+        
+        /* Header with logo */
+        .header {
+            position: absolute;
+            top: 60px;
+            left: 80px;
+            right: 80px;
+            z-index: 20;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+        
+        .logo-icon {
+            background: white;
+            color: #064e3b;
+            width: 96px;
+            height: 96px;
+            border-radius: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 42px;
+            box-shadow: 0 12px 45px rgba(0, 0, 0, 0.2);
+        }
+        
+        .logo-text {
+            font-size: 54px;
+            font-weight: 700;
+            color: white;
+        }
+        
+        .logo-text .accent {
+            font-weight: 300;
+            color: #a3e635;
+        }
+        
+        .slide-number {
+            font-size: 36px;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.5);
+        }
+        
+        /* Content area */
+        .content {
+            position: relative;
+            z-index: 10;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            padding: 200px 120px 320px 120px;
+            max-width: 1400px;
+        }
+        
+        /* Reserved space for PIP video (bottom right) */
+        .pip-reserved {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 500px;
+            height: 350px;
+            z-index: 5;
+            pointer-events: none;
+        }
+        
+        /* Title slide */
+        .title-main {
+            font-size: 96px;
+            font-weight: 900;
+            color: white;
+            line-height: 1.1;
+            margin-bottom: 36px;
+            text-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+        }
+        
+        .title-sub {
+            font-size: 48px;
+            font-weight: 600;
+            color: #a3e635;
+            margin-bottom: 20px;
+        }
+        
+        .title-description {
+            font-size: 36px;
+            font-weight: 500;
+            color: #d1fae5;
+            line-height: 1.5;
+            max-width: 1200px;
+        }
+        
+        /* Section headers */
+        .section-title {
+            font-size: 72px;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 48px;
+            line-height: 1.2;
+        }
+        
+        .section-subtitle {
+            font-size: 44px;
+            font-weight: 600;
+            color: #a3e635;
+            margin-bottom: 48px;
+            line-height: 1.3;
+        }
+        
+        /* Content blocks */
+        .content-box {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(20px);
+            border-radius: 30px;
+            padding: 48px;
+            margin-bottom: 36px;
+            border: 4px solid rgba(163, 230, 53, 0.3);
+        }
+        
+        .content-box-title {
+            font-size: 44px;
+            font-weight: 700;
+            color: #a3e635;
+            margin-bottom: 28px;
+        }
+        
+        .content-text {
+            font-size: 36px;
+            font-weight: 500;
+            color: white;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .content-text:last-child {
+            margin-bottom: 0;
+        }
+        
+        .highlight {
+            color: #a3e635;
+            font-weight: 700;
+        }
+        
+        /* Lists */
+        .big-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .big-list li {
+            font-size: 40px;
+            font-weight: 600;
+            color: white;
+            line-height: 1.5;
+            margin-bottom: 36px;
+            padding-left: 60px;
+            position: relative;
+        }
+        
+        .big-list li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #a3e635;
+            font-weight: 800;
+            font-size: 48px;
+        }
+        
+        /* Steps */
+        .steps {
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+        }
+        
+        .step {
+            display: flex;
+            align-items: flex-start;
+            gap: 28px;
+        }
+        
+        .step-number {
+            flex-shrink: 0;
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #a3e635 0%, #14b8a6 100%);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            font-weight: 900;
+            color: #064e3b;
+        }
+        
+        .step-content {
+            flex: 1;
+        }
+        
+        .step-title {
+            font-size: 44px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 14px;
+        }
+        
+        .step-description {
+            font-size: 36px;
+            font-weight: 500;
+            color: #d1fae5;
+            line-height: 1.5;
+        }
+        
+        /* Script box */
+        .script-box {
+            background: rgba(20, 184, 166, 0.15);
+            border-left: 6px solid #14b8a6;
+            border-radius: 20px;
+            padding: 40px;
+            margin: 36px 0;
+        }
+        
+        .script-label {
+            font-size: 30px;
+            font-weight: 700;
+            color: #14b8a6;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .script-text {
+            font-size: 36px;
+            font-weight: 500;
+            color: white;
+            line-height: 1.6;
+            font-style: italic;
+        }
+        
+        /* Stats */
+        .stat-box {
+            background: linear-gradient(135deg, rgba(163, 230, 53, 0.2) 0%, rgba(20, 184, 166, 0.2) 100%);
+            border-radius: 30px;
+            padding: 40px 50px;
+            text-align: center;
+            margin: 36px 0;
+        }
+        
+        .stat-number {
+            font-size: 84px;
+            font-weight: 900;
+            color: #a3e635;
+            line-height: 1;
+            margin-bottom: 20px;
+        }
+        
+        .stat-label {
+            font-size: 36px;
+            font-weight: 600;
+            color: white;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <!-- Slide 1: Title -->
+    <div class="slide">
+        <div class="bg-blob-1"></div>
+        <div class="bg-blob-2"></div>
+        <div class="bg-dots"></div>
+        
+        <div class="header">
+            <div class="logo">
+                <div class="logo-icon">L²</div>
+                <div class="logo-text">Launch<span class="accent">ToLead</span></div>
+            </div>
+            <div class="slide-number">1 / 8</div>
+        </div>
+        
+        <div class="content">
+            <div class="title-main">The Warm Intro<br>Protocol™</div>
+            <div class="title-sub">Stop Being a PDF, Start Being a Person</div>
+            <div class="title-description">Learn the exact 4-step system to turn alumni connections into job referrals</div>
+        </div>
+    </div>
+
+    <!-- Slide 2: The Problem -->
+    <div class="slide">
+        <div class="bg-blob-1"></div>
+        <div class="bg-blob-2"></div>
+        <div class="bg-dots"></div>
+        
+        <div class="header">
+            <div class="logo">
+                <div class="logo-icon">L²</div>
+                <div class="logo-text">Launch<span class="accent">ToLead</span></div>
+            </div>
+            <div class="slide-number">2 / 8</div>
+        </div>
+        
+        <div class="content">
+            <div class="section-title">The Core Problem</div>
+            <div class="content-box">
+                <div class="content-text">Cold applying puts you in a pile of <span class="highlight">500 applicants</span>.</div>
+                <div class="content-text" style="margin-top: 48px;">You are a <span class="highlight">commodity</span>.</div>
+            </div>
+            
+            <div class="stat-box">
+                <div class="stat-number">1-2%</div>
+                <div class="stat-label">Response rate from cold applications</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 3: The Solution -->
+    <div class="slide">
+        <div class="bg-blob-1"></div>
+        <div class="bg-blob-2"></div>
+        <div class="bg-dots"></div>
+        
+        <div class="header">
+            <div class="logo">
+                <div class="logo-icon">L²</div>
+                <div class="logo-text">Launch<span class="accent">ToLead</span></div>
+            </div>
+            <div class="slide-number">3 / 8</div>
+        </div>
+        
+        <div class="content">
+            <div class="section-title">The Solution</div>
+            <div class="section-subtitle">Get someone INSIDE the castle to lower the drawbridge</div>
+            
+            <div class="content-box">
+                <div class="content-box-title">The Trojan Horse Effect</div>
+                <div class="content-text">When you build a human connection, this person becomes your <span class="highlight">advocate</span>.</div>
+                <div class="content-text" style="margin-top: 36px;">You stop being a PDF and start being a <span class="highlight">person they know and like</span>.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 4: The 4 Steps -->
+    <div class="slide">
+        <div class="bg-blob-1"></div>
+        <div class="bg-blob-2"></div>
+        <div class="bg-dots"></div>
+        
+        <div class="header">
+            <div class="logo">
+                <div class="logo-icon">L²</div>
+                <div class="logo-text">Launch<span class="accent">ToLead</span></div>
+            </div>
+            <div class="slide-number">4 / 8</div>
+        </div>
+        
+        <div class="content">
+            <div class="section-title">The 4-Step Process</div>
+            
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <div class="step-title">Identify</div>
+                        <div class="step-description">Find 3-5 alumni at your target company using LinkedIn Alumni tool</div>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <div class="step-title">Outreach</div>
+                        <div class="step-description">Send a "Low-Friction" connection request</div>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <div class="step-title">The Call</div>
+                        <div class="step-description">Conduct a 15-minute "Researcher" interview</div>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <div class="step-title">The Pivot</div>
+                        <div class="step-description">Convert the relationship into a referral</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 5: The Outreach Script -->
+    <div class="slide">
+        <div class="bg-blob-1"></div>
+        <div class="bg-blob-2"></div>
+        <div class="bg-dots"></div>
+        
+        <div class="header">
+            <div class="logo">
+                <div class="logo-icon">L²</div>
+                <div class="logo-text">Launch<span class="accent">ToLead</span></div>
+            </div>
+            <div class="slide-number">5 / 8</div>
+        </div>
+        
+        <div class="content">
+            <div class="section-title">The Outreach Script</div>
+            
+            <div class="script-box">
+                <div class="script-label">Copy & Use This:</div>
+                <div class="script-text">"Hi [Name], I'm a senior [Major] student at [School]. I see you're working at [Company]—I've been following their work on [Project] and would love to ask 2-3 questions about your experience there. No expectations, just looking for perspective from a fellow alum. Thanks, [Your Name]"</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 6: Why It Works -->
+    <div class="slide">
+        <div class="bg-blob-1"></div>
+        <div class="bg-blob-2"></div>
+        <div class="bg-dots"></div>
+        
+        <div class="header">
+            <div class="logo">
+                <div class="logo-icon">L²</div>
+                <div class="logo-text">Launch<span class="accent">ToLead</span></div>
+            </div>
+            <div class="slide-number">6 / 8</div>
+        </div>
+        
+        <div class="content">
+            <div class="section-title">Why This Script Works</div>
+            
+            <ul class="big-list">
+                <li><span class="highlight">Tribalism:</span> "Fellow alum" creates instant trust</li>
+                <li><span class="highlight">Flattery:</span> Asking for advice validates their expertise</li>
+                <li><span class="highlight">Low Friction:</span> "No expectations" removes pressure to hire you</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Slide 7: The Mindset Shift -->
+    <div class="slide">
+        <div class="bg-blob-1"></div>
+        <div class="bg-blob-2"></div>
+        <div class="bg-dots"></div>
+        
+        <div class="header">
+            <div class="logo">
+                <div class="logo-icon">L²</div>
+                <div class="logo-text">Launch<span class="accent">ToLead</span></div>
+            </div>
+            <div class="slide-number">7 / 8</div>
+        </div>
+        
+        <div class="content">
+            <div class="section-title">You Are Not a Beggar</div>
+            <div class="section-subtitle">You are a Researcher gathering data</div>
+            
+            <div class="content-box">
+                <div class="content-text">You are NOT asking for a job.</div>
+                <div class="content-text" style="margin-top: 36px;">You are giving them a chance to <span class="highlight">pay it forward</span> and share their expertise.</div>
+                <div class="content-text" style="margin-top: 36px;">Most professionals <span class="highlight">want</span> to help the next generation.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 8: Action Items -->
+    <div class="slide">
+        <div class="bg-blob-1"></div>
+        <div class="bg-blob-2"></div>
+        <div class="bg-dots"></div>
+        
+        <div class="header">
+            <div class="logo">
+                <div class="logo-icon">L²</div>
+                <div class="logo-text">Launch<span class="accent">ToLead</span></div>
+            </div>
+            <div class="slide-number">8 / 8</div>
+        </div>
+        
+        <div class="content">
+            <div class="section-title">Your Action Items</div>
+            
+            <ul class="big-list">
+                <li>Find 3-5 alumni at your top 3 target companies</li>
+                <li>Send the outreach script to at least 2 people</li>
+                <li>Schedule your first 15-minute call this week</li>
+            </ul>
+            
+            <div class="stat-box" style="margin-top: 72px;">
+                <div class="stat-number">30-50%</div>
+                <div class="stat-label">Response rate when you personalize outreach to alumni</div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
