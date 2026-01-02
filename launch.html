@@ -52,8 +52,8 @@
 
 <main>
 
-<!-- HERO - Hormozi Premium Positioning -->
-<div class="relative pt-16 pb-16 bg-white overflow-hidden">
+<!-- HERO - Full Width Video Layout -->
+<div class="relative pt-12 pb-16 bg-white overflow-hidden">
     <!-- Dot Pattern -->
     <div class="absolute inset-0 bg-dots opacity-20" style="background-size: 20px 20px;"></div>
     
@@ -62,75 +62,77 @@
     <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 bg-lime-100 rounded-full blur-3xl opacity-60" aria-hidden="true"></div>
     
     <div class="max-w-6xl mx-auto px-4 relative z-10">
-        <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-            <!-- Video - Left side on desktop -->
-            <div id="video" class="relative flex justify-center scroll-mt-24 order-1 lg:order-1 mb-8 lg:mb-0">
-                <div class="bg-slate-900 rounded-2xl overflow-hidden border-4 border-slate-800 shadow-2xl w-full max-w-[320px]" style="aspect-ratio: 9/16;">
-                    <video autoplay loop playsinline controls controlslist="nofullscreen" disablepictureinpicture class="w-full h-full object-cover">
-                        <source src="video_scripts/launch_page.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-                
-                <!-- Trust Indicator Below Video -->
-                <div class="absolute -bottom-10 left-1/2 -translate-x-1/2 flex items-center gap-6 text-sm text-slate-500 whitespace-nowrap">
-                    <div class="flex items-center gap-1">
-                        <i data-lucide="briefcase" class="w-4 h-4 text-brand-secondary"></i>
-                        <span>7 Years at John Deere</span>
-                    </div>
-                    <div class="flex items-center gap-1">
-                        <i data-lucide="users" class="w-4 h-4 text-brand-secondary"></i>
-                        <span>Hired Engineers</span>
-                    </div>
-                </div>
+        
+        <!-- VIDEO FIRST - Full Width -->
+        <div id="video" class="mb-10 scroll-mt-24">
+            <div class="bg-slate-900 rounded-2xl overflow-hidden border-4 border-slate-800 shadow-2xl w-full" style="aspect-ratio: 16/9;">
+                <video controls controlslist="nofullscreen" disablepictureinpicture class="w-full h-full object-cover">
+                    <source src="video_scripts/launch_page_V2.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
             </div>
             
-            <!-- Content - Right side on desktop -->
-            <div class="text-center lg:text-left order-2 lg:order-2">
-                <!-- Scarcity Badge -->
-                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-red-50 border border-red-200 text-red-700 text-xs font-bold mb-4">
-                    <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
-                    Only 10 Spots Per Month
+            <!-- Trust Indicators Below Video -->
+            <div class="flex items-center justify-center gap-8 mt-4 text-sm text-slate-500">
+                <div class="flex items-center gap-1">
+                    <i data-lucide="briefcase" class="w-4 h-4 text-brand-secondary"></i>
+                    <span>7 Years at John Deere</span>
                 </div>
-                
-                <!-- Dream Outcome Headline -->
-                <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight mb-4 leading-tight">
-                    Land a Top-Tier Engineering Job in 90 Days
-                    <span class="block text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-brand-secondary">Without the Application Black Hole</span>
-                </h1>
-                
-                <p class="text-lg text-slate-600 mb-6">
-                    Get the exact system that I, an engineer (not HR, not a recruiter), used to land at <strong>John Deere</strong>—and have used to help others do the same.
-                </p>
-                
-                <!-- Social Proof Mini -->
-                <div class="flex flex-wrap items-center gap-4 mb-6 justify-center lg:justify-start">
-                    <div class="flex -space-x-2">
-                        <img src="testimonials/pictures/chiebuka_onyejesi.jpg" alt="Client" class="w-8 h-8 rounded-full border-2 border-white">
-                        <img src="testimonials/pictures/gavin_patel.jpg" alt="Client" class="w-8 h-8 rounded-full border-2 border-white">
-                        <img src="testimonials/pictures/sarah_korssa.jpeg" alt="Client" class="w-8 h-8 rounded-full border-2 border-white">
-                    </div>
-                    <p class="text-sm text-slate-500">Engineers who've landed offers at Fortune 500 companies</p>
+                <div class="flex items-center gap-1">
+                    <i data-lucide="users" class="w-4 h-4 text-brand-secondary"></i>
+                    <span>Hired Engineers</span>
                 </div>
-                
-                <!-- CTA -->
-                <div class="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
-                    <a href="#pricing" class="px-6 py-3 bg-brand-primary text-white font-bold rounded-full hover:bg-brand-secondary transition shadow-lg hover:shadow-xl hover:-translate-y-0.5 inline-flex items-center justify-center gap-2">
-                        <i data-lucide="rocket" class="w-4 h-4"></i>
-                        Get The Blueprint - $1,997
-                    </a>
-                    <a href="https://calendar.app.google/uzaLZUWSUH3ZbaGr6" target="_blank" class="px-6 py-3 bg-white text-brand-primary font-bold rounded-full border-2 border-emerald-200 hover:border-brand-primary transition inline-flex items-center justify-center gap-2">
-                        <i data-lucide="calendar" class="w-4 h-4"></i>
-                        Book Free Strategy Session
-                    </a>
+                <div class="flex items-center gap-1">
+                    <i data-lucide="trophy" class="w-4 h-4 text-brand-secondary"></i>
+                    <span>4 Promotions</span>
                 </div>
-                
-                <!-- Payment Plan Note -->
-                <p class="text-xs text-slate-400 mt-3 text-center lg:text-left">
-                    Or 3 payments of $699 • 100% satisfaction guarantee
-                </p>
             </div>
-
+        </div>
+        
+        <!-- TEXT CONTENT - Centered Below -->
+        <div class="text-center max-w-4xl mx-auto">
+            <!-- Scarcity Badge -->
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-red-50 border border-red-200 text-red-700 text-xs font-bold mb-4">
+                <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
+                Only 10 Spots Per Month
+            </div>
+            
+            <!-- Dream Outcome Headline -->
+            <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight mb-4 leading-tight">
+                Land a Top-Tier Engineering Job in 90 Days
+                <span class="block text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-brand-secondary">Without the Application Black Hole</span>
+            </h1>
+            
+            <p class="text-lg text-slate-600 mb-6">
+                Get the exact system that I, an engineer (not HR, not a recruiter), used to land at <strong>John Deere</strong>—and have used to help others do the same.
+            </p>
+            
+            <!-- Social Proof Mini -->
+            <div class="flex flex-wrap items-center gap-4 mb-6 justify-center">
+                <div class="flex -space-x-2">
+                    <img src="testimonials/pictures/chiebuka_onyejesi.jpg" alt="Client" class="w-8 h-8 rounded-full border-2 border-white">
+                    <img src="testimonials/pictures/gavin_patel.jpg" alt="Client" class="w-8 h-8 rounded-full border-2 border-white">
+                    <img src="testimonials/pictures/sarah_korssa.jpeg" alt="Client" class="w-8 h-8 rounded-full border-2 border-white">
+                </div>
+                <p class="text-sm text-slate-500">Engineers who've landed offers at Fortune 500 companies</p>
+            </div>
+            
+            <!-- CTAs -->
+            <div class="flex flex-col sm:flex-row gap-3 justify-center mb-4">
+                <a href="#pricing" class="px-8 py-4 bg-brand-primary text-white font-bold rounded-full hover:bg-brand-secondary transition shadow-lg hover:shadow-xl hover:-translate-y-0.5 inline-flex items-center justify-center gap-2 text-lg">
+                    <i data-lucide="rocket" class="w-5 h-5"></i>
+                    Get The Blueprint - $1,997
+                </a>
+                <a href="https://calendar.app.google/uzaLZUWSUH3ZbaGr6" target="_blank" class="px-6 py-4 bg-white text-brand-primary font-bold rounded-full border-2 border-emerald-200 hover:border-brand-primary transition inline-flex items-center justify-center gap-2">
+                    <i data-lucide="calendar" class="w-5 h-5"></i>
+                    Book Free Strategy Session
+                </a>
+            </div>
+            
+            <!-- Payment Plan Note -->
+            <p class="text-sm text-slate-400">
+                Or 3 payments of $699 • 100% satisfaction guarantee
+            </p>
         </div>
     </div>
 </div>
