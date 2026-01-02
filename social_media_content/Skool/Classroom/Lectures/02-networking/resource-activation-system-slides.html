@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resource Activation System - Launch Method V3</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: #1a1a1a;
+            overflow-x: hidden;
+            overflow-y: auto;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .slide {
+            display: flex;
+            flex-direction: column;
+            width: 1920px;
+            height: 1080px;
+            position: relative;
+            background: linear-gradient(160deg, #064e3b 0%, #065f46 40%, #047857 100%);
+            margin: 0 auto 40px auto;
+            page-break-after: always;
+            page-break-inside: avoid;
+            overflow: hidden;
+        }
+        
+        .slide:last-child {
+            margin-bottom: 0;
+        }
+        
+        @media print {
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            
+            body {
+                background: white;
+                padding: 0;
+                margin: 0;
+            }
+            
+            .slide {
+                margin: 0;
+                page-break-after: always;
+                overflow: hidden;
+                position: relative;
+            }
+            
+            .slide:last-child {
+                page-break-after: auto;
+            }
+            
+            .bg-blob-1,
+            .bg-blob-2 {
+                filter: blur(80px) !important;
+            }
+        }
+        
+        /* Background effects */
+        .bg-blob-1 {
+            position: absolute;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(20, 184, 166, 0.3) 0%, transparent 70%);
+            border-radius: 50%;
+            top: -200px;
+            right: -200px;
+            filter: blur(100px);
+        }
+        
+        .bg-blob-2 {
+            position: absolute;
+            width: 700px;
+            height: 700px;
+            background: radial-gradient(circle, rgba(163, 230, 53, 0.25) 0%, transparent 70%);
+            border-radius: 50%;
+            bottom: -150px;
+            left: -150px;
+            filter: blur(100px);
+        }
+        
+        .bg-dots {
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(rgba(20, 184, 166, 0.25) 2px, transparent 2px);
+            background-size: 60px 60px;
+            opacity: 0.5;
+        }
+        
+        /* Header with logo */
+        .header {
+            position: absolute;
+            top: 60px;
+            left: 80px;
+            right: 80px;
+            z-index: 20;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+        
+        .logo-icon {
+            background: white;
+            color: #064e3b;
+            width: 96px;
+            height: 96px;
+            border-radius: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 42px;
+            box-shadow: 0 12px 45px rgba(0, 0, 0, 0.2);
+        }
+        
+        .logo-text {
+            font-size: 54px;
+            font-weight: 700;
+            color: white;
+        }
+        
+        .logo-text .accent {
+            font-weight: 300;
+            color: #a3e635;
+        }
+        
+        .slide-number {
+            font-size: 36px;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.5);
+        }
+        
+        /* Content area */
+        .content {
+            position: relative;
+            z-index: 10;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            padding: 200px 120px 320px 120px;
+            max-width: 1400px;
+        }
+        
+        /* Reserved space for PIP video (bottom right) */
+        .pip-reserved {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 500px;
+            height: 350px;
+            z-index: 5;
+            pointer-events: none;
+        }
+
+        /* Title slide */
+        .title-main {
+            font-size: 82px;
+            font-weight: 900;
+            color: white;
+            line-height: 1.1;
+            margin-bottom: 30px;
+            text-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+        }
+        
+        .title-sub {
+            font-size: 41px;
+            font-weight: 600;
+            color: #a3e635;
+            margin-bottom: 18px;
+        }
+        
+        .title-description {
+            font-size: 31px;
+            font-weight: 500;
+            color: #d1fae5;
+            line-height: 1.5;
+            max-width: 1200px;
+        }
+        
+        /* Section headers */
+        .section-title {
+            font-size: 61px;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 40px;
+            line-height: 1.2;
+        }
+        
+        .section-subtitle {
+            font-size: 37px;
+            font-weight: 600;
+            color: #a3e635;
+            margin-bottom: 40px;
+            line-height: 1.3;
+        }
+        
+        /* Content blocks */
+        .content-box {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(20px);
+            border-radius: 26px;
+            padding: 40px;
+            margin-bottom: 30px;
+            border: 4px solid rgba(163, 230, 53, 0.3);
+        }
+        
+        .content-box-title {
+            font-size: 37px;
+            font-weight: 700;
+            color: #a3e635;
+            margin-bottom: 24px;
+        }
+        
+        .content-text {
+            font-size: 31px;
+            font-weight: 500;
+            color: white;
+            line-height: 1.6;
+            margin-bottom: 18px;
+        }
+        
+        .content-text:last-child {
+            margin-bottom: 0;
+        }
+        
+        .highlight {
+            color: #a3e635;
+            font-weight: 700;
+        }
+        
+        /* Stats */
+        .stat-box {
+            background: linear-gradient(135deg, rgba(163, 230, 53, 0.2) 0%, rgba(20, 184, 166, 0.2) 100%);
+            border-radius: 26px;
+            padding: 34px 42px;
+            text-align: center;
+            margin: 30px 0;
+        }
+        
+        .stat-number {
+            font-size: 71px;
+            font-weight: 900;
+            color: #a3e635;
+            line-height: 1;
+            margin-bottom: 18px;
+        }
+        
+        .stat-label {
+            font-size: 31px;
+            font-weight: 600;
+            color: white;
+        }
+
+        /* Lists */
+        .big-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .big-list li {
+            font-size: 34px;
+            font-weight: 600;
+            color: white;
+            line-height: 1.5;
+            margin-bottom: 30px;
+            padding-left: 50px;
+            position: relative;
+        }
+        
+        .big-list li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #a3e635;
+            font-weight: 800;
+            font-size: 41px;
+        }
+        
+        /* Steps */
+        .steps {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+        
+        .step {
+            display: flex;
+            align-items: flex-start;
+            gap: 24px;
+        }
+        
+        .step-number {
+            flex-shrink: 0;
+            width: 68px;
+            height: 68px;
+            background: linear-gradient(135deg, #a3e635 0%, #14b8a6 100%);
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 41px;
+            font-weight: 900;
+            color: #064e3b;
+        }
+        
+        .step-content {
+            flex: 1;
+        }
+        
+        .step-title {
+            font-size: 37px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 12px;
+        }
+        
+        .step-description {
+            font-size: 31px;
+            font-weight: 500;
+            color: #d1fae5;
+            line-height: 1.5;
+        }
+        
+        /* Script box */
+        .script-box {
+            background: rgba(20, 184, 166, 0.15);
+            border-left: 6px solid #14b8a6;
+            border-radius: 18px;
+            padding: 34px;
+            margin: 30px 0;
+        }
+        
+        .script-label {
+            font-size: 26px;
+            font-weight: 700;
+            color: #14b8a6;
+            margin-bottom: 18px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .script-text {
+            font-size: 31px;
+            font-weight: 500;
+            color: white;
+            line-height: 1.6;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <!-- Slide 1: Title -->
+    <div class="slide">
+        <div class="bg-blob-1"></div>
+        <div class="bg-blob-2"></div>
+        <div class="bg-dots"></div>
+        
+        <div class="header">
+            <div class="logo">
+                <div class="logo-icon">L²</div>
+                <div class="logo-text">Launch<span class="accent">ToLead</span></div>
+            </div>
+            <div class="slide-number">1 / 8</div>
+        </div>
+        
+        <div class="content">
+            <div class="title-main">The Resource<br>Activation System™</div>
+            <div class="title-sub">Turn Your Tuition Into Hidden Job Market Access</div>
+            <div class="title-description">Learn how to activate the 4 pillars of university resources for maximum job search ROI</div>
+        </div>
+    </div>
+
+    <!-- Slide 2: The Problem -->
+    <div class="slide">
+        <div class="bg-blob-1"></div>
+        <div class="bg-blob-2"></div>
+        <div class="bg-dots"></div>
+        
+        <div class="header">
+            <div class="logo">
+                <div class="logo-icon">L²</div>
+                <div class="logo-text">Launch<span class="accent">ToLead</span></div>
+            </div>
+            <div class="slide-number">2 / 8</div>
+        </div>
+        
+        <div class="content">
+            <div class="section-title">The Core Problem</div>
+            <div class="content-box">
+                <div class="content-text">You're paying <span class="highlight">$20K-$50K per year</span> for university resources...</div>
+                <div class="content-text" style="margin-top: 36px;">But you're ignoring the <span class="highlight">career center, alumni database, engineering societies, and professors</span> who can connect you to hidden jobs.</div>
+            </div>
+            
+            <div class="stat-box">
+                <div class="stat-number">70-85%</div>
+                <div class="stat-label">of jobs aren't publicly posted—filled via networks you already have access to</div>
+            </div>
+            
+            <div class="content-text" style="margin-top: 36px;">While you're stuck in "cold apply hell" with a <span class="highlight">2% success rate</span>, your classmates are landing roles through resources you <span class="highlight">both pay for</span>.</div>
+        </div>
+    </div>
+
+    <!-- Slide 3: The Solution -->
+    <div class="slide">
+        <div class="bg-blob-1"></div>
+        <div class="bg-blob-2"></div>
+        <div class="bg-dots"></div>
+        
+        <div class="header">
+            <div class="logo">
+                <div class="logo-icon">L²</div>
+                <div class="logo-text">Launch<span class="accent">ToLead</span></div>
+            </div>
+            <div class="slide-number">3 / 8</div>
+        </div>
+        
+        <div class="content">
+            <div class="section-title">The Solution</div>
+            <div class="section-subtitle">Activate Your Pre-Built Professional Network</div>
+            
+            <div class="content-box">
+                <div class="content-text">Stop treating university resources as "optional extras."</div>
+                <div class="content-text" style="margin-top: 36px;">Start treating them as your <span class="highlight">pre-built professional network</span> with direct access to hiring managers.</div>
+            </div>
+            
+            <div class="stat-box">
+                <div class="stat-number">1.5x</div>
+                <div class="stat-label">Students using career services are more likely to secure jobs within 6 months</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 4: The 4 Pillars (Part 1) -->
+    <div class="slide">
+        <div class="bg-blob-1"></div>
+        <div class="bg-blob-2"></div>
+        <div class="bg-dots"></div>
+        
+        <div class="header">
+            <div class="logo">
+                <div class="logo-icon">L²</div>
+                <div class="logo-text">Launch<span class="accent">ToLead</span></div>
+            </div>
+            <div class="slide-number">4 / 8</div>
+        </div>
+        
+        <div class="content">
+            <div class="section-title">The 4 Pillars</div>
+            
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <div class="step-title">Career Center</div>
+                        <div class="step-description">Employer info sessions • Mock networking practice • Industry salary data • Ask: "Who recruits here most often?"</div>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <div class="step-title">Alumni Database</div>
+                        <div class="step-description">30-50% response rate when personalized • Filter 3-7 years out (relatable + hiring roles) • Lead with shared school connection</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 5: The 4 Pillars (Part 2) -->
+    <div class="slide">
+        <div class="bg-blob-1"></div>
+        <div class="bg-blob-2"></div>
+        <div class="bg-dots"></div>
+        
+        <div class="header">
+            <div class="logo">
+                <div class="logo-icon">L²</div>
+                <div class="logo-text">Launch<span class="accent">ToLead</span></div>
+            </div>
+            <div class="slide-number">5 / 8</div>
+        </div>
+        
+        <div class="content">
+            <div class="section-title">The 4 Pillars (Continued)</div>
+            
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <div class="step-title">Engineering Societies</div>
+                        <div class="step-description">ASME, IEEE, SWE, ASCE • $25-50/year for job boards + mentorship • Volunteer for face-time with officers • Virtual webinars + Q&A networking</div>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <div class="step-title">Professors</div>
+                        <div class="step-description">Office hours mid-semester (not finals) • Adjunct profs = industry insiders • Ask: "Know anyone in [Field]?" • Send recap email after intros</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 6: The Resource Audit -->
+    <div class="slide">
+        <div class="bg-blob-1"></div>
+        <div class="bg-blob-2"></div>
+        <div class="bg-dots"></div>
+        
+        <div class="header">
+            <div class="logo">
+                <div class="logo-icon">L²</div>
+                <div class="logo-text">Launch<span class="accent">ToLead</span></div>
+            </div>
+            <div class="slide-number">6 / 8</div>
+        </div>
+        
+        <div class="content">
+            <div class="section-title">The Resource Audit</div>
+            <div class="section-subtitle">30-Minute Activation Protocol</div>
+            
+            <div class="content-box">
+                <div class="content-text">Spend <span class="highlight">30 minutes</span> brainstorming every portal, office, club, or connection you've heard of but ignored.</div>
+                <div class="content-text" style="margin-top: 36px;">Track in a simple spreadsheet:</div>
+            </div>
+            
+            <ul class="big-list">
+                <li><span class="highlight">Resource:</span> Career center, alumni portal, ASME chapter, Professor Smith</li>
+                <li><span class="highlight">Contact:</span> Name/email of who to reach</li>
+                <li><span class="highlight">Ask Made:</span> What you requested (intro, advice, resume review)</li>
+                <li><span class="highlight">Outcome:</span> Response, referral, interview, etc.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Slide 7: Why This Works -->
+    <div class="slide">
+        <div class="bg-blob-1"></div>
+        <div class="bg-blob-2"></div>
+        <div class="bg-dots"></div>
+        
+        <div class="header">
+            <div class="logo">
+                <div class="logo-icon">L²</div>
+                <div class="logo-text">Launch<span class="accent">ToLead</span></div>
+            </div>
+            <div class="slide-number">7 / 8</div>
+        </div>
+        
+        <div class="content">
+            <div class="section-title">Why This Works</div>
+            
+            <div class="content-box">
+                <div class="content-box-title">The Math</div>
+                <div class="content-text">Referrals boost your odds <span class="highlight">4x</span> compared to cold applications.</div>
+                <div class="content-text" style="margin-top: 24px;">Alumni respond at <span class="highlight">30-50%</span> when you personalize (vs. &lt;10% generic).</div>
+            </div>
+            
+            <div class="content-box">
+                <div class="content-box-title">The Psychology</div>
+                <div class="content-text"><span class="highlight">Tribal Connection:</span> "Fellow alum" creates instant trust and lowers defenses.</div>
+                <div class="content-text" style="margin-top: 24px;"><span class="highlight">Pay It Forward:</span> Most professionals want to help the next generation—you're giving them an easy way to do good.</div>
+            </div>
+            
+            <div class="script-box">
+                <div class="script-text">"These resources often extend 1-5 years post-grad—your access doesn't expire at graduation."</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 8: Action Items -->
+    <div class="slide">
+        <div class="bg-blob-1"></div>
+        <div class="bg-blob-2"></div>
+        <div class="bg-dots"></div>
+        
+        <div class="header">
+            <div class="logo">
+                <div class="logo-icon">L²</div>
+                <div class="logo-text">Launch<span class="accent">ToLead</span></div>
+            </div>
+            <div class="slide-number">8 / 8</div>
+        </div>
+        
+        <div class="content">
+            <div class="section-title">Your Action Items</div>
+            <div class="section-subtitle">Stop paying for resources you don't use. Activate them this week.</div>
+            
+            <ul class="big-list">
+                <li>Schedule a <span class="highlight">30-min Resource Audit</span> this week—list every career service, society, and professor contact you have</li>
+                <li>Book a <span class="highlight">career center appointment</span> and ask: "Who recruits here most often for my major?"</li>
+                <li>Search your <span class="highlight">alumni database</span> for 5 people at target companies who graduated 3-7 years ago</li>
+                <li>Join <span class="highlight">1 engineering society</span> (ASME, IEEE, SWE) and attend their next virtual event</li>
+                <li>Visit <span class="highlight">1 professor's office hours</span> and ask: "Do you know anyone working in [target field]?"</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

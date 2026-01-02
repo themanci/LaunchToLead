@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Thumbnails - How I Got Hired at John Deere (V2)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Impact&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; margin: 0; padding: 40px; background: #1e293b; }
+        .thumbnail-container { margin-bottom: 60px; }
+        .label { color: #94a3b8; font-size: 14px; margin-bottom: 8px; }
+        .photo-crop {
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center top;
+        }
+        .photo-crop-large {
+            width: 500px;
+            height: 600px;
+            object-fit: cover;
+            object-position: center top;
+        }
+        .outline-text {
+            -webkit-text-stroke: 3px black;
+            paint-order: stroke fill;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 class="text-white text-3xl font-bold mb-2 text-center">YouTube Thumbnail Options — Ready to Export</h1>
+    <p class="text-slate-400 text-center mb-12">Size: 1280×720 | Right-click → Capture node screenshot</p>
+
+    <!-- ====================================== -->
+    <!-- THUMBNAIL 1: Split Face / Bold Contrast -->
+    <!-- ====================================== -->
+    <div class="thumbnail-container">
+        <p class="label">THUMBNAIL 1: Split Face — High Contrast (Proven Performer)</p>
+        <div class="relative rounded-xl overflow-hidden shadow-2xl" style="width: 1280px; height: 720px;">
+            
+            <!-- Background: Half yellow, half dark -->
+            <div class="absolute inset-0">
+                <div class="absolute left-0 top-0 bottom-0 w-1/2 bg-yellow-400"></div>
+                <div class="absolute right-0 top-0 bottom-0 w-1/2 bg-slate-900"></div>
+            </div>
+            
+            <!-- Your Photo - Centered, cropped to head -->
+            <div class="absolute inset-0 flex items-center justify-center">
+                <img src="file:///C:/Users/thema/Pictures/CameraHub/Snapshot_2025-12-29_13-45-41.png" 
+                     alt="Mansour" 
+                     class="h-[700px] object-cover object-top"
+                     style="mask-image: linear-gradient(to bottom, black 80%, transparent 100%);">
+            </div>
+            
+            <!-- Left Text (on yellow) -->
+            <div class="absolute left-8 top-1/2 -translate-y-1/2">
+                <p class="text-slate-900 text-3xl font-black uppercase tracking-tight">I Borrowed</p>
+                <p class="text-slate-900 text-5xl font-black uppercase">MONEY</p>
+                <p class="text-slate-900 text-3xl font-black uppercase tracking-tight">For This</p>
+            </div>
+            
+            <!-- Right Text (on dark) -->
+            <div class="absolute right-8 top-1/2 -translate-y-1/2 text-right">
+                <p class="text-white text-3xl font-black uppercase tracking-tight">Got Hired at</p>
+                <p class="text-yellow-400 text-6xl font-black uppercase" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">DEERE</p>
+                <p class="text-emerald-400 text-2xl font-bold mt-2">Here's How →</p>
+            </div>
+            
+            <!-- John Deere Green accent line -->
+            <div class="absolute bottom-0 left-0 right-0 h-3 bg-gradient-to-r from-yellow-400 via-emerald-500 to-emerald-600"></div>
+            
+        </div>
+    </div>
+
+    <!-- ====================================== -->
+    <!-- THUMBNAIL 2: Big Text + Reaction Face -->
+    <!-- ====================================== -->
+    <div class="thumbnail-container">
+        <p class="label">THUMBNAIL 2: Shocked/Excited Expression — YouTube Classic</p>
+        <div class="relative rounded-xl overflow-hidden shadow-2xl" style="width: 1280px; height: 720px;">
+            
+            <!-- Background gradient -->
+            <div class="absolute inset-0 bg-gradient-to-br from-emerald-900 via-slate-900 to-slate-950"></div>
+            
+            <!-- Radial burst behind head -->
+            <div class="absolute left-1/4 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-radial from-yellow-400/30 via-transparent to-transparent rounded-full"></div>
+            
+            <!-- Photo - Left side, cropped head -->
+            <div class="absolute left-0 bottom-0">
+                <img src="file:///C:/Users/thema/Pictures/CameraHub/Snapshot_2025-12-29_13-45-41.png" 
+                     alt="Mansour" 
+                     class="h-[720px] object-cover object-top">
+            </div>
+            
+            <!-- Main Text - Right side -->
+            <div class="absolute right-12 top-1/2 -translate-y-1/2 text-right max-w-[650px]">
+                <p class="text-yellow-400 text-4xl font-black mb-2 uppercase">The Secret</p>
+                <h1 class="text-white text-8xl font-black leading-none mb-4 outline-text" style="text-shadow: 4px 4px 0 #000;">
+                    INTERVIEW<br/>BINDER
+                </h1>
+                <p class="text-emerald-400 text-3xl font-bold">That Got Me Hired</p>
+                
+                <!-- Arrow pointing to you -->
+                <div class="mt-6 flex justify-end items-center gap-4">
+                    <span class="text-white text-2xl font-bold">At John Deere</span>
+                    <div class="w-16 h-16 bg-yellow-400 rounded-full flex items-center justify-center">
+                        <span class="text-4xl">🚜</span>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- ====================================== -->
+    <!-- THUMBNAIL 3: Before/After Style -->
+    <!-- ====================================== -->
+    <div class="thumbnail-container">
+        <p class="label">THUMBNAIL 3: Transformation Story — Borrowed Money → Dream Job</p>
+        <div class="relative rounded-xl overflow-hidden shadow-2xl" style="width: 1280px; height: 720px;">
+            
+            <!-- Split background -->
+            <div class="absolute inset-0">
+                <div class="absolute left-0 top-0 bottom-0 w-1/2 bg-gradient-to-br from-red-900 via-red-950 to-slate-900"></div>
+                <div class="absolute right-0 top-0 bottom-0 w-1/2 bg-gradient-to-br from-emerald-800 via-emerald-900 to-slate-900"></div>
+            </div>
+            
+            <!-- Diagonal divider -->
+            <div class="absolute inset-0">
+                <svg class="w-full h-full" preserveAspectRatio="none">
+                    <polygon points="580,0 700,720 640,720 520,0" fill="#1e293b"/>
+                </svg>
+            </div>
+            
+            <!-- Left: "Before" -->
+            <div class="absolute left-8 top-8">
+                <span class="bg-red-500 text-white px-4 py-2 rounded-lg font-black text-xl">BEFORE</span>
+            </div>
+            <div class="absolute left-8 top-1/2 -translate-y-1/2 text-left max-w-[350px]">
+                <p class="text-red-400 text-3xl font-black leading-tight">Broke</p>
+                <p class="text-white text-5xl font-black leading-tight">Borrowed</p>
+                <p class="text-white text-5xl font-black leading-tight">$1,000</p>
+                <p class="text-slate-400 text-xl mt-4">For an interview...</p>
+            </div>
+            
+            <!-- Center: Photo -->
+            <div class="absolute left-1/2 -translate-x-1/2 bottom-0">
+                <img src="file:///C:/Users/thema/Pictures/CameraHub/Snapshot_2025-12-29_13-45-41.png" 
+                     alt="Mansour" 
+                     class="h-[650px] object-cover object-top"
+                     style="mask-image: linear-gradient(to bottom, black 85%, transparent 100%);">
+            </div>
+            
+            <!-- Right: "After" -->
+            <div class="absolute right-8 top-8">
+                <span class="bg-emerald-500 text-white px-4 py-2 rounded-lg font-black text-xl">AFTER</span>
+            </div>
+            <div class="absolute right-8 top-1/2 -translate-y-1/2 text-right max-w-[350px]">
+                <p class="text-emerald-400 text-3xl font-black leading-tight">Hired at</p>
+                <p class="text-yellow-400 text-5xl font-black leading-tight">JOHN</p>
+                <p class="text-yellow-400 text-5xl font-black leading-tight">DEERE</p>
+                <p class="text-emerald-300 text-xl mt-4">8 years & counting</p>
+            </div>
+            
+            <!-- Arrow -->
+            <div class="absolute top-4 left-1/2 -translate-x-1/2">
+                <span class="text-white text-6xl">→</span>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- ====================================== -->
+    <!-- THUMBNAIL 4: Big Number + Curiosity Gap -->
+    <!-- ====================================== -->
+    <div class="thumbnail-container">
+        <p class="label">THUMBNAIL 4: "7 Keys" Number Focus — Curiosity Driver</p>
+        <div class="relative rounded-xl overflow-hidden shadow-2xl" style="width: 1280px; height: 720px;">
+            
+            <!-- Dark background with green tint -->
+            <div class="absolute inset-0 bg-gradient-to-br from-slate-900 via-emerald-950 to-slate-900"></div>
+            
+            <!-- Giant "7" in background -->
+            <div class="absolute right-0 top-1/2 -translate-y-1/2 text-[500px] font-black text-emerald-800/30 leading-none" style="font-family: Impact, sans-serif;">
+                7
+            </div>
+            
+            <!-- Photo - Left side -->
+            <div class="absolute left-0 bottom-0">
+                <img src="file:///C:/Users/thema/Pictures/CameraHub/Snapshot_2025-12-29_13-45-41.png" 
+                     alt="Mansour" 
+                     class="h-[720px] object-cover object-top"
+                     style="mask-image: linear-gradient(to right, black 70%, transparent 100%);">
+            </div>
+            
+            <!-- Text overlay -->
+            <div class="absolute right-16 top-1/2 -translate-y-1/2 text-right">
+                <div class="flex items-center justify-end gap-4 mb-4">
+                    <span class="bg-yellow-400 text-slate-900 px-5 py-2 rounded-xl font-black text-2xl transform -rotate-3">
+                        NOBODY TEACHES THIS
+                    </span>
+                </div>
+                <h1 class="text-white text-7xl font-black leading-none mb-2">
+                    <span class="text-yellow-400">7</span> KEYS
+                </h1>
+                <p class="text-emerald-400 text-4xl font-bold mb-4">To Getting Hired</p>
+                <p class="text-white text-3xl font-semibold">At John Deere</p>
+                
+                <!-- Visual list hint -->
+                <div class="mt-6 flex justify-end gap-2">
+                    <div class="w-4 h-4 bg-yellow-400 rounded-full"></div>
+                    <div class="w-4 h-4 bg-emerald-400 rounded-full"></div>
+                    <div class="w-4 h-4 bg-teal-400 rounded-full"></div>
+                    <div class="w-4 h-4 bg-cyan-400 rounded-full"></div>
+                    <div class="w-4 h-4 bg-blue-400 rounded-full"></div>
+                    <div class="w-4 h-4 bg-purple-400 rounded-full"></div>
+                    <div class="w-4 h-4 bg-red-400 rounded-full"></div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- ====================================== -->
+    <!-- THUMBNAIL 5: Interview Binder Hero Shot -->
+    <!-- ====================================== -->
+    <div class="thumbnail-container">
+        <p class="label">THUMBNAIL 5: Interview Binder Focus — The "Secret Weapon"</p>
+        <div class="relative rounded-xl overflow-hidden shadow-2xl" style="width: 1280px; height: 720px;">
+            
+            <!-- Background -->
+            <div class="absolute inset-0 bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900"></div>
+            
+            <!-- Glow effect behind binder -->
+            <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-yellow-400/20 rounded-full blur-3xl"></div>
+            
+            <!-- Photo on left -->
+            <div class="absolute left-0 bottom-0">
+                <img src="file:///C:/Users/thema/Pictures/CameraHub/Snapshot_2025-12-29_13-45-41.png" 
+                     alt="Mansour" 
+                     class="h-[700px] object-cover object-top"
+                     style="mask-image: linear-gradient(to right, black 60%, transparent 90%);">
+            </div>
+            
+            <!-- Giant Binder Graphic - Center-Right -->
+            <div class="absolute right-32 top-1/2 -translate-y-1/2">
+                <div class="relative">
+                    <!-- Binder -->
+                    <div class="w-72 h-96 bg-gradient-to-br from-blue-700 to-blue-900 rounded-2xl shadow-2xl border-8 border-blue-600 transform -rotate-6">
+                        <!-- Spine -->
+                        <div class="absolute left-0 top-0 bottom-0 w-10 bg-gradient-to-r from-blue-800 to-blue-700 rounded-l-xl border-r-4 border-blue-600"></div>
+                        
+                        <!-- Tabs -->
+                        <div class="absolute -right-6 top-12 space-y-4">
+                            <div class="bg-red-500 w-16 h-6 rounded-r-full shadow-lg"></div>
+                            <div class="bg-orange-500 w-16 h-6 rounded-r-full shadow-lg"></div>
+                            <div class="bg-yellow-500 w-16 h-6 rounded-r-full shadow-lg"></div>
+                            <div class="bg-green-500 w-16 h-6 rounded-r-full shadow-lg"></div>
+                            <div class="bg-blue-400 w-16 h-6 rounded-r-full shadow-lg"></div>
+                            <div class="bg-purple-500 w-16 h-6 rounded-r-full shadow-lg"></div>
+                        </div>
+                        
+                        <!-- Cover text -->
+                        <div class="absolute inset-12 text-center flex flex-col justify-center">
+                            <p class="text-blue-200 text-lg mb-1">INTERVIEW</p>
+                            <p class="text-white font-black text-4xl">BINDER</p>
+                            <p class="text-yellow-400 text-xl mt-2 font-bold">15 Examples</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Sparkle effects -->
+                    <div class="absolute -top-4 -right-4 text-4xl">✨</div>
+                    <div class="absolute -bottom-2 -left-4 text-3xl">⭐</div>
+                </div>
+            </div>
+            
+            <!-- Text - Top Right -->
+            <div class="absolute top-8 right-8 text-right">
+                <span class="bg-red-500 text-white px-6 py-3 rounded-xl font-black text-2xl inline-block transform rotate-3 shadow-lg">
+                    SECRET WEAPON
+                </span>
+            </div>
+            
+            <!-- Text - Bottom -->
+            <div class="absolute bottom-8 left-1/2 -translate-x-1/2 text-center">
+                <p class="text-white text-4xl font-black mb-2">
+                    How I Got Hired at <span class="text-yellow-400">JOHN DEERE</span>
+                </p>
+                <p class="text-emerald-400 text-2xl font-semibold">The thing nobody else brought to the interview</p>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- ====================================== -->
+    <!-- EXPORT INSTRUCTIONS -->
+    <!-- ====================================== -->
+    <div class="max-w-4xl mx-auto bg-slate-700 rounded-xl p-8 mt-8">
+        <h2 class="text-white text-2xl font-bold mb-4">📸 How to Export</h2>
+        <ol class="text-slate-300 space-y-2 list-decimal list-inside">
+            <li>Open this file in Chrome or Edge</li>
+            <li>Right-click on the thumbnail you want</li>
+            <li>Click "Inspect" to open DevTools</li>
+            <li>Find the 1280×720 div in Elements panel</li>
+            <li>Right-click that div → "Capture node screenshot"</li>
+            <li>Upload directly to YouTube!</li>
+        </ol>
+        <div class="mt-6 p-4 bg-emerald-900/30 rounded-lg border border-emerald-700">
+            <p class="text-emerald-400 font-semibold">💡 Tip:</p>
+            <p class="text-slate-300 text-sm mt-1">
+                If your photo doesn't load, open this file as a local server or copy the image to the same folder.
+            </p>
+        </div>
+    </div>
+
+</body>
+</html>

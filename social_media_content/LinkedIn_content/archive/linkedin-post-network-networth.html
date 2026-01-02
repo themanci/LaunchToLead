@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedIn Post - Network = Net Worth</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #1a1a2e;
+            padding: 20px;
+        }
+        
+        .canvas {
+            width: 1080px;
+            height: 1080px;
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            position: relative;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+            overflow: hidden;
+        }
+        
+        /* Decorative background elements */
+        .bg-circle {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.05;
+        }
+        
+        .bg-circle-1 {
+            width: 400px;
+            height: 400px;
+            background: #a3e635;
+            top: -150px;
+            right: -150px;
+        }
+        
+        .bg-circle-2 {
+            width: 300px;
+            height: 300px;
+            background: #047857;
+            bottom: -100px;
+            left: -100px;
+        }
+        
+        .content {
+            padding: 80px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .main-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin-top: -80px;
+        }
+        
+        .eyebrow {
+            color: #a3e635;
+            font-size: 32px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+        
+        .main-message {
+            color: white;
+            font-size: 96px;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 50px;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+        
+        .main-message .highlight {
+            color: #a3e635;
+            display: block;
+            font-size: 110px;
+            letter-spacing: -2px;
+        }
+        
+        .main-message .network {
+            background: linear-gradient(135deg, #a3e635 0%, #84cc16 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .main-message .networth {
+            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .underline {
+            width: 400px;
+            height: 8px;
+            background: linear-gradient(90deg, #a3e635 0%, #84cc16 50%, #fbbf24 100%);
+            margin: 0 auto 50px;
+            border-radius: 4px;
+        }
+        
+        .subtext {
+            color: #94a3b8;
+            font-size: 28px;
+            font-weight: 600;
+            line-height: 1.4;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        /* Decorative connection nodes */
+        .network-visual {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            opacity: 0.08;
+        }
+        
+        .node {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background: #a3e635;
+            border-radius: 50%;
+        }
+        
+        .node-1 { top: 20%; left: 15%; }
+        .node-2 { top: 30%; left: 85%; }
+        .node-3 { top: 70%; left: 10%; }
+        .node-4 { top: 65%; left: 90%; }
+        .node-5 { top: 45%; left: 5%; }
+        .node-6 { top: 55%; left: 95%; }
+        
+        .connection {
+            position: absolute;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #a3e635, transparent);
+            transform-origin: left center;
+        }
+        
+        .footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 40px;
+            border-top: 2px solid rgba(163, 230, 53, 0.2);
+        }
+        
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .logo {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #a3e635 0%, #84cc16 100%);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            font-weight: 900;
+            color: #0f172a;
+            box-shadow: 0 8px 24px rgba(163, 230, 53, 0.3);
+        }
+        
+        .brand-text {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .brand-name {
+            color: white;
+            font-size: 32px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+        
+        .brand-tagline {
+            color: #a3e635;
+            font-size: 16px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+        
+        .cta {
+            background: linear-gradient(135deg, #047857 0%, #065f46 100%);
+            color: white;
+            font-size: 20px;
+            font-weight: 700;
+            padding: 18px 40px;
+            border-radius: 50px;
+            border: 2px solid #a3e635;
+            box-shadow: 0 8px 24px rgba(4, 120, 87, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <div class="canvas">
+        <!-- Background decorative elements -->
+        <div class="bg-circle bg-circle-1"></div>
+        <div class="bg-circle bg-circle-2"></div>
+        
+        <!-- Network visualization -->
+        <div class="network-visual">
+            <div class="node node-1"></div>
+            <div class="node node-2"></div>
+            <div class="node node-3"></div>
+            <div class="node node-4"></div>
+            <div class="node node-5"></div>
+            <div class="node node-6"></div>
+        </div>
+        
+        <div class="content">
+            <div class="main-section">
+                <div class="eyebrow">Career Truth</div>
+                
+                <div class="main-message">
+                    Your <span class="network highlight">NETWORK</span>
+                    Will Determine Your
+                    <span class="networth highlight">NET WORTH!</span>
+                </div>
+                
+                <div class="underline"></div>
+                
+                <div class="subtext">
+                    The right connections open doors.<br>
+                    Strategic relationships accelerate growth.<br>
+                    Your network is your #1 career asset.
+                </div>
+            </div>
+            
+            <div class="footer">
+                <div class="brand">
+                    <div class="logo">L²</div>
+                    <div class="brand-text">
+                        <div class="brand-name">LaunchToLead</div>
+                        <div class="brand-tagline">CAREER ACCELERATION</div>
+                    </div>
+                </div>
+                
+                <div class="cta">LaunchToLead.io</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
