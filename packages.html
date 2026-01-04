@@ -54,8 +54,8 @@
 
 <main>
 
-    <!-- HERO -->
-    <div id="top" class="relative pt-16 pb-12 bg-white overflow-hidden">
+    <!-- HERO - Video on Top Layout (matches index.html) -->
+    <div id="top" class="relative pt-12 pb-16 bg-white overflow-hidden">
         <!-- Dot Pattern -->
         <div class="absolute inset-0 bg-dots opacity-20" style="background-size: 20px 20px;"></div>
         
@@ -63,37 +63,66 @@
         <div class="absolute top-0 right-0 -mr-20 -mt-20 w-80 h-80 bg-teal-100 rounded-full blur-3xl opacity-60" aria-hidden="true"></div>
         <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 bg-lime-100 rounded-full blur-3xl opacity-60" aria-hidden="true"></div>
 
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-                <!-- Video - Left side on desktop -->
-                <div id="video" class="relative flex justify-center scroll-mt-24 order-1 lg:order-1 mb-8 lg:mb-0">
-                    <div class="bg-slate-900 rounded-2xl overflow-hidden border-4 border-slate-800 shadow-2xl w-full max-w-[320px]" style="aspect-ratio: 9/16;">
-                        <video autoplay loop playsinline controls controlslist="nofullscreen" disablepictureinpicture class="w-full h-full object-cover">
-                            <source src="video_scripts/package_page.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                    </div>
+        <div class="max-w-6xl mx-auto px-4 relative z-10">
+            
+            <!-- VIDEO FIRST - Full Width -->
+            <div id="video" class="mb-10 scroll-mt-24">
+                <div class="bg-slate-900 rounded-2xl overflow-hidden border-4 border-slate-800 shadow-2xl w-full" style="aspect-ratio: 16/9;">
+                    <video controls controlslist="nofullscreen" disablepictureinpicture class="w-full h-full object-cover">
+                        <source src="video_scripts/package_page_V2.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
                 </div>
                 
-                <!-- Content - Right side on desktop -->
-                <div class="text-center lg:text-left order-2 lg:order-2">
-                    <!-- Scarcity Badge -->
-                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-red-50 border border-red-200 text-red-700 text-xs font-bold mb-4">
-                        <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
-                        Only 10 Spots Per Month
+                <!-- Trust Indicators Below Video -->
+                <div class="flex items-center justify-center gap-8 mt-4 text-sm text-slate-500">
+                    <div class="flex items-center gap-1">
+                        <i data-lucide="briefcase" class="w-4 h-4 text-brand-secondary"></i>
+                        <span>7 Years at John Deere</span>
                     </div>
-                    
-                    <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight mb-4">
-                        The 21-Day Engineering <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-brand-secondary">Career Launch Blueprint</span>
-                    </h1>
-                    <p class="max-w-2xl mx-auto lg:mx-0 text-lg text-slate-500 font-light leading-relaxed mb-2">
-                        Become interview-ready in 21 days with the exact system I used to land at John Deere—and have used to help others do the same.
-                    </p>
-                    <p class="text-sm text-slate-400 italic">
-                        From an engineer who's been on both sides of the hiring table
-                    </p>
+                    <div class="flex items-center gap-1">
+                        <i data-lucide="users" class="w-4 h-4 text-brand-secondary"></i>
+                        <span>Hired Engineers</span>
+                    </div>
+                    <div class="flex items-center gap-1">
+                        <i data-lucide="trophy" class="w-4 h-4 text-brand-secondary"></i>
+                        <span>4 Promotions</span>
+                    </div>
                 </div>
-
+            </div>
+            
+            <!-- TEXT CONTENT - Centered Below -->
+            <div class="text-center max-w-4xl mx-auto">
+                <!-- Scarcity Badge -->
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-red-50 border border-red-200 text-red-700 text-xs font-bold mb-4">
+                    <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
+                    Only 10 Spots Per Month
+                </div>
+                
+                <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight mb-4">
+                    The 21-Day Engineering <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-brand-secondary">Career Launch Blueprint</span>
+                </h1>
+                
+                <p class="text-lg text-slate-600 mb-2">
+                    Become interview-ready in 21 days with the exact system I used to land at John Deere—and have used to help others do the same.
+                </p>
+                
+                <p class="text-sm text-slate-400 italic mb-6">
+                    From an engineer who's been on both sides of the hiring table
+                </p>
+                
+                <!-- Mini Stats Row -->
+                <div class="flex flex-wrap gap-4 text-sm text-slate-600 justify-center">
+                    <span class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-emerald-50 rounded-full font-medium border border-emerald-100">
+                        <i data-lucide="check-circle" class="w-4 h-4 text-emerald-600"></i> 21-Day Blueprint
+                    </span>
+                    <span class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-emerald-50 rounded-full font-medium border border-emerald-100">
+                        <i data-lucide="check-circle" class="w-4 h-4 text-emerald-600"></i> 1-on-1 Coaching
+                    </span>
+                    <span class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-emerald-50 rounded-full font-medium border border-emerald-100">
+                        <i data-lucide="check-circle" class="w-4 h-4 text-emerald-600"></i> Guaranteed Deliverables
+                    </span>
+                </div>
             </div>
         </div>
     </div>
