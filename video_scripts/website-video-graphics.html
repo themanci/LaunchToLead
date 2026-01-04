@@ -5,30 +5,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Website Video Graphics - 1920×1080</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            primary: '#064e3b',
+                            secondary: '#14b8a6',
+                            accent: '#a3e635',
+                            light: '#ecfdf5',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        body { font-family: 'Inter', sans-serif; background: #1a1a2e; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background: #1a1a2e; }
         .graphic-frame {
             width: 1920px;
             height: 1080px;
             position: relative;
             overflow: hidden;
         }
+        /* Full-width graphics are 2100px wide to allow cropping on left edge */
         .lower-third {
-            width: 1920px;
+            width: 2100px;
             height: 200px;
         }
         .text-flash {
-            width: 1920px;
+            width: 2100px;
             height: 300px;
         }
+        .cta-banner {
+            width: 2100px;
+            height: 250px;
+        }
         .corner-logo {
-            width: 300px;
-            height: 120px;
+            width: 320px;
+            height: 100px;
+        }
+        .name-card {
+            width: 380px;
+            height: 90px;
         }
         .value-card {
             width: 600px;
             height: 180px;
+        }
+        .session-card {
+            width: 700px;
+            height: 200px;
         }
     </style>
 </head>
@@ -37,27 +69,28 @@
     <div class="max-w-7xl mx-auto">
         <h1 class="text-4xl font-bold text-white mb-2">Website Video Graphics</h1>
         <p class="text-gray-400 mb-4">1920×1080 Graphics for DaVinci Resolve</p>
-        <div class="bg-yellow-500/20 border border-yellow-500 rounded-lg p-4 mb-8 text-yellow-200">
+        <div class="bg-amber-500/20 border border-amber-500 rounded-lg p-4 mb-8 text-amber-200">
             <strong>📸 Export Instructions:</strong> Right-click each graphic → Inspect → Select the element → Right-click in DevTools → "Capture node screenshot"
             <br><strong>🎬 DaVinci Position:</strong> Lower-thirds use Position Y = -440 to sit at bottom
+            <br><strong>⚠️ Full-width graphics are 2100px wide:</strong> Crop ~90px from left edge in DaVinci to fix color bar issue
         </div>
 
         <!-- ===== SECTION 1: LOWER-THIRD STAT BARS ===== -->
         <section class="mb-16">
             <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-3">
-                <span class="bg-blue-600 text-white px-3 py-1 rounded-full text-sm">SECTION 1</span>
-                Lower-Third Stat Bars (1920×200)
+                <span class="bg-brand-secondary text-white px-3 py-1 rounded-full text-sm">SECTION 1</span>
+                Lower-Third Stat Bars (2100×200)
             </h2>
-            <p class="text-gray-400 mb-6">Position Y = -440 in DaVinci Transform</p>
+            <p class="text-gray-400 mb-6">Position Y = -440 in DaVinci Transform. Crop left edge if needed.</p>
 
             <div class="space-y-8">
 
                 <!-- LT1: 52 Methods -->
                 <div>
                     <p class="text-gray-300 text-sm mb-2">LT1: 52 Proprietary Methods</p>
-                    <div class="lower-third bg-gradient-to-r from-slate-900 via-slate-900/95 to-transparent flex items-center px-12">
-                        <div class="flex items-center gap-6">
-                            <div class="text-7xl font-black text-yellow-400">52</div>
+                    <div class="lower-third bg-gradient-to-r from-slate-900 via-slate-900 to-slate-900/90 flex items-center justify-center">
+                        <div class="flex items-center gap-6 text-center">
+                            <div class="text-7xl font-extrabold text-brand-accent">52</div>
                             <div>
                                 <div class="text-3xl font-bold text-white">Proprietary Methods</div>
                                 <div class="text-xl text-gray-400">Proven frameworks that actually work</div>
@@ -69,9 +102,9 @@
                 <!-- LT2: 90-Minute Sessions -->
                 <div>
                     <p class="text-gray-300 text-sm mb-2">LT2: 90-Minute Sessions</p>
-                    <div class="lower-third bg-gradient-to-r from-slate-900 via-slate-900/95 to-transparent flex items-center px-12">
-                        <div class="flex items-center gap-6">
-                            <div class="text-7xl font-black text-yellow-400">90</div>
+                    <div class="lower-third bg-gradient-to-r from-slate-900 via-slate-900 to-slate-900/90 flex items-center justify-center">
+                        <div class="flex items-center gap-6 text-center">
+                            <div class="text-7xl font-extrabold text-brand-accent">90</div>
                             <div>
                                 <div class="text-3xl font-bold text-white">Minute Sessions</div>
                                 <div class="text-xl text-gray-400">Deep-dive 1-on-1 coaching</div>
@@ -83,9 +116,9 @@
                 <!-- LT3: 3 Sessions -->
                 <div>
                     <p class="text-gray-300 text-sm mb-2">LT3: 3 Sessions Total</p>
-                    <div class="lower-third bg-gradient-to-r from-slate-900 via-slate-900/95 to-transparent flex items-center px-12">
-                        <div class="flex items-center gap-6">
-                            <div class="text-7xl font-black text-yellow-400">3</div>
+                    <div class="lower-third bg-gradient-to-r from-slate-900 via-slate-900 to-slate-900/90 flex items-center justify-center">
+                        <div class="flex items-center gap-6 text-center">
+                            <div class="text-7xl font-extrabold text-brand-accent">3</div>
                             <div>
                                 <div class="text-3xl font-bold text-white">Coaching Sessions</div>
                                 <div class="text-xl text-gray-400">4.5 hours of direct access</div>
@@ -97,9 +130,9 @@
                 <!-- LT4: 40 Bonuses -->
                 <div>
                     <p class="text-gray-300 text-sm mb-2">LT4: 40 Bonus Materials</p>
-                    <div class="lower-third bg-gradient-to-r from-slate-900 via-slate-900/95 to-transparent flex items-center px-12">
-                        <div class="flex items-center gap-6">
-                            <div class="text-7xl font-black text-yellow-400">40</div>
+                    <div class="lower-third bg-gradient-to-r from-slate-900 via-slate-900 to-slate-900/90 flex items-center justify-center">
+                        <div class="flex items-center gap-6 text-center">
+                            <div class="text-7xl font-extrabold text-brand-accent">40</div>
                             <div>
                                 <div class="text-3xl font-bold text-white">Bonus Materials</div>
                                 <div class="text-xl text-gray-400">Templates, scripts & checklists</div>
@@ -111,9 +144,9 @@
                 <!-- LT5: 21 Days -->
                 <div>
                     <p class="text-gray-300 text-sm mb-2">LT5: 21-Day Transformation</p>
-                    <div class="lower-third bg-gradient-to-r from-slate-900 via-slate-900/95 to-transparent flex items-center px-12">
-                        <div class="flex items-center gap-6">
-                            <div class="text-7xl font-black text-yellow-400">21</div>
+                    <div class="lower-third bg-gradient-to-r from-slate-900 via-slate-900 to-slate-900/90 flex items-center justify-center">
+                        <div class="flex items-center gap-6 text-center">
+                            <div class="text-7xl font-extrabold text-brand-accent">21</div>
                             <div>
                                 <div class="text-3xl font-bold text-white">Day Transformation</div>
                                 <div class="text-xl text-gray-400">Become a different candidate</div>
@@ -125,9 +158,9 @@
                 <!-- LT6: $6-8K Lost -->
                 <div>
                     <p class="text-gray-300 text-sm mb-2">LT6: Monthly Cost of Waiting</p>
-                    <div class="lower-third bg-gradient-to-r from-red-900 via-red-900/95 to-transparent flex items-center px-12">
-                        <div class="flex items-center gap-6">
-                            <div class="text-6xl font-black text-red-400">$6-8K</div>
+                    <div class="lower-third bg-gradient-to-r from-red-900 via-red-900 to-red-900/90 flex items-center justify-center">
+                        <div class="flex items-center gap-6 text-center">
+                            <div class="text-6xl font-extrabold text-red-400">$6-8K</div>
                             <div>
                                 <div class="text-3xl font-bold text-white">Lost Every Month</div>
                                 <div class="text-xl text-gray-400">The cost of staying stuck</div>
@@ -139,9 +172,9 @@
                 <!-- LT7: 10 Spots -->
                 <div>
                     <p class="text-gray-300 text-sm mb-2">LT7: Limited Availability</p>
-                    <div class="lower-third bg-gradient-to-r from-amber-900 via-amber-900/95 to-transparent flex items-center px-12">
-                        <div class="flex items-center gap-6">
-                            <div class="text-7xl font-black text-amber-400">10</div>
+                    <div class="lower-third bg-gradient-to-r from-amber-900 via-amber-900 to-amber-900/90 flex items-center justify-center">
+                        <div class="flex items-center gap-6 text-center">
+                            <div class="text-7xl font-extrabold text-amber-400">10</div>
                             <div>
                                 <div class="text-3xl font-bold text-white">Spots Per Month</div>
                                 <div class="text-xl text-gray-400">Limited availability</div>
@@ -153,12 +186,12 @@
                 <!-- LT8: John Deere -->
                 <div>
                     <p class="text-gray-300 text-sm mb-2">LT8: Credibility - John Deere</p>
-                    <div class="lower-third bg-gradient-to-r from-green-900 via-green-900/95 to-transparent flex items-center px-12">
-                        <div class="flex items-center gap-6">
-                            <div class="text-6xl font-black text-green-400">7 Years</div>
+                    <div class="lower-third bg-gradient-to-r from-brand-primary via-brand-primary to-brand-primary/90 flex items-center justify-center">
+                        <div class="flex items-center gap-6 text-center">
+                            <div class="text-6xl font-extrabold text-brand-accent">7 Years</div>
                             <div>
                                 <div class="text-3xl font-bold text-white">at John Deere</div>
-                                <div class="text-xl text-gray-400">4 promotions • Hired engineers</div>
+                                <div class="text-xl text-brand-secondary">4 promotions • Hired engineers</div>
                             </div>
                         </div>
                     </div>
@@ -171,9 +204,9 @@
         <section class="mb-16">
             <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-3">
                 <span class="bg-purple-600 text-white px-3 py-1 rounded-full text-sm">SECTION 2</span>
-                Hook Text Flashes (1920×300)
+                Hook Text Flashes (2100×300)
             </h2>
-            <p class="text-gray-400 mb-6">Position Y = -390 in DaVinci for lower-center placement</p>
+            <p class="text-gray-400 mb-6">Position Y = -390 in DaVinci for lower-center placement. Crop left edge if needed.</p>
 
             <div class="space-y-8">
 
@@ -182,8 +215,8 @@
                     <p class="text-gray-300 text-sm mb-2">FLASH1: Homepage Hook</p>
                     <div class="text-flash bg-black flex items-center justify-center">
                         <div class="text-center">
-                            <div class="text-8xl font-black text-white tracking-tight">250 APPLICATIONS</div>
-                            <div class="text-6xl font-black text-red-500 mt-2">ZERO RESPONSES</div>
+                            <div class="text-8xl font-extrabold text-white tracking-tight">250 APPLICATIONS</div>
+                            <div class="text-6xl font-extrabold text-red-500 mt-2">ZERO RESPONSES</div>
                         </div>
                     </div>
                 </div>
@@ -193,8 +226,8 @@
                     <p class="text-gray-300 text-sm mb-2">FLASH2: Launch Page Hook</p>
                     <div class="text-flash bg-black flex items-center justify-center">
                         <div class="text-center">
-                            <div class="text-7xl font-black text-white tracking-tight">6 MONTHS OF SEARCHING?</div>
-                            <div class="text-8xl font-black text-red-500 mt-2">$40,000 GONE</div>
+                            <div class="text-7xl font-extrabold text-white tracking-tight">6 MONTHS OF SEARCHING?</div>
+                            <div class="text-8xl font-extrabold text-red-500 mt-2">$40,000 GONE</div>
                         </div>
                     </div>
                 </div>
@@ -204,8 +237,8 @@
                     <p class="text-gray-300 text-sm mb-2">FLASH3: Pain Point</p>
                     <div class="text-flash bg-black flex items-center justify-center">
                         <div class="text-center">
-                            <div class="text-6xl font-black text-gray-400 tracking-tight">YOUR RESUME LOOKS LIKE</div>
-                            <div class="text-7xl font-black text-white mt-2">EVERYONE ELSE'S</div>
+                            <div class="text-6xl font-extrabold text-gray-400 tracking-tight">YOUR RESUME LOOKS LIKE</div>
+                            <div class="text-7xl font-extrabold text-white mt-2">EVERYONE ELSE'S</div>
                         </div>
                     </div>
                 </div>
@@ -215,7 +248,7 @@
                     <p class="text-gray-300 text-sm mb-2">FLASH4: Guarantee Statement</p>
                     <div class="text-flash bg-black flex items-center justify-center">
                         <div class="text-center">
-                            <div class="text-8xl font-black text-yellow-400 tracking-tight">GUARANTEED</div>
+                            <div class="text-8xl font-extrabold text-brand-accent tracking-tight">GUARANTEED</div>
                             <div class="text-4xl font-bold text-white mt-4">The Launch Blueprint Guarantee™</div>
                         </div>
                     </div>
@@ -224,10 +257,10 @@
                 <!-- Flash 5: 21-Day Blueprint -->
                 <div>
                     <p class="text-gray-300 text-sm mb-2">FLASH5: Program Name</p>
-                    <div class="text-flash bg-gradient-to-r from-yellow-500 via-amber-400 to-yellow-500 flex items-center justify-center">
+                    <div class="text-flash bg-gradient-to-r from-brand-secondary via-brand-accent to-brand-secondary flex items-center justify-center">
                         <div class="text-center">
-                            <div class="text-4xl font-bold text-black/70 tracking-wide">THE</div>
-                            <div class="text-8xl font-black text-black tracking-tight">21-DAY BLUEPRINT</div>
+                            <div class="text-4xl font-bold text-brand-primary/70 tracking-wide">THE</div>
+                            <div class="text-8xl font-extrabold text-brand-primary tracking-tight">21-DAY BLUEPRINT</div>
                         </div>
                     </div>
                 </div>
@@ -238,20 +271,25 @@
         <!-- ===== SECTION 3: BRANDED CORNER LOGOS ===== -->
         <section class="mb-16">
             <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-3">
-                <span class="bg-green-600 text-white px-3 py-1 rounded-full text-sm">SECTION 3</span>
-                Corner Logos (300×120)
+                <span class="bg-brand-primary text-white px-3 py-1 rounded-full text-sm">SECTION 3</span>
+                Corner Logos (320×100)
             </h2>
             <p class="text-gray-400 mb-6">Position: Top-right corner. Use opacity 70-80% in DaVinci.</p>
 
             <div class="space-y-8">
 
-                <!-- Logo 1: Standard -->
+                <!-- Logo 1: Primary Brand -->
                 <div>
-                    <p class="text-gray-300 text-sm mb-2">LOGO1: Standard Corner Bug</p>
-                    <div class="corner-logo bg-black/80 rounded-l-xl flex items-center justify-center px-6">
-                        <div class="text-center">
-                            <div class="text-2xl font-bold text-white">Launch<span class="text-yellow-400">ToLead</span></div>
-                            <div class="text-xs text-gray-400 tracking-widest">.IO</div>
+                    <p class="text-gray-300 text-sm mb-2">LOGO1: Primary Brand (Dark BG)</p>
+                    <div class="corner-logo bg-brand-primary rounded-l-2xl flex items-center px-5 shadow-lg">
+                        <div class="flex items-center gap-3">
+                            <div class="w-14 h-14 bg-white rounded-xl flex items-center justify-center">
+                                <span class="text-3xl font-extrabold text-brand-primary">L</span>
+                            </div>
+                            <div>
+                                <div class="text-xl font-extrabold text-white">Launch<span class="text-brand-accent font-light">to</span>Lead</div>
+                                <div class="text-xs text-brand-secondary tracking-wide">.IO</div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -259,19 +297,42 @@
                 <!-- Logo 2: With Tagline -->
                 <div>
                     <p class="text-gray-300 text-sm mb-2">LOGO2: With Tagline</p>
-                    <div class="corner-logo bg-gradient-to-r from-slate-900 to-slate-800 rounded-l-xl flex items-center px-6">
-                        <div>
-                            <div class="text-xl font-bold text-white">Launch<span class="text-yellow-400">ToLead</span><span class="text-gray-500">.io</span></div>
-                            <div class="text-xs text-gray-400">Engineering Career Coaching</div>
+                    <div class="corner-logo bg-gradient-to-r from-brand-primary to-brand-primary/90 rounded-l-2xl flex items-center px-5 shadow-lg">
+                        <div class="flex items-center gap-3">
+                            <div class="w-12 h-12 bg-white rounded-xl flex items-center justify-center">
+                                <span class="text-2xl font-extrabold text-brand-primary">L</span>
+                            </div>
+                            <div>
+                                <div class="text-lg font-bold text-white">Launch<span class="text-brand-accent font-light">to</span>Lead</div>
+                                <div class="text-xs text-brand-secondary">Engineer Your Next Role</div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Logo 3: Minimal -->
+                <!-- Logo 3: Minimal Icon -->
                 <div>
-                    <p class="text-gray-300 text-sm mb-2">LOGO3: Minimal</p>
-                    <div class="corner-logo bg-black/70 rounded-l-xl flex items-center justify-center">
-                        <div class="text-3xl font-black text-yellow-400">L2L</div>
+                    <p class="text-gray-300 text-sm mb-2">LOGO3: Minimal Icon Only</p>
+                    <div class="w-[100px] h-[100px] bg-brand-primary rounded-xl flex items-center justify-center shadow-lg">
+                        <div class="w-16 h-16 bg-white rounded-lg flex items-center justify-center">
+                            <span class="text-4xl font-extrabold text-brand-primary">L²</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Logo 4: Light Version -->
+                <div>
+                    <p class="text-gray-300 text-sm mb-2">LOGO4: Light Version (for dark video backgrounds)</p>
+                    <div class="corner-logo bg-white/95 rounded-l-2xl flex items-center px-5 shadow-lg border-l-4 border-brand-accent">
+                        <div class="flex items-center gap-3">
+                            <div class="w-12 h-12 bg-brand-primary rounded-xl flex items-center justify-center">
+                                <span class="text-2xl font-extrabold text-white">L</span>
+                            </div>
+                            <div>
+                                <div class="text-lg font-bold text-brand-primary">Launch<span class="text-brand-secondary font-light">to</span>Lead</div>
+                                <div class="text-xs text-gray-500">.IO</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -281,7 +342,7 @@
         <!-- ===== SECTION 4: VALUE STACK CARDS ===== -->
         <section class="mb-16">
             <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-3">
-                <span class="bg-amber-600 text-white px-3 py-1 rounded-full text-sm">SECTION 4</span>
+                <span class="bg-brand-secondary text-white px-3 py-1 rounded-full text-sm">SECTION 4</span>
                 Value Stack Cards (600×180)
             </h2>
             <p class="text-gray-400 mb-6">For Packages page - pop these in as you mention each item. Position at right side of frame.</p>
@@ -291,12 +352,14 @@
                 <!-- Value 1: Sessions -->
                 <div>
                     <p class="text-gray-300 text-sm mb-2">VALUE1: Coaching Sessions</p>
-                    <div class="value-card bg-gradient-to-r from-blue-900 to-blue-800 rounded-xl flex items-center px-8 border-l-4 border-yellow-400">
+                    <div class="value-card bg-gradient-to-r from-brand-primary to-brand-primary/90 rounded-xl flex items-center px-8 border-l-4 border-brand-accent shadow-xl">
                         <div class="flex items-center gap-4">
-                            <div class="text-5xl">🎯</div>
+                            <div class="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center">
+                                <span class="text-4xl">🎯</span>
+                            </div>
                             <div>
                                 <div class="text-2xl font-bold text-white">3 × 90-Minute Sessions</div>
-                                <div class="text-lg text-blue-200">4.5 hours of 1-on-1 coaching</div>
+                                <div class="text-lg text-brand-secondary">4.5 hours of 1-on-1 coaching</div>
                             </div>
                         </div>
                     </div>
@@ -305,12 +368,14 @@
                 <!-- Value 2: Methods -->
                 <div>
                     <p class="text-gray-300 text-sm mb-2">VALUE2: Proprietary Methods</p>
-                    <div class="value-card bg-gradient-to-r from-purple-900 to-purple-800 rounded-xl flex items-center px-8 border-l-4 border-yellow-400">
+                    <div class="value-card bg-gradient-to-r from-brand-primary to-brand-primary/90 rounded-xl flex items-center px-8 border-l-4 border-brand-accent shadow-xl">
                         <div class="flex items-center gap-4">
-                            <div class="text-5xl">⚡</div>
+                            <div class="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center">
+                                <span class="text-4xl">⚡</span>
+                            </div>
                             <div>
                                 <div class="text-2xl font-bold text-white">52 Proprietary Methods</div>
-                                <div class="text-lg text-purple-200">Impact Bullet Builder™ & more</div>
+                                <div class="text-lg text-brand-secondary">Impact Bullet Builder™ & more</div>
                             </div>
                         </div>
                     </div>
@@ -319,12 +384,14 @@
                 <!-- Value 3: Bonuses -->
                 <div>
                     <p class="text-gray-300 text-sm mb-2">VALUE3: Bonus Materials</p>
-                    <div class="value-card bg-gradient-to-r from-emerald-900 to-emerald-800 rounded-xl flex items-center px-8 border-l-4 border-yellow-400">
+                    <div class="value-card bg-gradient-to-r from-brand-primary to-brand-primary/90 rounded-xl flex items-center px-8 border-l-4 border-brand-accent shadow-xl">
                         <div class="flex items-center gap-4">
-                            <div class="text-5xl">🎁</div>
+                            <div class="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center">
+                                <span class="text-4xl">🎁</span>
+                            </div>
                             <div>
                                 <div class="text-2xl font-bold text-white">40 Bonus Materials</div>
-                                <div class="text-lg text-emerald-200">Templates, scripts & checklists</div>
+                                <div class="text-lg text-brand-secondary">Templates, scripts & checklists</div>
                             </div>
                         </div>
                     </div>
@@ -333,9 +400,11 @@
                 <!-- Value 4: Guarantee -->
                 <div>
                     <p class="text-gray-300 text-sm mb-2">VALUE4: The Guarantee</p>
-                    <div class="value-card bg-gradient-to-r from-amber-700 to-amber-600 rounded-xl flex items-center px-8 border-l-4 border-white">
+                    <div class="value-card bg-gradient-to-r from-amber-700 to-amber-600 rounded-xl flex items-center px-8 border-l-4 border-white shadow-xl">
                         <div class="flex items-center gap-4">
-                            <div class="text-5xl">🛡️</div>
+                            <div class="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center">
+                                <span class="text-4xl">🛡️</span>
+                            </div>
                             <div>
                                 <div class="text-2xl font-bold text-white">Launch Blueprint Guarantee™</div>
                                 <div class="text-lg text-amber-100">Results or I keep working free</div>
@@ -350,7 +419,7 @@
         <!-- ===== SECTION 5: SESSION BREAKDOWN CARDS ===== -->
         <section class="mb-16">
             <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-3">
-                <span class="bg-rose-600 text-white px-3 py-1 rounded-full text-sm">SECTION 5</span>
+                <span class="bg-brand-accent text-brand-primary px-3 py-1 rounded-full text-sm font-bold">SECTION 5</span>
                 Session Breakdown Cards (700×200)
             </h2>
             <p class="text-gray-400 mb-6">For Launch page when explaining sessions 1-2-3</p>
@@ -360,14 +429,14 @@
                 <!-- Session 1 -->
                 <div>
                     <p class="text-gray-300 text-sm mb-2">SESSION1: Resume Transformation</p>
-                    <div class="w-[700px] h-[200px] bg-gradient-to-r from-blue-600 to-blue-500 rounded-2xl flex items-center px-10 shadow-2xl">
+                    <div class="session-card bg-gradient-to-r from-brand-primary to-brand-primary/90 rounded-2xl flex items-center px-10 shadow-2xl border-l-4 border-brand-accent">
                         <div class="flex items-center gap-6">
-                            <div class="w-24 h-24 bg-white/20 rounded-full flex items-center justify-center">
-                                <span class="text-5xl font-black text-white">1</span>
+                            <div class="w-24 h-24 bg-brand-secondary/30 rounded-full flex items-center justify-center">
+                                <span class="text-5xl font-extrabold text-white">1</span>
                             </div>
                             <div>
                                 <div class="text-3xl font-bold text-white">Resume Transformation</div>
-                                <div class="text-xl text-blue-100 mt-1">The Impact Bullet Builder™ method</div>
+                                <div class="text-xl text-brand-secondary mt-1">The Impact Bullet Builder™ method</div>
                             </div>
                         </div>
                     </div>
@@ -376,14 +445,14 @@
                 <!-- Session 2 -->
                 <div>
                     <p class="text-gray-300 text-sm mb-2">SESSION2: Story Building</p>
-                    <div class="w-[700px] h-[200px] bg-gradient-to-r from-purple-600 to-purple-500 rounded-2xl flex items-center px-10 shadow-2xl">
+                    <div class="session-card bg-gradient-to-r from-brand-primary to-brand-primary/90 rounded-2xl flex items-center px-10 shadow-2xl border-l-4 border-brand-secondary">
                         <div class="flex items-center gap-6">
-                            <div class="w-24 h-24 bg-white/20 rounded-full flex items-center justify-center">
-                                <span class="text-5xl font-black text-white">2</span>
+                            <div class="w-24 h-24 bg-brand-accent/30 rounded-full flex items-center justify-center">
+                                <span class="text-5xl font-extrabold text-white">2</span>
                             </div>
                             <div>
                                 <div class="text-3xl font-bold text-white">15+ STAR Stories</div>
-                                <div class="text-xl text-purple-100 mt-1">Master Story Vault™ framework</div>
+                                <div class="text-xl text-brand-accent mt-1">Master Story Vault™ framework</div>
                             </div>
                         </div>
                     </div>
@@ -392,14 +461,14 @@
                 <!-- Session 3 -->
                 <div>
                     <p class="text-gray-300 text-sm mb-2">SESSION3: Mock Interview</p>
-                    <div class="w-[700px] h-[200px] bg-gradient-to-r from-emerald-600 to-emerald-500 rounded-2xl flex items-center px-10 shadow-2xl">
+                    <div class="session-card bg-gradient-to-r from-brand-primary to-brand-primary/90 rounded-2xl flex items-center px-10 shadow-2xl border-l-4 border-white">
                         <div class="flex items-center gap-6">
                             <div class="w-24 h-24 bg-white/20 rounded-full flex items-center justify-center">
-                                <span class="text-5xl font-black text-white">3</span>
+                                <span class="text-5xl font-extrabold text-white">3</span>
                             </div>
                             <div>
                                 <div class="text-3xl font-bold text-white">Live Mock Interview</div>
-                                <div class="text-xl text-emerald-100 mt-1">Real feedback before the real thing</div>
+                                <div class="text-xl text-white/80 mt-1">Real feedback before the real thing</div>
                             </div>
                         </div>
                     </div>
@@ -412,19 +481,19 @@
         <section class="mb-16">
             <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-3">
                 <span class="bg-cyan-600 text-white px-3 py-1 rounded-full text-sm">SECTION 6</span>
-                CTA Banners (1920×250)
+                CTA Banners (2100×250)
             </h2>
-            <p class="text-gray-400 mb-6">End screen call-to-action. Position Y = -415 for bottom placement.</p>
+            <p class="text-gray-400 mb-6">End screen call-to-action. Position Y = -415 for bottom placement. Crop left edge if needed.</p>
 
             <div class="space-y-8">
 
                 <!-- CTA 1: Book Strategy Call -->
                 <div>
                     <p class="text-gray-300 text-sm mb-2">CTA1: Book Strategy Call</p>
-                    <div class="w-[1920px] h-[250px] bg-gradient-to-r from-yellow-500 via-amber-400 to-yellow-500 flex items-center justify-center">
+                    <div class="cta-banner bg-gradient-to-r from-brand-accent via-brand-secondary to-brand-accent flex items-center justify-center">
                         <div class="text-center">
-                            <div class="text-6xl font-black text-black tracking-tight">BOOK YOUR FREE STRATEGY CALL</div>
-                            <div class="text-3xl font-bold text-black/70 mt-3">Click below to see if you qualify</div>
+                            <div class="text-6xl font-extrabold text-brand-primary tracking-tight">BOOK YOUR FREE STRATEGY CALL</div>
+                            <div class="text-3xl font-bold text-brand-primary/70 mt-3">Click below to see if you qualify</div>
                         </div>
                     </div>
                 </div>
@@ -432,14 +501,14 @@
                 <!-- CTA 2: Limited Spots -->
                 <div>
                     <p class="text-gray-300 text-sm mb-2">CTA2: Urgency + Price</p>
-                    <div class="w-[1920px] h-[250px] bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 flex items-center justify-between px-20">
+                    <div class="cta-banner bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 flex items-center justify-center gap-40">
                         <div class="text-left">
-                            <div class="text-5xl font-black text-white">Only 10 Spots/Month</div>
+                            <div class="text-5xl font-extrabold text-white">Only 10 Spots/Month</div>
                             <div class="text-2xl text-gray-400 mt-2">Limited availability</div>
                         </div>
                         <div class="text-right">
-                            <div class="text-6xl font-black text-yellow-400">$1,997</div>
-                            <div class="text-2xl text-gray-400 mt-2">or 3 × $699</div>
+                            <div class="text-6xl font-extrabold text-brand-accent">$1,997</div>
+                            <div class="text-2xl text-brand-secondary mt-2">or 3 × $699</div>
                         </div>
                     </div>
                 </div>
@@ -462,9 +531,9 @@
                     <p class="text-gray-300 text-sm mb-2">TITLE1: Homepage Video Intro</p>
                     <div class="graphic-frame bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 flex items-center justify-center">
                         <div class="text-center">
-                            <div class="text-3xl font-medium text-yellow-400 tracking-widest mb-4">LAUNCHTOLEAD.IO</div>
-                            <div class="text-8xl font-black text-white tracking-tight">WHY YOU'RE</div>
-                            <div class="text-9xl font-black text-yellow-400 tracking-tight">INVISIBLE</div>
+                            <div class="text-3xl font-medium text-brand-accent tracking-widest mb-4">LAUNCHTOLEAD.IO</div>
+                            <div class="text-8xl font-extrabold text-white tracking-tight">WHY YOU'RE</div>
+                            <div class="text-9xl font-extrabold text-brand-accent tracking-tight">INVISIBLE</div>
                             <div class="text-2xl text-gray-400 mt-8">The truth about your job search</div>
                         </div>
                     </div>
@@ -476,8 +545,8 @@
                     <div class="graphic-frame bg-gradient-to-br from-red-950 via-slate-900 to-slate-900 flex items-center justify-center">
                         <div class="text-center">
                             <div class="text-3xl font-medium text-red-400 tracking-widest mb-4">THE COST OF WAITING</div>
-                            <div class="text-9xl font-black text-white tracking-tight">$40K</div>
-                            <div class="text-6xl font-black text-red-500 tracking-tight">MISTAKE</div>
+                            <div class="text-9xl font-extrabold text-white tracking-tight">$40K</div>
+                            <div class="text-6xl font-extrabold text-red-500 tracking-tight">MISTAKE</div>
                             <div class="text-2xl text-gray-400 mt-8">Every month costs you $6,000-$8,000</div>
                         </div>
                     </div>
@@ -486,11 +555,11 @@
                 <!-- Title: Packages -->
                 <div>
                     <p class="text-gray-300 text-sm mb-2">TITLE3: Packages Page Video Intro</p>
-                    <div class="graphic-frame bg-gradient-to-br from-emerald-950 via-slate-900 to-slate-900 flex items-center justify-center">
+                    <div class="graphic-frame bg-gradient-to-br from-brand-primary via-slate-900 to-slate-900 flex items-center justify-center">
                         <div class="text-center">
-                            <div class="text-3xl font-medium text-emerald-400 tracking-widest mb-4">THE 21-DAY BLUEPRINT</div>
-                            <div class="text-8xl font-black text-white tracking-tight">52 METHODS</div>
-                            <div class="text-7xl font-black text-yellow-400 tracking-tight mt-2">21 DAYS</div>
+                            <div class="text-3xl font-medium text-brand-secondary tracking-widest mb-4">THE 21-DAY BLUEPRINT</div>
+                            <div class="text-8xl font-extrabold text-white tracking-tight">52 METHODS</div>
+                            <div class="text-7xl font-extrabold text-brand-accent tracking-tight mt-2">21 DAYS</div>
                             <div class="text-2xl text-gray-400 mt-8">A complete transformation</div>
                         </div>
                     </div>
@@ -502,9 +571,81 @@
                     <div class="graphic-frame bg-gradient-to-br from-amber-950 via-slate-900 to-slate-900 flex items-center justify-center">
                         <div class="text-center">
                             <div class="text-3xl font-medium text-amber-400 tracking-widest mb-4">MEET MANSOUR</div>
-                            <div class="text-7xl font-black text-white tracking-tight">FROM INVISIBLE</div>
-                            <div class="text-7xl font-black text-yellow-400 tracking-tight mt-2">TO UNSTOPPABLE</div>
+                            <div class="text-7xl font-extrabold text-white tracking-tight">FROM INVISIBLE</div>
+                            <div class="text-7xl font-extrabold text-brand-accent tracking-tight mt-2">TO UNSTOPPABLE</div>
                             <div class="text-2xl text-gray-400 mt-8">7 years at John Deere • 4 promotions</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ===== SECTION 8: NAME CARDS ===== -->
+        <section class="mb-16">
+            <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-3">
+                <span class="bg-rose-600 text-white px-3 py-1 rounded-full text-sm">SECTION 8</span>
+                Name Cards (380×90)
+            </h2>
+            <p class="text-gray-400 mb-6">Keep in top-right or top-left corner throughout video. Use opacity 80-90% in DaVinci.</p>
+
+            <div class="space-y-8">
+
+                <!-- Name Card 1: Dark Background Version -->
+                <div>
+                    <p class="text-gray-300 text-sm mb-2">NAME1: Primary (for light/mixed video backgrounds)</p>
+                    <div class="name-card bg-brand-primary rounded-xl flex items-center px-5 shadow-lg">
+                        <div class="flex items-center gap-4">
+                            <div class="w-14 h-14 bg-white rounded-lg flex items-center justify-center">
+                                <span class="text-2xl font-extrabold text-brand-primary">M</span>
+                            </div>
+                            <div>
+                                <div class="text-xl font-bold text-white">Mansour Manci</div>
+                                <div class="text-sm text-brand-secondary">Engineering Career Coach</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Name Card 2: Light Background Version -->
+                <div>
+                    <p class="text-gray-300 text-sm mb-2">NAME2: Light (for dark video backgrounds)</p>
+                    <div class="name-card bg-white rounded-xl flex items-center px-5 shadow-lg border-l-4 border-brand-accent">
+                        <div class="flex items-center gap-4">
+                            <div class="w-14 h-14 bg-brand-primary rounded-lg flex items-center justify-center">
+                                <span class="text-2xl font-extrabold text-white">M</span>
+                            </div>
+                            <div>
+                                <div class="text-xl font-bold text-brand-primary">Mansour Manci</div>
+                                <div class="text-sm text-brand-secondary">Engineering Career Coach</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Name Card 3: Minimal -->
+                <div>
+                    <p class="text-gray-300 text-sm mb-2">NAME3: Minimal (text only, for clean look)</p>
+                    <div class="name-card bg-black/70 backdrop-blur rounded-xl flex items-center px-6 shadow-lg">
+                        <div>
+                            <div class="text-xl font-bold text-white">Mansour Manci</div>
+                            <div class="text-sm text-brand-accent">Engineering Career Coach</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Name Card 4: Branded Accent -->
+                <div>
+                    <p class="text-gray-300 text-sm mb-2">NAME4: With Brand Accent Bar</p>
+                    <div class="name-card bg-gradient-to-r from-brand-primary to-brand-primary/90 rounded-xl flex items-center px-5 shadow-lg border-l-4 border-brand-accent">
+                        <div class="flex items-center gap-4">
+                            <div class="w-14 h-14 bg-brand-accent rounded-lg flex items-center justify-center">
+                                <span class="text-2xl font-extrabold text-brand-primary">M</span>
+                            </div>
+                            <div>
+                                <div class="text-xl font-bold text-white">Mansour Manci</div>
+                                <div class="text-sm text-brand-accent">Engineering Career Coach</div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -517,26 +658,59 @@
             <h2 class="text-2xl font-bold text-white mb-6">📋 Quick Reference: DaVinci Positions</h2>
             <div class="grid md:grid-cols-2 gap-6 text-sm">
                 <div>
-                    <h3 class="font-bold text-yellow-400 mb-3">Graphic Sizes</h3>
+                    <h3 class="font-bold text-brand-accent mb-3">Graphic Sizes</h3>
                     <ul class="space-y-2 text-gray-300">
-                        <li>• <strong>Lower-thirds:</strong> 1920×200</li>
-                        <li>• <strong>Text flashes:</strong> 1920×300</li>
-                        <li>• <strong>Corner logos:</strong> 300×120</li>
+                        <li>• <strong>Lower-thirds:</strong> 2100×200 (crop left ~90px)</li>
+                        <li>• <strong>Text flashes:</strong> 2100×300 (crop left ~90px)</li>
+                        <li>• <strong>Corner logos:</strong> 320×100</li>
+                        <li>• <strong>Name cards:</strong> 380×90</li>
                         <li>• <strong>Value cards:</strong> 600×180</li>
                         <li>• <strong>Session cards:</strong> 700×200</li>
-                        <li>• <strong>CTA banners:</strong> 1920×250</li>
+                        <li>• <strong>CTA banners:</strong> 2100×250 (crop left ~90px)</li>
                         <li>• <strong>Title cards:</strong> 1920×1080</li>
                     </ul>
                 </div>
                 <div>
-                    <h3 class="font-bold text-yellow-400 mb-3">Position Y Values (Transform)</h3>
+                    <h3 class="font-bold text-brand-accent mb-3">Position Y Values (Transform)</h3>
                     <ul class="space-y-2 text-gray-300">
                         <li>• <strong>Lower-thirds (200h):</strong> Y = -440</li>
                         <li>• <strong>Text flashes (300h):</strong> Y = -390</li>
                         <li>• <strong>CTA banners (250h):</strong> Y = -415</li>
                         <li>• <strong>Corner logo:</strong> Position manually top-right</li>
+                        <li>• <strong>Name cards:</strong> Position manually top-right or top-left</li>
                         <li>• <strong>Value/Session cards:</strong> Position manually right side</li>
                     </ul>
+                </div>
+            </div>
+            <div class="mt-6 p-4 bg-brand-primary/20 border border-brand-secondary rounded-lg">
+                <h3 class="font-bold text-brand-accent mb-2">⚠️ Color Bar Fix</h3>
+                <p class="text-gray-300">Full-width graphics (lower-thirds, text flashes, CTA banners) are now 2100px wide. In DaVinci, crop approximately 90px from the left edge to eliminate any color bar artifacts.</p>
+            </div>
+        </section>
+
+        <!-- Brand Colors Reference -->
+        <section class="mb-16 bg-slate-800 rounded-xl p-8">
+            <h2 class="text-2xl font-bold text-white mb-6">🎨 Brand Colors Used</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="text-center">
+                    <div class="w-full h-20 bg-brand-primary rounded-lg mb-2"></div>
+                    <div class="text-white font-bold">Primary</div>
+                    <div class="text-gray-400 text-sm">#064e3b</div>
+                </div>
+                <div class="text-center">
+                    <div class="w-full h-20 bg-brand-secondary rounded-lg mb-2"></div>
+                    <div class="text-white font-bold">Secondary</div>
+                    <div class="text-gray-400 text-sm">#14b8a6</div>
+                </div>
+                <div class="text-center">
+                    <div class="w-full h-20 bg-brand-accent rounded-lg mb-2"></div>
+                    <div class="text-white font-bold">Accent</div>
+                    <div class="text-gray-400 text-sm">#a3e635</div>
+                </div>
+                <div class="text-center">
+                    <div class="w-full h-20 bg-brand-light rounded-lg mb-2"></div>
+                    <div class="text-white font-bold">Light</div>
+                    <div class="text-gray-400 text-sm">#ecfdf5</div>
                 </div>
             </div>
         </section>
