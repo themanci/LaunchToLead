@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soufiane Talmoust - Resume - UN Agribusiness Consultant</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @page {
+            size: letter;
+            margin: 0.5in;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 10pt;
+            line-height: 1.4;
+            color: #1a1a1a;
+            background: #f5f5f5;
+        }
+
+        .resume-container {
+            max-width: 8.5in;
+            margin: 0 auto;
+            background: white;
+            padding: 0.5in;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            border-bottom: 2px solid #1a4480;
+            padding-bottom: 12px;
+            margin-bottom: 16px;
+        }
+
+        .name {
+            font-size: 24pt;
+            font-weight: 700;
+            color: #1a4480;
+            margin-bottom: 4px;
+            letter-spacing: -0.5px;
+        }
+
+        .title {
+            font-size: 11pt;
+            font-weight: 500;
+            color: #2e7d32;
+            margin-bottom: 8px;
+        }
+
+        .contact-info {
+            font-size: 9pt;
+            color: #4a4a4a;
+        }
+
+        .contact-info a {
+            color: #1a4480;
+            text-decoration: none;
+        }
+
+        /* Section Styling */
+        .section {
+            margin-bottom: 14px;
+        }
+
+        .section-title {
+            font-size: 11pt;
+            font-weight: 700;
+            color: #1a4480;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1px solid #e5e5e5;
+            padding-bottom: 4px;
+            margin-bottom: 10px;
+        }
+
+        /* Summary */
+        .summary {
+            font-size: 9.5pt;
+            color: #333;
+            margin-bottom: 10px;
+            text-align: justify;
+        }
+
+        .competencies {
+            font-size: 9pt;
+            color: #4a4a4a;
+        }
+
+        .competencies strong {
+            color: #1a4480;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6px;
+            font-size: 9pt;
+        }
+
+        .skill-row {
+            display: flex;
+        }
+
+        .skill-label {
+            font-weight: 600;
+            color: #1a4480;
+            min-width: 160px;
+        }
+
+        .skill-value {
+            color: #333;
+        }
+
+        /* Experience */
+        .job {
+            margin-bottom: 12px;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 6px;
+        }
+
+        .job-title {
+            font-size: 10.5pt;
+            font-weight: 700;
+            color: #1a1a1a;
+        }
+
+        .job-company {
+            font-weight: 500;
+            color: #2e7d32;
+        }
+
+        .job-date {
+            font-size: 9pt;
+            color: #666;
+            font-style: italic;
+        }
+
+        .job-bullets {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .job-bullets li {
+            font-size: 9.5pt;
+            color: #333;
+            margin-bottom: 4px;
+            padding-left: 14px;
+            position: relative;
+            text-align: justify;
+        }
+
+        .job-bullets li::before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #2e7d32;
+            font-size: 10pt;
+        }
+
+        /* Education */
+        .education-item {
+            margin-bottom: 6px;
+        }
+
+        .degree {
+            font-weight: 600;
+            color: #1a1a1a;
+            font-size: 9.5pt;
+        }
+
+        .school {
+            color: #666;
+            font-size: 9pt;
+        }
+
+        /* Languages */
+        .languages-grid {
+            display: flex;
+            gap: 24px;
+            font-size: 9pt;
+        }
+
+        .language-item {
+            display: flex;
+            gap: 6px;
+        }
+
+        .language-name {
+            font-weight: 600;
+            color: #1a4480;
+        }
+
+        .language-level {
+            color: #333;
+        }
+
+        /* Geographic Experience */
+        .geo-section {
+            margin-bottom: 10px;
+        }
+
+        .geo-region {
+            font-weight: 600;
+            color: #1a4480;
+            font-size: 9pt;
+        }
+
+        .geo-countries {
+            font-size: 9pt;
+            color: #333;
+        }
+
+        /* Page Break */
+        .page-break {
+            page-break-before: always;
+            margin-top: 0.5in;
+            padding-top: 0.5in;
+            border-top: 2px solid #1a4480;
+        }
+
+        /* Consultant Profile Section */
+        .profile-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .profile-title {
+            font-size: 14pt;
+            font-weight: 700;
+            color: #1a4480;
+            margin-bottom: 4px;
+        }
+
+        .profile-subtitle {
+            font-size: 10pt;
+            color: #666;
+        }
+
+        .profile-box {
+            background: #f8f9fa;
+            border: 1px solid #e5e5e5;
+            border-radius: 6px;
+            padding: 16px;
+            margin-bottom: 16px;
+        }
+
+        .profile-box-title {
+            font-size: 10pt;
+            font-weight: 700;
+            color: #1a4480;
+            margin-bottom: 8px;
+        }
+
+        .profile-box p {
+            font-size: 9.5pt;
+            color: #333;
+            margin-bottom: 6px;
+        }
+
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+        }
+
+        .expertise-item {
+            font-size: 9pt;
+            color: #333;
+            padding-left: 14px;
+            position: relative;
+        }
+
+        .expertise-item::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #2e7d32;
+            font-weight: bold;
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                background: white;
+            }
+
+            .resume-container {
+                box-shadow: none;
+                padding: 0;
+                max-width: none;
+            }
+
+            .section {
+                page-break-inside: avoid;
+            }
+
+            .job {
+                page-break-inside: avoid;
+            }
+
+            .page-break {
+                margin-top: 0;
+                padding-top: 0.5in;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="resume-container">
+        <!-- PAGE 1: TRADITIONAL RESUME -->
+        
+        <!-- Header -->
+        <header class="header">
+            <h1 class="name">Soufiane Talmoust</h1>
+            <div class="title">Agribusiness & Poultry Sector Development Specialist | Value Chain Analyst</div>
+            <div class="contact-info">
+                Morocco &nbsp;|&nbsp; +971 588 005 132 &nbsp;|&nbsp; +212 661 476 188 &nbsp;|&nbsp; 
+                <a href="mailto:Soufiane.talmoust@gmail.com">Soufiane.talmoust@gmail.com</a>
+            </div>
+        </header>
+
+        <!-- Professional Summary -->
+        <section class="section">
+            <h2 class="section-title">Professional Summary</h2>
+            <p class="summary">
+                Agribusiness development specialist with 8+ years of experience conducting rapid market diagnostics, value chain assessments, and investment feasibility studies across 15+ countries in Africa and the Middle East. Proven track record advising poultry producers, hatcheries, and agricultural integrators on equipment selection, system optimization, and operational efficiency improvements. Combines hands-on production expertise (broiler, breeder, and hatchery systems) with analytical capability to identify market bottlenecks, assess private sector investment viability, and provide policy-level recommendations for food security initiatives.
+            </p>
+            <p class="competencies">
+                <strong>Core Competencies:</strong> Value Chain Analysis • Market Diagnostics • Feasibility Studies • Private Sector Development • Food Security Assessment • Stakeholder Engagement • Technical Assistance • Policy Advisory • Investment Risk Analysis
+            </p>
+        </section>
+
+        <!-- Technical Expertise -->
+        <section class="section">
+            <h2 class="section-title">Technical Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-row">
+                    <span class="skill-label">Sector Analysis:</span>
+                    <span class="skill-value">Poultry value chains, feed economics, hatchery systems</span>
+                </div>
+                <div class="skill-row">
+                    <span class="skill-label">Assessment Methods:</span>
+                    <span class="skill-value">Rapid market diagnostics, supply-demand gap analysis</span>
+                </div>
+                <div class="skill-row">
+                    <span class="skill-label">Project Types:</span>
+                    <span class="skill-value">Feasibility studies, investment analysis, policy advisory</span>
+                </div>
+                <div class="skill-row">
+                    <span class="skill-label">Production Systems:</span>
+                    <span class="skill-value">Broilers, breeders (Ross strains), layers, hatcheries</span>
+                </div>
+                <div class="skill-row">
+                    <span class="skill-label">Stakeholder Work:</span>
+                    <span class="skill-value">Public-private interface, capacity building, training</span>
+                </div>
+                <div class="skill-row">
+                    <span class="skill-label">Languages:</span>
+                    <span class="skill-value">English (Fluent), French (Fluent), Arabic (Fluent)</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Professional Experience -->
+        <section class="section">
+            <h2 class="section-title">Professional Experience</h2>
+
+            <!-- Val-Co -->
+            <div class="job">
+                <div class="job-header">
+                    <div>
+                        <span class="job-title">Sales Manager – Africa & Middle East</span>
+                        <span class="job-company"> | Val-Co</span>
+                    </div>
+                    <span class="job-date">May 2017 – Present</span>
+                </div>
+                <ul class="job-bullets">
+                    <li>Led technical advisory services for poultry production projects across 15+ countries in Africa and the Middle East, providing equipment selection guidance and system design recommendations to optimize operational efficiency for hatcheries, broiler farms, and integrated producers.</li>
+                    <li>Conducted rapid market assessments to evaluate regional poultry investment opportunities, analyzing supply-demand dynamics, cost structures, and competitive landscapes to inform private sector decision-making.</li>
+                    <li>Built and managed a regional dealer and distributor network spanning Africa and the Middle East, establishing partnerships that expanded market access for poultry production equipment and technical services.</li>
+                    <li>Provided technical planning support for large-scale keynote projects, coordinating with stakeholders to ensure alignment between equipment specifications, production goals, and investment timelines.</li>
+                    <li>Developed deep market intelligence on regional poultry sectors, tracking feed price transmission, day-old chick (DOC) pricing trends, and investment behavior patterns to advise clients on market entry strategies.</li>
+                </ul>
+            </div>
+
+            <!-- Family Business / Independent Projects -->
+            <div class="job">
+                <div class="job-header">
+                    <div>
+                        <span class="job-title">Poultry Production & Agribusiness Consultant</span>
+                        <span class="job-company"> | Independent Projects</span>
+                    </div>
+                    <span class="job-date">[START DATE] – [END DATE]</span>
+                </div>
+                <ul class="job-bullets">
+                    <li>Managed hands-on broiler and breeder production operations (Ross strains), overseeing flock management, biosecurity protocols, and production performance optimization across multiple facilities.</li>
+                    <li>Led planning and development activities for hatchery and poultry production projects in Morocco, Côte d'Ivoire, and the Middle East, from initial feasibility assessment through implementation planning.</li>
+                    <li>Conducted investment feasibility analyses for prospective poultry ventures, evaluating supply-demand gaps, regulatory constraints, infrastructure requirements, and projected returns to inform go/no-go decisions.</li>
+                    <li>Assessed market entry barriers and operational risks for emerging market investments, providing actionable recommendations on site selection, production system design, and regulatory compliance.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Education -->
+        <section class="section">
+            <h2 class="section-title">Education</h2>
+            <div class="education-item">
+                <div class="degree">Bachelor of Science in Agricultural Engineering – Animal Production Systems</div>
+                <div class="school">Iowa State University, Ames, Iowa, USA | Graduated May 2017</div>
+            </div>
+        </section>
+
+        <!-- Geographic Experience -->
+        <section class="section">
+            <h2 class="section-title">Geographic Experience</h2>
+            <div class="geo-section">
+                <span class="geo-region">Africa:</span>
+                <span class="geo-countries">Morocco, Algeria, Côte d'Ivoire, Burkina Faso, Kenya, Sudan, Senegal, Uganda, Tanzania, Egypt</span>
+            </div>
+            <div class="geo-section">
+                <span class="geo-region">Middle East:</span>
+                <span class="geo-countries">Saudi Arabia, United Arab Emirates, Kuwait, Bahrain, Jordan</span>
+            </div>
+        </section>
+
+        <!-- PAGE 2: CONSULTANT PROFILE -->
+        <div class="page-break">
+            <div class="profile-header">
+                <div class="profile-title">Consultant Profile</div>
+                <div class="profile-subtitle">Soufiane Talmoust — Agribusiness & Poultry Sector Specialist</div>
+            </div>
+
+            <!-- Availability -->
+            <div class="profile-box">
+                <div class="profile-box-title">Availability & Engagement Preferences</div>
+                <p><strong>Availability:</strong> Available for short-term international and national consultancy assignments (5–20 days per mission).</p>
+                <p><strong>Engagement Types:</strong> Technical assessments, rapid market diagnostics, value chain studies, feasibility analyses, policy advisory missions, private sector diagnostics, training and capacity building.</p>
+                <p><strong>Target Organizations:</strong> Open to engagements with FAO, UNDP, UNFPA, IFAD, World Bank, and related international development institutions and projects.</p>
+            </div>
+
+            <!-- Core Areas of Expertise -->
+            <div class="profile-box">
+                <div class="profile-box-title">Core Areas of Expertise</div>
+                <div class="expertise-grid">
+                    <div class="expertise-item">Poultry sector market analysis (Africa & Middle East)</div>
+                    <div class="expertise-item">Rapid livestock market diagnostics</div>
+                    <div class="expertise-item">Poultry value chain assessment</div>
+                    <div class="expertise-item">Bottleneck identification and resolution</div>
+                    <div class="expertise-item">Hatchery economics and DOC pricing analysis</div>
+                    <div class="expertise-item">Feed cost structure and price transmission</div>
+                    <div class="expertise-item">Agribusiness feasibility studies</div>
+                    <div class="expertise-item">Hatcheries, feed mills, breeders, broilers, layers</div>
+                    <div class="expertise-item">Private sector diagnostics for food security</div>
+                    <div class="expertise-item">Public-private interface and policy advisory</div>
+                    <div class="expertise-item">Investment risk assessment in emerging markets</div>
+                    <div class="expertise-item">Short-term international technical missions</div>
+                </div>
+            </div>
+
+            <!-- Production Systems Experience -->
+            <div class="profile-box">
+                <div class="profile-box-title">Production Systems Experience</div>
+                <p><strong>Broiler Production:</strong> Hands-on experience managing commercial broiler operations, including flock management, feed optimization, and production performance monitoring.</p>
+                <p><strong>Breeder Operations:</strong> Experience with Ross strain breeder production systems, including biosecurity protocols and fertility management.</p>
+                <p><strong>Hatchery Systems:</strong> Expertise in hatchery economics, incubation management, and day-old chick quality assessment and pricing.</p>
+                <p><strong>Feed Economics:</strong> Deep understanding of feed cost structures, ingredient sourcing, price transmission dynamics, and impact on production profitability.</p>
+            </div>
+
+            <!-- Languages -->
+            <div class="profile-box">
+                <div class="profile-box-title">Languages</div>
+                <div class="languages-grid">
+                    <div class="language-item">
+                        <span class="language-name">English:</span>
+                        <span class="language-level">Fluent (Professional Working Proficiency)</span>
+                    </div>
+                    <div class="language-item">
+                        <span class="language-name">French:</span>
+                        <span class="language-level">Fluent (Professional Working Proficiency)</span>
+                    </div>
+                    <div class="language-item">
+                        <span class="language-name">Arabic:</span>
+                        <span class="language-level">Fluent (Native)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Declarations -->
+            <div class="profile-box">
+                <div class="profile-box-title">Declarations</div>
+                <p>Independent consultant with no conflict of interest with public institutions.</p>
+                <p>Private sector activities can be disclosed upon request.</p>
+                <p>Available to provide references from previous technical engagements upon request.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
