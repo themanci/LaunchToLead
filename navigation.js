@@ -16,6 +16,7 @@
         'success-stories.html': { name: 'success-stories', displayName: 'Success Stories' },
         'about.html': { name: 'about', displayName: 'About' },
         'blog.html': { name: 'blog', displayName: 'Blog' },
+        'social.html': { name: 'social', displayName: 'Social' },
         'vault.html': { name: 'vault', displayName: 'The L² Vault' },
         'contact.html': { name: 'contact', displayName: 'Contact' }
     };
@@ -53,6 +54,109 @@
         return `${base} ${isActive ? active : inactive}`;
     }
     
+    // Social media links configuration with proper brand icons
+    const socialLinks = [
+        { 
+            name: 'Skool Community', 
+            url: 'https://www.skool.com/launch-to-lead-community-6905/about?ref=c9899dd4e0bf4fe9a69a6315529fab96', 
+            icon: '<svg class="w-5 h-5" viewBox="0 0 48 48" fill="currentColor"><path d="M24 4C12.954 4 4 12.954 4 24s8.954 20 20 20 20-8.954 20-20S35.046 4 24 4zm0 4c8.837 0 16 7.163 16 16 0 3.478-1.113 6.698-3 9.32V28c0-2.21-1.79-4-4-4h-4v-4c0-1.1-.9-2-2-2h-8v-4h4c1.1 0 2-.9 2-2v-4h4c2.21 0 4-1.79 4-4v-.78C38.28 5.903 42 14.09 42 24c0 8.837-7.163 16-16 16-1.38 0-2.72-.18-4-.5V36c0-1.1-.9-2-2-2l-6.36-6.36c-.15-.82-.24-1.66-.24-2.52 0-.62.08-1.22.21-1.8L20 30v2c0 2.21 1.79 4 4 4v3.5c-8.837 0-16-7.163-16-16S15.163 8 24 8z"/></svg>',
+            color: '#0066FF'
+        },
+        { 
+            name: 'LinkedIn', 
+            url: 'https://www.linkedin.com/company/110177288', 
+            icon: '<i data-lucide="linkedin" class="w-5 h-5"></i>',
+            color: '#0A66C2'
+        },
+        { 
+            name: 'YouTube', 
+            url: 'https://youtube.com/@launchtolead?si=ixd6oMJWhG2GhbNp', 
+            icon: '<i data-lucide="youtube" class="w-5 h-5"></i>',
+            color: '#FF0000'
+        },
+        { 
+            name: 'TikTok', 
+            url: 'https://www.tiktok.com/@launch.to.lead1?is_from_webapp=1&sender_device=pc', 
+            icon: '<svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/></svg>',
+            color: '#000000'
+        },
+        { 
+            name: 'Instagram', 
+            url: 'https://www.instagram.com/launch.to.lead/', 
+            icon: '<i data-lucide="instagram" class="w-5 h-5"></i>',
+            color: '#E4405F'
+        },
+        { 
+            name: 'X', 
+            url: 'https://x.com/LaunchToLead', 
+            icon: '<svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>',
+            color: '#000000'
+        },
+        { 
+            name: 'Facebook', 
+            url: 'https://www.facebook.com/profile.php?id=61585810773337', 
+            icon: '<i data-lucide="facebook" class="w-5 h-5"></i>',
+            color: '#1877F2'
+        }
+    ];
+
+    // Generate social dropdown HTML for desktop
+    function getSocialDropdownHTML() {
+        let dropdownItems = '';
+        socialLinks.forEach(link => {
+            dropdownItems += `
+                <a href="${link.url}" target="_blank" rel="noopener noreferrer" 
+                   class="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-700 hover:bg-emerald-50 hover:text-brand-primary transition">
+                    <span class="text-slate-500">${link.icon}</span>
+                    <span class="font-medium">${link.name}</span>
+                </a>`;
+        });
+        
+        return `
+            <div class="relative group" data-social-dropdown>
+                <button class="text-sm font-medium text-slate-500 hover:text-brand-secondary transition py-1.5 flex items-center gap-1">
+                    Social
+                    <svg class="w-3 h-3 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                    </svg>
+                </button>
+                <div class="absolute top-full left-0 mt-1 w-48 bg-white rounded-xl shadow-lg border border-slate-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                    <div class="py-2">
+                        ${dropdownItems}
+                    </div>
+                    <div class="border-t border-slate-100 p-2">
+                        <a href="social.html" class="flex items-center justify-center gap-2 px-3 py-2 text-xs font-semibold text-brand-primary bg-emerald-50 rounded-lg hover:bg-emerald-100 transition">
+                            <i data-lucide="layout-grid" class="w-3 h-3"></i>
+                            View All Platforms
+                        </a>
+                    </div>
+                </div>
+            </div>`;
+    }
+
+    // Generate mobile social section HTML
+    function getMobileSocialHTML() {
+        let items = '';
+        socialLinks.forEach(link => {
+            items += `
+                <a href="${link.url}" target="_blank" rel="noopener noreferrer" 
+                   class="flex items-center gap-3 px-3 py-2 text-sm text-slate-700 hover:bg-emerald-50 hover:text-brand-primary rounded-md transition">
+                    <span class="text-slate-500">${link.icon}</span>
+                    <span class="font-medium">${link.name}</span>
+                </a>`;
+        });
+        
+        return `
+            <div class="border-t border-slate-100 mt-2 pt-2">
+                <p class="px-3 py-1 text-xs font-bold text-slate-400 uppercase tracking-wider">Connect</p>
+                ${items}
+                <a href="social.html" class="flex items-center gap-2 mx-3 mt-2 px-3 py-2 text-sm font-semibold text-brand-primary bg-emerald-50 rounded-lg hover:bg-emerald-100 transition justify-center">
+                    <i data-lucide="layout-grid" class="w-4 h-4"></i>
+                    View All Platforms
+                </a>
+            </div>`;
+    }
+
     // Navigation HTML template
     const navigationHTML = `
 <!-- Sticky Navigation + Banner Wrapper -->
@@ -77,6 +181,7 @@
                 <a href="about.html" class="${getLinkClasses('about')}">About</a>
                 <a href="blog.html" class="${getLinkClasses('blog')}">Blog</a>
                 <a href="vault.html" class="${getLinkClasses('vault')}">The L² Vault</a>
+                ${getSocialDropdownHTML()}
                 <a href="contact.html" class="${getLinkClasses('contact', true)}">
                     Get Started
                 </a>
@@ -108,6 +213,7 @@
             <a href="blog.html" class="${getMobileLinkClasses('blog')}">Blog</a>
             <a href="vault.html" class="${getMobileLinkClasses('vault')}">The L² Vault</a>
             <a href="contact.html" class="${getMobileLinkClasses('contact', true)}">Get Started</a>
+            ${getMobileSocialHTML()}
         </div>
     </div>
 </nav>
