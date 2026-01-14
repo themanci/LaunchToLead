@@ -67,45 +67,66 @@
     </div><main>
 
 <!-- HERO - Pain-First -->
-<div id="top" class="relative pt-12 pb-10 bg-white overflow-hidden">
+<!-- HERO with Video Testimonial -->
+<div id="top" class="relative pt-12 pb-16 bg-gradient-to-b from-slate-900 to-slate-800 overflow-hidden">
     <!-- Dot Pattern -->
-    <div class="absolute inset-0 bg-dots opacity-20" style="background-size: 20px 20px;"></div>
+    <div class="absolute inset-0 bg-dots opacity-10" style="background-size: 20px 20px;"></div>
     
     <!-- Background blobs -->
-    <div class="absolute top-0 right-0 -mr-20 -mt-20 w-80 h-80 bg-teal-100 rounded-full blur-3xl opacity-60" aria-hidden="true"></div>
-    <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 bg-lime-100 rounded-full blur-3xl opacity-60" aria-hidden="true"></div>
+    <div class="absolute top-0 right-0 -mr-20 -mt-20 w-80 h-80 bg-teal-500 rounded-full blur-3xl opacity-20" aria-hidden="true"></div>
+    <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 bg-lime-500 rounded-full blur-3xl opacity-20" aria-hidden="true"></div>
 
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-        <p class="text-emerald-600 font-bold text-sm uppercase tracking-wider mb-3">Real Transformations, Real Results</p>
-        <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight mb-4">
-            From 200+ Applications & Zero Callbacks<br class="hidden md:block"> to <span class="text-emerald-600">Fortune 500 Offers</span>
-        </h1>
-        <p class="max-w-2xl mx-auto text-lg text-slate-600 font-medium leading-relaxed mb-6">
-            These engineers were exactly where you are. Here's how they escaped.
-        </p>
+    <div class="max-w-6xl mx-auto px-4 relative z-10">
         
-        <!-- Pain Validation Box -->
-        <div class="max-w-3xl mx-auto bg-slate-900 rounded-2xl p-6 text-left">
-            <p class="text-slate-300 text-sm mb-3">If any of these sound familiar, you're not alone:</p>
-            <div class="grid md:grid-cols-2 gap-3">
-                <div class="flex items-start gap-2">
-                    <i data-lucide="check" class="w-4 h-4 text-red-400 mt-0.5 flex-shrink-0"></i>
-                    <span class="text-slate-200 text-sm">Sent 50+ applications with nothing to show for it</span>
-                </div>
-                <div class="flex items-start gap-2">
-                    <i data-lucide="check" class="w-4 h-4 text-red-400 mt-0.5 flex-shrink-0"></i>
-                    <span class="text-slate-200 text-sm">Questioning if your $40,000 degree was worth it</span>
-                </div>
-                <div class="flex items-start gap-2">
-                    <i data-lucide="check" class="w-4 h-4 text-red-400 mt-0.5 flex-shrink-0"></i>
-                    <span class="text-slate-200 text-sm">Dreading "how's the job hunt going?" at family dinners</span>
-                </div>
-                <div class="flex items-start gap-2">
-                    <i data-lucide="check" class="w-4 h-4 text-red-400 mt-0.5 flex-shrink-0"></i>
-                    <span class="text-slate-200 text-sm">Worried AI will take entry-level jobs before you get one</span>
-                </div>
+        <!-- VIDEO FIRST - Full Width -->
+        <div id="video" class="mb-10 scroll-mt-24">
+            <div class="bg-slate-900 rounded-2xl overflow-hidden border-4 border-slate-700 shadow-2xl w-full" style="aspect-ratio: 16/9;">
+                <video controls controlslist="nofullscreen" disablepictureinpicture class="w-full h-full object-cover">
+                    <source src="video_scripts/karen_bickford_testimonial_compressed.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
             </div>
-            <p class="text-emerald-400 font-bold text-sm mt-4">Every engineer below felt the exact same way. Then they took action.</p>
+            
+            <!-- Trust Indicator Below Video -->
+            <div class="flex items-center justify-center gap-2 mt-4 text-sm text-slate-400">
+                <i data-lucide="play-circle" class="w-4 h-4 text-emerald-400"></i>
+                <span>Hear from Karen Bickford — Launch Path Graduate</span>
+            </div>
+        </div>
+        
+        <!-- TEXT CONTENT - Centered Below -->
+        <div class="text-center max-w-4xl mx-auto">
+            <p class="text-emerald-400 font-bold text-sm uppercase tracking-wider mb-3">Real Transformations, Real Results</p>
+            <h1 class="text-4xl md:text-5xl font-extrabold text-white tracking-tight mb-4">
+                From 200+ Applications & Zero Callbacks<br class="hidden md:block"> to <span class="text-emerald-400">Fortune 500 Offers</span>
+            </h1>
+            <p class="max-w-2xl mx-auto text-lg text-slate-300 font-medium leading-relaxed mb-8">
+                These engineers were exactly where you are. Here's how they escaped.
+            </p>
+            
+            <!-- Pain Validation Box -->
+            <div class="max-w-3xl mx-auto bg-slate-800/50 backdrop-blur rounded-2xl p-6 text-left border border-slate-700">
+                <p class="text-slate-400 text-sm mb-3">If any of these sound familiar, you're not alone:</p>
+                <div class="grid md:grid-cols-2 gap-3">
+                    <div class="flex items-start gap-2">
+                        <i data-lucide="check" class="w-4 h-4 text-red-400 mt-0.5 flex-shrink-0"></i>
+                        <span class="text-slate-200 text-sm">Sent 50+ applications with nothing to show for it</span>
+                    </div>
+                    <div class="flex items-start gap-2">
+                        <i data-lucide="check" class="w-4 h-4 text-red-400 mt-0.5 flex-shrink-0"></i>
+                        <span class="text-slate-200 text-sm">Questioning if your $40,000 degree was worth it</span>
+                    </div>
+                    <div class="flex items-start gap-2">
+                        <i data-lucide="check" class="w-4 h-4 text-red-400 mt-0.5 flex-shrink-0"></i>
+                        <span class="text-slate-200 text-sm">Dreading "how's the job hunt going?" at family dinners</span>
+                    </div>
+                    <div class="flex items-start gap-2">
+                        <i data-lucide="check" class="w-4 h-4 text-red-400 mt-0.5 flex-shrink-0"></i>
+                        <span class="text-slate-200 text-sm">Worried AI will take entry-level jobs before you get one</span>
+                    </div>
+                </div>
+                <p class="text-emerald-400 font-bold text-sm mt-4">Every engineer below felt the exact same way. Then they took action.</p>
+            </div>
         </div>
     </div>
 </div>
