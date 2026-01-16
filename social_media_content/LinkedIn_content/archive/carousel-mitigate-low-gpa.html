@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedIn Carousel - Mitigate a Low GPA</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: #f3f4f6;
+            padding: 20px;
+        }
+
+        .slide {
+            width: 1080px;
+            height: 1080px;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            margin: 0 auto 40px auto;
+            padding: 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            page-break-after: always;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slide::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(163, 230, 53, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .slide-number {
+            position: absolute;
+            bottom: 40px;
+            right: 60px;
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.4);
+            font-weight: 500;
+        }
+
+        .brand {
+            position: absolute;
+            bottom: 40px;
+            left: 60px;
+            font-size: 18px;
+            color: #a3e635;
+            font-weight: 600;
+        }
+
+        /* Slide 1 - Title */
+        .slide-1 .eyebrow {
+            font-size: 28px;
+            font-weight: 600;
+            color: #a3e635;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 40px;
+        }
+
+        .slide-1 .title {
+            font-size: 72px;
+            font-weight: 800;
+            color: white;
+            line-height: 1.1;
+            margin-bottom: 50px;
+        }
+
+        .slide-1 .title .highlight {
+            color: #a3e635;
+        }
+
+        .slide-1 .subtitle {
+            font-size: 32px;
+            color: rgba(255, 255, 255, 0.7);
+            font-weight: 500;
+            line-height: 1.4;
+        }
+
+        /* Slide 2 - The Reality */
+        .slide-2 .main-text {
+            font-size: 52px;
+            font-weight: 700;
+            color: white;
+            line-height: 1.3;
+            margin-bottom: 50px;
+        }
+
+        .slide-2 .point-row {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 35px;
+        }
+
+        .slide-2 .point-icon {
+            font-size: 40px;
+            margin-right: 25px;
+            flex-shrink: 0;
+        }
+
+        .slide-2 .point-content {
+            flex: 1;
+        }
+
+        .slide-2 .point-title {
+            font-size: 32px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 8px;
+        }
+
+        .slide-2 .point-title .red {
+            color: #f87171;
+        }
+
+        .slide-2 .point-title .green {
+            color: #a3e635;
+        }
+
+        .slide-2 .point-desc {
+            font-size: 24px;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Slide 3 - The Transition Story */
+        .slide-3 .label {
+            display: inline-block;
+            background: rgba(251, 191, 36, 0.2);
+            color: #fbbf24;
+            font-size: 20px;
+            font-weight: 700;
+            padding: 12px 24px;
+            border-radius: 50px;
+            margin-bottom: 40px;
+        }
+
+        .slide-3 .main-text {
+            font-size: 52px;
+            font-weight: 700;
+            color: white;
+            line-height: 1.3;
+            margin-bottom: 50px;
+        }
+
+        .slide-3 .main-text .highlight {
+            color: #fbbf24;
+        }
+
+        .slide-3 .reasons-box {
+            background: rgba(251, 191, 36, 0.08);
+            border: 2px solid rgba(251, 191, 36, 0.3);
+            border-radius: 20px;
+            padding: 40px;
+        }
+
+        .slide-3 .reason {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .slide-3 .reason:last-child {
+            margin-bottom: 0;
+        }
+
+        .slide-3 .reason-icon {
+            font-size: 28px;
+            margin-right: 20px;
+        }
+
+        .slide-3 .reason-text {
+            font-size: 28px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* Slide 4 - Growth Trajectory */
+        .slide-4 .main-text {
+            font-size: 52px;
+            font-weight: 700;
+            color: white;
+            line-height: 1.3;
+            margin-bottom: 50px;
+        }
+
+        .slide-4 .trajectory-box {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 50px;
+            margin-bottom: 40px;
+        }
+
+        .slide-4 .gpa-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+
+        .slide-4 .gpa-item {
+            text-align: center;
+        }
+
+        .slide-4 .gpa-label {
+            font-size: 22px;
+            color: rgba(255, 255, 255, 0.5);
+            margin-bottom: 10px;
+        }
+
+        .slide-4 .gpa-value {
+            font-size: 64px;
+            font-weight: 800;
+        }
+
+        .slide-4 .gpa-value.bad {
+            color: #f87171;
+        }
+
+        .slide-4 .gpa-value.good {
+            color: #a3e635;
+        }
+
+        .slide-4 .arrow-container {
+            flex: 1;
+            text-align: center;
+        }
+
+        .slide-4 .arrow {
+            font-size: 48px;
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        .slide-4 .summary {
+            text-align: center;
+            font-size: 28px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .slide-4 .summary .highlight {
+            color: #a3e635;
+            font-weight: 700;
+        }
+
+        .slide-4 .quote-box {
+            background: rgba(163, 230, 53, 0.08);
+            border-left: 4px solid #a3e635;
+            padding: 25px 35px;
+            border-radius: 0 16px 16px 0;
+        }
+
+        .slide-4 .quote-text {
+            font-size: 26px;
+            color: rgba(255, 255, 255, 0.8);
+            font-style: italic;
+        }
+
+        /* Slide 5 - Core Engineering GPA */
+        .slide-5 .label {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.2);
+            color: #a78bfa;
+            font-size: 20px;
+            font-weight: 700;
+            padding: 12px 24px;
+            border-radius: 50px;
+            margin-bottom: 40px;
+        }
+
+        .slide-5 .main-text {
+            font-size: 52px;
+            font-weight: 700;
+            color: white;
+            line-height: 1.3;
+            margin-bottom: 50px;
+        }
+
+        .slide-5 .comparison-box {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 50px;
+            margin-bottom: 40px;
+        }
+
+        .slide-5 .compare-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        .slide-5 .compare-item {
+            text-align: center;
+            padding: 30px;
+            border-radius: 16px;
+        }
+
+        .slide-5 .compare-item.bad {
+            background: rgba(248, 113, 113, 0.1);
+            border: 2px solid rgba(248, 113, 113, 0.3);
+        }
+
+        .slide-5 .compare-item.good {
+            background: rgba(163, 230, 53, 0.1);
+            border: 2px solid rgba(163, 230, 53, 0.5);
+        }
+
+        .slide-5 .compare-label {
+            font-size: 20px;
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 10px;
+        }
+
+        .slide-5 .compare-value {
+            font-size: 56px;
+            font-weight: 800;
+        }
+
+        .slide-5 .compare-value.bad {
+            color: #f87171;
+        }
+
+        .slide-5 .compare-value.good {
+            color: #a3e635;
+        }
+
+        .slide-5 .compare-desc {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.5);
+            margin-top: 10px;
+        }
+
+        .slide-5 .arrow {
+            font-size: 48px;
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        .slide-5 .tip {
+            font-size: 26px;
+            color: rgba(255, 255, 255, 0.7);
+            font-style: italic;
+            text-align: center;
+        }
+
+        /* Slide 6 - Highlight Specific Wins */
+        .slide-6 .label {
+            display: inline-block;
+            background: rgba(163, 230, 53, 0.2);
+            color: #a3e635;
+            font-size: 20px;
+            font-weight: 700;
+            padding: 12px 24px;
+            border-radius: 50px;
+            margin-bottom: 40px;
+        }
+
+        .slide-6 .main-text {
+            font-size: 52px;
+            font-weight: 700;
+            color: white;
+            line-height: 1.3;
+            margin-bottom: 50px;
+        }
+
+        .slide-6 .wins-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .slide-6 .win-card {
+            background: rgba(163, 230, 53, 0.08);
+            border: 2px solid rgba(163, 230, 53, 0.2);
+            border-radius: 16px;
+            padding: 30px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .slide-6 .win-icon {
+            font-size: 36px;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+
+        .slide-6 .win-text {
+            font-size: 26px;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.4;
+        }
+
+        /* Slide 7 - Independent Projects */
+        .slide-7 .label {
+            display: inline-block;
+            background: rgba(56, 189, 248, 0.2);
+            color: #38bdf8;
+            font-size: 20px;
+            font-weight: 700;
+            padding: 12px 24px;
+            border-radius: 50px;
+            margin-bottom: 40px;
+        }
+
+        .slide-7 .main-text {
+            font-size: 52px;
+            font-weight: 700;
+            color: white;
+            line-height: 1.3;
+            margin-bottom: 20px;
+        }
+
+        .slide-7 .subtitle {
+            font-size: 26px;
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 50px;
+        }
+
+        .slide-7 .projects-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .slide-7 .project-card {
+            background: rgba(56, 189, 248, 0.08);
+            border: 2px solid rgba(56, 189, 248, 0.2);
+            border-radius: 16px;
+            padding: 30px;
+        }
+
+        .slide-7 .project-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .slide-7 .project-title {
+            font-size: 28px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .slide-7 .project-desc {
+            font-size: 22px;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Slide 8 - Get in Front of Humans */
+        .slide-8 .label {
+            display: inline-block;
+            background: rgba(251, 146, 60, 0.2);
+            color: #fb923c;
+            font-size: 20px;
+            font-weight: 700;
+            padding: 12px 24px;
+            border-radius: 50px;
+            margin-bottom: 40px;
+        }
+
+        .slide-8 .main-text {
+            font-size: 52px;
+            font-weight: 700;
+            color: white;
+            line-height: 1.3;
+            margin-bottom: 20px;
+        }
+
+        .slide-8 .subtitle {
+            font-size: 26px;
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 50px;
+        }
+
+        .slide-8 .method-row {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 30px;
+            background: rgba(251, 146, 60, 0.08);
+            padding: 30px;
+            border-radius: 16px;
+            border-left: 4px solid #fb923c;
+        }
+
+        .slide-8 .method-icon {
+            font-size: 36px;
+            margin-right: 25px;
+            flex-shrink: 0;
+        }
+
+        .slide-8 .method-content {
+            flex: 1;
+        }
+
+        .slide-8 .method-title {
+            font-size: 28px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 8px;
+        }
+
+        .slide-8 .method-desc {
+            font-size: 22px;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Slide 9 - Interview Script */
+        .slide-9 .main-text {
+            font-size: 48px;
+            font-weight: 700;
+            color: white;
+            line-height: 1.3;
+            margin-bottom: 40px;
+        }
+
+        .slide-9 .script-box {
+            background: rgba(163, 230, 53, 0.08);
+            border: 2px solid rgba(163, 230, 53, 0.3);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 40px;
+        }
+
+        .slide-9 .script-text {
+            font-size: 26px;
+            color: rgba(255, 255, 255, 0.85);
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .slide-9 .script-text:last-child {
+            margin-bottom: 0;
+        }
+
+        .slide-9 .steps-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .slide-9 .step {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px 25px;
+            border-radius: 12px;
+            font-size: 20px;
+            font-weight: 600;
+            color: white;
+        }
+
+        .slide-9 .step-arrow {
+            font-size: 24px;
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        /* Slide 10 - Summary */
+        .slide-10 .main-text {
+            font-size: 52px;
+            font-weight: 700;
+            color: white;
+            line-height: 1.3;
+            margin-bottom: 50px;
+        }
+
+        .slide-10 .summary-list {
+            margin-bottom: 50px;
+        }
+
+        .slide-10 .summary-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 25px 30px;
+            border-radius: 12px;
+        }
+
+        .slide-10 .check {
+            font-size: 28px;
+            color: #a3e635;
+            margin-right: 20px;
+        }
+
+        .slide-10 .summary-text {
+            font-size: 26px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .slide-10 .summary-text .highlight {
+            color: #a3e635;
+            font-weight: 700;
+        }
+
+        .slide-10 .honest-note {
+            font-size: 26px;
+            color: rgba(255, 255, 255, 0.6);
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .slide-10 .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .slide-10 .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 22px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        @media print {
+            @page {
+                size: 1080px 1080px;
+                margin: 0;
+            }
+            body {
+                padding: 0;
+                margin: 0;
+                background: white;
+            }
+            .slide {
+                width: 1080px !important;
+                height: 1080px !important;
+                margin: 0 !important;
+                padding: 80px !important;
+                page-break-after: always !important;
+                page-break-inside: avoid !important;
+                break-after: page !important;
+                break-inside: avoid !important;
+                overflow: hidden !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            .slide:last-child {
+                page-break-after: avoid !important;
+                break-after: avoid !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Slide 1: Title -->
+    <div class="slide slide-1">
+        <p class="eyebrow">Interview Strategy</p>
+        <h1 class="title">Your GPA Is <span class="highlight">Lower</span><br>Than You'd Like</h1>
+        <p class="subtitle">Here's how to mitigate it honestly.</p>
+        <div class="brand">LaunchToLead</div>
+        <div class="slide-number">1/10</div>
+    </div>
+
+    <!-- Slide 2: The Reality -->
+    <div class="slide slide-2">
+        <h2 class="main-text">Let's Be Honest</h2>
+        <div class="point-row">
+            <span class="point-icon">🚫</span>
+            <div class="point-content">
+                <p class="point-title">Some companies have <span class="red">hard cutoffs</span></p>
+                <p class="point-desc">No amount of projects or networking will change that.</p>
+            </div>
+        </div>
+        <div class="point-row">
+            <span class="point-icon">✅</span>
+            <div class="point-content">
+                <p class="point-title">But <span class="green">many companies don't</span></p>
+                <p class="point-desc">And for those, you have options.</p>
+            </div>
+        </div>
+        <div class="point-row">
+            <span class="point-icon">🎯</span>
+            <div class="point-content">
+                <p class="point-title">The goal: <span class="green">mitigation</span>, not miracles</p>
+                <p class="point-desc">Show your GPA doesn't tell your full story.</p>
+            </div>
+        </div>
+        <div class="brand">LaunchToLead</div>
+        <div class="slide-number">2/10</div>
+    </div>
+
+    <!-- Slide 3: The Transition Story -->
+    <div class="slide slide-3">
+        <span class="label">STRATEGY #1</span>
+        <h2 class="main-text">Tell the <span class="highlight">Transition Story</span></h2>
+        <div class="reasons-box">
+            <div class="reason">
+                <span class="reason-icon">📚</span>
+                <span class="reason-text">College requires completely new study methods</span>
+            </div>
+            <div class="reason">
+                <span class="reason-icon">🏠</span>
+                <span class="reason-text">Living independently for the first time</span>
+            </div>
+            <div class="reason">
+                <span class="reason-icon">⏰</span>
+                <span class="reason-text">No one forcing you to go to class</span>
+            </div>
+            <div class="reason">
+                <span class="reason-icon">🔄</span>
+                <span class="reason-text">Early GPA damage is hard to recover from</span>
+            </div>
+        </div>
+        <div class="brand">LaunchToLead</div>
+        <div class="slide-number">3/10</div>
+    </div>
+
+    <!-- Slide 4: Growth Trajectory -->
+    <div class="slide slide-4">
+        <h2 class="main-text">Show Your Growth Trajectory</h2>
+        <div class="trajectory-box">
+            <div class="gpa-row">
+                <div class="gpa-item">
+                    <p class="gpa-label">Freshman Year</p>
+                    <p class="gpa-value bad">2.1</p>
+                </div>
+                <div class="arrow-container">
+                    <span class="arrow">→ 📈 →</span>
+                </div>
+                <div class="gpa-item">
+                    <p class="gpa-label">Senior Year</p>
+                    <p class="gpa-value good">3.5</p>
+                </div>
+            </div>
+            <p class="summary">Cumulative: 2.7 → But last 4 semesters: <span class="highlight">3.4 average</span></p>
+        </div>
+        <div class="quote-box">
+            <p class="quote-text">"My cumulative is 2.7, but my last two years averaged 3.4 as I learned how to study effectively."</p>
+        </div>
+        <div class="brand">LaunchToLead</div>
+        <div class="slide-number">4/10</div>
+    </div>
+
+    <!-- Slide 5: Core Engineering GPA -->
+    <div class="slide slide-5">
+        <span class="label">STRATEGY #2</span>
+        <h2 class="main-text">Use Your Core Engineering GPA</h2>
+        <div class="comparison-box">
+            <div class="compare-row">
+                <div class="compare-item bad">
+                    <p class="compare-label">Overall GPA</p>
+                    <p class="compare-value bad">2.8</p>
+                    <p class="compare-desc">(dragged down by gen eds)</p>
+                </div>
+                <span class="arrow">→</span>
+                <div class="compare-item good">
+                    <p class="compare-label">Engineering GPA</p>
+                    <p class="compare-value good">3.3</p>
+                    <p class="compare-desc">(major courses only)</p>
+                </div>
+            </div>
+        </div>
+        <p class="tip">"Engineering GPA: 3.3/4.0" is 100% legitimate on your resume.</p>
+        <div class="brand">LaunchToLead</div>
+        <div class="slide-number">5/10</div>
+    </div>
+
+    <!-- Slide 6: Highlight Specific Wins -->
+    <div class="slide slide-6">
+        <span class="label">STRATEGY #3</span>
+        <h2 class="main-text">Highlight Specific Wins</h2>
+        <div class="wins-grid">
+            <div class="win-card">
+                <span class="win-icon">🅰️</span>
+                <span class="win-text">A's in tough courses: Thermo, Controls, Machine Design</span>
+            </div>
+            <div class="win-card">
+                <span class="win-icon">🏆</span>
+                <span class="win-text">High scores on capstone or senior design projects</span>
+            </div>
+            <div class="win-card">
+                <span class="win-icon">📊</span>
+                <span class="win-text">Lab reports that exceeded expectations</span>
+            </div>
+            <div class="win-card">
+                <span class="win-icon">🎓</span>
+                <span class="win-text">Dean's List for specific semesters</span>
+            </div>
+        </div>
+        <div class="brand">LaunchToLead</div>
+        <div class="slide-number">6/10</div>
+    </div>
+
+    <!-- Slide 7: Independent Projects -->
+    <div class="slide slide-7">
+        <span class="label">STRATEGY #4</span>
+        <h2 class="main-text">Show Independent Impact</h2>
+        <p class="subtitle">Projects outside of class demonstrate skills your transcript doesn't capture:</p>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-icon">🔧</div>
+                <p class="project-title">Personal Projects</p>
+                <p class="project-desc">Built because you wanted to, not for a grade</p>
+            </div>
+            <div class="project-card">
+                <div class="project-icon">🌐</div>
+                <p class="project-title">Open Source</p>
+                <p class="project-desc">Contributions that got merged</p>
+            </div>
+            <div class="project-card">
+                <div class="project-icon">🏅</div>
+                <p class="project-title">Hackathons</p>
+                <p class="project-desc">48-hour builds that worked</p>
+            </div>
+            <div class="project-card">
+                <div class="project-icon">💡</div>
+                <p class="project-title">Problem Solving</p>
+                <p class="project-desc">Things you built to solve real problems</p>
+            </div>
+        </div>
+        <div class="brand">LaunchToLead</div>
+        <div class="slide-number">7/10</div>
+    </div>
+
+    <!-- Slide 8: Get in Front of Humans -->
+    <div class="slide slide-8">
+        <span class="label">STRATEGY #5</span>
+        <h2 class="main-text">Get in Front of Humans</h2>
+        <p class="subtitle">ATS systems filter automatically. Humans can see potential.</p>
+        <div class="method-row">
+            <span class="method-icon">🤝</span>
+            <div class="method-content">
+                <p class="method-title">Employee Referrals</p>
+                <p class="method-desc">Often bypass GPA filters entirely</p>
+            </div>
+        </div>
+        <div class="method-row">
+            <span class="method-icon">🎪</span>
+            <div class="method-content">
+                <p class="method-title">Career Fairs</p>
+                <p class="method-desc">Face-to-face impressions matter more than numbers</p>
+            </div>
+        </div>
+        <div class="method-row">
+            <span class="method-icon">💬</span>
+            <div class="method-content">
+                <p class="method-title">LinkedIn Outreach</p>
+                <p class="method-desc">Message engineers directly with genuine interest</p>
+            </div>
+        </div>
+        <div class="brand">LaunchToLead</div>
+        <div class="slide-number">8/10</div>
+    </div>
+
+    <!-- Slide 9: Interview Script -->
+    <div class="slide slide-9">
+        <h2 class="main-text">If They Ask About Your GPA...</h2>
+        <div class="script-box">
+            <p class="script-text">"My freshman year was a struggle adjusting to college-level work and living on my own for the first time.</p>
+            <p class="script-text">Once I figured out how to study effectively, my last four semesters averaged a 3.4.</p>
+            <p class="script-text">I also earned A's in [Thermodynamics / Controls] and built a [personal project] outside of class."</p>
+        </div>
+        <div class="steps-row">
+            <span class="step">1. Own it briefly</span>
+            <span class="step-arrow">→</span>
+            <span class="step">2. Show growth</span>
+            <span class="step-arrow">→</span>
+            <span class="step">3. Redirect to wins</span>
+        </div>
+        <div class="brand">LaunchToLead</div>
+        <div class="slide-number">9/10</div>
+    </div>
+
+    <!-- Slide 10: Summary -->
+    <div class="slide slide-10">
+        <h2 class="main-text">The Bottom Line</h2>
+        <div class="summary-list">
+            <div class="summary-item">
+                <span class="check">✓</span>
+                <span class="summary-text">Tell the story of how you <span class="highlight">learned and improved</span></span>
+            </div>
+            <div class="summary-item">
+                <span class="check">✓</span>
+                <span class="summary-text">Use your <span class="highlight">core engineering GPA</span> if it's higher</span>
+            </div>
+            <div class="summary-item">
+                <span class="check">✓</span>
+                <span class="summary-text">Highlight <span class="highlight">specific wins</span>—tough classes, great projects</span>
+            </div>
+            <div class="summary-item">
+                <span class="check">✓</span>
+                <span class="summary-text">Get in front of <span class="highlight">humans</span>, not just ATS bots</span>
+            </div>
+        </div>
+        <p class="honest-note">Will this work every time? No.<br>But it works more often than you'd think.</p>
+        <div class="cta-buttons">
+            <span class="cta-btn">♻️ Repost</span>
+            <span class="cta-btn">💾 Save</span>
+            <span class="cta-btn">🔔 Follow</span>
+        </div>
+        <div class="brand">LaunchToLead</div>
+        <div class="slide-number">10/10</div>
+    </div>
+
+</body>
+</html>

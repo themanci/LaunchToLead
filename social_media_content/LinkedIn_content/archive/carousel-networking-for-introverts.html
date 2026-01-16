@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedIn Carousel - Networking for Introverts</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: #f3f4f6;
+            padding: 20px;
+        }
+
+        .slide {
+            width: 1080px;
+            height: 1080px;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            margin: 0 auto 40px auto;
+            padding: 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            page-break-after: always;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slide::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(163, 230, 53, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .slide-number {
+            position: absolute;
+            bottom: 40px;
+            right: 60px;
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.4);
+            font-weight: 500;
+        }
+
+        .brand {
+            position: absolute;
+            bottom: 40px;
+            left: 60px;
+            font-size: 18px;
+            color: #a3e635;
+            font-weight: 600;
+        }
+
+        /* Slide 1 - Title */
+        .slide-1 .eyebrow {
+            font-size: 28px;
+            font-weight: 600;
+            color: #a3e635;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 40px;
+        }
+
+        .slide-1 .title {
+            font-size: 72px;
+            font-weight: 800;
+            color: white;
+            line-height: 1.1;
+            margin-bottom: 50px;
+        }
+
+        .slide-1 .highlight {
+            color: #a3e635;
+        }
+
+        .slide-1 .subtitle {
+            font-size: 32px;
+            color: rgba(255, 255, 255, 0.7);
+            font-weight: 500;
+            line-height: 1.4;
+        }
+
+        /* Slide 2 - The Problem */
+        .slide-2 {
+            text-align: center;
+        }
+
+        .slide-2 .context {
+            font-size: 28px;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 50px;
+        }
+
+        .slide-2 .pain-points {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .slide-2 .pain-item {
+            background: rgba(248, 113, 113, 0.1);
+            border: 2px solid rgba(248, 113, 113, 0.3);
+            border-radius: 16px;
+            padding: 30px 40px;
+            font-size: 32px;
+            color: rgba(255, 255, 255, 0.9);
+            text-align: left;
+        }
+
+        .slide-2 .pain-item .icon {
+            color: #f87171;
+            margin-right: 15px;
+        }
+
+        /* Slide 3 - The Truth */
+        .slide-3 {
+            text-align: center;
+        }
+
+        .slide-3 .small-text {
+            font-size: 26px;
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 40px;
+        }
+
+        .slide-3 .main-text {
+            font-size: 52px;
+            font-weight: 800;
+            color: white;
+            line-height: 1.3;
+            margin-bottom: 50px;
+        }
+
+        .slide-3 .main-text .highlight {
+            color: #a3e635;
+        }
+
+        .slide-3 .subtext {
+            font-size: 32px;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.5;
+        }
+
+        /* Slide 4 - Tip 1 */
+        .slide-4 .section-label {
+            display: inline-block;
+            background: rgba(163, 230, 53, 0.2);
+            border: 1px solid rgba(163, 230, 53, 0.4);
+            color: #a3e635;
+            font-size: 20px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            padding: 10px 24px;
+            border-radius: 50px;
+            margin-bottom: 40px;
+        }
+
+        .slide-4 .heading {
+            font-size: 52px;
+            font-weight: 800;
+            color: white;
+            line-height: 1.2;
+            margin-bottom: 50px;
+        }
+
+        .slide-4 .heading .highlight {
+            color: #a3e635;
+        }
+
+        .slide-4 .content {
+            font-size: 32px;
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.6;
+            margin-bottom: 40px;
+        }
+
+        .slide-4 .highlight-box {
+            background: rgba(163, 230, 53, 0.1);
+            border: 2px solid rgba(163, 230, 53, 0.3);
+            border-radius: 20px;
+            padding: 35px;
+        }
+
+        .slide-4 .highlight-text {
+            font-size: 30px;
+            font-weight: 600;
+            color: #a3e635;
+            line-height: 1.4;
+            text-align: center;
+        }
+
+        /* Slide 5 - Tip 2 Header */
+        .slide-5 .section-label {
+            display: inline-block;
+            background: rgba(56, 189, 248, 0.2);
+            border: 1px solid rgba(56, 189, 248, 0.4);
+            color: #38bdf8;
+            font-size: 20px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            padding: 10px 24px;
+            border-radius: 50px;
+            margin-bottom: 40px;
+        }
+
+        .slide-5 .heading {
+            font-size: 52px;
+            font-weight: 800;
+            color: white;
+            line-height: 1.2;
+            margin-bottom: 50px;
+        }
+
+        .slide-5 .heading .highlight {
+            color: #38bdf8;
+        }
+
+        .slide-5 .comparison {
+            display: flex;
+            gap: 30px;
+        }
+
+        .slide-5 .compare-box {
+            flex: 1;
+            padding: 35px;
+            border-radius: 16px;
+            text-align: center;
+        }
+
+        .slide-5 .wrong {
+            background: rgba(248, 113, 113, 0.15);
+            border: 2px solid rgba(248, 113, 113, 0.3);
+        }
+
+        .slide-5 .right {
+            background: rgba(56, 189, 248, 0.15);
+            border: 2px solid rgba(56, 189, 248, 0.3);
+        }
+
+        .slide-5 .compare-label {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .slide-5 .wrong .compare-label {
+            color: #f87171;
+        }
+
+        .slide-5 .right .compare-label {
+            color: #38bdf8;
+        }
+
+        .slide-5 .compare-text {
+            font-size: 26px;
+            font-weight: 600;
+            color: white;
+            line-height: 1.4;
+        }
+
+        /* Slide 6 - Goal Examples */
+        .slide-6 .section-label {
+            display: inline-block;
+            background: rgba(56, 189, 248, 0.2);
+            border: 1px solid rgba(56, 189, 248, 0.4);
+            color: #38bdf8;
+            font-size: 20px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            padding: 10px 24px;
+            border-radius: 50px;
+            margin-bottom: 40px;
+        }
+
+        .slide-6 .heading {
+            font-size: 42px;
+            font-weight: 800;
+            color: white;
+            line-height: 1.2;
+            margin-bottom: 40px;
+        }
+
+        .slide-6 .list {
+            display: flex;
+            flex-direction: column;
+            gap: 22px;
+        }
+
+        .slide-6 .list-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            font-size: 26px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .slide-6 .list-icon {
+            width: 45px;
+            height: 45px;
+            background: rgba(56, 189, 248, 0.2);
+            border: 2px solid rgba(56, 189, 248, 0.4);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #38bdf8;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        /* Slide 7 - Tip 3 */
+        .slide-7 .section-label {
+            display: inline-block;
+            background: rgba(168, 85, 247, 0.2);
+            border: 1px solid rgba(168, 85, 247, 0.4);
+            color: #a855f7;
+            font-size: 20px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            padding: 10px 24px;
+            border-radius: 50px;
+            margin-bottom: 40px;
+        }
+
+        .slide-7 .heading {
+            font-size: 52px;
+            font-weight: 800;
+            color: white;
+            line-height: 1.2;
+            margin-bottom: 50px;
+        }
+
+        .slide-7 .heading .highlight {
+            color: #a855f7;
+        }
+
+        .slide-7 .content {
+            font-size: 32px;
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.6;
+            margin-bottom: 40px;
+        }
+
+        .slide-7 .examples {
+            display: flex;
+            gap: 25px;
+        }
+
+        .slide-7 .example-box {
+            flex: 1;
+            background: rgba(168, 85, 247, 0.1);
+            border: 2px solid rgba(168, 85, 247, 0.3);
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .slide-7 .example-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .slide-7 .example-text {
+            font-size: 24px;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.4;
+        }
+
+        /* Slide 8 - Reality Check */
+        .slide-8 {
+            text-align: center;
+        }
+
+        .slide-8 .eyebrow {
+            font-size: 24px;
+            font-weight: 600;
+            color: #f87171;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 50px;
+        }
+
+        .slide-8 .main-text {
+            font-size: 44px;
+            font-weight: 700;
+            color: white;
+            line-height: 1.4;
+            margin-bottom: 50px;
+        }
+
+        .slide-8 .main-text .highlight {
+            color: #f87171;
+        }
+
+        .slide-8 .question-box {
+            background: rgba(248, 113, 113, 0.1);
+            border: 2px solid rgba(248, 113, 113, 0.3);
+            border-radius: 20px;
+            padding: 40px;
+        }
+
+        .slide-8 .question {
+            font-size: 36px;
+            font-weight: 700;
+            color: #f87171;
+            font-style: italic;
+        }
+
+        /* Slide 9 - Summary */
+        .slide-9 .heading {
+            font-size: 48px;
+            font-weight: 800;
+            color: white;
+            line-height: 1.2;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        .slide-9 .heading .highlight {
+            color: #a3e635;
+        }
+
+        .slide-9 .tips-recap {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .slide-9 .tip-box {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 30px;
+        }
+
+        .slide-9 .tip-number {
+            width: 60px;
+            height: 60px;
+            background: #a3e635;
+            color: #0f172a;
+            font-size: 28px;
+            font-weight: 800;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .slide-9 .tip-text {
+            font-size: 28px;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 600;
+        }
+
+        /* Slide 10 - CTA */
+        .slide-10 {
+            text-align: center;
+        }
+
+        .slide-10 .heading {
+            font-size: 52px;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 40px;
+            line-height: 1.2;
+        }
+
+        .slide-10 .highlight {
+            color: #a3e635;
+        }
+
+        .slide-10 .summary {
+            font-size: 30px;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+            margin-bottom: 50px;
+        }
+
+        .slide-10 .cta-question {
+            font-size: 34px;
+            font-weight: 700;
+            color: #a3e635;
+            margin-bottom: 40px;
+        }
+
+        .slide-10 .action {
+            display: inline-block;
+            background: #a3e635;
+            color: #0f172a;
+            font-size: 28px;
+            font-weight: 700;
+            padding: 24px 48px;
+            border-radius: 12px;
+        }
+
+        @page {
+            size: 1080px 1080px;
+            margin: 0;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+                margin: 0;
+            }
+
+            .slide {
+                margin: 0;
+                box-shadow: none;
+                page-break-after: always;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+                width: 100vw;
+                height: 100vh;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- SLIDE 1: Title -->
+    <div class="slide slide-1">
+        <div class="eyebrow">Career Advice</div>
+        <h1 class="title">
+            <span class="highlight">Networking</span><br>
+            for<br>
+            <span class="highlight">Introverts</span>
+        </h1>
+        <p class="subtitle">
+            3 tips that actually work.
+        </p>
+        <div class="slide-number">1/10</div>
+        <div class="brand">Launch To Lead</div>
+    </div>
+
+    <!-- SLIDE 2: The Problem -->
+    <div class="slide slide-2">
+        <p class="context">Does this sound familiar?</p>
+        <div class="pain-points">
+            <div class="pain-item">
+                <span class="icon">😰</span> Career fairs make you sweat bullets
+            </div>
+            <div class="pain-item">
+                <span class="icon">😰</span> Networking events make you want to hide
+            </div>
+            <div class="pain-item">
+                <span class="icon">😰</span> Talking about yourself feels painful
+            </div>
+        </div>
+        <div class="slide-number">2/10</div>
+        <div class="brand">Launch To Lead</div>
+    </div>
+
+    <!-- SLIDE 3: The Truth -->
+    <div class="slide slide-3">
+        <p class="small-text">Here's the truth:</p>
+        <p class="main-text">
+            You need to train that little<br>
+            <span class="highlight">extrovert</span> inside you<br>
+            to come out from time to time.
+        </p>
+        <p class="subtext">
+            I was super introverted through high school<br>
+            and early college. Until I decided enough was enough.
+        </p>
+        <div class="slide-number">3/10</div>
+        <div class="brand">Launch To Lead</div>
+    </div>
+
+    <!-- SLIDE 4: Tip 1 -->
+    <div class="slide slide-4">
+        <div class="section-label">Tip #1</div>
+        <h2 class="heading">
+            Practice makes<br>
+            <span class="highlight">progress.</span>
+        </h2>
+        <p class="content">
+            You won't magically become an extrovert overnight. That's not the goal.
+        </p>
+        <div class="highlight-box">
+            <p class="highlight-text">
+                The only way to get better at talking to<br>
+                people you find intimidating?<br><br>
+                Do it anyway. Repeatedly.
+            </p>
+        </div>
+        <div class="slide-number">4/10</div>
+        <div class="brand">Launch To Lead</div>
+    </div>
+
+    <!-- SLIDE 5: Tip 2 Header -->
+    <div class="slide slide-5">
+        <div class="section-label">Tip #2</div>
+        <h2 class="heading">
+            Set <span class="highlight">specific</span> goals.<br>
+            Not vague wishes.
+        </h2>
+        <div class="comparison">
+            <div class="compare-box wrong">
+                <div class="compare-label">❌ A Wish</div>
+                <div class="compare-text">"I want to network more"</div>
+            </div>
+            <div class="compare-box right">
+                <div class="compare-label">✅ A Goal</div>
+                <div class="compare-text">"Every week I'll reach out to 5 new people on LinkedIn"</div>
+            </div>
+        </div>
+        <div class="slide-number">5/10</div>
+        <div class="brand">Launch To Lead</div>
+    </div>
+
+    <!-- SLIDE 6: Goal Examples -->
+    <div class="slide slide-6">
+        <div class="section-label">Tip #2 Continued</div>
+        <h2 class="heading">
+            Real goals look like this:
+        </h2>
+        <div class="list">
+            <div class="list-item">
+                <div class="list-icon">→</div>
+                <span>"Every week I'll go to professor's office hours"</span>
+            </div>
+            <div class="list-item">
+                <div class="list-icon">→</div>
+                <span>"I'll attend SI sessions and exchange info with 1 classmate"</span>
+            </div>
+            <div class="list-item">
+                <div class="list-icon">→</div>
+                <span>"I'll join 1 new student org and meet 10 people this semester"</span>
+            </div>
+            <div class="list-item">
+                <div class="list-icon">→</div>
+                <span>"I'll introduce myself to 1 new person in my dorm weekly"</span>
+            </div>
+            <div class="list-item">
+                <div class="list-icon">→</div>
+                <span>"I'll join Toastmasters and practice public speaking"</span>
+            </div>
+        </div>
+        <div class="slide-number">6/10</div>
+        <div class="brand">Launch To Lead</div>
+    </div>
+
+    <!-- SLIDE 7: Tip 3 -->
+    <div class="slide slide-7">
+        <div class="section-label">Tip #3</div>
+        <h2 class="heading">
+            Start with your<br>
+            <span class="highlight">passions.</span>
+        </h2>
+        <p class="content">
+            It's way easier to be social about things you actually care about.
+        </p>
+        <div class="examples">
+            <div class="example-box">
+                <div class="example-icon">🎮</div>
+                <div class="example-text">Join clubs that<br>matter to you</div>
+            </div>
+            <div class="example-box">
+                <div class="example-icon">💬</div>
+                <div class="example-text">Meet people in<br>contexts you enjoy</div>
+            </div>
+            <div class="example-box">
+                <div class="example-icon">🔥</div>
+                <div class="example-text">Talk about topics<br>that excite you</div>
+            </div>
+        </div>
+        <div class="slide-number">7/10</div>
+        <div class="brand">Launch To Lead</div>
+    </div>
+
+    <!-- SLIDE 8: Reality Check -->
+    <div class="slide slide-8">
+        <p class="eyebrow">⚠️ Reality Check</p>
+        <p class="main-text">
+            If you're in an interview and you're<br>
+            <span class="highlight">so shy</span> that it's hard to<br>
+            communicate with you...
+        </p>
+        <div class="question-box">
+            <p class="question">
+                "How high will they rank you on<br>
+                'works well with others'?"
+            </p>
+        </div>
+        <div class="slide-number">8/10</div>
+        <div class="brand">Launch To Lead</div>
+    </div>
+
+    <!-- SLIDE 9: Summary -->
+    <div class="slide slide-9">
+        <h2 class="heading">
+            The <span class="highlight">3 tips</span> recap:
+        </h2>
+        <div class="tips-recap">
+            <div class="tip-box">
+                <div class="tip-number">1</div>
+                <div class="tip-text">Practice makes progress—stretch those muscles</div>
+            </div>
+            <div class="tip-box">
+                <div class="tip-number">2</div>
+                <div class="tip-text">Set specific, measurable networking goals</div>
+            </div>
+            <div class="tip-box">
+                <div class="tip-number">3</div>
+                <div class="tip-text">Start with topics and clubs you're passionate about</div>
+            </div>
+        </div>
+        <div class="slide-number">9/10</div>
+        <div class="brand">Launch To Lead</div>
+    </div>
+
+    <!-- SLIDE 10: CTA -->
+    <div class="slide slide-10">
+        <h2 class="heading">
+            Networking isn't <span class="highlight">optional.</span><br>
+            But it is <span class="highlight">learnable.</span>
+        </h2>
+        <p class="summary">
+            Start small. Be consistent.<br>
+            Watch yourself grow.
+        </p>
+        <p class="cta-question">
+            What's one networking goal you can<br>
+            commit to this week?
+        </p>
+        <div class="action">Drop it in the comments 👇</div>
+        <div class="slide-number">10/10</div>
+        <div class="brand">Launch To Lead</div>
+    </div>
+
+</body>
+</html>

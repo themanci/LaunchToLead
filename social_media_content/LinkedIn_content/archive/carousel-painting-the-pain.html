@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedIn Carousel - Painting the Pain Framework</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: #f3f4f6;
+            padding: 20px;
+        }
+
+        .slide {
+            width: 1080px;
+            height: 1080px;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            margin: 0 auto 40px auto;
+            padding: 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            page-break-after: always;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slide::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(163, 230, 53, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .slide-number {
+            position: absolute;
+            bottom: 40px;
+            right: 60px;
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.4);
+            font-weight: 500;
+        }
+
+        .brand {
+            position: absolute;
+            bottom: 40px;
+            left: 60px;
+            font-size: 18px;
+            color: #a3e635;
+            font-weight: 600;
+        }
+
+        /* Slide 1 - Title */
+        .slide-1 .eyebrow {
+            font-size: 28px;
+            font-weight: 600;
+            color: #a3e635;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 40px;
+        }
+
+        .slide-1 .title {
+            font-size: 68px;
+            font-weight: 800;
+            color: white;
+            line-height: 1.1;
+            margin-bottom: 50px;
+        }
+
+        .slide-1 .title .highlight {
+            color: #a3e635;
+        }
+
+        .slide-1 .subtitle {
+            font-size: 32px;
+            color: rgba(255, 255, 255, 0.7);
+            font-weight: 500;
+            line-height: 1.4;
+        }
+
+        /* Slide 2 - The Problem */
+        .slide-2 .label {
+            font-size: 22px;
+            font-weight: 600;
+            color: #f87171;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 40px;
+        }
+
+        .slide-2 .main-text {
+            font-size: 52px;
+            font-weight: 700;
+            color: white;
+            line-height: 1.3;
+            margin-bottom: 50px;
+        }
+
+        .slide-2 .consequence {
+            background: rgba(248, 113, 113, 0.15);
+            border-left: 4px solid #f87171;
+            padding: 30px 40px;
+            border-radius: 0 16px 16px 0;
+        }
+
+        .slide-2 .consequence-text {
+            font-size: 28px;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.5;
+        }
+
+        /* Slide 3 - The Insight */
+        .slide-3 .icon {
+            font-size: 80px;
+            margin-bottom: 40px;
+        }
+
+        .slide-3 .quote {
+            font-size: 56px;
+            font-weight: 800;
+            color: white;
+            line-height: 1.2;
+            margin-bottom: 50px;
+        }
+
+        .slide-3 .quote .highlight {
+            color: #a3e635;
+        }
+
+        .slide-3 .explanation {
+            font-size: 28px;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.5;
+        }
+
+        /* Slide 4 - Bad Example */
+        .slide-4 .label {
+            display: inline-block;
+            background: rgba(248, 113, 113, 0.2);
+            color: #f87171;
+            font-size: 20px;
+            font-weight: 700;
+            padding: 12px 24px;
+            border-radius: 50px;
+            margin-bottom: 50px;
+        }
+
+        .slide-4 .example-box {
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(248, 113, 113, 0.3);
+            border-radius: 20px;
+            padding: 50px;
+            margin-bottom: 50px;
+        }
+
+        .slide-4 .example-text {
+            font-size: 36px;
+            color: rgba(255, 255, 255, 0.8);
+            font-style: italic;
+            line-height: 1.4;
+        }
+
+        .slide-4 .problem-text {
+            font-size: 28px;
+            color: rgba(255, 255, 255, 0.6);
+            line-height: 1.5;
+        }
+
+        .slide-4 .x-icon {
+            color: #f87171;
+            font-size: 32px;
+            margin-right: 15px;
+        }
+
+        /* Slide 5 - Good Example */
+        .slide-5 .label {
+            display: inline-block;
+            background: rgba(163, 230, 53, 0.2);
+            color: #a3e635;
+            font-size: 20px;
+            font-weight: 700;
+            padding: 12px 24px;
+            border-radius: 50px;
+            margin-bottom: 40px;
+        }
+
+        .slide-5 .example-box {
+            background: rgba(163, 230, 53, 0.08);
+            border: 2px solid rgba(163, 230, 53, 0.3);
+            border-radius: 20px;
+            padding: 40px;
+        }
+
+        .slide-5 .pain-point {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+        }
+
+        .slide-5 .pain-point:last-child {
+            margin-bottom: 0;
+        }
+
+        .slide-5 .arrow {
+            color: #a3e635;
+            font-size: 28px;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+
+        .slide-5 .pain-text {
+            font-size: 30px;
+            color: white;
+            line-height: 1.4;
+        }
+
+        /* Slide 6 - Framework Title */
+        .slide-6 .eyebrow {
+            font-size: 24px;
+            font-weight: 600;
+            color: #14b8a6;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 40px;
+        }
+
+        .slide-6 .title {
+            font-size: 64px;
+            font-weight: 800;
+            color: white;
+            line-height: 1.2;
+            margin-bottom: 50px;
+        }
+
+        .slide-6 .steps-preview {
+            display: flex;
+            gap: 30px;
+        }
+
+        .slide-6 .step-pill {
+            background: rgba(20, 184, 166, 0.15);
+            border: 2px solid rgba(20, 184, 166, 0.4);
+            padding: 20px 35px;
+            border-radius: 50px;
+            font-size: 24px;
+            color: #14b8a6;
+            font-weight: 600;
+        }
+
+        /* Slide 7 - Step 1 */
+        .slide-7 .step-number {
+            display: inline-block;
+            background: linear-gradient(135deg, #14b8a6, #a3e635);
+            color: #0f172a;
+            font-size: 24px;
+            font-weight: 800;
+            padding: 15px 30px;
+            border-radius: 50px;
+            margin-bottom: 40px;
+        }
+
+        .slide-7 .step-title {
+            font-size: 56px;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 50px;
+        }
+
+        .slide-7 .point-list {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .slide-7 .point {
+            display: flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 25px 35px;
+            border-radius: 16px;
+        }
+
+        .slide-7 .point-icon {
+            font-size: 36px;
+            margin-right: 25px;
+        }
+
+        .slide-7 .point-text {
+            font-size: 30px;
+            color: white;
+            font-weight: 500;
+        }
+
+        /* Slide 8 - Step 2 */
+        .slide-8 .step-number {
+            display: inline-block;
+            background: linear-gradient(135deg, #14b8a6, #a3e635);
+            color: #0f172a;
+            font-size: 24px;
+            font-weight: 800;
+            padding: 15px 30px;
+            border-radius: 50px;
+            margin-bottom: 40px;
+        }
+
+        .slide-8 .step-title {
+            font-size: 56px;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 50px;
+        }
+
+        .slide-8 .question-list {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .slide-8 .question {
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .slide-8 .q-icon {
+            color: #a3e635;
+            font-size: 32px;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+
+        .slide-8 .q-text {
+            font-size: 32px;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.4;
+        }
+
+        /* Slide 9 - Step 3 */
+        .slide-9 .step-number {
+            display: inline-block;
+            background: linear-gradient(135deg, #14b8a6, #a3e635);
+            color: #0f172a;
+            font-size: 24px;
+            font-weight: 800;
+            padding: 15px 30px;
+            border-radius: 50px;
+            margin-bottom: 40px;
+        }
+
+        .slide-9 .step-title {
+            font-size: 56px;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 50px;
+        }
+
+        .slide-9 .contrast-box {
+            background: linear-gradient(135deg, rgba(163, 230, 53, 0.1), rgba(20, 184, 166, 0.1));
+            border-radius: 20px;
+            padding: 45px;
+        }
+
+        .slide-9 .contrast-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        .slide-9 .contrast-row:last-child {
+            margin-bottom: 0;
+        }
+
+        .slide-9 .arrow {
+            color: #a3e635;
+            font-size: 28px;
+            margin-right: 20px;
+        }
+
+        .slide-9 .contrast-text {
+            font-size: 30px;
+            color: white;
+            line-height: 1.4;
+        }
+
+        .slide-9 .contrast-text .highlight {
+            color: #a3e635;
+            font-weight: 700;
+        }
+
+        /* Slide 10 - The Math */
+        .slide-10 .label {
+            font-size: 24px;
+            font-weight: 600;
+            color: #a3e635;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 50px;
+        }
+
+        .slide-10 .comparison {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .slide-10 .compare-box {
+            flex: 1;
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .slide-10 .compare-box.bad {
+            background: rgba(248, 113, 113, 0.1);
+            border: 2px solid rgba(248, 113, 113, 0.3);
+        }
+
+        .slide-10 .compare-box.good {
+            background: rgba(163, 230, 53, 0.1);
+            border: 2px solid rgba(163, 230, 53, 0.3);
+        }
+
+        .slide-10 .compare-label {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .slide-10 .compare-box.bad .compare-label {
+            color: #f87171;
+        }
+
+        .slide-10 .compare-box.good .compare-label {
+            color: #a3e635;
+        }
+
+        .slide-10 .percentage {
+            font-size: 80px;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .slide-10 .compare-desc {
+            font-size: 24px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .slide-10 .insight {
+            font-size: 32px;
+            color: white;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        /* Slide 11 - CTA */
+        .slide-11 .main-message {
+            font-size: 48px;
+            font-weight: 700;
+            color: white;
+            line-height: 1.3;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        .slide-11 .main-message .highlight {
+            color: #a3e635;
+        }
+
+        .slide-11 .action-box {
+            background: linear-gradient(135deg, #064e3b, #065f46);
+            border-radius: 24px;
+            padding: 50px;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .slide-11 .action-text {
+            font-size: 36px;
+            color: white;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .slide-11 .action-sub {
+            font-size: 26px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .slide-11 .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .slide-11 .cta-btn {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 24px;
+            color: rgba(255, 255, 255, 0.7);
+            font-weight: 500;
+        }
+
+        .slide-11 .cta-icon {
+            font-size: 28px;
+        }
+
+        /* Print Styles for PDF Export */
+        @media print {
+            @page {
+                size: 1080px 1080px;
+                margin: 0;
+            }
+
+            html, body {
+                margin: 0;
+                padding: 0;
+                background: white;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+
+            .slide {
+                width: 1080px !important;
+                height: 1080px !important;
+                margin: 0 !important;
+                padding: 80px !important;
+                page-break-after: always;
+                page-break-inside: avoid;
+                break-after: page;
+                break-inside: avoid;
+                box-shadow: none;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
+            .slide:last-child {
+                page-break-after: avoid;
+            }
+
+            /* Force background colors to print */
+            .slide::before {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Slide 1: Title -->
+    <div class="slide slide-1">
+        <div class="eyebrow">Interview Storytelling</div>
+        <h1 class="title">Master the<br>"<span class="highlight">Painting the Pain</span>"<br>Framework</h1>
+        <p class="subtitle">Turn good STAR stories into unforgettable ones</p>
+        <div class="brand">LaunchToLead</div>
+        <div class="slide-number">1/11</div>
+    </div>
+
+    <!-- Slide 2: The Problem -->
+    <div class="slide slide-2">
+        <div class="label">❌ The Mistake</div>
+        <p class="main-text">Most candidates rush through their interview stories.</p>
+        <div class="consequence">
+            <p class="consequence-text">They speed through the <strong>Situation</strong> like it's a boring intro... then wonder why their "amazing results" don't land.</p>
+        </div>
+        <div class="brand">LaunchToLead</div>
+        <div class="slide-number">2/11</div>
+    </div>
+
+    <!-- Slide 3: The Insight -->
+    <div class="slide slide-3">
+        <div class="icon">🐉</div>
+        <p class="quote">The <span class="highlight">bigger</span> the monster you slay, the <span class="highlight">bigger</span> the hero you become.</p>
+        <p class="explanation">Your results are only as impressive as the problem they solved.</p>
+        <div class="brand">LaunchToLead</div>
+        <div class="slide-number">3/11</div>
+    </div>
+
+    <!-- Slide 4: Bad Example -->
+    <div class="slide slide-4">
+        <div class="label">❌ WEAK SITUATION</div>
+        <div class="example-box">
+            <p class="example-text">"We had a project running behind schedule, so I helped get it back on track..."</p>
+        </div>
+        <p class="problem-text"><span class="x-icon">✗</span>No stakes. No tension. No reason to care.</p>
+        <p class="problem-text"><span class="x-icon">✗</span>The interviewer has no context for why your actions mattered.</p>
+        <div class="brand">LaunchToLead</div>
+        <div class="slide-number">4/11</div>
+    </div>
+
+    <!-- Slide 5: Good Example -->
+    <div class="slide slide-5">
+        <div class="label">✓ PAINTED PAIN</div>
+        <div class="example-box">
+            <div class="pain-point">
+                <span class="arrow">→</span>
+                <span class="pain-text">"Our flagship product launch was 6 weeks behind"</span>
+            </div>
+            <div class="pain-point">
+                <span class="arrow">→</span>
+                <span class="pain-text">"The CEO was reviewing our progress daily"</span>
+            </div>
+            <div class="pain-point">
+                <span class="arrow">→</span>
+                <span class="pain-text">"Every week of delay cost $200K in market opportunity"</span>
+            </div>
+            <div class="pain-point">
+                <span class="arrow">→</span>
+                <span class="pain-text">"Two team leads had already quit from the pressure"</span>
+            </div>
+        </div>
+        <div class="brand">LaunchToLead</div>
+        <div class="slide-number">5/11</div>
+    </div>
+
+    <!-- Slide 6: Framework Intro -->
+    <div class="slide slide-6">
+        <div class="eyebrow">The Framework</div>
+        <h2 class="title">3 Ways to "Paint the Pain" in Your STAR Stories</h2>
+        <div class="steps-preview">
+            <div class="step-pill">Quantify</div>
+            <div class="step-pill">Tension</div>
+            <div class="step-pill">Contrast</div>
+        </div>
+        <div class="brand">LaunchToLead</div>
+        <div class="slide-number">6/11</div>
+    </div>
+
+    <!-- Slide 7: Step 1 -->
+    <div class="slide slide-7">
+        <div class="step-number">STEP 1</div>
+        <h2 class="step-title">Quantify the Stakes</h2>
+        <div class="point-list">
+            <div class="point">
+                <span class="point-icon">💰</span>
+                <span class="point-text">Revenue at risk</span>
+            </div>
+            <div class="point">
+                <span class="point-icon">👥</span>
+                <span class="point-text">Customers or users affected</span>
+            </div>
+            <div class="point">
+                <span class="point-icon">🏢</span>
+                <span class="point-text">Team members impacted</span>
+            </div>
+            <div class="point">
+                <span class="point-icon">⏰</span>
+                <span class="point-text">Timeline pressure & deadlines</span>
+            </div>
+        </div>
+        <div class="brand">LaunchToLead</div>
+        <div class="slide-number">7/11</div>
+    </div>
+
+    <!-- Slide 8: Step 2 -->
+    <div class="slide slide-8">
+        <div class="step-number">STEP 2</div>
+        <h2 class="step-title">Show the Tension</h2>
+        <div class="question-list">
+            <div class="question">
+                <span class="q-icon">?</span>
+                <span class="q-text">Who was watching?<br><em style="color: rgba(255,255,255,0.5); font-size: 26px;">(Executives, clients, board?)</em></span>
+            </div>
+            <div class="question">
+                <span class="q-icon">?</span>
+                <span class="q-text">What was the consequence of failure?<br><em style="color: rgba(255,255,255,0.5); font-size: 26px;">(Lost contract, layoffs, reputation?)</em></span>
+            </div>
+            <div class="question">
+                <span class="q-icon">?</span>
+                <span class="q-text">Why couldn't the "obvious" solutions work?<br><em style="color: rgba(255,255,255,0.5); font-size: 26px;">(Constraints, failed attempts?)</em></span>
+            </div>
+        </div>
+        <div class="brand">LaunchToLead</div>
+        <div class="slide-number">8/11</div>
+    </div>
+
+    <!-- Slide 9: Step 3 -->
+    <div class="slide slide-9">
+        <div class="step-number">STEP 3</div>
+        <h2 class="step-title">Create the Contrast</h2>
+        <div class="contrast-box">
+            <div class="contrast-row">
+                <span class="arrow">→</span>
+                <span class="contrast-text">The <span class="highlight">bigger</span> the problem you describe...</span>
+            </div>
+            <div class="contrast-row">
+                <span class="arrow">→</span>
+                <span class="contrast-text">The more <span class="highlight">impressive</span> your solution becomes...</span>
+            </div>
+            <div class="contrast-row">
+                <span class="arrow">→</span>
+                <span class="contrast-text">Without changing a <span class="highlight">single fact</span>.</span>
+            </div>
+        </div>
+        <div class="brand">LaunchToLead</div>
+        <div class="slide-number">9/11</div>
+    </div>
+
+    <!-- Slide 10: The Math -->
+    <div class="slide slide-10">
+        <div class="label">Time Spent on Situation</div>
+        <div class="comparison">
+            <div class="compare-box bad">
+                <div class="compare-label">Most People</div>
+                <div class="percentage">10%</div>
+                <div class="compare-desc">Rush to solution</div>
+            </div>
+            <div class="compare-box good">
+                <div class="compare-label">Top Performers</div>
+                <div class="percentage">40%</div>
+                <div class="compare-desc">Paint the pain</div>
+            </div>
+        </div>
+        <p class="insight">They let the interviewer <em>feel</em> the weight of the problem<br>before revealing how they solved it.</p>
+        <div class="brand">LaunchToLead</div>
+        <div class="slide-number">10/11</div>
+    </div>
+
+    <!-- Slide 11: CTA -->
+    <div class="slide slide-11">
+        <p class="main-message">Before you explain what you <span class="highlight">DID</span>...<br>Make them understand why it <span class="highlight">MATTERED</span>.</p>
+        <div class="action-box">
+            <p class="action-text">🐉 Slay bigger monsters.</p>
+            <p class="action-sub">Become a bigger hero.</p>
+        </div>
+        <div class="cta-buttons">
+            <span class="cta-btn"><span class="cta-icon">♻️</span> Repost</span>
+            <span class="cta-btn"><span class="cta-icon">💾</span> Save</span>
+            <span class="cta-btn"><span class="cta-icon">🔔</span> Follow</span>
+        </div>
+        <div class="brand">LaunchToLead</div>
+        <div class="slide-number">11/11</div>
+    </div>
+
+</body>
+</html>
