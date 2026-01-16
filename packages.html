@@ -9,6 +9,19 @@
       gtag('js', new Date());
       gtag('config', 'G-L8V47TR52C');
     </script>
+    <!-- Track strategy call booking clicks -->
+    <script>
+      document.addEventListener('click', function(e) {
+        const link = e.target.closest('a[href*="calendar.app.google"]');
+        if (link && typeof gtag === 'function') {
+          gtag('event', 'strategy_call_click', {
+            'page_location': window.location.pathname,
+            'page_title': document.title,
+            'link_text': link.textContent.trim().substring(0, 50)
+          });
+        }
+      });
+    </script>
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
