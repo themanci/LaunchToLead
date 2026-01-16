@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedIn Carousel - Why Entry-Level Engineers Still Matter</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: #f3f4f6;
+            padding: 20px;
+        }
+
+        .slide {
+            width: 1080px;
+            height: 1080px;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            margin: 0 auto 40px auto;
+            padding: 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            page-break-after: always;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slide::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(16, 185, 129, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .slide-number {
+            position: absolute;
+            bottom: 40px;
+            right: 60px;
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.4);
+            font-weight: 500;
+        }
+
+        .brand {
+            position: absolute;
+            bottom: 40px;
+            left: 60px;
+            font-size: 18px;
+            color: #10b981;
+            font-weight: 600;
+        }
+
+        /* Slide 1 - Title */
+        .slide-1 .title {
+            font-size: 72px;
+            font-weight: 800;
+            color: white;
+            line-height: 1.1;
+            margin-bottom: 40px;
+        }
+
+        .slide-1 .highlight {
+            color: #10b981;
+        }
+
+        .slide-1 .subtitle {
+            font-size: 32px;
+            color: rgba(255, 255, 255, 0.7);
+            font-weight: 500;
+            line-height: 1.4;
+        }
+
+        /* Slide 2 - The Narrative */
+        .slide-2 .heading {
+            font-size: 42px;
+            font-weight: 700;
+            color: #10b981;
+            margin-bottom: 50px;
+        }
+
+        .slide-2 .content {
+            font-size: 38px;
+            color: white;
+            line-height: 1.5;
+        }
+
+        .slide-2 .quote {
+            font-size: 52px;
+            color: #f87171;
+            font-weight: 700;
+            margin-top: 50px;
+            font-style: italic;
+        }
+
+        /* Slide 3 - The Question */
+        .slide-3 {
+            text-align: center;
+        }
+
+        .slide-3 .big-quote {
+            font-size: 80px;
+            font-weight: 800;
+            color: #10b981;
+            line-height: 1.2;
+            margin-bottom: 50px;
+        }
+
+        .slide-3 .context {
+            font-size: 32px;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.5;
+        }
+
+        /* Slide 4 - The Insight */
+        .slide-4 .heading {
+            font-size: 42px;
+            font-weight: 700;
+            color: #10b981;
+            margin-bottom: 50px;
+        }
+
+        .slide-4 .content {
+            font-size: 36px;
+            color: white;
+            line-height: 1.6;
+            margin-bottom: 40px;
+        }
+
+        .slide-4 .emphasis {
+            font-size: 44px;
+            color: #fbbf24;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        /* Slide 5 - Fresh Eyes */
+        .slide-5 .heading {
+            font-size: 52px;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 60px;
+        }
+
+        .slide-5 .heading .highlight {
+            color: #10b981;
+        }
+
+        .slide-5 .comparison {
+            display: flex;
+            gap: 40px;
+        }
+
+        .slide-5 .column {
+            flex: 1;
+            padding: 40px;
+            border-radius: 20px;
+        }
+
+        .slide-5 .senior {
+            background: rgba(248, 113, 113, 0.15);
+            border: 2px solid rgba(248, 113, 113, 0.3);
+        }
+
+        .slide-5 .junior {
+            background: rgba(16, 185, 129, 0.15);
+            border: 2px solid rgba(16, 185, 129, 0.3);
+        }
+
+        .slide-5 .column-title {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+
+        .slide-5 .senior .column-title {
+            color: #f87171;
+        }
+
+        .slide-5 .junior .column-title {
+            color: #10b981;
+        }
+
+        .slide-5 .column-text {
+            font-size: 26px;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.5;
+        }
+
+        /* Slide 6 - The Pattern */
+        .slide-6 .heading {
+            font-size: 42px;
+            font-weight: 700;
+            color: #10b981;
+            margin-bottom: 50px;
+        }
+
+        .slide-6 .content {
+            font-size: 34px;
+            color: white;
+            line-height: 1.6;
+            margin-bottom: 40px;
+        }
+
+        .slide-6 .list-item {
+            font-size: 30px;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 25px;
+            padding-left: 40px;
+            position: relative;
+        }
+
+        .slide-6 .list-item::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: #10b981;
+        }
+
+        /* Slide 7 - The Truth */
+        .slide-7 {
+            text-align: center;
+        }
+
+        .slide-7 .big-text {
+            font-size: 56px;
+            font-weight: 800;
+            color: white;
+            line-height: 1.3;
+            margin-bottom: 50px;
+        }
+
+        .slide-7 .highlight {
+            color: #10b981;
+        }
+
+        .slide-7 .subtext {
+            font-size: 32px;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.5;
+        }
+
+        /* Slide 8 - CTA */
+        .slide-8 {
+            text-align: center;
+        }
+
+        .slide-8 .heading {
+            font-size: 52px;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 60px;
+            line-height: 1.2;
+        }
+
+        .slide-8 .highlight {
+            color: #10b981;
+        }
+
+        .slide-8 .cta {
+            font-size: 36px;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.5;
+            margin-bottom: 60px;
+        }
+
+        .slide-8 .action {
+            display: inline-block;
+            background: #10b981;
+            color: #0f172a;
+            font-size: 28px;
+            font-weight: 700;
+            padding: 24px 48px;
+            border-radius: 12px;
+        }
+
+        @page {
+            size: 1080px 1080px;
+            margin: 0;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+                margin: 0;
+            }
+
+            .slide {
+                margin: 0;
+                box-shadow: none;
+                page-break-after: always;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+                width: 100vw;
+                height: 100vh;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- SLIDE 1: Title -->
+    <div class="slide slide-1">
+        <h1 class="title">
+            In the Era of AI,<br>
+            <span class="highlight">Entry-Level Engineers</span><br>
+            Still Matter
+        </h1>
+        <p class="subtitle">
+            And it's not for the reason you think.
+        </p>
+        <div class="slide-number">1/8</div>
+        <div class="brand">Launch To Lead</div>
+    </div>
+
+    <!-- SLIDE 2: The Narrative -->
+    <div class="slide slide-2">
+        <h2 class="heading">The common narrative:</h2>
+        <p class="content">
+            "AI will replace entry-level engineers."
+            <br><br>
+            "Why hire someone with no experience when AI can do the basics?"
+            <br><br>
+            "Junior roles are disappearing."
+        </p>
+        <p class="quote">
+            I think this misses something critical.
+        </p>
+        <div class="slide-number">2/8</div>
+        <div class="brand">Launch To Lead</div>
+    </div>
+
+    <!-- SLIDE 3: The Question -->
+    <div class="slide slide-3">
+        <p class="big-quote">
+            "Why are we<br>doing it this way?"
+        </p>
+        <p class="context">
+            Entry-level engineers ask this question constantly.
+            <br><br>
+            Usually to learn. To understand.
+            <br><br>
+            But this simple question has a powerful side effect.
+        </p>
+        <div class="slide-number">3/8</div>
+        <div class="brand">Launch To Lead</div>
+    </div>
+
+    <!-- SLIDE 4: The Insight -->
+    <div class="slide slide-4">
+        <h2 class="heading">I've seen it happen many times:</h2>
+        <p class="content">
+            A junior engineer asks "why do we do it this way?"
+            <br><br>
+            The senior pauses.
+            <br><br>
+            Then says:
+        </p>
+        <p class="emphasis">
+            "Actually... good question.<br>Why DO we still do it this way?"
+        </p>
+        <div class="slide-number">4/8</div>
+        <div class="brand">Launch To Lead</div>
+    </div>
+
+    <!-- SLIDE 5: Fresh Eyes vs Blinders -->
+    <div class="slide slide-5">
+        <h2 class="heading">
+            <span class="highlight">Fresh eyes</span> vs. Blinders
+        </h2>
+        <div class="comparison">
+            <div class="column senior">
+                <h3 class="column-title">Senior Engineers</h3>
+                <p class="column-text">
+                    Have done it this way for years.
+                    <br><br>
+                    Stopped questioning the process.
+                    <br><br>
+                    "That's how we've always done it."
+                </p>
+            </div>
+            <div class="column junior">
+                <h3 class="column-title">Junior Engineers</h3>
+                <p class="column-text">
+                    No habits yet.
+                    <br><br>
+                    Question everything.
+                    <br><br>
+                    "But what if we tried..."
+                </p>
+            </div>
+        </div>
+        <div class="slide-number">5/8</div>
+        <div class="brand">Launch To Lead</div>
+    </div>
+
+    <!-- SLIDE 6: The Pattern -->
+    <div class="slide slide-6">
+        <h2 class="heading">Here's what usually happens:</h2>
+        <p class="content">
+            People keep doing things a certain way long after it stopped being the best way.
+        </p>
+        <div class="list-item">Circumstances changed</div>
+        <div class="list-item">Better tools exist now</div>
+        <div class="list-item">The original reason no longer applies</div>
+        <div class="list-item">Nobody stopped to question it</div>
+        <p class="content" style="margin-top: 40px; color: #10b981; font-weight: 600;">
+            Until someone new asked "why?"
+        </p>
+        <div class="slide-number">6/8</div>
+        <div class="brand">Launch To Lead</div>
+    </div>
+
+    <!-- SLIDE 7: The Truth -->
+    <div class="slide slide-7">
+        <p class="big-text">
+            Entry-level engineers<br>
+            <span class="highlight">challenge the status quo</span><br>
+            simply by trying to understand it.
+        </p>
+        <p class="subtext">
+            That's not a bug. It's a feature.
+            <br><br>
+            AI can optimize existing processes.
+            <br>
+            It can't question why they exist in the first place.
+        </p>
+        <div class="slide-number">7/8</div>
+        <div class="brand">Launch To Lead</div>
+    </div>
+
+    <!-- SLIDE 8: CTA -->
+    <div class="slide slide-8">
+        <h2 class="heading">
+            Don't underestimate<br>
+            <span class="highlight">a fresh perspective.</span>
+        </h2>
+        <p class="cta">
+            The next time a junior asks "why?"—
+            <br>
+            don't dismiss it.
+            <br><br>
+            Actually think about the answer.
+        </p>
+        <div class="action">Follow for more</div>
+        <div class="slide-number">8/8</div>
+        <div class="brand">Launch To Lead</div>
+    </div>
+
+</body>
+</html>

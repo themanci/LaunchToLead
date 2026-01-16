@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedIn Carousel - Engineering School Didn't Teach This</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: #f3f4f6;
+            padding: 20px;
+        }
+
+        .slide {
+            width: 1080px;
+            height: 1080px;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            margin: 0 auto 40px auto;
+            padding: 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            page-break-after: always;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slide::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(163, 230, 53, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .slide-number {
+            position: absolute;
+            bottom: 40px;
+            right: 60px;
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.4);
+            font-weight: 500;
+        }
+
+        .brand {
+            position: absolute;
+            bottom: 40px;
+            left: 60px;
+            font-size: 18px;
+            color: #a3e635;
+            font-weight: 600;
+        }
+
+        /* Slide 1 - Title */
+        .slide-1 .eyebrow {
+            font-size: 26px;
+            font-weight: 600;
+            color: #a3e635;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 40px;
+        }
+
+        .slide-1 .title {
+            font-size: 64px;
+            font-weight: 800;
+            color: white;
+            line-height: 1.15;
+            margin-bottom: 50px;
+        }
+
+        .slide-1 .highlight {
+            color: #a3e635;
+        }
+
+        .slide-1 .subtitle {
+            font-size: 32px;
+            color: rgba(255, 255, 255, 0.7);
+            font-weight: 500;
+            line-height: 1.4;
+        }
+
+        /* Slide 2 - The Quote */
+        .slide-2 {
+            text-align: center;
+        }
+
+        .slide-2 .context {
+            font-size: 26px;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.5);
+            margin-bottom: 50px;
+        }
+
+        .slide-2 .quote {
+            font-size: 54px;
+            font-weight: 700;
+            color: white;
+            line-height: 1.3;
+            font-style: italic;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .slide-2 .quote .highlight {
+            color: #a3e635;
+        }
+
+        .slide-2 .attribution {
+            font-size: 24px;
+            color: rgba(255, 255, 255, 0.5);
+            margin-top: 40px;
+        }
+
+        /* Slide 3 - What They Taught */
+        .slide-3 .heading {
+            font-size: 44px;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 50px;
+        }
+
+        .slide-3 .heading .highlight {
+            color: #a3e635;
+        }
+
+        .slide-3 .list {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .slide-3 .list-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            font-size: 32px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .slide-3 .list-icon {
+            width: 55px;
+            height: 55px;
+            background: rgba(163, 230, 53, 0.2);
+            border: 2px solid rgba(163, 230, 53, 0.4);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #a3e635;
+            font-size: 26px;
+            flex-shrink: 0;
+        }
+
+        /* Slide 4 - What They Didn't Teach */
+        .slide-4 .heading {
+            font-size: 44px;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 50px;
+        }
+
+        .slide-4 .heading .highlight {
+            color: #f87171;
+        }
+
+        .slide-4 .list {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .slide-4 .list-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            font-size: 32px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .slide-4 .list-icon {
+            width: 55px;
+            height: 55px;
+            background: rgba(248, 113, 113, 0.2);
+            border: 2px solid rgba(248, 113, 113, 0.4);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #f87171;
+            font-size: 26px;
+            flex-shrink: 0;
+        }
+
+        /* Slide 5 - The Analogy */
+        .slide-5 {
+            text-align: center;
+        }
+
+        .slide-5 .main-text {
+            font-size: 56px;
+            font-weight: 800;
+            color: white;
+            line-height: 1.3;
+            margin-bottom: 60px;
+        }
+
+        .slide-5 .main-text .highlight {
+            color: #a3e635;
+        }
+
+        .slide-5 .visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .slide-5 .icon-box {
+            width: 200px;
+            height: 200px;
+            border-radius: 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .slide-5 .build-box {
+            background: rgba(163, 230, 53, 0.15);
+            border: 2px solid rgba(163, 230, 53, 0.3);
+        }
+
+        .slide-5 .drive-box {
+            background: rgba(248, 113, 113, 0.15);
+            border: 2px solid rgba(248, 113, 113, 0.3);
+        }
+
+        .slide-5 .icon-emoji {
+            font-size: 70px;
+        }
+
+        .slide-5 .icon-label {
+            font-size: 22px;
+            font-weight: 600;
+        }
+
+        .slide-5 .build-box .icon-label {
+            color: #a3e635;
+        }
+
+        .slide-5 .drive-box .icon-label {
+            color: #f87171;
+        }
+
+        .slide-5 .arrow {
+            font-size: 48px;
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        /* Slide 6 - The Gap */
+        .slide-6 .heading {
+            font-size: 48px;
+            font-weight: 800;
+            color: white;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .slide-6 .comparison {
+            display: flex;
+            gap: 30px;
+        }
+
+        .slide-6 .column {
+            flex: 1;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        .slide-6 .skills-col {
+            background: rgba(163, 230, 53, 0.1);
+            border: 2px solid rgba(163, 230, 53, 0.3);
+        }
+
+        .slide-6 .job-col {
+            background: rgba(56, 189, 248, 0.1);
+            border: 2px solid rgba(56, 189, 248, 0.3);
+        }
+
+        .slide-6 .column-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 25px;
+        }
+
+        .slide-6 .skills-col .column-title {
+            color: #a3e635;
+        }
+
+        .slide-6 .job-col .column-title {
+            color: #38bdf8;
+        }
+
+        .slide-6 .column-content {
+            font-size: 22px;
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.6;
+            text-align: left;
+        }
+
+        .slide-6 .not-equal {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            color: #f87171;
+            font-weight: 800;
+        }
+
+        /* Slide 7 - The Reality */
+        .slide-7 .heading {
+            font-size: 48px;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 50px;
+        }
+
+        .slide-7 .heading .highlight {
+            color: #a3e635;
+        }
+
+        .slide-7 .content {
+            font-size: 34px;
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.6;
+            margin-bottom: 50px;
+        }
+
+        .slide-7 .highlight-box {
+            background: rgba(248, 113, 113, 0.1);
+            border: 2px solid rgba(248, 113, 113, 0.3);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .slide-7 .highlight-text {
+            font-size: 32px;
+            font-weight: 600;
+            color: #f87171;
+            line-height: 1.4;
+        }
+
+        /* Slide 8 - The Truth */
+        .slide-8 {
+            text-align: center;
+        }
+
+        .slide-8 .eyebrow {
+            font-size: 24px;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.5);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 50px;
+        }
+
+        .slide-8 .main-text {
+            font-size: 58px;
+            font-weight: 800;
+            color: white;
+            line-height: 1.25;
+            margin-bottom: 50px;
+        }
+
+        .slide-8 .main-text .highlight {
+            color: #a3e635;
+        }
+
+        .slide-8 .subtext {
+            font-size: 32px;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.5;
+        }
+
+        /* Slide 9 - Not Your Fault */
+        .slide-9 {
+            text-align: center;
+        }
+
+        .slide-9 .main-text {
+            font-size: 64px;
+            font-weight: 800;
+            color: white;
+            line-height: 1.2;
+            margin-bottom: 60px;
+        }
+
+        .slide-9 .main-text .highlight {
+            color: #a3e635;
+        }
+
+        .slide-9 .subtext {
+            font-size: 36px;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.5;
+        }
+
+        /* Slide 10 - CTA */
+        .slide-10 {
+            text-align: center;
+        }
+
+        .slide-10 .heading {
+            font-size: 54px;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 50px;
+            line-height: 1.2;
+        }
+
+        .slide-10 .highlight {
+            color: #a3e635;
+        }
+
+        .slide-10 .content {
+            font-size: 32px;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.5;
+            margin-bottom: 60px;
+        }
+
+        .slide-10 .action {
+            display: inline-block;
+            background: #a3e635;
+            color: #0f172a;
+            font-size: 28px;
+            font-weight: 700;
+            padding: 24px 48px;
+            border-radius: 12px;
+        }
+
+        @page {
+            size: 1080px 1080px;
+            margin: 0;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+                margin: 0;
+            }
+
+            .slide {
+                margin: 0;
+                box-shadow: none;
+                page-break-after: always;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+                width: 100vw;
+                height: 100vh;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- SLIDE 1: Title -->
+    <div class="slide slide-1">
+        <div class="eyebrow">A Client Said Something That Hit Hard</div>
+        <h1 class="title">
+            Engineering School<br>
+            <span class="highlight">Didn't Teach</span><br>
+            Me This
+        </h1>
+        <p class="subtitle">
+            The gap no one talks about.
+        </p>
+        <div class="slide-number">1/10</div>
+        <div class="brand">Launch To Lead</div>
+    </div>
+
+    <!-- SLIDE 2: The Quote -->
+    <div class="slide slide-2">
+        <p class="context">She said:</p>
+        <p class="quote">
+            "It's like engineering school taught us how to <span class="highlight">be engineers</span>, but not how to <span class="highlight">get a good job.</span>"
+        </p>
+        <p class="attribution">— A coaching client in the Launch Path</p>
+        <div class="slide-number">2/10</div>
+        <div class="brand">Launch To Lead</div>
+    </div>
+
+    <!-- SLIDE 3: What They Taught -->
+    <div class="slide slide-3">
+        <h2 class="heading">4 years of school <span class="highlight">taught you:</span></h2>
+        <div class="list">
+            <div class="list-item">
+                <div class="list-icon">✓</div>
+                <span>Thermodynamics</span>
+            </div>
+            <div class="list-item">
+                <div class="list-icon">✓</div>
+                <span>Data structures & algorithms</span>
+            </div>
+            <div class="list-item">
+                <div class="list-icon">✓</div>
+                <span>Circuit analysis</span>
+            </div>
+            <div class="list-item">
+                <div class="list-icon">✓</div>
+                <span>Differential equations</span>
+            </div>
+            <div class="list-item">
+                <div class="list-icon">✓</div>
+                <span>CAD & simulation tools</span>
+            </div>
+            <div class="list-item">
+                <div class="list-icon">✓</div>
+                <span>How to survive brutal exams</span>
+            </div>
+        </div>
+        <div class="slide-number">3/10</div>
+        <div class="brand">Launch To Lead</div>
+    </div>
+
+    <!-- SLIDE 4: What They Didn't Teach -->
+    <div class="slide slide-4">
+        <h2 class="heading">But <span class="highlight">zero courses</span> on:</h2>
+        <div class="list">
+            <div class="list-item">
+                <div class="list-icon">✗</div>
+                <span>Writing a resume that gets callbacks</span>
+            </div>
+            <div class="list-item">
+                <div class="list-icon">✗</div>
+                <span>Networking without feeling awkward</span>
+            </div>
+            <div class="list-item">
+                <div class="list-icon">✗</div>
+                <span>Answering "tell me about yourself"</span>
+            </div>
+            <div class="list-item">
+                <div class="list-icon">✗</div>
+                <span>Standing out in 500+ applicants</span>
+            </div>
+            <div class="list-item">
+                <div class="list-icon">✗</div>
+                <span>Negotiating your salary</span>
+            </div>
+            <div class="list-item">
+                <div class="list-icon">✗</div>
+                <span>Telling your story with impact</span>
+            </div>
+        </div>
+        <div class="slide-number">4/10</div>
+        <div class="brand">Launch To Lead</div>
+    </div>
+
+    <!-- SLIDE 5: The Analogy -->
+    <div class="slide slide-5">
+        <p class="main-text">
+            It's like learning to<br>
+            <span class="highlight">build a race car</span><br>
+            but never learning to<br>
+            <span class="highlight">drive it.</span>
+        </p>
+        <div class="visual">
+            <div class="icon-box build-box">
+                <span class="icon-emoji">🔧</span>
+                <span class="icon-label">Build it ✓</span>
+            </div>
+            <span class="arrow">→</span>
+            <div class="icon-box drive-box">
+                <span class="icon-emoji">🏎️</span>
+                <span class="icon-label">Drive it ✗</span>
+            </div>
+        </div>
+        <div class="slide-number">5/10</div>
+        <div class="brand">Launch To Lead</div>
+    </div>
+
+    <!-- SLIDE 6: The Gap -->
+    <div class="slide slide-6">
+        <h2 class="heading">Two different skill sets:</h2>
+        <div class="comparison">
+            <div class="column skills-col">
+                <h3 class="column-title">🎓 Skills That Make You<br>Good at the Job</h3>
+                <div class="column-content">
+                    → Technical knowledge<br>
+                    → Problem solving<br>
+                    → Analytical thinking<br>
+                    → Project execution<br>
+                    → Tool proficiency
+                </div>
+            </div>
+            <div class="not-equal">≠</div>
+            <div class="column job-col">
+                <h3 class="column-title">💼 Skills That Get<br>You the Job</h3>
+                <div class="column-content">
+                    → Personal branding<br>
+                    → Storytelling<br>
+                    → Interview performance<br>
+                    → Networking<br>
+                    → Negotiation
+                </div>
+            </div>
+        </div>
+        <div class="slide-number">6/10</div>
+        <div class="brand">Launch To Lead</div>
+    </div>
+
+    <!-- SLIDE 7: The Reality -->
+    <div class="slide slide-7">
+        <h2 class="heading">Then <span class="highlight">graduation</span> comes...</h2>
+        <p class="content">
+            And suddenly you're expected to craft a personal brand, navigate ATS systems, tell compelling stories, and negotiate offers.
+        </p>
+        <div class="highlight-box">
+            <p class="highlight-text">
+                With zero formal training.<br><br>
+                Most engineers figure this out the hard way—<br>
+                after months of rejections and ghosted interviews.
+            </p>
+        </div>
+        <div class="slide-number">7/10</div>
+        <div class="brand">Launch To Lead</div>
+    </div>
+
+    <!-- SLIDE 8: The Truth -->
+    <div class="slide slide-8">
+        <p class="eyebrow">Here's what I've learned:</p>
+        <p class="main-text">
+            The job search<br>
+            is a <span class="highlight">skill.</span><br><br>
+            And like any skill,<br>
+            it can be <span class="highlight">learned.</span>
+        </p>
+        <p class="subtext">
+            You just have to treat it like another<br>
+            engineering problem to solve.
+        </p>
+        <div class="slide-number">8/10</div>
+        <div class="brand">Launch To Lead</div>
+    </div>
+
+    <!-- SLIDE 9: Not Your Fault -->
+    <div class="slide slide-9">
+        <p class="main-text">
+            If you're feeling this gap:<br><br>
+            <span class="highlight">You're not alone.</span><br>
+            <span class="highlight">It's not your fault.</span>
+        </p>
+        <p class="subtext">
+            The system just never taught you this part.
+        </p>
+        <div class="slide-number">9/10</div>
+        <div class="brand">Launch To Lead</div>
+    </div>
+
+    <!-- SLIDE 10: CTA -->
+    <div class="slide slide-10">
+        <h2 class="heading">
+            The good news?<br>
+            <span class="highlight">It's learnable.</span>
+        </h2>
+        <p class="content">
+            The same problem-solving brain that got you<br>
+            through engineering school can crack this too.
+        </p>
+        <div class="action">Follow for more career insights</div>
+        <div class="slide-number">10/10</div>
+        <div class="brand">Launch To Lead</div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedIn Carousel - Does It Get Easier After School?</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: #f3f4f6;
+            padding: 20px;
+        }
+
+        .slide {
+            width: 1080px;
+            height: 1080px;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            margin: 0 auto 40px auto;
+            padding: 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            page-break-after: always;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slide::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(163, 230, 53, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .slide-number {
+            position: absolute;
+            bottom: 40px;
+            right: 60px;
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.4);
+            font-weight: 500;
+        }
+
+        .brand {
+            position: absolute;
+            bottom: 40px;
+            left: 60px;
+            font-size: 18px;
+            color: #a3e635;
+            font-weight: 600;
+        }
+
+        /* Slide 1 - Title */
+        .slide-1 .eyebrow {
+            font-size: 28px;
+            font-weight: 600;
+            color: #a3e635;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 40px;
+        }
+
+        .slide-1 .title {
+            font-size: 68px;
+            font-weight: 800;
+            color: white;
+            line-height: 1.15;
+            margin-bottom: 50px;
+        }
+
+        .slide-1 .highlight {
+            color: #a3e635;
+        }
+
+        .slide-1 .subtitle {
+            font-size: 32px;
+            color: rgba(255, 255, 255, 0.7);
+            font-weight: 500;
+            line-height: 1.4;
+        }
+
+        /* Slide 2 - The Context */
+        .slide-2 .heading {
+            font-size: 38px;
+            font-weight: 700;
+            color: #a3e635;
+            margin-bottom: 50px;
+        }
+
+        .slide-2 .quote {
+            font-size: 48px;
+            font-weight: 700;
+            color: white;
+            line-height: 1.3;
+            font-style: italic;
+            margin-bottom: 50px;
+            padding-left: 30px;
+            border-left: 6px solid #a3e635;
+        }
+
+        .slide-2 .context {
+            font-size: 30px;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.5;
+        }
+
+        .slide-2 .context strong {
+            color: #fbbf24;
+        }
+
+        /* Slide 3 - My Answer */
+        .slide-3 {
+            text-align: center;
+        }
+
+        .slide-3 .heading {
+            font-size: 36px;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 50px;
+        }
+
+        .slide-3 .big-answer {
+            font-size: 140px;
+            font-weight: 800;
+            color: #a3e635;
+            margin-bottom: 50px;
+        }
+
+        .slide-3 .subtext {
+            font-size: 36px;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.5;
+        }
+
+        /* Slide 4 - Reason 1 */
+        .slide-4 .reason-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #a3e635, #65a30d);
+            color: #0f172a;
+            font-size: 40px;
+            font-weight: 800;
+            border-radius: 50%;
+            margin-bottom: 40px;
+        }
+
+        .slide-4 .heading {
+            font-size: 52px;
+            font-weight: 800;
+            color: white;
+            line-height: 1.2;
+            margin-bottom: 50px;
+        }
+
+        .slide-4 .heading .highlight {
+            color: #a3e635;
+        }
+
+        .slide-4 .content {
+            font-size: 34px;
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.6;
+        }
+
+        .slide-4 .emphasis {
+            color: #fbbf24;
+            font-weight: 600;
+        }
+
+        /* Slide 5 - Reason 2 */
+        .slide-5 .reason-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #a3e635, #65a30d);
+            color: #0f172a;
+            font-size: 40px;
+            font-weight: 800;
+            border-radius: 50%;
+            margin-bottom: 40px;
+        }
+
+        .slide-5 .heading {
+            font-size: 52px;
+            font-weight: 800;
+            color: white;
+            line-height: 1.2;
+            margin-bottom: 50px;
+        }
+
+        .slide-5 .heading .highlight {
+            color: #a3e635;
+        }
+
+        .slide-5 .comparison {
+            display: flex;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .slide-5 .column {
+            flex: 1;
+            padding: 35px;
+            border-radius: 20px;
+        }
+
+        .slide-5 .during {
+            background: rgba(248, 113, 113, 0.15);
+            border: 2px solid rgba(248, 113, 113, 0.3);
+        }
+
+        .slide-5 .after {
+            background: rgba(163, 230, 53, 0.15);
+            border: 2px solid rgba(163, 230, 53, 0.3);
+        }
+
+        .slide-5 .column-title {
+            font-size: 26px;
+            font-weight: 700;
+            margin-bottom: 25px;
+        }
+
+        .slide-5 .during .column-title {
+            color: #f87171;
+        }
+
+        .slide-5 .after .column-title {
+            color: #a3e635;
+        }
+
+        .slide-5 .column-text {
+            font-size: 24px;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.5;
+        }
+
+        /* Slide 6 - The Peaks */
+        .slide-6 .reason-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #a3e635, #65a30d);
+            color: #0f172a;
+            font-size: 40px;
+            font-weight: 800;
+            border-radius: 50%;
+            margin-bottom: 40px;
+        }
+
+        .slide-6 .heading {
+            font-size: 48px;
+            font-weight: 800;
+            color: white;
+            line-height: 1.2;
+            margin-bottom: 40px;
+        }
+
+        .slide-6 .heading .highlight {
+            color: #a3e635;
+        }
+
+        .slide-6 .graph-container {
+            display: flex;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .slide-6 .graph-box {
+            flex: 1;
+            text-align: center;
+        }
+
+        .slide-6 .graph-label {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .slide-6 .school-label {
+            color: #f87171;
+        }
+
+        .slide-6 .work-label {
+            color: #a3e635;
+        }
+
+        .slide-6 .graph-visual {
+            height: 200px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            gap: 8px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+        }
+
+        .slide-6 .bar {
+            width: 40px;
+            border-radius: 8px 8px 0 0;
+        }
+
+        .slide-6 .school-bar {
+            background: #f87171;
+        }
+
+        .slide-6 .work-bar {
+            background: #a3e635;
+        }
+
+        .slide-6 .description {
+            font-size: 26px;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.5;
+            margin-top: 40px;
+        }
+
+        /* Slide 7 - Reason 3 */
+        .slide-7 .reason-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #a3e635, #65a30d);
+            color: #0f172a;
+            font-size: 40px;
+            font-weight: 800;
+            border-radius: 50%;
+            margin-bottom: 40px;
+        }
+
+        .slide-7 .heading {
+            font-size: 48px;
+            font-weight: 800;
+            color: white;
+            line-height: 1.2;
+            margin-bottom: 50px;
+        }
+
+        .slide-7 .heading .highlight {
+            color: #a3e635;
+        }
+
+        .slide-7 .comparison-row {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .slide-7 .compare-box {
+            flex: 1;
+            padding: 30px;
+            border-radius: 16px;
+            text-align: center;
+        }
+
+        .slide-7 .school-box {
+            background: rgba(248, 113, 113, 0.15);
+            border: 2px solid rgba(248, 113, 113, 0.3);
+        }
+
+        .slide-7 .career-box {
+            background: rgba(163, 230, 53, 0.15);
+            border: 2px solid rgba(163, 230, 53, 0.3);
+        }
+
+        .slide-7 .box-label {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .slide-7 .school-box .box-label {
+            color: #f87171;
+        }
+
+        .slide-7 .career-box .box-label {
+            color: #a3e635;
+        }
+
+        .slide-7 .box-content {
+            font-size: 30px;
+            color: white;
+            font-weight: 700;
+        }
+
+        .slide-7 .bottom-text {
+            font-size: 30px;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.5;
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .slide-7 .bottom-text strong {
+            color: #a3e635;
+        }
+
+        /* Slide 8 - The Key Message */
+        .slide-8 {
+            text-align: center;
+        }
+
+        .slide-8 .eyebrow {
+            font-size: 26px;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.6);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 50px;
+        }
+
+        .slide-8 .main-message {
+            font-size: 72px;
+            font-weight: 800;
+            color: #a3e635;
+            line-height: 1.2;
+            margin-bottom: 50px;
+        }
+
+        .slide-8 .subtext {
+            font-size: 34px;
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.5;
+        }
+
+        /* Slide 9 - The Reminder */
+        .slide-9 .content {
+            font-size: 38px;
+            color: white;
+            line-height: 1.6;
+            margin-bottom: 50px;
+        }
+
+        .slide-9 .highlight-box {
+            background: rgba(163, 230, 53, 0.15);
+            border: 2px solid rgba(163, 230, 53, 0.3);
+            border-radius: 20px;
+            padding: 50px;
+            text-align: center;
+        }
+
+        .slide-9 .highlight-text {
+            font-size: 42px;
+            font-weight: 700;
+            color: #a3e635;
+            line-height: 1.4;
+        }
+
+        /* Slide 10 - CTA */
+        .slide-10 {
+            text-align: center;
+        }
+
+        .slide-10 .heading {
+            font-size: 52px;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 50px;
+            line-height: 1.2;
+        }
+
+        .slide-10 .highlight {
+            color: #a3e635;
+        }
+
+        .slide-10 .cta {
+            font-size: 32px;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.5;
+            margin-bottom: 60px;
+        }
+
+        .slide-10 .action {
+            display: inline-block;
+            background: #a3e635;
+            color: #0f172a;
+            font-size: 28px;
+            font-weight: 700;
+            padding: 24px 48px;
+            border-radius: 12px;
+        }
+
+        @page {
+            size: 1080px 1080px;
+            margin: 0;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+                margin: 0;
+            }
+
+            .slide {
+                margin: 0;
+                box-shadow: none;
+                page-break-after: always;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+                width: 100vw;
+                height: 100vh;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- SLIDE 1: Title -->
+    <div class="slide slide-1">
+        <div class="eyebrow">A Client Asked Me...</div>
+        <h1 class="title">
+            "Does it get <span class="highlight">easier</span><br>
+            after school?"
+        </h1>
+        <p class="subtitle">
+            Here's what I told them (and why it matters).
+        </p>
+        <div class="slide-number">1/10</div>
+        <div class="brand">Launch To Lead</div>
+    </div>
+
+    <!-- SLIDE 2: The Context -->
+    <div class="slide slide-2">
+        <h2 class="heading">The question came from someone who:</h2>
+        <p class="quote">
+            "I'm working almost full-time while going to school full-time. Does the stress ever end?"
+        </p>
+        <p class="context">
+            They were exhausted. Burned out. Wondering if all this effort was worth it.
+            <br><br>
+            <strong>My answer surprised them.</strong>
+        </p>
+        <div class="slide-number">2/10</div>
+        <div class="brand">Launch To Lead</div>
+    </div>
+
+    <!-- SLIDE 3: My Answer -->
+    <div class="slide slide-3">
+        <p class="heading">My honest answer:</p>
+        <p class="big-answer">Yes.</p>
+        <p class="subtext">
+            In many important ways, it absolutely does.
+            <br><br>
+            Here are the 3 biggest reasons why:
+        </p>
+        <div class="slide-number">3/10</div>
+        <div class="brand">Launch To Lead</div>
+    </div>
+
+    <!-- SLIDE 4: Reason 1 -->
+    <div class="slide slide-4">
+        <div class="reason-number">1</div>
+        <h2 class="heading">
+            The <span class="highlight">uncertainty</span><br>
+            disappears.
+        </h2>
+        <p class="content">
+            Right now, you're grinding with one nagging question:
+            <br><br>
+            <span class="emphasis">"Is this going to pay off?"</span>
+            <br><br>
+            When you land that job, that question is answered. You made it. The "promised land" is real—and you're standing in it.
+        </p>
+        <div class="slide-number">4/10</div>
+        <div class="brand">Launch To Lead</div>
+    </div>
+
+    <!-- SLIDE 5: Reason 2 -->
+    <div class="slide slide-5">
+        <div class="reason-number">2</div>
+        <h2 class="heading">
+            No more <span class="highlight">juggling</span><br>
+            three lives.
+        </h2>
+        <div class="comparison">
+            <div class="column during">
+                <h3 class="column-title">📚 During School + Work</h3>
+                <p class="column-text">
+                    → School deadlines<br>
+                    → Work shifts<br>
+                    → Personal life<br>
+                    → Everything competing<br>
+                    → Constant context switching
+                </p>
+            </div>
+            <div class="column after">
+                <h3 class="column-title">💼 After Graduation</h3>
+                <p class="column-text">
+                    → One primary focus<br>
+                    → Clear boundaries<br>
+                    → Evenings are yours<br>
+                    → Weekends are yours<br>
+                    → Mental space to breathe
+                </p>
+            </div>
+        </div>
+        <div class="slide-number">5/10</div>
+        <div class="brand">Launch To Lead</div>
+    </div>
+
+    <!-- SLIDE 6: The Peaks -->
+    <div class="slide slide-6">
+        <div class="reason-number">2</div>
+        <h2 class="heading">
+            The stress <span class="highlight">peaks</span> flatten out.
+        </h2>
+        <div class="graph-container">
+            <div class="graph-box">
+                <div class="graph-label school-label">School + Work Stress</div>
+                <div class="graph-visual">
+                    <div class="bar school-bar" style="height: 40px;"></div>
+                    <div class="bar school-bar" style="height: 60px;"></div>
+                    <div class="bar school-bar" style="height: 180px;"></div>
+                    <div class="bar school-bar" style="height: 50px;"></div>
+                    <div class="bar school-bar" style="height: 170px;"></div>
+                    <div class="bar school-bar" style="height: 45px;"></div>
+                    <div class="bar school-bar" style="height: 190px;"></div>
+                </div>
+            </div>
+            <div class="graph-box">
+                <div class="graph-label work-label">Career Stress</div>
+                <div class="graph-visual">
+                    <div class="bar work-bar" style="height: 80px;"></div>
+                    <div class="bar work-bar" style="height: 95px;"></div>
+                    <div class="bar work-bar" style="height: 85px;"></div>
+                    <div class="bar work-bar" style="height: 100px;"></div>
+                    <div class="bar work-bar" style="height: 90px;"></div>
+                    <div class="bar work-bar" style="height: 85px;"></div>
+                    <div class="bar work-bar" style="height: 95px;"></div>
+                </div>
+            </div>
+        </div>
+        <p class="description">
+            Exams, finals, project deadlines while working = intense peaks.
+            <br>
+            Work stress is more consistent—fewer extreme highs and lows.
+        </p>
+        <div class="slide-number">6/10</div>
+        <div class="brand">Launch To Lead</div>
+    </div>
+
+    <!-- SLIDE 7: Reason 3 -->
+    <div class="slide slide-7">
+        <div class="reason-number">3</div>
+        <h2 class="heading">
+            Future stress is <span class="highlight">voluntary</span>.
+        </h2>
+        <div class="comparison-row">
+            <div class="compare-box school-box">
+                <div class="box-label">In School</div>
+                <div class="box-content">"Potential" reward</div>
+            </div>
+            <div class="compare-box career-box">
+                <div class="box-label">In Career</div>
+                <div class="box-content">"Certain" reward</div>
+            </div>
+        </div>
+        <div class="comparison-row">
+            <div class="compare-box school-box">
+                <div class="box-label">Stress for...</div>
+                <div class="box-content">Hope it works out</div>
+            </div>
+            <div class="compare-box career-box">
+                <div class="box-label">Stress for...</div>
+                <div class="box-content">Known trade-offs</div>
+            </div>
+        </div>
+        <p class="bottom-text">
+            Promotions come with more stress—but you <strong>choose</strong> it,
+            <br>knowing the reward upfront.
+        </p>
+        <div class="slide-number">7/10</div>
+        <div class="brand">Launch To Lead</div>
+    </div>
+
+    <!-- SLIDE 8: The Key Message -->
+    <div class="slide slide-8">
+        <p class="eyebrow">The most important thing to remember:</p>
+        <p class="main-message">
+            This too<br>shall pass.
+        </p>
+        <p class="subtext">
+            No state lasts forever.
+            <br>
+            Especially this one.
+        </p>
+        <div class="slide-number">8/10</div>
+        <div class="brand">Launch To Lead</div>
+    </div>
+
+    <!-- SLIDE 9: The Reminder -->
+    <div class="slide slide-9">
+        <p class="content">
+            It's only a handful of years from your life.
+            <br><br>
+            And it will be over.
+            <br><br>
+            The important thing is to:
+        </p>
+        <div class="highlight-box">
+            <p class="highlight-text">
+                Keep seeing the light at the end of the tunnel.
+                <br><br>
+                Hang in there—and you'll get exactly what you set out to get.
+            </p>
+        </div>
+        <div class="slide-number">9/10</div>
+        <div class="brand">Launch To Lead</div>
+    </div>
+
+    <!-- SLIDE 10: CTA -->
+    <div class="slide slide-10">
+        <h2 class="heading">
+            To every student<br>
+            <span class="highlight">grinding through school + work:</span>
+        </h2>
+        <p class="cta">
+            You're doing one of the hardest things.
+            <br><br>
+            The finish line is closer than you think.
+            <br>
+            Keep going.
+        </p>
+        <div class="action">Follow for more career insights</div>
+        <div class="slide-number">10/10</div>
+        <div class="brand">Launch To Lead</div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedIn Carousel - Confident Without Being Arrogant</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: #f3f4f6;
+            padding: 20px;
+        }
+
+        .slide {
+            width: 1080px;
+            height: 1080px;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            margin: 0 auto 40px auto;
+            padding: 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            page-break-after: always;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slide::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(163, 230, 53, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .slide-number {
+            position: absolute;
+            bottom: 40px;
+            right: 60px;
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.4);
+            font-weight: 500;
+        }
+
+        .brand {
+            position: absolute;
+            bottom: 40px;
+            left: 60px;
+            font-size: 18px;
+            color: #a3e635;
+            font-weight: 600;
+        }
+
+        /* Slide 1 - Title */
+        .slide-1 .eyebrow {
+            font-size: 28px;
+            font-weight: 600;
+            color: #a3e635;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 40px;
+        }
+
+        .slide-1 .title {
+            font-size: 72px;
+            font-weight: 800;
+            color: white;
+            line-height: 1.1;
+            margin-bottom: 50px;
+        }
+
+        .slide-1 .highlight {
+            color: #a3e635;
+        }
+
+        .slide-1 .subtitle {
+            font-size: 32px;
+            color: rgba(255, 255, 255, 0.7);
+            font-weight: 500;
+            line-height: 1.4;
+        }
+
+        /* Slide 2 - The Question */
+        .slide-2 {
+            text-align: center;
+        }
+
+        .slide-2 .context {
+            font-size: 28px;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 50px;
+        }
+
+        .slide-2 .quote {
+            font-size: 52px;
+            font-weight: 700;
+            color: white;
+            line-height: 1.3;
+            font-style: italic;
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .slide-2 .quote .highlight {
+            color: #a3e635;
+        }
+
+        /* Slide 3 - Two Parts */
+        .slide-3 .heading {
+            font-size: 48px;
+            font-weight: 800;
+            color: white;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .slide-3 .two-columns {
+            display: flex;
+            gap: 40px;
+        }
+
+        .slide-3 .column {
+            flex: 1;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        .slide-3 .confidence-col {
+            background: rgba(163, 230, 53, 0.1);
+            border: 2px solid rgba(163, 230, 53, 0.3);
+        }
+
+        .slide-3 .humility-col {
+            background: rgba(56, 189, 248, 0.1);
+            border: 2px solid rgba(56, 189, 248, 0.3);
+        }
+
+        .slide-3 .column-icon {
+            font-size: 60px;
+            margin-bottom: 20px;
+        }
+
+        .slide-3 .column-title {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .slide-3 .confidence-col .column-title {
+            color: #a3e635;
+        }
+
+        .slide-3 .humility-col .column-title {
+            color: #38bdf8;
+        }
+
+        .slide-3 .column-text {
+            font-size: 24px;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.5;
+        }
+
+        /* Slide 4 - Confidence Section */
+        .slide-4 .section-label {
+            display: inline-block;
+            background: rgba(163, 230, 53, 0.2);
+            border: 1px solid rgba(163, 230, 53, 0.4);
+            color: #a3e635;
+            font-size: 20px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            padding: 10px 24px;
+            border-radius: 50px;
+            margin-bottom: 40px;
+        }
+
+        .slide-4 .heading {
+            font-size: 52px;
+            font-weight: 800;
+            color: white;
+            line-height: 1.2;
+            margin-bottom: 50px;
+        }
+
+        .slide-4 .heading .highlight {
+            color: #a3e635;
+        }
+
+        .slide-4 .list {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .slide-4 .list-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            font-size: 30px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .slide-4 .list-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(163, 230, 53, 0.2);
+            border: 2px solid rgba(163, 230, 53, 0.4);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #a3e635;
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+
+        /* Slide 5 - The Key Shift */
+        .slide-5 {
+            text-align: center;
+        }
+
+        .slide-5 .small-text {
+            font-size: 26px;
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 40px;
+        }
+
+        .slide-5 .main-text {
+            font-size: 56px;
+            font-weight: 800;
+            color: white;
+            line-height: 1.3;
+            margin-bottom: 50px;
+        }
+
+        .slide-5 .main-text .highlight {
+            color: #a3e635;
+        }
+
+        .slide-5 .comparison {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+        }
+
+        .slide-5 .compare-box {
+            padding: 30px 40px;
+            border-radius: 16px;
+            text-align: center;
+        }
+
+        .slide-5 .wrong {
+            background: rgba(248, 113, 113, 0.15);
+            border: 2px solid rgba(248, 113, 113, 0.3);
+        }
+
+        .slide-5 .right {
+            background: rgba(163, 230, 53, 0.15);
+            border: 2px solid rgba(163, 230, 53, 0.3);
+        }
+
+        .slide-5 .compare-label {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .slide-5 .wrong .compare-label {
+            color: #f87171;
+        }
+
+        .slide-5 .right .compare-label {
+            color: #a3e635;
+        }
+
+        .slide-5 .compare-text {
+            font-size: 28px;
+            font-weight: 700;
+            color: white;
+        }
+
+        /* Slide 6 - Humility Section */
+        .slide-6 .section-label {
+            display: inline-block;
+            background: rgba(56, 189, 248, 0.2);
+            border: 1px solid rgba(56, 189, 248, 0.4);
+            color: #38bdf8;
+            font-size: 20px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            padding: 10px 24px;
+            border-radius: 50px;
+            margin-bottom: 40px;
+        }
+
+        .slide-6 .heading {
+            font-size: 52px;
+            font-weight: 800;
+            color: white;
+            line-height: 1.2;
+            margin-bottom: 50px;
+        }
+
+        .slide-6 .heading .highlight {
+            color: #38bdf8;
+        }
+
+        .slide-6 .list {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .slide-6 .list-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            font-size: 30px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .slide-6 .list-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(56, 189, 248, 0.2);
+            border: 2px solid rgba(56, 189, 248, 0.4);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #38bdf8;
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+
+        /* Slide 7 - Arrogant vs Confident */
+        .slide-7 .heading {
+            font-size: 42px;
+            font-weight: 800;
+            color: white;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .slide-7 .comparison {
+            display: flex;
+            gap: 30px;
+        }
+
+        .slide-7 .column {
+            flex: 1;
+            padding: 35px;
+            border-radius: 20px;
+        }
+
+        .slide-7 .arrogant {
+            background: rgba(248, 113, 113, 0.1);
+            border: 2px solid rgba(248, 113, 113, 0.3);
+        }
+
+        .slide-7 .confident {
+            background: rgba(163, 230, 53, 0.1);
+            border: 2px solid rgba(163, 230, 53, 0.3);
+        }
+
+        .slide-7 .column-title {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .slide-7 .arrogant .column-title {
+            color: #f87171;
+        }
+
+        .slide-7 .confident .column-title {
+            color: #a3e635;
+        }
+
+        .slide-7 .column-list {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .slide-7 .column-item {
+            font-size: 22px;
+            color: rgba(255, 255, 255, 0.85);
+            padding-left: 25px;
+            position: relative;
+            line-height: 1.4;
+        }
+
+        .slide-7 .arrogant .column-item::before {
+            content: '✗';
+            position: absolute;
+            left: 0;
+            color: #f87171;
+        }
+
+        .slide-7 .confident .column-item::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #a3e635;
+        }
+
+        /* Slide 8 - The Key Insight */
+        .slide-8 {
+            text-align: center;
+        }
+
+        .slide-8 .eyebrow {
+            font-size: 24px;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.5);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 50px;
+        }
+
+        .slide-8 .main-text {
+            font-size: 64px;
+            font-weight: 800;
+            color: white;
+            line-height: 1.2;
+            margin-bottom: 50px;
+        }
+
+        .slide-8 .main-text .highlight {
+            color: #a3e635;
+        }
+
+        .slide-8 .subtext {
+            font-size: 32px;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.5;
+        }
+
+        /* Slide 9 - Practice */
+        .slide-9 .heading {
+            font-size: 52px;
+            font-weight: 800;
+            color: white;
+            line-height: 1.2;
+            margin-bottom: 50px;
+        }
+
+        .slide-9 .heading .highlight {
+            color: #a3e635;
+        }
+
+        .slide-9 .content {
+            font-size: 34px;
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.6;
+            margin-bottom: 50px;
+        }
+
+        .slide-9 .highlight-box {
+            background: rgba(163, 230, 53, 0.1);
+            border: 2px solid rgba(163, 230, 53, 0.3);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .slide-9 .highlight-text {
+            font-size: 36px;
+            font-weight: 700;
+            color: #a3e635;
+            line-height: 1.4;
+        }
+
+        /* Slide 10 - CTA */
+        .slide-10 {
+            text-align: center;
+        }
+
+        .slide-10 .heading {
+            font-size: 56px;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 50px;
+            line-height: 1.2;
+        }
+
+        .slide-10 .highlight {
+            color: #a3e635;
+        }
+
+        .slide-10 .summary {
+            font-size: 30px;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+            margin-bottom: 60px;
+        }
+
+        .slide-10 .action {
+            display: inline-block;
+            background: #a3e635;
+            color: #0f172a;
+            font-size: 28px;
+            font-weight: 700;
+            padding: 24px 48px;
+            border-radius: 12px;
+        }
+
+        @page {
+            size: 1080px 1080px;
+            margin: 0;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+                margin: 0;
+            }
+
+            .slide {
+                margin: 0;
+                box-shadow: none;
+                page-break-after: always;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+                width: 100vw;
+                height: 100vh;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- SLIDE 1: Title -->
+    <div class="slide slide-1">
+        <div class="eyebrow">From a Coaching Session</div>
+        <h1 class="title">
+            How to Sound<br>
+            <span class="highlight">Confident</span><br>
+            Without Being<br>
+            <span class="highlight">Arrogant</span>
+        </h1>
+        <p class="subtitle">
+            The balance that wins interviews.
+        </p>
+        <div class="slide-number">1/10</div>
+        <div class="brand">Launch To Lead</div>
+    </div>
+
+    <!-- SLIDE 2: The Question -->
+    <div class="slide slide-2">
+        <p class="context">A client asked me:</p>
+        <p class="quote">
+            "How do I <span class="highlight">sell myself</span> and sound confident without coming across as <span class="highlight">arrogant</span> and full of myself?"
+        </p>
+        <div class="slide-number">2/10</div>
+        <div class="brand">Launch To Lead</div>
+    </div>
+
+    <!-- SLIDE 3: Two Parts -->
+    <div class="slide slide-3">
+        <h2 class="heading">It's a balance of two things:</h2>
+        <div class="two-columns">
+            <div class="column confidence-col">
+                <div class="column-icon">💪</div>
+                <h3 class="column-title">Confidence</h3>
+                <p class="column-text">Know your value.<br>Own your contributions.</p>
+            </div>
+            <div class="column humility-col">
+                <div class="column-icon">🤝</div>
+                <h3 class="column-title">Humility</h3>
+                <p class="column-text">Stay honest.<br>Give credit. Stay curious.</p>
+            </div>
+        </div>
+        <div class="slide-number">3/10</div>
+        <div class="brand">Launch To Lead</div>
+    </div>
+
+    <!-- SLIDE 4: Confidence -->
+    <div class="slide slide-4">
+        <div class="section-label">Building Confidence</div>
+        <h2 class="heading">
+            Confidence comes from<br>
+            <span class="highlight">knowing yourself.</span>
+        </h2>
+        <div class="list">
+            <div class="list-item">
+                <div class="list-icon">→</div>
+                <span>Know your projects and experiences deeply</span>
+            </div>
+            <div class="list-item">
+                <div class="list-icon">→</div>
+                <span>Know the details with certainty</span>
+            </div>
+            <div class="list-item">
+                <div class="list-icon">→</div>
+                <span>Know YOUR contribution—not "we delivered"</span>
+            </div>
+            <div class="list-item">
+                <div class="list-icon">→</div>
+                <span>Practice until delivery feels natural</span>
+            </div>
+            <div class="list-item">
+                <div class="list-icon">→</div>
+                <span>Believe you belong in that role</span>
+            </div>
+        </div>
+        <div class="slide-number">4/10</div>
+        <div class="brand">Launch To Lead</div>
+    </div>
+
+    <!-- SLIDE 5: The Key Shift -->
+    <div class="slide slide-5">
+        <p class="small-text">The language shift that matters:</p>
+        <p class="main-text">
+            Stop saying <span class="highlight">"we."</span><br>
+            Start owning <span class="highlight">"I."</span>
+        </p>
+        <div class="comparison">
+            <div class="compare-box wrong">
+                <div class="compare-label">❌ Sounds vague</div>
+                <div class="compare-text">"We delivered the project..."</div>
+            </div>
+            <div class="compare-box right">
+                <div class="compare-label">✅ Sounds confident</div>
+                <div class="compare-text">"I led the implementation..."</div>
+            </div>
+        </div>
+        <div class="slide-number">5/10</div>
+        <div class="brand">Launch To Lead</div>
+    </div>
+
+    <!-- SLIDE 6: Humility -->
+    <div class="slide slide-6">
+        <div class="section-label">Showing Humility</div>
+        <h2 class="heading">
+            Humility comes from<br>
+            <span class="highlight">honesty.</span>
+        </h2>
+        <div class="list">
+            <div class="list-item">
+                <div class="list-icon">→</div>
+                <span>Give credit to teammates who contributed</span>
+            </div>
+            <div class="list-item">
+                <div class="list-icon">→</div>
+                <span>Ask intelligent questions that show curiosity</span>
+            </div>
+            <div class="list-item">
+                <div class="list-icon">→</div>
+                <span>Admit what you don't know</span>
+            </div>
+            <div class="list-item">
+                <div class="list-icon">→</div>
+                <span>Share failures and what you learned</span>
+            </div>
+            <div class="list-item">
+                <div class="list-icon">→</div>
+                <span>Talk about how you'd improve next time</span>
+            </div>
+        </div>
+        <div class="slide-number">6/10</div>
+        <div class="brand">Launch To Lead</div>
+    </div>
+
+    <!-- SLIDE 7: Arrogant vs Confident -->
+    <div class="slide slide-7">
+        <h2 class="heading">Spot the difference:</h2>
+        <div class="comparison">
+            <div class="column arrogant">
+                <h3 class="column-title">🚫 Arrogant People</h3>
+                <div class="column-list">
+                    <div class="column-item">Don't ask questions</div>
+                    <div class="column-item">Never admit gaps in knowledge</div>
+                    <div class="column-item">Claim to have "done everything"</div>
+                    <div class="column-item">Don't talk about improving</div>
+                    <div class="column-item">Avoid discussing failures</div>
+                    <div class="column-item">Take all the credit</div>
+                </div>
+            </div>
+            <div class="column confident">
+                <h3 class="column-title">✅ Confident People</h3>
+                <div class="column-list">
+                    <div class="column-item">Ask thoughtful questions</div>
+                    <div class="column-item">Acknowledge what they're learning</div>
+                    <div class="column-item">Own their specific contribution</div>
+                    <div class="column-item">Discuss how they'd do it better</div>
+                    <div class="column-item">Share failures + lessons learned</div>
+                    <div class="column-item">Give credit where it's due</div>
+                </div>
+            </div>
+        </div>
+        <div class="slide-number">7/10</div>
+        <div class="brand">Launch To Lead</div>
+    </div>
+
+    <!-- SLIDE 8: Key Insight -->
+    <div class="slide slide-8">
+        <p class="eyebrow">The key insight</p>
+        <p class="main-text">
+            Confident people<br>
+            know their <span class="highlight">worth</span>—<br>
+            and their <span class="highlight">limits.</span>
+        </p>
+        <p class="subtext">
+            They own their contributions<br>
+            AND give credit to others.
+        </p>
+        <div class="slide-number">8/10</div>
+        <div class="brand">Launch To Lead</div>
+    </div>
+
+    <!-- SLIDE 9: Practice -->
+    <div class="slide slide-9">
+        <h2 class="heading">
+            Confidence comes from<br>
+            <span class="highlight">repetition.</span>
+        </h2>
+        <p class="content">
+            The more you practice telling your stories—out loud, with feedback—the more natural your delivery becomes.
+        </p>
+        <div class="highlight-box">
+            <p class="highlight-text">
+                Practice with someone who gives you<br>
+                honest feedback.<br><br>
+                That's where real confidence is built.
+            </p>
+        </div>
+        <div class="slide-number">9/10</div>
+        <div class="brand">Launch To Lead</div>
+    </div>
+
+    <!-- SLIDE 10: CTA -->
+    <div class="slide slide-10">
+        <h2 class="heading">
+            The balance isn't a <span class="highlight">trick.</span><br>
+            It's <span class="highlight">authenticity.</span>
+        </h2>
+        <p class="summary">
+            Know your value. Stay honest.<br>
+            Own your wins. Share your lessons.<br>
+            Be confident. Stay curious.
+        </p>
+        <div class="action">Follow for more interview tips</div>
+        <div class="slide-number">10/10</div>
+        <div class="brand">Launch To Lead</div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Short Overlays — Green Screen for OBS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background: #18181b; }
+        .overlay {
+            width: 1080px;
+            height: 1920px;
+            /* CHROMA KEY GREEN - OBS will remove this */
+            background: #00FF00 !important;
+        }
+    </style>
+</head>
+<body class="min-h-screen py-12 px-4">
+
+    <div class="max-w-[1200px] mx-auto">
+        
+        <!-- Header -->
+        <h1 class="text-3xl font-bold text-white mb-2 text-center">YouTube Short Overlays — Green Screen</h1>
+        <p class="text-zinc-400 text-center mb-2">Green background (#00FF00) for OBS Chroma Key</p>
+        <p class="text-emerald-400 text-center mb-12">Export as PNG → Add to OBS → Apply Chroma Key filter</p>
+
+        <!-- OBS Instructions -->
+        <div class="bg-zinc-800 rounded-2xl p-6 mb-12 max-w-3xl mx-auto">
+            <h2 class="text-white text-xl font-bold mb-4">🎬 OBS Chroma Key Setup</h2>
+            <ol class="text-zinc-300 space-y-2 list-decimal list-inside text-sm">
+                <li>Export each overlay as PNG (DevTools → Capture node screenshot)</li>
+                <li>In OBS, add an <strong>Image</strong> source with the PNG</li>
+                <li>Right-click the Image source → <strong>Filters</strong></li>
+                <li>Click <strong>+ → Chroma Key</strong></li>
+                <li>Set <strong>Key Color Type</strong> to "Green"</li>
+                <li>Adjust <strong>Similarity</strong> to ~400 (tweak if needed)</li>
+                <li>The green will disappear, leaving only your text!</li>
+            </ol>
+        </div>
+
+        <!-- Grid of overlays -->
+        <div class="space-y-16">
+
+            <!-- ====================================== -->
+            <!-- OVERLAY 1: Hook -->
+            <!-- ====================================== -->
+            <div class="text-center">
+                <p class="text-zinc-500 mb-2 text-lg">OVERLAY 1 — Hook (0:00-0:03)</p>
+                <div class="overlay rounded-2xl mx-auto relative">
+                    
+                    <div class="absolute bottom-32 left-0 right-0 px-12">
+                        <div class="bg-black px-12 py-10 rounded-3xl">
+                            <p class="text-yellow-400 text-6xl font-black text-center leading-tight">
+                                I borrowed money<br/>for a job interview...
+                            </p>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <!-- ====================================== -->
+            <!-- OVERLAY 2: Context -->
+            <!-- ====================================== -->
+            <div class="text-center">
+                <p class="text-zinc-500 mb-2 text-lg">OVERLAY 2 — Context (0:03-0:08)</p>
+                <div class="overlay rounded-2xl mx-auto relative">
+                    
+                    <div class="absolute bottom-32 left-0 right-0 px-12">
+                        <div class="bg-black px-12 py-10 rounded-3xl">
+                            <p class="text-white text-5xl font-bold text-center leading-tight mb-6">
+                                Wife. Two kids.
+                            </p>
+                            <p class="text-red-400 text-4xl font-bold text-center leading-tight">
+                                Government job that<br/>barely paid the bills.
+                            </p>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <!-- ====================================== -->
+            <!-- OVERLAY 3: The Shift -->
+            <!-- ====================================== -->
+            <div class="text-center">
+                <p class="text-zinc-500 mb-2 text-lg">OVERLAY 3 — The Shift (0:08-0:15)</p>
+                <div class="overlay rounded-2xl mx-auto relative">
+                    
+                    <div class="absolute bottom-32 left-0 right-0 px-12">
+                        <div class="bg-black px-12 py-10 rounded-3xl">
+                            <p class="text-white text-4xl font-bold text-center leading-tight mb-6">
+                                But I didn't ask<br/>"How do I get hired?"
+                            </p>
+                            <p class="text-emerald-400 text-5xl font-black text-center">
+                                I asked something different...
+                            </p>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <!-- ====================================== -->
+            <!-- OVERLAY 4: The Question -->
+            <!-- ====================================== -->
+            <div class="text-center">
+                <p class="text-zinc-500 mb-2 text-lg">OVERLAY 4 — The Question (0:15-0:20)</p>
+                <div class="overlay rounded-2xl mx-auto relative">
+                    
+                    <div class="absolute bottom-32 left-0 right-0 px-8">
+                        <div class="bg-black px-12 py-12 rounded-3xl border-4 border-emerald-500">
+                            <p class="text-white text-5xl font-black text-center leading-tight mb-4">
+                                "Who do I need to
+                            </p>
+                            <p class="text-yellow-400 text-8xl font-black text-center">
+                                BECOME
+                            </p>
+                            <p class="text-white text-5xl font-black text-center leading-tight mt-4">
+                                to get this job?"
+                            </p>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <!-- ====================================== -->
+            <!-- OVERLAY 5A: What I Did - Item 1 -->
+            <!-- ====================================== -->
+            <div class="text-center">
+                <p class="text-zinc-500 mb-2 text-lg">OVERLAY 5A — Item 1 (0:20-0:23)</p>
+                <div class="overlay rounded-2xl mx-auto relative">
+                    
+                    <div class="absolute bottom-32 left-0 right-0 px-10">
+                        <div class="bg-black px-10 py-8 rounded-3xl">
+                            <div class="flex items-center gap-6">
+                                <span class="text-6xl">✅</span>
+                                <p class="text-white text-4xl font-bold text-left">15 interview examples<br/>memorized like my birthday</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <!-- ====================================== -->
+            <!-- OVERLAY 5B: What I Did - Item 2 -->
+            <!-- ====================================== -->
+            <div class="text-center">
+                <p class="text-zinc-500 mb-2 text-lg">OVERLAY 5B — Item 2 (0:23-0:25)</p>
+                <div class="overlay rounded-2xl mx-auto relative">
+                    
+                    <div class="absolute bottom-32 left-0 right-0 px-10">
+                        <div class="bg-black px-10 py-8 rounded-3xl space-y-4">
+                            <div class="flex items-center gap-6 opacity-60">
+                                <span class="text-5xl">✅</span>
+                                <p class="text-white text-3xl font-bold text-left">15 examples memorized</p>
+                            </div>
+                            <div class="flex items-center gap-6">
+                                <span class="text-6xl">✅</span>
+                                <p class="text-white text-4xl font-bold text-left">2 mock interviews<br/>every single day</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <!-- ====================================== -->
+            <!-- OVERLAY 5C: What I Did - Item 3 -->
+            <!-- ====================================== -->
+            <div class="text-center">
+                <p class="text-zinc-500 mb-2 text-lg">OVERLAY 5C — Item 3 (0:25-0:27)</p>
+                <div class="overlay rounded-2xl mx-auto relative">
+                    
+                    <div class="absolute bottom-32 left-0 right-0 px-10">
+                        <div class="bg-black px-10 py-8 rounded-3xl space-y-3">
+                            <div class="flex items-center gap-5 opacity-50">
+                                <span class="text-4xl">✅</span>
+                                <p class="text-white text-2xl font-bold">15 examples memorized</p>
+                            </div>
+                            <div class="flex items-center gap-5 opacity-50">
+                                <span class="text-4xl">✅</span>
+                                <p class="text-white text-2xl font-bold">2 mock interviews daily</p>
+                            </div>
+                            <div class="flex items-center gap-6">
+                                <span class="text-6xl">✅</span>
+                                <p class="text-white text-4xl font-bold text-left">Built an interview binder<br/>nobody else brought</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <!-- ====================================== -->
+            <!-- OVERLAY 5D: What I Did - All Items -->
+            <!-- ====================================== -->
+            <div class="text-center">
+                <p class="text-zinc-500 mb-2 text-lg">OVERLAY 5D — All Items (0:27-0:30)</p>
+                <div class="overlay rounded-2xl mx-auto relative">
+                    
+                    <div class="absolute bottom-28 left-0 right-0 px-10">
+                        <div class="bg-black px-10 py-8 rounded-3xl space-y-4">
+                            <div class="flex items-center gap-5">
+                                <span class="text-5xl">✅</span>
+                                <p class="text-white text-3xl font-bold">15 examples memorized</p>
+                            </div>
+                            <div class="flex items-center gap-5">
+                                <span class="text-5xl">✅</span>
+                                <p class="text-white text-3xl font-bold">2 mock interviews daily</p>
+                            </div>
+                            <div class="flex items-center gap-5">
+                                <span class="text-5xl">✅</span>
+                                <p class="text-white text-3xl font-bold">Interview binder</p>
+                            </div>
+                            <div class="flex items-center gap-5">
+                                <span class="text-5xl">🔥</span>
+                                <p class="text-yellow-400 text-3xl font-black">Burned the boats — NO backup plan</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <!-- ====================================== -->
+            <!-- OVERLAY 6: The Transformation -->
+            <!-- ====================================== -->
+            <div class="text-center">
+                <p class="text-zinc-500 mb-2 text-lg">OVERLAY 6 — Transformation (0:30-0:33)</p>
+                <div class="overlay rounded-2xl mx-auto relative">
+                    
+                    <div class="absolute bottom-32 left-0 right-0 px-12">
+                        <div class="bg-black px-12 py-10 rounded-3xl">
+                            <p class="text-white text-5xl font-black text-center leading-tight mb-6">
+                                That person<br/><span class="text-red-400">didn't exist</span> yet.
+                            </p>
+                            <div class="w-24 h-1 bg-yellow-400 mx-auto mb-6"></div>
+                            <p class="text-emerald-400 text-5xl font-black text-center">
+                                I had to become him.
+                            </p>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <!-- ====================================== -->
+            <!-- OVERLAY 7: Result -->
+            <!-- ====================================== -->
+            <div class="text-center">
+                <p class="text-zinc-500 mb-2 text-lg">OVERLAY 7 — Result (0:33-0:38)</p>
+                <div class="overlay rounded-2xl mx-auto relative">
+                    
+                    <div class="absolute bottom-32 left-0 right-0 px-12">
+                        <div class="bg-black px-12 py-10 rounded-3xl border-4 border-yellow-500">
+                            <p class="text-white text-4xl font-bold text-center mb-4">8 years later...</p>
+                            <p class="text-yellow-400 text-6xl font-black text-center leading-tight mb-4">
+                                Still at John Deere 🚜
+                            </p>
+                            <p class="text-emerald-400 text-4xl font-bold text-center">
+                                Multiple promotions
+                            </p>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <!-- ====================================== -->
+            <!-- OVERLAY 8: The Lesson -->
+            <!-- ====================================== -->
+            <div class="text-center">
+                <p class="text-zinc-500 mb-2 text-lg">OVERLAY 8 — The Lesson (0:38-0:48)</p>
+                <div class="overlay rounded-2xl mx-auto relative">
+                    
+                    <div class="absolute bottom-32 left-0 right-0 px-12">
+                        <div class="bg-black px-12 py-10 rounded-3xl">
+                            <p class="text-white text-4xl font-bold text-center mb-6">
+                                Don't set goals for what you'll
+                            </p>
+                            <p class="text-red-400 text-7xl font-black text-center mb-6">GET</p>
+                            <p class="text-white text-4xl font-bold text-center mb-6">
+                                Set goals for who you'll
+                            </p>
+                            <p class="text-emerald-400 text-7xl font-black text-center">BECOME</p>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <!-- ====================================== -->
+            <!-- OVERLAY 9: CTA -->
+            <!-- ====================================== -->
+            <div class="text-center">
+                <p class="text-zinc-500 mb-2 text-lg">OVERLAY 9 — CTA (0:48-0:55)</p>
+                <div class="overlay rounded-2xl mx-auto relative">
+                    
+                    <!-- Top banner -->
+                    <div class="absolute top-24 left-0 right-0 px-12">
+                        <div class="bg-emerald-600 px-8 py-4 rounded-2xl">
+                            <p class="text-white text-3xl font-bold text-center">
+                                Follow for more career tips
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Bottom CTA -->
+                    <div class="absolute bottom-32 left-0 right-0 px-12">
+                        <div class="bg-black px-12 py-10 rounded-3xl border-4 border-yellow-500">
+                            <p class="text-white text-4xl font-bold text-center mb-6">
+                                Comment below 👇
+                            </p>
+                            <p class="text-yellow-400 text-5xl font-black text-center leading-tight">
+                                What do you need to<br/>BECOME in 2026?
+                            </p>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Quick Reference -->
+        <div class="bg-zinc-800 rounded-2xl p-8 mt-16 max-w-4xl mx-auto">
+            <h2 class="text-white text-xl font-bold mb-4">⚡ Quick OBS Filter Settings</h2>
+            <div class="grid grid-cols-2 gap-4 text-sm">
+                <div>
+                    <p class="text-zinc-400">Key Color Type:</p>
+                    <p class="text-white font-bold">Green</p>
+                </div>
+                <div>
+                    <p class="text-zinc-400">Similarity:</p>
+                    <p class="text-white font-bold">400 (adjust if needed)</p>
+                </div>
+                <div>
+                    <p class="text-zinc-400">Smoothness:</p>
+                    <p class="text-white font-bold">80</p>
+                </div>
+                <div>
+                    <p class="text-zinc-400">Key Color Spill Reduction:</p>
+                    <p class="text-white font-bold">100</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
