@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedIn Carousel - Master the STAR Method Plus Lessons Learned</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: #f3f4f6;
+            padding: 20px;
+        }
+
+        .slide {
+            width: 1080px;
+            height: 1080px;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            margin: 0 auto 40px auto;
+            padding: 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            page-break-after: always;
+            position: relative;
+            overflow: hidden;
+        }
+
+        @media print {
+            body {
+                padding: 0;
+                margin: 0;
+                background: white;
+            }
+
+            .slide {
+                width: 8.5in;
+                height: 11in;
+                margin: 0;
+                padding: 0.5in;
+                page-break-after: always;
+                page-break-inside: avoid;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+
+            .slide-1 .eyebrow {
+                font-size: 18px;
+                margin-bottom: 20px;
+            }
+
+            .slide-1 .title {
+                font-size: 48px;
+                margin-bottom: 30px;
+            }
+
+            .slide-1 .subtitle {
+                font-size: 20px;
+            }
+
+            .slide-2 .context {
+                font-size: 18px;
+                margin-bottom: 30px;
+            }
+
+            .slide-2 .problem {
+                font-size: 36px;
+                margin-bottom: 25px;
+            }
+
+            .slide-2 .explanation {
+                font-size: 16px;
+            }
+
+            .slide-3 .question {
+                font-size: 18px;
+                margin-bottom: 25px;
+            }
+
+            .slide-3 .star-breakdown {
+                font-size: 32px;
+                margin-bottom: 30px;
+            }
+
+            .slide-3 .missing {
+                font-size: 36px;
+                margin-top: 15px;
+            }
+
+            .slide-3 .note {
+                font-size: 14px;
+                margin-top: 20px;
+            }
+
+            .slide-4 .intro {
+                font-size: 16px;
+                margin-bottom: 30px;
+            }
+
+            .slide-4 .method {
+                font-size: 48px;
+                margin-bottom: 30px;
+            }
+
+            .slide-4 .description {
+                font-size: 18px;
+            }
+
+            .slide-5 .section-title {
+                font-size: 16px;
+                margin-bottom: 30px;
+            }
+
+            .slide-5 .reason {
+                font-size: 20px;
+                margin-bottom: 20px;
+            }
+
+            .slide-5 .explanation {
+                font-size: 16px;
+                margin-bottom: 30px;
+            }
+
+            .slide-6 .title {
+                font-size: 24px;
+                margin-bottom: 30px;
+            }
+
+            .slide-6 .step {
+                font-size: 18px;
+                margin-bottom: 10px;
+            }
+
+            .slide-6 .detail {
+                font-size: 14px;
+                margin-bottom: 20px;
+            }
+
+            .slide-7 .impact-title {
+                font-size: 16px;
+                margin-bottom: 25px;
+            }
+
+            .slide-7 .impact-stat {
+                font-size: 36px;
+                margin-bottom: 20px;
+            }
+
+            .slide-7 .impact-description {
+                font-size: 18px;
+                margin-bottom: 25px;
+            }
+
+            .slide-7 .result {
+                font-size: 16px;
+            }
+
+            .slide-8 .cta-text {
+                font-size: 32px;
+                margin-bottom: 30px;
+            }
+
+            .slide-8 .action {
+                font-size: 20px;
+                padding: 20px 35px;
+                margin-bottom: 25px;
+            }
+
+            .slide-8 .final {
+                font-size: 16px;
+            }
+
+            .slide-number {
+                font-size: 12px;
+            }
+
+            .brand {
+                font-size: 14px;
+            }
+        }
+
+        .slide::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(163, 230, 53, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .slide-number {
+            position: absolute;
+            bottom: 40px;
+            right: 60px;
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.4);
+            font-weight: 500;
+        }
+
+        .brand {
+            position: absolute;
+            bottom: 40px;
+            left: 60px;
+            font-size: 18px;
+            color: #a3e635;
+            font-weight: 600;
+        }
+
+        /* Slide 1 - Title */
+        .slide-1 .eyebrow {
+            font-size: 28px;
+            font-weight: 600;
+            color: #a3e635;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 40px;
+        }
+
+        .slide-1 .title {
+            font-size: 72px;
+            font-weight: 800;
+            color: white;
+            line-height: 1.1;
+            margin-bottom: 50px;
+        }
+
+        .slide-1 .highlight {
+            color: #a3e635;
+        }
+
+        .slide-1 .subtitle {
+            font-size: 32px;
+            color: rgba(255, 255, 255, 0.7);
+            font-weight: 500;
+            line-height: 1.4;
+        }
+
+        /* Slide 2 - The Problem */
+        .slide-2 {
+            text-align: center;
+        }
+
+        .slide-2 .context {
+            font-size: 28px;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 60px;
+        }
+
+        .slide-2 .problem {
+            font-size: 56px;
+            font-weight: 800;
+            color: white;
+            line-height: 1.2;
+            margin-bottom: 40px;
+        }
+
+        .slide-2 .problem-highlight {
+            color: #ef4444;
+        }
+
+        .slide-2 .explanation {
+            font-size: 24px;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.5;
+        }
+
+        /* Slide 3 - What's Missing */
+        .slide-3 {
+            text-align: center;
+        }
+
+        .slide-3 .question {
+            font-size: 28px;
+            font-weight: 600;
+            color: #a3e635;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .slide-3 .star-breakdown {
+            font-size: 48px;
+            font-weight: 800;
+            color: white;
+            line-height: 1.8;
+            margin-bottom: 50px;
+        }
+
+        .slide-3 .missing {
+            color: #ef4444;
+            display: block;
+            margin-top: 20px;
+            font-size: 56px;
+        }
+
+        .slide-3 .note {
+            font-size: 22px;
+            color: rgba(255, 255, 255, 0.7);
+            margin-top: 40px;
+            font-style: italic;
+        }
+
+        /* Slide 4 - The L Method */
+        .slide-4 {
+            text-align: center;
+        }
+
+        .slide-4 .intro {
+            font-size: 24px;
+            font-weight: 600;
+            color: #a3e635;
+            margin-bottom: 50px;
+            text-transform: uppercase;
+        }
+
+        .slide-4 .method {
+            font-size: 72px;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 50px;
+            line-height: 1.2;
+        }
+
+        .slide-4 .method-highlight {
+            color: #a3e635;
+        }
+
+        .slide-4 .description {
+            font-size: 28px;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+        }
+
+        /* Slide 5 - Why It Works */
+        .slide-5 {
+            text-align: center;
+        }
+
+        .slide-5 .section-title {
+            font-size: 28px;
+            font-weight: 600;
+            color: #a3e635;
+            margin-bottom: 50px;
+            text-transform: uppercase;
+        }
+
+        .slide-5 .reason {
+            font-size: 32px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 30px;
+            line-height: 1.4;
+        }
+
+        .slide-5 .explanation {
+            font-size: 24px;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 50px;
+            line-height: 1.6;
+        }
+
+        /* Slide 6 - How to Document */
+        .slide-6 {
+            text-align: center;
+        }
+
+        .slide-6 .title {
+            font-size: 36px;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 50px;
+            line-height: 1.3;
+        }
+
+        .slide-6 .step {
+            font-size: 28px;
+            font-weight: 700;
+            color: #a3e635;
+            margin-bottom: 15px;
+            text-align: left;
+            margin-left: 80px;
+        }
+
+        .slide-6 .detail {
+            font-size: 22px;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 35px;
+            text-align: left;
+            margin-left: 80px;
+            line-height: 1.5;
+        }
+
+        /* Slide 7 - The Impact */
+        .slide-7 {
+            text-align: center;
+        }
+
+        .slide-7 .impact-title {
+            font-size: 28px;
+            font-weight: 600;
+            color: #a3e635;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+        }
+
+        .slide-7 .impact-stat {
+            font-size: 56px;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 30px;
+            line-height: 1.2;
+        }
+
+        .slide-7 .impact-description {
+            font-size: 28px;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+            margin-bottom: 40px;
+        }
+
+        .slide-7 .result {
+            font-size: 24px;
+            color: #a3e635;
+            font-weight: 600;
+        }
+
+        /* Slide 8 - CTA */
+        .slide-8 {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .slide-8 .cta-text {
+            font-size: 48px;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 50px;
+            line-height: 1.2;
+        }
+
+        .slide-8 .cta-highlight {
+            color: #a3e635;
+        }
+
+        .slide-8 .action {
+            font-size: 32px;
+            font-weight: 700;
+            color: white;
+            background: rgba(163, 230, 53, 0.2);
+            border: 2px solid #a3e635;
+            padding: 30px 50px;
+            border-radius: 12px;
+            margin-bottom: 40px;
+            display: inline-block;
+        }
+
+        .slide-8 .final {
+            font-size: 24px;
+            color: rgba(255, 255, 255, 0.8);
+            font-style: italic;
+        }
+
+        .content {
+            position: relative;
+            z-index: 10;
+        }
+    </style>
+</head>
+<body>
+
+<!-- SLIDE 1: Title Slide -->
+<div class="slide slide-1">
+    <div class="content">
+        <div class="eyebrow">Interview Technique</div>
+        <div class="title">You're Doing the <span class="highlight">STAR</span> Method <span class="highlight">Wrong</span></div>
+        <div class="subtitle">The classic 4-step framework is missing the most critical element.</div>
+    </div>
+    <div class="slide-number">1 / 8</div>
+    <div class="brand">L² Launch to Lead</div>
+</div>
+
+<!-- SLIDE 2: The Problem -->
+<div class="slide slide-2">
+    <div class="content">
+        <div class="context">The Mistake</div>
+        <div class="problem">You Stop at <span class="problem-highlight">R</span></div>
+        <div class="explanation">Results feel complete. But to the interviewer, you're leaving the door open for a follow-up question they'll definitely ask.</div>
+    </div>
+    <div class="slide-number">2 / 8</div>
+    <div class="brand">L² Launch to Lead</div>
+</div>
+
+<!-- SLIDE 3: What's Missing -->
+<div class="slide slide-3">
+    <div class="content">
+        <div class="question">Standard STAR Breakdown</div>
+        <div class="star-breakdown">
+            S = Situation<br>
+            T = Task<br>
+            A = Action<br>
+            R = Results
+            <span class="missing">? = Missing ???</span>
+        </div>
+        <div class="note">This is where most people stop.</div>
+    </div>
+    <div class="slide-number">3 / 8</div>
+    <div class="brand">L² Launch to Lead</div>
+</div>
+
+<!-- SLIDE 4: The L Method -->
+<div class="slide slide-4">
+    <div class="content">
+        <div class="intro">Add This One Final Step</div>
+        <div class="method"><span class="method-highlight">L</span> = Lessons Learned</div>
+        <div class="description">(Or: What I'd Do Differently)<br><br>What did you learn? How would you approach it differently next time?</div>
+    </div>
+    <div class="slide-number">4 / 8</div>
+    <div class="brand">L² Launch to Lead</div>
+</div>
+
+<!-- SLIDE 5: Why It Works -->
+<div class="slide slide-5">
+    <div class="content">
+        <div class="section-title">Why This Matters</div>
+        <div class="reason">It Demonstrates Self-Awareness</div>
+        <div class="explanation">Arrogant people claim they did everything perfectly. Confident, humble engineers acknowledge what they'd improve.<br><br>Interviewers want the latter.</div>
+    </div>
+    <div class="slide-number">5 / 8</div>
+    <div class="brand">L² Launch to Lead</div>
+</div>
+
+<!-- SLIDE 6: How to Document -->
+<div class="slide slide-6">
+    <div class="content">
+        <div class="title">Master Your Stories<br>In Extreme Detail</div>
+        <div class="step">Step 1: Write It Out</div>
+        <div class="detail">Full narrative (2-3 paragraphs) with dates, names, specifics, emotions</div>
+        <div class="step">Step 2: Extract Bullets</div>
+        <div class="detail">Boil it down to 5-7 bullet points you can memorize</div>
+        <div class="step">Step 3: Practice It</div>
+        <div class="detail">Deliver it conversationally in 2 minutes (not robotic)</div>
+    </div>
+    <div class="slide-number">6 / 8</div>
+    <div class="brand">L² Launch to Lead</div>
+</div>
+
+<!-- SLIDE 7: The Impact -->
+<div class="slide slide-7">
+    <div class="content">
+        <div class="impact-title">What Interviewers Think</div>
+        <div class="impact-stat">STAR Story<br>+ L (Lessons)</div>
+        <div class="impact-description">= Candidate who is capable, reflective, and coachable</div>
+        <div class="result">That's who gets hired.</div>
+    </div>
+    <div class="slide-number">7 / 8</div>
+    <div class="brand">L² Launch to Lead</div>
+</div>
+
+<!-- SLIDE 8: CTA -->
+<div class="slide slide-8">
+    <div class="content">
+        <div class="cta-text">Ready to <span class="cta-highlight">Master Your Interviews</span>?</div>
+        <div class="action">Book a Strategy Session</div>
+        <div class="final">Let's build your master story vault in the next 21 days.</div>
+    </div>
+    <div class="slide-number">8 / 8</div>
+    <div class="brand">L² Launch to Lead</div>
+</div>
+
+</body>
+</html>
