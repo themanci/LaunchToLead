@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedIn Carousel - Conquer Imposter Syndrome with Relationships</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: #f3f4f6;
+            padding: 20px;
+        }
+
+        .slide {
+            width: 1080px;
+            height: 1080px;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            margin: 0 auto 40px auto;
+            padding: 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            page-break-after: always;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Accent color from brand */
+        .accent {
+            color: #a3e635;
+        }
+
+        .accent-bg {
+            background: rgba(163, 230, 53, 0.1);
+            border-left: 4px solid #a3e635;
+            padding: 20px 30px;
+            border-radius: 4px;
+        }
+
+        /* Typography */
+        .eyebrow {
+            font-size: 28px;
+            font-weight: 600;
+            color: #a3e635;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .title {
+            font-size: 72px;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 40px;
+            line-height: 1.1;
+        }
+
+        .subtitle {
+            font-size: 36px;
+            font-weight: 600;
+            color: #e2e8f0;
+            line-height: 1.3;
+        }
+
+        .body-text {
+            font-size: 32px;
+            color: #cbd5e1;
+            line-height: 1.5;
+            margin-bottom: 30px;
+        }
+
+        .highlight {
+            color: #a3e635;
+            font-weight: 700;
+        }
+
+        .comparison {
+            display: flex;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .comparison-col {
+            flex: 1;
+            padding: 30px;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(163, 230, 53, 0.2);
+        }
+
+        .comparison-col.wrong {
+            border-color: rgba(248, 113, 113, 0.3);
+        }
+
+        .comparison-label {
+            font-size: 18px;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            color: #a3e635;
+        }
+
+        .comparison-col.wrong .comparison-label {
+            color: #f87171;
+        }
+
+        .comparison-text {
+            font-size: 24px;
+            color: #e2e8f0;
+            line-height: 1.4;
+        }
+
+        .bullet-list {
+            font-size: 28px;
+            color: #cbd5e1;
+            line-height: 1.8;
+            margin-top: 20px;
+        }
+
+        .bullet-list li {
+            margin-bottom: 20px;
+            margin-left: 0;
+            list-style: none;
+            padding-left: 50px;
+            position: relative;
+        }
+
+        .bullet-list li:before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #a3e635;
+            font-size: 32px;
+        }
+
+        .cta-text {
+            font-size: 24px;
+            color: #e2e8f0;
+            margin-top: 30px;
+            font-style: italic;
+        }
+
+        .emphasis {
+            background: linear-gradient(120deg, rgba(163, 230, 53, 0.2), rgba(163, 230, 53, 0.05));
+            padding: 20px 30px;
+            border-radius: 4px;
+            font-size: 28px;
+            color: #e2e8f0;
+            line-height: 1.5;
+            margin-top: 30px;
+        }
+
+        /* Print optimization */
+        @media print {
+            body {
+                padding: 0;
+                margin: 0;
+                background: white;
+            }
+
+            .slide {
+                width: 8.5in;
+                height: 11in;
+                margin: 0;
+                padding: 0.5in;
+                page-break-after: always;
+                page-break-inside: avoid;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            }
+
+            .eyebrow {
+                font-size: 16px;
+                margin-bottom: 12px;
+            }
+
+            .title {
+                font-size: 44px;
+                margin-bottom: 24px;
+            }
+
+            .subtitle {
+                font-size: 24px;
+                margin-bottom: 20px;
+            }
+
+            .body-text {
+                font-size: 18px;
+                margin-bottom: 18px;
+            }
+
+            .bullet-list {
+                font-size: 16px;
+                line-height: 1.6;
+                margin-top: 12px;
+            }
+
+            .bullet-list li {
+                margin-bottom: 12px;
+                padding-left: 30px;
+            }
+
+            .comparison {
+                gap: 20px;
+                margin-top: 24px;
+            }
+
+            .comparison-col {
+                padding: 20px;
+            }
+
+            .comparison-label {
+                font-size: 12px;
+                margin-bottom: 12px;
+            }
+
+            .comparison-text {
+                font-size: 14px;
+                line-height: 1.3;
+            }
+
+            .cta-text {
+                font-size: 14px;
+                margin-top: 18px;
+            }
+
+            .emphasis {
+                padding: 15px 20px;
+                font-size: 16px;
+                line-height: 1.4;
+                margin-top: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- SLIDE 1: TITLE SLIDE -->
+<div class="slide">
+    <div class="eyebrow">You're at the Starting Line</div>
+    <div class="title">Forget How You Got Here</div>
+    <div class="subtitle">You're here now. That's all that matters.</div>
+</div>
+
+<!-- SLIDE 2: THE SITUATION -->
+<div class="slide">
+    <div class="body-text">Maybe your path was different.</div>
+    <div class="body-text" style="margin-top: 30px;">Maybe you're older than others on your team.</div>
+    <div class="body-text" style="margin-top: 30px;">Maybe you took detours.</div>
+    <div class="body-text" style="margin-top: 30px;">Maybe you didn't go to the "right" school.</div>
+    <div class="emphasis" style="margin-top: 50px;">
+        That story is over.
+        <br><br>
+        You're here now.
+    </div>
+</div>
+
+<!-- SLIDE 3: YOU EARNED IT -->
+<div class="slide">
+    <div class="eyebrow">The Truth</div>
+    <div class="title">You Earned Your Seat</div>
+    <div class="body-text" style="margin-top: 40px;">
+        Someone chose you.
+        <br><br>
+        You didn't sneak in while no one was looking.
+        <br><br>
+        You earned it.
+    </div>
+    <div class="emphasis" style="margin-top: 40px;">
+        This isn't benevolence. This is merit.
+    </div>
+</div>
+
+<!-- SLIDE 4: YOU BELONG -->
+<div class="slide">
+    <div class="body-text">
+        The fact that you're here <span class="highlight">proves you belong here.</span>
+    </div>
+    <div class="emphasis" style="margin-top: 50px;">
+        No one feels bad for you. No one lowered the bar.
+        <br><br>
+        You earned it.
+        <br><br>
+        You belong.
+    </div>
+</div>
+
+<!-- SLIDE 5: STOP THE DOUBT -->
+<div class="slide">
+    <div class="eyebrow">Your Next Move</div>
+    <div class="title">Stop the Self-Doubt</div>
+    <div class="body-text" style="margin-top: 40px;">
+        This is NOT the time for self-doubt.
+        <br><br>
+        This is NOT the time for second-guessing.
+    </div>
+    <div class="emphasis" style="margin-top: 50px;">
+        This is the time to put your foot on the gas.
+    </div>
+</div>
+
+<!-- SLIDE 6: WHAT YOU CONTROL -->
+<div class="slide">
+    <div class="eyebrow">The Key</div>
+    <div class="title">Control What You Can</div>
+    <div class="body-text" style="margin-top: 40px;">
+        You can't control your past.
+        <br><br>
+        You can't control what might happen tomorrow that's out of your hands.
+    </div>
+    <div class="emphasis" style="margin-top: 40px;">
+        But you CAN control how hard you work.
+        <br><br>
+        And no one can take that from you.
+    </div>
+</div>
+
+<!-- SLIDE 7: YOUR UNFAIR ADVANTAGE -->
+<div class="slide">
+    <div class="eyebrow">The Plot Twist</div>
+    <div class="title">Your Unorthodox Path Is Your Advantage</div>
+    <div class="body-text" style="margin-top: 40px;">
+        You have life experience.
+        <br><br>
+        You have perspective.
+        <br><br>
+        You have resilience.
+    </div>
+    <div class="body-text" style="margin-top: 30px;">
+        While others are just starting their journey, you're starting with a head start in grit.
+    </div>
+</div>
+
+<!-- SLIDE 8: THE 10-YEAR MOVE -->
+<div class="slide">
+    <div class="eyebrow">Your Power</div>
+    <div class="title">Outwork Everyone</div>
+    <ul class="bullet-list" style="margin-top: 40px;">
+        <li>Learn obsessively</li>
+        <li>Grow relentlessly</li>
+        <li>Ask better questions</li>
+        <li>Close your gaps</li>
+        <li>Show up harder than anyone</li>
+    </ul>
+    <div class="body-text" style="margin-top: 40px;">
+        Outwork everyone for 10 years.
+    </div>
+</div>
+
+<!-- SLIDE 9: WHERE YOU'LL BE -->
+<div class="slide">
+    <div class="body-text">
+        You won't just be "where you think you should be."
+    </div>
+    <div class="emphasis" style="margin-top: 50px;">
+        You'll be way past it.
+    </div>
+</div>
+
+</body>
+</html>
