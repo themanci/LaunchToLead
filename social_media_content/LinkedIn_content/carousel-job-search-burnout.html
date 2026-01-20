@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedIn Carousel - Avoiding Job Search Burnout</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: #f3f4f6;
+            padding: 20px;
+        }
+
+        .slide {
+            width: 1080px;
+            height: 1080px;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            margin: 0 auto 40px auto;
+            padding: 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            page-break-after: always;
+            position: relative;
+            overflow: hidden;
+        }
+
+        @media print {
+            body {
+                padding: 0;
+                margin: 0;
+                background: white;
+            }
+
+            .slide {
+                width: 8.5in;
+                height: 11in;
+                margin: 0;
+                padding: 0.5in;
+                page-break-after: always;
+                page-break-inside: avoid;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+        }
+
+        .slide::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(163, 230, 53, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .slide-number {
+            position: absolute;
+            top: 40px;
+            right: 60px;
+            color: #a3e635;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .brand {
+            position: absolute;
+            bottom: 40px;
+            left: 60px;
+            color: #94a3b8;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+
+        /* Slide 1: Title Slide */
+        .slide-1 .eyebrow {
+            color: #a3e635;
+            font-size: 28px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 30px;
+        }
+
+        .slide-1 .title {
+            color: white;
+            font-size: 88px;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 40px;
+        }
+
+        .slide-1 .title .highlight {
+            color: #a3e635;
+            display: block;
+            font-size: 100px;
+            letter-spacing: -1px;
+        }
+
+        .slide-1 .subtitle {
+            color: #d1fae5;
+            font-size: 32px;
+            font-weight: 500;
+            line-height: 1.4;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* Slide 2: The Reality */
+        .slide-2 .reality-label {
+            color: #fbbf24;
+            font-size: 28px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 30px;
+        }
+
+        .slide-2 .stats {
+            color: white;
+            font-size: 64px;
+            font-weight: 800;
+            line-height: 1.3;
+            margin-bottom: 40px;
+        }
+
+        .slide-2 .stats .big-number {
+            color: #fbbf24;
+            display: block;
+            font-size: 96px;
+            font-weight: 900;
+            letter-spacing: -1px;
+        }
+
+        .slide-2 .explanation {
+            color: #fed7aa;
+            font-size: 26px;
+            font-weight: 500;
+            line-height: 1.4;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Slide 3: The Burnout Cycle */
+        .slide-3 .cycle-title {
+            color: #ef4444;
+            font-size: 28px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 40px;
+        }
+
+        .slide-3 .cycle-item {
+            background: linear-gradient(135deg, rgba(239, 68, 68, 0.15) 0%, rgba(239, 68, 68, 0.05) 100%);
+            border: 2px solid rgba(239, 68, 68, 0.3);
+            border-radius: 20px;
+            padding: 25px;
+            margin-bottom: 20px;
+            color: white;
+            text-align: left;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .slide-3 .cycle-number {
+            background: #ef4444;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 800;
+            flex-shrink: 0;
+        }
+
+        .slide-3 .cycle-text {
+            font-size: 22px;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+
+        /* Slide 4: The 68-Day Reality */
+        .slide-4 .timeline-label {
+            color: #a3e635;
+            font-size: 28px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 40px;
+        }
+
+        .slide-4 .big-stat {
+            font-size: 120px;
+            font-weight: 900;
+            background: linear-gradient(135deg, #a3e635 0%, #84cc16 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 30px;
+        }
+
+        .slide-4 .stat-label {
+            color: white;
+            font-size: 36px;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 40px;
+        }
+
+        .slide-4 .stat-note {
+            color: #d1fae5;
+            font-size: 26px;
+            font-weight: 500;
+            line-height: 1.5;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Slide 5: The Unsustainable Trap */
+        .slide-5 .trap-title {
+            color: #ef4444;
+            font-size: 28px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 50px;
+        }
+
+        .slide-5 .trap-list {
+            text-align: left;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .slide-5 .trap-item {
+            background: linear-gradient(135deg, rgba(239, 68, 68, 0.1) 0%, rgba(239, 68, 68, 0.05) 100%);
+            border-left: 4px solid #ef4444;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            color: white;
+        }
+
+        .slide-5 .trap-item-title {
+            color: #fecaca;
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .slide-5 .trap-item-desc {
+            color: #fbbf24;
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+        /* Slide 6: The Strategy */
+        .slide-6 .strategy-title {
+            color: #a3e635;
+            font-size: 28px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 50px;
+        }
+
+        .slide-6 .strategy-box {
+            background: linear-gradient(135deg, rgba(163, 230, 53, 0.15) 0%, rgba(163, 230, 53, 0.05) 100%);
+            border: 2px solid #a3e635;
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+
+        .slide-6 .strategy-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .slide-6 .strategy-number {
+            background: #a3e635;
+            color: #0f172a;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            font-weight: 800;
+            flex-shrink: 0;
+        }
+
+        .slide-6 .strategy-step {
+            color: white;
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .slide-6 .strategy-description {
+            color: #d1fae5;
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 1.4;
+            margin-top: 10px;
+        }
+
+        /* Slide 7: Sustainability Rules */
+        .slide-7 .rules-title {
+            color: #a3e635;
+            font-size: 28px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 40px;
+        }
+
+        .slide-7 .rule-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .slide-7 .rule-box {
+            background: linear-gradient(135deg, #065f46 0%, #047857 100%);
+            border-radius: 16px;
+            padding: 30px;
+            border: 2px solid rgba(163, 230, 53, 0.2);
+        }
+
+        .slide-7 .rule-icon {
+            font-size: 44px;
+            margin-bottom: 15px;
+        }
+
+        .slide-7 .rule-title {
+            color: white;
+            font-size: 20px;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .slide-7 .rule-desc {
+            color: #d1fae5;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 1.4;
+        }
+
+        /* Slide 8: CTA */
+        .slide-8 .cta-eyebrow {
+            color: #a3e635;
+            font-size: 28px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 40px;
+        }
+
+        .slide-8 .cta-main {
+            color: white;
+            font-size: 72px;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 50px;
+        }
+
+        .slide-8 .cta-main .highlight {
+            color: #a3e635;
+            display: block;
+            font-size: 84px;
+        }
+
+        .slide-8 .cta-subtext {
+            color: #d1fae5;
+            font-size: 28px;
+            font-weight: 500;
+            line-height: 1.5;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <!-- Slide 1: Title -->
+    <div class="slide slide-1">
+        <div class="slide-number">1 / 8</div>
+        <div class="content">
+            <div class="eyebrow">Job Search Reality</div>
+            <div class="title">
+                Job Search<span class="highlight">Burnout</span>
+            </div>
+            <div class="subtitle">
+                The median search takes 68+ days. Here's how to stay sane through it.
+            </div>
+        </div>
+        <div class="brand">LaunchToLead.io</div>
+    </div>
+
+    <!-- Slide 2: The Stats -->
+    <div class="slide slide-2">
+        <div class="slide-number">2 / 8</div>
+        <div class="content">
+            <div class="reality-label">The Reality</div>
+            <div class="stats">
+                Median job search:<span class="big-number">68 days</span>
+            </div>
+            <div class="explanation">
+                Most people underestimate how long this takes. That's where the burnout begins.
+            </div>
+        </div>
+        <div class="brand">LaunchToLead.io</div>
+    </div>
+
+    <!-- Slide 3: The Burnout Cycle -->
+    <div class="slide slide-3">
+        <div class="slide-number">3 / 8</div>
+        <div class="content">
+            <div class="cycle-title">The Burnout Cycle</div>
+            
+            <div class="cycle-item">
+                <div class="cycle-number">1</div>
+                <div class="cycle-text">Week 1-2: Optimism. "I'll find something fast." Apply everywhere.</div>
+            </div>
+            
+            <div class="cycle-item">
+                <div class="cycle-number">2</div>
+                <div class="cycle-text">Week 3-6: Reality hits. Few responses. Panic sets in. Double applications.</div>
+            </div>
+            
+            <div class="cycle-item">
+                <div class="cycle-number">3</div>
+                <div class="cycle-text">Week 7-10: Desperation. Applying to things that aren't aligned. Low motivation.</div>
+            </div>
+            
+            <div class="cycle-item">
+                <div class="cycle-number">4</div>
+                <div class="cycle-text">Week 11+: Burnout. Tired. Resentful. Checking email obsessively.</div>
+            </div>
+        </div>
+        <div class="brand">LaunchToLead.io</div>
+    </div>
+
+    <!-- Slide 4: The Timeline -->
+    <div class="slide slide-4">
+        <div class="slide-number">4 / 8</div>
+        <div class="content">
+            <div class="timeline-label">You Are Not Slow</div>
+            <div class="big-stat">68 days</div>
+            <div class="stat-label">
+                is the MEDIAN.<br>Not the exception.
+            </div>
+            <div class="stat-note">
+                From first application to offer: recruiting takes time. Screening takes time. Interviews take time. Decisions take time. <br><br><strong>Plan for 2-3 months. Not 2-3 weeks.</strong>
+            </div>
+        </div>
+        <div class="brand">LaunchToLead.io</div>
+    </div>
+
+    <!-- Slide 5: The Unsustainable Traps -->
+    <div class="slide slide-5">
+        <div class="slide-number">5 / 8</div>
+        <div class="content">
+            <div class="trap-title">Burnout Accelerators</div>
+            <div class="trap-list">
+                <div class="trap-item">
+                    <div class="trap-item-title">Applying to Everything</div>
+                    <div class="trap-item-desc">Spray-and-pray yields 1-2% response. You're wasting energy on dead ends.</div>
+                </div>
+                <div class="trap-item">
+                    <div class="trap-item-title">No Pipeline Visibility</div>
+                    <div class="trap-item-desc">Not tracking where you applied = anxiety + no patterns = lost momentum.</div>
+                </div>
+                <div class="trap-item">
+                    <div class="trap-item-title">Obsessive Checking</div>
+                    <div class="trap-item-desc">Email checking isn't work. It's anxiety. You can't speed up their process.</div>
+                </div>
+                <div class="trap-item">
+                    <div class="trap-item-title">Solo Effort</div>
+                    <div class="trap-item-desc">No accountability = no consistency = burnout. Find a search buddy or community.</div>
+                </div>
+            </div>
+        </div>
+        <div class="brand">LaunchToLead.io</div>
+    </div>
+
+    <!-- Slide 6: The Anti-Burnout Strategy -->
+    <div class="slide slide-6">
+        <div class="slide-number">6 / 8</div>
+        <div class="content">
+            <div class="strategy-title">The Antidote</div>
+            
+            <div class="strategy-box">
+                <div class="strategy-header">
+                    <div class="strategy-number">1</div>
+                    <div class="strategy-step">Build a Sustainable Pace</div>
+                </div>
+                <div class="strategy-description">5-10 targeted applications per week, not 50. Quality > volume. You're in this for 68 days, not burning out in week 3.</div>
+            </div>
+            
+            <div class="strategy-box">
+                <div class="strategy-header">
+                    <div class="strategy-number">2</div>
+                    <div class="strategy-step">Track Everything</div>
+                </div>
+                <div class="strategy-description">Spreadsheet of every app, stage, next action date. Visibility removes anxiety. You can see progress.</div>
+            </div>
+            
+            <div class="strategy-box">
+                <div class="strategy-header">
+                    <div class="strategy-number">3</div>
+                    <div class="strategy-step">Time-Box Your Search</div>
+                </div>
+                <div class="strategy-description">Job searching 9-11 AM and 2-4 PM. Then stop. Don't live on LinkedIn. Don't check email every 15 mins.</div>
+            </div>
+            
+            <div class="strategy-box">
+                <div class="strategy-header">
+                    <div class="strategy-number">4</div>
+                    <div class="strategy-step">Lean On Community</div>
+                </div>
+                <div class="strategy-description">Weekly check-in with accountability partner. Share wins (interviews, referrals). Share struggles. Don't do this alone.</div>
+            </div>
+        </div>
+        <div class="brand">LaunchToLead.io</div>
+    </div>
+
+    <!-- Slide 7: Sustainability Rules -->
+    <div class="slide slide-7">
+        <div class="slide-number">7 / 8</div>
+        <div class="content">
+            <div class="rules-title">Weekly Wellness Rules</div>
+            
+            <div class="rule-grid">
+                <div class="rule-box">
+                    <div class="rule-icon">⏰</div>
+                    <div class="rule-title">Time Boundaries</div>
+                    <div class="rule-desc">Schedule job search hours. Then actually stop. Your brain needs rest.</div>
+                </div>
+                
+                <div class="rule-box">
+                    <div class="rule-icon">📊</div>
+                    <div class="rule-title">Track Progress</div>
+                    <div class="rule-desc">Sunday review: How many quality apps? How many screens? Stay data-driven.</div>
+                </div>
+                
+                <div class="rule-box">
+                    <div class="rule-icon">🎯</div>
+                    <div class="rule-title">Quality Over Quantity</div>
+                    <div class="rule-desc">Tailor to 10-15 target companies. Skip the noise. Focus = energy.</div>
+                </div>
+                
+                <div class="rule-box">
+                    <div class="rule-icon">🤝</div>
+                    <div class="rule-title">Find Your People</div>
+                    <div class="rule-desc">Job search community, friend group, or mentor. Accountability prevents burnout.</div>
+                </div>
+            </div>
+        </div>
+        <div class="brand">LaunchToLead.io</div>
+    </div>
+
+    <!-- Slide 8: CTA -->
+    <div class="slide slide-8">
+        <div class="slide-number">8 / 8</div>
+        <div class="content">
+            <div class="cta-eyebrow">The Truth</div>
+            <div class="cta-main">
+                68 days is<span class="highlight">winnable</span>
+            </div>
+            <div class="cta-subtext">
+                But only if you pace yourself. Treat your job search like a 10-week project, not a sprint. Systems beat intensity. Consistency beats heroics.
+            </div>
+        </div>
+        <div class="brand">LaunchToLead.io</div>
+    </div>
+</body>
+</html>
