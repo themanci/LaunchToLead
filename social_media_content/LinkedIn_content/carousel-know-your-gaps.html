@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedIn Carousel - Know Your Gaps Before You Get a Coach</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: #f3f4f6;
+            padding: 20px;
+        }
+
+        .slide {
+            width: 1080px;
+            height: 1080px;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            margin: 0 auto 40px auto;
+            padding: 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            page-break-after: always;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slide::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(163, 230, 53, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .slide-number {
+            position: absolute;
+            bottom: 40px;
+            right: 60px;
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.4);
+            font-weight: 500;
+        }
+
+        .brand {
+            position: absolute;
+            bottom: 40px;
+            left: 60px;
+            font-size: 18px;
+            color: #a3e635;
+            font-weight: 600;
+        }
+
+        /* Slide 1 - Title */
+        .slide-1 .eyebrow {
+            font-size: 28px;
+            font-weight: 600;
+            color: #a3e635;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 40px;
+        }
+
+        .slide-1 .title {
+            font-size: 72px;
+            font-weight: 800;
+            color: white;
+            line-height: 1.1;
+            margin-bottom: 50px;
+        }
+
+        .slide-1 .title .highlight {
+            color: #a3e635;
+        }
+
+        .slide-1 .subtitle {
+            font-size: 32px;
+            color: rgba(255, 255, 255, 0.7);
+            font-weight: 500;
+            line-height: 1.4;
+        }
+
+        /* Slide 2 - The Pattern */
+        .slide-2 .main-text {
+            font-size: 48px;
+            font-weight: 700;
+            color: white;
+            line-height: 1.3;
+            margin-bottom: 50px;
+        }
+
+        .slide-2 .conversation {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 50px;
+            margin-bottom: 40px;
+        }
+
+        .slide-2 .message {
+            margin-bottom: 30px;
+        }
+
+        .slide-2 .message:last-child {
+            margin-bottom: 0;
+        }
+
+        .slide-2 .speaker {
+            font-size: 18px;
+            color: #a3e635;
+            font-weight: 600;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .slide-2 .speech {
+            font-size: 32px;
+            color: rgba(255, 255, 255, 0.9);
+            font-style: italic;
+            line-height: 1.4;
+        }
+
+        .slide-2 .crickets {
+            font-size: 64px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        /* Slide 3 - The Problem */
+        .slide-3 .label {
+            display: inline-block;
+            background: rgba(248, 113, 113, 0.2);
+            color: #f87171;
+            font-size: 20px;
+            font-weight: 700;
+            padding: 12px 24px;
+            border-radius: 50px;
+            margin-bottom: 40px;
+        }
+
+        .slide-3 .main-text {
+            font-size: 52px;
+            font-weight: 700;
+            color: white;
+            line-height: 1.3;
+            margin-bottom: 50px;
+        }
+
+        .slide-3 .main-text .highlight {
+            color: #f87171;
+        }
+
+        .slide-3 .stats-row {
+            display: flex;
+            gap: 30px;
+        }
+
+        .slide-3 .stat-box {
+            flex: 1;
+            background: rgba(248, 113, 113, 0.1);
+            border: 2px solid rgba(248, 113, 113, 0.3);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .slide-3 .stat-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .slide-3 .stat-text {
+            font-size: 24px;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.4;
+        }
+
+        /* Slide 4 - Below Zero */
+        .slide-4 .main-text {
+            font-size: 56px;
+            font-weight: 700;
+            color: white;
+            line-height: 1.2;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        .slide-4 .main-text .highlight {
+            color: #f87171;
+        }
+
+        .slide-4 .scale {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 50px;
+        }
+
+        .slide-4 .scale-line {
+            height: 8px;
+            background: linear-gradient(90deg, #f87171 0%, #f87171 40%, rgba(255,255,255,0.3) 40%, rgba(255,255,255,0.3) 50%, #a3e635 50%, #a3e635 100%);
+            border-radius: 4px;
+            position: relative;
+            margin: 50px 0;
+        }
+
+        .slide-4 .scale-marker {
+            position: absolute;
+            top: -60px;
+            transform: translateX(-50%);
+            text-align: center;
+        }
+
+        .slide-4 .scale-marker.negative {
+            left: 20%;
+        }
+
+        .slide-4 .scale-marker.zero {
+            left: 50%;
+        }
+
+        .slide-4 .scale-marker.positive {
+            left: 80%;
+        }
+
+        .slide-4 .marker-icon {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .slide-4 .marker-label {
+            font-size: 20px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .slide-4 .you-label {
+            position: absolute;
+            bottom: -50px;
+            left: 20%;
+            transform: translateX(-50%);
+            background: #f87171;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        /* Slide 5 - Review Feedback */
+        .slide-5 .label {
+            display: inline-block;
+            background: rgba(163, 230, 53, 0.2);
+            color: #a3e635;
+            font-size: 20px;
+            font-weight: 700;
+            padding: 12px 24px;
+            border-radius: 50px;
+            margin-bottom: 40px;
+        }
+
+        .slide-5 .main-text {
+            font-size: 52px;
+            font-weight: 700;
+            color: white;
+            line-height: 1.3;
+            margin-bottom: 50px;
+        }
+
+        .slide-5 .questions-list {
+            background: rgba(163, 230, 53, 0.08);
+            border: 2px solid rgba(163, 230, 53, 0.3);
+            border-radius: 20px;
+            padding: 50px;
+        }
+
+        .slide-5 .question {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 30px;
+        }
+
+        .slide-5 .question:last-child {
+            margin-bottom: 0;
+        }
+
+        .slide-5 .arrow {
+            color: #a3e635;
+            font-size: 28px;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+
+        .slide-5 .question-text {
+            font-size: 28px;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.4;
+        }
+
+        /* Slide 6 - Push for Feedback */
+        .slide-6 .main-text {
+            font-size: 52px;
+            font-weight: 700;
+            color: white;
+            line-height: 1.3;
+            margin-bottom: 50px;
+        }
+
+        .slide-6 .main-text .highlight {
+            color: #fbbf24;
+        }
+
+        .slide-6 .quote-box {
+            background: rgba(251, 191, 36, 0.1);
+            border-left: 4px solid #fbbf24;
+            padding: 40px;
+            border-radius: 0 20px 20px 0;
+            margin-bottom: 40px;
+        }
+
+        .slide-6 .quote {
+            font-size: 36px;
+            color: white;
+            font-style: italic;
+            line-height: 1.4;
+        }
+
+        .slide-6 .tip {
+            font-size: 26px;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.5;
+        }
+
+        /* Slide 7 - 360 Feedback */
+        .slide-7 .label {
+            display: inline-block;
+            background: rgba(56, 189, 248, 0.2);
+            color: #38bdf8;
+            font-size: 20px;
+            font-weight: 700;
+            padding: 12px 24px;
+            border-radius: 50px;
+            margin-bottom: 40px;
+        }
+
+        .slide-7 .main-text {
+            font-size: 52px;
+            font-weight: 700;
+            color: white;
+            line-height: 1.3;
+            margin-bottom: 50px;
+        }
+
+        .slide-7 .levels-grid {
+            display: flex;
+            gap: 30px;
+        }
+
+        .slide-7 .level-card {
+            flex: 1;
+            background: rgba(56, 189, 248, 0.08);
+            border: 2px solid rgba(56, 189, 248, 0.3);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .slide-7 .level-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .slide-7 .level-title {
+            font-size: 28px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        .slide-7 .level-ask {
+            font-size: 22px;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.4;
+        }
+
+        /* Slide 8 - Why People Don't */
+        .slide-8 .main-text {
+            font-size: 48px;
+            font-weight: 700;
+            color: white;
+            line-height: 1.3;
+            margin-bottom: 50px;
+        }
+
+        .slide-8 .reasons-list {
+            margin-bottom: 40px;
+        }
+
+        .slide-8 .reason {
+            display: flex;
+            align-items: center;
+            background: rgba(248, 113, 113, 0.1);
+            border-left: 4px solid #f87171;
+            padding: 30px 40px;
+            border-radius: 0 16px 16px 0;
+            margin-bottom: 20px;
+        }
+
+        .slide-8 .reason-icon {
+            font-size: 32px;
+            margin-right: 25px;
+        }
+
+        .slide-8 .reason-text {
+            font-size: 28px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* Slide 9 - The Payoff */
+        .slide-9 .main-text {
+            font-size: 52px;
+            font-weight: 700;
+            color: white;
+            line-height: 1.3;
+            margin-bottom: 50px;
+        }
+
+        .slide-9 .main-text .highlight {
+            color: #a3e635;
+        }
+
+        .slide-9 .benefits-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .slide-9 .benefit-card {
+            background: rgba(163, 230, 53, 0.08);
+            border: 2px solid rgba(163, 230, 53, 0.2);
+            border-radius: 16px;
+            padding: 35px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .slide-9 .benefit-icon {
+            font-size: 32px;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+
+        .slide-9 .benefit-text {
+            font-size: 24px;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.4;
+        }
+
+        /* Slide 10 - CTA */
+        .slide-10 .main-text {
+            font-size: 56px;
+            font-weight: 700;
+            color: white;
+            line-height: 1.2;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        .slide-10 .main-text .highlight {
+            color: #a3e635;
+        }
+
+        .slide-10 .action-box {
+            background: rgba(163, 230, 53, 0.1);
+            border: 2px solid rgba(163, 230, 53, 0.3);
+            border-radius: 20px;
+            padding: 50px;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .slide-10 .action-text {
+            font-size: 32px;
+            color: white;
+            line-height: 1.5;
+            margin-bottom: 30px;
+        }
+
+        .slide-10 .action-highlight {
+            font-size: 36px;
+            font-weight: 700;
+            color: #a3e635;
+        }
+
+        .slide-10 .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .slide-10 .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 22px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        @media print {
+            @page {
+                size: 1080px 1080px;
+                margin: 0;
+            }
+            body {
+                padding: 0;
+                margin: 0;
+                background: white;
+            }
+            .slide {
+                width: 1080px !important;
+                height: 1080px !important;
+                margin: 0 !important;
+                padding: 80px !important;
+                page-break-after: always !important;
+                page-break-inside: avoid !important;
+                break-after: page !important;
+                break-inside: avoid !important;
+                overflow: hidden !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            .slide:last-child {
+                page-break-after: avoid !important;
+                break-after: avoid !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Slide 1: Title -->
+    <div class="slide slide-1">
+        <p class="eyebrow">Career Growth</p>
+        <h1 class="title">Know Your <span class="highlight">Gaps</span><br>Before You Get<br>a Coach</h1>
+        <p class="subtitle">Why most people aren't ready for mentorship</p>
+        <div class="brand">LaunchToLead</div>
+        <div class="slide-number">1/10</div>
+    </div>
+
+    <!-- Slide 2: The Pattern -->
+    <div class="slide slide-2">
+        <h2 class="main-text">I keep seeing this pattern...</h2>
+        <div class="conversation">
+            <div class="message">
+                <p class="speaker">Engineer</p>
+                <p class="speech">"I'm stuck. I've hit a ceiling. I need coaching."</p>
+            </div>
+            <div class="message">
+                <p class="speaker">Coach</p>
+                <p class="speech">"Great. What do you think your biggest gaps are?"</p>
+            </div>
+            <div class="crickets">🦗 🦗 🦗</div>
+        </div>
+        <div class="brand">LaunchToLead</div>
+        <div class="slide-number">2/10</div>
+    </div>
+
+    <!-- Slide 3: The Problem -->
+    <div class="slide slide-3">
+        <span class="label">THE PROBLEM</span>
+        <h2 class="main-text">They <span class="highlight">sense</span> something is wrong.<br>But they haven't figured out <span class="highlight">what</span>.</h2>
+        <div class="stats-row">
+            <div class="stat-box">
+                <div class="stat-icon">😶</div>
+                <p class="stat-text">Can't articulate their gaps</p>
+            </div>
+            <div class="stat-box">
+                <div class="stat-icon">🤷</div>
+                <p class="stat-text">Haven't reflected on feedback</p>
+            </div>
+            <div class="stat-box">
+                <div class="stat-icon">🙈</div>
+                <p class="stat-text">Dismissed criticism as "unfair"</p>
+            </div>
+        </div>
+        <div class="brand">LaunchToLead</div>
+        <div class="slide-number">3/10</div>
+    </div>
+
+    <!-- Slide 4: Below Zero -->
+    <div class="slide slide-4">
+        <h2 class="main-text">If you can't articulate your gaps,<br>you're not at zero.<br>You're in the <span class="highlight">negative</span>.</h2>
+        <div class="scale">
+            <div class="scale-line">
+                <div class="scale-marker negative">
+                    <div class="marker-icon">📍</div>
+                    <div class="marker-label">No Self-Awareness</div>
+                </div>
+                <div class="scale-marker zero">
+                    <div class="marker-icon">🎯</div>
+                    <div class="marker-label">Starting Point</div>
+                </div>
+                <div class="scale-marker positive">
+                    <div class="marker-icon">🚀</div>
+                    <div class="marker-label">Growth</div>
+                </div>
+                <div class="you-label">← You are here</div>
+            </div>
+        </div>
+        <div class="brand">LaunchToLead</div>
+        <div class="slide-number">4/10</div>
+    </div>
+
+    <!-- Slide 5: Review Feedback -->
+    <div class="slide slide-5">
+        <span class="label">STEP 1</span>
+        <h2 class="main-text">Mine Your Existing Feedback</h2>
+        <div class="questions-list">
+            <div class="question">
+                <span class="arrow">→</span>
+                <span class="question-text">What feedback keeps showing up in your reviews?</span>
+            </div>
+            <div class="question">
+                <span class="arrow">→</span>
+                <span class="question-text">What do managers consistently tell you to improve?</span>
+            </div>
+            <div class="question">
+                <span class="arrow">→</span>
+                <span class="question-text">What patterns do you see across multiple jobs?</span>
+            </div>
+            <div class="question">
+                <span class="arrow">→</span>
+                <span class="question-text">What's the theme you keep hearing?</span>
+            </div>
+        </div>
+        <div class="brand">LaunchToLead</div>
+        <div class="slide-number">5/10</div>
+    </div>
+
+    <!-- Slide 6: Push for Feedback -->
+    <div class="slide slide-6">
+        <h2 class="main-text">Not getting feedback?<br>That's a <span class="highlight">problem too</span>.</h2>
+        <div class="quote-box">
+            <p class="quote">"What's one thing I should work on to get to the next level?"</p>
+        </div>
+        <p class="tip">Ask your manager directly. Make it impossible for them to dodge. If they can't answer, they're not doing their job—or they're not paying attention.</p>
+        <div class="brand">LaunchToLead</div>
+        <div class="slide-number">6/10</div>
+    </div>
+
+    <!-- Slide 7: 360 Feedback -->
+    <div class="slide slide-7">
+        <span class="label">STEP 2</span>
+        <h2 class="main-text">Do a 360° Feedback Exercise</h2>
+        <div class="levels-grid">
+            <div class="level-card">
+                <div class="level-icon">👆</div>
+                <p class="level-title">Seniors</p>
+                <p class="level-ask">"What would you improve if you were me?"</p>
+            </div>
+            <div class="level-card">
+                <div class="level-icon">👥</div>
+                <p class="level-title">Peers</p>
+                <p class="level-ask">"What patterns do you notice in how I work?"</p>
+            </div>
+            <div class="level-card">
+                <div class="level-icon">👇</div>
+                <p class="level-title">Juniors</p>
+                <p class="level-ask">"How could I support you better?"</p>
+            </div>
+        </div>
+        <div class="brand">LaunchToLead</div>
+        <div class="slide-number">7/10</div>
+    </div>
+
+    <!-- Slide 8: Why People Don't -->
+    <div class="slide slide-8">
+        <h2 class="main-text">Why most people never do this:</h2>
+        <div class="reasons-list">
+            <div class="reason">
+                <span class="reason-icon">🙉</span>
+                <span class="reason-text">They never ask for feedback in the first place</span>
+            </div>
+            <div class="reason">
+                <span class="reason-icon">🛡️</span>
+                <span class="reason-text">They dismiss it as "biased" or "unfair"</span>
+            </div>
+            <div class="reason">
+                <span class="reason-icon">😤</span>
+                <span class="reason-text">They hear it but don't internalize it</span>
+            </div>
+            <div class="reason">
+                <span class="reason-icon">😰</span>
+                <span class="reason-text">They're scared of what they might learn</span>
+            </div>
+        </div>
+        <div class="brand">LaunchToLead</div>
+        <div class="slide-number">8/10</div>
+    </div>
+
+    <!-- Slide 9: The Payoff -->
+    <div class="slide slide-9">
+        <h2 class="main-text">When you <span class="highlight">know your gaps</span>,<br>coaching actually works.</h2>
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <span class="benefit-icon">🎯</span>
+                <span class="benefit-text">Hit the ground running with clear goals</span>
+            </div>
+            <div class="benefit-card">
+                <span class="benefit-icon">⏱️</span>
+                <span class="benefit-text">No wasted sessions figuring out the problem</span>
+            </div>
+            <div class="benefit-card">
+                <span class="benefit-icon">🔧</span>
+                <span class="benefit-text">Start working on gaps yourself right now</span>
+            </div>
+            <div class="benefit-card">
+                <span class="benefit-icon">📈</span>
+                <span class="benefit-text">Measure progress against specific areas</span>
+            </div>
+        </div>
+        <div class="brand">LaunchToLead</div>
+        <div class="slide-number">9/10</div>
+    </div>
+
+    <!-- Slide 10: CTA -->
+    <div class="slide slide-10">
+        <h2 class="main-text">Don't show up to coaching<br><span class="highlight">empty-handed</span>.</h2>
+        <div class="action-box">
+            <p class="action-text">Know your gaps. Know where you want to grow.<br>Know what's holding you back.</p>
+            <p class="action-highlight">Then make coaching count.</p>
+        </div>
+        <div class="cta-buttons">
+            <span class="cta-btn">♻️ Repost</span>
+            <span class="cta-btn">💾 Save</span>
+            <span class="cta-btn">🔔 Follow</span>
+        </div>
+        <div class="brand">LaunchToLead</div>
+        <div class="slide-number">10/10</div>
+    </div>
+
+</body>
+</html>
