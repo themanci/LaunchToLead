@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedIn Carousel - Don't Reveal Deal Breakers Before You Have an Offer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: #f3f4f6;
+            padding: 20px;
+        }
+
+        .slide {
+            width: 1080px;
+            height: 1080px;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            margin: 0 auto 40px auto;
+            padding: 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            page-break-after: always;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slide::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(163, 230, 53, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .slide-number {
+            position: absolute;
+            bottom: 40px;
+            right: 60px;
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.4);
+            font-weight: 500;
+        }
+
+        .brand {
+            position: absolute;
+            bottom: 40px;
+            left: 60px;
+            font-size: 18px;
+            color: #a3e635;
+            font-weight: 600;
+        }
+
+        /* Slide 1 - Title */
+        .slide-1 .eyebrow {
+            font-size: 28px;
+            font-weight: 600;
+            color: #a3e635;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 40px;
+        }
+
+        .slide-1 .title {
+            font-size: 68px;
+            font-weight: 800;
+            color: white;
+            line-height: 1.1;
+            margin-bottom: 50px;
+        }
+
+        .slide-1 .title .highlight {
+            color: #f87171;
+        }
+
+        .slide-1 .subtitle {
+            font-size: 32px;
+            color: rgba(255, 255, 255, 0.7);
+            font-weight: 500;
+            line-height: 1.4;
+        }
+
+        /* Slide 2 - The Mistake */
+        .slide-2 .main-text {
+            font-size: 48px;
+            font-weight: 700;
+            color: white;
+            line-height: 1.3;
+            margin-bottom: 50px;
+        }
+
+        .slide-2 .quotes-list {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .slide-2 .quote-item {
+            background: rgba(248, 113, 113, 0.1);
+            border-left: 4px solid #f87171;
+            padding: 30px 40px;
+            border-radius: 0 16px 16px 0;
+        }
+
+        .slide-2 .quote-text {
+            font-size: 30px;
+            color: rgba(255, 255, 255, 0.9);
+            font-style: italic;
+        }
+
+        /* Slide 3 - Why It Hurts */
+        .slide-3 .label {
+            display: inline-block;
+            background: rgba(248, 113, 113, 0.2);
+            color: #f87171;
+            font-size: 20px;
+            font-weight: 700;
+            padding: 12px 24px;
+            border-radius: 50px;
+            margin-bottom: 40px;
+        }
+
+        .slide-3 .main-text {
+            font-size: 48px;
+            font-weight: 700;
+            color: white;
+            line-height: 1.3;
+            margin-bottom: 50px;
+        }
+
+        .slide-3 .thoughts-list {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .slide-3 .thought {
+            display: flex;
+            align-items: center;
+            background: rgba(248, 113, 113, 0.08);
+            border: 2px solid rgba(248, 113, 113, 0.3);
+            padding: 30px 40px;
+            border-radius: 16px;
+        }
+
+        .slide-3 .thought-icon {
+            font-size: 36px;
+            margin-right: 25px;
+        }
+
+        .slide-3 .thought-text {
+            font-size: 28px;
+            color: rgba(255, 255, 255, 0.9);
+            font-style: italic;
+        }
+
+        /* Slide 4 - The Reality */
+        .slide-4 .main-text {
+            font-size: 52px;
+            font-weight: 700;
+            color: white;
+            line-height: 1.2;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        .slide-4 .main-text .highlight {
+            color: #a3e635;
+        }
+
+        .slide-4 .comparison {
+            display: flex;
+            gap: 30px;
+        }
+
+        .slide-4 .compare-box {
+            flex: 1;
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .slide-4 .compare-box.before {
+            background: rgba(248, 113, 113, 0.1);
+            border: 2px solid rgba(248, 113, 113, 0.3);
+        }
+
+        .slide-4 .compare-box.after {
+            background: rgba(163, 230, 53, 0.1);
+            border: 2px solid rgba(163, 230, 53, 0.3);
+        }
+
+        .slide-4 .compare-label {
+            font-size: 22px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+
+        .slide-4 .compare-box.before .compare-label {
+            color: #f87171;
+        }
+
+        .slide-4 .compare-box.after .compare-label {
+            color: #a3e635;
+        }
+
+        .slide-4 .compare-status {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .slide-4 .compare-text {
+            font-size: 24px;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.4;
+        }
+
+        /* Slide 5 - The Kicker */
+        .slide-5 .label {
+            display: inline-block;
+            background: rgba(251, 191, 36, 0.2);
+            color: #fbbf24;
+            font-size: 20px;
+            font-weight: 700;
+            padding: 12px 24px;
+            border-radius: 50px;
+            margin-bottom: 40px;
+        }
+
+        .slide-5 .main-text {
+            font-size: 52px;
+            font-weight: 700;
+            color: white;
+            line-height: 1.2;
+            margin-bottom: 50px;
+        }
+
+        .slide-5 .main-text .highlight {
+            color: #fbbf24;
+        }
+
+        .slide-5 .benefits-list {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .slide-5 .benefit {
+            display: flex;
+            align-items: center;
+        }
+
+        .slide-5 .benefit-icon {
+            color: #fbbf24;
+            font-size: 32px;
+            margin-right: 25px;
+        }
+
+        .slide-5 .benefit-text {
+            font-size: 30px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* Slide 6 - Examples */
+        .slide-6 .main-text {
+            font-size: 48px;
+            font-weight: 700;
+            color: white;
+            line-height: 1.3;
+            margin-bottom: 50px;
+        }
+
+        .slide-6 .examples-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .slide-6 .example-card {
+            background: rgba(248, 113, 113, 0.08);
+            border: 2px solid rgba(248, 113, 113, 0.2);
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .slide-6 .example-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .slide-6 .example-text {
+            font-size: 24px;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.4;
+        }
+
+        /* Slide 7 - Before Offer */
+        .slide-7 .label {
+            display: inline-block;
+            background: rgba(56, 189, 248, 0.2);
+            color: #38bdf8;
+            font-size: 20px;
+            font-weight: 700;
+            padding: 12px 24px;
+            border-radius: 50px;
+            margin-bottom: 40px;
+        }
+
+        .slide-7 .main-text {
+            font-size: 52px;
+            font-weight: 700;
+            color: white;
+            line-height: 1.3;
+            margin-bottom: 50px;
+        }
+
+        .slide-7 .actions-list {
+            background: rgba(56, 189, 248, 0.08);
+            border: 2px solid rgba(56, 189, 248, 0.3);
+            border-radius: 20px;
+            padding: 50px;
+        }
+
+        .slide-7 .action {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .slide-7 .action:last-child {
+            margin-bottom: 0;
+        }
+
+        .slide-7 .action-icon {
+            color: #38bdf8;
+            font-size: 28px;
+            margin-right: 25px;
+        }
+
+        .slide-7 .action-text {
+            font-size: 32px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* Slide 8 - After Offer */
+        .slide-8 .label {
+            display: inline-block;
+            background: rgba(163, 230, 53, 0.2);
+            color: #a3e635;
+            font-size: 20px;
+            font-weight: 700;
+            padding: 12px 24px;
+            border-radius: 50px;
+            margin-bottom: 40px;
+        }
+
+        .slide-8 .main-text {
+            font-size: 52px;
+            font-weight: 700;
+            color: white;
+            line-height: 1.3;
+            margin-bottom: 50px;
+        }
+
+        .slide-8 .actions-list {
+            background: rgba(163, 230, 53, 0.08);
+            border: 2px solid rgba(163, 230, 53, 0.3);
+            border-radius: 20px;
+            padding: 50px;
+        }
+
+        .slide-8 .action {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .slide-8 .action:last-child {
+            margin-bottom: 0;
+        }
+
+        .slide-8 .action-icon {
+            color: #a3e635;
+            font-size: 28px;
+            margin-right: 25px;
+        }
+
+        .slide-8 .action-text {
+            font-size: 32px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* Slide 9 - Power Shift */
+        .slide-9 .main-text {
+            font-size: 56px;
+            font-weight: 700;
+            color: white;
+            line-height: 1.2;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        .slide-9 .main-text .highlight {
+            color: #a3e635;
+        }
+
+        .slide-9 .power-visual {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 50px;
+        }
+
+        .slide-9 .power-line {
+            height: 8px;
+            background: linear-gradient(90deg, #f87171 0%, #f87171 45%, #fbbf24 50%, #a3e635 55%, #a3e635 100%);
+            border-radius: 4px;
+            position: relative;
+            margin: 60px 0;
+        }
+
+        .slide-9 .power-marker {
+            position: absolute;
+            top: -50px;
+            transform: translateX(-50%);
+            text-align: center;
+        }
+
+        .slide-9 .power-marker.interview {
+            left: 25%;
+        }
+
+        .slide-9 .power-marker.offer {
+            left: 50%;
+        }
+
+        .slide-9 .power-marker.negotiate {
+            left: 75%;
+        }
+
+        .slide-9 .marker-icon {
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+
+        .slide-9 .marker-label {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .slide-9 .power-labels {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .slide-9 .power-label-text {
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .slide-9 .power-label-text.them {
+            color: #f87171;
+        }
+
+        .slide-9 .power-label-text.you {
+            color: #a3e635;
+        }
+
+        /* Slide 10 - CTA */
+        .slide-10 .main-text {
+            font-size: 56px;
+            font-weight: 700;
+            color: white;
+            line-height: 1.2;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        .slide-10 .main-text .highlight {
+            color: #a3e635;
+        }
+
+        .slide-10 .action-box {
+            background: rgba(163, 230, 53, 0.1);
+            border: 2px solid rgba(163, 230, 53, 0.3);
+            border-radius: 20px;
+            padding: 50px;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .slide-10 .action-text {
+            font-size: 36px;
+            color: white;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        .slide-10 .action-highlight {
+            font-size: 32px;
+            font-weight: 600;
+            color: #a3e635;
+        }
+
+        .slide-10 .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .slide-10 .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 22px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        @media print {
+            @page {
+                size: 1080px 1080px;
+                margin: 0;
+            }
+            body {
+                padding: 0;
+                margin: 0;
+                background: white;
+            }
+            .slide {
+                width: 1080px !important;
+                height: 1080px !important;
+                margin: 0 !important;
+                padding: 80px !important;
+                page-break-after: always !important;
+                page-break-inside: avoid !important;
+                break-after: page !important;
+                break-inside: avoid !important;
+                overflow: hidden !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            .slide:last-child {
+                page-break-after: avoid !important;
+                break-after: avoid !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Slide 1: Title -->
+    <div class="slide slide-1">
+        <p class="eyebrow">Interview Strategy</p>
+        <h1 class="title">Don't Reveal<br><span class="highlight">Deal Breakers</span><br>Before You Have<br>an Offer</h1>
+        <p class="subtitle">You're killing your leverage</p>
+        <div class="brand">LaunchToLead</div>
+        <div class="slide-number">1/10</div>
+    </div>
+
+    <!-- Slide 2: The Mistake -->
+    <div class="slide slide-2">
+        <h2 class="main-text">Things I hear candidates say<br>during interviews:</h2>
+        <div class="quotes-list">
+            <div class="quote-item">
+                <p class="quote-text">"I'm not sure I'd relocate..."</p>
+            </div>
+            <div class="quote-item">
+                <p class="quote-text">"I really prefer fully remote."</p>
+            </div>
+            <div class="quote-item">
+                <p class="quote-text">"That salary range might be too low."</p>
+            </div>
+            <div class="quote-item">
+                <p class="quote-text">"I don't love that location."</p>
+            </div>
+        </div>
+        <div class="brand">LaunchToLead</div>
+        <div class="slide-number">2/10</div>
+    </div>
+
+    <!-- Slide 3: Why It Hurts -->
+    <div class="slide slide-3">
+        <span class="label">WHAT THE HIRING TEAM THINKS</span>
+        <h2 class="main-text">You're planting seeds of doubt.</h2>
+        <div class="thoughts-list">
+            <div class="thought">
+                <span class="thought-icon">🤔</span>
+                <span class="thought-text">"This person has baggage..."</span>
+            </div>
+            <div class="thought">
+                <span class="thought-icon">⚖️</span>
+                <span class="thought-text">"The other candidate doesn't have these concerns..."</span>
+            </div>
+            <div class="thought">
+                <span class="thought-icon">🚫</span>
+                <span class="thought-text">"Why take the risk?"</span>
+            </div>
+        </div>
+        <div class="brand">LaunchToLead</div>
+        <div class="slide-number">3/10</div>
+    </div>
+
+    <!-- Slide 4: The Reality -->
+    <div class="slide slide-4">
+        <h2 class="main-text">Before the offer,<br>you're <span class="highlight">competing</span>.</h2>
+        <div class="comparison">
+            <div class="compare-box before">
+                <p class="compare-label">Before Offer</p>
+                <div class="compare-status">⚔️</div>
+                <p class="compare-text">You're being compared.<br>You're being evaluated.<br>Every concern is a risk.</p>
+            </div>
+            <div class="compare-box after">
+                <p class="compare-label">After Offer</p>
+                <div class="compare-status">🤝</div>
+                <p class="compare-text">They've chosen you.<br>They want you.<br>Now they'll work with you.</p>
+            </div>
+        </div>
+        <div class="brand">LaunchToLead</div>
+        <div class="slide-number">4/10</div>
+    </div>
+
+    <!-- Slide 5: The Kicker -->
+    <div class="slide slide-5">
+        <span class="label">HERE'S THE KICKER</span>
+        <h2 class="main-text">What you think is a deal breaker<br><span class="highlight">might not be</span>.</h2>
+        <div class="benefits-list">
+            <div class="benefit">
+                <span class="benefit-icon">💰</span>
+                <span class="benefit-text">Companies increase offers for top candidates</span>
+            </div>
+            <div class="benefit">
+                <span class="benefit-icon">🏠</span>
+                <span class="benefit-text">They negotiate remote policies</span>
+            </div>
+            <div class="benefit">
+                <span class="benefit-icon">📍</span>
+                <span class="benefit-text">They make relocation exceptions</span>
+            </div>
+            <div class="benefit">
+                <span class="benefit-icon">✨</span>
+                <span class="benefit-text">They find creative solutions</span>
+            </div>
+        </div>
+        <div class="brand">LaunchToLead</div>
+        <div class="slide-number">5/10</div>
+    </div>
+
+    <!-- Slide 6: Examples -->
+    <div class="slide slide-6">
+        <h2 class="main-text">Cards you should keep<br>close to your chest:</h2>
+        <div class="examples-grid">
+            <div class="example-card">
+                <div class="example-icon">🏠</div>
+                <p class="example-text">"I don't want<br>to relocate"</p>
+            </div>
+            <div class="example-card">
+                <div class="example-icon">💻</div>
+                <p class="example-text">"I need fully<br>remote"</p>
+            </div>
+            <div class="example-card">
+                <div class="example-icon">📍</div>
+                <p class="example-text">"I don't like<br>that region"</p>
+            </div>
+            <div class="example-card">
+                <div class="example-icon">💵</div>
+                <p class="example-text">"That's below<br>my minimum"</p>
+            </div>
+            <div class="example-card">
+                <div class="example-icon">📅</div>
+                <p class="example-text">"The start date<br>doesn't work"</p>
+            </div>
+            <div class="example-card">
+                <div class="example-icon">🎯</div>
+                <p class="example-text">"That team isn't<br>my first choice"</p>
+            </div>
+        </div>
+        <div class="brand">LaunchToLead</div>
+        <div class="slide-number">6/10</div>
+    </div>
+
+    <!-- Slide 7: Before Offer -->
+    <div class="slide slide-7">
+        <span class="label">BEFORE THE OFFER</span>
+        <h2 class="main-text">Be the easiest "yes" they've seen.</h2>
+        <div class="actions-list">
+            <div class="action">
+                <span class="action-icon">✓</span>
+                <span class="action-text">Be agreeable</span>
+            </div>
+            <div class="action">
+                <span class="action-icon">✓</span>
+                <span class="action-text">Be flexible</span>
+            </div>
+            <div class="action">
+                <span class="action-icon">✓</span>
+                <span class="action-text">Be enthusiastic</span>
+            </div>
+            <div class="action">
+                <span class="action-icon">✓</span>
+                <span class="action-text">Keep concerns to yourself</span>
+            </div>
+        </div>
+        <div class="brand">LaunchToLead</div>
+        <div class="slide-number">7/10</div>
+    </div>
+
+    <!-- Slide 8: After Offer -->
+    <div class="slide slide-8">
+        <span class="label">AFTER THE OFFER</span>
+        <h2 class="main-text">Now you have leverage.</h2>
+        <div class="actions-list">
+            <div class="action">
+                <span class="action-icon">→</span>
+                <span class="action-text">Now you negotiate</span>
+            </div>
+            <div class="action">
+                <span class="action-icon">→</span>
+                <span class="action-text">Now you're transparent</span>
+            </div>
+            <div class="action">
+                <span class="action-icon">→</span>
+                <span class="action-text">Now you discuss trade-offs</span>
+            </div>
+            <div class="action">
+                <span class="action-icon">→</span>
+                <span class="action-text">Now you have power</span>
+            </div>
+        </div>
+        <div class="brand">LaunchToLead</div>
+        <div class="slide-number">8/10</div>
+    </div>
+
+    <!-- Slide 9: Power Shift -->
+    <div class="slide slide-9">
+        <h2 class="main-text">The offer is when<br>the <span class="highlight">power shifts</span>.</h2>
+        <div class="power-visual">
+            <div class="power-line">
+                <div class="power-marker interview">
+                    <div class="marker-icon">📝</div>
+                    <div class="marker-label">Interviewing</div>
+                </div>
+                <div class="power-marker offer">
+                    <div class="marker-icon">📧</div>
+                    <div class="marker-label">Offer</div>
+                </div>
+                <div class="power-marker negotiate">
+                    <div class="marker-icon">🤝</div>
+                    <div class="marker-label">Negotiate</div>
+                </div>
+            </div>
+            <div class="power-labels">
+                <span class="power-label-text them">Their Power</span>
+                <span class="power-label-text you">Your Power</span>
+            </div>
+        </div>
+        <div class="brand">LaunchToLead</div>
+        <div class="slide-number">9/10</div>
+    </div>
+
+    <!-- Slide 10: CTA -->
+    <div class="slide slide-10">
+        <h2 class="main-text">Don't give away your cards<br>before you're at the <span class="highlight">table</span>.</h2>
+        <div class="action-box">
+            <p class="action-text">Get the offer first.<br>Then negotiate everything.</p>
+            <p class="action-highlight">Patience = Leverage</p>
+        </div>
+        <div class="cta-buttons">
+            <span class="cta-btn">♻️ Repost</span>
+            <span class="cta-btn">💾 Save</span>
+            <span class="cta-btn">🔔 Follow</span>
+        </div>
+        <div class="brand">LaunchToLead</div>
+        <div class="slide-number">10/10</div>
+    </div>
+
+</body>
+</html>
