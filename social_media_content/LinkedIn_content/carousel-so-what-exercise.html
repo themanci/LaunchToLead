@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedIn Carousel - The "So What" Exercise for Career Decisions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: #f3f4f6;
+            padding: 20px;
+        }
+
+        .slide {
+            width: 1080px;
+            height: 1080px;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            margin: 0 auto 40px auto;
+            padding: 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            page-break-after: always;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slide::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(163, 230, 53, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .slide-number {
+            position: absolute;
+            bottom: 40px;
+            right: 60px;
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.4);
+            font-weight: 500;
+        }
+
+        .brand {
+            position: absolute;
+            bottom: 40px;
+            left: 60px;
+            font-size: 18px;
+            color: #a3e635;
+            font-weight: 600;
+        }
+
+        /* Slide 1 - Title */
+        .slide-1 .eyebrow {
+            font-size: 28px;
+            font-weight: 600;
+            color: #a3e635;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 40px;
+        }
+
+        .slide-1 .title {
+            font-size: 72px;
+            font-weight: 800;
+            color: white;
+            line-height: 1.1;
+            margin-bottom: 50px;
+        }
+
+        .slide-1 .title .highlight {
+            color: #a3e635;
+        }
+
+        .slide-1 .subtitle {
+            font-size: 32px;
+            color: rgba(255, 255, 255, 0.7);
+            font-weight: 500;
+            line-height: 1.4;
+        }
+
+        /* Slide 2 - The Situation */
+        .slide-2 .main-text {
+            font-size: 48px;
+            font-weight: 700;
+            color: white;
+            line-height: 1.3;
+            margin-bottom: 50px;
+        }
+
+        .slide-2 .scenario {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 50px;
+        }
+
+        .slide-2 .scenario-text {
+            font-size: 32px;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.5;
+            margin-bottom: 30px;
+        }
+
+        .slide-2 .scenario-highlight {
+            font-size: 36px;
+            font-weight: 700;
+            color: #f87171;
+        }
+
+        /* Slide 3 - The What Ifs */
+        .slide-3 .label {
+            display: inline-block;
+            background: rgba(248, 113, 113, 0.2);
+            color: #f87171;
+            font-size: 20px;
+            font-weight: 700;
+            padding: 12px 24px;
+            border-radius: 50px;
+            margin-bottom: 40px;
+        }
+
+        .slide-3 .main-text {
+            font-size: 48px;
+            font-weight: 700;
+            color: white;
+            line-height: 1.3;
+            margin-bottom: 50px;
+        }
+
+        .slide-3 .fears-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .slide-3 .fear {
+            background: rgba(248, 113, 113, 0.1);
+            border-left: 4px solid #f87171;
+            padding: 25px 35px;
+            border-radius: 0 16px 16px 0;
+        }
+
+        .slide-3 .fear-text {
+            font-size: 28px;
+            color: rgba(255, 255, 255, 0.9);
+            font-style: italic;
+        }
+
+        /* Slide 4 - The Problem */
+        .slide-4 .main-text {
+            font-size: 52px;
+            font-weight: 700;
+            color: white;
+            line-height: 1.2;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        .slide-4 .main-text .highlight {
+            color: #f87171;
+        }
+
+        .slide-4 .comparison {
+            display: flex;
+            gap: 30px;
+        }
+
+        .slide-4 .compare-box {
+            flex: 1;
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .slide-4 .compare-box.abstract {
+            background: rgba(248, 113, 113, 0.1);
+            border: 2px solid rgba(248, 113, 113, 0.3);
+        }
+
+        .slide-4 .compare-box.concrete {
+            background: rgba(163, 230, 53, 0.1);
+            border: 2px solid rgba(163, 230, 53, 0.3);
+        }
+
+        .slide-4 .compare-label {
+            font-size: 22px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+
+        .slide-4 .compare-box.abstract .compare-label {
+            color: #f87171;
+        }
+
+        .slide-4 .compare-box.concrete .compare-label {
+            color: #a3e635;
+        }
+
+        .slide-4 .compare-icon {
+            font-size: 64px;
+            margin-bottom: 20px;
+        }
+
+        .slide-4 .compare-text {
+            font-size: 24px;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.4;
+        }
+
+        /* Slide 5 - The Exercise */
+        .slide-5 .label {
+            display: inline-block;
+            background: rgba(163, 230, 53, 0.2);
+            color: #a3e635;
+            font-size: 20px;
+            font-weight: 700;
+            padding: 12px 24px;
+            border-radius: 50px;
+            margin-bottom: 40px;
+        }
+
+        .slide-5 .main-text {
+            font-size: 52px;
+            font-weight: 700;
+            color: white;
+            line-height: 1.3;
+            margin-bottom: 50px;
+        }
+
+        .slide-5 .main-text .highlight {
+            color: #a3e635;
+        }
+
+        .slide-5 .instruction {
+            background: rgba(163, 230, 53, 0.08);
+            border: 2px solid rgba(163, 230, 53, 0.3);
+            border-radius: 20px;
+            padding: 50px;
+            text-align: center;
+        }
+
+        .slide-5 .instruction-text {
+            font-size: 36px;
+            color: white;
+            line-height: 1.5;
+        }
+
+        /* Slide 6 - Example Chain */
+        .slide-6 .main-text {
+            font-size: 40px;
+            font-weight: 700;
+            color: white;
+            line-height: 1.3;
+            margin-bottom: 40px;
+        }
+
+        .slide-6 .chain {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .slide-6 .chain-item {
+            display: flex;
+            align-items: flex-start;
+            padding: 20px 30px;
+            border-radius: 12px;
+        }
+
+        .slide-6 .chain-item.question {
+            background: rgba(248, 113, 113, 0.1);
+            border-left: 4px solid #f87171;
+        }
+
+        .slide-6 .chain-item.answer {
+            background: rgba(163, 230, 53, 0.1);
+            border-left: 4px solid #a3e635;
+            margin-left: 40px;
+        }
+
+        .slide-6 .chain-label {
+            font-size: 16px;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-right: 15px;
+            flex-shrink: 0;
+            width: 80px;
+        }
+
+        .slide-6 .chain-item.question .chain-label {
+            color: #f87171;
+        }
+
+        .slide-6 .chain-item.answer .chain-label {
+            color: #a3e635;
+        }
+
+        .slide-6 .chain-text {
+            font-size: 24px;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.3;
+        }
+
+        /* Slide 7 - Continue Chain */
+        .slide-7 .chain {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .slide-7 .chain-item {
+            display: flex;
+            align-items: flex-start;
+            padding: 25px 35px;
+            border-radius: 12px;
+        }
+
+        .slide-7 .chain-item.question {
+            background: rgba(251, 191, 36, 0.1);
+            border-left: 4px solid #fbbf24;
+        }
+
+        .slide-7 .chain-item.answer {
+            background: rgba(163, 230, 53, 0.1);
+            border-left: 4px solid #a3e635;
+            margin-left: 40px;
+        }
+
+        .slide-7 .chain-label {
+            font-size: 16px;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-right: 15px;
+            flex-shrink: 0;
+            width: 100px;
+        }
+
+        .slide-7 .chain-item.question .chain-label {
+            color: #fbbf24;
+        }
+
+        .slide-7 .chain-item.answer .chain-label {
+            color: #a3e635;
+        }
+
+        .slide-7 .chain-text {
+            font-size: 26px;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.3;
+        }
+
+        .slide-7 .conclusion {
+            background: rgba(163, 230, 53, 0.15);
+            border: 2px solid rgba(163, 230, 53, 0.4);
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .slide-7 .conclusion-text {
+            font-size: 28px;
+            font-weight: 700;
+            color: #a3e635;
+        }
+
+        /* Slide 8 - The Steps */
+        .slide-8 .label {
+            display: inline-block;
+            background: rgba(56, 189, 248, 0.2);
+            color: #38bdf8;
+            font-size: 20px;
+            font-weight: 700;
+            padding: 12px 24px;
+            border-radius: 50px;
+            margin-bottom: 40px;
+        }
+
+        .slide-8 .main-text {
+            font-size: 52px;
+            font-weight: 700;
+            color: white;
+            line-height: 1.3;
+            margin-bottom: 50px;
+        }
+
+        .slide-8 .steps-list {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .slide-8 .step {
+            display: flex;
+            align-items: flex-start;
+            background: rgba(56, 189, 248, 0.08);
+            border: 2px solid rgba(56, 189, 248, 0.2);
+            padding: 30px 40px;
+            border-radius: 16px;
+        }
+
+        .slide-8 .step-number {
+            font-size: 32px;
+            font-weight: 800;
+            color: #38bdf8;
+            margin-right: 25px;
+            flex-shrink: 0;
+        }
+
+        .slide-8 .step-text {
+            font-size: 28px;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.4;
+        }
+
+        /* Slide 9 - The Realization */
+        .slide-9 .main-text {
+            font-size: 48px;
+            font-weight: 700;
+            color: white;
+            line-height: 1.3;
+            margin-bottom: 50px;
+        }
+
+        .slide-9 .main-text .highlight {
+            color: #a3e635;
+        }
+
+        .slide-9 .realizations {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .slide-9 .realization {
+            background: rgba(163, 230, 53, 0.08);
+            border: 2px solid rgba(163, 230, 53, 0.2);
+            border-radius: 16px;
+            padding: 35px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .slide-9 .realization-icon {
+            font-size: 32px;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+
+        .slide-9 .realization-text {
+            font-size: 24px;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.4;
+        }
+
+        /* Slide 10 - CTA */
+        .slide-10 .main-text {
+            font-size: 52px;
+            font-weight: 700;
+            color: white;
+            line-height: 1.2;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        .slide-10 .main-text .highlight {
+            color: #a3e635;
+        }
+
+        .slide-10 .action-box {
+            background: rgba(163, 230, 53, 0.1);
+            border: 2px solid rgba(163, 230, 53, 0.3);
+            border-radius: 20px;
+            padding: 50px;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .slide-10 .action-text {
+            font-size: 32px;
+            color: white;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        .slide-10 .action-highlight {
+            font-size: 36px;
+            font-weight: 700;
+            color: #a3e635;
+        }
+
+        .slide-10 .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .slide-10 .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 22px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        @media print {
+            @page {
+                size: 1080px 1080px;
+                margin: 0;
+            }
+            body {
+                padding: 0;
+                margin: 0;
+                background: white;
+            }
+            .slide {
+                width: 1080px !important;
+                height: 1080px !important;
+                margin: 0 !important;
+                padding: 80px !important;
+                page-break-after: always !important;
+                page-break-inside: avoid !important;
+                break-after: page !important;
+                break-inside: avoid !important;
+                overflow: hidden !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            .slide:last-child {
+                page-break-after: avoid !important;
+                break-after: avoid !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Slide 1: Title -->
+    <div class="slide slide-1">
+        <p class="eyebrow">Decision Making</p>
+        <h1 class="title">The <span class="highlight">"So What"</span><br>Exercise</h1>
+        <p class="subtitle">How to defeat the "what ifs" paralyzing your career decisions</p>
+        <div class="brand">LaunchToLead</div>
+        <div class="slide-number">1/10</div>
+    </div>
+
+    <!-- Slide 2: The Situation -->
+    <div class="slide slide-2">
+        <h2 class="main-text">I was coaching someone with an offer on the table.</h2>
+        <div class="scenario">
+            <p class="scenario-text">New company. Exciting role. Better opportunity.</p>
+            <p class="scenario-text">But they couldn't pull the trigger.</p>
+            <p class="scenario-highlight">Their mind was racing with "what ifs."</p>
+        </div>
+        <div class="brand">LaunchToLead</div>
+        <div class="slide-number">2/10</div>
+    </div>
+
+    <!-- Slide 3: The What Ifs -->
+    <div class="slide slide-3">
+        <span class="label">THE FEARS</span>
+        <h2 class="main-text">The "what ifs" were paralyzing them:</h2>
+        <div class="fears-list">
+            <div class="fear">
+                <p class="fear-text">"What if I get laid off in a year?"</p>
+            </div>
+            <div class="fear">
+                <p class="fear-text">"What if the new company isn't stable?"</p>
+            </div>
+            <div class="fear">
+                <p class="fear-text">"What if I regret leaving the big company comfort?"</p>
+            </div>
+            <div class="fear">
+                <p class="fear-text">"What if it doesn't pan out?"</p>
+            </div>
+        </div>
+        <div class="brand">LaunchToLead</div>
+        <div class="slide-number">3/10</div>
+    </div>
+
+    <!-- Slide 4: The Problem -->
+    <div class="slide slide-4">
+        <h2 class="main-text">Abstract fears are <span class="highlight">monsters</span>.<br>Specific answers are manageable.</h2>
+        <div class="comparison">
+            <div class="compare-box abstract">
+                <p class="compare-label">In Your Head</p>
+                <div class="compare-icon">👻</div>
+                <p class="compare-text">Vague, looming, terrifying.<br>Unknown outcomes.<br>Paralyzing.</p>
+            </div>
+            <div class="compare-box concrete">
+                <p class="compare-label">On Paper</p>
+                <div class="compare-icon">📝</div>
+                <p class="compare-text">Specific, answerable, survivable.<br>Clear next steps.<br>Manageable.</p>
+            </div>
+        </div>
+        <div class="brand">LaunchToLead</div>
+        <div class="slide-number">4/10</div>
+    </div>
+
+    <!-- Slide 5: The Exercise -->
+    <div class="slide slide-5">
+        <span class="label">THE FIX</span>
+        <h2 class="main-text">Write down every "what if."<br>Then <span class="highlight">answer it</span>.</h2>
+        <div class="instruction">
+            <p class="instruction-text">Don't just acknowledge the fear.<br><strong>Follow it to the end.</strong><br><br>"Okay, so what? Then what happens?"</p>
+        </div>
+        <div class="brand">LaunchToLead</div>
+        <div class="slide-number">5/10</div>
+    </div>
+
+    <!-- Slide 6: Example Chain -->
+    <div class="slide slide-6">
+        <h2 class="main-text">Example: Following the chain</h2>
+        <div class="chain">
+            <div class="chain-item question">
+                <span class="chain-label">FEAR:</span>
+                <span class="chain-text">"What if I get laid off in a year?"</span>
+            </div>
+            <div class="chain-item answer">
+                <span class="chain-label">SO WHAT:</span>
+                <span class="chain-text">"I'd have to find another job."</span>
+            </div>
+            <div class="chain-item question">
+                <span class="chain-label">THEN:</span>
+                <span class="chain-text">"Do you have an emergency fund?"</span>
+            </div>
+            <div class="chain-item answer">
+                <span class="chain-label">ANSWER:</span>
+                <span class="chain-text">"Yes, 6-9 months of expenses."</span>
+            </div>
+            <div class="chain-item question">
+                <span class="chain-label">THEN:</span>
+                <span class="chain-text">"So your family won't be homeless?"</span>
+            </div>
+            <div class="chain-item answer">
+                <span class="chain-label">ANSWER:</span>
+                <span class="chain-text">"No. We'd have runway."</span>
+            </div>
+        </div>
+        <div class="brand">LaunchToLead</div>
+        <div class="slide-number">6/10</div>
+    </div>
+
+    <!-- Slide 7: Continue Chain -->
+    <div class="slide slide-7">
+        <div class="chain">
+            <div class="chain-item question">
+                <span class="chain-label">AND THEN:</span>
+                <span class="chain-text">"Could you find another job in that time?"</span>
+            </div>
+            <div class="chain-item answer">
+                <span class="chain-label">ANSWER:</span>
+                <span class="chain-text">"Yes, I have skills and a network."</span>
+            </div>
+            <div class="chain-item question">
+                <span class="chain-label">AND THEN:</span>
+                <span class="chain-text">"Could you go back to your old employer?"</span>
+            </div>
+            <div class="chain-item answer">
+                <span class="chain-label">ANSWER:</span>
+                <span class="chain-text">"Probably, if I left on good terms."</span>
+            </div>
+        </div>
+        <div class="conclusion">
+            <p class="conclusion-text">So... what exactly is the catastrophe here?</p>
+        </div>
+        <div class="brand">LaunchToLead</div>
+        <div class="slide-number">7/10</div>
+    </div>
+
+    <!-- Slide 8: The Steps -->
+    <div class="slide slide-8">
+        <span class="label">TRY THIS</span>
+        <h2 class="main-text">The "So What" Exercise</h2>
+        <div class="steps-list">
+            <div class="step">
+                <span class="step-number">1</span>
+                <span class="step-text">Write down every "what if" that's haunting you</span>
+            </div>
+            <div class="step">
+                <span class="step-number">2</span>
+                <span class="step-text">For each one, ask: "So what? Then what happens?"</span>
+            </div>
+            <div class="step">
+                <span class="step-number">3</span>
+                <span class="step-text">Keep going: "And then what? And then what?"</span>
+            </div>
+            <div class="step">
+                <span class="step-number">4</span>
+                <span class="step-text">Follow the chain to the very end</span>
+            </div>
+        </div>
+        <div class="brand">LaunchToLead</div>
+        <div class="slide-number">8/10</div>
+    </div>
+
+    <!-- Slide 9: The Realization -->
+    <div class="slide slide-9">
+        <h2 class="main-text">By the end, you'll realize:</h2>
+        <div class="realizations">
+            <div class="realization">
+                <span class="realization-icon">🏠</span>
+                <span class="realization-text">You're not going to be homeless</span>
+            </div>
+            <div class="realization">
+                <span class="realization-icon">💀</span>
+                <span class="realization-text">Your life isn't going to end</span>
+            </div>
+            <div class="realization">
+                <span class="realization-icon">🛡️</span>
+                <span class="realization-text">The worst case is survivable</span>
+            </div>
+            <div class="realization">
+                <span class="realization-icon">👻</span>
+                <span class="realization-text">The fear was bigger than reality</span>
+            </div>
+        </div>
+        <div class="brand">LaunchToLead</div>
+        <div class="slide-number">9/10</div>
+    </div>
+
+    <!-- Slide 10: CTA -->
+    <div class="slide slide-10">
+        <h2 class="main-text">The vague fear is always<br>scarier than the <span class="highlight">specific answer</span>.</h2>
+        <div class="action-box">
+            <p class="action-text">Write down your "what ifs."<br>Answer them. Follow them to the end.</p>
+            <p class="action-highlight">See how small they really are.</p>
+        </div>
+        <div class="cta-buttons">
+            <span class="cta-btn">♻️ Repost</span>
+            <span class="cta-btn">💾 Save</span>
+            <span class="cta-btn">🔔 Follow</span>
+        </div>
+        <div class="brand">LaunchToLead</div>
+        <div class="slide-number">10/10</div>
+    </div>
+
+</body>
+</html>
