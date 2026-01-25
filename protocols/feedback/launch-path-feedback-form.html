@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Launch Path Completion Feedback | LaunchToLead</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        @media print {
+            .no-print { display: none !important; }
+            body { background: white !important; }
+            .print-break { page-break-before: always; }
+        }
+        input[type="text"], textarea {
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            padding: 12px;
+            width: 100%;
+            font-family: inherit;
+        }
+        input[type="text"]:focus, textarea:focus {
+            outline: none;
+            border-color: #10b981;
+            box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+        }
+        textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+        .rating-group {
+            display: flex;
+            gap: 8px;
+        }
+        .rating-option {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 8px 12px;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .rating-option:hover {
+            border-color: #10b981;
+            background: #f0fdf4;
+        }
+        .rating-option input[type="radio"] {
+            margin-bottom: 4px;
+        }
+        .checkbox-option {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .checkbox-option:hover {
+            border-color: #10b981;
+            background: #f0fdf4;
+        }
+        .section-card {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            padding: 32px;
+            margin-bottom: 24px;
+        }
+    </style>
+</head>
+<body class="bg-slate-100 min-h-screen">
+
+    <!-- Header -->
+    <div class="bg-gradient-to-r from-emerald-600 to-teal-600 text-white p-8 print:p-4">
+        <div class="max-w-3xl mx-auto">
+            <div class="flex items-center gap-3 mb-4">
+                <div class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center">
+                    <span class="text-xl font-bold">L²</span>
+                </div>
+                <div>
+                    <span class="text-lg font-semibold">LaunchToLead</span>
+                    <p class="text-emerald-100 text-sm">Launch Path Program</p>
+                </div>
+            </div>
+            <h1 class="text-3xl font-bold mb-2">Program Completion Feedback</h1>
+            <p class="text-emerald-100">Your honest feedback helps me improve the program for future clients.</p>
+        </div>
+    </div>
+
+    <!-- Print Button -->
+    <div class="max-w-3xl mx-auto p-4 no-print">
+        <div class="flex gap-4 justify-end">
+            <button onclick="window.print()" class="bg-emerald-600 text-white px-6 py-2 rounded-lg hover:bg-emerald-700 flex items-center gap-2">
+                🖨️ Print Form
+            </button>
+        </div>
+    </div>
+
+    <div class="max-w-3xl mx-auto px-4 pb-12">
+
+        <!-- Basic Info -->
+        <div class="section-card">
+            <h2 class="text-xl font-bold text-slate-800 mb-6 flex items-center gap-2">
+                <span class="w-8 h-8 bg-emerald-100 text-emerald-600 rounded-lg flex items-center justify-center text-sm font-bold">1</span>
+                Basic Information
+            </h2>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                    <label class="block text-slate-700 font-medium mb-2">Your Name</label>
+                    <input type="text" placeholder="Full name">
+                </div>
+                <div>
+                    <label class="block text-slate-700 font-medium mb-2">Date Completed</label>
+                    <input type="text" placeholder="MM/DD/YYYY">
+                </div>
+            </div>
+        </div>
+
+        <!-- Overall Experience -->
+        <div class="section-card">
+            <h2 class="text-xl font-bold text-slate-800 mb-6 flex items-center gap-2">
+                <span class="w-8 h-8 bg-emerald-100 text-emerald-600 rounded-lg flex items-center justify-center text-sm font-bold">2</span>
+                Overall Experience
+            </h2>
+
+            <!-- Overall Satisfaction -->
+            <div class="mb-8">
+                <label class="block text-slate-700 font-medium mb-4">How would you rate your overall experience with the Launch Path program?</label>
+                <div class="rating-group flex-wrap">
+                    <label class="rating-option">
+                        <input type="radio" name="overall" value="1">
+                        <span class="text-lg">1</span>
+                        <span class="text-xs text-slate-500">Poor</span>
+                    </label>
+                    <label class="rating-option">
+                        <input type="radio" name="overall" value="2">
+                        <span class="text-lg">2</span>
+                        <span class="text-xs text-slate-500">Fair</span>
+                    </label>
+                    <label class="rating-option">
+                        <input type="radio" name="overall" value="3">
+                        <span class="text-lg">3</span>
+                        <span class="text-xs text-slate-500">Good</span>
+                    </label>
+                    <label class="rating-option">
+                        <input type="radio" name="overall" value="4">
+                        <span class="text-lg">4</span>
+                        <span class="text-xs text-slate-500">Great</span>
+                    </label>
+                    <label class="rating-option">
+                        <input type="radio" name="overall" value="5">
+                        <span class="text-lg">5</span>
+                        <span class="text-xs text-slate-500">Excellent</span>
+                    </label>
+                </div>
+                <div class="mt-3">
+                    <label class="block text-slate-500 text-sm mb-2">Why did you give this rating? (Optional)</label>
+                    <textarea class="text-sm" style="min-height: 60px;" placeholder="Share more details about your overall experience..."></textarea>
+                </div>
+            </div>
+
+            <!-- NPS -->
+            <div class="mb-8">
+                <label class="block text-slate-700 font-medium mb-4">How likely are you to recommend the Launch Path to a friend or colleague? (0-10)</label>
+                <div class="rating-group flex-wrap">
+                    <label class="rating-option"><input type="radio" name="nps" value="0"><span>0</span></label>
+                    <label class="rating-option"><input type="radio" name="nps" value="1"><span>1</span></label>
+                    <label class="rating-option"><input type="radio" name="nps" value="2"><span>2</span></label>
+                    <label class="rating-option"><input type="radio" name="nps" value="3"><span>3</span></label>
+                    <label class="rating-option"><input type="radio" name="nps" value="4"><span>4</span></label>
+                    <label class="rating-option"><input type="radio" name="nps" value="5"><span>5</span></label>
+                    <label class="rating-option"><input type="radio" name="nps" value="6"><span>6</span></label>
+                    <label class="rating-option"><input type="radio" name="nps" value="7"><span>7</span></label>
+                    <label class="rating-option"><input type="radio" name="nps" value="8"><span>8</span></label>
+                    <label class="rating-option"><input type="radio" name="nps" value="9"><span>9</span></label>
+                    <label class="rating-option"><input type="radio" name="nps" value="10"><span>10</span></label>
+                </div>
+                <p class="text-xs text-slate-500 mt-2">0 = Not at all likely, 10 = Extremely likely</p>
+                <div class="mt-3">
+                    <label class="block text-slate-500 text-sm mb-2">Why did you give this rating? (Optional)</label>
+                    <textarea class="text-sm" style="min-height: 60px;" placeholder="What would make you more likely to recommend?"></textarea>
+                </div>
+            </div>
+
+            <!-- Value for Money -->
+            <div>
+                <label class="block text-slate-700 font-medium mb-4">How would you rate the value you received for your investment?</label>
+                <div class="rating-group flex-wrap">
+                    <label class="rating-option">
+                        <input type="radio" name="value" value="1">
+                        <span class="text-lg">1</span>
+                        <span class="text-xs text-slate-500">Poor</span>
+                    </label>
+                    <label class="rating-option">
+                        <input type="radio" name="value" value="2">
+                        <span class="text-lg">2</span>
+                        <span class="text-xs text-slate-500">Fair</span>
+                    </label>
+                    <label class="rating-option">
+                        <input type="radio" name="value" value="3">
+                        <span class="text-lg">3</span>
+                        <span class="text-xs text-slate-500">Good</span>
+                    </label>
+                    <label class="rating-option">
+                        <input type="radio" name="value" value="4">
+                        <span class="text-lg">4</span>
+                        <span class="text-xs text-slate-500">Great</span>
+                    </label>
+                    <label class="rating-option">
+                        <input type="radio" name="value" value="5">
+                        <span class="text-lg">5</span>
+                        <span class="text-xs text-slate-500">Excellent</span>
+                    </label>
+                </div>
+                <div class="mt-3">
+                    <label class="block text-slate-500 text-sm mb-2">Why did you give this rating? (Optional)</label>
+                    <textarea class="text-sm" style="min-height: 60px;" placeholder="Was the investment worth it? Why or why not?"></textarea>
+                </div>
+            </div>
+        </div>
+
+        <!-- Session-Specific Feedback -->
+        <div class="section-card print-break">
+            <h2 class="text-xl font-bold text-slate-800 mb-6 flex items-center gap-2">
+                <span class="w-8 h-8 bg-emerald-100 text-emerald-600 rounded-lg flex items-center justify-center text-sm font-bold">3</span>
+                Session-Specific Feedback
+            </h2>
+
+            <!-- Session 1 -->
+            <div class="mb-8 p-6 bg-slate-50 rounded-xl">
+                <h3 class="font-bold text-slate-800 mb-4">Session 1: Deep Resume Transformation</h3>
+                <p class="text-sm text-slate-500 mb-4">Asset Mindset, Me-in-We, Impact Bullet Formula, STAR+L, etc.</p>
+                
+                <div class="mb-4">
+                    <label class="block text-slate-700 font-medium mb-2">How useful was Session 1? (1-5)</label>
+                    <div class="rating-group">
+                        <label class="rating-option"><input type="radio" name="session1" value="1"><span>1</span></label>
+                        <label class="rating-option"><input type="radio" name="session1" value="2"><span>2</span></label>
+                        <label class="rating-option"><input type="radio" name="session1" value="3"><span>3</span></label>
+                        <label class="rating-option"><input type="radio" name="session1" value="4"><span>4</span></label>
+                        <label class="rating-option"><input type="radio" name="session1" value="5"><span>5</span></label>
+                    </div>
+                </div>
+                
+                <div>
+                    <label class="block text-slate-700 font-medium mb-2">What was most valuable from Session 1?</label>
+                    <textarea placeholder="Which methods or concepts helped you the most?"></textarea>
+                </div>
+            </div>
+
+            <!-- Session 2 -->
+            <div class="mb-8 p-6 bg-slate-50 rounded-xl">
+                <h3 class="font-bold text-slate-800 mb-4">Session 2: Interview Strategy & Story Mastery</h3>
+                <p class="text-sm text-slate-500 mb-4">Story Vault, High-Impact Story Framework, Power Pause, Interview Cheat Sheet</p>
+                
+                <div class="mb-4">
+                    <label class="block text-slate-700 font-medium mb-2">How useful was Session 2? (1-5)</label>
+                    <div class="rating-group">
+                        <label class="rating-option"><input type="radio" name="session2" value="1"><span>1</span></label>
+                        <label class="rating-option"><input type="radio" name="session2" value="2"><span>2</span></label>
+                        <label class="rating-option"><input type="radio" name="session2" value="3"><span>3</span></label>
+                        <label class="rating-option"><input type="radio" name="session2" value="4"><span>4</span></label>
+                        <label class="rating-option"><input type="radio" name="session2" value="5"><span>5</span></label>
+                    </div>
+                </div>
+                
+                <div>
+                    <label class="block text-slate-700 font-medium mb-2">What was most valuable from Session 2?</label>
+                    <textarea placeholder="Which frameworks or exercises helped you the most?"></textarea>
+                </div>
+            </div>
+
+            <!-- Session 3 -->
+            <div class="p-6 bg-slate-50 rounded-xl">
+                <h3 class="font-bold text-slate-800 mb-4">Session 3: Live Mock Interview & Refinement</h3>
+                <p class="text-sm text-slate-500 mb-4">Mock interview, feedback, rejection reframe, negotiation preview</p>
+                
+                <div class="mb-4">
+                    <label class="block text-slate-700 font-medium mb-2">How useful was Session 3? (1-5)</label>
+                    <div class="rating-group">
+                        <label class="rating-option"><input type="radio" name="session3" value="1"><span>1</span></label>
+                        <label class="rating-option"><input type="radio" name="session3" value="2"><span>2</span></label>
+                        <label class="rating-option"><input type="radio" name="session3" value="3"><span>3</span></label>
+                        <label class="rating-option"><input type="radio" name="session3" value="4"><span>4</span></label>
+                        <label class="rating-option"><input type="radio" name="session3" value="5"><span>5</span></label>
+                    </div>
+                </div>
+                
+                <div>
+                    <label class="block text-slate-700 font-medium mb-2">What was most valuable from Session 3?</label>
+                    <textarea placeholder="What feedback or insights helped you the most?"></textarea>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pre-Session & Post-Session Materials -->
+        <div class="section-card print-break">
+            <h2 class="text-xl font-bold text-slate-800 mb-6 flex items-center gap-2">
+                <span class="w-8 h-8 bg-emerald-100 text-emerald-600 rounded-lg flex items-center justify-center text-sm font-bold">4</span>
+                Pre-Session & Post-Session Materials
+            </h2>
+
+            <!-- Pre-Session 1 Materials -->
+            <div class="mb-8 p-6 bg-slate-50 rounded-xl">
+                <h3 class="font-bold text-slate-800 mb-2">Pre-Session 1 Materials</h3>
+                <p class="text-sm text-slate-500 mb-4">Asset Mindset Shift, Job Sourcing Strategy, Application Pipeline, Networking Mindset, Warm Intro Protocol, Career Center Checklist, etc.</p>
+                
+                <div class="mb-4">
+                    <label class="block text-slate-700 font-medium mb-2">How useful were the Pre-Session 1 materials? (1-5)</label>
+                    <div class="rating-group">
+                        <label class="rating-option"><input type="radio" name="pre1" value="1"><span>1</span></label>
+                        <label class="rating-option"><input type="radio" name="pre1" value="2"><span>2</span></label>
+                        <label class="rating-option"><input type="radio" name="pre1" value="3"><span>3</span></label>
+                        <label class="rating-option"><input type="radio" name="pre1" value="4"><span>4</span></label>
+                        <label class="rating-option"><input type="radio" name="pre1" value="5"><span>5</span></label>
+                    </div>
+                </div>
+                
+                <div>
+                    <label class="block text-slate-700 font-medium mb-2">Which Pre-Session 1 materials were most/least helpful?</label>
+                    <textarea placeholder="What prepared you well? What wasn't as useful?"></textarea>
+                </div>
+            </div>
+
+            <!-- Post-Session 1 Materials -->
+            <div class="mb-8 p-6 bg-slate-50 rounded-xl">
+                <h3 class="font-bold text-slate-800 mb-2">Post-Session 1 Materials</h3>
+                <p class="text-sm text-slate-500 mb-4">Companion Cover Letter, Company Research Deep Dive, New Grad-Friendly Company List</p>
+                
+                <div class="mb-4">
+                    <label class="block text-slate-700 font-medium mb-2">How useful were the Post-Session 1 materials? (1-5)</label>
+                    <div class="rating-group">
+                        <label class="rating-option"><input type="radio" name="post1" value="1"><span>1</span></label>
+                        <label class="rating-option"><input type="radio" name="post1" value="2"><span>2</span></label>
+                        <label class="rating-option"><input type="radio" name="post1" value="3"><span>3</span></label>
+                        <label class="rating-option"><input type="radio" name="post1" value="4"><span>4</span></label>
+                        <label class="rating-option"><input type="radio" name="post1" value="5"><span>5</span></label>
+                    </div>
+                </div>
+                
+                <div>
+                    <label class="block text-slate-700 font-medium mb-2">Which Post-Session 1 materials were most/least helpful?</label>
+                    <textarea placeholder="What helped you apply what you learned? What could be improved?"></textarea>
+                </div>
+            </div>
+
+            <!-- Pre-Session 2 Materials -->
+            <div class="mb-8 p-6 bg-slate-50 rounded-xl">
+                <h3 class="font-bold text-slate-800 mb-2">Pre-Session 2 Materials</h3>
+                <p class="text-sm text-slate-500 mb-4">High-Impact Story Framework, Competency Story Map, Interview Types Guide, Phone Screen Prep, Three-Tier Impact Ladder</p>
+                
+                <div class="mb-4">
+                    <label class="block text-slate-700 font-medium mb-2">How useful were the Pre-Session 2 materials? (1-5)</label>
+                    <div class="rating-group">
+                        <label class="rating-option"><input type="radio" name="pre2" value="1"><span>1</span></label>
+                        <label class="rating-option"><input type="radio" name="pre2" value="2"><span>2</span></label>
+                        <label class="rating-option"><input type="radio" name="pre2" value="3"><span>3</span></label>
+                        <label class="rating-option"><input type="radio" name="pre2" value="4"><span>4</span></label>
+                        <label class="rating-option"><input type="radio" name="pre2" value="5"><span>5</span></label>
+                    </div>
+                </div>
+                
+                <div>
+                    <label class="block text-slate-700 font-medium mb-2">Which Pre-Session 2 materials were most/least helpful?</label>
+                    <textarea placeholder="What prepared you well? What wasn't as useful?"></textarea>
+                </div>
+            </div>
+
+            <!-- Post-Session 2 Materials -->
+            <div class="mb-8 p-6 bg-slate-50 rounded-xl">
+                <h3 class="font-bold text-slate-800 mb-2">Post-Session 2 Materials</h3>
+                <p class="text-sm text-slate-500 mb-4">Career Fair Prep, Digital Stage Presence, Elevator Pitch Structure, Follow-Up Protocol, Phone Screen Questions, Referral Request Script, Technical Gauntlet, Visual Aid Binder</p>
+                
+                <div class="mb-4">
+                    <label class="block text-slate-700 font-medium mb-2">How useful were the Post-Session 2 materials? (1-5)</label>
+                    <div class="rating-group">
+                        <label class="rating-option"><input type="radio" name="post2" value="1"><span>1</span></label>
+                        <label class="rating-option"><input type="radio" name="post2" value="2"><span>2</span></label>
+                        <label class="rating-option"><input type="radio" name="post2" value="3"><span>3</span></label>
+                        <label class="rating-option"><input type="radio" name="post2" value="4"><span>4</span></label>
+                        <label class="rating-option"><input type="radio" name="post2" value="5"><span>5</span></label>
+                    </div>
+                </div>
+                
+                <div>
+                    <label class="block text-slate-700 font-medium mb-2">Which Post-Session 2 materials were most/least helpful?</label>
+                    <textarea placeholder="What helped you apply what you learned? What could be improved?"></textarea>
+                </div>
+            </div>
+
+            <!-- Pre-Session 3 Materials -->
+            <div class="mb-8 p-6 bg-slate-50 rounded-xl">
+                <h3 class="font-bold text-slate-800 mb-2">Pre-Session 3 Materials</h3>
+                <p class="text-sm text-slate-500 mb-4">Rejection Reframe System, Burnout Prevention System, Research Your Worth, Entry-Level Negotiation Scripts, Offer Comparison Tool</p>
+                
+                <div class="mb-4">
+                    <label class="block text-slate-700 font-medium mb-2">How useful were the Pre-Session 3 materials? (1-5)</label>
+                    <div class="rating-group">
+                        <label class="rating-option"><input type="radio" name="pre3" value="1"><span>1</span></label>
+                        <label class="rating-option"><input type="radio" name="pre3" value="2"><span>2</span></label>
+                        <label class="rating-option"><input type="radio" name="pre3" value="3"><span>3</span></label>
+                        <label class="rating-option"><input type="radio" name="pre3" value="4"><span>4</span></label>
+                        <label class="rating-option"><input type="radio" name="pre3" value="5"><span>5</span></label>
+                    </div>
+                </div>
+                
+                <div>
+                    <label class="block text-slate-700 font-medium mb-2">Which Pre-Session 3 materials were most/least helpful?</label>
+                    <textarea placeholder="What prepared you well? What wasn't as useful?"></textarea>
+                </div>
+            </div>
+
+            <!-- Post-Session 3 Materials -->
+            <div class="p-6 bg-slate-50 rounded-xl">
+                <h3 class="font-bold text-slate-800 mb-2">Post-Session 3 Materials</h3>
+                <p class="text-sm text-slate-500 mb-4">First 90-Day Plan, Post-Interview Follow-Up, Gap Explanation Scripts, Offer Timeline Scripts, Ghosting Response, Digital Footprint Audit, Comparison Trap Escape, External Pressure Scripts</p>
+                
+                <div class="mb-4">
+                    <label class="block text-slate-700 font-medium mb-2">How useful were the Post-Session 3 materials? (1-5)</label>
+                    <div class="rating-group">
+                        <label class="rating-option"><input type="radio" name="post3" value="1"><span>1</span></label>
+                        <label class="rating-option"><input type="radio" name="post3" value="2"><span>2</span></label>
+                        <label class="rating-option"><input type="radio" name="post3" value="3"><span>3</span></label>
+                        <label class="rating-option"><input type="radio" name="post3" value="4"><span>4</span></label>
+                        <label class="rating-option"><input type="radio" name="post3" value="5"><span>5</span></label>
+                    </div>
+                </div>
+                
+                <div>
+                    <label class="block text-slate-700 font-medium mb-2">Which Post-Session 3 materials were most/least helpful?</label>
+                    <textarea placeholder="What helped you apply what you learned? What could be improved?"></textarea>
+                </div>
+            </div>
+        </div>
+
+        <!-- Impact & Outcomes -->
+        <div class="section-card">
+            <h2 class="text-xl font-bold text-slate-800 mb-6 flex items-center gap-2">
+                <span class="w-8 h-8 bg-emerald-100 text-emerald-600 rounded-lg flex items-center justify-center text-sm font-bold">5</span>
+                Impact & Outcomes
+            </h2>
+
+            <div class="mb-6">
+                <label class="block text-slate-700 font-medium mb-4">How has the Launch Path helped you? (Select all that apply)</label>
+                <div class="grid md:grid-cols-2 gap-3">
+                    <label class="checkbox-option">
+                        <input type="checkbox" value="resume">
+                        <span>My resume is significantly stronger</span>
+                    </label>
+                    <label class="checkbox-option">
+                        <input type="checkbox" value="confidence">
+                        <span>I feel more confident in interviews</span>
+                    </label>
+                    <label class="checkbox-option">
+                        <input type="checkbox" value="stories">
+                        <span>I have better stories to tell</span>
+                    </label>
+                    <label class="checkbox-option">
+                        <input type="checkbox" value="structure">
+                        <span>I have a structured job search approach</span>
+                    </label>
+                    <label class="checkbox-option">
+                        <input type="checkbox" value="interviews">
+                        <span>I've gotten more interviews</span>
+                    </label>
+                    <label class="checkbox-option">
+                        <input type="checkbox" value="offers">
+                        <span>I've received job offers</span>
+                    </label>
+                    <label class="checkbox-option">
+                        <input type="checkbox" value="mindset">
+                        <span>My mindset about job searching changed</span>
+                    </label>
+                    <label class="checkbox-option">
+                        <input type="checkbox" value="negotiation">
+                        <span>I feel prepared to negotiate</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="mb-6">
+                <label class="block text-slate-700 font-medium mb-2">Describe the biggest change or transformation you experienced:</label>
+                <textarea placeholder="What's different now compared to before the program?"></textarea>
+            </div>
+
+            <div>
+                <label class="block text-slate-700 font-medium mb-2">If you've had interviews since completing the program, how did they go?</label>
+                <textarea placeholder="Any wins, callbacks, offers, or improvements you noticed?"></textarea>
+            </div>
+        </div>
+
+        <!-- Coaching Experience -->
+        <div class="section-card print-break">
+            <h2 class="text-xl font-bold text-slate-800 mb-6 flex items-center gap-2">
+                <span class="w-8 h-8 bg-emerald-100 text-emerald-600 rounded-lg flex items-center justify-center text-sm font-bold">6</span>
+                Coaching Experience
+            </h2>
+
+            <div class="mb-6">
+                <label class="block text-slate-700 font-medium mb-4">How would you rate the coaching style and delivery?</label>
+                <div class="rating-group flex-wrap">
+                    <label class="rating-option">
+                        <input type="radio" name="coaching" value="1">
+                        <span class="text-lg">1</span>
+                        <span class="text-xs text-slate-500">Poor</span>
+                    </label>
+                    <label class="rating-option">
+                        <input type="radio" name="coaching" value="2">
+                        <span class="text-lg">2</span>
+                        <span class="text-xs text-slate-500">Fair</span>
+                    </label>
+                    <label class="rating-option">
+                        <input type="radio" name="coaching" value="3">
+                        <span class="text-lg">3</span>
+                        <span class="text-xs text-slate-500">Good</span>
+                    </label>
+                    <label class="rating-option">
+                        <input type="radio" name="coaching" value="4">
+                        <span class="text-lg">4</span>
+                        <span class="text-xs text-slate-500">Great</span>
+                    </label>
+                    <label class="rating-option">
+                        <input type="radio" name="coaching" value="5">
+                        <span class="text-lg">5</span>
+                        <span class="text-xs text-slate-500">Excellent</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="mb-6">
+                <label class="block text-slate-700 font-medium mb-2">What did you appreciate most about working with Mansour?</label>
+                <textarea placeholder="Coaching style, communication, expertise, etc."></textarea>
+            </div>
+
+            <div>
+                <label class="block text-slate-700 font-medium mb-2">Was there anything about the coaching experience that could be improved?</label>
+                <textarea placeholder="Be honest - this helps me get better!"></textarea>
+            </div>
+        </div>
+
+        <!-- Materials & Resources -->
+        <div class="section-card">
+            <h2 class="text-xl font-bold text-slate-800 mb-6 flex items-center gap-2">
+                <span class="w-8 h-8 bg-emerald-100 text-emerald-600 rounded-lg flex items-center justify-center text-sm font-bold">7</span>
+                Materials & Resources
+            </h2>
+
+            <div class="mb-6">
+                <label class="block text-slate-700 font-medium mb-4">How would you rate the session materials and resources provided?</label>
+                <div class="rating-group flex-wrap">
+                    <label class="rating-option">
+                        <input type="radio" name="materials" value="1">
+                        <span class="text-lg">1</span>
+                        <span class="text-xs text-slate-500">Poor</span>
+                    </label>
+                    <label class="rating-option">
+                        <input type="radio" name="materials" value="2">
+                        <span class="text-lg">2</span>
+                        <span class="text-xs text-slate-500">Fair</span>
+                    </label>
+                    <label class="rating-option">
+                        <input type="radio" name="materials" value="3">
+                        <span class="text-lg">3</span>
+                        <span class="text-xs text-slate-500">Good</span>
+                    </label>
+                    <label class="rating-option">
+                        <input type="radio" name="materials" value="4">
+                        <span class="text-lg">4</span>
+                        <span class="text-xs text-slate-500">Great</span>
+                    </label>
+                    <label class="rating-option">
+                        <input type="radio" name="materials" value="5">
+                        <span class="text-lg">5</span>
+                        <span class="text-xs text-slate-500">Excellent</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="mb-6">
+                <label class="block text-slate-700 font-medium mb-2">Which materials or resources were most helpful?</label>
+                <textarea placeholder="Slides, frameworks, templates, cheat sheets, etc."></textarea>
+            </div>
+
+            <div>
+                <label class="block text-slate-700 font-medium mb-2">What additional materials or resources would have been helpful?</label>
+                <textarea placeholder="Anything missing that would have made the program even better?"></textarea>
+            </div>
+        </div>
+
+        <!-- Suggestions & Improvements -->
+        <div class="section-card">
+            <h2 class="text-xl font-bold text-slate-800 mb-6 flex items-center gap-2">
+                <span class="w-8 h-8 bg-emerald-100 text-emerald-600 rounded-lg flex items-center justify-center text-sm font-bold">8</span>
+                Suggestions & Improvements
+            </h2>
+
+            <div class="mb-6">
+                <label class="block text-slate-700 font-medium mb-2">What would you add, change, or remove from the program?</label>
+                <textarea placeholder="Be specific - your ideas help shape the future of Launch Path"></textarea>
+            </div>
+
+            <div class="mb-6">
+                <label class="block text-slate-700 font-medium mb-2">Was the 21-day timeline and 3-session format right for you?</label>
+                <textarea placeholder="Too fast? Too slow? Just right? Would you prefer more/fewer sessions?"></textarea>
+            </div>
+
+            <div>
+                <label class="block text-slate-700 font-medium mb-2">Is there anything you wish we had spent more time on?</label>
+                <textarea placeholder="Topics, skills, or areas that deserved deeper focus"></textarea>
+            </div>
+        </div>
+
+        <!-- Testimonial -->
+        <div class="section-card print-break">
+            <h2 class="text-xl font-bold text-slate-800 mb-6 flex items-center gap-2">
+                <span class="w-8 h-8 bg-emerald-100 text-emerald-600 rounded-lg flex items-center justify-center text-sm font-bold">9</span>
+                Testimonial (Optional)
+            </h2>
+
+            <div class="mb-6 p-4 bg-amber-50 border border-amber-200 rounded-xl">
+                <p class="text-amber-800 text-sm">
+                    <strong>Note:</strong> If you're comfortable, I'd love to use your feedback as a testimonial to help future clients understand the value of the program. This is completely optional and I'll always ask for your approval before using anything publicly.
+                </p>
+            </div>
+
+            <div class="mb-6">
+                <label class="block text-slate-700 font-medium mb-2">In your own words, how would you describe your experience with the Launch Path?</label>
+                <textarea placeholder="This could be used as a testimonial (with your permission)"></textarea>
+            </div>
+
+            <div class="mb-6">
+                <label class="block text-slate-700 font-medium mb-4">May I use your feedback as a testimonial?</label>
+                <div class="flex gap-4">
+                    <label class="checkbox-option">
+                        <input type="radio" name="testimonial_permission" value="yes_name">
+                        <span>Yes, with my name</span>
+                    </label>
+                    <label class="checkbox-option">
+                        <input type="radio" name="testimonial_permission" value="yes_anonymous">
+                        <span>Yes, but anonymously</span>
+                    </label>
+                    <label class="checkbox-option">
+                        <input type="radio" name="testimonial_permission" value="no">
+                        <span>No, keep private</span>
+                    </label>
+                </div>
+            </div>
+
+            <div>
+                <label class="block text-slate-700 font-medium mb-4">Would you be open to a brief video testimonial? (2-3 minutes)</label>
+                <div class="flex gap-4">
+                    <label class="checkbox-option">
+                        <input type="radio" name="video_testimonial" value="yes">
+                        <span>Yes, I'd be happy to</span>
+                    </label>
+                    <label class="checkbox-option">
+                        <input type="radio" name="video_testimonial" value="maybe">
+                        <span>Maybe, let's discuss</span>
+                    </label>
+                    <label class="checkbox-option">
+                        <input type="radio" name="video_testimonial" value="no">
+                        <span>No, thank you</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Final Thoughts -->
+        <div class="section-card">
+            <h2 class="text-xl font-bold text-slate-800 mb-6 flex items-center gap-2">
+                <span class="w-8 h-8 bg-emerald-100 text-emerald-600 rounded-lg flex items-center justify-center text-sm font-bold">10</span>
+                Final Thoughts
+            </h2>
+
+            <div class="mb-6">
+                <label class="block text-slate-700 font-medium mb-2">Anything else you'd like to share?</label>
+                <textarea placeholder="Additional feedback, thoughts, or suggestions"></textarea>
+            </div>
+
+            <div>
+                <label class="block text-slate-700 font-medium mb-2">Would you be interested in the Accelerate Path (career advancement coaching) in the future?</label>
+                <div class="flex gap-4 flex-wrap">
+                    <label class="checkbox-option">
+                        <input type="radio" name="accelerate_interest" value="yes">
+                        <span>Yes, definitely</span>
+                    </label>
+                    <label class="checkbox-option">
+                        <input type="radio" name="accelerate_interest" value="maybe">
+                        <span>Maybe later</span>
+                    </label>
+                    <label class="checkbox-option">
+                        <input type="radio" name="accelerate_interest" value="no">
+                        <span>Not at this time</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Thank You -->
+        <div class="section-card bg-gradient-to-r from-emerald-50 to-teal-50 border-2 border-emerald-200">
+            <div class="text-center">
+                <div class="text-4xl mb-4">🙏</div>
+                <h2 class="text-2xl font-bold text-slate-800 mb-4">Thank You!</h2>
+                <p class="text-slate-600 mb-4">
+                    Your feedback is incredibly valuable and helps me continuously improve the Launch Path program. 
+                    I'm grateful for the trust you placed in me during your career transition.
+                </p>
+                <p class="text-slate-600">
+                    Please email this completed form to <strong class="text-emerald-600">contact@launchtolead.io</strong>
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="bg-slate-800 text-white p-6 text-center no-print">
+        <p class="text-slate-400">© 2026 LaunchToLead. All rights reserved.</p>
+    </div>
+
+</body>
+</html>
