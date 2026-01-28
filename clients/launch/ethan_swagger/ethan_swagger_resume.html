@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ethan Swagger - Resume - Network Administrator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @page {
+            size: letter;
+            margin: 0.5in;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 10pt;
+            line-height: 1.4;
+            color: #1a1a1a;
+            background: #f5f5f5;
+        }
+
+        .resume-container {
+            max-width: 8.5in;
+            margin: 0 auto;
+            background: white;
+            padding: 0.5in;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            border-bottom: 2px solid #0369a1;
+            padding-bottom: 12px;
+            margin-bottom: 16px;
+        }
+
+        .name {
+            font-size: 24pt;
+            font-weight: 700;
+            color: #0369a1;
+            margin-bottom: 4px;
+            letter-spacing: -0.5px;
+        }
+
+        .contact-info {
+            font-size: 9pt;
+            color: #4a4a4a;
+        }
+
+        .contact-info a {
+            color: #0369a1;
+            text-decoration: none;
+        }
+
+        /* Section Styling */
+        .section {
+            margin-bottom: 14px;
+        }
+
+        .section-title {
+            font-size: 11pt;
+            font-weight: 700;
+            color: #0369a1;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1px solid #e5e5e5;
+            padding-bottom: 4px;
+            margin-bottom: 10px;
+        }
+
+        /* Summary */
+        .summary {
+            font-size: 9.5pt;
+            color: #333;
+            margin-bottom: 10px;
+            text-align: justify;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 4px;
+            font-size: 9pt;
+        }
+
+        .skill-row {
+            display: flex;
+        }
+
+        .skill-label {
+            font-weight: 600;
+            color: #0369a1;
+            min-width: 140px;
+        }
+
+        .skill-value {
+            color: #333;
+        }
+
+        /* Experience */
+        .job {
+            margin-bottom: 14px;
+        }
+
+        .job-header {
+            margin-bottom: 6px;
+        }
+
+        .job-title-line {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+
+        .job-title {
+            font-size: 10.5pt;
+            font-weight: 700;
+            color: #1a1a1a;
+        }
+
+        .job-date {
+            font-size: 9pt;
+            color: #666;
+            font-style: italic;
+        }
+
+        .job-company {
+            font-size: 9.5pt;
+            font-weight: 500;
+            color: #059669;
+        }
+
+        .job-category {
+            font-size: 9pt;
+            font-weight: 600;
+            color: #0369a1;
+            margin-top: 8px;
+            margin-bottom: 4px;
+        }
+
+        .job-bullets {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .job-bullets li {
+            font-size: 9.5pt;
+            color: #333;
+            margin-bottom: 4px;
+            padding-left: 14px;
+            position: relative;
+            text-align: justify;
+        }
+
+        .job-bullets li::before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #059669;
+            font-size: 10pt;
+        }
+
+        /* Certifications */
+        .cert-item {
+            font-size: 9.5pt;
+            color: #333;
+            margin-bottom: 4px;
+        }
+
+        .cert-status {
+            color: #666;
+            font-style: italic;
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                background: white;
+            }
+
+            .resume-container {
+                box-shadow: none;
+                padding: 0;
+                max-width: none;
+            }
+
+            .section {
+                page-break-inside: avoid;
+            }
+
+            .job {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="resume-container">
+        
+        <!-- Header -->
+        <header class="header">
+            <h1 class="name">Ethan Swagger</h1>
+            <div class="contact-info">
+                Altoona, IA &nbsp;|&nbsp; (402) 890-3224 &nbsp;|&nbsp; 
+                <a href="mailto:eswagger@hotmail.com">eswagger@hotmail.com</a>
+            </div>
+        </header>
+
+        <!-- Professional Summary -->
+        <section class="section">
+            <h2 class="section-title">Summary</h2>
+            <p class="summary">
+                Network-focused IT professional with 4+ years of experience supporting large-scale retail environments. Strong background in WAN troubleshooting, multi-site network operations, and improving reliability through practical process changes. Experienced with Cisco Meraki environments, automation-assisted support, and cross-team coordination. Actively pursuing CCNA certification.
+            </p>
+        </section>
+
+        <!-- Technical Skills -->
+        <section class="section">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-row">
+                    <span class="skill-label">Networking:</span>
+                    <span class="skill-value">WAN/LAN Troubleshooting, VLANs, DHCP, NAT, SSIDs, Firewall Policies, ACLs, Zone-Based Firewall Concepts, Packet Loss & Latency Analysis</span>
+                </div>
+                <div class="skill-row">
+                    <span class="skill-label">Platforms & Vendors:</span>
+                    <span class="skill-value">Cisco Meraki (MX, MS, MR), Cisco IOS / IOS-XE, Juniper (exposure)</span>
+                </div>
+                <div class="skill-row">
+                    <span class="skill-label">Automation:</span>
+                    <span class="skill-value">PowerShell, Ansible, Nagios, Ivanti</span>
+                </div>
+                <div class="skill-row">
+                    <span class="skill-label">Operating Systems:</span>
+                    <span class="skill-value">Windows, Linux (Ubuntu, Debian, FreeBSD)</span>
+                </div>
+                <div class="skill-row">
+                    <span class="skill-label">Certifications:</span>
+                    <span class="skill-value">CCNA (In Progress)</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience -->
+        <section class="section">
+            <h2 class="section-title">Experience</h2>
+            
+            <!-- Kum & Go / Maverik -->
+            <div class="job">
+                <div class="job-header">
+                    <div class="job-title-line">
+                        <span class="job-title">Retail IT Technical Support II (Network Administrator)</span>
+                        <span class="job-date">November 2022 – Present</span>
+                    </div>
+                    <div class="job-company">Kum & Go / Maverik — Des Moines, IA</div>
+                </div>
+
+                <div class="job-category">WAN Engineering & Reliability</div>
+                <ul class="job-bullets">
+                    <li>Validated WAN performance for 800+ store locations across 15+ states in 2 days using Cisco Meraki WAN performance statistics, ensuring less than 1% packet loss and optimal latency to proactively identify issues before stores reported problems.</li>
+                </ul>
+
+                <div class="job-category">Network Operations & Infrastructure Support</div>
+                <ul class="job-bullets">
+                    <li>Supported WAN and LAN connectivity for 750+ retail locations using Cisco Meraki MX, MS, and MR equipment, maintaining uptime across a geographically distributed network environment.</li>
+                    <li>Maintained VLAN configurations, SSIDs, and DHCP scopes across a large multi-site environment, ensuring consistent network segmentation and IP management.</li>
+                    <li>Handled escalations involving routing, switching, wireless, and firewall-related connectivity issues, resolving complex problems that Tier 1 support could not address.</li>
+                    <li>Assisted with firewall policy, NAT, ARP, and related troubleshooting within retail network environments, restoring connectivity for affected store operations.</li>
+                </ul>
+
+                <div class="job-category">Network Migrations & Store Rebrands</div>
+                <ul class="job-bullets">
+                    <li>Supported large-scale store rebrands involving the transition from the legacy Kum & Go network to the Maverik network, helping standardize infrastructure across the merged organization.</li>
+                    <li>Migrated and configured Cisco Meraki MX, MS, and MR devices to integrate rebranded stores into the new network environment, enabling unified management and monitoring.</li>
+                    <li>Verified VLAN mappings, SSIDs, and device connectivity during cutover to ensure minimal disruption to store operations during the transition.</li>
+                    <li>Assisted with troubleshooting connectivity issues during and after migrations to stabilize rebranded locations, reducing post-migration support tickets.</li>
+                    <li>Coordinated with internal teams to ensure rebranded sites met network standards prior to handoff, improving the consistency of network deployments.</li>
+                </ul>
+
+                <div class="job-category">Automation & Operational Efficiency</div>
+                <ul class="job-bullets">
+                    <li>Wrote and maintained automation scripts to assist with deployments, monitoring, and recurring remediation tasks, reducing manual effort for repetitive workflows.</li>
+                    <li>Used monitoring and alerting tools to identify network issues early, enabling proactive response and reducing mean time to resolution.</li>
+                    <li>Improved response times by replacing repetitive manual steps with scripted workflows, increasing efficiency for common support tasks.</li>
+                </ul>
+
+                <div class="job-category">Documentation, Training & Process Support</div>
+                <ul class="job-bullets">
+                    <li>Created and maintained documentation for retail hardware including label printers and other in-store devices, enabling faster issue resolution for support teams.</li>
+                    <li>Documented repeat issues, fixes, and workarounds encountered during daily support, building a knowledge base for the team.</li>
+                    <li>Helped train newer team members on troubleshooting workflows, tools, and support expectations, reducing onboarding time for new hires.</li>
+                    <li>Improved consistency by sharing practical guidance for handling common operational issues, standardizing support practices across the team.</li>
+                </ul>
+
+                <div class="job-category">Retail Systems & Operational Support</div>
+                <ul class="job-bullets">
+                    <li>Supported POS systems, site controllers, and back-office devices during live store operations, minimizing downtime impact on revenue-generating activities.</li>
+                    <li>Participated in large-scale initiatives including Outdoor EMV upgrades and POS infrastructure refreshes, contributing to company-wide technology modernization.</li>
+                    <li>Assisted with incident response to minimize store downtime and operational impact, ensuring business continuity during critical outages.</li>
+                </ul>
+            </div>
+
+            <!-- Casey's -->
+            <div class="job">
+                <div class="job-header">
+                    <div class="job-title-line">
+                        <span class="job-title">IT Support Specialist</span>
+                        <span class="job-date">September 2021 – March 2022</span>
+                    </div>
+                    <div class="job-company">Casey's — Des Moines, IA</div>
+                </div>
+
+                <ul class="job-bullets">
+                    <li>Tracked and supported store conversion projects including OEMV and M400 PIN pad deployments, ensuring accurate status visibility for project stakeholders.</li>
+                    <li>Built Excel-based tracking tools to monitor deployment progress and issue resolution, improving project management visibility for technology rollouts.</li>
+                    <li>Provided Level 1 remote support for receipt printers, office printers, and back-office systems, resolving common hardware and connectivity issues.</li>
+                    <li>Performed drive imaging for registers and store computers, preparing devices for deployment to new or refreshed store locations.</li>
+                    <li>Refurbished, configured, and staged devices for deployment, ensuring equipment was ready for field installation.</li>
+                    <li>Assisted with warehouse operations and POS equipment assembly, supporting the logistics pipeline for store technology deployments.</li>
+                </ul>
+            </div>
+
+        </section>
+
+    </div>
+</body>
+</html>
