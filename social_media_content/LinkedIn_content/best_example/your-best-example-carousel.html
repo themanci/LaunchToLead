@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedIn Carousel - Your Best Example Might Not Look Technical</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: #f3f4f6;
+            padding: 20px;
+        }
+
+        .slide {
+            width: 1080px;
+            height: 1080px;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            margin: 0 auto 40px auto;
+            padding: 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            page-break-after: always;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slide::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(163, 230, 53, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .slide-number {
+            position: absolute;
+            bottom: 40px;
+            right: 60px;
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.4);
+            font-weight: 500;
+        }
+
+        .brand {
+            position: absolute;
+            bottom: 40px;
+            left: 60px;
+            font-size: 18px;
+            color: #a3e635;
+            font-weight: 600;
+        }
+
+        /* Slide 1 - Title */
+        .slide-1 .eyebrow {
+            font-size: 28px;
+            font-weight: 600;
+            color: #a3e635;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 40px;
+        }
+
+        .slide-1 .title {
+            font-size: 68px;
+            font-weight: 800;
+            color: white;
+            line-height: 1.1;
+            margin-bottom: 50px;
+        }
+
+        .slide-1 .title .highlight {
+            color: #a3e635;
+        }
+
+        .slide-1 .subtitle {
+            font-size: 32px;
+            color: rgba(255, 255, 255, 0.7);
+            font-weight: 500;
+            line-height: 1.4;
+        }
+
+        /* Slide 2 - The Setup */
+        .slide-2 .main-text {
+            font-size: 48px;
+            font-weight: 700;
+            color: white;
+            line-height: 1.3;
+            margin-bottom: 50px;
+        }
+
+        .slide-2 .question-box {
+            background: rgba(163, 230, 53, 0.1);
+            border-left: 4px solid #a3e635;
+            padding: 40px 50px;
+            border-radius: 0 16px 16px 0;
+        }
+
+        .slide-2 .question-label {
+            font-size: 20px;
+            font-weight: 700;
+            color: #a3e635;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+
+        .slide-2 .question-text {
+            font-size: 32px;
+            color: rgba(255, 255, 255, 0.9);
+            font-style: italic;
+            line-height: 1.4;
+        }
+
+        /* Slide 3 - The Hesitation */
+        .slide-3 .quote-container {
+            text-align: center;
+        }
+
+        .slide-3 .quote-mark {
+            font-size: 120px;
+            color: #a3e635;
+            line-height: 0.5;
+            margin-bottom: 40px;
+        }
+
+        .slide-3 .quote-text {
+            font-size: 48px;
+            font-style: italic;
+            color: white;
+            line-height: 1.4;
+            margin-bottom: 50px;
+        }
+
+        .slide-3 .attribution {
+            font-size: 26px;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Slide 4 - The Example */
+        .slide-4 .label {
+            display: inline-block;
+            background: rgba(163, 230, 53, 0.2);
+            color: #a3e635;
+            font-size: 20px;
+            font-weight: 700;
+            padding: 12px 24px;
+            border-radius: 50px;
+            margin-bottom: 40px;
+        }
+
+        .slide-4 .example-box {
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(163, 230, 53, 0.3);
+            border-radius: 20px;
+            padding: 50px;
+            margin-bottom: 50px;
+        }
+
+        .slide-4 .example-text {
+            font-size: 36px;
+            line-height: 1.5;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .slide-4 .example-text .highlight {
+            color: #a3e635;
+            font-weight: 600;
+        }
+
+        .slide-4 .response {
+            font-size: 44px;
+            font-weight: 700;
+            color: white;
+            text-align: center;
+            line-height: 1.3;
+        }
+
+        .slide-4 .response .emphasis {
+            color: #a3e635;
+        }
+
+        /* Slide 5 - What Most Think */
+        .slide-5 .label {
+            display: inline-block;
+            background: rgba(148, 163, 184, 0.2);
+            color: #94a3b8;
+            font-size: 20px;
+            font-weight: 700;
+            padding: 12px 24px;
+            border-radius: 50px;
+            margin-bottom: 40px;
+        }
+
+        .slide-5 .main-text {
+            font-size: 44px;
+            font-weight: 700;
+            color: white;
+            line-height: 1.3;
+            margin-bottom: 50px;
+        }
+
+        .slide-5 .list {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .slide-5 .list-item {
+            display: flex;
+            align-items: center;
+            background: rgba(148, 163, 184, 0.08);
+            border: 2px solid rgba(148, 163, 184, 0.2);
+            padding: 25px 35px;
+            border-radius: 16px;
+        }
+
+        .slide-5 .list-item .icon {
+            font-size: 28px;
+            color: #94a3b8;
+            margin-right: 25px;
+        }
+
+        .slide-5 .list-item .text {
+            font-size: 30px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .slide-5 .bottom-text {
+            margin-top: 50px;
+            font-size: 32px;
+            color: rgba(255, 255, 255, 0.5);
+            text-align: center;
+            font-style: italic;
+        }
+
+        /* Slide 6 - The Difference */
+        .slide-6 .main-text {
+            font-size: 52px;
+            font-weight: 700;
+            color: white;
+            line-height: 1.2;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        .slide-6 .main-text .highlight {
+            color: #a3e635;
+        }
+
+        .slide-6 .comparison {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .slide-6 .compare-box {
+            border-radius: 20px;
+            padding: 40px;
+        }
+
+        .slide-6 .compare-box.typical {
+            background: rgba(148, 163, 184, 0.1);
+            border: 2px solid rgba(148, 163, 184, 0.3);
+        }
+
+        .slide-6 .compare-box.real {
+            background: rgba(163, 230, 53, 0.1);
+            border: 2px solid rgba(163, 230, 53, 0.3);
+        }
+
+        .slide-6 .compare-label {
+            font-size: 20px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+
+        .slide-6 .compare-box.typical .compare-label {
+            color: #94a3b8;
+        }
+
+        .slide-6 .compare-box.real .compare-label {
+            color: #a3e635;
+        }
+
+        .slide-6 .compare-text {
+            font-size: 28px;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.4;
+        }
+
+        /* Slide 7 - What It Demonstrates */
+        .slide-7 .label {
+            display: inline-block;
+            background: rgba(163, 230, 53, 0.2);
+            color: #a3e635;
+            font-size: 20px;
+            font-weight: 700;
+            padding: 12px 24px;
+            border-radius: 50px;
+            margin-bottom: 40px;
+        }
+
+        .slide-7 .main-text {
+            font-size: 44px;
+            font-weight: 700;
+            color: white;
+            line-height: 1.3;
+            margin-bottom: 50px;
+        }
+
+        .slide-7 .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .slide-7 .grid-item {
+            background: rgba(163, 230, 53, 0.08);
+            border: 2px solid rgba(163, 230, 53, 0.2);
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .slide-7 .grid-item .icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .slide-7 .grid-item .text {
+            font-size: 26px;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.3;
+        }
+
+        .slide-7 .grid-item .subtext {
+            font-size: 20px;
+            color: rgba(255, 255, 255, 0.5);
+            margin-top: 8px;
+        }
+
+        /* Slide 8 - The Key Insight */
+        .slide-8 .not-about {
+            font-size: 32px;
+            color: rgba(255, 255, 255, 0.4);
+            margin-bottom: 50px;
+            text-decoration: line-through;
+            text-align: center;
+        }
+
+        .slide-8 .main-text {
+            font-size: 48px;
+            font-weight: 700;
+            color: white;
+            line-height: 1.3;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        .slide-8 .main-text .highlight {
+            color: #a3e635;
+        }
+
+        .slide-8 .bottom-box {
+            background: rgba(163, 230, 53, 0.08);
+            border: 2px solid rgba(163, 230, 53, 0.3);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .slide-8 .bottom-text {
+            font-size: 30px;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.4;
+        }
+
+        /* Slide 9 - Stop Dismissing */
+        .slide-9 .main-text {
+            font-size: 56px;
+            font-weight: 700;
+            color: white;
+            line-height: 1.2;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .slide-9 .main-text .highlight {
+            color: #a3e635;
+        }
+
+        .slide-9 .sub-box {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 50px;
+            text-align: center;
+        }
+
+        .slide-9 .sub-text {
+            font-size: 34px;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.5;
+        }
+
+        .slide-9 .sub-text .emphasis {
+            color: #a3e635;
+            font-weight: 600;
+        }
+
+        /* Slide 10 - CTA */
+        .slide-10 .main-text {
+            font-size: 48px;
+            font-weight: 700;
+            color: white;
+            text-align: center;
+            line-height: 1.3;
+            margin-bottom: 50px;
+        }
+
+        .slide-10 .main-text .highlight {
+            color: #a3e635;
+        }
+
+        .slide-10 .prompt {
+            font-size: 32px;
+            color: rgba(255, 255, 255, 0.6);
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .slide-10 .action-box {
+            background: rgba(163, 230, 53, 0.1);
+            border: 2px solid rgba(163, 230, 53, 0.3);
+            border-radius: 20px;
+            padding: 50px;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .slide-10 .action-text {
+            font-size: 36px;
+            color: white;
+            line-height: 1.5;
+        }
+
+        .slide-10 .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .slide-10 .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 22px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        @media print {
+            @page {
+                size: 1080px 1080px;
+                margin: 0;
+            }
+            body {
+                padding: 0;
+                margin: 0;
+                background: white;
+            }
+            .slide {
+                width: 1080px !important;
+                height: 1080px !important;
+                margin: 0 !important;
+                padding: 80px !important;
+                page-break-after: always !important;
+                page-break-inside: avoid !important;
+                break-after: page !important;
+                break-inside: avoid !important;
+                overflow: hidden !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            .slide:last-child {
+                page-break-after: avoid !important;
+                break-after: avoid !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Slide 1: Title -->
+    <div class="slide slide-1">
+        <p class="eyebrow">Interview Prep Reality Check</p>
+        <h1 class="title">Your Best Example<br>Might Not Look<br><span class="highlight">"Technical"</span></h1>
+        <p class="subtitle">Stop dismissing the stories that actually set you apart.</p>
+        <div class="brand">LaunchToLead</div>
+        <div class="slide-number">1/10</div>
+    </div>
+
+    <!-- Slide 2: The Setup -->
+    <div class="slide slide-2">
+        <h2 class="main-text">I was prepping someone for behavioral interviews yesterday.</h2>
+        <div class="question-box">
+            <p class="question-label">The Question</p>
+            <p class="question-text">"Tell me about a time you adapted your communication style for a different audience."</p>
+        </div>
+        <div class="brand">LaunchToLead</div>
+        <div class="slide-number">2/10</div>
+    </div>
+
+    <!-- Slide 3: The Hesitation -->
+    <div class="slide slide-3">
+        <div class="quote-container">
+            <div class="quote-mark">"</div>
+            <p class="quote-text">I have an example, but I don't think it counts...<br><br>It's not really technical.</p>
+            <p class="attribution">— My client, second-guessing themselves</p>
+        </div>
+        <div class="brand">LaunchToLead</div>
+        <div class="slide-number">3/10</div>
+    </div>
+
+    <!-- Slide 4: The Example -->
+    <div class="slide slide-4">
+        <span class="label">THEIR EXAMPLE</span>
+        <div class="example-box">
+            <p class="example-text">Training a coworker <span class="highlight">on the autism spectrum</span> at a previous job to complete a specific task.</p>
+        </div>
+        <p class="response">My response:<br><span class="emphasis">"That's one of the best examples I've heard."</span></p>
+        <div class="brand">LaunchToLead</div>
+        <div class="slide-number">4/10</div>
+    </div>
+
+    <!-- Slide 5: What Most Think -->
+    <div class="slide slide-5">
+        <span class="label">WHAT MOST CANDIDATES THINK</span>
+        <h2 class="main-text">What this question means:</h2>
+        <div class="list">
+            <div class="list-item">
+                <span class="icon">→</span>
+                <span class="text">Presenting your project to the marketing team</span>
+            </div>
+            <div class="list-item">
+                <span class="icon">→</span>
+                <span class="text">Explaining code to your non-technical manager</span>
+            </div>
+            <div class="list-item">
+                <span class="icon">→</span>
+                <span class="text">"Dumbing down" concepts for executives</span>
+            </div>
+            <div class="list-item">
+                <span class="icon">→</span>
+                <span class="text">Your senior design presentation to a panel</span>
+            </div>
+        </div>
+        <p class="bottom-text">These are fine. But they're also... expected.</p>
+        <div class="brand">LaunchToLead</div>
+        <div class="slide-number">5/10</div>
+    </div>
+
+    <!-- Slide 6: The Difference -->
+    <div class="slide slide-6">
+        <h2 class="main-text">The <span class="highlight">Difference</span></h2>
+        <div class="comparison">
+            <div class="compare-box typical">
+                <p class="compare-label">Typical Example</p>
+                <p class="compare-text">"I presented technical information simply to a non-technical audience."</p>
+            </div>
+            <div class="compare-box real">
+                <p class="compare-label">This Example</p>
+                <p class="compare-text">"I observed how someone processes information differently and adapted my entire approach to meet them where they are."</p>
+            </div>
+        </div>
+        <div class="brand">LaunchToLead</div>
+        <div class="slide-number">6/10</div>
+    </div>
+
+    <!-- Slide 7: What It Demonstrates -->
+    <div class="slide slide-7">
+        <span class="label">WHAT THIS ACTUALLY SHOWS</span>
+        <h2 class="main-text">Real communication competency.</h2>
+        <div class="grid">
+            <div class="grid-item">
+                <div class="icon">💚</div>
+                <p class="text">Real Empathy</p>
+                <p class="subtext">Not performative</p>
+            </div>
+            <div class="grid-item">
+                <div class="icon">👁️</div>
+                <p class="text">Genuine Observation</p>
+                <p class="subtext">How does THIS person learn?</p>
+            </div>
+            <div class="grid-item">
+                <div class="icon">⚖️</div>
+                <p class="text">Adapting Without Condescension</p>
+                <p class="subtext">Helping without talking down</p>
+            </div>
+            <div class="grid-item">
+                <div class="icon">🎯</div>
+                <p class="text">Real-Time Adjustment</p>
+                <p class="subtext">Responding to their needs</p>
+            </div>
+            <div class="grid-item">
+                <div class="icon">🤝</div>
+                <p class="text">Patience & Care</p>
+                <p class="subtext">Caring about THEIR outcome</p>
+            </div>
+            <div class="grid-item">
+                <div class="icon">🧠</div>
+                <p class="text">Understanding Different Minds</p>
+                <p class="subtext">Not everyone processes the same</p>
+            </div>
+        </div>
+        <div class="brand">LaunchToLead</div>
+        <div class="slide-number">7/10</div>
+    </div>
+
+    <!-- Slide 8: The Key Insight -->
+    <div class="slide slide-8">
+        <p class="not-about">"I can explain technical things simply."</p>
+        <h2 class="main-text"><span class="highlight">Communication</span> is about connecting with anyone—<br>regardless of how they <span class="highlight">process information</span>.</h2>
+        <div class="bottom-box">
+            <p class="bottom-text">This example showed MORE competency than the typical "I presented to a non-technical panel."</p>
+        </div>
+        <div class="brand">LaunchToLead</div>
+        <div class="slide-number">8/10</div>
+    </div>
+
+    <!-- Slide 9: Stop Dismissing -->
+    <div class="slide slide-9">
+        <h2 class="main-text">Stop <span class="highlight">dismissing</span><br>your experiences.</h2>
+        <div class="sub-box">
+            <p class="sub-text">The example you think is "too small" or "not technical enough"?<br><br>It might be the one that <span class="emphasis">sets you apart</span>.</p>
+        </div>
+        <div class="brand">LaunchToLead</div>
+        <div class="slide-number">9/10</div>
+    </div>
+
+    <!-- Slide 10: CTA -->
+    <div class="slide slide-10">
+        <h2 class="main-text">What <span class="highlight">"unconventional"</span> example<br>have you been hesitant to use?</h2>
+        <p class="prompt">Drop it in the comments—I'll tell you if it works. 👇</p>
+        <div class="action-box">
+            <p class="action-text">Save this for your next interview prep session.</p>
+        </div>
+        <div class="cta-buttons">
+            <span class="cta-btn">♻️ Repost</span>
+            <span class="cta-btn">💾 Save</span>
+            <span class="cta-btn">🔔 Follow</span>
+        </div>
+        <div class="brand">LaunchToLead</div>
+        <div class="slide-number">10/10</div>
+    </div>
+
+</body>
+</html>
