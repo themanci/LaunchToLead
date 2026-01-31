@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Launch Path 75% Off Announcement</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: #1e293b;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .graphic {
+            width: 1080px;
+            height: 1080px;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .graphic::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 20%, rgba(16, 185, 129, 0.15) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 80%, rgba(163, 230, 53, 0.1) 0%, transparent 50%);
+        }
+        
+        .content {
+            position: relative;
+            z-index: 1;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 60px;
+        }
+        
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+            color: white;
+            font-size: 24px;
+            font-weight: 800;
+            padding: 12px 32px;
+            border-radius: 50px;
+            margin-bottom: 24px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .main-title {
+            font-size: 72px;
+            font-weight: 800;
+            color: white;
+            line-height: 1.1;
+            margin-bottom: 16px;
+        }
+        
+        .main-title .highlight {
+            color: #a3e635;
+        }
+        
+        .subtitle {
+            font-size: 28px;
+            color: #94a3b8;
+            font-weight: 500;
+        }
+        
+        /* Offer Box */
+        .offer-box {
+            background: rgba(163, 230, 53, 0.1);
+            border: 3px solid #a3e635;
+            border-radius: 24px;
+            padding: 40px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .price-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 16px;
+        }
+        
+        .original-price {
+            font-size: 48px;
+            font-weight: 700;
+            color: #64748b;
+            text-decoration: line-through;
+        }
+        
+        .arrow {
+            font-size: 40px;
+            color: #a3e635;
+        }
+        
+        .new-price {
+            font-size: 80px;
+            font-weight: 800;
+            color: #a3e635;
+        }
+        
+        .offer-details {
+            font-size: 28px;
+            color: white;
+            font-weight: 600;
+        }
+        
+        /* What's Included */
+        .includes-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .includes-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #94a3b8;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        
+        .includes-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        .include-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px 24px;
+            border-radius: 16px;
+        }
+        
+        .check-icon {
+            width: 32px;
+            height: 32px;
+            background: #10b981;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        
+        .check-icon svg {
+            width: 20px;
+            height: 20px;
+            stroke: white;
+            stroke-width: 3;
+        }
+        
+        .include-text {
+            font-size: 22px;
+            font-weight: 600;
+            color: white;
+        }
+        
+        /* Results Banner */
+        .results-banner {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            border-radius: 16px;
+            padding: 24px;
+            margin-top: 40px;
+            text-align: center;
+        }
+        
+        .results-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: rgba(255, 255, 255, 0.9);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+        }
+        
+        .results-list {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .result-item {
+            font-size: 18px;
+            color: white;
+            font-weight: 600;
+        }
+        
+        .result-item .name {
+            color: #d9f99d;
+        }
+        
+        /* Footer */
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 40px;
+            padding-top: 24px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: 800;
+            color: white;
+        }
+        
+        .logo .accent {
+            color: #a3e635;
+        }
+        
+        .cta {
+            font-size: 24px;
+            font-weight: 700;
+            color: #a3e635;
+        }
+        
+        .spots {
+            background: rgba(239, 68, 68, 0.2);
+            border: 2px solid #ef4444;
+            color: #fca5a5;
+            font-size: 20px;
+            font-weight: 700;
+            padding: 12px 24px;
+            border-radius: 50px;
+        }
+        
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .graphic {
+                width: 1080px;
+                height: 1080px;
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="graphic">
+        <div class="content">
+            <!-- Header -->
+            <div class="header">
+                <div class="badge">🔥 Limited Time Offer</div>
+                <h1 class="main-title">
+                    Launch Path Coaching<br>
+                    <span class="highlight">75% OFF</span>
+                </h1>
+                <p class="subtitle">For Engineers Ready to Land Their Next Role</p>
+            </div>
+            
+            <!-- Offer Box -->
+            <div class="offer-box">
+                <div class="price-container">
+                    <span class="original-price">$2,000</span>
+                    <span class="arrow">→</span>
+                    <span class="new-price">$500</span>
+                </div>
+                <p class="offer-details">3 One-on-One 90-Minute Sessions</p>
+            </div>
+            
+            <!-- What's Included -->
+            <div class="includes-section">
+                <p class="includes-title">What's Included</p>
+                <div class="includes-grid">
+                    <div class="include-item">
+                        <div class="check-icon">
+                            <svg viewBox="0 0 24 24" fill="none">
+                                <path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <span class="include-text">Resume Overhaul</span>
+                    </div>
+                    <div class="include-item">
+                        <div class="check-icon">
+                            <svg viewBox="0 0 24 24" fill="none">
+                                <path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <span class="include-text">LinkedIn Optimization</span>
+                    </div>
+                    <div class="include-item">
+                        <div class="check-icon">
+                            <svg viewBox="0 0 24 24" fill="none">
+                                <path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <span class="include-text">Interview Prep</span>
+                    </div>
+                    <div class="include-item">
+                        <div class="check-icon">
+                            <svg viewBox="0 0 24 24" fill="none">
+                                <path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <span class="include-text">Behavioral Stories</span>
+                    </div>
+                    <div class="include-item">
+                        <div class="check-icon">
+                            <svg viewBox="0 0 24 24" fill="none">
+                                <path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <span class="include-text">Job Search Strategy</span>
+                    </div>
+                    <div class="include-item">
+                        <div class="check-icon">
+                            <svg viewBox="0 0 24 24" fill="none">
+                                <path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <span class="include-text">Personalized Game Plan</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Results Banner -->
+            <div class="results-banner">
+                <p class="results-title">Real Results From Real Engineers</p>
+                <div class="results-list">
+                    <span class="result-item"><span class="name">Gavin:</span> $75K Fortune 500</span>
+                    <span class="result-item"><span class="name">Sarah:</span> $106K at Ford</span>
+                    <span class="result-item"><span class="name">Karen:</span> SpaceX & Google Interviews</span>
+                </div>
+            </div>
+            
+            <!-- Footer -->
+            <div class="footer">
+                <div class="logo">Launch<span class="accent">to</span>Lead</div>
+                <div class="cta">DM me to claim your spot →</div>
+                <div class="spots">Only 5 Spots</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
