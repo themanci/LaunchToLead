@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume: Encyclopedia or Appetizer?</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: #1e293b;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .graphic {
+            width: 1080px;
+            height: 1080px;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .graphic::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 20%, rgba(16, 185, 129, 0.15) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 80%, rgba(163, 230, 53, 0.1) 0%, transparent 50%);
+        }
+        
+        .content {
+            position: relative;
+            z-index: 1;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 60px;
+        }
+        
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .main-title {
+            font-size: 52px;
+            font-weight: 800;
+            color: white;
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+        
+        .main-title .highlight {
+            color: #a3e635;
+        }
+        
+        .subtitle {
+            font-size: 24px;
+            color: #94a3b8;
+            font-weight: 500;
+        }
+        
+        /* Comparison */
+        .comparison {
+            flex: 1;
+            display: flex;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .compare-box {
+            flex: 1;
+            border-radius: 20px;
+            padding: 32px;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .compare-box.wrong {
+            background: rgba(239, 68, 68, 0.1);
+            border: 2px solid rgba(239, 68, 68, 0.3);
+        }
+        
+        .compare-box.right {
+            background: rgba(163, 230, 53, 0.1);
+            border: 2px solid rgba(163, 230, 53, 0.3);
+        }
+        
+        .compare-icon {
+            font-size: 48px;
+            margin-bottom: 16px;
+        }
+        
+        .compare-label {
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+        
+        .wrong .compare-label {
+            color: #f87171;
+        }
+        
+        .right .compare-label {
+            color: #a3e635;
+        }
+        
+        .compare-title {
+            font-size: 32px;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 20px;
+        }
+        
+        .compare-list {
+            list-style: none;
+            flex: 1;
+        }
+        
+        .compare-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 18px;
+            color: #cbd5e1;
+            margin-bottom: 14px;
+            line-height: 1.4;
+        }
+        
+        .wrong .compare-list li::before {
+            content: '✗';
+            color: #f87171;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+        
+        .right .compare-list li::before {
+            content: '✓';
+            color: #a3e635;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+        
+        /* Bottom Message */
+        .bottom-message {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 28px 36px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .bottom-message p {
+            font-size: 24px;
+            font-weight: 600;
+            color: white;
+            line-height: 1.5;
+        }
+        
+        .bottom-message .accent {
+            color: #a3e635;
+        }
+        
+        /* Footer */
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: white;
+        }
+        
+        .logo .accent {
+            color: #a3e635;
+        }
+        
+        .website {
+            font-size: 20px;
+            color: #64748b;
+            font-weight: 500;
+        }
+        
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .graphic {
+                width: 1080px;
+                height: 1080px;
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="graphic">
+        <div class="content">
+            <!-- Header -->
+            <div class="header">
+                <h1 class="main-title">
+                    Is Your Resume an<br>
+                    <span class="highlight">Encyclopedia</span> or an <span class="highlight">Appetizer</span>?
+                </h1>
+                <p class="subtitle">The mindset shift that gets more interviews</p>
+            </div>
+            
+            <!-- Comparison -->
+            <div class="comparison">
+                <div class="compare-box wrong">
+                    <div class="compare-icon">📚</div>
+                    <p class="compare-label">Encyclopedia</p>
+                    <h3 class="compare-title">The Wrong Way</h3>
+                    <ul class="compare-list">
+                        <li>Every job you've ever had</li>
+                        <li>3+ pages of history</li>
+                        <li>Makes employer do the work</li>
+                        <li>Overwhelms with information</li>
+                        <li>Gets skipped</li>
+                    </ul>
+                </div>
+                
+                <div class="compare-box right">
+                    <div class="compare-icon">🍽️</div>
+                    <p class="compare-label">Appetizer</p>
+                    <h3 class="compare-title">The Right Way</h3>
+                    <ul class="compare-list">
+                        <li>Only relevant experience</li>
+                        <li>Curated & concise</li>
+                        <li>Does the work for them</li>
+                        <li>Ordered by relevance</li>
+                        <li>Gets the interview</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Bottom Message -->
+            <div class="bottom-message">
+                <p>Your resume's job: Make them <span class="accent">curious enough</span> to pick up the phone.</p>
+            </div>
+            
+            <!-- Footer -->
+            <div class="footer">
+                <div class="logo">Launch<span class="accent">to</span>Lead</div>
+                <div class="website">launchtolead.io</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
