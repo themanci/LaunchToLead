@@ -262,6 +262,16 @@
                     'source': 'popup'
                 });
             }
+
+            // Meta Pixel conversion tracking
+            if (typeof fbq === 'function') {
+                fbq('track', 'Lead', {
+                    content_name: CONFIG.leadMagnet.name,
+                    content_category: 'Homepage Popup',
+                    value: 0,
+                    currency: 'USD'
+                });
+            }
             
             markFormSubmitted(email);
             document.getElementById('submitted-email').textContent = email;
