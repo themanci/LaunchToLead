@@ -805,6 +805,16 @@ const VaultPopup = (function() {
                     });
                 }
 
+                // Meta Pixel conversion tracking
+                if (typeof fbq === 'function') {
+                    fbq('track', 'Lead', {
+                        content_name: 'Lead Magnet Download',
+                        content_category: currentPath,
+                        value: 0,
+                        currency: 'USD'
+                    });
+                }
+
                 // Show success
                 document.getElementById('vault-submitted-email').textContent = email;
                 document.getElementById('vault-popup-form').classList.add('hidden');
