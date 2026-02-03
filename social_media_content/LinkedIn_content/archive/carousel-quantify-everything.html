@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedIn Carousel - Quantify Everything: The Power of Metrics</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: #f3f4f6;
+            padding: 20px;
+        }
+
+        .slide {
+            width: 1080px;
+            height: 1080px;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            margin: 0 auto 40px auto;
+            padding: 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            page-break-after: always;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Accent color from brand */
+        .accent {
+            color: #a3e635;
+        }
+
+        .accent-bg {
+            background: rgba(163, 230, 53, 0.1);
+            border-left: 4px solid #a3e635;
+            padding: 20px 30px;
+            border-radius: 4px;
+        }
+
+        /* Typography */
+        .eyebrow {
+            font-size: 28px;
+            font-weight: 600;
+            color: #a3e635;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .title {
+            font-size: 72px;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 40px;
+            line-height: 1.1;
+        }
+
+        .subtitle {
+            font-size: 36px;
+            font-weight: 600;
+            color: #e2e8f0;
+            line-height: 1.3;
+        }
+
+        .body-text {
+            font-size: 32px;
+            color: #cbd5e1;
+            line-height: 1.5;
+            margin-bottom: 30px;
+        }
+
+        .highlight {
+            color: #a3e635;
+            font-weight: 700;
+        }
+
+        .comparison {
+            display: flex;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .comparison-col {
+            flex: 1;
+            padding: 30px;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(163, 230, 53, 0.2);
+        }
+
+        .comparison-label {
+            font-size: 18px;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            color: #a3e635;
+        }
+
+        .comparison-text {
+            font-size: 24px;
+            color: #e2e8f0;
+            line-height: 1.4;
+        }
+
+        .bullet-list {
+            font-size: 28px;
+            color: #cbd5e1;
+            line-height: 1.8;
+            margin-top: 20px;
+        }
+
+        .bullet-list li {
+            margin-bottom: 20px;
+            margin-left: 0;
+            list-style: none;
+            padding-left: 50px;
+            position: relative;
+        }
+
+        .bullet-list li:before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #a3e635;
+            font-size: 32px;
+        }
+
+        .cta-text {
+            font-size: 24px;
+            color: #e2e8f0;
+            margin-top: 30px;
+            font-style: italic;
+        }
+
+        .emphasis {
+            background: linear-gradient(120deg, rgba(163, 230, 53, 0.2), rgba(163, 230, 53, 0.05));
+            padding: 20px 30px;
+            border-radius: 4px;
+            font-size: 28px;
+            color: #e2e8f0;
+            line-height: 1.5;
+            margin-top: 30px;
+        }
+
+        .example-box {
+            background: rgba(163, 230, 53, 0.05);
+            border: 2px solid rgba(163, 230, 53, 0.3);
+            padding: 25px;
+            border-radius: 6px;
+            margin-top: 20px;
+        }
+
+        .example-label {
+            font-size: 18px;
+            color: #a3e635;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .example-text {
+            font-size: 24px;
+            color: #e2e8f0;
+            line-height: 1.5;
+        }
+
+        /* Print optimization */
+        @media print {
+            body {
+                padding: 0;
+                margin: 0;
+                background: white;
+            }
+
+            .slide {
+                width: 8.5in;
+                height: 11in;
+                margin: 0;
+                padding: 0.5in;
+                page-break-after: always;
+                page-break-inside: avoid;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            }
+
+            .eyebrow {
+                font-size: 16px;
+                margin-bottom: 12px;
+            }
+
+            .title {
+                font-size: 44px;
+                margin-bottom: 24px;
+            }
+
+            .subtitle {
+                font-size: 24px;
+                margin-bottom: 20px;
+            }
+
+            .body-text {
+                font-size: 18px;
+                margin-bottom: 18px;
+            }
+
+            .bullet-list {
+                font-size: 16px;
+                line-height: 1.6;
+                margin-top: 12px;
+            }
+
+            .bullet-list li {
+                margin-bottom: 12px;
+                padding-left: 30px;
+            }
+
+            .comparison {
+                gap: 20px;
+                margin-top: 24px;
+            }
+
+            .comparison-col {
+                padding: 20px;
+            }
+
+            .comparison-label {
+                font-size: 12px;
+                margin-bottom: 12px;
+            }
+
+            .comparison-text {
+                font-size: 14px;
+                line-height: 1.3;
+            }
+
+            .cta-text {
+                font-size: 14px;
+                margin-top: 18px;
+            }
+
+            .emphasis {
+                padding: 15px 20px;
+                font-size: 16px;
+                line-height: 1.4;
+                margin-top: 18px;
+            }
+
+            .example-box {
+                padding: 18px;
+                margin-top: 15px;
+            }
+
+            .example-label {
+                font-size: 12px;
+                margin-bottom: 10px;
+            }
+
+            .example-text {
+                font-size: 14px;
+                line-height: 1.3;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- SLIDE 1: TITLE SLIDE -->
+<div class="slide">
+    <div class="eyebrow">Resume Reality Check</div>
+    <div class="title">Quantify Everything</div>
+    <div class="subtitle">The Secret to Making Your Accomplishments Believable</div>
+</div>
+
+<!-- SLIDE 2: THE PROBLEM -->
+<div class="slide">
+    <div class="body-text">Your resume is full of vague statements:</div>
+    <div class="emphasis">
+        "Maintained devices."
+        <br><br>
+        "Improved performance."
+        <br><br>
+        "Supported team members."
+    </div>
+    <div class="body-text" style="margin-top: 40px;">These don't prove anything.</div>
+    <div class="body-text">They just turn on the BS meter.</div>
+</div>
+
+<!-- SLIDE 3: DATA BEATS DUTIES -->
+<div class="slide">
+    <div class="eyebrow">The Fix</div>
+    <div class="title">Add Numbers</div>
+    <div class="body-text" style="margin-top: 40px;">The moment you quantify something, credibility happens.</div>
+    <div class="example-box">
+        <div class="example-label">Instead of:</div>
+        <div class="example-text">"Maintained devices"</div>
+    </div>
+    <div class="example-box">
+        <div class="example-label">Say:</div>
+        <div class="example-text">"Maintained 150+ network devices across 8 facilities, achieving 99.2% uptime"</div>
+    </div>
+</div>
+
+<!-- SLIDE 4: MORE EXAMPLES -->
+<div class="slide">
+    <div class="body-text">Vague vs. Credible:</div>
+    <div class="comparison" style="margin-top: 50px;">
+        <div class="comparison-col">
+            <div class="comparison-label">❌ Vague</div>
+            <div class="comparison-text">
+                "Improved performance"
+                <br><br>
+                "Reduced errors"
+                <br><br>
+                "Supported operations"
+            </div>
+        </div>
+        <div class="comparison-col">
+            <div class="comparison-label">✓ Credible</div>
+            <div class="comparison-text">
+                "Reduced API latency by 38%"
+                <br><br>
+                "Cut error rates from 2.4% to 0.8%"
+                <br><br>
+                "Supported 800+ locations"
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 5: THE CREDIBILITY FACTOR -->
+<div class="slide">
+    <div class="eyebrow">Why It Works</div>
+    <div class="title">Specific Data = Credibility</div>
+    <div class="body-text" style="margin-top: 40px;">
+        Hiring managers review hundreds of resumes.
+    </div>
+    <div class="body-text">
+        They've learned to spot vague language instantly.
+    </div>
+    <div class="emphasis" style="margin-top: 40px;">
+        But when you give them numbers? It cuts through the noise.
+        <br><br>
+        It proves you were paying attention to what you were doing.
+    </div>
+</div>
+
+<!-- SLIDE 6: IT'S OKAY TO ESTIMATE -->
+<div class="slide">
+    <div class="eyebrow">The Reality</div>
+    <div class="title">You Don't Need Perfect Data</div>
+    <div class="body-text" style="margin-top: 40px;">
+        If you don't have exact numbers, estimate.
+    </div>
+    <div class="body-text">
+        But estimate conservatively and with research.
+    </div>
+    <div class="emphasis" style="margin-top: 40px;">
+        • Look at historical data
+        <br>
+        • Ask a former manager
+        <br>
+        • Check company reports or benchmarks
+        <br><br>
+        A well-researched estimate beats vague language every time.
+    </div>
+</div>
+
+<!-- SLIDE 7: START TRACKING NOW -->
+<div class="slide">
+    <div class="eyebrow">The Real Play</div>
+    <div class="title">Track Your Metrics Today</div>
+    <div class="body-text" style="margin-top: 40px;">
+        Don't wait until you need to update your resume.
+    </div>
+    <div class="body-text">
+        Start documenting now:
+    </div>
+    <ul class="bullet-list">
+        <li>Devices supported</li>
+        <li>Response times / latency</li>
+        <li>Error rates and improvements</li>
+        <li>Deployments completed</li>
+        <li>Bugs fixed or prevented</li>
+        <li>Locations / scale impacted</li>
+    </ul>
+</div>
+
+<!-- SLIDE 8: YOUR MOVE -->
+<div class="slide">
+    <div class="eyebrow">Next Steps</div>
+    <div class="title">Audit Your Resume</div>
+    <div class="body-text" style="margin-top: 40px;">
+        Find every vague statement.
+    </div>
+    <div class="body-text">
+        Replace it with a number.
+    </div>
+    <div class="emphasis" style="margin-top: 50px;">
+        Then, going forward, start tracking.
+        <br><br>
+        Your future resume will thank you.
+    </div>
+</div>
+
+</body>
+</html>

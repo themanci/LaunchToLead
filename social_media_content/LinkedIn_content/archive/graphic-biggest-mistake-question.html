@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Answer "Your Biggest Mistake"</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: #1e293b;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .graphic {
+            width: 1080px;
+            height: 1080px;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .graphic::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 20%, rgba(163, 230, 53, 0.15) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 80%, rgba(239, 68, 68, 0.1) 0%, transparent 50%);
+        }
+        
+        .content {
+            position: relative;
+            z-index: 1;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 60px;
+        }
+        
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .eyebrow {
+            font-size: 18px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #a3e635;
+            margin-bottom: 16px;
+        }
+        
+        .main-title {
+            font-size: 48px;
+            font-weight: 800;
+            color: white;
+            line-height: 1.2;
+        }
+        
+        .main-title .highlight {
+            color: #a3e635;
+        }
+        
+        /* Comparison */
+        .comparison {
+            flex: 1;
+            display: flex;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .compare-box {
+            flex: 1;
+            border-radius: 20px;
+            padding: 32px;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .compare-box.wrong {
+            background: rgba(239, 68, 68, 0.1);
+            border: 2px solid rgba(239, 68, 68, 0.3);
+        }
+        
+        .compare-box.right {
+            background: rgba(163, 230, 53, 0.1);
+            border: 2px solid rgba(163, 230, 53, 0.3);
+        }
+        
+        .compare-icon {
+            font-size: 48px;
+            margin-bottom: 16px;
+        }
+        
+        .compare-label {
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+        }
+        
+        .wrong .compare-label {
+            color: #f87171;
+        }
+        
+        .right .compare-label {
+            color: #a3e635;
+        }
+        
+        .compare-title {
+            font-size: 28px;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 24px;
+        }
+        
+        .compare-list {
+            list-style: none;
+            flex: 1;
+        }
+        
+        .compare-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 20px;
+            color: #cbd5e1;
+            margin-bottom: 18px;
+            line-height: 1.4;
+        }
+        
+        .compare-list li .icon {
+            flex-shrink: 0;
+            font-weight: 700;
+        }
+        
+        .wrong .compare-list li .icon {
+            color: #f87171;
+        }
+        
+        .right .compare-list li .icon {
+            color: #a3e635;
+        }
+        
+        .example-quote {
+            font-style: italic;
+            color: #94a3b8;
+            font-size: 18px;
+            margin-top: 8px;
+            padding-left: 24px;
+            border-left: 2px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        /* Bottom Message */
+        .bottom-message {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 28px 36px;
+            text-align: center;
+            margin-bottom: 24px;
+        }
+        
+        .bottom-message p {
+            font-size: 26px;
+            font-weight: 600;
+            color: white;
+            line-height: 1.5;
+        }
+        
+        .bottom-message .accent {
+            color: #a3e635;
+        }
+        
+        /* Footer */
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .logo {
+            font-size: 22px;
+            font-weight: 800;
+            color: white;
+        }
+        
+        .logo .accent {
+            color: #a3e635;
+        }
+        
+        .tagline {
+            font-size: 16px;
+            color: #64748b;
+        }
+    </style>
+</head>
+<body>
+    <div class="graphic">
+        <div class="content">
+            
+            <!-- Header -->
+            <div class="header">
+                <p class="eyebrow">Interview Question</p>
+                <h1 class="main-title">"Tell me about your <span class="highlight">biggest mistake</span>"</h1>
+            </div>
+            
+            <!-- Comparison -->
+            <div class="comparison">
+                
+                <!-- Wrong Side -->
+                <div class="compare-box wrong">
+                    <div class="compare-icon">🚫</div>
+                    <p class="compare-label">Don't Do This</p>
+                    <h2 class="compare-title">What NOT to Say</h2>
+                    <ul class="compare-list">
+                        <li>
+                            <span class="icon">✗</span>
+                            <div>
+                                Your actual worst moment
+                                <p class="example-quote">"I got drunk and drove a golf cart into a pond"</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="icon">✗</span>
+                            <div>
+                                Fake humble-brags
+                                <p class="example-quote">"I'm too much of a perfectionist"</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="icon">✗</span>
+                            <span>Flaws in core job competencies</span>
+                        </li>
+                        <li>
+                            <span class="icon">✗</span>
+                            <span>Blaming others or making excuses</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Right Side -->
+                <div class="compare-box right">
+                    <div class="compare-icon">✅</div>
+                    <p class="compare-label">Do This Instead</p>
+                    <h2 class="compare-title">The Right Approach</h2>
+                    <ul class="compare-list">
+                        <li>
+                            <span class="icon">✓</span>
+                            <span>Pick something <strong>real but palatable</strong></span>
+                        </li>
+                        <li>
+                            <span class="icon">✓</span>
+                            <span><strong>Own it completely</strong> — no excuses</span>
+                        </li>
+                        <li>
+                            <span class="icon">✓</span>
+                            <span>Show the <strong>lesson learned</strong></span>
+                        </li>
+                        <li>
+                            <span class="icon">✓</span>
+                            <span>Explain how you <strong>prevent it now</strong></span>
+                        </li>
+                    </ul>
+                </div>
+                
+            </div>
+            
+            <!-- Bottom Message -->
+            <div class="bottom-message">
+                <p>They're looking for <span class="accent">self-awareness</span>, <span class="accent">growth</span>, and <span class="accent">accountability</span>.<br>Not your deepest confession.</p>
+            </div>
+            
+            <!-- Footer -->
+            <div class="footer">
+                <div class="logo">Launch <span class="accent">to</span> Lead</div>
+                <div class="tagline">Engineering Career Coaching</div>
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>
