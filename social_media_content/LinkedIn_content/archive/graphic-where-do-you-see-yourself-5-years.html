@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Where Do You See Yourself in 5 Years?</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: #1e293b;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .graphic {
+            width: 1200px;
+            height: 628px;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .graphic::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 30%, rgba(163, 230, 53, 0.12) 0%, transparent 40%),
+                        radial-gradient(circle at 80% 70%, rgba(99, 102, 241, 0.08) 0%, transparent 40%);
+        }
+        
+        .content {
+            position: relative;
+            z-index: 1;
+            height: 100%;
+            display: flex;
+            padding: 40px 50px;
+            gap: 40px;
+        }
+        
+        /* Left Column */
+        .left-col {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .eyebrow {
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #a3e635;
+            margin-bottom: 12px;
+        }
+        
+        .main-title {
+            font-size: 32px;
+            font-weight: 800;
+            color: white;
+            line-height: 1.2;
+            margin-bottom: 24px;
+        }
+        
+        .main-title .highlight {
+            color: #a3e635;
+        }
+        
+        .dont-box {
+            background: rgba(239, 68, 68, 0.1);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 16px;
+        }
+        
+        .dont-label {
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #f87171;
+            margin-bottom: 8px;
+        }
+        
+        .dont-text {
+            font-size: 18px;
+            color: #fca5a5;
+            font-style: italic;
+        }
+        
+        .do-box {
+            background: rgba(163, 230, 53, 0.1);
+            border: 1px solid rgba(163, 230, 53, 0.3);
+            border-radius: 12px;
+            padding: 20px;
+        }
+        
+        .do-label {
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #a3e635;
+            margin-bottom: 8px;
+        }
+        
+        .do-text {
+            font-size: 18px;
+            color: #d9f99d;
+            font-style: italic;
+        }
+        
+        /* Right Column */
+        .right-col {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .phase-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 20px;
+        }
+        
+        .phases {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+        
+        .phase {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        
+        .phase-number {
+            width: 40px;
+            height: 40px;
+            background: rgba(163, 230, 53, 0.2);
+            border: 2px solid #a3e635;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            font-weight: 700;
+            color: #a3e635;
+            flex-shrink: 0;
+        }
+        
+        .phase-content {
+            flex: 1;
+        }
+        
+        .phase-label {
+            font-size: 14px;
+            font-weight: 600;
+            color: #a3e635;
+            margin-bottom: 2px;
+        }
+        
+        .phase-desc {
+            font-size: 16px;
+            color: #cbd5e1;
+        }
+        
+        .connector {
+            width: 2px;
+            height: 12px;
+            background: rgba(163, 230, 53, 0.3);
+            margin-left: 19px;
+        }
+        
+        .bottom-message {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 16px 20px;
+            text-align: center;
+        }
+        
+        .bottom-message p {
+            font-size: 16px;
+            font-weight: 600;
+            color: white;
+        }
+        
+        .bottom-message .accent {
+            color: #a3e635;
+        }
+        
+        /* Footer */
+        .footer {
+            position: absolute;
+            bottom: 20px;
+            left: 50px;
+            right: 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 12px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .logo {
+            font-size: 18px;
+            font-weight: 800;
+            color: white;
+        }
+        
+        .logo .accent {
+            color: #a3e635;
+        }
+        
+        .tagline {
+            font-size: 14px;
+            color: #64748b;
+        }
+    </style>
+</head>
+<body>
+    <div class="graphic">
+        <div class="content">
+            
+            <!-- Left Column -->
+            <div class="left-col">
+                <p class="eyebrow">Interview Question</p>
+                <h1 class="main-title">"Where do you see yourself in <span class="highlight">5 years</span>?"</h1>
+                
+                <div class="dont-box">
+                    <p class="dont-label">✗ Don't say this</p>
+                    <p class="dont-text">"I want to be promoted to Staff Engineer."</p>
+                </div>
+                
+                <div class="do-box">
+                    <p class="do-label">✓ Say this instead</p>
+                    <p class="do-text">"I want to tackle bigger challenges, grow as a technical lead, and drive real value for the team."</p>
+                </div>
+            </div>
+            
+            <!-- Right Column -->
+            <div class="right-col">
+                <h2 class="phase-title">Break it into phases:</h2>
+                
+                <div class="phases">
+                    <div class="phase">
+                        <div class="phase-number">1</div>
+                        <div class="phase-content">
+                            <p class="phase-label">Near-term</p>
+                            <p class="phase-desc">Build deep expertise</p>
+                        </div>
+                    </div>
+                    
+                    <div class="connector"></div>
+                    
+                    <div class="phase">
+                        <div class="phase-number">2</div>
+                        <div class="phase-content">
+                            <p class="phase-label">Mid-term</p>
+                            <p class="phase-desc">Lead larger projects</p>
+                        </div>
+                    </div>
+                    
+                    <div class="connector"></div>
+                    
+                    <div class="phase">
+                        <div class="phase-number">3</div>
+                        <div class="phase-content">
+                            <p class="phase-label">Long-term</p>
+                            <p class="phase-desc">Mentor others & multiply impact</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bottom-message">
+                    <p>Focus on <span class="accent">impact</span>. The titles will follow.</p>
+                </div>
+            </div>
+            
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer">
+            <div class="logo">Launch <span class="accent">to</span> Lead</div>
+            <div class="tagline">Engineering Career Coaching</div>
+        </div>
+    </div>
+</body>
+</html>
