@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meta Ad - For Parents (Short)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: #1a1a1a;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .ad-container {
+            width: 1080px;
+            height: 1080px;
+            background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 50%, #fef3c7 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Safe zone: 200px on left/right, content at bottom */
+        .safe-zone {
+            position: absolute;
+            top: 0;
+            left: 200px;
+            right: 200px;
+            bottom: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding-bottom: 105px;
+        }
+        
+        /* Content wrapper */
+        .content-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        /* Gift icon */
+        .gift-icon {
+            width: 70px;
+            height: 70px;
+            background: #14b8a6;
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+        }
+        
+        /* Main question */
+        .main-question {
+            font-size: 38px;
+            font-weight: 800;
+            color: #1a1a1a;
+            line-height: 1.1;
+        }
+        
+        /* Body copy */
+        .body-copy {
+            font-size: 20px;
+            color: #475569;
+            line-height: 1.4;
+        }
+        
+        /* The math */
+        .math-section {
+            background: white;
+            border-radius: 16px;
+            padding: 20px 24px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+        }
+        
+        .math-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .math-label {
+            font-size: 15px;
+            color: #64748b;
+        }
+        
+        .math-value {
+            font-size: 28px;
+            font-weight: 800;
+        }
+        
+        .math-value.spent { color: #dc2626; }
+        .math-value.invest { color: #059669; }
+        .math-value.result { color: #14b8a6; }
+        
+        .math-arrow {
+            font-size: 24px;
+            color: #14b8a6;
+        }
+        
+        /* Punchline */
+        .punchline {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1a1a1a;
+            font-style: italic;
+        }
+        
+        /* Who this is for */
+        .who-section {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .who-badge {
+            background: #064e3b;
+            color: white;
+            padding: 8px 14px;
+            border-radius: 6px;
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .who-text {
+            font-size: 14px;
+            color: #475569;
+        }
+        
+        /* CTA Section - full width */
+        .cta-section {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #064e3b;
+            padding: 20px 210px;
+            text-align: center;
+        }
+        
+        .cta-main {
+            font-size: 20px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 6px;
+        }
+        
+        .cta-proof {
+            font-size: 14px;
+            color: #a7f3d0;
+            line-height: 1.35;
+        }
+        
+        .cta-proof strong {
+            color: #fcd34d;
+        }
+    </style>
+</head>
+<body>
+    <div class="ad-container">
+        <div class="safe-zone">
+            <div class="content-wrapper">
+                <div class="gift-icon">🎁</div>
+                
+                <h1 class="main-question">Investing In Someone You Love?</h1>
+                
+                <p class="body-copy">
+                    Your kid has the degree. So why are they still unemployed?
+                </p>
+                
+                <div class="math-section">
+                    <div class="math-row">
+                        <span class="math-label">You invested</span>
+                        <span class="math-value spent">$40k+</span>
+                        <span class="math-arrow">→</span>
+                        <span class="math-label">This</span>
+                        <span class="math-value invest">$1,997</span>
+                        <span class="math-label">→</span>
+                        <span class="math-value result">$70k+ salary</span>
+                    </div>
+                </div>
+                
+                <p class="punchline">"Way cheaper than another year on your couch."</p>
+                
+                <div class="who-section">
+                    <span class="who-badge">This Ad Is For</span>
+                    <span class="who-text">Parents of unemployed engineering grads</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="cta-section">
+            <p class="cta-main">We can help your grad get hired.</p>
+            <p class="cta-proof">In 90 days, <strong>Karen got offers from SpaceX & Google.</strong></p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Master the Art of Focus</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .card {
+            width: 1080px;
+            height: 1080px;
+            background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
+            padding: 60px;
+            display: flex;
+            flex-direction: column;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .logo-icon {
+            width: 44px;
+            height: 44px;
+            background: linear-gradient(135deg, #a3e635, #65a30d);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            font-size: 22px;
+            color: #0f172a;
+        }
+        .logo-text {
+            font-size: 18px;
+            font-weight: 700;
+            color: #94a3b8;
+        }
+        .badge {
+            background: rgba(163, 230, 53, 0.15);
+            border: 1px solid rgba(163, 230, 53, 0.4);
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-size: 12px;
+            font-weight: 700;
+            color: #a3e635;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .title {
+            font-size: 80px;
+            font-weight: 900;
+            color: #fff;
+            line-height: 1.05;
+            margin-bottom: 50px;
+        }
+        .title span { color: #a3e635; }
+        .two-col {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        .col {
+            flex: 1;
+            background: rgba(255,255,255,0.03);
+            border-radius: 16px;
+            padding: 30px;
+        }
+        .col-title {
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 24px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid;
+        }
+        .col-title.red { color: #f87171; border-color: #f87171; }
+        .col-title.green { color: #a3e635; border-color: #a3e635; }
+        .item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 18px;
+            font-size: 17px;
+            color: #e2e8f0;
+            font-weight: 500;
+        }
+        .item:last-child { margin-bottom: 0; }
+        .icon { font-size: 22px; }
+        .progress-box {
+            background: rgba(163, 230, 53, 0.08);
+            border: 1px solid rgba(163, 230, 53, 0.25);
+            border-radius: 16px;
+            padding: 30px 40px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .progress-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 24px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .hours {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+        .hour {
+            width: 90px;
+            height: 90px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 14px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .hour.active {
+            background: linear-gradient(135deg, #a3e635, #65a30d);
+            box-shadow: 0 0 40px rgba(163, 230, 53, 0.5);
+        }
+        .hour-num {
+            font-size: 36px;
+            font-weight: 900;
+            color: #fff;
+        }
+        .hour.active .hour-num { color: #0f172a; }
+        .hour-lbl {
+            font-size: 12px;
+            font-weight: 600;
+            color: #94a3b8;
+            text-transform: uppercase;
+        }
+        .hour.active .hour-lbl { color: #0f172a; }
+        .arrow {
+            font-size: 28px;
+            color: #a3e635;
+            font-weight: 700;
+        }
+        .quote {
+            text-align: center;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .quote-text {
+            font-size: 24px;
+            font-weight: 600;
+            color: #cbd5e1;
+            margin-bottom: 12px;
+        }
+        .quote-text span { color: #a3e635; font-weight: 700; }
+        .quote-big {
+            font-size: 42px;
+            font-weight: 900;
+            color: #a3e635;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+        }
+        .footer {
+            text-align: right;
+            font-size: 18px;
+            font-weight: 700;
+            color: #a3e635;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="header">
+            <div class="logo">
+                <div class="logo-icon">L</div>
+                <span class="logo-text">LaunchToLead</span>
+            </div>
+            <div class="badge">💡 Advice to My Younger Self</div>
+        </div>
+
+        <h1 class="title">Master the<br>Art of <span>Focus.</span></h1>
+
+        <div class="two-col">
+            <div class="col">
+                <div class="col-title red">❌ What Killed My Focus</div>
+                <div class="item"><span class="icon">📚</span> Studying with friends at the library</div>
+                <div class="item"><span class="icon">📱</span> Checking phone every 20 minutes</div>
+                <div class="item"><span class="icon">🌙</span> Studying late when already exhausted</div>
+                <div class="item"><span class="icon">🏋️</span> Procrastinating for gym or lunch</div>
+            </div>
+            <div class="col">
+                <div class="col-title green">✓ The Simple Fix</div>
+                <div class="item"><span class="icon">🚫</span> Remove ALL distractions</div>
+                <div class="item"><span class="icon">🚪</span> Go into a room alone</div>
+                <div class="item"><span class="icon">⏰</span> Set a timer (NOT your phone)</div>
+                <div class="item"><span class="icon">🚀</span> Just do it. Start with 1 hour.</div>
+            </div>
+        </div>
+
+        <div class="progress-box">
+            <div class="progress-title">🔥 Build Your Focus Muscle</div>
+            <div class="hours">
+                <div class="hour"><span class="hour-num">1</span><span class="hour-lbl">hour</span></div>
+                <span class="arrow">→</span>
+                <div class="hour"><span class="hour-num">2</span><span class="hour-lbl">hours</span></div>
+                <span class="arrow">→</span>
+                <div class="hour"><span class="hour-num">3</span><span class="hour-lbl">hours</span></div>
+                <span class="arrow">→</span>
+                <div class="hour active"><span class="hour-num">4</span><span class="hour-lbl">hours</span></div>
+            </div>
+        </div>
+
+        <div class="quote">
+            <p class="quote-text">Imagine being as <span>addicted to focused work</span> as you are to your phone.</p>
+            <p class="quote-big">You'd be unstoppable.</p>
+        </div>
+
+        <div class="footer">launchtolead.io</div>
+    </div>
+</body>
+</html>

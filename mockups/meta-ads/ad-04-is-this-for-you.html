@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meta Ad - Is This For You?</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: #1a1a1a;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .ad-container {
+            width: 1080px;
+            height: 1080px;
+            background: linear-gradient(180deg, #f8fafc 0%, #e2e8f0 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Safe zone: 200px on left/right, content at bottom */
+        .safe-zone {
+            position: absolute;
+            top: 0;
+            left: 200px;
+            right: 200px;
+            bottom: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding-bottom: 105px;
+        }
+        
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 16px;
+        }
+        
+        .header-label {
+            font-size: 12px;
+            font-weight: 700;
+            color: #14b8a6;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 6px;
+        }
+        
+        .headline {
+            font-size: 34px;
+            font-weight: 800;
+            color: #1a1a1a;
+            line-height: 1.15;
+            margin-bottom: 6px;
+        }
+        
+        .subhead {
+            font-size: 13px;
+            color: #64748b;
+        }
+        
+        /* Persona Cards */
+        .persona-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+        
+        .persona-card {
+            padding: 16px 14px;
+            border-radius: 14px;
+            border: 3px solid;
+        }
+        
+        .persona-card.green { 
+            background: linear-gradient(135deg, #ecfdf5, #d1fae5); 
+            border-color: #10b981;
+        }
+        .persona-card.orange { 
+            background: linear-gradient(135deg, #fffbeb, #fef3c7); 
+            border-color: #f59e0b;
+        }
+        .persona-card.blue { 
+            background: linear-gradient(135deg, #eff6ff, #dbeafe); 
+            border-color: #3b82f6;
+        }
+        .persona-card.purple { 
+            background: linear-gradient(135deg, #faf5ff, #f3e8ff); 
+            border-color: #8b5cf6;
+        }
+        
+        .persona-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+        
+        .persona-card.green .persona-icon { background: #10b981; }
+        .persona-card.orange .persona-icon { background: #f59e0b; }
+        .persona-card.blue .persona-icon { background: #3b82f6; }
+        .persona-card.purple .persona-icon { background: #8b5cf6; }
+        
+        .persona-title {
+            font-size: 15px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 4px;
+        }
+        
+        .persona-desc {
+            font-size: 12px;
+            color: #64748b;
+            line-height: 1.35;
+            margin-bottom: 6px;
+        }
+        
+        .persona-cta {
+            font-size: 12px;
+            font-weight: 700;
+        }
+        
+        .persona-card.green .persona-cta { color: #059669; }
+        .persona-card.orange .persona-cta { color: #d97706; }
+        .persona-card.blue .persona-cta { color: #2563eb; }
+        .persona-card.purple .persona-cta { color: #7c3aed; }
+        
+        /* CTA Section - full width */
+        .cta-section {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #064e3b;
+            padding: 20px 210px;
+            text-align: center;
+        }
+        
+        .cta-main {
+            font-size: 20px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 6px;
+        }
+        
+        .cta-proof {
+            font-size: 14px;
+            color: #a7f3d0;
+            line-height: 1.35;
+        }
+        
+        .cta-proof strong {
+            color: #fcd34d;
+        }
+    </style>
+</head>
+<body>
+    <div class="ad-container">
+        <div class="safe-zone">
+            <div class="header">
+                <p class="header-label">Is This For You?</p>
+                <h1 class="headline">The Launch Path is Perfect For...</h1>
+                <p class="subhead">If any of these sound like you, we built this for your situation.</p>
+            </div>
+            
+            <div class="persona-grid">
+                <div class="persona-card green">
+                    <div class="persona-icon">🎓</div>
+                    <h3 class="persona-title">Graduating in 3-6 Months</h3>
+                    <p class="persona-desc">Cap & gown ready, zero interviews?</p>
+                    <p class="persona-cta">This is for you →</p>
+                </div>
+                
+                <div class="persona-card orange">
+                    <div class="persona-icon">⏰</div>
+                    <h3 class="persona-title">6+ Months & Nothing</h3>
+                    <p class="persona-desc">Friends promoted, you're still hunting?</p>
+                    <p class="persona-cta">This is for you →</p>
+                </div>
+                
+                <div class="persona-card blue">
+                    <div class="persona-icon">🌍</div>
+                    <h3 class="persona-title">International Student</h3>
+                    <p class="persona-desc">Need sponsorship, competing vs citizens?</p>
+                    <p class="persona-cta">This is for you →</p>
+                </div>
+                
+                <div class="persona-card purple">
+                    <div class="persona-icon">📧</div>
+                    <h3 class="persona-title">Applied to 50+ Jobs</h3>
+                    <p class="persona-desc">Resumes into the void, only crickets?</p>
+                    <p class="persona-cta">This is for you →</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="cta-section">
+            <p class="cta-main">We can help you land your first role.</p>
+            <p class="cta-proof">In 90 days, <strong>Karen got offers from SpaceX & Google.</strong></p>
+        </div>
+    </div>
+</body>
+</html>

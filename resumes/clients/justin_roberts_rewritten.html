@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Justin Roberts - Resume</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 10.5pt;
+            line-height: 1.4;
+            color: #1a1a1a;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+        
+        .resume {
+            max-width: 8.5in;
+            margin: 0 auto;
+            background: white;
+            padding: 0.6in 0.7in;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #2563eb;
+        }
+        
+        .name {
+            font-size: 24pt;
+            font-weight: 700;
+            color: #1a1a1a;
+            letter-spacing: -0.5px;
+            margin-bottom: 4px;
+        }
+        
+        .title {
+            font-size: 11pt;
+            color: #4b5563;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 8px 20px;
+            font-size: 9.5pt;
+            color: #374151;
+        }
+        
+        .contact-info a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+        
+        /* Section styling */
+        .section {
+            margin-bottom: 16px;
+        }
+        
+        .section-title {
+            font-size: 11pt;
+            font-weight: 700;
+            color: #1a1a1a;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid #e5e7eb;
+            padding-bottom: 4px;
+            margin-bottom: 10px;
+        }
+        
+        /* Core Competencies */
+        .competencies {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px 12px;
+            margin-bottom: 8px;
+        }
+        
+        .competency-tag {
+            background: #eff6ff;
+            color: #1d4ed8;
+            padding: 3px 10px;
+            border-radius: 4px;
+            font-size: 9pt;
+            font-weight: 500;
+        }
+        
+        /* Experience entries */
+        .experience-entry {
+            margin-bottom: 14px;
+        }
+        
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 2px;
+        }
+        
+        .job-title {
+            font-weight: 600;
+            font-size: 10.5pt;
+            color: #1a1a1a;
+        }
+        
+        .dates {
+            font-size: 9.5pt;
+            color: #6b7280;
+            font-weight: 500;
+        }
+        
+        .company-line {
+            font-size: 10pt;
+            color: #4b5563;
+            margin-bottom: 6px;
+        }
+        
+        .company-name {
+            font-weight: 500;
+        }
+        
+        /* Bullet points */
+        .bullets {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .bullets li {
+            position: relative;
+            padding-left: 14px;
+            margin-bottom: 4px;
+            font-size: 10pt;
+            line-height: 1.45;
+        }
+        
+        .bullets li::before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #2563eb;
+            font-size: 9pt;
+        }
+        
+        /* Metrics placeholder */
+        .metric {
+            background: #fef3c7;
+            color: #92400e;
+            padding: 0 3px;
+            border-radius: 2px;
+            font-weight: 500;
+        }
+        
+        /* Skills section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 100px 1fr;
+            gap: 6px 12px;
+            font-size: 10pt;
+        }
+        
+        .skill-category {
+            font-weight: 600;
+            color: #374151;
+        }
+        
+        .skill-items {
+            color: #4b5563;
+        }
+        
+        /* Education */
+        .education-entry {
+            margin-bottom: 8px;
+        }
+        
+        .edu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+        
+        .degree {
+            font-weight: 600;
+            font-size: 10.5pt;
+        }
+        
+        .school {
+            color: #4b5563;
+            font-size: 10pt;
+        }
+        
+        /* Print styles */
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            
+            .resume {
+                box-shadow: none;
+                padding: 0.5in;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="resume">
+        <!-- Header -->
+        <header class="header">
+            <h1 class="name">Justin Roberts</h1>
+            <p class="title">Chemical Engineering Student · Process & Project Engineering</p>
+            <div class="contact-info">
+                <span>740-877-7365</span>
+                <a href="mailto:roberts.2130@osu.edu">roberts.2130@osu.edu</a>
+                <a href="https://linkedin.com/in/jroberts614">linkedin.com/in/jroberts614</a>
+            </div>
+        </header>
+
+        <!-- Core Competencies -->
+        <section class="section">
+            <h2 class="section-title">Core Competencies</h2>
+            <div class="competencies">
+                <span class="competency-tag">Process Engineering</span>
+                <span class="competency-tag">Project Coordination</span>
+                <span class="competency-tag">P&ID Development</span>
+                <span class="competency-tag">AutoCAD</span>
+                <span class="competency-tag">PSM Compliance</span>
+                <span class="competency-tag">Energy Analysis</span>
+                <span class="competency-tag">Cross-Functional Collaboration</span>
+                <span class="competency-tag">Technical Documentation</span>
+            </div>
+        </section>
+
+        <!-- Experience -->
+        <section class="section">
+            <h2 class="section-title">Professional Experience</h2>
+            
+            <!-- GFS Chemicals -->
+            <div class="experience-entry">
+                <div class="experience-header">
+                    <span class="job-title">Project Coordinator / Engineering Intern</span>
+                    <span class="dates">Oct 2025 – Present</span>
+                </div>
+                <div class="company-line">
+                    <span class="company-name">GFS Chemicals</span> · Columbus, OH (20 hrs/wk while full-time student)
+                </div>
+                <ul class="bullets">
+                    <li>Engineered technical documentation and AutoCAD layouts for 20+ product lines, authoring purchasing specifications that reduced material inconsistencies by <span class="metric">[X]</span>% and cut assembly kitting time by <span class="metric">[X]</span> hours/week</li>
+                    <li>Coordinated 10+ multi-departmental projects simultaneously across small and large scales, maintaining <span class="metric">[X]</span>% on-time delivery rate by proactively jumping into support roles to prevent delays</li>
+                    <li>Developed private-label branding for <span class="metric">[X]</span> chemical manufacturers using BarTender software, designing compliant labeling for 10+ product lines that passed <span class="metric">[X]</span>% of regulatory audits</li>
+                    <li>Sourced mission-critical raw materials to overcome supply chain hurdles, meeting federal procurement requirements and enabling a $160K Navy contract to close <span class="metric">[X]</span> weeks ahead of deadline</li>
+                </ul>
+            </div>
+            
+            <!-- Ecosystem Energy -->
+            <div class="experience-entry">
+                <div class="experience-header">
+                    <span class="job-title">Engineering Intern</span>
+                    <span class="dates">May 2025 – Aug 2025</span>
+                </div>
+                <div class="company-line">
+                    <span class="company-name">Ecosystem Energy</span> · Columbus, OH
+                </div>
+                <ul class="bullets">
+                    <li>Analyzed steam, chilled water, and electricity consumption across 10+ OSU buildings using C3ntinel and eDNA platforms, identifying <span class="metric">[X]</span>+ energy-saving opportunities that maintained 30%+ savings targets</li>
+                    <li>Engineered demolition plans and asset documentation workflows for steam-to-hot-water transitions, completing field verifications <span class="metric">[X]</span>% faster through standardized review processes</li>
+                    <li>Partnered with multidisciplinary teams to plan piping layouts, pressure regulation systems, and control valve optimization, supporting <span class="metric">[X]</span> on-site walkthroughs and LOTO activities with zero safety incidents</li>
+                    <li>Prepared monthly M&V energy savings reports through utility data validation and root cause analysis of metering discrepancies, building Excel dashboards that reduced client reporting time by <span class="metric">[X]</span>%</li>
+                </ul>
+            </div>
+            
+            <!-- Capital Resin -->
+            <div class="experience-entry">
+                <div class="experience-header">
+                    <span class="job-title">Process Engineering Intern</span>
+                    <span class="dates">May 2024 – Jan 2025</span>
+                </div>
+                <div class="company-line">
+                    <span class="company-name">Capital Resin Corporation</span> · Columbus, OH
+                </div>
+                <ul class="bullets">
+                    <li>Operated in PSM-regulated facility, mastering requirements for operating procedures, Materials of Construction, and Process Safety documentation that ensured <span class="metric">[X]</span>% compliance during audits</li>
+                    <li>Contributed to continuous formaldehyde system development by creating and updating <span class="metric">[X]</span>+ P&IDs and Device Lists for acid reactors and resin reactors, reducing design iteration cycles by <span class="metric">[X]</span>%</li>
+                    <li>Created and modified 100+ engineering drawings in AutoCAD with field verification, optimizing workflows and maintaining BOM accuracy that reduced procurement errors by <span class="metric">[X]</span>%</li>
+                    <li>Collaborated cross-functionally to ensure safe startup of Detroit facility with zero incidents, directly enabling the company to secure a long-term DOW contract worth $<span class="metric">[X]</span></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Education -->
+        <section class="section">
+            <h2 class="section-title">Education</h2>
+            <div class="education-entry">
+                <div class="edu-header">
+                    <span class="degree">BS in Chemical Engineering</span>
+                    <span class="dates">Expected Dec 2026</span>
+                </div>
+                <div class="school">The Ohio State University · Columbus, OH</div>
+            </div>
+        </section>
+
+        <!-- Technical Skills -->
+        <section class="section">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-grid">
+                <span class="skill-category">Software</span>
+                <span class="skill-items">AutoCAD, SolidWorks, MATLAB, C3ntinel, eDNA, BarTender, Microsoft Excel</span>
+                
+                <span class="skill-category">Engineering</span>
+                <span class="skill-items">P&ID Development, Piping Design, Process Analysis, Heat Transfer, Separations, Kinetics</span>
+                
+                <span class="skill-category">Domains</span>
+                <span class="skill-items">Chemical Manufacturing, PSM Compliance, Energy Systems, Process Controls, Mass Transfer</span>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

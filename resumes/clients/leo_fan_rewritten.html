@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leo Fan - Resume</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 11pt;
+            line-height: 1.4;
+            color: #1a1a1a;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+
+        .resume {
+            max-width: 8.5in;
+            margin: 0 auto;
+            background: white;
+            padding: 0.5in 0.6in;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #1a1a1a;
+        }
+
+        .name {
+            font-size: 24pt;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .contact {
+            font-size: 10pt;
+            color: #444;
+        }
+
+        .contact a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+
+        .contact span {
+            margin: 0 8px;
+        }
+
+        /* Section */
+        .section {
+            margin-bottom: 14px;
+        }
+
+        .section-title {
+            font-size: 11pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 4px;
+            margin-bottom: 10px;
+        }
+
+        /* Summary */
+        .summary {
+            font-size: 10.5pt;
+            color: #333;
+            text-align: justify;
+        }
+
+        /* Experience Entry */
+        .entry {
+            margin-bottom: 12px;
+        }
+
+        .entry-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 2px;
+        }
+
+        .company {
+            font-weight: 700;
+            font-size: 11pt;
+        }
+
+        .location {
+            font-size: 10pt;
+            color: #555;
+        }
+
+        .title-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 4px;
+        }
+
+        .job-title {
+            font-style: italic;
+            font-size: 10.5pt;
+        }
+
+        .dates {
+            font-size: 10pt;
+            color: #555;
+        }
+
+        /* Bullets */
+        ul {
+            margin-left: 18px;
+            margin-top: 4px;
+        }
+
+        li {
+            margin-bottom: 3px;
+            font-size: 10.5pt;
+            text-align: justify;
+        }
+
+        /* Education */
+        .education-entry {
+            margin-bottom: 8px;
+        }
+
+        .edu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+
+        .school {
+            font-weight: 600;
+        }
+
+        .degree {
+            font-size: 10.5pt;
+        }
+
+        /* Skills/Personal */
+        .skills-list {
+            font-size: 10.5pt;
+            columns: 2;
+            column-gap: 30px;
+        }
+
+        .skills-list li {
+            margin-bottom: 2px;
+        }
+
+        /* Publications */
+        .publications li {
+            font-size: 9.5pt;
+            margin-bottom: 4px;
+            text-align: justify;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .resume {
+                box-shadow: none;
+                padding: 0.4in 0.5in;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="resume">
+        <!-- Header -->
+        <div class="header">
+            <div class="name">LEO FAN</div>
+            <div class="contact">
+                <a href="https://www.linkedin.com/in/leo-fan-b2455554">linkedin.com/in/leo-fan-b2455554</a>
+                <span>|</span>
+                (816) 352-0587
+                <span>|</span>
+                <a href="mailto:leo.david.fan@gmail.com">leo.david.fan@gmail.com</a>
+            </div>
+        </div>
+
+        <!-- Objective -->
+        <div class="section">
+            <div class="section-title">Objective</div>
+            <div class="summary">
+                To be a global leader in modern machines with AI and advanced technologies.
+            </div>
+        </div>
+
+        <!-- Summary -->
+        <div class="section">
+            <div class="section-title">Summary</div>
+            <div class="summary">
+                Experienced in AI, Software, Electrical, and Manufacturing Engineering with 20 years in the machinery industry with business acumen. Hold advanced degrees in Electrical Engineering from both the US and China, along with an MBA. Passionate about applying technologies to build new machines. Open to Iowa, Los Angeles, Dallas, DC, China, and other remote opportunities.
+            </div>
+        </div>
+
+        <!-- Experience -->
+        <div class="section">
+            <div class="section-title">Experience</div>
+
+            <!-- Sub-Zero -->
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="company">Sub-Zero</span>
+                    <span class="location">Cedar Rapids, IA</span>
+                </div>
+                <div class="title-row">
+                    <span class="job-title">Staff Engineer</span>
+                    <span class="dates">Aug 2024 – Feb 2026</span>
+                </div>
+                <ul>
+                    <li>Architected end-to-end testing systems encompassing hardware, software, and integrated systems for a new factory launch, enabling quality validation for [X] new product lines from day one of production.</li>
+                </ul>
+            </div>
+
+            <!-- John Deere ISG -->
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="company">John Deere Intelligent Solution Group</span>
+                    <span class="location">Waterloo, IA</span>
+                </div>
+                <div class="title-row">
+                    <span class="job-title">Embedded Software Testing Engineer</span>
+                    <span class="dates">Nov 2020 – Jun 2024</span>
+                </div>
+                <ul>
+                    <li>Tested Embedded Software for Engine Interface Controller across [X] Operator Station features, developing [X+] test scripts in C, MATLAB, Visual Basic, Python, HTML, and JavaScript to ensure firmware reliability across [X] controller variants.</li>
+                    <li>Designed and implemented test systems supporting both 16-bit and 32-bit Operator Station Software, applying DFx and FMEA methodologies to systematically identify and mitigate [X] failure modes before production release, reducing post-release defects by [X%].</li>
+                    <li>Validated J1939-based CAN communication and John Deere Virtual Signals across SIL, HIL, and VIL environments, reducing integration defects by [X%] by catching protocol issues early in the development cycle.</li>
+                    <li>Leveraged server-based testing infrastructure including Amazon cloud servers to scale test execution, enabling parallel validation across [X] software builds and accelerating release timelines by [X%].</li>
+                    <li>Operated advanced testing toolchains including ECU-TEST, All Sim, CPS Testing Tool, Vector Tools, CanSniff, and Jenkins to automate [X+] regression tests and maintain continuous integration pipelines, reducing manual testing effort by [X%].</li>
+                </ul>
+            </div>
+
+            <!-- Theteslafan -->
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="company">Theteslafan.com</span>
+                    <span class="location">Remote</span>
+                </div>
+                <div class="title-row">
+                    <span class="job-title">Systems Diagnostic Engineer (Part-time)</span>
+                    <span class="dates">May 2023 – Aug 2024</span>
+                </div>
+                <ul>
+                    <li>Diagnosed and repaired [X+] complex system issues spanning electrical, mechanical, and software domains, applying cross-functional troubleshooting expertise to resolve multi-disciplinary failures with [X%] first-time fix rate.</li>
+                </ul>
+            </div>
+
+            <!-- John Deere Power System -->
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="company">John Deere Power System</span>
+                    <span class="location">Waterloo, IA</span>
+                </div>
+                <div class="title-row">
+                    <span class="job-title">Software Engineer</span>
+                    <span class="dates">Nov 2018 – Nov 2020</span>
+                </div>
+                <ul>
+                    <li>Developed diesel engine control software following Model-Based Software Development practices, building [X] modules in both AUTOSAR and Legacy architectures using MATLAB, Simulink, and Stateflow to meet functional safety requirements.</li>
+                    <li>Programmed the complete Software-in-the-Loop (SIL) validation package for the L40 R1D Engine Release in C, enabling early-stage verification and reducing physical prototype dependencies by [X%].</li>
+                    <li>Supported MATLAB-to-C++ code migration for JDActiveX4 interface development, ensuring seamless integration between legacy codebases and next-generation control systems.</li>
+                </ul>
+            </div>
+
+            <!-- John Deere Tractor Assembly -->
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="company">John Deere Tractor Assembly Operation</span>
+                    <span class="location">Waterloo, IA</span>
+                </div>
+                <div class="title-row">
+                    <span class="job-title">Electrical Manufacturing Engineer</span>
+                    <span class="dates">May 2018 – Nov 2018</span>
+                </div>
+                <ul>
+                    <li>Provided real-time support for [X] large tractor assembly lines, diagnosing and resolving [X+] electrical harness issues to minimize production line downtime by [X hours/week] and maintain throughput targets.</li>
+                    <li>Executed vehicle system verification, validation, and documentation using GFPT, SAP, VNSM, Ignition, and Service ADVISOR to ensure build quality and traceability compliance.</li>
+                </ul>
+            </div>
+
+            <!-- John Deere Electrical Testing -->
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="company">John Deere Tractor Assembly Operation</span>
+                    <span class="location">Waterloo, IA</span>
+                </div>
+                <div class="title-row">
+                    <span class="job-title">Electrical Testing Engineer</span>
+                    <span class="dates">Sep 2017 – May 2018</span>
+                </div>
+                <ul>
+                    <li>Tested vehicle electrical systems on the Electrical Drive Audit Tool (EDAT) and JD Tester in the F9 DB facility, validating functionality prior to final assembly approval.</li>
+                    <li>Programmed [X] automated test sequences in LabVIEW, NI TestStand, and Lab Windows CVI during the 6R Series SOP NPI launch, reducing manual testing time by [X%] and improving test repeatability.</li>
+                    <li>Researched and evaluated [X] drivetrain test machine suppliers globally, managing a $[X]M capital equipment budget to identify optimal price-performance solutions, saving [$XK] through competitive bidding.</li>
+                    <li>Developed deep technical knowledge of electrical, mechanical, hydraulic, and power systems in large agricultural tractors, enabling cross-functional troubleshooting capability.</li>
+                </ul>
+            </div>
+
+            <!-- John Deere Drivetrain -->
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="company">John Deere Drivetrain Operation</span>
+                    <span class="location">Waterloo, IA</span>
+                </div>
+                <div class="title-row">
+                    <span class="job-title">Factory Automation Engineer</span>
+                    <span class="dates">Jan 2017 – Sep 2017</span>
+                </div>
+                <ul>
+                    <li>Built and deployed [X] temperature monitoring and [X] safety lighting automation systems into the JDAAT production environment, enhancing operator safety for [X] workstations and enabling real-time process visibility.</li>
+                    <li>Collaborated directly with [X] technicians and operators to identify [X] automation opportunities, translating shop floor needs into functional control system implementations.</li>
+                    <li>Programmed and commissioned systems using Allen Bradley PLC, HMI, RSLogix 5000, FactoryTalk View, and AutoCAD to deliver turnkey automation solutions.</li>
+                </ul>
+            </div>
+
+            <!-- Missouri S&T Research -->
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="company">Missouri University of Science and Technology</span>
+                    <span class="location">Rolla, MO</span>
+                </div>
+                <div class="title-row">
+                    <span class="job-title">Research Assistant</span>
+                    <span class="dates">2015 – 2016</span>
+                </div>
+                <ul>
+                    <li>Secured $50,000 in research funding for Underwater Wireless Communication market analysis, demonstrating proposal writing and stakeholder communication skills.</li>
+                    <li>Developed a GPS receiver (FTS250) based measurement system, processing data in National Marine Electronic Association format and implementing a custom modeling algorithm for signal analysis.</li>
+                    <li>Implemented real-time signal processing algorithms on a microcontroller unit (MSP430F5529), translating theoretical models into embedded firmware.</li>
+                </ul>
+                <div class="title-row" style="margin-top: 6px;">
+                    <span class="job-title">Teaching Assistant</span>
+                    <span class="dates">2015 – 2016</span>
+                </div>
+                <ul>
+                    <li>Taught MATLAB programming to [X] senior undergraduate engineering students across [X] semesters, developing instructional materials and providing hands-on coding support.</li>
+                </ul>
+            </div>
+
+            <!-- Taylor Cable -->
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="company">Taylor Cable</span>
+                    <span class="location">Grandview, MO</span>
+                </div>
+                <div class="title-row">
+                    <span class="job-title">Engineer</span>
+                    <span class="dates">2014 – 2015</span>
+                </div>
+                <ul>
+                    <li>Prototyped and programmed a computer numeric control (CNC) molding machine with a quarter-million-dollar R&D budget, reducing polycarbonate prototype forming time by 90% and accelerating product development cycles.</li>
+                </ul>
+            </div>
+
+            <!-- Package Development Corporation -->
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="company">Package Development Corporation</span>
+                    <span class="location">Kansas City, KS</span>
+                </div>
+                <div class="title-row">
+                    <span class="job-title">Production Supervisor</span>
+                    <span class="dates">2013</span>
+                </div>
+                <ul>
+                    <li>Managed polypropylene product assembly lines, maintaining a 5% low production failure rate through proactive quality controls and process monitoring.</li>
+                    <li>Maintained thermoformer, extruder, grinder, and packer equipment, minimizing unplanned downtime through preventive maintenance practices.</li>
+                    <li>Translated Chinese-language technical and legal documents and provided interpretation services for company management during vendor negotiations, enabling critical international supplier relationships.</li>
+                </ul>
+            </div>
+
+            <!-- McKesson -->
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="company">McKesson</span>
+                    <span class="location">Overland Park, KS</span>
+                </div>
+                <div class="title-row">
+                    <span class="job-title">Bilingual Product Support Specialist</span>
+                    <span class="dates">2011 – 2013</span>
+                </div>
+                <ul>
+                    <li>Provided product support to over 5,000 customers, navigating complex medical software programs and resolving technical issues to maintain customer satisfaction.</li>
+                </ul>
+            </div>
+
+            <!-- China University - Lecturer -->
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="company">China University of Geosciences, Jiangcheng College</span>
+                    <span class="location">Wuhan, Hubei</span>
+                </div>
+                <div class="title-row">
+                    <span class="job-title">Visiting Lecturer</span>
+                    <span class="dates">2007 – 2011</span>
+                </div>
+                <ul>
+                    <li>Taught C++ programming to [X] senior undergraduate students across [X] semesters, developing curriculum and assessments for object-oriented programming concepts.</li>
+                </ul>
+            </div>
+
+            <!-- China University - Research -->
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="company">China University of Geosciences</span>
+                    <span class="location">Wuhan, Hubei</span>
+                </div>
+                <div class="title-row">
+                    <span class="job-title">Research Assistant</span>
+                    <span class="dates">2005 – 2009</span>
+                </div>
+                <ul>
+                    <li>Conducted sponsored research in Statistical Signal Processing for Signal, Speech, and Image Processing under the School of Mechanical Engineering and Electronic Information.</li>
+                    <li>Researched Gray Level Image Processing methodologies under the School of Information Engineering, contributing to published academic work.</li>
+                </ul>
+                <div class="title-row" style="margin-top: 6px;">
+                    <span class="job-title">Teaching Assistant</span>
+                    <span class="dates">2005 – 2009</span>
+                </div>
+                <ul>
+                    <li>Assisted in teaching Pattern Recognition and Machine Learning with emphasis in Information & Communication Engineering.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Education -->
+        <div class="section">
+            <div class="section-title">Education</div>
+            
+            <div class="education-entry">
+                <div class="edu-header">
+                    <span class="school">The George Washington University</span>
+                    <span class="dates">Aug 2024 – Present</span>
+                </div>
+                <div class="degree">Doctor of Engineering Candidate in Artificial Intelligence and Machine Learning</div>
+            </div>
+
+            <div class="education-entry">
+                <div class="edu-header">
+                    <span class="school">University of Iowa</span>
+                    <span class="dates">Aug 2020 – Oct 2022</span>
+                </div>
+                <div class="degree">MBA, with distinction</div>
+            </div>
+
+            <div class="education-entry">
+                <div class="edu-header">
+                    <span class="school">Missouri University of Science and Technology</span>
+                    <span class="dates">Jan 2015 – Dec 2016</span>
+                </div>
+                <div class="degree">M.S., Ph.D.(c) in Electrical Engineering</div>
+            </div>
+
+            <div class="education-entry">
+                <div class="edu-header">
+                    <span class="school">China University of Geosciences</span>
+                    <span class="dates">Sep 2003 – Jul 2009</span>
+                </div>
+                <div class="degree">M.S. in Electrical Engineering<br>B.S. in Electrical Engineering</div>
+            </div>
+        </div>
+
+        <!-- Personal -->
+        <div class="section">
+            <div class="section-title">Personal</div>
+            <ul class="skills-list">
+                <li>U.S. Citizen</li>
+                <li>Native in Chinese</li>
+                <li>College Varsity Taekwondo and Basketball Player</li>
+            </ul>
+        </div>
+
+        <!-- Publications -->
+        <div class="section">
+            <div class="section-title">Publications</div>
+            <ul class="publications">
+                <li>Y. R. Zheng and L. Fan, "Performance metrics for low probability of detection in cooperative communication networks," OCEANS IEEE, Shanghai, 2016, pp. 1-5.</li>
+                <li>L. Fan, "Research on Signal Reconstruction and Information Detection Based on ICA."</li>
+                <li>L. Fan, Q. Hou, C. Li, J. Li, "Hierarchical Iterative ICA-based Super-resolution Image Reconstruction," Journal of Wuhan University of Technology, 2009, 31 (3).</li>
+                <li>L. Fan, Q. Hou, T. Wu, J. Li, "Comparison of Speech Enhancement in Different Noise Environments," Journal of Wuhan University of Technology, 2009, 31 (2).</li>
+                <li>Q. Hou, G. Wu, Y. Huang, L. Fan, "Pivotal Technology in UWB Wireless Communication," Second International Conference on Space Information Technology, 2007, 6795(1): 0H.</li>
+                <li>L. Fan, "Research of Blind Signal Separation in Signal Processing," Selected by provincial government as an outstanding thesis, 2007.</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

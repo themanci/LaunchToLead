@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ad 11 - Comparison + Status Recovery</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: #0a0a0a;
+            margin: 0;
+            padding: 0;
+            width: 1080px;
+            height: 1080px;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .ad-container {
+            width: 1080px;
+            min-width: 1080px;
+            max-width: 1080px;
+            height: 1080px;
+            min-height: 1080px;
+            max-height: 1080px;
+            background: linear-gradient(165deg, #1a1a2e 0%, #16213e 50%, #1a1a2e 100%);
+            padding: 40px 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .ad-container::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -30%;
+            width: 80%;
+            height: 80%;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.08) 0%, transparent 60%);
+            pointer-events: none;
+        }
+        
+        .callout {
+            text-align: center;
+        }
+        
+        .callout-line {
+            font-size: 40px;
+            font-weight: 700;
+            color: #f87171;
+            line-height: 1.2;
+        }
+        
+        .contrast {
+            text-align: center;
+        }
+        
+        .contrast-line {
+            font-size: 48px;
+            font-weight: 700;
+            color: #e2e8f0;
+            line-height: 1.3;
+        }
+        
+        .contrast-negative {
+            color: #f87171;
+        }
+        
+        .same-section {
+            text-align: center;
+        }
+        
+        .same-item {
+            font-size: 42px;
+            font-weight: 600;
+            color: #94a3b8;
+            margin: 8px 0;
+        }
+        
+        .question {
+            font-size: 48px;
+            font-weight: 800;
+            color: #fbbf24;
+            text-align: center;
+        }
+        
+        .answer {
+            text-align: center;
+        }
+        
+        .answer-line {
+            font-size: 44px;
+            font-weight: 700;
+            color: #4ade80;
+            line-height: 1.3;
+        }
+        
+        .answer-emphasis {
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+        
+        .skill-note {
+            font-size: 40px;
+            font-weight: 700;
+            color: #e2e8f0;
+            text-align: center;
+        }
+        
+        .urgency-box {
+            background: rgba(251, 191, 36, 0.15);
+            border: 3px solid rgba(251, 191, 36, 0.4);
+            border-radius: 16px;
+            padding: 25px 40px;
+            text-align: center;
+        }
+        
+        .urgency-price {
+            font-size: 42px;
+            font-weight: 800;
+            color: #fbbf24;
+        }
+        
+        .urgency-spots {
+            font-size: 32px;
+            font-weight: 700;
+            color: #f87171;
+            margin-top: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="ad-container">
+        <div class="callout">
+            <div class="callout-line">Friends snagging engineering jobs</div>
+            <div class="callout-line">while you're passed over?</div>
+        </div>
+        
+        <div class="contrast">
+            <div class="contrast-line">Friends getting hired.</div>
+            <div class="contrast-line"><span class="contrast-negative">You getting ghosted.</span></div>
+        </div>
+        
+        <div class="same-section">
+            <div class="same-item">Same grades.</div>
+            <div class="same-item">Same projects.</div>
+            <div class="same-item">Same internships.</div>
+        </div>
+        
+        <div class="question">So what's the difference?</div>
+        
+        <div class="answer">
+            <div class="answer-line">They know how to</div>
+            <div class="answer-line"><span class="answer-emphasis">communicate their value.</span></div>
+        </div>
+        
+        <div class="skill-note">That's a learnable skill.</div>
+        
+        <div class="urgency-box">
+            <div class="urgency-price">50% OFF — $1,000 (normally $2,000)</div>
+            <div class="urgency-spots">Only 10 spots/month</div>
+        </div>
+    </div>
+</body>
+</html>

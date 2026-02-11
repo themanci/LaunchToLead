@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will Rosenberg - Resume</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 10.5pt;
+            line-height: 1.4;
+            color: #1a1a1a;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+        
+        .resume {
+            max-width: 8.5in;
+            margin: 0 auto;
+            background: white;
+            padding: 0.6in 0.7in;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #2563eb;
+        }
+        
+        .name {
+            font-size: 24pt;
+            font-weight: 700;
+            color: #1a1a1a;
+            letter-spacing: -0.5px;
+            margin-bottom: 4px;
+        }
+        
+        .title {
+            font-size: 11pt;
+            color: #4b5563;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 8px 20px;
+            font-size: 9.5pt;
+            color: #374151;
+        }
+        
+        .contact-info a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+        
+        /* Section styling */
+        .section {
+            margin-bottom: 16px;
+        }
+        
+        .section-title {
+            font-size: 11pt;
+            font-weight: 700;
+            color: #1a1a1a;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid #e5e7eb;
+            padding-bottom: 4px;
+            margin-bottom: 10px;
+        }
+        
+        /* Core Competencies */
+        .competencies {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px 12px;
+            margin-bottom: 8px;
+        }
+        
+        .competency-tag {
+            background: #eff6ff;
+            color: #1d4ed8;
+            padding: 3px 10px;
+            border-radius: 4px;
+            font-size: 9pt;
+            font-weight: 500;
+        }
+        
+        /* Experience entries */
+        .experience-entry {
+            margin-bottom: 14px;
+        }
+        
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 2px;
+        }
+        
+        .job-title {
+            font-weight: 600;
+            font-size: 10.5pt;
+            color: #1a1a1a;
+        }
+        
+        .dates {
+            font-size: 9.5pt;
+            color: #6b7280;
+            font-weight: 500;
+        }
+        
+        .company-line {
+            font-size: 10pt;
+            color: #4b5563;
+            margin-bottom: 6px;
+        }
+        
+        .company-name {
+            font-weight: 500;
+        }
+        
+        /* Bullet points */
+        .bullets {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .bullets li {
+            position: relative;
+            padding-left: 14px;
+            margin-bottom: 4px;
+            font-size: 10pt;
+            line-height: 1.45;
+        }
+        
+        .bullets li::before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #2563eb;
+            font-size: 9pt;
+        }
+        
+        /* Metrics placeholder */
+        .metric {
+            background: #fef3c7;
+            color: #92400e;
+            padding: 0 3px;
+            border-radius: 2px;
+            font-weight: 500;
+        }
+        
+        /* Skills section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 100px 1fr;
+            gap: 6px 12px;
+            font-size: 10pt;
+        }
+        
+        .skill-category {
+            font-weight: 600;
+            color: #374151;
+        }
+        
+        .skill-items {
+            color: #4b5563;
+        }
+        
+        /* Education */
+        .education-entry {
+            margin-bottom: 8px;
+        }
+        
+        .edu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+        
+        .degree {
+            font-weight: 600;
+            font-size: 10.5pt;
+        }
+        
+        .school {
+            color: #4b5563;
+            font-size: 10pt;
+        }
+        
+        /* Certifications */
+        .cert-entry {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 4px;
+            font-size: 10pt;
+        }
+        
+        .cert-name {
+            font-weight: 500;
+        }
+        
+        .cert-issuer {
+            color: #6b7280;
+        }
+        
+        /* Print styles */
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            
+            .resume {
+                box-shadow: none;
+                padding: 0.5in;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="resume">
+        <!-- Header -->
+        <header class="header">
+            <h1 class="name">Will Rosenberg</h1>
+            <p class="title">Product-Focused Full-Stack Software Engineer</p>
+            <div class="contact-info">
+                <span>Chicago, IL</span>
+                <a href="https://williamrosenberg.com">williamrosenberg.com</a>
+                <a href="https://github.com/will-rosenberg">github.com/will-rosenberg</a>
+                <a href="https://linkedin.com/in/will-rosenberg">linkedin.com/in/will-rosenberg</a>
+            </div>
+        </header>
+
+        <!-- Core Competencies -->
+        <section class="section">
+            <h2 class="section-title">Core Competencies</h2>
+            <div class="competencies">
+                <span class="competency-tag">Full-Stack Development</span>
+                <span class="competency-tag">Product Strategy</span>
+                <span class="competency-tag">React & Node.js</span>
+                <span class="competency-tag">PostgreSQL</span>
+                <span class="competency-tag">Systems Engineering</span>
+                <span class="competency-tag">HIL Testing</span>
+                <span class="competency-tag">Cross-Functional Collaboration</span>
+                <span class="competency-tag">Trilingual (EN/PT/ES)</span>
+            </div>
+        </section>
+
+        <!-- Experience -->
+        <section class="section">
+            <h2 class="section-title">Professional Experience</h2>
+            
+            <!-- Simple American Accent -->
+            <div class="experience-entry">
+                <div class="experience-header">
+                    <span class="job-title">Founder & Full-Stack Software Engineer</span>
+                    <span class="dates">2018 – Present</span>
+                </div>
+                <div class="company-line">
+                    <span class="company-name">Simple American Accent</span> · Chicago, IL
+                </div>
+                <ul class="bullets">
+                    <li>Built and scaled a full-stack web application serving <span class="metric">[X]</span> active users across <span class="metric">[X]</span> countries, enabling audio processing, transcript annotation, and personalized training workflows that drive <span class="metric">[X]</span>% user engagement</li>
+                    <li>Delivered <span class="metric">[X]</span>+ features end-to-end across frontend (React), backend (Node.js/Express), and database (PostgreSQL) layers, reducing development cycle time by <span class="metric">[X]</span>% through unified ownership</li>
+                    <li>Engineered authentication system with role-based access control and rate limiting, securing <span class="metric">[X]</span>+ user accounts while maintaining <span class="metric">[X]</span>% uptime</li>
+                    <li>Managed <span class="metric">[X]</span>+ production deployments and database migrations with zero critical incidents, using structured debugging workflows to resolve issues <span class="metric">[X]</span>x faster</li>
+                    <li>Analyzed usage patterns from 400+ clients and server logs to prioritize product decisions, resulting in <span class="metric">[X]</span>% improvement in user retention</li>
+                    <li>Increased code reliability by <span class="metric">[X]</span>% through unit testing, accessibility audits, and strategic refactoring, reducing bug reports by <span class="metric">[X]</span>%</li>
+                </ul>
+            </div>
+            
+            <!-- Boeing -->
+            <div class="experience-entry">
+                <div class="experience-header">
+                    <span class="job-title">Systems Engineer</span>
+                    <span class="dates">2015 – 2018</span>
+                </div>
+                <div class="company-line">
+                    <span class="company-name">Boeing Commercial Airplanes</span> · Everett, WA
+                </div>
+                <ul class="bullets">
+                    <li>Led design and testing of automated controls for the 777X air conditioning system, optimizing thermal performance for <span class="metric">[X]</span>+ passengers across <span class="metric">[X]</span> flight conditions</li>
+                    <li>Project-managed HIL test bench build integrating 1,000+ signals and 50+ actuators/sensors, completing system integration <span class="metric">[X]</span>% ahead of schedule</li>
+                    <li>Authored and executed <span class="metric">[X]</span>+ validation test procedures, achieving <span class="metric">[X]</span>% first-pass approval rate on engineering change reviews</li>
+                    <li>Represented air conditioning system in <span class="metric">[X]</span>+ alert/indication design reviews, defining pilot and maintenance data displays that met FAA certification requirements</li>
+                    <li>Coordinated with <span class="metric">[X]</span>+ suppliers and cross-functional teams (remote and in-person) to resolve <span class="metric">[X]</span>+ technical issues, maintaining project timeline</li>
+                </ul>
+            </div>
+            
+            <!-- Internships -->
+            <div class="experience-entry">
+                <div class="experience-header">
+                    <span class="job-title">Engineering Intern</span>
+                    <span class="dates">2012 – 2013</span>
+                </div>
+                <div class="company-line">
+                    <span class="company-name">Ethicon Endo-Surgery · Case New Holland · GE Aviation</span>
+                </div>
+                <ul class="bullets">
+                    <li>Developed data acquisition and control logic for lab test systems using LabVIEW, automating <span class="metric">[X]</span>+ test scenarios and reducing manual testing time by <span class="metric">[X]</span>%</li>
+                    <li>Contributed to <span class="metric">[X]</span>+ structured experiments from planning through execution, identifying root causes for <span class="metric">[X]</span>% of anomalies discovered</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Technical Skills -->
+        <section class="section">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-grid">
+                <span class="skill-category">Frontend</span>
+                <span class="skill-items">React, JavaScript, TypeScript, HTML, CSS, Tailwind, Vite, shadcn/ui</span>
+                
+                <span class="skill-category">Backend</span>
+                <span class="skill-items">Node.js, Express, PostgreSQL, Prisma, REST APIs, SQL, Auth0</span>
+                
+                <span class="skill-category">Cloud & DevOps</span>
+                <span class="skill-items">Render, Cloudflare, Vercel, AWS S3</span>
+                
+                <span class="skill-category">Testing & Tools</span>
+                <span class="skill-items">Git, GitHub, pnpm, Jest, Storybook, Postman, Prettier, ESLint</span>
+                
+                <span class="skill-category">Languages</span>
+                <span class="skill-items">English (native), Portuguese (near-native), Spanish (near-native, DELE C2)</span>
+            </div>
+        </section>
+
+        <!-- Education -->
+        <section class="section">
+            <h2 class="section-title">Education</h2>
+            <div class="education-entry">
+                <div class="edu-header">
+                    <span class="degree">BS in Mechanical Engineering</span>
+                    <span class="dates">2010 – 2015</span>
+                </div>
+                <div class="school">Iowa State University · Ames, IA · GPA: 3.45/4.00</div>
+            </div>
+        </section>
+
+        <!-- Certifications -->
+        <section class="section">
+            <h2 class="section-title">Certifications</h2>
+            <div class="cert-entry">
+                <span>
+                    <span class="cert-name">Architecture and Systems Engineering</span>
+                    <span class="cert-issuer"> · MIT Professional Education</span>
+                </span>
+                <span class="dates">2017</span>
+            </div>
+            <div class="cert-entry">
+                <span>
+                    <span class="cert-name">Spanish DELE C2 (Mastery)</span>
+                    <span class="cert-issuer"> · Instituto Cervantes</span>
+                </span>
+                <span class="dates">2014</span>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Launch Path 50% Off - Design A (Split Layout)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: #0a0a0a;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .graphic {
+            width: 1080px;
+            height: 1080px;
+            background: #0f172a;
+            position: relative;
+            overflow: hidden;
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+        }
+        
+        /* Top Banner */
+        .top-banner {
+            background: linear-gradient(90deg, #dc2626, #f97316);
+            padding: 14px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .banner-text {
+            color: white;
+            font-size: 18px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .banner-price {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .old-price {
+            color: rgba(255,255,255,0.6);
+            font-size: 24px;
+            font-weight: 700;
+            text-decoration: line-through;
+        }
+        
+        .new-price {
+            color: white;
+            font-size: 36px;
+            font-weight: 900;
+        }
+        
+        /* Main Content - Split */
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+        
+        /* Left Side - Problem */
+        .left-side {
+            background: linear-gradient(180deg, #1e1e2e 0%, #2d1f3d 100%);
+            padding: 35px;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .problem-header {
+            margin-bottom: 20px;
+        }
+        
+        .problem-label {
+            color: #f87171;
+            font-size: 12px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 8px;
+        }
+        
+        .problem-title {
+            color: white;
+            font-size: 28px;
+            font-weight: 900;
+            line-height: 1.1;
+        }
+        
+        .pain-list {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            margin-bottom: 24px;
+        }
+        
+        .pain-item {
+            background: rgba(239, 68, 68, 0.1);
+            border-left: 4px solid #ef4444;
+            padding: 14px 16px;
+            border-radius: 0 12px 12px 0;
+        }
+        
+        .pain-item p {
+            color: #e2e8f0;
+            font-size: 14px;
+            font-style: italic;
+            line-height: 1.4;
+        }
+        
+        /* Success Story on Left */
+        .success-left {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(236, 72, 153, 0.2));
+            border-radius: 16px;
+            padding: 18px;
+            margin-top: auto;
+        }
+        
+        .success-name {
+            color: #a78bfa;
+            font-size: 18px;
+            font-weight: 800;
+            margin-bottom: 6px;
+        }
+        
+        .success-before {
+            color: #94a3b8;
+            font-size: 12px;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+        
+        .success-result {
+            color: #10b981;
+            font-size: 15px;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+        
+        .company-tags {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+        }
+        
+        .company-tag {
+            background: rgba(255,255,255,0.1);
+            color: white;
+            font-size: 10px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 20px;
+        }
+        
+        /* Right Side - Solution */
+        .right-side {
+            background: linear-gradient(180deg, #064e3b 0%, #065f46 50%, #047857 100%);
+            padding: 35px;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .solution-header {
+            margin-bottom: 20px;
+        }
+        
+        .solution-label {
+            color: #a3e635;
+            font-size: 12px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 8px;
+        }
+        
+        .solution-title {
+            color: white;
+            font-size: 28px;
+            font-weight: 900;
+            line-height: 1.1;
+        }
+        
+        .blueprint-label {
+            color: #a3e635;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+        
+        .session-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+        
+        .session-item {
+            background: rgba(255,255,255,0.1);
+            border-radius: 12px;
+            padding: 14px 16px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+        
+        .session-num {
+            background: #a3e635;
+            color: #064e3b;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: 900;
+            flex-shrink: 0;
+        }
+        
+        .session-info h4 {
+            color: white;
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 2px;
+        }
+        
+        .session-info p {
+            color: rgba(255,255,255,0.7);
+            font-size: 11px;
+        }
+        
+        /* Success Story on Right */
+        .success-right {
+            background: rgba(255,255,255,0.1);
+            border-radius: 16px;
+            padding: 18px;
+            margin-top: auto;
+        }
+        
+        .success-right .success-name {
+            color: #a3e635;
+        }
+        
+        /* Bottom CTA */
+        .bottom-cta {
+            background: #1e293b;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .cta-left h2 {
+            color: white;
+            font-size: 26px;
+            font-weight: 900;
+        }
+        
+        .cta-left h2 span {
+            color: #a3e635;
+        }
+        
+        .cta-right {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        
+        .cta-button {
+            background: linear-gradient(135deg, #10b981, #a3e635);
+            color: #064e3b;
+            font-size: 16px;
+            font-weight: 800;
+            padding: 14px 28px;
+            border-radius: 50px;
+        }
+        
+        .cta-url {
+            color: #94a3b8;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="graphic">
+        <!-- Top Banner -->
+        <div class="top-banner">
+            <span class="banner-text">🔥 50% OFF Limited Time</span>
+            <div class="banner-price">
+                <span class="old-price">$2,000</span>
+                <span class="new-price">$1,000</span>
+            </div>
+        </div>
+        
+        <!-- Main Split Content -->
+        <div class="main-content">
+            <!-- Left - Problem -->
+            <div class="left-side">
+                <div class="problem-header">
+                    <p class="problem-label">Sound Familiar?</p>
+                    <h2 class="problem-title">The Engineering Job Search Struggle</h2>
+                </div>
+                
+                <div class="pain-list">
+                    <div class="pain-item">
+                        <p>"I've sent 200+ applications and barely heard back from anyone"</p>
+                    </div>
+                    <div class="pain-item">
+                        <p>"I get interviews but freeze up when they ask behavioral questions"</p>
+                    </div>
+                    <div class="pain-item">
+                        <p>"I don't know how to talk about my experience without sounding generic"</p>
+                    </div>
+                </div>
+                
+                <div class="success-left">
+                    <p class="success-name">Karen B.</p>
+                    <p class="success-before">Felt stuck, struggled to demonstrate her value and skills from her experiences.</p>
+                    <p class="success-result">4 OFFERS in under 90 days!</p>
+                    <div class="company-tags">
+                        <span class="company-tag">Google</span>
+                        <span class="company-tag">SpaceX</span>
+                        <span class="company-tag">GE</span>
+                        <span class="company-tag">Bridgestone</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Right - Solution -->
+            <div class="right-side">
+                <div class="solution-header">
+                    <p class="solution-label">The Solution</p>
+                    <h2 class="solution-title">21-Day Engineering Career Launch Blueprint</h2>
+                </div>
+                
+                <p class="blueprint-label">3 Sessions • 90 Min Each</p>
+                
+                <div class="session-list">
+                    <div class="session-item">
+                        <div class="session-num">1</div>
+                        <div class="session-info">
+                            <h4>Resume Rebuild</h4>
+                            <p>Impact Bullet Builder™</p>
+                        </div>
+                    </div>
+                    <div class="session-item">
+                        <div class="session-num">2</div>
+                        <div class="session-info">
+                            <h4>Interview Weaponization</h4>
+                            <p>15+ STAR examples ready</p>
+                        </div>
+                    </div>
+                    <div class="session-item">
+                        <div class="session-num">3</div>
+                        <div class="session-info">
+                            <h4>Live Roast & Offer Machine</h4>
+                            <p>Full mock + feedback</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="success-right">
+                    <p class="success-name">Sarah K.</p>
+                    <p class="success-before">Intern who needed help extracting meaningful interview examples from her academic experiences and internships.</p>
+                    <p class="success-result">High paying Process Engineer role offer extended and accepted at Ford!</p>
+                    <div class="company-tags">
+                        <span class="company-tag">Ford Motor Company</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Bottom CTA -->
+        <div class="bottom-cta">
+            <div class="cta-left">
+                <h2>Ready to be <span>interview ready?</span></h2>
+            </div>
+            <div class="cta-right">
+                <div class="cta-button">DM me to start →</div>
+                <span class="cta-url">LaunchtoLead.io</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
