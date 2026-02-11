@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Launch Path 50% Off - Design C (Magazine Style)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: #0a0a0a;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .graphic {
+            width: 1080px;
+            height: 1080px;
+            background: #0a0a0a;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Giant Price Banner - Diagonal */
+        .price-banner {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: linear-gradient(135deg, #dc2626, #f97316);
+            width: 400px;
+            height: 140px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            clip-path: polygon(20% 0, 100% 0, 100% 100%, 0 100%);
+        }
+        
+        .price-old {
+            color: rgba(255,255,255,0.6);
+            font-size: 24px;
+            text-decoration: line-through;
+        }
+        
+        .price-new {
+            color: white;
+            font-size: 56px;
+            font-weight: 900;
+            line-height: 1;
+        }
+        
+        .price-label {
+            color: rgba(255,255,255,0.9);
+            font-size: 14px;
+            font-weight: 700;
+        }
+        
+        /* Main Title - Large Typography */
+        .main-header {
+            padding: 50px 50px 30px;
+        }
+        
+        .eyebrow {
+            color: #a3e635;
+            font-size: 16px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-bottom: 12px;
+        }
+        
+        .main-title {
+            font-size: 72px;
+            font-weight: 900;
+            color: white;
+            line-height: 0.95;
+            max-width: 650px;
+        }
+        
+        .main-title span {
+            color: #10b981;
+        }
+        
+        /* Content Grid */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            padding: 0 50px;
+            height: calc(100% - 340px);
+        }
+        
+        /* Left Column */
+        .left-col {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        
+        /* Pain Section */
+        .pain-section {
+            background: linear-gradient(135deg, #1a1a1a, #262626);
+            border: 1px solid #333;
+            border-radius: 20px;
+            padding: 22px;
+        }
+        
+        .section-label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 14px;
+        }
+        
+        .label-icon {
+            width: 28px;
+            height: 28px;
+            background: #ef4444;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 14px;
+        }
+        
+        .label-text {
+            color: #ef4444;
+            font-size: 14px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .pain-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .pain-item {
+            color: #d1d5db;
+            font-size: 14px;
+            font-style: italic;
+            line-height: 1.4;
+            padding-left: 16px;
+            border-left: 3px solid #ef4444;
+        }
+        
+        /* Sessions Section */
+        .sessions-section {
+            background: linear-gradient(135deg, #064e3b, #065f46);
+            border-radius: 20px;
+            padding: 22px;
+            flex: 1;
+        }
+        
+        .sessions-label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 14px;
+        }
+        
+        .sessions-label .label-icon {
+            background: #a3e635;
+            color: #064e3b;
+        }
+        
+        .sessions-label .label-text {
+            color: #a3e635;
+        }
+        
+        .session-items {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .session-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: rgba(255,255,255,0.1);
+            padding: 12px 14px;
+            border-radius: 12px;
+        }
+        
+        .session-num {
+            background: #a3e635;
+            color: #064e3b;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: 900;
+            flex-shrink: 0;
+        }
+        
+        .session-text h4 {
+            color: white;
+            font-size: 14px;
+            font-weight: 700;
+        }
+        
+        .session-text p {
+            color: rgba(255,255,255,0.7);
+            font-size: 11px;
+        }
+        
+        /* Right Column - Success Stories */
+        .right-col {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        
+        .success-section {
+            background: linear-gradient(135deg, #1e1b4b, #312e81);
+            border-radius: 20px;
+            padding: 22px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .success-label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+        
+        .success-label .label-icon {
+            background: linear-gradient(135deg, #a855f7, #ec4899);
+        }
+        
+        .success-label .label-text {
+            color: #c4b5fd;
+        }
+        
+        .success-stories {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            flex: 1;
+        }
+        
+        .story-card {
+            background: rgba(255,255,255,0.08);
+            border-radius: 14px;
+            padding: 16px;
+            flex: 1;
+        }
+        
+        .story-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 8px;
+        }
+        
+        .story-name {
+            color: #a3e635;
+            font-size: 20px;
+            font-weight: 800;
+        }
+        
+        .story-arrow {
+            color: #10b981;
+            font-size: 24px;
+        }
+        
+        .story-before {
+            color: #a5b4fc;
+            font-size: 12px;
+            line-height: 1.4;
+            margin-bottom: 10px;
+        }
+        
+        .story-result {
+            color: white;
+            font-size: 15px;
+            font-weight: 800;
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
+        
+        .story-companies {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+        }
+        
+        .company-pill {
+            background: linear-gradient(135deg, rgba(168, 85, 247, 0.3), rgba(16, 185, 129, 0.3));
+            color: white;
+            font-size: 10px;
+            font-weight: 700;
+            padding: 5px 10px;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        /* Bottom CTA */
+        .bottom-cta {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(90deg, #10b981, #059669, #047857);
+            padding: 24px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .cta-left {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .cta-title {
+            color: white;
+            font-size: 24px;
+            font-weight: 900;
+        }
+        
+        .cta-sessions {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            font-size: 14px;
+            font-weight: 700;
+            padding: 8px 16px;
+            border-radius: 50px;
+        }
+        
+        .cta-right {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        
+        .cta-button {
+            background: white;
+            color: #059669;
+            font-size: 18px;
+            font-weight: 800;
+            padding: 14px 32px;
+            border-radius: 50px;
+        }
+        
+        .cta-url {
+            color: rgba(255,255,255,0.8);
+            font-size: 16px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="graphic">
+        <!-- Price Banner -->
+        <div class="price-banner">
+            <span class="price-old">$2,000</span>
+            <span class="price-new">$1,000</span>
+            <span class="price-label">50% OFF</span>
+        </div>
+        
+        <!-- Main Header -->
+        <div class="main-header">
+            <p class="eyebrow">Engineering Career Coaching</p>
+            <h1 class="main-title">
+                <span>21-Day</span><br>
+                Career Launch<br>
+                Blueprint
+            </h1>
+        </div>
+        
+        <!-- Content Grid -->
+        <div class="content-grid">
+            <!-- Left Column -->
+            <div class="left-col">
+                <!-- Pain Section -->
+                <div class="pain-section">
+                    <div class="section-label">
+                        <div class="label-icon">✕</div>
+                        <span class="label-text">Sound Familiar?</span>
+                    </div>
+                    <div class="pain-list">
+                        <p class="pain-item">"I've sent 200+ applications and barely heard back from anyone"</p>
+                        <p class="pain-item">"I get interviews but freeze up when they ask behavioral questions"</p>
+                        <p class="pain-item">"I don't know how to talk about my experience without sounding generic"</p>
+                    </div>
+                </div>
+                
+                <!-- Sessions Section -->
+                <div class="sessions-section">
+                    <div class="sessions-label">
+                        <div class="label-icon">✓</div>
+                        <span class="label-text">3 Sessions • 90 Min Each</span>
+                    </div>
+                    <div class="session-items">
+                        <div class="session-row">
+                            <div class="session-num">1</div>
+                            <div class="session-text">
+                                <h4>Resume Rebuild</h4>
+                                <p>Impact Bullet Builder™</p>
+                            </div>
+                        </div>
+                        <div class="session-row">
+                            <div class="session-num">2</div>
+                            <div class="session-text">
+                                <h4>Interview Weaponization</h4>
+                                <p>15+ STAR examples ready</p>
+                            </div>
+                        </div>
+                        <div class="session-row">
+                            <div class="session-num">3</div>
+                            <div class="session-text">
+                                <h4>Live Roast & Offer Machine</h4>
+                                <p>Full mock + feedback</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Right Column -->
+            <div class="right-col">
+                <div class="success-section">
+                    <div class="success-label">
+                        <div class="label-icon">✨</div>
+                        <span class="label-text">Real Results</span>
+                    </div>
+                    <div class="success-stories">
+                        <div class="story-card">
+                            <div class="story-header">
+                                <span class="story-name">Karen B.</span>
+                                <span class="story-arrow">→</span>
+                            </div>
+                            <p class="story-before">Felt stuck, struggled to demonstrate her value and skills from her experiences.</p>
+                            <p class="story-result">4 OFFERS in under 90 days!</p>
+                            <div class="story-companies">
+                                <span class="company-pill">Google</span>
+                                <span class="company-pill">SpaceX</span>
+                                <span class="company-pill">GE</span>
+                                <span class="company-pill">Bridgestone</span>
+                            </div>
+                        </div>
+                        <div class="story-card">
+                            <div class="story-header">
+                                <span class="story-name">Sarah K.</span>
+                                <span class="story-arrow">→</span>
+                            </div>
+                            <p class="story-before">Intern who needed help extracting meaningful interview examples from her academic experiences and internships.</p>
+                            <p class="story-result">High paying Process Engineer role offer extended and accepted at Ford!</p>
+                            <div class="story-companies">
+                                <span class="company-pill">Ford Motor Company</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Bottom CTA -->
+        <div class="bottom-cta">
+            <div class="cta-left">
+                <span class="cta-title">Ready to be interview ready?</span>
+                <span class="cta-sessions">3 × 90-min Sessions</span>
+            </div>
+            <div class="cta-right">
+                <div class="cta-button">DM me to start →</div>
+                <span class="cta-url">LaunchtoLead.io</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

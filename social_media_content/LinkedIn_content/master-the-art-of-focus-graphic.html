@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Master the Art of Focus - LinkedIn Graphic</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #0a0a0a;
+        }
+
+        .graphic {
+            width: 1080px;
+            height: 1080px;
+            background: #0f172a;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Background accent */
+        .bg-accent {
+            position: absolute;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(163, 230, 53, 0.08) 0%, transparent 60%);
+            top: -200px;
+            right: -200px;
+        }
+
+        /* Top section */
+        .top-bar {
+            background: linear-gradient(135deg, #a3e635, #65a30d);
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-icon {
+            width: 36px;
+            height: 36px;
+            background: #0f172a;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            font-size: 18px;
+            color: #a3e635;
+        }
+
+        .logo-text {
+            font-size: 16px;
+            font-weight: 700;
+            color: #0f172a;
+        }
+
+        .badge {
+            background: rgba(15, 23, 42, 0.2);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 700;
+            color: #0f172a;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Main content */
+        .content {
+            padding: 50px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .headline {
+            font-size: 72px;
+            font-weight: 900;
+            color: #ffffff;
+            line-height: 1.05;
+            margin-bottom: 40px;
+        }
+
+        .headline span {
+            color: #a3e635;
+        }
+
+        /* Two column layout */
+        .columns {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .column {
+            flex: 1;
+        }
+
+        .column-header {
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid;
+        }
+
+        .column-header.bad {
+            color: #f87171;
+            border-color: #f87171;
+        }
+
+        .column-header.good {
+            color: #a3e635;
+            border-color: #a3e635;
+        }
+
+        .list-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 14px;
+        }
+
+        .icon {
+            font-size: 18px;
+            line-height: 1.4;
+        }
+
+        .list-item p {
+            color: #e2e8f0;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 1.4;
+        }
+
+        /* Hours progression */
+        .progression {
+            background: linear-gradient(135deg, rgba(163, 230, 53, 0.1), rgba(163, 230, 53, 0.02));
+            border: 1px solid rgba(163, 230, 53, 0.3);
+            border-radius: 16px;
+            padding: 30px 40px;
+            margin-bottom: 40px;
+        }
+
+        .progression-title {
+            color: #ffffff;
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .hours {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+        }
+
+        .hour {
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hour.active {
+            background: linear-gradient(135deg, #a3e635, #65a30d);
+            box-shadow: 0 0 40px rgba(163, 230, 53, 0.5);
+        }
+
+        .hour-num {
+            font-size: 32px;
+            font-weight: 900;
+            color: #ffffff;
+        }
+
+        .hour.active .hour-num {
+            color: #0f172a;
+        }
+
+        .hour-label {
+            font-size: 12px;
+            font-weight: 600;
+            color: #94a3b8;
+            text-transform: uppercase;
+        }
+
+        .hour.active .hour-label {
+            color: #0f172a;
+        }
+
+        .arrow {
+            color: #a3e635;
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        /* Bottom quote */
+        .quote {
+            text-align: center;
+        }
+
+        .quote-text {
+            font-size: 22px;
+            font-weight: 600;
+            color: #cbd5e1;
+            margin-bottom: 10px;
+        }
+
+        .quote-text span {
+            color: #a3e635;
+            font-weight: 700;
+        }
+
+        .quote-big {
+            font-size: 36px;
+            font-weight: 900;
+            color: #a3e635;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+        }
+
+        /* Footer */
+        .footer {
+            position: absolute;
+            bottom: 30px;
+            right: 50px;
+            color: #64748b;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .footer span {
+            color: #a3e635;
+        }
+    </style>
+</head>
+<body>
+    <div class="graphic">
+        <div class="bg-accent"></div>
+
+        <!-- Top bar -->
+        <div class="top-bar">
+            <div class="logo">
+                <div class="logo-icon">L</div>
+                <span class="logo-text">LaunchToLead</span>
+            </div>
+            <div class="badge">💡 Advice to My Younger Self</div>
+        </div>
+
+        <!-- Content -->
+        <div class="content">
+            <h1 class="headline">Master the<br>Art of <span>Focus.</span></h1>
+
+            <!-- Two columns -->
+            <div class="columns">
+                <div class="column">
+                    <div class="column-header bad">❌ What Killed My Focus</div>
+                    <div class="list-item">
+                        <span class="icon">📚</span>
+                        <p>Studying with friends at the library</p>
+                    </div>
+                    <div class="list-item">
+                        <span class="icon">📱</span>
+                        <p>Checking my phone every 20 minutes</p>
+                    </div>
+                    <div class="list-item">
+                        <span class="icon">🌙</span>
+                        <p>Studying late when already exhausted</p>
+                    </div>
+                    <div class="list-item">
+                        <span class="icon">🏋️</span>
+                        <p>Procrastinating for gym or lunch</p>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="column-header good">✓ The Simple Fix</div>
+                    <div class="list-item">
+                        <span class="icon">🚫</span>
+                        <p>Remove ALL distractions from the room</p>
+                    </div>
+                    <div class="list-item">
+                        <span class="icon">🚪</span>
+                        <p>Go into a room alone, close the door</p>
+                    </div>
+                    <div class="list-item">
+                        <span class="icon">⏰</span>
+                        <p>Set a timer (NOT your phone)</p>
+                    </div>
+                    <div class="list-item">
+                        <span class="icon">🚀</span>
+                        <p>Just do it. Start with 1 hour.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Progression -->
+            <div class="progression">
+                <div class="progression-title">🔥 Build Your Focus Muscle Over Time</div>
+                <div class="hours">
+                    <div class="hour">
+                        <span class="hour-num">1</span>
+                        <span class="hour-label">hour</span>
+                    </div>
+                    <span class="arrow">→</span>
+                    <div class="hour">
+                        <span class="hour-num">2</span>
+                        <span class="hour-label">hours</span>
+                    </div>
+                    <span class="arrow">→</span>
+                    <div class="hour">
+                        <span class="hour-num">3</span>
+                        <span class="hour-label">hours</span>
+                    </div>
+                    <span class="arrow">→</span>
+                    <div class="hour active">
+                        <span class="hour-num">4</span>
+                        <span class="hour-label">hours</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quote -->
+            <div class="quote">
+                <p class="quote-text">Imagine being as <span>addicted to focused work</span> as you are to your phone.</p>
+                <p class="quote-big">You'd be unstoppable.</p>
+            </div>
+        </div>
+
+        <div class="footer"><span>launchtolead.io</span></div>
+    </div>
+</body>
+</html>
+
+        .step-number {
+            width: 26px;
+            height: 26px;
+            background: linear-gradient(135deg, #a3e635, #65a30d);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            font-weight: 800;
+            color: #0f172a;
+            flex-shrink: 0;
+        }
+
+        .step-text {
+            color: #e2e8f0;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        /* Footer */
+        .footer {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            margin-top: auto;
+            padding-top: 10px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .website {
+            color: #a3e635;
+            font-size: 15px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+    <div class="graphic-container">
+        <!-- Glow effects -->
+        <div class="glow-orb glow-orb-1"></div>
+        <div class="glow-orb glow-orb-2"></div>
+
+        <!-- Header -->
+        <div class="header">
+            <div class="logo-section">
+                <div class="logo-circle">
+                    <span>L</span>
+                </div>
+                <span class="brand-name">LaunchToLead</span>
+            </div>
+            <div class="advice-badge">💡 Advice to My Younger Self</div>
+        </div>
+
+        <!-- Main content - horizontal layout -->
+        <div class="main-content">
+            <!-- Left side -->
+            <div class="left-side">
+                <h1 class="main-headline">
+                    Master the Art of<br><span class="highlight">Focus.</span>
+                </h1>
+
+                <!-- Progression pills -->
+                <div class="progression-inline">
+                    <span class="progression-label">Build up:</span>
+                    <div class="hour-pills">
+                        <span class="hour-pill">1hr</span>
+                        <span class="arrow-small">→</span>
+                        <span class="hour-pill">2hr</span>
+                        <span class="arrow-small">→</span>
+                        <span class="hour-pill">3hr</span>
+                        <span class="arrow-small">→</span>
+                        <span class="hour-pill final">4hr</span>
+                    </div>
+                </div>
+
+                <!-- Power statement -->
+                <div class="power-statement">
+                    <p class="power-text">
+                        Imagine being as <span class="green">addicted to focused work</span> as you are to checking your phone every 3 minutes.
+                    </p>
+                    <p class="unstoppable">You would be unstoppable.</p>
+                </div>
+            </div>
+
+            <!-- Right side -->
+            <div class="right-side">
+                <!-- Distractions -->
+                <div class="distractions-box">
+                    <div class="section-label red">
+                        <span>⚠️</span> What Killed My Focus in College
+                    </div>
+                    <div class="distractions-grid">
+                        <div class="distraction-item">
+                            <span class="x-icon">✕</span>
+                            <span>Studying with friends</span>
+                        </div>
+                        <div class="distraction-item">
+                            <span class="x-icon">✕</span>
+                            <span>Checking phone constantly</span>
+                        </div>
+                        <div class="distraction-item">
+                            <span class="x-icon">✕</span>
+                            <span>Studying late when tired</span>
+                        </div>
+                        <div class="distraction-item">
+                            <span class="x-icon">✕</span>
+                            <span>Procrastinating for gym/lunch</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Solution -->
+                <div class="solution-box">
+                    <div class="section-label green">
+                        <span>✓</span> The Simple Fix (No Hacks Needed)
+                    </div>
+                    <div class="solution-steps">
+                        <div class="step-item">
+                            <div class="step-number">1</div>
+                            <span class="step-text">Remove ALL distractions</span>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">2</div>
+                            <span class="step-text">Go into a room alone</span>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">3</div>
+                            <span class="step-text">Set timer (not phone)</span>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">4</div>
+                            <span class="step-text">Just do it. Start small.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <span class="website">launchtolead.io</span>
+        </div>
+    </div>
+</body>
+</html>

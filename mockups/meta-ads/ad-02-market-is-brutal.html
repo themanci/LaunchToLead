@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meta Ad - The Market Is Brutal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: #1a1a1a;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .ad-container {
+            width: 1080px;
+            height: 1080px;
+            background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Safe zone: 200px on left/right, content at bottom */
+        .safe-zone {
+            position: absolute;
+            top: 0;
+            left: 200px;
+            right: 200px;
+            bottom: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding-bottom: 105px;
+        }
+        
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 16px;
+        }
+        
+        .headline {
+            font-size: 34px;
+            font-weight: 800;
+            color: white;
+            line-height: 1.15;
+            margin-bottom: 6px;
+        }
+        
+        .headline-red {
+            color: #f87171;
+        }
+        
+        .subhead {
+            font-size: 14px;
+            color: #94a3b8;
+        }
+        
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-bottom: 14px;
+        }
+        
+        .stat-card {
+            text-align: center;
+            padding: 14px 10px;
+            border-radius: 12px;
+        }
+        
+        .stat-card.red { background: rgba(239, 68, 68, 0.15); border: 2px solid rgba(239, 68, 68, 0.3); }
+        .stat-card.yellow { background: rgba(234, 179, 8, 0.15); border: 2px solid rgba(234, 179, 8, 0.3); }
+        .stat-card.pink { background: rgba(236, 72, 153, 0.15); border: 2px solid rgba(236, 72, 153, 0.3); }
+        .stat-card.purple { background: rgba(168, 85, 247, 0.15); border: 2px solid rgba(168, 85, 247, 0.3); }
+        
+        .stat-number {
+            font-size: 30px;
+            font-weight: 800;
+            margin-bottom: 4px;
+        }
+        
+        .stat-card.red .stat-number { color: #f87171; }
+        .stat-card.yellow .stat-number { color: #fbbf24; }
+        .stat-card.pink .stat-number { color: #f472b6; }
+        .stat-card.purple .stat-number { color: #c084fc; }
+        
+        .stat-label {
+            font-size: 10px;
+            color: #94a3b8;
+            line-height: 1.3;
+        }
+        
+        /* Sound Familiar */
+        .familiar-section {
+            background: rgba(127, 29, 29, 0.3);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            border-radius: 10px;
+            padding: 12px 16px;
+            margin-bottom: 12px;
+        }
+        
+        .familiar-header {
+            font-size: 14px;
+            font-weight: 700;
+            color: white;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        
+        .familiar-items {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        
+        .familiar-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            font-size: 12px;
+            color: #fca5a5;
+        }
+        
+        .familiar-x {
+            color: #ef4444;
+            font-weight: 800;
+            flex-shrink: 0;
+        }
+        
+        /* Who this is for */
+        .who-section {
+            text-align: center;
+        }
+        
+        .who-label {
+            font-size: 10px;
+            font-weight: 700;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 4px;
+        }
+        
+        .who-text {
+            font-size: 14px;
+            color: #e2e8f0;
+        }
+        
+        /* CTA Section - full width */
+        .cta-section {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(135deg, #064e3b, #0f766e);
+            padding: 20px 210px;
+            text-align: center;
+        }
+        
+        .cta-main {
+            font-size: 20px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 6px;
+        }
+        
+        .cta-proof {
+            font-size: 14px;
+            color: #a7f3d0;
+            line-height: 1.35;
+        }
+        
+        .cta-proof strong {
+            color: #fcd34d;
+        }
+    </style>
+</head>
+<body>
+    <div class="ad-container">
+        <div class="safe-zone">
+            <div class="header">
+                <h1 class="headline">The Engineering Job Market<br>Is <span class="headline-red">Brutal</span> Right Now</h1>
+                <p class="subhead">You're not imagining it. The numbers don't lie.</p>
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stat-card red">
+                    <p class="stat-number">18-22%</p>
+                    <p class="stat-label">Grad unemployment & underemployment</p>
+                </div>
+                <div class="stat-card yellow">
+                    <p class="stat-number">250+</p>
+                    <p class="stat-label">Apps to get 3-5 interviews</p>
+                </div>
+                <div class="stat-card pink">
+                    <p class="stat-number">73%</p>
+                    <p class="stat-label">Report anxiety from job search</p>
+                </div>
+                <div class="stat-card purple">
+                    <p class="stat-number">40%+</p>
+                    <p class="stat-label">New grads have parents paying rent</p>
+                </div>
+            </div>
+            
+            <div class="familiar-section">
+                <p class="familiar-header">Sound Familiar?</p>
+                <div class="familiar-items">
+                    <div class="familiar-item">
+                        <span class="familiar-x">✕</span>
+                        <span>"200+ apps, barely any callbacks"</span>
+                    </div>
+                    <div class="familiar-item">
+                        <span class="familiar-x">✕</span>
+                        <span>"I freeze on behavioral questions"</span>
+                    </div>
+                    <div class="familiar-item">
+                        <span class="familiar-x">✕</span>
+                        <span>"I sound generic when talking about myself"</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="who-section">
+                <p class="who-label">This ad is for</p>
+                <p class="who-text">Engineering grads struggling to land their first role</p>
+            </div>
+        </div>
+        
+        <div class="cta-section">
+            <p class="cta-main">We can help you break through.</p>
+            <p class="cta-proof">In 90 days, <strong>Karen got offers from SpaceX & Google.</strong></p>
+        </div>
+    </div>
+</body>
+</html>

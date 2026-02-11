@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Launch Path 50% Off Announcement</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: #0a0a0a;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .graphic {
+            width: 1080px;
+            height: 1080px;
+            background: linear-gradient(160deg, #0f0f23 0%, #1a1a2e 40%, #16213e 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Animated background elements */
+        .graphic::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(239, 68, 68, 0.12) 0%, transparent 40%),
+                radial-gradient(circle at 80% 30%, rgba(16, 185, 129, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 60% 80%, rgba(139, 92, 246, 0.1) 0%, transparent 40%);
+        }
+        
+        .graphic::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+        
+        .content {
+            position: relative;
+            z-index: 1;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 35px 45px;
+        }
+        
+        /* Urgent Header Banner */
+        .urgent-banner {
+            background: linear-gradient(90deg, #dc2626, #ef4444, #dc2626);
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: 16px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin: -35px -45px 20px -45px;
+        }
+        
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 14px;
+        }
+        
+        .main-title {
+            font-size: 52px;
+            font-weight: 900;
+            color: white;
+            line-height: 1.05;
+            margin-bottom: 6px;
+            text-shadow: 0 4px 30px rgba(0,0,0,0.5);
+        }
+        
+        .main-title .highlight {
+            background: linear-gradient(135deg, #10b981, #34d399, #a3e635);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        /* Price Section - Hero Style */
+        .price-hero {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 14px;
+            padding: 18px;
+            background: rgba(16, 185, 129, 0.1);
+            border: 2px solid rgba(16, 185, 129, 0.3);
+            border-radius: 16px;
+            position: relative;
+        }
+        
+        .price-hero::before {
+            content: '50% OFF';
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            font-size: 14px;
+            font-weight: 800;
+            padding: 5px 20px;
+            border-radius: 50px;
+            letter-spacing: 2px;
+        }
+        
+        .original-price {
+            font-size: 32px;
+            font-weight: 700;
+            color: #64748b;
+            text-decoration: line-through;
+        }
+        
+        .arrow {
+            font-size: 28px;
+            color: #10b981;
+        }
+        
+        .new-price-box {
+            text-align: center;
+        }
+        
+        .new-price {
+            font-size: 54px;
+            font-weight: 900;
+            background: linear-gradient(135deg, #10b981, #a3e635);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+        }
+        
+        .price-subtitle {
+            font-size: 14px;
+            color: #94a3b8;
+            margin-top: 3px;
+        }
+        
+        /* Sound Familiar Pain Section */
+        .pain-section {
+            background: rgba(127, 29, 29, 0.2);
+            border: 2px solid rgba(239, 68, 68, 0.3);
+            border-radius: 14px;
+            padding: 14px 18px;
+            margin-bottom: 12px;
+        }
+        
+        .pain-header-main {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        
+        .pain-title-main {
+            font-size: 20px;
+            font-weight: 800;
+            color: white;
+        }
+        
+        .pain-quotes {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        .pain-quote {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: rgba(0, 0, 0, 0.25);
+            padding: 10px 14px;
+            border-radius: 10px;
+        }
+        
+        .x-icon {
+            color: #ef4444;
+            font-size: 16px;
+            font-weight: 800;
+            flex-shrink: 0;
+        }
+        
+        .quote-text {
+            font-size: 14px;
+            color: #f1f5f9;
+            font-style: italic;
+            line-height: 1.3;
+        }
+        
+        /* Sessions Section */
+        .sessions-section {
+            background: rgba(16, 185, 129, 0.08);
+            border: 2px solid rgba(16, 185, 129, 0.25);
+            border-radius: 14px;
+            padding: 14px 16px;
+            margin-bottom: 12px;
+        }
+        
+        .sessions-header {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        
+        .sessions-label {
+            display: block;
+            font-size: 11px;
+            font-weight: 700;
+            color: #14b8a6;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 2px;
+        }
+        
+        .sessions-title {
+            font-size: 16px;
+            font-weight: 800;
+            color: white;
+        }
+        
+        .sessions-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+        
+        .session-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 10px;
+            text-align: center;
+            border-left: 3px solid #10b981;
+        }
+        
+        .session-week {
+            display: block;
+            font-size: 10px;
+            font-weight: 700;
+            color: #10b981;
+            margin-bottom: 4px;
+            letter-spacing: 1px;
+        }
+        
+        .session-name {
+            display: block;
+            font-size: 12px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 2px;
+            line-height: 1.2;
+        }
+        
+        .session-desc {
+            display: block;
+            font-size: 10px;
+            color: #94a3b8;
+        }
+        
+        /* Success Stories - HERO SECTION */
+        .success-hero {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.15), rgba(16, 185, 129, 0.15));
+            border: 2px solid rgba(139, 92, 246, 0.3);
+            border-radius: 16px;
+            padding: 16px 20px;
+            margin-bottom: 0;
+            position: relative;
+            flex: 1;
+        }
+        
+        .success-badge {
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            background: linear-gradient(135deg, #8b5cf6, #a855f7);
+            color: white;
+            font-size: 11px;
+            font-weight: 800;
+            padding: 4px 14px;
+            border-radius: 50px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .success-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+            margin-top: 6px;
+        }
+        
+        .success-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 12px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .success-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #8b5cf6, #10b981);
+        }
+        
+        .success-name {
+            font-size: 18px;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 4px;
+        }
+        
+        .success-before {
+            font-size: 11px;
+            color: #94a3b8;
+            margin-bottom: 6px;
+            line-height: 1.3;
+        }
+        
+        .success-arrow {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 6px;
+        }
+        
+        .arrow-line {
+            flex: 1;
+            height: 2px;
+            background: linear-gradient(90deg, #64748b, #10b981);
+        }
+        
+        .arrow-head {
+            color: #10b981;
+            font-size: 12px;
+        }
+        
+        .success-result {
+            font-size: 14px;
+            font-weight: 800;
+            color: #10b981;
+            margin-bottom: 8px;
+            line-height: 1.2;
+        }
+        
+        .company-logos {
+            display: flex;
+            gap: 5px;
+            flex-wrap: wrap;
+        }
+        
+        .company-logo {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.3), rgba(16, 185, 129, 0.3));
+            color: white;
+            font-size: 10px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 5px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        /* CTA Footer */
+        .cta-footer {
+            background: linear-gradient(135deg, #10b981, #059669);
+            margin: 12px -45px -35px -45px;
+            padding: 14px 45px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .cta-text {
+            font-size: 20px;
+            font-weight: 800;
+            color: white;
+        }
+        
+        .cta-button {
+            background: white;
+            color: #059669;
+            font-size: 15px;
+            font-weight: 800;
+            padding: 10px 24px;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .cta-arrow {
+            font-size: 16px;
+        }
+        
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .graphic {
+                width: 1080px;
+                height: 1080px;
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="graphic">
+        <div class="content">
+            <!-- Urgent Banner -->
+            <div class="urgent-banner">
+                🔥 Limited Time: 50% OFF Engineering Career Coaching 🔥
+            </div>
+            
+            <!-- Header -->
+            <div class="header">
+                <h1 class="main-title">
+                    <span class="highlight">21-Day</span> Engineering<br>
+                    Career Launch Blueprint
+                </h1>
+            </div>
+            
+            <!-- Price Hero -->
+            <div class="price-hero">
+                <span class="original-price">$2,000</span>
+                <span class="arrow">→</span>
+                <div class="new-price-box">
+                    <div class="new-price">$1,000</div>
+                    <div class="price-subtitle">3 Live 1-on-1 Sessions (90 min each)</div>
+                </div>
+            </div>
+            
+            <!-- Sound Familiar Pain Points -->
+            <div class="pain-section">
+                <div class="pain-header-main">
+                    <span class="pain-title-main">Sound Familiar?</span>
+                </div>
+                <div class="pain-quotes">
+                    <div class="pain-quote">
+                        <span class="x-icon">✕</span>
+                        <span class="quote-text">"I've sent 200+ applications and barely heard back from anyone"</span>
+                    </div>
+                    <div class="pain-quote">
+                        <span class="x-icon">✕</span>
+                        <span class="quote-text">"I get interviews but freeze up when they ask behavioral questions"</span>
+                    </div>
+                    <div class="pain-quote">
+                        <span class="x-icon">✕</span>
+                        <span class="quote-text">"I don't know how to talk about my experience without sounding generic"</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 3 Sessions -->
+            <div class="sessions-section">
+                <div class="sessions-header">
+                    <span class="sessions-label">THE 21-DAY BLUEPRINT</span>
+                    <span class="sessions-title">3 Sessions. Complete Transformation.</span>
+                </div>
+                <div class="sessions-grid">
+                    <div class="session-card">
+                        <span class="session-week">WEEK 1</span>
+                        <span class="session-name">Resume Rebuild</span>
+                        <span class="session-desc">Impact Bullet Builder™</span>
+                    </div>
+                    <div class="session-card">
+                        <span class="session-week">WEEK 2</span>
+                        <span class="session-name">Interview Weaponization</span>
+                        <span class="session-desc">15+ STAR examples ready</span>
+                    </div>
+                    <div class="session-card">
+                        <span class="session-week">WEEK 3</span>
+                        <span class="session-name">Live Roast & Offer Machine</span>
+                        <span class="session-desc">Full mock + feedback</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Success Stories Hero -->
+            <div class="success-hero">
+                <div class="success-badge">✨ Real Results</div>
+                <div class="success-grid">
+                    <div class="success-card">
+                        <p class="success-name">Karen B.</p>
+                        <p class="success-before">Felt stuck, struggled to demonstrate her value and skills from her experiences.</p>
+                        <div class="success-arrow">
+                            <div class="arrow-line"></div>
+                            <span class="arrow-head">→</span>
+                        </div>
+                        <p class="success-result">4 OFFERS in under 90 days!</p>
+                        <div class="company-logos">
+                            <span class="company-logo">Google</span>
+                            <span class="company-logo">SpaceX</span>
+                            <span class="company-logo">GE</span>
+                            <span class="company-logo">Bridgestone</span>
+                        </div>
+                    </div>
+                    <div class="success-card">
+                        <p class="success-name">Sarah K.</p>
+                        <p class="success-before">Intern who needed help extracting meaningful interview examples from her academic experiences and internships.</p>
+                        <div class="success-arrow">
+                            <div class="arrow-line"></div>
+                            <span class="arrow-head">→</span>
+                        </div>
+                        <p class="success-result">High paying Process Engineer role offer extended and accepted at Ford!</p>
+                        <div class="company-logos">
+                            <span class="company-logo">Ford Motor Company</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- CTA Footer -->
+            <div class="cta-footer">
+                <span class="cta-text">Ready to be interview ready?</span>
+                <div class="cta-button">
+                    DM me or visit LaunchtoLead.io
+                    <span class="cta-arrow">→</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

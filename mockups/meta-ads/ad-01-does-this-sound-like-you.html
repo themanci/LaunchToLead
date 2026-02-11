@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meta Ad - Does This Sound Like You?</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: #1a1a1a;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .ad-container {
+            width: 1080px;
+            height: 1080px;
+            background: #ffffff;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Safe zone: 200px on left/right, content at bottom */
+        .safe-zone {
+            position: absolute;
+            top: 0;
+            left: 200px;
+            right: 200px;
+            bottom: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding-bottom: 110px;
+        }
+        
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 14px;
+        }
+        
+        .header-label {
+            font-size: 16px;
+            font-weight: 700;
+            color: #14b8a6;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+        
+        /* Main quote */
+        .quote-section {
+            text-align: center;
+            margin-bottom: 16px;
+        }
+        
+        .quote-mark {
+            font-size: 50px;
+            color: #14b8a6;
+            opacity: 0.4;
+            line-height: 0.6;
+            margin-bottom: 8px;
+            font-family: Georgia, serif;
+        }
+        
+        .quote-text {
+            font-size: 32px;
+            font-weight: 700;
+            color: #1a1a1a;
+            line-height: 1.25;
+        }
+        
+        .quote-highlight {
+            color: #dc2626;
+        }
+        
+        /* Reassurance */
+        .reassurance {
+            background: #f1f5f9;
+            border-radius: 12px;
+            padding: 16px 20px;
+            text-align: center;
+            margin-bottom: 14px;
+        }
+        
+        .reassurance-text {
+            font-size: 16px;
+            color: #475569;
+            line-height: 1.4;
+        }
+        
+        .reassurance-bold {
+            font-weight: 700;
+            color: #064e3b;
+        }
+        
+        /* Who this is for */
+        .who-section {
+            text-align: center;
+        }
+        
+        .who-label {
+            font-size: 10px;
+            font-weight: 700;
+            color: #94a3b8;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+        
+        .who-tags {
+            display: flex;
+            justify-content: center;
+            gap: 6px;
+            flex-wrap: wrap;
+        }
+        
+        .who-tag {
+            padding: 6px 12px;
+            border-radius: 100px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+        
+        .tag-green { background: #d1fae5; color: #065f46; }
+        .tag-orange { background: #ffedd5; color: #9a3412; }
+        .tag-blue { background: #dbeafe; color: #1e40af; }
+        .tag-purple { background: #f3e8ff; color: #7c3aed; }
+        
+        /* CTA Section - full width */
+        .cta-section {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #064e3b;
+            padding: 20px 210px;
+            text-align: center;
+        }
+        
+        .cta-main {
+            font-size: 20px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 6px;
+        }
+        
+        .cta-proof {
+            font-size: 14px;
+            color: #a7f3d0;
+            line-height: 1.35;
+        }
+        
+        .cta-proof strong {
+            color: #fcd34d;
+        }
+    </style>
+</head>
+<body>
+    <div class="ad-container">
+        <div class="safe-zone">
+            <div class="header">
+                <p class="header-label">Does This Sound Like You?</p>
+            </div>
+            
+            <div class="quote-section">
+                <div class="quote-mark">"</div>
+                <p class="quote-text">
+                    I've been applying for months.<br>
+                    My friends are getting hired.<br>
+                    <span class="quote-highlight">I'm starting to wonder if something is wrong with me.</span>
+                </p>
+            </div>
+            
+            <div class="reassurance">
+                <p class="reassurance-text">
+                    There's nothing wrong with you. Engineering school taught you to solve equations—<span class="reassurance-bold">not to sell yourself.</span>
+                </p>
+            </div>
+            
+            <div class="who-section">
+                <p class="who-label">This is for you if you're:</p>
+                <div class="who-tags">
+                    <span class="who-tag tag-green">Graduating senior</span>
+                    <span class="who-tag tag-orange">Recent grad</span>
+                    <span class="who-tag tag-blue">International student</span>
+                    <span class="who-tag tag-purple">Parent helping</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="cta-section">
+            <p class="cta-main">We can help you get unstuck.</p>
+            <p class="cta-proof">In 90 days, <strong>Karen got offers from SpaceX & Google.</strong></p>
+        </div>
+    </div>
+</body>
+</html>
