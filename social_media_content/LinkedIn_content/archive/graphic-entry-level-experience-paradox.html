@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Entry-Level Experience Paradox</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: #1e293b;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .graphic {
+            width: 1200px;
+            height: 628px;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .graphic::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 15% 50%, rgba(239, 68, 68, 0.1) 0%, transparent 35%),
+                        radial-gradient(circle at 85% 50%, rgba(163, 230, 53, 0.12) 0%, transparent 35%);
+        }
+        
+        .content {
+            position: relative;
+            z-index: 1;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 40px 50px;
+        }
+        
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 28px;
+        }
+        
+        .problem-box {
+            background: rgba(239, 68, 68, 0.1);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            border-radius: 8px;
+            padding: 12px 24px;
+            display: inline-block;
+            margin-bottom: 16px;
+        }
+        
+        .problem-text {
+            font-size: 18px;
+            color: #fca5a5;
+            font-style: italic;
+        }
+        
+        .main-title {
+            font-size: 36px;
+            font-weight: 800;
+            color: white;
+            line-height: 1.2;
+        }
+        
+        .main-title .highlight {
+            color: #a3e635;
+        }
+        
+        /* Strategy Grid */
+        .strategy-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            flex: 1;
+        }
+        
+        .strategy-box {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(163, 230, 53, 0.2);
+            border-radius: 12px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .strategy-number {
+            width: 32px;
+            height: 32px;
+            background: rgba(163, 230, 53, 0.2);
+            border: 2px solid #a3e635;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            font-weight: 700;
+            color: #a3e635;
+            margin-bottom: 12px;
+        }
+        
+        .strategy-title {
+            font-size: 17px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
+        
+        .strategy-desc {
+            font-size: 13px;
+            color: #94a3b8;
+            line-height: 1.5;
+            flex: 1;
+        }
+        
+        .strategy-desc strong {
+            color: #a3e635;
+        }
+        
+        /* Bottom Message */
+        .bottom-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+            padding-top: 16px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .bottom-message {
+            background: rgba(163, 230, 53, 0.1);
+            border: 1px solid rgba(163, 230, 53, 0.3);
+            border-radius: 8px;
+            padding: 14px 24px;
+        }
+        
+        .bottom-message p {
+            font-size: 18px;
+            font-weight: 600;
+            color: white;
+        }
+        
+        .bottom-message .accent {
+            color: #a3e635;
+        }
+        
+        .logo {
+            font-size: 18px;
+            font-weight: 800;
+            color: white;
+        }
+        
+        .logo .accent {
+            color: #a3e635;
+        }
+        
+        .tagline {
+            font-size: 13px;
+            color: #64748b;
+            margin-top: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div class="graphic">
+        <div class="content">
+            
+            <!-- Header -->
+            <div class="header">
+                <div class="problem-box">
+                    <p class="problem-text">"Entry-level job. Requirements: 1-3 years experience."</p>
+                </div>
+                <h1 class="main-title">4 Ways to <span class="highlight">Build Experience</span> Before You Graduate</h1>
+            </div>
+            
+            <!-- Strategy Grid -->
+            <div class="strategy-grid">
+                
+                <div class="strategy-box">
+                    <div class="strategy-number">1</div>
+                    <h3 class="strategy-title">Highlight What You Already Have</h3>
+                    <p class="strategy-desc">Internships, coursework projects, capstone, lab work — <strong>this all counts</strong>. Stop underselling yourself.</p>
+                </div>
+                
+                <div class="strategy-box">
+                    <div class="strategy-number">2</div>
+                    <h3 class="strategy-title">Build Independent Projects</h3>
+                    <p class="strategy-desc">Work on something <strong>not assigned by a professor</strong>. Shows passion, initiative, and self-motivation.</p>
+                </div>
+                
+                <div class="strategy-box">
+                    <div class="strategy-number">3</div>
+                    <h3 class="strategy-title">Consider a Co-Op</h3>
+                    <p class="strategy-desc">Delay graduation 1 semester for real experience. <strong>Tiny cost now, decades of benefit later.</strong></p>
+                </div>
+                
+                <div class="strategy-box">
+                    <div class="strategy-number">4</div>
+                    <h3 class="strategy-title">Choose Relevant Part-Time Work</h3>
+                    <p class="strategy-desc">TA, tutor, lab assistant, local firm — <strong>even if it pays less</strong>. It's an investment in your resume.</p>
+                </div>
+                
+            </div>
+            
+            <!-- Bottom Section -->
+            <div class="bottom-section">
+                <div class="bottom-message">
+                    <p>The experience gap is real — but it's <span class="accent">not insurmountable</span>.</p>
+                </div>
+                <div>
+                    <div class="logo">Launch <span class="accent">to</span> Lead</div>
+                    <div class="tagline">Engineering Career Coaching</div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>

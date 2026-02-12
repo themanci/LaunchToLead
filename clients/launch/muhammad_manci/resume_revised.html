@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhammad Manci - Resume</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            font-size: 11pt;
+            line-height: 1.4;
+            color: #1a1a1a;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+        
+        .resume {
+            max-width: 8.5in;
+            margin: 0 auto;
+            background: white;
+            padding: 0.6in 0.7in;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #2563eb;
+            padding-bottom: 16px;
+        }
+        
+        .name {
+            font-size: 24pt;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 8px;
+        }
+        
+        .contact {
+            font-size: 10pt;
+            color: #475569;
+        }
+        
+        .contact a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+        
+        /* Summary */
+        .summary {
+            margin-bottom: 20px;
+            padding: 12px 16px;
+            background: #f8fafc;
+            border-left: 3px solid #2563eb;
+            font-size: 10.5pt;
+            color: #334155;
+        }
+        
+        /* Sections */
+        .section {
+            margin-bottom: 18px;
+        }
+        
+        .section-title {
+            font-size: 12pt;
+            font-weight: 700;
+            color: #1e293b;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 4px;
+            margin-bottom: 12px;
+        }
+        
+        /* Job Entry */
+        .job {
+            margin-bottom: 16px;
+        }
+        
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 4px;
+        }
+        
+        .job-title {
+            font-size: 11pt;
+            font-weight: 700;
+            color: #1e293b;
+        }
+        
+        .job-date {
+            font-size: 10pt;
+            color: #64748b;
+            font-weight: 500;
+        }
+        
+        .job-company {
+            font-size: 10.5pt;
+            color: #475569;
+            font-style: italic;
+            margin-bottom: 8px;
+        }
+        
+        .job-bullets {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .job-bullets li {
+            position: relative;
+            padding-left: 16px;
+            margin-bottom: 6px;
+            font-size: 10.5pt;
+            color: #334155;
+        }
+        
+        .job-bullets li::before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #2563eb;
+        }
+        
+        /* Metrics - make them stand out */
+        .metric {
+            font-weight: 600;
+            color: #1e293b;
+        }
+        
+        /* Placeholder styling */
+        .placeholder {
+            background: #fef3c7;
+            color: #92400e;
+            padding: 1px 4px;
+            border-radius: 2px;
+            font-size: 9pt;
+        }
+        
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+        
+        .skill-category {
+            margin-bottom: 8px;
+        }
+        
+        .skill-label {
+            font-weight: 600;
+            font-size: 10pt;
+            color: #1e293b;
+            margin-bottom: 4px;
+        }
+        
+        .skill-list {
+            font-size: 10pt;
+            color: #475569;
+        }
+        
+        /* Print styles */
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .resume {
+                box-shadow: none;
+                padding: 0.5in;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="resume">
+        
+        <!-- Header -->
+        <header class="header">
+            <h1 class="name">Muhammad Manci</h1>
+            <p class="contact">
+                515-290-7023 | <a href="mailto:moemanci@gmail.com">moemanci@gmail.com</a> | Des Moines, IA
+            </p>
+        </header>
+        
+        <!-- Summary -->
+        <div class="summary">
+            High-volume sales professional with <span class="metric">12+ years of experience</span> in retail and in-home sales, specializing in construction, remodeling, and exterior products. Proven track record of exceeding <span class="metric">$1M+ in annual sales</span> and ranking as <span class="metric">top performer across a 5-state district</span>. Skilled in project estimation, client relationship management, and cross-functional coordination.
+        </div>
+        
+        <!-- Work Experience -->
+        <section class="section">
+            <h2 class="section-title">Professional Experience</h2>
+            
+            <!-- Job 1 -->
+            <div class="job">
+                <div class="job-header">
+                    <span class="job-title">Commercial Project Estimator</span>
+                    <span class="job-date">October 2023 – Present</span>
+                </div>
+                <div class="job-company">Wolf Construction | Des Moines, IA</div>
+                <ul class="job-bullets">
+                    <li>
+                        Delivered <span class="metric"><span class="placeholder">[X]</span> framing and finish carpentry estimates</span> for multi-million dollar commercial buildings by analyzing blueprints in PlanSwift and collaborating directly with general contractors, <span class="placeholder">[resulting in X% win rate / $X in awarded contracts]</span>
+                    </li>
+                    <li>
+                        Scoped <span class="metric"><span class="placeholder">[X]</span> commercial projects</span> through on-site meetings with property developers, accurately defining project requirements and timelines using Gantt charts to ensure on-time delivery
+                    </li>
+                    <li>
+                        Maintained <span class="metric">100% operational continuity</span> by stepping in as acting commercial roofing foreman after abrupt departure, managing <span class="placeholder">[X crew members / $X in active projects]</span> while ensuring zero project delays
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Job 2 -->
+            <div class="job">
+                <div class="job-header">
+                    <span class="job-title">Project Specialist – Exteriors</span>
+                    <span class="job-date">December 2017 – October 2023</span>
+                </div>
+                <div class="job-company">Lowe's | West Des Moines, IA</div>
+                <ul class="job-bullets">
+                    <li>
+                        Generated <span class="metric">$1M+ in annual project sales</span> for 6 consecutive years by conducting in-home consultations for windows, doors, fencing, decking, roofing, and siding—consistently ranking as <span class="metric">top volume salesperson across a 5-state Midwest district</span>
+                    </li>
+                    <li>
+                        Produced <span class="metric">hundreds of qualified leads annually</span> through proactive outreach and customer engagement, converting prospects to signed contracts via Adobe Sign with a <span class="placeholder">[X%]</span> close rate
+                    </li>
+                    <li>
+                        Ensured <span class="metric"><span class="placeholder">[X%]</span> customer satisfaction</span> by coordinating installation schedules, managing order pipelines, and serving as primary liaison between customers and install crews
+                    </li>
+                    <li>
+                        Expanded market coverage by <span class="metric">3 store locations</span> (West Des Moines, Jordan Creek, Ames) by filling sales gaps and maintaining consistent revenue performance across all territories
+                    </li>
+                    <li>
+                        Developed expertise in premium product lines including Pella Windows, Trex Decking, GAF Roofing, and Georgia Pacific Siding, enabling consultative selling that matched customer needs to optimal solutions
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Job 3 -->
+            <div class="job">
+                <div class="job-header">
+                    <span class="job-title">Project Specialist – Interiors</span>
+                    <span class="job-date">December 2013 – December 2017</span>
+                </div>
+                <div class="job-company">Lowe's | Altoona, IA</div>
+                <ul class="job-bullets">
+                    <li>
+                        Sold <span class="metric">$1M in kitchen and bath remodel projects within first 6 months</span>—doubling the store's historical annual performance of under $500K—by building trust with customers and delivering compelling design proposals
+                    </li>
+                    <li>
+                        Closed <span class="metric"><span class="placeholder">[X]</span> high-value remodel projects</span> ranging from $40K–$100K by conducting in-home consultations, creating custom designs in 2020 CAD, and presenting solutions aligned with customer budgets and style preferences
+                    </li>
+                    <li>
+                        Generated <span class="metric"><span class="placeholder">[X]</span> leads</span> by representing Lowe's at the Des Moines Home + Garden Show, increasing brand visibility and building a pipeline of prospective customers
+                    </li>
+                    <li>
+                        Built and mentored a high-performing sales team by sharing best practices and fostering collaboration, contributing to <span class="placeholder">[X% increase in team sales / improved team metrics]</span>
+                    </li>
+                </ul>
+            </div>
+            
+        </section>
+        
+        <!-- Skills -->
+        <section class="section">
+            <h2 class="section-title">Skills & Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <div class="skill-label">Sales & Business Development</div>
+                    <div class="skill-list">In-Home Sales, Consultative Selling, Lead Generation, Contract Negotiation, Customer Relationship Management</div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-label">Project Management</div>
+                    <div class="skill-list">Estimating, Quoting, Order Management, Install Coordination, Timeline Management, Scope Definition</div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-label">Software & Tools</div>
+                    <div class="skill-list">PlanSwift, ProCore, Salesforce, 2020 CAD Design, Adobe Sign, Acrobat Pro, Microsoft Office, Google Workspace</div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-label">Industry Knowledge</div>
+                    <div class="skill-list">Kitchen & Bath Remodeling, Roofing, Siding, Windows, Doors, Decking, Fencing, Commercial Framing</div>
+                </div>
+            </div>
+        </section>
+        
+    </div>
+</body>
+</html>
