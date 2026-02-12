@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remote Work Realities in Engineering</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: #1e293b;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .graphic {
+            width: 1200px;
+            height: 628px;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .graphic::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 30%, rgba(99, 102, 241, 0.12) 0%, transparent 35%),
+                        radial-gradient(circle at 80% 70%, rgba(163, 230, 53, 0.1) 0%, transparent 35%);
+        }
+        
+        .content {
+            position: relative;
+            z-index: 1;
+            height: 100%;
+            display: flex;
+            padding: 40px 50px;
+            gap: 40px;
+        }
+        
+        /* Left Column */
+        .left-col {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .eyebrow {
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #a3e635;
+            margin-bottom: 12px;
+        }
+        
+        .main-title {
+            font-size: 32px;
+            font-weight: 800;
+            color: white;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+        
+        .main-title .highlight {
+            color: #a3e635;
+        }
+        
+        .subtitle {
+            font-size: 15px;
+            color: #94a3b8;
+            line-height: 1.5;
+            margin-bottom: 24px;
+        }
+        
+        /* Comparison boxes */
+        .comparison {
+            display: flex;
+            gap: 16px;
+        }
+        
+        .compare-box {
+            flex: 1;
+            border-radius: 12px;
+            padding: 18px;
+        }
+        
+        .compare-box.office {
+            background: rgba(99, 102, 241, 0.1);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+        }
+        
+        .compare-box.remote {
+            background: rgba(251, 191, 36, 0.1);
+            border: 1px solid rgba(251, 191, 36, 0.3);
+        }
+        
+        .compare-icon {
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+        
+        .compare-label {
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+        
+        .office .compare-label {
+            color: #818cf8;
+        }
+        
+        .remote .compare-label {
+            color: #fbbf24;
+        }
+        
+        .compare-list {
+            list-style: none;
+        }
+        
+        .compare-list li {
+            font-size: 12px;
+            color: #cbd5e1;
+            margin-bottom: 5px;
+            padding-left: 14px;
+            position: relative;
+        }
+        
+        .compare-list li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: #64748b;
+            font-size: 10px;
+        }
+        
+        /* Right Column */
+        .right-col {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 14px;
+        }
+        
+        .section-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 4px;
+        }
+        
+        .tip-box {
+            background: rgba(163, 230, 53, 0.08);
+            border: 1px solid rgba(163, 230, 53, 0.2);
+            border-radius: 10px;
+            padding: 14px 18px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .tip-number {
+            width: 26px;
+            height: 26px;
+            background: rgba(163, 230, 53, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            font-weight: 700;
+            color: #a3e635;
+            flex-shrink: 0;
+        }
+        
+        .tip-text {
+            font-size: 14px;
+            color: #e2e8f0;
+        }
+        
+        .tip-text strong {
+            color: #a3e635;
+        }
+        
+        /* Bottom Bar */
+        .bottom-bar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.03);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 14px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .bottom-message {
+            font-size: 15px;
+            font-weight: 600;
+            color: white;
+        }
+        
+        .bottom-message .accent {
+            color: #a3e635;
+        }
+        
+        .logo {
+            font-size: 16px;
+            font-weight: 800;
+            color: white;
+        }
+        
+        .logo .accent {
+            color: #a3e635;
+        }
+    </style>
+</head>
+<body>
+    <div class="graphic">
+        <div class="content">
+            
+            <!-- Left Column -->
+            <div class="left-col">
+                <p class="eyebrow">Remote Work Reality</p>
+                <h1 class="main-title">The Hidden <span class="highlight">Trade-Offs</span> of Remote Engineering Jobs</h1>
+                <p class="subtitle">Remote work exists in engineering—but it comes with career implications most people don't talk about.</p>
+                
+                <!-- Comparison -->
+                <div class="comparison">
+                    <div class="compare-box office">
+                        <div class="compare-icon">🏢</div>
+                        <p class="compare-label">In-Office Advantage</p>
+                        <ul class="compare-list">
+                            <li>Osmosis learning from peers</li>
+                            <li>Spontaneous collaboration</li>
+                            <li>Meaty, career-advancing projects</li>
+                            <li>Visibility with leadership</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="compare-box remote">
+                        <div class="compare-icon">🏠</div>
+                        <p class="compare-label">Remote Risk</p>
+                        <ul class="compare-list">
+                            <li>Often assigned "busywork"</li>
+                            <li>Less strategic involvement</li>
+                            <li>Harder to build relationships</li>
+                            <li>Out of sight, out of mind</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Right Column -->
+            <div class="right-col">
+                <p class="section-title">How to Thrive Remotely:</p>
+                
+                <div class="tip-box">
+                    <div class="tip-number">1</div>
+                    <p class="tip-text"><strong>Schedule regular check-ins</strong> — be proactive, don't wait</p>
+                </div>
+                
+                <div class="tip-box">
+                    <div class="tip-number">2</div>
+                    <p class="tip-text"><strong>Volunteer for cross-functional projects</strong> — get visibility</p>
+                </div>
+                
+                <div class="tip-box">
+                    <div class="tip-number">3</div>
+                    <p class="tip-text"><strong>Use real-time communication</strong> — mimic in-office presence</p>
+                </div>
+                
+                <div class="tip-box">
+                    <div class="tip-number">4</div>
+                    <p class="tip-text"><strong>Speak up in meetings</strong> — don't be the quiet box</p>
+                </div>
+                
+                <div class="tip-box">
+                    <div class="tip-number">5</div>
+                    <p class="tip-text"><strong>Build relationships intentionally</strong> — they won't happen by accident</p>
+                </div>
+            </div>
+            
+        </div>
+        
+        <!-- Bottom Bar -->
+        <div class="bottom-bar">
+            <p class="bottom-message">Know what you're <span class="accent">optimizing for</span>. Then choose accordingly.</p>
+            <div class="logo">Launch <span class="accent">to</span> Lead</div>
+        </div>
+    </div>
+</body>
+</html>

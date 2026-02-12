@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Low GPA? Here's How to Own It</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: #1e293b;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .graphic {
+            width: 1200px;
+            height: 628px;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .graphic::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 10% 50%, rgba(239, 68, 68, 0.1) 0%, transparent 30%),
+                        radial-gradient(circle at 90% 50%, rgba(163, 230, 53, 0.12) 0%, transparent 30%);
+        }
+        
+        .content {
+            position: relative;
+            z-index: 1;
+            height: 100%;
+            display: flex;
+            padding: 40px 50px;
+            gap: 40px;
+        }
+        
+        /* Left Column */
+        .left-col {
+            flex: 0.9;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .eyebrow {
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #f87171;
+            margin-bottom: 12px;
+        }
+        
+        .main-title {
+            font-size: 34px;
+            font-weight: 800;
+            color: white;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+        
+        .main-title .highlight {
+            color: #a3e635;
+        }
+        
+        .subtitle {
+            font-size: 16px;
+            color: #94a3b8;
+            line-height: 1.5;
+            margin-bottom: 24px;
+        }
+        
+        /* ABC Framework */
+        .abc-framework {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(163, 230, 53, 0.2);
+            border-radius: 12px;
+            padding: 20px;
+        }
+        
+        .abc-title {
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #a3e635;
+            margin-bottom: 14px;
+        }
+        
+        .abc-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 10px;
+        }
+        
+        .abc-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .abc-letter {
+            width: 28px;
+            height: 28px;
+            background: rgba(163, 230, 53, 0.2);
+            border: 2px solid #a3e635;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: 700;
+            color: #a3e635;
+            flex-shrink: 0;
+        }
+        
+        .abc-text {
+            font-size: 14px;
+            color: #e2e8f0;
+            line-height: 1.4;
+        }
+        
+        .abc-text strong {
+            color: white;
+        }
+        
+        /* Right Column */
+        .right-col {
+            flex: 1.1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 14px;
+        }
+        
+        .tip-box {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 16px 20px;
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+        }
+        
+        .tip-number {
+            width: 28px;
+            height: 28px;
+            background: rgba(163, 230, 53, 0.15);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: 700;
+            color: #a3e635;
+            flex-shrink: 0;
+        }
+        
+        .tip-content {
+            flex: 1;
+        }
+        
+        .tip-title {
+            font-size: 15px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 4px;
+        }
+        
+        .tip-desc {
+            font-size: 13px;
+            color: #94a3b8;
+            line-height: 1.4;
+        }
+        
+        /* Bottom Bar */
+        .bottom-bar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(163, 230, 53, 0.1);
+            border-top: 1px solid rgba(163, 230, 53, 0.2);
+            padding: 14px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .bottom-message {
+            font-size: 16px;
+            font-weight: 600;
+            color: white;
+        }
+        
+        .bottom-message .accent {
+            color: #a3e635;
+        }
+        
+        .logo {
+            font-size: 16px;
+            font-weight: 800;
+            color: white;
+        }
+        
+        .logo .accent {
+            color: #a3e635;
+        }
+    </style>
+</head>
+<body>
+    <div class="graphic">
+        <div class="content">
+            
+            <!-- Left Column -->
+            <div class="left-col">
+                <p class="eyebrow">Low GPA?</p>
+                <h1 class="main-title">How to <span class="highlight">Own It</span> and Still Land the Job</h1>
+                <p class="subtitle">A low GPA isn't a death sentence. It's a chapter in your story—not the whole book.</p>
+                
+                <!-- ABC Framework -->
+                <div class="abc-framework">
+                    <p class="abc-title">The A-B-C Response Framework</p>
+                    
+                    <div class="abc-item">
+                        <div class="abc-letter">A</div>
+                        <p class="abc-text"><strong>Acknowledge:</strong> "My GPA is 2.6. I struggled early on due to personal circumstances."</p>
+                    </div>
+                    
+                    <div class="abc-item">
+                        <div class="abc-letter">B</div>
+                        <p class="abc-text"><strong>Bridge:</strong> "But I've made significant improvements since then."</p>
+                    </div>
+                    
+                    <div class="abc-item">
+                        <div class="abc-letter">C</div>
+                        <p class="abc-text"><strong>Capability:</strong> "I raised my major GPA, earned A's in my hardest courses, and gained hands-on experience."</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Right Column -->
+            <div class="right-col">
+                
+                <div class="tip-box">
+                    <div class="tip-number">1</div>
+                    <div class="tip-content">
+                        <p class="tip-title">Always include your GPA</p>
+                        <p class="tip-desc">Leaving it off makes recruiters assume the worst. Use your major GPA if it's higher.</p>
+                    </div>
+                </div>
+                
+                <div class="tip-box">
+                    <div class="tip-number">2</div>
+                    <div class="tip-content">
+                        <p class="tip-title">Show the upward trajectory</p>
+                        <p class="tip-desc">1.7 → 2.6 is a story of grit. A's in your hardest classes prove capability.</p>
+                    </div>
+                </div>
+                
+                <div class="tip-box">
+                    <div class="tip-number">3</div>
+                    <div class="tip-content">
+                        <p class="tip-title">Shift focus to experience</p>
+                        <p class="tip-desc">Internships, projects, and leadership matter more. Only 12% of STEM jobs have strict GPA cutoffs.</p>
+                    </div>
+                </div>
+                
+                <div class="tip-box">
+                    <div class="tip-number">4</div>
+                    <div class="tip-content">
+                        <p class="tip-title">GPA fades fast</p>
+                        <p class="tip-desc">After your first job, no one cares. One year of experience eclipses four years of grades.</p>
+                    </div>
+                </div>
+                
+            </div>
+            
+        </div>
+        
+        <!-- Bottom Bar -->
+        <div class="bottom-bar">
+            <p class="bottom-message">Own it. Explain it. Show your <span class="accent">growth</span>.</p>
+            <div class="logo">Launch <span class="accent">to</span> Lead</div>
+        </div>
+    </div>
+</body>
+</html>
