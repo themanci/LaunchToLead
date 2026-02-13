@@ -401,7 +401,7 @@ Build your target list like an investment portfolio—diversify across risk/rewa
 |----------|---------|----------|------------|
 | **🐋 The Whales** | Big Tech. High pay ($100K+), extreme competition (1:1000 odds) | Google, Apple, Microsoft, Meta, Amazon, Tesla | Target "new grad" specific tracks. IBM has "new collar" programs for non-traditional backgrounds. |
 | **🛡️ The Shields** | Defense contractors. Stability, clearance pathways, citizenship required | Lockheed Martin, Northrop Grumman, Raytheon, L3Harris, General Dynamics, Boeing | DoD budgets up 5%. Rotational programs for MechE/EE. Northrop top Forbes employer. |
-| **🎓 The Training Grounds** | Rotational programs. Gold standard for new grads. | John Deere, GE Aerospace, Honeywell, Cummins, 3M, P&G, Caterpillar | 2-year programs convert 80% to full-time. Best for building your resume foundation. |
+| **🎓 The Training Grounds** | Rotational programs. Gold standard for new grads. | GE Aerospace, Honeywell, Cummins, 3M, P&G, Caterpillar | 2-year programs convert 80% to full-time. Best for building your resume foundation. |
 | **🏗️ The Builders** | Industrial/Manufacturing. Huge revenue, low competition, hands-on work. | Honeywell, Cummins, Eaton, Parker Hannifin, Rockwell Automation, Emerson | Desperate for engineers. $10B+ revenues. Stock options often included. |
 | **🚀 The Innovators** | Startups/Medtech. High growth, equity upside, less bureaucracy. | Nuro, Stryker, Intuitive Surgical, Rivian, Anduril, Relativity Space | 15% hiring growth in AI/ML roles. Startups hire 20% of new grads in tech. |
 
@@ -458,7 +458,7 @@ Recently acquired startups need to backfill talent. Search "[Company] acquisitio
 
 | Discipline | Training Grounds | Builders | Innovators |
 |------------|------------------|----------|------------|
-| **Mechanical** | John Deere, Caterpillar, GE Aerospace | Parker Hannifin, Eaton, Cummins | Rivian, Relativity Space, SpaceX |
+| **Mechanical** | Caterpillar, GE Aerospace, Honeywell | Parker Hannifin, Eaton, Cummins | Rivian, Relativity Space, SpaceX |
 | **Electrical** | Honeywell, Emerson, 3M | Rockwell Automation, ABB, Schneider | Anduril, Aurora, Zoox |
 | **Software/CS** | Microsoft, IBM, Salesforce | Intuit, ServiceNow, Workday | Stripe, Databricks, Scale AI |
 | **Civil** | AECOM, Jacobs, Bechtel | Kiewit, Fluor, Black & Veatch | Modular construction startups |
@@ -719,7 +719,7 @@ A CS new grad used this pivot in a 20-min alumni chat; got referred to a mid-siz
 ### The Universal Translator + ATS Pass™
 **The Problem:** Candidates get pigeonholed. A Civil Engineer can't get a Mechanical job because the recruiter doesn't understand "Highway Design."
 
-**The Origin Story:** When I applied to John Deere as a Mechanical Engineer, my only professional experience was 1 year at the Iowa Department of Transportation as a Highway Design Engineer. I realized the content didn't matter—**the competency did.**
+**The Origin Story:** When I applied to a Fortune 100 Ag OEM as a Mechanical Engineer, my only professional experience was 1 year at the Iowa Department of Transportation as a Highway Design Engineer. I realized the content didn't matter—**the competency did.**
 
 **The Tactic: The Jargon Audit**
 Go through every bullet point on your resume. If a word is specific to your old industry, delete it and replace it with the universal engineering competency.
@@ -803,7 +803,7 @@ Move up one level of abstraction until the skill is universal.
 ### The Asset Mindset Shift™
 **The Problem:** Candidates are submissive. They wait to be picked. They approach recruiters like beggars asking for a favor.
 
-**The Origin Story:** My first career fair at Iowa State, I waited in line for 45 minutes to talk to a John Deere recruiter. When I got to the front, I handed over my resume like I was handing in homework. The recruiter glanced at it for 3 seconds and said "We'll be in touch." I walked away feeling like a number. I realized: **I was acting like a beggar, not an asset.** The next career fair, I led with a question about their current projects. The conversation lasted 10 minutes. I got an interview.
+**The Origin Story:** My first career fair at Iowa State, I waited in line for 45 minutes to talk to a Fortune 100 recruiter. When I got to the front, I handed over my resume like I was handing in homework. The recruiter glanced at it for 3 seconds and said "We'll be in touch." I walked away feeling like a number. I realized: **I was acting like a beggar, not an asset.** The next career fair, I led with a question about their current projects. The conversation lasted 10 minutes. I got an interview.
 
 **The Tactic: Confidence Calibration**
 This isn't about being arrogant or cocky. It's about viewing yourself as an asset to be acquired, not a beggar asking for a favor.
@@ -957,7 +957,7 @@ The bigger the monster, the bigger the hero.
 **Why It Works:** 99% of interviewers say yes. It shows preparation and professionalism. The ask itself is a signal: "I prepared for this."
 
 ### The Visual Aid Binder™
-**The Origin Story:** Before my final-round interview at John Deere, I was sitting in the waiting room. I had 15 stories memorized, but I realized I had no way to SHOW them what I was talking about. I went home, printed out CAD screenshots, graphs, and photos from every project. I put them in a tabbed binder. In my next interview, when they asked about a design project, I handed them the binder and said "Here's exactly what I built." Their eyes lit up. I got the offer.
+**The Origin Story:** Before my final-round interview at a Fortune 100 Ag OEM, I was sitting in the waiting room. I had 15 stories memorized, but I realized I had no way to SHOW them what I was talking about. I went home, printed out CAD screenshots, graphs, and photos from every project. I put them in a tabbed binder. In my next interview, when they asked about a design project, I handed them the binder and said "Here's exactly what I built." Their eyes lit up. I got the offer.
 
 **What to Include:**
 For each of your 15 prepared examples, gather:
