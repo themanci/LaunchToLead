@@ -18,7 +18,7 @@ Launch to Lead Engineering provides career coaching for:
 - **Hosting**: GitHub Pages (free, fast, reliable)
 - **Forms**: Direct LinkedIn/Email contact
 - **Booking**: Direct scheduling via contact page
-- **Payments**: Venmo/Zelle (arranged after discovery call)
+- **Payments**: Stripe, Venmo, or Zelle (arranged after discovery call)
 
 ## 📁 Project Structure
 
