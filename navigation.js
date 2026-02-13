@@ -172,18 +172,12 @@
                 <span class="font-bold text-xl text-brand-primary tracking-tight">Launch<span class="font-light text-brand-secondary">ToLead</span></span>
             </a>
             <div class="hidden md:flex items-center space-x-6">
-                <a href="launch.html" class="${getLinkClasses('launch')}">Launch</a>
-                <a href="pivot.html" class="${getLinkClasses('pivot')}">Pivot</a>
-                <a href="accelerate.html" class="${getLinkClasses('accelerate')}">Accelerate</a>
-                <a href="packages.html" class="${getLinkClasses('packages')}">Packages</a>
-                <a href="faq.html" class="${getLinkClasses('faq')}">FAQ</a>
-                <a href="success-stories.html" class="${getLinkClasses('success-stories')}">Success Stories</a>
                 <a href="about.html" class="${getLinkClasses('about')}">About</a>
-                <a href="blog.html" class="${getLinkClasses('blog')}">Blog</a>
-                <a href="vault.html" class="${getLinkClasses('vault')}">The L² Vault</a>
+                <a href="success-stories.html" class="${getLinkClasses('success-stories')}">Success Stories</a>
+                <a href="vault.html" class="${getLinkClasses('vault')}">Free Resources</a>
                 ${getSocialDropdownHTML()}
-                <a href="contact.html" class="${getLinkClasses('contact', true)}">
-                    Get Started
+                <a href="https://calendar.app.google/uzaLZUWSUH3ZbaGr6" target="_blank" class="${getLinkClasses('contact', true)}">
+                    Book a Free Call →
                 </a>
             </div>
             <!-- Mobile menu button -->
@@ -203,16 +197,10 @@
     <!-- Mobile menu (animated) -->
     <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-white border-b border-emerald-100 shadow-lg z-50 transform transition-all duration-200 -translate-y-2 opacity-0 pointer-events-none">
         <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <a href="launch.html" class="${getMobileLinkClasses('launch')}">Launch</a>
-            <a href="pivot.html" class="${getMobileLinkClasses('pivot')}">Pivot</a>
-            <a href="accelerate.html" class="${getMobileLinkClasses('accelerate')}">Accelerate</a>
-            <a href="packages.html" class="${getMobileLinkClasses('packages')}">Packages</a>
-            <a href="faq.html" class="${getMobileLinkClasses('faq')}">FAQ</a>
-            <a href="success-stories.html" class="${getMobileLinkClasses('success-stories')}">Success Stories</a>
             <a href="about.html" class="${getMobileLinkClasses('about')}">About</a>
-            <a href="blog.html" class="${getMobileLinkClasses('blog')}">Blog</a>
-            <a href="vault.html" class="${getMobileLinkClasses('vault')}">The L² Vault</a>
-            <a href="contact.html" class="${getMobileLinkClasses('contact', true)}">Get Started</a>
+            <a href="success-stories.html" class="${getMobileLinkClasses('success-stories')}">Success Stories</a>
+            <a href="vault.html" class="${getMobileLinkClasses('vault')}">Free Resources</a>
+            <a href="https://calendar.app.google/uzaLZUWSUH3ZbaGr6" target="_blank" class="${getMobileLinkClasses('contact', true)}">Book a Free Call →</a>
             ${getMobileSocialHTML()}
         </div>
     </div>
