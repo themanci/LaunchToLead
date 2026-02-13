@@ -23,7 +23,7 @@
         leadMagnet: {
             name: "Impact Bullet Builder Starter Guide",
             tagline: "Stop Applying Into the Void",
-            subtitle: "The exact formula I used to land my first engineering role at John Deere",
+            subtitle: "The exact formula I used to land my first engineering role at a Fortune 100 Ag OEM",
             painPoints: [
                 "Sent 100+ applications with zero callbacks?",
                 "Resume full of responsibilities that impress no one?",
@@ -87,7 +87,7 @@
                     '<div id="popup-main" class="p-8">' +
                         '<!-- Main content -->' +
                         '<div class="text-center mb-8">' +
-                            '<h2 class="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">The Resume Formula that landed me John Deere</h2>' +
+                            '<h2 class="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">The Resume Formula that landed me a Fortune 100 Ag OEM</h2>' +
                             '<p class="text-emerald-100 text-base mb-4">Completely FREE PDF Download — Transform your resume like I did</p>' +
                             '<div class="bg-red-950/50 border-2 border-red-800/70 rounded-xl px-4 py-3 inline-block">' +
                                 '<p class="text-red-200 text-sm font-semibold">Your resume has 6 seconds to impress, you\'re wasting those 6 seconds without this formula.</p>' +
