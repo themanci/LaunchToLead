@@ -177,7 +177,7 @@
                             '</div>' +
                             '<!-- Cost of waiting -->' +
                             '<div class="bg-amber-950/30 border border-amber-800/50 rounded-lg p-3 mb-4">' +
-                                '<p class="text-amber-200 text-xs text-center"><strong class="text-amber-300">The math:</strong> Investing $1,997 for help vs. losing $6-8K <strong>every month</strong> you wait to land your job</p>' +
+                                '<p class="text-amber-200 text-xs text-center"><strong class="text-amber-300">The math:</strong> A small coaching investment vs. losing $6-8K <strong>every month</strong> you wait to land your job</p>' +
                                 '<p class="text-amber-300 text-xs text-center mt-2 font-semibold">You\'ve already waited long enough.</p>' +
                             '</div>' +
                             '<!-- Calendar link -->' +

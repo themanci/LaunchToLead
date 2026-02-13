@@ -9,16 +9,7 @@ tailwind.config = {
                     light: '#ecfdf5', /* Emerald 50 */
                     surface: '#ffffff'
                 },
-                pivot: {
-                    primary: '#b45309', /* Amber 700 */
-                    secondary: '#f59e0b', /* Amber 500 */
-                    light: '#fffbeb', /* Amber 50 */
-                },
-                accelerate: {
-                    primary: '#4338ca', /* Indigo 700 */
-                    secondary: '#6366f1', /* Indigo 500 */
-                    light: '#eef2ff', /* Indigo 50 */
-                }
+
             },
             fontFamily: {
                 sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
