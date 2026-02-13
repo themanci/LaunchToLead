@@ -8,17 +8,11 @@
     // Page configuration for dynamic highlighting
     const pages = {
         'index.html': { name: 'home', displayName: 'Home' },
-        'launch.html': { name: 'launch', displayName: 'Launch' },
-        'pivot.html': { name: 'pivot', displayName: 'Pivot' },
-        'accelerate.html': { name: 'accelerate', displayName: 'Accelerate' },
-        'packages.html': { name: 'packages', displayName: 'Packages' },
-        'faq.html': { name: 'faq', displayName: 'FAQ' },
         'success-stories.html': { name: 'success-stories', displayName: 'Success Stories' },
         'about.html': { name: 'about', displayName: 'About' },
-        'blog.html': { name: 'blog', displayName: 'Blog' },
         'social.html': { name: 'social', displayName: 'Social' },
         'vault.html': { name: 'vault', displayName: 'The L² Vault' },
-        'contact.html': { name: 'contact', displayName: 'Contact' }
+        'legal.html': { name: 'legal', displayName: 'Legal' }
     };
     
     const currentPageName = pages[currentPage]?.name || 'home';
