@@ -140,7 +140,7 @@ This is a **sophisticated, launch-ready business** with deep methodological supp
 
 ### Consistent Hero Pattern (Most Pages)
 1. **Video-first layout** (16:9 aspect ratio, controls enabled)
-2. **Trust indicators below video:** "7 Years at John Deere" + "Hired Engineers" + "4 Promotions"
+2. **Trust indicators below video:** "7 Years at a Fortune 100 Ag OEM" + "Hired Engineers" + "4 Promotions"
 3. **Dot pattern background** + animated teal/lime gradient blobs
 4. **Scarcity badge** below headline
 5. **Dual CTAs:** Primary (darker) + Secondary (outline)
@@ -363,7 +363,7 @@ A 6-phase progression model for getting promoted:
 - **Short-form content:** 5+ templates for YouTube Shorts
 - **Overlay formats:** OBS-ready graphics, lower thirds, greenscreen overlays
 - **Goal-themed:** "2026 Goals: Who You Become" content
-- **Archive:** "How I Got Hired at Deere" video series planning
+- **Archive:** "How I Got Hired at a Fortune 100 Ag OEM" video series planning
 
 #### TikTok
 - **Greenscreen content:** Skool community, lead magnets promotion
@@ -671,7 +671,7 @@ A 6-phase progression model for getting promoted:
 - 52 specific methods, not vague advice
 
 #### 3. Engineer-to-Engineer
-- Real John Deere experience (7 years)
+- Real Fortune 100 Ag OEM experience (7 years)
 - Hired people (as engineer, not HR)
 - Interviewed candidates (as manager)
 - Coached real people with real results
@@ -912,7 +912,7 @@ gtag('event', 'strategy_call_click', {
 - Pivot Method full framework (outline exists, not teaching-ready)
 - Video content for Skool classroom (lecture outlines ready, videos being produced)
 - Blog content expansion (20+ articles possible based on themes)
-- YouTube video series ("How I Got Hired at Deere" - placeholder exists)
+- YouTube video series ("How I Got Hired at a Fortune 100 Ag OEM" - placeholder exists)
 
 ## Metadata & Documentation Ready
 - Complete Launch Method V3 (52 methods documented)
@@ -934,7 +934,7 @@ gtag('event', 'strategy_call_click', {
 
 ### Example Meta Tags (from launch.html)
 ```html
-<meta name="description" content="Become interview-ready in 21 days with the system an engineer used to land at John Deere. $1,997 includes 3 live 1-on-1 sessions, 52 proprietary methods, and The Launch Blueprint Guarantee™.">
+<meta name="description" content="Become interview-ready in 21 days with the system an engineer used to land at a Fortune 100 Ag OEM. $1,997 includes 3 live 1-on-1 sessions, 52 proprietary methods, and The Launch Blueprint Guarantee™.">
 <meta property="og:title" content="The 21-Day Engineering Career Launch Blueprint | Launch to Lead">
 ```
 
@@ -970,7 +970,7 @@ gtag('event', 'strategy_call_click', {
 3. **Murilo Baptistella** - Senior engineer → Visibility boost + technical lead responsibilities
 4. **AJ Marsiglio** - Entry-level → Level 2 in 18 months
 5. **Mohamed Ibrahim** - Contract engineer → Permanent salaried + software pivot
-6. **Cole Hunzeker** - John Deere coworker → Positioned for promotion
+6. **Cole Hunzeker** - Fortune 100 coworker → Positioned for promotion
 7. **Jonah Brehm** - Entry-level mechanical → Software Test Engineer (company-internal pivot)
 
 ## Testimonial Photos
@@ -995,7 +995,7 @@ gtag('event', 'strategy_call_click', {
 
 ## High Priority (Do Next)
 5. **Expand blog content** - 20+ potential topics (AI/tech, career pivot strategies, interview tips)
-6. **Create YouTube content** - "How I Got Hired at Deere" series has placeholder
+6. **Create YouTube content** - "How I Got Hired at a Fortune 100 Ag OEM" series has placeholder
 7. **TikTok/Instagram content** - Templates exist, just needs posting/scheduling
 8. **Sales page A/B testing** - Track which CTAs convert best
 9. **Email nurture sequence** - Automate post-booking prep communications
