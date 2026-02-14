@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subodh Kulkarni — Resume</title>
+    <style>
+        /* ATS-friendly, clean layout — prints well on Letter/A4 */
+        @page { margin: 0.45in 0.55in; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Calibri', 'Segoe UI', Arial, sans-serif;
+            font-size: 10.5pt;
+            line-height: 1.45;
+            color: #1a1a1a;
+            max-width: 8.5in;
+            margin: 0 auto;
+            padding: 0.45in 0.55in;
+        }
+
+        /* Header */
+        .header { text-align: center; margin-bottom: 14px; border-bottom: 2px solid #1a1a1a; padding-bottom: 10px; }
+        .header h1 { font-size: 22pt; font-weight: 700; letter-spacing: 1px; margin-bottom: 4px; }
+        .header .contact { font-size: 10pt; color: #333; }
+        .header .contact a { color: #333; text-decoration: none; }
+
+        /* Section */
+        .section { margin-bottom: 12px; }
+        .section-title {
+            font-size: 11pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            border-bottom: 1px solid #999;
+            padding-bottom: 2px;
+            margin-bottom: 8px;
+            color: #1a1a1a;
+        }
+
+        /* Summary */
+        .summary { font-size: 10.5pt; line-height: 1.5; color: #222; }
+
+        /* Job entry */
+        .job { margin-bottom: 14px; }
+        .job:last-child { margin-bottom: 0; }
+        .job-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px; }
+        .job-title { font-weight: 700; font-size: 11pt; }
+        .job-dates { font-size: 10pt; color: #444; white-space: nowrap; }
+        .job-company { font-style: italic; color: #333; font-size: 10pt; margin-bottom: 5px; }
+
+        /* Sub-role within same company */
+        .sub-role { margin-bottom: 10px; }
+        .sub-role:last-child { margin-bottom: 0; }
+        .sub-role-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px; }
+        .sub-role-title { font-weight: 700; font-size: 10.5pt; }
+        .sub-role-dates { font-size: 9.5pt; color: #555; }
+        .sub-role-scope { font-size: 9.5pt; color: #555; font-style: italic; margin-bottom: 4px; }
+
+        /* Bullets */
+        ul { list-style: none; padding: 0; }
+        ul li {
+            padding-left: 14px;
+            position: relative;
+            margin-bottom: 4px;
+            font-size: 10.5pt;
+            line-height: 1.45;
+        }
+        ul li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #555;
+        }
+
+        /* Skills / certs */
+        .skills-grid { display: grid; grid-template-columns: 130px 1fr; gap: 3px 12px; font-size: 10pt; }
+        .skills-grid .label { font-weight: 700; color: #333; }
+        .skills-grid .value { color: #222; }
+
+        /* Education */
+        .edu-entry { margin-bottom: 4px; }
+        .edu-entry .degree { font-weight: 700; }
+        .edu-entry .school { font-style: italic; color: #444; }
+
+        /* Print adjustments */
+        @media print {
+            body { padding: 0; }
+            .section { break-inside: avoid; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ============================================ -->
+<!--                   HEADER                     -->
+<!-- ============================================ -->
+<div class="header">
+    <h1>SUBODH KULKARNI</h1>
+    <div class="contact">
+        [City, State] &nbsp;|&nbsp; [Phone] &nbsp;|&nbsp; [Email] &nbsp;|&nbsp; <a href="#">linkedin.com/in/subodh-kulkarni</a>
+    </div>
+</div>
+
+<!-- ============================================ -->
+<!--                  SUMMARY                     -->
+<!-- ============================================ -->
+<div class="section">
+    <div class="section-title">Professional Summary</div>
+    <div class="summary">
+        Program Quality Engineer with 20+ years across OEM, defense, aerospace, and agricultural equipment. Led quality programs for 8+ customer-facing product features with cross-functional teams of up to 35, driving defect reductions of 50–90% year-over-year across multiple product lines. Systems engineering approach to risk identification, root cause analysis, and supplier quality management.
+    </div>
+</div>
+
+<!-- ============================================ -->
+<!--                 EXPERIENCE                   -->
+<!-- ============================================ -->
+<div class="section">
+    <div class="section-title">Experience</div>
+
+    <!-- === JOHN DEERE === -->
+    <div class="job">
+        <div class="job-company">John Deere &mdash; Harvester Works &amp; R&D Center, East Moline, IL</div>
+
+        <!-- Role 1: Program Quality Engineer -->
+        <div class="sub-role">
+            <div class="sub-role-header">
+                <span class="sub-role-title">Program Quality Engineer, R&D Center</span>
+                <span class="sub-role-dates">2017 – Present</span>
+            </div>
+            <ul>
+                <li>Led end-to-end quality delivery for the MY26 Large Combine program across 8 customer-facing features (embedded 32-bit software, Combine Auto Unload, Smart Data Capture Controller, and 5 others), managing 9 quality engineers through all EPDP gates to on-time release.</li>
+
+                <li>Reduced repeat defects (NCCAs/CARs) by 70% year-over-year on the MY26 program by implementing systematic root cause tracking, resolving 80+ new nonconformances and closing ~1,400 field events across cross-functional teams at HX and ISG — contributing to an estimated 20%+ improvement in customer productivity through automation features.</li>
+
+                <li>Delivered the MY25 Yield 3.0 yield monitoring program using a Systems Engineering approach, achieving 90% repeat defect reduction and resolving 30+ NCCAs and ~200 field events while coordinating with 3 quality engineers across factory leadership, product council, and core team reviews.</li>
+
+                <li>Eliminated pre-delivery wire harness failures across 80+ machines by collaborating with suppliers and design engineers to identify and correct intermittent Ethernet cable, FLP harness, and transmission harness defects before units left the factory. Resolved 200+ NCCAs and ~500 field events; reduced repeat issues by 50%.</li>
+
+                <li>Established the first-ever Verification Build (VB) process for wire harness programs, proactively segregating 10 current-product issues and influencing cross-functional teams without direct authority to remediate them before production builds.</li>
+
+                <li>Drove quality for sensor and electrical component integration on the Grizzly combine and Caribou FEE program. Completed 126 sensor application reviews (speed, temperature, pressure, proximity, position) and managed quality assurance for 135 assemblies and 250+ parts across FMEA, DPAR, PPAP, and NCCA processes — reducing repeat issues by 90%.</li>
+
+                <li>Saved 350+ engineering hours by consolidating redundant FGR and DPAR review meetings into a unified process, later adopted globally at the direction of the Global Quality Manager.</li>
+
+                <li>Reduced frame rework by 75% on durability build activities (equivalent to 30 hours/week saved) and created a DTAC solution. Piloted automated data collection for quality parameters on the Mercury program.</li>
+
+                <li>Identified and escalated program risks with quantified impact — including camera bracket positioning for Combine Auto Unload (resolved via CVML mistake-proofing) and sensor bracket failures on Yield 3.0 (resolved through cross-functional redesign and rigorous test validation).</li>
+            </ul>
+        </div>
+
+        <!-- Role 2: Module Leader -->
+        <div class="sub-role">
+            <div class="sub-role-header">
+                <span class="sub-role-title">Module Leader, Quality Services — Harvester Works</span>
+                <span class="sub-role-dates">2016 – 2017</span>
+            </div>
+            <ul>
+                <li>Led a team of 35 line inspectors across multiple shifts, managing qualification, staffing, scheduling, and performance — reducing absenteeism by ~20% through clear expectations and accountability measures.</li>
+
+                <li>Implemented 100% cross-training of Combine and FEE line inspectors for the first time in HX history, eliminating overtime violations and saving ~$30,000 per year during multi-shift factory operations.</li>
+            </ul>
+        </div>
+
+        <!-- Role 3: Quality Engineer, OFP -->
+        <div class="sub-role">
+            <div class="sub-role-header">
+                <span class="sub-role-title">Quality Engineer, OFP — Harvester Works</span>
+                <span class="sub-role-dates">2014 – 2016</span>
+            </div>
+            <ul>
+                <li>Resolved the top 5 warranty issues on combines, eliminating 50% of associated defects by driving corrective actions across suppliers and cross-functional stakeholders — including 80% ladder damage reduction, auger engagement improvements, hydraulic valve leak elimination, and rear axle motor spindle failure prevention.</li>
+
+                <li>Revised HX work instructions for nonconforming material processes and timelines, standardizing quality response across the factory.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- === J.B. HUNT === -->
+    <div class="job">
+        <div class="job-header">
+            <span class="job-title">Logistics Engineer</span>
+            <span class="job-dates">2013</span>
+        </div>
+        <div class="job-company">J.B. Hunt Transport Services, Lowell, AR</div>
+        <ul>
+            <li>Delivered 4 SQL-based back-end cost update projects used by senior leadership for strategic logistical decision-making across the transportation network.</li>
+        </ul>
+    </div>
+
+    <!-- === PELLA === -->
+    <div class="job">
+        <div class="job-header">
+            <span class="job-title">Quality Project Manager</span>
+            <span class="job-dates">2011 – 2012</span>
+        </div>
+        <div class="job-company">Pella Corporation (Windows & Doors), Pella, MO</div>
+        <ul>
+            <li>Reduced daily part rejection by 20% on painted mullions and jambs (~$125,000/year savings) by revising and implementing preventive maintenance plans for paint curing ovens and conveyor systems, targeting dust and flake deposition root causes.</li>
+
+            <li>Improved product quality and reduced scuff-related rejection by 10% through new material stacking methods and revised operational guidelines for window and curtain wall assemblies.</li>
+        </ul>
+    </div>
+
+    <!-- === UNIVERSITY OF ARKANSAS === -->
+    <div class="job">
+        <div class="job-header">
+            <span class="job-title">Farm Machinery Specialist</span>
+            <span class="job-dates">2007 – 2011</span>
+        </div>
+        <div class="job-company">Division of Agriculture, University of Arkansas</div>
+        <ul>
+            <li>Secured over $500,000 in grants as Principal Investigator and collaborator. Published 35+ peer-reviewed articles on precision agriculture and machinery performance, earning documented recognition from John Deere, USDA, Cotton Incorporated, and multiple universities.</li>
+
+            <li>Obtained $50,000+ in funding for cotton picker soil compaction research and $40,000 for an ATV accident simulation project, identifying improvement opportunities for newly launched John Deere equipment and a collaborator agency in accident restoration.</li>
+
+            <li>Planned and executed educational and training programs on machinery and precision ag technologies at local, regional, state, and national levels.</li>
+        </ul>
+    </div>
+
+    <!-- === WALCHANDNAGAR === -->
+    <div class="job">
+        <div class="job-header">
+            <span class="job-title">Deputy Chief Engineer (QC & R&D)</span>
+            <span class="job-dates">1995 – 2001</span>
+        </div>
+        <div class="job-company">Walchandnagar Industries Limited (Heavy Engineering), India</div>
+        <ul>
+            <li>Led QC/QA activities for a 6,000 metric ton fabricated nuclear power plant steel structure, plus defense projects including rocket nozzles, cones, booster assemblies, and missile launchers — contributing to a $250,000 early-completion bonus from the Government of India.</li>
+
+            <li>Managed end-to-end R&D for a walk-behind sugarcane harvester from ideation through design, manufacturing, and field testing — building 25 prototypes for field operation.</li>
+        </ul>
+    </div>
+
+    <!-- === EARLIER ROLES (condensed) === -->
+    <div class="job">
+        <div class="job-header">
+            <span class="job-title">Earlier Career</span>
+            <span class="job-dates">1994 – 2006</span>
+        </div>
+        <div class="job-company">Elpro International (X-Ray Machines), India &nbsp;|&nbsp; Universities of South Dakota & Arkansas (Research)</div>
+        <ul>
+            <li>Completed 3 major precision agriculture research projects (cotton/soybean), presenting at international conferences and publishing results in thesis and dissertation.</li>
+            <li>Increased manufacturing efficiency by 3% as process engineer for medical X-ray machine and press shop operations.</li>
+        </ul>
+    </div>
+
+</div>
+
+<!-- ============================================ -->
+<!--                 EDUCATION                    -->
+<!-- ============================================ -->
+<div class="section">
+    <div class="section-title">Education</div>
+    <div class="edu-entry">
+        <span class="degree">Ph.D., Agricultural Engineering</span> — <span class="school">University of Arkansas</span>
+    </div>
+    <div class="edu-entry">
+        <span class="degree">M.S., Agricultural Engineering</span> — <span class="school">South Dakota State University</span>
+    </div>
+    <div class="edu-entry">
+        <span class="degree">B.E., Mechanical Engineering</span> — <span class="school">University of Pune, India</span>
+    </div>
+</div>
+
+<!-- ============================================ -->
+<!--             CERTIFICATIONS                   -->
+<!-- ============================================ -->
+<div class="section">
+    <div class="section-title">Certifications</div>
+    <ul>
+        <li>Systems Engineering Fundamentals — Caltech (2022)</li>
+        <li>Business Analytics Certification — University of Iowa (2019)</li>
+        <li>Level II NDE Certifications: Magnetic Particle, Ultrasonic, Liquid Penetrant — ISNT & ASNT (1997–1999)</li>
+    </ul>
+</div>
+
+<!-- ============================================ -->
+<!--              TECHNICAL SKILLS                -->
+<!-- ============================================ -->
+<div class="section">
+    <div class="section-title">Technical Skills</div>
+    <div class="skills-grid">
+        <span class="label">Quality Systems</span>
+        <span class="value">FMEA (System & Process), DPAR, PPAP, NCCA/CAR Management, Root Cause Analysis, EPDP, VB/DVP&R</span>
+
+        <span class="label">Data & Analytics</span>
+        <span class="value">SQL, R / RStudio, SAS, JMP, SAP (Quality & HR modules), Statistical Process Control</span>
+
+        <span class="label">Engineering Tools</span>
+        <span class="value">AutoCAD, Pro/E, ANSYS, SolidWorks, ArcGIS, ENVI, ERDAS IMAGINE</span>
+
+        <span class="label">Standards</span>
+        <span class="value">JDS G194, JDS G156, ASNT/ISNT NDE Standards, AASHTO</span>
+
+        <span class="label">Methodologies</span>
+        <span class="value">Systems Engineering, Cross-functional Leadership, Supplier Quality Management, Warranty Analysis</span>
+    </div>
+</div>
+
+<!-- ============================================ -->
+<!--            LEADERSHIP & SERVICE              -->
+<!-- ============================================ -->
+<div class="section">
+    <div class="section-title">Leadership & Community</div>
+    <ul>
+        <li>Founded a community language school (8 teachers, 27 students) — established, led, and successfully transitioned operations.</li>
+        <li>Board of Directors, STEAM ON WHEELS — a nonprofit dedicated to youth STEM development.</li>
+        <li>Organized scientific toy-making workshops, free STEM tutoring sessions, and inspirational lecture series for youth and adults.</li>
+    </ul>
+</div>
+
+</body>
+</html>

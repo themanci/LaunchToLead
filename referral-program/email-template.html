@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Referral Email Template</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: #0f172a;
+            color: #e2e8f0;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Instructions banner */
+        .instructions {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.15), rgba(139, 92, 246, 0.15));
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            border-radius: 16px;
+            padding: 28px 32px;
+            margin-bottom: 40px;
+        }
+        .instructions h2 {
+            color: #a5b4fc;
+            font-size: 18px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+        }
+        .instructions ol {
+            color: #c7d2fe;
+            font-size: 15px;
+            line-height: 1.8;
+            padding-left: 20px;
+        }
+        .instructions code {
+            background: rgba(99, 102, 241, 0.2);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 13px;
+            color: #e0e7ff;
+        }
+
+        /* Toggles */
+        .version-toggle {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 32px;
+        }
+        .version-toggle button {
+            flex: 1;
+            padding: 14px 24px;
+            border-radius: 12px;
+            border: 2px solid rgba(99, 102, 241, 0.3);
+            background: rgba(99, 102, 241, 0.05);
+            color: #a5b4fc;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .version-toggle button.active {
+            background: rgba(99, 102, 241, 0.2);
+            border-color: #6366f1;
+            color: #e0e7ff;
+        }
+
+        /* Email preview card */
+        .email-card {
+            background: #1e293b;
+            border: 1px solid rgba(148, 163, 184, 0.15);
+            border-radius: 16px;
+            overflow: hidden;
+        }
+        .email-header {
+            background: rgba(15, 23, 42, 0.6);
+            padding: 20px 28px;
+            border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+        }
+        .email-field {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+        .email-field:last-child { margin-bottom: 0; }
+        .email-field span:first-child {
+            color: #64748b;
+            font-weight: 600;
+            min-width: 70px;
+        }
+        .email-field span:last-child { color: #cbd5e1; }
+        .placeholder {
+            background: rgba(250, 204, 21, 0.15);
+            color: #fde68a;
+            padding: 1px 6px;
+            border-radius: 3px;
+            font-weight: 600;
+        }
+
+        .email-body {
+            padding: 32px 28px;
+            font-size: 16px;
+            line-height: 1.75;
+            color: #cbd5e1;
+        }
+        .email-body p { margin-bottom: 20px; }
+        .email-body p:last-child { margin-bottom: 0; }
+
+        .link-block {
+            background: rgba(16, 185, 129, 0.08);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            border-radius: 12px;
+            padding: 20px 24px;
+            margin: 24px 0;
+        }
+        .link-block .label {
+            font-size: 12px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #6ee7b7;
+            margin-bottom: 8px;
+        }
+        .link-block .value {
+            font-size: 15px;
+            color: #34d399;
+            word-break: break-all;
+            font-weight: 600;
+        }
+
+        .sig { color: #94a3b8; }
+
+        /* Copy button */
+        .copy-bar {
+            display: flex;
+            justify-content: flex-end;
+            padding: 16px 28px;
+            border-top: 1px solid rgba(148, 163, 184, 0.1);
+            background: rgba(15, 23, 42, 0.4);
+        }
+        .copy-btn {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 24px;
+            border-radius: 8px;
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            background: rgba(16, 185, 129, 0.1);
+            color: #6ee7b7;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .copy-btn:hover {
+            background: rgba(16, 185, 129, 0.2);
+        }
+
+        .hidden { display: none; }
+
+        /* Subject line options */
+        .subject-options {
+            margin-top: 32px;
+        }
+        .subject-options h3 {
+            color: #94a3b8;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+        }
+        .subject-option {
+            background: rgba(30, 41, 59, 0.6);
+            border: 1px solid rgba(148, 163, 184, 0.1);
+            padding: 14px 20px;
+            border-radius: 10px;
+            margin-bottom: 8px;
+            font-size: 15px;
+            color: #e2e8f0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .subject-option .num {
+            background: rgba(99, 102, 241, 0.2);
+            color: #a5b4fc;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            font-weight: 800;
+            flex-shrink: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Instructions -->
+        <div class="instructions">
+            <h2>📋 How to Use This Template</h2>
+            <ol>
+                <li>Replace all <code>[FIRST_NAME]</code> with the person's first name</li>
+                <li>Replace <code>[CODE]</code> with their referral code (format: <code>REF-FIRSTNAME</code>)</li>
+                <li>Replace <code>[REFERRAL_LINK]</code> with: <code>https://launchtolead.io/refer?code=REF-FIRSTNAME</code></li>
+                <li>Replace <code>[EXPIRATION_DATE]</code> with the date 90 days from when you send it</li>
+                <li>Pick Version A (past clients) or Version B (professional contacts)</li>
+                <li>Copy the plain text and paste into Gmail / Outlook — keep it plain, no fancy formatting</li>
+            </ol>
+        </div>
+
+        <!-- Version Toggle -->
+        <div class="version-toggle">
+            <button class="active" onclick="showVersion('a')">Version A: Past Clients</button>
+            <button onclick="showVersion('b')">Version B: Professional Contacts</button>
+        </div>
+
+        <!-- VERSION A: Past Clients -->
+        <div id="version-a" class="email-card">
+            <div class="email-header">
+                <div class="email-field">
+                    <span>Subject:</span>
+                    <span>Quick favor (and $200 for you)</span>
+                </div>
+                <div class="email-field">
+                    <span>To:</span>
+                    <span><span class="placeholder">[FIRST_NAME]</span></span>
+                </div>
+            </div>
+            <div class="email-body" id="email-text-a">
+                <p>Hey <span class="placeholder">[FIRST_NAME]</span>,</p>
+
+                <p>Hope you're doing well. Quick one for you.</p>
+
+                <p>I'm running a referral deal for Launch to Lead — my engineering career coaching. Since you've worked with me before and know what I actually do, figured you'd be the right person to ask.</p>
+
+                <p><strong>Here's the deal:</strong> if someone you send my way books coaching through your link, I'll Zelle or Venmo you <strong>$200</strong>. No cap on how many people you refer — every one that converts is another $200 in your pocket.</p>
+
+                <div class="link-block">
+                    <div class="label">Your Personal Referral Link</div>
+                    <div class="value"><span class="placeholder">[REFERRAL_LINK]</span></div>
+                </div>
+
+                <div class="link-block">
+                    <div class="label">Your Code (they can also just mention this on the call)</div>
+                    <div class="value"><span class="placeholder">[CODE]</span></div>
+                </div>
+
+                <p>The people who'd crush it: anyone in engineering who's job hunting, stuck in a dead-end role, or trying to level up their resume and interview game. College seniors and recent grads especially — they're the ones who need it most and don't know where to start.</p>
+
+                <p>Link's good until <span class="placeholder">[EXPIRATION_DATE]</span>.</p>
+
+                <p>No pressure at all. But if someone comes to mind — just forward this or shoot them the link.</p>
+
+                <p class="sig">Appreciate you,<br>Mansour</p>
+            </div>
+            <div class="copy-bar">
+                <button class="copy-btn" onclick="copyText('a')">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+                    Copy Plain Text
+                </button>
+            </div>
+        </div>
+
+        <!-- VERSION B: Professional Contacts -->
+        <div id="version-b" class="email-card hidden">
+            <div class="email-header">
+                <div class="email-field">
+                    <span>Subject:</span>
+                    <span>Got a deal for you, <span class="placeholder">[FIRST_NAME]</span></span>
+                </div>
+                <div class="email-field">
+                    <span>To:</span>
+                    <span><span class="placeholder">[FIRST_NAME]</span></span>
+                </div>
+            </div>
+            <div class="email-body" id="email-text-b">
+                <p>Hey <span class="placeholder">[FIRST_NAME]</span>,</p>
+
+                <p>Been a minute — hope things are going well on your end.</p>
+
+                <p>I've been running an engineering career coaching business called Launch to Lead. We help engineers land jobs, negotiate offers, and build resumes that actually get callbacks. Lot of success stories so far — figured you probably know some people who could use it.</p>
+
+                <p><strong>So here's what I'm doing:</strong> I'm giving you a referral link. Anyone you send my way who books coaching — I'll send you <strong>$200 via Zelle or Venmo</strong>. No limit on referrals. Every conversion = another $200.</p>
+
+                <div class="link-block">
+                    <div class="label">Your Personal Referral Link</div>
+                    <div class="value"><span class="placeholder">[REFERRAL_LINK]</span></div>
+                </div>
+
+                <div class="link-block">
+                    <div class="label">Your Code (they can also just mention this on the call)</div>
+                    <div class="value"><span class="placeholder">[CODE]</span></div>
+                </div>
+
+                <p>Best fit: engineers who are job hunting, career switching, or just graduated and don't know how to get their foot in the door. If you know anyone in that boat — just send them the link or have them drop your code when they book a call.</p>
+
+                <p>Link expires <span class="placeholder">[EXPIRATION_DATE]</span>.</p>
+
+                <p>Either way — we should catch up soon. But if someone comes to mind, I'd appreciate the pass.</p>
+
+                <p class="sig">Talk soon,<br>Mansour</p>
+            </div>
+            <div class="copy-bar">
+                <button class="copy-btn" onclick="copyText('b')">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+                    Copy Plain Text
+                </button>
+            </div>
+        </div>
+
+        <!-- Subject Line Options -->
+        <div class="subject-options">
+            <h3>Alternative Subject Lines</h3>
+            <div class="subject-option">
+                <span class="num">1</span>
+                Quick favor (and $200 for you)
+            </div>
+            <div class="subject-option">
+                <span class="num">2</span>
+                Got a deal for you, <span class="placeholder">[FIRST_NAME]</span>
+            </div>
+            <div class="subject-option">
+                <span class="num">3</span>
+                $200 if you know someone job hunting
+            </div>
+            <div class="subject-option">
+                <span class="num">4</span>
+                Know anyone looking for an engineering job?
+            </div>
+            <div class="subject-option">
+                <span class="num">5</span>
+                I owe you one — here's $200
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showVersion(v) {
+            document.getElementById('version-a').classList.toggle('hidden', v !== 'a');
+            document.getElementById('version-b').classList.toggle('hidden', v !== 'b');
+            document.querySelectorAll('.version-toggle button').forEach((btn, i) => {
+                btn.classList.toggle('active', (v === 'a' && i === 0) || (v === 'b' && i === 1));
+            });
+        }
+
+        function copyText(version) {
+            const el = document.getElementById('email-text-' + version);
+            const text = el.innerText;
+            navigator.clipboard.writeText(text).then(() => {
+                const btn = el.closest('.email-card').querySelector('.copy-btn');
+                btn.innerHTML = '✓ Copied!';
+                setTimeout(() => {
+                    btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg> Copy Plain Text';
+                }, 2000);
+            });
+        }
+    </script>
+</body>
+</html>

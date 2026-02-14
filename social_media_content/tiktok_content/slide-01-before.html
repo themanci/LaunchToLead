@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide 01 — Before Resume</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: #0f172a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .slide {
+            width: 1080px;
+            height: 1920px;
+            background: linear-gradient(170deg, #1c1917 0%, #0f172a 100%);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            padding: 24px 28px 20px;
+        }
+        .slide::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 50% 20%, rgba(239, 68, 68, 0.06) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .top-label {
+            text-align: center;
+            margin-bottom: 6px;
+        }
+        .top-label span {
+            display: inline-block;
+            background: rgba(239, 68, 68, 0.15);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            color: #fca5a5;
+            font-size: 32px;
+            font-weight: 800;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            padding: 16px 44px;
+            border-radius: 50px;
+        }
+
+        .big-label {
+            text-align: center;
+            margin-bottom: 12px;
+        }
+        .big-label h1 {
+            font-size: 200px;
+            font-weight: 900;
+            color: #ef4444;
+            margin-bottom: 0;
+            line-height: 0.9;
+        }
+        .big-label p {
+            font-size: 46px;
+            color: #94a3b8;
+            font-weight: 500;
+        }
+
+        .card {
+            background: rgba(239, 68, 68, 0.05);
+            border: 2px solid rgba(239, 68, 68, 0.2);
+            border-radius: 20px;
+            padding: 28px 24px;
+            position: relative;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+        .card-title {
+            font-size: 38px;
+            font-weight: 700;
+            color: #fecaca;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid rgba(239, 68, 68, 0.15);
+        }
+        .bullet {
+            display: flex;
+            gap: 18px;
+            align-items: flex-start;
+        }
+        .bullet-dot {
+            flex-shrink: 0;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: #f87171;
+            opacity: 0.4;
+            margin-top: 16px;
+        }
+        .bullet-text {
+            font-size: 38px;
+            line-height: 1.4;
+            color: #a8a29e;
+            text-decoration: line-through;
+            text-decoration-color: rgba(239, 68, 68, 0.35);
+        }
+
+        .bottom-tag {
+            text-align: center;
+            color: #475569;
+            font-size: 26px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-top: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide">
+        <div class="top-label">
+            <span>🚫 What Most Resumes Look Like</span>
+        </div>
+
+        <div class="big-label">
+            <h1>BEFORE</h1>
+            <p>Lists tasks. Says nothing.</p>
+        </div>
+
+        <div class="card">
+            <div class="card-title">Network Operations & Infrastructure Support</div>
+
+            <div class="bullet">
+                <div class="bullet-dot"></div>
+                <div class="bullet-text">Supported WAN and LAN connectivity for 750+ retail locations using Cisco Meraki MX, MS, and MR equipment.</div>
+            </div>
+            <div class="bullet">
+                <div class="bullet-dot"></div>
+                <div class="bullet-text">Maintained VLAN configurations, SSIDs, and DHCP scopes across a large multi-site environment.</div>
+            </div>
+            <div class="bullet">
+                <div class="bullet-dot"></div>
+                <div class="bullet-text">Handled escalations involving routing, switching, wireless, and firewall-related connectivity issues.</div>
+            </div>
+            <div class="bullet">
+                <div class="bullet-dot"></div>
+                <div class="bullet-text">Assisted with firewall policy, NAT, ARP, and related troubleshooting within retail network environments.</div>
+            </div>
+        </div>
+
+        <div class="bottom-tag">@launch.to.lead</div>
+    </div>
+</body>
+</html>
