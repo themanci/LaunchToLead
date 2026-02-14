@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide 02 — After Resume</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: #0f172a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .slide {
+            width: 1080px;
+            height: 1920px;
+            background: linear-gradient(170deg, #022c22 0%, #0f172a 100%);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            padding: 24px 28px 20px;
+        }
+        .slide::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 50% 20%, rgba(16, 185, 129, 0.08) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .top-label {
+            text-align: center;
+            margin-bottom: 4px;
+        }
+        .top-label span {
+            display: inline-block;
+            background: rgba(16, 185, 129, 0.15);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            color: #6ee7b7;
+            font-size: 32px;
+            font-weight: 800;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            padding: 16px 44px;
+            border-radius: 50px;
+        }
+
+        .big-label {
+            text-align: center;
+            margin-bottom: 8px;
+        }
+        .big-label h1 {
+            font-size: 200px;
+            font-weight: 900;
+            color: #10b981;
+            margin-bottom: 0;
+            line-height: 0.9;
+        }
+        .big-label p {
+            font-size: 46px;
+            color: #94a3b8;
+            font-weight: 500;
+        }
+        .big-label .session-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            font-size: 28px;
+            font-weight: 800;
+            padding: 14px 36px;
+            border-radius: 50px;
+            margin-top: 4px;
+            letter-spacing: 1px;
+        }
+
+        .card {
+            background: rgba(16, 185, 129, 0.05);
+            border: 2px solid rgba(16, 185, 129, 0.2);
+            border-radius: 20px;
+            padding: 28px 24px;
+            position: relative;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+        .card-title {
+            font-size: 38px;
+            font-weight: 700;
+            color: #a7f3d0;
+            margin-bottom: 12px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(16, 185, 129, 0.15);
+        }
+        .bullet {
+            display: flex;
+            gap: 18px;
+            align-items: flex-start;
+        }
+        .bullet-dot {
+            flex-shrink: 0;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: #34d399;
+            margin-top: 16px;
+        }
+        .bullet-text {
+            font-size: 36px;
+            line-height: 1.4;
+            color: #d1fae5;
+        }
+        .bullet-text strong {
+            color: #6ee7b7;
+            font-weight: 700;
+        }
+
+        .bottom-tag {
+            text-align: center;
+            color: #475569;
+            font-size: 26px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-top: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide">
+        <div class="top-label">
+            <span>✅ After Working With Me</span>
+        </div>
+
+        <div class="big-label">
+            <h1>AFTER</h1>
+            <p>Shows impact. Gets callbacks.</p>
+            <div class="session-badge">↑ Session 1 of 3</div>
+        </div>
+
+        <div class="card">
+            <div class="card-title">Network and Back-Office Support (Post-Acquisition with Maverik)</div>
+
+            <div class="bullet">
+                <div class="bullet-dot"></div>
+                <div class="bullet-text"><strong>Administrated Cisco Meraki MX, MS, and MR infrastructure</strong> to support WAN and LAN connectivity across 750+ retail locations. Maintained switchport VLAN assignments, wireless AP SSIDs, DHCP reservations, and firewall rules; resolving escalations to sustain reliable store operations at scale.</div>
+            </div>
+            <div class="bullet">
+                <div class="bullet-dot"></div>
+                <div class="bullet-text"><strong>Established WAN performance baselines per Cisco guidelines</strong> (≤1% packet loss, &lt;100ms latency, 48-hour resolution) across all retail locations using Meraki analytics, enabling proactive ISP escalation and reducing repeat incidents.</div>
+            </div>
+            <div class="bullet">
+                <div class="bullet-dot"></div>
+                <div class="bullet-text"><strong>Supported migration of ~350 retail locations'</strong> Cisco Meraki equipment from legacy to production org, configuring MX, MS, and MR devices, and validating VLAN mappings, SSIDs, and connectivity prior to handoff.</div>
+            </div>
+        </div>
+
+        <div class="bottom-tag">@launch.to.lead</div>
+    </div>
+</body>
+</html>
