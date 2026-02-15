@@ -170,8 +170,8 @@
                 <a href="success-stories.html" class="${getLinkClasses('success-stories')}">Success Stories</a>
                 <a href="vault.html" class="${getLinkClasses('vault')}">Free Resources</a>
                 ${getSocialDropdownHTML()}
-                <a href="https://calendar.app.google/uzaLZUWSUH3ZbaGr6" target="_blank" class="${getLinkClasses('contact', true)}">
-                    Book a Free Call →
+                <a href="landing/offer.html?source=site" class="${getLinkClasses('contact', true)}">
+                    Ready To Launch? →
                 </a>
             </div>
             <!-- Mobile menu button -->
@@ -194,7 +194,7 @@
             <a href="about.html" class="${getMobileLinkClasses('about')}">About</a>
             <a href="success-stories.html" class="${getMobileLinkClasses('success-stories')}">Success Stories</a>
             <a href="vault.html" class="${getMobileLinkClasses('vault')}">Free Resources</a>
-            <a href="https://calendar.app.google/uzaLZUWSUH3ZbaGr6" target="_blank" class="${getMobileLinkClasses('contact', true)}">Book a Free Call →</a>
+            <a href="landing/offer.html?source=site" class="${getMobileLinkClasses('contact', true)}">Ready To Launch? →</a>
             ${getMobileSocialHTML()}
         </div>
     </div>

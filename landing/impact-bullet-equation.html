@@ -138,16 +138,15 @@
                            class="w-full px-4 py-3 rounded-xl border border-slate-300 text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-brand-secondary focus:border-brand-secondary transition">
                 </div>
 
-                <!-- Budget Qualifier -->
+                <!-- Qualifying Question -->
                 <div>
-                    <label for="budget" class="block text-sm font-semibold text-slate-700 mb-1">What are you ready to pay to land your dream engineering job?</label>
-                    <select id="budget" name="budget" required
+                    <label for="actively-applying" class="block text-sm font-semibold text-slate-700 mb-1">Are you actively applying for engineering jobs or will be in the next 6 months?</label>
+                    <select id="actively-applying" name="actively-applying" required
                             class="w-full px-4 py-3 rounded-xl border border-slate-300 text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-brand-secondary focus:border-brand-secondary transition bg-white appearance-none"
                             style="background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%20viewBox%3D%220%200%2020%2020%22%20fill%3D%22%2364748b%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cpath%20fill-rule%3D%22evenodd%22%20d%3D%22M5.293%207.293a1%201%200%20011.414%200L10%2010.586l3.293-3.293a1%201%200%20111.414%201.414l-4%204a1%201%200%2001-1.414%200l-4-4a1%201%200%20010-1.414z%22%20clip-rule%3D%22evenodd%22/%3E%3C/svg%3E'); background-repeat: no-repeat; background-position: right 12px center; background-size: 20px;">
                         <option value="" disabled selected>Select an option...</option>
-                        <option value="0">$0</option>
-                        <option value="500-1999">$500 to $1,999</option>
-                        <option value="2000+">$2,000+</option>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
                     </select>
                 </div>
 
@@ -199,7 +198,7 @@
         const firstName = document.getElementById('firstName').value.trim();
         const email = document.getElementById('email').value.trim();
         const phone = document.getElementById('phone').value.trim();
-        const budget = document.getElementById('budget').value;
+        const activelyApplying = document.getElementById('actively-applying').value;
         const submitBtn = e.target.querySelector('button[type="submit"]');
 
         // Disable button while submitting
@@ -209,7 +208,7 @@
         // Fire GA4 event
         if (typeof gtag === 'function') {
             gtag('event', 'lead_form_submit', {
-                'lead_budget': budget,
+                'actively_applying': activelyApplying,
                 'page_location': window.location.pathname
             });
         }
@@ -217,8 +216,7 @@
         // Fire Meta Pixel lead event
         if (typeof fbq === 'function') {
             fbq('track', 'Lead', {
-                value: budget,
-                currency: 'USD',
+                actively_applying: activelyApplying,
                 content_name: 'Impact Bullet Builder Lead Magnet'
             });
         }
@@ -229,7 +227,7 @@
             formData.append('email_address', email);
             formData.append('first_name', firstName);
             formData.append('fields[phone_number]', phone);
-            formData.append('fields[budget]', budget === '0' ? '$0' : '$' + budget);
+            formData.append('fields[actively_applying]', activelyApplying);
 
             await fetch('https://app.kit.com/forms/8815632/subscriptions', {
                 method: 'POST',
@@ -240,13 +238,13 @@
             // Continue with redirect even if Kit fails — don't block the user
         }
 
-        // Route based on budget selection
-        if (budget === '0') {
-            // $0 — send to thank you page (lead magnet only, no sales page)
-            window.location.href = 'thank-you.html?name=' + encodeURIComponent(firstName);
+        // Route based on qualifying answer
+        if (activelyApplying === 'yes') {
+            // Qualified — send to landing page 2 (offer details)
+            window.location.href = 'offer.html?name=' + encodeURIComponent(firstName);
         } else {
-            // Qualified lead — send to landing page 2 (offer details)
-            window.location.href = 'offer.html?name=' + encodeURIComponent(firstName) + '&budget=' + encodeURIComponent(budget);
+            // Not qualified — send to thank you page (lead magnet only)
+            window.location.href = 'thank-you.html?name=' + encodeURIComponent(firstName);
         }
 
         return false;

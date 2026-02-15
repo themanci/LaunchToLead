@@ -3,13 +3,13 @@
 ## Funnel Flow Overview
 ```
 Meta Ads → Landing Page 1 (Impact Bullet Equation lead magnet)
-  ├── $0 budget → Thank You page (free guide only)
-  └── $500+ budget → Landing Page 2 (Offer page with qualifier)
+  ├── Not actively applying → Thank You page (free guide only)
+  └── Actively applying → Landing Page 2 (Offer page with qualifier)
         ├── Not Qualified → Soft rejection + Skool/socials
         └── Qualified → Google Calendar booking
               └── Landing Page 3 / Email (VSL to prep for sales call)
 
-Main Site ("Ready To Launch" CTA) → Landing Page 2b (Generic offer page, no banner)
+Main Site ("Ready To Launch? →" CTA) → Landing Page 2 (offer.html?source=site, no banner)
   ├── Not Qualified → Soft rejection + Skool/socials
   └── Qualified → Google Calendar booking
         └── Landing Page 3 / Email (VSL to prep for sales call)
@@ -18,15 +18,41 @@ Main Site ("Ready To Launch" CTA) → Landing Page 2b (Generic offer page, no ba
 ---
 
 ## ✅ COMPLETED
-- [x] Landing Page 1: `landing/impact-bullet-equation.html` — Kit form, lead magnet, budget routing
+
+### Landing Pages & Forms
+- [x] Landing Page 1: `landing/impact-bullet-equation.html` — Kit form, lead magnet
+- [x] Landing Page 1 question: "Are you actively applying for engineering jobs?" (Yes→offer, No→thank-you)
 - [x] Thank You page: `landing/thank-you.html` — Generic, dots background
 - [x] Landing Page 2: `landing/offer.html` — Hormozi-style, qualifying form, calendar gating
-- [x] Kit form wired (Form ID 8815632, custom fields: phone_number, budget)
+- [x] Kit Form 1 wired (Form ID 8815632, custom fields: `phone_number`, `actively_applying`)
+- [x] Kit Form 2 wired (Form ID 9087434, custom fields: `last_name`, `phone_number`, `situation`, `timeline`, `commitment`, `willing_to_invest`, `qualified`)
 - [x] Kit incentive email rewritten
+- [x] Qualifying form: contact fields (phone, first/last name, email) + 4 questions
+- [x] Qualification logic: `timeline !== 'thinking' && commitment !== 'no' && willingToInvest !== 'no'`
+- [x] Not-qualified result: Warm message + Skool card + social links + main site link
+- [x] Budget Q replaced with "willing to invest in coaching" (softer question)
+- [x] FAQ pricing removed — says "pricing discussed on strategy call"
+
+### Main Site Updates
+- [x] Generic offer page: URL param toggle (`?source=site` hides confirmation banner)
+- [x] All main site CTAs → "Ready To Launch? →" → `landing/offer.html?source=site`
+  - index.html (scarcity banner, hero, mid-page, final CTA, footer)
+  - about.html (scarcity banner, hero, mid-page, final CTA, footer)
+  - success-stories.html (scarcity banner, mid-page, final CTA, footer)
+  - vault.html (scarcity banner, mid-page, footer, popup CTA)
+  - social.html (scarcity banner, main CTA, footer)
+  - legal.html (main CTA, footer)
+  - navigation.js (desktop + mobile nav CTAs)
+  - lead-magnet.js (popup CTA)
+- [x] GA4 tracking updated: `offer_page_click` event (replaces `strategy_call_click`)
+- [x] Meta Pixel tracking updated: tracks `offer.html` clicks (replaces `calendar.app.google`)
 - [x] Popup removed from index.html
-- [x] Qualifying form: contact fields + 4 questions with correct qualification logic
-- [x] Not-qualified result: Skool, socials, main site links
-- [x] FAQ pricing updated to $1,000
+- [x] Index.html video → image placeholder (`professional_standing.png` with gradient overlay)
+- [x] About.html video → image placeholder (`casual_roof.jpg` with "Meet Mansour" overlay)
+- [x] "Fortune 100 Ag OEM" → "Fortune 100 company" on all public pages (index, about, offer, vault, success-stories)
+
+### Git
+- [x] Previous commit: `4ccc0df` — landing page funnel + qualifying form + Kit integration
 
 ---
 
@@ -38,41 +64,13 @@ Main Site ("Ready To Launch" CTA) → Landing Page 2b (Generic offer page, no ba
 - **Content:** VSL video, what to expect on the call, how to prepare
 - **File:** `landing/booking-confirmed.html` (if page) or n8n automation (if email)
 
-### 2. [ ] Create Generic Offer Page (no lead magnet banner)
-- **Purpose:** Version of offer.html without the "Confirmed: Your Impact Bullet Builder..." banner at top — for use from main site
-- **File:** `landing/offer-direct.html` (or parameterize offer.html with URL param)
-- **Decision needed:** Separate file or single file with URL param toggle?
-- **Everything else stays the same:** qualifying form, calendar gating, FAQ, social proof
-
-### 3. [ ] Update Main Site CTAs
-- **Purpose:** Change all "Book Your Strategy Call" / "Book a Free Call" / "See If You Qualify" buttons on index.html to something like "Ready To Launch?" that funnels to the generic offer page
-- **Scope:** index.html hero CTA, any other CTA buttons/sections across site
-- **Also check:** about.html, success-stories.html, vault.html, other pages for CTA consistency
-
-### 4. [ ] Simplify Google Calendar Booking Questions
-- **Purpose:** Remove redundant qualification questions from Google Calendar signup since users already answered them on offer page
-- **Action:** Review current Google Calendar questions and strip down to minimum (name, email already known — just confirm they're booking)
-- **Note:** This is done in Google Calendar settings, not code
+### 4. [x] Simplify Google Calendar Booking Questions
+- **Simplified to:** Dream role + Dream companies (removed 3 redundant questions)
+- **Done in Google Calendar settings**
 
 ---
 
 ## 🔨 TO DO — Main Site Updates
-
-### 5. [ ] Remove Video from Index Page
-- **Purpose:** Main homepage video is being replaced — VSLs will live in landing pages instead
-- **Action:** Replace video section with image placeholders
-- **File:** index.html
-
-### 6. [ ] Remove Video from About Page
-- **Purpose:** Same as above — no video needed on about page
-- **Action:** Replace video section with image placeholders
-- **File:** about.html
-- **Note:** Keep Karen's video on success-stories.html
-
-### 7. [ ] Change "Fortune 100 Ag OEM" References
-- **Purpose:** "Ag OEM" is confusing — simplify to "Fortune 100 company" or similar
-- **Scope:** Search ALL files for "Ag OEM" and replace
-- **Files to check:** index.html, about.html, success-stories.html, methods/, testimonials/, etc.
 
 ### 8. [ ] Figure Out Free Resources Page (vault.html)
 - **Purpose:** Decide how the free resources / vault page fits into the new funnel
@@ -95,10 +93,10 @@ Main Site ("Ready To Launch" CTA) → Landing Page 2b (Generic offer page, no ba
 
 ## 🔨 TO DO — Git & Deploy
 
-### 10. [ ] Commit All Landing Page Work
+### 10. [ ] Commit Current Batch of Changes
 - **Branch:** `website-updates`
-- **Uncommitted files:** `landing/impact-bullet-equation.html`, `landing/thank-you.html`, `landing/offer.html`, modified `index.html`, this checklist
-- **Last commit:** `6d17e07`
+- **Changes since last commit (`4ccc0df`):** CTA overhaul, video removal, Ag OEM fixes, GA4/Meta tracking updates, offer page refinements
+- **Status:** Ready to commit
 
 ### 11. [ ] Push to GitHub & Merge
 - **Push** `website-updates` → remote
@@ -106,9 +104,16 @@ Main Site ("Ready To Launch" CTA) → Landing Page 2b (Generic offer page, no ba
 
 ---
 
+## 🧹 LOW PRIORITY / OPTIONAL
+- [ ] Fix "Ag OEM" in internal docs (lead-magnets, methods, mockups) — not public-facing
+
+---
+
 ## Notes
 - Google Calendar link: https://calendar.app.google/uzaLZUWSUH3ZbaGr6
-- Kit Form ID: 8815632
+- Kit Form 1 (Landing Page 1): 8815632
+- Kit Form 2 (Offer Page): 9087434
 - GA4: G-L8V47TR52C
 - Meta Pixel: 3141490496240983
 - Skool: https://www.skool.com/launch-to-lead-community-6905/about?ref=c9899dd4e0bf4fe9a69a6315529fab96
+- Generic offer URL: landing/offer.html?source=site

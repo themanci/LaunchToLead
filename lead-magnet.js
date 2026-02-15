@@ -180,9 +180,9 @@
                                 '<p class="text-amber-200 text-xs text-center"><strong class="text-amber-300">The math:</strong> A small coaching investment vs. losing $6-8K <strong>every month</strong> you wait to land your job</p>' +
                                 '<p class="text-amber-300 text-xs text-center mt-2 font-semibold">You\'ve already waited long enough.</p>' +
                             '</div>' +
-                            '<!-- Calendar link -->' +
-                            '<p class="text-emerald-300 text-xs text-center mb-3 font-semibold">📅 See available slots on Google Calendar now</p>' +
-                            '<a href="https://calendar.app.google/uzaLZUWSUH3ZbaGr6" target="_blank" class="block w-full py-4 bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 text-white font-bold text-lg rounded-xl transition-all shadow-xl mb-2 text-center">Book My Free Strategy Call Now</a>' +
+                            '<!-- CTA label -->' +
+                            '<p class="text-emerald-300 text-xs text-center mb-3 font-semibold">🚀 See if you qualify for coaching</p>' +
+                            '<a href="landing/offer.html?source=site" class="block w-full py-4 bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 text-white font-bold text-lg rounded-xl transition-all shadow-xl mb-2 text-center">Ready To Launch? →</a>' +
                             '<!-- Reassurance -->' +
                             '<p class="text-center text-emerald-400 text-xs mt-2">No pressure. No pitch. Just clarity.</p>' +
                         '</div>' +
