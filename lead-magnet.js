@@ -182,7 +182,7 @@
                             '</div>' +
                             '<!-- CTA label -->' +
                             '<p class="text-emerald-300 text-xs text-center mb-3 font-semibold">🚀 See if you qualify for coaching</p>' +
-                            '<a href="landing/offer.html?source=site" class="block w-full py-4 bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 text-white font-bold text-lg rounded-xl transition-all shadow-xl mb-2 text-center">Ready To Launch? →</a>' +
+                            '<a href="landing/offer.html?source=site" class="block w-full py-4 bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 text-white font-bold text-lg rounded-xl transition-all shadow-xl mb-2 text-center">Ready To Launch?→</a>' +
                             '<!-- Reassurance -->' +
                             '<p class="text-center text-emerald-400 text-xs mt-2">No pressure. No pitch. Just clarity.</p>' +
                         '</div>' +
