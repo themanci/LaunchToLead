@@ -171,7 +171,7 @@
                 <a href="vault.html" class="${getLinkClasses('vault')}">Free Resources</a>
                 ${getSocialDropdownHTML()}
                 <a href="landing/offer.html?source=site" class="${getLinkClasses('contact', true)}">
-                    Ready To Launch?→
+                    Ready To Launch?
                 </a>
             </div>
             <!-- Mobile menu button -->
@@ -194,7 +194,7 @@
             <a href="about.html" class="${getMobileLinkClasses('about')}">About</a>
             <a href="success-stories.html" class="${getMobileLinkClasses('success-stories')}">Success Stories</a>
             <a href="vault.html" class="${getMobileLinkClasses('vault')}">Free Resources</a>
-            <a href="landing/offer.html?source=site" class="${getMobileLinkClasses('contact', true)}">Ready To Launch?→</a>
+            <a href="landing/offer.html?source=site" class="${getMobileLinkClasses('contact', true)}">Ready To Launch?</a>
             ${getMobileSocialHTML()}
         </div>
     </div>
