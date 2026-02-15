@@ -9,12 +9,12 @@
       gtag('js', new Date());
       gtag('config', 'G-L8V47TR52C');
     </script>
-    <!-- Track strategy call booking clicks -->
+    <!-- Track offer page clicks -->
     <script>
       document.addEventListener('click', function(e) {
-        const link = e.target.closest('a[href*="calendar.app.google"]');
+        const link = e.target.closest('a[href*="offer.html"]');
         if (link && typeof gtag === 'function') {
-          gtag('event', 'strategy_call_click', {
+          gtag('event', 'offer_page_click', {
             'page_location': window.location.pathname,
             'page_title': document.title,
             'link_text': link.textContent.trim().substring(0, 50)
@@ -31,20 +31,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Free Job Search Playbook | Launch to Lead Engineering</title>
-    <meta name="description" content="Get the exact playbook that helped land a job at a Fortune 100 Ag OEM. Real case study, exact strategies, no fluff. Free download.">
+    <meta name="description" content="Get the exact playbook that helped land a job at a Fortune 100 company. Real case study, exact strategies, no fluff. Free download.">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://launchtolead.io/vault.html">
     <meta property="og:title" content="Free Job Search Playbook | Launch to Lead Engineering">
-    <meta property="og:description" content="Get the exact playbook that helped land a job at a Fortune 100 Ag OEM. Real case study, exact strategies, no fluff. Free download.">
+    <meta property="og:description" content="Get the exact playbook that helped land a job at a Fortune 100 company. Real case study, exact strategies, no fluff. Free download.">
     <meta property="og:image" content="https://launchtolead.io/social-share.png">
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://launchtolead.io/vault.html">
     <meta property="twitter:title" content="Free Job Search Playbook | Launch to Lead Engineering">
-    <meta property="twitter:description" content="Get the exact playbook that helped land a job at a Fortune 100 Ag OEM. Real case study, exact strategies, no fluff. Free download.">
+    <meta property="twitter:description" content="Get the exact playbook that helped land a job at a Fortune 100 company. Real case study, exact strategies, no fluff. Free download.">
     <meta property="twitter:image" content="https://launchtolead.io/social-share.png">
     
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -67,7 +67,7 @@
     <div class="bg-gradient-to-r from-red-600 to-red-700 text-white py-2 px-4 text-center text-sm font-medium">
         <span class="inline-flex items-center gap-2">
             <span class="w-2 h-2 rounded-full bg-white animate-pulse"></span>
-            Only 10 spots available per month — <a href="https://calendar.app.google/uzaLZUWSUH3ZbaGr6" target="_blank" class="underline font-bold hover:text-red-100">See if you qualify →</a>
+            Only 10 spots available per month
         </span>
     </div><!-- HERO SECTION - Launch-Focused -->
 <div class="relative pt-12 pb-16 bg-white overflow-hidden">
@@ -87,7 +87,7 @@
             <!-- Outcome-Focused Headline -->
             <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight mb-4">
                 The <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-900 to-teal-500">EXACT Playbook</span> That<br class="hidden md:block">
-                Landed Me at a Fortune 100 Ag OEM
+                Landed Me at a Fortune 100 Company
             </h1>
             <p class="max-w-2xl mx-auto text-lg text-slate-600 mb-6">
                 Not theory. Not templates. The <strong>exact strategies</strong> I used to go from "application black hole" to job offer. 
@@ -359,8 +359,8 @@
                     
                     <!-- CTA -->
                     <div class="flex justify-center">
-                        <a href="https://calendar.app.google/uzaLZUWSUH3ZbaGr6" target="_blank" class="inline-flex items-center justify-center gap-2 bg-emerald-500 text-white px-8 py-4 rounded-full font-bold hover:bg-emerald-400 transition shadow-lg hover:shadow-xl">
-                            Book Your Free Strategy Call →
+                        <a href="landing/offer.html?source=site" class="inline-flex items-center justify-center gap-2 bg-emerald-500 text-white px-8 py-4 rounded-full font-bold hover:bg-emerald-400 transition shadow-lg hover:shadow-xl">
+                            Ready To Launch? →
                         </a>
                     </div>
                 </div>
@@ -424,8 +424,8 @@
                     </a></li>
                 </ul>
                 <div class="mt-6">
-                    <a href="https://calendar.app.google/uzaLZUWSUH3ZbaGr6" target="_blank" class="inline-block px-4 py-2 bg-brand-accent text-brand-primary font-bold rounded-lg text-sm hover:bg-white transition">
-                        Book Strategy Session
+                    <a href="landing/offer.html?source=site" class="inline-block px-4 py-2 bg-brand-accent text-brand-primary font-bold rounded-lg text-sm hover:bg-white transition">
+                        Ready To Launch? →
                     </a>
                 </div>
             </div>
@@ -463,8 +463,8 @@
                     <div id="vault-popup-icon" class="inline-flex items-center justify-center w-14 h-14 rounded-xl mb-4 bg-gradient-to-br from-emerald-400 to-teal-500 shadow-lg">
                         <svg class="w-7 h-7 text-emerald-950" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                     </div>
-                    <h2 id="vault-popup-title" class="text-2xl md:text-3xl font-bold text-white mb-2 leading-tight">The EXACT Playbook That<br>Landed Me at a Fortune 100 Ag OEM</h2>
-                    <p id="vault-popup-subtitle" class="text-emerald-100 text-sm">Completely <span class="font-bold text-emerald-300">FREE</span> PDF Download — Step by step how I landed my first job at a Fortune 100 Ag OEM</p>
+                    <h2 id="vault-popup-title" class="text-2xl md:text-3xl font-bold text-white mb-2 leading-tight">The EXACT Playbook That<br>Landed Me at a Fortune 100 Company</h2>
+                    <p id="vault-popup-subtitle" class="text-emerald-100 text-sm">Completely <span class="font-bold text-emerald-300">FREE</span> PDF Download — Step by step how I landed my first job at a Fortune 100 company</p>
                 </div>
 
                 <!-- Urgency Box -->
@@ -603,14 +603,14 @@
                         </p>
                     </div>
 
-                    <!-- Calendar link -->
+                    <!-- CTA label -->
                     <p class="text-emerald-300 text-xs text-center mb-3 font-semibold">
-                        📅 See available slots on Google Calendar now
+                        🚀 See if you qualify for coaching
                     </p>
 
-                    <a href="https://calendar.app.google/uzaLZUWSUH3ZbaGr6" target="_blank" 
+                    <a href="landing/offer.html?source=site" 
                        class="block w-full text-center py-4 bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 text-white font-bold text-lg rounded-xl transition-all shadow-xl mb-2">
-                        Book My Free Strategy Call Now
+                        Ready To Launch? →
                     </a>
                     
                     <!-- Reassurance -->

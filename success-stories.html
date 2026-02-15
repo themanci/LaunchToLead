@@ -9,12 +9,12 @@
       gtag('js', new Date());
       gtag('config', 'G-L8V47TR52C');
     </script>
-    <!-- Track strategy call booking clicks -->
+    <!-- Track offer page clicks -->
     <script>
       document.addEventListener('click', function(e) {
-        const link = e.target.closest('a[href*="calendar.app.google"]');
+        const link = e.target.closest('a[href*="offer.html"]');
         if (link && typeof gtag === 'function') {
-          gtag('event', 'strategy_call_click', {
+          gtag('event', 'offer_page_click', {
             'page_location': window.location.pathname,
             'page_title': document.title,
             'link_text': link.textContent.trim().substring(0, 50)
@@ -72,7 +72,7 @@
     <div class="bg-gradient-to-r from-red-600 to-red-700 text-white py-2 px-4 text-center text-sm font-medium">
         <span class="inline-flex items-center gap-2">
             <span class="w-2 h-2 rounded-full bg-white animate-pulse"></span>
-            Only 10 spots available per month — <a href="https://calendar.app.google/uzaLZUWSUH3ZbaGr6" target="_blank" class="underline font-bold hover:text-red-100">See if you qualify →</a>
+            Only 10 spots available per month
         </span>
     </div><main>
 
@@ -168,7 +168,7 @@
                     </div>
                 </div>
                 <p class="text-sm text-slate-800 font-bold mb-2">Stuck & Unsure → SpaceX, Google, GE & Bridgestone Offers</p>
-                <p class="text-xs text-slate-600 mb-3">Long-tenured at a Fortune 100 OEM — received job offers from SpaceX, Google, GE & Bridgestone</p>
+                <p class="text-xs text-slate-600 mb-3">Long-tenured at a Fortune 100 company — received job offers from SpaceX, Google, GE & Bridgestone</p>
                 <div class="bg-emerald-50 p-3 rounded-lg border border-emerald-200">
                     <p class="text-xs font-bold text-emerald-800 mb-1">🎯 KEY QUOTE:</p>
                     <p class="text-xs text-emerald-700 italic">"I went from insecure to walking into interviews confident and clear about my value."</p>
@@ -379,7 +379,7 @@
                     </div>
                     <div class="flex-1">
                         <h3 class="text-2xl font-bold text-slate-900 mb-2">Karen B. — From Stuck to SpaceX Offers</h3>
-                        <p class="text-sm text-emerald-600 font-semibold uppercase tracking-wide">Stuck at a Fortune 100 OEM → Offers from SpaceX, Google, GE & Bridgestone</p>
+                        <p class="text-sm text-emerald-600 font-semibold uppercase tracking-wide">Stuck at a Fortune 100 Company → Offers from SpaceX, Google, GE & Bridgestone</p>
                     </div>
                 </div>
 
@@ -412,7 +412,7 @@
                             <strong>Long-tenured engineer who wanted more but didn't know how to get there.</strong>
                         </p>
                         <p class="text-slate-600 text-sm leading-relaxed">
-                            Karen had been working as a Programming & Test Engineer at a Fortune 100 Ag OEM for a long time. She wanted something more challenging, something she was passionate about — but she had two big obstacles: she didn't know how to position herself in the market, and interviews were intimidating. She had no clear strategy for making a change.
+                            Karen had been working as a Programming & Test Engineer at a Fortune 100 company for a long time. She wanted something more challenging, something she was passionate about — but she had two big obstacles: she didn't know how to position herself in the market, and interviews were intimidating. She had no clear strategy for making a change.
                         </p>
                     </div>
 
@@ -574,7 +574,7 @@
                             <strong>Needed to convert internship experience into a full-time role at a top company.</strong>
                         </p>
                         <p class="text-slate-600 text-sm leading-relaxed">
-                            Sarah was an intern at a Fortune 100 Ag OEM looking to launch her career after graduation. Like many engineering students, she needed help transforming her academic and internship experiences into compelling interview stories, building a resume that would stand out, and developing the interview skills to land a role at a top-tier company.
+                            Sarah was an intern at a Fortune 100 company looking to launch her career after graduation. Like many engineering students, she needed help transforming her academic and internship experiences into compelling interview stories, building a resume that would stand out, and developing the interview skills to land a role at a top-tier company.
                         </p>
                     </div>
 
@@ -660,7 +660,7 @@
                             <strong>"Struggling with interviews."</strong>
                         </p>
                         <p class="text-slate-600 mt-2 text-sm leading-relaxed">
-                            Mohamed was an entry-level contract engineer at a Fortune 100 Ag OEM who couldn't convert interviews into job offers. His interview performance was limiting his potential opportunities, keeping him trapped in contract roles when he wanted permanent employment and a path to software engineering. Every failed interview meant more months of uncertainty.
+                            Mohamed was an entry-level contract engineer at a Fortune 100 company who couldn't convert interviews into job offers. His interview performance was limiting his potential opportunities, keeping him trapped in contract roles when he wanted permanent employment and a path to software engineering. Every failed interview meant more months of uncertainty.
                         </p>
                     </div>
 
@@ -720,10 +720,10 @@
                 <p class="text-emerald-100 mb-4 text-sm max-w-2xl mx-auto">
                     Every month you wait = $6,000-$7,000 in lost income. Gavin and Mohamed were exactly where you are. They decided to stop doing it alone.
                 </p>
-                <a href="https://calendar.app.google/uzaLZUWSUH3ZbaGr6" target="_blank" class="inline-block bg-white text-emerald-700 font-bold px-8 py-4 rounded-full hover:bg-emerald-50 transition shadow-lg hover:shadow-2xl hover:-translate-y-1">
-                    Book Your Free Strategy Session →
+                <a href="landing/offer.html?source=site" class="inline-block bg-white text-emerald-700 font-bold px-8 py-4 rounded-full hover:bg-emerald-50 transition shadow-lg hover:shadow-2xl hover:-translate-y-1">
+                    Ready To Launch? →
                 </a>
-                <p class="text-emerald-200 text-xs mt-3">No commitment. No sales pitch. Just an honest conversation.</p>
+                <p class="text-emerald-200 text-xs mt-3">See if you qualify · No pressure · Takes 2 minutes</p>
             </div>
 
             <!-- Ebuka's Full Story -->
@@ -747,7 +747,7 @@
                             The Challenge
                         </h4>
                         <p class="text-slate-700 leading-relaxed mb-2">
-                            <strong>"I was starting out as an intern at a Fortune 100 Ag OEM and needed to know how to maximize my internship to get a return offer and overall make an impact at the company."</strong>
+                            <strong>"I was starting out as an intern at a Fortune 100 company and needed to know how to maximize my internship to get a return offer and overall make an impact at the company."</strong>
                         </p>
                         <p class="text-slate-600 text-sm leading-relaxed">
                             As a new intern, Ebuka lacked knowledge about networking, building reputation, and strategically positioning himself for a return offer. He felt lost and knew coaching would help him overcome barriers faster.
@@ -816,7 +816,7 @@
                     </div>
                     <div class="flex-1">
                         <h3 class="text-2xl font-bold text-slate-900 mb-2">Jonah B. — "0% Chance" to Software Engineer</h3>
-                        <p class="text-sm text-emerald-600 font-semibold uppercase tracking-wide">Mechanical Engineer → Software Test Engineer at a Fortune 100 Ag OEM</p>
+                        <p class="text-sm text-emerald-600 font-semibold uppercase tracking-wide">Mechanical Engineer → Software Test Engineer at a Fortune 100 Company</p>
                     </div>
                 </div>
 
@@ -836,7 +836,7 @@
                             <strong>"Landing any permanent role, but especially breaking into the software field as a Mechanical Engineer."</strong>
                         </p>
                         <p class="text-slate-600 mt-2 text-sm leading-relaxed">
-                            Jonah felt powerless in his job search. As an entry-level mechanical engineer at a Fortune 100 Ag OEM, breaking into software engineering seemed impossible without significant luck. The traditional path didn't align with his goals, and he needed a strategic approach to make the transition.
+                            Jonah felt powerless in his job search. As an entry-level mechanical engineer at a Fortune 100 company, breaking into software engineering seemed impossible without significant luck. The traditional path didn't align with his goals, and he needed a strategic approach to make the transition.
                         </p>
                     </div>
 
@@ -862,7 +862,7 @@
                         </h4>
                         <div class="bg-emerald-50 p-4 rounded-lg border border-emerald-200">
                             <p class="text-emerald-900 font-bold text-lg mb-2">
-                                Successfully repositioned into permanent Software Test Engineer role at a Fortune 100 Ag OEM
+                                Successfully repositioned into permanent Software Test Engineer role at a Fortune 100 company
                             </p>
                             <p class="text-emerald-800 text-sm leading-relaxed">
                                 Jonah made the mechanical-to-software transition within the same company, leveraging strategic coaching to navigate internal systems and position himself as the ideal candidate.
@@ -1022,7 +1022,7 @@
                             "The most helpful advice I received was in regards to positioning myself for the next step. I was told to go above and beyond in my current role. That didn't just mean in the work I do, but also the connections I make."
                         </blockquote>
                         <p class="text-slate-600 mt-3 text-sm leading-relaxed">
-                            Through coaching, Cole learned that promotion readiness goes far beyond technical excellence. We focused on strategic positioning, building relationships with key stakeholders, and developing interviewing skills for when opportunities emerged. The coaching was honest and specific—not generic career advice, but tailored strategies for his exact role and aspirations at a Fortune 100 OEM.
+                            Through coaching, Cole learned that promotion readiness goes far beyond technical excellence. We focused on strategic positioning, building relationships with key stakeholders, and developing interviewing skills for when opportunities emerged. The coaching was honest and specific—not generic career advice, but tailored strategies for his exact role and aspirations at a Fortune 100 company.
                         </p>
                         <div class="mt-3 bg-emerald-50 p-4 rounded-lg">
                             <p class="text-xs font-semibold text-emerald-900 mb-2">What Made the Difference:</p>
@@ -1093,7 +1093,7 @@
                             "Before we started working together, my biggest challenge was feeling stuck in my career development. I had goals and ambitions, but I lacked clarity about the best path forward and the strategies needed to progress with confidence. I also struggled to translate my potential into visible results and didn't have a structured plan to improve my performance and positioning."
                         </blockquote>
                         <p class="text-slate-600 text-sm leading-relaxed">
-                            Murilo was a senior engineer at a Fortune 100 Ag OEM with strong technical knowledge and drive, but he was struggling to position himself for promotion and transition deeper into software. He had the ambition to move from design into the software area but lacked technical direction and confidence to make that change effectively. This created a sense of stagnation—he knew he had potential to contribute more strategically but wasn't sure how to bridge the gap between where he was and where he wanted to be.
+                            Murilo was a senior engineer at a Fortune 100 company with strong technical knowledge and drive, but he was struggling to position himself for promotion and transition deeper into software. He had the ambition to move from design into the software area but lacked technical direction and confidence to make that change effectively. This created a sense of stagnation—he knew he had potential to contribute more strategically but wasn't sure how to bridge the gap between where he was and where he wanted to be.
                         </p>
                     </div>
 
@@ -1200,12 +1200,12 @@
             <strong class="text-emerald-400">They decided to stop doing it alone.</strong>
         </p>
         
-        <a href="https://calendar.app.google/uzaLZUWSUH3ZbaGr6" target="_blank" class="inline-block bg-emerald-500 text-white font-bold px-10 py-5 rounded-full hover:bg-emerald-400 transition shadow-lg hover:shadow-2xl hover:-translate-y-1 text-lg">
-            Book Your Free Strategy Session Now →
+        <a href="landing/offer.html?source=site" class="inline-block bg-emerald-500 text-white font-bold px-10 py-5 rounded-full hover:bg-emerald-400 transition shadow-lg hover:shadow-2xl hover:-translate-y-1 text-lg">
+            Ready To Launch? →
         </a>
         
         <p class="text-slate-400 text-sm mt-4">
-            No commitment. No sales pitch. Just an honest conversation about whether the 21-Day Blueprint is right for you.
+            See if you qualify · No pressure · Takes 2 minutes
         </p>
     </div>
 </div>
@@ -1267,8 +1267,8 @@
                     </a></li>
                 </ul>
                 <div class="mt-6">
-                    <a href="https://calendar.app.google/uzaLZUWSUH3ZbaGr6" target="_blank" class="inline-block px-4 py-2 bg-brand-accent text-brand-primary font-bold rounded-lg text-sm hover:bg-white transition">
-                        Book Strategy Session
+                    <a href="landing/offer.html?source=site" class="inline-block px-4 py-2 bg-brand-accent text-brand-primary font-bold rounded-lg text-sm hover:bg-white transition">
+                        Ready To Launch? →
                     </a>
                 </div>
             </div>

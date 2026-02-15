@@ -60,7 +60,7 @@
 <!-- ============================================ -->
 <!-- SECTION 1: CONFIRMATION BANNER                -->
 <!-- ============================================ -->
-<div class="bg-brand-primary text-white py-3 text-center text-sm font-semibold">
+<div id="confirmation-banner" class="bg-brand-primary text-white py-3 text-center text-sm font-semibold">
     <span class="inline-flex items-center gap-2">
         <svg class="w-4 h-4 text-brand-accent" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
         Confirmed: Your Impact Bullet Builder is being sent to your inbox
@@ -307,7 +307,7 @@
                     <div class="text-center md:text-left">
                         <h3 class="text-2xl font-bold mb-2">I'm Not HR. I'm Not a Recruiter.</h3>
                         <p class="text-emerald-400 font-bold text-lg mb-3">I'm an Engineer Who Figured Out the System.</p>
-                        <p class="text-slate-300 text-sm">4 promotions. 4 career pivots. 7 years at a Fortune 100 Ag OEM. Mechanical → Software → Leadership. I've been on <strong>both sides of the hiring table</strong> — and I packaged everything I learned into a system I can teach you in 21 days.</p>
+                        <p class="text-slate-300 text-sm">4 promotions. 4 career pivots. 7 years at a Fortune 100 company. Mechanical → Software → Leadership. I've been on <strong>both sides of the hiring table</strong> — and I packaged everything I learned into a system I can teach you in 21 days.</p>
                     </div>
                 </div>
             </div>
@@ -442,13 +442,13 @@
                     </select>
                 </div>
 
-                <!-- Q4: Budget Confirmation -->
+                <!-- Q4: Investment Mindset -->
                 <div>
-                    <label class="block text-sm font-semibold text-slate-700 mb-1">The program investment is $1,000. Does that work for you?</label>
-                    <select id="q-budget-confirm" required class="w-full px-4 py-3 rounded-xl border border-slate-300 text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-brand-secondary focus:border-brand-secondary transition bg-white appearance-none" style="background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%20viewBox%3D%220%200%2020%2020%22%20fill%3D%22%2364748b%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cpath%20fill-rule%3D%22evenodd%22%20d%3D%22M5.293%207.293a1%201%200%20011.414%200L10%2010.586l3.293-3.293a1%201%200%20111.414%201.414l-4%204a1%201%200%2001-1.414%200l-4-4a1%201%200%20010-1.414z%22%20clip-rule%3D%22evenodd%22/%3E%3C/svg%3E'); background-repeat: no-repeat; background-position: right 12px center; background-size: 20px;">
+                    <label class="block text-sm font-semibold text-slate-700 mb-1">Are you willing to invest in coaching to fast-track your job search?</label>
+                    <select id="q-invest" required class="w-full px-4 py-3 rounded-xl border border-slate-300 text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-brand-secondary focus:border-brand-secondary transition bg-white appearance-none" style="background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%20viewBox%3D%220%200%2020%2020%22%20fill%3D%22%2364748b%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cpath%20fill-rule%3D%22evenodd%22%20d%3D%22M5.293%207.293a1%201%200%20011.414%200L10%2010.586l3.293-3.293a1%201%200%20111.414%201.414l-4%204a1%201%200%2001-1.414%200l-4-4a1%201%200%20010-1.414z%22%20clip-rule%3D%22evenodd%22/%3E%3C/svg%3E'); background-repeat: no-repeat; background-position: right 12px center; background-size: 20px;">
                         <option value="" disabled selected>Select an option...</option>
-                        <option value="yes">Yes, $1,000 works</option>
-                        <option value="no">No, that's too much</option>
+                        <option value="yes">Yes, if it gets results</option>
+                        <option value="no">No, I only want free resources</option>
                     </select>
                 </div>
 
@@ -589,9 +589,9 @@
                     <svg class="w-5 h-5 text-slate-400 shrink-0 faq-icon transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
                 </button>
                 <div class="faq-content hidden px-5 pb-5 text-sm text-slate-600 leading-relaxed">
-                    <p class="mb-2">The investment is $1,000. We'll confirm everything on the strategy call.</p>
-                    <p class="mb-2">Consider this: the average starting engineering salary is $80,000+. Every month without that job costs you <strong>$6,700</strong>. The program pays for itself in the first week of your new job.</p>
-                    <p>If you haven't made at least that much back from the free guide, don't do it. If you have, chances are we can help more.</p>
+                    <p class="mb-2">Pricing is discussed on the strategy call once we've confirmed you're a good fit. The call is free, low-pressure, and only 15 minutes.</p>
+                    <p class="mb-2">Consider this: the average starting engineering salary is $80,000+. Every month without that job costs you <strong>$6,700</strong>. The right coaching pays for itself in the first week of your new job.</p>
+                    <p>We'll walk through everything on the call — no surprises.</p>
                 </div>
             </div>
 
@@ -659,6 +659,12 @@
     const name = params.get('name');
     const budget = params.get('budget');
 
+    // Hide confirmation banner if coming from main site (no lead magnet)
+    if (params.get('source') === 'site') {
+        const banner = document.getElementById('confirmation-banner');
+        if (banner) banner.style.display = 'none';
+    }
+
     // FAQ toggle
     function toggleFaq(btn) {
         const content = btn.nextElementSibling;
@@ -690,11 +696,11 @@
         const situation = document.getElementById('q-situation').value;
         const timeline = document.getElementById('q-timeline').value;
         const commitment = document.getElementById('q-commitment').value;
-        const budgetConfirm = document.getElementById('q-budget-confirm').value;
+        const willingToInvest = document.getElementById('q-invest').value;
 
         // Qualification logic
-        // Disqualified if: timeline is "just thinking", OR not willing to commit, OR budget doesn't work
-        const isQualified = timeline !== 'thinking' && commitment !== 'no' && budgetConfirm !== 'no';
+        // Disqualified if: timeline is "just thinking", OR not willing to commit, OR not willing to invest
+        const isQualified = timeline !== 'thinking' && commitment !== 'no' && willingToInvest !== 'no';
 
         // Send to Kit (Form ID: 9087434)
         try {
@@ -706,7 +712,7 @@
             formData.append('fields[situation]', situation);
             formData.append('fields[timeline]', timeline);
             formData.append('fields[commitment]', commitment);
-            formData.append('fields[budget_confirm]', budgetConfirm);
+            formData.append('fields[willing_to_invest]', willingToInvest);
             formData.append('fields[qualified]', isQualified ? 'yes' : 'no');
 
             await fetch('https://app.kit.com/forms/9087434/subscriptions', {
@@ -726,7 +732,7 @@
                 'situation': situation,
                 'timeline': timeline,
                 'commitment': commitment,
-                'budget_confirm': budgetConfirm,
+                'willing_to_invest': willingToInvest,
                 'qualified': isQualified ? 'yes' : 'no'
             });
         }

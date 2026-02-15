@@ -9,12 +9,12 @@
       gtag('js', new Date());
       gtag('config', 'G-L8V47TR52C');
     </script>
-    <!-- Track strategy call booking clicks -->
+    <!-- Track offer page clicks -->
     <script>
       document.addEventListener('click', function(e) {
-        const link = e.target.closest('a[href*="calendar.app.google"]');
+        const link = e.target.closest('a[href*="offer.html"]');
         if (link && typeof gtag === 'function') {
-          gtag('event', 'strategy_call_click', {
+          gtag('event', 'offer_page_click', {
             'page_location': window.location.pathname,
             'page_title': document.title,
             'link_text': link.textContent.trim().substring(0, 50)
@@ -72,7 +72,7 @@
     <div class="bg-gradient-to-r from-red-600 to-red-700 text-white py-2 px-4 text-center text-sm font-medium">
         <span class="inline-flex items-center gap-2">
             <span class="w-2 h-2 rounded-full bg-white animate-pulse"></span>
-            Only 10 spots available per month — <a href="https://calendar.app.google/uzaLZUWSUH3ZbaGr6" target="_blank" class="underline font-bold hover:text-red-100">See if you qualify →</a>
+            Only 10 spots available per month
         </span>
     </div>
 
@@ -86,20 +86,22 @@
         
         <div class="max-w-6xl mx-auto px-4 relative z-10">
             
-            <!-- VIDEO FIRST - Full Width -->
-            <div id="video" class="mb-10 scroll-mt-24">
-                <div class="bg-slate-900 rounded-2xl overflow-hidden border-4 border-slate-800 shadow-2xl w-full" style="aspect-ratio: 16/9;">
-                    <video controls controlslist="nofullscreen" disablepictureinpicture class="w-full h-full object-cover">
-                        <source src="video_scripts/about_page_V2.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
+            <!-- HERO IMAGE -->
+            <div id="hero-image" class="mb-10 scroll-mt-24">
+                <div class="bg-gradient-to-br from-emerald-900 to-teal-800 rounded-2xl overflow-hidden border-4 border-slate-800 shadow-2xl w-full relative" style="aspect-ratio: 16/9;">
+                    <img src="pictures/mansour/casual_roof.jpg" alt="Mansour Manci - Engineering Career Coach" class="w-full h-full object-cover object-top">
+                    <div class="absolute inset-0 bg-gradient-to-t from-emerald-900/60 via-transparent to-transparent"></div>
+                    <div class="absolute bottom-6 left-6 right-6 text-white">
+                        <p class="text-2xl md:text-3xl font-bold drop-shadow-lg">Meet Mansour</p>
+                        <p class="text-emerald-200 text-sm md:text-base mt-1 drop-shadow">Engineer. Coach. Career strategist.</p>
+                    </div>
                 </div>
                 
                 <!-- Trust Indicators Below Video -->
                 <div class="flex items-center justify-center gap-8 mt-4 text-sm text-slate-500">
                     <div class="flex items-center gap-1">
                         <i data-lucide="briefcase" class="w-4 h-4 text-brand-secondary"></i>
-                        <span>7 Years at a Fortune 100 Ag OEM</span>
+                        <span>7 Years at a Fortune 100 Company</span>
                     </div>
                     <div class="flex items-center gap-1">
                         <i data-lucide="users" class="w-4 h-4 text-brand-secondary"></i>
@@ -131,8 +133,8 @@
                 
                 <!-- CTAs -->
                 <div class="flex justify-center mb-6">
-                    <a href="https://calendar.app.google/uzaLZUWSUH3ZbaGr6" target="_blank" class="px-8 py-4 bg-brand-primary text-white font-bold rounded-full hover:bg-brand-secondary transition shadow-lg hover:shadow-xl hover:-translate-y-0.5 text-lg inline-flex items-center justify-center gap-2">
-                        Book Your Free Strategy Call →
+                    <a href="landing/offer.html?source=site" class="px-8 py-4 bg-brand-primary text-white font-bold rounded-full hover:bg-brand-secondary transition shadow-lg hover:shadow-xl hover:-translate-y-0.5 text-lg inline-flex items-center justify-center gap-2">
+                        Ready To Launch? →
                     </a>
                 </div>
 
@@ -239,7 +241,7 @@
 
                 <!-- The Result -->
                 <div class="bg-slate-900 rounded-2xl p-6 md:p-8">
-                    <h3 class="text-xl font-bold text-white mb-4 text-center">The Result: Landed at a Fortune 100 Ag OEM</h3>
+                    <h3 class="text-xl font-bold text-white mb-4 text-center">The Result: Landed at a Fortune 100 Company</h3>
                     <p class="text-slate-400 text-center mb-6">And once I was inside, I figured out the rest of the game too...</p>
                     <div class="grid md:grid-cols-4 gap-4 text-center">
                         <div class="bg-slate-800 rounded-xl p-4">
@@ -381,8 +383,8 @@
                 <h3 class="text-2xl font-bold mb-3">Tired of the Application Black Hole?</h3>
                 <p class="text-emerald-100 mb-6 max-w-xl mx-auto">If you're sending out applications and hearing nothing back, there's a better way.</p>
                 <div class="flex flex-col sm:flex-row gap-3 justify-center">
-                    <a href="https://calendar.app.google/uzaLZUWSUH3ZbaGr6" target="_blank" class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white text-emerald-600 font-bold rounded-full hover:bg-emerald-50 transition shadow-lg">
-                        Book Your Free Strategy Call →
+                    <a href="landing/offer.html?source=site" class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white text-emerald-600 font-bold rounded-full hover:bg-emerald-50 transition shadow-lg">
+                        Ready To Launch? →
                     </a>
                 </div>
             </div>
@@ -573,8 +575,8 @@
                 <p class="text-slate-400 mb-8 max-w-2xl mx-auto">Every week without a job is another $1,500+ lost. Let's get you interview-ready in 21 days.</p>
                 
                 <div class="flex justify-center mb-6">
-                    <a href="https://calendar.app.google/uzaLZUWSUH3ZbaGr6" target="_blank" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-emerald-500 text-white font-bold rounded-full hover:bg-emerald-400 transition shadow-lg hover:shadow-xl hover:-translate-y-0.5">
-                        Book Your Free Strategy Call →
+                    <a href="landing/offer.html?source=site" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-emerald-500 text-white font-bold rounded-full hover:bg-emerald-400 transition shadow-lg hover:shadow-xl hover:-translate-y-0.5">
+                        Ready To Launch? →
                     </a>
                 </div>
                 
@@ -639,8 +641,8 @@
                         </a></li>
                     </ul>
                     <div class="mt-6">
-                        <a href="https://calendar.app.google/uzaLZUWSUH3ZbaGr6" target="_blank" class="inline-block px-4 py-2 bg-brand-accent text-brand-primary font-bold rounded-lg text-sm hover:bg-white transition">
-                            Book Strategy Session
+                        <a href="landing/offer.html?source=site" class="inline-block px-4 py-2 bg-brand-accent text-brand-primary font-bold rounded-lg text-sm hover:bg-white transition">
+                            Ready To Launch? →
                         </a>
                     </div>
                 </div>

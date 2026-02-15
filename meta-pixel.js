@@ -55,12 +55,12 @@ fbq('track', 'PageView');
     }
 })();
 
-// Track Lead events when clicking strategy call booking links
+// Track Lead events when clicking offer page links
 document.addEventListener('click', function(e) {
-    var link = e.target.closest('a[href*="calendar.app.google"]');
+    var link = e.target.closest('a[href*="offer.html"]');
     if (link) {
         fbq('track', 'Lead', {
-            content_name: 'Strategy Call Booking',
+            content_name: 'Offer Page Click',
             content_category: window.location.pathname,
             value: 0,
             currency: 'USD'

@@ -9,12 +9,12 @@
       gtag('js', new Date());
       gtag('config', 'G-L8V47TR52C');
     </script>
-    <!-- Track strategy call booking clicks -->
+    <!-- Track offer page clicks -->
     <script>
       document.addEventListener('click', function(e) {
-        const link = e.target.closest('a[href*="calendar.app.google"]');
+        const link = e.target.closest('a[href*="offer.html"]');
         if (link && typeof gtag === 'function') {
-          gtag('event', 'strategy_call_click', {
+          gtag('event', 'offer_page_click', {
             'page_location': window.location.pathname,
             'page_title': document.title,
             'link_text': link.textContent.trim().substring(0, 50)
@@ -65,7 +65,7 @@
 <div class="bg-gradient-to-r from-red-600 to-red-700 text-white py-2 px-4 text-center text-sm font-medium">
     <span class="inline-flex items-center gap-2">
         <span class="w-2 h-2 rounded-full bg-white animate-pulse"></span>
-        Only 10 spots available per month — <a href="https://calendar.app.google/uzaLZUWSUH3ZbaGr6" target="_blank" class="underline font-bold hover:text-red-100">See if you qualify →</a>
+        Only 10 spots available per month
     </span>
 </div>
 
@@ -85,20 +85,22 @@
     
     <div class="max-w-6xl mx-auto px-4 relative z-10">
         
-        <!-- VIDEO FIRST - Full Width -->
-        <div id="video" class="mb-10 scroll-mt-24">
-            <div class="bg-slate-900 rounded-2xl overflow-hidden border-4 border-slate-800 shadow-2xl w-full" style="aspect-ratio: 16/9;">
-                <video controls controlslist="nofullscreen" disablepictureinpicture class="w-full h-full object-cover">
-                    <source src="video_scripts/index_page_final_v6.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
+        <!-- HERO IMAGE -->
+        <div id="hero-image" class="mb-10 scroll-mt-24">
+            <div class="bg-gradient-to-br from-emerald-900 to-teal-800 rounded-2xl overflow-hidden border-4 border-slate-800 shadow-2xl w-full relative" style="aspect-ratio: 16/9;">
+                <img src="pictures/mansour/professional_standing.png" alt="Mansour Manci - Engineering Career Coach" class="w-full h-full object-cover object-top">
+                <div class="absolute inset-0 bg-gradient-to-t from-emerald-900/60 via-transparent to-transparent"></div>
+                <div class="absolute bottom-6 left-6 right-6 text-white">
+                    <p class="text-2xl md:text-3xl font-bold drop-shadow-lg">DO YOU WANT TO LAND YOUR FIRST TOP-TIER ENGINEERING JOB?</p>
+                    <p class="text-emerald-200 text-sm md:text-base mt-1 drop-shadow">1-on-1 coaching from a real engineer, not HR.</p>
+                </div>
             </div>
             
             <!-- Trust Indicators Below Video -->
             <div class="flex items-center justify-center gap-8 mt-4 text-sm text-slate-500">
                 <div class="flex items-center gap-1">
                     <i data-lucide="briefcase" class="w-4 h-4 text-brand-secondary"></i>
-                    <span>7 Years at a Fortune 100 Ag OEM</span>
+                    <span>7 Years at a Fortune 100 Company</span>
                 </div>
                 <div class="flex items-center gap-1">
                     <i data-lucide="users" class="w-4 h-4 text-brand-secondary"></i>
@@ -128,11 +130,11 @@
             
             <!-- Single CTA -->
             <div class="flex justify-center mb-4">
-                <a href="https://calendar.app.google/uzaLZUWSUH3ZbaGr6" target="_blank" class="px-8 py-4 bg-brand-primary text-white font-bold rounded-full hover:bg-brand-secondary transition shadow-lg hover:shadow-xl hover:-translate-y-0.5 text-lg">
-                    Book Your Free Strategy Call →
+                <a href="landing/offer.html?source=site" class="px-8 py-4 bg-brand-primary text-white font-bold rounded-full hover:bg-brand-secondary transition shadow-lg hover:shadow-xl hover:-translate-y-0.5 text-lg">
+                    Ready To Launch? →
                 </a>
             </div>
-            <p class="text-sm text-slate-400 mb-6">15-minute call · No pressure · See if we're a fit</p>
+            <p class="text-sm text-slate-400 mb-6">See if you qualify · No pressure · Takes 2 minutes</p>
 
             <!-- Mini Stats Row -->
             <div class="flex flex-wrap gap-4 text-sm text-slate-600 justify-center">
@@ -429,10 +431,10 @@
                 
                 <!-- Single CTA — No price -->
                 <div class="text-center">
-                    <a href="https://calendar.app.google/uzaLZUWSUH3ZbaGr6" target="_blank" class="inline-block px-10 py-4 bg-brand-primary text-white font-bold rounded-full hover:bg-brand-secondary transition shadow-lg hover:shadow-xl hover:-translate-y-0.5 text-lg mb-3">
-                        Book Your Free Strategy Call →
+                    <a href="landing/offer.html?source=site" class="inline-block px-10 py-4 bg-brand-primary text-white font-bold rounded-full hover:bg-brand-secondary transition shadow-lg hover:shadow-xl hover:-translate-y-0.5 text-lg mb-3">
+                        Ready To Launch? →
                     </a>
-                    <p class="text-sm text-slate-500">15-minute call · No pressure · See if we're a fit</p>
+                    <p class="text-sm text-slate-500">See if you qualify · No pressure · Takes 2 minutes</p>
                 </div>
             </div>
         </div>
@@ -461,7 +463,7 @@
                         <div class="text-center md:text-left">
                             <h3 class="text-2xl font-bold mb-2">I'm Not HR. I'm Not a Recruiter.</h3>
                             <p class="text-emerald-400 font-bold text-lg mb-3">I'm an Engineer Who Figured Out the System.</p>
-                            <p class="text-slate-300">4 promotions. 4 career pivots. 7 years at a Fortune 100 Ag OEM. Mechanical → Software → Leadership. I've been on <strong>both sides of the hiring table</strong> — and I packaged everything I learned into a system I can teach you in 21 days.</p>
+                            <p class="text-slate-300">4 promotions. 4 career pivots. 7 years at a Fortune 100 company. Mechanical → Software → Leadership. I've been on <strong>both sides of the hiring table</strong> — and I packaged everything I learned into a system I can teach you in 21 days.</p>
                         </div>
                     </div>
                 </div>
@@ -670,7 +672,7 @@
                     </div>
                     <div class="flex-1 min-w-0">
                         <p class="text-base font-bold text-slate-900">Ebuka O.</p>
-                        <p class="text-sm font-semibold text-lime-600">Maximized Internship Impact at a Fortune 100 OEM</p>
+                        <p class="text-sm font-semibold text-lime-600">Maximized Internship Impact at a Fortune 100 Company</p>
                     </div>
                 </div>
             </div>
@@ -767,12 +769,12 @@
                     In 21 days, you could have a transformed resume, 15+ interview stories ready, and the confidence to walk into any room and win.
                 </p>
                 
-                <a href="https://calendar.app.google/uzaLZUWSUH3ZbaGr6" target="_blank" class="inline-block bg-white text-emerald-700 font-bold text-lg px-10 py-4 rounded-full hover:bg-emerald-50 transition shadow-xl hover:shadow-2xl hover:-translate-y-0.5">
-                    Book Your Free Strategy Call →
+                <a href="landing/offer.html?source=site" class="inline-block bg-white text-emerald-700 font-bold text-lg px-10 py-4 rounded-full hover:bg-emerald-50 transition shadow-xl hover:shadow-2xl hover:-translate-y-0.5">
+                    Ready To Launch? →
                 </a>
                 
                 <p class="text-emerald-200 text-sm mt-6">
-                    15-minute call · No obligation · See if we're a good fit
+                    See if you qualify · No pressure · Takes 2 minutes
                 </p>
             </div>
         </div>
@@ -833,8 +835,8 @@
                     </a></li>
                 </ul>
                 <div class="mt-6">
-                    <a href="https://calendar.app.google/uzaLZUWSUH3ZbaGr6" target="_blank" class="inline-block px-4 py-2 bg-brand-accent text-brand-primary font-bold rounded-lg text-sm hover:bg-white transition">
-                        Book Strategy Session
+                    <a href="landing/offer.html?source=site" class="inline-block px-4 py-2 bg-brand-accent text-brand-primary font-bold rounded-lg text-sm hover:bg-white transition">
+                        Ready To Launch? →
                     </a>
                 </div>
             </div>
