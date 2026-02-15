@@ -1,4 +1,4 @@
-# The 21-Day Engineering Career Launch Blueprint V2
+﻿# The 21-Day Engineering Career Launch Blueprint V2
 ## Alex Hormozi-Inspired Grand Slam Offer
 
 ---
@@ -23,7 +23,7 @@
 
 ## My Unique Branding
 
-I am not an HR person, I am not a recruiter, I am not a contract head hunter, I am an engineer. I got an engineering degree and landed the job. I have hired people at a Fortune 100 Ag OEM as an engineer, not an HR person. I have interviewed people as an engineering manager. I have coached other engineering students, interns, and entry level employees as an engineer myself, as a staff engineer myself, as an engineering manager myself. This isn't HR and recruiter talk about how to be an engineer that stands out, this is coming from an engineer, a senior engineer, a staff engineer, an engineering manager. And it has worked for many that I have coached, and it will work for you.
+I am not an HR person, I am not a recruiter, I am not a contract head hunter, I am an engineer. I got an engineering degree and landed the job. I have hired people at a Fortune 100 company as an engineer, not an HR person. I have interviewed people as an engineering manager. I have coached other engineering students, interns, and entry level employees as an engineer myself, as a staff engineer myself, as an engineering manager myself. This isn't HR and recruiter talk about how to be an engineer that stands out, this is coming from an engineer, a senior engineer, a staff engineer, an engineering manager. And it has worked for many that I have coached, and it will work for you.
 
 ---
 
@@ -905,10 +905,10 @@ Three 90-minute 1:1 coaching sessions with comprehensive bonus materials deliver
 ### Why Prospects Should Believe They'll Succeed
 
 **My Origin Story (Proof It Works for "Underdogs"):**
-I didn't come from some ivy league school, I didn't have any mentors, I didn't have any coaches, I didn't have a stellar GPA, connections, or amazing internships, but I landed a job at a Fortune 100 Ag OEM because of the system and steps I am going to lay out for you in this coaching program.
+I didn't come from some ivy league school, I didn't have any mentors, I didn't have any coaches, I didn't have a stellar GPA, connections, or amazing internships, but I landed a job at a Fortune 100 company because of the system and steps I am going to lay out for you in this coaching program.
 
 **My Inside Knowledge (Proof I Know the Game):**
-I have attended many recruiting events and have recruited for a Fortune 100 Ag OEM and will share with you my ocean of experience and what I have seen work well and not work well for candidates trying to get in from the outside.
+I have attended many recruiting events and have recruited for a Fortune 100 company and will share with you my ocean of experience and what I have seen work well and not work well for candidates trying to get in from the outside.
 
 **Client Results (Proof It Works for Others):**
 I have also coached many engineering students and early career engineers and they have landed great jobs at Fortune 100 companies and at other top companies from the advice and systems that I taught them in our coaching sessions.

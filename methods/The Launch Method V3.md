@@ -1,4 +1,4 @@
-# The Launch Method V3: Complete Methodology
+﻿# The Launch Method V3: Complete Methodology
 
 > **Target Audience:** College students, recent graduates, and early-career engineers seeking their first engineering role.
 
@@ -719,7 +719,7 @@ A CS new grad used this pivot in a 20-min alumni chat; got referred to a mid-siz
 ### The Universal Translator + ATS Pass™
 **The Problem:** Candidates get pigeonholed. A Civil Engineer can't get a Mechanical job because the recruiter doesn't understand "Highway Design."
 
-**The Origin Story:** When I applied to a Fortune 100 Ag OEM as a Mechanical Engineer, my only professional experience was 1 year at the Iowa Department of Transportation as a Highway Design Engineer. I realized the content didn't matter—**the competency did.**
+**The Origin Story:** When I applied to a Fortune 100 company as a Mechanical Engineer, my only professional experience was 1 year at the Iowa Department of Transportation as a Highway Design Engineer. I realized the content didn't matter—**the competency did.**
 
 **The Tactic: The Jargon Audit**
 Go through every bullet point on your resume. If a word is specific to your old industry, delete it and replace it with the universal engineering competency.
@@ -957,7 +957,7 @@ The bigger the monster, the bigger the hero.
 **Why It Works:** 99% of interviewers say yes. It shows preparation and professionalism. The ask itself is a signal: "I prepared for this."
 
 ### The Visual Aid Binder™
-**The Origin Story:** Before my final-round interview at a Fortune 100 Ag OEM, I was sitting in the waiting room. I had 15 stories memorized, but I realized I had no way to SHOW them what I was talking about. I went home, printed out CAD screenshots, graphs, and photos from every project. I put them in a tabbed binder. In my next interview, when they asked about a design project, I handed them the binder and said "Here's exactly what I built." Their eyes lit up. I got the offer.
+**The Origin Story:** Before my final-round interview at a Fortune 100 company, I was sitting in the waiting room. I had 15 stories memorized, but I realized I had no way to SHOW them what I was talking about. I went home, printed out CAD screenshots, graphs, and photos from every project. I put them in a tabbed binder. In my next interview, when they asked about a design project, I handed them the binder and said "Here's exactly what I built." Their eyes lit up. I got the offer.
 
 **What to Include:**
 For each of your 15 prepared examples, gather:
