@@ -58,11 +58,13 @@ Main Site ("Ready To Launch? →" CTA) → Landing Page 2 (offer.html?source=sit
 
 ## 🔨 TO DO — Landing Pages & Funnel
 
-### 1. [ ] Create Landing Page 3: Post-Booking Prep Page
-- **Purpose:** After someone books via Google Calendar, send them to a page (or email) with a VSL that preps them for the strategy call
-- **Decision needed:** Standalone landing page vs. n8n-triggered email (or both?)
-- **Content:** VSL video, what to expect on the call, how to prepare
-- **File:** `landing/booking-confirmed.html` (if page) or n8n automation (if email)
+### 1. [x] Create Landing Page 3: Post-Booking Prep Page
+- **File:** `landing/booking-confirmed.html`
+- **Structure:** Full VSL page — Promise → Pain → Plan → Proof → Coach Bio → Objection Handling → Price ($997) → Prep Checklist
+- **Prep checklist:** Dream roles, dream companies, timeline
+- **Video:** Placeholder ready for VSL recording
+- **Linked from:** Google Calendar booking confirmation email
+- **GA4 event:** `booking_confirmed_view`
 
 ### 4. [x] Simplify Google Calendar Booking Questions
 - **Simplified to:** Dream role + Dream companies (removed 3 redundant questions)
