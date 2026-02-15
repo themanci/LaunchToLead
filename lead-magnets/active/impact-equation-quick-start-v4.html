@@ -1,0 +1,1520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Impact Bullet Builder™ — Free Starter Guide | LaunchToLead</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../../tailwind-config.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+        .font-mono-num { font-family: 'Space Grotesk', monospace; }
+        @media print {
+            .page-break { page-break-after: always; }
+            .no-break { page-break-inside: avoid; }
+            .no-print { display: none; }
+            body { background: white; }
+        }
+        .gradient-text { background: linear-gradient(135deg, #14b8a6, #a3e635); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .gradient-text-red { background: linear-gradient(135deg, #ef4444, #f97316); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .gradient-text-purple { background: linear-gradient(135deg, #a855f6, #ec4899); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .glass { background: rgba(255,255,255,0.08); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.15); }
+        .glass-dark { background: rgba(0,0,0,0.2); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.1); }
+        .card-hover { transition: transform 0.2s, box-shadow 0.2s; }
+        .card-hover:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(0,0,0,0.12); }
+        .stat-glow { box-shadow: 0 0 30px rgba(20,184,166,0.15); }
+        .danger-glow { box-shadow: 0 0 30px rgba(239,68,68,0.12); }
+        .purple-glow { box-shadow: 0 0 40px rgba(168,85,247,0.12); }
+        .amber-glow { box-shadow: 0 0 30px rgba(245,158,11,0.12); }
+        .check-badge { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 50%; background: #064e3b; color: #a3e635; font-weight: 700; flex-shrink: 0; }
+        .x-badge { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 50%; background: #7f1d1d; color: #fca5a5; font-weight: 700; flex-shrink: 0; }
+        .page { min-height: 100vh; }
+        @page { margin: 0; size: letter; }
+
+        /* ── Premium graphic helpers ── */
+        .dot-pattern { background-image: radial-gradient(rgba(255,255,255,0.07) 1px, transparent 1px); background-size: 20px 20px; }
+        .dot-pattern-dark { background-image: radial-gradient(rgba(0,0,0,0.04) 1px, transparent 1px); background-size: 20px 20px; }
+        .ring-decoration { position: absolute; border-radius: 50%; border: 1px solid rgba(255,255,255,0.06); pointer-events: none; }
+        .glow-orb { position: absolute; border-radius: 50%; filter: blur(60px); pointer-events: none; }
+
+        /* Pyramid trapezoid tiers */
+        .pyramid-top { clip-path: polygon(20% 0%, 80% 0%, 85% 100%, 15% 100%); }
+        .pyramid-mid { clip-path: polygon(10% 0%, 90% 0%, 95% 100%, 5% 100%); }
+        .pyramid-bot { clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%); }
+
+        /* Formula pill enhanced */
+        .formula-pill { padding: 14px 24px; border-radius: 16px; font-weight: 700; font-size: 18px; position: relative; overflow: hidden; }
+        .formula-pill::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(255,255,255,0.1), transparent); pointer-events: none; }
+        .formula-operator { font-family: 'Space Grotesk', monospace; font-size: 28px; font-weight: 300; opacity: 0.5; }
+
+        /* Dragon slayer fire gradient */
+        .fire-gradient { background: linear-gradient(135deg, #1a0a2e 0%, #16213e 50%, #0f3460 100%); }
+        .fire-glow { position: absolute; width: 400px; height: 400px; border-radius: 50%; background: radial-gradient(circle, rgba(249,115,22,0.15) 0%, transparent 70%); pointer-events: none; }
+
+        /* Gauge meter for BS Meter */
+        .gauge-track { height: 12px; border-radius: 6px; background: linear-gradient(to right, #ef4444 0%, #ef4444 40%, #f59e0b 40%, #f59e0b 70%, #10b981 70%, #10b981 100%); position: relative; overflow: hidden; }
+        .gauge-label { position: absolute; top: -20px; font-size: 10px; font-weight: 700; transform: translateX(-50%); }
+
+        /* Stat card ring */
+        .stat-ring { position: relative; }
+        .stat-ring::after { content: ''; position: absolute; inset: -4px; border-radius: 20px; background: linear-gradient(135deg, rgba(20,184,166,0.2), rgba(163,230,53,0.2)); z-index: -1; }
+
+        /* Transform arrow */
+        .transform-arrow { display: flex; align-items: center; justify-content: center; width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg, #064e3b, #0d9488); color: #a3e635; font-size: 24px; font-weight: 700; box-shadow: 0 8px 30px rgba(6,78,59,0.3); flex-shrink: 0; }
+    </style>
+</head>
+<body class="bg-slate-50">
+
+<!-- ================================================================ -->
+<!-- PAGE 1: COVER                                                    -->
+<!-- ================================================================ -->
+<div class="page flex items-center justify-center p-8" style="background: linear-gradient(135deg, #022c22 0%, #064e3b 30%, #0d9488 60%, #065f46 100%); position: relative; overflow: hidden;">
+    <!-- Decorative background elements -->
+    <div class="glow-orb" style="width: 500px; height: 500px; background: rgba(163,230,53,0.06); top: -150px; right: -100px;"></div>
+    <div class="glow-orb" style="width: 400px; height: 400px; background: rgba(20,184,166,0.08); bottom: -100px; left: -80px;"></div>
+    <div class="ring-decoration" style="width: 600px; height: 600px; top: -200px; right: -200px;"></div>
+    <div class="ring-decoration" style="width: 400px; height: 400px; top: -100px; right: -100px;"></div>
+    <div class="ring-decoration" style="width: 500px; height: 500px; bottom: -200px; left: -150px;"></div>
+    <div class="max-w-3xl text-center text-white relative">
+        <!-- Decorative dots -->
+        <div class="absolute inset-0 opacity-5" style="background-image: radial-gradient(#a3e635 1px, transparent 1px); background-size: 24px 24px;"></div>
+        <div class="relative z-10">
+            <!-- Logo -->
+            <div class="mb-10">
+                <div class="inline-flex items-center gap-3">
+                    <div class="bg-white text-emerald-900 w-14 h-14 rounded-2xl flex items-center justify-center font-bold text-xl shadow-lg shadow-emerald-900/50">
+                        L²
+                    </div>
+                    <span class="text-3xl font-bold tracking-tight">Launch<span class="font-light text-lime-300">ToLead</span></span>
+                </div>
+            </div>
+            
+            <!-- Badge -->
+            <div class="inline-flex items-center gap-2 glass px-5 py-2.5 rounded-full mb-8">
+                <svg class="w-5 h-5 text-lime-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                </svg>
+                <span class="text-sm font-semibold tracking-wide uppercase text-lime-200">Launch Path</span>
+                <span class="text-white/40">•</span>
+                <span class="text-sm text-white/70">Free Starter Guide</span>
+            </div>
+            
+            <!-- Title -->
+            <h1 class="text-5xl md:text-7xl font-extrabold mb-4 leading-[1.1] tracking-tight">
+                The Impact Bullet<br/>Builder<span class="text-lime-300">™</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-emerald-100/90 mb-6 font-light tracking-wide">Starter Guide</p>
+            
+            <div class="w-20 h-1.5 bg-gradient-to-r from-lime-400 to-emerald-300 mx-auto mb-8 rounded-full"></div>
+            
+            <p class="text-lg text-emerald-50/80 max-w-xl mx-auto leading-relaxed mb-10">
+                The exact formula I used to land my first engineering role at a Fortune 100 company — and my clients have used to land jobs at Google, SpaceX, GE, Ford, and more.
+            </p>
+
+            <!-- 3-stat row -->
+            <div class="grid grid-cols-3 gap-4 max-w-lg mx-auto mb-12">
+                <div class="glass rounded-xl px-3 py-4 stat-ring" style="box-shadow: 0 0 25px rgba(163,230,53,0.1);">
+                    <p class="font-mono-num text-3xl font-bold text-lime-300">30</p>
+                    <p class="text-xs text-emerald-200/70 mt-1">Minutes To Complete</p>
+                </div>
+                <div class="glass rounded-xl px-3 py-4 stat-ring" style="box-shadow: 0 0 25px rgba(163,230,53,0.1);">
+                    <p class="font-mono-num text-3xl font-bold text-lime-300">4</p>
+                    <p class="text-xs text-emerald-200/70 mt-1">Part Formula</p>
+                </div>
+                <div class="glass rounded-xl px-3 py-4 stat-ring" style="box-shadow: 0 0 25px rgba(163,230,53,0.1);">
+                    <p class="font-mono-num text-3xl font-bold text-lime-300">40%+</p>
+                    <p class="text-xs text-emerald-200/70 mt-1">Callback Rate</p>
+                </div>
+            </div>
+            
+            <!-- Author -->
+            <div class="flex items-center justify-center gap-4">
+                <img src="../../pictures/mansour/headshot_square.png" alt="Mansour Manci" class="w-16 h-16 rounded-full border-2 border-white/30 object-cover">
+                <div class="text-left">
+                    <p class="text-white font-semibold">Mansour Manci</p>
+                    <p class="text-emerald-200/70 text-sm">Career Coach & Founder, LaunchToLead</p>
+                    <p class="text-emerald-300/50 text-xs mt-0.5">4 Promotions · 7 Years at a Fortune 100</p>
+                </div>
+            </div>
+            
+            <!-- Footer -->
+            <div class="mt-12 pt-6 border-t border-white/10">
+                <p class="text-emerald-300/50 text-sm">LaunchToLead.io</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ================================================================ -->
+<!-- PAGE 2: THE PROBLEM                                              -->
+<!-- ================================================================ -->
+<div class="page p-10 md:p-14 bg-white flex flex-col justify-center">
+    <div class="max-w-4xl mx-auto">
+        <!-- Section label -->
+        <div class="flex items-center gap-3 mb-3">
+            <div class="w-8 h-8 rounded-lg bg-red-500 text-white flex items-center justify-center text-sm font-bold">01</div>
+            <span class="text-red-500 font-bold text-sm uppercase tracking-widest">The Problem</span>
+        </div>
+        <h2 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-3 tracking-tight">Your Resume Is <span class="gradient-text-red">Invisible</span></h2>
+        <p class="text-slate-500 text-lg mb-8 max-w-2xl">And it's costing you more than you think.</p>
+
+        <!-- Cost stat banner -->
+        <div class="rounded-2xl p-6 mb-8 no-break" style="background: linear-gradient(135deg, #450a0a 0%, #7f1d1d 40%, #991b1b 100%); position: relative; overflow: hidden; box-shadow: 0 12px 40px rgba(127,29,29,0.25);">
+            <div class="dot-pattern" style="position: absolute; inset: 0; opacity: 0.08;"></div>
+            <div style="position: absolute; top: -40px; right: -40px; width: 160px; height: 160px; border-radius: 50%; background: radial-gradient(circle, rgba(239,68,68,0.25) 0%, transparent 70%); pointer-events: none;"></div>
+            <div class="relative z-10 flex flex-col md:flex-row items-center gap-6">
+                <div class="text-center md:text-left">
+                    <p class="text-xs text-red-300/70 font-bold uppercase tracking-[3px] mb-2">The Real Cost of a Bad Resume</p>
+                    <p class="font-mono-num text-5xl font-extrabold text-white" style="text-shadow: 0 0 30px rgba(239,68,68,0.5);">$6,700</p>
+                    <p class="text-red-300/80 text-sm mt-1">lost per month you're stuck job hunting</p>
+                </div>
+                <div class="hidden md:block w-px h-20 bg-red-400/30"></div>
+                <div class="grid grid-cols-3 gap-4 text-center flex-1">
+                    <div class="rounded-xl p-3" style="background: rgba(239,68,68,0.1); border: 1px solid rgba(239,68,68,0.2);">
+                        <p class="font-mono-num text-2xl font-bold text-red-300">3 mo</p>
+                        <p class="text-red-400/60 text-xs">$20,000 lost</p>
+                    </div>
+                    <div class="rounded-xl p-3" style="background: rgba(239,68,68,0.1); border: 1px solid rgba(239,68,68,0.2);">
+                        <p class="font-mono-num text-2xl font-bold text-red-300">6 mo</p>
+                        <p class="text-red-400/60 text-xs">$40,000 lost</p>
+                    </div>
+                    <div class="rounded-xl p-3" style="background: rgba(239,68,68,0.1); border: 1px solid rgba(239,68,68,0.2);">
+                        <p class="font-mono-num text-2xl font-bold text-red-300">12 mo</p>
+                        <p class="text-red-400/60 text-xs">$80,000 lost</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stats row -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+            <div class="rounded-xl p-5 text-center no-break" style="background: linear-gradient(160deg, #0f172a, #1e293b); position: relative; overflow: hidden;">
+                <div style="position: absolute; top: -20px; right: -20px; width: 80px; height: 80px; border-radius: 50%; background: radial-gradient(circle, rgba(239,68,68,0.15) 0%, transparent 70%);"></div>
+                <p class="font-mono-num text-3xl font-bold text-red-400 relative z-10" style="text-shadow: 0 0 20px rgba(239,68,68,0.2);">250+</p>
+                <p class="text-slate-400 text-sm mt-1 relative z-10">Average applications sent by engineering grads</p>
+            </div>
+            <div class="rounded-xl p-5 text-center no-break" style="background: linear-gradient(160deg, #0f172a, #1e293b); position: relative; overflow: hidden;">
+                <div style="position: absolute; top: -20px; right: -20px; width: 80px; height: 80px; border-radius: 50%; background: radial-gradient(circle, rgba(245,158,11,0.15) 0%, transparent 70%);"></div>
+                <p class="font-mono-num text-3xl font-bold text-amber-400 relative z-10" style="text-shadow: 0 0 20px rgba(245,158,11,0.2);">6 sec</p>
+                <p class="text-slate-400 text-sm mt-1 relative z-10">Time a hiring manager spends on your resume</p>
+            </div>
+            <div class="rounded-xl p-5 text-center no-break" style="background: linear-gradient(160deg, #0f172a, #1e293b); position: relative; overflow: hidden;">
+                <div style="position: absolute; top: -20px; right: -20px; width: 80px; height: 80px; border-radius: 50%; background: radial-gradient(circle, rgba(249,115,22,0.15) 0%, transparent 70%);"></div>
+                <p class="font-mono-num text-3xl font-bold text-orange-400 relative z-10" style="text-shadow: 0 0 20px rgba(249,115,22,0.2);">75%</p>
+                <p class="text-slate-400 text-sm mt-1 relative z-10">Auto-rejected by ATS before a human sees it</p>
+            </div>
+        </div>
+
+        <!-- Key insight -->
+        <div class="bg-slate-50 border-2 border-slate-200 rounded-xl p-6 no-break">
+            <p class="text-xl text-slate-700 leading-relaxed">
+                <strong class="text-slate-900">You're not getting rejected. You're getting <span class="text-red-600">filtered out</span> before a human ever sees your resume.</strong>
+            </p>
+            <p class="text-slate-500 mt-3">
+                Think of your resume as a highlight reel, not a job description. Its only job is to make them curious enough to pick up the phone. Right now, most engineering resumes list responsibilities and duties instead of <strong>specific accomplishments worth bragging about</strong>.
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ================================================================ -->
+<!-- PAGE 3: WHAT MOST ENGINEERS WRITE (BAD EXAMPLES)                 -->
+<!-- ================================================================ -->
+<div class="page p-10 md:p-14 bg-white flex flex-col justify-center">
+    <div class="max-w-4xl mx-auto">
+        <div class="flex items-center gap-3 mb-3">
+            <div class="w-8 h-8 rounded-lg bg-red-500 text-white flex items-center justify-center text-sm font-bold">02</div>
+            <span class="text-red-500 font-bold text-sm uppercase tracking-widest">The Diagnosis</span>
+        </div>
+        <h2 class="text-4xl font-extrabold text-slate-900 mb-2 tracking-tight">What Most Engineers Write</h2>
+        <p class="text-slate-500 text-lg mb-8">These read like job descriptions, not accomplishments. Sound familiar?</p>
+
+        <!-- Bad bullets -->
+        <div class="bg-red-50 border-2 border-red-200 rounded-2xl p-8 mb-8">
+            <div class="space-y-4">
+                <div class="flex items-start gap-3">
+                    <span class="x-badge text-lg">✗</span>
+                    <p class="text-red-900 text-lg">"Developed features for web application"</p>
+                </div>
+                <div class="flex items-start gap-3">
+                    <span class="x-badge text-lg">✗</span>
+                    <p class="text-red-900 text-lg">"Improved system performance"</p>
+                </div>
+                <div class="flex items-start gap-3">
+                    <span class="x-badge text-lg">✗</span>
+                    <p class="text-red-900 text-lg">"Collaborated with team members on projects"</p>
+                </div>
+                <div class="flex items-start gap-3">
+                    <span class="x-badge text-lg">✗</span>
+                    <p class="text-red-900 text-lg">"Responsible for maintaining codebase"</p>
+                </div>
+            </div>
+            <div class="mt-6 bg-red-100 rounded-lg p-4">
+                <p class="text-red-700 text-sm"><strong>Why these fail:</strong> These are tasks, duties, and responsibilities — things you'd find copy-pasted from a job description. Zero specificity. No numbers. No tools. No business value. A hiring manager reads this and thinks: <em>"So did every other applicant."</em></p>
+            </div>
+            <div class="mt-3 bg-red-50 rounded-lg p-4 border border-red-200">
+                <p class="text-red-800 text-sm font-semibold">🚫 The #1 Resume Mistake: Listing responsibilities instead of accomplishments.</p>
+                <p class="text-red-600 text-xs mt-1">Your resume is not a job description. It's a highlight reel of <strong>specific, acute accomplishments</strong> you're proud of — things you personally did that had a measurable outcome. Not duties you held over long periods of time.</p>
+            </div>
+        </div>
+
+        <!-- Pyramid of Value -->
+        <div class="no-break">
+            <div class="text-center mb-6">
+                <div class="inline-flex items-center gap-2 bg-slate-100 px-4 py-2 rounded-full mb-3">
+                    <span class="text-lg">📊</span>
+                    <span class="text-slate-600 font-bold text-sm uppercase tracking-widest">Diagnostic</span>
+                </div>
+                <h3 class="text-3xl font-extrabold text-slate-900">The Pyramid of Value</h3>
+                <p class="text-slate-500 mt-1">Where do your current bullets fall?</p>
+            </div>
+            
+            <div class="relative max-w-2xl mx-auto" style="perspective: 800px;">
+                <!-- Decorative glow behind pyramid -->
+                <div style="position: absolute; top: -20px; left: 50%; transform: translateX(-50%); width: 200px; height: 200px; border-radius: 50%; background: radial-gradient(circle, rgba(16,185,129,0.15) 0%, transparent 70%); pointer-events: none;"></div>
+
+                <!-- TOP TIER — Impact Standard -->
+                <div class="relative mb-1" style="margin: 0 auto; width: 65%;">
+                    <div style="background: linear-gradient(135deg, #064e3b, #0d9488, #065f46); border-radius: 16px 16px 4px 4px; padding: 24px 28px; position: relative; overflow: hidden; box-shadow: 0 8px 40px rgba(16,185,129,0.25);">
+                        <!-- Dot pattern overlay -->
+                        <div style="position: absolute; inset: 0; opacity: 0.06; background-image: radial-gradient(#a3e635 1px, transparent 1px); background-size: 16px 16px; pointer-events: none;"></div>
+                        <div style="position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: linear-gradient(135deg, #a3e635, #84cc16); color: #064e3b; font-size: 10px; font-weight: 800; padding: 4px 16px; border-radius: 100px; letter-spacing: 1.5px; text-transform: uppercase; box-shadow: 0 4px 15px rgba(163,230,53,0.3); z-index: 10;">THE STANDARD</div>
+                        <div class="relative z-10 text-center mt-2">
+                            <p class="font-extrabold text-white text-xl mb-2" style="text-shadow: 0 2px 10px rgba(0,0,0,0.2);">🚀 Impact Standard</p>
+                            <p class="text-emerald-100 text-sm leading-relaxed italic">"Automated tracking for 3 major programs, saving 85% time and enabling daily executive visibility"</p>
+                            <div class="mt-3 inline-flex items-center gap-2 bg-white/10 px-4 py-1.5 rounded-full border border-white/20">
+                                <span class="w-2 h-2 bg-lime-300 rounded-full"></span>
+                                <span class="text-lime-300 text-xs font-bold tracking-wider uppercase">Gets Hired</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MIDDLE TIER — Achiever -->
+                <div class="relative mb-1" style="margin: 0 auto; width: 82%;">
+                    <div style="background: linear-gradient(135deg, #fef3c7, #fde68a); border: 2px solid #f59e0b; border-radius: 4px; padding: 20px 24px; position: relative;">
+                        <div class="flex items-center justify-center gap-3">
+                            <span class="text-2xl">📋</span>
+                            <div class="text-center">
+                                <p class="font-bold text-amber-900 text-lg">The Achiever</p>
+                                <p class="text-amber-800 text-sm italic">"Maintained spreadsheets for 3 projects"</p>
+                                <div class="mt-2 inline-flex items-center gap-2 bg-amber-200/60 px-3 py-1 rounded-full">
+                                    <span class="w-2 h-2 bg-amber-500 rounded-full"></span>
+                                    <span class="text-amber-700 text-xs font-bold tracking-wider uppercase">Considered</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BOTTOM TIER — Doer -->
+                <div class="relative" style="margin: 0 auto; width: 100%;">
+                    <div style="background: linear-gradient(135deg, #fef2f2, #fecaca); border: 2px solid #ef4444; border-radius: 4px 4px 16px 16px; padding: 20px 24px; position: relative;">
+                        <div class="flex items-center justify-center gap-3">
+                            <span class="text-2xl">😴</span>
+                            <div class="text-center">
+                                <p class="font-bold text-red-900 text-lg">The Doer</p>
+                                <p class="text-red-700 text-sm italic">"Maintained spreadsheets"</p>
+                                <p class="text-red-500 text-[10px] mt-1">← This is a responsibility, not an accomplishment</p>
+                                <div class="mt-2 inline-flex items-center gap-2 bg-red-200/60 px-3 py-1 rounded-full">
+                                    <span class="w-2 h-2 bg-red-500 rounded-full"></span>
+                                    <span class="text-red-700 text-xs font-bold tracking-wider uppercase">Ignored</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Side labels -->
+                <div style="position: absolute; right: -8px; top: 10px; writing-mode: vertical-rl; text-orientation: mixed;">
+                    <div style="display: flex; align-items: center; gap: 4px;">
+                        <svg width="12" height="60" style="opacity: 0.3;"><line x1="6" y1="0" x2="6" y2="60" stroke="#10b981" stroke-width="2" stroke-dasharray="4,4"/></svg>
+                        <span class="text-emerald-500 text-xs font-bold tracking-widest uppercase" style="letter-spacing: 3px;">VALUE</span>
+                    </div>
+                </div>
+            </div>
+            <p class="text-slate-500 text-sm mt-6 text-center italic">Most engineering resumes are stuck at the bottom two tiers — listing responsibilities instead of accomplishments. This guide gets you to the top.</p>
+        </div>
+    </div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ================================================================ -->
+<!-- PAGE 4: STEP 0 — THE ME-IN-WE EXTRACTOR                        -->
+<!-- ================================================================ -->
+<div class="page p-10 md:p-14 bg-gradient-to-br from-slate-50 to-teal-50 flex flex-col justify-center">
+    <div class="max-w-4xl mx-auto">
+        <div class="flex items-center gap-3 mb-3">
+            <div class="w-8 h-8 rounded-lg bg-slate-800 text-lime-300 flex items-center justify-center text-sm font-bold">0</div>
+            <span class="text-teal-700 font-bold text-sm uppercase tracking-widest">Before You Start</span>
+        </div>
+        <h2 class="text-4xl font-extrabold text-slate-900 mb-2 tracking-tight">The Me-in-We Extractor™</h2>
+        <p class="text-slate-600 text-lg mb-8">Before applying the formula, do this 5-minute fix first.</p>
+
+        <!-- Instruction -->
+        <div class="bg-white rounded-2xl shadow-lg border border-teal-200 p-8 mb-6 no-break stat-glow">
+            <h3 class="text-xl font-bold text-slate-900 mb-4">Find Every "We" and Replace It With What <em>You</em> Did</h3>
+            <p class="text-slate-600 mb-6">Engineers are trained to be humble. You say "we" and "the team" even when YOU did the heavy lifting. Hiring managers don't know who "we" is — they only care about what <strong>you</strong> specifically contributed.</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <!-- Before -->
+                <div class="bg-red-50 rounded-xl p-5 border border-red-200">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="x-badge text-sm">✗</span>
+                        <span class="text-red-700 font-bold text-sm">HIDDEN BEHIND "WE"</span>
+                    </div>
+                    <div class="space-y-3 text-red-800 text-sm">
+                        <p>"<strong>We</strong> delivered the project on time"</p>
+                        <p>"<strong>The team</strong> improved system reliability"</p>
+                        <p>"<strong>Our group</strong> redesigned the workflow"</p>
+                    </div>
+                </div>
+                <!-- After -->
+                <div class="bg-emerald-50 rounded-xl p-5 border border-emerald-200">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="check-badge text-sm">✓</span>
+                        <span class="text-emerald-800 font-bold text-sm">YOUR CONTRIBUTION</span>
+                    </div>
+                    <div class="space-y-3 text-emerald-800 text-sm">
+                        <p>"<strong>I led</strong> sprint planning and dependency tracking for 3 workstreams"</p>
+                        <p>"<strong>I designed</strong> the automated monitoring pipeline"</p>
+                        <p>"<strong>I proposed and implemented</strong> the new process flow"</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pro tip -->
+        <div class="bg-teal-900 text-white rounded-2xl p-6 no-break">
+            <div class="flex items-start gap-3">
+                <span class="text-2xl">💡</span>
+                <div>
+                    <p class="font-bold text-lg mb-2">The "Own Without Arrogance" Rule</p>
+                    <p class="text-teal-100 text-sm leading-relaxed">
+                        Owning your contribution isn't bragging — it's clarity. You can still give credit to teammates in interviews. But on your resume, <strong>you have 6 seconds</strong> to prove YOUR value. "We" accomplishes nothing in that window.
+                    </p>
+                    <p class="text-lime-300 text-sm font-semibold mt-3">
+                        ✍️ Action: Open your resume right now. Ctrl+F for "we," "our," "the team." Replace every one.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick win callout -->
+        <div class="mt-6 bg-white rounded-xl border-2 border-lime-400 p-5 no-break">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-lime-400 rounded-full flex items-center justify-center text-emerald-900 font-bold text-lg">⚡</div>
+                <div>
+                    <p class="font-bold text-slate-900">5-Minute Quick Win</p>
+                    <p class="text-slate-600 text-sm">Just doing this one step — before anything else — typically improves a resume by 20-30%. It's the single fastest improvement you can make.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ================================================================ -->
+<!-- PAGE 5: THE IMPACT BULLET BUILDER™ FORMULA                       -->
+<!-- ================================================================ -->
+<div class="page p-10 md:p-14 bg-white flex flex-col justify-center">
+    <div class="max-w-4xl mx-auto">
+        <div class="flex items-center gap-3 mb-3">
+            <div class="w-8 h-8 rounded-lg bg-emerald-700 text-white flex items-center justify-center text-sm font-bold">03</div>
+            <span class="text-emerald-700 font-bold text-sm uppercase tracking-widest">The Formula</span>
+        </div>
+        <h2 class="text-4xl font-extrabold text-slate-900 mb-2 tracking-tight">The Impact Bullet Builder™</h2>
+        <p class="text-slate-500 text-lg mb-8">A 4-part formula that turns vague job duties into specific, brag-worthy accomplishments</p>
+
+        <!-- Formula banner -->
+        <div class="rounded-2xl p-8 text-center mb-8 no-break" style="background: linear-gradient(160deg, #022c22 0%, #064e3b 40%, #0d9488 100%); position: relative; overflow: hidden; box-shadow: 0 20px 60px rgba(6,78,59,0.3);">
+            <!-- Decorative elements -->
+            <div class="dot-pattern" style="position: absolute; inset: 0; opacity: 0.4;"></div>
+            <div class="glow-orb" style="width: 300px; height: 300px; background: rgba(163,230,53,0.08); top: -100px; right: -50px;"></div>
+            <div class="ring-decoration" style="width: 300px; height: 300px; bottom: -150px; left: -100px; border-color: rgba(20,184,166,0.1);"></div>
+            
+            <div class="relative z-10">
+                <p class="text-emerald-300/70 text-xs font-bold tracking-[4px] uppercase mb-4">The Formula</p>
+                <div class="flex items-center gap-3 flex-wrap justify-center mb-4">
+                    <div class="formula-pill" style="background: linear-gradient(135deg, rgba(59,130,246,0.2), rgba(59,130,246,0.05)); border: 1px solid rgba(59,130,246,0.35); color: #93c5fd;">
+                        <span class="text-xs block opacity-60 mb-0.5">Your win</span>Accomplishment
+                    </div>
+                    <span class="formula-operator text-white">+</span>
+                    <div class="formula-pill" style="background: linear-gradient(135deg, rgba(20,184,166,0.2), rgba(20,184,166,0.05)); border: 1px solid rgba(20,184,166,0.35); color: #5eead4;">
+                        <span class="text-xs block opacity-60 mb-0.5">The number</span>Metric
+                    </div>
+                    <span class="formula-operator text-white">+</span>
+                    <div class="formula-pill" style="background: linear-gradient(135deg, rgba(6,182,212,0.2), rgba(6,182,212,0.05)); border: 1px solid rgba(6,182,212,0.35); color: #67e8f9;">
+                        <span class="text-xs block opacity-60 mb-0.5">The method</span>How
+                    </div>
+                    <span class="formula-operator text-white">+</span>
+                    <div class="formula-pill" style="background: linear-gradient(135deg, rgba(163,230,53,0.2), rgba(163,230,53,0.05)); border: 1px solid rgba(163,230,53,0.35); color: #d9f99d;">
+                        <span class="text-xs block opacity-60 mb-0.5">The value</span>Why
+                    </div>
+                    <span class="formula-operator text-white">=</span>
+                    <div class="formula-pill" style="background: linear-gradient(135deg, rgba(255,255,255,0.15), rgba(255,255,255,0.05)); border: 2px solid rgba(255,255,255,0.3); color: #fff; box-shadow: 0 0 30px rgba(163,230,53,0.15); font-size: 22px; letter-spacing: 2px;">
+                        IMPACT
+                    </div>
+                </div>
+                <p class="text-emerald-200/50 text-sm mt-2">Combine all 4 elements into a single powerful sentence</p>
+            </div>
+        </div>
+
+        <!-- 4 cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+            <div class="bg-white rounded-xl p-6 shadow-lg card-hover no-break" style="border-left: 5px solid #3b82f6; box-shadow: 0 8px 30px rgba(59,130,246,0.08);">
+                <div class="flex items-center mb-3">
+                    <div class="w-12 h-12 rounded-xl flex items-center justify-center text-xl font-bold mr-3" style="background: linear-gradient(135deg, #3b82f6, #60a5fa); color: white; box-shadow: 0 4px 15px rgba(59,130,246,0.25);">1</div>
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-900">Accomplishment</h3>
+                        <p class="text-blue-500 text-xs font-semibold uppercase tracking-wider">Your specific win</p>
+                    </div>
+                </div>
+                <p class="text-slate-600 mb-3 text-sm">A <strong>specific thing you did</strong> — not a duty or responsibility, but an acute accomplishment you're proud of.</p>
+                <div class="text-sm text-slate-500 space-y-1.5 bg-blue-50 rounded-lg p-3 border border-blue-100">
+                    <p>• "Redesigned manufacturing workflow"</p>
+                    <p>• "Automated testing pipeline"</p>
+                    <p>• "Led safety protocol revision"</p>
+                </div>
+                <p class="text-blue-600 text-xs font-semibold mt-3">💡 Start with a strong action verb — never "Responsible for" or "Duties included"</p>
+            </div>
+
+            <div class="bg-white rounded-xl p-6 shadow-lg card-hover no-break" style="border-left: 5px solid #14b8a6; box-shadow: 0 8px 30px rgba(20,184,166,0.08);">
+                <div class="flex items-center mb-3">
+                    <div class="w-12 h-12 rounded-xl flex items-center justify-center text-xl font-bold mr-3" style="background: linear-gradient(135deg, #0d9488, #14b8a6); color: white; box-shadow: 0 4px 15px rgba(20,184,166,0.25);">2</div>
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-900">Metric</h3>
+                        <p class="text-teal-500 text-xs font-semibold uppercase tracking-wider">The number</p>
+                    </div>
+                </div>
+                <p class="text-slate-600 mb-3 text-sm">The <strong>quantifiable result</strong> — prove it with data</p>
+                <div class="text-sm text-slate-500 space-y-1.5 bg-teal-50 rounded-lg p-3 border border-teal-100">
+                    <p>• "Reduced cycle time by 35%"</p>
+                    <p>• "Cut defect rate from 8% to 2%"</p>
+                    <p>• "Saved $120K annually"</p>
+                </div>
+                <p class="text-teal-600 text-xs font-semibold mt-3">💡 Estimates are OK — "approximately 30%" beats no number</p>
+            </div>
+
+            <div class="bg-white rounded-xl p-6 shadow-lg card-hover no-break" style="border-left: 5px solid #06b6d4; box-shadow: 0 8px 30px rgba(6,182,212,0.08);">
+                <div class="flex items-center mb-3">
+                    <div class="w-12 h-12 rounded-xl flex items-center justify-center text-xl font-bold mr-3" style="background: linear-gradient(135deg, #0891b2, #06b6d4); color: white; box-shadow: 0 4px 15px rgba(6,182,212,0.25);">3</div>
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-900">How</h3>
+                        <p class="text-cyan-500 text-xs font-semibold uppercase tracking-wider">The method</p>
+                    </div>
+                </div>
+                <p class="text-slate-600 mb-3 text-sm">Your <strong>approach</strong> — the tool, tech, or method used</p>
+                <div class="text-sm text-slate-500 space-y-1.5 bg-cyan-50 rounded-lg p-3 border border-cyan-100">
+                    <p>• "Using Lean Six Sigma principles"</p>
+                    <p>• "By implementing automated CI/CD"</p>
+                    <p>• "Through cross-functional workshops"</p>
+                </div>
+                <p class="text-cyan-600 text-xs font-semibold mt-3">💡 Show skills in action — don't just list them separately</p>
+            </div>
+
+            <div class="bg-white rounded-xl p-6 shadow-lg card-hover no-break" style="border-left: 5px solid #84cc16; box-shadow: 0 8px 30px rgba(132,204,22,0.08);">
+                <div class="flex items-center mb-3">
+                    <div class="w-12 h-12 rounded-xl flex items-center justify-center text-xl font-bold mr-3" style="background: linear-gradient(135deg, #65a30d, #84cc16); color: white; box-shadow: 0 4px 15px rgba(132,204,22,0.25);">4</div>
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-900">Why</h3>
+                        <p class="text-lime-500 text-xs font-semibold uppercase tracking-wider">The value</p>
+                    </div>
+                </div>
+                <p class="text-slate-600 mb-3 text-sm">The <strong>business impact</strong> — why does the CEO care?</p>
+                <div class="text-sm text-slate-500 space-y-1.5 bg-lime-50 rounded-lg p-3 border border-lime-100">
+                    <p>• "Enabling on-time delivery for 12 clients"</p>
+                    <p>• "Supporting company's ISO certification"</p>
+                    <p>• "Freeing team for higher-value projects"</p>
+                </div>
+                <p class="text-lime-600 text-xs font-semibold mt-3">💡 Think: why would the CEO care about this?</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ================================================================ -->
+<!-- PAGE 6: DRAGON SLAYER — CONTEXT TECHNIQUE                        -->
+<!-- ================================================================ -->
+<div class="page p-10 md:p-14 flex flex-col justify-center" style="background: linear-gradient(160deg, #1a0a2e 0%, #16213e 50%, #0f3460 100%); position: relative; overflow: hidden;">
+    <!-- Fire glow decorations -->
+    <div class="fire-glow" style="top: -100px; right: -100px;"></div>
+    <div class="fire-glow" style="bottom: -120px; left: -80px; width: 350px; height: 350px; background: radial-gradient(circle, rgba(168,85,247,0.1) 0%, transparent 70%);"></div>
+    <div style="position: absolute; inset: 0; opacity: 0.03; background-image: radial-gradient(#e2e8f0 1px, transparent 1px); background-size: 24px 24px; pointer-events: none;"></div>
+    
+    <div class="max-w-4xl mx-auto relative z-10">
+        <div class="flex items-center gap-3 mb-3">
+            <div class="w-8 h-8 rounded-lg bg-purple-600 text-white flex items-center justify-center text-sm font-bold" style="box-shadow: 0 0 20px rgba(168,85,247,0.3);">04</div>
+            <span class="text-purple-300 font-bold text-sm uppercase tracking-widest">Advanced Technique</span>
+        </div>
+        <h2 class="text-4xl font-extrabold text-white mb-2 tracking-tight">The Dragon Slayer <span style="font-size: 2.5rem;">🐉</span></h2>
+        <p class="text-slate-400 text-lg mb-8">The bigger the monster you slay, the bigger the hero you become.</p>
+
+        <!-- Concept -->
+        <div class="rounded-2xl p-8 mb-6 no-break" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(168,85,247,0.2); backdrop-filter: blur(12px);">
+            <p class="text-lg text-slate-300 leading-relaxed mb-4">
+                Most engineers jump straight to the result: <em class="text-purple-300">"Reduced latency by 60%."</em> That's good — but it's missing <strong class="text-white">context</strong>. 
+                When you paint the pain of the problem first, your solution becomes dramatically more impressive.
+            </p>
+            <p class="text-purple-300 font-semibold">
+                The top 10% of interview candidates spend 40% of their answer on the problem — not 10%. They let the interviewer <em>feel</em> the weight before revealing the fix.
+            </p>
+        </div>
+
+        <!-- Before/After -->
+        <div class="mb-6 no-break">
+            <div class="flex flex-col md:flex-row gap-4 items-stretch">
+                <!-- Before -->
+                <div class="flex-1 rounded-xl p-5" style="background: rgba(239,68,68,0.06); border: 1px solid rgba(239,68,68,0.2);">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="x-badge text-sm">✗</span>
+                        <span class="text-red-400 font-bold text-sm uppercase tracking-wider">Good But Generic</span>
+                    </div>
+                    <p class="text-red-300 italic">"Reduced API latency by 60% using Redis caching"</p>
+                </div>
+                
+                <!-- Arrow -->
+                <div class="flex items-center justify-center">
+                    <div class="transform-arrow" style="background: linear-gradient(135deg, #7c3aed, #a855f7); box-shadow: 0 8px 30px rgba(124,58,237,0.3);">→</div>
+                </div>
+
+                <!-- After -->
+                <div class="flex-1 rounded-xl p-5" style="background: rgba(16,185,129,0.06); border: 2px solid rgba(16,185,129,0.25); box-shadow: 0 0 30px rgba(16,185,129,0.08);">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="check-badge text-sm">✓</span>
+                        <span class="text-emerald-400 font-bold text-sm uppercase tracking-wider">Dragon Slayer Version</span>
+                    </div>
+                    <p class="text-emerald-200">"Reduced API latency by 60% using Redis caching <strong class="text-white">for a system experiencing SLA violations that threatened a $200K annual client contract</strong> — restoring compliance within 2 weeks"</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3 steps -->
+        <div class="rounded-2xl p-6 no-break" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08);">
+            <h3 class="font-bold text-lg mb-4 text-center text-white">3 Ways to Add Context to Any Bullet</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="rounded-xl p-5 text-center" style="background: linear-gradient(135deg, rgba(168,85,247,0.08), rgba(168,85,247,0.02)); border: 1px solid rgba(168,85,247,0.2);">
+                    <div class="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3" style="background: linear-gradient(135deg, #7c3aed, #a855f7); box-shadow: 0 4px 20px rgba(124,58,237,0.3);">
+                        <span class="text-white font-bold text-lg">1</span>
+                    </div>
+                    <p class="text-purple-300 font-bold text-sm mb-2">Quantify the Stakes</p>
+                    <p class="text-slate-400 text-sm">Revenue at risk, users affected, deadline pressure, contract value</p>
+                </div>
+                <div class="rounded-xl p-5 text-center" style="background: linear-gradient(135deg, rgba(249,115,22,0.08), rgba(249,115,22,0.02)); border: 1px solid rgba(249,115,22,0.2);">
+                    <div class="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3" style="background: linear-gradient(135deg, #ea580c, #f97316); box-shadow: 0 4px 20px rgba(249,115,22,0.3);">
+                        <span class="text-white font-bold text-lg">2</span>
+                    </div>
+                    <p class="text-orange-300 font-bold text-sm mb-2">Show the Tension</p>
+                    <p class="text-slate-400 text-sm">Who was watching? What happens if you fail? What was the cost of inaction?</p>
+                </div>
+                <div class="rounded-xl p-5 text-center" style="background: linear-gradient(135deg, rgba(16,185,129,0.08), rgba(16,185,129,0.02)); border: 1px solid rgba(16,185,129,0.2);">
+                    <div class="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3" style="background: linear-gradient(135deg, #059669, #10b981); box-shadow: 0 4px 20px rgba(16,185,129,0.3);">
+                        <span class="text-white font-bold text-lg">3</span>
+                    </div>
+                    <p class="text-emerald-300 font-bold text-sm mb-2">Create Contrast</p>
+                    <p class="text-slate-400 text-sm">The bigger the gap between problem and result, the more impressive you look</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- More examples -->
+        <div class="mt-6 space-y-3">
+            <div class="rounded-lg p-4 no-break" style="background: rgba(168,85,247,0.06); border: 1px solid rgba(168,85,247,0.15);">
+                <p class="text-sm text-purple-200">
+                    <strong class="text-purple-300">Weak:</strong> <span class="text-slate-400">"The code was slow."</span><br/>
+                    <strong class="text-purple-300">Dragon Slayer:</strong> "The code latency was threatening our SLA with a major client, risking a $50K contract penalty and potential churn of our largest account."
+                </p>
+            </div>
+            <div class="rounded-lg p-4 no-break" style="background: rgba(168,85,247,0.06); border: 1px solid rgba(168,85,247,0.15);">
+                <p class="text-sm text-purple-200">
+                    <strong class="text-purple-300">Weak:</strong> <span class="text-slate-400">"Assembly line had downtime issues."</span><br/>
+                    <strong class="text-purple-300">Dragon Slayer:</strong> "Unplanned downtime on the primary assembly line was costing $12K per hour, with 3 incidents in the previous month during peak production season."
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ================================================================ -->
+<!-- PAGE 7: EXAMPLES BY DISCIPLINE                                   -->
+<!-- ================================================================ -->
+<div class="page p-10 md:p-14 bg-white flex flex-col justify-center">
+    <div class="max-w-4xl mx-auto">
+        <div class="flex items-center gap-3 mb-3">
+            <div class="w-8 h-8 rounded-lg bg-emerald-700 text-white flex items-center justify-center text-sm font-bold">05</div>
+            <span class="text-emerald-700 font-bold text-sm uppercase tracking-widest">Real Examples</span>
+        </div>
+        <h2 class="text-4xl font-extrabold text-slate-900 mb-2 tracking-tight">Impact Bullets by Discipline</h2>
+        <p class="text-slate-500 text-lg mb-8">See the formula in action across different engineering fields</p>
+
+        <div class="space-y-5">
+            <!-- Mechanical -->
+            <div class="bg-white rounded-xl p-5 no-break" style="border-left: 5px solid #3b82f6; box-shadow: 0 4px 16px rgba(0,0,0,0.04);">
+                <div class="flex items-center gap-2 mb-3">
+                    <span class="w-9 h-9 rounded-lg flex items-center justify-center text-sm" style="background: linear-gradient(135deg, #3b82f6, #2563eb); box-shadow: 0 3px 10px rgba(59,130,246,0.3);">⚙️</span>
+                    <h3 class="font-bold text-slate-800">Mechanical Engineering</h3>
+                </div>
+                <div class="bg-red-50 rounded-lg p-3 mb-2">
+                    <p class="text-red-700 text-sm"><span class="x-badge text-xs mr-1.5" style="width:20px;height:20px;">✗</span> "Worked on improving assembly line efficiency"</p>
+                </div>
+                <div class="bg-emerald-50 rounded-lg p-3">
+                    <p class="text-emerald-800 text-sm"><span class="check-badge text-xs mr-1.5" style="width:20px;height:20px;">✓</span> "Redesigned conveyor belt alignment system using SolidWorks FEA analysis, reducing assembly line downtime by 40% and saving $85K in annual maintenance costs — during a quarter when unplanned stops were costing $12K/hour"</p>
+                </div>
+            </div>
+
+            <!-- Electrical -->
+            <div class="bg-white rounded-xl p-5 no-break" style="border-left: 5px solid #eab308; box-shadow: 0 4px 16px rgba(0,0,0,0.04);">
+                <div class="flex items-center gap-2 mb-3">
+                    <span class="w-9 h-9 rounded-lg flex items-center justify-center text-sm" style="background: linear-gradient(135deg, #eab308, #ca8a04); box-shadow: 0 3px 10px rgba(234,179,8,0.3);">⚡</span>
+                    <h3 class="font-bold text-slate-800">Electrical Engineering</h3>
+                </div>
+                <div class="bg-red-50 rounded-lg p-3 mb-2">
+                    <p class="text-red-700 text-sm"><span class="x-badge text-xs mr-1.5" style="width:20px;height:20px;">✗</span> "Designed circuit boards for new products"</p>
+                </div>
+                <div class="bg-emerald-50 rounded-lg p-3">
+                    <p class="text-emerald-800 text-sm"><span class="check-badge text-xs mr-1.5" style="width:20px;height:20px;">✓</span> "Designed 4-layer PCB for IoT sensor module using Altium Designer, improving signal integrity by 25% and enabling UL certification on first submission — eliminating 8 weeks of re-testing that delayed the previous product line"</p>
+                </div>
+            </div>
+
+            <!-- Civil -->
+            <div class="bg-white rounded-xl p-5 no-break" style="border-left: 5px solid #f97316; box-shadow: 0 4px 16px rgba(0,0,0,0.04);">
+                <div class="flex items-center gap-2 mb-3">
+                    <span class="w-9 h-9 rounded-lg flex items-center justify-center text-sm" style="background: linear-gradient(135deg, #f97316, #ea580c); box-shadow: 0 3px 10px rgba(249,115,22,0.3);">🏗️</span>
+                    <h3 class="font-bold text-slate-800">Civil Engineering</h3>
+                </div>
+                <div class="bg-red-50 rounded-lg p-3 mb-2">
+                    <p class="text-red-700 text-sm"><span class="x-badge text-xs mr-1.5" style="width:20px;height:20px;">✗</span> "Managed construction project timelines"</p>
+                </div>
+                <div class="bg-emerald-50 rounded-lg p-3">
+                    <p class="text-emerald-800 text-sm"><span class="check-badge text-xs mr-1.5" style="width:20px;height:20px;">✓</span> "Led scheduling optimization for $2.4M bridge renovation using Primavera P6, completing project 3 weeks ahead of deadline and avoiding $45K in penalty fees while coordinating across 4 subcontractor teams"</p>
+                </div>
+            </div>
+
+            <!-- Software -->
+            <div class="bg-white rounded-xl p-5 no-break" style="border-left: 5px solid #a855f7; box-shadow: 0 4px 16px rgba(0,0,0,0.04);">
+                <div class="flex items-center gap-2 mb-3">
+                    <span class="w-9 h-9 rounded-lg flex items-center justify-center text-sm" style="background: linear-gradient(135deg, #a855f7, #9333ea); box-shadow: 0 3px 10px rgba(168,85,247,0.3);">💻</span>
+                    <h3 class="font-bold text-slate-800">Software Engineering</h3>
+                </div>
+                <div class="bg-red-50 rounded-lg p-3 mb-2">
+                    <p class="text-red-700 text-sm"><span class="x-badge text-xs mr-1.5" style="width:20px;height:20px;">✗</span> "Developed features for web application"</p>
+                </div>
+                <div class="bg-emerald-50 rounded-lg p-3">
+                    <p class="text-emerald-800 text-sm"><span class="check-badge text-xs mr-1.5" style="width:20px;height:20px;">✓</span> "Rebuilt checkout API using Node.js and Redis caching, reducing page load time by 60% and increasing conversion rate by 12% ($340K additional annual revenue) for a platform serving 50K+ concurrent users"</p>
+                </div>
+            </div>
+
+            <!-- Industrial / Quality -->
+            <div class="bg-white rounded-xl p-5 no-break" style="border-left: 5px solid #14b8a6; box-shadow: 0 4px 16px rgba(0,0,0,0.04);">
+                <div class="flex items-center gap-2 mb-3">
+                    <span class="w-9 h-9 rounded-lg flex items-center justify-center text-sm" style="background: linear-gradient(135deg, #14b8a6, #0d9488); box-shadow: 0 3px 10px rgba(20,184,166,0.3);">📐</span>
+                    <h3 class="font-bold text-slate-800">Industrial / Quality Engineering</h3>
+                </div>
+                <div class="bg-red-50 rounded-lg p-3 mb-2">
+                    <p class="text-red-700 text-sm"><span class="x-badge text-xs mr-1.5" style="width:20px;height:20px;">✗</span> "Responsible for quality control processes"</p>
+                </div>
+                <div class="bg-emerald-50 rounded-lg p-3">
+                    <p class="text-emerald-800 text-sm"><span class="check-badge text-xs mr-1.5" style="width:20px;height:20px;">✓</span> "Implemented 100% cross-training program for 12-person quality team using standardized work instructions, reducing absenteeism impact by 20% and saving ~$30K/year in temporary staffing costs"</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ================================================================ -->
+<!-- PAGE 8: FINDING HIDDEN METRICS + TIME CALCULATOR                 -->
+<!-- ================================================================ -->
+<div class="page p-10 md:p-14 bg-gradient-to-br from-slate-50 to-emerald-50 flex flex-col justify-center">
+    <div class="max-w-4xl mx-auto">
+        <div class="flex items-center gap-3 mb-3">
+            <div class="w-8 h-8 rounded-lg bg-amber-500 text-white flex items-center justify-center text-sm font-bold">06</div>
+            <span class="text-amber-600 font-bold text-sm uppercase tracking-widest">Common Question</span>
+        </div>
+        <h2 class="text-4xl font-extrabold text-slate-900 mb-2 tracking-tight">"But I Don't Have Metrics!"</h2>
+        <p class="text-slate-500 text-lg mb-6">You do. Here's how to find or estimate them.</p>
+
+        <!-- 5 ways -->
+        <div class="bg-white rounded-2xl shadow-lg border border-emerald-200 p-6 mb-6 stat-glow">
+            <h3 class="text-lg font-bold text-slate-900 mb-4">5 Ways to Find Hidden Metrics</h3>
+            <div class="space-y-3">
+                <div class="flex items-start gap-3 no-break">
+                    <div class="w-7 h-7 bg-emerald-500 text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">1</div>
+                    <div>
+                        <p class="font-semibold text-slate-800">Ask your manager or team lead</p>
+                        <p class="text-slate-500 text-sm">"What was the business impact of [project]?" — They often have data you don't.</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-3 no-break">
+                    <div class="w-7 h-7 bg-emerald-500 text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">2</div>
+                    <div>
+                        <p class="font-semibold text-slate-800">Check company dashboards & reports</p>
+                        <p class="text-slate-500 text-sm">Quarterly reports, Jira stats, project retrospectives, internal KPI dashboards.</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-3 no-break">
+                    <div class="w-7 h-7 bg-emerald-500 text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">3</div>
+                    <div>
+                        <p class="font-semibold text-slate-800">Calculate time savings (see formula below ↓)</p>
+                        <p class="text-slate-500 text-sm">Most impactful source — works for any automation, process fix, or tool you built.</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-3 no-break">
+                    <div class="w-7 h-7 bg-emerald-500 text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">4</div>
+                    <div>
+                        <p class="font-semibold text-slate-800">Use conservative estimates with qualifiers</p>
+                        <p class="text-slate-500 text-sm">"Reduced processing time by approximately 30%" — Better than no number at all.</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-3 no-break">
+                    <div class="w-7 h-7 bg-emerald-500 text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">5</div>
+                    <div>
+                        <p class="font-semibold text-slate-800">Count scope and scale</p>
+                        <p class="text-slate-500 text-sm">"Served 500+ users" or "Deployed across 3 facilities" — Scale is a metric too.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Time savings calculator -->
+        <div class="rounded-2xl p-8 mb-6 no-break" style="background: linear-gradient(160deg, #022c22 0%, #064e3b 40%, #0d9488 100%); position: relative; overflow: hidden; box-shadow: 0 20px 60px rgba(6,78,59,0.25);">
+            <!-- Decorative -->
+            <div class="dot-pattern" style="position: absolute; inset: 0; opacity: 0.4;"></div>
+            <div class="glow-orb" style="width: 250px; height: 250px; background: rgba(163,230,53,0.08); top: -80px; right: -40px;"></div>
+            <div class="ring-decoration" style="width: 200px; height: 200px; bottom: -80px; left: -60px; border-color: rgba(20,184,166,0.1);"></div>
+
+            <div class="relative z-10 text-white">
+                <div class="flex items-center gap-3 mb-1">
+                    <div class="w-10 h-10 rounded-xl flex items-center justify-center" style="background: linear-gradient(135deg, rgba(163,230,53,0.2), rgba(163,230,53,0.05)); border: 1px solid rgba(163,230,53,0.3);">
+                        <span class="text-xl">⏱️</span>
+                    </div>
+                    <h3 class="text-xl font-bold">The Time Savings Calculator</h3>
+                </div>
+                <p class="text-emerald-200/70 text-sm mb-6">The single biggest "aha moment" for engineers who think they don't have metrics.</p>
+                
+                <div class="rounded-xl p-6 mb-5" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); backdrop-filter: blur(8px);">
+                    <div class="grid grid-cols-5 gap-3 items-center text-center">
+                        <div>
+                            <p class="text-emerald-300/70 text-xs mb-2 font-semibold uppercase tracking-wider">Time saved/day</p>
+                            <div class="rounded-xl px-3 py-3" style="background: linear-gradient(135deg, rgba(59,130,246,0.15), rgba(59,130,246,0.05)); border: 1px solid rgba(59,130,246,0.25);">
+                                <p class="font-mono-num text-2xl font-bold text-blue-300">30 min</p>
+                            </div>
+                        </div>
+                        <div class="font-mono-num text-2xl font-bold text-white/30">×</div>
+                        <div>
+                            <p class="text-emerald-300/70 text-xs mb-2 font-semibold uppercase tracking-wider">People affected</p>
+                            <div class="rounded-xl px-3 py-3" style="background: linear-gradient(135deg, rgba(20,184,166,0.15), rgba(20,184,166,0.05)); border: 1px solid rgba(20,184,166,0.25);">
+                                <p class="font-mono-num text-2xl font-bold text-teal-300">5</p>
+                            </div>
+                        </div>
+                        <div class="font-mono-num text-2xl font-bold text-white/30">×</div>
+                        <div>
+                            <p class="text-emerald-300/70 text-xs mb-2 font-semibold uppercase tracking-wider">Working days/yr</p>
+                            <div class="rounded-xl px-3 py-3" style="background: linear-gradient(135deg, rgba(163,230,53,0.15), rgba(163,230,53,0.05)); border: 1px solid rgba(163,230,53,0.25);">
+                                <p class="font-mono-num text-2xl font-bold text-lime-300">250</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Result -->
+                <div class="text-center rounded-xl py-5 px-6" style="background: linear-gradient(135deg, rgba(163,230,53,0.08), rgba(16,185,129,0.08)); border: 2px solid rgba(163,230,53,0.2);">
+                    <p class="text-emerald-300/70 text-sm mb-1">= 625 hours/year × $50/hr =</p>
+                    <p class="font-mono-num text-5xl font-extrabold" style="background: linear-gradient(135deg, #a3e635, #34d399); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; filter: drop-shadow(0 0 20px rgba(163,230,53,0.3));">$31,250</p>
+                    <p class="text-emerald-200/60 text-xs mt-2 uppercase tracking-wider font-semibold">saved annually — put this on your resume</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Common metrics grid -->
+        <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 no-break">
+            <h4 class="font-bold text-amber-900 mb-3">📊 Common Metrics by Category</h4>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
+                <div>
+                    <p class="font-semibold text-amber-800 mb-1.5">Time & Efficiency</p>
+                    <ul class="text-amber-700 space-y-1 text-xs">
+                        <li>• Hours saved/week</li>
+                        <li>• Cycle time reduction %</li>
+                        <li>• Projects ahead of schedule</li>
+                    </ul>
+                </div>
+                <div>
+                    <p class="font-semibold text-amber-800 mb-1.5">Quality & Reliability</p>
+                    <ul class="text-amber-700 space-y-1 text-xs">
+                        <li>• Defect/error rate reduction</li>
+                        <li>• Uptime/availability %</li>
+                        <li>• Customer satisfaction</li>
+                    </ul>
+                </div>
+                <div>
+                    <p class="font-semibold text-amber-800 mb-1.5">Cost & Revenue</p>
+                    <ul class="text-amber-700 space-y-1 text-xs">
+                        <li>• Cost savings ($)</li>
+                        <li>• Revenue generated</li>
+                        <li>• Budget managed</li>
+                    </ul>
+                </div>
+                <div>
+                    <p class="font-semibold text-amber-800 mb-1.5">Scale & Scope</p>
+                    <ul class="text-amber-700 space-y-1 text-xs">
+                        <li>• Users/customers served</li>
+                        <li>• Team size managed</li>
+                        <li>• Systems/facilities impacted</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ================================================================ -->
+<!-- PAGE 9: THE BS METER CHECKLIST                                   -->
+<!-- ================================================================ -->
+<div class="page p-10 md:p-14 flex flex-col justify-center" style="background: linear-gradient(160deg, #0f172a 0%, #1e293b 100%); position: relative; overflow: hidden;">
+    <!-- Decorative -->
+    <div style="position: absolute; inset: 0; opacity: 0.03; background-image: radial-gradient(#f97316 1px, transparent 1px); background-size: 24px 24px; pointer-events: none;"></div>
+    <div class="glow-orb" style="width: 400px; height: 400px; background: rgba(249,115,22,0.06); top: -100px; left: -80px;"></div>
+    
+    <div class="max-w-4xl mx-auto relative z-10">
+        <div class="flex items-center gap-3 mb-3">
+            <div class="w-8 h-8 rounded-lg text-white flex items-center justify-center text-sm font-bold" style="background: linear-gradient(135deg, #ea580c, #f97316); box-shadow: 0 0 20px rgba(249,115,22,0.3);">07</div>
+            <span class="text-orange-400 font-bold text-sm uppercase tracking-widest">Quality Check</span>
+        </div>
+        <h2 class="text-4xl font-extrabold text-white mb-2 tracking-tight">The BS Meter™ Checklist</h2>
+        <p class="text-slate-400 text-lg mb-6">Run every bullet through this 5-point test. If it fails any, rewrite it.</p>
+
+        <!-- Visual gauge bar -->
+        <div class="mb-8 no-break">
+            <div class="flex justify-between text-xs font-bold mb-2">
+                <span class="text-red-400 uppercase tracking-wider">Invisible</span>
+                <span class="text-amber-400 uppercase tracking-wider">Getting There</span>
+                <span class="text-emerald-400 uppercase tracking-wider">Impact Standard</span>
+            </div>
+            <div class="gauge-track rounded-lg" style="height: 14px;">
+            </div>
+            <div class="flex justify-between mt-1.5">
+                <span class="font-mono-num text-red-400 text-sm font-bold">0</span>
+                <span class="font-mono-num text-amber-400 text-sm font-bold">3</span>
+                <span class="font-mono-num text-emerald-400 text-sm font-bold">5</span>
+            </div>
+        </div>
+
+        <!-- Checklist -->
+        <div class="space-y-4 mb-8 no-break">
+            <div class="flex items-start gap-4 rounded-xl p-5" style="background: linear-gradient(135deg, rgba(59,130,246,0.06), rgba(59,130,246,0.02)); border: 1px solid rgba(59,130,246,0.15);">
+                <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 font-bold" style="border: 2px solid rgba(163,230,53,0.4); color: #a3e635; background: rgba(163,230,53,0.05);">☐</div>
+                <div>
+                    <p class="font-bold text-lg text-white">Does it contain at least ONE number?</p>
+                    <p class="text-slate-400 text-sm mt-1">Percentages, dollar amounts, time saved, users served, team size — any number proves you were paying attention.</p>
+                </div>
+            </div>
+            <div class="flex items-start gap-4 rounded-xl p-5" style="background: linear-gradient(135deg, rgba(20,184,166,0.06), rgba(20,184,166,0.02)); border: 1px solid rgba(20,184,166,0.15);">
+                <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 font-bold" style="border: 2px solid rgba(163,230,53,0.4); color: #a3e635; background: rgba(163,230,53,0.05);">☐</div>
+                <div>
+                    <p class="font-bold text-lg text-white">Could a stranger tell what <em class="text-orange-300">you</em> did?</p>
+                    <p class="text-slate-400 text-sm mt-1">Not "the team" or "we" — what YOU specifically contributed. If they can't tell, neither can a hiring manager.</p>
+                </div>
+            </div>
+            <div class="flex items-start gap-4 rounded-xl p-5" style="background: linear-gradient(135deg, rgba(6,182,212,0.06), rgba(6,182,212,0.02)); border: 1px solid rgba(6,182,212,0.15);">
+                <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 font-bold" style="border: 2px solid rgba(163,230,53,0.4); color: #a3e635; background: rgba(163,230,53,0.05);">☐</div>
+                <div>
+                    <p class="font-bold text-lg text-white">Does it name the tool, method, or technology?</p>
+                    <p class="text-slate-400 text-sm mt-1">Show skills in action — "using Python," "via Lean Six Sigma," "with SolidWorks." Don't just list skills separately.</p>
+                </div>
+            </div>
+            <div class="flex items-start gap-4 rounded-xl p-5" style="background: linear-gradient(135deg, rgba(163,230,53,0.06), rgba(163,230,53,0.02)); border: 1px solid rgba(163,230,53,0.15);">
+                <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 font-bold" style="border: 2px solid rgba(163,230,53,0.4); color: #a3e635; background: rgba(163,230,53,0.05);">☐</div>
+                <div>
+                    <p class="font-bold text-lg text-white">Could someone explain why this mattered to the business?</p>
+                    <p class="text-slate-400 text-sm mt-1">If a VP reads it, will they think "that saved us money" or "that moved the needle"? Results the business cares about.</p>
+                </div>
+            </div>
+            <div class="flex items-start gap-4 rounded-xl p-5" style="background: linear-gradient(135deg, rgba(249,115,22,0.06), rgba(249,115,22,0.02)); border: 1px solid rgba(249,115,22,0.15);">
+                <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 font-bold" style="border: 2px solid rgba(163,230,53,0.4); color: #a3e635; background: rgba(163,230,53,0.05);">☐</div>
+                <div>
+                    <p class="font-bold text-lg text-white">Is it one sentence (not a paragraph)?</p>
+                    <p class="text-slate-400 text-sm mt-1">You have 6 seconds. One powerful sentence beats three mediocre ones. Cut the filler.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Test it -->
+        <div class="rounded-xl p-6 mb-6 no-break" style="background: rgba(249,115,22,0.05); border: 1px solid rgba(249,115,22,0.15);">
+            <h3 class="font-bold text-orange-300 text-lg mb-3">🧪 The Read-Aloud Test</h3>
+            <p class="text-slate-300">
+                Read your bullet out loud. If it sounds like it could be copy-pasted from a <em class="text-orange-300">job description</em>, it fails. 
+                If it sounds like a duty you held over a long period of time instead of a specific accomplishment you achieved, rewrite it.
+                A hiring manager who reads hundreds of resumes can spot the difference between a responsibility and an accomplishment instantly.
+            </p>
+        </div>
+
+        <!-- Scoring -->
+        <div class="grid grid-cols-3 gap-4 no-break">
+            <div class="rounded-xl p-5 text-center" style="background: linear-gradient(135deg, rgba(239,68,68,0.08), rgba(239,68,68,0.02)); border: 1px solid rgba(239,68,68,0.2);">
+                <p class="font-mono-num text-3xl font-bold text-red-400">0-2</p>
+                <p class="text-red-300 text-sm font-semibold mt-1">Invisible</p>
+                <p class="text-red-400/50 text-xs mt-1">Complete rewrite needed</p>
+            </div>
+            <div class="rounded-xl p-5 text-center" style="background: linear-gradient(135deg, rgba(245,158,11,0.08), rgba(245,158,11,0.02)); border: 1px solid rgba(245,158,11,0.2);">
+                <p class="font-mono-num text-3xl font-bold text-amber-400">3-4</p>
+                <p class="text-amber-300 text-sm font-semibold mt-1">Getting There</p>
+                <p class="text-amber-400/50 text-xs mt-1">Add the missing element</p>
+            </div>
+            <div class="rounded-xl p-5 text-center" style="background: linear-gradient(135deg, rgba(16,185,129,0.08), rgba(16,185,129,0.02)); border: 1px solid rgba(16,185,129,0.2); box-shadow: 0 0 25px rgba(16,185,129,0.1);">
+                <p class="font-mono-num text-3xl font-bold text-emerald-400">5/5</p>
+                <p class="text-emerald-300 text-sm font-semibold mt-1">Impact Standard ✓</p>
+                <p class="text-emerald-400/50 text-xs mt-1">Ready to send</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ================================================================ -->
+<!-- PAGE 10: FULL BEFORE/AFTER TRANSFORMATION                        -->
+<!-- ================================================================ -->
+<div class="page p-10 md:p-14 bg-white flex flex-col justify-center" style="position: relative; overflow: hidden;">
+    <!-- Subtle dot pattern -->
+    <div class="dot-pattern-dark" style="position: absolute; inset: 0;"></div>
+    
+    <div class="max-w-4xl mx-auto relative z-10">
+        <div class="flex items-center gap-3 mb-3">
+            <div class="w-8 h-8 rounded-lg bg-emerald-700 text-white flex items-center justify-center text-sm font-bold">08</div>
+            <span class="text-emerald-700 font-bold text-sm uppercase tracking-widest">Full Transformation</span>
+        </div>
+        <h2 class="text-4xl font-extrabold text-slate-900 mb-2 tracking-tight">From Invisible to <span class="gradient-text">Irresistible</span></h2>
+        <p class="text-slate-500 text-lg mb-8">Watch the formula transform a real resume bullet step by step</p>
+
+        <!-- Side-by-side Before/After with center arrow -->
+        <div class="flex items-stretch gap-0 mb-6 no-break" style="border-radius: 20px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.1);">
+            <!-- Before side -->
+            <div class="flex-1 p-7" style="background: linear-gradient(160deg, #fef2f2, #fee2e2);">
+                <div class="flex items-center gap-2 mb-4">
+                    <div style="background: linear-gradient(135deg, #dc2626, #ef4444); color: white; font-weight: 800; font-size: 11px; padding: 6px 16px; border-radius: 100px; letter-spacing: 1.5px; text-transform: uppercase;">Before</div>
+                </div>
+                <p class="text-slate-400 text-xs font-bold uppercase tracking-wider mb-2">Generic · Vague · Forgettable</p>
+                <p class="text-red-900 text-lg font-medium leading-relaxed italic">
+                    "Developed features for web application and improved system performance. Collaborated with team members to maintain codebase."
+                </p>
+                <div class="mt-5 flex items-center gap-2 bg-red-200/50 rounded-lg p-3">
+                    <span class="text-lg">⚠️</span>
+                    <p class="text-red-700 text-xs font-semibold">BS Meter: 0/5 — describes every engineer ever</p>
+                </div>
+            </div>
+
+            <!-- Center arrow divider -->
+            <div class="flex items-center justify-center" style="background: linear-gradient(to bottom, #fef2f2, #ecfdf5); padding: 0 4px;">
+                <div class="transform-arrow" style="z-index: 5; margin: 0 -20px;">→</div>
+            </div>
+
+            <!-- After side -->
+            <div class="flex-1 p-7" style="background: linear-gradient(160deg, #ecfdf5, #d1fae5);">
+                <div class="flex items-center gap-2 mb-4">
+                    <div style="background: linear-gradient(135deg, #064e3b, #0d9488); color: white; font-weight: 800; font-size: 11px; padding: 6px 16px; border-radius: 100px; letter-spacing: 1.5px; text-transform: uppercase;">After</div>
+                </div>
+                <p class="text-slate-400 text-xs font-bold uppercase tracking-wider mb-2">Specific · Measurable · Compelling</p>
+                <p class="text-emerald-900 text-lg font-medium leading-relaxed">
+                    "Rebuilt checkout API using Node.js and Redis caching, reducing page load time by 60% and increasing conversion rate by 12% ($340K additional annual revenue) for a platform serving 50K+ concurrent users."
+                </p>
+                <div class="mt-4 grid grid-cols-2 gap-2">
+                    <div class="bg-white/70 rounded-lg p-2.5 border border-emerald-200">
+                        <p class="text-blue-600 font-bold text-[10px] mb-0.5 uppercase tracking-wider">Accomplishment ✓</p>
+                        <p class="text-emerald-800 text-xs">Rebuilt checkout API</p>
+                    </div>
+                    <div class="bg-white/70 rounded-lg p-2.5 border border-emerald-200">
+                        <p class="text-teal-600 font-bold text-[10px] mb-0.5 uppercase tracking-wider">Metric ✓</p>
+                        <p class="text-emerald-800 text-xs">60% faster, +12% conversion</p>
+                    </div>
+                    <div class="bg-white/70 rounded-lg p-2.5 border border-emerald-200">
+                        <p class="text-cyan-600 font-bold text-[10px] mb-0.5 uppercase tracking-wider">How ✓</p>
+                        <p class="text-emerald-800 text-xs">Node.js + Redis caching</p>
+                    </div>
+                    <div class="bg-white/70 rounded-lg p-2.5 border border-emerald-200">
+                        <p class="text-lime-600 font-bold text-[10px] mb-0.5 uppercase tracking-wider">Why ✓</p>
+                        <p class="text-emerald-800 text-xs">$340K revenue, 50K users</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Result banner -->
+        <div class="rounded-2xl p-6 mb-5 no-break text-center" style="background: linear-gradient(160deg, #022c22 0%, #064e3b 40%, #0d9488 100%); position: relative; overflow: hidden; box-shadow: 0 12px 40px rgba(6,78,59,0.2);">
+            <div class="dot-pattern" style="position: absolute; inset: 0; opacity: 0.3;"></div>
+            <div class="relative z-10">
+                <p class="text-emerald-300/70 text-xs font-bold tracking-[3px] uppercase mb-2">The Result</p>
+                <div class="flex items-center justify-center gap-6">
+                    <div>
+                        <p class="font-mono-num text-4xl font-extrabold text-red-400" style="text-shadow: 0 0 20px rgba(239,68,68,0.3);">2%</p>
+                        <p class="text-red-300/60 text-xs mt-1">response rate</p>
+                    </div>
+                    <div class="text-3xl text-white/30 font-light">→</div>
+                    <div>
+                        <p class="font-mono-num text-4xl font-extrabold text-lime-300" style="text-shadow: 0 0 20px rgba(163,230,53,0.3);">40%+</p>
+                        <p class="text-lime-300/60 text-xs mt-1">callback rate</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Social proof quotes -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 no-break">
+            <div class="rounded-xl p-4 relative overflow-hidden" style="background: linear-gradient(160deg, #f0fdf4, #ecfdf5); border: 1px solid #a7f3d0;">
+                <div style="position: absolute; top: 8px; left: 12px; font-size: 48px; line-height: 1; color: rgba(16,185,129,0.1); font-family: Georgia, serif; font-weight: bold;">"</div>
+                <p class="text-slate-700 text-sm italic mb-3 relative z-10 pt-4">"I went from feeling insecure to walking into interviews very well prepared, very confident, and clear about my value."</p>
+                <div class="flex items-center gap-2">
+                    <div class="w-7 h-7 rounded-full flex items-center justify-center text-white text-xs font-bold" style="background: linear-gradient(135deg, #10b981, #059669); box-shadow: 0 2px 8px rgba(16,185,129,0.3);">K</div>
+                    <div>
+                        <p class="text-slate-800 text-xs font-bold">Karen B.</p>
+                        <p class="text-emerald-600 text-xs font-semibold">SpaceX, Google, GE interviews</p>
+                    </div>
+                </div>
+            </div>
+            <div class="rounded-xl p-4 relative overflow-hidden" style="background: linear-gradient(160deg, #f0fdf4, #ecfdf5); border: 1px solid #a7f3d0;">
+                <div style="position: absolute; top: 8px; left: 12px; font-size: 48px; line-height: 1; color: rgba(16,185,129,0.1); font-family: Georgia, serif; font-weight: bold;">"</div>
+                <p class="text-slate-700 text-sm italic mb-3 relative z-10 pt-4">"There is a 0% chance I would have broken into my current role without you."</p>
+                <div class="flex items-center gap-2">
+                    <div class="w-7 h-7 rounded-full flex items-center justify-center text-white text-xs font-bold" style="background: linear-gradient(135deg, #10b981, #059669); box-shadow: 0 2px 8px rgba(16,185,129,0.3);">J</div>
+                    <div>
+                        <p class="text-slate-800 text-xs font-bold">Jonah B.</p>
+                        <p class="text-emerald-600 text-xs font-semibold">Mech to Software Engineer</p>
+                    </div>
+                </div>
+            </div>
+            <div class="rounded-xl p-4 relative overflow-hidden" style="background: linear-gradient(160deg, #f0fdf4, #ecfdf5); border: 1px solid #a7f3d0;">
+                <div style="position: absolute; top: 8px; left: 12px; font-size: 48px; line-height: 1; color: rgba(16,185,129,0.1); font-family: Georgia, serif; font-weight: bold;">"</div>
+                <p class="text-slate-700 text-sm italic mb-3 relative z-10 pt-4">"Same experience. Completely different outcome. We didn't change what she did — just how she said it."</p>
+                <div class="flex items-center gap-2">
+                    <div class="w-7 h-7 rounded-full flex items-center justify-center text-white text-xs font-bold" style="background: linear-gradient(135deg, #10b981, #059669); box-shadow: 0 2px 8px rgba(16,185,129,0.3);">S</div>
+                    <div>
+                        <p class="text-slate-800 text-xs font-bold">Sarah K.</p>
+                        <p class="text-emerald-600 text-xs font-semibold">$106K at Ford Motor Company</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ================================================================ -->
+<!-- PAGE 11: BULLETS = INTERVIEW ANSWERS                             -->
+<!-- ================================================================ -->
+<div class="page p-10 md:p-14 bg-gradient-to-br from-slate-50 to-indigo-50 flex flex-col justify-center">
+    <div class="max-w-4xl mx-auto">
+        <div class="flex items-center gap-3 mb-3">
+            <div class="w-8 h-8 rounded-lg bg-indigo-600 text-white flex items-center justify-center text-sm font-bold">09</div>
+            <span class="text-indigo-600 font-bold text-sm uppercase tracking-widest">Hidden Benefit</span>
+        </div>
+        <h2 class="text-4xl font-extrabold text-slate-900 mb-2 tracking-tight">Your Bullets <span class="text-indigo-600">=</span> Interview Answers</h2>
+        <p class="text-slate-500 text-lg mb-8">Every impact bullet you write is a compressed STAR story waiting to expand</p>
+
+        <!-- Visual: bullet → STAR expansion -->
+        <div class="bg-white rounded-2xl shadow-lg border border-indigo-200 p-8 mb-6 no-break" style="box-shadow: 0 8px 30px rgba(99,102,241,0.08);">
+            <!-- Compressed -->
+            <div class="rounded-xl p-5 mb-6" style="background: linear-gradient(135deg, #ecfdf5, #d1fae5); border: 2px solid #6ee7b7;">
+                <p class="text-xs font-bold uppercase tracking-[2px] mb-2" style="color: #059669;">Your Resume Bullet</p>
+                <p class="text-emerald-900 font-medium">"Redesigned conveyor belt alignment system using SolidWorks FEA analysis, reducing assembly line downtime by 40% and saving $85K annually"</p>
+            </div>
+            
+            <div class="flex justify-center mb-6">
+                <div class="rounded-full px-5 py-2.5 font-bold text-sm flex items-center gap-2" style="background: linear-gradient(135deg, #e0e7ff, #c7d2fe); color: #4338ca; border: 1px solid #a5b4fc;">
+                    <span>Interviewer asks:</span> "Tell me about a time you improved a process"
+                    <span class="text-xl">↓</span>
+                </div>
+            </div>
+
+            <!-- Expanded STAR -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="rounded-xl p-4" style="background: linear-gradient(160deg, #eef2ff, #e0e7ff); border-left: 4px solid #6366f1;">
+                    <p class="text-indigo-700 font-bold text-sm mb-2">S — Situation</p>
+                    <p class="text-slate-700 text-sm">"Our primary assembly line was experiencing 40+ hours of unplanned downtime per quarter, costing $12K/hour..."</p>
+                </div>
+                <div class="rounded-xl p-4" style="background: linear-gradient(160deg, #eef2ff, #e0e7ff); border-left: 4px solid #818cf8;">
+                    <p class="text-indigo-700 font-bold text-sm mb-2">T — Task</p>
+                    <p class="text-slate-700 text-sm">"I was tasked with diagnosing the root cause and designing a permanent fix..."</p>
+                </div>
+                <div class="rounded-xl p-4" style="background: linear-gradient(160deg, #eef2ff, #e0e7ff); border-left: 4px solid #a5b4fc;">
+                    <p class="text-indigo-700 font-bold text-sm mb-2">A — Action</p>
+                    <p class="text-slate-700 text-sm">"I ran FEA simulations in SolidWorks, identified misalignment under thermal expansion, and redesigned the mounting brackets..."</p>
+                </div>
+                <div class="rounded-xl p-4" style="background: linear-gradient(160deg, #eef2ff, #e0e7ff); border-left: 4px solid #c7d2fe;">
+                    <p class="text-indigo-700 font-bold text-sm mb-2">R — Result</p>
+                    <p class="text-slate-700 text-sm">"Reduced downtime by 40%, saved $85K in the first year, and the design was adopted across 2 other production lines..."</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Key insight -->
+        <div class="bg-indigo-900 text-white rounded-2xl p-6 mb-6 no-break">
+            <div class="flex items-start gap-3">
+                <span class="text-2xl">💡</span>
+                <div>
+                    <p class="font-bold text-lg mb-2">This Is Why Impact Bullets Matter Beyond the Resume</p>
+                    <p class="text-indigo-200 text-sm leading-relaxed mb-3">
+                        The engineers who get callbacks aren't always the most qualified. They're the ones who learned how to <strong>translate their work into language that lands</strong>. That's a skill. And it's learnable.
+                    </p>
+                    <p class="text-indigo-200 text-sm leading-relaxed">
+                        When you write 3-5 strong impact bullets per role, you're simultaneously building your <strong>interview story arsenal</strong>. Aim for 15+ stories total — that's enough to answer any behavioral question with confidence.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- The 3-Tier Impact Ladder -->
+        <div class="rounded-2xl p-6 no-break" style="background: linear-gradient(160deg, #1e1b4b, #312e81, #3730a3); position: relative; overflow: hidden; box-shadow: 0 12px 40px rgba(49,46,129,0.3);">
+            <div class="dot-pattern" style="position: absolute; inset: 0; opacity: 0.06;"></div>
+            <div style="position: absolute; bottom: -40px; left: -40px; width: 160px; height: 160px; border-radius: 50%; background: radial-gradient(circle, rgba(129,140,248,0.2) 0%, transparent 70%); pointer-events: none;"></div>
+            <div class="relative z-10">
+                <h3 class="font-bold text-white text-lg mb-5 text-center">🪜 The 3-Tier Impact Ladder — Make Every Story Stronger</h3>
+                <div class="space-y-3">
+                    <!-- Tier 3 (top) -->
+                    <div class="rounded-xl p-4" style="background: linear-gradient(135deg, rgba(99,102,241,0.3), rgba(129,140,248,0.15)); border: 1px solid rgba(129,140,248,0.3); margin-left: 0;">
+                        <div class="flex items-start gap-3">
+                            <div class="w-10 h-10 rounded-lg flex items-center justify-center text-white font-bold flex-shrink-0" style="background: linear-gradient(135deg, #6366f1, #4f46e5); box-shadow: 0 4px 15px rgba(99,102,241,0.4);">3</div>
+                            <div>
+                                <p class="font-semibold text-white">"I solved it, automated it, AND trained the team on it"</p>
+                                <p class="text-indigo-300/70 text-xs mt-1">Future leader. Force multiplier. <strong class="text-lime-300">This is what gets offers.</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Tier 2 -->
+                    <div class="rounded-xl p-4" style="background: rgba(129,140,248,0.08); border: 1px solid rgba(129,140,248,0.15); margin-left: 32px;">
+                        <div class="flex items-start gap-3">
+                            <div class="w-10 h-10 rounded-lg flex items-center justify-center text-white font-bold flex-shrink-0" style="background: rgba(129,140,248,0.3); border: 1px solid rgba(129,140,248,0.4);">2</div>
+                            <div>
+                                <p class="font-semibold text-indigo-200">"I solved it AND automated it so it won't happen again"</p>
+                                <p class="text-indigo-300/50 text-xs mt-1">Efficiency thinker. Above average.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Tier 1 (bottom) -->
+                    <div class="rounded-xl p-4" style="background: rgba(100,116,139,0.1); border: 1px solid rgba(100,116,139,0.2); margin-left: 64px;">
+                        <div class="flex items-start gap-3">
+                            <div class="w-10 h-10 rounded-lg flex items-center justify-center text-slate-400 font-bold flex-shrink-0" style="background: rgba(100,116,139,0.2); border: 1px solid rgba(100,116,139,0.3);">1</div>
+                            <div>
+                                <p class="font-semibold text-slate-300">"I solved the problem"</p>
+                                <p class="text-slate-400/60 text-xs mt-1">Competent worker. Table stakes.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p class="text-indigo-300 text-sm font-semibold mt-5 text-center">Push every bullet and story as high up the ladder as the truth allows.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ================================================================ -->
+<!-- PAGE 12: BONUS — 4-MINUTE TAILORED BULLET SYSTEM                 -->
+<!-- ================================================================ -->
+<div class="page p-10 md:p-14 bg-white flex flex-col justify-center">
+    <div class="max-w-4xl mx-auto">
+        <div class="flex items-center gap-3 mb-3">
+            <div class="bg-gradient-to-r from-amber-400 to-orange-400 text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Bonus</div>
+            <span class="text-amber-600 font-bold text-sm uppercase tracking-widest">Speed System</span>
+        </div>
+        <h2 class="text-4xl font-extrabold text-slate-900 mb-2 tracking-tight">The 4-Minute Tailored Bullet System™</h2>
+        <p class="text-slate-500 text-lg mb-8">How to customize your resume for every job posting in under 4 minutes</p>
+
+        <!-- Context -->
+        <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-6 no-break">
+            <p class="text-amber-900">
+                <strong>Why this matters:</strong> 75% of applications are auto-rejected by ATS (applicant tracking systems) because the resume doesn't match the job posting's keywords. A generic resume — even with great impact bullets — still gets filtered. This system fixes that.
+            </p>
+        </div>
+
+        <!-- 4 minutes -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-8">
+            <div class="bg-white rounded-xl p-6 border-2 border-amber-300 shadow-md no-break">
+                <div class="flex items-center gap-3 mb-3">
+                    <div class="w-12 h-12 bg-amber-400 text-white rounded-xl flex items-center justify-center font-bold text-xl">1</div>
+                    <div>
+                        <p class="font-bold text-slate-900">Scan Keywords</p>
+                        <p class="text-amber-600 text-xs font-mono-num font-semibold">MINUTE 1</p>
+                    </div>
+                </div>
+                <p class="text-slate-600 text-sm">Read the job posting. Highlight the 5-8 most important skills, tools, and competencies they mention. These are what the ATS is looking for.</p>
+            </div>
+
+            <div class="bg-white rounded-xl p-6 border-2 border-amber-300 shadow-md no-break">
+                <div class="flex items-center gap-3 mb-3">
+                    <div class="w-12 h-12 bg-amber-500 text-white rounded-xl flex items-center justify-center font-bold text-xl">2</div>
+                    <div>
+                        <p class="font-bold text-slate-900">Swap Top Bullets</p>
+                        <p class="text-amber-600 text-xs font-mono-num font-semibold">MINUTE 2</p>
+                    </div>
+                </div>
+                <p class="text-slate-600 text-sm">Reorder your bullets so the most relevant ones (matching their keywords) appear first under each role. First 2 bullets get 80% of the attention.</p>
+            </div>
+
+            <div class="bg-white rounded-xl p-6 border-2 border-amber-300 shadow-md no-break">
+                <div class="flex items-center gap-3 mb-3">
+                    <div class="w-12 h-12 bg-orange-500 text-white rounded-xl flex items-center justify-center font-bold text-xl">3</div>
+                    <div>
+                        <p class="font-bold text-slate-900">Vocabulary Injection</p>
+                        <p class="text-amber-600 text-xs font-mono-num font-semibold">MINUTE 3</p>
+                    </div>
+                </div>
+                <p class="text-slate-600 text-sm">Mirror their exact language in your bullets. They say "cross-functional collaboration"? Use that phrase, not "worked with other teams." Same meaning — their words.</p>
+            </div>
+
+            <div class="bg-white rounded-xl p-6 border-2 border-amber-300 shadow-md no-break">
+                <div class="flex items-center gap-3 mb-3">
+                    <div class="w-12 h-12 bg-orange-600 text-white rounded-xl flex items-center justify-center font-bold text-xl">4</div>
+                    <div>
+                        <p class="font-bold text-slate-900">Export & Apply</p>
+                        <p class="text-amber-600 text-xs font-mono-num font-semibold">MINUTE 4</p>
+                    </div>
+                </div>
+                <p class="text-slate-600 text-sm">Save as PDF. Apply. Move on. Don't spend 45 minutes customizing — targeted applications at 10-20% response rate beat spray-and-pray at 2-5%.</p>
+            </div>
+        </div>
+
+        <!-- Stat callout -->
+        <div class="bg-gradient-to-r from-amber-500 to-orange-500 text-white rounded-2xl p-6 mb-6 no-break text-center">
+            <p class="font-mono-num text-3xl font-extrabold mb-1">10-20% vs. 2-5%</p>
+            <p class="text-amber-100">Targeted applications vs. spray-and-pray response rates</p>
+        </div>
+
+        <!-- Pro tip: Application timing -->
+        <div class="bg-slate-900 text-white rounded-xl p-5 no-break">
+            <div class="flex items-start gap-3">
+                <span class="text-xl">⏰</span>
+                <div>
+                    <p class="font-bold mb-2">Bonus Tip: Application Timing Matters</p>
+                    <div class="grid grid-cols-3 gap-3 text-sm">
+                        <div class="bg-emerald-500/20 rounded-lg p-3 border border-emerald-400/30">
+                            <p class="text-emerald-300 font-bold">Day 0-2</p>
+                            <p class="text-emerald-200 text-xs">🟢 Green Zone — 3× higher interview rate</p>
+                        </div>
+                        <div class="bg-amber-500/20 rounded-lg p-3 border border-amber-400/30">
+                            <p class="text-amber-300 font-bold">Day 3-7</p>
+                            <p class="text-amber-200 text-xs">🟡 Yellow Zone — Still worth applying</p>
+                        </div>
+                        <div class="bg-red-500/20 rounded-lg p-3 border border-red-400/30">
+                            <p class="text-red-300 font-bold">Day 14+</p>
+                            <p class="text-red-200 text-xs">🔴 Dead Zone — Position likely filled</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ================================================================ -->
+<!-- PAGE 13: YOUR TURN — WORKSHEET                                   -->
+<!-- ================================================================ -->
+<div class="page p-10 md:p-14 bg-slate-50 flex flex-col justify-center">
+    <div class="max-w-4xl mx-auto">
+        <div class="flex items-center gap-3 mb-3">
+            <div class="w-8 h-8 rounded-lg bg-emerald-700 text-white flex items-center justify-center text-sm font-bold">10</div>
+            <span class="text-emerald-700 font-bold text-sm uppercase tracking-widest">Your Turn</span>
+        </div>
+        <h2 class="text-4xl font-extrabold text-slate-900 mb-2 tracking-tight">Transform Your Resume Right Now</h2>
+        <p class="text-slate-500 text-lg mb-6">Pick your weakest bullet. Apply the formula. Turn a vague responsibility into a specific accomplishment.</p>
+
+        <div class="bg-amber-50 border-2 border-amber-300 rounded-xl p-4 mb-6 no-break">
+            <p class="text-amber-900 text-sm"><strong>⚠️ Remember:</strong> You’re not listing tasks, duties, or job responsibilities. Each bullet should be a <strong>specific, acute accomplishment</strong> — something you personally achieved with a clear, measurable outcome. If it reads like a job description, rewrite it.</p>
+        </div>
+
+        <div class="bg-white rounded-2xl shadow-xl p-8 border border-slate-200 space-y-6">
+            <!-- Original -->
+            <div>
+                <label class="block text-lg font-bold text-slate-900 mb-2">Your Original Bullet:</label>
+                <div class="border-2 border-slate-300 rounded-lg p-5 min-h-[70px] bg-slate-50">
+                    <p class="text-slate-400 italic text-sm">Write your current bullet here...</p>
+                </div>
+            </div>
+
+            <div class="h-px bg-slate-200"></div>
+
+            <!-- 4 parts -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                    <label class="block font-bold text-blue-700 mb-2">1. Accomplishment — What specific thing did you achieve?</label>
+                    <div class="border-2 border-blue-200 rounded-lg p-4 min-h-[60px] bg-blue-50">
+                        <p class="text-slate-400 italic text-xs">Example: "Redesigned API architecture" (not "Responsible for API maintenance")</p>
+                    </div>
+                </div>
+                <div>
+                    <label class="block font-bold text-teal-700 mb-2">2. Metric — What was the result?</label>
+                    <div class="border-2 border-teal-200 rounded-lg p-4 min-h-[60px] bg-teal-50">
+                        <p class="text-slate-400 italic text-xs">Example: "Reduced response time by 60%"</p>
+                    </div>
+                </div>
+                <div>
+                    <label class="block font-bold text-cyan-700 mb-2">3. How — What method/tech?</label>
+                    <div class="border-2 border-cyan-200 rounded-lg p-4 min-h-[60px] bg-cyan-50">
+                        <p class="text-slate-400 italic text-xs">Example: "Using GraphQL and Redis caching"</p>
+                    </div>
+                </div>
+                <div>
+                    <label class="block font-bold text-lime-700 mb-2">4. Why — Business impact?</label>
+                    <div class="border-2 border-lime-200 rounded-lg p-4 min-h-[60px] bg-lime-50">
+                        <p class="text-slate-400 italic text-xs">Example: "Supporting 50K+ concurrent users"</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="h-px bg-slate-200"></div>
+
+            <!-- Dragon slayer context -->
+            <div>
+                <label class="block font-bold text-purple-700 mb-2">🐉 Dragon Slayer Context — What were the stakes?</label>
+                <div class="border-2 border-purple-200 rounded-lg p-4 min-h-[60px] bg-purple-50">
+                    <p class="text-slate-400 italic text-xs">Example: "System was violating SLAs, risking a $200K client contract"</p>
+                </div>
+            </div>
+
+            <div class="h-px bg-slate-200"></div>
+
+            <!-- Final bullet -->
+            <div>
+                <label class="block text-lg font-bold text-emerald-800 mb-2">✨ Your New Impact Bullet:</label>
+                <div class="border-4 border-emerald-400 rounded-lg p-5 min-h-[80px] bg-emerald-50">
+                    <p class="text-slate-400 italic text-sm">Combine all parts into one powerful sentence...</p>
+                </div>
+            </div>
+
+            <!-- BS Meter quick check -->
+            <div class="bg-slate-100 rounded-lg p-4">
+                <p class="font-bold text-slate-800 text-sm mb-2">Quick BS Meter Check:</p>
+                <div class="grid grid-cols-5 gap-2 text-xs text-center">
+                    <div class="bg-white rounded p-2 border">☐ Number?</div>
+                    <div class="bg-white rounded p-2 border">☐ "I" not "We"?</div>
+                    <div class="bg-white rounded p-2 border">☐ Names tech?</div>
+                    <div class="bg-white rounded p-2 border">☐ Business value?</div>
+                    <div class="bg-white rounded p-2 border">☐ One sentence?</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-6 bg-lime-100 border-2 border-lime-400 rounded-xl p-5 no-break">
+            <p class="text-emerald-900 font-semibold">
+                💡 <strong>Pro Tip:</strong> Repeat this for every bullet on your resume. Aim for 3-5 impact bullets per role. That gives you 15+ interview stories automatically.
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ================================================================ -->
+<!-- PAGE 14: CTA — NEXT STEPS                                        -->
+<!-- ================================================================ -->
+<div class="page flex items-center justify-center p-8" style="background: linear-gradient(135deg, #022c22 0%, #064e3b 30%, #0d9488 60%, #065f46 100%); position: relative; overflow: hidden;">
+    <!-- Decorative elements -->
+    <div style="position: absolute; top: -60px; right: -60px; width: 300px; height: 300px; border-radius: 50%; background: radial-gradient(circle, rgba(163,230,53,0.08) 0%, transparent 70%); pointer-events: none;"></div>
+    <div style="position: absolute; bottom: -80px; left: -80px; width: 350px; height: 350px; border-radius: 50%; background: radial-gradient(circle, rgba(20,184,166,0.1) 0%, transparent 70%); pointer-events: none;"></div>
+    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 500px; height: 500px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.03); pointer-events: none;"></div>
+    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 700px; height: 700px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.02); pointer-events: none;"></div>
+    <div class="dot-pattern" style="position: absolute; inset: 0; opacity: 0.04;"></div>
+    <div class="max-w-3xl text-center text-white relative z-10">
+
+            <h2 class="text-3xl md:text-4xl font-extrabold mb-3 tracking-tight">This Was Just the Foundation</h2>
+            <p class="text-lg text-emerald-100/80 mb-6 leading-relaxed max-w-xl mx-auto">
+                You now know HOW to write better bullets. But here's what separates engineers who get callbacks from those who don't...
+            </p>
+
+            <!-- Pain reminder -->
+            <div class="rounded-2xl p-5 mb-5 text-left" style="background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1);">
+                <h3 class="text-base font-bold text-red-300 mb-3">Still Struggling With:</h3>
+                <ul class="space-y-1.5 text-red-200 text-sm">
+                    <li class="flex items-center gap-2"><span class="text-red-400">✗</span> Not knowing which companies are actually hiring in your field?</li>
+                    <li class="flex items-center gap-2"><span class="text-red-400">✗</span> Bombing interviews because you can't tell your story under pressure?</li>
+                    <li class="flex items-center gap-2"><span class="text-red-400">✗</span> Getting ghosted after "great" final rounds?</li>
+                    <li class="flex items-center gap-2"><span class="text-red-400">✗</span> Feeling like an imposter compared to other candidates?</li>
+                </ul>
+            </div>
+
+            <!-- Full program -->
+            <div class="rounded-2xl p-5 mb-5 text-left" style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15);">
+                <h3 class="text-lg font-bold mb-4 text-center">The Full 21-Day Engineering Career Launch Blueprint™</h3>
+                <div class="space-y-2 text-sm">
+                    <div class="flex items-start gap-3">
+                        <span class="text-lime-300 text-base mt-0.5">✓</span>
+                        <div>
+                            <strong>3 × 90-Minute 1-on-1 Coaching Sessions</strong>
+                            <p class="text-emerald-200/70 text-xs mt-0.5">Resume rebuild, interview weaponization, and live mock interview</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <span class="text-lime-300 text-base mt-0.5">✓</span>
+                        <div>
+                            <strong>52 Proprietary Methods & Frameworks</strong>
+                            <p class="text-emerald-200/70 text-xs mt-0.5">Including the full Impact Bullet Builder™, Master Story Vault™, and more</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <span class="text-lime-300 text-base mt-0.5">✓</span>
+                        <div>
+                            <strong>40+ Bonus Materials</strong>
+                            <p class="text-emerald-200/70 text-xs mt-0.5">Templates, scripts, checklists, and guides delivered throughout the program</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <span class="text-lime-300 text-base mt-0.5">✓</span>
+                        <div>
+                            <strong>Email Support Between Sessions</strong>
+                            <p class="text-emerald-200/70 text-xs mt-0.5">Personalized feedback and accountability throughout your 21-day journey</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Guarantee -->
+            <div class="rounded-xl px-5 py-3 mb-5 inline-block" style="background: rgba(52,211,153,0.1); border: 1px solid rgba(52,211,153,0.2);">
+                <p class="text-emerald-100 font-semibold text-sm">🛡️ The Launch Blueprint Guarantee™</p>
+                <p class="text-emerald-200/70 text-xs mt-1.5 max-w-md">
+                    Complete all 3 sessions and do the homework. If you don't walk away with a transformed resume, 15+ STAR examples, and 10× more confidence — I keep working with you at no extra charge.
+                </p>
+            </div>
+
+            <!-- CTA button -->
+            <div class="mb-4">
+                <a href="https://launchtolead.io/landing/offer.html" class="inline-block bg-lime-400 hover:bg-lime-300 text-emerald-900 font-bold text-lg px-10 py-4 rounded-full transition-all duration-300 transform hover:scale-105 shadow-xl shadow-lime-400/20">
+                    See The Full Blueprint
+                </a>
+                <p class="text-emerald-200/60 text-sm mt-2">Free strategy call — no pressure, no obligation</p>
+            </div>
+
+            <!-- Author sign-off -->
+            <div class="flex items-center justify-center gap-3 mt-5 pt-4 border-t border-white/10">
+                <img src="../../pictures/mansour/headshot_square.png" alt="Mansour Manci" class="w-10 h-10 rounded-full border border-white/30 object-cover">
+                <div class="text-left">
+                    <p class="text-white text-sm font-semibold">Mansour Manci</p>
+                    <p class="text-emerald-300/50 text-xs">I'm not HR. I'm not a recruiter. I'm an engineer who figured out the system.</p>
+                </div>
+            </div>
+        <div class="mt-4 pt-3 border-t border-white/10">
+                <p class="text-emerald-300/40 text-xs">© 2026 LaunchToLead. Part of The Launch Method™ curriculum.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
