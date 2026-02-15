@@ -9,6 +9,17 @@
 
 ---
 
+## 🎯 Selected Ads (7 Winners)
+- **Ad 02** — Time Delay + Financial Loss (Callout 1)
+- **Ad 07** — Time Delay + Urgency (Callout 2)
+- **Ad 11** — Comparison + Status Recovery (Callout 3)
+- **Ad 19** — Effort + Frustration (Callout 4)
+- **Ad 21** — Interview Problem + Close Rate (Callout 5)
+- **Ad 26** — Parent Worry + Time Sensitivity (Callout 6)
+- **Ad 31** — Grandparent Worry + Pride (Callout 7)
+
+---
+
 ## Urgency & Scarcity Messaging
 
 ### 💰 Pricing (50% Off)
@@ -130,7 +141,7 @@ That could be you.
 
 ---
 
-### Ad 02 - Time Delay + Financial Loss
+### ✅ Ad 02 - Time Delay + Financial Loss — SELECTED
 
 **🖼️ GRAPHIC (on the image):**
 ```
@@ -493,7 +504,7 @@ She picked Google.
 
 ---
 
-### Ad 07 - Time Delay + Urgency
+### ✅ Ad 07 - Time Delay + Urgency — SELECTED
 
 **🖼️ GRAPHIC (on the image):**
 ```
@@ -785,7 +796,7 @@ Your post is coming. Let me help you write it.
 
 ---
 
-### Ad 11 - Comparison + Status Recovery
+### ✅ Ad 11 - Comparison + Status Recovery — SELECTED
 
 **🖼️ GRAPHIC (on the image):**
 ```
@@ -1367,7 +1378,7 @@ Sarah fixed these problems → $106K at Ford
 
 ---
 
-### Ad 19 - Effort + Frustration
+### ✅ Ad 19 - Effort + Frustration — SELECTED
 
 **🖼️ GRAPHIC (on the image):**
 ```
@@ -1519,7 +1530,7 @@ Sarah was an underpaid intern → Now she makes $106K at Ford
 
 ---
 
-### Ad 21 - Interview Problem + Close Rate
+### ✅ Ad 21 - Interview Problem + Close Rate — SELECTED
 
 **🖼️ GRAPHIC (on the image):**
 ```
@@ -1886,7 +1897,7 @@ You've done the hard part. Let's finish this.
 
 ---
 
-### Ad 26 - Parent Worry + Time Sensitivity
+### ✅ Ad 26 - Parent Worry + Time Sensitivity — SELECTED
 
 **🖼️ GRAPHIC (on the image):**
 ```
@@ -2255,7 +2266,7 @@ Sarah: Intern → $106K at Ford
 
 ---
 
-### Ad 31 - Grandparent Worry + Pride
+### ✅ Ad 31 - Grandparent Worry + Pride — SELECTED
 
 **🖼️ GRAPHIC (on the image):**
 ```
