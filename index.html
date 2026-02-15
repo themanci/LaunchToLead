@@ -1,37 +1,18 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth scroll-pt-32">
 <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-L8V47TR52C"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-L8V47TR52C');
-    </script>
-    <!-- Track offer page clicks -->
-    <script>
-      document.addEventListener('click', function(e) {
-        const link = e.target.closest('a[href*="offer.html"]');
-        if (link && typeof gtag === 'function') {
-          gtag('event', 'offer_page_click', {
-            'page_location': window.location.pathname,
-            'page_title': document.title,
-            'link_text': link.textContent.trim().substring(0, 50)
-          });
-        }
-      });
-    </script>
-    
-    <!-- Meta Pixel Code -->
-    <script src="meta-pixel.js"></script>
-    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=3141490496240983&ev=PageView&noscript=1"/></noscript>
-    <!-- End Meta Pixel Code -->
-    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Land Your Engineering Job in 21 Days | Launch to Lead</title>
     <meta name="description" content="Land a top-tier, high-salary engineering job with the 21-Day Engineering Career Launch Blueprint. 1-on-1 coaching from a real engineer, not HR. Guaranteed deliverables.">
+    
+    <!-- Preload LCP image for fastest render -->
+    <link rel="preload" as="image" href="pictures/mansour/professional_standing.webp" type="image/webp">
+    
+    <!-- Preconnect to critical origins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
@@ -48,12 +29,51 @@
     <meta property="twitter:image" content="https://launchtolead.io/social-share.png">
     
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    
+    <!-- Tailwind CSS (render-blocking but required for layout) -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <!-- Corrected font family name (Jakarta vs Jakob) to ensure consistent metrics across pages -->
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="tailwind-config.js"></script>
-    <!-- Removed Alpine.js (no longer needed due to vanilla navigation.js) -->
+    
+    <!-- Google Fonts with display=swap (non-blocking text render) -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Lucide icons deferred (not needed for initial paint) -->
+    <script defer src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Analytics deferred to after page load -->
+    <script>
+      // GA + Meta Pixel load after page is interactive
+      window.addEventListener('load', function() {
+        // Google Analytics
+        var ga = document.createElement('script');
+        ga.src = 'https://www.googletagmanager.com/gtag/js?id=G-L8V47TR52C';
+        ga.async = true;
+        document.head.appendChild(ga);
+        ga.onload = function() {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          window.gtag = gtag;
+          gtag('js', new Date());
+          gtag('config', 'G-L8V47TR52C');
+        };
+        // Meta Pixel
+        var mp = document.createElement('script');
+        mp.src = 'meta-pixel.js';
+        document.head.appendChild(mp);
+      });
+      // Track offer page clicks (works once GA loads)
+      document.addEventListener('click', function(e) {
+        var link = e.target.closest('a[href*="offer.html"]');
+        if (link && typeof gtag === 'function') {
+          gtag('event', 'offer_page_click', {
+            'page_location': window.location.pathname,
+            'page_title': document.title,
+            'link_text': link.textContent.trim().substring(0, 50)
+          });
+        }
+      });
+    </script>
+    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=3141490496240983&ev=PageView&noscript=1"/></noscript>
 </head>
 
 <body class="bg-slate-50 text-slate-600 font-sans antialiased">
@@ -98,7 +118,7 @@
                 <!-- Right: Photo -->
                 <div class="w-full md:w-1/2">
                     <div class="bg-gradient-to-br from-emerald-900 to-teal-800 rounded-2xl overflow-hidden border-4 border-slate-800 shadow-2xl" style="aspect-ratio: 4/3;">
-                        <img src="pictures/mansour/professional_standing.png" alt="Mansour Manci - Engineering Career Coach" class="w-full h-full object-cover object-top">
+                        <img src="pictures/mansour/professional_standing.webp" alt="Mansour Manci - Engineering Career Coach" class="w-full h-full object-cover object-top" fetchpriority="high" width="800" height="600" decoding="async">
                     </div>
                 </div>
             </div>
@@ -465,7 +485,7 @@
                 <div class="relative z-10">
                     <div class="flex flex-col md:flex-row items-center gap-6">
                         <div class="w-24 h-24 rounded-2xl overflow-hidden border-4 border-emerald-500 shadow-xl flex-shrink-0">
-                            <img src="pictures/mansour/professional_sitting.png" alt="Mansour Manci" class="w-full h-full object-cover object-top scale-125" loading="lazy">
+                            <img src="pictures/mansour/professional_sitting.webp" alt="Mansour Manci" class="w-full h-full object-cover object-top scale-125" loading="lazy">
                         </div>
                         <div class="text-center md:text-left">
                             <h3 class="text-2xl font-bold mb-2">I'm Not HR. I'm Not a Recruiter.</h3>
@@ -641,7 +661,7 @@
                     "Mansour took the time to share thoughtful early-career advice, covering everything from navigating interviews to advocating for myself. What stood out most was how open he was about his own career journey—the honest ups and downs made his guidance feel real, grounded, and genuinely motivating."
                 </p>
                 <div class="flex items-center gap-3 pt-4 border-t border-emerald-200">
-                    <img src="testimonials/pictures/gavin_patel.jpg" alt="Gavin Patel" class="w-12 h-12 rounded-full object-cover border-2 border-white shadow-md" loading="lazy">
+                    <img src="testimonials/pictures/gavin_patel.webp" alt="Gavin Patel" class="w-12 h-12 rounded-full object-cover border-2 border-white shadow-md" loading="lazy">
                     <div>
                         <div class="font-bold text-slate-900">Gavin Patel</div>
                         <div class="text-sm text-emerald-600 font-semibold">Engineering Intern → Software Engineer at Fortune 500</div>
@@ -661,7 +681,7 @@
                     "I was a mechanical engineer who wanted to break into software. Mansour helped me position my experience so that I could prove my value. Now I have a permanent software engineering role—without changing companies or taking a pay cut."
                 </p>
                 <div class="flex items-center gap-3 pt-4 border-t border-slate-200">
-                    <img src="testimonials/pictures/jonah_brehm.jpeg" alt="Jonah Brehm" class="w-12 h-12 rounded-full object-cover border-2 border-white shadow-md" loading="lazy">
+                    <img src="testimonials/pictures/jonah_brehm.webp" alt="Jonah Brehm" class="w-12 h-12 rounded-full object-cover border-2 border-white shadow-md" loading="lazy">
                     <div>
                         <div class="font-bold text-slate-900">Jonah Brehm</div>
                         <div class="text-sm text-amber-600 font-semibold">Mechanical Engineer → Software Engineer</div>
@@ -675,7 +695,7 @@
             <div class="bg-white border-2 border-lime-300 p-4 rounded-xl">
                 <div class="flex items-center gap-4">
                     <div class="w-14 h-14 rounded-full overflow-hidden border-2 border-lime-400 flex-shrink-0 shadow">
-                        <img src="testimonials/pictures/chiebuka_onyejesi.jpg" alt="Ebuka" class="w-full h-full object-cover">
+                        <img src="testimonials/pictures/chiebuka_onyejesi.webp" alt="Ebuka" class="w-full h-full object-cover">
                     </div>
                     <div class="flex-1 min-w-0">
                         <p class="text-base font-bold text-slate-900">Ebuka O.</p>
@@ -687,7 +707,7 @@
             <div class="bg-white border-2 border-purple-300 p-4 rounded-xl">
                 <div class="flex items-center gap-4">
                     <div class="w-14 h-14 rounded-full overflow-hidden border-2 border-purple-400 flex-shrink-0 shadow">
-                        <img src="testimonials/pictures/gavin_patel.jpg" alt="Gavin" class="w-full h-full object-cover">
+                        <img src="testimonials/pictures/gavin_patel.webp" alt="Gavin" class="w-full h-full object-cover">
                     </div>
                     <div class="flex-1 min-w-0">
                         <p class="text-base font-bold text-slate-900">Gavin P.</p>
@@ -699,7 +719,7 @@
             <div class="bg-white border-2 border-blue-300 p-4 rounded-xl">
                 <div class="flex items-center gap-4">
                     <div class="w-14 h-14 rounded-full overflow-hidden border-2 border-blue-400 flex-shrink-0 shadow">
-                        <img src="testimonials/pictures/sarah_korssa.jpeg" alt="Sarah" class="w-full h-full object-cover">
+                        <img src="testimonials/pictures/sarah_korssa.webp" alt="Sarah" class="w-full h-full object-cover">
                     </div>
                     <div class="flex-1 min-w-0">
                         <p class="text-base font-bold text-slate-900">Sarah K.</p>
@@ -856,7 +876,15 @@
 </footer>
 
 <script>
-    lucide.createIcons();
+    // Wait for deferred Lucide to load before creating icons
+    if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
+    } else {
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof lucide !== 'undefined') lucide.createIcons();
+            else setTimeout(function() { lucide.createIcons(); }, 100);
+        });
+    }
 </script>
 
 <!-- Lead magnet popup removed — now handled by landing/meta-ads.html -->

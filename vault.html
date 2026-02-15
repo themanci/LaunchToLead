@@ -49,7 +49,7 @@
     
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <script defer src="https://unpkg.com/lucide@latest"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="tailwind-config.js"></script>
     <style>
@@ -150,7 +150,7 @@
                     <!-- Card 1: Gavin -->
                     <div class="bg-emerald-950/40 border border-emerald-700/30 rounded-xl p-3">
                         <div class="flex items-center gap-2 mb-2">
-                            <img src="testimonials/pictures/gavin_patel.jpg" class="w-10 h-10 rounded-full border-2 border-emerald-500">
+                            <img src="testimonials/pictures/gavin_patel.webp" class="w-10 h-10 rounded-full border-2 border-emerald-500">
                             <div>
                                 <p class="text-white font-bold text-xs">Gavin P.</p>
                                 <p class="text-emerald-400 text-xs">Fortune 500</p>
@@ -165,7 +165,7 @@
                     <!-- Card 2: Mohamed -->
                     <div class="bg-emerald-950/40 border border-emerald-700/30 rounded-xl p-3">
                         <div class="flex items-center gap-2 mb-2">
-                            <img src="testimonials/pictures/mohamed_ibrahim.jpg" class="w-10 h-10 rounded-full border-2 border-emerald-500">
+                            <img src="testimonials/pictures/mohamed_ibrahim.webp" class="w-10 h-10 rounded-full border-2 border-emerald-500">
                             <div>
                                 <p class="text-white font-bold text-xs">Mohamed I.</p>
                                 <p class="text-emerald-400 text-xs">Software Eng.</p>
@@ -180,7 +180,7 @@
                     <!-- Card 3: Sarah -->
                     <div class="bg-emerald-950/40 border border-emerald-700/30 rounded-xl p-3">
                         <div class="flex items-center gap-2 mb-2">
-                            <img src="testimonials/pictures/sarah_korssa.jpeg" class="w-10 h-10 rounded-full border-2 border-emerald-500">
+                            <img src="testimonials/pictures/sarah_korssa.webp" class="w-10 h-10 rounded-full border-2 border-emerald-500">
                             <div>
                                 <p class="text-white font-bold text-xs">Sarah K.</p>
                                 <p class="text-emerald-400 text-xs">Ford Motor Co.</p>
@@ -195,7 +195,7 @@
                     <!-- Card 4: Ebuka -->
                     <div class="bg-emerald-950/40 border border-emerald-700/30 rounded-xl p-3">
                         <div class="flex items-center gap-2 mb-2">
-                            <img src="testimonials/pictures/chiebuka_onyejesi.jpg" class="w-10 h-10 rounded-full border-2 border-emerald-500">
+                            <img src="testimonials/pictures/chiebuka_onyejesi.webp" class="w-10 h-10 rounded-full border-2 border-emerald-500">
                             <div>
                                 <p class="text-white font-bold text-xs">Ebuka O.</p>
                                 <p class="text-emerald-400 text-xs">Positioned</p>
@@ -438,7 +438,11 @@
 </footer>
 
 <script>
-    lucide.createIcons();
+    if (typeof lucide !== "undefined") { lucide.createIcons(); }
+    else { document.addEventListener("DOMContentLoaded", function() {
+        if (typeof lucide !== "undefined") lucide.createIcons();
+        else setTimeout(function() { lucide.createIcons(); }, 100);
+    }); }
 </script>
 
 <!-- Vault Popup Modal System -->

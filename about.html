@@ -55,7 +55,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <script defer src="https://unpkg.com/lucide@latest"></script>
     
     <style>
         body {
@@ -92,7 +92,7 @@
                     <!-- Left: Photo -->
                     <div class="w-full md:w-1/2">
                         <div class="bg-gradient-to-br from-emerald-900 to-teal-800 rounded-2xl overflow-hidden border-4 border-slate-800 shadow-2xl" style="aspect-ratio: 4/3;">
-                            <img src="pictures/mansour/casual_roof.jpg" alt="Mansour Manci - Engineering Career Coach" class="w-full h-full object-cover object-top">
+                            <img src="pictures/mansour/casual_roof.webp" alt="Mansour Manci - Engineering Career Coach" class="w-full h-full object-cover object-top">
                         </div>
                     </div>
                     <!-- Right: Text -->
@@ -661,7 +661,11 @@
     </footer>
 
     <script>
-        lucide.createIcons();
+        if (typeof lucide !== "undefined") { lucide.createIcons(); }
+        else { document.addEventListener("DOMContentLoaded", function() {
+            if (typeof lucide !== "undefined") lucide.createIcons();
+            else setTimeout(function() { lucide.createIcons(); }, 100);
+        }); }
     </script>
 
 </body>
