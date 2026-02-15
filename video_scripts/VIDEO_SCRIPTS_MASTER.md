@@ -1,4 +1,4 @@
-# Video Scripts Master Document
+﻿# Video Scripts Master Document
 ## 1-Minute Hormozi-Style Scripts for LaunchToLead.io
 
 *Updated: December 9, 2025*
@@ -57,7 +57,7 @@
 > Here's what nobody tells you: Your resume looks exactly like everyone else's. And that's why you're invisible."
 
 ### PROBLEM + CREDIBILITY (10-30s)
-> "I'm Mansour. 7 years at a Fortune 100 Ag OEM. Four promotions. I've hired engineers, interviewed engineers, and coached engineers into Fortune 100 companies.
+> "I'm Mansour. 7 years at a Fortune 100 company. Four promotions. I've hired engineers, interviewed engineers, and coached engineers into Fortune 100 companies.
 
 > And I can tell you—the engineers who get hired don't have better degrees. They have a better system."
 
@@ -151,7 +151,7 @@
 ### TURNING POINT (15-35s)
 > "So I built a system. I learned how to quantify impact, tell compelling stories, and position myself as the obvious choice.
 
-> I landed at a Fortune 100 Ag OEM. Four promotions in seven years. From mechanical engineer to software leader. And I started teaching other engineers the same frameworks."
+> I landed at a Fortune 100 company. Four promotions in seven years. From mechanical engineer to software leader. And I started teaching other engineers the same frameworks."
 
 ### THE DIFFERENCE (35-50s)
 > "I'm not HR. I'm not a recruiter. I'm an engineer who figured out the game—and I've packaged everything into The 21-Day Blueprint.

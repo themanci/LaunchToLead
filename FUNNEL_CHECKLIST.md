@@ -1,4 +1,4 @@
-# Launch to Lead — Funnel & Site Update Checklist
+﻿# Launch to Lead — Funnel & Site Update Checklist
 
 ## Funnel Flow Overview
 ```
@@ -49,7 +49,7 @@ Main Site ("Ready To Launch? →" CTA) → Landing Page 2 (offer.html?source=sit
 - [x] Popup removed from index.html
 - [x] Index.html video → image placeholder (`professional_standing.png` with gradient overlay)
 - [x] About.html video → image placeholder (`casual_roof.jpg` with "Meet Mansour" overlay)
-- [x] "Fortune 100 Ag OEM" → "Fortune 100 company" on all public pages (index, about, offer, vault, success-stories)
+- [x] "Fortune 100 company" → "Fortune 100 company" on all public pages (index, about, offer, vault, success-stories)
 
 ### Git
 - [x] Previous commit: `4ccc0df` — landing page funnel + qualifying form + Kit integration
@@ -97,7 +97,7 @@ Main Site ("Ready To Launch? →" CTA) → Landing Page 2 (offer.html?source=sit
 
 ### 10. [ ] Commit Current Batch of Changes
 - **Branch:** `website-updates`
-- **Changes since last commit (`4ccc0df`):** CTA overhaul, video removal, Ag OEM fixes, GA4/Meta tracking updates, offer page refinements
+- **Changes since last commit (`4ccc0df`):** CTA overhaul, video removal, company fixes, GA4/Meta tracking updates, offer page refinements
 - **Status:** Ready to commit
 
 ### 11. [ ] Push to GitHub & Merge
@@ -107,7 +107,7 @@ Main Site ("Ready To Launch? →" CTA) → Landing Page 2 (offer.html?source=sit
 ---
 
 ## 🧹 LOW PRIORITY / OPTIONAL
-- [ ] Fix "Ag OEM" in internal docs (lead-magnets, methods, mockups) — not public-facing
+- [ ] Fix "company" in internal docs (lead-magnets, methods, mockups) — not public-facing
 
 ---
 
