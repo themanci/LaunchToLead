@@ -3,371 +3,289 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Referral Email Template</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <title>Referral Email — Launch to Lead</title>
+    <!--
+        REFERRAL EMAIL TEMPLATE
+        Sent manually to past coaching clients
+        From: contact@launchtolead.io
+        Subject: I'll Pay you $200 For Referrals!
+        
+        HOW TO USE:
+        1. Open this file in your browser
+        2. Select a client from the dropdown at the top
+        3. All placeholders auto-fill
+        4. Click "Copy Email HTML" → paste into Gmail
+    -->
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
+        .toolbar {
+            max-width: 600px;
+            margin: 0 auto 16px;
+            padding: 20px 24px;
+            background: #1e293b;
+            border-radius: 12px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .toolbar label {
+            color: #94a3b8;
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .toolbar select {
+            padding: 10px 16px;
+            border-radius: 8px;
+            border: 1px solid #334155;
             background: #0f172a;
             color: #e2e8f0;
-            padding: 40px 20px;
-        }
-
-        .container {
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        /* Instructions banner */
-        .instructions {
-            background: linear-gradient(135deg, rgba(99, 102, 241, 0.15), rgba(139, 92, 246, 0.15));
-            border: 1px solid rgba(99, 102, 241, 0.3);
-            border-radius: 16px;
-            padding: 28px 32px;
-            margin-bottom: 40px;
-        }
-        .instructions h2 {
-            color: #a5b4fc;
-            font-size: 18px;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 16px;
-        }
-        .instructions ol {
-            color: #c7d2fe;
             font-size: 15px;
-            line-height: 1.8;
-            padding-left: 20px;
-        }
-        .instructions code {
-            background: rgba(99, 102, 241, 0.2);
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-family: monospace;
-            font-size: 13px;
-            color: #e0e7ff;
-        }
-
-        /* Toggles */
-        .version-toggle {
-            display: flex;
-            gap: 12px;
-            margin-bottom: 32px;
-        }
-        .version-toggle button {
+            font-weight: 600;
+            font-family: inherit;
+            cursor: pointer;
             flex: 1;
-            padding: 14px 24px;
-            border-radius: 12px;
-            border: 2px solid rgba(99, 102, 241, 0.3);
-            background: rgba(99, 102, 241, 0.05);
-            color: #a5b4fc;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            font-size: 15px;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.2s;
+            min-width: 200px;
         }
-        .version-toggle button.active {
-            background: rgba(99, 102, 241, 0.2);
-            border-color: #6366f1;
-            color: #e0e7ff;
-        }
-
-        /* Email preview card */
-        .email-card {
-            background: #1e293b;
-            border: 1px solid rgba(148, 163, 184, 0.15);
-            border-radius: 16px;
-            overflow: hidden;
-        }
-        .email-header {
-            background: rgba(15, 23, 42, 0.6);
-            padding: 20px 28px;
-            border-bottom: 1px solid rgba(148, 163, 184, 0.1);
-        }
-        .email-field {
-            display: flex;
-            gap: 12px;
-            margin-bottom: 8px;
-            font-size: 14px;
-        }
-        .email-field:last-child { margin-bottom: 0; }
-        .email-field span:first-child {
-            color: #64748b;
-            font-weight: 600;
-            min-width: 70px;
-        }
-        .email-field span:last-child { color: #cbd5e1; }
-        .placeholder {
-            background: rgba(250, 204, 21, 0.15);
-            color: #fde68a;
-            padding: 1px 6px;
-            border-radius: 3px;
-            font-weight: 600;
-        }
-
-        .email-body {
-            padding: 32px 28px;
-            font-size: 16px;
-            line-height: 1.75;
-            color: #cbd5e1;
-        }
-        .email-body p { margin-bottom: 20px; }
-        .email-body p:last-child { margin-bottom: 0; }
-
-        .link-block {
-            background: rgba(16, 185, 129, 0.08);
-            border: 1px solid rgba(16, 185, 129, 0.2);
-            border-radius: 12px;
-            padding: 20px 24px;
-            margin: 24px 0;
-        }
-        .link-block .label {
-            font-size: 12px;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: #6ee7b7;
-            margin-bottom: 8px;
-        }
-        .link-block .value {
-            font-size: 15px;
-            color: #34d399;
-            word-break: break-all;
-            font-weight: 600;
-        }
-
-        .sig { color: #94a3b8; }
-
-        /* Copy button */
-        .copy-bar {
-            display: flex;
-            justify-content: flex-end;
-            padding: 16px 28px;
-            border-top: 1px solid rgba(148, 163, 184, 0.1);
-            background: rgba(15, 23, 42, 0.4);
-        }
-        .copy-btn {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            padding: 10px 24px;
+        .toolbar select:focus { outline: none; border-color: #10b981; }
+        .toolbar button {
+            padding: 10px 20px;
             border-radius: 8px;
-            border: 1px solid rgba(16, 185, 129, 0.3);
-            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid #10b981;
+            background: rgba(16, 185, 129, 0.15);
             color: #6ee7b7;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            font-size: 14px;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.2s;
-        }
-        .copy-btn:hover {
-            background: rgba(16, 185, 129, 0.2);
-        }
-
-        .hidden { display: none; }
-
-        /* Subject line options */
-        .subject-options {
-            margin-top: 32px;
-        }
-        .subject-options h3 {
-            color: #94a3b8;
-            font-size: 14px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 16px;
-        }
-        .subject-option {
-            background: rgba(30, 41, 59, 0.6);
-            border: 1px solid rgba(148, 163, 184, 0.1);
-            padding: 14px 20px;
-            border-radius: 10px;
-            margin-bottom: 8px;
-            font-size: 15px;
-            color: #e2e8f0;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-        .subject-option .num {
-            background: rgba(99, 102, 241, 0.2);
-            color: #a5b4fc;
-            width: 28px;
-            height: 28px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             font-size: 13px;
-            font-weight: 800;
-            flex-shrink: 0;
+            font-weight: 700;
+            font-family: inherit;
+            cursor: pointer;
+            white-space: nowrap;
         }
+        .toolbar button:hover { background: rgba(16, 185, 129, 0.25); }
     </style>
 </head>
-<body>
-    <div class="container">
-        <!-- Instructions -->
-        <div class="instructions">
-            <h2>📋 How to Use This Template</h2>
-            <ol>
-                <li>Replace all <code>[FIRST_NAME]</code> with the person's first name</li>
-                <li>Replace <code>[CODE]</code> with their referral code (format: <code>REF-FIRSTNAME</code>)</li>
-                <li>Replace <code>[REFERRAL_LINK]</code> with: <code>https://launchtolead.io/refer?code=REF-FIRSTNAME</code></li>
-                <li>Replace <code>[EXPIRATION_DATE]</code> with the date 90 days from when you send it</li>
-                <li>Pick Version A (past clients) or Version B (professional contacts)</li>
-                <li>Copy the plain text and paste into Gmail / Outlook — keep it plain, no fancy formatting</li>
-            </ol>
+<body style="margin: 0; padding: 0; background-color: #f1f5f9; font-family: 'Helvetica Neue', Arial, sans-serif; -webkit-font-smoothing: antialiased;">
+
+    <!-- Toolbar (not part of email — for your use only) -->
+    <div class="toolbar" id="toolbar">
+        <div style="width: 100%; margin-bottom: 4px;">
+            <label>Subject line:</label>
+            <input id="subjectLine" type="text" value="I'll Pay you $200 For Referrals!" readonly onclick="this.select()" style="width: 100%; margin-top: 6px; padding: 10px 16px; border-radius: 8px; border: 1px solid #334155; background: #0f172a; color: #e2e8f0; font-size: 15px; font-weight: 600; font-family: inherit; cursor: pointer; box-sizing: border-box;">
         </div>
+        <label>Send to:</label>
+        <select id="clientSelect" onchange="fillTemplate()">
+            <option value="">— Select a client —</option>
+            <option value="Karen|REF-KAREN">Karen Bickford</option>
+            <option value="Sarah|REF-SARAH">Sarah Korssa</option>
+            <option value="Jonah|REF-JONAH">Jonah Brehm</option>
+            <option value="Gavin|REF-GAVIN">Gavin Patel</option>
+            <option value="Osaid|REF-OSAID">Osaid Samman</option>
+            <option value="Mohammad|REF-MOHAMMAD">Mohammad Abdelmagid</option>
+            <option value="Ethan|REF-ETHAN">Ethan Swagger</option>
+            <option value="Amal|REF-AMAL">Amal Alkhalil</option>
+        </select>
+        <button onclick="copyEmailHTML()">&#128203; Copy Email HTML</button>
+    </div>
 
-        <!-- Version Toggle -->
-        <div class="version-toggle">
-            <button class="active" onclick="showVersion('a')">Version A: Past Clients</button>
-            <button onclick="showVersion('b')">Version B: Professional Contacts</button>
-        </div>
+    <!-- Email Content (this is what gets copied) -->
+    <div id="email-container">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color: #f1f5f9; padding: 32px 16px;">
+        <tr>
+            <td align="center">
 
-        <!-- VERSION A: Past Clients -->
-        <div id="version-a" class="email-card">
-            <div class="email-header">
-                <div class="email-field">
-                    <span>Subject:</span>
-                    <span>Quick favor (and $200 for you)</span>
-                </div>
-                <div class="email-field">
-                    <span>To:</span>
-                    <span><span class="placeholder">[FIRST_NAME]</span></span>
-                </div>
-            </div>
-            <div class="email-body" id="email-text-a">
-                <p>Hey <span class="placeholder">[FIRST_NAME]</span>,</p>
+                <!-- Email Container -->
+                <table role="presentation" width="600" cellpadding="0" cellspacing="0" style="max-width: 600px; width: 100%; background-color: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0,0.08);">
 
-                <p>Hope you're doing well. Quick one for you.</p>
+                    <!-- Header Banner -->
+                    <tr>
+                        <td style="background: linear-gradient(135deg, #064e3b 0%, #065f46 100%); padding: 40px 32px; text-align: center;">
+                            <div style="width: 64px; height: 64px; margin: 0 auto 20px; background-color: #a3e635; border-radius: 50%; line-height: 64px; text-align: center;">
+                                <span style="font-size: 32px; color: #064e3b;">&#127873;</span>
+                            </div>
+                            <h1 style="margin: 0 0 8px; font-size: 28px; font-weight: 800; color: #ffffff; letter-spacing: -0.5px;">You've Earned This</h1>
+                            <p style="margin: 0; font-size: 16px; color: #a7f3d0; line-height: 1.5;">$200 for every engineer you send my way.</p>
+                        </td>
+                    </tr>
 
-                <p>I'm running a referral deal for Launch to Lead — my engineering career coaching. Since you've worked with me before and know what I actually do, figured you'd be the right person to ask.</p>
+                    <!-- Main Content -->
+                    <tr>
+                        <td style="padding: 32px;">
 
-                <p><strong>Here's the deal:</strong> if someone you send my way books coaching through your link, I'll Zelle or Venmo you <strong>$200</strong>. No cap on how many people you refer — every one that converts is another $200 in your pocket.</p>
+                            <p style="margin: 0 0 20px; font-size: 16px; color: #334155; line-height: 1.6;">
+                                Hey [FIRST_NAME],
+                            </p>
+                            <p style="margin: 0 0 16px; font-size: 16px; color: #334155; line-height: 1.6;">
+                                Hope you're doing well. Quick one for you.
+                            </p>
+                            <p style="margin: 0 0 24px; font-size: 16px; color: #334155; line-height: 1.6;">
+                                I'm running a referral program for Launch to Lead. Since you've been through the coaching yourself, figured you'd be the right person to ask.
+                            </p>
 
-                <div class="link-block">
-                    <div class="label">Your Personal Referral Link</div>
-                    <div class="value"><span class="placeholder">[REFERRAL_LINK]</span></div>
-                </div>
+                            <!-- The Deal -->
+                            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color: #ecfdf5; border: 2px solid #a7f3d0; border-radius: 12px; margin: 0 0 24px;">
+                                <tr>
+                                    <td style="padding: 20px 24px;">
+                                        <p style="margin: 0 0 8px; font-size: 18px; color: #064e3b; font-weight: 800;">
+                                            &#128176; Here's the deal:
+                                        </p>
+                                        <p style="margin: 0; font-size: 15px; color: #334155; line-height: 1.6;">
+                                            If someone you refer signs up for coaching, I'll Zelle or Venmo you <strong>$200</strong>. No cap — every person that signs up is another $200.
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
 
-                <div class="link-block">
-                    <div class="label">Your Code (they can also just mention this on the call)</div>
-                    <div class="value"><span class="placeholder">[CODE]</span></div>
-                </div>
+                            <!-- Code Block -->
+                            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 12px; margin: 0 0 24px; text-align: center;">
+                                <tr>
+                                    <td style="padding: 20px 24px;">
+                                        <p style="margin: 0 0 6px; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; color: #059669;">Your Referral Code</p>
+                                        <p style="margin: 0 0 6px; font-size: 28px; font-weight: 800; color: #064e3b; letter-spacing: 3px;" id="code-display">[CODE]</p>
+                                        <p style="margin: 0; font-size: 13px; color: #64748b;">They just mention this code when they book a discovery call.</p>
+                                    </td>
+                                </tr>
+                            </table>
 
-                <p>The people who'd crush it: anyone in engineering who's job hunting, stuck in a dead-end role, or trying to level up their resume and interview game. College seniors and recent grads especially — they're the ones who need it most and don't know where to start.</p>
+                            <!-- Divider -->
+                            <hr style="border: none; border-top: 2px solid #e2e8f0; margin: 0 0 24px;">
 
-                <p>Link's good until <span class="placeholder">[EXPIRATION_DATE]</span>.</p>
+                            <!-- How It Works -->
+                            <h2 style="margin: 0 0 16px; font-size: 20px; font-weight: 800; color: #0f172a;">How It Works:</h2>
 
-                <p>No pressure at all. But if someone comes to mind — just forward this or shoot them the link.</p>
+                            <!-- Step 1 -->
+                            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin: 0 0 12px;">
+                                <tr>
+                                    <td width="40" valign="top">
+                                        <div style="width: 32px; height: 32px; background-color: #a3e635; border-radius: 50%; text-align: center; line-height: 32px; font-size: 16px; font-weight: 800; color: #064e3b;">1</div>
+                                    </td>
+                                    <td style="padding: 4px 0 0 8px;">
+                                        <p style="margin: 0; font-size: 15px; color: #0f172a; font-weight: 700;">Tell them about the coaching</p>
+                                        <p style="margin: 2px 0 0; font-size: 13px; color: #64748b;">Anyone in engineering who's job hunting, switching careers, or leveling up.</p>
+                                    </td>
+                                </tr>
+                            </table>
 
-                <p class="sig">Appreciate you,<br>Mansour</p>
-            </div>
-            <div class="copy-bar">
-                <button class="copy-btn" onclick="copyText('a')">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
-                    Copy Plain Text
-                </button>
-            </div>
-        </div>
+                            <!-- Step 2 -->
+                            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin: 0 0 12px;">
+                                <tr>
+                                    <td width="40" valign="top">
+                                        <div style="width: 32px; height: 32px; background-color: #a3e635; border-radius: 50%; text-align: center; line-height: 32px; font-size: 16px; font-weight: 800; color: #064e3b;">2</div>
+                                    </td>
+                                    <td style="padding: 4px 0 0 8px;">
+                                        <p style="margin: 0; font-size: 15px; color: #0f172a; font-weight: 700;">Give them your code above</p>
+                                        <p style="margin: 2px 0 0; font-size: 13px; color: #64748b;">They mention it when they book their free discovery call.</p>
+                                    </td>
+                                </tr>
+                            </table>
 
-        <!-- VERSION B: Professional Contacts -->
-        <div id="version-b" class="email-card hidden">
-            <div class="email-header">
-                <div class="email-field">
-                    <span>Subject:</span>
-                    <span>Got a deal for you, <span class="placeholder">[FIRST_NAME]</span></span>
-                </div>
-                <div class="email-field">
-                    <span>To:</span>
-                    <span><span class="placeholder">[FIRST_NAME]</span></span>
-                </div>
-            </div>
-            <div class="email-body" id="email-text-b">
-                <p>Hey <span class="placeholder">[FIRST_NAME]</span>,</p>
+                            <!-- Step 3 -->
+                            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin: 0 0 24px;">
+                                <tr>
+                                    <td width="40" valign="top">
+                                        <div style="width: 32px; height: 32px; background-color: #a3e635; border-radius: 50%; text-align: center; line-height: 32px; font-size: 16px; font-weight: 800; color: #064e3b;">3</div>
+                                    </td>
+                                    <td style="padding: 4px 0 0 8px;">
+                                        <p style="margin: 0; font-size: 15px; color: #0f172a; font-weight: 700;">They sign up → you get $200</p>
+                                        <p style="margin: 2px 0 0; font-size: 13px; color: #64748b;">Zelle or Venmo, your choice. No limit on referrals.</p>
+                                    </td>
+                                </tr>
+                            </table>
 
-                <p>Been a minute — hope things are going well on your end.</p>
+                            <!-- Expiration -->
+                            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color: #fef3c7; border-radius: 12px; margin: 0 0 24px;">
+                                <tr>
+                                    <td style="padding: 16px 20px;">
+                                        <p style="margin: 0; font-size: 14px; color: #92400e; font-weight: 600; text-align: center;">
+                                            &#9202; Code expires [EXPIRATION_DATE].
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
 
-                <p>I've been running an engineering career coaching business called Launch to Lead. We help engineers land jobs, negotiate offers, and build resumes that actually get callbacks. Lot of success stories so far — figured you probably know some people who could use it.</p>
+                            <!-- Links to share -->
+                            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color: #eff6ff; border: 1px solid #bfdbfe; border-radius: 12px; margin: 0 0 24px;">
+                                <tr>
+                                    <td style="padding: 16px 24px;">
+                                        <p style="margin: 0 0 12px; font-size: 14px; color: #1e40af; font-weight: 700;">&#128279; Pages to send them:</p>
+                                        <p style="margin: 0 0 8px; font-size: 14px; color: #334155;"><strong>The coaching offer:</strong> <a href="https://launchtolead.io/landing/offer.html" style="color: #2563eb; text-decoration: underline; font-weight: 600;">launchtolead.io/landing/offer.html</a></p>
+                                        <p style="margin: 0; font-size: 14px; color: #334155;"><strong>Free resume guide:</strong> <a href="https://launchtolead.io/landing/impact-bullet-equation.html" style="color: #2563eb; text-decoration: underline; font-weight: 600;">launchtolead.io/landing/impact-bullet-equation.html</a></p>
+                                    </td>
+                                </tr>
+                            </table>
 
-                <p><strong>So here's what I'm doing:</strong> I'm giving you a referral link. Anyone you send my way who books coaching — I'll send you <strong>$200 via Zelle or Venmo</strong>. No limit on referrals. Every conversion = another $200.</p>
+                            <p style="margin: 0 0 24px; font-size: 16px; color: #334155; line-height: 1.6;">
+                                No pressure at all. But if someone comes to mind — just pass along the code and that link.
+                            </p>
 
-                <div class="link-block">
-                    <div class="label">Your Personal Referral Link</div>
-                    <div class="value"><span class="placeholder">[REFERRAL_LINK]</span></div>
-                </div>
+                            <!-- Sign-off -->
+                            <p style="margin: 0 0 4px; font-size: 16px; color: #334155; line-height: 1.6;">
+                                Appreciate you,
+                            </p>
+                            <p style="margin: 0; font-size: 16px; color: #0f172a; font-weight: 700;">
+                                Mansour Manci
+                            </p>
+                            <p style="margin: 4px 0 0; font-size: 13px; color: #64748b;">
+                                Founder, Launch to Lead
+                            </p>
 
-                <div class="link-block">
-                    <div class="label">Your Code (they can also just mention this on the call)</div>
-                    <div class="value"><span class="placeholder">[CODE]</span></div>
-                </div>
+                        </td>
+                    </tr>
 
-                <p>Best fit: engineers who are job hunting, career switching, or just graduated and don't know how to get their foot in the door. If you know anyone in that boat — just send them the link or have them drop your code when they book a call.</p>
+                    <!-- Footer -->
+                    <tr>
+                        <td style="background-color: #0f172a; padding: 24px 32px; text-align: center;">
+                            <p style="margin: 0 0 8px; font-size: 16px; font-weight: 700; color: #ffffff;">
+                                Launch<span style="font-weight: 300; color: #14b8a6;">ToLead</span>
+                            </p>
+                            <p style="margin: 0; font-size: 11px; color: #64748b; line-height: 1.5;">
+                                &copy; 2026 Launch to Lead Engineering. All rights reserved.<br>
+                                <a href="https://launchtolead.io/legal.html" style="color: #94a3b8; text-decoration: underline;">Legal & Privacy</a>
+                            </p>
+                        </td>
+                    </tr>
 
-                <p>Link expires <span class="placeholder">[EXPIRATION_DATE]</span>.</p>
+                </table>
 
-                <p>Either way — we should catch up soon. But if someone comes to mind, I'd appreciate the pass.</p>
-
-                <p class="sig">Talk soon,<br>Mansour</p>
-            </div>
-            <div class="copy-bar">
-                <button class="copy-btn" onclick="copyText('b')">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
-                    Copy Plain Text
-                </button>
-            </div>
-        </div>
-
-        <!-- Subject Line Options -->
-        <div class="subject-options">
-            <h3>Alternative Subject Lines</h3>
-            <div class="subject-option">
-                <span class="num">1</span>
-                Quick favor (and $200 for you)
-            </div>
-            <div class="subject-option">
-                <span class="num">2</span>
-                Got a deal for you, <span class="placeholder">[FIRST_NAME]</span>
-            </div>
-            <div class="subject-option">
-                <span class="num">3</span>
-                $200 if you know someone job hunting
-            </div>
-            <div class="subject-option">
-                <span class="num">4</span>
-                Know anyone looking for an engineering job?
-            </div>
-            <div class="subject-option">
-                <span class="num">5</span>
-                I owe you one — here's $200
-            </div>
-        </div>
+            </td>
+        </tr>
+    </table>
     </div>
 
     <script>
-        function showVersion(v) {
-            document.getElementById('version-a').classList.toggle('hidden', v !== 'a');
-            document.getElementById('version-b').classList.toggle('hidden', v !== 'b');
-            document.querySelectorAll('.version-toggle button').forEach((btn, i) => {
-                btn.classList.toggle('active', (v === 'a' && i === 0) || (v === 'b' && i === 1));
-            });
+        function fillTemplate() {
+            const val = document.getElementById('clientSelect').value;
+            if (!val) return;
+            const [firstName, code] = val.split('|');
+
+            // Expiration = 90 days from today
+            const expiry = new Date();
+            expiry.setDate(expiry.getDate() + 90);
+            const expiryStr = expiry.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+
+            // Fill placeholders in the email container
+            const container = document.getElementById('email-container');
+            // Reset to template first
+            if (!window._originalHTML) {
+                window._originalHTML = container.innerHTML;
+            }
+            let html = window._originalHTML;
+            html = html.replace(/\[FIRST_NAME\]/g, firstName);
+            html = html.replace(/\[EXPIRATION_DATE\]/g, expiryStr);
+            container.innerHTML = html;
+
+            // Set the code separately (it has its own ID)
+            document.getElementById('code-display').textContent = code;
         }
 
-        function copyText(version) {
-            const el = document.getElementById('email-text-' + version);
-            const text = el.innerText;
-            navigator.clipboard.writeText(text).then(() => {
-                const btn = el.closest('.email-card').querySelector('.copy-btn');
-                btn.innerHTML = '✓ Copied!';
-                setTimeout(() => {
-                    btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg> Copy Plain Text';
-                }, 2000);
+        function copyEmailHTML() {
+            const container = document.getElementById('email-container');
+            const html = container.innerHTML;
+            navigator.clipboard.writeText(html).then(() => {
+                const btn = document.querySelector('.toolbar button');
+                const orig = btn.innerHTML;
+                btn.innerHTML = '&#10003; Copied!';
+                setTimeout(() => btn.innerHTML = orig, 2000);
             });
         }
     </script>
