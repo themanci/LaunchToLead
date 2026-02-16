@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leonardo De Jesus Lucero – Resume</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #f3f4f6;
+            padding: 20px;
+            color: #1f2937;
+            line-height: 1.4;
+        }
+
+        .resume {
+            max-width: 8.5in;
+            margin: 0 auto;
+            background: white;
+            padding: 0.6in 0.7in;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #2563eb;
+        }
+
+        .name {
+            font-size: 24pt;
+            font-weight: 700;
+            color: #111827;
+            letter-spacing: 0.5px;
+        }
+
+        .title {
+            font-size: 11pt;
+            color: #4b5563;
+            margin-top: 2px;
+            font-weight: 400;
+        }
+
+        .contact-info {
+            margin-top: 6px;
+            font-size: 9.5pt;
+            color: #6b7280;
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .contact-info a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        /* Sections */
+        .section {
+            margin-bottom: 14px;
+        }
+
+        .section-title {
+            font-size: 11pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            color: #1f2937;
+            border-bottom: 1.5px solid #e5e7eb;
+            padding-bottom: 3px;
+            margin-bottom: 8px;
+        }
+
+        /* Competencies */
+        .competencies {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .competency-tag {
+            background: #eff6ff;
+            color: #2563eb;
+            font-size: 9pt;
+            font-weight: 500;
+            padding: 3px 10px;
+            border-radius: 4px;
+        }
+
+        /* Experience */
+        .experience-entry {
+            margin-bottom: 12px;
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+
+        .job-title {
+            font-weight: 600;
+            font-size: 11pt;
+            color: #111827;
+        }
+
+        .dates {
+            font-size: 9.5pt;
+            color: #6b7280;
+            white-space: nowrap;
+        }
+
+        .company-line {
+            font-size: 10pt;
+            color: #4b5563;
+            margin-top: 1px;
+        }
+
+        .company-name {
+            font-weight: 600;
+        }
+
+        .bullets {
+            list-style: none;
+            margin-top: 6px;
+            padding-left: 14px;
+        }
+
+        .bullets li {
+            font-size: 10pt;
+            color: #374151;
+            margin-bottom: 4px;
+            position: relative;
+            padding-left: 2px;
+            line-height: 1.45;
+        }
+
+        .bullets li::before {
+            content: "▸";
+            position: absolute;
+            left: -14px;
+            color: #2563eb;
+            font-size: 9pt;
+        }
+
+        /* Metrics placeholder */
+        .metric {
+            background: #fef3c7;
+            color: #92400e;
+            padding: 0 3px;
+            border-radius: 2px;
+            font-weight: 500;
+        }
+
+        /* Skills section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 110px 1fr;
+            gap: 6px 12px;
+            font-size: 10pt;
+        }
+
+        .skill-category {
+            font-weight: 600;
+            color: #374151;
+        }
+
+        .skill-items {
+            color: #4b5563;
+        }
+
+        /* Education */
+        .education-entry {
+            margin-bottom: 8px;
+        }
+
+        .edu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+
+        .degree {
+            font-weight: 600;
+            font-size: 10.5pt;
+        }
+
+        .school {
+            color: #4b5563;
+            font-size: 10pt;
+        }
+
+        .edu-details {
+            font-size: 9.5pt;
+            color: #6b7280;
+            margin-top: 2px;
+        }
+
+        /* Extracurriculars */
+        .activities {
+            font-size: 10pt;
+            color: #374151;
+            line-height: 1.5;
+        }
+
+        .activities strong {
+            font-weight: 600;
+        }
+
+        /* Instructions box */
+        .instructions-box {
+            margin-top: 30px;
+            padding: 16px 20px;
+            background: #fef3c7;
+            border: 2px dashed #f59e0b;
+            border-radius: 8px;
+            font-size: 10pt;
+            color: #92400e;
+            line-height: 1.6;
+        }
+
+        .instructions-box h3 {
+            font-size: 11pt;
+            margin-bottom: 8px;
+            color: #78350f;
+        }
+
+        .instructions-box code {
+            background: #fde68a;
+            padding: 1px 4px;
+            border-radius: 2px;
+            font-size: 9.5pt;
+        }
+
+        /* Print styles */
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+
+            .resume {
+                box-shadow: none;
+                padding: 0.5in;
+            }
+
+            .instructions-box {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="resume">
+        <!-- Header -->
+        <header class="header">
+            <h1 class="name">Leonardo De Jesus Lucero, EIT</h1>
+            <p class="title">Civil Engineer · Construction Estimating & Field Engineering</p>
+            <div class="contact-info">
+                <span>Escondido, CA</span>
+                <span>760-270-4180</span>
+                <a href="mailto:leonardoxlucero@gmail.com">leonardoxlucero@gmail.com</a>
+                <a href="https://www.linkedin.com/in/ldlucero">linkedin.com/in/ldlucero</a>
+            </div>
+        </header>
+
+        <!-- Core Competencies -->
+        <section class="section">
+            <h2 class="section-title">Core Competencies</h2>
+            <div class="competencies">
+                <span class="competency-tag">Cost Estimating</span>
+                <span class="competency-tag">Quantity Takeoffs</span>
+                <span class="competency-tag">PlanSwift</span>
+                <span class="competency-tag">Bluebeam</span>
+                <span class="competency-tag">Field Engineering</span>
+                <span class="competency-tag">Quality Control</span>
+                <span class="competency-tag">AutoCAD Civil 3D</span>
+                <span class="competency-tag">Construction Documentation</span>
+                <span class="competency-tag">Bilingual (English/Spanish)</span>
+            </div>
+        </section>
+
+        <!-- Experience -->
+        <section class="section">
+            <h2 class="section-title">Professional Experience</h2>
+
+            <!-- Kenyon Plastering -->
+            <div class="experience-entry">
+                <div class="experience-header">
+                    <span class="job-title">Project Estimator</span>
+                    <span class="dates">Nov 2025 – Present</span>
+                </div>
+                <div class="company-line">
+                    <span class="company-name">Kenyon Plastering Construction Inc</span> · San Marcos, CA
+                </div>
+                <ul class="bullets">
+                    <li>Prepare <span class="metric">[X]</span>+ detailed cost estimates per month for exterior plaster and stucco systems valued at $<span class="metric">[X]</span>K–$<span class="metric">[X]</span>M, accounting for materials, labor, and production rates to achieve a <span class="metric">[X]</span>% bid-win rate</li>
+                    <li>Analyze architectural drawings, technical specifications, and RFIs for <span class="metric">[X]</span>+ active projects simultaneously, identifying scope gaps that prevented $<span class="metric">[X]</span>K in potential cost overruns</li>
+                    <li>Conduct digital takeoffs using PlanSwift software to quantify materials across <span class="metric">[X]</span>+ plan sets, reducing manual measurement time by <span class="metric">[X]</span>% and producing estimate reports within <span class="metric">[X]</span>-day turnaround</li>
+                    <li>Manage competing bid deadlines across <span class="metric">[X]</span>+ concurrent projects, maintaining <span class="metric">[X]</span>% on-time delivery rate by prioritizing tasks and coordinating with project managers to align submission schedules</li>
+                </ul>
+            </div>
+
+            <!-- Whiting-Turner -->
+            <div class="experience-entry">
+                <div class="experience-header">
+                    <span class="job-title">Field Engineer Intern</span>
+                    <span class="dates">Jun 2024 – Sep 2024</span>
+                </div>
+                <div class="company-line">
+                    <span class="company-name">The Whiting-Turner Contracting Co.</span> · P2000 62 Area Mess Hall Project, Camp Pendleton, CA
+                </div>
+                <ul class="bullets">
+                    <li>Maintained <span class="metric">[X]</span>+ daily field journals and as-built documents for a $<span class="metric">[X]</span>M military mess hall construction project, ensuring <span class="metric">[X]</span>% documentation compliance during owner reviews</li>
+                    <li>Executed quality control inspections and daily safety checklists across <span class="metric">[X]</span>+ active work areas, contributing to <span class="metric">[X]</span> consecutive days with zero recordable safety incidents on a federal project</li>
+                    <li>Performed preconstruction quantity takeoffs for <span class="metric">[X]</span> trade scopes and contacted <span class="metric">[X]</span>+ subcontractors to validate pricing, supporting bid packages worth $<span class="metric">[X]</span>K in total trade value</li>
+                    <li>Coordinated daily with <span class="metric">[X]</span>+ subcontractor crews to resolve field conflicts through RFI submissions, reducing average response turnaround from <span class="metric">[X]</span> days to <span class="metric">[X]</span> days</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Education -->
+        <section class="section">
+            <h2 class="section-title">Education & Certification</h2>
+            <div class="education-entry">
+                <div class="edu-header">
+                    <span class="degree">BS in Civil Engineering</span>
+                    <span class="dates">Jun 2025</span>
+                </div>
+                <div class="school">California Polytechnic State University, San Luis Obispo</div>
+                <div class="edu-details">Dean's List, Winter 2023</div>
+            </div>
+            <div class="education-entry" style="margin-top: 6px;">
+                <div class="edu-header">
+                    <span class="degree">Engineer-in-Training (EIT) Certification</span>
+                    <span class="dates">Oct 2025</span>
+                </div>
+                <div class="edu-details">California Board for Professional Engineers · Cert #1186358</div>
+            </div>
+        </section>
+
+        <!-- Technical Skills -->
+        <section class="section">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-grid">
+                <span class="skill-category">Estimating</span>
+                <span class="skill-items">PlanSwift, Bluebeam, Quantity Takeoffs, Cost Analysis, Bid Preparation</span>
+
+                <span class="skill-category">Engineering</span>
+                <span class="skill-items">AutoCAD Civil 3D, Revit, Primavera P6, Quality Control, Field Verification</span>
+
+                <span class="skill-category">General</span>
+                <span class="skill-items">Microsoft Excel, Microsoft Office Suite, Bilingual (English/Spanish), Technical Documentation</span>
+            </div>
+        </section>
+
+        <!-- Leadership & Activities -->
+        <section class="section">
+            <h2 class="section-title">Leadership & Activities</h2>
+            <div class="activities">
+                <strong>Society of Civil Engineers</strong> — Outstanding Senior Member 2025<br>
+                <strong>Society of Hispanic Professional Engineers (SHPE)</strong> — Active Member<br>
+                <strong>Latin Cultural Association (LCA)</strong> — Active Member<br>
+                <strong>Disability Resource Center</strong> — Note Taker<br>
+                <strong>STEM Tutor</strong> — Grade School Subjects
+            </div>
+        </section>
+    </div>
+
+    <!-- Instructions for Leonardo -->
+    <div class="instructions-box">
+        <h3>📋 How to Complete This Resume</h3>
+        <p>
+            Every <code>[X]</code> highlighted in yellow is a placeholder for a real number or metric only you know. 
+            This is the <strong>Impact Equation</strong> at work: <strong>Task + Metric + How + Why = Impact</strong>.
+        </p>
+        <p style="margin-top: 8px;">
+            <strong>Tips for filling in placeholders:</strong>
+        </p>
+        <ul style="margin-top: 6px; padding-left: 20px; line-height: 1.8;">
+            <li><strong>Estimates per month:</strong> How many bids do you typically turn around in a month? (e.g., 8, 12, 15)</li>
+            <li><strong>Project values:</strong> What's the typical range of your projects? (e.g., $50K–$500K, $100K–$2M)</li>
+            <li><strong>Bid-win rate:</strong> Roughly what % of your bids win? Ask your PM if you're unsure. Even "competitive" works if you don't know.</li>
+            <li><strong>Active projects:</strong> How many projects are you managing scope for at once? (e.g., 5, 8, 10+)</li>
+            <li><strong>Cost overruns prevented:</strong> Think of one time you caught something in plans that could have been expensive. How much would it have cost?</li>
+            <li><strong>Turnaround time:</strong> How quickly do you deliver an estimate from receiving plans? (e.g., 2–3 days, same week)</li>
+            <li><strong>Whiting-Turner project value:</strong> How large was the Camp Pendleton mess hall project? (Check your old project docs)</li>
+            <li><strong>Safety streak:</strong> Did the project hit any safety milestones? (e.g., 90 days zero incidents, full project zero recordable)</li>
+            <li><strong>Subcontractor counts:</strong> How many subs were on the job? How many did you interact with daily?</li>
+            <li><strong>RFI turnaround:</strong> How fast did you typically close out RFIs?</li>
+        </ul>
+        <p style="margin-top: 10px;">
+            <strong>Remember:</strong> Estimates and approximations are fine — use "~" or "approximately" if exact numbers are hard to pin down. 
+            The goal is to show <em>scale</em> and <em>results</em>, not perfection.
+        </p>
+    </div>
+</body>
+</html>
