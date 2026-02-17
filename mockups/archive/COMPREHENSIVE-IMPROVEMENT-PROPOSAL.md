@@ -45,7 +45,7 @@ Identify section ordering inconsistencies across similar pages to establish a st
 9. `#faq` - FAQ
 
 #### **pivot.html** (Pivot Your Path)
-1. `#top` - Hero ("I've Pivoted 4 Times at a Fortune 100 Company")
+1. `#top` - Hero ("I've Pivoted 4 Times at John Deere")
 2. `#ai` - AI section (embedded in hero area)
 3. `#my-pivot` - My Pivot Journey
 4. "The Pivot Myths I'll Help You Debunk" (no ID)

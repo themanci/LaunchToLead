@@ -4,7 +4,7 @@
 
 **Target:** Students & Juniors.
 
-**Promise:** "Land the Fortune 100 Job."
+**Promise:** "Land the John Deere Job."
 
 - **Phase 1:** The Me-in-We Extraction. (Identifying individual contribution).
 - **Phase 2:** The Impact Equation. (Task + Metric + How + Why).

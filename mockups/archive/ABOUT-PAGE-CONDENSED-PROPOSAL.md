@@ -36,7 +36,7 @@ Reduce page length by 40-50% while retaining all key information and credibility
 
 [3-4 paragraph summary instead of long narrative]
 
-- Paragraph 1: Mechanical engineer → 4 pivots → software leader at Fortune 100
+- Paragraph 1: Mechanical engineer → 4 pivots → software leader at John Deere
 - Paragraph 2: What drives me (brief personal motivation)
 - Paragraph 3: Why I coach (helping others avoid my early mistakes)
 
@@ -72,7 +72,7 @@ Reduce page length by 40-50% while retaining all key information and credibility
 → Key Lesson: "Visibility is currency" - Strategic communication matters
 
 [Stats Box]
-📊 4 promotions | 4 pivots | 7 years | Fortune 100 company
+📊 4 promotions | 4 pivots | 7 years | John Deere
 ```
 
 **Space Savings**: 50% reduction (combine 2 sections into 1)
@@ -150,7 +150,7 @@ I didn't figure this out alone. I had mentors who gave me honest feedback, opene
 - ML/Data Science fundamentals
 
 📊 **Track Record**
-- 4 promotions in 7 years (Fortune 100)
+- 4 promotions in 7 years (John Deere)
 - Led teams of 50+ engineers
 - Built enablement programs from scratch
 ```

@@ -49,7 +49,7 @@ Main Site ("Ready To Launch? →" CTA) → Landing Page 2 (offer.html?source=sit
 - [x] Popup removed from index.html
 - [x] Index.html video → image placeholder (`professional_standing.png` with gradient overlay)
 - [x] About.html video → image placeholder (`casual_roof.jpg` with "Meet Mansour" overlay)
-- [x] "Fortune 100 company" → "Fortune 100 company" on all public pages (index, about, offer, vault, success-stories)
+- [x] "Fortune 100 company" → "John Deere" across all public pages, lead magnets, offers, scripts, and graphics
 
 ### Git
 - [x] Previous commit: `4ccc0df` — landing page funnel + qualifying form + Kit integration

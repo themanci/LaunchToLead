@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LaunchToLead — Social Media Banners V2</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* ── Reset & Page ─────────────────────────────────────── */
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: #0c0c14;
+            color: #e2e8f0;
+            padding: 60px 40px;
+            min-height: 100vh;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        .page-header h1 {
+            font-size: 36px;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 8px;
+            letter-spacing: -1px;
+        }
+        .page-header p {
+            font-size: 16px;
+            color: #94a3b8;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* ── Section wrappers ─────────────────────────────────── */
+        .banner-section {
+            margin-bottom: 80px;
+        }
+        .banner-section h2 {
+            font-size: 22px;
+            font-weight: 700;
+            color: #a3e635;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .banner-section .meta {
+            font-size: 14px;
+            color: #64748b;
+            margin-bottom: 24px;
+            font-weight: 500;
+        }
+        .banner-wrap {
+            background: #16182a;
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 16px;
+            padding: 24px;
+            display: inline-block;
+        }
+
+        /* ── Export instructions ───────────────────────────────── */
+        .export-note {
+            margin-top: 16px;
+            padding: 14px 20px;
+            background: rgba(163, 230, 53, 0.06);
+            border: 1px solid rgba(163, 230, 53, 0.15);
+            border-radius: 10px;
+            font-size: 13px;
+            color: #94a3b8;
+            line-height: 1.6;
+            max-width: 700px;
+        }
+        .export-note strong { color: #a3e635; }
+
+        /* ═══════════════════════════════════════════════════════
+           SHARED BANNER DESIGN SYSTEM 
+           ═══════════════════════════════════════════════════════ */
+
+        /* ── Base banner styles ───────────────────────────────── */
+        .banner {
+            position: relative;
+            overflow: hidden;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        /* Dark premium base */
+        .banner-bg {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(155deg, #0f0f1a 0%, #0a1628 35%, #121225 65%, #0d0d1f 100%);
+            z-index: 0;
+        }
+
+        /* Subtle grid pattern */
+        .banner-grid {
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(255,255,255,0.018) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.018) 1px, transparent 1px);
+            background-size: 48px 48px;
+            z-index: 1;
+        }
+
+        /* Glow orbs */
+        .glow-teal {
+            position: absolute;
+            width: 55%;
+            height: 70%;
+            background: radial-gradient(circle, rgba(20, 184, 166, 0.10) 0%, rgba(20, 184, 166, 0.03) 40%, transparent 70%);
+            filter: blur(50px);
+            z-index: 1;
+        }
+        .glow-lime {
+            position: absolute;
+            width: 45%;
+            height: 60%;
+            background: radial-gradient(circle, rgba(163, 230, 53, 0.08) 0%, rgba(163, 230, 53, 0.02) 40%, transparent 70%);
+            filter: blur(60px);
+            z-index: 1;
+        }
+        .glow-purple {
+            position: absolute;
+            width: 35%;
+            height: 50%;
+            background: radial-gradient(circle, rgba(139, 92, 246, 0.06) 0%, transparent 60%);
+            filter: blur(50px);
+            z-index: 1;
+        }
+
+        /* Light streak accents */
+        .streak {
+            position: absolute;
+            height: 1.5px;
+            background: linear-gradient(90deg, transparent, rgba(163, 230, 53, 0.4), rgba(20, 184, 166, 0.3), transparent);
+            z-index: 2;
+            opacity: 0.6;
+        }
+
+        /* Content layer */
+        .banner-content {
+            position: relative;
+            z-index: 10;
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Logo badge */
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: white;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            font-size: 18px;
+            color: #0f0f1a;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3), 0 0 15px rgba(163, 230, 53, 0.15);
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .logo-wordmark {
+            font-size: 20px;
+            font-weight: 800;
+            color: white;
+            letter-spacing: -0.5px;
+        }
+        .logo-wordmark .accent {
+            font-weight: 300;
+            color: #a3e635;
+        }
+
+        /* Headline treatment */
+        .headline {
+            font-weight: 800;
+            color: white;
+            line-height: 1.1;
+            letter-spacing: -1.5px;
+        }
+        .headline .pop {
+            background: linear-gradient(135deg, #a3e635 0%, #4ade80 50%, #14b8a6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Sub-headline */
+        .sub {
+            color: #94a3b8;
+            font-weight: 500;
+            line-height: 1.4;
+        }
+        .sub strong {
+            color: #e2e8f0;
+            font-weight: 700;
+        }
+
+        /* Stat pills */
+        .stats {
+            display: flex;
+            gap: 12px;
+        }
+        .stat {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 12px;
+            padding: 10px 18px;
+            text-align: center;
+            backdrop-filter: blur(8px);
+        }
+        .stat-number {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            color: #a3e635;
+            line-height: 1;
+        }
+        .stat-label {
+            font-size: 10px;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+            margin-top: 2px;
+        }
+
+        /* Proof badges */
+        .proof {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .proof-tag {
+            background: rgba(163, 230, 53, 0.08);
+            border: 1px solid rgba(163, 230, 53, 0.18);
+            border-radius: 100px;
+            padding: 6px 14px;
+            font-size: 11px;
+            font-weight: 600;
+            color: #a3e635;
+            white-space: nowrap;
+            letter-spacing: 0.3px;
+        }
+
+        /* Website pill */
+        .url-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.10);
+            border-radius: 8px;
+            padding: 6px 14px;
+            font-size: 12px;
+            font-weight: 600;
+            color: rgba(255,255,255,0.7);
+            letter-spacing: 0.5px;
+        }
+        .url-pill .dot {
+            width: 6px;
+            height: 6px;
+            background: #4ade80;
+            border-radius: 50%;
+            box-shadow: 0 0 8px rgba(74, 222, 128, 0.6);
+        }
+
+        /* ═══════════════════════════════════════════════════════
+           1) LINKEDIN BANNER — 1584 × 396
+           ═══════════════════════════════════════════════════════ */
+        .linkedin-banner {
+            width: 1584px;
+            height: 396px;
+        }
+        .linkedin-banner .glow-teal { top: -30%; left: -5%; }
+        .linkedin-banner .glow-lime { bottom: -20%; right: -5%; }
+        .linkedin-banner .glow-purple { top: 10%; right: 15%; }
+
+        .linkedin-banner .streak-1 { top: 85px; left: 0; width: 400px; }
+        .linkedin-banner .streak-2 { bottom: 70px; right: 0; width: 350px; }
+
+        .linkedin-banner .banner-content {
+            padding: 24px 70px 24px 420px;
+            justify-content: space-between;
+        }
+        .linkedin-banner .left {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            max-width: 680px;
+        }
+        .linkedin-banner .headline { font-size: 60px; }
+        .linkedin-banner .right {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 18px;
+        }
+        .linkedin-banner .stat { padding: 14px 24px; }
+        .linkedin-banner .stat-number { font-size: 38px; }
+        .linkedin-banner .stat-label { font-size: 12px; }
+        .linkedin-banner .proof-tag { font-size: 15px; padding: 8px 18px; }
+        .linkedin-banner .url-pill { font-size: 16px; padding: 10px 20px; }
+        .linkedin-banner .url-pill .dot { width: 8px; height: 8px; }
+        .linkedin-banner .sub { font-size: 22px; max-width: 560px; }
+
+        /* ═══════════════════════════════════════════════════════
+           2) FACEBOOK COVER — 1640 × 624 (2x retina for crisp display)
+           ═══════════════════════════════════════════════════════ */
+        .facebook-banner {
+            width: 1640px;
+            height: 624px;
+        }
+        .facebook-banner .glow-teal { top: -40%; left: -10%; }
+        .facebook-banner .glow-lime { bottom: -30%; right: -10%; }
+
+        .facebook-banner .streak-1 { top: 120px; left: 0; width: 500px; }
+        .facebook-banner .streak-2 { bottom: 100px; right: 0; width: 400px; }
+
+        .facebook-banner .banner-content {
+            padding: 64px 96px;
+            justify-content: space-between;
+        }
+        .facebook-banner .left {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            max-width: 960px;
+        }
+        .facebook-banner .headline { font-size: 72px; }
+        .facebook-banner .sub { font-size: 28px; max-width: 760px; }
+        .facebook-banner .logo-icon { width: 68px; height: 68px; font-size: 30px; border-radius: 16px; }
+        .facebook-banner .logo-wordmark { font-size: 34px; }
+        .facebook-banner .right {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 28px;
+        }
+        .facebook-banner .stat { padding: 16px 28px; }
+        .facebook-banner .stat-number { font-size: 44px; }
+        .facebook-banner .stat-label { font-size: 16px; }
+        .facebook-banner .proof-tag { font-size: 18px; padding: 10px 22px; }
+        .facebook-banner .url-pill { font-size: 18px; padding: 12px 24px; }
+        .facebook-banner .url-pill .dot { width: 8px; height: 8px; }
+
+        /* ═══════════════════════════════════════════════════════
+           3) X (TWITTER) HEADER — 1500 × 500
+           ═══════════════════════════════════════════════════════ */
+        .x-banner {
+            width: 1500px;
+            height: 500px;
+        }
+        .x-banner .glow-teal { top: -25%; left: 5%; }
+        .x-banner .glow-lime { bottom: -25%; right: 0%; }
+        .x-banner .glow-purple { bottom: 5%; left: 30%; }
+
+        .x-banner .streak-1 { top: 100px; left: 0; width: 500px; }
+        .x-banner .streak-2 { bottom: 100px; right: 0; width: 400px; }
+
+        .x-banner .banner-content {
+            padding: 50px 80px;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            gap: 20px;
+        }
+        .x-banner .headline { font-size: 56px; text-align: center; }
+        .x-banner .sub { font-size: 20px; text-align: center; max-width: 700px; }
+        .x-banner .stats { gap: 16px; }
+        .x-banner .stat-number { font-size: 30px; }
+        .x-banner .stat-label { font-size: 10px; }
+
+        /* ═══════════════════════════════════════════════════════
+           4) YOUTUBE BANNER — 2048 × 1152 (native, no scaling)
+           Safe area centered: ~1546 × 423
+           ═══════════════════════════════════════════════════════ */
+        .youtube-banner {
+            width: 2048px;
+            height: 1152px;
+        }
+        .youtube-banner .glow-teal { top: 15%; left: 5%; }
+        .youtube-banner .glow-lime { bottom: 15%; right: 5%; }
+        .youtube-banner .glow-purple { top: 25%; right: 25%; }
+
+        .youtube-banner .streak-1 { top: 400px; left: 0; width: 700px; }
+        .youtube-banner .streak-2 { bottom: 400px; right: 0; width: 550px; }
+
+        .youtube-banner .banner-content {
+            position: absolute;
+            /* Fit within "viewable on all devices" safe zone (~1235×338 at 2048×1152) */
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 1200px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 30px 40px;
+        }
+        .youtube-banner .left {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            max-width: 620px;
+        }
+        .youtube-banner .headline { font-size: 52px; }
+        .youtube-banner .sub { font-size: 20px; max-width: 560px; }
+        .youtube-banner .right {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 14px;
+        }
+        .youtube-banner .stat { padding: 10px 18px; }
+        .youtube-banner .stat-number { font-size: 32px; }
+        .youtube-banner .stat-label { font-size: 10px; }
+        .youtube-banner .proof-tag { font-size: 13px; padding: 7px 16px; }
+        .youtube-banner .url-pill { font-size: 14px; padding: 8px 18px; }
+        .youtube-banner .url-pill .dot { width: 7px; height: 7px; }
+
+        /* ═══════════════════════════════════════════════════════
+           5) SKOOL COMMUNITY COVER — 1084 × 576
+           ═══════════════════════════════════════════════════════ */
+        .skool-banner {
+            width: 1084px;
+            height: 576px;
+        }
+        .skool-banner .glow-teal { top: -20%; left: 0%; }
+        .skool-banner .glow-lime { bottom: -15%; right: -5%; }
+        .skool-banner .glow-purple { top: 20%; right: 10%; }
+
+        .skool-banner .streak-1 { top: 120px; left: 0; width: 350px; }
+        .skool-banner .streak-2 { bottom: 130px; right: 0; width: 280px; }
+
+        .skool-banner .banner-content {
+            padding: 50px 64px;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            gap: 20px;
+        }
+        .skool-banner .headline { font-size: 48px; text-align: center; }
+        .skool-banner .sub { font-size: 18px; text-align: center; max-width: 600px; }
+        .skool-banner .stat-number { font-size: 26px; }
+        .skool-banner .stat-label { font-size: 9px; }
+    </style>
+</head>
+<body>
+
+    <div class="page-header">
+        <h1>LaunchToLead — Social Media Banners V2</h1>
+        <p>Dark premium design system. All banners share a unified visual language — consistent with the Meta ad graphics. Each is pixel-perfect for its platform.</p>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════
+         1) LINKEDIN — 1584 × 396 
+         ═══════════════════════════════════════════════════════ -->
+    <div class="banner-section">
+        <h2>① LinkedIn Banner</h2>
+        <div class="meta">1584 × 396 px · Personal profile header</div>
+
+        <div class="banner-wrap">
+            <div class="banner linkedin-banner" id="linkedin">
+                <div class="banner-bg"></div>
+                <div class="banner-grid"></div>
+                <div class="glow-teal"></div>
+                <div class="glow-lime"></div>
+                <div class="glow-purple"></div>
+                <div class="streak streak-1"></div>
+                <div class="streak streak-2"></div>
+
+                <div class="banner-content">
+                    <div class="left">
+                        <div class="logo">
+                            <div class="logo-icon">L²</div>
+                            <div class="logo-wordmark">Launch<span class="accent">ToLead</span></div>
+                        </div>
+                        <div class="headline">
+                            Engineering Grads: <span class="pop">Hire-Ready</span> in 21 Days
+                        </div>
+                        <div class="sub">
+                            1-on-1 career coaching from a <strong>real engineer</strong> who's been on both sides of the hiring table. Not HR. Not a recruiter.
+                        </div>
+                        <div class="proof">
+                            <span class="proof-tag">🎯 Clients at Google</span>
+                            <span class="proof-tag">🚀 SpaceX</span>
+                            <span class="proof-tag">💰 $106K Offers</span>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <div class="stats">
+                            <div class="stat">
+                                <div class="stat-number">21</div>
+                                <div class="stat-label">Days</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-number">52</div>
+                                <div class="stat-label">Methods</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-number">3</div>
+                                <div class="stat-label">Sessions</div>
+                            </div>
+                        </div>
+                        <div class="url-pill">
+                            <span class="dot"></span>
+                            LaunchToLead.io
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="export-note">
+            <strong>Export:</strong> Right-click the banner → Inspect → right-click <code>&lt;div id="linkedin"&gt;</code> → "Capture node screenshot." Upload to LinkedIn → Edit Cover Image. Image is exactly 1584×396.
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════
+         2) FACEBOOK — 820 × 312
+         ═══════════════════════════════════════════════════════ -->
+    <div class="banner-section">
+        <h2>② Facebook Cover</h2>
+        <div class="meta">1640 × 624 px (2x retina) · Page & personal cover photo</div>
+
+        <div class="banner-wrap">
+            <div class="banner facebook-banner" id="facebook">
+                <div class="banner-bg"></div>
+                <div class="banner-grid"></div>
+                <div class="glow-teal"></div>
+                <div class="glow-lime"></div>
+
+                <div class="streak streak-1"></div>
+                <div class="streak streak-2"></div>
+
+                <div class="banner-content">
+                    <div class="left">
+                        <div class="logo">
+                            <div class="logo-icon">L²</div>
+                            <div class="logo-wordmark">Launch<span class="accent">ToLead</span></div>
+                        </div>
+                        <div class="headline">
+                            Your <span class="pop">Engineering Degree</span> Should Be Working For You
+                        </div>
+                        <div class="sub">
+                            Be hire-ready in 21 days. <strong>Real coaching from a real engineer.</strong>
+                        </div>
+                        <div class="proof">
+                            <span class="proof-tag">Google</span>
+                            <span class="proof-tag">SpaceX</span>
+                            <span class="proof-tag">Ford $106K</span>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <div class="stats">
+                            <div class="stat">
+                                <div class="stat-number">21</div>
+                                <div class="stat-label">Days</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-number">52</div>
+                                <div class="stat-label">Methods</div>
+                            </div>
+                        </div>
+                        <div class="url-pill">
+                            <span class="dot"></span>
+                            LaunchToLead.io
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="export-note">
+            <strong>Export:</strong> Capture node screenshot of <code>&lt;div id="facebook"&gt;</code>. Upload to Facebook → Edit Cover Photo. Note: Facebook crops differently on mobile — key content is centered intentionally.
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════
+         3) X (TWITTER) — 1500 × 500
+         ═══════════════════════════════════════════════════════ -->
+    <div class="banner-section">
+        <h2>③ X (Twitter) Header</h2>
+        <div class="meta">1500 × 500 px · Profile header image</div>
+
+        <div class="banner-wrap">
+            <div class="banner x-banner" id="x-twitter">
+                <div class="banner-bg"></div>
+                <div class="banner-grid"></div>
+                <div class="glow-teal"></div>
+                <div class="glow-lime"></div>
+                <div class="glow-purple"></div>
+
+                <div class="streak streak-1"></div>
+                <div class="streak streak-2"></div>
+
+                <div class="banner-content">
+                    <div class="logo">
+                        <div class="logo-icon">L²</div>
+                        <div class="logo-wordmark">Launch<span class="accent">ToLead</span></div>
+                    </div>
+                    <div class="headline">
+                        <span class="pop">Engineering Grad?</span> Your Friends Are Getting Hired.<br>
+                        You're Getting <span style="color: #f87171;">Ghosted</span>.
+                    </div>
+                    <div class="sub">
+                        Engineering career coaching that makes you <strong>hire-ready in 21 days</strong>.
+                    </div>
+                    <div class="stats">
+                        <div class="stat">
+                            <div class="stat-number">21</div>
+                            <div class="stat-label">Days</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">52</div>
+                            <div class="stat-label">Methods</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">3</div>
+                            <div class="stat-label">Sessions</div>
+                        </div>
+                    </div>
+                    <div class="proof">
+                        <span class="proof-tag">Clients at Google & SpaceX</span>
+                        <span class="proof-tag">$106K Offers</span>
+                        <span class="proof-tag">Not HR — A Real Engineer</span>
+                    </div>
+                    <div class="url-pill">
+                        <span class="dot"></span>
+                        LaunchToLead.io
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="export-note">
+            <strong>Export:</strong> Capture node screenshot of <code>&lt;div id="x-twitter"&gt;</code>. Upload to X → Edit Profile → Header. X crops heavily on mobile — bottom ~60px may be hidden by profile pic. Core message is centered vertically to stay visible.
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════
+         4) YOUTUBE — 2048 × 1152 (native size)
+         ═══════════════════════════════════════════════════════ -->
+    <div class="banner-section">
+        <h2>④ YouTube Channel Banner</h2>
+        <div class="meta">2048 × 1152 px (native) · Right-click in DevTools → "Capture node screenshot"</div>
+
+        <div class="banner-wrap">
+            <div class="banner youtube-banner" id="youtube">
+                <div class="banner-bg"></div>
+                <div class="banner-grid"></div>
+                <div class="glow-teal"></div>
+                <div class="glow-lime"></div>
+                <div class="glow-purple"></div>
+
+                <div class="streak streak-1"></div>
+                <div class="streak streak-2"></div>
+
+                <div class="banner-content">
+                    <div class="left">
+                        <div class="logo" style="gap: 14px;">
+                            <div class="logo-icon" style="width: 50px; height: 50px; font-size: 22px; border-radius: 12px;">L²</div>
+                            <div class="logo-wordmark" style="font-size: 26px;">Launch<span class="accent">ToLead</span></div>
+                        </div>
+                        <div class="headline">
+                            Engineering Career <span class="pop">Coaching</span>
+                        </div>
+                        <div class="sub">
+                            From zero callbacks to <strong>hire-ready in 21 days</strong>. Real coaching from a real engineer — not HR, not a recruiter.
+                        </div>
+                    </div>
+                    <div class="right">
+                        <div class="stats" style="gap: 16px;">
+                            <div class="stat">
+                                <div class="stat-number">21</div>
+                                <div class="stat-label">Days</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-number">52</div>
+                                <div class="stat-label">Methods</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-number">3</div>
+                                <div class="stat-label">Sessions</div>
+                            </div>
+                        </div>
+                        <div class="proof">
+                            <span class="proof-tag">Google</span>
+                            <span class="proof-tag">SpaceX</span>
+                            <span class="proof-tag">$106K Ford</span>
+                        </div>
+                        <div class="url-pill">
+                            <span class="dot"></span>
+                            LaunchToLead.io
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="export-note">
+            <strong>Export:</strong> Right-click the banner → Inspect → right-click <code>&lt;div id="youtube"&gt;</code> → "Capture node screenshot." Upload to YouTube → Customize Channel → Branding → Banner. Image is exactly 2048×1152.
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════
+         5) SKOOL COMMUNITY — 1084 × 576
+         ═══════════════════════════════════════════════════════ -->
+    <div class="banner-section">
+        <h2>⑤ Skool Community Cover</h2>
+        <div class="meta">1084 × 576 px · Community header image</div>
+
+        <div class="banner-wrap">
+            <div class="banner skool-banner" id="skool">
+                <div class="banner-bg"></div>
+                <div class="banner-grid"></div>
+                <div class="glow-teal"></div>
+                <div class="glow-lime"></div>
+                <div class="glow-purple"></div>
+
+                <div class="streak streak-1"></div>
+                <div class="streak streak-2"></div>
+
+                <div class="banner-content">
+                    <div class="logo" style="gap: 12px;">
+                        <div class="logo-icon" style="width: 44px; height: 44px; font-size: 20px;">L²</div>
+                        <div class="logo-wordmark" style="font-size: 22px;">Launch<span class="accent">ToLead</span></div>
+                    </div>
+                    <div class="headline">
+                        The <span class="pop">Engineering</span> Career Community
+                    </div>
+                    <div class="sub">
+                        A free community for engineers who want to <strong>land their dream job</strong>. Get advice from a real engineer who's been on both sides of the hiring table — not HR, not a recruiter.
+                    </div>
+                    <div class="proof">
+                        <span class="proof-tag">🆓 100% Free to Join</span>
+                        <span class="proof-tag">🎯 Direct Access to a Real Engineer</span>
+                        <span class="proof-tag">🚀 Resume & Interview Help</span>
+                    </div>
+                    <div class="url-pill">
+                        <span class="dot"></span>
+                        LaunchToLead.io
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="export-note">
+            <strong>Export:</strong> Capture node screenshot of <code>&lt;div id="skool"&gt;</code>. Upload to Skool → Community Settings → Cover Image. Exactly 1084×576.
+        </div>
+    </div>
+
+</body>
+</html>

@@ -719,7 +719,7 @@ A CS new grad used this pivot in a 20-min alumni chat; got referred to a mid-siz
 ### The Universal Translator + ATS Pass™
 **The Problem:** Candidates get pigeonholed. A Civil Engineer can't get a Mechanical job because the recruiter doesn't understand "Highway Design."
 
-**The Origin Story:** When I applied to a Fortune 100 company as a Mechanical Engineer, my only professional experience was 1 year at the Iowa Department of Transportation as a Highway Design Engineer. I realized the content didn't matter—**the competency did.**
+**The Origin Story:** When I applied to John Deere as a Mechanical Engineer, my only professional experience was 1 year at the Iowa Department of Transportation as a Highway Design Engineer. I realized the content didn't matter—**the competency did.**
 
 **The Tactic: The Jargon Audit**
 Go through every bullet point on your resume. If a word is specific to your old industry, delete it and replace it with the universal engineering competency.
@@ -803,7 +803,7 @@ Move up one level of abstraction until the skill is universal.
 ### The Asset Mindset Shift™
 **The Problem:** Candidates are submissive. They wait to be picked. They approach recruiters like beggars asking for a favor.
 
-**The Origin Story:** My first career fair at Iowa State, I waited in line for 45 minutes to talk to a Fortune 100 recruiter. When I got to the front, I handed over my resume like I was handing in homework. The recruiter glanced at it for 3 seconds and said "We'll be in touch." I walked away feeling like a number. I realized: **I was acting like a beggar, not an asset.** The next career fair, I led with a question about their current projects. The conversation lasted 10 minutes. I got an interview.
+**The Origin Story:** My first career fair at Iowa State, I waited in line for 45 minutes to talk to a John Deere recruiter. When I got to the front, I handed over my resume like I was handing in homework. The recruiter glanced at it for 3 seconds and said "We'll be in touch." I walked away feeling like a number. I realized: **I was acting like a beggar, not an asset.** The next career fair, I led with a question about their current projects. The conversation lasted 10 minutes. I got an interview.
 
 **The Tactic: Confidence Calibration**
 This isn't about being arrogant or cocky. It's about viewing yourself as an asset to be acquired, not a beggar asking for a favor.
@@ -957,7 +957,7 @@ The bigger the monster, the bigger the hero.
 **Why It Works:** 99% of interviewers say yes. It shows preparation and professionalism. The ask itself is a signal: "I prepared for this."
 
 ### The Visual Aid Binder™
-**The Origin Story:** Before my final-round interview at a Fortune 100 company, I was sitting in the waiting room. I had 15 stories memorized, but I realized I had no way to SHOW them what I was talking about. I went home, printed out CAD screenshots, graphs, and photos from every project. I put them in a tabbed binder. In my next interview, when they asked about a design project, I handed them the binder and said "Here's exactly what I built." Their eyes lit up. I got the offer.
+**The Origin Story:** Before my final-round interview at John Deere, I was sitting in the waiting room. I had 15 stories memorized, but I realized I had no way to SHOW them what I was talking about. I went home, printed out CAD screenshots, graphs, and photos from every project. I put them in a tabbed binder. In my next interview, when they asked about a design project, I handed them the binder and said "Here's exactly what I built." Their eyes lit up. I got the offer.
 
 **What to Include:**
 For each of your 15 prepared examples, gather:
