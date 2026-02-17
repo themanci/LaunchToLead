@@ -6,9 +6,45 @@
  * - Base pixel initialization and PageView tracking
  * - Lead event tracking for strategy call booking clicks
  * - ViewContent tracking for key pages
+ * - fbc (Click ID) and fbp (Browser ID) parameter passing for improved Event Match Quality
  * 
  * Usage: Include this script in the <head> of all pages after the noscript fallback
  */
+
+// --- Helper: Read cookie by name ---
+function _ltlGetCookie(name) {
+    var match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+    return match ? decodeURIComponent(match[2]) : null;
+}
+
+// --- Helper: Get fbclid from URL and build fbc parameter ---
+function _ltlGetFbc() {
+    // First check if _fbc cookie already exists (set by Pixel)
+    var fbc = _ltlGetCookie('_fbc');
+    if (fbc) return fbc;
+    
+    // Otherwise build it from fbclid URL parameter
+    var params = new URLSearchParams(window.location.search);
+    var fbclid = params.get('fbclid');
+    if (fbclid) {
+        // Format: fb.1.{timestamp}.{fbclid}
+        fbc = 'fb.1.' + Date.now() + '.' + fbclid;
+        // Store as cookie for 90 days so it persists across pages
+        var expires = new Date(Date.now() + 90 * 24 * 60 * 60 * 1000).toUTCString();
+        document.cookie = '_fbc=' + fbc + '; expires=' + expires + '; path=/; SameSite=Lax';
+        return fbc;
+    }
+    return null;
+}
+
+// --- Helper: Get fbp (Browser ID) from _fbp cookie ---
+function _ltlGetFbp() {
+    return _ltlGetCookie('_fbp');
+}
+
+// --- Capture fbc on page load (before pixel fires) ---
+var _ltlFbc = _ltlGetFbc();
+var _ltlFbp = null;
 
 // Meta Pixel Base Code
 !function(f,b,e,v,n,t,s)
@@ -20,11 +56,29 @@ t.src=v;s=b.getElementsByTagName(e)[0];
 s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
 
-// Initialize Pixel
-fbq('init', '3141490496240983');
+// Initialize Pixel with advanced matching parameters
+var _ltlInitData = {};
+if (_ltlFbc) _ltlInitData.fbc = _ltlFbc;
+// fbp may not be available yet on first load — pixel sets it after init
+fbq('init', '3141490496240983', {}, _ltlInitData);
 
 // Track PageView
 fbq('track', 'PageView');
+
+// After pixel loads, capture fbp for use in subsequent events
+setTimeout(function() {
+    _ltlFbp = _ltlGetFbp();
+}, 1000);
+
+// --- Helper: Build event user data with fbc + fbp ---
+function _ltlGetEventUserData() {
+    var data = {};
+    var fbc = _ltlFbc || _ltlGetFbc();
+    var fbp = _ltlFbp || _ltlGetFbp();
+    if (fbc) data.fbc = fbc;
+    if (fbp) data.fbp = fbp;
+    return data;
+}
 
 // Track ViewContent for key pages with content details
 (function() {
@@ -51,6 +105,7 @@ fbq('track', 'PageView');
     }
     
     if (contentData) {
+        Object.assign(contentData, _ltlGetEventUserData());
         fbq('track', 'ViewContent', contentData);
     }
 })();
@@ -59,12 +114,14 @@ fbq('track', 'PageView');
 document.addEventListener('click', function(e) {
     var link = e.target.closest('a[href*="offer.html"]');
     if (link) {
-        fbq('track', 'Lead', {
+        var leadData = {
             content_name: 'Offer Page Click',
             content_category: window.location.pathname,
             value: 0,
             currency: 'USD'
-        });
+        };
+        Object.assign(leadData, _ltlGetEventUserData());
+        fbq('track', 'Lead', leadData);
     }
 });
 
@@ -72,9 +129,11 @@ document.addEventListener('click', function(e) {
 document.addEventListener('submit', function(e) {
     var form = e.target;
     if (form && (form.id === 'contact-form' || form.classList.contains('contact-form'))) {
-        fbq('track', 'Contact', {
+        var contactData = {
             content_name: 'Contact Form Submission',
             content_category: window.location.pathname
-        });
+        };
+        Object.assign(contactData, _ltlGetEventUserData());
+        fbq('track', 'Contact', contactData);
     }
 });
