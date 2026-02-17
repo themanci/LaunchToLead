@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Lead Magnet Popup System v2
  * 
  * Single-Step Flow - Hormozi Style:
@@ -88,7 +88,7 @@
                         '<!-- Main content -->' +
                         '<div class="text-center mb-8">' +
                             '<h2 class="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">The Resume Formula that landed me a Fortune 100 company</h2>' +
-                            '<p class="text-emerald-100 text-base mb-4">Completely FREE PDF Download — Transform your resume like I did</p>' +
+                            '<p class="text-emerald-100 text-base mb-4">Completely FREE PDF Download � Transform your resume like I did</p>' +
                             '<div class="bg-red-950/50 border-2 border-red-800/70 rounded-xl px-4 py-3 inline-block">' +
                                 '<p class="text-red-200 text-sm font-semibold">Your resume has 6 seconds to impress, you\'re wasting those 6 seconds without this formula.</p>' +
                             '</div>' +
@@ -100,25 +100,25 @@
                                     '<div class="w-5 h-5 rounded-full bg-emerald-600 flex items-center justify-center flex-shrink-0 mt-0.5">' +
                                         '<svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">' +
                                             '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></div>' +
-                                    '<div><p class="font-semibold text-white">The Formula — transform your boring bullets</p></div>' +
+                                    '<div><p class="font-semibold text-white">The Formula � transform your boring bullets</p></div>' +
                                 '</li>' +
                                 '<li class="flex items-start gap-3">' +
                                     '<div class="w-5 h-5 rounded-full bg-emerald-600 flex items-center justify-center flex-shrink-0 mt-0.5">' +
                                         '<svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">' +
                                             '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></div>' +
-                                    '<div><p class="font-semibold text-white">Before/After — See it in action</p></div>' +
+                                    '<div><p class="font-semibold text-white">Before/After � See it in action</p></div>' +
                                 '</li>' +
                                 '<li class="flex items-start gap-3">' +
                                     '<div class="w-5 h-5 rounded-full bg-emerald-600 flex items-center justify-center flex-shrink-0 mt-0.5">' +
                                         '<svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">' +
                                             '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></div>' +
-                                    '<div><p class="font-semibold text-white">Metrics, metrics, metrics — how to get them</p></div>' +
+                                    '<div><p class="font-semibold text-white">Metrics, metrics, metrics � how to get them</p></div>' +
                                 '</li>' +
                                 '<li class="flex items-start gap-3">' +
                                     '<div class="w-5 h-5 rounded-full bg-emerald-600 flex items-center justify-center flex-shrink-0 mt-0.5">' +
                                         '<svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">' +
                                             '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></div>' +
-                                    '<div><p class="font-semibold text-white">Template — use on your bullets immediately</p></div>' +
+                                    '<div><p class="font-semibold text-white">Template � use on your bullets immediately</p></div>' +
                                 '</li>' +
                             '</ul>' +
                         '</div>' +
@@ -152,12 +152,12 @@
                             '<div class="flex items-center justify-center gap-2 mb-2">' +
                                 '<span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>' +
                                 '<p class="font-bold text-red-200 text-sm">Only 10 Coaching Spots Available Per Month</p></div>' +
-                            '<p class="text-red-300 text-xs text-center">Limited availability • High-touch 1-on-1 coaching</p>' +
+                            '<p class="text-red-300 text-xs text-center">Limited availability � High-touch 1-on-1 coaching</p>' +
                         '</div>' +
                         '<!-- Strategy Call CTA Box -->' +
                         '<div class="bg-gradient-to-br from-emerald-950/40 to-teal-950/40 border-2 border-emerald-600/50 rounded-xl p-6 mb-6">' +
                             '<div class="text-center mb-4">' +
-                                '<h3 class="text-xl font-bold text-white mb-2">🎯 Book Your Free 15-Minute Strategy Call</h3>' +
+                                '<h3 class="text-xl font-bold text-white mb-2">?? Book Your Free 15-Minute Strategy Call</h3>' +
                                 '<p class="text-emerald-200 text-sm">Let\'s identify what\'s holding you back and how we can help</p>' +
                             '</div>' +
                             '<!-- What happens on the call -->' +
@@ -165,13 +165,13 @@
                                 '<p class="text-emerald-300 text-xs font-semibold mb-3 uppercase tracking-wide">On this call, we\'ll:</p>' +
                                 '<ul class="space-y-2 text-sm text-white">' +
                                     '<li class="flex items-start gap-2">' +
-                                        '<span class="text-emerald-500 mt-0.5">→</span>' +
+                                        '<span class="text-emerald-500 mt-0.5">?</span>' +
                                         '<span><strong class="text-emerald-300">Walk through our 21-Day Launch Blueprint</strong> program</span></li>' +
                                     '<li class="flex items-start gap-2">' +
-                                        '<span class="text-emerald-500 mt-0.5">→</span>' +
+                                        '<span class="text-emerald-500 mt-0.5">?</span>' +
                                         '<span><strong class="text-emerald-300">Identify your key pain points</strong> in the job search</span></li>' +
                                     '<li class="flex items-start gap-2">' +
-                                        '<span class="text-emerald-500 mt-0.5">→</span>' +
+                                        '<span class="text-emerald-500 mt-0.5">?</span>' +
                                         '<span><strong class="text-emerald-300">See if we can help</strong> you reach interview-ready status</span></li>' +
                                 '</ul>' +
                             '</div>' +
@@ -181,8 +181,8 @@
                                 '<p class="text-amber-300 text-xs text-center mt-2 font-semibold">You\'ve already waited long enough.</p>' +
                             '</div>' +
                             '<!-- CTA label -->' +
-                            '<p class="text-emerald-300 text-xs text-center mb-3 font-semibold">🚀 See if you qualify for coaching</p>' +
-                            '<a href="landing/offer.html?source=site" class="block w-full py-4 bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 text-white font-bold text-lg rounded-xl transition-all shadow-xl mb-2 text-center">Ready To Launch?</a>' +
+                            '<p class="text-emerald-300 text-xs text-center mb-3 font-semibold">?? See if you qualify for coaching</p>' +
+                            '<a href="landing/offer.html?source=site" class="block w-full py-4 bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 text-white font-bold text-lg rounded-xl transition-all shadow-xl mb-2 text-center">Ready To Launch</a>' +
                             '<!-- Reassurance -->' +
                             '<p class="text-center text-emerald-400 text-xs mt-2">No pressure. No pitch. Just clarity.</p>' +
                         '</div>' +
