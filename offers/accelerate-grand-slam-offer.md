@@ -52,7 +52,7 @@ They feel:
 
 ## The Core Claim
 
-**4 promotions in 7 years at a Fortune 100 company**
+**4 promotions in 7 years at John Deere**
 
 ### The Promotion Track Record
 
@@ -71,7 +71,7 @@ They feel:
 ### Why This Matters
 
 1. **Not theory—LIVED EXPERIENCE**
-2. **Proven in competitive environment** (Fortune 100)
+2. **Proven in competitive environment** (John Deere)
 3. **Repeatable system** (4 times, taught to others)
 4. **Started from zero** (figured it out from scratch)
 
@@ -101,7 +101,7 @@ They feel:
 ### Perceived Likelihood of Achievement 📈
 
 - 4 promotions in 7 years (personal track record)
-- Done at Fortune 100 level
+- Done at John Deere level
 - Taught successfully to others
 - Engineering-specific methodology
 

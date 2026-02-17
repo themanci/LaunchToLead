@@ -50,7 +50,7 @@ LaunchToLead.io/impact-equation (or wherever your lead magnet lives)
 
 ### Content (LinkedIn Article or Long Post):
 ```
-How I Got 4 Promotions in 7 Years at a Fortune 100
+How I Got 4 Promotions in 7 Years at John Deere
 
 (Without being the smartest coder in the room)
 

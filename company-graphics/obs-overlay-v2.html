@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LaunchToLead OBS Overlay V2</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 1920px;
+            height: 1080px;
+            overflow: hidden;
+            background: transparent;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            position: relative;
+        }
+
+        .overlay-container {
+            width: 1920px;
+            height: 1080px;
+            position: relative;
+        }
+
+        /* ─── Shared card style: dark glassmorphism ─── */
+        .glass-card {
+            background: rgba(15, 15, 26, 0.65);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(163, 230, 53, 0.2);
+            border-radius: 16px;
+            box-shadow:
+                0 8px 32px rgba(0, 0, 0, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.05);
+        }
+
+        /* ─── Top Left: Logo & Brand ─── */
+        .top-left {
+            position: absolute;
+            top: 32px;
+            left: 32px;
+            padding: 16px 24px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .logo-icon {
+            width: 64px;
+            height: 64px;
+            background: linear-gradient(135deg, rgba(163, 230, 53, 0.15), rgba(20, 184, 166, 0.15));
+            border: 1px solid rgba(163, 230, 53, 0.3);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 30px;
+            font-weight: 700;
+            color: #ffffff;
+            position: relative;
+        }
+
+        .logo-icon::after {
+            content: '2';
+            font-size: 14px;
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            color: #a3e635;
+            font-weight: 700;
+        }
+
+        .brand-text {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .brand-name {
+            font-size: 26px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            line-height: 1.1;
+        }
+
+        .brand-name .launch {
+            color: #ffffff;
+        }
+
+        .brand-name .to-lead {
+            background: linear-gradient(90deg, #a3e635, #14b8a6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .tagline {
+            font-size: 12px;
+            font-weight: 500;
+            color: #94a3b8;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        /* Subtle glow behind top-left */
+        .top-left::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            width: 140px;
+            height: 140px;
+            background: radial-gradient(circle, rgba(163, 230, 53, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* ─── Top Right: URL ─── */
+        .top-right {
+            position: absolute;
+            top: 32px;
+            right: 32px;
+            padding: 16px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .url-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #a3e635;
+            box-shadow: 0 0 8px rgba(163, 230, 53, 0.5);
+            animation: pulse-dot 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse-dot {
+            0%, 100% { opacity: 1; box-shadow: 0 0 8px rgba(163, 230, 53, 0.5); }
+            50% { opacity: 0.6; box-shadow: 0 0 16px rgba(163, 230, 53, 0.8); }
+        }
+
+        .url-text {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 22px;
+            font-weight: 600;
+            background: linear-gradient(90deg, #a3e635, #14b8a6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.3px;
+        }
+
+        /* Subtle glow behind top-right */
+        .top-right::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 120px;
+            height: 120px;
+            background: radial-gradient(circle, rgba(20, 184, 166, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* ─── Bottom Center: Credibility Bar ─── */
+        .bottom-bar {
+            position: absolute;
+            bottom: 32px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 14px 40px;
+            display: flex;
+            align-items: center;
+            gap: 0;
+            white-space: nowrap;
+        }
+
+        .cred-item {
+            font-size: 16px;
+            font-weight: 600;
+            color: #e2e8f0;
+            letter-spacing: 0.2px;
+        }
+
+        .cred-item .highlight {
+            color: #a3e635;
+            font-weight: 700;
+        }
+
+        .cred-separator {
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background: rgba(163, 230, 53, 0.5);
+            margin: 0 20px;
+            flex-shrink: 0;
+        }
+
+        /* Subtle accent line on bottom bar */
+        .bottom-bar::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 40px;
+            right: 40px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(163, 230, 53, 0.3), rgba(20, 184, 166, 0.3), transparent);
+            border-radius: 1px;
+        }
+
+        /* ─── Export helper: white bg for JPG ─── */
+        body.export-mode {
+            background: #000000;
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay-container">
+
+        <!-- Top Left: Logo & Brand -->
+        <div class="top-left glass-card">
+            <div class="logo-icon">L</div>
+            <div class="brand-text">
+                <div class="brand-name">
+                    <span class="launch">Launch</span><span class="to-lead">ToLead</span>
+                </div>
+                <div class="tagline">Former John Deere Engineer • Career Coach</div>
+            </div>
+        </div>
+
+        <!-- Top Right: URL with live dot -->
+        <div class="top-right glass-card">
+            <div class="url-dot"></div>
+            <div class="url-text">LaunchToLead.io</div>
+        </div>
+
+        <!-- Bottom Center: Credibility Bar -->
+        <div class="bottom-bar glass-card">
+            <div class="cred-item"><span class="highlight">52</span> Proven Methods</div>
+            <div class="cred-separator"></div>
+            <div class="cred-item">Engineers at <span class="highlight">Google, SpaceX, Ford</span></div>
+            <div class="cred-separator"></div>
+            <div class="cred-item">Hire-Ready in <span class="highlight">21 Days</span></div>
+        </div>
+
+    </div>
+</body>
+</html>

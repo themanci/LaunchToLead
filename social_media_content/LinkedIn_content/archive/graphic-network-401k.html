@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Network is a 401k</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: #0f0f1a;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .graphic {
+            width: 1200px;
+            height: 628px;
+            background: linear-gradient(155deg, #0f172a 0%, #1e293b 40%, #0f172a 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Ambient light effects */
+        .glow-1 {
+            position: absolute;
+            top: -20%;
+            right: -5%;
+            width: 50%;
+            height: 60%;
+            background: radial-gradient(ellipse, rgba(163, 230, 53, 0.12) 0%, transparent 70%);
+            filter: blur(80px);
+        }
+        
+        .glow-2 {
+            position: absolute;
+            bottom: -25%;
+            left: -10%;
+            width: 45%;
+            height: 50%;
+            background: radial-gradient(ellipse, rgba(20, 184, 166, 0.1) 0%, transparent 70%);
+            filter: blur(70px);
+        }
+        
+        /* Subtle grid pattern */
+        .grid-overlay {
+            position: absolute;
+            inset: 0;
+            background-image: 
+                linear-gradient(rgba(255,255,255,0.012) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.012) 1px, transparent 1px);
+            background-size: 50px 50px;
+        }
+        
+        .content {
+            position: relative;
+            z-index: 1;
+            height: 100%;
+            display: flex;
+            padding: 42px 50px 55px;
+            gap: 40px;
+        }
+        
+        /* Left column */
+        .left-col {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        /* Badge */
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .badge-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #a3e635;
+            box-shadow: 0 0 12px #a3e635, 0 0 24px rgba(163, 230, 53, 0.5);
+        }
+        
+        .badge-text {
+            font-size: 14px;
+            font-weight: 600;
+            color: #a3e635;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+        }
+        
+        /* Main title */
+        .main-title {
+            font-size: 46px;
+            font-weight: 800;
+            color: white;
+            line-height: 1.1;
+            margin-bottom: 16px;
+        }
+        
+        .highlight {
+            background: linear-gradient(135deg, #a3e635 0%, #14b8a6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .subtitle {
+            font-size: 18px;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.55);
+            line-height: 1.5;
+            margin-bottom: auto;
+        }
+        
+        /* Growth chart visual */
+        .chart-container {
+            margin-top: 20px;
+        }
+        
+        .chart-label {
+            font-size: 12px;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            margin-bottom: 12px;
+        }
+        
+        .chart {
+            height: 80px;
+            display: flex;
+            align-items: flex-end;
+            gap: 6px;
+        }
+        
+        .bar {
+            flex: 1;
+            background: linear-gradient(to top, rgba(163, 230, 53, 0.15), rgba(163, 230, 53, 0.4));
+            border-radius: 4px 4px 0 0;
+            border-top: 2px solid #a3e635;
+            position: relative;
+        }
+        
+        .bar:nth-child(1)  { height: 8%; }
+        .bar:nth-child(2)  { height: 9%; }
+        .bar:nth-child(3)  { height: 11%; }
+        .bar:nth-child(4)  { height: 14%; }
+        .bar:nth-child(5)  { height: 18%; }
+        .bar:nth-child(6)  { height: 24%; }
+        .bar:nth-child(7)  { height: 32%; }
+        .bar:nth-child(8)  { height: 44%; }
+        .bar:nth-child(9)  { height: 62%; }
+        .bar:nth-child(10) { height: 88%; background: linear-gradient(to top, rgba(163, 230, 53, 0.3), rgba(163, 230, 53, 0.7)); border-top: 3px solid #a3e635; }
+        
+        .chart-years {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 8px;
+        }
+        
+        .chart-years span {
+            font-size: 11px;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.3);
+        }
+        
+        .chart-years span:last-child {
+            color: #a3e635;
+        }
+        
+        /* Right column - timeline */
+        .right-col {
+            width: 420px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        
+        .timeline-item {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 14px;
+            padding: 16px 20px;
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            transition: all 0.3s ease;
+        }
+        
+        .timeline-item:last-child {
+            background: rgba(163, 230, 53, 0.06);
+            border-color: rgba(163, 230, 53, 0.2);
+        }
+        
+        .year-badge {
+            min-width: 64px;
+            padding: 6px 10px;
+            background: rgba(255, 255, 255, 0.06);
+            border-radius: 8px;
+            text-align: center;
+            font-size: 13px;
+            font-weight: 700;
+            color: rgba(255, 255, 255, 0.5);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        .timeline-item:last-child .year-badge {
+            background: rgba(163, 230, 53, 0.15);
+            color: #a3e635;
+        }
+        
+        .timeline-text {
+            font-size: 15px;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.65);
+            line-height: 1.4;
+        }
+        
+        .timeline-item:last-child .timeline-text {
+            color: rgba(255, 255, 255, 0.85);
+        }
+        
+        .timeline-text strong {
+            color: white;
+            font-weight: 700;
+        }
+        
+        .timeline-item:last-child .timeline-text strong {
+            color: #a3e635;
+        }
+        
+        /* Bottom callout */
+        .bottom-callout {
+            margin-top: auto;
+            background: rgba(163, 230, 53, 0.06);
+            border: 1px solid rgba(163, 230, 53, 0.15);
+            border-radius: 12px;
+            padding: 14px 18px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .callout-icon {
+            font-size: 20px;
+            min-width: 24px;
+        }
+        
+        .callout-text {
+            font-size: 14px;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.4;
+        }
+        
+        .callout-text span {
+            color: #a3e635;
+        }
+        
+        /* Footer */
+        .footer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 16px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50px;
+            right: 50px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent);
+        }
+        
+        .footer-text {
+            font-size: 13px;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.25);
+        }
+        
+        .logo {
+            font-size: 14px;
+            font-weight: 700;
+            color: rgba(255, 255, 255, 0.4);
+            letter-spacing: 0.08em;
+        }
+        
+        /* Accent bar */
+        .accent-bar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #a3e635 0%, #14b8a6 50%, #a3e635 100%);
+        }
+    </style>
+</head>
+<body>
+    <div class="graphic">
+        <!-- Background effects -->
+        <div class="glow-1"></div>
+        <div class="glow-2"></div>
+        <div class="grid-overlay"></div>
+        
+        <div class="content">
+            <!-- Left column -->
+            <div class="left-col">
+                <!-- Badge -->
+                <div class="badge">
+                    <div class="badge-dot"></div>
+                    <span class="badge-text">Compound Growth</span>
+                </div>
+                
+                <!-- Title -->
+                <h1 class="main-title">Your Network<br>Is a <span class="highlight">401k</span></h1>
+                <p class="subtitle">Every connection is a deposit.<br>Every follow-up is interest earned.<br>Every "how can I help?" is reinvesting dividends.</p>
+                
+                <!-- Chart -->
+                <div class="chart-container">
+                    <div class="chart-label">Network Value Over Time</div>
+                    <div class="chart">
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                    </div>
+                    <div class="chart-years">
+                        <span>Year 1</span>
+                        <span>Year 10</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Right column -->
+            <div class="right-col">
+                <div class="timeline-item">
+                    <div class="year-badge">Year 1</div>
+                    <p class="timeline-text">Meet people. <strong>Nothing seems to happen.</strong></p>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="year-badge">Year 3</div>
+                    <p class="timeline-text">Coffee chats. LinkedIn adds. <strong>Still feels slow.</strong></p>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="year-badge">Year 5</div>
+                    <p class="timeline-text">Someone you barely remember <strong>refers you for a role.</strong></p>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="year-badge">Year 10</div>
+                    <p class="timeline-text"><strong>An army of people</strong> in your corner — and you in theirs.</p>
+                </div>
+                
+                <div class="bottom-callout">
+                    <span class="callout-icon">🌱</span>
+                    <p class="callout-text"><span>Start planting.</span> The harvest comes later.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer">
+            <span class="footer-text">Compound interest is real</span>
+            <span class="logo">LAUNCHTOLEAD.IO</span>
+        </div>
+        
+        <!-- Accent bar -->
+        <div class="accent-bar"></div>
+    </div>
+</body>
+</html>

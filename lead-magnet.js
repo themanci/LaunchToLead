@@ -1,4 +1,4 @@
-/**
+ï»¿/**
  * Lead Magnet Popup System v2
  * 
  * Single-Step Flow - Hormozi Style:
@@ -23,7 +23,7 @@
         leadMagnet: {
             name: "Impact Bullet Builder Starter Guide",
             tagline: "Stop Applying Into the Void",
-            subtitle: "The exact formula I used to land my first engineering role at a Fortune 100 company",
+            subtitle: "The exact formula I used to land my first engineering role at John Deere",
             painPoints: [
                 "Sent 100+ applications with zero callbacks?",
                 "Resume full of responsibilities that impress no one?",
@@ -87,8 +87,8 @@
                     '<div id="popup-main" class="p-8">' +
                         '<!-- Main content -->' +
                         '<div class="text-center mb-8">' +
-                            '<h2 class="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">The Resume Formula that landed me a Fortune 100 company</h2>' +
-                            '<p class="text-emerald-100 text-base mb-4">Completely FREE PDF Download — Transform your resume like I did</p>' +
+                            '<h2 class="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">The Resume Formula that landed me John Deere</h2>' +
+                            '<p class="text-emerald-100 text-base mb-4">Completely FREE PDF Download ï¿½ Transform your resume like I did</p>' +
                             '<div class="bg-red-950/50 border-2 border-red-800/70 rounded-xl px-4 py-3 inline-block">' +
                                 '<p class="text-red-200 text-sm font-semibold">Your resume has 6 seconds to impress, you\'re wasting those 6 seconds without this formula.</p>' +
                             '</div>' +
@@ -100,25 +100,25 @@
                                     '<div class="w-5 h-5 rounded-full bg-emerald-600 flex items-center justify-center flex-shrink-0 mt-0.5">' +
                                         '<svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">' +
                                             '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></div>' +
-                                    '<div><p class="font-semibold text-white">The Formula — transform your boring bullets</p></div>' +
+                                    '<div><p class="font-semibold text-white">The Formula ï¿½ transform your boring bullets</p></div>' +
                                 '</li>' +
                                 '<li class="flex items-start gap-3">' +
                                     '<div class="w-5 h-5 rounded-full bg-emerald-600 flex items-center justify-center flex-shrink-0 mt-0.5">' +
                                         '<svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">' +
                                             '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></div>' +
-                                    '<div><p class="font-semibold text-white">Before/After — See it in action</p></div>' +
+                                    '<div><p class="font-semibold text-white">Before/After ï¿½ See it in action</p></div>' +
                                 '</li>' +
                                 '<li class="flex items-start gap-3">' +
                                     '<div class="w-5 h-5 rounded-full bg-emerald-600 flex items-center justify-center flex-shrink-0 mt-0.5">' +
                                         '<svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">' +
                                             '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></div>' +
-                                    '<div><p class="font-semibold text-white">Metrics, metrics, metrics — how to get them</p></div>' +
+                                    '<div><p class="font-semibold text-white">Metrics, metrics, metrics ï¿½ how to get them</p></div>' +
                                 '</li>' +
                                 '<li class="flex items-start gap-3">' +
                                     '<div class="w-5 h-5 rounded-full bg-emerald-600 flex items-center justify-center flex-shrink-0 mt-0.5">' +
                                         '<svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">' +
                                             '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></div>' +
-                                    '<div><p class="font-semibold text-white">Template — use on your bullets immediately</p></div>' +
+                                    '<div><p class="font-semibold text-white">Template ï¿½ use on your bullets immediately</p></div>' +
                                 '</li>' +
                             '</ul>' +
                         '</div>' +
@@ -152,7 +152,7 @@
                             '<div class="flex items-center justify-center gap-2 mb-2">' +
                                 '<span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>' +
                                 '<p class="font-bold text-red-200 text-sm">Only 10 Coaching Spots Available Per Month</p></div>' +
-                            '<p class="text-red-300 text-xs text-center">Limited availability • High-touch 1-on-1 coaching</p>' +
+                            '<p class="text-red-300 text-xs text-center">Limited availability ï¿½ High-touch 1-on-1 coaching</p>' +
                         '</div>' +
                         '<!-- Strategy Call CTA Box -->' +
                         '<div class="bg-gradient-to-br from-emerald-950/40 to-teal-950/40 border-2 border-emerald-600/50 rounded-xl p-6 mb-6">' +

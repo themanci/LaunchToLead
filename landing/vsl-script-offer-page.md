@@ -42,7 +42,7 @@ If any of that sounds familiar — stay with me.
 ### BEAT 2: The Core Problem + Credibility
 *(Slight lean in.)*
 
-My name's Mansour. I'm a mechanical engineer. Seven years at a Fortune 100 company — four promotions, four career pivots. And I've sat on both sides of the hiring table. I've reviewed resumes. I've made hiring decisions.
+My name's Mansour. I'm a mechanical engineer. Seven years at John Deere — four promotions, four career pivots. And I've sat on both sides of the hiring table. I've reviewed resumes. I've made hiring decisions.
 
 And here's what I've learned: the number one reason qualified engineers don't get hired isn't their skills, their GPA, or the market. It's that they're *invisible*.
 
