@@ -13,10 +13,85 @@
         body { font-family: 'Plus Jakarta Sans', sans-serif; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
         .font-mono-num { font-family: 'Space Grotesk', monospace; }
         @media print {
-            .page-break { page-break-after: always; }
+            html, body { margin: 0 !important; padding: 0 !important; background: white; }
+
+            /* ── Page-break helpers ── */
+            .page-break { page-break-after: always; height: 0 !important; margin: 0 !important; padding: 0 !important; line-height: 0; font-size: 0; }
             .no-break { page-break-inside: avoid; }
             .no-print { display: none; }
-            body { background: white; }
+
+            /* ── Lock each .page to exactly ONE letter page ── */
+            .page {
+                height: 11in !important;
+                min-height: 0 !important;
+                max-height: 11in !important;
+                overflow: hidden !important;
+                box-sizing: border-box !important;
+                padding: 0.3in 0.42in !important;
+                page-break-inside: avoid;
+            }
+
+            /* ── Hide decorative blobs (they bleed and serve no purpose in PDF) ── */
+            .glow-orb, .ring-decoration, .fire-glow { display: none !important; }
+
+            /* ── Compact typography — less wrapping = less height ── */
+            .page .text-5xl { font-size: 2rem !important; line-height: 1.2 !important; }
+            .page .text-4xl { font-size: 1.6rem !important; line-height: 1.2 !important; }
+            .page .text-3xl { font-size: 1.3rem !important; line-height: 1.25 !important; }
+            .page .text-2xl { font-size: 1.15rem !important; }
+            .page .text-xl  { font-size: 0.95rem !important; }
+            .page .text-lg  { font-size: 0.85rem !important; }
+
+            /* ── Tighten vertical margins ── */
+            .page .mb-10 { margin-bottom: 0.5rem !important; }
+            .page .mb-8  { margin-bottom: 0.45rem !important; }
+            .page .mb-6  { margin-bottom: 0.35rem !important; }
+            .page .mb-5  { margin-bottom: 0.3rem !important; }
+            .page .mt-8  { margin-top: 0.45rem !important; }
+            .page .mt-6  { margin-top: 0.35rem !important; }
+            .page .mt-5  { margin-top: 0.3rem !important; }
+            .page .pt-4  { padding-top: 0.35rem !important; }
+
+            /* ── Tighten gaps & vertical rhythm ── */
+            .page .gap-6 { gap: 0.5rem !important; }
+            .page .gap-5 { gap: 0.4rem !important; }
+            .page .gap-4 { gap: 0.35rem !important; }
+            .page .space-y-6 > * + * { margin-top: 0.35rem !important; }
+            .page .space-y-5 > * + * { margin-top: 0.3rem !important; }
+            .page .space-y-4 > * + * { margin-top: 0.25rem !important; }
+            .page .space-y-3 > * + * { margin-top: 0.2rem !important; }
+
+            /* ── Compact internal block padding ── */
+            .page .p-8  { padding: 0.85rem !important; }
+            .page .p-7  { padding: 0.75rem !important; }
+            .page .p-6  { padding: 0.65rem !important; }
+            .page .p-5  { padding: 0.55rem !important; }
+            .page .p-4  { padding: 0.45rem !important; }
+            .page .py-5 { padding-top: 0.55rem !important; padding-bottom: 0.55rem !important; }
+            .page .py-3 { padding-top: 0.35rem !important; padding-bottom: 0.35rem !important; }
+
+            /* ── Shrink worksheet form boxes ── */
+            .page [class*="min-h-"] { min-height: 1.75rem !important; }
+
+            /* ── Ensure backdrop-filter elements stay visible in print ── */
+            .page [style*="backdrop-filter"] { backdrop-filter: none !important; -webkit-backdrop-filter: none !important; }
+
+            /* ── Page-specific overrides for tight pages ── */
+            .page-tight { padding: 0.22in 0.38in !important; }
+            .page-tight .text-4xl { font-size: 1.4rem !important; }
+            .page-tight .text-3xl { font-size: 1.15rem !important; }
+            .page-tight .mb-8 { margin-bottom: 0.3rem !important; }
+            .page-tight .mb-6 { margin-bottom: 0.25rem !important; }
+            .page-tight .mb-3 { margin-bottom: 0.15rem !important; }
+            .page-tight .mt-6 { margin-top: 0.25rem !important; }
+            .page-tight .mt-3 { margin-top: 0.15rem !important; }
+            .page-tight .p-8 { padding: 0.6rem !important; }
+            .page-tight .p-5 { padding: 0.4rem !important; }
+            .page-tight .p-4 { padding: 0.35rem !important; }
+            .page-tight .p-3 { padding: 0.25rem !important; }
+            .page-tight .space-y-5 > * + * { margin-top: 0.2rem !important; }
+            .page-tight .space-y-4 > * + * { margin-top: 0.15rem !important; }
+            .page-tight .gap-4 { gap: 0.25rem !important; }
         }
         .gradient-text { background: linear-gradient(135deg, #14b8a6, #a3e635); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
         .gradient-text-red { background: linear-gradient(135deg, #ef4444, #f97316); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
@@ -40,10 +115,6 @@
         .ring-decoration { position: absolute; border-radius: 50%; border: 1px solid rgba(255,255,255,0.06); pointer-events: none; }
         .glow-orb { position: absolute; border-radius: 50%; filter: blur(60px); pointer-events: none; }
 
-        /* Pyramid trapezoid tiers */
-        .pyramid-top { clip-path: polygon(20% 0%, 80% 0%, 85% 100%, 15% 100%); }
-        .pyramid-mid { clip-path: polygon(10% 0%, 90% 0%, 95% 100%, 5% 100%); }
-        .pyramid-bot { clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%); }
 
         /* Formula pill enhanced */
         .formula-pill { padding: 14px 24px; border-radius: 16px; font-weight: 700; font-size: 18px; position: relative; overflow: hidden; }
@@ -227,7 +298,7 @@
 <!-- ================================================================ -->
 <!-- PAGE 3: WHAT MOST ENGINEERS WRITE (BAD EXAMPLES)                 -->
 <!-- ================================================================ -->
-<div class="page p-10 md:p-14 bg-white flex flex-col justify-center">
+<div class="page page-tight p-10 md:p-14 bg-white flex flex-col justify-center">
     <div class="max-w-4xl mx-auto">
         <div class="flex items-center gap-3 mb-3">
             <div class="w-8 h-8 rounded-lg bg-red-500 text-white flex items-center justify-center text-sm font-bold">02</div>
@@ -276,20 +347,21 @@
                 <p class="text-slate-500 mt-1">Where do your current bullets fall?</p>
             </div>
             
-            <div class="relative max-w-2xl mx-auto" style="perspective: 800px;">
+            <div class="relative max-w-xl mx-auto">
                 <!-- Decorative glow behind pyramid -->
                 <div style="position: absolute; top: -20px; left: 50%; transform: translateX(-50%); width: 200px; height: 200px; border-radius: 50%; background: radial-gradient(circle, rgba(16,185,129,0.15) 0%, transparent 70%); pointer-events: none;"></div>
 
                 <!-- TOP TIER — Impact Standard -->
-                <div class="relative mb-1" style="margin: 0 auto; width: 65%;">
-                    <div style="background: linear-gradient(135deg, #064e3b, #0d9488, #065f46); border-radius: 16px 16px 4px 4px; padding: 24px 28px; position: relative; overflow: hidden; box-shadow: 0 8px 40px rgba(16,185,129,0.25);">
+                <div class="relative mb-1" style="margin: 0 auto; width: 65%; margin-top: 16px;">
+                    <!-- Badge positioned outside overflow:hidden container so it doesn't get clipped -->
+                    <div style="position: absolute; top: -10px; left: 50%; transform: translateX(-50%); background: linear-gradient(135deg, #a3e635, #84cc16); color: #064e3b; font-size: 9px; font-weight: 800; padding: 3px 12px; border-radius: 100px; letter-spacing: 1.5px; text-transform: uppercase; box-shadow: 0 4px 15px rgba(163,230,53,0.3); z-index: 10;">THE STANDARD</div>
+                    <div style="background: linear-gradient(135deg, #064e3b, #0d9488, #065f46); border-radius: 12px 12px 4px 4px; padding: 16px 20px; position: relative; overflow: hidden; box-shadow: 0 8px 40px rgba(16,185,129,0.25);">
                         <!-- Dot pattern overlay -->
                         <div style="position: absolute; inset: 0; opacity: 0.06; background-image: radial-gradient(#a3e635 1px, transparent 1px); background-size: 16px 16px; pointer-events: none;"></div>
-                        <div style="position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: linear-gradient(135deg, #a3e635, #84cc16); color: #064e3b; font-size: 10px; font-weight: 800; padding: 4px 16px; border-radius: 100px; letter-spacing: 1.5px; text-transform: uppercase; box-shadow: 0 4px 15px rgba(163,230,53,0.3); z-index: 10;">THE STANDARD</div>
-                        <div class="relative z-10 text-center mt-2">
-                            <p class="font-extrabold text-white text-xl mb-2" style="text-shadow: 0 2px 10px rgba(0,0,0,0.2);">🚀 Impact Standard</p>
-                            <p class="text-emerald-100 text-sm leading-relaxed italic">"Automated tracking for 3 major programs, saving 85% time and enabling daily executive visibility"</p>
-                            <div class="mt-3 inline-flex items-center gap-2 bg-white/10 px-4 py-1.5 rounded-full border border-white/20">
+                        <div class="relative z-10 text-center mt-1">
+                            <p class="font-extrabold text-white text-base mb-1" style="text-shadow: 0 2px 10px rgba(0,0,0,0.2);">🚀 Impact Standard</p>
+                            <p class="text-emerald-100 text-xs leading-relaxed italic">"Automated tracking for 3 major programs, saving 85% time and enabling daily executive visibility"</p>
+                            <div class="mt-2 inline-flex items-center gap-2 bg-white/10 px-3 py-1 rounded-full border border-white/20">
                                 <span class="w-2 h-2 bg-lime-300 rounded-full"></span>
                                 <span class="text-lime-300 text-xs font-bold tracking-wider uppercase">Gets Hired</span>
                             </div>
@@ -299,13 +371,13 @@
 
                 <!-- MIDDLE TIER — Achiever -->
                 <div class="relative mb-1" style="margin: 0 auto; width: 82%;">
-                    <div style="background: linear-gradient(135deg, #fef3c7, #fde68a); border: 2px solid #f59e0b; border-radius: 4px; padding: 20px 24px; position: relative;">
+                    <div style="background: linear-gradient(135deg, #fef3c7, #fde68a); border: 2px solid #f59e0b; border-radius: 4px; padding: 14px 18px; position: relative;">
                         <div class="flex items-center justify-center gap-3">
-                            <span class="text-2xl">📋</span>
+                            <span class="text-xl">📋</span>
                             <div class="text-center">
-                                <p class="font-bold text-amber-900 text-lg">The Achiever</p>
-                                <p class="text-amber-800 text-sm italic">"Maintained spreadsheets for 3 projects"</p>
-                                <div class="mt-2 inline-flex items-center gap-2 bg-amber-200/60 px-3 py-1 rounded-full">
+                                <p class="font-bold text-amber-900 text-base">The Achiever</p>
+                                <p class="text-amber-800 text-xs italic">"Maintained spreadsheets for 3 projects"</p>
+                                <div class="mt-1.5 inline-flex items-center gap-2 bg-amber-200/60 px-3 py-1 rounded-full">
                                     <span class="w-2 h-2 bg-amber-500 rounded-full"></span>
                                     <span class="text-amber-700 text-xs font-bold tracking-wider uppercase">Considered</span>
                                 </div>
@@ -316,14 +388,14 @@
 
                 <!-- BOTTOM TIER — Doer -->
                 <div class="relative" style="margin: 0 auto; width: 100%;">
-                    <div style="background: linear-gradient(135deg, #fef2f2, #fecaca); border: 2px solid #ef4444; border-radius: 4px 4px 16px 16px; padding: 20px 24px; position: relative;">
+                    <div style="background: linear-gradient(135deg, #fef2f2, #fecaca); border: 2px solid #ef4444; border-radius: 4px 4px 12px 12px; padding: 14px 18px; position: relative;">
                         <div class="flex items-center justify-center gap-3">
-                            <span class="text-2xl">😴</span>
+                            <span class="text-xl">😴</span>
                             <div class="text-center">
-                                <p class="font-bold text-red-900 text-lg">The Doer</p>
-                                <p class="text-red-700 text-sm italic">"Maintained spreadsheets"</p>
+                                <p class="font-bold text-red-900 text-base">The Doer</p>
+                                <p class="text-red-700 text-xs italic">"Maintained spreadsheets"</p>
                                 <p class="text-red-500 text-[10px] mt-1">← This is a responsibility, not an accomplishment</p>
-                                <div class="mt-2 inline-flex items-center gap-2 bg-red-200/60 px-3 py-1 rounded-full">
+                                <div class="mt-1.5 inline-flex items-center gap-2 bg-red-200/60 px-3 py-1 rounded-full">
                                     <span class="w-2 h-2 bg-red-500 rounded-full"></span>
                                     <span class="text-red-700 text-xs font-bold tracking-wider uppercase">Ignored</span>
                                 </div>
@@ -651,7 +723,7 @@
 <!-- ================================================================ -->
 <!-- PAGE 7: EXAMPLES BY DISCIPLINE                                   -->
 <!-- ================================================================ -->
-<div class="page p-10 md:p-14 bg-white flex flex-col justify-center">
+<div class="page page-tight p-10 md:p-14 bg-white flex flex-col justify-center">
     <div class="max-w-4xl mx-auto">
         <div class="flex items-center gap-3 mb-3">
             <div class="w-8 h-8 rounded-lg bg-emerald-700 text-white flex items-center justify-center text-sm font-bold">05</div>
