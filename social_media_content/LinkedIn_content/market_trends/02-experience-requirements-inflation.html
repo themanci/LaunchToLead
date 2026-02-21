@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Market Trend #2 — Entry-Level Requires 3+ Years Experience</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background: #0c0c14; min-height: 100vh; display: flex; flex-direction: column; align-items: center; padding: 40px 20px; color: #e2e8f0; }
+        .graphic { width: 1080px; height: 1080px; background: linear-gradient(160deg, #0a0e1a 0%, #131a2e 40%, #0f1623 70%, #0a0e1a 100%); position: relative; overflow: hidden; flex-shrink: 0; }
+
+        .bg-orb-1 { position: absolute; width: 550px; height: 550px; top: -150px; right: -100px; background: radial-gradient(circle, rgba(251,191,36,0.14) 0%, transparent 65%); filter: blur(60px); }
+        .bg-orb-2 { position: absolute; width: 500px; height: 500px; bottom: -120px; left: -80px; background: radial-gradient(circle, rgba(163,230,53,0.12) 0%, transparent 65%); filter: blur(70px); }
+        .bg-orb-3 { position: absolute; width: 400px; height: 400px; top: 50%; left: 40%; transform: translate(-50%,-50%); background: radial-gradient(circle, rgba(251,191,36,0.06) 0%, transparent 60%); filter: blur(50px); }
+        .bg-orb-4 { position: absolute; width: 300px; height: 300px; bottom: 20%; right: 10%; background: radial-gradient(circle, rgba(239,68,68,0.06) 0%, transparent 65%); filter: blur(50px); }
+        .bg-dots { position: absolute; inset: 0; background-image: radial-gradient(rgba(255,255,255,0.04) 1px, transparent 1px); background-size: 24px 24px; z-index: 1; }
+        .bg-line-1 { position: absolute; top: 320px; left: -60px; width: 450px; height: 1.5px; background: linear-gradient(90deg, transparent, rgba(251,191,36,0.25), transparent); transform: rotate(-5deg); z-index: 1; }
+        .bg-line-2 { position: absolute; bottom: 200px; right: -40px; width: 350px; height: 1px; background: linear-gradient(270deg, transparent, rgba(163,230,53,0.20), transparent); transform: rotate(7deg); z-index: 1; }
+        .bg-mesh { position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,0.012) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.012) 1px, transparent 1px); background-size: 80px 80px; z-index: 1; }
+
+        .gc { position: relative; z-index: 10; height: 100%; display: flex; flex-direction: column; padding: 48px 58px 90px; }
+        .top-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+        .trend-badge { display: inline-flex; align-items: center; gap: 10px; background: rgba(251,191,36,0.08); backdrop-filter: blur(12px); border: 1px solid rgba(251,191,36,0.25); border-radius: 50px; padding: 12px 24px; font-size: 13px; font-weight: 700; color: #fde68a; text-transform: uppercase; letter-spacing: 2.5px; }
+        .trend-badge .dot { width: 8px; height: 8px; background: #f59e0b; border-radius: 50%; box-shadow: 0 0 10px rgba(245,158,11,0.6); animation: pulse 2s infinite; }
+        @keyframes pulse { 0%,100%{ opacity:1; box-shadow: 0 0 10px rgba(245,158,11,0.6); } 50%{ opacity:.5; box-shadow: 0 0 20px rgba(245,158,11,0.9); } }
+        .series-num { font-family: 'Space Grotesk', sans-serif; font-size: 14px; color: #475569; font-weight: 600; letter-spacing: 1px; }
+
+        .title { font-size: 58px; font-weight: 900; color: #fff; line-height: 1.06; margin-bottom: 14px; letter-spacing: -2px; }
+        .title .highlight { background: linear-gradient(135deg, #f59e0b, #fbbf24); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .subtitle { font-size: 20px; color: #94a3b8; line-height: 1.5; margin-bottom: 28px; max-width: 800px; }
+
+        .stats-duo { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 20px; }
+        .stat-card { background: rgba(255,255,255,0.03); backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.06); border-radius: 18px; padding: 32px 24px 28px; text-align: center; position: relative; overflow: hidden; }
+        .stat-card::before { content:''; position: absolute; top: 0; left: 0; right: 0; height: 3px; border-radius: 20px 20px 0 0; }
+        .stat-card.amber::before { background: linear-gradient(90deg, #f59e0b, #fbbf24); }
+        .stat-card.red::before { background: linear-gradient(90deg, #ef4444, #f87171); }
+        .stat-card .glow { position: absolute; top: -30px; left: 50%; transform: translateX(-50%); width: 140px; height: 70px; border-radius: 50%; filter: blur(30px); opacity: 0.35; }
+        .stat-card.amber .glow { background: rgba(251,191,36,0.4); }
+        .stat-card.red .glow { background: rgba(239,68,68,0.35); }
+        .stat-big { font-family: 'Space Grotesk', sans-serif; font-size: 70px; font-weight: 700; line-height: 1; position: relative; margin-bottom: 10px; color: #fbbf24; text-shadow: 0 0 40px rgba(251,191,36,0.3); }
+        .stat-change { font-family: 'Space Grotesk', sans-serif; font-size: 42px; font-weight: 700; color: #f87171; line-height: 1; position: relative; margin-bottom: 10px; text-shadow: 0 0 30px rgba(239,68,68,0.25); }
+        .stat-change .arrow { color: #fca5a5; font-size: 30px; }
+        .stat-desc { font-size: 15px; color: #64748b; line-height: 1.45; position: relative; }
+
+        .bar-section { margin-bottom: 18px; }
+        .bar-header { font-size: 13px; font-weight: 700; color: #94a3b8; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 12px; }
+        .bar-row { display: flex; align-items: center; gap: 14px; margin-bottom: 10px; }
+        .bar-year { font-family: 'Space Grotesk', sans-serif; font-size: 14px; color: #475569; font-weight: 600; width: 50px; }
+        .bar-track { flex: 1; height: 32px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.04); border-radius: 8px; overflow: hidden; }
+        .bar-fill { height: 100%; border-radius: 8px; display: flex; align-items: center; justify-content: flex-end; padding-right: 14px; font-family: 'Space Grotesk', sans-serif; font-size: 14px; font-weight: 700; }
+        .bar-fill.old { width: 37%; background: linear-gradient(90deg, rgba(148,163,184,0.15), rgba(148,163,184,0.25)); color: #94a3b8; }
+        .bar-fill.new { width: 42%; background: linear-gradient(90deg, rgba(239,68,68,0.15), rgba(239,68,68,0.35)); color: #fca5a5; }
+        .bar-note { font-size: 12px; color: #475569; text-align: right; margin-top: 4px; }
+
+        .context-bar { display: flex; gap: 12px; margin-bottom: 18px; flex: 1; align-items: stretch; }
+        .ctx-chip { flex: 1; display: flex; align-items: center; gap: 10px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 12px; padding: 14px 16px; }
+        .ctx-icon { font-size: 20px; flex-shrink: 0; }
+        .ctx-text { font-size: 13px; color: #94a3b8; line-height: 1.4; }
+        .ctx-text strong { color: #e2e8f0; }
+
+        .insight-strip { background: rgba(163,230,53,0.05); backdrop-filter: blur(12px); border: 1px solid rgba(163,230,53,0.18); border-radius: 16px; padding: 22px 28px; position: relative; overflow: hidden; }
+        .insight-strip::before { content:''; position: absolute; top: 0; left: 0; bottom: 0; width: 4px; background: linear-gradient(180deg, #a3e635, #14b8a6); border-radius: 16px 0 0 16px; }
+        .insight-label { font-size: 11px; font-weight: 700; color: #a3e635; text-transform: uppercase; letter-spacing: 2.5px; margin-bottom: 8px; padding-left: 10px; }
+        .insight-text { font-size: 16px; color: #cbd5e1; line-height: 1.5; padding-left: 10px; }
+        .insight-text strong { color: #a3e635; }
+
+        .bottom-bar { position: absolute; bottom: 0; left: 0; right: 0; z-index: 10; background: rgba(10,14,26,0.7); backdrop-filter: blur(12px); border-top: 1px solid rgba(255,255,255,0.05); padding: 16px 58px; display: flex; justify-content: space-between; align-items: center; }
+        .logo-group { display: flex; align-items: center; gap: 12px; }
+        .logo-icon { width: 36px; height: 36px; background: linear-gradient(135deg, rgba(163,230,53,0.15), rgba(20,184,166,0.15)); border: 1px solid rgba(163,230,53,0.3); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-family: 'Space Grotesk', sans-serif; font-size: 16px; font-weight: 700; color: #fff; }
+        .logo-icon .sup { font-size: 9px; vertical-align: super; color: #a3e635; }
+        .logo-text { font-size: 17px; font-weight: 800; color: #fff; letter-spacing: -0.3px; }
+        .logo-text .accent { background: linear-gradient(90deg, #a3e635, #14b8a6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .series-tag { font-size: 13px; color: #475569; font-weight: 500; }
+
+        .post-container { width: 680px; margin-top: 60px; background: #0f172a; border-radius: 16px; padding: 48px; border: 1px solid rgba(255,255,255,0.06); }
+        .post-container h2 { font-size: 20px; color: #a3e635; margin-bottom: 20px; }
+        .post-text { font-size: 15px; color: #cbd5e1; line-height: 1.85; white-space: pre-line; }
+        .comment-container { width: 680px; margin-top: 24px; background: rgba(163,230,53,0.05); border-radius: 16px; padding: 36px 48px; border: 1px solid rgba(163,230,53,0.15); }
+        .comment-container h3 { font-size: 16px; color: #a3e635; margin-bottom: 14px; }
+        .comment-text { font-size: 14px; color: #94a3b8; line-height: 1.85; white-space: pre-line; }
+    </style>
+</head>
+<body>
+
+<div class="graphic">
+    <div class="bg-orb-1"></div><div class="bg-orb-2"></div><div class="bg-orb-3"></div><div class="bg-orb-4"></div>
+    <div class="bg-dots"></div><div class="bg-mesh"></div><div class="bg-line-1"></div><div class="bg-line-2"></div>
+
+    <div class="gc">
+        <div class="top-bar">
+            <div class="trend-badge"><span class="dot"></span> Market Trend</div>
+            <div class="series-num">#2 of 10</div>
+        </div>
+
+        <h1 class="title">"Entry-Level" Now<br>Requires <span class="highlight">3+ Years</span></h1>
+        <p class="subtitle">60% of jobs labeled "entry-level" demand 3+ years. Tech postings requiring 5+ years rose from 37% to 42%.</p>
+
+        <div class="stats-duo">
+            <div class="stat-card amber">
+                <div class="glow"></div>
+                <div class="stat-big">60%</div>
+                <div class="stat-desc">of "entry-level" postings<br>require 3+ years experience</div>
+            </div>
+            <div class="stat-card red">
+                <div class="glow"></div>
+                <div class="stat-change">37% <span class="arrow">→</span> 42%</div>
+                <div class="stat-desc">Tech roles requiring 5+ years<br>(2022 → now)</div>
+            </div>
+        </div>
+
+        <div class="bar-section">
+            <div class="bar-header">Tech roles requiring 5+ years experience</div>
+            <div class="bar-row"><div class="bar-year">Before</div><div class="bar-track"><div class="bar-fill old">37%</div></div></div>
+            <div class="bar-row"><div class="bar-year">Now</div><div class="bar-track"><div class="bar-fill new">42%</div></div></div>
+            <div class="bar-note">+5 percentage points in 3 years — and accelerating</div>
+        </div>
+
+        <div class="context-bar">
+            <div class="ctx-chip"><div class="ctx-icon">📋</div><div class="ctx-text"><strong>Wishlists, not requirements</strong> — many postings inflate to filter applicants</div></div>
+            <div class="ctx-chip"><div class="ctx-icon">🎯</div><div class="ctx-text"><strong>Apply at 60-70%</strong> — you don't need every bullet point</div></div>
+            <div class="ctx-chip"><div class="ctx-icon">🔧</div><div class="ctx-text"><strong>Projects = experience</strong> — GitHub, freelance, and research count</div></div>
+        </div>
+
+        <div class="insight-strip">
+            <p class="insight-label">What to do about it</p>
+            <p class="insight-text">Bridge the gap with <strong>freelance gigs, open-source contributions, and capstone projects</strong>. Contribute to GitHub repos to demonstrate hands-on skills without formal jobs.</p>
+        </div>
+    </div>
+
+    <div class="bottom-bar">
+        <div class="logo-group"><div class="logo-icon">L<span class="sup">2</span></div><div class="logo-text">Launch<span class="accent">ToLead</span></div></div>
+        <div class="series-tag">Market Trends for Engineers</div>
+    </div>
+</div>
+
+<div class="post-container">
+    <h2>📋 LinkedIn Post Text</h2>
+    <div class="post-text">"Entry-level" doesn't mean what it used to.
+
+60% of jobs labeled "entry-level" now require 3+ years of experience.
+
+Let that sink in.
+
+You graduate with a degree, maybe an internship — and you're told you're not experienced enough for a role literally designed for people starting out.
+
+And it's getting worse:
+→ In tech, jobs requiring 5+ years went from 37% to 42% between 2022 and 2025
+→ Companies are stacking requirements to filter out applicants
+→ Many job descriptions are wishlists, not real requirements
+
+So what actually works?
+
+Here's the truth: you don't need "3 years of experience." You need proof you can do the work.
+
+And that proof comes from places most students overlook:
+
+1. Open-source contributions — find a GitHub repo in your field and start contributing. Even documentation or bug fixes count. This shows initiative and real coding ability.
+
+2. Freelance gigs — platforms like Upwork or Fiverr let you build a portfolio of real client work. One project for a small company teaches you more than a semester of lectures.
+
+3. Capstone and personal projects — don't treat these as throwaway assignments. Build something you can talk about for 5 minutes in an interview.
+
+4. Lab research or TA work — if you helped solve a problem, improve a process, or build a system, that's experience. Frame it that way.
+
+The companies writing "3+ years required" on entry-level jobs?
+
+Many of them will hire someone with zero years — if that person demonstrates impact.
+
+Your job isn't to meet every requirement.
+Your job is to tell a story that makes them say, "We need this person."
+
+---
+
+Have you ever landed a role you were "underqualified" for? Drop the story below 👇
+
+♻️ Repost to help someone who's discouraged.
+🔔 Follow for more engineering career insights.
+
+#EngineeringCareers #JobSearch #EntryLevel #NewGrad #CareerAdvice #Engineering #JobMarket #ResumeBuilding #LaunchToLead</div>
+</div>
+
+<div class="comment-container">
+    <h3>💬 First Comment (post after publishing)</h3>
+    <div class="comment-text">If "3+ years required" on entry-level jobs makes you feel stuck — you're not alone.
+
+I built a free guide called the Impact Equation Quick Start that shows you how to write resume bullets that prove your value even without traditional experience.
+
+It's the formula top engineers use to turn projects, internships, and coursework into impact stories that get callbacks.
+
+Grab it free: https://launchtolead.io/vault.html
+
+And if you want someone to help you build the full strategy — resume, interviews, positioning — that's exactly what we do at Launch to Lead.
+
+Link in my profile.</div>
+</div>
+
+</body>
+</html>

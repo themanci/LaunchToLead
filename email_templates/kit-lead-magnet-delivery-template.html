@@ -1,0 +1,202 @@
+<!--
+    KIT EMAIL TEMPLATE — Lead Magnet Delivery
+    Template Name: Launch to Lead — Lead Magnet Delivery
+    
+    USAGE:
+    1. Go to Kit → Send → Email Templates → New Email Template
+    2. Paste this entire HTML into the "Template HTML" field
+    3. Name it: "Launch to Lead — Lead Magnet Delivery"
+    4. Save
+    5. Then in your Form → Settings → Incentive Email → choose this template
+    
+    The {{ message_content }} variable renders Kit's email body content
+    (your subject line, greeting, and the download button are controlled in the incentive email editor)
+    
+    VARIABLES USED:
+    {{ message_content }} — The full email body from your incentive/broadcast editor
+    {{ address }} — Your company address (required by CAN-SPAM)
+    {{ unsubscribe_link }} — Kit unsubscribe link
+    {{ subscriber_preferences_link }} — Subscriber preferences
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Your Guide is Ready — Launch to Lead</title>
+    <!--[if mso]>
+    <noscript>
+        <xml>
+            <o:OfficeDocumentSettings>
+                <o:PixelsPerInch>96</o:PixelsPerInch>
+            </o:OfficeDocumentSettings>
+        </xml>
+    </noscript>
+    <![endif]-->
+</head>
+<body style="margin: 0; padding: 0; background-color: #f1f5f9; font-family: 'Helvetica Neue', Arial, sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;">
+
+    <!-- Wrapper -->
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color: #f1f5f9; padding: 32px 16px;">
+        <tr>
+            <td align="center">
+
+                <!-- Email Container -->
+                <table role="presentation" width="600" cellpadding="0" cellspacing="0" style="max-width: 600px; width: 100%; background-color: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0,0.08);">
+
+                    <!-- Header Banner -->
+                    <tr>
+                        <td style="background: linear-gradient(135deg, #064e3b 0%, #065f46 100%); padding: 40px 32px; text-align: center;">
+                            <!-- Download Icon -->
+                            <div style="width: 64px; height: 64px; margin: 0 auto 20px; background-color: #a3e635; border-radius: 50%; line-height: 64px; text-align: center;">
+                                <span style="font-size: 32px; color: #064e3b;">&#128230;</span>
+                            </div>
+                            <h1 style="margin: 0 0 8px; font-size: 28px; font-weight: 800; color: #ffffff; letter-spacing: -0.5px;">Your Guide is Ready!</h1>
+                            <p style="margin: 0; font-size: 15px; color: #a7f3d0; line-height: 1.5;">Download it below and start transforming<br>your resume bullets today.</p>
+                        </td>
+                    </tr>
+
+                    <!-- Main Content (Kit message_content goes here) -->
+                    <tr>
+                        <td style="padding: 32px 32px 16px;">
+                            {{ message_content }}
+                        </td>
+                    </tr>
+
+                    <!-- Divider -->
+                    <tr>
+                        <td style="padding: 0 32px;">
+                            <hr style="border: none; border-top: 2px solid #e2e8f0; margin: 0;">
+                        </td>
+                    </tr>
+
+                    <!-- What's Inside Section -->
+                    <tr>
+                        <td style="padding: 24px 32px;">
+                            <h2 style="margin: 0 0 16px; font-size: 20px; font-weight: 800; color: #0f172a;">Here's what you'll find inside:</h2>
+
+                            <!-- Item 1 -->
+                            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin: 0 0 12px;">
+                                <tr>
+                                    <td width="40" valign="top">
+                                        <div style="width: 32px; height: 32px; background-color: #a3e635; border-radius: 50%; text-align: center; line-height: 32px; font-size: 16px; font-weight: 800; color: #064e3b;">1</div>
+                                    </td>
+                                    <td style="padding: 4px 0 0 8px;">
+                                        <p style="margin: 0; font-size: 15px; color: #0f172a; font-weight: 700;">The Impact Equation Formula</p>
+                                        <p style="margin: 2px 0 0; font-size: 13px; color: #64748b;">The exact formula top engineers use to write resume bullets that get callbacks.</p>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <!-- Item 2 -->
+                            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin: 0 0 12px;">
+                                <tr>
+                                    <td width="40" valign="top">
+                                        <div style="width: 32px; height: 32px; background-color: #a3e635; border-radius: 50%; text-align: center; line-height: 32px; font-size: 16px; font-weight: 800; color: #064e3b;">2</div>
+                                    </td>
+                                    <td style="padding: 4px 0 0 8px;">
+                                        <p style="margin: 0; font-size: 15px; color: #0f172a; font-weight: 700;">Before &amp; After Examples</p>
+                                        <p style="margin: 2px 0 0; font-size: 13px; color: #64748b;">See how boring job duties become impact stories interviewers remember.</p>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <!-- Item 3 -->
+                            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin: 0 0 16px;">
+                                <tr>
+                                    <td width="40" valign="top">
+                                        <div style="width: 32px; height: 32px; background-color: #a3e635; border-radius: 50%; text-align: center; line-height: 32px; font-size: 16px; font-weight: 800; color: #064e3b;">3</div>
+                                    </td>
+                                    <td style="padding: 4px 0 0 8px;">
+                                        <p style="margin: 0; font-size: 15px; color: #0f172a; font-weight: 700;">Your Action Template</p>
+                                        <p style="margin: 2px 0 0; font-size: 13px; color: #64748b;">A fill-in-the-blank worksheet to rewrite your own bullets in 30 minutes.</p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- Divider -->
+                    <tr>
+                        <td style="padding: 0 32px;">
+                            <hr style="border: none; border-top: 2px solid #e2e8f0; margin: 0;">
+                        </td>
+                    </tr>
+
+                    <!-- Next Step CTA -->
+                    <tr>
+                        <td style="padding: 24px 32px;">
+                            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color: #ecfdf5; border: 2px solid #a7f3d0; border-radius: 12px;">
+                                <tr>
+                                    <td style="padding: 20px 24px; text-align: center;">
+                                        <p style="margin: 0 0 8px; font-size: 16px; color: #064e3b; font-weight: 800;">
+                                            &#127919; Want to go deeper?
+                                        </p>
+                                        <p style="margin: 0 0 16px; font-size: 14px; color: #334155; line-height: 1.6;">
+                                            This guide gives you the formula — but the 21-Day Blueprint gives you the full system: resume, interview prep, job search strategy, and 1-on-1 coaching from a real engineer.
+                                        </p>
+                                        <table role="presentation" cellpadding="0" cellspacing="0" style="margin: 0 auto;">
+                                            <tr>
+                                                <td style="background: linear-gradient(135deg, #064e3b 0%, #065f46 100%); border-radius: 10px; padding: 14px 28px; text-align: center;">
+                                                    <a href="https://launchtolead.io/landing/offer.html" style="font-size: 16px; font-weight: 700; color: #ffffff; text-decoration: none; display: block;">
+                                                        See the Full 21-Day Blueprint &rarr;
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <p style="margin: 8px 0 0; font-size: 12px; color: #94a3b8;">Free strategy call included. No pressure.</p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- Sign-off -->
+                    <tr>
+                        <td style="padding: 0 32px 32px;">
+                            <p style="margin: 0 0 4px; font-size: 16px; color: #334155; line-height: 1.6;">
+                                Talk soon,
+                            </p>
+                            <p style="margin: 0; font-size: 16px; color: #0f172a; font-weight: 700;">
+                                Mansour Manci
+                            </p>
+                            <p style="margin: 4px 0 0; font-size: 13px; color: #64748b;">
+                                Founder, Launch to Lead
+                            </p>
+                        </td>
+                    </tr>
+
+                    <!-- Footer -->
+                    <tr>
+                        <td style="background-color: #0f172a; padding: 24px 32px; text-align: center;">
+                            <p style="margin: 0 0 8px; font-size: 16px; font-weight: 700; color: #ffffff;">
+                                Launch<span style="font-weight: 300; color: #14b8a6;">ToLead</span>
+                            </p>
+                            <p style="margin: 0 0 12px; font-size: 11px; color: #64748b; line-height: 1.5;">
+                                {{ address }}
+                            </p>
+                            <p style="margin: 0; font-size: 11px; color: #64748b; line-height: 1.5;">
+                                <a href="{{ unsubscribe_link }}" style="color: #94a3b8; text-decoration: underline;">Unsubscribe</a>
+                                &nbsp;&middot;&nbsp;
+                                <a href="{{ subscriber_preferences_link }}" style="color: #94a3b8; text-decoration: underline;">Update preferences</a>
+                                &nbsp;&middot;&nbsp;
+                                <a href="https://launchtolead.io/legal.html" style="color: #94a3b8; text-decoration: underline;">Legal &amp; Privacy</a>
+                            </p>
+                            <p style="margin: 12px 0 0; font-size: 10px; color: #475569;">
+                                &copy; 2026 Launch to Lead Engineering. All rights reserved.
+                            </p>
+                        </td>
+                    </tr>
+
+                </table>
+                <!-- End Email Container -->
+
+            </td>
+        </tr>
+    </table>
+    <!-- End Wrapper -->
+
+</body>
+</html>

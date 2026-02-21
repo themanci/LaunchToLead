@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Market Trend #8 — Cultural Fit & Soft Skills Are Deciding Factors</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background: #0c0c14; min-height: 100vh; display: flex; flex-direction: column; align-items: center; padding: 40px 20px; color: #e2e8f0; }
+        .graphic { width: 1080px; height: 1080px; background: linear-gradient(160deg, #0a0e1a 0%, #1a0a1e 40%, #120a1e 70%, #0a0e1a 100%); position: relative; overflow: hidden; flex-shrink: 0; }
+
+        .bg-orb-1 { position: absolute; width: 600px; height: 600px; top: -180px; right: -100px; background: radial-gradient(circle, rgba(236,72,153,0.14) 0%, transparent 65%); filter: blur(60px); }
+        .bg-orb-2 { position: absolute; width: 500px; height: 500px; bottom: -100px; left: -80px; background: radial-gradient(circle, rgba(163,230,53,0.12) 0%, transparent 65%); filter: blur(70px); }
+        .bg-orb-3 { position: absolute; width: 400px; height: 400px; top: 45%; left: 40%; transform: translate(-50%,-50%); background: radial-gradient(circle, rgba(236,72,153,0.07) 0%, transparent 60%); filter: blur(50px); }
+        .bg-orb-4 { position: absolute; width: 300px; height: 300px; bottom: 25%; right: 15%; background: radial-gradient(circle, rgba(163,230,53,0.06) 0%, transparent 65%); filter: blur(50px); }
+        .bg-dots { position: absolute; inset: 0; background-image: radial-gradient(rgba(255,255,255,0.04) 1px, transparent 1px); background-size: 24px 24px; z-index: 1; }
+        .bg-line-1 { position: absolute; top: 300px; left: -60px; width: 480px; height: 1.5px; background: linear-gradient(90deg, transparent, rgba(236,72,153,0.25), transparent); transform: rotate(-5deg); z-index: 1; }
+        .bg-line-2 { position: absolute; bottom: 240px; right: -40px; width: 400px; height: 1px; background: linear-gradient(270deg, transparent, rgba(163,230,53,0.2), transparent); transform: rotate(7deg); z-index: 1; }
+        .bg-mesh { position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,0.012) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.012) 1px, transparent 1px); background-size: 80px 80px; z-index: 1; }
+
+        .gc { position: relative; z-index: 10; height: 100%; display: flex; flex-direction: column; padding: 52px 60px 72px; }
+        .top-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 28px; }
+        .trend-badge { display: inline-flex; align-items: center; gap: 10px; background: rgba(236,72,153,0.08); backdrop-filter: blur(12px); border: 1px solid rgba(236,72,153,0.25); border-radius: 50px; padding: 12px 24px; font-size: 13px; font-weight: 700; color: #fbcfe8; text-transform: uppercase; letter-spacing: 2.5px; }
+        .trend-badge .dot { width: 8px; height: 8px; background: #ec4899; border-radius: 50%; box-shadow: 0 0 10px rgba(236,72,153,0.6); animation: pulse 2s infinite; }
+        @keyframes pulse { 0%,100%{ opacity:1; box-shadow: 0 0 10px rgba(236,72,153,0.6); } 50%{ opacity:.5; box-shadow: 0 0 20px rgba(236,72,153,0.9); } }
+        .series-num { font-family: 'Space Grotesk', sans-serif; font-size: 14px; color: #475569; font-weight: 600; letter-spacing: 1px; }
+
+        .title { font-size: 60px; font-weight: 900; color: #fff; line-height: 1.06; margin-bottom: 18px; letter-spacing: -2px; }
+        .title .highlight { background: linear-gradient(135deg, #ec4899, #f472b6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .subtitle { font-size: 21px; color: #94a3b8; line-height: 1.5; margin-bottom: 32px; max-width: 800px; }
+
+        .content-area { display: flex; gap: 36px; flex: 1; margin-bottom: 24px; }
+
+        /* Left — stat blocks */
+        .stat-col { flex: 0 0 360px; display: flex; flex-direction: column; gap: 14px; }
+        .stat-block { background: rgba(255,255,255,0.03); backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.06); border-radius: 18px; padding: 28px 30px; position: relative; overflow: hidden; flex: 1; }
+        .stat-block::before { content:''; position: absolute; top: 0; left: 0; bottom: 0; width: 3px; background: linear-gradient(180deg, #ec4899, rgba(236,72,153,0.2)); border-radius: 18px 0 0 18px; }
+        .stat-block .inner-glow { position: absolute; top: -20px; right: -20px; width: 80px; height: 80px; background: radial-gradient(circle, rgba(236,72,153,0.1) 0%, transparent 70%); }
+        .stat-block .sb-number { font-family: 'Space Grotesk', sans-serif; font-size: 54px; font-weight: 700; color: #f472b6; line-height: 1; padding-left: 10px; position: relative; }
+        .stat-block .sb-label { font-size: 15px; color: #94a3b8; margin-top: 8px; line-height: 1.4; padding-left: 10px; position: relative; }
+        .stat-block .sb-label strong { color: #e2e8f0; }
+
+        /* Right — skill list */
+        .skill-col { flex: 1; display: flex; flex-direction: column; gap: 10px; }
+        .skill-header { font-size: 13px; font-weight: 700; color: #f472b6; text-transform: uppercase; letter-spacing: 2.5px; margin-bottom: 4px; }
+        .skill-item { display: flex; align-items: center; gap: 16px; background: rgba(255,255,255,0.03); backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.06); border-radius: 16px; padding: 18px 22px; flex: 1; }
+        .skill-icon { font-size: 26px; flex-shrink: 0; }
+        .skill-name { font-size: 17px; font-weight: 700; color: #fff; }
+        .skill-desc { font-size: 13px; color: #94a3b8; margin-top: 2px; }
+
+        .insight-strip { background: rgba(163,230,53,0.05); backdrop-filter: blur(12px); border: 1px solid rgba(163,230,53,0.18); border-radius: 18px; padding: 28px 36px; position: relative; overflow: hidden; }
+        .insight-strip::before { content:''; position: absolute; top: 0; left: 0; bottom: 0; width: 4px; background: linear-gradient(180deg, #a3e635, #14b8a6); border-radius: 18px 0 0 18px; }
+        .insight-label { font-size: 12px; font-weight: 700; color: #a3e635; text-transform: uppercase; letter-spacing: 2.5px; margin-bottom: 10px; padding-left: 10px; }
+        .insight-text { font-size: 18px; color: #cbd5e1; line-height: 1.55; padding-left: 10px; }
+        .insight-text strong { color: #a3e635; }
+
+        .bottom-bar { position: absolute; bottom: 0; left: 0; right: 0; z-index: 10; background: rgba(10,14,26,0.7); backdrop-filter: blur(12px); border-top: 1px solid rgba(255,255,255,0.05); padding: 18px 60px; display: flex; justify-content: space-between; align-items: center; }
+        .logo-group { display: flex; align-items: center; gap: 12px; }
+        .logo-icon { width: 36px; height: 36px; background: linear-gradient(135deg, rgba(163,230,53,0.15), rgba(20,184,166,0.15)); border: 1px solid rgba(163,230,53,0.3); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-family: 'Space Grotesk', sans-serif; font-size: 16px; font-weight: 700; color: #fff; }
+        .logo-icon .sup { font-size: 9px; vertical-align: super; color: #a3e635; }
+        .logo-text { font-size: 17px; font-weight: 800; color: #fff; letter-spacing: -0.3px; }
+        .logo-text .accent { background: linear-gradient(90deg, #a3e635, #14b8a6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .series-tag { font-size: 13px; color: #475569; font-weight: 500; }
+
+        .post-container { width: 680px; margin-top: 60px; background: #0f172a; border-radius: 16px; padding: 48px; border: 1px solid rgba(255,255,255,0.06); }
+        .post-container h2 { font-size: 20px; color: #a3e635; margin-bottom: 20px; }
+        .post-text { font-size: 15px; color: #cbd5e1; line-height: 1.85; white-space: pre-line; }
+        .comment-container { width: 680px; margin-top: 24px; background: rgba(163,230,53,0.05); border-radius: 16px; padding: 36px 48px; border: 1px solid rgba(163,230,53,0.15); }
+        .comment-container h3 { font-size: 16px; color: #a3e635; margin-bottom: 14px; }
+        .comment-text { font-size: 14px; color: #94a3b8; line-height: 1.85; white-space: pre-line; }
+    </style>
+</head>
+<body>
+
+<div class="graphic">
+    <div class="bg-orb-1"></div><div class="bg-orb-2"></div><div class="bg-orb-3"></div><div class="bg-orb-4"></div>
+    <div class="bg-dots"></div><div class="bg-mesh"></div><div class="bg-line-1"></div><div class="bg-line-2"></div>
+
+    <div class="gc">
+        <div class="top-bar">
+            <div class="trend-badge"><span class="dot"></span> Market Trend</div>
+            <div class="series-num">#8 of 10</div>
+        </div>
+
+        <h1 class="title">Technical Skills Get Interviews.<br><span class="highlight">Soft Skills Get Offers.</span></h1>
+        <p class="subtitle">55% of employers say Gen Z struggles with teamwork. 37% would rather hire AI than a human who can't collaborate. The bar for "human skills" has never been higher.</p>
+
+        <div class="content-area">
+            <div class="stat-col">
+                <div class="stat-block">
+                    <div class="inner-glow"></div>
+                    <div class="sb-number">55%</div>
+                    <div class="sb-label">of employers cite <strong>teamwork struggles</strong> with recent graduates</div>
+                </div>
+                <div class="stat-block">
+                    <div class="inner-glow"></div>
+                    <div class="sb-number">37%</div>
+                    <div class="sb-label">of hiring managers <strong>prefer AI over Gen Z hires</strong> for lacking "human" skills</div>
+                </div>
+                <div class="stat-block">
+                    <div class="inner-glow"></div>
+                    <div class="sb-number">#1</div>
+                    <div class="sb-label">Reason for rejection at final round: <strong>cultural fit concerns</strong></div>
+                </div>
+            </div>
+            <div class="skill-col">
+                <div class="skill-header">Skills employers are testing for</div>
+                <div class="skill-item">
+                    <div class="skill-icon">🗣️</div>
+                    <div><div class="skill-name">Communication</div><div class="skill-desc">Can you explain technical work to non-technical stakeholders?</div></div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">🤝</div>
+                    <div><div class="skill-name">Collaboration</div><div class="skill-desc">Can you work across functions without being managed?</div></div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">🧩</div>
+                    <div><div class="skill-name">Problem Solving Under Pressure</div><div class="skill-desc">Can you think clearly when the deadline is tomorrow?</div></div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">🎯</div>
+                    <div><div class="skill-name">Ownership & Accountability</div><div class="skill-desc">Do you follow through without being micromanaged?</div></div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">💡</div>
+                    <div><div class="skill-name">Adaptability</div><div class="skill-desc">Can you pivot when requirements change mid-project?</div></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="insight-strip">
+            <p class="insight-label">How to prove soft skills</p>
+            <p class="insight-text"><strong>Lead a student org or team project</strong>. Use the STAR method in interviews to show collaboration in action. These skills can't be claimed — they must be demonstrated.</p>
+        </div>
+    </div>
+
+    <div class="bottom-bar">
+        <div class="logo-group"><div class="logo-icon">L<span class="sup">2</span></div><div class="logo-text">Launch<span class="accent">ToLead</span></div></div>
+        <div class="series-tag">Market Trends for Engineers</div>
+    </div>
+</div>
+
+<div class="post-container">
+    <h2>📋 LinkedIn Post Text</h2>
+    <div class="post-text">I had a hiring manager tell me something that stuck:
+
+"We stopped rejecting candidates for lack of technical skill. Now we reject them for lack of people skill."
+
+55% of employers say Gen Z graduates struggle with teamwork.
+37% of managers say they'd rather use AI than hire someone who can't collaborate.
+
+That's not a minor data point. That's a hiring philosophy shift.
+
+Here's what's happening:
+
+Companies realized that technical skills can be taught in 90 days. But someone who can't communicate, can't handle feedback, and disappears when things get hard? That takes years to fix — if it fixes at all.
+
+So now, interviews aren't just testing what you know. They're testing who you are to work with.
+
+Behavioral questions used to be a formality. Now they're dealbreakers.
+
+The engineer who writes perfect code but can't explain their work to a PM? They lose to the one who explains clearly, takes feedback, and follows through.
+
+Here's what "soft skills" actually means in an engineering interview:
+
+🗣️ Communication — Can you explain your capstone project to someone with zero technical background? In 60 seconds?
+
+🤝 Collaboration — Do you have a real example of working on a team with conflict and navigating it?
+
+🧩 Problem-solving under pressure — Have you ever had a project go sideways and adapted on the fly?
+
+🎯 Ownership — Can you point to something you led from start to finish?
+
+💡 Adaptability — What did you do when plans changed mid-semester?
+
+If you can't answer those with real stories, you're going to get beat by someone who can.
+
+How to build this proof:
+
+1. Take leadership in a student organization — treasurer, project lead, event coordinator. Something with accountability.
+
+2. Do group projects intentionally — not just for the grade, but to practice navigating disagreements and dividing work.
+
+3. Prep 5-7 STAR stories before every interview — Situation, Task, Action, Result. Make them specific. Make them human.
+
+4. Practice explaining technical work simply — if your mom can't understand what you built, you haven't practiced enough.
+
+Your resume gets you in the room.
+Your soft skills get you the offer.
+
+---
+
+What's the most common soft skill gap you've seen in interviews? Drop it below 👇
+
+♻️ Repost if you know someone who needs to hear this.
+🔔 Follow for more engineering career insights.
+
+#SoftSkills #EngineeringCareers #JobSearch #InterviewTips #GenZ #CareerAdvice #Communication #LaunchToLead</div>
+</div>
+
+<div class="comment-container">
+    <h3>💬 First Comment (post after publishing)</h3>
+    <div class="comment-text">Soft skills get tested in interviews. But they need to show up on your resume first.
+
+I built a free guide called the Impact Equation Quick Start that helps you write resume bullets combining technical work WITH the human skills behind it.
+
+It's the difference between:
+❌ "Designed a testing framework"
+✅ "Led cross-functional team of 4 to design a testing framework that reduced QA cycle time by 30%"
+
+One gets skimmed. The other gets interviews.
+
+Grab it free here: https://launchtolead.io/vault.html
+
+If you want personalized coaching on how to tell your story in interviews, that's what we do at Launch to Lead.
+
+Link in my profile.</div>
+</div>
+
+</body>
+</html>

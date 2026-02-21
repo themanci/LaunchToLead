@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Market Trend #7 — Preference for Hybrid/On-Site Work Models</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background: #0c0c14; min-height: 100vh; display: flex; flex-direction: column; align-items: center; padding: 40px 20px; color: #e2e8f0; }
+        .graphic { width: 1080px; height: 1080px; background: linear-gradient(160deg, #0a0e1a 0%, #0f0f2e 40%, #0a0e23 70%, #0a0e1a 100%); position: relative; overflow: hidden; flex-shrink: 0; }
+
+        .bg-orb-1 { position: absolute; width: 600px; height: 600px; top: -180px; right: -100px; background: radial-gradient(circle, rgba(99,102,241,0.14) 0%, transparent 65%); filter: blur(60px); }
+        .bg-orb-2 { position: absolute; width: 500px; height: 500px; bottom: -100px; left: -80px; background: radial-gradient(circle, rgba(163,230,53,0.12) 0%, transparent 65%); filter: blur(70px); }
+        .bg-orb-3 { position: absolute; width: 400px; height: 400px; top: 45%; left: 40%; transform: translate(-50%,-50%); background: radial-gradient(circle, rgba(99,102,241,0.07) 0%, transparent 60%); filter: blur(50px); }
+        .bg-orb-4 { position: absolute; width: 300px; height: 300px; bottom: 25%; right: 15%; background: radial-gradient(circle, rgba(163,230,53,0.06) 0%, transparent 65%); filter: blur(50px); }
+        .bg-dots { position: absolute; inset: 0; background-image: radial-gradient(rgba(255,255,255,0.04) 1px, transparent 1px); background-size: 24px 24px; z-index: 1; }
+        .bg-line-1 { position: absolute; top: 300px; left: -60px; width: 480px; height: 1.5px; background: linear-gradient(90deg, transparent, rgba(99,102,241,0.25), transparent); transform: rotate(-5deg); z-index: 1; }
+        .bg-line-2 { position: absolute; bottom: 240px; right: -40px; width: 400px; height: 1px; background: linear-gradient(270deg, transparent, rgba(163,230,53,0.2), transparent); transform: rotate(7deg); z-index: 1; }
+        .bg-mesh { position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,0.012) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.012) 1px, transparent 1px); background-size: 80px 80px; z-index: 1; }
+
+        .gc { position: relative; z-index: 10; height: 100%; display: flex; flex-direction: column; padding: 52px 60px 72px; }
+        .top-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 28px; }
+        .trend-badge { display: inline-flex; align-items: center; gap: 10px; background: rgba(99,102,241,0.08); backdrop-filter: blur(12px); border: 1px solid rgba(99,102,241,0.25); border-radius: 50px; padding: 12px 24px; font-size: 13px; font-weight: 700; color: #c7d2fe; text-transform: uppercase; letter-spacing: 2.5px; }
+        .trend-badge .dot { width: 8px; height: 8px; background: #6366f1; border-radius: 50%; box-shadow: 0 0 10px rgba(99,102,241,0.6); animation: pulse 2s infinite; }
+        @keyframes pulse { 0%,100%{ opacity:1; box-shadow: 0 0 10px rgba(99,102,241,0.6); } 50%{ opacity:.5; box-shadow: 0 0 20px rgba(99,102,241,0.9); } }
+        .series-num { font-family: 'Space Grotesk', sans-serif; font-size: 14px; color: #475569; font-weight: 600; letter-spacing: 1px; }
+
+        .title { font-size: 62px; font-weight: 900; color: #fff; line-height: 1.06; margin-bottom: 18px; letter-spacing: -2px; }
+        .title .highlight { background: linear-gradient(135deg, #6366f1, #818cf8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .subtitle { font-size: 22px; color: #94a3b8; line-height: 1.5; margin-bottom: 36px; max-width: 800px; }
+
+        /* Donut + info layout */
+        .viz-section { display: flex; gap: 40px; margin-bottom: 28px; flex: 1; align-items: center; }
+        .donut-viz { flex: 0 0 340px; display: flex; flex-direction: column; align-items: center; gap: 20px; }
+        .donut-ring { width: 280px; height: 280px; border-radius: 50%; background: conic-gradient(#6366f1 0% 70%, #a3e635 70% 100%); display: flex; align-items: center; justify-content: center; box-shadow: 0 0 40px rgba(99,102,241,0.2); }
+        .donut-center { width: 200px; height: 200px; border-radius: 50%; background: #0f0f2e; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+        .donut-big { font-family: 'Space Grotesk', sans-serif; font-size: 56px; font-weight: 700; color: #fff; }
+        .donut-small { font-size: 15px; color: #94a3b8; }
+        .donut-legend { display: flex; gap: 24px; }
+        .legend-item { display: flex; align-items: center; gap: 8px; }
+        .legend-dot { width: 14px; height: 14px; border-radius: 4px; }
+        .legend-dot.office { background: #6366f1; }
+        .legend-dot.hybrid { background: #a3e635; }
+        .legend-label { font-size: 14px; color: #94a3b8; }
+
+        .info-col { flex: 1; display: flex; flex-direction: column; gap: 14px; }
+        .info-card { background: rgba(255,255,255,0.03); backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.06); border-radius: 18px; padding: 26px 28px; position: relative; overflow: hidden; }
+        .info-card::before { content:''; position: absolute; top: 0; left: 0; bottom: 0; width: 3px; background: linear-gradient(180deg, #6366f1, rgba(99,102,241,0.2)); border-radius: 18px 0 0 18px; }
+        .info-card .ic-icon { font-size: 24px; margin-bottom: 8px; padding-left: 10px; }
+        .info-card .ic-title { font-size: 17px; font-weight: 700; color: #fff; margin-bottom: 6px; padding-left: 10px; }
+        .info-card .ic-text { font-size: 14px; color: #94a3b8; line-height: 1.5; padding-left: 10px; }
+        .info-card .ic-text strong { color: #a3e635; }
+
+        .insight-strip { background: rgba(163,230,53,0.05); backdrop-filter: blur(12px); border: 1px solid rgba(163,230,53,0.18); border-radius: 18px; padding: 30px 36px; position: relative; overflow: hidden; }
+        .insight-strip::before { content:''; position: absolute; top: 0; left: 0; bottom: 0; width: 4px; background: linear-gradient(180deg, #a3e635, #14b8a6); border-radius: 18px 0 0 18px; }
+        .insight-label { font-size: 12px; font-weight: 700; color: #a3e635; text-transform: uppercase; letter-spacing: 2.5px; margin-bottom: 10px; padding-left: 10px; }
+        .insight-text { font-size: 18px; color: #cbd5e1; line-height: 1.55; padding-left: 10px; }
+        .insight-text strong { color: #a3e635; }
+
+        .bottom-bar { position: absolute; bottom: 0; left: 0; right: 0; z-index: 10; background: rgba(10,14,26,0.7); backdrop-filter: blur(12px); border-top: 1px solid rgba(255,255,255,0.05); padding: 18px 60px; display: flex; justify-content: space-between; align-items: center; }
+        .logo-group { display: flex; align-items: center; gap: 12px; }
+        .logo-icon { width: 36px; height: 36px; background: linear-gradient(135deg, rgba(163,230,53,0.15), rgba(20,184,166,0.15)); border: 1px solid rgba(163,230,53,0.3); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-family: 'Space Grotesk', sans-serif; font-size: 16px; font-weight: 700; color: #fff; }
+        .logo-icon .sup { font-size: 9px; vertical-align: super; color: #a3e635; }
+        .logo-text { font-size: 17px; font-weight: 800; color: #fff; letter-spacing: -0.3px; }
+        .logo-text .accent { background: linear-gradient(90deg, #a3e635, #14b8a6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .series-tag { font-size: 13px; color: #475569; font-weight: 500; }
+
+        .post-container { width: 680px; margin-top: 60px; background: #0f172a; border-radius: 16px; padding: 48px; border: 1px solid rgba(255,255,255,0.06); }
+        .post-container h2 { font-size: 20px; color: #a3e635; margin-bottom: 20px; }
+        .post-text { font-size: 15px; color: #cbd5e1; line-height: 1.85; white-space: pre-line; }
+        .comment-container { width: 680px; margin-top: 24px; background: rgba(163,230,53,0.05); border-radius: 16px; padding: 36px 48px; border: 1px solid rgba(163,230,53,0.15); }
+        .comment-container h3 { font-size: 16px; color: #a3e635; margin-bottom: 14px; }
+        .comment-text { font-size: 14px; color: #94a3b8; line-height: 1.85; white-space: pre-line; }
+    </style>
+</head>
+<body>
+
+<div class="graphic">
+    <div class="bg-orb-1"></div><div class="bg-orb-2"></div><div class="bg-orb-3"></div><div class="bg-orb-4"></div>
+    <div class="bg-dots"></div><div class="bg-mesh"></div><div class="bg-line-1"></div><div class="bg-line-2"></div>
+
+    <div class="gc">
+        <div class="top-bar">
+            <div class="trend-badge"><span class="dot"></span> Market Trend</div>
+            <div class="series-num">#7 of 10</div>
+        </div>
+
+        <h1 class="title">Remote Engineering Jobs<br>Are <span class="highlight">Disappearing</span></h1>
+        <p class="subtitle">70% of engineering roles are now fully in-office. 30% are hybrid. Remote-first positions have sharply declined as companies rebuild culture.</p>
+
+        <div class="viz-section">
+            <div class="donut-viz">
+                <div class="donut-ring">
+                    <div class="donut-center">
+                        <div class="donut-big">70%</div>
+                        <div class="donut-small">In-Office</div>
+                    </div>
+                </div>
+                <div class="donut-legend">
+                    <div class="legend-item"><div class="legend-dot office"></div><div class="legend-label">Fully In-Office (70%)</div></div>
+                    <div class="legend-item"><div class="legend-dot hybrid"></div><div class="legend-label">Hybrid (30%)</div></div>
+                </div>
+            </div>
+            <div class="info-col">
+                <div class="info-card">
+                    <div class="ic-icon">🏢</div>
+                    <div class="ic-title">Why Companies Want You On-Site</div>
+                    <div class="ic-text">Post-pandemic culture rebuilding, mentorship for juniors, <strong>faster collaboration</strong>, and easier performance management.</div>
+                </div>
+                <div class="info-card">
+                    <div class="ic-icon">📍</div>
+                    <div class="ic-title">Engineering Hubs to Watch</div>
+                    <div class="ic-text"><strong>Texas, Illinois, California, Michigan</strong> — relocating strategically puts you closer to the most engineering jobs per capita.</div>
+                </div>
+                <div class="info-card">
+                    <div class="ic-icon">🤝</div>
+                    <div class="ic-title">The Hidden Advantage</div>
+                    <div class="ic-text">In-person engineers get <strong>more visibility, faster mentorship, and stronger referral networks</strong> — critical for early career growth.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="insight-strip">
+            <p class="insight-label">What to do about it</p>
+            <p class="insight-text">Highlight flexibility in applications but <strong>prepare for in-person roles</strong>. Build teamwork skills through group projects. Relocate strategically to engineering hubs.</p>
+        </div>
+    </div>
+
+    <div class="bottom-bar">
+        <div class="logo-group"><div class="logo-icon">L<span class="sup">2</span></div><div class="logo-text">Launch<span class="accent">ToLead</span></div></div>
+        <div class="series-tag">Market Trends for Engineers</div>
+    </div>
+</div>
+
+<div class="post-container">
+    <h2>📋 LinkedIn Post Text</h2>
+    <div class="post-text">If you're an engineering student hoping for a remote job out of college — I have some uncomfortable news.
+
+70% of engineering roles in 2025 are fully in-office.
+30% are hybrid.
+Fully remote? Almost gone.
+
+The pandemic made remote work feel normal. Companies are now pulling that back aggressively — especially for engineers.
+
+Why?
+
+• Engineering collaboration is harder over Zoom
+• Companies want to rebuild in-person culture
+• Junior engineers need mentorship — and that happens at a whiteboard, not a Slack thread
+• Managers want to see who's actually contributing
+
+I know this isn't what most people want to hear.
+
+But here's the reality: if "fully remote" is your #1 requirement, you're cutting yourself off from 70% of the market before you even start.
+
+That doesn't mean remote doesn't exist. It does. But it's rare, competitive, and usually reserved for experienced engineers with proven track records.
+
+For early-career engineers, here's how to approach this strategically:
+
+1. Be flexible in applications — don't filter for "remote only." You're eliminating most opportunities.
+
+2. Relocate with intention — Texas, Illinois, Michigan, and California have the highest engineering job density. Moving to where the jobs are is one of the easiest wins.
+
+3. Use in-person as an advantage — you get more face time with leaders, faster mentorship, and stronger referral networks. Early career is when visibility matters most.
+
+4. Build teamwork skills now — if you've been working solo on projects, start doing group work. Companies are explicitly looking for collaboration ability.
+
+Don't let work model preference limit your career before it starts.
+
+Get in the door first. Earn remote later.
+
+---
+
+Would you take a great in-office role over a mediocre remote one? Honest answers 👇
+
+♻️ Repost to share a different perspective.
+🔔 Follow for more engineering career insights.
+
+#RemoteWork #EngineeringCareers #JobSearch #CareerAdvice #Engineering #WorkCulture #NewGrad #LaunchToLead</div>
+</div>
+
+<div class="comment-container">
+    <h3>💬 First Comment (post after publishing)</h3>
+    <div class="comment-text">Whether the role is remote, hybrid, or in-office — your resume still needs to open the door.
+
+I built a free guide called the Impact Equation Quick Start that shows you how to write resume bullets that make hiring managers say "let's talk to this one."
+
+Works for any engineering discipline. Any work model.
+
+Grab it free: https://launchtolead.io/vault.html
+
+And if you want help figuring out where to apply, how to position yourself, and how to navigate this market strategically — that's what we do at Launch to Lead.
+
+Link in my profile.</div>
+</div>
+
+</body>
+</html>
