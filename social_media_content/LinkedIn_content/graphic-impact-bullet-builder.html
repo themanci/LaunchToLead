@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stop Getting Filtered Out — Impact Bullet Builder</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background: #0c0c14; min-height: 100vh; display: flex; flex-direction: column; align-items: center; padding: 40px 20px; color: #e2e8f0; }
+        .graphic { width: 1080px; height: 1080px; background: linear-gradient(160deg, #0a0e1a 0%, #131a2e 40%, #0f1623 70%, #0a0e1a 100%); position: relative; overflow: hidden; flex-shrink: 0; }
+
+        /* Background layers */
+        .bg-orb-1 { position: absolute; width: 550px; height: 550px; top: -150px; right: -80px; background: radial-gradient(circle, rgba(163,230,53,0.14) 0%, transparent 65%); filter: blur(60px); }
+        .bg-orb-2 { position: absolute; width: 500px; height: 500px; bottom: -120px; left: -80px; background: radial-gradient(circle, rgba(20,184,166,0.12) 0%, transparent 65%); filter: blur(70px); }
+        .bg-orb-3 { position: absolute; width: 400px; height: 400px; top: 50%; left: 40%; transform: translate(-50%,-50%); background: radial-gradient(circle, rgba(163,230,53,0.06) 0%, transparent 60%); filter: blur(50px); }
+        .bg-orb-4 { position: absolute; width: 300px; height: 300px; bottom: 25%; right: 10%; background: radial-gradient(circle, rgba(20,184,166,0.06) 0%, transparent 65%); filter: blur(50px); }
+        .bg-dots { position: absolute; inset: 0; background-image: radial-gradient(rgba(255,255,255,0.04) 1px, transparent 1px); background-size: 24px 24px; z-index: 1; }
+        .bg-line-1 { position: absolute; top: 300px; left: -60px; width: 450px; height: 1.5px; background: linear-gradient(90deg, transparent, rgba(163,230,53,0.25), transparent); transform: rotate(-5deg); z-index: 1; }
+        .bg-line-2 { position: absolute; bottom: 220px; right: -40px; width: 350px; height: 1px; background: linear-gradient(270deg, transparent, rgba(20,184,166,0.20), transparent); transform: rotate(7deg); z-index: 1; }
+        .bg-mesh { position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,0.012) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.012) 1px, transparent 1px); background-size: 80px 80px; z-index: 1; }
+
+        /* Content */
+        .gc { position: relative; z-index: 10; height: 100%; display: flex; flex-direction: column; padding: 46px 58px 88px; }
+        .top-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; }
+        .trend-badge { display: inline-flex; align-items: center; gap: 10px; background: rgba(163,230,53,0.08); backdrop-filter: blur(12px); border: 1px solid rgba(163,230,53,0.25); border-radius: 50px; padding: 12px 24px; font-size: 13px; font-weight: 700; color: #bef264; text-transform: uppercase; letter-spacing: 2.5px; }
+        .trend-badge .dot { width: 8px; height: 8px; background: #a3e635; border-radius: 50%; box-shadow: 0 0 10px rgba(163,230,53,0.6); animation: pulse 2s infinite; }
+        @keyframes pulse { 0%,100%{ opacity:1; box-shadow: 0 0 10px rgba(163,230,53,0.6); } 50%{ opacity:.5; box-shadow: 0 0 20px rgba(163,230,53,0.9); } }
+        .free-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(20,184,166,0.12); border: 1px solid rgba(20,184,166,0.35); border-radius: 50px; padding: 10px 22px; font-size: 14px; font-weight: 800; color: #5eead4; text-transform: uppercase; letter-spacing: 2px; }
+
+        .title { font-size: 56px; font-weight: 900; color: #fff; line-height: 1.08; margin-bottom: 10px; letter-spacing: -2px; }
+        .title .highlight { background: linear-gradient(135deg, #a3e635, #14b8a6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .subtitle { font-size: 19px; color: #94a3b8; line-height: 1.5; margin-bottom: 24px; max-width: 820px; }
+
+        /* Formula bar */
+        .formula-bar { display: flex; align-items: center; gap: 10px; margin-bottom: 22px; flex-wrap: wrap; }
+        .formula-pill { padding: 12px 20px; border-radius: 14px; font-size: 16px; font-weight: 700; position: relative; overflow: hidden; }
+        .formula-pill::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(255,255,255,0.08), transparent); pointer-events: none; }
+        .pill-blue { background: rgba(59,130,246,0.12); border: 1px solid rgba(59,130,246,0.3); color: #93c5fd; }
+        .pill-teal { background: rgba(20,184,166,0.12); border: 1px solid rgba(20,184,166,0.3); color: #5eead4; }
+        .pill-cyan { background: rgba(6,182,212,0.12); border: 1px solid rgba(6,182,212,0.3); color: #67e8f9; }
+        .pill-green { background: rgba(163,230,53,0.12); border: 1px solid rgba(163,230,53,0.3); color: #d9f99d; }
+        .formula-op { font-family: 'Space Grotesk', sans-serif; font-size: 26px; font-weight: 400; color: rgba(255,255,255,0.25); }
+        .formula-eq { font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 700; color: #a3e635; text-shadow: 0 0 20px rgba(163,230,53,0.3); }
+
+        /* Stats */
+        .stats-trio { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; margin-bottom: 20px; }
+        .stat-card { background: rgba(255,255,255,0.03); backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.06); border-radius: 18px; padding: 26px 20px 22px; text-align: center; position: relative; overflow: hidden; }
+        .stat-card::before { content:''; position: absolute; top: 0; left: 0; right: 0; height: 3px; border-radius: 18px 18px 0 0; }
+        .stat-card.red::before { background: linear-gradient(90deg, #ef4444, #f97316); }
+        .stat-card.amber::before { background: linear-gradient(90deg, #f59e0b, #eab308); }
+        .stat-card.green::before { background: linear-gradient(90deg, #a3e635, #14b8a6); }
+        .stat-card .glow { position: absolute; top: -30px; left: 50%; transform: translateX(-50%); width: 120px; height: 60px; border-radius: 50%; filter: blur(25px); opacity: 0.35; }
+        .stat-card.red .glow { background: rgba(239,68,68,0.4); }
+        .stat-card.amber .glow { background: rgba(245,158,11,0.35); }
+        .stat-card.green .glow { background: rgba(163,230,53,0.35); }
+        .stat-big { font-family: 'Space Grotesk', sans-serif; font-size: 48px; font-weight: 700; line-height: 1; position: relative; margin-bottom: 8px; }
+        .stat-big.red { color: #f87171; text-shadow: 0 0 30px rgba(239,68,68,0.25); }
+        .stat-big.amber { color: #fbbf24; text-shadow: 0 0 30px rgba(245,158,11,0.25); }
+        .stat-big.green-num { color: #a3e635; text-shadow: 0 0 30px rgba(163,230,53,0.25); }
+        .stat-desc { font-size: 13.5px; color: #64748b; line-height: 1.4; position: relative; }
+
+        /* Before/After transform */
+        .transform-section { margin-bottom: 18px; }
+        .transform-header { font-size: 13px; font-weight: 700; color: #94a3b8; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 12px; }
+        .transform-row { display: grid; grid-template-columns: 1fr auto 1fr; gap: 14px; align-items: center; }
+        .transform-box { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); border-radius: 16px; padding: 22px 24px; }
+        .transform-box.bad { border-color: rgba(239,68,68,0.2); }
+        .transform-box.good { border-color: rgba(163,230,53,0.2); }
+        .transform-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; }
+        .transform-label.bad { color: #f87171; }
+        .transform-label.good { color: #a3e635; }
+        .transform-text { font-size: 15px; line-height: 1.55; color: #cbd5e1; font-style: italic; }
+        .transform-text strong { font-style: normal; }
+        .arrow-circle { width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(135deg, rgba(163,230,53,0.15), rgba(20,184,166,0.15)); border: 1px solid rgba(163,230,53,0.3); display: flex; align-items: center; justify-content: center; font-size: 22px; color: #a3e635; flex-shrink: 0; }
+
+        /* CTA strip */
+        .cta-strip { background: linear-gradient(135deg, rgba(163,230,53,0.08), rgba(20,184,166,0.06)); backdrop-filter: blur(12px); border: 1px solid rgba(163,230,53,0.22); border-radius: 16px; padding: 22px 28px; display: flex; align-items: center; gap: 20px; }
+        .cta-icon { font-size: 36px; flex-shrink: 0; }
+        .cta-content { flex: 1; }
+        .cta-label { font-size: 11px; font-weight: 700; color: #a3e635; text-transform: uppercase; letter-spacing: 2.5px; margin-bottom: 6px; }
+        .cta-text { font-size: 17px; color: #e2e8f0; font-weight: 600; line-height: 1.4; }
+        .cta-text .url { color: #a3e635; font-weight: 800; }
+        .cta-sub { font-size: 13px; color: #64748b; margin-top: 4px; }
+
+        /* Bottom bar */
+        .bottom-bar { position: absolute; bottom: 0; left: 0; right: 0; z-index: 10; background: rgba(10,14,26,0.7); backdrop-filter: blur(12px); border-top: 1px solid rgba(255,255,255,0.05); padding: 16px 58px; display: flex; justify-content: space-between; align-items: center; }
+        .logo-group { display: flex; align-items: center; gap: 12px; }
+        .logo-icon { width: 36px; height: 36px; background: linear-gradient(135deg, rgba(163,230,53,0.15), rgba(20,184,166,0.15)); border: 1px solid rgba(163,230,53,0.3); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-family: 'Space Grotesk', sans-serif; font-size: 16px; font-weight: 700; color: #fff; }
+        .logo-icon .sup { font-size: 9px; vertical-align: super; color: #a3e635; }
+        .logo-text { font-size: 17px; font-weight: 800; color: #fff; letter-spacing: -0.3px; }
+        .logo-text .accent { background: linear-gradient(90deg, #a3e635, #14b8a6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .series-tag { font-size: 13px; color: #475569; font-weight: 500; }
+    </style>
+</head>
+<body>
+
+<div class="graphic">
+    <div class="bg-orb-1"></div><div class="bg-orb-2"></div><div class="bg-orb-3"></div><div class="bg-orb-4"></div>
+    <div class="bg-dots"></div><div class="bg-mesh"></div><div class="bg-line-1"></div><div class="bg-line-2"></div>
+
+    <div class="gc">
+        <div class="top-bar">
+            <div class="trend-badge"><span class="dot"></span> Free Guide</div>
+            <div class="free-badge">📥 14 Pages</div>
+        </div>
+
+        <h1 class="title">Your Resume Is<br><span class="highlight">Invisible</span> to Employers</h1>
+        <p class="subtitle">75% of resumes get auto-rejected by ATS before a human ever sees them. This free framework fixes that.</p>
+
+        <!-- Formula -->
+        <div class="formula-bar">
+            <div class="formula-pill pill-blue">Accomplishment</div>
+            <span class="formula-op">+</span>
+            <div class="formula-pill pill-teal">Metric</div>
+            <span class="formula-op">+</span>
+            <div class="formula-pill pill-cyan">How</div>
+            <span class="formula-op">+</span>
+            <div class="formula-pill pill-green">Why It Mattered</div>
+            <span class="formula-eq">=</span>
+            <span style="font-size: 18px; font-weight: 800; color: #a3e635;">Impact Bullet™</span>
+        </div>
+
+        <!-- Stats -->
+        <div class="stats-trio">
+            <div class="stat-card red">
+                <div class="glow"></div>
+                <div class="stat-big red">$6,700</div>
+                <div class="stat-desc">lost per month you're<br>stuck job hunting</div>
+            </div>
+            <div class="stat-card amber">
+                <div class="glow"></div>
+                <div class="stat-big amber">6 sec</div>
+                <div class="stat-desc">avg time a recruiter<br>spends on your resume</div>
+            </div>
+            <div class="stat-card green">
+                <div class="glow"></div>
+                <div class="stat-big green-num">40%+</div>
+                <div class="stat-desc">callback rate using<br>Impact Bullets</div>
+            </div>
+        </div>
+
+        <!-- Before/After Transform -->
+        <div class="transform-section">
+            <div class="transform-header">The Impact Bullet Builder™ in action</div>
+            <div class="transform-row">
+                <div class="transform-box bad">
+                    <div class="transform-label bad">❌ Before</div>
+                    <div class="transform-text">"Worked on embedded firmware and helped debug communication issues between modules"</div>
+                </div>
+                <div class="arrow-circle">→</div>
+                <div class="transform-box good">
+                    <div class="transform-label good">✅ After</div>
+                    <div class="transform-text">"<strong>Cut field failure rate by 62%</strong> by refactoring the CAN bus interrupt handler in C to implement priority-based arbitration across 8 ECUs on a safety-critical powertrain network"</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="cta-strip">
+            <div class="cta-icon">📄</div>
+            <div class="cta-content">
+                <div class="cta-label">Free Download</div>
+                <div class="cta-text">Get the Impact Bullet Builder™ → <span class="url">launchtolead.io/free</span></div>
+                <div class="cta-sub">14-page guide · 4-part formula · real before/after examples</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bottom-bar">
+        <div class="logo-group"><div class="logo-icon">L<span class="sup">2</span></div><div class="logo-text">Launch<span class="accent">ToLead</span></div></div>
+        <div class="series-tag">launchtolead.io/free</div>
+    </div>
+</div>
+
+</body>
+</html>
