@@ -60,6 +60,10 @@
         var mp = document.createElement('script');
         mp.src = 'meta-pixel.js';
         document.head.appendChild(mp);
+        // LinkedIn Insight Tag
+        var li = document.createElement('script');
+        li.src = 'linkedin-insight-tag.js';
+        document.head.appendChild(li);
       });
       // Track offer page clicks (works once GA loads)
       document.addEventListener('click', function(e) {
