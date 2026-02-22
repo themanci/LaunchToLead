@@ -14,6 +14,10 @@
     <script src="../meta-pixel.js"></script>
     <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=3141490496240983&ev=PageView&noscript=1"/></noscript>
 
+    <!-- LinkedIn Insight Tag -->
+    <script src="../linkedin-insight-tag.js"></script>
+    <noscript><img height="1" width="1" style="display:none" alt="" src="https://px.ads.linkedin.com/collect/?pid=8832100&fmt=gif" /></noscript>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Free Resume Framework | Launch to Lead</title>
@@ -265,6 +269,14 @@
                 actively_applying: activelyApplying,
                 content_name: 'Impact Bullet Builder Lead Magnet'
             });
+        }
+
+        // Fire LinkedIn conversion event
+        if (typeof ltlLinkedInConversion === 'function') {
+            ltlLinkedInConversion('lead');
+            if (activelyApplying === 'yes') {
+                ltlLinkedInConversion('qualifiedLead');
+            }
         }
 
         // Submit to Kit (ConvertKit) — triggers automated email with PDF
