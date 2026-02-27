@@ -164,6 +164,17 @@
         document.getElementById('user-greeting').textContent = name + ', ';
         document.getElementById('offer-cta-link').href = 'offer.html?name=' + encodeURIComponent(name);
     }
+
+    // GA4: Track thank-you page view with attribution
+    if (typeof gtag === 'function') {
+        const utm = typeof getUtmData === 'function' ? getUtmData() : {};
+        gtag('event', 'thankyou_page_view', {
+            'traffic_source': utm.traffic_source || 'Direct',
+            'utm_source': utm.utm_source || '',
+            'utm_medium': utm.utm_medium || '',
+            'utm_campaign': utm.utm_campaign || ''
+        });
+    }
 </script>
 
 </body>

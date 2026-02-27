@@ -917,12 +917,17 @@
 
         // Fire GA4 event
         if (typeof gtag === 'function') {
+            const utm = typeof getUtmData === 'function' ? getUtmData() : {};
             gtag('event', 'qualify_form_submit', {
                 'first_name': firstName,
                 'situation': situation,
                 'timeline': timeline,
                 'willing_to_invest': willingToInvest,
-                'qualified': isQualified ? 'yes' : 'no'
+                'qualified': isQualified ? 'yes' : 'no',
+                'traffic_source': utm.traffic_source || 'Direct',
+                'utm_source': utm.utm_source || '',
+                'utm_medium': utm.utm_medium || '',
+                'utm_campaign': utm.utm_campaign || ''
             });
         }
 

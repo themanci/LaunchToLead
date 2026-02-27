@@ -300,8 +300,13 @@
 
         // Fire GA4 event
         if (typeof gtag === 'function') {
+            const utm = typeof getUtmData === 'function' ? getUtmData() : {};
             gtag('event', 'lead_form_submit', {
-                'page_location': window.location.pathname
+                'page_location': window.location.pathname,
+                'traffic_source': utm.traffic_source || 'Direct',
+                'utm_source': utm.utm_source || '',
+                'utm_medium': utm.utm_medium || '',
+                'utm_campaign': utm.utm_campaign || ''
             });
         }
 
