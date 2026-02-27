@@ -31,7 +31,7 @@ Main Site ("Ready To Launch? →" CTA) → Landing Page 2 (offer.html?source=sit
 - [x] Qualification logic: `timeline !== 'thinking' && commitment !== 'no' && willingToInvest !== 'no'`
 - [x] Not-qualified result: Warm message + Skool card + social links + main site link
 - [x] Budget Q replaced with "willing to invest in coaching" (softer question)
-- [x] FAQ pricing removed — says "pricing discussed on strategy call"
+- [x] FAQ pricing shows $997 (or 3 x $349) with Career Launch Call CTA
 
 ### Main Site Updates
 - [x] Generic offer page: URL param toggle (`?source=site` hides confirmation banner)

@@ -1,33 +1,88 @@
 # LinkedIn Ads Copy — LaunchToLead
-## Rewritten from Meta Ads Batch 1 Final (Feb 2026)
+## Formatted for LinkedIn Campaign Manager (Feb 2026)
 
 **Lead Magnet:** Impact Bullet Builder™ (free 14-page guide)
-**Landing Page:** launchtolead.io/free
-**CTA Button:** Learn More (LinkedIn default)
-**Image Format:** 1080×1080 square
+**Landing Page:** https://launchtolead.io/free
+**Image Format:** 1080×1080 square PNG
 **Audience:** Engineering grads struggling to land jobs
+**Total Ads:** 7
 
 ---
 
-## CTA Strategy
+## LinkedIn Ad Fields Reference
 
-**Direct Link ads** — include `launchtolead.io/free` in the copy. Best for cold traffic.
-**Comment CTA ads** — say "Comment GUIDE and I'll send it." Best for engagement + organic reach.
-**Hybrid ads** — include the link AND ask for a comment. Test both.
+| Field | What It Is | Limit | Tip |
+|---|---|---|---|
+| **Introductory Text** | Main copy above the image | 3,000 chars | First ~150 chars show before "...see more" — hook MUST land here |
+| **Media** | Image to upload | 1080×1080 PNG | Screenshot the graphic HTML file |
+| **Destination URL** | Where the CTA button links | Full URL | Always `https://launchtolead.io/free` |
+| **Headline** | Bold text below the image | 200 chars | First ~70 chars visible — front-load the value |
+| **Call-to-action** | Button label (dropdown) | Select one | Use **Download** for free guide |
+| **Description** | Small text below headline | 300 chars | Reinforces the offer — keep it short |
+| **Personalize Text** | Audience-specific intro text | Optional | Swap "Engineering grad" for specific discipline |
 
-Run 2 direct-link + 2 comment CTA in week 1. Kill the losers. Scale the winners.
+## Ad Naming Convention
+Use: `Ad_[number]_[date]` — Example: `Ad_1_23Feb2026`
+
+---
+
+## URL Tracking Parameters (set at campaign level)
+```
+utm_source=LinkedIn&utm_medium=paid_social&utm_campaign={{CAMPAIGN_NAME}}&utm_term={{AD_SET_NAME}}&utm_content={{AD_NAME}}&account_id={{ACCOUNT_ID}}
+```
 
 ---
 ---
 
 # AD 01 — Financial Bleed
-**Source:** Meta Ad 02 (Financial Loss / $6,700)
-**Graphic:** linkedin-ad-01.html
-**Angle:** Every month without a job is costing you $6,700. Your resume is the bottleneck.
+**Source:** Meta Ad 02 | **Graphic:** linkedin-ad-01.html
+**Angle:** Every month without a job costs $6,700. Resume is the bottleneck.
 
 ---
 
-**📝 PRIMARY TEXT — Version A (Direct):**
+### Introductory Text
+_Recommended version — paste directly into Campaign Manager:_
+
+I've been on the hiring side at engineering companies. Here's something most candidates don't realize:
+
+Every month you can't land a job, you lose ~$6,700 in salary. I created a free 14-page guide called the Impact Bullet Builder that fixes the root cause. It takes 30 minutes to apply.
+
+The resume is always the bottleneck. Not the degree, not the GPA, not the market.
+
+When I reviewed engineering resumes, 95% looked identical. "Collaborated with cross-functional teams." "Utilized MATLAB for analysis." "Assisted with testing procedures."
+
+Those lines communicate nothing. They describe a job posting, not a result. Hiring managers see them 200 times a day.
+
+The engineers who stand out write bullets with specific, measurable outcomes. That's a learnable skill — and that's exactly what this guide teaches.
+
+Karen applied the formula: 4 offers including Google & SpaceX.
+Sarah applied it: $106K at Ford.
+
+14 pages. Free. No email drip — just the guide.
+
+### Destination URL
+```
+https://launchtolead.io/free
+```
+
+### Headline
+```
+The Resume Fix Engineers at Google & Ford Used
+```
+
+### Call-to-action
+```
+Download
+```
+
+### Description
+```
+Free 14-page Impact Bullet Builder guide. The same framework behind offers at Google, SpaceX, Ford, and Bridgestone.
+```
+
+---
+
+#### Alternative Introductory Text — Version A (Direct Hook)
 
 Engineering grad with 50+ rejections?
 
@@ -52,71 +107,63 @@ Sarah used it too. She went from anxious intern to $106K at Ford.
 
 Same formula. Same framework. It's yours free.
 
-👉 Grab it here: launchtolead.io/free
-
----
-
-**📝 PRIMARY TEXT — Version B (Comment CTA):**
-
-Engineering grad? 50+ applications and nothing?
-
-I built a free guide called the Impact Bullet Builder that fixes the #1 reason engineers get ghosted. The framework takes 30 minutes to apply to your entire resume.
-
-Here's the uncomfortable math:
-
-Every month without a job costs you ~$6,700 in lost salary. By month 6, you've lost $40K+. By month 12, $80K.
-
-Your university taught you thermodynamics. Not job searching. Career services gave you a template and said "good luck." That template is why your resume sounds identical to every other engineering grad's.
-
-Hiring managers spend 6 seconds on your resume. If they see "Assisted with project deliverables" — they close it. Not because you're not qualified. Because you look like everyone else.
-
-Karen used this framework. Google, SpaceX, Bridgestone — 4 offers.
-
-Sarah used it. $106K at Ford.
-
-Comment "GUIDE" and I'll send it to you.
-
----
-
-**📝 PRIMARY TEXT — Version C (Authority-Led):**
-
-I've been on the hiring side at engineering companies. Here's something most candidates don't realize:
-
-Every month you can't land a job, you lose ~$6,700 in salary. I created a free 14-page guide called the Impact Bullet Builder that fixes the root cause. It takes 30 minutes to apply.
-
-The resume is always the bottleneck. Not the degree, not the GPA, not the market.
-
-When I reviewed engineering resumes, 95% looked identical. "Collaborated with cross-functional teams." "Utilized MATLAB for analysis." "Assisted with testing procedures."
-
-Those lines communicate nothing. They describe a job posting, not a result. Hiring managers see them 200 times a day.
-
-The engineers who stand out write bullets with specific, measurable outcomes. That's a learnable skill — and that's exactly what this guide teaches.
-
-Karen applied the formula: 4 offers including Google & SpaceX.
-Sarah applied it: $106K at Ford.
-
-14 pages. Free. No email drip — just the guide.
-
-👉 launchtolead.io/free
-
----
-
-**📌 HEADLINE OPTIONS (pick one):**
-- A: "Free Guide: Stop Losing $6,700/Month"
-- B: "The Resume Fix Engineers at Google & Ford Used"
-- C: "Free 14-Page Guide: Impact Bullet Builder"
+#### Alternative Headlines
+- "Free Guide: Stop Losing $6,700/Month"
+- "Free 14-Page Guide: Impact Bullet Builder"
 
 ---
 ---
 
 # AD 02 — Urgency / Market Getting Harder
-**Source:** Meta Ad 07 (Time Delay / Urgency)
-**Graphic:** linkedin-ad-02.html
-**Angle:** The market is getting harder. Your classmates are pulling ahead. Clock is ticking.
+**Source:** Meta Ad 07 | **Graphic:** linkedin-ad-02.html
+**Angle:** Market is the hardest it's been. Your classmates are pulling ahead. Clock is ticking.
 
 ---
 
-**📝 PRIMARY TEXT — Version A (Direct):**
+### Introductory Text
+_Recommended version — paste directly into Campaign Manager:_
+
+75% of engineering resumes get auto-rejected by ATS before a human ever reads them.
+
+I built a free guide called the Impact Bullet Builder that gets your resume past both the algorithm and the 6-second recruiter scan. Here's why this matters right now:
+
+The engineering job market in 2026 is fundamentally different from 2020. Companies are hiring slower, demanding more, and screening harder. New grads are competing against candidates with 2-3 years of experience who got laid off.
+
+Your university didn't prepare you for this. Career services gave you a resume template from 2015 and said "apply everywhere."
+
+That template is the problem.
+
+When every bullet says "Assisted with..." and "Collaborated on..." — you look identical to the other 500 applicants. Recruiters close your resume in 6 seconds.
+
+The Impact Bullet Builder rewrites every bullet using a specific formula: what you did + the measurable result + how you did it + why it mattered.
+
+Engineers have used it to land at Google, SpaceX, Ford, GE, and Bridgestone.
+
+Free. 14 pages. No strings.
+
+### Destination URL
+```
+https://launchtolead.io/free
+```
+
+### Headline
+```
+75% of Engineering Resumes Never Reach a Human
+```
+
+### Call-to-action
+```
+Download
+```
+
+### Description
+```
+Free Impact Bullet Builder guide. Rewrites every resume bullet in 30 minutes. Used by engineers now at Google, SpaceX, and Ford.
+```
+
+---
+
+#### Alternative Introductory Text — Version A (Direct Hook)
 
 Struggling engineer? No callbacks?
 
@@ -140,73 +187,61 @@ Sarah was frustrated too. Then: $106K at Ford.
 
 The window is closing. Fix the resume first.
 
-👉 Free download: launchtolead.io/free
-
----
-
-**📝 PRIMARY TEXT — Version B (Comment CTA):**
-
-Engineering grads — the market isn't going to get easier.
-
-I created a free guide called the Impact Bullet Builder that fixes the #1 reason you're not hearing back. It rewrites every bullet on your resume in 30 minutes.
-
-Here's the reality:
-
-Companies are hiring fewer new grads. AI screening tools are rejecting resumes before a human ever touches them. The engineers who wait for things to "get better" end up with a 6-month gap and even fewer options.
-
-Meanwhile, your classmates who figured out how to communicate their value on paper? They're getting offers.
-
-The difference isn't intelligence. It's not connections. It's 14 bullet points on a resume that either say something — or say nothing.
-
-Karen figured this out. Google, SpaceX, Bridgestone.
-Sarah figured it out. $106K at Ford.
-
-Same formula. Free. 14 pages.
-
-Comment "GUIDE" and I'll send it to you.
-
----
-
-**📝 PRIMARY TEXT — Version C (Data-Led):**
-
-75% of engineering resumes get auto-rejected by ATS before a human ever reads them.
-
-I built a free guide called the Impact Bullet Builder that gets your resume past both the algorithm and the 6-second recruiter scan. Here's why this matters right now:
-
-The engineering job market in 2026 is fundamentally different from 2020. Companies are hiring slower, demanding more, and screening harder. New grads are competing against candidates with 2-3 years of experience who got laid off.
-
-Your university didn't prepare you for this. Career services gave you a resume template from 2015 and said "apply everywhere."
-
-That template is the problem.
-
-When every bullet says "Assisted with..." and "Collaborated on..." — you look identical to the other 500 applicants. Recruiters close your resume in 6 seconds.
-
-The Impact Bullet Builder rewrites every bullet using a specific formula: what you did + the measurable result + how you did it + why it mattered.
-
-Engineers have used it to land at Google, SpaceX, Ford, GE, and Bridgestone.
-
-Free. 14 pages. No strings.
-
-👉 launchtolead.io/free
-
----
-
-**📌 HEADLINE OPTIONS (pick one):**
-- A: "Engineers: The Market Won't Wait for You"
-- B: "Free Guide: Stop Getting Auto-Rejected"
-- C: "75% of Engineering Resumes Never Reach a Human"
+#### Alternative Headlines
+- "Engineers: The Market Won't Wait for You"
+- "Free Guide: Stop Getting Auto-Rejected"
 
 ---
 ---
 
 # AD 03 — Friends Getting Hired
-**Source:** Meta Ad 11 (Comparison / Status)
-**Graphic:** linkedin-ad-03.html
+**Source:** Meta Ad 11 | **Graphic:** linkedin-ad-03.html
 **Angle:** Same degree, same classes — why are they getting hired and you're not?
 
 ---
 
-**📝 PRIMARY TEXT — Version A (Direct):**
+### Introductory Text
+_Recommended version — paste directly into Campaign Manager:_
+
+Two resumes. Same engineering internship. Same project. Here's what they look like:
+
+BEFORE: "Assisted with firmware development and testing procedures"
+AFTER: "Cut field failure rate by 62% by refactoring the CAN bus interrupt handler in C to implement priority-based arbitration across 8 ECUs"
+
+The difference? A formula I packaged into a free 14-page guide called the Impact Bullet Builder. It rewrites every bullet on your resume in about 30 minutes.
+
+Same work. Same experience. Different communication. One gets calls. The other gets silence.
+
+Your classmates who are getting hired aren't smarter. They're not more connected. They just know how to translate their work into measurable outcomes on paper.
+
+Karen used this formula. 4 offers — Google, SpaceX, Bridgestone.
+Sarah used it. $106K at Ford.
+
+Works on internships, class projects, research, and part-time work.
+
+### Destination URL
+```
+https://launchtolead.io/free
+```
+
+### Headline
+```
+Two Resumes. Same Experience. Different Results.
+```
+
+### Call-to-action
+```
+Download
+```
+
+### Description
+```
+Free 14-page guide. Transform generic resume bullets into measurable impact statements in 30 minutes.
+```
+
+---
+
+#### Alternative Introductory Text — Version A (Direct Hook)
 
 Friends getting engineering jobs while you're getting ghosted?
 
@@ -231,71 +266,21 @@ Sarah used it too. $106K at Ford.
 
 Same framework. Same formula. It's yours free.
 
-👉 Grab it: launchtolead.io/free
-
----
-
-**📝 PRIMARY TEXT — Version B (Comment CTA):**
-
-Your classmates aren't better engineers than you. They're better at one thing: communicating value on paper.
-
-I built a free guide called the Impact Bullet Builder that teaches this skill in 30 minutes. It's the same framework that helped engineers land at Google, SpaceX, Ford, and Bridgestone.
-
-That's the entire difference between "ghosted" and "4 offers."
-
-Their bullets have numbers. Yours have duties. Their resume tells a story of impact. Yours reads like a job description.
-
-Two engineers. Same internship. Same project:
-
-Engineer A: "Assisted with firmware development and testing"
-Engineer B: "Cut field failure rate by 62% by refactoring the CAN bus interrupt handler in C to implement priority-based arbitration across 8 ECUs"
-
-Same work. Engineer B gets the interview. Every time.
-
-You're not less qualified. You're less visible. This formula fixes that.
-
-Comment "GUIDE" and I'll send it to you.
-
----
-
-**📝 PRIMARY TEXT — Version C (Before/After Hook):**
-
-Two resumes. Same engineering internship. Same project. Here's what they look like:
-
-❌ "Assisted with firmware development and testing procedures"
-✅ "Cut field failure rate by 62% by refactoring the CAN bus interrupt handler in C to implement priority-based arbitration across 8 ECUs"
-
-The difference? A formula I packaged into a free 14-page guide called the Impact Bullet Builder. It rewrites every bullet on your resume in about 30 minutes.
-
-Same work. Same experience. Different communication. One gets calls. The other gets silence.
-
-Your classmates who are getting hired aren't smarter. They're not more connected. They just know how to translate their work into measurable outcomes on paper.
-
-Karen used this formula. 4 offers — Google, SpaceX, Bridgestone.
-Sarah used it. $106K at Ford.
-
-Works on internships, class projects, research, and part-time work.
-
-👉 launchtolead.io/free
-
----
-
-**📌 HEADLINE OPTIONS (pick one):**
-- A: "Same Degree — So Why Are They Getting Hired?"
-- B: "Free Guide: What Your Classmates Know That You Don't"
-- C: "Two Resumes. Same Experience. Different Results."
+#### Alternative Headlines
+- "Same Degree — So Why Are They Getting Hired?"
+- "Free Guide: What Your Classmates Know That You Don't"
 
 ---
 ---
 
 # AD 04 — Exhausting Cycle
-**Source:** Meta Ad 19 (Effort + Frustration)
-**Graphic:** linkedin-ad-04.html
+**Source:** Meta Ad 19 | **Graphic:** linkedin-ad-04.html
 **Angle:** 50+ apps, zero offers. The cycle is exhausting. Your resume is the problem.
 
 ---
 
-**📝 PRIMARY TEXT — Version A (Direct):**
+### Introductory Text
+_Recommended version — paste directly into Campaign Manager:_
 
 50+ engineering applications. Zero offers.
 
@@ -321,35 +306,29 @@ Same framework. Same formula. It's yours for free.
 
 You've earned this. Let's fix it.
 
-👉 Free download: launchtolead.io/free
+### Destination URL
+```
+https://launchtolead.io/free
+```
+
+### Headline
+```
+50+ Apps, Zero Offers? This Fixes It.
+```
+
+### Call-to-action
+```
+Download
+```
+
+### Description
+```
+Free Impact Bullet Builder guide. Stop the apply-and-pray cycle. Rewrite your resume in 30 minutes.
+```
 
 ---
 
-**📝 PRIMARY TEXT — Version B (Comment CTA):**
-
-Engineers — I'm going to validate something you might be feeling right now:
-
-This is exhausting. I created a free guide called the Impact Bullet Builder that ends the cycle. It takes 30 minutes to apply to your entire resume.
-
-The endless applications. The hope. The rejection. The silence. Repeat.
-
-You did everything you were supposed to do. Got the degree. Did internships. Pulled all-nighters. And now you're stuck in a loop that feels like it has no exit.
-
-Here's the thing: it does have an exit. And it's simpler than you think.
-
-The problem isn't the market. It's not your experience. It's 14 bullet points on a piece of paper that don't communicate any measurable value.
-
-When every bullet says "Assisted with..." — you're invisible. When they say "Reduced defect rate by 23% by implementing automated test protocols" — you get calls.
-
-Karen was in this exact loop. Then she applied the formula: Google, SpaceX, Bridgestone.
-
-Sarah too. $106K at Ford.
-
-Comment "GUIDE" and I'll send it to you.
-
----
-
-**📝 PRIMARY TEXT — Version C (Empathy Hook):**
+#### Alternative Introductory Text — Version B (Empathy Hook)
 
 I know what it feels like to apply to 50+ engineering jobs and hear nothing back.
 
@@ -368,26 +347,65 @@ Sarah applied it. $106K at Ford.
 
 Free. No email drip. Just the guide.
 
-👉 launchtolead.io/free
-
----
-
-**📌 HEADLINE OPTIONS (pick one):**
-- A: "Engineers: Stop the Rejection Cycle"
-- B: "Free Guide: End the Apply-and-Pray Loop"
-- C: "50+ Apps, Zero Offers? This Fixes It."
+#### Alternative Headlines
+- "Engineers: Stop the Rejection Cycle"
+- "Free Guide: End the Apply-and-Pray Loop"
 
 ---
 ---
 
 # AD 05 — Wasted Degree
-**Source:** Meta Ad 20 (Status + Wasted Degree)
-**Graphic:** linkedin-ad-05.html
-**Angle:** Your $200K engineering degree is sitting in a drawer. Your resume is the bottleneck.
+**Source:** Meta Ad 20 | **Graphic:** linkedin-ad-05.html
+**Angle:** Your $200K engineering degree is sitting in a drawer. Resume is the bottleneck.
 
 ---
 
-**📝 PRIMARY TEXT — Version A (Direct):**
+### Introductory Text
+_Recommended version — paste directly into Campaign Manager:_
+
+Let's do the math on your engineering degree:
+
+→ 4+ years of your life
+→ $50K – $200K in tuition
+→ Thousands of hours studying, building, testing
+→ Current ROI: $0/month
+
+I built a free guide called the Impact Bullet Builder that turns that investment into job offers. 14 pages. 30 minutes to apply.
+
+The degree wasn't supposed to end here. You were supposed to graduate and have companies lining up. Instead, you're competing against 500 people for every opening and hearing nothing back.
+
+The problem? Your resume communicates duties instead of outcomes. "Collaborated with cross-functional teams" appears on every engineering resume in the country. It tells the recruiter absolutely nothing.
+
+The Impact Bullet Builder teaches a formula that rewrites every bullet into a specific, measurable accomplishment. It works on internships, class projects, research, and part-time work.
+
+Karen applied it. 4 offers — Google, SpaceX, Bridgestone.
+Sarah applied it. $106K at Ford.
+
+Your degree is worth something. Your resume just doesn't show it yet.
+
+### Destination URL
+```
+https://launchtolead.io/free
+```
+
+### Headline
+```
+$200K Degree. 0 Offers. The Fix Is Free.
+```
+
+### Call-to-action
+```
+Download
+```
+
+### Description
+```
+Free 14-page guide. Make your engineering degree pay off. Same framework used by engineers at Google, SpaceX, and Ford.
+```
+
+---
+
+#### Alternative Introductory Text — Version A (Direct Hook)
 
 Your engineering degree cost you 4+ years and up to $200K. And right now, it's sitting in a drawer.
 
@@ -411,87 +429,154 @@ Same framework. Same formula. It's yours for free.
 
 Your degree is worth something. Time to prove it.
 
-👉 Free download: launchtolead.io/free
-
----
-
-**📝 PRIMARY TEXT — Version B (Comment CTA):**
-
-Engineers — your degree cost 4+ years and $50K–$200K.
-
-I created a free guide called the Impact Bullet Builder that makes sure that investment pays off. It rewrites every bullet on your resume in 30 minutes.
-
-Here's the uncomfortable truth: nobody is hiring you because of your degree. They're hiring the person who can communicate what they accomplished with that degree.
-
-"Assisted with testing" doesn't prove you're worth $80K/year.
-"Reduced warranty claims by 31% by redesigning the thermal management system" does.
-
-The difference is a formula. And 95% of engineering graduates were never taught it.
-
-Your university taught you how to solve differential equations. Not how to sell your engineering skills on a resume. Career services handed you a template from 2015. That template is why you sound identical to every other applicant.
-
-Karen used this formula: Google, SpaceX, Bridgestone.
-Sarah used it: $106K at Ford.
-
-Free. 14 pages. Comment "GUIDE" and I'll send it.
-
----
-
-**📝 PRIMARY TEXT — Version C (Investment Angle):**
-
-Let's do the math on your engineering degree:
-
-→ 4+ years of your life
-→ $50K – $200K in tuition
-→ Thousands of hours studying, building, testing
-→ Current ROI: $0/month
-
-I built a free guide called the Impact Bullet Builder that turns that investment into job offers. 14 pages. 30 minutes to apply.
-
-The degree wasn't supposed to end here. You were supposed to graduate and have companies lining up. Instead, you're competing against 500 people for every opening and hearing nothing back.
-
-The problem? Your resume communicates duties instead of outcomes. "Collaborated with cross-functional teams" appears on every engineering resume in the country. It tells the recruiter absolutely nothing.
-
-The Impact Bullet Builder teaches a formula that rewrites every bullet into a specific, measurable accomplishment. It works on internships, class projects, research, and part-time work.
-
-Karen applied it. 4 offers — Google, SpaceX, Bridgestone.
-Sarah applied it. $106K at Ford.
-
-Your degree is worth something. Your resume just doesn't show it yet.
-
-👉 launchtolead.io/free
-
----
-
-**📌 HEADLINE OPTIONS (pick one):**
-- A: "Engineers: Make Your Degree Pay Off"
-- B: "Free Guide: Your $200K Degree Deserves Better"
-- C: "$200K Degree. 0 Offers. The Fix Is Free."
+#### Alternative Headlines
+- "Engineers: Make Your Degree Pay Off"
+- "Free Guide: Your $200K Degree Deserves Better"
 
 ---
 ---
 
-## Quick Reference: All 5 Ads at a Glance
+# AD 06 — Parents
+**Source:** Meta Ad 26 | **Graphic:** linkedin-ad-06.html
+**Angle:** Your kid did everything right — grades, internships, hard work. Nobody taught them how to get hired.
 
-| Ad | File | Source | Hook | Best Version | Recommended Headline |
-|---|---|---|---|---|---|
-| 01 | linkedin-ad-01.html | Meta Ad 02 | $6,700/mo financial bleed | Version C (Authority-Led) | B: "The Resume Fix Engineers at Google & Ford Used" |
-| 02 | linkedin-ad-02.html | Meta Ad 07 | Market getting harder, clock ticking | Version C (Data-Led) | C: "75% of Engineering Resumes Never Reach a Human" |
-| 03 | linkedin-ad-03.html | Meta Ad 11 | Friends hired, you ghosted | Version C (Before/After) | C: "Two Resumes. Same Experience. Different Results." |
-| 04 | linkedin-ad-04.html | Meta Ad 19 | Exhausting rejection cycle | Version A (Direct) | C: "50+ Apps, Zero Offers? This Fixes It." |
-| 05 | linkedin-ad-05.html | Meta Ad 20 | $200K degree sitting in drawer | Version C (Investment) | C: "$200K Degree. 0 Offers. The Fix Is Free." |
+---
+
+### Introductory Text
+_Recommended version — paste directly into Campaign Manager:_
+
+Is your kid an engineering grad with no job offers?
+
+You're watching them struggle and it's hard. They did everything right — got the grades, finished the degree, did internships, worked hard.
+
+I made a free guide called the Impact Bullet Builder that fixes the real problem. Share it with them or grab it below.
+
+Here's what's happening: universities teach engineering, not job searching. Career centers hand them a resume template and say "good luck." That's it.
+
+The gap between "educated" and "employed" isn't their fault. Nobody taught them how to communicate their value on a resume. Generic bullet points that say nothing. Hiring managers spend 6 seconds before moving on.
+
+Meanwhile, you're watching them lose confidence. Get more frustrated. Start to doubt themselves.
+
+Karen's parents watched her struggle too. She used the Impact Bullet Builder to rewrite her resume. Then: 4 offers in 90 days — including Google.
+
+Sarah's parents saw the same thing. Then: $106K at Ford.
+
+Same framework. Same formula. It's free.
+
+Share this with them, or click below to get the free guide.
+
+### Destination URL
+```
+https://launchtolead.io/free
+```
+
+### Headline
+```
+Parents: Free Guide to Help Your Eng Grad Get Hired
+```
+
+### Call-to-action
+```
+Download
+```
+
+### Description
+```
+Free Impact Bullet Builder guide. Help your kid turn their engineering degree into job offers. 14 pages, 30 minutes to apply.
+```
+
+---
+---
+
+# AD 07 — Grandparents
+**Source:** Meta Ad 31 | **Graphic:** linkedin-ad-07.html
+**Angle:** You bragged about their degree. Now they're stuck. The rules have changed.
+
+---
+
+### Introductory Text
+_Recommended version — paste directly into Campaign Manager:_
+
+Is your grandkid an engineering grad with no job offers?
+
+You watched them grow up. Cheered at graduations. Bragged to friends about their big engineering degree. And now they're stuck.
+
+I made a free guide called the Impact Bullet Builder that fixes the real problem. Share it with them or grab it below.
+
+They're smart. They worked hard. They did everything right. But the job market isn't what it used to be.
+
+When you were their age, a degree meant something. Companies recruited on campus. A firm handshake went a long way. Today? They're competing against thousands online. AI is changing everything.
+
+Your advice comes from a good place, but the rules are different now. Here's how you CAN help: point them toward a free guide that fixes the real problem — their resume.
+
+Nobody taught them how to communicate their value. Generic bullet points that say nothing. Hiring managers spend 6 seconds before moving on.
+
+Karen's grandparents watched her struggle too. She used the Impact Bullet Builder. Then: 4 offers in 90 days — including Google.
+
+Sarah was struggling too. Then: $106K at Ford.
+
+Same framework. Same formula. It's free.
+
+Click below to get the free guide, then share it with your grandkid or their parents.
+
+### Destination URL
+```
+https://launchtolead.io/free
+```
+
+### Headline
+```
+Grandparents: Free Guide to Help Your Eng Grad Get Hired
+```
+
+### Call-to-action
+```
+Download
+```
+
+### Description
+```
+Free Impact Bullet Builder guide. Share it with your grandkid. Same framework behind offers at Google, SpaceX, and Ford.
+```
+
+---
+---
+
+## Quick Reference: All 7 Ads
+
+| Ad | Graphic | Angle | Recommended Headline | Target |
+|---|---|---|---|---|
+| 01 | linkedin-ad-01.html | $6,700/mo financial bleed | The Resume Fix Engineers at Google & Ford Used | Grads |
+| 02 | linkedin-ad-02.html | Market harder, 75% auto-rejected | 75% of Engineering Resumes Never Reach a Human | Grads |
+| 03 | linkedin-ad-03.html | Friends hired, you ghosted | Two Resumes. Same Experience. Different Results. | Grads |
+| 04 | linkedin-ad-04.html | Exhausting rejection cycle | 50+ Apps, Zero Offers? This Fixes It. | Grads |
+| 05 | linkedin-ad-05.html | $200K degree sitting in drawer | $200K Degree. 0 Offers. The Fix Is Free. | Grads |
+| 06 | linkedin-ad-06.html | Parent watching kid struggle | Parents: Free Guide to Help Your Eng Grad Get Hired | Parents |
+| 07 | linkedin-ad-07.html | Grandparent, rules changed | Grandparents: Free Guide to Help Your Eng Grad Get Hired | Family |
+
+## All Ads — Shared Fields
+These are the same for every ad:
+- **Destination URL:** `https://launchtolead.io/free`
+- **Call-to-action:** Download
+- **Media:** Screenshot the corresponding HTML graphic file at 1080×1080
 
 ## Testing Plan
-- Week 1: Run Ads 01, 03, 04 (strongest angles) — use Version A (Direct) for each
-- Week 2: Add Version C for winning ads as A/B test
-- Week 3: Introduce Ads 02 & 05, kill any underperformers
-- Always test headline options — LinkedIn lets you run 5 headlines per ad
+- **Week 1:** Run Ads 01, 03, 04 (strongest direct-to-grad angles)
+- **Week 2:** A/B test — duplicate winners and swap Introductory Text with alternative version
+- **Week 3:** Add Ads 02, 05. Add Ads 06, 07 in a separate ad set targeting parents (age 45-65)
+- Kill any ad with CTR below 0.5% after 1,000 impressions
+
+## Personalize Text Tips
+LinkedIn lets you customize introductory text by audience segment. If you set up audience segments by engineering discipline, swap the opening line:
+- Mechanical: "Mechanical engineering grad with 50+ rejections?"
+- Electrical: "EE grad and no callbacks?"
+- Civil: "Civil engineering grad stuck in the job search?"
+- Computer/Software: "CS grad applying everywhere and hearing nothing?"
 
 ## Notes
-- All graphics use market_trends style (dark charcoal, green/teal accents, NO blue)
-- All link to launchtolead.io/free
-- Impact Bullet Builder mentioned in first 3 sentences of EVERY version
-- Profanity removed from all copy (LinkedIn flags it)
-- Parent/grandparent ads excluded (wrong audience for LinkedIn)
-- LinkedIn recommended image: 1080×1080 (square) — same as Meta
-- CTA: "Learn More" button on all ads
+- All graphics: dark charcoal backgrounds, green/teal accents, NO blue
+- All destination URLs: https://launchtolead.io/free
+- Impact Bullet Builder mentioned in first 3 sentences of every version
+- No profanity (LinkedIn flags it)
+- No emojis in ad copy (looks AI-generated)
+- Parent/grandparent ads (06, 07) should target age 45-65 in a separate ad set

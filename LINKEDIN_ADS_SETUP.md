@@ -34,14 +34,15 @@ LinkedIn's tracking system has two parts, just like Meta:
 ```
 LinkedIn Ad Click
     → launchtolead.io/free (Impact Bullet Equation landing page)
-        → User fills out form (name, email, phone, actively applying?)
-            → "Yes" → /landing/offer.html  (qualified lead — CONVERSION)
-            → "No"  → /landing/thank-you.html (lead magnet only — CONVERSION)
+        → User fills out form (first name, email)
+            → /landing/thank-you.html (confirmation + CTA — LEAD CONVERSION)
+                → /landing/offer.html (full sales page + qualifying form)
+                    → /landing/booking-confirmed.html (Career Launch Call booked — BOOKING CONVERSION)
 ```
 
 You want to track TWO conversion events:
-1. **Lead** — anyone who submits the form (both paths)
-2. **Qualified Lead** — the subset that answers "yes" and hits offer.html
+1. **Lead** — anyone who submits the lead magnet form (fires on thank-you page load)
+2. **Booking** — anyone who books a Career Launch Call (fires on booking-confirmed page load)
 
 ---
 
@@ -126,7 +127,7 @@ You need two conversions:
 
 ### Conversion 1: Lead (Form Submitted)
 
-This fires for ANYONE who submits the lead magnet form — both qualified and unqualified.
+This fires when someone submits the lead magnet form and lands on the thank-you page.
 
 1. In Campaign Manager, go to **"Analyze"** → **"Conversion tracking"**
 2. Click **"Create Conversion"**
@@ -140,32 +141,19 @@ This fires for ANYONE who submits the lead magnet form — both qualified and un
    - LinkedIn will generate an event-specific pixel with a `conversion_id`
    - **Copy the `conversion_id` number** — it looks like: `19876543`
    - This is already integrated in the `linkedin-insight-tag.js` — just replace the placeholder
-5. Alternatively, choose **"Use a page load trigger"** and enter the URLs:
+5. Alternatively, choose **"Use a page load trigger"** and enter the URL:
    - URL contains: `/landing/thank-you.html`
-   - Add second URL: also contains `/landing/offer.html`
    - This method is simpler (no code change needed) but slightly less precise
 
 **Recommended: Use the event-specific pixel** — it fires at the exact moment of form submission, matching how we fire the Meta Lead pixel. The code is already wired up in `linkedin-insight-tag.js`.
 
-### Conversion 2: Qualified Lead (Optional but valuable)
-
-This fires ONLY for people who answer "yes" to actively applying and land on the offer page.
-
-1. Create another conversion:
-   - **Name:** `Qualified Lead - Actively Applying`
-   - **Conversion type:** Select **"Lead"**
-   - **Value:** `50` (higher value — these are your sales-qualified leads)
-2. Under **"Define your conversion"**, choose **"Use a page load trigger"**:
-   - URL contains: `/landing/offer.html`
-3. Or use event-specific pixel — copy the conversion_id and add it to the script
-
-### Conversion 3 (Future): Strategy Call Booked
+### Conversion 2: Career Launch Call Booked
 
 When someone books a coaching call:
 
 1. Create conversion:
-   - **Name:** `Strategy Call Booked`
-   - **Conversion type:** Select **"Schedule"**
+   - **Name:** `Career Launch Call Booked`
+   - **Conversion type:** Select **"Schedule"****
    - **Value:** `200`
 2. Define: URL contains `/landing/booking-confirmed.html`
 
@@ -358,7 +346,7 @@ Consider adding it when:
 | `social.html` | Added `<script src="linkedin-insight-tag.js">` |
 | `landing/impact-bullet-equation.html` | Added tag + conversion event on form submit |
 | `landing/thank-you.html` | Added tag + conversion event on page load |
-| `landing/offer.html` | Added tag + conversion events (Lead + Qualified Lead) on page load |
+| `landing/offer.html` | Added tag (page view tracking only — no conversion event) |
 | `landing/booking-confirmed.html` | Added tag + booking conversion event |
 
 ### Action Required From You

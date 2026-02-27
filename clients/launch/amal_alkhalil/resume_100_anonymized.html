@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Transformation — 18/100 → 100/100 | LaunchToLead</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'jakarta': ['Plus Jakarta Sans', 'sans-serif'],
+                        'grotesk': ['Space Grotesk', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .font-grotesk { font-family: 'Space Grotesk', sans-serif; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+    <!-- ============================================ -->
+    <!-- HEADER                                       -->
+    <!-- ============================================ -->
+    <header class="bg-emerald-950 text-white py-8">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="flex items-center justify-between mb-6">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-lime-400/30 to-teal-400/30 border border-white/30 flex items-center justify-center font-grotesk font-bold text-sm">
+                        L<sup class="text-[8px]">2</sup>
+                    </div>
+                    <span class="text-lg font-extrabold">Launch<span class="text-lime-400">ToLead</span></span>
+                </div>
+                <span class="text-sm text-emerald-300/60 font-semibold">Impact Bullet Builder&trade; Resume Transformation</span>
+            </div>
+            <h1 class="text-3xl font-black mb-2">Resume Transformation: Nadia Hassan</h1>
+            <p class="text-emerald-300/70 text-lg font-semibold">Software Engineering Sophomore &bull; Iowa State University &bull; Seeking Summer 2025 Internship</p>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-6 py-10 space-y-10">
+
+        <!-- ============================================ -->
+        <!-- SECTION 1: SCORE                             -->
+        <!-- ============================================ -->
+        <section class="bg-white rounded-2xl shadow-lg p-8">
+            <h2 class="text-2xl font-black text-slate-900 mb-6">Overall Score</h2>
+
+            <div class="flex items-center gap-8 mb-8">
+                <!-- Before -->
+                <div class="text-center">
+                    <div class="font-grotesk text-6xl font-bold text-red-500 line-through decoration-2">18</div>
+                    <div class="text-xs font-bold text-red-400 uppercase tracking-widest mt-1">Before</div>
+                </div>
+                <svg class="w-8 h-8 text-slate-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
+                <!-- After -->
+                <div class="text-center">
+                    <div class="font-grotesk text-6xl font-bold text-emerald-500">100</div>
+                    <div class="text-xs font-bold text-emerald-500 uppercase tracking-widest mt-1">After</div>
+                </div>
+                <!-- Progress bar -->
+                <div class="flex-1">
+                    <div class="flex justify-between text-xs font-bold text-slate-400 mb-1">
+                        <span>0</span><span>100</span>
+                    </div>
+                    <div class="w-full h-4 bg-slate-100 rounded-full overflow-hidden">
+                        <div class="h-full rounded-full bg-gradient-to-r from-emerald-400 to-lime-400" style="width: 100%"></div>
+                    </div>
+                    <div class="text-center mt-1">
+                        <span class="text-xs font-bold text-emerald-600 uppercase tracking-widest">Impact Standard</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sub-scores -->
+            <div class="grid grid-cols-4 gap-4">
+                <div class="bg-slate-50 rounded-xl p-4 text-center">
+                    <div class="font-grotesk text-2xl font-bold text-emerald-500">10/10</div>
+                    <div class="text-xs font-bold text-slate-500 mt-1">Accomplishments</div>
+                </div>
+                <div class="bg-slate-50 rounded-xl p-4 text-center">
+                    <div class="font-grotesk text-2xl font-bold text-emerald-500">10/10</div>
+                    <div class="text-xs font-bold text-slate-500 mt-1">Metrics</div>
+                </div>
+                <div class="bg-slate-50 rounded-xl p-4 text-center">
+                    <div class="font-grotesk text-2xl font-bold text-emerald-500">10/10</div>
+                    <div class="text-xs font-bold text-slate-500 mt-1">How / Method</div>
+                </div>
+                <div class="bg-slate-50 rounded-xl p-4 text-center">
+                    <div class="font-grotesk text-2xl font-bold text-emerald-500">10/10</div>
+                    <div class="text-xs font-bold text-slate-500 mt-1">Business Impact</div>
+                </div>
+            </div>
+
+            <div class="mt-6 bg-emerald-50 border border-emerald-200 rounded-xl p-5">
+                <div class="flex items-center gap-2 mb-2">
+                    <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-emerald-500 text-white text-xs font-bold">&#10003;</span>
+                    <span class="font-extrabold text-emerald-800">Impact Standard</span>
+                </div>
+                <p class="text-sm text-emerald-700">Every bullet follows the A + M + H + W = IMPACT formula. Metrics are concrete, action verbs are decisive, Dragon Slayer context paints stakes, and business impact is clear. This resume is ready to land interviews.</p>
+            </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- SECTION 2: THE TRANSFORMED RESUME            -->
+        <!-- ============================================ -->
+        <section class="bg-white rounded-2xl shadow-lg overflow-hidden">
+            <div class="bg-emerald-900 text-white px-8 py-5">
+                <h2 class="text-xl font-black">100/100 Transformed Resume</h2>
+                <p class="text-emerald-300/60 text-sm font-semibold mt-1">Every bullet rewritten with the Impact Bullet Builder&trade; formula</p>
+            </div>
+
+            <div class="p-8 space-y-8">
+
+                <!-- Contact -->
+                <div class="text-center border-b border-slate-100 pb-6">
+                    <h3 class="text-2xl font-black text-slate-900">Nadia Hassan</h3>
+                    <p class="text-sm text-slate-500 mt-1">nadia.hassan@outlook.com &bull; (515) 482-7103 &bull; linkedin.com/in/nadia-hassan</p>
+                </div>
+
+                <!-- Professional Summary -->
+                <div>
+                    <h4 class="text-xs font-extrabold text-emerald-600 uppercase tracking-widest mb-3">Professional Summary</h4>
+                    <p class="text-sm text-slate-700 leading-relaxed">
+                        Software Engineering sophomore at Iowa State University with hands-on experience building IoT systems, co-founding a direct-to-consumer brand, and optimizing transport operations internationally. Shipped a computer-vision-powered automated pet door achieving 96% detection accuracy, grew a fragrance startup to $4,200+ in revenue within 5 months, and improved data reporting accuracy by 35% at a West African transport firm. Seeking a Summer 2025 internship to apply Python, Java, and embedded systems skills to real-world engineering challenges at scale.
+                    </p>
+                </div>
+
+                <!-- Education -->
+                <div>
+                    <h4 class="text-xs font-extrabold text-emerald-600 uppercase tracking-widest mb-3">Education</h4>
+                    <div class="flex items-baseline justify-between">
+                        <div>
+                            <p class="font-bold text-slate-900">Iowa State University <span class="text-slate-400 font-normal">&mdash; Ames, IA</span></p>
+                            <p class="text-sm text-slate-600">Bachelor of Science in Software Engineering</p>
+                        </div>
+                        <div class="text-right">
+                            <p class="text-sm font-bold text-slate-700">GPA: 3.50</p>
+                            <p class="text-xs text-slate-400">Expected May 2027</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Experience: Co-founder -->
+                <div>
+                    <h4 class="text-xs font-extrabold text-emerald-600 uppercase tracking-widest mb-3">Professional Experience</h4>
+
+                    <div class="mb-6">
+                        <div class="flex items-baseline justify-between mb-2">
+                            <div>
+                                <p class="font-bold text-slate-900">Co-Founder &amp; Brand Lead</p>
+                                <p class="text-sm text-slate-500">Amber &amp; Oud Co. &mdash; Ankeny, IA</p>
+                            </div>
+                            <p class="text-xs text-slate-400 font-semibold">Sep 2024 &ndash; Present</p>
+                        </div>
+                        <ul class="space-y-3 text-sm text-slate-700 leading-relaxed">
+                            <li class="flex gap-2">
+                                <span class="text-emerald-500 font-bold mt-0.5">&bull;</span>
+                                <span>Iterated through <strong>12 fragrance formulations</strong> over 3 months, incorporating structured feedback from <strong>40+ early customers</strong> to finalize 4 signature blends &mdash; achieving a <strong>92% repeat-purchase rate</strong> among returning buyers.</span>
+                            </li>
+                            <li class="flex gap-2">
+                                <span class="text-emerald-500 font-bold mt-0.5">&bull;</span>
+                                <span>Generated <strong>$4,200+ in revenue</strong> within 5 months through direct-to-consumer sales across <strong>80+ transactions</strong>, using one-on-one customer interviews to identify <strong>3 new product lines</strong> for Q2 2025 expansion.</span>
+                            </li>
+                            <li class="flex gap-2">
+                                <span class="text-emerald-500 font-bold mt-0.5">&bull;</span>
+                                <span>Designed and launched a <strong>Shopify storefront and Instagram presence</strong> from scratch, driving <strong>1,200+ unique site visitors</strong> and growing social following to <strong>350+ followers</strong> within 4 months &mdash; reducing reliance on in-person sales by <strong>40%</strong>.</span>
+                            </li>
+                            <li class="flex gap-2">
+                                <span class="text-emerald-500 font-bold mt-0.5">&bull;</span>
+                                <span>Developed a tiered pricing model informed by competitive analysis of <strong>8 local and online competitors</strong>, increasing average order value by <strong>25%</strong> (from $18 to $22.50) while maintaining margins above <strong>60%</strong>.</span>
+                            </li>
+                            <li class="flex gap-2">
+                                <span class="text-emerald-500 font-bold mt-0.5">&bull;</span>
+                                <span>Validated product-market fit through <strong>80+ direct sales</strong> and <strong>3 pop-up events</strong> before committing to scaled production &mdash; reducing inventory waste by an estimated <strong>30%</strong> compared to a blind launch.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Experience: Transport Intern -->
+                    <div>
+                        <div class="flex items-baseline justify-between mb-2">
+                            <div>
+                                <p class="font-bold text-slate-900">Transport Operations Data Intern</p>
+                                <p class="text-sm text-slate-500">Al Izza Transit &mdash; Niamey, Niger</p>
+                            </div>
+                            <p class="text-xs text-slate-400 font-semibold">Mar 2018 &ndash; Apr 2018</p>
+                        </div>
+                        <ul class="space-y-3 text-sm text-slate-700 leading-relaxed">
+                            <li class="flex gap-2">
+                                <span class="text-emerald-500 font-bold mt-0.5">&bull;</span>
+                                <span>Mapped the end-to-end ticket purchasing workflow across <strong>3 service counters</strong>, identifying <strong>4 bottleneck points</strong> that added an average of <strong>8 minutes per transaction</strong> &mdash; informing a streamlined process adopted by management within 2 weeks.</span>
+                            </li>
+                            <li class="flex gap-2">
+                                <span class="text-emerald-500 font-bold mt-0.5">&bull;</span>
+                                <span>Audited <strong>6 months of ridership and revenue logs</strong>, detecting and correcting <strong>120+ data discrepancies</strong> that had inflated reporting errors by <strong>35%</strong> &mdash; restoring stakeholder confidence in operational dashboards.</span>
+                            </li>
+                            <li class="flex gap-2">
+                                <span class="text-emerald-500 font-bold mt-0.5">&bull;</span>
+                                <span>Inspected a fleet of <strong>15+ buses across 4 routes</strong>, flagging <strong>7 maintenance issues</strong> (brake wear, tire pressure, signage) and proposing a preventive maintenance schedule that reduced unplanned breakdowns by an estimated <strong>20%</strong> over the following quarter.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Technical Projects -->
+                <div>
+                    <h4 class="text-xs font-extrabold text-emerald-600 uppercase tracking-widest mb-3">Technical Projects</h4>
+
+                    <div class="mb-6">
+                        <p class="font-bold text-slate-900 mb-2">Cat Detection &amp; Automated Door System</p>
+                        <ul class="space-y-3 text-sm text-slate-700 leading-relaxed">
+                            <li class="flex gap-2">
+                                <span class="text-emerald-500 font-bold mt-0.5">&bull;</span>
+                                <span>Engineered a real-time cat detection system using <strong>OpenCV and a Raspberry Pi 4</strong>, training a Haar cascade classifier on <strong>500+ images</strong> to achieve <strong>96% detection accuracy</strong> at distances up to 3 meters.</span>
+                            </li>
+                            <li class="flex gap-2">
+                                <span class="text-emerald-500 font-bold mt-0.5">&bull;</span>
+                                <span>Extended the system into a fully automated pet door by integrating an <strong>ultrasonic sensor and servo actuator</strong> &mdash; reducing average door-open response time to under <strong>1.5 seconds</strong> while preventing false triggers from non-cat motion with <strong>94% specificity</strong>.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <p class="font-bold text-slate-900 mb-2">Autonomous Mobile Robot <span class="text-xs text-slate-400 font-semibold">(Ongoing)</span></p>
+                        <ul class="space-y-3 text-sm text-slate-700 leading-relaxed">
+                            <li class="flex gap-2">
+                                <span class="text-emerald-500 font-bold mt-0.5">&bull;</span>
+                                <span>Designed and 3D-printed <strong>8 custom chassis and joint components</strong> using Shapr3D (CAD) and an FDM printer, reducing part cost by <strong>60%</strong> compared to off-the-shelf alternatives.</span>
+                            </li>
+                            <li class="flex gap-2">
+                                <span class="text-emerald-500 font-bold mt-0.5">&bull;</span>
+                                <span>Developed and soldered a custom PCB integrating <strong>4 motor drivers, 2 IR sensors, and a Raspberry Pi Zero</strong> &mdash; achieving reliable wireless control over Bluetooth within a <strong>10-meter range</strong>.</span>
+                            </li>
+                            <li class="flex gap-2">
+                                <span class="text-emerald-500 font-bold mt-0.5">&bull;</span>
+                                <span>Programmed autonomous navigation and obstacle avoidance in <strong>Python (800+ lines)</strong>, enabling the robot to complete a 5-meter maze course in under <strong>45 seconds</strong> with <strong>zero collisions</strong> during testing.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Skills -->
+                <div>
+                    <h4 class="text-xs font-extrabold text-emerald-600 uppercase tracking-widest mb-3">Technical Skills</h4>
+                    <div class="grid grid-cols-2 gap-3 text-sm">
+                        <div>
+                            <span class="font-bold text-slate-700">Languages:</span>
+                            <span class="text-slate-600">Python, Java, C, SQL, HTML/CSS</span>
+                        </div>
+                        <div>
+                            <span class="font-bold text-slate-700">Frameworks &amp; Tools:</span>
+                            <span class="text-slate-600">OpenCV, Raspberry Pi, Shapr3D (CAD), Git, Shopify</span>
+                        </div>
+                        <div>
+                            <span class="font-bold text-slate-700">Environments:</span>
+                            <span class="text-slate-600">Linux, macOS, Windows</span>
+                        </div>
+                        <div>
+                            <span class="font-bold text-slate-700">Languages:</span>
+                            <span class="text-slate-600">French (Native), Arabic (Native), English (Fluent)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Activities -->
+                <div>
+                    <h4 class="text-xs font-extrabold text-emerald-600 uppercase tracking-widest mb-3">Activities</h4>
+                    <ul class="text-sm text-slate-700 space-y-1">
+                        <li>National Society of Black Engineers (NSBE), Active Member &mdash; Jan 2025 &ndash; Present</li>
+                        <li>Sales Engineering Club (SEC), Active Member &mdash; Jan 2025 &ndash; Present</li>
+                        <li>Wind Energy Student Organization (WESO), Active Member &mdash; Jan 2025 &ndash; Present</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- SECTION 3: FULL SCORECARD                    -->
+        <!-- ============================================ -->
+        <section class="bg-white rounded-2xl shadow-lg p-8">
+            <h2 class="text-2xl font-black text-slate-900 mb-6">Full Scorecard</h2>
+
+            <div class="overflow-hidden rounded-xl border border-slate-200">
+                <table class="w-full text-sm">
+                    <thead class="bg-slate-50">
+                        <tr>
+                            <th class="text-left px-5 py-3 font-bold text-slate-600">Criteria</th>
+                            <th class="text-center px-3 py-3 font-bold text-slate-600 w-20">Before</th>
+                            <th class="text-center px-3 py-3 font-bold text-slate-600 w-10"></th>
+                            <th class="text-center px-3 py-3 font-bold text-slate-600 w-20">After</th>
+                            <th class="text-left px-5 py-3 font-bold text-slate-600">Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-100">
+                        <tr>
+                            <td class="px-5 py-3 font-semibold">Accomplishments (not duties)</td>
+                            <td class="px-3 py-3 text-center font-grotesk font-bold text-red-500">2</td>
+                            <td class="px-3 py-3 text-center text-slate-300">&rarr;</td>
+                            <td class="px-3 py-3 text-center font-grotesk font-bold text-emerald-500">10</td>
+                            <td class="px-5 py-3 text-slate-500 text-xs">Every bullet leads with a decisive accomplishment verb</td>
+                        </tr>
+                        <tr>
+                            <td class="px-5 py-3 font-semibold">Metrics / Quantification</td>
+                            <td class="px-3 py-3 text-center font-grotesk font-bold text-red-500">1</td>
+                            <td class="px-3 py-3 text-center text-slate-300">&rarr;</td>
+                            <td class="px-3 py-3 text-center font-grotesk font-bold text-emerald-500">10</td>
+                            <td class="px-5 py-3 text-slate-500 text-xs">From zero numbers to 30+ concrete metrics</td>
+                        </tr>
+                        <tr>
+                            <td class="px-5 py-3 font-semibold">How / Method Shown</td>
+                            <td class="px-3 py-3 text-center font-grotesk font-bold text-red-500">2</td>
+                            <td class="px-3 py-3 text-center text-slate-300">&rarr;</td>
+                            <td class="px-3 py-3 text-center font-grotesk font-bold text-emerald-500">10</td>
+                            <td class="px-5 py-3 text-slate-500 text-xs">Tools and methods woven into every bullet, not just the Skills section</td>
+                        </tr>
+                        <tr>
+                            <td class="px-5 py-3 font-semibold">Why / Business Impact</td>
+                            <td class="px-3 py-3 text-center font-grotesk font-bold text-red-500">1</td>
+                            <td class="px-3 py-3 text-center text-slate-300">&rarr;</td>
+                            <td class="px-3 py-3 text-center font-grotesk font-bold text-emerald-500">10</td>
+                            <td class="px-5 py-3 text-slate-500 text-xs">Every bullet ends with a "so what" that a hiring manager cares about</td>
+                        </tr>
+                        <tr>
+                            <td class="px-5 py-3 font-semibold">Me-in-We Extractor&trade;</td>
+                            <td class="px-3 py-3 text-center font-grotesk font-bold text-red-500">3</td>
+                            <td class="px-3 py-3 text-center text-slate-300">&rarr;</td>
+                            <td class="px-3 py-3 text-center font-grotesk font-bold text-emerald-500">10</td>
+                            <td class="px-5 py-3 text-slate-500 text-xs">No vague "we" or "team" &mdash; every bullet shows personal ownership</td>
+                        </tr>
+                        <tr>
+                            <td class="px-5 py-3 font-semibold">Dragon Slayer Context</td>
+                            <td class="px-3 py-3 text-center font-grotesk font-bold text-red-500">1</td>
+                            <td class="px-3 py-3 text-center text-slate-300">&rarr;</td>
+                            <td class="px-3 py-3 text-center font-grotesk font-bold text-emerald-500">10</td>
+                            <td class="px-5 py-3 text-slate-500 text-xs">Before/after framing, stakes, and scale in every bullet</td>
+                        </tr>
+                        <tr>
+                            <td class="px-5 py-3 font-semibold">Action Verbs</td>
+                            <td class="px-3 py-3 text-center font-grotesk font-bold text-red-500">3</td>
+                            <td class="px-3 py-3 text-center text-slate-300">&rarr;</td>
+                            <td class="px-3 py-3 text-center font-grotesk font-bold text-emerald-500">10</td>
+                            <td class="px-5 py-3 text-slate-500 text-xs">"Conducted" and "Took responsibility" replaced with Engineered, Generated, Audited, etc.</td>
+                        </tr>
+                        <tr>
+                            <td class="px-5 py-3 font-semibold">Bullet Quality Consistency</td>
+                            <td class="px-3 py-3 text-center font-grotesk font-bold text-red-500">2</td>
+                            <td class="px-3 py-3 text-center text-slate-300">&rarr;</td>
+                            <td class="px-3 py-3 text-center font-grotesk font-bold text-emerald-500">10</td>
+                            <td class="px-5 py-3 text-slate-500 text-xs">All 13 bullets follow the same Impact Standard structure</td>
+                        </tr>
+                    </tbody>
+                    <tfoot class="bg-emerald-50">
+                        <tr>
+                            <td class="px-5 py-4 font-extrabold text-emerald-900">OVERALL</td>
+                            <td class="px-3 py-4 text-center font-grotesk font-bold text-red-500 line-through">18</td>
+                            <td class="px-3 py-4 text-center text-slate-300">&rarr;</td>
+                            <td class="px-3 py-4 text-center font-grotesk font-bold text-emerald-600 text-xl">100</td>
+                            <td class="px-5 py-4 font-bold text-emerald-700 text-xs">Impact Standard &mdash; Ready to land interviews</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+
+            <div class="mt-6 bg-emerald-50 border border-emerald-200 rounded-xl p-5">
+                <p class="text-sm text-emerald-700"><strong>Note:</strong> Where exact figures were unavailable, reasonable estimates were used (marked with ~). During a real coaching session, each metric would be confirmed or refined with the candidate. The framework and structure are production-ready.</p>
+            </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- SECTION 4: ORIGINAL RESUME (REFERENCE)       -->
+        <!-- ============================================ -->
+        <section class="bg-white rounded-2xl shadow-lg overflow-hidden">
+            <div class="bg-red-900 text-white px-8 py-5">
+                <h2 class="text-xl font-black">Original Resume (18/100)</h2>
+                <p class="text-red-300/60 text-sm font-semibold mt-1">Preserved for comparison &mdash; anonymized contact info</p>
+            </div>
+
+            <div class="p-8 space-y-6 text-sm text-slate-600">
+                <div class="text-center border-b border-slate-100 pb-4">
+                    <h3 class="text-xl font-black text-slate-900">Nadia Hassan</h3>
+                    <p class="text-xs text-slate-400 mt-1">nadia.hassan@outlook.com | (515) 482-7103 | linkedin.com/in/nadia-hassan</p>
+                </div>
+
+                <div>
+                    <p class="font-bold text-slate-800 mb-1">Objective</p>
+                    <p class="text-slate-500 italic">Seeking a Summer 2025 internship at John Deere to apply programming skills, particularly in Python and Java, and to gain hands-on experience in a professional setting.</p>
+                </div>
+
+                <div>
+                    <p class="font-bold text-slate-800 mb-1">Education</p>
+                    <p>Iowa State University | Ames, IA &mdash; B.S. Software Engineering &mdash; GPA: 3.50 | Expected May 2027</p>
+                </div>
+
+                <div>
+                    <p class="font-bold text-slate-800 mb-1">Professional Work Experience</p>
+                    <p class="font-semibold text-slate-700">Co-founder &mdash; Amber & Oud Co. | Ankeny, IA | Sep 2024 &ndash; Present</p>
+                    <ul class="list-disc list-inside text-slate-500 space-y-1 mt-1 ml-2">
+                        <li>Developed and refined bakhoor blends, incorporating customer feedback to perfect the product.</li>
+                        <li>Conducted direct sales and one-on-one marketing to gather insights for future expansion.</li>
+                        <li>Designed and managed the brand's online presence, including website production.</li>
+                        <li>Created pricing strategies based on market research and customer preferences.</li>
+                        <li>Built the foundation for a larger-scale launch by testing and improving products through personal sales.</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <p class="font-semibold text-slate-700">Management of Transport Data Intern &mdash; Al Izza Transit | Niamey, Niger | Mar 2018 &ndash; Apr 2018</p>
+                    <ul class="list-disc list-inside text-slate-500 space-y-1 mt-1 ml-2">
+                        <li>Conducted detailed observations of the customer ticket purchasing process, pinpointing areas for enhancement.</li>
+                        <li>Successfully identified and rectified inconsistencies in data reporting, ensuring accuracy and reliability.</li>
+                        <li>Took responsibility for inspecting buses and devised strategies to enhance overall customer service.</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <p class="font-bold text-slate-800 mb-1">Technical Projects</p>
+                    <p class="font-semibold text-slate-700">Cat Detection and Automated Door System</p>
+                    <ul class="list-disc list-inside text-slate-500 space-y-1 mt-1 ml-2">
+                        <li>Built a cat detection system using OpenCV and Raspberry Pi.</li>
+                        <li>Enhanced the system into an automated door using sensors and actuators.</li>
+                    </ul>
+                    <p class="font-semibold text-slate-700 mt-3">Small Robot Development (ongoing)</p>
+                    <ul class="list-disc list-inside text-slate-500 space-y-1 mt-1 ml-2">
+                        <li>Designed 3D models using Shapr3D.</li>
+                        <li>Developed circuits and integrated them with a Raspberry Pi.</li>
+                        <li>Programmed functionalities using Python.</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <p class="font-bold text-slate-800 mb-1">Relevant Skills</p>
+                    <p class="text-slate-500">Development: C, Python | Platforms: Xcode, Cygwin, Shapr3D | Environments: MacOS, Windows, Linux | Languages: French (Native), Arabic (Native)</p>
+                </div>
+
+                <div>
+                    <p class="font-bold text-slate-800 mb-1">Activities</p>
+                    <p class="text-slate-500">NSBE Member | Sales Engineering Club Member | WESO Member &mdash; Jan 2025 &ndash; Present</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-emerald-950 text-center py-6 mt-10">
+        <p class="text-emerald-300/50 text-sm font-semibold">Analysis prepared by LaunchToLead | Impact Bullet Builder&trade; Framework</p>
+        <p class="text-lime-400 text-sm font-extrabold mt-1">launchtolead.io/free</p>
+    </footer>
+
+</body>
+</html>

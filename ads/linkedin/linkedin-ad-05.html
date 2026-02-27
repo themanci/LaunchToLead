@@ -3,168 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LinkedIn Ad 05 — Wasted Degree</title>
+    <title>LinkedIn Ad 05 — Status + Wasted Degree</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background: #0c0c14; min-height: 100vh; display: flex; flex-direction: column; align-items: center; padding: 40px 20px; }
-        .graphic { width: 1080px; height: 1080px; background: linear-gradient(160deg, #0a0e1a 0%, #131a2e 40%, #0f1623 70%, #0a0e1a 100%); position: relative; overflow: hidden; flex-shrink: 0; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background: #0a0a0a; width: 1080px; height: 1080px; overflow: hidden; display: flex; justify-content: center; align-items: center; }
 
-        .bg-orb-1 { position: absolute; width: 550px; height: 550px; top: -100px; left: 50%; transform: translateX(-50%); background: radial-gradient(circle, rgba(139,92,246,0.1) 0%, transparent 65%); filter: blur(60px); }
-        .bg-orb-2 { position: absolute; width: 450px; height: 450px; bottom: -100px; left: -80px; background: radial-gradient(circle, rgba(20,184,166,0.1) 0%, transparent 65%); filter: blur(70px); }
-        .bg-orb-3 { position: absolute; width: 350px; height: 350px; top: 55%; right: -60px; background: radial-gradient(circle, rgba(139,92,246,0.06) 0%, transparent 60%); filter: blur(50px); }
-        .bg-dots { position: absolute; inset: 0; background-image: radial-gradient(rgba(255,255,255,0.04) 1px, transparent 1px); background-size: 24px 24px; z-index: 1; }
-        .bg-mesh { position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,0.012) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.012) 1px, transparent 1px); background-size: 80px 80px; z-index: 1; }
-        .bg-line-1 { position: absolute; top: 320px; left: -50px; width: 400px; height: 1.5px; background: linear-gradient(90deg, transparent, rgba(139,92,246,0.18), transparent); transform: rotate(-3deg); z-index: 1; }
-        .bg-line-2 { position: absolute; bottom: 280px; right: -30px; width: 300px; height: 1px; background: linear-gradient(270deg, transparent, rgba(20,184,166,0.15), transparent); transform: rotate(4deg); z-index: 1; }
+        .ad { width: 1080px; height: 1080px; background: linear-gradient(165deg, #111111 0%, #1a1714 50%, #111111 100%); display: flex; flex-direction: column; justify-content: space-between; padding: 50px 55px 40px; position: relative; overflow: hidden; }
 
-        .gc { position: relative; z-index: 10; height: 100%; display: flex; flex-direction: column; padding: 44px 58px 88px; }
-        .top-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 22px; }
-        .badge { display: inline-flex; align-items: center; gap: 10px; background: rgba(139,92,246,0.08); backdrop-filter: blur(12px); border: 1px solid rgba(139,92,246,0.25); border-radius: 50px; padding: 12px 24px; font-size: 13px; font-weight: 700; color: #c4b5fd; text-transform: uppercase; letter-spacing: 2.5px; }
-        .badge .dot { width: 8px; height: 8px; background: #8b5cf6; border-radius: 50%; box-shadow: 0 0 10px rgba(139,92,246,0.6); animation: pulse 2s infinite; }
-        @keyframes pulse { 0%,100%{ opacity:1; } 50%{ opacity:.5; } }
-        .free-tag { display: inline-flex; align-items: center; gap: 8px; background: rgba(20,184,166,0.1); border: 1px solid rgba(20,184,166,0.3); border-radius: 50px; padding: 10px 22px; font-size: 14px; font-weight: 800; color: #5eead4; text-transform: uppercase; letter-spacing: 2px; }
+        /* Depth layers */
+        .bg-orb-1 { position: absolute; width: 700px; height: 700px; top: -300px; right: -150px; background: radial-gradient(circle, rgba(251,191,36,0.07) 0%, transparent 60%); filter: blur(60px); }
+        .bg-orb-2 { position: absolute; width: 600px; height: 600px; bottom: -250px; left: -150px; background: radial-gradient(circle, rgba(163,230,53,0.06) 0%, transparent 60%); filter: blur(70px); }
+        .bg-orb-3 { position: absolute; width: 400px; height: 400px; top: 40%; left: 50%; transform: translate(-50%,-50%); background: radial-gradient(circle, rgba(248,113,113,0.04) 0%, transparent 55%); filter: blur(50px); }
+        .bg-dots { position: absolute; inset: 0; background-image: radial-gradient(rgba(255,255,255,0.025) 1px, transparent 1px); background-size: 24px 24px; }
+        .bg-mesh { position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,0.006) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.006) 1px, transparent 1px); background-size: 80px 80px; }
+        .bg-line-1 { position: absolute; top: 260px; left: -80px; width: 500px; height: 1px; background: linear-gradient(90deg, transparent, rgba(251,191,36,0.12), transparent); transform: rotate(-3deg); }
+        .bg-line-2 { position: absolute; bottom: 340px; right: -60px; width: 400px; height: 1px; background: linear-gradient(270deg, transparent, rgba(163,230,53,0.08), transparent); transform: rotate(5deg); }
+        .bg-reflect { position: absolute; top: 0; left: 0; right: 0; height: 50%; background: linear-gradient(180deg, rgba(255,255,255,0.012) 0%, transparent 100%); pointer-events: none; }
 
-        .title { font-size: 48px; font-weight: 900; color: #fff; line-height: 1.08; margin-bottom: 10px; letter-spacing: -1.5px; }
-        .title .purple { background: linear-gradient(135deg, #a78bfa, #8b5cf6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-        .subtitle { font-size: 18px; color: #94a3b8; line-height: 1.5; margin-bottom: 24px; max-width: 750px; }
+        .content { position: relative; z-index: 10; display: flex; flex-direction: column; justify-content: space-between; height: 100%; }
 
-        .funnel-section { flex: 1; display: flex; flex-direction: column; gap: 10px; margin-bottom: 18px; }
-        .funnel-step { display: flex; align-items: center; gap: 18px; border-radius: 14px; padding: 16px 22px; position: relative; transition: all 0.3s; }
-        .funnel-step.green { background: rgba(163,230,53,0.05); border: 1px solid rgba(163,230,53,0.12); }
-        .funnel-step.green .step-num { background: rgba(163,230,53,0.15); color: #a3e635; border: 1px solid rgba(163,230,53,0.3); }
-        .funnel-step.green .step-label { color: #a3e635; }
-        .funnel-step.green .step-bar-fill { background: linear-gradient(90deg, #a3e635, #14b8a6); }
-        .funnel-step.amber { background: rgba(251,191,36,0.04); border: 1px solid rgba(251,191,36,0.1); }
-        .funnel-step.amber .step-num { background: rgba(251,191,36,0.12); color: #fbbf24; border: 1px solid rgba(251,191,36,0.25); }
-        .funnel-step.amber .step-label { color: #fbbf24; }
-        .funnel-step.amber .step-bar-fill { background: linear-gradient(90deg, #fbbf24, #f59e0b); }
-        .funnel-step.red { background: rgba(239,68,68,0.04); border: 1px solid rgba(239,68,68,0.1); }
-        .funnel-step.red .step-num { background: rgba(239,68,68,0.12); color: #f87171; border: 1px solid rgba(239,68,68,0.25); }
-        .funnel-step.red .step-label { color: #f87171; }
-        .funnel-step.red .step-bar-fill { background: linear-gradient(90deg, #ef4444, #dc2626); }
+        .callout { text-align: center; }
+        .callout-line { font-size: 42px; font-weight: 800; color: #f87171; line-height: 1.25; text-shadow: 0 0 40px rgba(248,113,113,0.3); }
 
-        .step-num { font-family: 'Space Grotesk', sans-serif; font-size: 16px; font-weight: 700; width: 42px; height: 42px; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-        .step-info { flex: 1; }
-        .step-label { font-size: 14px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 4px; }
-        .step-desc { font-size: 14px; color: #94a3b8; line-height: 1.3; }
-        .step-bar { width: 110px; height: 8px; background: rgba(255,255,255,0.04); border-radius: 50px; overflow: hidden; flex-shrink: 0; }
-        .step-bar-fill { height: 100%; border-radius: 50px; }
-        .step-stat { font-family: 'Space Grotesk', sans-serif; font-size: 18px; font-weight: 700; flex-shrink: 0; min-width: 55px; text-align: right; }
-        .step-stat.green { color: #a3e635; }
-        .step-stat.amber { color: #fbbf24; }
-        .step-stat.red { color: #f87171; }
+        .hook { font-size: 44px; font-weight: 700; color: #e2e8f0; text-align: center; }
 
-        .gap-indicator { display: flex; align-items: center; justify-content: center; gap: 12px; padding: 6px 0; }
-        .gap-line { flex: 1; height: 1px; background: linear-gradient(90deg, transparent, rgba(139,92,246,0.3), transparent); }
-        .gap-text { font-size: 14px; font-weight: 800; color: #8b5cf6; text-transform: uppercase; letter-spacing: 3px; white-space: nowrap; }
+        .costs { text-align: center; }
+        .cost-item { font-size: 38px; font-weight: 600; color: #94a3b8; margin: 12px 0; }
+        .cost-emphasis { color: #fbbf24; font-weight: 700; }
 
-        .insight-strip { background: rgba(139,92,246,0.06); backdrop-filter: blur(12px); border: 1px solid rgba(139,92,246,0.18); border-radius: 14px; padding: 18px 24px; display: flex; align-items: flex-start; gap: 16px; margin-bottom: 14px; position: relative; overflow: hidden; }
-        .insight-strip::before { content:''; position: absolute; top: 0; left: 0; bottom: 0; width: 4px; background: linear-gradient(180deg, #8b5cf6, #a78bfa); border-radius: 14px 0 0 14px; }
-        .insight-icon { font-size: 28px; flex-shrink: 0; margin-top: 2px; }
-        .insight-content { flex: 1; }
-        .insight-label { font-size: 11px; font-weight: 700; color: #a78bfa; text-transform: uppercase; letter-spacing: 2.5px; margin-bottom: 4px; }
-        .insight-text { font-size: 16px; color: #e2e8f0; font-weight: 600; line-height: 1.4; }
+        .current-state { text-align: center; }
+        .state-intro { font-size: 36px; color: #94a3b8; margin-bottom: 10px; }
+        .state-line { font-family: 'Space Grotesk', sans-serif; font-size: 52px; font-weight: 700; color: #f87171; text-shadow: 0 0 30px rgba(248,113,113,0.2); text-transform: uppercase; letter-spacing: 1px; }
 
-        .fix-strip { background: rgba(163,230,53,0.06); backdrop-filter: blur(12px); border: 1px solid rgba(163,230,53,0.2); border-radius: 14px; padding: 18px 24px; display: flex; align-items: center; gap: 16px; position: relative; overflow: hidden; }
-        .fix-strip::before { content:''; position: absolute; top: 0; left: 0; bottom: 0; width: 4px; background: linear-gradient(180deg, #a3e635, #14b8a6); border-radius: 14px 0 0 14px; }
-        .fix-icon { font-size: 28px; flex-shrink: 0; }
-        .fix-content { flex: 1; }
-        .fix-label { font-size: 11px; font-weight: 700; color: #a3e635; text-transform: uppercase; letter-spacing: 2.5px; margin-bottom: 4px; }
-        .fix-text { font-size: 16px; color: #e2e8f0; font-weight: 600; line-height: 1.35; }
-        .fix-text .url { color: #a3e635; font-weight: 800; }
+        .action { text-align: center; }
+        .action-line1 { font-size: 38px; font-weight: 700; color: #94a3b8; margin-bottom: 8px; }
+        .action-line2 { font-size: 48px; font-weight: 800; color: #a3e635; text-shadow: 0 0 30px rgba(163,230,53,0.25); }
 
-        .bottom-bar { position: absolute; bottom: 0; left: 0; right: 0; z-index: 10; background: rgba(10,14,26,0.7); backdrop-filter: blur(12px); border-top: 1px solid rgba(255,255,255,0.05); padding: 16px 58px; display: flex; justify-content: space-between; align-items: center; }
-        .logo-group { display: flex; align-items: center; gap: 12px; }
-        .logo-icon { width: 36px; height: 36px; background: linear-gradient(135deg, rgba(163,230,53,0.15), rgba(20,184,166,0.15)); border: 1px solid rgba(163,230,53,0.3); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-family: 'Space Grotesk', sans-serif; font-size: 16px; font-weight: 700; color: #fff; }
-        .logo-icon .sup { font-size: 9px; vertical-align: super; color: #a3e635; }
-        .logo-text { font-size: 17px; font-weight: 800; color: #fff; letter-spacing: -0.3px; }
-        .logo-text .accent { background: linear-gradient(90deg, #a3e635, #14b8a6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-        .series-tag { font-size: 13px; color: #475569; font-weight: 500; }
+        .cta-box { background: rgba(163,230,53,0.06); backdrop-filter: blur(16px); border: 1px solid rgba(163,230,53,0.20); border-radius: 18px; padding: 28px 40px; text-align: center; position: relative; overflow: hidden; box-shadow: 0 8px 32px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.04); }
+        .cta-box::before { content:''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, #a3e635, #14b8a6, transparent); }
+        .cta-title { font-size: 36px; font-weight: 800; color: #fff; }
+        .cta-brand { font-size: 22px; font-weight: 700; color: #a3e635; margin-top: 6px; letter-spacing: 0.5px; }
     </style>
 </head>
 <body>
-<div class="graphic">
+<div class="ad">
     <div class="bg-orb-1"></div><div class="bg-orb-2"></div><div class="bg-orb-3"></div>
-    <div class="bg-dots"></div><div class="bg-mesh"></div><div class="bg-line-1"></div><div class="bg-line-2"></div>
+    <div class="bg-dots"></div><div class="bg-mesh"></div>
+    <div class="bg-line-1"></div><div class="bg-line-2"></div><div class="bg-reflect"></div>
 
-    <div class="gc">
-        <div class="top-bar">
-            <div class="badge"><span class="dot"></span> Reality Check</div>
-            <div class="free-tag">📥 Free Guide</div>
+    <div class="content">
+        <div class="callout">
+            <div class="callout-line">50+ engineering apps, zero offers?</div>
         </div>
 
-        <h1 class="title">Your Engineering Degree<br>Is <span class="purple">Sitting in a Drawer</span></h1>
-        <p class="subtitle">4+ years. Up to $200K. Countless all-nighters. And right now it's earning you $0/month.</p>
+        <div class="hook">Your engineering degree cost:</div>
 
-        <div class="funnel-section">
-            <div class="funnel-step green">
-                <div class="step-num">✓</div>
-                <div class="step-info">
-                    <div class="step-label">Engineering degree</div>
-                    <div class="step-desc">4+ years of your life — completed</div>
-                </div>
-                <div class="step-bar"><div class="step-bar-fill" style="width: 100%;"></div></div>
-                <div class="step-stat green">Done</div>
-            </div>
-            <div class="funnel-step green">
-                <div class="step-num">✓</div>
-                <div class="step-info">
-                    <div class="step-label">Tuition invested</div>
-                    <div class="step-desc">$50K – $200K spent on education</div>
-                </div>
-                <div class="step-bar"><div class="step-bar-fill" style="width: 100%;"></div></div>
-                <div class="step-stat green">Paid</div>
-            </div>
-            <div class="funnel-step green">
-                <div class="step-num">✓</div>
-                <div class="step-info">
-                    <div class="step-label">Hard work</div>
-                    <div class="step-desc">All-nighters, projects, labs, internships</div>
-                </div>
-                <div class="step-bar"><div class="step-bar-fill" style="width: 100%;"></div></div>
-                <div class="step-stat green">Done</div>
-            </div>
-
-            <div class="gap-indicator">
-                <div class="gap-line"></div>
-                <div class="gap-text">⚡ Current ROI: $0/month</div>
-                <div class="gap-line"></div>
-            </div>
-
-            <div class="funnel-step red">
-                <div class="step-num">✕</div>
-                <div class="step-info">
-                    <div class="step-label">Job offers</div>
-                    <div class="step-desc">Your resume is the bottleneck — not your degree</div>
-                </div>
-                <div class="step-bar"><div class="step-bar-fill" style="width: 5%;"></div></div>
-                <div class="step-stat red">0</div>
-            </div>
+        <div class="costs">
+            <div class="cost-item">● <span class="cost-emphasis">4+ years</span> of your life</div>
+            <div class="cost-item">● <span class="cost-emphasis">$50K – $200K</span> in tuition</div>
+            <div class="cost-item">● Countless all-nighters</div>
         </div>
 
-        <div class="insight-strip">
-            <div class="insight-icon">🎯</div>
-            <div class="insight-content">
-                <div class="insight-label">What nobody told you</div>
-                <div class="insight-text">The degree was the ticket to the game — not a guarantee you'd win. Your resume has to close the deal.</div>
-            </div>
+        <div class="current-state">
+            <div class="state-intro">And right now? It's</div>
+            <div class="state-line">sitting in a drawer</div>
         </div>
 
-        <div class="fix-strip">
-            <div class="fix-icon">📄</div>
-            <div class="fix-content">
-                <div class="fix-label">Make your degree pay off — Free</div>
-                <div class="fix-text">Free Impact Bullet Builder Guide → <span class="url">launchtolead.io/free</span></div>
-            </div>
+        <div class="action">
+            <div class="action-line1">Your resume is the problem.</div>
+            <div class="action-line2">Fix it for free.</div>
         </div>
-    </div>
 
-    <div class="bottom-bar">
-        <div class="logo-group"><div class="logo-icon">L<span class="sup">2</span></div><div class="logo-text">Launch<span class="accent">ToLead</span></div></div>
-        <div class="series-tag">launchtolead.io/free</div>
+        <div class="cta-box">
+            <div class="cta-title">Free Impact Bullet Builder Guide</div>
+            <div class="cta-brand">LaunchToLead</div>
+        </div>
     </div>
 </div>
 </body>

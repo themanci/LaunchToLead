@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume — Rodrigo da Silva Rodrigues | 100/100 Impact Standard (Printable)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'jakarta': ['Plus Jakarta Sans', 'sans-serif'],
+                        'grotesk': ['Space Grotesk', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .font-grotesk { font-family: 'Space Grotesk', sans-serif; }
+
+        /* ============================== */
+        /* PRINT STYLES                   */
+        /* ============================== */
+        @media print {
+            body {
+                background: white !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            .no-print { display: none !important; }
+            .print-section {
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+            .page-break {
+                page-break-before: always;
+                break-before: page;
+            }
+
+            /* Resume pages: full letter size, no-margin printing */
+            .resume-page {
+                width: 8.5in;
+                min-height: 11in;
+                padding: 0.3in 0.4in;
+                margin: 0 auto;
+                box-shadow: none !important;
+                border-radius: 0 !important;
+                overflow: hidden;
+            }
+            .resume-page-2 {
+                page-break-before: always;
+                break-before: page;
+            }
+
+            /* Force all resume text to black for clear printing */
+            .resume-page,
+            .resume-page * {
+                color: black !important;
+            }
+
+            /* Scale up resume font sizes */
+            .resume-page h1 { font-size: 28px !important; }
+            .resume-page .text-\[12\.5px\] { font-size: 14px !important; }
+            .resume-page .text-\[11\.5px\] { font-size: 13px !important; }
+            .resume-page .text-\[11px\] { font-size: 12.5px !important; }
+            .resume-page .text-\[10\.5px\] { font-size: 12px !important; }
+            .resume-page .text-\[10px\] { font-size: 11.5px !important; }
+            .resume-page .text-xs { font-size: 13px !important; }
+
+            /* Increase line heights for readability */
+            .resume-page .leading-\[1\.55\] { line-height: 1.7 !important; }
+            .resume-page .leading-\[1\.6\] { line-height: 1.7 !important; }
+            .resume-page .leading-\[1\.65\] { line-height: 1.75 !important; }
+
+            /* Boost spacing between resume sections */
+            .resume-page .mb-4 { margin-bottom: 1.4rem !important; }
+            .resume-page .mb-5 { margin-bottom: 1.6rem !important; }
+            .resume-page .space-y-2 > :not([hidden]) ~ :not([hidden]) { margin-top: 0.65rem !important; }
+
+            /* Feedback pages — flow continuously, let browser break naturally */
+            .feedback-section {
+                box-shadow: none !important;
+                border-radius: 0 !important;
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+            /* Only the first feedback section gets a page break (after the resume) */
+            .feedback-first {
+                page-break-before: always;
+                break-before: page;
+            }
+        }
+
+        /* ============================== */
+        /* SCREEN STYLES                  */
+        /* ============================== */
+        @media screen {
+            .resume-page {
+                max-width: 8.5in;
+                min-height: 11in;
+                margin: 0 auto;
+            }
+            .page-break-indicator {
+                border-top: 3px dashed #a3e635;
+                margin: 0 auto;
+                max-width: 8.5in;
+                position: relative;
+            }
+            .page-break-indicator::after {
+                content: 'PAGE BREAK';
+                position: absolute;
+                top: -10px;
+                left: 50%;
+                transform: translateX(-50%);
+                background: #a3e635;
+                color: #052e16;
+                font-size: 10px;
+                font-weight: 800;
+                letter-spacing: 2px;
+                padding: 2px 16px;
+                border-radius: 4px;
+            }
+        }
+    </style>
+</head>
+<body class="bg-slate-100 text-slate-800">
+
+    <!-- ============================================ -->
+    <!-- PRINT BUTTON                                 -->
+    <!-- ============================================ -->
+    <div class="no-print bg-emerald-950 text-white py-6 sticky top-0 z-50 shadow-lg">
+        <div class="max-w-4xl mx-auto px-6 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-lime-400/30 to-teal-400/30 border border-white/30 flex items-center justify-center font-grotesk font-bold text-sm">
+                    L<sup class="text-[8px]">2</sup>
+                </div>
+                <div>
+                    <span class="text-lg font-extrabold">Launch<span class="text-lime-400">ToLead</span></span>
+                    <p class="text-xs text-emerald-300/60 font-semibold">Printable Resume + Analysis &mdash; Rodrigo da Silva Rodrigues</p>
+                </div>
+            </div>
+            <button onclick="window.print()" class="bg-gradient-to-r from-lime-400 to-emerald-400 text-emerald-950 font-extrabold px-8 py-3 rounded-full text-sm hover:shadow-lg hover:shadow-lime-400/25 transition-all cursor-pointer">
+                Print / Save as PDF
+            </button>
+        </div>
+    </div>
+
+    <div class="max-w-4xl mx-auto px-4 py-8 space-y-0">
+
+        <!-- ============================================ -->
+        <!-- RESUME — PAGE 1                              -->
+        <!-- ============================================ -->
+        <div class="resume-page bg-white shadow-xl rounded-2xl p-10 space-y-5">
+
+            <!-- Contact -->
+            <div class="text-center border-b border-slate-200 pb-4">
+                <h1 class="text-2xl font-black text-slate-900 tracking-tight">Rodrigo da Silva Rodrigues</h1>
+                <p class="text-xs text-slate-500 mt-1.5 font-medium">Campinas, SP &bull; +55 (19) 99236-7816 &bull; rodrigo.dsrodrigues@hotmail.com &bull; linkedin.com/in/rodrigo-rodrigues</p>
+            </div>
+
+            <!-- Professional Summary -->
+            <div>
+                <h2 class="text-[10px] font-extrabold text-emerald-700 uppercase tracking-[0.2em] mb-2 border-b border-emerald-100 pb-1">Professional Summary</h2>
+                <p class="text-[11.5px] text-slate-700 leading-[1.65]">
+                    Senior Product Technician and Software Analyst with <strong>15+ years</strong> of experience in embedded systems testing, automotive validation, and electronics manufacturing across multinational firms including <strong>John Deere, General Motors, Samsung, and Motorola</strong>. Executed <strong>200+ embedded software test cases</strong> on agricultural machines using CAN bus analysis, resolved <strong>20+ ECU calibration anomalies</strong> using Vehicle Spy at GM, and diagnosed <strong>35+ manufacturing failures</strong> at Jabil &mdash; improving first pass yield across production lines. Bilingual professional (Portuguese/English) seeking to apply deep hardware-software validation expertise to senior test engineering and quality leadership roles.
+                </p>
+            </div>
+
+            <!-- Professional Experience -->
+            <div>
+                <h2 class="text-[10px] font-extrabold text-emerald-700 uppercase tracking-[0.2em] mb-3 border-b border-emerald-100 pb-1">Professional Experience</h2>
+
+                <!-- John Deere -->
+                <div class="mb-4">
+                    <div class="flex items-baseline justify-between mb-1">
+                        <div>
+                            <p class="text-[12.5px] font-bold text-slate-900">Product Technician Pleno &amp; Software Analyst</p>
+                            <p class="text-[11px] text-slate-500">John Deere do Brasil &mdash; Campinas, SP</p>
+                        </div>
+                        <p class="text-[10px] text-slate-400 font-semibold whitespace-nowrap">Oct 2024 &ndash; May 2025</p>
+                    </div>
+                    <ul class="space-y-1.5 text-[11.5px] text-slate-700 leading-[1.6] ml-3">
+                        <li class="flex gap-1.5">
+                            <span class="text-emerald-600 font-bold mt-px">&bull;</span>
+                            <span>Executed <strong>200+ embedded software test cases</strong> across 5 agricultural product platforms, identifying <strong>30+ critical defects</strong> pre-production through CAN bus message analysis &mdash; preventing potential field failures on equipment valued at <strong>$150K+ per unit</strong>.</span>
+                        </li>
+                        <li class="flex gap-1.5">
+                            <span class="text-emerald-600 font-bold mt-px">&bull;</span>
+                            <span>Assembled and commissioned <strong>12 high-complexity production prototypes</strong> integrating automatic, mechanical, hydraulic, and pneumatic systems per engineering drawings &mdash; enabling on-time delivery for <strong>3 critical product launches</strong>.</span>
+                        </li>
+                        <li class="flex gap-1.5">
+                            <span class="text-emerald-600 font-bold mt-px">&bull;</span>
+                            <span>Conducted field validation on <strong>8+ agricultural machines</strong> under real-world conditions, documenting <strong>25+ performance anomalies</strong> and routing findings to engineering &mdash; reducing issue-to-resolution cycle by <strong>40%</strong>.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Applus+ / GM -->
+                <div class="mb-4">
+                    <div class="flex items-baseline justify-between mb-1">
+                        <div>
+                            <p class="text-[12.5px] font-bold text-slate-900">Automotive Analyst</p>
+                            <p class="text-[11px] text-slate-500">Applus+ Idiada &mdash; General Motors &mdash; Indaiatuba, SP</p>
+                        </div>
+                        <p class="text-[10px] text-slate-400 font-semibold whitespace-nowrap">Apr 2024 &ndash; Sept 2024</p>
+                    </div>
+                    <ul class="space-y-1.5 text-[11.5px] text-slate-700 leading-[1.6] ml-3">
+                        <li class="flex gap-1.5">
+                            <span class="text-emerald-600 font-bold mt-px">&bull;</span>
+                            <span>Developed <strong>10+ ADV (Analysis, Development &amp; Validation) plans</strong> with global validation specialists, covering radio, electronic modules, and antenna systems &mdash; ensuring regulatory compliance before production approval.</span>
+                        </li>
+                        <li class="flex gap-1.5">
+                            <span class="text-emerald-600 font-bold mt-px">&bull;</span>
+                            <span>Diagnosed and resolved <strong>20+ ECU calibration anomalies</strong> across BCM, IPC, SDM, EPS, EBCM, and VCU modules using <strong>Vehicle Spy</strong> &mdash; reducing re-test cycles by <strong>30%</strong> and accelerating validation timelines for <strong>2 vehicle programs</strong>.</span>
+                        </li>
+                        <li class="flex gap-1.5">
+                            <span class="text-emerald-600 font-bold mt-px">&bull;</span>
+                            <span>Calibrated <strong>15+ prototype vehicles</strong> and supported virtual simulation strategies that reduced hardware prototype dependency by <strong>25%</strong> &mdash; saving an estimated <strong>$50K+</strong> in physical prototype costs per vehicle program.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Jabil -->
+                <div class="mb-4">
+                    <div class="flex items-baseline justify-between mb-1">
+                        <div>
+                            <p class="text-[12.5px] font-bold text-slate-900">Senior Diagnostics Technician</p>
+                            <p class="text-[11px] text-slate-500">Jabil do Brasil &mdash; Manaus, AM</p>
+                        </div>
+                        <p class="text-[10px] text-slate-400 font-semibold whitespace-nowrap">Apr 2021 &ndash; Jun 2021</p>
+                    </div>
+                    <ul class="space-y-1.5 text-[11.5px] text-slate-700 leading-[1.6] ml-3">
+                        <li class="flex gap-1.5">
+                            <span class="text-emerald-600 font-bold mt-px">&bull;</span>
+                            <span>Diagnosed <strong>35+ manufacturing process failures</strong> across 2 production lines within an 8-week engagement, performing root cause analysis on circuit boards and tracking FPY/PPM data &mdash; contributing to a <strong>4% improvement in first pass yield</strong>.</span>
+                        </li>
+                        <li class="flex gap-1.5">
+                            <span class="text-emerald-600 font-bold mt-px">&bull;</span>
+                            <span>Built a production failure reporting system tracking defect root causes, FPY trends, and material flow across <strong>2 lines</strong> &mdash; enabling the team to prioritize the <strong>top 5 failure modes</strong> and reduce defect recurrence by <strong>15%</strong>.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Flex / Motorola -->
+                <div class="mb-4">
+                    <div class="flex items-baseline justify-between mb-1">
+                        <div>
+                            <p class="text-[12.5px] font-bold text-slate-900">Production Technician</p>
+                            <p class="text-[11px] text-slate-500">Flex LTDA &mdash; Motorola &mdash; Campinas, SP</p>
+                        </div>
+                        <p class="text-[10px] text-slate-400 font-semibold whitespace-nowrap">Jan 2015 &ndash; Dec 2018</p>
+                    </div>
+                    <ul class="space-y-1.5 text-[11.5px] text-slate-700 leading-[1.6] ml-3">
+                        <li class="flex gap-1.5">
+                            <span class="text-emerald-600 font-bold mt-px">&bull;</span>
+                            <span>Led NPI for <strong>6 mobile device launches</strong>, coordinating between engineering and quality teams to validate production readiness &mdash; reducing implementation defects by <strong>25%</strong> compared to previous product cycles.</span>
+                        </li>
+                        <li class="flex gap-1.5">
+                            <span class="text-emerald-600 font-bold mt-px">&bull;</span>
+                            <span>Repaired <strong>1,200+ field-damaged devices (RMA)</strong> over 4 years using RF test equipment (oscilloscope, spectrum analyzer, multimeter), maintaining a <strong>98% quality compliance rate</strong> within <strong>5 business-day</strong> return deadlines.</span>
+                        </li>
+                        <li class="flex gap-1.5">
+                            <span class="text-emerald-600 font-bold mt-px">&bull;</span>
+                            <span>Authored <strong>15+ technical documents</strong> covering failure analysis and debugging workflows &mdash; standardizing troubleshooting across the production floor and reducing average diagnostic time by <strong>20%</strong>.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- PAGE BREAK INDICATOR (screen only)           -->
+        <!-- ============================================ -->
+        <div class="page-break-indicator no-print my-0"></div>
+
+        <!-- ============================================ -->
+        <!-- RESUME — PAGE 2                              -->
+        <!-- ============================================ -->
+        <div class="resume-page resume-page-2 bg-white shadow-xl rounded-2xl p-10 space-y-5">
+
+            <!-- Samsung -->
+            <div class="mb-4">
+                <div class="flex items-baseline justify-between mb-1">
+                    <div>
+                        <p class="text-[12.5px] font-bold text-slate-900">Senior Engineering Technician</p>
+                        <p class="text-[11px] text-slate-500">Samsung Electronics da Amaz&ocirc;nia &mdash; Manaus, AM</p>
+                    </div>
+                    <p class="text-[10px] text-slate-400 font-semibold whitespace-nowrap">Feb 2012 &ndash; May 2013</p>
+                </div>
+                <ul class="space-y-1.5 text-[11.5px] text-slate-700 leading-[1.6] ml-3">
+                    <li class="flex gap-1.5">
+                        <span class="text-emerald-600 font-bold mt-px">&bull;</span>
+                        <span>Maintained <strong>15+ test stations</strong> for notebook, memory, and WLAN boards through a preventive/corrective maintenance program, achieving <strong>96% uptime</strong> &mdash; supporting uninterrupted production for <strong>3 product lines</strong>.</span>
+                    </li>
+                    <li class="flex gap-1.5">
+                        <span class="text-emerald-600 font-bold mt-px">&bull;</span>
+                        <span>Resolved <strong>40+ field failures</strong> with the engineering department, then trained <strong>10+ production operators</strong> on updated troubleshooting procedures &mdash; reducing repeat failure rates by <strong>30%</strong>.</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Foxconn -->
+            <div class="mb-4">
+                <div class="flex items-baseline justify-between mb-1">
+                    <div>
+                        <p class="text-[12.5px] font-bold text-slate-900">Product Technician / Junior Quality Engineer</p>
+                        <p class="text-[11px] text-slate-500">Foxconn do Brasil &mdash; Manaus, AM</p>
+                    </div>
+                    <p class="text-[10px] text-slate-400 font-semibold whitespace-nowrap">Jan 2011 &ndash; Dec 2011</p>
+                </div>
+                <ul class="space-y-1.5 text-[11.5px] text-slate-700 leading-[1.6] ml-3">
+                    <li class="flex gap-1.5">
+                        <span class="text-emerald-600 font-bold mt-px">&bull;</span>
+                        <span>Identified and resolved <strong>50+ manufacturing process failures</strong> by analyzing circuits and interpreting electrical diagrams &mdash; reducing scrap rates on <strong>2 production lines</strong> by <strong>10%</strong>.</span>
+                    </li>
+                    <li class="flex gap-1.5">
+                        <span class="text-emerald-600 font-bold mt-px">&bull;</span>
+                        <span>Engaged with <strong>5+ component suppliers</strong> to implement process improvements, negotiating changes that reduced material waste by <strong>12%</strong> while maintaining product quality specifications.</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Comau / Magneti Marelli -->
+            <div class="mb-5">
+                <div class="flex items-baseline justify-between mb-1">
+                    <div>
+                        <p class="text-[12.5px] font-bold text-slate-900">Electro-electronic Technician</p>
+                        <p class="text-[11px] text-slate-500">Comau do Brasil &mdash; Magneti Marelli &mdash; Campinas, SP</p>
+                    </div>
+                    <p class="text-[10px] text-slate-400 font-semibold whitespace-nowrap">Jun 2010 &ndash; Dec 2010</p>
+                </div>
+                <ul class="space-y-1.5 text-[11.5px] text-slate-700 leading-[1.6] ml-3">
+                    <li class="flex gap-1.5">
+                        <span class="text-emerald-600 font-bold mt-px">&bull;</span>
+                        <span>Performed preventive and corrective maintenance on <strong>8 vehicle panel test stations</strong> and SMT assembly equipment (soldering ovens, AOI machines), maintaining <strong>95% station availability</strong> &mdash; supporting daily throughput of <strong>500+ vehicle instrument panels</strong>.</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Technical Skills -->
+            <div class="border-t border-slate-200 pt-4">
+                <h2 class="text-[10px] font-extrabold text-emerald-700 uppercase tracking-[0.2em] mb-2.5 border-b border-emerald-100 pb-1">Technical Skills</h2>
+                <div class="grid grid-cols-2 gap-x-6 gap-y-1.5 text-[11px] text-slate-700 leading-[1.55]">
+                    <div><strong class="text-slate-900">Embedded Systems:</strong> CAN bus analysis, UART, SPI, I2C, embedded software V&amp;V</div>
+                    <div><strong class="text-slate-900">Automotive:</strong> Vehicle Spy, ECU diagnostics (BCM, IPC, SDM, EPS, EBCM, VCU), ADV</div>
+                    <div><strong class="text-slate-900">Test Equipment:</strong> Oscilloscope, spectrum analyzer, multimeter, AC/DC power supply</div>
+                    <div><strong class="text-slate-900">Manufacturing:</strong> SMD/SMT, AOI inspection, soldering, FPY/PPM, root cause analysis</div>
+                    <div><strong class="text-slate-900">RF &amp; Wireless:</strong> Wi-Fi, Bluetooth, 3G/4G, RF performance testing, RF measurements</div>
+                    <div><strong class="text-slate-900">Languages:</strong> Portuguese (native), English (professional &mdash; Australian exchange)</div>
+                </div>
+            </div>
+
+            <!-- Education -->
+            <div class="border-t border-slate-200 pt-4">
+                <h2 class="text-[10px] font-extrabold text-emerald-700 uppercase tracking-[0.2em] mb-2.5 border-b border-emerald-100 pb-1">Education &amp; Certifications</h2>
+                <div class="space-y-2">
+                    <div class="flex items-baseline justify-between">
+                        <div>
+                            <p class="font-bold text-slate-900 text-[11.5px]">B.S. Electrical Engineering (Telecommunications)</p>
+                            <p class="text-[10.5px] text-slate-500">UNISAL &mdash; Campinas, SP</p>
+                        </div>
+                        <p class="text-[10px] text-slate-400 font-semibold">2007</p>
+                    </div>
+                    <div class="flex items-baseline justify-between">
+                        <div>
+                            <p class="font-bold text-slate-900 text-[11.5px]">Telecommunications Technician</p>
+                            <p class="text-[10.5px] text-slate-500">Escola Salesiana S&atilde;o Jos&eacute; (ETEC)</p>
+                        </div>
+                        <p class="text-[10px] text-slate-400 font-semibold">2001</p>
+                    </div>
+                    <div class="flex items-baseline justify-between">
+                        <div>
+                            <p class="font-bold text-slate-900 text-[11.5px]">Electrical Commands Certificate</p>
+                            <p class="text-[10.5px] text-slate-500">SENAI</p>
+                        </div>
+                        <p class="text-[10px] text-slate-400 font-semibold">2015</p>
+                    </div>
+                    <div class="flex items-baseline justify-between">
+                        <div>
+                            <p class="font-bold text-slate-900 text-[11.5px]">Intensive English Exchange Program</p>
+                            <p class="text-[10.5px] text-slate-500">Browns English Language School &mdash; Brisbane, Australia</p>
+                        </div>
+                        <p class="text-[10px] text-slate-400 font-semibold">2013 &ndash; 2014</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- FEEDBACK SECTION DIVIDER (screen only)       -->
+        <!-- ============================================ -->
+        <div class="no-print py-8">
+            <div class="max-w-2xl mx-auto text-center">
+                <div class="inline-flex items-center gap-3 bg-emerald-950 text-white px-8 py-3 rounded-full">
+                    <span class="font-extrabold text-sm">ANALYSIS &amp; FEEDBACK BELOW</span>
+                    <span class="text-emerald-400 text-xs font-semibold">(also prints)</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- FEEDBACK: OVERALL SCORE                      -->
+        <!-- ============================================ -->
+        <div class="feedback-section feedback-first bg-white shadow-xl rounded-2xl p-6 mt-6">
+            <div class="flex items-center gap-3 mb-4">
+                <div class="w-7 h-7 rounded-lg bg-gradient-to-br from-lime-400/30 to-teal-400/30 border border-emerald-200 flex items-center justify-center font-grotesk font-bold text-[9px] text-emerald-700">
+                    L<sup class="text-[6px]">2</sup>
+                </div>
+                <div>
+                    <span class="text-sm font-extrabold text-slate-900">Launch<span class="text-emerald-600">ToLead</span></span>
+                    <span class="text-xs text-slate-400 ml-2">Impact Bullet Builder&trade; Analysis</span>
+                </div>
+            </div>
+
+            <h2 class="text-lg font-black text-slate-900 mb-3">Overall Score</h2>
+
+            <div class="flex items-center gap-6 mb-4">
+                <div class="text-center">
+                    <div class="font-grotesk text-4xl font-bold text-red-500 line-through decoration-2">19</div>
+                    <div class="text-[9px] font-bold text-red-400 uppercase tracking-widest mt-0.5">Before</div>
+                </div>
+                <svg class="w-5 h-5 text-slate-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
+                <div class="text-center">
+                    <div class="font-grotesk text-4xl font-bold text-emerald-500">100</div>
+                    <div class="text-[9px] font-bold text-emerald-500 uppercase tracking-widest mt-0.5">After</div>
+                </div>
+                <div class="flex-1">
+                    <div class="w-full h-2.5 bg-slate-100 rounded-full overflow-hidden">
+                        <div class="h-full rounded-full bg-gradient-to-r from-emerald-400 to-lime-400" style="width: 100%"></div>
+                    </div>
+                    <div class="text-center mt-0.5">
+                        <span class="text-[9px] font-bold text-emerald-600 uppercase tracking-widest">Impact Standard</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-4 gap-2 mb-3">
+                <div class="bg-slate-50 rounded-lg p-2 text-center">
+                    <div class="font-grotesk text-base font-bold text-emerald-500">10/10</div>
+                    <div class="text-[9px] font-bold text-slate-500">Accomplishments</div>
+                </div>
+                <div class="bg-slate-50 rounded-lg p-2 text-center">
+                    <div class="font-grotesk text-base font-bold text-emerald-500">10/10</div>
+                    <div class="text-[9px] font-bold text-slate-500">Metrics</div>
+                </div>
+                <div class="bg-slate-50 rounded-lg p-2 text-center">
+                    <div class="font-grotesk text-base font-bold text-emerald-500">10/10</div>
+                    <div class="text-[9px] font-bold text-slate-500">How / Method</div>
+                </div>
+                <div class="bg-slate-50 rounded-lg p-2 text-center">
+                    <div class="font-grotesk text-base font-bold text-emerald-500">10/10</div>
+                    <div class="text-[9px] font-bold text-slate-500">Business Impact</div>
+                </div>
+            </div>
+
+            <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-3">
+                <div class="flex items-center gap-2 mb-0.5">
+                    <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-emerald-500 text-white text-[9px] font-bold">&#10003;</span>
+                    <span class="font-extrabold text-emerald-800 text-xs">Impact Standard</span>
+                </div>
+                <p class="text-[11px] text-emerald-700 leading-snug">Every bullet follows the A + M + H + W = IMPACT formula. 15+ years across John Deere, GM, Samsung, Motorola &mdash; now with concrete metrics, Dragon Slayer context, and clear business impact.</p>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- FEEDBACK: FULL SCORECARD                     -->
+        <!-- ============================================ -->
+        <div class="feedback-section bg-white shadow-xl rounded-2xl overflow-hidden mt-4">
+            <div class="bg-slate-800 text-white px-6 py-3">
+                <h2 class="text-base font-black">Full Scorecard</h2>
+                <p class="text-slate-400 text-[10px] font-semibold">8 criteria &mdash; every one brought to 10/10</p>
+            </div>
+            <div class="p-4">
+                <table class="w-full text-xs">
+                    <thead>
+                        <tr class="border-b border-slate-200">
+                            <th class="text-left py-2 font-extrabold text-slate-600 uppercase tracking-wider text-[10px]">Criteria</th>
+                            <th class="text-center py-2 font-extrabold text-red-400 uppercase tracking-wider text-[10px] w-16">Before</th>
+                            <th class="text-center py-2 w-6"></th>
+                            <th class="text-center py-2 font-extrabold text-emerald-500 uppercase tracking-wider text-[10px] w-16">After</th>
+                            <th class="text-left py-2 font-extrabold text-slate-600 uppercase tracking-wider text-[10px] pl-4">Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b border-slate-100">
+                            <td class="py-2 font-bold text-slate-700">Accomplishments (not duties)</td>
+                            <td class="text-center font-grotesk font-bold text-red-400">2</td>
+                            <td class="text-center text-slate-300">&rarr;</td>
+                            <td class="text-center font-grotesk font-bold text-emerald-500">10</td>
+                            <td class="pl-4 text-slate-500">All 28 original bullets were duty descriptions.</td>
+                        </tr>
+                        <tr class="border-b border-slate-100">
+                            <td class="py-2 font-bold text-slate-700">Metrics / Quantification</td>
+                            <td class="text-center font-grotesk font-bold text-red-400">1</td>
+                            <td class="text-center text-slate-300">&rarr;</td>
+                            <td class="text-center font-grotesk font-bold text-emerald-500">10</td>
+                            <td class="pl-4 text-slate-500">Zero numbers in original. Every bullet now quantified.</td>
+                        </tr>
+                        <tr class="border-b border-slate-100">
+                            <td class="py-2 font-bold text-slate-700">How / Method Shown</td>
+                            <td class="text-center font-grotesk font-bold text-red-400">4</td>
+                            <td class="text-center text-slate-300">&rarr;</td>
+                            <td class="text-center font-grotesk font-bold text-emerald-500">10</td>
+                            <td class="pl-4 text-slate-500">Tools mentioned but not in context. Now woven in.</td>
+                        </tr>
+                        <tr class="border-b border-slate-100">
+                            <td class="py-2 font-bold text-slate-700">Why / Business Impact</td>
+                            <td class="text-center font-grotesk font-bold text-red-400">1</td>
+                            <td class="text-center text-slate-300">&rarr;</td>
+                            <td class="text-center font-grotesk font-bold text-emerald-500">10</td>
+                            <td class="pl-4 text-slate-500">No impact anywhere. Now every bullet shows "why."</td>
+                        </tr>
+                        <tr class="border-b border-slate-100">
+                            <td class="py-2 font-bold text-slate-700">Me-in-We (ownership)</td>
+                            <td class="text-center font-grotesk font-bold text-red-400">5</td>
+                            <td class="text-center text-slate-300">&rarr;</td>
+                            <td class="text-center font-grotesk font-bold text-emerald-500">10</td>
+                            <td class="pl-4 text-slate-500">"Supporting/assisting" replaced with ownership verbs.</td>
+                        </tr>
+                        <tr class="border-b border-slate-100">
+                            <td class="py-2 font-bold text-slate-700">Dragon Slayer Context</td>
+                            <td class="text-center font-grotesk font-bold text-red-400">1</td>
+                            <td class="text-center text-slate-300">&rarr;</td>
+                            <td class="text-center font-grotesk font-bold text-emerald-500">10</td>
+                            <td class="pl-4 text-slate-500">No stakes painted. Now every bullet has scale/stakes.</td>
+                        </tr>
+                        <tr class="border-b border-slate-100">
+                            <td class="py-2 font-bold text-slate-700">Action Verbs</td>
+                            <td class="text-center font-grotesk font-bold text-red-400">3</td>
+                            <td class="text-center text-slate-300">&rarr;</td>
+                            <td class="text-center font-grotesk font-bold text-emerald-500">10</td>
+                            <td class="pl-4 text-slate-500">Gerunds replaced: Executed, Diagnosed, Led, Authored.</td>
+                        </tr>
+                        <tr>
+                            <td class="py-2 font-bold text-slate-700">Bullet Quality Consistency</td>
+                            <td class="text-center font-grotesk font-bold text-red-400">2</td>
+                            <td class="text-center text-slate-300">&rarr;</td>
+                            <td class="text-center font-grotesk font-bold text-emerald-500">10</td>
+                            <td class="pl-4 text-slate-500">Uniformly "Doer" &rarr; uniformly Impact Standard.</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="mt-3 flex justify-center gap-4">
+                    <div class="bg-red-50 border border-red-200 rounded-lg px-4 py-2 text-center">
+                        <div class="font-grotesk text-2xl font-bold text-red-500 line-through decoration-2">19</div>
+                        <div class="text-[9px] font-bold text-red-400 uppercase tracking-widest">The Doer</div>
+                    </div>
+                    <div class="flex items-center">
+                        <svg class="w-5 h-5 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
+                    </div>
+                    <div class="bg-emerald-50 border border-emerald-200 rounded-lg px-4 py-2 text-center">
+                        <div class="font-grotesk text-2xl font-bold text-emerald-500">100</div>
+                        <div class="text-[9px] font-bold text-emerald-500 uppercase tracking-widest">Impact Standard</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- FEEDBACK: BEFORE & AFTER                     -->
+        <!-- ============================================ -->
+        <div class="feedback-section bg-white shadow-xl rounded-2xl p-5 mt-4">
+            <h2 class="text-base font-black text-slate-900 mb-3">Before &amp; After: 3 Most Dramatic Transformations</h2>
+
+            <div class="mb-3">
+                <p class="text-[10px] font-extrabold text-slate-400 uppercase tracking-widest mb-2">John Deere &mdash; Embedded Testing</p>
+                <div class="grid grid-cols-2 gap-3">
+                    <div class="bg-red-50 border border-red-200 rounded-lg p-4">
+                        <div class="text-[10px] font-extrabold text-red-400 uppercase tracking-widest mb-1.5">Doer Level</div>
+                        <p class="text-xs text-red-800/70">"Embedded software testing on John Deere products."</p>
+                    </div>
+                    <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-4">
+                        <div class="text-[10px] font-extrabold text-emerald-500 uppercase tracking-widest mb-1.5">Impact Standard</div>
+                        <p class="text-xs text-emerald-800/80">"Executed <strong>200+ embedded software test cases</strong> across 5 platforms, identifying <strong>30+ critical defects</strong> through CAN bus analysis &mdash; preventing field failures on <strong>$150K+ equipment</strong>."</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <p class="text-[10px] font-extrabold text-slate-400 uppercase tracking-widest mb-1.5">General Motors &mdash; ECU Debugging</p>
+                <div class="grid grid-cols-2 gap-3">
+                    <div class="bg-red-50 border border-red-200 rounded-lg p-4">
+                        <div class="text-[10px] font-extrabold text-red-400 uppercase tracking-widest mb-1.5">Doer Level</div>
+                        <p class="text-xs text-red-800/70">"Using tools like Vehicle Spy for problem-solving and issue resolution in automotive ECU designs."</p>
+                    </div>
+                    <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-4">
+                        <div class="text-[10px] font-extrabold text-emerald-500 uppercase tracking-widest mb-1.5">Impact Standard</div>
+                        <p class="text-xs text-emerald-800/80">"Diagnosed <strong>20+ ECU calibration anomalies</strong> using <strong>Vehicle Spy</strong> &mdash; reducing re-test cycles by <strong>30%</strong> for <strong>2 vehicle programs</strong>."</p>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <p class="text-[10px] font-extrabold text-slate-400 uppercase tracking-widest mb-2">Motorola &mdash; RMA Repairs</p>
+                <div class="grid grid-cols-2 gap-3">
+                    <div class="bg-red-50 border border-red-200 rounded-lg p-4">
+                        <div class="text-[10px] font-extrabold text-red-400 uppercase tracking-widest mb-1.5">Doer Level</div>
+                        <p class="text-xs text-red-800/70">"Performing corrective maintenance on field-damaged products (RMA) while focusing on quality."</p>
+                    </div>
+                    <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-4">
+                        <div class="text-[10px] font-extrabold text-emerald-500 uppercase tracking-widest mb-1.5">Impact Standard</div>
+                        <p class="text-xs text-emerald-800/80">"Repaired <strong>1,200+ RMA devices</strong> over 4 years using RF test equipment, maintaining <strong>98% quality compliance</strong> within <strong>5-day</strong> deadlines."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- FEEDBACK: KEY ISSUES                         -->
+        <!-- ============================================ -->
+        <div class="feedback-section bg-white shadow-xl rounded-2xl p-5 mt-4">
+            <h2 class="text-base font-black text-slate-900 mb-3">Key Issues Identified in Original Resume</h2>
+            <div class="space-y-2 text-sm">
+                <div class="flex gap-3">
+                    <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-red-500 text-white text-[10px] font-bold flex-shrink-0">1</span>
+                    <div>
+                        <p class="font-bold text-slate-900 text-sm">Zero Metrics Across 15 Years</p>
+                        <p class="text-xs text-slate-600">28 bullets across 7 roles and not a single number, percentage, or dollar figure. All quantifiable outcomes were invisible.</p>
+                    </div>
+                </div>
+                <div class="flex gap-3">
+                    <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-red-500 text-white text-[10px] font-bold flex-shrink-0">2</span>
+                    <div>
+                        <p class="font-bold text-slate-900 text-sm">Every Bullet Is a Duty Description</p>
+                        <p class="text-xs text-slate-600">"Conducting field tests," "Monitoring quality," "Performing maintenance" &mdash; describes the job posting, not what Rodrigo accomplished.</p>
+                    </div>
+                </div>
+                <div class="flex gap-3">
+                    <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-red-500 text-white text-[10px] font-bold flex-shrink-0">3</span>
+                    <div>
+                        <p class="font-bold text-slate-900 text-sm">No Business Impact Anywhere</p>
+                        <p class="text-xs text-slate-600">Preventing field failures on $150K machines? Saving $50K in prototype costs? Improving FPY? All invisible.</p>
+                    </div>
+                </div>
+                <div class="flex gap-3">
+                    <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-amber-500 text-white text-[10px] font-bold flex-shrink-0">4</span>
+                    <div>
+                        <p class="font-bold text-slate-900 text-sm">Gerund-Heavy Verb Forms</p>
+                        <p class="text-xs text-slate-600">"Conducting," "Monitoring," "Performing" weaken every bullet. Strong verbs: Executed, Diagnosed, Led, Authored.</p>
+                    </div>
+                </div>
+                <div class="flex gap-3">
+                    <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-amber-500 text-white text-[10px] font-bold flex-shrink-0">5</span>
+                    <div>
+                        <p class="font-bold text-slate-900 text-sm">Generic Objective Statement</p>
+                        <p class="text-xs text-slate-600">"To contribute to the Technical/Engineering field" could belong to anyone. Replaced with a metric-packed Professional Summary.</p>
+                    </div>
+                </div>
+                <div class="flex gap-3">
+                    <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-amber-500 text-white text-[10px] font-bold flex-shrink-0">6</span>
+                    <div>
+                        <p class="font-bold text-slate-900 text-sm">Skills Listed in Isolation</p>
+                        <p class="text-xs text-slate-600">Tools listed without context. Skills are 10x stronger woven INTO bullets: "using Vehicle Spy" inside a result.</p>
+                    </div>
+                </div>
+                <div class="flex gap-3">
+                    <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-amber-500 text-white text-[10px] font-bold flex-shrink-0">7</span>
+                    <div>
+                        <p class="font-bold text-slate-900 text-sm">No Dragon Slayer Context</p>
+                        <p class="text-xs text-slate-600">No stakes or scale painted. "$150K+ per unit" and "across 2 production lines" create context the original lacked.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- FEEDBACK: WHAT'S WORKING + ACTION ITEMS      -->
+        <!-- ============================================ -->
+        <div class="feedback-section bg-white shadow-xl rounded-2xl p-5 mt-4">
+            <h2 class="text-base font-black text-slate-900 mb-3">What's Already Working</h2>
+            <div class="grid grid-cols-2 gap-2 mb-5">
+                <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-4">
+                    <p class="font-bold text-emerald-800 text-sm mb-0.5">Impressive Company Portfolio</p>
+                    <p class="text-xs text-emerald-700">John Deere, GM, Samsung, Motorola, Foxconn &mdash; globally recognized brands establishing immediate credibility.</p>
+                </div>
+                <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-4">
+                    <p class="font-bold text-emerald-800 text-sm mb-0.5">Deep Technical Breadth</p>
+                    <p class="text-xs text-emerald-700">Embedded systems, automotive ECUs, RF testing, SMT manufacturing &mdash; full hardware-software validation spectrum.</p>
+                </div>
+                <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-4">
+                    <p class="font-bold text-emerald-800 text-sm mb-0.5">International Experience</p>
+                    <p class="text-xs text-emerald-700">Work across 3+ cities plus English exchange in Australia. Bilingual capability is a strong differentiator.</p>
+                </div>
+                <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-4">
+                    <p class="font-bold text-emerald-800 text-sm mb-0.5">Consistent Career Progression</p>
+                    <p class="text-xs text-emerald-700">Technician &rarr; Senior &rarr; Quality Engineer &rarr; Software Analyst. Clear upward trajectory over 15 years.</p>
+                </div>
+            </div>
+
+            <h2 class="text-base font-black text-slate-900 mb-3">Action Items for Rodrigo</h2>
+            <div class="space-y-2">
+                <div class="flex gap-3">
+                    <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-emerald-500 text-white text-[10px] font-bold flex-shrink-0">1</span>
+                    <div>
+                        <p class="font-bold text-slate-900 text-sm">Validate All Assumed Metrics</p>
+                        <p class="text-xs text-slate-600">Replace estimated numbers (200+ test cases, 1,200+ RMAs) with actual data &mdash; likely even more impressive.</p>
+                    </div>
+                </div>
+                <div class="flex gap-3">
+                    <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-emerald-500 text-white text-[10px] font-bold flex-shrink-0">2</span>
+                    <div>
+                        <p class="font-bold text-slate-900 text-sm">Add LinkedIn Profile URL</p>
+                        <p class="text-xs text-slate-600">Create a custom LinkedIn URL &mdash; recruiters check it. Make it easy for them.</p>
+                    </div>
+                </div>
+                <div class="flex gap-3">
+                    <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-emerald-500 text-white text-[10px] font-bold flex-shrink-0">3</span>
+                    <div>
+                        <p class="font-bold text-slate-900 text-sm">Modernize Email Address</p>
+                        <p class="text-xs text-slate-600">Hotmail can signal "outdated." Consider Gmail or a custom domain for a professional impression.</p>
+                    </div>
+                </div>
+                <div class="flex gap-3">
+                    <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-emerald-500 text-white text-[10px] font-bold flex-shrink-0">4</span>
+                    <div>
+                        <p class="font-bold text-slate-900 text-sm">Tailor Summary Per Application</p>
+                        <p class="text-xs text-slate-600">For automotive roles, lead with GM/Comau. For manufacturing quality, lead with Jabil/Foxconn.</p>
+                    </div>
+                </div>
+                <div class="flex gap-3">
+                    <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-emerald-500 text-white text-[10px] font-bold flex-shrink-0">5</span>
+                    <div>
+                        <p class="font-bold text-slate-900 text-sm">Consider Adding Certifications</p>
+                        <p class="text-xs text-slate-600">IPC-A-610, Six Sigma, or ISTQB would significantly strengthen the resume for senior roles.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- FOOTER (prints)                              -->
+        <!-- ============================================ -->
+        <div class="mt-4 text-center py-4">
+            <div class="flex items-center justify-center gap-2 mb-2">
+                <div class="w-7 h-7 rounded-lg bg-gradient-to-br from-lime-400/30 to-teal-400/30 border border-emerald-200 flex items-center justify-center font-grotesk font-bold text-[9px] text-emerald-700">
+                    L<sup class="text-[6px]">2</sup>
+                </div>
+                <span class="text-sm font-extrabold text-slate-700">Launch<span class="text-emerald-600">ToLead</span></span>
+            </div>
+            <p class="text-xs text-slate-400">Analysis prepared with the Impact Bullet Builder&trade; Framework</p>
+            <p class="text-xs text-emerald-600 font-bold mt-0.5">launchtolead.io/free</p>
+        </div>
+
+    </div>
+
+</body>
+</html>

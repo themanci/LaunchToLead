@@ -64,50 +64,78 @@
 </header>
 
 <!-- MAIN -->
-<main class="flex-1 flex items-center justify-center px-4 py-16 relative overflow-hidden">
-    <!-- Background effects -->
+<main class="flex-1">
+
+<!-- ============================================ -->
+<!-- SECTION 1: CONFIRMATION + PDF PREVIEW        -->
+<!-- ============================================ -->
+<div class="px-4 py-12 md:py-16 relative overflow-hidden">
     <div class="absolute inset-0 bg-dots opacity-20 pointer-events-none"></div>
     <div class="absolute top-0 right-0 -mr-20 -mt-20 w-80 h-80 bg-teal-100 rounded-full blur-3xl opacity-60 pointer-events-none" aria-hidden="true"></div>
     <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 bg-lime-100 rounded-full blur-3xl opacity-60 pointer-events-none" aria-hidden="true"></div>
 
-    <div class="max-w-lg text-center relative z-10">
-        <!-- Check icon -->
-        <div class="w-20 h-20 mx-auto mb-6 rounded-full bg-emerald-50 border-2 border-emerald-200 flex items-center justify-center">
-            <svg class="w-10 h-10 text-emerald-600" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
-            </svg>
+    <div class="max-w-xl mx-auto relative z-10">
+        <!-- Headline + inbox note -->
+        <div class="text-center">
+            <h1 class="text-2xl md:text-3xl font-extrabold text-slate-900 mb-2 leading-tight">
+                <span id="user-greeting"></span>Your FREE PDF guide is on the way!
+            </h1>
+            <p class="text-sm text-slate-500 leading-relaxed">
+                Check your inbox — it should arrive in the next few minutes. If you don't see it, check your spam/junk folder.
+            </p>
         </div>
 
-        <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-3" id="thank-you-heading">
-            Congrats, <span id="user-name">Friend</span>!
-        </h1>
-
-        <p class="text-lg text-slate-600 mb-8 leading-relaxed">
-            Check your inbox — your free gift is already on its way. If you don't see it in a few minutes, check your spam/junk folder.
-        </p>
-
-        <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 mb-8 text-left">
-            <h3 class="font-bold text-slate-900 text-sm uppercase tracking-wider mb-3">What to do next:</h3>
-            <ol class="space-y-3 text-sm text-slate-600">
-                <li class="flex gap-3">
-                    <span class="flex-shrink-0 w-6 h-6 rounded-full bg-brand-primary text-white text-xs font-bold flex items-center justify-center">1</span>
-                    <span>Open the guide and read the Impact Bullet Formula</span>
-                </li>
-                <li class="flex gap-3">
-                    <span class="flex-shrink-0 w-6 h-6 rounded-full bg-brand-primary text-white text-xs font-bold flex items-center justify-center">2</span>
-                    <span>Rewrite your resume bullets using the new framework</span>
-                </li>
-                <li class="flex gap-3">
-                    <span class="flex-shrink-0 w-6 h-6 rounded-full bg-brand-primary text-white text-xs font-bold flex items-center justify-center">3</span>
-                    <span>Come check out our website to learn more about our <a href="https://launchtolead.io" target="_blank" class="text-brand-secondary font-semibold underline hover:text-brand-primary transition">21 Day Career Launch Program</a></span>
-                </li>
-            </ol>
+        <!-- CTA to offer page -->
+        <div class="mt-8">
+            <a href="offer.html?name=" id="offer-cta-link" class="block relative overflow-hidden bg-gradient-to-r from-brand-primary to-emerald-700 text-white rounded-2xl p-6 md:p-8 text-center shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all group border-2 border-emerald-400/30">
+                <div class="absolute inset-0 bg-gradient-to-r from-emerald-400/10 to-teal-400/10 group-hover:from-emerald-400/20 group-hover:to-teal-400/20 transition"></div>
+                <div class="relative z-10">
+                    <p class="text-xl md:text-2xl font-extrabold leading-snug mb-3">While you wait, learn about my full program that landed Karen at Google and Sarah at Ford.</p>
+                    <span class="inline-flex items-center gap-2 px-6 py-2.5 bg-brand-accent text-brand-primary font-extrabold text-sm rounded-full group-hover:scale-105 transition-transform shadow-lg">
+                        Learn More
+                        <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+                    </span>
+                </div>
+            </a>
         </div>
-
-        <a href="https://launchtolead.io" class="inline-flex items-center gap-2 px-6 py-3 bg-brand-primary text-white font-bold text-base rounded-xl hover:bg-emerald-800 transition shadow-md">
-            Visit Us at LaunchToLead.io!
-        </a>
     </div>
+</div>
+
+<!-- ============================================ -->
+<!-- SECTION 2: KAREN VIDEO TESTIMONIAL           -->
+<!-- ============================================ -->
+<div class="px-4 py-10 bg-white">
+    <div class="max-w-lg mx-auto">
+        <div class="text-center mb-5">
+            <span class="inline-block px-3 py-1 bg-emerald-100 text-emerald-700 text-xs font-bold rounded-full uppercase tracking-widest mb-2">Real Results</span>
+            <h2 class="text-xl md:text-2xl font-extrabold text-slate-900">See What Happened When Karen Used the Full System</h2>
+            <p class="text-sm text-slate-500 mt-1">She started with the same free guide you just downloaded.</p>
+        </div>
+        <div class="rounded-2xl overflow-hidden border-2 border-emerald-200 shadow-xl bg-slate-900 relative cursor-pointer group" id="karen-video-container" onclick="var v=document.getElementById('karen-video');this.querySelector('.karen-thumb').classList.add('hidden');v.classList.remove('hidden');v.play();">
+            <!-- Custom thumbnail for clarity -->
+            <div class="karen-thumb flex flex-col items-center justify-center py-10 md:py-14">
+                <img src="../testimonials/pictures/karen_bickford.webp" alt="Karen B." class="w-24 h-24 md:w-32 md:h-32 rounded-full object-cover border-4 border-emerald-300 shadow-xl mb-3">
+                <p class="text-white font-bold text-sm mb-0.5">Karen B.</p>
+                <p class="text-emerald-300 text-xs mb-3">Offers from SpaceX, Google, GE &amp; Bridgestone</p>
+                <div class="w-14 h-14 rounded-full bg-emerald-500 bg-opacity-90 flex items-center justify-center shadow-lg group-hover:bg-opacity-100 transition-all group-hover:scale-110">
+                    <svg class="w-6 h-6 text-white ml-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                </div>
+            </div>
+            <video
+                id="karen-video"
+                class="w-full h-auto hidden"
+                controls
+                playsinline
+                preload="none"
+            >
+                <source src="../video_scripts/karen_confidence_compressed.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <p class="text-center text-xs text-slate-400 mt-3">Karen B. — LaunchToLead client. Individual results may vary.</p>
+    </div>
+</div>
+
 </main>
 
 <!-- FOOTER -->
@@ -126,11 +154,12 @@
 </footer>
 
 <script>
-    // Personalize with first name from URL
+    // Personalize headline with first name from URL param
     const params = new URLSearchParams(window.location.search);
     const name = params.get('name');
     if (name) {
-        document.getElementById('user-name').textContent = name;
+        document.getElementById('user-greeting').textContent = name + ', ';
+        document.getElementById('offer-cta-link').href = 'offer.html?name=' + encodeURIComponent(name);
     }
 </script>
 

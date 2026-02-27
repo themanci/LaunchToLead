@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedIn Carousel — Stop Writing Duties. Start Writing Impact.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background: #0f0f0f; min-height: 100vh; display: flex; flex-direction: column; align-items: center; padding: 40px 20px; gap: 40px; }
+        .slide-label { color: rgba(255,255,255,0.25); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-bottom: -28px; }
+
+        .slide { width: 1080px; height: 1080px; position: relative; overflow: hidden; flex-shrink: 0; }
+
+        /* Reusable backgrounds */
+        .bg-dark { background: linear-gradient(155deg, #0f172a 0%, #1e293b 50%, #0f172a 100%); }
+        .bg-red { background: linear-gradient(155deg, #450a0a 0%, #7f1d1d 50%, #450a0a 100%); }
+        .bg-green { background: linear-gradient(155deg, #052e16 0%, #14532d 50%, #052e16 100%); }
+        .bg-split { background: linear-gradient(90deg, #450a0a 0%, #450a0a 50%, #052e16 50%, #052e16 100%); }
+        .bg-cta { background: linear-gradient(155deg, #052e16 0%, #0f4c2d 40%, #115e3a 100%); }
+
+        .dots { position: absolute; inset: 0; background-image: radial-gradient(rgba(255,255,255,0.025) 1px, transparent 1px); background-size: 28px 28px; z-index: 1; }
+        .orb { position: absolute; border-radius: 50%; filter: blur(80px); z-index: 0; }
+
+        .gc { position: relative; z-index: 10; height: 100%; display: flex; flex-direction: column; padding: 60px; }
+
+        /* Footer (all slides) */
+        .bottom-bar { position: absolute; bottom: 0; left: 0; right: 0; z-index: 10; background: rgba(0,0,0,0.30); backdrop-filter: blur(12px); border-top: 1px solid rgba(255,255,255,0.06); padding: 16px 60px; display: flex; justify-content: space-between; align-items: center; }
+        .logo-group { display: flex; align-items: center; gap: 10px; }
+        .logo-icon { width: 30px; height: 30px; background: linear-gradient(135deg, rgba(163,230,53,0.30), rgba(20,184,166,0.30)); border: 1px solid rgba(255,255,255,0.35); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-family: 'Space Grotesk', sans-serif; font-size: 13px; font-weight: 700; color: #fff; }
+        .logo-icon .sup { font-size: 8px; vertical-align: super; }
+        .logo-text { font-size: 15px; font-weight: 800; color: #fff; }
+        .logo-text .accent { color: #a3e635; }
+        .page-num { font-family: 'Space Grotesk', sans-serif; font-size: 13px; color: rgba(255,255,255,0.35); font-weight: 600; }
+        .website { font-size: 14px; color: #a3e635; font-weight: 800; }
+
+        /* Shared text styles */
+        .tag { display: inline-flex; align-items: center; gap: 8px; border-radius: 50px; padding: 6px 18px 6px 14px; font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; width: fit-content; }
+        .tag-dark { background: rgba(0,0,0,0.25); border: 1px solid rgba(255,255,255,0.10); color: rgba(255,255,255,0.80); }
+        .tag-red { background: rgba(239,68,68,0.15); border: 1px solid rgba(239,68,68,0.25); color: #fca5a5; }
+        .tag-green { background: rgba(163,230,53,0.15); border: 1px solid rgba(163,230,53,0.25); color: #a3e635; }
+        .tag .dot { width: 7px; height: 7px; border-radius: 50%; }
+        .dot-red { background: #ef4444; box-shadow: 0 0 10px rgba(239,68,68,0.5); }
+        .dot-green { background: #a3e635; box-shadow: 0 0 10px rgba(163,230,53,0.5); }
+        .dot-white { background: #fff; box-shadow: 0 0 10px rgba(255,255,255,0.3); }
+
+        .heading { font-size: 52px; font-weight: 900; color: #fff; line-height: 1.15; }
+        .heading .lime { color: #a3e635; }
+        .heading .red { color: #f87171; }
+        .sub { font-size: 20px; color: rgba(255,255,255,0.50); font-weight: 600; line-height: 1.5; }
+
+        /* Bullet cards */
+        .bullet-card { border-radius: 16px; padding: 28px 32px; }
+        .bullet-card.bad { background: rgba(239,68,68,0.08); border: 1px solid rgba(239,68,68,0.20); }
+        .bullet-card.good { background: rgba(163,230,53,0.06); border: 1px solid rgba(163,230,53,0.18); }
+
+        .bullet-label { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+        .bullet-label.bad { color: #f87171; }
+        .bullet-label.good { color: #a3e635; }
+
+        .bullet-text { font-size: 22px; font-weight: 600; line-height: 1.55; }
+        .bullet-text.bad { color: rgba(255,255,255,0.55); }
+        .bullet-text.good { color: rgba(255,255,255,0.90); }
+        .bullet-text .hl-red { color: #f87171; font-weight: 800; }
+        .bullet-text .hl-green { color: #a3e635; font-weight: 800; }
+        .bullet-text .hl-lime { color: #bef264; font-weight: 800; }
+        .bullet-text .strike { text-decoration: line-through; text-decoration-color: #ef4444; text-decoration-thickness: 2px; }
+
+        /* Callout chips */
+        .callouts { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+        .chip { font-size: 12px; font-weight: 700; padding: 5px 14px; border-radius: 50px; }
+        .chip-red { background: rgba(239,68,68,0.12); color: #fca5a5; border: 1px solid rgba(239,68,68,0.20); }
+        .chip-green { background: rgba(163,230,53,0.10); color: #a3e635; border: 1px solid rgba(163,230,53,0.18); }
+
+        /* Arrow */
+        .arrow { display: flex; align-items: center; justify-content: center; padding: 8px 0; }
+        .arrow svg { width: 36px; height: 36px; color: #a3e635; }
+
+        /* Pattern list */
+        .pattern-list { display: flex; flex-direction: column; gap: 16px; }
+        .pattern-item { display: flex; align-items: flex-start; gap: 16px; padding: 16px 20px; border-radius: 14px; }
+        .pattern-item.bad { background: rgba(239,68,68,0.06); border: 1px solid rgba(239,68,68,0.12); }
+        .pattern-item.good { background: rgba(163,230,53,0.05); border: 1px solid rgba(163,230,53,0.10); }
+        .pattern-icon { width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 16px; flex-shrink: 0; }
+        .pattern-icon.bad { background: rgba(239,68,68,0.15); color: #f87171; }
+        .pattern-icon.good { background: rgba(163,230,53,0.15); color: #a3e635; }
+        .pattern-title { font-size: 20px; font-weight: 800; line-height: 1.3; }
+        .pattern-title.bad { color: #fca5a5; }
+        .pattern-title.good { color: #a3e635; }
+        .pattern-desc { font-size: 14px; color: rgba(255,255,255,0.40); font-weight: 500; line-height: 1.4; margin-top: 4px; }
+    </style>
+</head>
+<body>
+
+<!-- ========================================== -->
+<!-- SLIDE 1: HOOK / COVER                      -->
+<!-- ========================================== -->
+<div class="slide-label">Slide 1 — Cover</div>
+<div class="slide bg-dark">
+    <div class="dots"></div>
+    <div class="orb" style="width:600px;height:600px;top:-200px;left:-150px;background:radial-gradient(circle,rgba(239,68,68,0.12) 0%,transparent 60%);"></div>
+    <div class="orb" style="width:500px;height:500px;bottom:-200px;right:-100px;background:radial-gradient(circle,rgba(163,230,53,0.10) 0%,transparent 60%);"></div>
+
+    <div class="gc" style="justify-content: center; align-items: center; text-align: center; padding-bottom: 100px;">
+        <div class="tag tag-dark" style="margin-bottom: 28px;"><span class="dot dot-white"></span> Resume Reality Check</div>
+
+        <div class="heading" style="font-size: 58px; margin-bottom: 16px;">
+            Stop writing <span class="red">duties</span>.<br>
+            Start writing <span class="lime">impact</span>.
+        </div>
+
+        <div class="sub" style="max-width: 650px; margin-bottom: 40px;">
+            Your resume tells a recruiter what you <em>did</em>.<br>
+            An impact resume tells them what <em>changed because you were there</em>.
+        </div>
+
+        <div style="display: flex; gap: 20px; align-items: center;">
+            <div style="background: rgba(239,68,68,0.12); border: 1px solid rgba(239,68,68,0.25); border-radius: 16px; padding: 20px 32px; text-align: center;">
+                <div style="font-family: 'Space Grotesk', sans-serif; font-size: 48px; font-weight: 700; color: #f87171;">52</div>
+                <div style="font-size: 13px; color: #fca5a5; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">Before</div>
+            </div>
+            <svg style="width:40px;height:40px;color:#a3e635;" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
+            <div style="background: rgba(163,230,53,0.10); border: 1px solid rgba(163,230,53,0.22); border-radius: 16px; padding: 20px 32px; text-align: center;">
+                <div style="font-family: 'Space Grotesk', sans-serif; font-size: 48px; font-weight: 700; color: #a3e635;">100</div>
+                <div style="font-size: 13px; color: #a3e635; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">After</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bottom-bar">
+        <div class="logo-group">
+            <div class="logo-icon">L<span class="sup">2</span></div>
+            <div class="logo-text">Launch<span class="accent">ToLead</span></div>
+        </div>
+        <div class="page-num">1 / 8</div>
+        <div class="website">LaunchToLead.io/free</div>
+    </div>
+</div>
+
+<!-- ========================================== -->
+<!-- SLIDE 2: PATTERN 1 — "Work With" Kills     -->
+<!-- ========================================== -->
+<div class="slide-label">Slide 2 — Pattern 1</div>
+<div class="slide bg-split">
+    <div class="dots"></div>
+
+    <div class="gc" style="gap: 24px; padding-bottom: 90px;">
+        <div style="display: flex; align-items: center; justify-content: space-between;">
+            <div class="tag tag-red"><span class="dot dot-red"></span> Pattern 1</div>
+            <span style="font-size: 13px; color: rgba(255,255,255,0.30); font-weight: 700;">"Work With" Makes You Invisible</span>
+        </div>
+
+        <div class="bullet-card bad" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+            <div class="bullet-label bad">&#x2716; Before</div>
+            <div class="bullet-text bad">
+                <span class="hl-red">"Work with</span> software engineers to understand inefficiencies in their tools, processes, and architectures"
+            </div>
+            <div class="callouts">
+                <span class="chip chip-red">Who did the work?</span>
+                <span class="chip chip-red">Zero metrics</span>
+                <span class="chip chip-red">No result</span>
+                <span class="chip chip-red">Sounds like an observer</span>
+            </div>
+        </div>
+
+        <div class="arrow">
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" /></svg>
+        </div>
+
+        <div class="bullet-card good" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+            <div class="bullet-label good">&#x2714; After</div>
+            <div class="bullet-text good">
+                <span class="hl-green">"Identified and eliminated 12+ toolchain bottlenecks</span> impacting <span class="hl-lime">2,000 embedded developers</span> company-wide &mdash; reducing ramp-up time by <span class="hl-lime">30%</span> and reclaiming <span class="hl-lime">$50K+</span> per new hire."
+            </div>
+            <div class="callouts">
+                <span class="chip chip-green">Decisive verb</span>
+                <span class="chip chip-green">2,000 dev scope</span>
+                <span class="chip chip-green">$50K metric</span>
+                <span class="chip chip-green">30% improvement</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="bottom-bar">
+        <div class="logo-group">
+            <div class="logo-icon">L<span class="sup">2</span></div>
+            <div class="logo-text">Launch<span class="accent">ToLead</span></div>
+        </div>
+        <div class="page-num">2 / 8</div>
+        <div class="website">LaunchToLead.io/free</div>
+    </div>
+</div>
+
+<!-- ========================================== -->
+<!-- SLIDE 3: PATTERN 2 — Hiding Amazing Stats  -->
+<!-- ========================================== -->
+<div class="slide-label">Slide 3 — Pattern 2</div>
+<div class="slide bg-split">
+    <div class="dots"></div>
+
+    <div class="gc" style="gap: 24px; padding-bottom: 90px;">
+        <div style="display: flex; align-items: center; justify-content: space-between;">
+            <div class="tag tag-red"><span class="dot dot-red"></span> Pattern 2</div>
+            <span style="font-size: 13px; color: rgba(255,255,255,0.30); font-weight: 700;">Burying Your Best Number</span>
+        </div>
+
+        <div class="bullet-card bad" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+            <div class="bullet-label bad">&#x2716; Before</div>
+            <div class="bullet-text bad">
+                "Rewrote C code unit tests for Denso high pressure fuel pump relief valve circuitry diagnostics to decrease code run time from <span class="hl-red">33000 to 25 milliseconds</span>"
+            </div>
+            <div class="callouts">
+                <span class="chip chip-red">1,320x improvement... buried</span>
+                <span class="chip chip-red">No team impact</span>
+                <span class="chip chip-red">No CI pipeline context</span>
+            </div>
+        </div>
+
+        <div class="arrow">
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" /></svg>
+        </div>
+
+        <div class="bullet-card good" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+            <div class="bullet-label good">&#x2714; After</div>
+            <div class="bullet-text good">
+                <span class="hl-green">"Achieved a 1,320x unit test performance improvement</span> (33,000ms &rarr; 25ms) &mdash; saving <span class="hl-lime">8+ hours of CI pipeline time per week</span> across 6 developers and eliminating test timeout failures blocking <span class="hl-lime">3&ndash;4 builds daily</span>."
+            </div>
+            <div class="callouts">
+                <span class="chip chip-green">1,320x leads the bullet</span>
+                <span class="chip chip-green">8 hrs/week saved</span>
+                <span class="chip chip-green">Builds unblocked</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="bottom-bar">
+        <div class="logo-group">
+            <div class="logo-icon">L<span class="sup">2</span></div>
+            <div class="logo-text">Launch<span class="accent">ToLead</span></div>
+        </div>
+        <div class="page-num">3 / 8</div>
+        <div class="website">LaunchToLead.io/free</div>
+    </div>
+</div>
+
+<!-- ========================================== -->
+<!-- SLIDE 4: PATTERN 3 — No Stakes Shown       -->
+<!-- ========================================== -->
+<div class="slide-label">Slide 4 — Pattern 3</div>
+<div class="slide bg-split">
+    <div class="dots"></div>
+
+    <div class="gc" style="gap: 24px; padding-bottom: 90px;">
+        <div style="display: flex; align-items: center; justify-content: space-between;">
+            <div class="tag tag-red"><span class="dot dot-red"></span> Pattern 3</div>
+            <span style="font-size: 13px; color: rgba(255,255,255,0.30); font-weight: 700;">No Stakes = No Story</span>
+        </div>
+
+        <div class="bullet-card bad" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+            <div class="bullet-label bad">&#x2716; Before</div>
+            <div class="bullet-text bad">
+                "Resolved <span class="hl-red">stuck in hidden park</span> defect on 8R IVT tractors by modifying code to create alignment between front console controller reverser lever position and drive strategy controller"
+            </div>
+            <div class="callouts">
+                <span class="chip chip-red">Safety-critical... unmarked</span>
+                <span class="chip chip-red">No $ at risk</span>
+                <span class="chip chip-red">No fleet scope</span>
+            </div>
+        </div>
+
+        <div class="arrow">
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" /></svg>
+        </div>
+
+        <div class="bullet-card good" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+            <div class="bullet-label good">&#x2714; After</div>
+            <div class="bullet-text good">
+                <span class="hl-green">"Resolved a safety-critical 'stuck in hidden park' defect</span> on 8R IVT tractors (<span class="hl-lime">MSRP $350&ndash;$500K+</span>) &mdash; preventing potential unintended vehicle movement affecting <span class="hl-lime">1,200+ tractors in production</span> and <span class="hl-lime">avoiding a fleet-wide safety recall</span>."
+            </div>
+            <div class="callouts">
+                <span class="chip chip-green">$350&ndash;500K machines</span>
+                <span class="chip chip-green">1,200+ tractors</span>
+                <span class="chip chip-green">Safety recall avoided</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="bottom-bar">
+        <div class="logo-group">
+            <div class="logo-icon">L<span class="sup">2</span></div>
+            <div class="logo-text">Launch<span class="accent">ToLead</span></div>
+        </div>
+        <div class="page-num">4 / 8</div>
+        <div class="website">LaunchToLead.io/free</div>
+    </div>
+</div>
+
+<!-- ========================================== -->
+<!-- SLIDE 5: PATTERN 4 — "Supported" = Intern  -->
+<!-- ========================================== -->
+<div class="slide-label">Slide 5 — Pattern 4</div>
+<div class="slide bg-split">
+    <div class="dots"></div>
+
+    <div class="gc" style="gap: 24px; padding-bottom: 90px;">
+        <div style="display: flex; align-items: center; justify-content: space-between;">
+            <div class="tag tag-red"><span class="dot dot-red"></span> Pattern 4</div>
+            <span style="font-size: 13px; color: rgba(255,255,255,0.30); font-weight: 700;">"Supported" Sounds Like an Intern</span>
+        </div>
+
+        <div class="bullet-card bad" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+            <div class="bullet-label bad">&#x2716; Before</div>
+            <div class="bullet-text bad">
+                <span class="hl-red">"Supported</span> code development for large tractor transmissions, mechanical front wheel drive, power take off and differential locking systems in embedded C to meet design system requirements"
+            </div>
+            <div class="callouts">
+                <span class="chip chip-red">"Supported" = invisible</span>
+                <span class="chip chip-red">Duty description</span>
+                <span class="chip chip-red">No outcome</span>
+            </div>
+        </div>
+
+        <div class="arrow">
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" /></svg>
+        </div>
+
+        <div class="bullet-card good" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+            <div class="bullet-label good">&#x2714; After</div>
+            <div class="bullet-text good" style="font-size: 26px; text-align: center; margin: 20px 0;">
+                <span style="color: #f87171; text-decoration: line-through; text-decoration-thickness: 3px;">This bullet was deleted.</span><br><br>
+                <span class="hl-green">3 strong bullets &gt; 9 bullets where 4 are filler.</span><br>
+                <span style="color: rgba(255,255,255,0.40); font-size: 20px;">Cut the weak ones. Keep only impact.</span>
+            </div>
+            <div class="callouts" style="justify-content: center;">
+                <span class="chip chip-green">Quality &gt; Quantity</span>
+                <span class="chip chip-green">If it's not impact, it's noise</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="bottom-bar">
+        <div class="logo-group">
+            <div class="logo-icon">L<span class="sup">2</span></div>
+            <div class="logo-text">Launch<span class="accent">ToLead</span></div>
+        </div>
+        <div class="page-num">5 / 8</div>
+        <div class="website">LaunchToLead.io/free</div>
+    </div>
+</div>
+
+<!-- ========================================== -->
+<!-- SLIDE 6: PATTERN 5 — Ending on the Fix     -->
+<!-- ========================================== -->
+<div class="slide-label">Slide 6 — Pattern 5</div>
+<div class="slide bg-split">
+    <div class="dots"></div>
+
+    <div class="gc" style="gap: 24px; padding-bottom: 90px;">
+        <div style="display: flex; align-items: center; justify-content: space-between;">
+            <div class="tag tag-red"><span class="dot dot-red"></span> Pattern 5</div>
+            <span style="font-size: 13px; color: rgba(255,255,255,0.30); font-weight: 700;">Ending on the Technical Fix</span>
+        </div>
+
+        <div class="bullet-card bad" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+            <div class="bullet-label bad">&#x2716; Before</div>
+            <div class="bullet-text bad">
+                "Built experimental software to correct aftertreatment regen issues and <span class="hl-red">relieve warehouse hold</span> in under 2 days. Addressed complex interactions <span class="hl-red">via collaboration</span> with multiple teams"
+            </div>
+            <div class="callouts">
+                <span class="chip chip-red">"Relieve warehouse hold" = vague</span>
+                <span class="chip chip-red">"Via collaboration" = invisible</span>
+                <span class="chip chip-red">$5M+ hidden</span>
+            </div>
+        </div>
+
+        <div class="arrow">
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" /></svg>
+        </div>
+
+        <div class="bullet-card good" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+            <div class="bullet-label good">&#x2714; After</div>
+            <div class="bullet-text good">
+                <span class="hl-green">"Built emergency experimental software in under 48 hours</span> &mdash; unblocking <span class="hl-lime">15+ machines worth $5M+</span> from shipping and <span class="hl-lime">preventing a production line stoppage</span>."
+            </div>
+            <div class="callouts">
+                <span class="chip chip-green">$5M leads, not hides</span>
+                <span class="chip chip-green">48-hour heroics</span>
+                <span class="chip chip-green">Production line saved</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="bottom-bar">
+        <div class="logo-group">
+            <div class="logo-icon">L<span class="sup">2</span></div>
+            <div class="logo-text">Launch<span class="accent">ToLead</span></div>
+        </div>
+        <div class="page-num">6 / 8</div>
+        <div class="website">LaunchToLead.io/free</div>
+    </div>
+</div>
+
+<!-- ========================================== -->
+<!-- SLIDE 7: THE FORMULA                       -->
+<!-- ========================================== -->
+<div class="slide-label">Slide 7 — The Formula</div>
+<div class="slide bg-dark">
+    <div class="dots"></div>
+    <div class="orb" style="width:500px;height:500px;top:50%;left:50%;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(163,230,53,0.08) 0%,transparent 60%);"></div>
+
+    <div class="gc" style="justify-content: center; align-items: center; text-align: center; padding-bottom: 80px; gap: 40px;">
+        <div class="tag tag-green"><span class="dot dot-green"></span> The Framework</div>
+
+        <div class="heading" style="font-size: 38px; margin-bottom: 10px;">
+            The Impact Bullet Builder&trade; Formula
+        </div>
+
+        <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 14px; max-width: 800px;">
+            <div style="background: rgba(16,185,129,0.10); border: 1px solid rgba(16,185,129,0.25); border-radius: 14px; padding: 20px 28px; text-align: center;">
+                <div style="font-size: 28px; font-weight: 900; color: #34d399;">Accomplishment</div>
+                <div style="font-size: 12px; color: rgba(255,255,255,0.40); margin-top: 4px;">What you achieved</div>
+            </div>
+            <div style="font-size: 32px; font-weight: 900; color: rgba(255,255,255,0.20);">+</div>
+            <div style="background: rgba(163,230,53,0.10); border: 1px solid rgba(163,230,53,0.22); border-radius: 14px; padding: 20px 28px; text-align: center;">
+                <div style="font-size: 28px; font-weight: 900; color: #a3e635;">Metric</div>
+                <div style="font-size: 12px; color: rgba(255,255,255,0.40); margin-top: 4px;">%, $, count, time</div>
+            </div>
+            <div style="font-size: 32px; font-weight: 900; color: rgba(255,255,255,0.20);">+</div>
+            <div style="background: rgba(20,184,166,0.10); border: 1px solid rgba(20,184,166,0.22); border-radius: 14px; padding: 20px 28px; text-align: center;">
+                <div style="font-size: 28px; font-weight: 900; color: #2dd4bf;">How</div>
+                <div style="font-size: 12px; color: rgba(255,255,255,0.40); margin-top: 4px;">Tools, methods, skills</div>
+            </div>
+            <div style="font-size: 32px; font-weight: 900; color: rgba(255,255,255,0.20);">+</div>
+            <div style="background: rgba(6,182,212,0.10); border: 1px solid rgba(6,182,212,0.22); border-radius: 14px; padding: 20px 28px; text-align: center;">
+                <div style="font-size: 28px; font-weight: 900; color: #22d3ee;">Why</div>
+                <div style="font-size: 12px; color: rgba(255,255,255,0.40); margin-top: 4px;">CEO cares because...</div>
+            </div>
+        </div>
+
+        <div style="margin-top: 10px;">
+            <div style="font-size: 24px; font-weight: 900; color: rgba(255,255,255,0.20);">=</div>
+            <div style="background: linear-gradient(135deg, #a3e635, #14b8a6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-size: 52px; font-weight: 900; margin-top: 8px;">IMPACT</div>
+        </div>
+
+        <div class="sub" style="max-width: 600px; font-size: 18px;">
+            Apply this to every bullet. No exceptions.<br>
+            That's how you go from 52 to 100.
+        </div>
+    </div>
+
+    <div class="bottom-bar">
+        <div class="logo-group">
+            <div class="logo-icon">L<span class="sup">2</span></div>
+            <div class="logo-text">Launch<span class="accent">ToLead</span></div>
+        </div>
+        <div class="page-num">7 / 8</div>
+        <div class="website">LaunchToLead.io/free</div>
+    </div>
+</div>
+
+<!-- ========================================== -->
+<!-- SLIDE 8: CTA                               -->
+<!-- ========================================== -->
+<div class="slide-label">Slide 8 — CTA</div>
+<div class="slide bg-cta">
+    <div class="dots"></div>
+    <div class="orb" style="width:700px;height:700px;top:-100px;right:-200px;background:radial-gradient(circle,rgba(163,230,53,0.12) 0%,transparent 55%);"></div>
+
+    <div class="gc" style="justify-content: center; align-items: center; text-align: center; padding-bottom: 80px; gap: 28px;">
+        <div class="tag tag-green"><span class="dot dot-green"></span> Free Download</div>
+
+        <div class="heading" style="font-size: 50px;">
+            Get the Impact<br>Bullet Builder&trade;
+        </div>
+
+        <div class="sub" style="max-width: 550px;">
+            The exact framework used to take this resume from 52 to 100. Same experience. Completely different results.
+        </div>
+
+        <div style="background: linear-gradient(135deg, #a3e635, #14b8a6); color: #052e16; font-size: 22px; font-weight: 900; padding: 18px 48px; border-radius: 60px; margin-top: 12px; box-shadow: 0 12px 40px rgba(163,230,53,0.25);">
+            LaunchToLead.io/free
+        </div>
+
+        <div style="color: rgba(255,255,255,0.30); font-size: 14px; font-weight: 600; margin-top: 8px;">
+            Link in bio &bull; Free, no BS, no fluff
+        </div>
+    </div>
+
+    <div class="bottom-bar">
+        <div class="logo-group">
+            <div class="logo-icon">L<span class="sup">2</span></div>
+            <div class="logo-text">Launch<span class="accent">ToLead</span></div>
+        </div>
+        <div class="page-num">8 / 8</div>
+        <div class="website">LaunchToLead.io/free</div>
+    </div>
+</div>
+
+<!-- ========================================== -->
+<!-- POST CAPTION                               -->
+<!-- ========================================== -->
+<div style="width: 1080px; margin-top: 40px; padding: 40px; background: #1e293b; border-radius: 16px; color: rgba(255,255,255,0.7); font-size: 14px; line-height: 1.8;">
+    <div style="font-size: 18px; font-weight: 800; color: #a3e635; margin-bottom: 16px;">LINKEDIN POST CAPTION:</div>
+    <pre style="font-family: 'Plus Jakarta Sans', sans-serif; white-space: pre-wrap; color: rgba(255,255,255,0.70);">Stop writing duties on your resume.
+
+I audited my own resume using the Impact Bullet Builder framework.
+
+Score: 52 out of 100.
+
+7 years at John Deere. 4 promotions. Led teams. Shipped products.
+And my resume still read like a job description.
+
+Here are the 5 patterns that were killing it:
+
+1. "Work with" / "Assist" / "Support" = invisible ownership
+2. Buried my best numbers (1,320x improvement hidden in a paragraph)
+3. Zero stakes shown on safety-critical work
+4. "Supported" = sounds like I watched someone else do it
+5. Technical fix with no business impact = meaningless to a recruiter
+
+Same experience. Same 7 years. Same accomplishments.
+
+The only thing that changed was the framework.
+
+52 &rarr; 100.
+
+Download the Impact Bullet Builder (free, link in bio):
+launchtolead.io/free
+
+#Resume #Engineering #CareerDevelopment #JobSearch #LinkedIn #ImpactBulletBuilder</pre>
+</div>
+
+</body>
+</html>

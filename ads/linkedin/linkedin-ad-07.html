@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedIn Ad 07 — Grandparent Worry + Pride</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background: #0a0a0a; width: 1080px; height: 1080px; overflow: hidden; display: flex; justify-content: center; align-items: center; }
+
+        .ad { width: 1080px; height: 1080px; background: linear-gradient(165deg, #111111 0%, #1a1714 50%, #111111 100%); display: flex; flex-direction: column; justify-content: space-between; padding: 50px 55px 40px; position: relative; overflow: hidden; }
+
+        /* Depth layers */
+        .bg-orb-1 { position: absolute; width: 700px; height: 700px; top: -300px; right: -150px; background: radial-gradient(circle, rgba(139,92,246,0.06) 0%, transparent 60%); filter: blur(60px); }
+        .bg-orb-2 { position: absolute; width: 600px; height: 600px; bottom: -250px; left: -150px; background: radial-gradient(circle, rgba(163,230,53,0.06) 0%, transparent 60%); filter: blur(70px); }
+        .bg-orb-3 { position: absolute; width: 400px; height: 400px; top: 40%; left: 50%; transform: translate(-50%,-50%); background: radial-gradient(circle, rgba(248,113,113,0.04) 0%, transparent 55%); filter: blur(50px); }
+        .bg-dots { position: absolute; inset: 0; background-image: radial-gradient(rgba(255,255,255,0.025) 1px, transparent 1px); background-size: 24px 24px; }
+        .bg-mesh { position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,0.006) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.006) 1px, transparent 1px); background-size: 80px 80px; }
+        .bg-line-1 { position: absolute; top: 280px; left: -80px; width: 500px; height: 1px; background: linear-gradient(90deg, transparent, rgba(139,92,246,0.10), transparent); transform: rotate(-3deg); }
+        .bg-line-2 { position: absolute; bottom: 300px; right: -60px; width: 400px; height: 1px; background: linear-gradient(270deg, transparent, rgba(163,230,53,0.08), transparent); transform: rotate(4deg); }
+        .bg-reflect { position: absolute; top: 0; left: 0; right: 0; height: 50%; background: linear-gradient(180deg, rgba(255,255,255,0.012) 0%, transparent 100%); pointer-events: none; }
+
+        .content { position: relative; z-index: 10; display: flex; flex-direction: column; justify-content: space-between; height: 100%; }
+
+        .callout { text-align: center; }
+        .callout-line { font-size: 40px; font-weight: 800; color: #f87171; line-height: 1.25; text-shadow: 0 0 40px rgba(248,113,113,0.3); }
+
+        .hook { text-align: center; }
+        .hook-line { font-size: 44px; font-weight: 700; color: #e2e8f0; line-height: 1.3; }
+
+        .stuck { font-family: 'Space Grotesk', sans-serif; font-size: 52px; font-weight: 700; color: #f87171; text-align: center; text-shadow: 0 0 30px rgba(248,113,113,0.2); }
+
+        .context { text-align: center; }
+        .context-line { font-size: 38px; font-weight: 600; color: #94a3b8; line-height: 1.4; }
+        .context-emphasis { font-family: 'Space Grotesk', sans-serif; color: #fbbf24; font-weight: 700; text-transform: uppercase; text-shadow: 0 0 25px rgba(251,191,36,0.2); }
+
+        .results { text-align: center; }
+        .result-item { font-size: 38px; font-weight: 700; color: #e2e8f0; margin: 10px 0; }
+        .result-company { color: #a3e635; text-shadow: 0 0 20px rgba(163,230,53,0.2); }
+
+        .can-help { text-align: center; }
+        .help-line { font-size: 44px; font-weight: 700; color: #a3e635; line-height: 1.3; text-shadow: 0 0 30px rgba(163,230,53,0.2); }
+
+        .cta-box { background: rgba(163,230,53,0.06); backdrop-filter: blur(16px); border: 1px solid rgba(163,230,53,0.20); border-radius: 18px; padding: 28px 40px; text-align: center; position: relative; overflow: hidden; box-shadow: 0 8px 32px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.04); }
+        .cta-box::before { content:''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, #a3e635, #14b8a6, transparent); }
+        .cta-title { font-size: 36px; font-weight: 800; color: #fff; }
+        .cta-brand { font-size: 22px; font-weight: 700; color: #a3e635; margin-top: 6px; letter-spacing: 0.5px; }
+    </style>
+</head>
+<body>
+<div class="ad">
+    <div class="bg-orb-1"></div><div class="bg-orb-2"></div><div class="bg-orb-3"></div>
+    <div class="bg-dots"></div><div class="bg-mesh"></div>
+    <div class="bg-line-1"></div><div class="bg-line-2"></div><div class="bg-reflect"></div>
+
+    <div class="content">
+        <div class="callout">
+            <div class="callout-line">Grandparent of an engineer</div>
+            <div class="callout-line">with no job offers?</div>
+        </div>
+
+        <div class="hook">
+            <div class="hook-line">You bragged about their degree.</div>
+        </div>
+
+        <div class="stuck">Now they're stuck.</div>
+
+        <div class="context">
+            <div class="context-line">The rules have changed.</div>
+            <div class="context-line"><span class="context-emphasis">Their resume</span> is the problem.</div>
+        </div>
+
+        <div class="results">
+            <div class="result-item">Karen → <span class="result-company">Google</span></div>
+            <div class="result-item">Sarah → <span class="result-company">$106K at Ford</span></div>
+        </div>
+
+        <div class="can-help">
+            <div class="help-line">You can help.</div>
+            <div class="help-line">Share this free guide.</div>
+        </div>
+
+        <div class="cta-box">
+            <div class="cta-title">Free Impact Bullet Builder Guide</div>
+            <div class="cta-brand">LaunchToLead</div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

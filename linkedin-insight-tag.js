@@ -1,20 +1,23 @@
 /**
  * LinkedIn Insight Tag Integration for LaunchToLead.io
- * Partner ID: YOUR_PARTNER_ID_HERE  ← Replace with your actual Partner ID from Campaign Manager
+ * Partner ID: 8832100
  * 
  * This script handles:
  * - Base Insight Tag initialization and page view tracking
  * - Lead conversion event tracking on form submission
- * - Qualified Lead tracking (actively applying → offer page)
  * - Booking conversion tracking
  * - LinkedIn click ID (li_fat_id) cookie preservation for attribution
+ * 
+ * Funnel:
+ *   Lead magnet form → thank-you.html → offer.html → booking-confirmed.html
+ *   All leads follow the same path (no split routing).
  * 
  * Usage: Include this script in the <head> of all pages after the noscript fallback
  * 
  * Setup:
  * 1. Go to LinkedIn Campaign Manager → Analyze → Insight Tag
  * 2. Copy your Partner ID (a number like 7654321)
- * 3. Replace YOUR_PARTNER_ID_HERE below with that number
+ * 3. Replace the Partner ID below with that number
  * 4. (Optional) Replace conversion ID placeholders with your actual conversion IDs
  *    from Campaign Manager → Analyze → Conversion Tracking → Create Conversion
  */
@@ -68,7 +71,6 @@ window._linkedin_data_partner_ids.push(_linkedin_partner_id);
 // LinkedIn will give you a conversion_id number for each conversion.
 var LTL_LINKEDIN_CONVERSIONS = {
     lead: null,            // Replace null with your Lead conversion ID, e.g., 19876543
-    qualifiedLead: null,   // Replace null with your Qualified Lead conversion ID
     booking: null          // Replace null with your Booking conversion ID
 };
 
@@ -91,18 +93,12 @@ function ltlLinkedInConversion(type) {
 (function() {
     var path = window.location.pathname;
 
-    // Thank-you page — lead converted (non-qualified)
+    // Thank-you page — lead converted (form submitted, PDF sent)
     if (path.includes('/thank-you.html')) {
         ltlLinkedInConversion('lead');
     }
 
-    // Offer page — qualified lead (they said "yes" to actively applying)
-    if (path.includes('/offer.html')) {
-        ltlLinkedInConversion('lead');          // Also counts as a lead
-        ltlLinkedInConversion('qualifiedLead'); // Plus: qualified lead
-    }
-
-    // Booking confirmed — strategy call booked
+    // Booking confirmed — Career Launch Call booked
     if (path.includes('/booking-confirmed.html')) {
         ltlLinkedInConversion('booking');
     }

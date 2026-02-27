@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedIn Post — Space to Fail</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background: #1a1a1a; min-height: 100vh; display: flex; flex-direction: column; align-items: center; padding: 40px 20px; }
+        .graphic { width: 1200px; height: 627px; background: linear-gradient(160deg, #a3e635 0%, #84cc16 40%, #65a30d 100%); position: relative; overflow: hidden; flex-shrink: 0; }
+
+        /* Background texture */
+        .bg-orb-1 { position: absolute; width: 600px; height: 600px; top: -250px; right: -80px; background: radial-gradient(circle, rgba(255,255,255,0.10) 0%, transparent 60%); filter: blur(50px); }
+        .bg-orb-2 { position: absolute; width: 500px; height: 500px; bottom: -220px; left: -100px; background: radial-gradient(circle, rgba(0,0,0,0.08) 0%, transparent 60%); filter: blur(60px); }
+        .bg-dots { position: absolute; inset: 0; background-image: radial-gradient(rgba(0,0,0,0.05) 1px, transparent 1px); background-size: 28px 28px; z-index: 1; }
+        .bg-line-1 { position: absolute; top: 180px; left: -60px; width: 500px; height: 1.5px; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.18), transparent); transform: rotate(-3deg); z-index: 1; }
+
+        /* Large faded quote mark */
+        .quote-deco { position: absolute; top: -30px; left: 30px; font-family: 'Space Grotesk', sans-serif; font-size: 320px; font-weight: 700; line-height: 1; color: rgba(0,0,0,0.06); z-index: 2; pointer-events: none; }
+
+        .gc { position: relative; z-index: 10; height: 100%; display: flex; align-items: center; padding: 40px 60px 55px; gap: 50px; }
+
+        /* Left side — quote */
+        .left { flex: 1; display: flex; flex-direction: column; justify-content: center; }
+        .quote-text { font-size: 38px; font-weight: 700; color: #fff; line-height: 1.35; font-style: italic; margin-bottom: 24px; padding-left: 28px; border-left: 5px solid rgba(255,255,255,0.5); }
+        .quote-text .hl { color: #0a0e1a; font-weight: 900; }
+        .quote-attr { padding-left: 28px; font-size: 19px; color: rgba(0,0,0,0.45); font-weight: 700; }
+        .quote-attr .name { color: rgba(0,0,0,0.65); }
+
+        /* Right side — takeaway */
+        .right { width: 400px; flex-shrink: 0; display: flex; flex-direction: column; gap: 14px; }
+
+        .pill-row { display: flex; flex-direction: column; gap: 10px; }
+        .pill { display: flex; align-items: center; gap: 16px; border-radius: 14px; padding: 16px 22px; }
+        .pill.pos { background: rgba(0,0,0,0.12); border: 1px solid rgba(0,0,0,0.10); }
+        .pill.neg { background: rgba(0,0,0,0.06); border: 1px solid rgba(0,0,0,0.06); }
+        .pill .icon { width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0; }
+        .pill.pos .icon { background: #fff; box-shadow: 0 0 8px rgba(255,255,255,0.4); }
+        .pill.neg .icon { background: rgba(0,0,0,0.20); }
+        .pill .label { font-size: 19px; font-weight: 700; }
+        .pill.pos .label { color: #fff; }
+        .pill.neg .label { color: rgba(0,0,0,0.30); text-decoration: line-through; text-decoration-color: rgba(0,0,0,0.25); }
+        .pill .tag { margin-left: auto; font-family: 'Space Grotesk', sans-serif; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; padding: 5px 13px; border-radius: 50px; flex-shrink: 0; }
+        .pill.pos .tag { background: rgba(255,255,255,0.15); color: #fff; }
+        .pill.neg .tag { background: rgba(0,0,0,0.06); color: rgba(0,0,0,0.35); }
+
+        .divider { height: 1px; background: linear-gradient(90deg, transparent, rgba(0,0,0,0.12), transparent); }
+
+        .bottom-line { text-align: center; font-size: 22px; font-weight: 800; color: #fff; line-height: 1.45; padding-top: 2px; }
+        .bottom-line .dark { color: #0a0e1a; }
+
+        /* Footer */
+        .bottom-bar { position: absolute; bottom: 0; left: 0; right: 0; z-index: 10; background: rgba(0,0,0,0.18); backdrop-filter: blur(12px); border-top: 1px solid rgba(255,255,255,0.1); padding: 12px 60px; display: flex; justify-content: space-between; align-items: center; }
+        .logo-group { display: flex; align-items: center; gap: 10px; }
+        .logo-icon { width: 30px; height: 30px; background: linear-gradient(135deg, rgba(163,230,53,0.30), rgba(20,184,166,0.30)); border: 1px solid rgba(255,255,255,0.35); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-family: 'Space Grotesk', sans-serif; font-size: 13px; font-weight: 700; color: #fff; }
+        .logo-icon .sup { font-size: 8px; vertical-align: super; color: #fff; }
+        .logo-text { font-size: 15px; font-weight: 800; color: #fff; letter-spacing: -0.3px; }
+        .logo-text .accent { color: #0a0e1a; -webkit-text-fill-color: #0a0e1a; }
+        .website { font-size: 15px; color: #0a0e1a; font-weight: 800; letter-spacing: 0.3px; }
+    </style>
+</head>
+<body>
+<div class="graphic">
+    <div class="bg-orb-1"></div><div class="bg-orb-2"></div>
+    <div class="bg-dots"></div><div class="bg-line-1"></div>
+    <div class="quote-deco">"</div>
+
+    <div class="gc">
+        <div class="left">
+            <div class="quote-text">
+                "I'd rather have you <span class="hl">mess up</span> and <span class="hl">learn something</span>, than never mess up and <span class="hl">not learn</span> as much."
+            </div>
+            <div class="quote-attr">— A Senior Engineer at <span class="name">John Deere</span></div>
+        </div>
+
+        <div class="right">
+            <div class="pill-row">
+                <div class="pill pos"><span class="icon"></span><span class="label">Space to fail</span><span class="tag">Builds growth</span></div>
+                <div class="pill pos"><span class="icon"></span><span class="label">Autonomy</span><span class="tag">Builds trust</span></div>
+                <div class="pill pos"><span class="icon"></span><span class="label">Patience</span><span class="tag">Builds confidence</span></div>
+            </div>
+            <div class="divider"></div>
+            <div class="pill neg"><span class="icon"></span><span class="label">Fear &amp; condescension</span><span class="tag">More mistakes</span></div>
+            <div class="divider"></div>
+            <div class="bottom-line">Crack a few eggs.<br><span class="dark">Make the omelet.</span></div>
+        </div>
+    </div>
+
+    <div class="bottom-bar">
+        <div class="logo-group"><div class="logo-icon">L<span class="sup">2</span></div><div class="logo-text">Launch<span class="accent">ToLead</span></div></div>
+        <div class="website">LaunchToLead.io/free</div>
+    </div>
+</div>
+</body>
+</html>

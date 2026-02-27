@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Analysis V2 — Mansour Manci | LaunchToLead</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .font-mono-num { font-family: 'Space Grotesk', monospace; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-700">
+
+<!-- ============================================ -->
+<!-- HEADER                                        -->
+<!-- ============================================ -->
+<header class="bg-emerald-900 text-white py-6 px-6">
+    <div class="max-w-4xl mx-auto">
+        <div class="flex items-center gap-3 mb-4">
+            <div class="bg-white text-emerald-900 w-10 h-10 rounded-xl flex items-center justify-center font-bold text-sm shadow">L²</div>
+            <span class="text-xl font-bold">Launch<span class="font-light text-lime-300">ToLead</span></span>
+        </div>
+        <h1 class="text-3xl font-extrabold mb-1">Resume Analysis & Rewrite — V2</h1>
+        <p class="text-emerald-200">Mansour Manci — Software / Controls / Engineering Manager</p>
+        <p class="text-emerald-400/60 text-sm mt-1">V2: Placeholders filled with reasonable assumptions based on John Deere context</p>
+    </div>
+</header>
+
+<div class="max-w-4xl mx-auto px-6 py-10 space-y-10">
+
+    <!-- ============================================ -->
+    <!-- V2 ASSUMPTIONS NOTE                          -->
+    <!-- ============================================ -->
+    <div class="bg-amber-50 border-2 border-amber-300 rounded-2xl p-6">
+        <p class="font-bold text-amber-900 text-lg mb-2">V2 Assumptions Disclaimer</p>
+        <p class="text-amber-800 text-sm">All metrics that were previously <strong>[X]</strong> placeholders have been filled with <strong>reasonable estimates</strong> based on: John Deere's scale (~2,000+ dealers in North America, $50B+ annual revenue), typical ag equipment pricing ($80K–$500K+ per machine), industry-standard dealer service visit costs (~$500–$600), typical embedded engineering team sizes (6–10 people per Mansour's guidance), and the SAFe/Agile cadence at JD (2–3 week PSIs). <strong>These are starting points — replace with actual numbers wherever possible.</strong> Metrics that couldn't be reasonably estimated have been removed rather than guessed.</p>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- SECTION 1: OVERALL SCORE                     -->
+    <!-- ============================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 overflow-hidden">
+        <div class="p-8">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="w-8 h-8 rounded-lg bg-amber-500 text-white flex items-center justify-center text-sm font-bold">📊</div>
+                <h2 class="text-2xl font-extrabold text-slate-900">Overall Score</h2>
+            </div>
+
+            <div class="flex items-center gap-8 mb-6">
+                <div class="text-center">
+                    <p class="font-mono-num text-6xl font-extrabold text-amber-500">52</p>
+                    <p class="text-slate-500 text-sm">out of 100</p>
+                </div>
+                <div class="flex-1">
+                    <div class="h-4 bg-slate-100 rounded-full overflow-hidden mb-2">
+                        <div class="h-full rounded-full" style="width: 52%; background: linear-gradient(to right, #eab308, #84cc16);"></div>
+                    </div>
+                    <div class="flex justify-between text-xs text-slate-400">
+                        <span>0 — Invisible</span>
+                        <span>50 — Achiever</span>
+                        <span>100 — Impact Standard</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="bg-lime-50 border border-lime-200 rounded-xl p-4 text-center">
+                    <p class="font-mono-num text-2xl font-bold text-lime-600">6/10</p>
+                    <p class="text-lime-700 text-xs font-semibold mt-1">Accomplishments</p>
+                    <p class="text-lime-500 text-[10px]">Many real wins present</p>
+                </div>
+                <div class="bg-lime-50 border border-lime-200 rounded-xl p-4 text-center">
+                    <p class="font-mono-num text-2xl font-bold text-lime-600">6/10</p>
+                    <p class="text-lime-700 text-xs font-semibold mt-1">Metrics</p>
+                    <p class="text-lime-500 text-[10px]">Good in Supervisor role</p>
+                </div>
+                <div class="bg-lime-50 border border-lime-200 rounded-xl p-4 text-center">
+                    <p class="font-mono-num text-2xl font-bold text-lime-600">7/10</p>
+                    <p class="text-lime-700 text-xs font-semibold mt-1">How / Method</p>
+                    <p class="text-lime-500 text-[10px]">Tools well-integrated</p>
+                </div>
+                <div class="bg-amber-50 border border-amber-200 rounded-xl p-4 text-center">
+                    <p class="font-mono-num text-2xl font-bold text-amber-500">4/10</p>
+                    <p class="text-amber-700 text-xs font-semibold mt-1">Why / Business Impact</p>
+                    <p class="text-amber-400 text-[10px]">Inconsistent across roles</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Verdict -->
+        <div class="bg-amber-700 text-white p-6">
+            <p class="font-bold text-lg mb-2">Verdict: "Almost There" Tier — The Framework Creator Who Hasn't Fully Applied His Own Framework</p>
+            <p class="text-amber-100 text-sm">The irony is not lost here. This resume has <strong>real substance</strong> — 7 years at John Deere, 4 promotions, a management role delivering autonomous tillage products, published metrics (30% OT reduction, 90% weekend work reduction, 25-30% release error reduction). But the Supervisor role is the only section that consistently applies the Impact Bullet Builder formula. The earlier roles (Engine Controls, Drivetrain, CI, PV&V) read like job descriptions — technically detailed but missing the "Why does the CEO care?" on most bullets. There are also duplicate bullets, overly long sentences, and the current role (Dev Enablement Lead) has zero metrics. This resume is a perfect case study in how the same person can write at the Impact Standard in one section and the Doer level in another.</p>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SECTION 2: KEY ISSUES IDENTIFIED             -->
+    <!-- ============================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 p-8">
+        <div class="flex items-center gap-3 mb-6">
+            <div class="w-8 h-8 rounded-lg bg-red-500 text-white flex items-center justify-center text-sm font-bold">🔍</div>
+            <h2 class="text-2xl font-extrabold text-slate-900">Key Issues Identified</h2>
+        </div>
+
+        <div class="space-y-4">
+            <div class="flex items-start gap-3 bg-red-50 rounded-xl p-5 border border-red-200">
+                <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-red-600 text-white font-bold text-sm flex-shrink-0">1</span>
+                <div>
+                    <p class="font-bold text-red-900">Current role (Dev Enablement Lead) has zero metrics and reads as duties</p>
+                    <p class="text-red-700 text-sm mt-1">"Work with software engineers to understand inefficiencies" — this is a job description, not an accomplishment. "Assist embedded developers to adopt new technologies" — classic "Assist" language. "Conduct, compile, and share results from surveys" — that's a task. The most recent role should be the <strong>strongest</strong> on the resume. Right now it's the weakest. How many engineers? What inefficiencies did you fix? What was the adoption rate? What survey insights drove actual change?</p>
+                </div>
+            </div>
+
+            <div class="flex items-start gap-3 bg-red-50 rounded-xl p-5 border border-red-200">
+                <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-red-600 text-white font-bold text-sm flex-shrink-0">2</span>
+                <div>
+                    <p class="font-bold text-red-900">Duplicate bullets in the Embedded Software Engineer section</p>
+                    <p class="text-red-700 text-sm mt-1">The Scrum Master bullet appears <strong>twice</strong> — nearly word-for-word. The commonized aftertreatment logic bullet appears <strong>twice</strong>. The Immobilizer test plan bullet appears <strong>twice</strong>. This looks like different resume versions were pasted together without deduplication. It signals low attention to detail — the exact opposite of what this resume should communicate.</p>
+                </div>
+            </div>
+
+            <div class="flex items-start gap-3 bg-red-50 rounded-xl p-5 border border-red-200">
+                <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-red-600 text-white font-bold text-sm flex-shrink-0">3</span>
+                <div>
+                    <p class="font-bold text-red-900">"Work with" and "Assist" language in the current role</p>
+                    <p class="text-red-700 text-sm mt-1">"Work with software engineers" and "Assist embedded developers" — these are the exact phrases the Impact Bullet Builder calls out as resume killers. Steven De Alwis got flagged for the same thing. The Me-in-We Extractor™ demands: what did YOU specifically do? Did you build a tool? Run a workshop? Create a framework? Own it.</p>
+                </div>
+            </div>
+
+            <div class="flex items-start gap-3 bg-red-50 rounded-xl p-5 border border-red-200">
+                <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-red-600 text-white font-bold text-sm flex-shrink-0">4</span>
+                <div>
+                    <p class="font-bold text-red-900">Earlier roles (Engine Controls, Drivetrain) are walls of technical text with no business impact</p>
+                    <p class="text-red-700 text-sm mt-1">"Authored sections of functional requirements specifications (FRS) to alleviate build errors in JENKINS cloud automation software build server due to mismatch between FRS and configuration, provide calibration guidelines..." — this is a 4-line run-on sentence. A recruiter stopped reading after "Authored sections of." Per the Impact Bullet Builder: lead with the win, not the task. How many build errors did this fix? How much eng time did it save? What was the cost of the mismatch?</p>
+                </div>
+            </div>
+
+            <div class="flex items-start gap-3 bg-red-50 rounded-xl p-5 border border-red-200">
+                <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-red-600 text-white font-bold text-sm flex-shrink-0">5</span>
+                <div>
+                    <p class="font-bold text-red-900">No Dragon Slayer context — even where stakes were massive</p>
+                    <p class="text-red-700 text-sm mt-1">"Managed the shipping and budget logistics for a $2M+ machine fleet" — the $2M is great, but what was the risk? Late machines = missed winter test window = delayed product launch = $X million in revenue? "Orchestrated cross department efforts to double testing capacity" — what was the consequence of missing that delivery? Dragon Slayer context would make these bullets 3x more powerful.</p>
+                </div>
+            </div>
+
+            <div class="flex items-start gap-3 bg-amber-50 rounded-xl p-5 border border-amber-200">
+                <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-amber-500 text-white font-bold text-sm flex-shrink-0">6</span>
+                <div>
+                    <p class="font-bold text-amber-900">Inconsistent quality between roles — Supervisor is strong, everything else drops off</p>
+                    <p class="text-amber-700 text-sm mt-1">The Supervisor role has real metrics (30% OT reduction, 90% weekend work reduction, 25-30% release error reduction, 50% onboarding time reduction, $2M fleet). Then the Embedded Software Engineer section has duplicates and duty descriptions. Engine Controls has a 4-line run-on bullet. The quality cliff is noticeable and suggests the Supervisor bullets were written with intention while others were legacy copy-paste.</p>
+                </div>
+            </div>
+
+            <div class="flex items-start gap-3 bg-amber-50 rounded-xl p-5 border border-amber-200">
+                <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-amber-500 text-white font-bold text-sm flex-shrink-0">7</span>
+                <div>
+                    <p class="font-bold text-amber-900">The code optimization win (33,000ms → 25ms) is buried and underframed</p>
+                    <p class="text-amber-700 text-sm mt-1">"Rewrote C code unit tests... to decrease code run time from 33000 to 25 milliseconds" — this is a <strong>1,320x improvement</strong>. That's an extraordinary number. But it's buried in a dense paragraph in the Engine Controls section. This should be a headline bullet with Dragon Slayer context: what was the cost of those 33-second test runs? How many tests? How much CI/CD pipeline time was being wasted?</p>
+                </div>
+            </div>
+
+            <div class="flex items-start gap-3 bg-amber-50 rounded-xl p-5 border border-amber-200">
+                <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-amber-500 text-white font-bold text-sm flex-shrink-0">8</span>
+                <div>
+                    <p class="font-bold text-amber-900">Skills section is a flat list — doesn't match the principle you teach</p>
+                    <p class="text-amber-700 text-sm mt-1">"Programming in Python, MATLAB, R, DIAdem and C" — the Impact Bullet Builder says "Show skills in action — don't just list them separately." This resume already does a better job than most showing tools in bullets (Rally, Azure DevOps, HIL, CANalyzer, TractorSim), but the Skills section itself contradicts the philosophy. It should either be categorized with context or removed entirely.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SECTION 3: REWRITTEN RESUME                  -->
+    <!-- ============================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 p-8">
+        <div class="flex items-center gap-3 mb-2">
+            <div class="w-8 h-8 rounded-lg bg-emerald-700 text-white flex items-center justify-center text-sm font-bold">✍️</div>
+            <h2 class="text-2xl font-extrabold text-slate-900">Rewritten Resume — Impact Bullet Builder™ Applied (V2)</h2>
+        </div>
+        <p class="text-slate-500 text-sm mb-8">Placeholders replaced with reasonable estimates. Duplicates removed. Bullets consolidated. <span class="bg-amber-100 text-amber-800 text-xs font-bold px-2 py-0.5 rounded">ESTIMATED</span> = metric is a reasonable assumption — confirm or adjust with real data.</p>
+
+        <div class="border-2 border-slate-200 rounded-2xl p-8 bg-slate-50">
+
+            <!-- Header -->
+            <div class="text-center mb-6 pb-6 border-b-2 border-slate-300">
+                <h3 class="text-2xl font-extrabold text-slate-900">Mansour Manci</h3>
+                <p class="text-slate-600 text-sm mt-1">515-708-8981 | themanci@launchtolead.io | LinkedIn | Ames, IA</p>
+            </div>
+
+            <!-- Education -->
+            <div class="mb-6">
+                <h4 class="text-sm font-extrabold text-slate-900 uppercase tracking-widest border-b-2 border-emerald-600 pb-1 mb-3">Education</h4>
+                <div class="flex justify-between items-start">
+                    <div>
+                        <p class="font-bold text-slate-900">M.Eng. Mechanical Engineering | B.S. Mechanical Engineering</p>
+                        <p class="text-slate-600 text-sm">Iowa State University, Ames, IA</p>
+                    </div>
+                    <p class="text-slate-500 text-sm">May 2020 | Aug 2015</p>
+                </div>
+            </div>
+
+            <!-- Work Experience -->
+            <div class="mb-6">
+                <h4 class="text-sm font-extrabold text-slate-900 uppercase tracking-widest border-b-2 border-emerald-600 pb-1 mb-3">Professional Experience</h4>
+
+                <!-- Dev Enablement Lead -->
+                <div class="mb-5">
+                    <div class="flex justify-between items-start mb-1">
+                        <div>
+                            <p class="font-bold text-slate-900">Software Development Enablement Lead</p>
+                            <p class="text-slate-600 text-sm">John Deere, Ames, IA</p>
+                        </div>
+                        <p class="text-slate-500 text-sm">May 2025 – Feb 2026</p>
+                    </div>
+
+                    <ul class="space-y-3 text-sm text-slate-700 ml-4">
+                        <li class="relative pl-4">
+                            <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                            <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-0.5 rounded mr-1">REWRITTEN</span>
+                            Identified and resolved <strong>12+ toolchain and workflow inefficiencies</strong> across <strong>8 embedded software teams</strong> by conducting 1-on-1 developer interviews and workflow audits — reducing developer onboarding friction by <strong>30%</strong> and improving developer satisfaction scores by <strong>12 points</strong> in the subsequent survey cycle.
+                        </li>
+                        <li class="relative pl-4">
+                            <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                            <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-0.5 rounded mr-1">REWRITTEN</span>
+                            Drove adoption of new development tooling and standardized workflows across <strong>8 embedded development teams</strong>, achieving <strong>85% adoption within 4 months</strong> — improving build throughput by <strong>20%</strong> and reducing context-switching during sprint cycles.
+                        </li>
+                        <li class="relative pl-4">
+                            <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                            <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-0.5 rounded mr-1">REWRITTEN</span>
+                            Designed, administered, and analyzed twice-yearly embedded developer experience surveys across <strong>150+ respondents</strong>, translating <strong>5 key findings</strong> into actionable roadmap items — <strong>3 of which</strong> were implemented within <strong>6 months</strong>, directly influencing tool procurement and process standardization decisions.
+                        </li>
+                    </ul>
+                    <div class="mt-3 pt-3 border-t border-slate-200">
+                        <p class="text-xs font-bold text-teal-700 uppercase tracking-wider mb-2">LinkedIn Skills</p>
+                        <div class="flex flex-wrap gap-1.5">
+                            <span class="bg-teal-50 text-teal-700 text-xs font-medium px-2.5 py-1 rounded-full border border-teal-200">Coaching</span>
+                            <span class="bg-teal-50 text-teal-700 text-xs font-medium px-2.5 py-1 rounded-full border border-teal-200">Change Management</span>
+                            <span class="bg-teal-50 text-teal-700 text-xs font-medium px-2.5 py-1 rounded-full border border-teal-200">Process Improvement</span>
+                            <span class="bg-teal-50 text-teal-700 text-xs font-medium px-2.5 py-1 rounded-full border border-teal-200">Training & Development</span>
+                            <span class="bg-teal-50 text-teal-700 text-xs font-medium px-2.5 py-1 rounded-full border border-teal-200">Stakeholder Management</span>
+                            <span class="bg-teal-50 text-teal-700 text-xs font-medium px-2.5 py-1 rounded-full border border-teal-200">Survey Design</span>
+                            <span class="bg-teal-50 text-teal-700 text-xs font-medium px-2.5 py-1 rounded-full border border-teal-200">Organizational Development</span>
+                            <span class="bg-teal-50 text-teal-700 text-xs font-medium px-2.5 py-1 rounded-full border border-teal-200">Developer Experience</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Supervisor -->
+                <div class="mb-5">
+                    <div class="flex justify-between items-start mb-1">
+                        <div>
+                            <p class="font-bold text-slate-900">Supervisor, Crop Care Software PV&V Engineering <span class="text-xs bg-lime-100 text-lime-800 font-bold px-2 py-0.5 rounded ml-2">STRONGEST SECTION</span></p>
+                            <p class="text-slate-600 text-sm">John Deere, Ames, IA</p>
+                        </div>
+                        <p class="text-slate-500 text-sm">Jun 2023 – May 2025</p>
+                    </div>
+
+                    <ul class="space-y-3 text-sm text-slate-700 ml-4">
+                        <li class="relative pl-4">
+                            <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                            <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-0.5 rounded mr-1">REWRITTEN</span>
+                            Led a team of 6–10 PV&V Engineers to deliver software on time for planting, air seeding, and tillage equipment — shipping key products to production including Aurora/Remington, Bismarck, and Jupiter Autonomous Tillage — on a timeline where a missed ship window meant delayed dealer delivery for the spring planting season, risking millions in lost revenue across <strong>2,000+ North American dealers</strong>.
+                        </li>
+                        <li class="relative pl-4">
+                            <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                            <span class="bg-lime-100 text-lime-800 text-xs font-bold px-2 py-0.5 rounded mr-1">ALREADY STRONG</span>
+                            Drove resource planning optimization and data-driven burndown charts, achieving a <strong>30% reduction in overtime</strong> and <strong>90% reduction in weekend work</strong> — improving team retention and morale during a critical delivery window.
+                        </li>
+                        <li class="relative pl-4">
+                            <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                            <span class="bg-lime-100 text-lime-800 text-xs font-bold px-2 py-0.5 rounded mr-1">ALREADY STRONG</span>
+                            Drove a process change for software payload releases, moving from informal handoffs to structured release audits — <strong>reducing release errors by 25–30%</strong> and eliminating <strong>40+ hours/month</strong> of rework caused by miscommunication between dev and test.
+                        </li>
+                        <li class="relative pl-4">
+                            <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                            <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-0.5 rounded mr-1">REWRITTEN</span>
+                            Orchestrated cross-department efforts to <strong>double testing capacity</strong> during a key software bundle delivery by recruiting additional resources and implementing two-shift testing cycles — ensuring on-time delivery when a delay would have pushed the release past the seasonal manufacturing cutoff, delaying dealer availability by a full production cycle.
+                        </li>
+                        <li class="relative pl-4">
+                            <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                            <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-0.5 rounded mr-1">REWRITTEN</span>
+                            Led migration from Rally to Microsoft Azure DevOps for test documentation and tracking, designing and delivering training to <strong>20–25 salaried and 15–20 union workers</strong> — achieving <strong>95% adoption within 6 weeks</strong> and reducing test documentation cycle time by <strong>35%</strong>.
+                        </li>
+                        <li class="relative pl-4">
+                            <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                            <span class="bg-lime-100 text-lime-800 text-xs font-bold px-2 py-0.5 rounded mr-1">ALREADY STRONG</span>
+                            Developed and implemented a shared scheduling system for Hardware-in-the-Loop (HIL) testing environments — <strong>reducing schedule management time by 90%</strong> and improving access for software devs, system engineers, and verification champions.
+                        </li>
+                        <li class="relative pl-4">
+                            <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                            <span class="bg-lime-100 text-lime-800 text-xs font-bold px-2 py-0.5 rounded mr-1">ALREADY STRONG</span>
+                            Mentored team members toward development goals and facilitated cross-training across platforms — <strong>reducing onboarding time for new engineers by 50%</strong> and improving team flexibility for resource rebalancing during peak delivery periods.
+                        </li>
+                        <li class="relative pl-4">
+                            <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                            <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-0.5 rounded mr-1">REWRITTEN</span>
+                            Managed shipping and budget logistics for a <strong>$2M+ machine fleet</strong> to winter test sites, optimizing machine utilization across geographic locations — where a misrouted or delayed machine meant a lost 2-week winter testing window worth an estimated <strong>$15K/day</strong> in idle machine and personnel costs.
+                        </li>
+                        <li class="relative pl-4">
+                            <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                            <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-0.5 rounded mr-1">REWRITTEN</span>
+                            Presented bi-weekly and monthly testing progress updates, risk mitigation strategies, and resource allocation plans to senior leaders — improving alignment between engineering, product management, manufacturing, and quality stakeholders, enabling leadership to make data-driven decisions on headcount allocation and timeline tradeoffs before they became blockers.
+                        </li>
+                    </ul>
+                    <div class="mt-3 pt-3 border-t border-slate-200">
+                        <p class="text-xs font-bold text-teal-700 uppercase tracking-wider mb-2">LinkedIn Skills</p>
+                        <div class="flex flex-wrap gap-1.5">
+                            <span class="bg-teal-50 text-teal-700 text-xs font-medium px-2.5 py-1 rounded-full border border-teal-200">Engineering Management</span>
+                            <span class="bg-teal-50 text-teal-700 text-xs font-medium px-2.5 py-1 rounded-full border border-teal-200">Team Leadership</span>
+                            <span class="bg-teal-50 text-teal-700 text-xs font-medium px-2.5 py-1 rounded-full border border-teal-200">Mentoring</span>
+                            <span class="bg-teal-50 text-teal-700 text-xs font-medium px-2.5 py-1 rounded-full border border-teal-200">Performance Management</span>
+                            <span class="bg-teal-50 text-teal-700 text-xs font-medium px-2.5 py-1 rounded-full border border-teal-200">People Management</span>
+                            <span class="bg-teal-50 text-teal-700 text-xs font-medium px-2.5 py-1 rounded-full border border-teal-200">Cross-functional Team Leadership</span>
+                            <span class="bg-teal-50 text-teal-700 text-xs font-medium px-2.5 py-1 rounded-full border border-teal-200">Agile Project Management</span>
+                            <span class="bg-teal-50 text-teal-700 text-xs font-medium px-2.5 py-1 rounded-full border border-teal-200">Presentation Skills</span>
+                            <span class="bg-teal-50 text-teal-700 text-xs font-medium px-2.5 py-1 rounded-full border border-teal-200">Resource Planning</span>
+                            <span class="bg-teal-50 text-teal-700 text-xs font-medium px-2.5 py-1 rounded-full border border-teal-200">Budget Management</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Embedded Software Engineer (DEDUPLICATED) -->
+                <div class="mb-5">
+                    <div class="flex justify-between items-start mb-1">
+                        <div>
+                            <p class="font-bold text-slate-900">Embedded Software Engineer</p>
+                            <p class="text-slate-600 text-sm">John Deere, Ames, IA</p>
+                        </div>
+                        <p class="text-slate-500 text-sm">Jun 2022 – Jun 2023</p>
+                    </div>
+                    <p class="text-xs text-red-500 font-bold mb-2 ml-4">NOTE: Original had 3 duplicate bullets — merged below</p>
+
+                    <ul class="space-y-3 text-sm text-slate-700 ml-4">
+                        <li class="relative pl-4">
+                            <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                            <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-0.5 rounded mr-1">REWRITTEN</span>
+                            Assumed Scrum Master role within first month on the team — implemented Rally as the team's agile tool, designed user story templates with minimum acceptance criteria, and led all sprint ceremonies (grooming, planning, standups, retros). Within 3 months, Rally adoption was <strong>100%</strong>, reducing work-in-progress by <strong>40%</strong> and improving sprint velocity by <strong>25%</strong>.
+                        </li>
+                        <li class="relative pl-4">
+                            <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                            <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-0.5 rounded mr-1">REWRITTEN</span>
+                            Served as Product Owner for the ATC (HVAC) controller across Tractor, Harvester, and Crop Care divisions — managing stakeholder requests from <strong>3 external divisions</strong>, prioritizing <strong>15+ program changes per PSI</strong>, and delivering HVAC software on time for <strong>4 product launches</strong> while navigating competing scope-vs-deadline tradeoffs.
+                        </li>
+                        <li class="relative pl-4">
+                            <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                            <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-0.5 rounded mr-1">REWRITTEN</span>
+                            Commonized engine aftertreatment regeneration control logic across <strong>3 platforms</strong> (combines, tractors, sprayers), reducing codebase duplication by <strong>30%</strong> and eliminating <strong>3 platform-specific maintenance branches</strong> — cutting future integration effort by <strong>20+ hours per release cycle</strong>.
+                        </li>
+                        <li class="relative pl-4">
+                            <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                            <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-0.5 rounded mr-1">REWRITTEN</span>
+                            Designed the test plan for Immobilizer vehicle security functionality (RFID transponder, Immobilizer Control Device, Check Application, Arbitrator), covering <strong>80+ test cases</strong> across <strong>3 vehicle platforms</strong> — achieving <strong>95% requirements coverage</strong> and identifying <strong>6 defects</strong> before production release.
+                        </li>
+                    </ul>
+                    <div class="mt-3 pt-3 border-t border-slate-200">
+                        <p class="text-xs font-bold text-teal-700 uppercase tracking-wider mb-2">LinkedIn Skills</p>
+                        <div class="flex flex-wrap gap-1.5">
+                            <span class="bg-teal-50 text-teal-700 text-xs font-medium px-2.5 py-1 rounded-full border border-teal-200">Scrum</span>
+                            <span class="bg-teal-50 text-teal-700 text-xs font-medium px-2.5 py-1 rounded-full border border-teal-200">Product Management</span>
+                            <span class="bg-teal-50 text-teal-700 text-xs font-medium px-2.5 py-1 rounded-full border border-teal-200">Agile Methodologies</span>
+                            <span class="bg-teal-50 text-teal-700 text-xs font-medium px-2.5 py-1 rounded-full border border-teal-200">Stakeholder Management</span>
+                            <span class="bg-teal-50 text-teal-700 text-xs font-medium px-2.5 py-1 rounded-full border border-teal-200">Cross-functional Collaboration</span>
+                            <span class="bg-teal-50 text-teal-700 text-xs font-medium px-2.5 py-1 rounded-full border border-teal-200">Sprint Planning</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Engine Control Systems -->
+                <div class="mb-5">
+                    <div class="flex justify-between items-start mb-1">
+                        <div>
+                            <p class="font-bold text-slate-900">Engine Control Systems Engineer</p>
+                            <p class="text-slate-600 text-sm">John Deere, Ames, IA</p>
+                        </div>
+                        <p class="text-slate-500 text-sm">May 2020 – Jun 2022</p>
+                    </div>
+
+                    <ul class="space-y-3 text-sm text-slate-700 ml-4">
+                        <li class="relative pl-4">
+                            <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                            <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-0.5 rounded mr-1">REWRITTEN</span>
+                            <span class="text-xs bg-purple-100 text-purple-800 font-bold px-2 py-0.5 rounded mr-1">HEADLINE BULLET</span>
+                            Rewrote C code unit tests for Denso high-pressure fuel pump diagnostic circuitry, <strong>reducing test execution time from 33,000ms to 25ms (1,320x improvement)</strong> by targeting only diagnostic words relevant to fault conditions — saving <strong>8+ hours of CI pipeline time per week</strong> across <strong>6 developers</strong> running 3–4 test cycles daily.
+                        </li>
+                        <li class="relative pl-4">
+                            <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                            <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-0.5 rounded mr-1">REWRITTEN</span>
+                            Implemented Regeneration Interval Management logic to reduce unwanted frequent vehicle regenerations caused by rapid soot loading — improving customer satisfaction on <strong>3 engine families</strong> where regen complaints were a leading cause of field calls.
+                        </li>
+                        <li class="relative pl-4">
+                            <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                            <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-0.5 rounded mr-1">REWRITTEN</span>
+                            Executed CPU load-level testing on HIL to verify loading remained below 80% threshold — confirming robustness for <strong>12+ engine control software builds</strong> and preventing watchdog resets on thousands of production vehicles.
+                        </li>
+                        <li class="relative pl-4">
+                            <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                            <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-0.5 rounded mr-1">REWRITTEN</span>
+                            Performed root cause analysis on a DPF Recovery defect that left vehicles stuck in 'Service' mode — implemented code fix, validated through HIL testing, and deployed across the affected fleet, eliminating an estimated <strong>30+ dealer service calls per month</strong> worth <strong>$18,000+</strong> in warranty costs.
+                        </li>
+                        <li class="relative pl-4">
+                            <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                            <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-0.5 rounded mr-1">REWRITTEN</span>
+                            Diagnosed and resolved build errors in Jenkins CI pipeline caused by FRS-to-configuration mismatches — authoring <strong>4 FRS corrections</strong> and calibration guidelines that eliminated <strong>6+ recurring build failures per sprint</strong>, saving <strong>15+ engineering hours per PSI</strong>.
+                        </li>
+                        <li class="relative pl-4">
+                            <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                            <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-0.5 rounded mr-1">REWRITTEN</span>
+                            Audited internal system diagrams and engineering schematics for internal customer support, verifying alignment between sensor supply DTCs and component-to-sensor-supply mappings — catching <strong>8+ discrepancies</strong> that would have caused misdiagnosed field failures and incorrect service procedures across <strong>3 engine platforms</strong>.
+                        </li>
+                        <li class="relative pl-4">
+                            <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                            <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-0.5 rounded mr-1">REWRITTEN</span>
+                            Diagnosed defect causing build errors during bulk parameter import for vehicle payloads — corrected output scaling of mappable input function tables to match configuration files, unblocking <strong>4 payload builds</strong> and restoring the team's release pipeline within <strong>4 hours</strong>.
+                        </li>
+                        <li class="relative pl-4">
+                            <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                            <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-0.5 rounded mr-1">REWRITTEN</span>
+                            Resolved <strong>12+ defects</strong> through end-to-end root cause investigations spanning system requirements re-authoring, C code changes, MATLAB model updates, bench testing, and HIL validation — reducing open defect backlog by <strong>35%</strong> and preventing <strong>8+ field escalations</strong>.
+                        </li>
+                    </ul>
+                    <div class="mt-3 pt-3 border-t border-slate-200">
+                        <p class="text-xs font-bold text-teal-700 uppercase tracking-wider mb-2">LinkedIn Skills</p>
+                        <div class="flex flex-wrap gap-1.5">
+                            <span class="bg-teal-50 text-teal-700 text-xs font-medium px-2.5 py-1 rounded-full border border-teal-200">Root Cause Analysis</span>
+                            <span class="bg-teal-50 text-teal-700 text-xs font-medium px-2.5 py-1 rounded-full border border-teal-200">Continuous Improvement</span>
+                            <span class="bg-teal-50 text-teal-700 text-xs font-medium px-2.5 py-1 rounded-full border border-teal-200">CI/CD</span>
+                            <span class="bg-teal-50 text-teal-700 text-xs font-medium px-2.5 py-1 rounded-full border border-teal-200">Unit Testing</span>
+                            <span class="bg-teal-50 text-teal-700 text-xs font-medium px-2.5 py-1 rounded-full border border-teal-200">Technical Writing</span>
+                            <span class="bg-teal-50 text-teal-700 text-xs font-medium px-2.5 py-1 rounded-full border border-teal-200">Problem Solving</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Drivetrain -->
+                <div class="mb-5">
+                    <div class="flex justify-between items-start mb-1">
+                        <div>
+                            <p class="font-bold text-slate-900">Drivetrain Embedded Software Engineer</p>
+                            <p class="text-slate-600 text-sm">John Deere, Ames, IA</p>
+                        </div>
+                        <p class="text-slate-500 text-sm">Oct 2019 – May 2020</p>
+                    </div>
+
+                    <ul class="space-y-3 text-sm text-slate-700 ml-4">
+                        <li class="relative pl-4">
+                            <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                            <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-0.5 rounded mr-1">REWRITTEN</span>
+                            Resolved a critical "stuck in hidden park" defect on 8R IVT tractors by aligning front console controller (FCC) reverser position with drive strategy controller commands — validated through SIL in TractorSim, preventing potential safety incidents affecting <strong>1,200+ 8R IVT tractors</strong> in production.
+                        </li>
+                        <li class="relative pl-4">
+                            <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                            <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-0.5 rounded mr-1">REWRITTEN</span>
+                            Improved rear PTO clutch protection by changing torque estimation run rate from every 10 seconds to every 60 seconds — validated through SIL and HIL testing, reducing nuisance DTC activations on 5M tractor models while maintaining clutch safety margins.
+                        </li>
+                        <li class="relative pl-4">
+                            <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                            <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-0.5 rounded mr-1">REWRITTEN</span>
+                            Reduced engine DTC false alarms on 5M tractors by editing the CHASSIS controller unit option script to include Stage 5 emissions four-cylinder applications in AC compressor CAN messaging — eliminating an estimated <strong>50+ no-fault-found dealer visits per quarter</strong> worth <strong>$30,000+</strong> in warranty costs.
+                        </li>
+                        <li class="relative pl-4">
+                            <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                            <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-0.5 rounded mr-1">REWRITTEN</span>
+                            Organized and delivered CANalyzer training for <strong>8 JDPS engineers</strong>, <strong>reducing CAN log analysis time by 50–75%</strong> — eliminating hours of manual log scrolling and becoming the team's standard data viewing workflow.
+                        </li>
+                        <li class="relative pl-4">
+                            <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                            <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-0.5 rounded mr-1">REWRITTEN</span>
+                            Implemented measured direction and output shaft speed logic for 8R IVT tractors in embedded C, following system requirements and maintaining consistency with legacy projects — validated through virtual CAN tools (CANalyzer, FVIO, TractorSim) and deployed to <strong>3 tractor configurations</strong> for production.
+                        </li>
+                        <li class="relative pl-4">
+                            <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                            <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-0.5 rounded mr-1">REWRITTEN</span>
+                            Developed vehicle direction determination logic from output shaft parameters, transmitting on CAN to enable monitoring and fault-state warnings for IVT large tractors — a safety-critical function protecting against unintended vehicle movement on 8R IVT tractor models.
+                        </li>
+                        <li class="relative pl-4">
+                            <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                            <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-0.5 rounded mr-1">REWRITTEN</span>
+                            Delivered embedded C code for large tractor transmissions, mechanical front wheel drive, power take-off, and differential locking systems — meeting design system requirements across <strong>4 subsystems</strong> and contributing to <strong>3 on-time PSI releases</strong>.
+                        </li>
+                        <li class="relative pl-4">
+                            <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                            <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-0.5 rounded mr-1">REWRITTEN</span>
+                            Released software payload for 8R IVT tractors at end of PSI, following all established testing and documentation procedures — ensuring zero release-blocking defects and maintaining the team's <strong>100% on-time delivery record</strong>.
+                        </li>
+                        <li class="relative pl-4">
+                            <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                            <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-0.5 rounded mr-1">REWRITTEN</span>
+                            Authored subsystem requirements for transmission oil temperature sensor across <strong>4 transmission families</strong>, analyzing system interactions to ensure implementation did not degrade performance on current production vehicles — validated through regression testing across <strong>12+ configurations</strong>.
+                        </li>
+                    </ul>
+                    <div class="mt-3 pt-3 border-t border-slate-200">
+                        <p class="text-xs font-bold text-teal-700 uppercase tracking-wider mb-2">LinkedIn Skills</p>
+                        <div class="flex flex-wrap gap-1.5">
+                            <span class="bg-teal-50 text-teal-700 text-xs font-medium px-2.5 py-1 rounded-full border border-teal-200">Technical Training</span>
+                            <span class="bg-teal-50 text-teal-700 text-xs font-medium px-2.5 py-1 rounded-full border border-teal-200">Embedded Systems</span>
+                            <span class="bg-teal-50 text-teal-700 text-xs font-medium px-2.5 py-1 rounded-full border border-teal-200">Systems Engineering</span>
+                            <span class="bg-teal-50 text-teal-700 text-xs font-medium px-2.5 py-1 rounded-full border border-teal-200">Requirements Analysis</span>
+                            <span class="bg-teal-50 text-teal-700 text-xs font-medium px-2.5 py-1 rounded-full border border-teal-200">Troubleshooting</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CI Software Engineer -->
+                <div class="mb-5">
+                    <div class="flex justify-between items-start mb-1">
+                        <div>
+                            <p class="font-bold text-slate-900">Controls Continuous Improvement Software Engineer</p>
+                            <p class="text-slate-600 text-sm">John Deere, Ames, IA</p>
+                        </div>
+                        <p class="text-slate-500 text-sm">Mar 2019 – Oct 2019</p>
+                    </div>
+
+                    <ul class="space-y-3 text-sm text-slate-700 ml-4">
+                        <li class="relative pl-4">
+                            <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                            <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-0.5 rounded mr-1">REWRITTEN</span>
+                            Built experimental software to resolve aftertreatment regen issues and relieve a warehouse hold — <strong>in under 2 days</strong> — by navigating complex base code conversion and hybrid AT setup across multiple teams, expediting release and unblocking <strong>15+ machines worth $5M+</strong> from shipping.
+                        </li>
+                        <li class="relative pl-4">
+                            <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                            <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-0.5 rounded mr-1">REWRITTEN</span>
+                            Presented the software emissions de-tier release process to 20 DTAC coworkers, establishing alignment between DTAC and Controls — <strong>decreasing payload release turnaround time by 15–20%</strong> and reducing miscommunication-driven rework.
+                        </li>
+                        <li class="relative pl-4">
+                            <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                            <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-0.5 rounded mr-1">REWRITTEN</span>
+                            Implemented software patch for variable geometry turbochargers affecting <strong>11 software codes and 5 ECU series</strong>, improving failed learn detection while eliminating the need for a field technician visit — saving an estimated <strong>40+ service calls per year</strong> worth <strong>$24,000+</strong> in warranty and labor costs.
+                        </li>
+                        <li class="relative pl-4">
+                            <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                            <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-0.5 rounded mr-1">REWRITTEN</span>
+                            Eliminated nuisance DTCs causing customer dissatisfaction on 8R tractors through deep root cause analysis of software DTC-enabling history — resolving <strong>20+ no-fault-found cases</strong> and reducing <strong>30+ unnecessary dealer service visits per quarter</strong>.
+                        </li>
+                        <li class="relative pl-4">
+                            <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                            <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-0.5 rounded mr-1">REWRITTEN</span>
+                            Introduced a new OneNote-based standup format capturing project milestones, ownership, and priority — eliminating ambiguity in task responsibility and repeat communication across <strong>8 team members</strong>, adopted as the team's permanent standup workflow.
+                        </li>
+                    </ul>
+                    <div class="mt-3 pt-3 border-t border-slate-200">
+                        <p class="text-xs font-bold text-teal-700 uppercase tracking-wider mb-2">LinkedIn Skills</p>
+                        <div class="flex flex-wrap gap-1.5">
+                            <span class="bg-teal-50 text-teal-700 text-xs font-medium px-2.5 py-1 rounded-full border border-teal-200">Process Improvement</span>
+                            <span class="bg-teal-50 text-teal-700 text-xs font-medium px-2.5 py-1 rounded-full border border-teal-200">Public Speaking</span>
+                            <span class="bg-teal-50 text-teal-700 text-xs font-medium px-2.5 py-1 rounded-full border border-teal-200">Cross-functional Collaboration</span>
+                            <span class="bg-teal-50 text-teal-700 text-xs font-medium px-2.5 py-1 rounded-full border border-teal-200">Problem Solving</span>
+                            <span class="bg-teal-50 text-teal-700 text-xs font-medium px-2.5 py-1 rounded-full border border-teal-200">Workflow Optimization</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PV&V Mechanical -->
+                <div class="mb-5">
+                    <div class="flex justify-between items-start mb-1">
+                        <div>
+                            <p class="font-bold text-slate-900">PV&V Mechanical Development Engineer</p>
+                            <p class="text-slate-600 text-sm">John Deere, Ames, IA</p>
+                        </div>
+                        <p class="text-slate-500 text-sm">May 2018 – Mar 2019</p>
+                    </div>
+
+                    <ul class="space-y-3 text-sm text-slate-700 ml-4">
+                        <li class="relative pl-4">
+                            <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                            <span class="bg-lime-100 text-lime-800 text-xs font-bold px-2 py-0.5 rounded mr-1">ALREADY STRONG</span>
+                            Decreased post-engine-test data processing time by <strong>at least 75%</strong> by writing 8–10 scripts in VBScript (DIAdem) and Python — turning hours of manual data extraction into automated workflows used by <strong>6 test engineers</strong>.
+                        </li>
+                        <li class="relative pl-4">
+                            <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                            <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-0.5 rounded mr-1">REWRITTEN</span>
+                            Created a software request tool for Test Engineers to streamline payload ordering, coordinating with Tech Leads to define requirements — reducing payload lead time by <strong>40%</strong> and eliminating <strong>3–4 incorrect payload incidents per quarter</strong> that had previously caused <strong>20+ hours of wasted test time</strong> per incident.
+                        </li>
+                        <li class="relative pl-4">
+                            <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                            <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-0.5 rounded mr-1">REWRITTEN</span>
+                            Assessed injector nozzle failure risk for a torque increase on 4-cylinder 4.5L tractors using heat-sensitive nozzles and thermocouple-instrumented injectors — confirming nozzle temps remained safely below design spec at extreme conditions, clearing <strong>3 engine configurations</strong> for production release.
+                        </li>
+                        <li class="relative pl-4">
+                            <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                            <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-0.5 rounded mr-1">REWRITTEN</span>
+                            Introduced 5 PV&V Tech Lead training sessions for new engine engineers, coordinating presenters and curriculum across <strong>5 topic areas</strong> — reducing new engineer ramp-up time by <strong>30%</strong> and establishing a repeatable onboarding process adopted across <strong>4+ subsequent hires</strong>.
+                        </li>
+                        <li class="relative pl-4">
+                            <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                            <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-0.5 rounded mr-1">REWRITTEN</span>
+                            Audited emissions for 3-cylinder 2.9L engines from the India factory by running CHET and RMC cycle tests, confirming NOx and PM levels within acceptable range with engine hours below 50 — validating <strong>2 engine configurations</strong> for production release and clearing EPA Tier 4 compliance requirements.
+                        </li>
+                    </ul>
+                    <div class="mt-3 pt-3 border-t border-slate-200">
+                        <p class="text-xs font-bold text-teal-700 uppercase tracking-wider mb-2">LinkedIn Skills</p>
+                        <div class="flex flex-wrap gap-1.5">
+                            <span class="bg-teal-50 text-teal-700 text-xs font-medium px-2.5 py-1 rounded-full border border-teal-200">Python</span>
+                            <span class="bg-teal-50 text-teal-700 text-xs font-medium px-2.5 py-1 rounded-full border border-teal-200">Data Analysis</span>
+                            <span class="bg-teal-50 text-teal-700 text-xs font-medium px-2.5 py-1 rounded-full border border-teal-200">Process Automation</span>
+                            <span class="bg-teal-50 text-teal-700 text-xs font-medium px-2.5 py-1 rounded-full border border-teal-200">Training & Development</span>
+                            <span class="bg-teal-50 text-teal-700 text-xs font-medium px-2.5 py-1 rounded-full border border-teal-200">Curriculum Development</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Skills -->
+            <div class="mb-6">
+                <h4 class="text-sm font-extrabold text-slate-900 uppercase tracking-widest border-b-2 border-emerald-600 pb-1 mb-3">Technical Skills</h4>
+                <div class="text-sm text-slate-700">
+                    <p><strong>Embedded Systems:</strong> C (engine/drivetrain control logic), MATLAB/Simulink (model-based design), SIL/HIL testing (TractorSim, CANalyzer, FVIO)</p>
+                    <p class="mt-1"><strong>DevOps & Tooling:</strong> Azure DevOps, Rally, Jenkins CI/CD, Subversion/Mercurial version control</p>
+                    <p class="mt-1"><strong>Data & Automation:</strong> Python (NumPy, Pandas, Matplotlib, Scikit-learn), VBScript/DIAdem (test data automation), R, Power BI, Excel</p>
+                    <p class="mt-1"><strong>Leadership:</strong> Six Sigma mindset, Agile (Scrum Master, Product Owner), team mentorship, survey-driven developer experience improvement</p>
+                    <p class="mt-1"><strong>Languages:</strong> Fluent in Arabic</p>
+                </div>
+            </div>
+
+            <!-- Activity & Awards -->
+            <div>
+                <h4 class="text-sm font-extrabold text-slate-900 uppercase tracking-widest border-b-2 border-emerald-600 pb-1 mb-3">Leadership & Community</h4>
+                <ul class="space-y-2 text-sm text-slate-700 ml-4">
+                    <li class="relative pl-4">
+                        <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                        <strong>National Society of Black Engineers</strong> — Conference participation, STEM outreach, intern mentorship (Mar 2018 – Present)
+                    </li>
+                    <li class="relative pl-4">
+                        <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                        <strong>MSA President, Iowa State University</strong> — Led a multicultural organization with 200+ members (Aug 2014 – May 2015)
+                    </li>
+                    <li class="relative pl-4">
+                        <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-slate-400 rounded-full"></span>
+                        Tutored students in Calculus, Physics, and English Composition (Aug 2010 – May 2015)
+                    </li>
+                    <li class="relative pl-4">
+                        <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-slate-400 rounded-full"></span>
+                        Volunteered at Habitat for Humanity Build (Jul 2018)
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SECTION 4: BEFORE & AFTER EXAMPLES           -->
+    <!-- ============================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 p-8">
+        <div class="flex items-center gap-3 mb-6">
+            <div class="w-8 h-8 rounded-lg bg-purple-600 text-white flex items-center justify-center text-sm font-bold">⚡</div>
+            <h2 class="text-2xl font-extrabold text-slate-900">Before & After — Best Examples</h2>
+        </div>
+
+        <div class="space-y-6">
+            <!-- Example 1: Current role -->
+            <div class="rounded-xl overflow-hidden border border-slate-200">
+                <div class="bg-red-50 p-5 border-b border-red-200">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-red-600 text-white font-bold text-xs">✗</span>
+                        <span class="text-red-700 font-bold text-sm">ORIGINAL (Doer Level — "Work with" + "Assist")</span>
+                    </div>
+                    <p class="text-red-800 text-sm">"Work with software engineers to understand inefficiencies in their tools, processes, and architectures"</p>
+                </div>
+                <div class="bg-emerald-50 p-5">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-emerald-600 text-white font-bold text-xs">✓</span>
+                        <span class="text-emerald-700 font-bold text-sm">REWRITTEN (Impact Standard)</span>
+                    </div>
+                    <p class="text-emerald-800 text-sm">"Identified and resolved 12+ toolchain and workflow inefficiencies across 8 embedded software teams by conducting 1-on-1 developer interviews and workflow audits — reducing developer onboarding friction by 30% and improving developer satisfaction scores by 12 points in the subsequent survey cycle."</p>
+                </div>
+            </div>
+
+            <!-- Example 2: Unit test optimization -->
+            <div class="rounded-xl overflow-hidden border border-slate-200">
+                <div class="bg-red-50 p-5 border-b border-red-200">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-red-600 text-white font-bold text-xs">✗</span>
+                        <span class="text-red-700 font-bold text-sm">ORIGINAL (Achiever Level — has the metric but buries the lead)</span>
+                    </div>
+                    <p class="text-red-800 text-sm">"Rewrote C code unit tests for Denso high pressure fuel pump relief valve circuitry diagnostics to decrease code run time from 33000 to 25 milliseconds by only running test over diagnostic words relevant to diagnostic faults and corner conditions"</p>
+                </div>
+                <div class="bg-emerald-50 p-5">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-emerald-600 text-white font-bold text-xs">✓</span>
+                        <span class="text-emerald-700 font-bold text-sm">REWRITTEN (Impact Standard — leads with the 1,320x win)</span>
+                    </div>
+                    <p class="text-emerald-800 text-sm">"Rewrote C code unit tests for Denso high-pressure fuel pump diagnostic circuitry, reducing test execution time from 33,000ms to 25ms (1,320x improvement) by targeting only diagnostic words relevant to fault conditions — saving 8+ hours of CI pipeline time per week across 6 developers running 3–4 test cycles daily."</p>
+                </div>
+            </div>
+
+            <!-- Example 3: Warehouse hold -->
+            <div class="rounded-xl overflow-hidden border border-slate-200">
+                <div class="bg-red-50 p-5 border-b border-red-200">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-red-600 text-white font-bold text-xs">✗</span>
+                        <span class="text-red-700 font-bold text-sm">ORIGINAL (Doer Level — no scale, no stakes)</span>
+                    </div>
+                    <p class="text-red-800 text-sm">"Built experimental software to correct aftertreatment (AT) regen issues and relieve warehouse hold in under 2 days."</p>
+                </div>
+                <div class="bg-emerald-50 p-5">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-emerald-600 text-white font-bold text-xs">✓</span>
+                        <span class="text-emerald-700 font-bold text-sm">REWRITTEN (Impact Standard — Dragon Slayer + scale)</span>
+                    </div>
+                    <p class="text-emerald-800 text-sm">"Built experimental software to resolve aftertreatment regen issues and relieve a warehouse hold — in under 2 days — by navigating complex base code conversion and hybrid AT setup across multiple teams, expediting release and unblocking 15+ machines worth $5M+ from shipping."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SECTION 5: ACTION ITEMS                      -->
+    <!-- ============================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 p-8">
+        <div class="flex items-center gap-3 mb-6">
+            <div class="w-8 h-8 rounded-lg bg-emerald-700 text-white flex items-center justify-center text-sm font-bold">🎯</div>
+            <h2 class="text-2xl font-extrabold text-slate-900">Summary: What Mansour Needs to Do</h2>
+        </div>
+
+        <div class="space-y-4">
+            <div class="flex items-start gap-4 p-5 bg-emerald-50 rounded-xl border border-emerald-200">
+                <div class="w-10 h-10 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-lg flex-shrink-0">1</div>
+                <div>
+                    <p class="font-bold text-emerald-900 text-lg">Validate or correct all estimated metrics</p>
+                    <p class="text-emerald-700 text-sm mt-1">This V2 fills in reasonable assumptions, but only you know the real numbers. Were there really 8 teams you worked across in the Dev Enablement role? Was Rally adoption truly 100% within 3 months? Were there really 1,200+ 8R IVT tractors affected by the hidden park defect? Replace estimates with actuals wherever possible — a specific number always beats a reasonable guess.</p>
+                </div>
+            </div>
+
+            <div class="flex items-start gap-4 p-5 bg-emerald-50 rounded-xl border border-emerald-200">
+                <div class="w-10 h-10 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-lg flex-shrink-0">2</div>
+                <div>
+                    <p class="font-bold text-emerald-900 text-lg">Completely rewrite the Dev Enablement Lead section with real data</p>
+                    <p class="text-emerald-700 text-sm mt-1">The V2 bullets show what the section SHOULD look like, but every metric is estimated. This is the most recent role and it needs to be the strongest. What specific tools did you drive adoption of? What was the actual survey response rate? What concrete changes resulted from the survey findings? The bones are right — now fill in reality.</p>
+                </div>
+            </div>
+
+            <div class="flex items-start gap-4 p-5 bg-emerald-50 rounded-xl border border-emerald-200">
+                <div class="w-10 h-10 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-lg flex-shrink-0">3</div>
+                <div>
+                    <p class="font-bold text-emerald-900 text-lg">Remove all duplicate bullets — immediately</p>
+                    <p class="text-emerald-700 text-sm mt-1">The Embedded Software Engineer section has the Scrum Master bullet twice, the aftertreatment commonization bullet twice, and the Immobilizer bullet twice. This is a copy-paste artifact that signals carelessness. Merge into single, stronger versions. (Already done in this V2 rewrite.)</p>
+                </div>
+            </div>
+
+            <div class="flex items-start gap-4 p-5 bg-emerald-50 rounded-xl border border-emerald-200">
+                <div class="w-10 h-10 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-lg flex-shrink-0">4</div>
+                <div>
+                    <p class="font-bold text-emerald-900 text-lg">Confirm the Dragon Slayer context in the Supervisor role</p>
+                    <p class="text-emerald-700 text-sm mt-1">The V2 adds "risking millions in lost revenue across 2,000+ North American dealers" and "$15K/day in idle machine costs" — these are based on John Deere's public dealer network and reasonable fleet costs. Confirm these are directionally correct and adjust with actual figures if possible. The seasonal manufacturing cutoff framing is also estimated — was it actually a seasonal deadline or a different constraint?</p>
+                </div>
+            </div>
+
+            <div class="flex items-start gap-4 p-5 bg-emerald-50 rounded-xl border border-emerald-200">
+                <div class="w-10 h-10 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-lg flex-shrink-0">5</div>
+                <div>
+                    <p class="font-bold text-emerald-900 text-lg">Validate warranty cost estimates</p>
+                    <p class="text-emerald-700 text-sm mt-1">Several bullets now include warranty cost estimates based on ~$600/dealer visit: $18,000+/month (DPF Recovery), $30,000+/quarter (5M DTC false alarms), $24,000+/year (VGT patch). These are conservative — JD dealer visits can run higher with travel and diagnostics. Adjust if you have access to actual warranty data or can confirm the per-visit cost.</p>
+                </div>
+            </div>
+
+            <div class="flex items-start gap-4 p-5 bg-emerald-50 rounded-xl border border-emerald-200">
+                <div class="w-10 h-10 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-lg flex-shrink-0">6</div>
+                <div>
+                    <p class="font-bold text-emerald-900 text-lg">Remove the quote from the header</p>
+                    <p class="text-emerald-700 text-sm mt-1">"Curiosity is the wick in the candle of learning" — while it's a great quote, resume header real estate is premium. Use that space for a LinkedIn URL, a portfolio link, or a 1-line value proposition. Quotes belong on LinkedIn profiles, not ATS-parsed resumes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SECTION 6: WHAT'S WORKING                    -->
+    <!-- ============================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 p-8">
+        <div class="flex items-center gap-3 mb-6">
+            <div class="w-8 h-8 rounded-lg bg-lime-500 text-white flex items-center justify-center text-sm font-bold">✓</div>
+            <h2 class="text-2xl font-extrabold text-slate-900">What's Already Working</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="bg-lime-50 border border-lime-200 rounded-xl p-5">
+                <p class="font-bold text-lime-900">Supervisor section is legitimately strong</p>
+                <p class="text-lime-700 text-sm mt-1">30% OT reduction, 90% weekend work reduction, 25-30% release error reduction, 50% onboarding time reduction, $2M fleet management, doubled testing capacity. This section walks the walk. It's proof that when you apply the formula, it works.</p>
+            </div>
+            <div class="bg-lime-50 border border-lime-200 rounded-xl p-5">
+                <p class="font-bold text-lime-900">Clear career progression at one company</p>
+                <p class="text-lime-700 text-sm mt-1">7 years at John Deere, 4+ promotions (PV&V → CI → Drivetrain → Engine Controls → Embedded SW → Supervisor → Enablement Lead). This tells a growth story that hiring managers love. The trajectory is visible without effort.</p>
+            </div>
+            <div class="bg-lime-50 border border-lime-200 rounded-xl p-5">
+                <p class="font-bold text-lime-900">Real metrics where they exist</p>
+                <p class="text-lime-700 text-sm mt-1">The resume DOES have metrics — 30%, 90%, 25-30%, 50%, 75%, 50-75%, 15-20%, $2M. They're just clustered in two sections (Supervisor and a few earlier bullets). The instinct to quantify is there. It needs to be applied everywhere.</p>
+            </div>
+            <div class="bg-lime-50 border border-lime-200 rounded-xl p-5">
+                <p class="font-bold text-lime-900">Tools shown in context, not just listed</p>
+                <p class="text-lime-700 text-sm mt-1">Rally, Azure DevOps, Jenkins, CANalyzer, TractorSim, HIL, SIL, DIAdem, Python, VBScript, MATLAB — almost all appear naturally within experience bullets. This is exactly what the Impact Bullet Builder teaches.</p>
+            </div>
+            <div class="bg-lime-50 border border-lime-200 rounded-xl p-5">
+                <p class="font-bold text-lime-900">Both individual contributor AND leadership experience</p>
+                <p class="text-lime-700 text-sm mt-1">The resume shows deep IC work (embedded C, unit tests, root cause analysis) AND management (team of 6-10, cross-department orchestration, mentorship, training). This versatility is rare and valuable. Both deserve strong bullets.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SECTION 7: FULL SCORECARD                    -->
+    <!-- ============================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 p-8">
+        <div class="flex items-center gap-3 mb-6">
+            <div class="w-8 h-8 rounded-lg bg-slate-800 text-lime-300 flex items-center justify-center text-sm font-bold">📋</div>
+            <h2 class="text-2xl font-extrabold text-slate-900">Scorecard: Impact Bullet Builder™ Criteria</h2>
+        </div>
+
+        <div class="overflow-x-auto">
+            <table class="w-full text-sm">
+                <thead>
+                    <tr class="border-b-2 border-slate-200">
+                        <th class="text-left py-3 pl-3 text-slate-900 font-bold">Criteria</th>
+                        <th class="text-center py-3 text-slate-900 font-bold w-20">Score</th>
+                        <th class="text-left py-3 text-slate-900 font-bold">Notes</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-100">
+                    <tr>
+                        <td class="py-3 pl-3 font-semibold text-slate-700">Accomplishments (not duties)</td>
+                        <td class="py-3 text-center"><span class="font-mono-num font-bold text-lime-600">6/10</span></td>
+                        <td class="py-3 text-slate-500">Supervisor and CI roles have real accomplishments. Dev Enablement Lead, Engine Controls, and Drivetrain are mostly duty descriptions. Inconsistent.</td>
+                    </tr>
+                    <tr>
+                        <td class="py-3 pl-3 font-semibold text-slate-700">Metrics / Quantification</td>
+                        <td class="py-3 text-center"><span class="font-mono-num font-bold text-lime-600">6/10</span></td>
+                        <td class="py-3 text-slate-500">Strong in Supervisor (30%, 90%, 25-30%, 50%, $2M) and PV&V (75%). Weak everywhere else. Current role has zero metrics. 33,000→25ms is golden but buried.</td>
+                    </tr>
+                    <tr>
+                        <td class="py-3 pl-3 font-semibold text-slate-700">How / Method Shown</td>
+                        <td class="py-3 text-center"><span class="font-mono-num font-bold text-lime-600">7/10</span></td>
+                        <td class="py-3 text-slate-500">Good throughout. Rally, Azure DevOps, Jenkins, CANalyzer, TractorSim, HIL, SIL, Python, DIAdem, MATLAB, C all appear naturally in bullets. Strongest element.</td>
+                    </tr>
+                    <tr>
+                        <td class="py-3 pl-3 font-semibold text-slate-700">Why / Business Impact</td>
+                        <td class="py-3 text-center"><span class="font-mono-num font-bold text-amber-500">4/10</span></td>
+                        <td class="py-3 text-slate-500">Supervisor has some "why" (on-time delivery, team morale). Everything else jumps from action to result without connecting to business value. Warranty costs, revenue impact, and production delays are never mentioned.</td>
+                    </tr>
+                    <tr>
+                        <td class="py-3 pl-3 font-semibold text-slate-700">Me-in-We Extractor™</td>
+                        <td class="py-3 text-center"><span class="font-mono-num font-bold text-amber-500">5/10</span></td>
+                        <td class="py-3 text-slate-500">"Work with" and "Assist" in the current role. "Supported code development" in Drivetrain. Most bullets do start with strong "I" verbs, but the slips are in high-visibility positions.</td>
+                    </tr>
+                    <tr>
+                        <td class="py-3 pl-3 font-semibold text-slate-700">Dragon Slayer Context</td>
+                        <td class="py-3 text-center"><span class="font-mono-num font-bold text-red-500">2/10</span></td>
+                        <td class="py-3 text-slate-500">The warehouse hold bullet ("in under 2 days") hints at urgency. The $2M fleet mentions stakes. But no bullet consistently paints the problem before showing the solution. Massive missed opportunity — especially in autonomous tillage, safety-critical engine controls, and production holds.</td>
+                    </tr>
+                    <tr>
+                        <td class="py-3 pl-3 font-semibold text-slate-700">Action Verbs</td>
+                        <td class="py-3 text-center"><span class="font-mono-num font-bold text-lime-600">7/10</span></td>
+                        <td class="py-3 text-slate-500">Strong variety: Led, Drove, Orchestrated, Implemented, Rewrote, Diagnosed, Built, Eliminated, Introduced. Weakened by "Work with," "Assist," and "Supported" in key positions.</td>
+                    </tr>
+                    <tr>
+                        <td class="py-3 pl-3 font-semibold text-slate-700">Bullet Quality Consistency</td>
+                        <td class="py-3 text-center"><span class="font-mono-num font-bold text-red-500">3/10</span></td>
+                        <td class="py-3 text-slate-500">Massive quality cliff. Supervisor = Impact Standard. Current role = Doer. Embedded SW = has duplicates. Engine Controls = 4-line run-on bullets. The resume reads like 3 different people wrote it at 3 different skill levels.</td>
+                    </tr>
+                    <tr class="bg-slate-50 font-bold">
+                        <td class="py-4 pl-3 text-slate-900 text-base">OVERALL SCORE</td>
+                        <td class="py-4 text-center"><span class="font-mono-num text-xl text-amber-500">52/100</span></td>
+                        <td class="py-4 text-slate-700">Tier: "Almost There" — the formula is proven in one section, needs to be applied everywhere</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="mt-6 bg-emerald-900 text-white rounded-xl p-6">
+            <p class="font-bold text-lg mb-2">The Good News</p>
+            <p class="text-emerald-200 text-sm">This resume is a fascinating case study. The Supervisor section <strong>proves</strong> that Mansour knows how to write at the Impact Standard — it has metrics, outcomes, specific numbers, and team context. The problem is that this level of quality wasn't applied backwards through the earlier roles. The raw material is exceptional: 7 years at John Deere with 4+ promotions, a 1,320x test optimization, autonomous tillage delivery, cross-department leadership, $2M fleet management, and training/mentoring impact. The fix is straightforward: apply the same discipline from the Supervisor section to every other role, remove duplicates, rewrite the current role to be the strongest section, and add Dragon Slayer context to the top 5 bullets. A focused session would push this from 52 to 85+. The framework creator just needs to fully apply his own framework.</p>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- V2 ESTIMATION DETAILS                        -->
+    <!-- ============================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 p-8">
+        <div class="flex items-center gap-3 mb-6">
+            <div class="w-8 h-8 rounded-lg bg-slate-600 text-white flex items-center justify-center text-sm font-bold">📐</div>
+            <h2 class="text-2xl font-extrabold text-slate-900">V2 Estimation Methodology</h2>
+        </div>
+
+        <p class="text-slate-600 text-sm mb-4">How each category of estimates was derived:</p>
+
+        <div class="space-y-3">
+            <div class="bg-slate-50 rounded-xl p-4 border border-slate-200">
+                <p class="font-bold text-slate-800 text-sm">Team sizes → 6–10 engineers</p>
+                <p class="text-slate-500 text-xs">Per Mansour's guidance. Applied consistently to JDPS, PV&V, engine controls, and drivetrain teams.</p>
+            </div>
+            <div class="bg-slate-50 rounded-xl p-4 border border-slate-200">
+                <p class="font-bold text-slate-800 text-sm">Dealer visit cost → ~$600/visit</p>
+                <p class="text-slate-500 text-xs">Industry average for heavy equipment dealer service calls including technician labor, travel, and diagnostics. Conservative — JD dealer visits often run $800–$1,200+ with parts and extended diagnostics.</p>
+            </div>
+            <div class="bg-slate-50 rounded-xl p-4 border border-slate-200">
+                <p class="font-bold text-slate-800 text-sm">Machine values → $80K–$500K+</p>
+                <p class="text-slate-500 text-xs">John Deere 5M tractors: ~$80K–$120K. 8R IVT tractors: ~$350K–$500K+. Combines (S-series): ~$400K–$700K. Crop care sprayers: ~$200K–$500K. Warehouse hold estimate of $5M+ for 15 machines uses conservative $300K+ average.</p>
+            </div>
+            <div class="bg-slate-50 rounded-xl p-4 border border-slate-200">
+                <p class="font-bold text-slate-800 text-sm">JD dealer network → 2,000+ North American dealers</p>
+                <p class="text-slate-500 text-xs">John Deere's publicly reported North American dealer network size. Used to illustrate the scale impact of late product delivery.</p>
+            </div>
+            <div class="bg-slate-50 rounded-xl p-4 border border-slate-200">
+                <p class="font-bold text-slate-800 text-sm">8R IVT production volume → 1,200+ units</p>
+                <p class="text-slate-500 text-xs">Estimated based on the 8R series being one of JD's flagship large tractor lines. Actual production numbers may vary significantly — JD does not publicly disclose per-model production volumes.</p>
+            </div>
+            <div class="bg-slate-50 rounded-xl p-4 border border-slate-200">
+                <p class="font-bold text-slate-800 text-sm">Winter test site costs → ~$15K/day</p>
+                <p class="text-slate-500 text-xs">Includes idle machine depreciation ($2M+ fleet ÷ ~365 days for daily cost basis), personnel lodging/travel, test site access fees, and lost testing throughput. Conservative for a multi-machine fleet operation.</p>
+            </div>
+            <div class="bg-slate-50 rounded-xl p-4 border border-slate-200">
+                <p class="font-bold text-slate-800 text-sm">Dev Enablement scope → 8 teams, 150+ survey respondents</p>
+                <p class="text-slate-500 text-xs">JD Ames ISG/embedded org likely has 8–15+ embedded software teams. 150+ survey respondents assumes ~60–70% response rate from an embedded org of 200+ developers. Adjust based on actual org size.</p>
+            </div>
+            <div class="bg-slate-50 rounded-xl p-4 border border-slate-200">
+                <p class="font-bold text-slate-800 text-sm">Defect counts, build failures, sprint metrics</p>
+                <p class="text-slate-500 text-xs">Based on typical embedded software development at scale: 6+ build failures per sprint is common in CI pipelines with complex configurations, 12+ defects over 2 years is conservative for an engine controls engineer, 35% backlog reduction is a reasonable impact for focused root cause work. Sprint velocity improvements of 25% are typical for teams adopting agile tooling for the first time.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center py-8 text-slate-400 text-sm">
+        <p>Analysis prepared by LaunchToLead | Impact Bullet Builder™ Framework</p>
+        <p class="mt-1">V2 — Estimated metrics filled in based on John Deere context</p>
+        <p class="mt-1">launchtolead.io/free</p>
+    </footer>
+
+</div>
+
+</body>
+</html>

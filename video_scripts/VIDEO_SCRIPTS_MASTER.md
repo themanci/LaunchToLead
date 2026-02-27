@@ -69,7 +69,7 @@
 > In 21 days, you become a completely different candidate. Guaranteed."
 
 ### CTA (50-60s)
-> "I only take 10 clients a month. Click below to book a free strategy call and see if you qualify."
+> "I only take 10 clients a month. Click below to book a free Career Launch Call and see if you qualify."
 
 ---
 
@@ -101,7 +101,7 @@
 > 52 methods. 40 bonus materials. Three 90-minute sessions. Done in 21 days."
 
 ### CTA (50-60s)
-> "$1,997—or less than one month of the salary you're losing. Book your free strategy call below."
+> "$1,997—or less than one month of the salary you're losing. Book your free Career Launch Call below."
 
 ---
 
@@ -131,7 +131,7 @@
 > It's you and me. Working on YOUR resume. YOUR stories. YOUR interviews."
 
 ### CTA (50-60s)
-> "$1,997. Three payments of $699. And only 10 spots per month. Book your strategy call now."
+> "$1,997. Three payments of $699. And only 10 spots per month. Book your Career Launch Call now."
 
 ---
 
@@ -159,7 +159,7 @@
 > 52 methods. Three 90-minute sessions. A complete transformation."
 
 ### CTA (50-60s)
-> "If you're tired of feeling invisible, book a free strategy call. Let's see if I can help you too."
+> "If you're tired of feeling invisible, book a free Career Launch Call. Let's see if I can help you too."
 
 ---
 

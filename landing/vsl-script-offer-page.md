@@ -3,7 +3,7 @@
 > **Purpose:** Video Sales Letter for the offer page (`landing/offer.html`)
 > **Target Length:** 5-6 minutes (~900-1,100 words spoken)
 > **Audience:** Engineering students / recent grads / early-career engineers who just downloaded the Impact Bullet Builder lead magnet
-> **Goal:** Get them to book a free strategy call
+> **Goal:** Get them to fill out the qualifying form and book a free Career Launch Call
 > **Tone:** Direct, empathetic, zero hype, engineer-to-engineer
 
 ---
@@ -115,7 +115,7 @@ Now — I can't promise a six-figure offer in three weeks. I can't control the m
 
 There's never a perfect time to do this. Every month you wait is another $6,700 you didn't earn and another month the gap widens.
 
-Below this video there's a short form — takes two minutes. If we're a good fit, you can book a free 15-minute strategy call. We'll talk about where you're stuck and whether the Blueprint makes sense for you. If it does, great. If not, I'll still point you in the right direction.
+Below this video there's a short form — takes two minutes. If we're a good fit, you can book a free 15-minute Career Launch Call. We'll talk about where you're stuck and whether the Blueprint makes sense for you. If it does, great. If not, I'll still point you in the right direction.
 
 No pressure. No pitch. Just a conversation between two engineers.
 

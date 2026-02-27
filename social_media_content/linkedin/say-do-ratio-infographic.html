@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Say/Do Ratio — LaunchToLead Infographic</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #e8e8e8;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+
+  .canvas {
+    width: 1080px;
+    background: #FFFEF8;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* ── TITLE BANNER ── */
+  .title-banner {
+    background: linear-gradient(135deg, #0d1f0d 0%, #14291a 50%, #0f1f14 100%);
+    padding: 54px 56px 50px;
+    text-align: center;
+    position: relative;
+  }
+  .title-banner::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, #a3e635, #14b8a6, #a3e635);
+  }
+  .title-main {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 72px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.15;
+  }
+  .title-main .hl {
+    color: #a3e635;
+    text-decoration: underline;
+    text-decoration-color: #a3e635;
+    text-underline-offset: 8px;
+    text-decoration-thickness: 5px;
+  }
+  .title-sub {
+    font-size: 28px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.7);
+    margin-top: 12px;
+  }
+
+  /* ── SECTION GRID ── */
+  .grid-row {
+    display: flex;
+    gap: 18px;
+    padding: 18px 28px 0;
+  }
+
+  /* ── SECTION BOX ── */
+  .section-box {
+    border-radius: 16px;
+    padding: 30px 28px 26px;
+    flex: 1;
+    position: relative;
+    border: 1.5px solid rgba(0,0,0,0.06);
+  }
+
+  /* ── COLOR THEMES ── */
+  .bg-lime    { background: #F3FDDA; }
+  .bg-teal    { background: #DFFAF5; }
+  .bg-yellow  { background: #FFF9DB; }
+  .bg-peach   { background: #FFF0E4; }
+  .bg-pink    { background: #FFE8EE; }
+  .bg-lavender{ background: #EDE8FF; }
+  .bg-mint    { background: #E0FFF0; }
+
+  /* ── NUMBER BADGE ── */
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    color: #fff;
+    margin-right: 14px;
+    flex-shrink: 0;
+  }
+  .badge-emerald { background: #65a30d; }
+  .badge-teal    { background: #0d9488; }
+  .badge-amber   { background: #d97706; }
+  .badge-rose    { background: #e11d48; }
+  .badge-violet  { background: #7c3aed; }
+
+  /* ── SECTION HEADERS ── */
+  .section-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+  .section-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    color: #1a1a1a;
+    line-height: 1.15;
+  }
+
+  /* ── BODY TEXT ── */
+  .body {
+    font-size: 21px;
+    line-height: 1.5;
+    color: #333;
+    font-weight: 500;
+  }
+  .body strong {
+    font-weight: 800;
+    color: #1a1a1a;
+  }
+  .body .accent {
+    color: #65a30d;
+    font-weight: 800;
+  }
+
+  /* ── RATIO VISUAL ── */
+  .ratio-visual {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0 8px;
+  }
+  .ratio-top, .ratio-bottom {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 28px;
+    color: #1a1a1a;
+    padding: 10px 32px;
+    border-radius: 10px;
+    text-align: center;
+  }
+  .ratio-top { background: #a3e635; }
+  .ratio-line {
+    width: 260px;
+    height: 4px;
+    background: #333;
+    margin: 5px 0;
+  }
+  .ratio-bottom {
+    background: rgba(231,70,70,0.15);
+    color: #b91c1c;
+  }
+  .ratio-equals {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 26px;
+    color: #555;
+    margin: 6px 0 2px;
+  }
+  .ratio-result {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 800;
+    font-size: 30px;
+    color: #65a30d;
+  }
+
+  /* ── CALLOUT STRIP ── */
+  .callout-strip {
+    background: linear-gradient(90deg, #14b8a6, #65a30d);
+    padding: 18px 32px;
+    margin: 18px 28px 0;
+    border-radius: 12px;
+    text-align: center;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    color: #fff;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+
+  /* ── RULE CALLOUT ── */
+  .rule-callout {
+    background: rgba(0,0,0,0.045);
+    border-radius: 10px;
+    padding: 14px 18px;
+    margin-top: 14px;
+    font-size: 19px;
+    line-height: 1.45;
+    color: #333;
+    border-left: 4px solid;
+    font-weight: 600;
+  }
+  .rule-callout.border-emerald { border-color: #65a30d; }
+  .rule-callout.border-teal    { border-color: #0d9488; }
+  .rule-callout.border-amber   { border-color: #d97706; }
+  .rule-callout.border-rose    { border-color: #e11d48; }
+  .rule-callout.border-violet  { border-color: #7c3aed; }
+
+  /* ── KEY POINT ── */
+  .key-point {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  .key-point .arrow {
+    color: #65a30d;
+    font-weight: 700;
+    font-size: 22px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  /* ── COMPARISON CARDS ── */
+  .compare-row {
+    display: flex;
+    gap: 16px;
+    margin-top: 16px;
+  }
+  .compare-card {
+    flex: 1;
+    border-radius: 12px;
+    padding: 18px 18px;
+    text-align: center;
+  }
+  .compare-card.good {
+    background: rgba(163,230,53,0.18);
+    border: 2px solid rgba(101,163,13,0.3);
+  }
+  .compare-card.bad {
+    background: rgba(231,70,70,0.08);
+    border: 2px solid rgba(185,28,28,0.15);
+  }
+  .compare-card .ratio-num {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 800;
+    font-size: 40px;
+  }
+  .compare-card.good .ratio-num { color: #65a30d; }
+  .compare-card.bad .ratio-num { color: #b91c1c; }
+  .compare-card .label {
+    font-size: 18px;
+    color: #555;
+    margin-top: 4px;
+    font-weight: 600;
+  }
+  .compare-card .verdict {
+    font-size: 17px;
+    margin-top: 6px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+  .compare-card.good .verdict { color: #65a30d; }
+  .compare-card.bad .verdict { color: #b91c1c; }
+
+  /* ── BOTTOM BANNER ── */
+  .bottom-banner {
+    background: linear-gradient(135deg, #0d1f0d 0%, #14291a 50%, #0f1f14 100%);
+    margin: 22px 28px 28px;
+    border-radius: 16px;
+    padding: 30px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+  }
+  .bottom-banner::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #a3e635, #14b8a6, #a3e635);
+  }
+  .bottom-left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  .logo-circle {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #a3e635, #14b8a6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 26px;
+    color: #0d1f0d;
+  }
+  .bottom-text .name {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 26px;
+    color: #fff;
+  }
+  .bottom-text .tagline {
+    font-size: 18px;
+    color: rgba(255,255,255,0.6);
+    margin-top: 2px;
+  }
+  .bottom-cta {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    color: #0d1f0d;
+    background: #a3e635;
+    padding: 14px 28px;
+    border-radius: 10px;
+  }
+</style>
+</head>
+<body>
+
+<div class="canvas">
+
+  <!-- ═══ TITLE BANNER ═══ -->
+  <div class="title-banner">
+    <div class="title-main">The <span class="hl">Say/Do Ratio</span></div>
+    <div class="title-sub">5 Rules to Build Trust Fast as a New Engineer</div>
+  </div>
+
+  <!-- ═══ ROW 1: THE RATIO + WHY IT MATTERS ═══ -->
+  <div class="grid-row">
+
+    <!-- The Ratio -->
+    <div class="section-box bg-lime">
+      <div class="section-header">
+        <span class="section-title">The Formula</span>
+      </div>
+      <div class="body">
+        Your career currency is <strong>reliability</strong>. One formula measures it:
+      </div>
+      <div class="ratio-visual">
+        <div class="ratio-top">Things You DO</div>
+        <div class="ratio-line"></div>
+        <div class="ratio-bottom">Things You SAY</div>
+        <div class="ratio-equals">=</div>
+        <div class="ratio-result">Your Say/Do Ratio</div>
+      </div>
+      <div class="body" style="text-align:center; margin-top:6px;">
+        Keep it at <strong style="color:#65a30d;">1.0 or above</strong>. Always.
+      </div>
+    </div>
+
+    <!-- Why It Matters -->
+    <div class="section-box bg-teal">
+      <div class="section-header">
+        <span class="section-title">Why It Matters</span>
+      </div>
+      <div class="body">
+        Your reliability reputation gets built in your <strong>first 90 days</strong> and follows you for years.
+      </div>
+      <div class="compare-row">
+        <div class="compare-card good">
+          <div class="ratio-num">10/10</div>
+          <div class="label">Delivers every time</div>
+          <div class="verdict">&#10003; Trusted</div>
+        </div>
+        <div class="compare-card bad">
+          <div class="ratio-num">6/10</div>
+          <div class="label">Brilliant but flaky</div>
+          <div class="verdict">&#10007; Risky</div>
+        </div>
+      </div>
+      <div class="body" style="margin-top:16px; text-align:center;">
+        <strong>Talent</strong> gets you in the room.<br>
+        <strong class="accent">Your ratio</strong> keeps you there.
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ═══ CALLOUT STRIP ═══ -->
+  <div class="callout-strip">
+    5 RULES TO KEEP YOUR RATIO HIGH
+  </div>
+
+  <!-- ═══ ROW 2: RULES 1 & 2 ═══ -->
+  <div class="grid-row">
+
+    <!-- Rule 1 -->
+    <div class="section-box bg-yellow">
+      <div class="section-header">
+        <span class="badge badge-emerald">1</span>
+        <span class="section-title">Under-Promise. Over-Deliver.</span>
+      </div>
+      <div class="rule-callout border-emerald">
+        Think Friday? <strong>Say Monday.</strong> Deliver Friday.<br>
+        "Exceeded expectations" — without extra work.
+      </div>
+      <div class="key-point">
+        <span class="arrow">▸</span>
+        <span class="body"><strong>Manage the denominator.</strong></span>
+      </div>
+    </div>
+
+    <!-- Rule 2 -->
+    <div class="section-box bg-peach">
+      <div class="section-header">
+        <span class="badge badge-amber">2</span>
+        <span class="section-title">Guard Your "Yes"</span>
+      </div>
+      <div class="rule-callout border-amber">
+        Every <strong>"I'll take that on"</strong> adds to your denominator.<br>
+        If it's not a priority — <strong>don't volunteer.</strong>
+      </div>
+      <div class="key-point">
+        <span class="arrow">▸</span>
+        <span class="body"><strong>Saying no</strong> to the wrong things = <strong>saying yes</strong> to the right things.</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ═══ ROW 3: RULES 3 & 4 ═══ -->
+  <div class="grid-row">
+
+    <!-- Rule 3 -->
+    <div class="section-box bg-pink">
+      <div class="section-header">
+        <span class="badge badge-rose">3</span>
+        <span class="section-title">Meetings = Promises</span>
+      </div>
+      <div class="rule-callout border-rose">
+        <strong>You forgot. Your manager didn't.</strong><br>
+        Every casual "I'll handle it" that doesn't get handled chips away at credibility.
+      </div>
+      <div class="key-point">
+        <span class="arrow">▸</span>
+        <span class="body">Every word in a meeting is a <strong>commitment</strong>.</span>
+      </div>
+    </div>
+
+    <!-- Rule 4 -->
+    <div class="section-box bg-lavender">
+      <div class="section-header">
+        <span class="badge badge-violet">4</span>
+        <span class="section-title">Track Your Commitments</span>
+      </div>
+      <div class="rule-callout border-violet">
+        If it came out of your mouth, <strong>write it down.</strong><br>
+        Notebook, Notion, sticky note — doesn't matter.
+      </div>
+      <div class="key-point">
+        <span class="arrow">▸</span>
+        <span class="body">High ratio engineers have a <strong>system</strong>. Low ones <strong>apologize</strong>.</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ═══ ROW 4: RULE 5 (Full Width) ═══ -->
+  <div class="grid-row">
+
+    <div class="section-box bg-mint" style="flex: 1 1 100%;">
+      <div class="section-header">
+        <span class="badge badge-teal">5</span>
+        <span class="section-title">Protect the Ratio at All Costs</span>
+      </div>
+      <div style="display:flex; gap:24px; align-items:center;">
+        <div class="body" style="flex:1;">
+          Your reputation for reliability is the <strong>most valuable asset</strong> you own as a new engineer.
+          It's built in your first 90 days and follows you for years.
+        </div>
+        <div style="flex:1; text-align:center;">
+          <div style="font-family:'Space Grotesk',sans-serif; font-weight:800; font-size:26px; color:#0d9488; line-height:1.6;">
+            It's not about saying more.<br>
+            It's about <span style="color:#65a30d;">doing everything you say.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ═══ BOTTOM BANNER ═══ -->
+  <div class="bottom-banner">
+    <div class="bottom-left">
+      <div class="logo-circle">L²</div>
+      <div class="bottom-text">
+        <div class="name">LaunchToLead</div>
+        <div class="tagline">Helping engineers launch careers that lead</div>
+      </div>
+    </div>
+    <div class="bottom-cta">FOLLOW FOR MORE ▸</div>
+  </div>
+
+</div>
+
+</body>
+</html>
