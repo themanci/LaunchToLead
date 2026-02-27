@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Analysis — Rahul Reddy Chidipudi | LaunchToLead</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .font-mono-num { font-family: 'Space Grotesk', monospace; }
+
+        /* Download PDF Button */
+        #download-btn {
+            position: fixed; top: 20px; right: 20px; z-index: 9999;
+            background: linear-gradient(135deg, #a3e635, #14b8a6); color: #052e16;
+            font-family: 'Plus Jakarta Sans', sans-serif; font-size: 16px; font-weight: 800;
+            padding: 14px 32px; border: none; border-radius: 50px; cursor: pointer;
+            box-shadow: 0 8px 30px rgba(163,230,53,0.3);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        #download-btn:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(163,230,53,0.4); }
+
+        /* ============================================ */
+        /* PRINT STYLES — Letter pages, proper breaks   */
+        /* ============================================ */
+        @media print {
+            @page {
+                size: letter;
+                margin: 0.5in 0.65in;
+            }
+
+            /* Reset for print */
+            body {
+                background: white !important;
+                color: #1e293b !important;
+                padding: 0 !important;
+                margin: 0 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
+            /* Hide non-print elements */
+            #download-btn { display: none !important; }
+
+            /* Page breaks — each major section starts a new page */
+            .page-break { break-before: page; }
+
+            /* Prevent cards/rows from splitting across pages */
+            .keep-together { break-inside: avoid; }
+
+            /* Auto-protect all card types from splitting */
+            .space-y-4 > div,
+            .space-y-6 > div,
+            .grid > div { break-inside: avoid; }
+
+            /* Resume role blocks */
+            section .mb-5 { break-inside: avoid; }
+
+            /* Resume bullet items */
+            ul.space-y-3 > li { break-inside: avoid; }
+
+            /* Score table rows */
+            tbody tr { break-inside: avoid; }
+
+            /* Before/After example cards */
+            .rounded-xl.overflow-hidden { break-inside: avoid; }
+
+            /* Prevent orphaned headings */
+            h2, h3, h4 { break-after: avoid; }
+
+            /* Remove decorative shadows for clean print */
+            section {
+                box-shadow: none !important;
+                border: 1px solid #e2e8f0 !important;
+            }
+
+            /* Full width on paper */
+            .max-w-4xl { max-width: 100% !important; }
+
+            /* Ensure colored backgrounds print */
+            .bg-red-900, .bg-amber-800, .bg-emerald-900 {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-700">
+
+<!-- Download PDF Button -->
+<button id="download-btn" onclick="window.print()">Download PDF</button>
+
+<!-- ============================================ -->
+<!-- HEADER                                        -->
+<!-- ============================================ -->
+<header class="bg-emerald-900 text-white py-6 px-6">
+    <div class="max-w-4xl mx-auto">
+        <div class="flex items-center gap-3 mb-4">
+            <div class="bg-white text-emerald-900 w-10 h-10 rounded-xl flex items-center justify-center font-bold text-sm shadow">L²</div>
+            <span class="text-xl font-bold">Launch<span class="font-light text-lime-300">ToLead</span></span>
+        </div>
+        <h1 class="text-3xl font-extrabold mb-1">Resume Analysis & Rewrite</h1>
+        <p class="text-emerald-200">Rahul Reddy Chidipudi — Computer Science / AI & Data Engineering</p>
+        <p class="text-emerald-400/60 text-sm mt-1">Analyzed against the Impact Bullet Builder™ framework</p>
+    </div>
+</header>
+
+<div class="max-w-4xl mx-auto px-6 py-10 space-y-10">
+
+    <!-- ============================================ -->
+    <!-- SECTION 1: OVERALL SCORE                     -->
+    <!-- ============================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 overflow-hidden">
+        <div class="p-8">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="w-8 h-8 rounded-lg bg-red-500 text-white flex items-center justify-center text-sm font-bold">📊</div>
+                <h2 class="text-2xl font-extrabold text-slate-900">Overall Score</h2>
+            </div>
+
+            <div class="flex items-center gap-8 mb-6">
+                <div class="text-center">
+                    <p class="font-mono-num text-6xl font-extrabold text-red-500">25</p>
+                    <p class="text-slate-500 text-sm">out of 100</p>
+                </div>
+                <div class="flex-1">
+                    <div class="h-4 bg-slate-100 rounded-full overflow-hidden mb-2">
+                        <div class="h-full rounded-full" style="width: 25%; background: linear-gradient(to right, #ef4444, #f97316);"></div>
+                    </div>
+                    <div class="flex justify-between text-xs text-slate-400">
+                        <span>0 — Invisible</span>
+                        <span>50 — Achiever</span>
+                        <span>100 — Impact Standard</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="bg-red-50 border border-red-200 rounded-xl p-4 text-center">
+                    <p class="font-mono-num text-2xl font-bold text-red-500">2/10</p>
+                    <p class="text-red-700 text-xs font-semibold mt-1">Accomplishments</p>
+                    <p class="text-red-400 text-[10px]">Almost entirely duty descriptions</p>
+                </div>
+                <div class="bg-red-50 border border-red-200 rounded-xl p-4 text-center">
+                    <p class="font-mono-num text-2xl font-bold text-red-500">2/10</p>
+                    <p class="text-red-700 text-xs font-semibold mt-1">Metrics</p>
+                    <p class="text-red-400 text-[10px]">One number on entire resume</p>
+                </div>
+                <div class="bg-amber-50 border border-amber-200 rounded-xl p-4 text-center">
+                    <p class="font-mono-num text-2xl font-bold text-amber-500">5/10</p>
+                    <p class="text-amber-700 text-xs font-semibold mt-1">How / Method</p>
+                    <p class="text-amber-400 text-[10px]">Tools mentioned but generic</p>
+                </div>
+                <div class="bg-red-50 border border-red-200 rounded-xl p-4 text-center">
+                    <p class="font-mono-num text-2xl font-bold text-red-500">1/10</p>
+                    <p class="text-red-700 text-xs font-semibold mt-1">Why / Business Impact</p>
+                    <p class="text-red-400 text-[10px]">No "why does the CEO care"</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Verdict -->
+        <div class="bg-red-900 text-white p-6">
+            <p class="font-bold text-lg mb-2">Verdict: "The Doer" Tier — Currently Invisible</p>
+            <p class="text-red-200 text-sm">This resume reads like a copy-paste of job descriptions with buzzwords sprinkled on top. Every bullet says what Rahul was responsible for — but not a single one proves he was <strong>good at it</strong>. "Supported production data systems," "Monitored enterprise network performance," "Participated in incident response" — a recruiter has seen these exact phrases on 500 other resumes today. Without quantified impact, this resume is functionally invisible in an ATS and will be skipped by a human in under 6 seconds.</p>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SECTION 2: KEY ISSUES IDENTIFIED             -->
+    <!-- ============================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 p-8 page-break">
+        <div class="flex items-center gap-3 mb-6">
+            <div class="w-8 h-8 rounded-lg bg-red-500 text-white flex items-center justify-center text-sm font-bold">🔍</div>
+            <h2 class="text-2xl font-extrabold text-slate-900">Key Issues Identified</h2>
+        </div>
+
+        <div class="space-y-4">
+            <div class="flex items-start gap-3 bg-red-50 rounded-xl p-5 border border-red-200">
+                <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-red-600 text-white font-bold text-sm flex-shrink-0">1</span>
+                <div>
+                    <p class="font-bold text-red-900">"Supported" and "Participated" language is everywhere</p>
+                    <p class="text-red-700 text-sm mt-1">"Supported production data systems," "Participated in incident response efforts," "Assisted in troubleshooting" — this is exactly the passive, team-hiding language the Impact Bullet Builder calls out as resume killers. These phrases tell a hiring manager that Rahul was <strong>present</strong>, not that he <strong>delivered</strong>. This violates the <strong>Me-in-We Extractor™</strong> principle on nearly every bullet.</p>
+                </div>
+            </div>
+
+            <div class="flex items-start gap-3 bg-red-50 rounded-xl p-5 border border-red-200">
+                <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-red-600 text-white font-bold text-sm flex-shrink-0">2</span>
+                <div>
+                    <p class="font-bold text-red-900">One single metric on the entire resume</p>
+                    <p class="text-red-700 text-sm mt-1">"Improved retrieval accuracy by 25%" appears in the RAG project — and that's it. No dollar amounts. No time reduced. No incident resolution speed. No data anomalies caught. No query performance improvements quantified. The Impact Bullet Builder requires a <strong>Metric</strong> in every single bullet. Right now, 95% of this resume has zero quantification.</p>
+                </div>
+            </div>
+
+            <div class="flex items-start gap-3 bg-red-50 rounded-xl p-5 border border-red-200">
+                <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-red-600 text-white font-bold text-sm flex-shrink-0">3</span>
+                <div>
+                    <p class="font-bold text-red-900">Zero Dragon Slayer context on any bullet</p>
+                    <p class="text-red-700 text-sm mt-1">Every bullet jumps straight into the task. None of them paint the problem first. Per the Dragon Slayer technique: "The bigger the monster you slay, the bigger the hero you become." What data was broken? What system was failing? What was the business pain before Rahul stepped in? Without that context, even the accomplishments that exist feel generic.</p>
+                </div>
+            </div>
+
+            <div class="flex items-start gap-3 bg-red-50 rounded-xl p-5 border border-red-200">
+                <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-red-600 text-white font-bold text-sm flex-shrink-0">4</span>
+                <div>
+                    <p class="font-bold text-red-900">"Gained exposure to" is the weakest possible language</p>
+                    <p class="text-red-700 text-sm mt-1">"Gained exposure to routing protocol fundamentals including BGP and OSPF in lab and testing environments." This bullet actively hurts the resume. It tells the hiring manager: "I saw this thing but didn't do anything with it." Either rewrite it as something Rahul actually accomplished with BGP/OSPF knowledge, or delete it entirely. Every bullet is real estate — don't waste it on spectating.</p>
+                </div>
+            </div>
+
+            <div class="flex items-start gap-3 bg-red-50 rounded-xl p-5 border border-red-200">
+                <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-red-600 text-white font-bold text-sm flex-shrink-0">5</span>
+                <div>
+                    <p class="font-bold text-red-900">Leadership section is 100% filler — zero measurable impact</p>
+                    <p class="text-red-700 text-sm mt-1">"Organized technical workshops," "Designed promotional graphics," "Delivered short talks" — none of these have a single number attached. How many workshops? How many attendees? Did engagement go up? How many events coordinated? This entire section reads like someone who did things, not someone who moved needles. It needs metrics or it needs to go.</p>
+                </div>
+            </div>
+
+            <div class="flex items-start gap-3 bg-amber-50 rounded-xl p-5 border border-amber-200">
+                <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-amber-500 text-white font-bold text-sm flex-shrink-0">6</span>
+                <div>
+                    <p class="font-bold text-amber-900">Best accomplishments are buried in the Projects section</p>
+                    <p class="text-amber-700 text-sm mt-1">The HR Workflow Automation project and the RAG pipeline with "25% improved retrieval accuracy" are the most impressive things on this resume — and they're buried at the bottom. The RAG project is the ONLY bullet with a real metric. The HR automation project shows end-to-end system design. These should be prominent and positioned ahead of the generic leadership activities.</p>
+                </div>
+            </div>
+
+            <div class="flex items-start gap-3 bg-amber-50 rounded-xl p-5 border border-amber-200">
+                <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-amber-500 text-white font-bold text-sm flex-shrink-0">7</span>
+                <div>
+                    <p class="font-bold text-amber-900">Summary reads like a self-assessment, not a value proposition</p>
+                    <p class="text-amber-700 text-sm mt-1">"Recent Grad with hands-on experience supporting production grade data systems" — this is the LinkedIn default. A summary should instantly communicate impact: what you delivered, what you're known for, and what the reader gets by hiring you. It should contain your top 2-3 metrics upfront. Right now it has none.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SECTION 3: REWRITTEN RESUME                  -->
+    <!-- ============================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 p-8 page-break">
+        <div class="flex items-center gap-3 mb-2">
+            <div class="w-8 h-8 rounded-lg bg-emerald-700 text-white flex items-center justify-center text-sm font-bold">✍️</div>
+            <h2 class="text-2xl font-extrabold text-slate-900">Rewritten Resume — Impact Bullet Builder™ Applied</h2>
+        </div>
+        <p class="text-slate-500 text-sm mb-8"><strong>[X]</strong> = placeholder where Rahul needs to provide missing information (metrics, specifics, or context we can't know from the outside)</p>
+
+        <!-- RESUME START -->
+        <div class="border-2 border-slate-200 rounded-2xl p-8 bg-slate-50">
+
+            <!-- Header -->
+            <div class="text-center mb-6 pb-6 border-b-2 border-slate-300">
+                <h3 class="text-2xl font-extrabold text-slate-900">Rahul Reddy Chidipudi</h3>
+                <p class="text-slate-600 text-sm mt-1">rahulchidipudi45@gmail.com | rahulchidipudi.org | LinkedIn | USA (Open to Relocation)</p>
+            </div>
+
+            <!-- Summary -->
+            <div class="mb-6">
+                <h4 class="text-sm font-extrabold text-slate-900 uppercase tracking-widest border-b-2 border-emerald-600 pb-1 mb-3">Summary</h4>
+                <p class="text-sm text-slate-700">
+                    <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-0.5 rounded mr-1">REWRITTEN</span>
+                    Data-focused software engineer who built automation pipelines that reduced manual workflows by <strong>[X]%</strong> and improved retrieval accuracy by 25% in production RAG systems. Delivered SQL query optimizations that cut latency by <strong>[X]%</strong> across <strong>[X]</strong> enterprise datasets in a regulated financial services environment. Experienced shipping Python-based monitoring tools, cloud-native backends (AWS, Azure), and AI-assisted diagnostic systems from prototype to production.
+                </p>
+            </div>
+
+            <!-- Education -->
+            <div class="mb-6">
+                <h4 class="text-sm font-extrabold text-slate-900 uppercase tracking-widest border-b-2 border-emerald-600 pb-1 mb-3">Education</h4>
+                <div class="mb-2">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <p class="font-bold text-slate-900">Bachelor of Science: Computer Science</p>
+                            <p class="text-slate-600 text-sm">Rowan University, New Jersey, USA</p>
+                        </div>
+                        <p class="text-slate-500 text-sm">Graduated Dec 2024</p>
+                    </div>
+                    <p class="text-slate-500 text-xs mt-1">Merit-Based International Credit Transfer Scholarship Recipient (Lovely Professional University)</p>
+                </div>
+            </div>
+
+            <!-- Work Experience -->
+            <div class="mb-6">
+                <h4 class="text-sm font-extrabold text-slate-900 uppercase tracking-widest border-b-2 border-emerald-600 pb-1 mb-3">Work Experience</h4>
+
+                <!-- Role 1: AI Integration Analyst -->
+                <div class="mb-2">
+                    <div class="flex justify-between items-start mb-1">
+                        <div>
+                            <p class="font-bold text-slate-900">AI Integration Analyst</p>
+                            <p class="text-slate-600 text-sm">Financial Services Firm — Arlington, TX</p>
+                        </div>
+                        <p class="text-slate-500 text-sm">Feb 2025 – Jan 2026</p>
+                    </div>
+                </div>
+
+                <ul class="space-y-3 text-sm text-slate-700 ml-4 mb-6">
+                    <!-- Bullet 1: Production data systems -->
+                    <li class="relative pl-4">
+                        <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                        <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-0.5 rounded mr-1">REWRITTEN</span>
+                        Owned data reliability for <strong>[X — how many?]</strong> production datasets used in large-scale portfolio analytics serving <strong>[X — how many users/teams?]</strong> across the firm — maintaining <strong>[X]%</strong> uptime and resolving <strong>[X]</strong> critical data incidents during tenure, preventing <strong>$[X]</strong> in potential reporting errors in a regulated environment.
+                    </li>
+
+                    <!-- Bullet 2: SQL query optimization -->
+                    <li class="relative pl-4">
+                        <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                        <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-0.5 rounded mr-1">REWRITTEN</span>
+                        Redesigned <strong>[X — how many?]</strong> underperforming SQL queries by analyzing execution plans and indexing strategies, cutting average query latency from <strong>[X]ms to [X]ms</strong> (<strong>[X]%</strong> reduction) — enabling the analytics team to run end-of-day portfolio calculations <strong>[X — how much faster?]</strong> faster than the previous workflow.
+                    </li>
+
+                    <!-- Bullet 3: Troubleshooting latency -->
+                    <li class="relative pl-4">
+                        <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                        <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-0.5 rounded mr-1">REWRITTEN</span>
+                        Diagnosed and resolved <strong>[X]</strong> latency and data-consistency issues by analyzing query execution plans and system logs across <strong>[X]</strong> interconnected services — reducing average incident resolution time from <strong>[X] hours to [X] hours</strong> and preventing <strong>[X]</strong> downstream reporting failures per quarter.
+                    </li>
+
+                    <!-- Bullet 4: Python automation -->
+                    <li class="relative pl-4">
+                        <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                        <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-0.5 rounded mr-1">REWRITTEN</span>
+                        Built <strong>[X — how many?]</strong> Python-based anomaly detection scripts that automatically flagged data quality violations across <strong>[X]</strong> data pipelines — eliminating <strong>[X] hours/week</strong> of manual inspection and catching <strong>[X]</strong> data anomalies in the first month that would have gone undetected under the previous manual workflow.
+                    </li>
+
+                    <!-- Bullet 5: Incident response -->
+                    <li class="relative pl-4">
+                        <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                        <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-0.5 rounded mr-1">REWRITTEN</span>
+                        Led root-cause analysis on <strong>[X]</strong> production incidents across database and service layers, documenting findings and implementing <strong>[X]</strong> preventive fixes — reducing repeat incidents by <strong>[X]%</strong> and contributing to the team achieving <strong>[X]%</strong> SLA compliance for the quarter.
+                    </li>
+
+                    <!-- Bullet 6: Retrieval workflows / AI diagnostics -->
+                    <li class="relative pl-4">
+                        <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                        <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-0.5 rounded mr-1">REWRITTEN</span>
+                        Designed structured retrieval workflows powering AI-assisted diagnostic reports, indexing <strong>[X — how many?]</strong> documents and <strong>[X]</strong> system logs — reducing diagnostic turnaround from <strong>[X] hours to [X] minutes</strong> and enabling on-call engineers to resolve <strong>[X]%</strong> of Tier-1 issues without escalation.
+                    </li>
+
+                    <!-- Bullet 7: Data integrity / validation — REWRITE -->
+                    <li class="relative pl-4">
+                        <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                        <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-0.5 rounded mr-1">REWRITTEN</span>
+                        Implemented <strong>[X]</strong> automated validation checks and audit logging mechanisms across <strong>[X]</strong> data pipelines, achieving <strong>[X]%</strong> data integrity compliance — passing <strong>[X]</strong> consecutive internal audits with zero findings in a regulated financial environment.
+                    </li>
+
+                    <!-- Bullet 8: Infrastructure collaboration — CONSIDER REMOVING -->
+                    <li class="relative pl-4">
+                        <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-amber-500 rounded-full"></span>
+                        <span class="bg-amber-100 text-amber-800 text-xs font-bold px-2 py-0.5 rounded mr-1">CONSIDER REMOVING</span>
+                        <span class="text-slate-400 line-through">Collaborated with infrastructure teams in order to investigate service level and network level bottlenecks affecting data pipelines.</span>
+                        <p class="text-amber-700 text-xs mt-1 italic">→ "Collaborated with" is vague team language. If keeping: "Identified and resolved [X] network-layer bottlenecks (DNS, TCP timeout, connection pooling) with the infrastructure team, improving pipeline throughput by [X]% and eliminating [X] hours/week of data delivery delays."</p>
+                    </li>
+                </ul>
+
+                <!-- Role 2: Network & Systems Engineering Intern -->
+                <div class="mb-2">
+                    <div class="flex justify-between items-start mb-1">
+                        <div>
+                            <p class="font-bold text-slate-900">Network & Systems Engineering Intern</p>
+                            <p class="text-slate-600 text-sm">Digi Technology — Hyderabad, India</p>
+                        </div>
+                        <p class="text-slate-500 text-sm">May 2022 – Aug 2022</p>
+                    </div>
+                </div>
+
+                <ul class="space-y-3 text-sm text-slate-700 ml-4">
+                    <!-- Bullet 1: Network monitoring -->
+                    <li class="relative pl-4">
+                        <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                        <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-0.5 rounded mr-1">REWRITTEN</span>
+                        Monitored TCP/IP traffic, DNS resolution, and routing health across <strong>[X — how many?]</strong> enterprise network nodes, identifying and escalating <strong>[X]</strong> performance degradations — contributing to <strong>[X]%</strong> reduction in unplanned downtime during the internship period.
+                    </li>
+
+                    <!-- Bullet 2: Troubleshooting routing -->
+                    <li class="relative pl-4">
+                        <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                        <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-0.5 rounded mr-1">REWRITTEN</span>
+                        Diagnosed <strong>[X]</strong> routing and connectivity issues within the internal infrastructure, reducing mean-time-to-resolution from <strong>[X] hours to [X] hours</strong> by building a standardized troubleshooting runbook adopted by <strong>[X — how many?]</strong> team members.
+                    </li>
+
+                    <!-- Bullet 3: SQL for network telemetry -->
+                    <li class="relative pl-4">
+                        <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                        <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-0.5 rounded mr-1">REWRITTEN</span>
+                        Built SQL-based dashboards analyzing <strong>[X]</strong> network telemetry data points across <strong>[X]</strong> systems, surfacing <strong>[X]</strong> previously undetected performance bottlenecks — enabling the team to proactively fix issues before they caused <strong>[X — outages? customer impact?]</strong>.
+                    </li>
+
+                    <!-- Bullet 4: Python health checks -->
+                    <li class="relative pl-4">
+                        <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                        <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-0.5 rounded mr-1">REWRITTEN</span>
+                        Developed <strong>[X — how many?]</strong> Python scripts automating recurring health checks across <strong>[X]</strong> devices, saving <strong>[X] hours/week</strong> of manual operational work — scripts remained in production use by the team <strong>[X — how long after?]</strong> after the internship ended.
+                    </li>
+
+                    <!-- Bullet 5: Documentation — CONSIDER REMOVING -->
+                    <li class="relative pl-4">
+                        <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-amber-500 rounded-full"></span>
+                        <span class="bg-amber-100 text-amber-800 text-xs font-bold px-2 py-0.5 rounded mr-1">CONSIDER REMOVING</span>
+                        <span class="text-slate-400 line-through">Documented troubleshooting procedures and supported configuration reviews with senior engineers.</span>
+                        <p class="text-amber-700 text-xs mt-1 italic">→ Low-value task bullet. If keeping: "Created [X]-page troubleshooting runbook covering [X] failure scenarios, adopted by [X] engineers — reducing onboarding time for new team members by [X]%."</p>
+                    </li>
+
+                    <!-- Bullet 6: BGP/OSPF — REMOVE -->
+                    <li class="relative pl-4">
+                        <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-red-500 rounded-full"></span>
+                        <span class="bg-red-100 text-red-800 text-xs font-bold px-2 py-0.5 rounded mr-1">REMOVE</span>
+                        <span class="text-slate-400 line-through">Gained exposure to routing protocol fundamentals including BGP and OSPF in lab and testing environments.</span>
+                        <p class="text-red-700 text-xs mt-1 italic">→ "Gained exposure to" is the weakest possible language on a resume. It tells the reader you watched someone else do it. If you actually configured BGP/OSPF: "Configured [X] BGP/OSPF routing instances in test environments, validating failover behavior across [X] scenarios." If not — delete this bullet entirely.</p>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Projects -->
+            <div class="mb-6" style="break-before: page;">
+                <h4 class="text-sm font-extrabold text-slate-900 uppercase tracking-widest border-b-2 border-emerald-600 pb-1 mb-3">Projects</h4>
+
+                <!-- HR Workflow Automation -->
+                <div class="mb-5">
+                    <div class="flex justify-between items-start mb-1">
+                        <div>
+                            <p class="font-bold text-slate-900">AI-Powered HR Workflow Automation <span class="text-xs bg-lime-100 text-lime-800 font-bold px-2 py-0.5 rounded ml-2">💡 STRONGEST PROJECT</span></p>
+                        </div>
+                    </div>
+
+                    <ul class="space-y-3 text-sm text-slate-700 ml-4">
+                        <li class="relative pl-4">
+                            <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                            <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-0.5 rounded mr-1">REWRITTEN</span>
+                            Designed and shipped an end-to-end HR automation system using n8n + WhatsApp Business API + PostgreSQL that handled <strong>[X — how many?]</strong> employee queries (leave balance, onboarding, policy lookups) without human intervention — reducing HR response time from <strong>[X] hours to [X] seconds</strong> and cutting <strong>[X]%</strong> of Tier-1 support tickets.
+                        </li>
+                        <li class="relative pl-4">
+                            <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                            <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-0.5 rounded mr-1">REWRITTEN</span>
+                            Integrated LLM-based response generation with custom prompt templates and validation checks, achieving <strong>[X]%</strong> answer accuracy (vs. <strong>[X]%</strong> baseline) — implemented fallback rules and escalation triggers that reduced hallucination-related errors by <strong>[X]%</strong> in testing.
+                        </li>
+                        <li class="relative pl-4">
+                            <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                            <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-0.5 rounded mr-1">REWRITTEN</span>
+                            Containerized the entire workflow with Docker for reproducible local deployment, connecting REST APIs and PostgreSQL for structured retrieval of <strong>[X — how many?]</strong> policy documents and <strong>[X]</strong> employee metadata records — achieving <strong>[X]ms</strong> average response time under <strong>[X — concurrent user load?]</strong>.
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Network Log Automation -->
+                <div class="mb-5">
+                    <div class="flex justify-between items-start mb-1">
+                        <div>
+                            <p class="font-bold text-slate-900">Network Log Automation & SQL Monitoring System</p>
+                        </div>
+                    </div>
+
+                    <ul class="space-y-3 text-sm text-slate-700 ml-4">
+                        <li class="relative pl-4">
+                            <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                            <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-0.5 rounded mr-1">REWRITTEN</span>
+                            Built a Python-based log automation pipeline that collected, parsed, and analyzed telemetry from <strong>[X — how many?]</strong> network devices on a cron schedule — replacing <strong>[X] hours/week</strong> of manual log inspection and generating automated anomaly reports that flagged <strong>[X]</strong> issues in the first <strong>[X]</strong> weeks of deployment.
+                        </li>
+                        <li class="relative pl-4">
+                            <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                            <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-0.5 rounded mr-1">REWRITTEN</span>
+                            Designed indexed PostgreSQL queries to analyze latency spikes, packet drops, and DNS resolution failures across <strong>[X]</strong> stored log records — reducing mean-time-to-detect anomalous routing behavior from <strong>[X] hours to [X] minutes</strong>.
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- RAG Project -->
+                <div class="mb-5">
+                    <div class="flex justify-between items-start mb-1">
+                        <div>
+                            <p class="font-bold text-slate-900">Financial Document Query System with RAG <span class="text-xs bg-blue-100 text-blue-800 font-bold px-2 py-0.5 rounded ml-2">📊 ONLY METRIC ON RESUME</span></p>
+                        </div>
+                    </div>
+
+                    <ul class="space-y-3 text-sm text-slate-700 ml-4">
+                        <li class="relative pl-4">
+                            <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                            <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-0.5 rounded mr-1">REWRITTEN</span>
+                            Architected a cloud-native RAG pipeline (AWS Lambda + Kendra + S3) for financial document retrieval, processing <strong>[X — how many?]</strong> documents across <strong>[X]</strong> financial categories — enabling natural-language queries that returned accurate answers in <strong>[X] seconds</strong> vs. <strong>[X] minutes</strong> of manual document search.
+                        </li>
+                        <li class="relative pl-4">
+                            <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                            <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-0.5 rounded mr-1">REWRITTEN</span>
+                            Improved retrieval accuracy by <strong>25%</strong> through systematic prompt engineering and comparative evaluation of GPT-3.5-turbo and LLaMA 2 across <strong>[X — how many?]</strong> test queries — documenting optimal prompt templates and model configurations that became the team's reference implementation.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Leadership — Condensed -->
+            <div class="mb-6">
+                <h4 class="text-sm font-extrabold text-slate-900 uppercase tracking-widest border-b-2 border-emerald-600 pb-1 mb-3">Leadership & Activities</h4>
+                <ul class="space-y-3 text-sm text-slate-700 ml-4">
+                    <li class="relative pl-4">
+                        <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                        <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-0.5 rounded mr-1">REWRITTEN</span>
+                        <strong>Tech Coordinator, ACM — Rowan University:</strong> Organized <strong>[X — how many?]</strong> technical workshops and meetups on backend development and AI, averaging <strong>[X]</strong> attendees per event — grew chapter engagement by <strong>[X]%</strong> over <strong>[X]</strong> semesters.
+                    </li>
+                    <li class="relative pl-4">
+                        <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                        <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-0.5 rounded mr-1">REWRITTEN</span>
+                        <strong>Public Speaker, Orator Student Club:</strong> Delivered <strong>[X — how many?]</strong> talks translating complex technical topics for mixed audiences of <strong>[X]</strong> attendees — selected as <strong>[X — event lead? keynote? featured speaker?]</strong> for <strong>[X]</strong> events.
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Skills -->
+            <div>
+                <h4 class="text-sm font-extrabold text-slate-900 uppercase tracking-widest border-b-2 border-emerald-600 pb-1 mb-3">Technical Skills</h4>
+                <div class="text-sm text-slate-700">
+                    <p><strong>Languages & Data:</strong> Python (automation, scripting, API integration), SQL (query optimization, execution plan analysis), Java</p>
+                    <p class="mt-1"><strong>Databases:</strong> PostgreSQL (indexing, anomaly detection queries, structured retrieval), relational database design</p>
+                    <p class="mt-1"><strong>Cloud & Infrastructure:</strong> AWS (Lambda, S3, Kendra — RAG pipelines), Azure (AI Search, Functions), GCP</p>
+                    <p class="mt-1"><strong>DevOps & Tools:</strong> Docker (containerized deployment), Linux (cron scheduling, log analysis), Git</p>
+                    <p class="mt-1"><strong>AI/ML:</strong> RAG pipeline design, LLM prompt engineering (GPT-3.5, LLaMA 2), retrieval-based workflows</p>
+                    <p class="mt-1"><strong>Networking:</strong> TCP/IP, DNS, HTTP, BGP/OSPF fundamentals, packet flow diagnostics</p>
+                </div>
+            </div>
+
+        </div>
+        <!-- RESUME END -->
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SECTION 4: ORIGINAL vs REWRITTEN SIDE-BY-SIDE -->
+    <!-- ============================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 p-8 page-break">
+        <div class="flex items-center gap-3 mb-6">
+            <div class="w-8 h-8 rounded-lg bg-purple-600 text-white flex items-center justify-center text-sm font-bold">⚡</div>
+            <h2 class="text-2xl font-extrabold text-slate-900">Before & After — Best Examples</h2>
+        </div>
+
+        <div class="space-y-6">
+            <!-- Example 1: Supported → Owned -->
+            <div class="rounded-xl overflow-hidden border border-slate-200">
+                <div class="bg-red-50 p-5 border-b border-red-200">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-red-600 text-white font-bold text-xs">✗</span>
+                        <span class="text-red-700 font-bold text-sm">ORIGINAL (Doer Level)</span>
+                    </div>
+                    <p class="text-red-800 text-sm">"Supported production data systems used for large scale portfolio analytics in a regulated enterprise environment."</p>
+                </div>
+                <div class="bg-emerald-50 p-5">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-emerald-600 text-white font-bold text-xs">✓</span>
+                        <span class="text-emerald-700 font-bold text-sm">REWRITTEN (Impact Standard + Dragon Slayer)</span>
+                    </div>
+                    <p class="text-emerald-800 text-sm">"Owned data reliability for [X] production datasets used in large-scale portfolio analytics serving [X] teams — maintaining [X]% uptime and resolving [X] critical data incidents, preventing $[X] in potential reporting errors in a regulated environment."</p>
+                </div>
+            </div>
+
+            <!-- Example 2: Participated → Led -->
+            <div class="rounded-xl overflow-hidden border border-slate-200">
+                <div class="bg-red-50 p-5 border-b border-red-200">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-red-600 text-white font-bold text-xs">✗</span>
+                        <span class="text-red-700 font-bold text-sm">ORIGINAL (Doer Level)</span>
+                    </div>
+                    <p class="text-red-800 text-sm">"Participated in incident response efforts, performing root cause analysis across database and service layers."</p>
+                </div>
+                <div class="bg-emerald-50 p-5">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-emerald-600 text-white font-bold text-xs">✓</span>
+                        <span class="text-emerald-700 font-bold text-sm">REWRITTEN (Impact Standard)</span>
+                    </div>
+                    <p class="text-emerald-800 text-sm">"Led root-cause analysis on [X] production incidents across database and service layers, documenting findings and implementing [X] preventive fixes — reducing repeat incidents by [X]% and contributing to [X]% SLA compliance for the quarter."</p>
+                </div>
+            </div>
+
+            <!-- Example 3: Built → Built with Impact -->
+            <div class="rounded-xl overflow-hidden border border-slate-200">
+                <div class="bg-red-50 p-5 border-b border-red-200">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-red-600 text-white font-bold text-xs">✗</span>
+                        <span class="text-red-700 font-bold text-sm">ORIGINAL (Doer Level)</span>
+                    </div>
+                    <p class="text-red-800 text-sm">"Built Python based automation scripts to monitor data anomalies and reduce manual operational workflows."</p>
+                </div>
+                <div class="bg-emerald-50 p-5">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-emerald-600 text-white font-bold text-xs">✓</span>
+                        <span class="text-emerald-700 font-bold text-sm">REWRITTEN (Impact Standard)</span>
+                    </div>
+                    <p class="text-emerald-800 text-sm">"Built [X] Python-based anomaly detection scripts that automatically flagged data quality violations across [X] data pipelines — eliminating [X] hours/week of manual inspection and catching [X] data anomalies in the first month that would have gone undetected under the previous manual workflow."</p>
+                </div>
+            </div>
+
+            <!-- Example 4: Gained exposure → DELETE -->
+            <div class="rounded-xl overflow-hidden border border-slate-200">
+                <div class="bg-red-50 p-5 border-b border-red-200">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-red-600 text-white font-bold text-xs">✗</span>
+                        <span class="text-red-700 font-bold text-sm">ORIGINAL (Invisible Tier)</span>
+                    </div>
+                    <p class="text-red-800 text-sm">"Gained exposure to routing protocol fundamentals including BGP and OSPF in lab and testing environments."</p>
+                </div>
+                <div class="bg-emerald-50 p-5">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-emerald-600 text-white font-bold text-xs">✓</span>
+                        <span class="text-emerald-700 font-bold text-sm">REWRITTEN (Or Delete Entirely)</span>
+                    </div>
+                    <p class="text-emerald-800 text-sm">"Configured [X] BGP/OSPF routing instances in test environments, validating failover behavior and route convergence across [X] scenarios — documenting [X] edge cases that were added to the team's operational runbook." <span class="text-emerald-600 italic text-xs">(Only if Rahul actually configured these — if he just observed, delete the bullet.)</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SECTION 5: ACTION ITEMS / SUMMARY            -->
+    <!-- ============================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 p-8 page-break">
+        <div class="flex items-center gap-3 mb-6">
+            <div class="w-8 h-8 rounded-lg bg-emerald-700 text-white flex items-center justify-center text-sm font-bold">🎯</div>
+            <h2 class="text-2xl font-extrabold text-slate-900">Summary: What Rahul Needs to Do</h2>
+        </div>
+
+        <div class="space-y-4">
+            <div class="flex items-start gap-4 p-5 bg-emerald-50 rounded-xl border border-emerald-200">
+                <div class="w-10 h-10 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-lg flex-shrink-0">1</div>
+                <div>
+                    <p class="font-bold text-emerald-900 text-lg">Kill "Supported," "Participated," "Assisted," "Gained exposure to"</p>
+                    <p class="text-emerald-700 text-sm mt-1">Ctrl+F for every passive verb on this resume. There are at least 6. Replace every one with what YOU specifically did. "Supported production data systems" → "Owned data reliability for [X] production datasets." "Participated in incident response" → "Led root-cause analysis on [X] incidents." Own your work.</p>
+                </div>
+            </div>
+
+            <div class="flex items-start gap-4 p-5 bg-emerald-50 rounded-xl border border-emerald-200">
+                <div class="w-10 h-10 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-lg flex-shrink-0">2</div>
+                <div>
+                    <p class="font-bold text-emerald-900 text-lg">Add metrics to EVERY bullet</p>
+                    <p class="text-emerald-700 text-sm mt-1">Right now there is exactly one number on the entire resume (25%). Go through every bullet and answer: How many? How much faster? How much money saved? How many users? How many incidents? Even conservative estimates are infinitely better than no number. "Approximately 40%" beats zero percent every time.</p>
+                </div>
+            </div>
+
+            <div class="flex items-start gap-4 p-5 bg-emerald-50 rounded-xl border border-emerald-200">
+                <div class="w-10 h-10 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-lg flex-shrink-0">3</div>
+                <div>
+                    <p class="font-bold text-emerald-900 text-lg">Fill in every [X] placeholder above</p>
+                    <p class="text-emerald-700 text-sm mt-1">The rewritten bullets have the structure right — but only Rahul knows the actual numbers. Go through each [X] and fill in the real data. How many production datasets? How many incidents resolved? How many hours saved? A conservative estimate is infinitely better than no number.</p>
+                </div>
+            </div>
+
+            <div class="flex items-start gap-4 p-5 bg-emerald-50 rounded-xl border border-emerald-200">
+                <div class="w-10 h-10 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-lg flex-shrink-0">4</div>
+                <div>
+                    <p class="font-bold text-emerald-900 text-lg">Add Dragon Slayer context to top 3-4 bullets</p>
+                    <p class="text-emerald-700 text-sm mt-1">Start the most important bullets with the problem. What was breaking? What was the cost of the pain? "When the team's manual log review process was missing critical data anomalies that risked [$ impact], built Python-based anomaly detection scripts that..." — paint the dragon, then slay it.</p>
+                </div>
+            </div>
+
+            <div class="flex items-start gap-4 p-5 bg-emerald-50 rounded-xl border border-emerald-200">
+                <div class="w-10 h-10 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-lg flex-shrink-0">5</div>
+                <div>
+                    <p class="font-bold text-emerald-900 text-lg">Elevate the HR Automation and RAG projects</p>
+                    <p class="text-emerald-700 text-sm mt-1">These are the two strongest things on the resume. The HR project shows end-to-end system design (WhatsApp API → LLM → PostgreSQL → Docker). The RAG project has the only real metric (25% accuracy improvement). Move them up in priority — consider whether they deserve more prominent positioning than some of the weaker work experience bullets.</p>
+                </div>
+            </div>
+
+            <div class="flex items-start gap-4 p-5 bg-emerald-50 rounded-xl border border-emerald-200">
+                <div class="w-10 h-10 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-lg flex-shrink-0">6</div>
+                <div>
+                    <p class="font-bold text-emerald-900 text-lg">Gut the Leadership section or add numbers</p>
+                    <p class="text-emerald-700 text-sm mt-1">Three leadership positions with zero metrics is worse than one position with strong metrics. Pick the 1-2 strongest leadership roles, add numbers (events organized, attendees, engagement growth), and drop the rest. "Designed promotional graphics" is not a resume bullet — it's a task. Make it impact or remove it.</p>
+                </div>
+            </div>
+
+            <div class="flex items-start gap-4 p-5 bg-emerald-50 rounded-xl border border-emerald-200">
+                <div class="w-10 h-10 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-lg flex-shrink-0">7</div>
+                <div>
+                    <p class="font-bold text-emerald-900 text-lg">Rewrite the Summary with your best 2-3 metrics</p>
+                    <p class="text-emerald-700 text-sm mt-1">"Recent Grad with hands-on experience" is what 10,000 other new grads wrote. Lead with impact: "Data engineer who built anomaly detection pipelines saving [X] hours/week, improved RAG retrieval accuracy by 25%, and optimized SQL queries cutting latency by [X]% across [X] enterprise datasets." That's a summary that makes a recruiter keep reading.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SECTION 6: WHAT'S WORKING                    -->
+    <!-- ============================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 p-8 page-break">
+        <div class="flex items-center gap-3 mb-6">
+            <div class="w-8 h-8 rounded-lg bg-lime-500 text-white flex items-center justify-center text-sm font-bold">✓</div>
+            <h2 class="text-2xl font-extrabold text-slate-900">What's Already Working</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="bg-lime-50 border border-lime-200 rounded-xl p-5">
+                <p class="font-bold text-lime-900">Real production experience</p>
+                <p class="text-lime-700 text-sm mt-1">Working with production data systems at a financial services firm in a regulated environment is genuine enterprise experience. This is gold — it just needs to be reframed as impact, not duties.</p>
+            </div>
+            <div class="bg-lime-50 border border-lime-200 rounded-xl p-5">
+                <p class="font-bold text-lime-900">Strong project portfolio</p>
+                <p class="text-lime-700 text-sm mt-1">The HR automation (WhatsApp + LLM + Docker) and RAG pipeline (Lambda + Kendra + S3) show end-to-end system thinking. These demonstrate Rahul can ship — not just code fragments. They need metrics, not a rewrite.</p>
+            </div>
+            <div class="bg-lime-50 border border-lime-200 rounded-xl p-5">
+                <p class="font-bold text-lime-900">Modern tech stack alignment</p>
+                <p class="text-lime-700 text-sm mt-1">Python, SQL, AWS, Docker, RAG, LLM prompt engineering, PostgreSQL — this stack is perfectly aligned with what companies are hiring for right now. The tools are relevant. The communication of results is the problem, not the experience.</p>
+            </div>
+            <div class="bg-lime-50 border border-lime-200 rounded-xl p-5">
+                <p class="font-bold text-lime-900">Strong certifications</p>
+                <p class="text-lime-700 text-sm mt-1">AWS Developer Associate, Stanford ML Specialization, and Hugging Face AI Agent are credible certifications that add legitimacy. They show continuous learning beyond the degree — which matters for a recent grad.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SECTION 7: SCORECARD BREAKDOWN               -->
+    <!-- ============================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 p-8 page-break">
+        <div class="flex items-center gap-3 mb-6">
+            <div class="w-8 h-8 rounded-lg bg-slate-800 text-lime-300 flex items-center justify-center text-sm font-bold">📋</div>
+            <h2 class="text-2xl font-extrabold text-slate-900">Scorecard: Impact Bullet Builder™ Criteria</h2>
+        </div>
+
+        <div class="overflow-x-auto">
+            <table class="w-full text-sm">
+                <thead>
+                    <tr class="border-b-2 border-slate-200">
+                        <th class="text-left py-3 pl-3 text-slate-900 font-bold">Criteria</th>
+                        <th class="text-center py-3 text-slate-900 font-bold w-20">Score</th>
+                        <th class="text-left py-3 text-slate-900 font-bold">Notes</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-100">
+                    <tr>
+                        <td class="py-3 pl-3 font-semibold text-slate-700">Accomplishments (not duties)</td>
+                        <td class="py-3 text-center"><span class="font-mono-num font-bold text-red-500">2/10</span></td>
+                        <td class="py-3 text-slate-500">Nearly every bullet describes a responsibility or task. "Supported," "Monitored," "Participated" — these are duties, not accomplishments. Only the 25% retrieval improvement qualifies.</td>
+                    </tr>
+                    <tr>
+                        <td class="py-3 pl-3 font-semibold text-slate-700">Metrics / Quantification</td>
+                        <td class="py-3 text-center"><span class="font-mono-num font-bold text-red-500">2/10</span></td>
+                        <td class="py-3 text-slate-500">One metric on the entire resume (25% retrieval accuracy). No dollar amounts, no time savings, no incident counts, no hours reduced, no user counts.</td>
+                    </tr>
+                    <tr>
+                        <td class="py-3 pl-3 font-semibold text-slate-700">How / Method Shown</td>
+                        <td class="py-3 text-center"><span class="font-mono-num font-bold text-amber-500">5/10</span></td>
+                        <td class="py-3 text-slate-500">Tools are mentioned (Python, SQL, PostgreSQL, Docker, AWS, CYMCAP) but mostly in a generic way. The project descriptions are better — they show the stack. Work experience bullets are weaker.</td>
+                    </tr>
+                    <tr>
+                        <td class="py-3 pl-3 font-semibold text-slate-700">Why / Business Impact</td>
+                        <td class="py-3 text-center"><span class="font-mono-num font-bold text-red-500">1/10</span></td>
+                        <td class="py-3 text-slate-500">Zero "why does the CEO care" context. "To reduce manual operational workflows" is the closest — but it's not quantified. No dollar impact, no risk context, no business outcomes anywhere.</td>
+                    </tr>
+                    <tr>
+                        <td class="py-3 pl-3 font-semibold text-slate-700">Me-in-We Extractor™</td>
+                        <td class="py-3 text-center"><span class="font-mono-num font-bold text-red-500">2/10</span></td>
+                        <td class="py-3 text-slate-500">"Supported," "Participated in," "Assisted in," "Contributed to," "Collaborated with," "Gained exposure to" — 6 instances of passive/team-hiding language. WORST offender category on this resume.</td>
+                    </tr>
+                    <tr>
+                        <td class="py-3 pl-3 font-semibold text-slate-700">Dragon Slayer Context</td>
+                        <td class="py-3 text-center"><span class="font-mono-num font-bold text-red-500">0/10</span></td>
+                        <td class="py-3 text-slate-500">Zero problem context on any bullet. Every single bullet jumps straight to the action without painting the dragon first. Not one bullet tells the reader what was broken, at risk, or costing money.</td>
+                    </tr>
+                    <tr>
+                        <td class="py-3 pl-3 font-semibold text-slate-700">Action Verbs</td>
+                        <td class="py-3 text-center"><span class="font-mono-num font-bold text-amber-500">4/10</span></td>
+                        <td class="py-3 text-slate-500">Mixed bag. Good: "Designed," "Built," "Implemented," "Deployed." Weak: "Supported," "Participated," "Assisted," "Gained exposure to," "Volunteered during," "Helped." Too many weak verbs drag down the strong ones.</td>
+                    </tr>
+                    <tr>
+                        <td class="py-3 pl-3 font-semibold text-slate-700">Bullet Quality Consistency</td>
+                        <td class="py-3 text-center"><span class="font-mono-num font-bold text-red-500">3/10</span></td>
+                        <td class="py-3 text-slate-500">Quality is inconsistent. The project bullets are stronger than work experience. Leadership section is pure filler. The gap between best bullet (RAG 25%) and worst ("Gained exposure to") is enormous.</td>
+                    </tr>
+                    <tr class="bg-slate-50 font-bold">
+                        <td class="py-4 pl-3 text-slate-900 text-base">OVERALL SCORE</td>
+                        <td class="py-4 text-center"><span class="font-mono-num text-xl text-red-500">25/100</span></td>
+                        <td class="py-4 text-slate-700">Tier: "The Doer" — resume is functionally invisible to hiring managers</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="mt-6 bg-emerald-900 text-white rounded-xl p-6">
+            <p class="font-bold text-lg mb-2">The Good News</p>
+            <p class="text-emerald-200 text-sm">The raw material is strong. Rahul has real production experience at a financial services firm, an AWS Developer Associate certification, a solid RAG project with a real metric, and an end-to-end HR automation system that shows legitimate system design skills. The tech stack (Python, SQL, AWS, Docker, LLMs, PostgreSQL) is exactly what the market is hiring for. The problem is <strong>not the experience — it's the communication</strong>. Applying the Impact Bullet Builder formula to this resume would likely jump it from 25/100 to 70+ in a single working session. The potential is absolutely there — Rahul just needs to stop describing duties and start proving impact.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center py-8 text-slate-400 text-sm">
+        <p>Analysis prepared by LaunchToLead | Impact Bullet Builder™ Framework</p>
+        <p class="mt-1">launchtolead.io/free</p>
+    </footer>
+
+</div>
+
+</body>
+</html>

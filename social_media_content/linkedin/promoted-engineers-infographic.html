@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Promoted Engineers — LaunchToLead Infographic</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #e8e8e8;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+
+  .canvas {
+    width: 1080px;
+    background: #FFFEF8;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* ── TITLE BANNER ── */
+  .title-banner {
+    background: linear-gradient(135deg, #0d1f0d 0%, #14291a 50%, #0f1f14 100%);
+    padding: 54px 56px 50px;
+    text-align: center;
+    position: relative;
+  }
+  .title-banner::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, #a3e635, #14b8a6, #a3e635);
+  }
+  .title-main {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 76px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.15;
+  }
+  .title-main .hl {
+    color: #a3e635;
+    text-decoration: underline;
+    text-decoration-color: #a3e635;
+    text-underline-offset: 8px;
+    text-decoration-thickness: 5px;
+  }
+  .title-main .hl-red {
+    color: #f87171;
+  }
+  .title-sub {
+    font-size: 32px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.7);
+    margin-top: 14px;
+    line-height: 1.45;
+  }
+
+  /* ── SECTION GRID ── */
+  .grid-row {
+    display: flex;
+    gap: 18px;
+    padding: 18px 28px 0;
+  }
+
+  /* ── SECTION BOX ── */
+  .section-box {
+    border-radius: 16px;
+    padding: 32px 30px 28px;
+    flex: 1;
+    position: relative;
+    border: 1.5px solid rgba(0,0,0,0.06);
+  }
+
+  /* ── COLOR THEMES ── */
+  .bg-lime    { background: #F3FDDA; }
+  .bg-teal    { background: #DFFAF5; }
+  .bg-yellow  { background: #FFF9DB; }
+  .bg-peach   { background: #FFF0E4; }
+  .bg-pink    { background: #FFE8EE; }
+  .bg-lavender{ background: #EDE8FF; }
+  .bg-mint    { background: #E0FFF0; }
+  .bg-red-soft{ background: #FFF0F0; }
+  .bg-green-soft { background: #F0FFF4; }
+
+  /* ── SECTION HEADERS ── */
+  .section-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+  .section-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 40px;
+    color: #1a1a1a;
+    line-height: 1.15;
+  }
+
+  /* ── BODY TEXT ── */
+  .body {
+    font-size: 27px;
+    line-height: 1.55;
+    color: #333;
+    font-weight: 500;
+  }
+  .body strong {
+    font-weight: 800;
+    color: #1a1a1a;
+  }
+  .body .accent {
+    color: #65a30d;
+    font-weight: 800;
+  }
+  .body .accent-red {
+    color: #dc2626;
+    font-weight: 800;
+  }
+
+  /* ── CALLOUT STRIP ── */
+  .callout-strip {
+    background: linear-gradient(90deg, #14b8a6, #65a30d);
+    padding: 20px 36px;
+    margin: 18px 28px 0;
+    border-radius: 12px;
+    text-align: center;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 30px;
+    color: #fff;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+
+  /* ── ICON BADGE ── */
+  .icon-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    font-size: 28px;
+    margin-right: 14px;
+    flex-shrink: 0;
+  }
+  .icon-badge.red   { background: rgba(220,38,38,0.12); }
+  .icon-badge.green { background: rgba(101,163,13,0.12); }
+
+  /* ── COMPARE ROW ── */
+  .compare-card {
+    border-radius: 14px;
+    padding: 24px 26px;
+    position: relative;
+  }
+  .compare-card.bad {
+    background: rgba(220,38,38,0.05);
+    border: 2px solid rgba(220,38,38,0.18);
+    border-left: 5px solid #dc2626;
+  }
+  .compare-card.good {
+    background: rgba(101,163,13,0.06);
+    border: 2px solid rgba(101,163,13,0.2);
+    border-left: 5px solid #65a30d;
+  }
+  .compare-label {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 12px;
+  }
+  .compare-label.red { color: #dc2626; }
+  .compare-label.green { color: #65a30d; }
+  .compare-text {
+    font-size: 26px;
+    line-height: 1.5;
+    color: #333;
+    font-weight: 500;
+  }
+
+  /* ── KEY POINT ── */
+  .key-point {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-top: 14px;
+  }
+  .key-point .arrow {
+    color: #65a30d;
+    font-weight: 700;
+    font-size: 26px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  /* ── BOTTOM BANNER ── */
+  .bottom-banner {
+    background: linear-gradient(135deg, #0d1f0d 0%, #14291a 50%, #0f1f14 100%);
+    margin: 22px 28px 28px;
+    border-radius: 16px;
+    padding: 30px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+  }
+  .bottom-banner::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #a3e635, #14b8a6, #a3e635);
+  }
+  .bottom-left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  .logo-circle {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #a3e635, #14b8a6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 26px;
+    color: #0d1f0d;
+  }
+  .bottom-text .name {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    color: #fff;
+  }
+  .bottom-text .tagline {
+    font-size: 22px;
+    color: rgba(255,255,255,0.6);
+    margin-top: 2px;
+  }
+  .bottom-cta {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 26px;
+    color: #0d1f0d;
+    background: #a3e635;
+    padding: 14px 28px;
+    border-radius: 10px;
+  }
+</style>
+</head>
+<body>
+
+<div class="canvas">
+
+  <!-- ═══ TITLE BANNER ═══ -->
+  <div class="title-banner">
+    <div class="title-main">The Engineers Who Get<br>Promoted <span class="hl-red">Aren't</span> the<br><span class="hl">Smartest</span> Ones</div>
+    <div class="title-sub">The real skill gap no one talks about.</div>
+  </div>
+
+  <!-- ═══ THE TRUTH ═══ -->
+  <div class="grid-row">
+    <div class="section-box bg-red-soft">
+      <div class="section-header">
+        <span class="icon-badge red">🧠</span>
+        <span class="section-title">Stuck Engineers</span>
+      </div>
+      <div class="body">
+        <strong class="accent-red">Best code.</strong> Best equations.<br>Most certifications.
+      </div>
+      <div class="body" style="margin-top:14px; font-size:24px; color:#999; font-style:italic;">
+        Same role. Same level. Year after year.
+      </div>
+    </div>
+
+    <div class="section-box bg-green-soft">
+      <div class="section-header">
+        <span class="icon-badge green">🚀</span>
+        <span class="section-title">Promoted Engineers</span>
+      </div>
+      <div class="body">
+        Can explain their <strong class="accent">impact</strong> to someone who doesn't speak engineering.
+      </div>
+      <div class="body" style="margin-top:14px; font-size:24px; color:#999; font-style:italic;">
+        That's it. That's the whole difference.
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ TRANSLATION STRIP ═══ -->
+  <div class="callout-strip">
+    SAME WORK — DIFFERENT LANGUAGE
+  </div>
+
+  <!-- ═══ BEFORE / AFTER ═══ -->
+  <div class="grid-row">
+    <div class="section-box bg-peach">
+      <div class="section-header">
+        <span class="section-title">What You Say</span>
+      </div>
+      <div class="compare-card bad">
+        <div class="compare-label red">Engineer-speak</div>
+        <div class="compare-text">
+          "I optimized the PID loop<br>for the thermal management<br>subsystem."
+        </div>
+      </div>
+    </div>
+
+    <div class="section-box bg-mint">
+      <div class="section-header">
+        <span class="section-title">What Leaders Hear</span>
+      </div>
+      <div class="compare-card good">
+        <div class="compare-label green">Impact-speak</div>
+        <div class="compare-text">
+          "Reduced equipment downtime<br>by <strong style="color:#65a30d;">18%</strong> — saving the plant<br><strong style="color:#65a30d;">$240K/year</strong>."
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ THE SHIFT ═══ -->
+  <div class="grid-row">
+    <div class="section-box bg-lime" style="flex: 1 1 100%;">
+      <div class="section-header">
+        <span class="section-title">If You Want to Move Up</span>
+      </div>
+      <div class="key-point">
+        <span class="arrow">→</span>
+        <span class="body">Stop collecting <strong>certifications</strong>. Start collecting <span class="accent">stories</span>.</span>
+      </div>
+      <div class="key-point">
+        <span class="arrow">→</span>
+        <span class="body">Stop describing <strong>tasks</strong>. Start describing <span class="accent">impact</span>.</span>
+      </div>
+      <div class="key-point">
+        <span class="arrow">→</span>
+        <span class="body">Stop talking to impress <strong>engineers</strong>. Start talking to move <span class="accent">leaders</span>.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ CTA STRIP ═══ -->
+  <div class="callout-strip" style="text-transform:none; letter-spacing:0; font-size:28px;">
+    Your work doesn't speak for itself. <strong>You have to speak for it.</strong>
+  </div>
+
+  <!-- ═══ BOTTOM BANNER ═══ -->
+  <div class="bottom-banner">
+    <div class="bottom-left">
+      <div class="logo-circle">L²</div>
+      <div class="bottom-text">
+        <div class="name">LaunchToLead</div>
+        <div class="tagline">Helping engineers launch careers that lead</div>
+      </div>
+    </div>
+    <div class="bottom-cta">FOLLOW FOR MORE ▸</div>
+  </div>
+
+</div>
+
+</body>
+</html>
