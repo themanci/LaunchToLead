@@ -125,37 +125,35 @@ That's it — the Insight Tag will now:
 
 You need two conversions:
 
-### Conversion 1: Lead (Form Submitted)
+### Conversion 1: Lead (Form Submitted) ✅ Done
 
-This fires when someone submits the lead magnet form and lands on the thank-you page.
+Fires when someone lands on the thank-you page after submitting the lead magnet form.
 
-1. In Campaign Manager, go to **"Analyze"** → **"Conversion tracking"**
-2. Click **"Create Conversion"**
-3. Fill in:
-   - **Name:** `Lead - Impact Bullet Builder Download`
-   - **Conversion type:** Select **"Lead"**
-   - **Value (optional):** Leave blank or enter `5` (estimated value of a lead for your records)
-   - **Attribution model:** Use **"Last touch - each campaign"**
-   - **Attribution window:** `30 days` post-click, `7 days` post-view
-4. Under **"Define your conversion"**, choose **"Use an event-specific pixel"**
-   - LinkedIn will generate an event-specific pixel with a `conversion_id`
-   - **Copy the `conversion_id` number** — it looks like: `19876543`
-   - This is already integrated in the `linkedin-insight-tag.js` — just replace the placeholder
-5. Alternatively, choose **"Use a page load trigger"** and enter the URL:
-   - URL contains: `/landing/thank-you.html`
-   - This method is simpler (no code change needed) but slightly less precise
+| Setting | Value |
+|---------|-------|
+| **Name** | `Lead - Impact Bullet Builder Download` |
+| **Category** | Lead |
+| **Value** | $30 (static) |
+| **Attribution window** | 30 days click / 7 days view |
+| **Attribution model** | Last Touch - Each ad set |
+| **Method** | Page load (URL-rule based) |
+| **URL rule** | Contains `launchtolead.io/landing/thank-you` |
 
-**Recommended: Use the event-specific pixel** — it fires at the exact moment of form submission, matching how we fire the Meta Lead pixel. The code is already wired up in `linkedin-insight-tag.js`.
+### Conversion 2: Booking (Career Launch Call) ✅ Done
 
-### Conversion 2: Career Launch Call Booked
+Fires when someone reaches the booking confirmation page.
 
-When someone books a coaching call:
+| Setting | Value |
+|---------|-------|
+| **Name** | `Strategy Call Booked` (or rename to `Booking - Career Launch Call`) |
+| **Category** | Lead |
+| **Value** | $100-$300 (static) |
+| **Attribution window** | 30 days click / 7 days view |
+| **Attribution model** | Last Touch - Each ad set |
+| **Method** | Page load (URL-rule based) |
+| **URL rule** | Contains `launchtolead.io/landing/booking-confirmed` |
 
-1. Create conversion:
-   - **Name:** `Career Launch Call Booked`
-   - **Conversion type:** Select **"Schedule"****
-   - **Value:** `200`
-2. Define: URL contains `/landing/booking-confirmed.html`
+> **Note:** Both conversions use URL-rule based tracking (page load method), not event-specific pixels. The Insight Tag on every page handles detection automatically — no conversion IDs needed in code.
 
 ---
 
@@ -234,13 +232,30 @@ This is where LinkedIn shines vs Meta — you can target by job title, degree, i
 2. Fill in:
    - **Name:** `Ad 01 - Financial Bleed`
    - **Introductory text:** Paste the ad copy from `ads/linkedin/linkedin-ads-copy.md` (Version A, B, or C)
-   - **Destination URL:** `https://launchtolead.io/free`
+   - **Destination URL:** (see UTM-tagged URLs below)
    - **Image:** Upload the screenshot of your `linkedin-ad-01.html` graphic (1080×1080)
    - **Headline:** Choose from the options in the .md file (e.g., "This Is What 6 Months Unemployed Actually Costs")
    - **Description:** `Free 14-page resume framework for engineers` (shows below headline)
    - **Call to action button:** Select **"Download"** or **"Learn More"**
 
 3. Repeat for each ad variation you want to test
+
+### Destination URLs with UTM Tracking
+
+Always use UTM-tagged URLs so GA4, Kit, and your attribution system can identify LinkedIn ad traffic:
+
+```
+https://launchtolead.io/free?utm_source=linkedin&utm_medium=paid&utm_campaign=CAMPAIGN_NAME&utm_content=AD_NAME
+```
+
+Replace `CAMPAIGN_NAME` and `AD_NAME` with your campaign/ad identifiers. Examples:
+
+```
+https://launchtolead.io/free?utm_source=linkedin&utm_medium=paid&utm_campaign=ibb-lead-gen&utm_content=ad-01-financial-bleed
+https://launchtolead.io/free?utm_source=linkedin&utm_medium=paid&utm_campaign=ibb-lead-gen&utm_content=ad-02-invisible-resume
+```
+
+> **Important:** Use `/free` as the landing page — it redirects to `/landing/impact-bullet-equation.html` and preserves all UTM parameters. These UTMs flow through the entire funnel into GA4, Kit, and Calendly automatically via `utm-tracker.js`.
 
 ### 4g. Testing Strategy
 
@@ -269,13 +284,14 @@ This is where LinkedIn shines vs Meta — you can target by job title, degree, i
 - [ ] Payment method added
 - [ ] Partner ID copied from Insight Tag page
 - [ ] `linkedin-insight-tag.js` updated with your Partner ID
-- [ ] Conversion IDs added to the script (if using event-specific pixels)
+- [ ] URL-rule conversions created in Campaign Manager (Lead + Booking)
 - [ ] Code pushed to GitHub → deployed to launchtolead.io
 - [ ] Chrome extension confirms Insight Tag fires on launchtolead.io
 - [ ] Chrome extension confirms Insight Tag fires on launchtolead.io/free
 - [ ] Submit test lead → confirm conversion fires in Campaign Manager (may take up to 24h to appear)
+- [ ] Ad destination URL includes UTM parameters (see Step 4f)
 - [ ] Ad creative uploaded (1080×1080 screenshots of your HTML graphics)
-- [ ] Ad copy pasted from linkedin-ads-copy.md
+- [ ] Ad copy pasted from meta-ads-copy.md or similar
 - [ ] Campaign set to "Website conversions" objective
 - [ ] Audience targeting configured per recommendations above
 - [ ] Daily budget set ($20–$50)
@@ -329,30 +345,30 @@ Consider adding it when:
 <a id="file-changes"></a>
 ## File Changes Summary
 
-### New Files Created
+### Tracking Files
 | File | Purpose |
 |------|---------|
-| `linkedin-insight-tag.js` | Base Insight Tag + conversion event tracking (like meta-pixel.js) |
+| `linkedin-insight-tag.js` | Base Insight Tag (Partner ID: `8832100`) + `li_fat_id` cookie preservation |
+| `utm-tracker.js` | Captures UTM params from URL, stores in sessionStorage, exposes `getUtmData()` |
 | `LINKEDIN_ADS_SETUP.md` | This guide |
 
-### Modified Files (Insight Tag added)
-| File | What Changed |
-|------|-------------|
-| `index.html` | Added `<script src="linkedin-insight-tag.js">` |
-| `about.html` | Added `<script src="linkedin-insight-tag.js">` |
-| `success-stories.html` | Added `<script src="linkedin-insight-tag.js">` |
-| `vault.html` | Added `<script src="linkedin-insight-tag.js">` |
-| `legal.html` | Added `<script src="linkedin-insight-tag.js">` |
-| `social.html` | Added `<script src="linkedin-insight-tag.js">` |
-| `landing/impact-bullet-equation.html` | Added tag + conversion event on form submit |
-| `landing/thank-you.html` | Added tag + conversion event on page load |
-| `landing/offer.html` | Added tag (page view tracking only — no conversion event) |
-| `landing/booking-confirmed.html` | Added tag + booking conversion event |
+### Funnel Pages (Insight Tag + UTM tracker on all)
+| File | Tracking |
+|------|----------|
+| `landing/impact-bullet-equation.html` | Insight Tag, UTM capture, Kit attribution fields, GA4 `lead_form_submit` |
+| `landing/thank-you.html` | Insight Tag, **Lead conversion** (URL-rule), GA4 `thankyou_page_view` |
+| `landing/offer.html` | Insight Tag, Kit qualifying form attribution, GA4 `qualify_form_submit`, Calendly prefill |
+| `landing/booking-confirmed.html` | Insight Tag, **Booking conversion** (URL-rule), GA4 `booking_confirmed_view` |
 
-### Action Required From You
-1. Get your **Partner ID** from Campaign Manager → Analyze → Insight Tag
-2. ~~Replace `YOUR_PARTNER_ID_HERE` in `linkedin-insight-tag.js`~~ ✅ Done — set to `8832100`
-3. (Optional) Get conversion IDs and replace the placeholders in the same file
+### Other Pages (Insight Tag only)
+`index.html`, `about.html`, `success-stories.html`, `vault.html`, `legal.html`, `social.html`
+
+### Action Required
+1. ~~Partner ID~~ ✅ Set to `8832100`
+2. ~~URL-rule conversions~~ ✅ Created in Campaign Manager
+3. Add UTM-tagged destination URLs to your LinkedIn ads (see Step 4f)
+4. (Optional) Add a hidden "Traffic Source" custom question in Calendly
+5. Push to GitHub
 4. Push to GitHub
 
 ---
