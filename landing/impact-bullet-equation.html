@@ -317,10 +317,8 @@
             });
         }
 
-        // Fire LinkedIn conversion event
-        if (typeof ltlLinkedInConversion === 'function') {
-            ltlLinkedInConversion('lead');
-        }
+        // LinkedIn conversion tracked automatically via URL-rule
+        // (Insight Tag fires on /landing/thank-you page load)
 
         // Submit to Kit (ConvertKit) — triggers automated email with PDF
         try {
