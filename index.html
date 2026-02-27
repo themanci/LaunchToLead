@@ -42,6 +42,9 @@
     
     <!-- Analytics deferred to after page load -->
     <script>
+      // Disable GA4 for internal traffic
+      if (document.cookie.includes('ltl_internal=true')) window['ga-disable-G-L8V47TR52C'] = true;
+
       // GA + Meta Pixel load after page is interactive
       window.addEventListener('load', function() {
         // Google Analytics
