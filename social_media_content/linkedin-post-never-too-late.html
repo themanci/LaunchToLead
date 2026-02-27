@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedIn Post — Never Too Late</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background: #1a1a1a; min-height: 100vh; display: flex; flex-direction: column; align-items: center; padding: 40px 20px; }
+        .graphic { width: 1200px; height: 627px; background: linear-gradient(155deg, #e11d48 0%, #be123c 25%, #9f1239 50%, #881337 75%, #7c2d12 100%); position: relative; overflow: hidden; flex-shrink: 0; }
+
+        /* Background texture */
+        .bg-orb-1 { position: absolute; width: 700px; height: 700px; top: -280px; left: -100px; background: radial-gradient(circle, rgba(251,113,133,0.20) 0%, transparent 55%); filter: blur(60px); }
+        .bg-orb-2 { position: absolute; width: 600px; height: 600px; bottom: -300px; right: -80px; background: radial-gradient(circle, rgba(253,164,175,0.15) 0%, transparent 55%); filter: blur(70px); }
+        .bg-orb-3 { position: absolute; width: 400px; height: 400px; top: 100px; right: 200px; background: radial-gradient(circle, rgba(251,191,36,0.08) 0%, transparent 60%); filter: blur(50px); }
+        .bg-dots { position: absolute; inset: 0; background-image: radial-gradient(rgba(255,255,255,0.03) 1px, transparent 1px); background-size: 32px 32px; z-index: 1; }
+        .bg-line-1 { position: absolute; top: 200px; left: -80px; width: 700px; height: 1px; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent); transform: rotate(-1.5deg); z-index: 1; }
+        .bg-line-2 { position: absolute; bottom: 140px; right: -40px; width: 500px; height: 1px; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent); transform: rotate(2deg); z-index: 1; }
+
+        .gc { position: relative; z-index: 10; height: 100%; display: flex; padding: 42px 55px 58px; gap: 40px; }
+
+        /* ─── Left: Quote + Message ─── */
+        .left { flex: 1; display: flex; flex-direction: column; justify-content: center; }
+
+        .quote-tag { display: inline-flex; align-items: center; gap: 8px; background: rgba(0,0,0,0.18); border: 1px solid rgba(255,255,255,0.10); border-radius: 50px; padding: 5px 16px 5px 12px; font-size: 11px; font-weight: 800; color: rgba(255,255,255,0.80); text-transform: uppercase; letter-spacing: 1.8px; margin-bottom: 18px; width: fit-content; }
+        .quote-tag .dot { width: 7px; height: 7px; border-radius: 50%; background: #fbbf24; box-shadow: 0 0 10px rgba(251,191,36,0.5); }
+
+        .main-quote { font-size: 28px; font-weight: 800; color: #fff; line-height: 1.35; margin-bottom: 12px; padding-left: 22px; border-left: 4px solid rgba(251,191,36,0.6); }
+        .main-quote .gold { color: #fbbf24; }
+
+        .attribution { padding-left: 22px; font-size: 14px; color: rgba(255,255,255,0.40); font-weight: 700; font-style: italic; margin-bottom: 28px; }
+
+        .message-box { background: rgba(0,0,0,0.15); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 18px 22px; }
+        .message-text { font-size: 17px; font-weight: 700; color: #fff; line-height: 1.5; }
+        .message-text .fade { color: rgba(255,255,255,0.50); }
+        .message-text .gold { color: #fbbf24; font-weight: 800; }
+
+        /* ─── Divider ─── */
+        .v-divider { width: 2px; background: linear-gradient(180deg, transparent 5%, rgba(255,255,255,0.12) 25%, rgba(255,255,255,0.12) 75%, transparent 95%); flex-shrink: 0; border-radius: 2px; }
+
+        /* ─── Right: The proof ─── */
+        .right { width: 410px; flex-shrink: 0; display: flex; flex-direction: column; justify-content: center; gap: 12px; }
+
+        .right-tag { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.10); border: 1px solid rgba(255,255,255,0.12); border-radius: 50px; padding: 5px 16px 5px 12px; font-size: 11px; font-weight: 800; color: #fff; text-transform: uppercase; letter-spacing: 1.8px; margin-bottom: 2px; width: fit-content; }
+        .right-tag .dot { width: 7px; height: 7px; border-radius: 50%; background: #a3e635; box-shadow: 0 0 10px rgba(163,230,53,0.5); }
+
+        .qa-list { display: flex; flex-direction: column; gap: 6px; }
+
+        .qa-item { display: flex; align-items: center; gap: 12px; padding: 10px 16px; border-radius: 10px; }
+        .qa-item.doubt { background: rgba(0,0,0,0.12); border: 1px solid rgba(0,0,0,0.08); }
+        .qa-item.win { background: rgba(255,255,255,0.10); border: 1px solid rgba(255,255,255,0.12); }
+
+        .qa-icon { width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 900; flex-shrink: 0; }
+        .qa-item.doubt .qa-icon { background: rgba(0,0,0,0.20); color: rgba(255,255,255,0.45); font-size: 10px; }
+        .qa-item.win .qa-icon { background: #a3e635; color: #1a2e05; }
+
+        .qa-text { font-size: 13.5px; font-weight: 600; line-height: 1.35; }
+        .qa-item.doubt .qa-text { color: rgba(255,255,255,0.50); }
+        .qa-item.win .qa-text { color: #fff; }
+
+        .qa-answer { margin-left: auto; font-family: 'Space Grotesk', sans-serif; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; padding: 3px 10px; border-radius: 50px; flex-shrink: 0; }
+        .qa-item.doubt .qa-answer { background: rgba(251,191,36,0.15); color: #fbbf24; }
+        .qa-item.win .qa-answer { background: rgba(163,230,53,0.15); color: #a3e635; }
+
+        .h-divider { height: 1px; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.10), transparent); margin: 2px 0; }
+
+        .takeaway { text-align: center; padding: 8px 0 0; }
+        .takeaway-text { font-size: 19px; font-weight: 800; color: #fff; line-height: 1.4; }
+        .takeaway-text .gold { color: #fbbf24; }
+        .takeaway-sub { font-size: 12px; color: rgba(255,255,255,0.40); font-weight: 600; margin-top: 4px; }
+
+        /* ─── Footer ─── */
+        .bottom-bar { position: absolute; bottom: 0; left: 0; right: 0; z-index: 10; background: rgba(0,0,0,0.22); backdrop-filter: blur(12px); border-top: 1px solid rgba(255,255,255,0.06); padding: 12px 55px; display: flex; justify-content: space-between; align-items: center; }
+        .logo-group { display: flex; align-items: center; gap: 10px; }
+        .logo-icon { width: 30px; height: 30px; background: linear-gradient(135deg, rgba(163,230,53,0.30), rgba(20,184,166,0.30)); border: 1px solid rgba(255,255,255,0.35); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-family: 'Space Grotesk', sans-serif; font-size: 13px; font-weight: 700; color: #fff; }
+        .logo-icon .sup { font-size: 8px; vertical-align: super; color: #fff; }
+        .logo-text { font-size: 15px; font-weight: 800; color: #fff; letter-spacing: -0.3px; }
+        .logo-text .accent { color: #fbbf24; }
+        .website { font-size: 15px; color: #fbbf24; font-weight: 800; letter-spacing: 0.3px; }
+    </style>
+</head>
+<body>
+<div class="graphic">
+    <div class="bg-orb-1"></div><div class="bg-orb-2"></div><div class="bg-orb-3"></div>
+    <div class="bg-dots"></div><div class="bg-line-1"></div><div class="bg-line-2"></div>
+
+    <div class="gc">
+        <!-- LEFT: Quote + Core Message -->
+        <div class="left">
+            <div class="quote-tag"><span class="dot"></span> Perspective</div>
+            <div class="main-quote">
+                "Today is the <span class="gold">oldest</span> you've ever been, and the <span class="gold">youngest</span> you'll ever be again."
+            </div>
+            <div class="attribution">— Eleanor Roosevelt</div>
+            <div class="message-box">
+                <div class="message-text">
+                    <span class="fade">I paused my degree for years.</span><br>
+                    Got married. Had a kid. Worked full time.<br>
+                    <span class="gold">Went back and finished anyway.</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Vertical Divider -->
+        <div class="v-divider"></div>
+
+        <!-- RIGHT: Did it stop me? -->
+        <div class="right">
+            <div class="right-tag"><span class="dot"></span> Did it stop me?</div>
+
+            <div class="qa-list">
+                <div class="qa-item doubt">
+                    <div class="qa-icon">?</div>
+                    <div class="qa-text">Feel too old going back?</div>
+                    <div class="qa-answer">Yes</div>
+                </div>
+                <div class="qa-item doubt">
+                    <div class="qa-icon">?</div>
+                    <div class="qa-text">Imposter syndrome the whole time?</div>
+                    <div class="qa-answer">Yes</div>
+                </div>
+                <div class="qa-item doubt">
+                    <div class="qa-icon">?</div>
+                    <div class="qa-text">Hard to juggle family + school + work?</div>
+                    <div class="qa-answer">Yes</div>
+                </div>
+            </div>
+
+            <div class="h-divider"></div>
+
+            <div class="qa-list">
+                <div class="qa-item win">
+                    <div class="qa-icon">&check;</div>
+                    <div class="qa-text">Stop me from being successful?</div>
+                    <div class="qa-answer">No</div>
+                </div>
+                <div class="qa-item win">
+                    <div class="qa-icon">&check;</div>
+                    <div class="qa-text">Stop me from getting hired?</div>
+                    <div class="qa-answer">No</div>
+                </div>
+                <div class="qa-item win">
+                    <div class="qa-icon">&check;</div>
+                    <div class="qa-text">Stop me from catching up?</div>
+                    <div class="qa-answer">No</div>
+                </div>
+            </div>
+
+            <div class="h-divider"></div>
+
+            <div class="takeaway">
+                <div class="takeaway-text">It's <span class="gold">never</span> too late.</div>
+                <div class="takeaway-sub">Regret what you DID — not what you didn't.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="bottom-bar">
+        <div class="logo-group">
+            <div class="logo-icon">L<span class="sup">2</span></div>
+            <div class="logo-text">Launch<span class="accent">ToLead</span></div>
+        </div>
+        <div class="website">LaunchToLead.io/free</div>
+    </div>
+</div>
+</body>
+</html>

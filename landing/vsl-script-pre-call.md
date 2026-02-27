@@ -1,6 +1,6 @@
 # VSL Script — Pre-Discovery Call Video
 
-> **Purpose:** Video for the booking confirmation page (`landing/booking-confirmed.html`). Shown after someone books a strategy call.
+> **Purpose:** Video for the booking confirmation page (`landing/booking-confirmed.html`). Shown after someone books a Career Launch Call.
 > **Target Length:** 5-6 minutes (~900-1,100 words spoken)
 > **Audience:** Engineers who already booked a discovery call — they're interested but may have doubts
 > **Goal:** Overcome objections before the call, reduce basic questions, prime them to come prepared
@@ -27,7 +27,7 @@
 ### BEAT 1: Congratulate + Set the Frame
 *(Camera: Direct to camera. Warm, genuine energy. Slight smile.)*
 
-Hey — congrats on booking your strategy call. I mean that. Most engineers think about getting help for weeks, sometimes months, and never actually take the step. You just did. That already puts you ahead.
+Hey — congrats on booking your Career Launch Call. I mean that. Most engineers think about getting help for weeks, sometimes months, and never actually take the step. You just did. That already puts you ahead.
 
 I want to use this quick video to make sure our call is as productive as possible. I'm going to cover a few things people usually ask me in the first five minutes — so we can skip the basics and get straight into *your* situation.
 

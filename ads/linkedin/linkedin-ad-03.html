@@ -3,128 +3,109 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LinkedIn Ad 03 — Friends Getting Hired</title>
+    <title>LinkedIn Ad 03 — Comparison + Status Recovery</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background: #0c0c14; min-height: 100vh; display: flex; flex-direction: column; align-items: center; padding: 40px 20px; }
-        .graphic { width: 1080px; height: 1080px; background: linear-gradient(160deg, #0a0e1a 0%, #131a2e 40%, #0f1623 70%, #0a0e1a 100%); position: relative; overflow: hidden; flex-shrink: 0; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background: #0a0a0a; width: 1080px; height: 1080px; overflow: hidden; display: flex; justify-content: center; align-items: center; }
 
-        .bg-orb-1 { position: absolute; width: 500px; height: 500px; top: -130px; left: -80px; background: radial-gradient(circle, rgba(163,230,53,0.12) 0%, transparent 65%); filter: blur(60px); }
-        .bg-orb-2 { position: absolute; width: 500px; height: 500px; bottom: -130px; right: -80px; background: radial-gradient(circle, rgba(20,184,166,0.12) 0%, transparent 65%); filter: blur(70px); }
-        .bg-orb-3 { position: absolute; width: 350px; height: 350px; top: 50%; left: 50%; transform: translate(-50%,-50%); background: radial-gradient(circle, rgba(163,230,53,0.05) 0%, transparent 60%); filter: blur(50px); }
-        .bg-dots { position: absolute; inset: 0; background-image: radial-gradient(rgba(255,255,255,0.04) 1px, transparent 1px); background-size: 24px 24px; z-index: 1; }
-        .bg-mesh { position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,0.012) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.012) 1px, transparent 1px); background-size: 80px 80px; z-index: 1; }
-        .bg-line-1 { position: absolute; top: 350px; left: -50px; width: 400px; height: 1.5px; background: linear-gradient(90deg, transparent, rgba(163,230,53,0.22), transparent); transform: rotate(-4deg); z-index: 1; }
-        .bg-line-2 { position: absolute; bottom: 250px; right: -30px; width: 300px; height: 1px; background: linear-gradient(270deg, transparent, rgba(20,184,166,0.18), transparent); transform: rotate(5deg); z-index: 1; }
+        .ad { width: 1080px; height: 1080px; background: linear-gradient(165deg, #111111 0%, #1a1714 50%, #111111 100%); display: flex; flex-direction: column; justify-content: space-between; padding: 50px 55px 40px; position: relative; overflow: hidden; }
 
-        .gc { position: relative; z-index: 10; height: 100%; display: flex; flex-direction: column; padding: 48px 58px 88px; }
-        .top-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; }
-        .badge { display: inline-flex; align-items: center; gap: 10px; background: rgba(163,230,53,0.08); backdrop-filter: blur(12px); border: 1px solid rgba(163,230,53,0.25); border-radius: 50px; padding: 12px 24px; font-size: 13px; font-weight: 700; color: #bef264; text-transform: uppercase; letter-spacing: 2.5px; }
-        .badge .dot { width: 8px; height: 8px; background: #a3e635; border-radius: 50%; box-shadow: 0 0 10px rgba(163,230,53,0.6); animation: pulse 2s infinite; }
-        @keyframes pulse { 0%,100%{ opacity:1; } 50%{ opacity:.5; } }
-        .free-tag { display: inline-flex; align-items: center; gap: 8px; background: rgba(20,184,166,0.1); border: 1px solid rgba(20,184,166,0.3); border-radius: 50px; padding: 10px 22px; font-size: 14px; font-weight: 800; color: #5eead4; text-transform: uppercase; letter-spacing: 2px; }
+        /* Depth layers */
+        .bg-orb-1 { position: absolute; width: 700px; height: 700px; top: -300px; left: -200px; background: radial-gradient(circle, rgba(163,230,53,0.07) 0%, transparent 60%); filter: blur(60px); }
+        .bg-orb-2 { position: absolute; width: 600px; height: 600px; bottom: -250px; right: -150px; background: radial-gradient(circle, rgba(248,113,113,0.06) 0%, transparent 60%); filter: blur(70px); }
+        .bg-orb-3 { position: absolute; width: 400px; height: 400px; top: 35%; left: 50%; transform: translate(-50%,-50%); background: radial-gradient(circle, rgba(251,191,36,0.04) 0%, transparent 55%); filter: blur(50px); }
+        .bg-dots { position: absolute; inset: 0; background-image: radial-gradient(rgba(255,255,255,0.025) 1px, transparent 1px); background-size: 24px 24px; }
+        .bg-mesh { position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,0.006) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.006) 1px, transparent 1px); background-size: 80px 80px; }
+        .bg-line-1 { position: absolute; top: 300px; left: -80px; width: 500px; height: 1px; background: linear-gradient(90deg, transparent, rgba(163,230,53,0.10), transparent); transform: rotate(-4deg); }
+        .bg-line-2 { position: absolute; bottom: 280px; right: -60px; width: 400px; height: 1px; background: linear-gradient(270deg, transparent, rgba(248,113,113,0.08), transparent); transform: rotate(5deg); }
+        .bg-reflect { position: absolute; top: 0; left: 0; right: 0; height: 50%; background: linear-gradient(180deg, rgba(255,255,255,0.012) 0%, transparent 100%); pointer-events: none; }
 
-        .title { font-size: 50px; font-weight: 900; color: #fff; line-height: 1.08; margin-bottom: 12px; letter-spacing: -2px; }
-        .title .green { background: linear-gradient(135deg, #a3e635, #14b8a6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-        .subtitle { font-size: 18px; color: #94a3b8; line-height: 1.5; margin-bottom: 24px; max-width: 700px; }
+        .content { position: relative; z-index: 10; display: flex; flex-direction: column; justify-content: space-between; height: 100%; }
 
-        .compare-section { margin-bottom: 20px; }
-        .compare-header { font-size: 13px; font-weight: 700; color: #94a3b8; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 14px; }
-        .compare-grid { display: grid; grid-template-columns: 1fr auto 1fr; gap: 16px; align-items: stretch; }
-        .compare-box { border-radius: 18px; padding: 28px 24px; position: relative; overflow: hidden; display: flex; flex-direction: column; }
-        .compare-box::before { content:''; position: absolute; top: 0; left: 0; right: 0; height: 3px; border-radius: 18px 18px 0 0; }
-        .compare-box.them { background: rgba(239,68,68,0.05); border: 1px solid rgba(239,68,68,0.15); }
-        .compare-box.them::before { background: linear-gradient(90deg, #ef4444, #f97316); }
-        .compare-box.you { background: rgba(163,230,53,0.05); border: 1px solid rgba(163,230,53,0.15); }
-        .compare-box.you::before { background: linear-gradient(90deg, #a3e635, #14b8a6); }
-        .compare-label { font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 16px; }
-        .compare-label.red { color: #f87171; }
-        .compare-label.green { color: #a3e635; }
-        .compare-result { font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 700; margin-bottom: 14px; }
-        .compare-result.red { color: #f87171; }
-        .compare-result.green { color: #a3e635; }
-        .compare-bullet { font-size: 15px; color: #94a3b8; font-style: italic; line-height: 1.5; padding: 14px; background: rgba(0,0,0,0.2); border-radius: 10px; flex: 1; }
-        .arrow-col { display: flex; align-items: center; justify-content: center; }
-        .vs-badge { font-family: 'Space Grotesk', sans-serif; font-size: 18px; font-weight: 700; color: #475569; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 50%; width: 52px; height: 52px; display: flex; align-items: center; justify-content: center; }
+        .callout { text-align: center; }
+        .callout-line { font-size: 42px; font-weight: 800; color: #e2e8f0; line-height: 1.25; }
+        .callout-neg { color: #f87171; text-shadow: 0 0 30px rgba(248,113,113,0.3); }
 
-        .same-row { display: flex; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
-        .same-chip { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); border-radius: 50px; padding: 10px 20px; font-size: 14px; color: #64748b; }
-        .same-chip .icon { font-size: 16px; }
+        .compare { display: flex; justify-content: center; align-items: center; gap: 40px; }
+        .compare-card { background: rgba(255,255,255,0.03); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.06); border-radius: 16px; padding: 24px 44px; text-align: center; box-shadow: 0 8px 24px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.03); }
+        .compare-card.them { border-color: rgba(163,230,53,0.20); }
+        .compare-card.you { border-color: rgba(248,113,113,0.20); }
+        .compare-label { font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 700; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 10px; }
+        .compare-card.them .compare-label { color: #a3e635; }
+        .compare-card.you .compare-label { color: #f87171; }
+        .compare-value { font-size: 40px; font-weight: 800; }
+        .compare-card.them .compare-value { color: #a3e635; text-shadow: 0 0 20px rgba(163,230,53,0.2); }
+        .compare-card.you .compare-value { color: #f87171; text-shadow: 0 0 20px rgba(248,113,113,0.2); }
+        .vs-badge { font-family: 'Space Grotesk', sans-serif; font-size: 22px; font-weight: 700; color: #475569; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 50%; width: 54px; height: 54px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 16px rgba(0,0,0,0.3); }
 
-        .fix-strip { background: rgba(163,230,53,0.06); backdrop-filter: blur(12px); border: 1px solid rgba(163,230,53,0.2); border-radius: 16px; padding: 24px 28px; display: flex; align-items: center; gap: 20px; position: relative; overflow: hidden; }
-        .fix-strip::before { content:''; position: absolute; top: 0; left: 0; bottom: 0; width: 4px; background: linear-gradient(180deg, #a3e635, #14b8a6); border-radius: 16px 0 0 16px; }
-        .fix-icon { font-size: 34px; flex-shrink: 0; }
-        .fix-content { flex: 1; }
-        .fix-label { font-size: 11px; font-weight: 700; color: #a3e635; text-transform: uppercase; letter-spacing: 2.5px; margin-bottom: 6px; }
-        .fix-text { font-size: 17px; color: #e2e8f0; font-weight: 600; line-height: 1.4; }
-        .fix-text .url { color: #a3e635; font-weight: 800; }
-        .fix-sub { font-size: 13px; color: #64748b; margin-top: 4px; }
+        .same-section { text-align: center; }
+        .same-item { font-size: 38px; font-weight: 600; color: #94a3b8; margin: 8px 0; }
 
-        .bottom-bar { position: absolute; bottom: 0; left: 0; right: 0; z-index: 10; background: rgba(10,14,26,0.7); backdrop-filter: blur(12px); border-top: 1px solid rgba(255,255,255,0.05); padding: 16px 58px; display: flex; justify-content: space-between; align-items: center; }
-        .logo-group { display: flex; align-items: center; gap: 12px; }
-        .logo-icon { width: 36px; height: 36px; background: linear-gradient(135deg, rgba(163,230,53,0.15), rgba(20,184,166,0.15)); border: 1px solid rgba(163,230,53,0.3); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-family: 'Space Grotesk', sans-serif; font-size: 16px; font-weight: 700; color: #fff; }
-        .logo-icon .sup { font-size: 9px; vertical-align: super; color: #a3e635; }
-        .logo-text { font-size: 17px; font-weight: 800; color: #fff; letter-spacing: -0.3px; }
-        .logo-text .accent { background: linear-gradient(90deg, #a3e635, #14b8a6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-        .series-tag { font-size: 13px; color: #475569; font-weight: 500; }
+        .question { font-family: 'Space Grotesk', sans-serif; font-size: 46px; font-weight: 700; color: #fbbf24; text-align: center; text-shadow: 0 0 30px rgba(251,191,36,0.2); }
+
+        .answer { text-align: center; }
+        .answer-line { font-size: 40px; font-weight: 700; color: #e2e8f0; line-height: 1.3; }
+        .answer-emphasis { color: #a3e635; font-weight: 800; text-transform: uppercase; text-shadow: 0 0 25px rgba(163,230,53,0.2); }
+
+        .skill-note { text-align: center; }
+        .skill-line1 { font-size: 38px; font-weight: 700; color: #94a3b8; }
+        .skill-line2 { font-size: 42px; font-weight: 800; color: #a3e635; text-shadow: 0 0 30px rgba(163,230,53,0.25); }
+
+        .cta-box { background: rgba(163,230,53,0.06); backdrop-filter: blur(16px); border: 1px solid rgba(163,230,53,0.20); border-radius: 18px; padding: 28px 40px; text-align: center; position: relative; overflow: hidden; box-shadow: 0 8px 32px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.04); }
+        .cta-box::before { content:''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, #a3e635, #14b8a6, transparent); }
+        .cta-title { font-size: 36px; font-weight: 800; color: #fff; }
+        .cta-brand { font-size: 22px; font-weight: 700; color: #a3e635; margin-top: 6px; letter-spacing: 0.5px; }
     </style>
 </head>
 <body>
-<div class="graphic">
+<div class="ad">
     <div class="bg-orb-1"></div><div class="bg-orb-2"></div><div class="bg-orb-3"></div>
-    <div class="bg-dots"></div><div class="bg-mesh"></div><div class="bg-line-1"></div><div class="bg-line-2"></div>
+    <div class="bg-dots"></div><div class="bg-mesh"></div>
+    <div class="bg-line-1"></div><div class="bg-line-2"></div><div class="bg-reflect"></div>
 
-    <div class="gc">
-        <div class="top-bar">
-            <div class="badge"><span class="dot"></span> The Hard Truth</div>
-            <div class="free-tag">📥 Free Guide</div>
+    <div class="content">
+        <div class="callout">
+            <div class="callout-line">Friends getting hired.</div>
+            <div class="callout-line"><span class="callout-neg">You getting ghosted.</span></div>
         </div>
 
-        <h1 class="title">Friends Getting Hired.<br>You Getting <span class="green">Ghosted.</span></h1>
-        <p class="subtitle">Same degree. Same classes. Same all-nighters. The only difference is how they write their resume.</p>
-
-        <div class="same-row">
-            <div class="same-chip"><span class="icon">📚</span> Same classes</div>
-            <div class="same-chip"><span class="icon">👨‍🏫</span> Same professors</div>
-            <div class="same-chip"><span class="icon">🌙</span> Same all-nighters</div>
-            <div class="same-chip"><span class="icon">🎓</span> Same degree</div>
-        </div>
-
-        <div class="compare-section">
-            <div class="compare-header">Same work. Different resume. Different outcome.</div>
-            <div class="compare-grid">
-                <div class="compare-box them">
-                    <div class="compare-label red">❌ You (right now)</div>
-                    <div class="compare-result red">Ghosted</div>
-                    <div class="compare-bullet">"Assisted with firmware development and testing procedures"</div>
-                </div>
-                <div class="arrow-col">
-                    <div class="vs-badge">vs</div>
-                </div>
-                <div class="compare-box you">
-                    <div class="compare-label green">✅ Them</div>
-                    <div class="compare-result green">4 Offers</div>
-                    <div class="compare-bullet">"Cut field failure rate by 62% by refactoring the CAN bus interrupt handler across 8 ECUs"</div>
-                </div>
+        <div class="compare">
+            <div class="compare-card them">
+                <div class="compare-label">Them</div>
+                <div class="compare-value">4 offers</div>
+            </div>
+            <div class="vs-badge">vs</div>
+            <div class="compare-card you">
+                <div class="compare-label">You</div>
+                <div class="compare-value">Ghosted</div>
             </div>
         </div>
 
-        <div class="fix-strip">
-            <div class="fix-icon">📄</div>
-            <div class="fix-content">
-                <div class="fix-label">Learn the formula they used — Free</div>
-                <div class="fix-text">Free Impact Bullet Builder Guide → <span class="url">launchtolead.io/free</span></div>
-                <div class="fix-sub">14 pages · 30 minutes · works on internships, class projects & research</div>
-            </div>
+        <div class="same-section">
+            <div class="same-item">● Same grades</div>
+            <div class="same-item">● Same projects</div>
+            <div class="same-item">● Same internships</div>
         </div>
-    </div>
 
-    <div class="bottom-bar">
-        <div class="logo-group"><div class="logo-icon">L<span class="sup">2</span></div><div class="logo-text">Launch<span class="accent">ToLead</span></div></div>
-        <div class="series-tag">launchtolead.io/free</div>
+        <div class="question">So what's the difference?</div>
+
+        <div class="answer">
+            <div class="answer-line">They know how to sell</div>
+            <div class="answer-line"><span class="answer-emphasis">their resume</span></div>
+        </div>
+
+        <div class="skill-note">
+            <div class="skill-line1">That's a learnable skill.</div>
+            <div class="skill-line2">Learn it for free.</div>
+        </div>
+
+        <div class="cta-box">
+            <div class="cta-title">Free Impact Bullet Builder Guide</div>
+            <div class="cta-brand">LaunchToLead</div>
+        </div>
     </div>
 </div>
 </body>

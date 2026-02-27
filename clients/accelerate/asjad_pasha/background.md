@@ -82,7 +82,7 @@ Held 3 progressive roles in 2 years 8 months:
 
 ---
 
-## Key Insights from Strategy Call
+## Key Insights from Career Launch Call
 
 ### The Core Problem
 - **Stuck as Senior Quality Engineer** - wants to become Engineering Manager
@@ -118,7 +118,7 @@ Held 3 progressive roles in 2 years 8 months:
 
 ## Coaching Priorities
 
-Based on strategy call, focus areas for Accelerate Path:
+Based on Career Launch Call, focus areas for Accelerate Path:
 
 1. **Visibility & Influence** - Stop being the invisible expert
 2. **Stakeholder Buy-In** - Get decision-makers to support his ideas

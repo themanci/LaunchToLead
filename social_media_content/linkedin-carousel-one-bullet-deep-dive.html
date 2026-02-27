@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedIn Carousel — One Bullet. Four Layers. $5M Impact.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background: #0f0f0f; min-height: 100vh; display: flex; flex-direction: column; align-items: center; padding: 40px 20px; gap: 40px; }
+        .slide-label { color: rgba(255,255,255,0.25); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-bottom: -28px; }
+
+        .slide { width: 1080px; height: 1080px; position: relative; overflow: hidden; flex-shrink: 0; }
+
+        .bg-dark { background: linear-gradient(155deg, #0f172a 0%, #1e293b 50%, #0f172a 100%); }
+        .bg-red { background: linear-gradient(155deg, #450a0a 0%, #7f1d1d 40%, #991b1b 100%); }
+        .bg-green { background: linear-gradient(155deg, #052e16 0%, #14532d 50%, #052e16 100%); }
+        .bg-emerald { background: linear-gradient(155deg, #064e3b 0%, #065f46 50%, #047857 100%); }
+        .bg-amber { background: linear-gradient(155deg, #451a03 0%, #78350f 50%, #92400e 100%); }
+        .bg-teal { background: linear-gradient(155deg, #042f2e 0%, #134e4a 50%, #115e59 100%); }
+
+        .dots { position: absolute; inset: 0; background-image: radial-gradient(rgba(255,255,255,0.025) 1px, transparent 1px); background-size: 28px 28px; z-index: 1; }
+        .orb { position: absolute; border-radius: 50%; filter: blur(80px); z-index: 0; }
+        .gc { position: relative; z-index: 10; height: 100%; display: flex; flex-direction: column; padding: 60px; }
+
+        .bottom-bar { position: absolute; bottom: 0; left: 0; right: 0; z-index: 10; background: rgba(0,0,0,0.30); backdrop-filter: blur(12px); border-top: 1px solid rgba(255,255,255,0.06); padding: 16px 60px; display: flex; justify-content: space-between; align-items: center; }
+        .logo-group { display: flex; align-items: center; gap: 10px; }
+        .logo-icon { width: 30px; height: 30px; background: linear-gradient(135deg, rgba(163,230,53,0.30), rgba(20,184,166,0.30)); border: 1px solid rgba(255,255,255,0.35); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-family: 'Space Grotesk', sans-serif; font-size: 13px; font-weight: 700; color: #fff; }
+        .logo-icon .sup { font-size: 8px; vertical-align: super; }
+        .logo-text { font-size: 15px; font-weight: 800; color: #fff; }
+        .logo-text .accent { color: #a3e635; }
+        .page-num { font-family: 'Space Grotesk', sans-serif; font-size: 13px; color: rgba(255,255,255,0.35); font-weight: 600; }
+        .website { font-size: 14px; color: #a3e635; font-weight: 800; }
+
+        .tag { display: inline-flex; align-items: center; gap: 8px; border-radius: 50px; padding: 6px 18px 6px 14px; font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; width: fit-content; }
+        .tag-dark { background: rgba(0,0,0,0.25); border: 1px solid rgba(255,255,255,0.10); color: rgba(255,255,255,0.80); }
+        .tag-red { background: rgba(239,68,68,0.15); border: 1px solid rgba(239,68,68,0.25); color: #fca5a5; }
+        .tag-green { background: rgba(163,230,53,0.15); border: 1px solid rgba(163,230,53,0.25); color: #a3e635; }
+        .tag-amber { background: rgba(251,191,36,0.15); border: 1px solid rgba(251,191,36,0.25); color: #fbbf24; }
+        .tag-teal { background: rgba(20,184,166,0.15); border: 1px solid rgba(20,184,166,0.25); color: #5eead4; }
+        .dot { width: 7px; height: 7px; border-radius: 50%; }
+        .dot-amber { background: #fbbf24; box-shadow: 0 0 10px rgba(251,191,36,0.5); }
+        .dot-red { background: #ef4444; box-shadow: 0 0 10px rgba(239,68,68,0.5); }
+        .dot-green { background: #a3e635; box-shadow: 0 0 10px rgba(163,230,53,0.5); }
+        .dot-teal { background: #14b8a6; box-shadow: 0 0 10px rgba(20,184,166,0.5); }
+
+        .heading { font-size: 52px; font-weight: 900; color: #fff; line-height: 1.15; }
+        .heading .lime { color: #a3e635; }
+        .heading .red { color: #f87171; }
+        .heading .amber { color: #fbbf24; }
+        .heading .teal { color: #5eead4; }
+        .sub { font-size: 20px; color: rgba(255,255,255,0.50); font-weight: 600; line-height: 1.5; }
+
+        .hl-red { color: #f87171; font-weight: 800; }
+        .hl-green { color: #a3e635; font-weight: 800; }
+        .hl-lime { color: #bef264; font-weight: 800; }
+        .hl-amber { color: #fbbf24; font-weight: 800; }
+        .hl-teal { color: #5eead4; font-weight: 800; }
+
+        /* Bullet display */
+        .bullet-display { background: rgba(0,0,0,0.30); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 32px 36px; font-size: 19px; font-weight: 600; line-height: 1.65; color: rgba(255,255,255,0.55); }
+        .bullet-display.bad { border-color: rgba(239,68,68,0.20); }
+        .bullet-display.good { border-color: rgba(163,230,53,0.18); color: rgba(255,255,255,0.85); }
+
+        /* Formula piece */
+        .formula-piece { border-radius: 16px; padding: 28px 32px; }
+        .formula-piece .piece-label { font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 12px; }
+        .formula-piece .piece-question { font-size: 17px; font-weight: 700; color: rgba(255,255,255,0.50); margin-bottom: 14px; }
+        .formula-piece .piece-answer { font-size: 22px; font-weight: 800; color: #fff; line-height: 1.4; }
+
+        /* Step indicator */
+        .step-num { font-family: 'Space Grotesk', sans-serif; font-size: 100px; font-weight: 700; position: absolute; top: 40px; right: 60px; opacity: 0.06; z-index: 0; }
+
+        /* Annotation callout */
+        .callout { display: flex; align-items: flex-start; gap: 12px; background: rgba(239,68,68,0.08); border: 1px solid rgba(239,68,68,0.18); border-radius: 12px; padding: 14px 18px; }
+        .callout-icon { width: 22px; height: 22px; flex-shrink: 0; margin-top: 2px; }
+        .callout-text { font-size: 14px; font-weight: 600; color: rgba(255,255,255,0.55); line-height: 1.5; }
+    </style>
+</head>
+<body>
+
+<!-- ========================================== -->
+<!-- SLIDE 1: HOOK                              -->
+<!-- ========================================== -->
+<div class="slide-label">Slide 1 — Hook</div>
+<div class="slide bg-dark">
+    <div class="dots"></div>
+    <div class="orb" style="width:600px;height:600px;top:-150px;left:-150px;background:radial-gradient(circle,rgba(239,68,68,0.08) 0%,transparent 55%);"></div>
+    <div class="orb" style="width:500px;height:500px;bottom:-100px;right:-100px;background:radial-gradient(circle,rgba(163,230,53,0.08) 0%,transparent 55%);"></div>
+
+    <div class="gc" style="justify-content: center; align-items: center; text-align: center; padding-bottom: 80px; gap: 28px;">
+        <div class="tag tag-dark"><span class="dot dot-amber"></span> Deep Dive</div>
+
+        <div class="heading" style="font-size: 48px; max-width: 850px;">
+            One bullet.<br>
+            Four layers.<br>
+            <span class="lime">$5M in impact.</span>
+        </div>
+
+        <div class="sub" style="max-width: 640px; margin-top: 4px;">
+            I took the weakest bullet on my resume and rebuilt it using the Impact Bullet Builder formula.
+        </div>
+
+        <div style="display: flex; gap: 12px; margin-top: 16px;">
+            <div style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 14px 22px; text-align: center;">
+                <div style="font-size: 13px; color: rgba(255,255,255,0.30); font-weight: 700; letter-spacing: 1px; text-transform: uppercase;">A</div>
+                <div style="font-size: 14px; color: rgba(255,255,255,0.60); font-weight: 700;">Accomplishment</div>
+            </div>
+            <div style="font-size: 22px; color: rgba(255,255,255,0.15); display: flex; align-items: center;">+</div>
+            <div style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 14px 22px; text-align: center;">
+                <div style="font-size: 13px; color: rgba(255,255,255,0.30); font-weight: 700; letter-spacing: 1px; text-transform: uppercase;">M</div>
+                <div style="font-size: 14px; color: rgba(255,255,255,0.60); font-weight: 700;">Metric</div>
+            </div>
+            <div style="font-size: 22px; color: rgba(255,255,255,0.15); display: flex; align-items: center;">+</div>
+            <div style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 14px 22px; text-align: center;">
+                <div style="font-size: 13px; color: rgba(255,255,255,0.30); font-weight: 700; letter-spacing: 1px; text-transform: uppercase;">H</div>
+                <div style="font-size: 14px; color: rgba(255,255,255,0.60); font-weight: 700;">How</div>
+            </div>
+            <div style="font-size: 22px; color: rgba(255,255,255,0.15); display: flex; align-items: center;">+</div>
+            <div style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 14px 22px; text-align: center;">
+                <div style="font-size: 13px; color: rgba(255,255,255,0.30); font-weight: 700; letter-spacing: 1px; text-transform: uppercase;">W</div>
+                <div style="font-size: 14px; color: rgba(255,255,255,0.60); font-weight: 700;">Why</div>
+            </div>
+            <div style="font-size: 22px; color: rgba(255,255,255,0.15); display: flex; align-items: center;">=</div>
+            <div style="background: rgba(163,230,53,0.08); border: 1px solid rgba(163,230,53,0.18); border-radius: 12px; padding: 14px 22px; text-align: center;">
+                <div style="font-size: 13px; color: #a3e635; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;">!</div>
+                <div style="font-size: 14px; color: #a3e635; font-weight: 700;">Impact</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bottom-bar">
+        <div class="logo-group">
+            <div class="logo-icon">L<span class="sup">2</span></div>
+            <div class="logo-text">Launch<span class="accent">ToLead</span></div>
+        </div>
+        <div class="page-num">1 / 8</div>
+        <div class="website">LaunchToLead.io/free</div>
+    </div>
+</div>
+
+<!-- ========================================== -->
+<!-- SLIDE 2: THE ORIGINAL BULLET               -->
+<!-- ========================================== -->
+<div class="slide-label">Slide 2 — The Original</div>
+<div class="slide bg-red">
+    <div class="dots"></div>
+    <div class="step-num" style="color: #fca5a5;">!</div>
+
+    <div class="gc" style="padding-bottom: 80px; gap: 24px;">
+        <div class="tag tag-red"><span class="dot dot-red"></span> The Original</div>
+        <div class="heading" style="font-size: 38px;">Here's what I actually had on my resume.</div>
+
+        <div class="bullet-display bad" style="margin-top: 12px;">
+            "Built experimental software to correct aftertreatment regen issues and <span class="hl-red">relieve warehouse hold</span> in under 2 days. Addressed complex interactions <span class="hl-red">via collaboration</span> with multiple teams and expedited release"
+        </div>
+
+        <div style="margin-top: 20px; display: flex; flex-direction: column; gap: 12px;">
+            <div class="callout">
+                <svg class="callout-icon" viewBox="0 0 24 24" fill="none" stroke="#f87171" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
+                <div class="callout-text"><strong class="hl-red">"Relieve warehouse hold"</strong> &mdash; What warehouse hold? How much was at stake? The reader has zero context.</div>
+            </div>
+            <div class="callout">
+                <svg class="callout-icon" viewBox="0 0 24 24" fill="none" stroke="#f87171" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
+                <div class="callout-text"><strong class="hl-red">"Via collaboration"</strong> &mdash; This means nothing. Everyone collaborates. Deleted.</div>
+            </div>
+            <div class="callout">
+                <svg class="callout-icon" viewBox="0 0 24 24" fill="none" stroke="#f87171" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
+                <div class="callout-text"><strong class="hl-red">No dollar figure</strong> &mdash; 15+ tractors at $350K each = $5M+ held hostage, and the reader would never know it.</div>
+            </div>
+            <div class="callout">
+                <svg class="callout-icon" viewBox="0 0 24 24" fill="none" stroke="#f87171" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
+                <div class="callout-text"><strong class="hl-red">No production-line risk</strong> &mdash; This was an emergency. The original bullet reads like a Tuesday afternoon.</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bottom-bar">
+        <div class="logo-group">
+            <div class="logo-icon">L<span class="sup">2</span></div>
+            <div class="logo-text">Launch<span class="accent">ToLead</span></div>
+        </div>
+        <div class="page-num">2 / 8</div>
+        <div class="website">LaunchToLead.io/free</div>
+    </div>
+</div>
+
+<!-- ========================================== -->
+<!-- SLIDE 3: STEP 1 — ACCOMPLISHMENT           -->
+<!-- ========================================== -->
+<div class="slide-label">Slide 3 — Step 1: Accomplishment</div>
+<div class="slide bg-dark">
+    <div class="dots"></div>
+    <div class="step-num">01</div>
+    <div class="orb" style="width:500px;height:500px;bottom:-100px;left:-100px;background:radial-gradient(circle,rgba(251,191,36,0.08) 0%,transparent 55%);"></div>
+
+    <div class="gc" style="padding-bottom: 80px; gap: 20px;">
+        <div class="tag tag-amber"><span class="dot dot-amber"></span> Step 1 of 4</div>
+        <div class="heading" style="font-size: 42px;">
+            <span class="amber">Accomplishment</span>
+        </div>
+        <div class="sub" style="margin-bottom: 8px;">What did you actually DO? Lead with the action, not the setup.</div>
+
+        <div class="formula-piece" style="background: rgba(251,191,36,0.06); border: 1px solid rgba(251,191,36,0.15);">
+            <div class="piece-label" style="color: #fbbf24;">Ask Yourself</div>
+            <div class="piece-question">"If I had to describe this in one sentence to a VP, what would I say I did?"</div>
+        </div>
+
+        <div style="display: flex; gap: 16px;">
+            <div style="flex: 1; background: rgba(239,68,68,0.06); border: 1px solid rgba(239,68,68,0.15); border-radius: 14px; padding: 24px;">
+                <div style="font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; color: #f87171; margin-bottom: 10px;">Before</div>
+                <div style="font-size: 16px; color: rgba(255,255,255,0.45); font-weight: 600; line-height: 1.6;">
+                    "Built experimental software to correct aftertreatment regen issues"
+                </div>
+                <div style="font-size: 13px; color: rgba(255,255,255,0.25); margin-top: 10px;">Too technical, no urgency</div>
+            </div>
+            <div style="flex: 1; background: rgba(163,230,53,0.06); border: 1px solid rgba(163,230,53,0.15); border-radius: 14px; padding: 24px;">
+                <div style="font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; color: #a3e635; margin-bottom: 10px;">After</div>
+                <div style="font-size: 16px; color: rgba(255,255,255,0.85); font-weight: 700; line-height: 1.6;">
+                    "<span class="hl-green">Built emergency experimental software in under 48 hours</span> to resolve an aftertreatment regen defect..."
+                </div>
+                <div style="font-size: 13px; color: #a3e635; margin-top: 10px;">Urgency + speed + action</div>
+            </div>
+        </div>
+
+        <div style="margin-top: auto; background: rgba(251,191,36,0.06); border: 1px solid rgba(251,191,36,0.12); border-radius: 12px; padding: 18px 24px; text-align: center;">
+            <div style="font-size: 17px; font-weight: 800; color: #fbbf24;">The upgraded first layer:</div>
+            <div style="font-size: 15px; color: rgba(255,255,255,0.50); margin-top: 4px;">
+                "Built" &rarr; "Built emergency experimental software in under 48 hours"
+            </div>
+        </div>
+    </div>
+
+    <div class="bottom-bar">
+        <div class="logo-group">
+            <div class="logo-icon">L<span class="sup">2</span></div>
+            <div class="logo-text">Launch<span class="accent">ToLead</span></div>
+        </div>
+        <div class="page-num">3 / 8</div>
+        <div class="website">LaunchToLead.io/free</div>
+    </div>
+</div>
+
+<!-- ========================================== -->
+<!-- SLIDE 4: STEP 2 — METRIC                  -->
+<!-- ========================================== -->
+<div class="slide-label">Slide 4 — Step 2: Metric</div>
+<div class="slide bg-dark">
+    <div class="dots"></div>
+    <div class="step-num">02</div>
+    <div class="orb" style="width:500px;height:500px;top:-100px;right:-100px;background:radial-gradient(circle,rgba(163,230,53,0.08) 0%,transparent 55%);"></div>
+
+    <div class="gc" style="padding-bottom: 80px; gap: 20px;">
+        <div class="tag tag-green"><span class="dot dot-green"></span> Step 2 of 4</div>
+        <div class="heading" style="font-size: 42px;">
+            <span class="lime">Metric</span>
+        </div>
+        <div class="sub" style="margin-bottom: 8px;">Attach a number. Any number. No metric = no proof.</div>
+
+        <div class="formula-piece" style="background: rgba(163,230,53,0.06); border: 1px solid rgba(163,230,53,0.15);">
+            <div class="piece-label" style="color: #a3e635;">Ask Yourself</div>
+            <div class="piece-question">"How many? How much? How fast? How big?"</div>
+        </div>
+
+        <div style="display: flex; gap: 16px;">
+            <div style="flex: 1; background: rgba(239,68,68,0.06); border: 1px solid rgba(239,68,68,0.15); border-radius: 14px; padding: 24px;">
+                <div style="font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; color: #f87171; margin-bottom: 10px;">Before</div>
+                <div style="font-size: 16px; color: rgba(255,255,255,0.45); font-weight: 600; line-height: 1.6;">
+                    "...relieve <span class="hl-red">warehouse hold</span>"
+                </div>
+                <div style="font-size: 13px; color: rgba(255,255,255,0.25); margin-top: 10px;">How many machines? How much money? Unknown.</div>
+            </div>
+            <div style="flex: 1; background: rgba(163,230,53,0.06); border: 1px solid rgba(163,230,53,0.15); border-radius: 14px; padding: 24px;">
+                <div style="font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; color: #a3e635; margin-bottom: 10px;">After</div>
+                <div style="font-size: 16px; color: rgba(255,255,255,0.85); font-weight: 700; line-height: 1.6;">
+                    "...unblocking <span class="hl-green">15+ machines worth $5M+</span> from shipping"
+                </div>
+                <div style="font-size: 13px; color: #a3e635; margin-top: 10px;">Count + dollar value = undeniable proof</div>
+            </div>
+        </div>
+
+        <div style="margin-top: auto; background: rgba(163,230,53,0.06); border: 1px solid rgba(163,230,53,0.12); border-radius: 12px; padding: 18px 24px;">
+            <div style="font-size: 14px; font-weight: 700; color: rgba(255,255,255,0.40); text-align: center;">
+                The math: 15 machines x $350K each = <span class="hl-green">$5M+</span>
+            </div>
+            <div style="font-size: 13px; color: rgba(255,255,255,0.25); text-align: center; margin-top: 6px;">
+                This number existed the whole time. It just wasn't on the resume.
+            </div>
+        </div>
+    </div>
+
+    <div class="bottom-bar">
+        <div class="logo-group">
+            <div class="logo-icon">L<span class="sup">2</span></div>
+            <div class="logo-text">Launch<span class="accent">ToLead</span></div>
+        </div>
+        <div class="page-num">4 / 8</div>
+        <div class="website">LaunchToLead.io/free</div>
+    </div>
+</div>
+
+<!-- ========================================== -->
+<!-- SLIDE 5: STEP 3 — HOW                     -->
+<!-- ========================================== -->
+<div class="slide-label">Slide 5 — Step 3: How</div>
+<div class="slide bg-dark">
+    <div class="dots"></div>
+    <div class="step-num">03</div>
+    <div class="orb" style="width:500px;height:500px;top:50%;left:-100px;transform:translateY(-50%);background:radial-gradient(circle,rgba(20,184,166,0.08) 0%,transparent 55%);"></div>
+
+    <div class="gc" style="padding-bottom: 80px; gap: 20px;">
+        <div class="tag tag-teal"><span class="dot dot-teal"></span> Step 3 of 4</div>
+        <div class="heading" style="font-size: 42px;">
+            <span class="teal">How</span>
+        </div>
+        <div class="sub" style="margin-bottom: 8px;">Method shows competence. It proves you didn't just get lucky.</div>
+
+        <div class="formula-piece" style="background: rgba(20,184,166,0.06); border: 1px solid rgba(20,184,166,0.15);">
+            <div class="piece-label" style="color: #5eead4;">Ask Yourself</div>
+            <div class="piece-question">"What approach, tool, or process did I use? What constraint did I work within?"</div>
+        </div>
+
+        <div style="display: flex; gap: 16px;">
+            <div style="flex: 1; background: rgba(239,68,68,0.06); border: 1px solid rgba(239,68,68,0.15); border-radius: 14px; padding: 24px;">
+                <div style="font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; color: #f87171; margin-bottom: 10px;">Before</div>
+                <div style="font-size: 16px; color: rgba(255,255,255,0.45); font-weight: 600; line-height: 1.6;">
+                    "Addressed complex interactions <span class="hl-red">via collaboration</span> with multiple teams and <span class="hl-red">expedited release</span>"
+                </div>
+                <div style="font-size: 13px; color: rgba(255,255,255,0.25); margin-top: 10px;">Vague. Everyone "collaborates." What did YOU do?</div>
+            </div>
+            <div style="flex: 1; background: rgba(163,230,53,0.06); border: 1px solid rgba(163,230,53,0.15); border-radius: 14px; padding: 24px;">
+                <div style="font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; color: #a3e635; margin-bottom: 10px;">After</div>
+                <div style="font-size: 16px; color: rgba(255,255,255,0.85); font-weight: 700; line-height: 1.6;">
+                    "...to resolve an aftertreatment regen defect <span class="hl-teal">blocking a factory warehouse hold</span>"
+                </div>
+                <div style="font-size: 13px; color: #5eead4; margin-top: 10px;">Specific constraint + context = credibility</div>
+            </div>
+        </div>
+
+        <div style="margin-top: auto; background: rgba(20,184,166,0.06); border: 1px solid rgba(20,184,166,0.12); border-radius: 12px; padding: 18px 24px; text-align: center;">
+            <div style="font-size: 17px; font-weight: 800; color: #5eead4;">The constraint IS the "How"</div>
+            <div style="font-size: 14px; color: rgba(255,255,255,0.40); margin-top: 4px;">
+                Factory warehouse hold. 48, hours. Emergency. These details prove this wasn't optional.
+            </div>
+        </div>
+    </div>
+
+    <div class="bottom-bar">
+        <div class="logo-group">
+            <div class="logo-icon">L<span class="sup">2</span></div>
+            <div class="logo-text">Launch<span class="accent">ToLead</span></div>
+        </div>
+        <div class="page-num">5 / 8</div>
+        <div class="website">LaunchToLead.io/free</div>
+    </div>
+</div>
+
+<!-- ========================================== -->
+<!-- SLIDE 6: STEP 4 — WHY                     -->
+<!-- ========================================== -->
+<div class="slide-label">Slide 6 — Step 4: Why</div>
+<div class="slide bg-dark">
+    <div class="dots"></div>
+    <div class="step-num">04</div>
+    <div class="orb" style="width:600px;height:600px;bottom:-100px;right:-150px;background:radial-gradient(circle,rgba(163,230,53,0.08) 0%,transparent 55%);"></div>
+
+    <div class="gc" style="padding-bottom: 80px; gap: 20px;">
+        <div class="tag tag-green"><span class="dot dot-green"></span> Step 4 of 4</div>
+        <div class="heading" style="font-size: 42px;">
+            <span class="lime">Why It Mattered</span>
+        </div>
+        <div class="sub" style="margin-bottom: 8px;">The Dragon Slayer. What was at risk if you hadn't done this?</div>
+
+        <div class="formula-piece" style="background: rgba(163,230,53,0.06); border: 1px solid rgba(163,230,53,0.15);">
+            <div class="piece-label" style="color: #a3e635;">Ask Yourself</div>
+            <div class="piece-question">"What would have happened if I hadn't done this? Who would have felt the pain?"</div>
+        </div>
+
+        <div style="display: flex; gap: 16px;">
+            <div style="flex: 1; background: rgba(239,68,68,0.06); border: 1px solid rgba(239,68,68,0.15); border-radius: 14px; padding: 24px;">
+                <div style="font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; color: #f87171; margin-bottom: 10px;">Before</div>
+                <div style="font-size: 16px; color: rgba(255,255,255,0.45); font-weight: 600; line-height: 1.6;">
+                    <span class="hl-red">(nothing)</span>
+                </div>
+                <div style="font-size: 13px; color: rgba(255,255,255,0.25); margin-top: 10px;">No consequence. No stakes. Reader asks: "So what?"</div>
+            </div>
+            <div style="flex: 1; background: rgba(163,230,53,0.06); border: 1px solid rgba(163,230,53,0.15); border-radius: 14px; padding: 24px;">
+                <div style="font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; color: #a3e635; margin-bottom: 10px;">After</div>
+                <div style="font-size: 16px; color: rgba(255,255,255,0.85); font-weight: 700; line-height: 1.6;">
+                    "...<span class="hl-green">preventing a production line stoppage</span>"
+                </div>
+                <div style="font-size: 13px; color: #a3e635; margin-top: 10px;">Now the reader sees the stakes. Factories don't stop for fun.</div>
+            </div>
+        </div>
+
+        <div style="margin-top: auto; background: rgba(163,230,53,0.06); border: 1px solid rgba(163,230,53,0.12); border-radius: 12px; padding: 18px 24px; text-align: center;">
+            <div style="font-size: 17px; font-weight: 800; color: #a3e635;">This is where most engineers stop.</div>
+            <div style="font-size: 14px; color: rgba(255,255,255,0.40); margin-top: 4px;">
+                They write what they did. They forget to say why anyone should care.
+            </div>
+        </div>
+    </div>
+
+    <div class="bottom-bar">
+        <div class="logo-group">
+            <div class="logo-icon">L<span class="sup">2</span></div>
+            <div class="logo-text">Launch<span class="accent">ToLead</span></div>
+        </div>
+        <div class="page-num">6 / 8</div>
+        <div class="website">LaunchToLead.io/free</div>
+    </div>
+</div>
+
+<!-- ========================================== -->
+<!-- SLIDE 7: THE FINAL BULLET                  -->
+<!-- ========================================== -->
+<div class="slide-label">Slide 7 — The Final Result</div>
+<div class="slide bg-green">
+    <div class="dots"></div>
+    <div class="orb" style="width:600px;height:600px;top:-100px;left:-100px;background:radial-gradient(circle,rgba(163,230,53,0.12) 0%,transparent 55%);"></div>
+
+    <div class="gc" style="padding-bottom: 80px; gap: 20px; justify-content: center;">
+        <div class="tag tag-green"><span class="dot dot-green"></span> The Final Bullet</div>
+        <div class="heading" style="font-size: 36px; margin-bottom: 4px;">All four layers. One bullet.</div>
+
+        <div class="bullet-display good" style="position: relative; font-size: 21px; border-color: rgba(163,230,53,0.30);">
+            "<span style="background: rgba(251,191,36,0.12); padding: 2px 6px; border-radius: 4px;"><span class="hl-amber">Built emergency experimental software in under 48 hours</span></span> to resolve an aftertreatment regen defect <span style="background: rgba(20,184,166,0.12); padding: 2px 6px; border-radius: 4px;"><span class="hl-teal">blocking a factory warehouse hold</span></span> &mdash; unblocking <span style="background: rgba(163,230,53,0.12); padding: 2px 6px; border-radius: 4px;"><span class="hl-green">15+ machines worth $5M+</span></span> from shipping and <span style="background: rgba(163,230,53,0.12); padding: 2px 6px; border-radius: 4px;"><span class="hl-green">preventing a production line stoppage</span></span>."
+        </div>
+
+        <div style="display: flex; gap: 12px; margin-top: 16px;">
+            <div style="flex: 1; background: rgba(251,191,36,0.08); border: 1px solid rgba(251,191,36,0.15); border-radius: 12px; padding: 16px 20px; text-align: center;">
+                <div style="font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; color: #fbbf24;">A</div>
+                <div style="font-size: 13px; color: rgba(255,255,255,0.60); font-weight: 700; margin-top: 4px;">Built in 48hrs</div>
+                <div style="font-size: 11px; color: rgba(255,255,255,0.30); margin-top: 2px;">Decisive + urgent</div>
+            </div>
+            <div style="flex: 1; background: rgba(163,230,53,0.08); border: 1px solid rgba(163,230,53,0.15); border-radius: 12px; padding: 16px 20px; text-align: center;">
+                <div style="font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; color: #a3e635;">M</div>
+                <div style="font-size: 13px; color: rgba(255,255,255,0.60); font-weight: 700; margin-top: 4px;">15+ machines, $5M+</div>
+                <div style="font-size: 11px; color: rgba(255,255,255,0.30); margin-top: 2px;">Concrete proof</div>
+            </div>
+            <div style="flex: 1; background: rgba(20,184,166,0.08); border: 1px solid rgba(20,184,166,0.15); border-radius: 12px; padding: 16px 20px; text-align: center;">
+                <div style="font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; color: #5eead4;">H</div>
+                <div style="font-size: 13px; color: rgba(255,255,255,0.60); font-weight: 700; margin-top: 4px;">Factory hold context</div>
+                <div style="font-size: 11px; color: rgba(255,255,255,0.30); margin-top: 2px;">Shows why it's hard</div>
+            </div>
+            <div style="flex: 1; background: rgba(163,230,53,0.08); border: 1px solid rgba(163,230,53,0.15); border-radius: 12px; padding: 16px 20px; text-align: center;">
+                <div style="font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; color: #a3e635;">W</div>
+                <div style="font-size: 13px; color: rgba(255,255,255,0.60); font-weight: 700; margin-top: 4px;">Production saved</div>
+                <div style="font-size: 11px; color: rgba(255,255,255,0.30); margin-top: 2px;">Dragon Slayer</div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 16px;">
+            <div style="font-size: 20px; font-weight: 800; color: rgba(255,255,255,0.80);">Same accomplishment. Same person. Same year.</div>
+            <div style="font-size: 16px; color: rgba(255,255,255,0.40); font-weight: 600; margin-top: 4px;">One bullet gets skipped. The other gets interviews.</div>
+        </div>
+    </div>
+
+    <div class="bottom-bar">
+        <div class="logo-group">
+            <div class="logo-icon">L<span class="sup">2</span></div>
+            <div class="logo-text">Launch<span class="accent">ToLead</span></div>
+        </div>
+        <div class="page-num">7 / 8</div>
+        <div class="website">LaunchToLead.io/free</div>
+    </div>
+</div>
+
+<!-- ========================================== -->
+<!-- SLIDE 8: CTA                               -->
+<!-- ========================================== -->
+<div class="slide-label">Slide 8 — CTA</div>
+<div class="slide bg-green">
+    <div class="dots"></div>
+    <div class="orb" style="width:700px;height:700px;top:-100px;right:-200px;background:radial-gradient(circle,rgba(163,230,53,0.14) 0%,transparent 55%);"></div>
+
+    <div class="gc" style="justify-content: center; align-items: center; text-align: center; padding-bottom: 80px; gap: 28px;">
+        <div class="tag tag-green"><span class="dot dot-green"></span> Free Framework</div>
+
+        <div class="heading" style="font-size: 46px;">
+            Every bullet on your resume<br>
+            has a <span class="lime">hidden $5M story.</span>
+        </div>
+
+        <div class="sub" style="max-width: 600px;">
+            The Impact Bullet Builder shows you how to find it, frame it, and make recruiters stop scrolling. Download the free guide.
+        </div>
+
+        <div style="background: linear-gradient(135deg, #a3e635, #14b8a6); color: #052e16; font-size: 22px; font-weight: 900; padding: 18px 48px; border-radius: 60px; margin-top: 12px; box-shadow: 0 12px 40px rgba(163,230,53,0.25);">
+            LaunchToLead.io/free
+        </div>
+
+        <div style="color: rgba(255,255,255,0.30); font-size: 14px; font-weight: 600; margin-top: 8px;">
+            Link in bio &bull; Free guide &bull; A + M + H + W = IMPACT
+        </div>
+    </div>
+
+    <div class="bottom-bar">
+        <div class="logo-group">
+            <div class="logo-icon">L<span class="sup">2</span></div>
+            <div class="logo-text">Launch<span class="accent">ToLead</span></div>
+        </div>
+        <div class="page-num">8 / 8</div>
+        <div class="website">LaunchToLead.io/free</div>
+    </div>
+</div>
+
+<!-- ========================================== -->
+<!-- POST CAPTION                               -->
+<!-- ========================================== -->
+<div style="width: 1080px; margin-top: 40px; padding: 40px; background: #1e293b; border-radius: 16px; color: rgba(255,255,255,0.7); font-size: 14px; line-height: 1.8;">
+    <div style="font-size: 18px; font-weight: 800; color: #a3e635; margin-bottom: 16px;">LINKEDIN POST CAPTION:</div>
+    <pre style="font-family: 'Plus Jakarta Sans', sans-serif; white-space: pre-wrap; color: rgba(255,255,255,0.70);">One bullet. Four layers. $5M in hidden impact.
+
+This is a real bullet from my resume at John Deere:
+
+"Built experimental software to correct aftertreatment regen issues and relieve warehouse hold in under 2 days."
+
+Sounds fine. But it's hiding everything that matters:
+
+&rarr; 15+ machines held hostage in a factory warehouse
+&rarr; $5M+ in revenue blocked from shipping
+&rarr; A production line at risk of stopping
+&rarr; I built the fix in 48 hours
+
+None of that was on my resume.
+
+So I rebuilt the bullet using the Impact Bullet Builder formula (A + M + H + W = Impact):
+
+1. Accomplishment: what I did (Built, emergency, 48 hours)
+2. Metric: how big ($5M+, 15+ machines)
+3. How: the context (factory warehouse hold, regen defect)
+4. Why: the stakes (preventing a production line stoppage)
+
+Same accomplishment. Same me.
+One version gets skipped. The other gets interviews.
+
+Swipe through to see the full breakdown.
+
+Every bullet on your resume has a hidden $5M story.
+The Impact Bullet Builder shows you how to find it.
+Download free: launchtolead.io/free (link in bio)
+
+#Resume #Engineering #CareerDevelopment #JobSearch #ImpactBulletBuilder</pre>
+</div>
+
+</body>
+</html>

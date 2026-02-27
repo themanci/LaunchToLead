@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedIn Post — The Intangibles</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background: #1a1a1a; min-height: 100vh; display: flex; flex-direction: column; align-items: center; padding: 40px 20px; }
+        .graphic { width: 1200px; height: 627px; background: linear-gradient(160deg, #f97316 0%, #ea580c 40%, #f59e0b 100%); position: relative; overflow: hidden; flex-shrink: 0; }
+
+        /* Background texture */
+        .bg-orb-1 { position: absolute; width: 600px; height: 600px; top: -250px; right: -100px; background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 60%); filter: blur(50px); }
+        .bg-orb-2 { position: absolute; width: 500px; height: 500px; bottom: -220px; left: -100px; background: radial-gradient(circle, rgba(0,0,0,0.10) 0%, transparent 60%); filter: blur(60px); }
+        .bg-dots { position: absolute; inset: 0; background-image: radial-gradient(rgba(0,0,0,0.06) 1px, transparent 1px); background-size: 28px 28px; z-index: 1; }
+        .bg-mesh { display: none; }
+        .bg-line-1 { position: absolute; top: 200px; left: -60px; width: 500px; height: 1.5px; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent); transform: rotate(-3deg); z-index: 1; }
+
+        /* Large faded quote mark */
+        .quote-deco { position: absolute; top: -30px; left: 30px; font-family: 'Space Grotesk', sans-serif; font-size: 320px; font-weight: 700; line-height: 1; color: rgba(0,0,0,0.08); z-index: 2; pointer-events: none; }
+
+        .gc { position: relative; z-index: 10; height: 100%; display: flex; align-items: center; padding: 40px 60px 55px; gap: 50px; }
+
+        /* Left side — quote */
+        .left { flex: 1; display: flex; flex-direction: column; justify-content: center; }
+        .quote-text { font-size: 42px; font-weight: 700; color: #fff; line-height: 1.35; font-style: italic; margin-bottom: 24px; padding-left: 28px; border-left: 5px solid rgba(255,255,255,0.5); }
+        .quote-text .hl { color: #0a0e1a; font-weight: 900; }
+        .quote-attr { padding-left: 28px; font-size: 19px; color: rgba(0,0,0,0.5); font-weight: 700; }
+        .quote-attr .name { color: rgba(0,0,0,0.7); }
+
+        /* Right side — takeaway */
+        .right { width: 420px; flex-shrink: 0; display: flex; flex-direction: column; gap: 14px; }
+
+        .pill-row { display: flex; flex-direction: column; gap: 10px; }
+        .pill { display: flex; align-items: center; gap: 16px; border-radius: 14px; padding: 18px 24px; }
+        .pill.green { background: rgba(0,0,0,0.15); border: 1px solid rgba(0,0,0,0.12); }
+        .pill.dim { background: rgba(0,0,0,0.08); border: 1px solid rgba(0,0,0,0.08); }
+        .pill .icon { width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0; }
+        .pill.green .icon { background: #fff; box-shadow: 0 0 8px rgba(255,255,255,0.4); }
+        .pill.dim .icon { background: rgba(0,0,0,0.25); }
+        .pill .label { font-size: 21px; font-weight: 700; }
+        .pill.green .label { color: #fff; }
+        .pill.dim .label { color: rgba(0,0,0,0.35); text-decoration: line-through; text-decoration-color: rgba(0,0,0,0.3); }
+        .pill .tag { margin-left: auto; font-family: 'Space Grotesk', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; padding: 6px 14px; border-radius: 50px; flex-shrink: 0; }
+        .pill.green .tag { background: rgba(255,255,255,0.15); color: #fff; }
+        .pill.dim .tag { background: rgba(0,0,0,0.08); color: rgba(0,0,0,0.4); }
+
+        .divider { height: 1px; background: linear-gradient(90deg, transparent, rgba(0,0,0,0.12), transparent); }
+
+        .bottom-line { text-align: center; font-size: 24px; font-weight: 800; color: #fff; line-height: 1.4; }
+        .bottom-line .green { color: #0a0e1a; }
+
+        /* Footer */
+        .bottom-bar { position: absolute; bottom: 0; left: 0; right: 0; z-index: 10; background: rgba(0,0,0,0.2); backdrop-filter: blur(12px); border-top: 1px solid rgba(255,255,255,0.1); padding: 12px 70px; display: flex; justify-content: space-between; align-items: center; }
+        .logo-group { display: flex; align-items: center; gap: 10px; }
+        .logo-icon { width: 30px; height: 30px; background: linear-gradient(135deg, rgba(163,230,53,0.25), rgba(20,184,166,0.25)); border: 1px solid rgba(163,230,53,0.5); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-family: 'Space Grotesk', sans-serif; font-size: 13px; font-weight: 700; color: #fff; }
+        .logo-icon .sup { font-size: 8px; vertical-align: super; color: #a3e635; }
+        .logo-text { font-size: 15px; font-weight: 800; color: #fff; letter-spacing: -0.3px; }
+        .logo-text .accent { background: linear-gradient(90deg, #a3e635, #14b8a6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .author { font-size: 14px; color: rgba(255,255,255,0.7); font-weight: 600; letter-spacing: 0.3px; }
+    </style>
+</head>
+<body>
+<div class="graphic">
+    <div class="bg-orb-1"></div><div class="bg-orb-2"></div>
+    <div class="bg-dots"></div><div class="bg-mesh"></div><div class="bg-line-1"></div>
+    <div class="quote-deco">"</div>
+
+    <div class="gc">
+        <div class="left">
+            <div class="quote-text">
+                "I look for <span class="hl">drive</span>, <span class="hl">curiosity</span>, and <span class="hl">potential to grow</span> — not a checklist of tools."
+            </div>
+            <div class="quote-attr">— One of my earliest Engineering Managers at <span class="name">John Deere</span></div>
+        </div>
+
+        <div class="right">
+            <div class="pill-row">
+                <div class="pill green"><span class="icon"></span><span class="label">Drive</span><span class="tag">Can't be taught</span></div>
+                <div class="pill green"><span class="icon"></span><span class="label">Curiosity</span><span class="tag">Can't be taught</span></div>
+                <div class="pill green"><span class="icon"></span><span class="label">Eagerness to grow</span><span class="tag">Can't be taught</span></div>
+            </div>
+            <div class="divider"></div>
+            <div class="pill dim"><span class="icon"></span><span class="label">Tools &amp; tech stack only</span><span class="tag">Teachable</span></div>
+            <div class="divider"></div>
+            <div class="bottom-line">Skills can be taught.<br><span class="green">Drive can't.</span></div>
+        </div>
+    </div>
+
+    <div class="bottom-bar">
+        <div class="logo-group"><div class="logo-icon">L<span class="sup">2</span></div><div class="logo-text">Launch<span class="accent">ToLead</span></div></div>
+        <div class="author">launchtolead.io</div>
+    </div>
+</div>
+</body>
+</html>

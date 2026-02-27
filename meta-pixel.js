@@ -4,7 +4,7 @@
  * 
  * This script handles:
  * - Base pixel initialization and PageView tracking
- * - Lead event tracking for strategy call booking clicks
+ * - Lead event tracking for Career Launch Call booking clicks
  * - ViewContent tracking for key pages
  * - fbc (Click ID) and fbp (Browser ID) parameter passing for improved Event Match Quality
  * 

@@ -154,10 +154,10 @@
                                 '<p class="font-bold text-red-200 text-sm">Only 10 Coaching Spots Available Per Month</p></div>' +
                             '<p class="text-red-300 text-xs text-center">Limited availability � High-touch 1-on-1 coaching</p>' +
                         '</div>' +
-                        '<!-- Strategy Call CTA Box -->' +
+                        '<!-- Career Launch Call CTA Box -->' +
                         '<div class="bg-gradient-to-br from-emerald-950/40 to-teal-950/40 border-2 border-emerald-600/50 rounded-xl p-6 mb-6">' +
                             '<div class="text-center mb-4">' +
-                                '<h3 class="text-xl font-bold text-white mb-2">?? Book Your Free 15-Minute Strategy Call</h3>' +
+                                '<h3 class="text-xl font-bold text-white mb-2">Book Your Free 15-Minute Career Launch Call</h3>' +
                                 '<p class="text-emerald-200 text-sm">Let\'s identify what\'s holding you back and how we can help</p>' +
                             '</div>' +
                             '<!-- What happens on the call -->' +

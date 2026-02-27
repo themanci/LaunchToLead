@@ -78,7 +78,7 @@ Tailwind default spacing with semantic guidelines:
     <h2 class="text-3xl lg:text-4xl font-bold text-white mb-6">Call to Action</h2>
     <a href="https://calendar.app.google/uzaLZUWSUH3ZbaGr6" target="_blank"
        class="inline-block bg-white text-brand-primary px-8 py-4 rounded-full font-semibold hover:shadow-fresh transition-all duration-300">
-      Book Your Free Strategy Call →
+      Book Your Free Career Launch Call →
     </a>
   </div>
 </section>

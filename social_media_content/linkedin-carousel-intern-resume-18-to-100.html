@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedIn Carousel — Intern Resume: 18 to 100</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background: #0f0f0f; min-height: 100vh; display: flex; flex-direction: column; align-items: center; padding: 40px 20px; gap: 40px; }
+        .slide-label { color: rgba(255,255,255,0.25); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-bottom: -28px; }
+
+        .slide { width: 1080px; height: 1080px; max-height: 1080px; aspect-ratio: 1 / 1; position: relative; overflow: hidden; flex-shrink: 0; display: flex; flex-direction: column; }
+
+        .bg-dark { background: linear-gradient(155deg, #0f172a 0%, #1e293b 50%, #0f172a 100%); }
+        .bg-red { background: linear-gradient(155deg, #450a0a 0%, #7f1d1d 40%, #991b1b 100%); }
+        .bg-green { background: linear-gradient(155deg, #052e16 0%, #14532d 50%, #052e16 100%); }
+        .bg-gradient { background: linear-gradient(155deg, #450a0a 0%, #1e293b 50%, #052e16 100%); }
+
+        .dots { position: absolute; inset: 0; background-image: radial-gradient(rgba(255,255,255,0.025) 1px, transparent 1px); background-size: 28px 28px; z-index: 1; }
+        .orb { position: absolute; border-radius: 50%; filter: blur(80px); z-index: 0; }
+        .gc { position: relative; z-index: 10; flex: 1; min-height: 0; display: flex; flex-direction: column; padding: 50px; }
+
+        .bottom-bar { z-index: 10; flex-shrink: 0; background: rgba(0,0,0,0.30); backdrop-filter: blur(12px); border-top: 1px solid rgba(255,255,255,0.06); padding: 18px 60px; display: flex; justify-content: space-between; align-items: center; }
+        .logo-group { display: flex; align-items: center; gap: 10px; }
+        .logo-icon { width: 30px; height: 30px; background: linear-gradient(135deg, rgba(163,230,53,0.30), rgba(20,184,166,0.30)); border: 1px solid rgba(255,255,255,0.35); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-family: 'Space Grotesk', sans-serif; font-size: 13px; font-weight: 700; color: #fff; }
+        .logo-icon .sup { font-size: 8px; vertical-align: super; }
+        .logo-text { font-size: 17px; font-weight: 800; color: #fff; }
+        .logo-text .accent { color: #a3e635; }
+        .page-num { font-family: 'Space Grotesk', sans-serif; font-size: 15px; color: rgba(255,255,255,0.35); font-weight: 600; }
+        .website { font-size: 16px; color: #a3e635; font-weight: 800; }
+
+        .tag { display: inline-flex; align-items: center; gap: 8px; border-radius: 50px; padding: 10px 26px 10px 18px; font-size: 16px; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; width: fit-content; }
+        .tag-dark { background: rgba(0,0,0,0.25); border: 1px solid rgba(255,255,255,0.10); color: rgba(255,255,255,0.80); }
+        .tag-red { background: rgba(239,68,68,0.15); border: 1px solid rgba(239,68,68,0.25); color: #fca5a5; }
+        .tag-green { background: rgba(163,230,53,0.15); border: 1px solid rgba(163,230,53,0.25); color: #a3e635; }
+        .dot { width: 7px; height: 7px; border-radius: 50%; }
+        .dot-amber { background: #fbbf24; box-shadow: 0 0 10px rgba(251,191,36,0.5); }
+        .dot-red { background: #ef4444; box-shadow: 0 0 10px rgba(239,68,68,0.5); }
+        .dot-green { background: #a3e635; box-shadow: 0 0 10px rgba(163,230,53,0.5); }
+
+        .heading { font-size: 58px; font-weight: 900; color: #fff; line-height: 1.15; }
+        .heading .lime { color: #a3e635; }
+        .heading .red { color: #f87171; }
+        .heading .amber { color: #fbbf24; }
+        .sub { font-size: 28px; color: rgba(255,255,255,0.50); font-weight: 600; line-height: 1.5; }
+
+        .hl-red { color: #f87171; font-weight: 800; }
+        .hl-green { color: #a3e635; font-weight: 800; }
+        .hl-lime { color: #bef264; font-weight: 800; }
+
+        .role-card { border-radius: 16px; padding: 22px 32px; margin-bottom: 10px; }
+        .role-card.before { background: rgba(239,68,68,0.08); border: 1px solid rgba(239,68,68,0.18); }
+        .role-card.after { background: rgba(163,230,53,0.06); border: 1px solid rgba(163,230,53,0.14); }
+        .role-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; }
+        .role-title { font-size: 22px; font-weight: 800; color: rgba(255,255,255,0.70); }
+        .role-label { font-size: 15px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; padding: 5px 16px; border-radius: 50px; }
+        .role-label.before { background: rgba(239,68,68,0.15); color: #f87171; }
+        .role-label.after { background: rgba(163,230,53,0.12); color: #a3e635; }
+        .role-bullet { font-size: 21px; font-weight: 600; line-height: 1.5; padding: 4px 0; }
+        .role-bullet.before { color: rgba(255,255,255,0.45); }
+        .role-bullet.after { color: rgba(255,255,255,0.85); }
+
+        .chip { display: inline-block; font-size: 15px; font-weight: 700; padding: 5px 14px; border-radius: 50px; margin-right: 8px; margin-top: 8px; }
+        .chip-red { background: rgba(239,68,68,0.12); color: #fca5a5; border: 1px solid rgba(239,68,68,0.20); }
+        .chip-green { background: rgba(163,230,53,0.10); color: #a3e635; border: 1px solid rgba(163,230,53,0.18); }
+
+        .sc-row { display: flex; align-items: center; padding: 18px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .sc-label { flex: 1; font-size: 24px; font-weight: 700; color: rgba(255,255,255,0.70); }
+        .sc-score { font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 700; width: 60px; text-align: center; }
+        .sc-score.bad { color: #f87171; }
+        .sc-score.good { color: #a3e635; }
+        .sc-arrow { color: rgba(255,255,255,0.15); font-size: 26px; width: 44px; text-align: center; }
+
+        /* ============================== */
+        /* PRINT STYLES                   */
+        /* ============================== */
+        @media print {
+            * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; color-adjust: exact !important; }
+
+            @page { size: 10in 10in; margin: 0; }
+
+            body {
+                background: white !important;
+                padding: 0 !important;
+                margin: 0 !important;
+                gap: 0 !important;
+                display: block !important;
+            }
+
+            .slide-label,
+            body > div:last-child {
+                display: none !important;
+            }
+
+            /* The slide is already display:flex flex-direction:column in base CSS.
+               .gc is flex:1 and .bottom-bar is flex-shrink:0.
+               That layout already works on screen — just resize for print. */
+            .slide {
+                width: 10in !important;
+                height: 10in !important;
+                max-height: 10in !important;
+                aspect-ratio: auto !important;
+                overflow: hidden !important;
+                display: flex !important;
+                flex-direction: column !important;
+                page-break-after: always;
+                break-after: page;
+                page-break-inside: avoid;
+                break-inside: avoid;
+                border-radius: 0 !important;
+            }
+            .slide:last-of-type {
+                page-break-after: auto;
+                break-after: auto;
+            }
+
+            .gc {
+                flex: 1 !important;
+                min-height: 0 !important;
+            }
+
+            .bottom-bar {
+                flex-shrink: 0 !important;
+                display: flex !important;
+                position: static !important;
+            }
+
+            .orb { display: none !important; }
+        }
+
+    </style>
+</head>
+<body>
+
+<!-- ========================================== -->
+<!-- SLIDE 1: HOOK                              -->
+<!-- ========================================== -->
+<div class="slide-label">Slide 1 — Hook</div>
+<div class="slide bg-green">
+    <div class="dots"></div>
+    <div class="orb" style="width:600px;height:600px;top:-200px;right:-100px;background:radial-gradient(circle,rgba(163,230,53,0.12) 0%,transparent 55%);"></div>
+    <div class="orb" style="width:500px;height:500px;bottom:-100px;left:-100px;background:radial-gradient(circle,rgba(20,184,166,0.10) 0%,transparent 55%);"></div>
+
+    <div class="gc" style="justify-content: center; align-items: center; text-align: center; gap: 28px;">
+        <div class="tag tag-dark"><span class="dot dot-amber"></span> Case Study</div>
+
+        <div class="heading" style="font-size: 60px; max-width: 900px;">
+            A sophomore's resume<br>scored <span class="red">18</span> out of 100.
+        </div>
+
+        <div class="sub" style="max-width: 750px; margin-top: 4px; font-size: 28px;">
+            Co-founded a business. Built an IoT system.<br>
+            Interned internationally.<br><br>
+            Great experience &mdash; the resume just <em>wasn't showing it.</em>
+        </div>
+
+        <div style="display: flex; gap: 32px; margin-top: 20px;">
+            <div style="text-align: center;">
+                <div style="font-family: 'Space Grotesk', sans-serif; font-size: 84px; font-weight: 700; color: #f87171; line-height: 1;">18</div>
+                <div style="font-size: 14px; color: rgba(255,255,255,0.30); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-top: 4px;">Before</div>
+            </div>
+            <svg style="width:42px;height:42px;color:rgba(255,255,255,0.15);align-self:center;" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
+            <div style="text-align: center;">
+                <div style="font-family: 'Space Grotesk', sans-serif; font-size: 84px; font-weight: 700; color: #a3e635; line-height: 1;">100</div>
+                <div style="font-size: 14px; color: rgba(255,255,255,0.30); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-top: 4px;">After</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bottom-bar">
+        <div class="logo-group">
+            <div class="logo-icon">L<span class="sup">2</span></div>
+            <div class="logo-text">Launch<span class="accent">ToLead</span></div>
+        </div>
+        <div class="page-num">1 / 8</div>
+        <div class="website">LaunchToLead.io/free</div>
+    </div>
+</div>
+
+<!-- ========================================== -->
+<!-- SLIDE 2: THE PROBLEM — Zero Numbers        -->
+<!-- ========================================== -->
+<div class="slide-label">Slide 2 — Zero Numbers</div>
+<div class="slide bg-red">
+    <div class="dots"></div>
+
+    <div class="gc" style="gap: 14px;">
+
+        <div class="role-card before">
+            <div class="role-header">
+                <span class="role-title">Co-Founder &mdash; Fragrance Startup</span>
+                <span class="role-label before">&#x2716; Before</span>
+            </div>
+            <div class="role-bullet before">"Conducted direct sales and one-on-one marketing to gather insights for future expansion."</div>
+            <div style="margin-top: 10px;">
+                <span class="chip chip-red">Revenue not shown</span>
+                <span class="chip chip-red">Transaction count missing</span>
+                <span class="chip chip-red">Could be more specific</span>
+            </div>
+        </div>
+
+        <div class="role-card before">
+            <div class="role-header">
+                <span class="role-title">Transport Data Intern</span>
+                <span class="role-label before">&#x2716; Before</span>
+            </div>
+            <div class="role-bullet before">"Successfully identified and rectified inconsistencies in data reporting, ensuring accuracy and reliability."</div>
+            <div style="margin-top: 10px;">
+                <span class="chip chip-red">How many errors?</span>
+                <span class="chip chip-red">What % improvement?</span>
+                <span class="chip chip-red">Add specifics</span>
+            </div>
+        </div>
+
+        <div class="role-card before">
+            <div class="role-header">
+                <span class="role-title">Cat Detection Project</span>
+                <span class="role-label before">&#x2716; Before</span>
+            </div>
+            <div class="role-bullet before">"Built a cat detection system using OpenCV and Raspberry Pi."</div>
+            <div style="margin-top: 10px;">
+                <span class="chip chip-red">Accuracy % missing</span>
+                <span class="chip chip-red">Dataset size missing</span>
+                <span class="chip chip-red">Performance stats missing</span>
+            </div>
+        </div>
+
+        <div style="margin-top: auto; text-align: center; font-size: 25px; font-weight: 800; color: rgba(255,255,255,0.60);">
+            The impact was there. The numbers just weren't on the page yet.
+        </div>
+    </div>
+
+    <div class="bottom-bar">
+        <div class="logo-group">
+            <div class="logo-icon">L<span class="sup">2</span></div>
+            <div class="logo-text">Launch<span class="accent">ToLead</span></div>
+        </div>
+        <div class="page-num">2 / 8</div>
+        <div class="website">LaunchToLead.io/free</div>
+    </div>
+</div>
+
+<!-- ========================================== -->
+<!-- SLIDE 3: COMPARISON — Startup Bullet       -->
+<!-- ========================================== -->
+<div class="slide-label">Slide 3 — Startup Revenue Before/After</div>
+<div class="slide bg-gradient">
+    <div class="dots"></div>
+
+    <div class="gc" style="gap: 14px;">
+        <div style="display: flex; align-items: center; justify-content: space-between;">
+            <div class="tag tag-dark"><span class="dot dot-amber"></span> Startup: Sales Bullet</div>
+            <span style="font-size: 16px; color: rgba(255,255,255,0.30); font-weight: 700;">$4,200 in revenue was right there</span>
+        </div>
+
+        <div class="role-card before">
+            <div class="role-header">
+                <span class="role-title">Original</span>
+                <span class="role-label before">&#x2716; Before</span>
+            </div>
+            <div class="role-bullet before">
+                "<span class="hl-red">Conducted</span> direct sales and one-on-one marketing to <span class="hl-red">gather insights</span> for future expansion."
+            </div>
+            <div style="margin-top: 10px;">
+                <span class="chip chip-red">Softer verb needed</span>
+                <span class="chip chip-red">Add revenue figure</span>
+                <span class="chip chip-red">Quantify transactions</span>
+            </div>
+        </div>
+
+        <div style="text-align: center; padding: 4px 0;">
+            <svg style="width:28px;height:28px;color:#a3e635;" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" /></svg>
+        </div>
+
+        <div class="role-card after">
+            <div class="role-header">
+                <span class="role-title">Rewritten with Impact Bullet Builder</span>
+                <span class="role-label after">&#x2714; After</span>
+            </div>
+            <div class="role-bullet after">
+                "<span class="hl-green">Generated $4,200+ in revenue</span> within 5 months through direct-to-consumer sales across <span class="hl-lime">80+ transactions</span>, using one-on-one customer interviews to identify <span class="hl-lime">3 new product lines</span> for Q2 2025 expansion."
+            </div>
+            <div style="margin-top: 8px;">
+                <span class="chip chip-green">$4,200+ revenue</span>
+                <span class="chip chip-green">80+ transactions</span>
+                <span class="chip chip-green">Expansion plan built</span>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: auto; background: rgba(163,230,53,0.06); border: 1px solid rgba(163,230,53,0.12); border-radius: 14px; padding: 20px 32px;">
+            <div style="font-size: 25px; font-weight: 800; color: #a3e635;">Same sales experience. Completely different story.</div>
+            <div style="font-size: 19px; color: rgba(255,255,255,0.35); font-weight: 600; margin-top: 6px;">The revenue was always there &mdash; it just needed to be on the resume.</div>
+        </div>
+    </div>
+
+    <div class="bottom-bar">
+        <div class="logo-group">
+            <div class="logo-icon">L<span class="sup">2</span></div>
+            <div class="logo-text">Launch<span class="accent">ToLead</span></div>
+        </div>
+        <div class="page-num">3 / 8</div>
+        <div class="website">LaunchToLead.io/free</div>
+    </div>
+</div>
+
+<!-- ========================================== -->
+<!-- SLIDE 4: COMPARISON — Data Intern          -->
+<!-- ========================================== -->
+<div class="slide-label">Slide 4 — Data Intern Before/After</div>
+<div class="slide bg-gradient">
+    <div class="dots"></div>
+
+    <div class="gc" style="gap: 14px;">
+        <div style="display: flex; align-items: center; justify-content: space-between;">
+            <div class="tag tag-dark"><span class="dot dot-amber"></span> Intern: Data Audit Bullet</div>
+            <span style="font-size: 16px; color: rgba(255,255,255,0.30); font-weight: 700;">120+ errors corrected &mdash; worth highlighting</span>
+        </div>
+
+        <div class="role-card before">
+            <div class="role-header">
+                <span class="role-title">Original</span>
+                <span class="role-label before">&#x2716; Before</span>
+            </div>
+            <div class="role-bullet before">
+                "<span class="hl-red">Successfully identified and rectified</span> inconsistencies in data reporting, <span class="hl-red">ensuring accuracy and reliability.</span>"
+            </div>
+            <div style="margin-top: 10px;">
+                <span class="chip chip-red">Add error count</span>
+                <span class="chip chip-red">Quantify improvement</span>
+                <span class="chip chip-red">Show the outcome</span>
+            </div>
+        </div>
+
+        <div style="text-align: center; padding: 4px 0;">
+            <svg style="width:28px;height:28px;color:#a3e635;" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" /></svg>
+        </div>
+
+        <div class="role-card after">
+            <div class="role-header">
+                <span class="role-title">Rewritten with Impact Bullet Builder</span>
+                <span class="role-label after">&#x2714; After</span>
+            </div>
+            <div class="role-bullet after">
+                "<span class="hl-green">Audited 6 months of ridership and revenue logs</span>, detecting and correcting <span class="hl-lime">120+ data discrepancies</span> that had inflated reporting errors by <span class="hl-lime">35%</span> &mdash; restoring stakeholder confidence in operational dashboards."
+            </div>
+            <div style="margin-top: 8px;">
+                <span class="chip chip-green">120+ errors found</span>
+                <span class="chip chip-green">35% accuracy fix</span>
+                <span class="chip chip-green">Stakeholder trust</span>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: auto; background: rgba(163,230,53,0.06); border: 1px solid rgba(163,230,53,0.12); border-radius: 14px; padding: 20px 32px;">
+            <div style="font-size: 25px; font-weight: 800; color: #a3e635;">This was a 1-month internship.</div>
+            <div style="font-size: 19px; color: rgba(255,255,255,0.35); font-weight: 600; margin-top: 6px;">Even short experiences have quantifiable impact when you ask the right questions.</div>
+        </div>
+    </div>
+
+    <div class="bottom-bar">
+        <div class="logo-group">
+            <div class="logo-icon">L<span class="sup">2</span></div>
+            <div class="logo-text">Launch<span class="accent">ToLead</span></div>
+        </div>
+        <div class="page-num">4 / 8</div>
+        <div class="website">LaunchToLead.io/free</div>
+    </div>
+</div>
+
+<!-- ========================================== -->
+<!-- SLIDE 5: COMPARISON — Cat Detection         -->
+<!-- ========================================== -->
+<div class="slide-label">Slide 5 — Cat Detection Before/After</div>
+<div class="slide bg-gradient">
+    <div class="dots"></div>
+
+    <div class="gc" style="gap: 14px;">
+        <div style="display: flex; align-items: center; justify-content: space-between;">
+            <div class="tag tag-dark"><span class="dot dot-amber"></span> Project: Cat Detection System</div>
+            <span style="font-size: 16px; color: rgba(255,255,255,0.30); font-weight: 700;">96% accuracy &mdash; waiting to be shown</span>
+        </div>
+
+        <div class="role-card before">
+            <div class="role-header">
+                <span class="role-title">Original (Full Project Entry)</span>
+                <span class="role-label before">&#x2716; Before</span>
+            </div>
+            <div class="role-bullet before" style="margin-bottom: 6px;">
+                "Built a cat detection system using OpenCV and Raspberry Pi."
+            </div>
+            <div class="role-bullet before">
+                "Enhanced the system into an automated door using sensors and actuators."
+            </div>
+            <div style="margin-top: 10px;">
+                <span class="chip chip-red">Accuracy % missing</span>
+                <span class="chip chip-red">Dataset size missing</span>
+                <span class="chip chip-red">Be more specific</span>
+            </div>
+        </div>
+
+        <div style="text-align: center; padding: 4px 0;">
+            <svg style="width:28px;height:28px;color:#a3e635;" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" /></svg>
+        </div>
+
+        <div class="role-card after">
+            <div class="role-header">
+                <span class="role-title">Rewritten with Impact Bullet Builder</span>
+                <span class="role-label after">&#x2714; After</span>
+            </div>
+            <div class="role-bullet after" style="margin-bottom: 8px;">
+                "<span class="hl-green">Engineered</span> a real-time cat detection system using OpenCV and a Raspberry Pi 4, training a Haar cascade classifier on <span class="hl-lime">500+ images</span> to achieve <span class="hl-lime">96% detection accuracy</span> at distances up to 3 meters."
+            </div>
+            <div class="role-bullet after">
+                "Extended the system into a fully automated pet door by integrating an <span class="hl-lime">ultrasonic sensor and servo actuator</span> &mdash; reducing response time to under <span class="hl-lime">1.5 seconds</span> with <span class="hl-lime">94% specificity</span>."
+            </div>
+            <div style="margin-top: 8px;">
+                <span class="chip chip-green">96% accuracy</span>
+                <span class="chip chip-green">500+ images</span>
+                <span class="chip chip-green">1.5s response</span>
+                <span class="chip chip-green">94% specificity</span>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: auto;">
+            <div style="font-size: 27px; font-weight: 800; color: rgba(255,255,255,0.60);">Side projects are goldmines &mdash; especially when you quantify them.</div>
+        </div>
+    </div>
+
+    <div class="bottom-bar">
+        <div class="logo-group">
+            <div class="logo-icon">L<span class="sup">2</span></div>
+            <div class="logo-text">Launch<span class="accent">ToLead</span></div>
+        </div>
+        <div class="page-num">5 / 8</div>
+        <div class="website">LaunchToLead.io/free</div>
+    </div>
+</div>
+
+<!-- ========================================== -->
+<!-- SLIDE 6: PATTERNS SUMMARY                  -->
+<!-- ========================================== -->
+<div class="slide-label">Slide 6 — 5 Patterns Fixed</div>
+<div class="slide bg-dark">
+    <div class="dots"></div>
+    <div class="orb" style="width:500px;height:500px;top:50%;left:50%;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(163,230,53,0.06) 0%,transparent 55%);"></div>
+
+    <div class="gc" style="gap: 14px;">
+        <div class="tag tag-green"><span class="dot dot-green"></span> 5 Patterns Improved</div>
+        <div class="heading" style="font-size: 42px; margin-bottom: 4px;">
+            What changed between <span class="red">18</span> and <span class="lime">100</span>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 4px;">
+
+            <div style="display: flex; gap: 12px; align-items: stretch;">
+                <div style="flex: 1; background: rgba(239,68,68,0.06); border: 1px solid rgba(239,68,68,0.15); border-radius: 14px; padding: 16px 18px;">
+                    <div style="font-size: 11px; font-weight: 800; color: #f87171; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 4px;">Before</div>
+                    <div style="font-size: 18px; font-weight: 700; color: rgba(255,255,255,0.50);">"Conducted," "Took responsibility," "Successfully identified"</div>
+                </div>
+                <div style="flex: 1; background: rgba(163,230,53,0.06); border: 1px solid rgba(163,230,53,0.15); border-radius: 14px; padding: 16px 18px;">
+                    <div style="font-size: 11px; font-weight: 800; color: #a3e635; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 4px;">After</div>
+                    <div style="font-size: 18px; font-weight: 700; color: rgba(255,255,255,0.85);">"Engineered," "Generated," "Audited," "Mapped"</div>
+                </div>
+            </div>
+
+            <div style="display: flex; gap: 12px; align-items: stretch;">
+                <div style="flex: 1; background: rgba(239,68,68,0.06); border: 1px solid rgba(239,68,68,0.15); border-radius: 14px; padding: 16px 18px;">
+                    <div style="font-size: 11px; font-weight: 800; color: #f87171; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 4px;">Before</div>
+                    <div style="font-size: 17px; font-weight: 700; color: rgba(255,255,255,0.50);">Zero metrics on entire resume</div>
+                </div>
+                <div style="flex: 1; background: rgba(163,230,53,0.06); border: 1px solid rgba(163,230,53,0.15); border-radius: 14px; padding: 16px 18px;">
+                    <div style="font-size: 11px; font-weight: 800; color: #a3e635; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 4px;">After</div>
+                    <div style="font-size: 17px; font-weight: 700; color: rgba(255,255,255,0.85);">30+ concrete numbers ($4,200, 96%, 120+, 80+, 35%...)</div>
+                </div>
+            </div>
+
+            <div style="display: flex; gap: 12px; align-items: stretch;">
+                <div style="flex: 1; background: rgba(239,68,68,0.06); border: 1px solid rgba(239,68,68,0.15); border-radius: 14px; padding: 16px 18px;">
+                    <div style="font-size: 11px; font-weight: 800; color: #f87171; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 4px;">Before</div>
+                    <div style="font-size: 17px; font-weight: 700; color: rgba(255,255,255,0.50);">"Ensuring accuracy and reliability"</div>
+                </div>
+                <div style="flex: 1; background: rgba(163,230,53,0.06); border: 1px solid rgba(163,230,53,0.15); border-radius: 14px; padding: 16px 18px;">
+                    <div style="font-size: 11px; font-weight: 800; color: #a3e635; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 4px;">After</div>
+                    <div style="font-size: 17px; font-weight: 700; color: rgba(255,255,255,0.85);">"Restoring stakeholder confidence in operational dashboards"</div>
+                </div>
+            </div>
+
+            <div style="display: flex; gap: 12px; align-items: stretch;">
+                <div style="flex: 1; background: rgba(239,68,68,0.06); border: 1px solid rgba(239,68,68,0.15); border-radius: 14px; padding: 16px 18px;">
+                    <div style="font-size: 11px; font-weight: 800; color: #f87171; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 4px;">Before</div>
+                    <div style="font-size: 18px; font-weight: 700; color: rgba(255,255,255,0.50);">Objective: "to gain hands-on experience"</div>
+                </div>
+                <div style="flex: 1; background: rgba(163,230,53,0.06); border: 1px solid rgba(163,230,53,0.15); border-radius: 14px; padding: 16px 18px;">
+                    <div style="font-size: 11px; font-weight: 800; color: #a3e635; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 4px;">After</div>
+                    <div style="font-size: 18px; font-weight: 700; color: rgba(255,255,255,0.85);">Summary proving it with: 96% accuracy, $4,200 revenue, 35% fix</div>
+                </div>
+            </div>
+
+            <div style="display: flex; gap: 12px; align-items: stretch;">
+                <div style="flex: 1; background: rgba(239,68,68,0.06); border: 1px solid rgba(239,68,68,0.15); border-radius: 14px; padding: 16px 18px;">
+                    <div style="font-size: 11px; font-weight: 800; color: #f87171; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 4px;">Before</div>
+                    <div style="font-size: 18px; font-weight: 700; color: rgba(255,255,255,0.50);">Skills: "C, Python" (end of list)</div>
+                </div>
+                <div style="flex: 1; background: rgba(163,230,53,0.06); border: 1px solid rgba(163,230,53,0.15); border-radius: 14px; padding: 16px 18px;">
+                    <div style="font-size: 11px; font-weight: 800; color: #a3e635; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 4px;">After</div>
+                    <div style="font-size: 18px; font-weight: 700; color: rgba(255,255,255,0.85);">Skills woven INTO bullets: "Python (800+ lines)," "OpenCV," "Shopify"</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="bottom-bar">
+        <div class="logo-group">
+            <div class="logo-icon">L<span class="sup">2</span></div>
+            <div class="logo-text">Launch<span class="accent">ToLead</span></div>
+        </div>
+        <div class="page-num">6 / 8</div>
+        <div class="website">LaunchToLead.io/free</div>
+    </div>
+</div>
+
+<!-- ========================================== -->
+<!-- SLIDE 7: SCORECARD                         -->
+<!-- ========================================== -->
+<div class="slide-label">Slide 7 — Scorecard</div>
+<div class="slide bg-green">
+    <div class="dots"></div>
+
+    <div class="gc" style="gap: 16px;">
+        <div class="tag tag-green"><span class="dot dot-green"></span> Full Scorecard</div>
+        <div class="heading" style="font-size: 48px; margin-bottom: 8px;">
+            <span class="red" style="text-decoration: line-through; text-decoration-thickness: 3px;">18</span> &rarr; <span class="lime">100</span> &mdash; Every Criteria
+        </div>
+
+        <div>
+            <div class="sc-row">
+                <span class="sc-label">Accomplishments (not duties)</span>
+                <span class="sc-score bad" style="opacity: 0.5;">2</span>
+                <span class="sc-arrow">&rarr;</span>
+                <span class="sc-score good">10</span>
+            </div>
+            <div class="sc-row">
+                <span class="sc-label">Metrics / Quantification</span>
+                <span class="sc-score bad" style="opacity: 0.5;">1</span>
+                <span class="sc-arrow">&rarr;</span>
+                <span class="sc-score good">10</span>
+            </div>
+            <div class="sc-row">
+                <span class="sc-label">How / Method Shown</span>
+                <span class="sc-score bad" style="opacity: 0.5;">2</span>
+                <span class="sc-arrow">&rarr;</span>
+                <span class="sc-score good">10</span>
+            </div>
+            <div class="sc-row">
+                <span class="sc-label">Why / Business Impact</span>
+                <span class="sc-score bad" style="opacity: 0.5;">1</span>
+                <span class="sc-arrow">&rarr;</span>
+                <span class="sc-score good">10</span>
+            </div>
+            <div class="sc-row">
+                <span class="sc-label">Me-in-We (ownership language)</span>
+                <span class="sc-score bad" style="opacity: 0.5;">3</span>
+                <span class="sc-arrow">&rarr;</span>
+                <span class="sc-score good">10</span>
+            </div>
+            <div class="sc-row">
+                <span class="sc-label">Dragon Slayer (stakes shown)</span>
+                <span class="sc-score bad" style="opacity: 0.5;">1</span>
+                <span class="sc-arrow">&rarr;</span>
+                <span class="sc-score good">10</span>
+            </div>
+            <div class="sc-row">
+                <span class="sc-label">Action Verbs</span>
+                <span class="sc-score bad" style="opacity: 0.5;">3</span>
+                <span class="sc-arrow">&rarr;</span>
+                <span class="sc-score good">10</span>
+            </div>
+            <div class="sc-row" style="border-bottom: none;">
+                <span class="sc-label">Bullet Quality Consistency</span>
+                <span class="sc-score bad" style="opacity: 0.5;">2</span>
+                <span class="sc-arrow">&rarr;</span>
+                <span class="sc-score good">10</span>
+            </div>
+        </div>
+
+        <div style="margin-top: auto; display: flex; gap: 20px; justify-content: center;">
+            <div style="background: rgba(0,0,0,0.25); border: 1px solid rgba(239,68,68,0.20); border-radius: 14px; padding: 22px 36px; text-align: center;">
+                <div style="font-family: 'Space Grotesk', sans-serif; font-size: 15px; font-weight: 700; color: #f87171; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 6px;">Before</div>
+                <div style="font-family: 'Space Grotesk', sans-serif; font-size: 52px; font-weight: 700; color: #f87171; opacity: 0.6; text-decoration: line-through; text-decoration-thickness: 3px;">18</div>
+                <div style="font-size: 13px; color: rgba(255,255,255,0.25);">The Doer</div>
+            </div>
+            <div style="display: flex; align-items: center;">
+                <svg style="width:38px;height:38px;color:#a3e635;" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
+            </div>
+            <div style="background: rgba(0,0,0,0.25); border: 1px solid rgba(163,230,53,0.25); border-radius: 14px; padding: 22px 36px; text-align: center;">
+                <div style="font-family: 'Space Grotesk', sans-serif; font-size: 15px; font-weight: 700; color: #a3e635; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 6px;">After</div>
+                <div style="font-family: 'Space Grotesk', sans-serif; font-size: 52px; font-weight: 700; color: #a3e635;">100</div>
+                <div style="font-size: 13px; color: rgba(255,255,255,0.50);">Impact Standard</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bottom-bar">
+        <div class="logo-group">
+            <div class="logo-icon">L<span class="sup">2</span></div>
+            <div class="logo-text">Launch<span class="accent">ToLead</span></div>
+        </div>
+        <div class="page-num">7 / 8</div>
+        <div class="website">LaunchToLead.io/free</div>
+    </div>
+</div>
+
+<!-- ========================================== -->
+<!-- SLIDE 8: CTA                               -->
+<!-- ========================================== -->
+<div class="slide-label">Slide 8 — CTA</div>
+<div class="slide bg-green">
+    <div class="dots"></div>
+    <div class="orb" style="width:700px;height:700px;top:-100px;right:-200px;background:radial-gradient(circle,rgba(163,230,53,0.14) 0%,transparent 55%);"></div>
+
+    <div class="gc" style="justify-content: center; align-items: center; text-align: center; gap: 28px;">
+        <div class="tag tag-green"><span class="dot dot-green"></span> Your Turn</div>
+
+        <div class="heading" style="font-size: 58px;">
+            You don't need more experience.<br>
+            You need a better <span class="lime">framework.</span>
+        </div>
+
+        <div class="sub" style="max-width: 700px; font-size: 26px;">
+            This student had a startup, an internship, and two engineering projects. Everything a recruiter looks for. It was just invisible on the page.
+        </div>
+
+        <div style="background: linear-gradient(135deg, #a3e635, #14b8a6); color: #052e16; font-size: 30px; font-weight: 900; padding: 24px 56px; border-radius: 60px; margin-top: 12px; box-shadow: 0 12px 40px rgba(163,230,53,0.25);">
+            LaunchToLead.io/free
+        </div>
+
+        <div style="color: rgba(255,255,255,0.30); font-size: 19px; font-weight: 600; margin-top: 8px;">
+            Link in bio &bull; Free guide &bull; Download the Impact Bullet Builder
+        </div>
+    </div>
+
+    <div class="bottom-bar">
+        <div class="logo-group">
+            <div class="logo-icon">L<span class="sup">2</span></div>
+            <div class="logo-text">Launch<span class="accent">ToLead</span></div>
+        </div>
+        <div class="page-num">8 / 8</div>
+        <div class="website">LaunchToLead.io/free</div>
+    </div>
+</div>
+
+<!-- ========================================== -->
+<!-- POST CAPTION                               -->
+<!-- ========================================== -->
+<div style="width: 1080px; margin-top: 40px; padding: 40px; background: #1e293b; border-radius: 16px; color: rgba(255,255,255,0.7); font-size: 14px; line-height: 1.8;">
+    <div style="font-size: 18px; font-weight: 800; color: #a3e635; margin-bottom: 16px;">LINKEDIN POST CAPTION:</div>
+    <pre style="font-family: 'Plus Jakarta Sans', sans-serif; white-space: pre-wrap; color: rgba(255,255,255,0.70);">A sophomore's resume scored 18 out of 100.
+
+She co-founded a business.
+Built an IoT cat detection system from scratch.
+Interned at a transport company in West Africa.
+
+The experience was impressive. The resume just wasn't showing it.
+
+13 bullets. Zero numbers.
+No revenue. No accuracy %. No dataset size.
+All of the impact was there &mdash; it just wasn't on the page yet.
+
+Here's what was hiding in plain sight:
+
+&bull; $4,200+ in startup revenue (never mentioned)
+&bull; 96% detection accuracy (never mentioned)
+&bull; 120+ data errors corrected (never mentioned)
+&bull; 80+ direct sales transactions (never mentioned)
+
+The experience was strong. The framing was invisible.
+
+After applying the Impact Bullet Builder formula (A + M + H + W = IMPACT):
+
+18 &rarr; 100.
+
+Same person. Same experience. Same resume.
+Different framework.
+
+You don't need more experience.
+You need a better way to write about the experience you already have.
+
+Download the Impact Bullet Builder free: launchtolead.io/free (link in bio)
+
+#Resume #Engineering #InternshipSearch #CareerDevelopment #ImpactBulletBuilder</pre>
+</div>
+
+</body>
+</html>
