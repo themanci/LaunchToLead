@@ -899,6 +899,13 @@
             formData.append('fields[willing_to_invest]', willingToInvest);
             formData.append('fields[qualified]', isQualified ? 'yes' : 'no');
 
+            // Append UTM attribution data
+            const utm = typeof getUtmData === 'function' ? getUtmData() : {};
+            if (utm.utm_source) formData.append('fields[utm_source]', utm.utm_source);
+            if (utm.utm_medium) formData.append('fields[utm_medium]', utm.utm_medium);
+            if (utm.utm_campaign) formData.append('fields[utm_campaign]', utm.utm_campaign);
+            if (utm.traffic_source) formData.append('fields[traffic_source]', utm.traffic_source);
+
             await fetch('https://app.kit.com/forms/9087434/subscriptions', {
                 method: 'POST',
                 body: formData,
