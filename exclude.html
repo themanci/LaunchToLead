@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Internal Traffic Excluded</title>
+    <style>
+        body { font-family: system-ui, sans-serif; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; background: #f8fafc; }
+        .card { text-align: center; max-width: 420px; padding: 2rem; }
+        .icon { font-size: 3rem; margin-bottom: 1rem; }
+        h1 { font-size: 1.25rem; color: #0f172a; margin-bottom: 0.5rem; }
+        p { color: #64748b; font-size: 0.95rem; line-height: 1.5; }
+        .status { margin-top: 1rem; padding: 0.75rem 1.5rem; border-radius: 0.5rem; font-weight: 600; font-size: 0.9rem; }
+        .set { background: #dcfce7; color: #166534; }
+        .already { background: #e0f2fe; color: #0c4a6e; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="icon" id="icon"></div>
+        <h1 id="heading"></h1>
+        <p id="message"></p>
+        <div class="status" id="status"></div>
+    </div>
+    <script>
+        var cookieName = 'ltl_internal';
+        var alreadySet = document.cookie.includes(cookieName + '=true');
+
+        if (!alreadySet) {
+            // Set cookie for 1 year
+            var expires = new Date(Date.now() + 365 * 24 * 60 * 60 * 1000).toUTCString();
+            document.cookie = cookieName + '=true; expires=' + expires + '; path=/; SameSite=Lax';
+        }
+
+        document.getElementById('icon').textContent = alreadySet ? '\u2705' : '\uD83D\uDEE1\uFE0F';
+        document.getElementById('heading').textContent = alreadySet
+            ? 'Already Excluded'
+            : 'Device Excluded from GA4';
+        document.getElementById('message').textContent = alreadySet
+            ? 'This device was already marked as internal. GA4 will not track your visits.'
+            : 'This device is now marked as internal. GA4 will no longer count your visits on this device.';
+        var statusEl = document.getElementById('status');
+        statusEl.textContent = alreadySet ? 'Cookie already active' : 'Cookie set — you\'re done';
+        statusEl.className = 'status ' + (alreadySet ? 'already' : 'set');
+    </script>
+</body>
+</html>
