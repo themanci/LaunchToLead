@@ -4,22 +4,16 @@
  * 
  * This script handles:
  * - Base Insight Tag initialization and page view tracking
- * - Lead conversion event tracking on form submission
- * - Booking conversion tracking
  * - LinkedIn click ID (li_fat_id) cookie preservation for attribution
+ * 
+ * Conversion tracking is handled by URL-rule based conversions in Campaign Manager:
+ *   - "Lead - Impact Bullet Builder Download" → URL contains /landing/thank-you
+ *   - "Booking - Career Launch Call"          → URL contains /landing/booking-confirmed
  * 
  * Funnel:
  *   Lead magnet form → thank-you.html → offer.html → booking-confirmed.html
- *   All leads follow the same path (no split routing).
  * 
- * Usage: Include this script in the <head> of all pages after the noscript fallback
- * 
- * Setup:
- * 1. Go to LinkedIn Campaign Manager → Analyze → Insight Tag
- * 2. Copy your Partner ID (a number like 7654321)
- * 3. Replace the Partner ID below with that number
- * 4. (Optional) Replace conversion ID placeholders with your actual conversion IDs
- *    from Campaign Manager → Analyze → Conversion Tracking → Create Conversion
+ * Usage: Include this script in the <head> of all pages.
  */
 
 // =============================================
@@ -63,43 +57,10 @@ window._linkedin_data_partner_ids.push(_linkedin_partner_id);
 })();
 
 // =============================================
-// 3. CONVERSION EVENT TRACKING
+// 3. CONVERSION TRACKING (URL-RULE BASED)
 // =============================================
-
-// Conversion IDs — replace these with your actual IDs from Campaign Manager
-// Go to: Analyze → Conversion Tracking → Create Conversion → "Use event-specific pixel"
-// LinkedIn will give you a conversion_id number for each conversion.
-var LTL_LINKEDIN_CONVERSIONS = {
-    lead: null,            // Replace null with your Lead conversion ID, e.g., 19876543
-    booking: null          // Replace null with your Booking conversion ID
-};
-
-/**
- * Fire a LinkedIn conversion event
- * @param {string} type - One of: 'lead', 'qualifiedLead', 'booking'
- */
-function ltlLinkedInConversion(type) {
-    var conversionId = LTL_LINKEDIN_CONVERSIONS[type];
-    if (conversionId && typeof window.lintrk === 'function') {
-        window.lintrk('track', { conversion_id: conversionId });
-        console.log('[LTL] LinkedIn conversion fired:', type, conversionId);
-    }
-}
-
-// =============================================
-// 4. PAGE-SPECIFIC CONVERSION TRACKING
-// =============================================
-
-(function() {
-    var path = window.location.pathname;
-
-    // Thank-you page — lead converted (form submitted, PDF sent)
-    if (path.includes('/thank-you.html')) {
-        ltlLinkedInConversion('lead');
-    }
-
-    // Booking confirmed — Career Launch Call booked
-    if (path.includes('/booking-confirmed.html')) {
-        ltlLinkedInConversion('booking');
-    }
-})();
+// Conversions are tracked automatically by LinkedIn using URL rules
+// configured in Campaign Manager → Analyze → Conversion Tracking:
+//   - "Lead - Impact Bullet Builder Download" → URL contains /landing/thank-you
+//   - "Booking - Career Launch Call"          → URL contains /landing/booking-confirmed
+// No event-specific code is needed — the Insight Tag + page load handles it.
