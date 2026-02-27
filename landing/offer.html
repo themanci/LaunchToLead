@@ -935,15 +935,13 @@
         document.getElementById('qualify-form-container').classList.add('hidden');
 
         if (isQualified) {
-            // Prefill Calendly widget with name, email, and traffic source
+            // Prefill Calendly widget with name and email
             const calendlyWidget = document.querySelector('.calendly-inline-widget');
             if (calendlyWidget) {
                 const baseUrl = 'https://calendly.com/themanci-launchtolead/career-launch-call?primary_color=064e3b';
-                const utm = typeof getUtmData === 'function' ? getUtmData() : {};
                 const prefillParams = new URLSearchParams();
                 prefillParams.set('name', firstName);
                 prefillParams.set('email', email);
-                if (utm.traffic_source) prefillParams.set('a1', utm.traffic_source);
                 calendlyWidget.setAttribute('data-url', baseUrl + '&' + prefillParams.toString());
             }
 
