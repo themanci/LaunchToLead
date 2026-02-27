@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Word Everyone Misses — LaunchToLead Infographic</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #e8e8e8;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+
+  .canvas {
+    width: 1080px;
+    background: #FFFEF8;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* ── TITLE BANNER ── */
+  .title-banner {
+    background: linear-gradient(135deg, #0d1f0d 0%, #14291a 50%, #0f1f14 100%);
+    padding: 54px 56px 50px;
+    text-align: center;
+    position: relative;
+  }
+  .title-banner::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, #a3e635, #14b8a6, #a3e635);
+  }
+  .title-main {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 86px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.15;
+  }
+  .title-main .hl {
+    color: #a3e635;
+    text-decoration: underline;
+    text-decoration-color: #a3e635;
+    text-underline-offset: 8px;
+    text-decoration-thickness: 5px;
+  }
+  .title-main .hl-red {
+    color: #f87171;
+  }
+  .title-sub {
+    font-size: 34px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.7);
+    margin-top: 14px;
+    line-height: 1.45;
+  }
+
+  /* ── SECTION GRID ── */
+  .grid-row {
+    display: flex;
+    gap: 18px;
+    padding: 18px 28px 0;
+  }
+
+  /* ── SECTION BOX ── */
+  .section-box {
+    border-radius: 16px;
+    padding: 30px 28px 26px;
+    flex: 1;
+    position: relative;
+    border: 1.5px solid rgba(0,0,0,0.06);
+  }
+
+  /* ── COLOR THEMES ── */
+  .bg-lime    { background: #F3FDDA; }
+  .bg-teal    { background: #DFFAF5; }
+  .bg-yellow  { background: #FFF9DB; }
+  .bg-peach   { background: #FFF0E4; }
+  .bg-pink    { background: #FFE8EE; }
+  .bg-lavender{ background: #EDE8FF; }
+  .bg-mint    { background: #E0FFF0; }
+  .bg-red-soft{ background: #FFF0F0; }
+  .bg-green-soft { background: #F0FFF4; }
+
+  /* ── NUMBER BADGE ── */
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 26px;
+    color: #fff;
+    margin-right: 14px;
+    flex-shrink: 0;
+  }
+  .badge-emerald { background: #65a30d; }
+  .badge-teal    { background: #0d9488; }
+  .badge-amber   { background: #d97706; }
+  .badge-rose    { background: #e11d48; }
+  .badge-violet  { background: #7c3aed; }
+  .badge-red     { background: #dc2626; }
+
+  /* ── SECTION HEADERS ── */
+  .section-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+  .section-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 44px;
+    color: #1a1a1a;
+    line-height: 1.15;
+  }
+
+  /* ── BODY TEXT ── */
+  .body {
+    font-size: 28px;
+    line-height: 1.5;
+    color: #333;
+    font-weight: 500;
+  }
+  .body strong {
+    font-weight: 800;
+    color: #1a1a1a;
+  }
+  .body .accent {
+    color: #65a30d;
+    font-weight: 800;
+  }
+  .body .accent-red {
+    color: #dc2626;
+    font-weight: 800;
+  }
+
+  /* ── CALLOUT STRIP ── */
+  .callout-strip {
+    background: linear-gradient(90deg, #14b8a6, #65a30d);
+    padding: 18px 32px;
+    margin: 18px 28px 0;
+    border-radius: 12px;
+    text-align: center;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    color: #fff;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+
+  /* ── THE QUESTION VISUAL ── */
+  .question-visual {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 42px;
+    font-weight: 600;
+    color: #555;
+    text-align: center;
+    line-height: 1.6;
+    padding: 10px 0;
+  }
+  .question-visual .word-a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 62px;
+    font-weight: 800;
+    color: #0d1f0d;
+    background: #a3e635;
+    width: 92px;
+    height: 92px;
+    border-radius: 50%;
+    margin: 0 6px;
+    vertical-align: middle;
+    box-shadow: 0 0 0 6px rgba(163,230,53,0.3);
+  }
+
+  /* ── COMPARE CARDS ── */
+  .compare-card {
+    border-radius: 14px;
+    padding: 24px 24px;
+    position: relative;
+  }
+  .compare-card.bad {
+    background: rgba(220,38,38,0.05);
+    border: 2px solid rgba(220,38,38,0.18);
+    border-left: 5px solid #dc2626;
+  }
+  .compare-card.good {
+    background: rgba(101,163,13,0.06);
+    border: 2px solid rgba(101,163,13,0.2);
+    border-left: 5px solid #65a30d;
+  }
+  .compare-label {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 10px;
+  }
+  .compare-label.red { color: #dc2626; }
+  .compare-label.green { color: #65a30d; }
+  .compare-text {
+    font-size: 27px;
+    line-height: 1.55;
+    color: #333;
+    font-weight: 500;
+    font-style: italic;
+  }
+
+  /* ── KEY POINT ── */
+  .key-point {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: 12px;
+  }
+  .key-point .arrow {
+    color: #65a30d;
+    font-weight: 700;
+    font-size: 22px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  /* ── BOTTOM BANNER ── */
+  .bottom-banner {
+    background: linear-gradient(135deg, #0d1f0d 0%, #14291a 50%, #0f1f14 100%);
+    margin: 22px 28px 28px;
+    border-radius: 16px;
+    padding: 30px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+  }
+  .bottom-banner::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #a3e635, #14b8a6, #a3e635);
+  }
+  .bottom-left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  .logo-circle {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #a3e635, #14b8a6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 26px;
+    color: #0d1f0d;
+  }
+  .bottom-text .name {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 34px;
+    color: #fff;
+  }
+  .bottom-text .tagline {
+    font-size: 24px;
+    color: rgba(255,255,255,0.6);
+    margin-top: 2px;
+  }
+  .bottom-cta {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 28px;
+    color: #0d1f0d;
+    background: #a3e635;
+    padding: 14px 28px;
+    border-radius: 10px;
+  }
+</style>
+</head>
+<body>
+
+<div class="canvas">
+
+  <!-- ═══ TITLE BANNER ═══ -->
+  <div class="title-banner">
+    <div class="title-main">The Word <span class="hl-red">Everyone</span> Misses</div>
+    <div class="title-sub">There's one word in every behavioral interview question<br>that most people completely ignore.</div>
+  </div>
+
+  <!-- ═══ THE QUESTION ═══ -->
+  <div class="grid-row">
+    <div class="section-box bg-yellow" style="flex: 1 1 100%;">
+      <div class="section-header">
+        <span class="section-title">The Question</span>
+      </div>
+      <div class="question-visual">
+        "Tell me about <span class="word-a">A</span> time you&hellip;"
+      </div>
+      <div class="body" style="text-align:center; margin-top:10px;">
+        <strong>A</strong> = one story, one incident, one moment.<br>
+        Not a pattern. Not a habit. Not "usually" or "sometimes."
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ BEFORE / AFTER ═══ -->
+  <div class="grid-row">
+
+    <!-- BAD -->
+    <div class="section-box bg-red-soft">
+      <div class="section-header">
+        <span class="badge badge-red">✗</span>
+        <span class="section-title">A Pattern</span>
+      </div>
+      <div class="compare-card bad">
+        <div class="compare-label red">What most people say</div>
+        <div class="compare-text">
+          "Sometimes customers get upset and I help calm them down. Usually I just try to de-escalate the situation and make sure they leave happy."
+        </div>
+      </div>
+      <div class="body" style="margin-top:14px; text-align:center;">
+        Vague. Generic. <strong class="accent-red">Forgettable.</strong>
+      </div>
+    </div>
+
+    <!-- GOOD -->
+    <div class="section-box bg-green-soft">
+      <div class="section-header">
+        <span class="badge badge-emerald">✓</span>
+        <span class="section-title">A Moment</span>
+      </div>
+      <div class="compare-card good">
+        <div class="compare-label green">What you should say</div>
+        <div class="compare-text">
+          "One time, a woman placed a huge catering order for a birthday party. We completely missed it. She showed up at 6pm — nothing was ready. She called my manager on the spot."
+        </div>
+      </div>
+      <div class="body" style="margin-top:14px; text-align:center;">
+        Specific. Visual. <strong class="accent">Unforgettable.</strong>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ═══ CTA STRIP ═══ -->
+  <div class="callout-strip" style="font-size:30px; text-transform:none; letter-spacing:0;">
+    Before your next interview — ask yourself: "Am I describing a pattern, or <strong>a moment</strong>?"
+  </div>
+
+  <!-- ═══ BOTTOM BANNER ═══ -->
+  <div class="bottom-banner">
+    <div class="bottom-left">
+      <div class="logo-circle">L²</div>
+      <div class="bottom-text">
+        <div class="name">LaunchToLead</div>
+        <div class="tagline">Helping engineers launch careers that lead</div>
+      </div>
+    </div>
+    <div class="bottom-cta">FOLLOW FOR MORE ▸</div>
+  </div>
+
+</div>
+
+</body>
+</html>

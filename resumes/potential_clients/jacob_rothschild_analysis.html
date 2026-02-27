@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Analysis — Jacob Rothschild | LaunchToLead</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .font-mono-num { font-family: 'Space Grotesk', monospace; }
+
+        /* Download PDF Button */
+        #download-btn {
+            position: fixed; top: 20px; right: 20px; z-index: 9999;
+            background: linear-gradient(135deg, #a3e635, #14b8a6); color: #052e16;
+            font-family: 'Plus Jakarta Sans', sans-serif; font-size: 16px; font-weight: 800;
+            padding: 14px 32px; border: none; border-radius: 50px; cursor: pointer;
+            box-shadow: 0 8px 30px rgba(163,230,53,0.3);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        #download-btn:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(163,230,53,0.4); }
+
+        @media print {
+            @page {
+                size: letter;
+                margin: 0.5in 0.65in;
+            }
+            body {
+                background: white !important;
+                color: #1e293b !important;
+                padding: 0 !important;
+                margin: 0 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            #download-btn { display: none !important; }
+            .page-break { break-before: page; }
+            .keep-together { break-inside: avoid; }
+            .space-y-4 > div,
+            .space-y-6 > div,
+            .grid > div { break-inside: avoid; }
+            section .mb-5 { break-inside: avoid; }
+            ul.space-y-3 > li { break-inside: avoid; }
+            tbody tr { break-inside: avoid; }
+            .rounded-xl.overflow-hidden { break-inside: avoid; }
+            h2, h3, h4 { break-after: avoid; }
+            section {
+                box-shadow: none !important;
+                border: 1px solid #e2e8f0 !important;
+            }
+            .max-w-4xl { max-width: 100% !important; }
+            .bg-red-900, .bg-amber-800, .bg-emerald-900 {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-700">
+
+<!-- Download PDF Button -->
+<button id="download-btn" onclick="window.print()">Download PDF</button>
+
+<!-- ============================================ -->
+<!-- HEADER                                        -->
+<!-- ============================================ -->
+<header class="bg-emerald-900 text-white py-6 px-6">
+    <div class="max-w-4xl mx-auto">
+        <div class="flex items-center gap-3 mb-4">
+            <div class="bg-white text-emerald-900 w-10 h-10 rounded-xl flex items-center justify-center font-bold text-sm shadow">L²</div>
+            <span class="text-xl font-bold">Launch<span class="font-light text-lime-300">ToLead</span></span>
+        </div>
+        <h1 class="text-3xl font-extrabold mb-1">Resume Analysis & Rewrite</h1>
+        <p class="text-emerald-200">Jacob Rothschild — Computer Engineering</p>
+        <p class="text-emerald-400/60 text-sm mt-1">Analyzed against the Impact Bullet Builder™ framework</p>
+    </div>
+</header>
+
+<div class="max-w-4xl mx-auto px-6 py-10 space-y-10">
+
+    <!-- ============================================ -->
+    <!-- SECTION 1: OVERALL SCORE                     -->
+    <!-- ============================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 overflow-hidden">
+        <div class="p-8">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="w-8 h-8 rounded-lg bg-red-500 text-white flex items-center justify-center text-sm font-bold">📊</div>
+                <h2 class="text-2xl font-extrabold text-slate-900">Overall Score</h2>
+            </div>
+
+            <div class="flex items-center gap-8 mb-6">
+                <div class="text-center">
+                    <p class="font-mono-num text-6xl font-extrabold text-red-500">30</p>
+                    <p class="text-slate-500 text-sm">out of 100</p>
+                </div>
+                <div class="flex-1">
+                    <div class="h-4 bg-slate-100 rounded-full overflow-hidden mb-2">
+                        <div class="h-full rounded-full" style="width: 30%; background: linear-gradient(to right, #ef4444, #f97316);"></div>
+                    </div>
+                    <div class="flex justify-between text-xs text-slate-400">
+                        <span>0 — Invisible</span>
+                        <span>50 — Achiever</span>
+                        <span>100 — Impact Standard</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="bg-amber-50 border border-amber-200 rounded-xl p-4 text-center">
+                    <p class="font-mono-num text-2xl font-bold text-amber-500">4/10</p>
+                    <p class="text-amber-700 text-xs font-semibold mt-1">Accomplishments</p>
+                    <p class="text-amber-400 text-[10px]">Work exp has some; projects are task lists</p>
+                </div>
+                <div class="bg-amber-50 border border-amber-200 rounded-xl p-4 text-center">
+                    <p class="font-mono-num text-2xl font-bold text-amber-500">5/10</p>
+                    <p class="text-amber-700 text-xs font-semibold mt-1">Metrics</p>
+                    <p class="text-amber-400 text-[10px]">Some time savings, 97% cost cut — no $ amounts</p>
+                </div>
+                <div class="bg-amber-50 border border-amber-200 rounded-xl p-4 text-center">
+                    <p class="font-mono-num text-2xl font-bold text-amber-500">6/10</p>
+                    <p class="text-amber-700 text-xs font-semibold mt-1">How / Method</p>
+                    <p class="text-amber-400 text-[10px]">Tools shown in context — solid</p>
+                </div>
+                <div class="bg-red-50 border border-red-200 rounded-xl p-4 text-center">
+                    <p class="font-mono-num text-2xl font-bold text-red-500">2/10</p>
+                    <p class="text-red-700 text-xs font-semibold mt-1">Why / Business Impact</p>
+                    <p class="text-red-400 text-[10px]">"Hours saved" hinted but no CEO-level impact</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Verdict -->
+        <div class="bg-red-900 text-white p-6">
+            <p class="font-bold text-lg mb-2">Verdict: "The Doer" Tier — On the Edge</p>
+            <p class="text-red-200 text-sm">Jacob's resume is a notch above most new-grad resumes because it has <strong>some real metrics</strong> — 50+ hours saved, 97% cost reduction, 10+ hours saved. That puts it right on the border of "The Achiever" tier. But those numbers are orphaned: they're not connected to a dollar amount, a business outcome, or a problem that was solved. The university projects read like lab reports, and the swim club section is pure filler. With the Impact Bullet Builder formula applied, this resume could jump to 65+ easily — the raw material is strong.</p>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SECTION 2: KEY ISSUES IDENTIFIED             -->
+    <!-- ============================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 p-8 page-break">
+        <div class="flex items-center gap-3 mb-6">
+            <div class="w-8 h-8 rounded-lg bg-red-500 text-white flex items-center justify-center text-sm font-bold">🔍</div>
+            <h2 class="text-2xl font-extrabold text-slate-900">Key Issues Identified</h2>
+        </div>
+
+        <div class="space-y-4">
+            <div class="flex items-start gap-3 bg-red-50 rounded-xl p-5 border border-red-200">
+                <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-red-600 text-white font-bold text-sm flex-shrink-0">1</span>
+                <div>
+                    <p class="font-bold text-red-900">Metrics exist but are disconnected from business impact</p>
+                    <p class="text-red-700 text-sm mt-1">"50 plus hours saved annually" and "cutting annual costs by approximately 97%" are good numbers — but 97% of WHAT? $500? $50,000? Without a dollar anchor, the reader can't gauge the impact. The <strong>Why</strong> component of the Impact Bullet Builder is missing on every single bullet. No one reading this knows why the CEO would care.</p>
+                </div>
+            </div>
+
+            <div class="flex items-start gap-3 bg-red-50 rounded-xl p-5 border border-red-200">
+                <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-red-600 text-white font-bold text-sm flex-shrink-0">2</span>
+                <div>
+                    <p class="font-bold text-red-900">"Made code more maintainable" — vague and uses weak verb</p>
+                    <p class="text-red-700 text-sm mt-1">"Made" is one of the weakest verbs you can open a bullet with. And "more maintainable" is a subjective claim with no proof. This violates the <strong>BS Meter</strong> principle — show it, don't claim it. How much more maintainable? What did you refactor? How many lines? How many fewer bugs in the next sprint?</p>
+                </div>
+            </div>
+
+            <div class="flex items-start gap-3 bg-red-50 rounded-xl p-5 border border-red-200">
+                <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-red-600 text-white font-bold text-sm flex-shrink-0">3</span>
+                <div>
+                    <p class="font-bold text-red-900">"Co-led" and team language throughout projects</p>
+                    <p class="text-red-700 text-sm mt-1">"Co-led the project management" and "with a team of students" — this is classic <strong>Me-in-We Extractor™</strong> territory. "Co-led" is hedge language. Did you lead or didn't you? What was YOUR specific contribution to the project management? "Led a collaborative effort to validate" is similarly vague — what did YOU personally validate?</p>
+                </div>
+            </div>
+
+            <div class="flex items-start gap-3 bg-red-50 rounded-xl p-5 border border-red-200">
+                <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-red-600 text-white font-bold text-sm flex-shrink-0">4</span>
+                <div>
+                    <p class="font-bold text-red-900">No Dragon Slayer context on any bullet</p>
+                    <p class="text-red-700 text-sm mt-1">Every bullet jumps straight into the action with no setup. What was broken? What was slow? What was costing money? Per the Dragon Slayer technique — the 97% cost cut is meaningless without knowing what the problem was before Jacob fixed it. Paint the monster, THEN slay it.</p>
+                </div>
+            </div>
+
+            <div class="flex items-start gap-3 bg-red-50 rounded-xl p-5 border border-red-200">
+                <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-red-600 text-white font-bold text-sm flex-shrink-0">5</span>
+                <div>
+                    <p class="font-bold text-red-900">"Learned how to program" — passive opener</p>
+                    <p class="text-red-700 text-sm mt-1">Starting a bullet with "Learned" tells the reader you were a student, not a contributor. The fact that Jacob picked up Verilog in 1 month is impressive — but it needs to be reframed as a result, not a process. "Self-taught Verilog in under 30 days, then programmed..." flips it from passive to assertive.</p>
+                </div>
+            </div>
+
+            <div class="flex items-start gap-3 bg-amber-50 rounded-xl p-5 border border-amber-200">
+                <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-amber-500 text-white font-bold text-sm flex-shrink-0">6</span>
+                <div>
+                    <p class="font-bold text-amber-900">"enhancing functionality and user experience" — filler phrase</p>
+                    <p class="text-amber-700 text-sm mt-1">"Enhancing functionality and user experience" is a generic phrase that means nothing. This violates the <strong>BS Meter</strong>. What functionality? What user experience specifically? Replace with something concrete: "enabling operators to identify [X] from [X] distance" or "reducing false-positive detection rate by [X]%."</p>
+                </div>
+            </div>
+
+            <div class="flex items-start gap-3 bg-amber-50 rounded-xl p-5 border border-amber-200">
+                <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-amber-500 text-white font-bold text-sm flex-shrink-0">7</span>
+                <div>
+                    <p class="font-bold text-amber-900">Swim club section is pure filler</p>
+                    <p class="text-amber-700 text-sm mt-1">"Managed budget, collected dues from 50 members" and "Led swim practices once a week" are low-value bullets taking up prime resume real estate. Either rewrite these with measurable leadership impact or cut the section entirely and use the space for stronger technical content.</p>
+                </div>
+            </div>
+
+            <div class="flex items-start gap-3 bg-amber-50 rounded-xl p-5 border border-amber-200">
+                <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-amber-500 text-white font-bold text-sm flex-shrink-0">8</span>
+                <div>
+                    <p class="font-bold text-amber-900">Skills section is a bare list</p>
+                    <p class="text-amber-700 text-sm mt-1">"Programming Languages: C and Python" and "Tools & Platforms: GitHub and Git" are thin. Per the Impact Bullet Builder: show skills in action, not as a dead list. Jacob mentions Python and multiprocessing in context in the work section — that's good — but the Skills section itself adds almost no value. It should either be enriched with usage context or integrated into bullets.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SECTION 3: REWRITTEN RESUME                  -->
+    <!-- ============================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 p-8 page-break">
+        <div class="flex items-center gap-3 mb-2">
+            <div class="w-8 h-8 rounded-lg bg-emerald-700 text-white flex items-center justify-center text-sm font-bold">✍️</div>
+            <h2 class="text-2xl font-extrabold text-slate-900">Rewritten Resume — Impact Bullet Builder™ Applied</h2>
+        </div>
+        <p class="text-slate-500 text-sm mb-8"><strong>[X]</strong> = placeholder where Jacob needs to provide missing information (metrics, specifics, or context we can't know from the outside)</p>
+
+        <!-- RESUME START -->
+        <div class="border-2 border-slate-200 rounded-2xl p-8 bg-slate-50">
+
+            <!-- Header -->
+            <div class="text-center mb-6 pb-6 border-b-2 border-slate-300">
+                <h3 class="text-2xl font-extrabold text-slate-900">Jacob P. Rothschild</h3>
+                <p class="text-slate-600 text-sm mt-1">(512) 466-9785 | jpr051502@gmail.com | LinkedIn | Lubbock, TX</p>
+            </div>
+
+            <!-- Education -->
+            <div class="mb-6">
+                <h4 class="text-sm font-extrabold text-slate-900 uppercase tracking-widest border-b-2 border-emerald-600 pb-1 mb-3">Education</h4>
+                <div class="flex justify-between items-start">
+                    <div>
+                        <p class="font-bold text-slate-900">Bachelor of Science: Computer Engineering</p>
+                        <p class="text-slate-600 text-sm">Texas Tech University, Lubbock, TX — GPA: 3.88/4.0</p>
+                        <p class="text-slate-500 text-xs mt-1">Study Abroad: Texas Tech University, San José, Costa Rica (Summer 2022)</p>
+                    </div>
+                    <p class="text-slate-500 text-sm">Aug 2020 – May 2024</p>
+                </div>
+            </div>
+
+            <!-- Work Experience -->
+            <div class="mb-6">
+                <h4 class="text-sm font-extrabold text-slate-900 uppercase tracking-widest border-b-2 border-emerald-600 pb-1 mb-3">Work Experience</h4>
+
+                <div class="mb-2">
+                    <div class="flex justify-between items-start mb-1">
+                        <div>
+                            <p class="font-bold text-slate-900">Software Engineer Intern</p>
+                            <p class="text-slate-600 text-sm">Universal Tech Movement</p>
+                        </div>
+                        <p class="text-slate-500 text-sm">Feb 2025 – Jun 2025</p>
+                    </div>
+                </div>
+
+                <ul class="space-y-3 text-sm text-slate-700 ml-4">
+                    <!-- Bullet 1: Multiprocessing optimization -->
+                    <li class="relative pl-4">
+                        <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                        <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-0.5 rounded mr-1">REWRITTEN</span>
+                        Inherited a job-scraping pipeline that took <strong>[X hours]</strong> to process <strong>[X]</strong> sponsor job boards; re-architected the scripts in Python with multiprocessing, cutting runtime by <strong>[X]%</strong> and saving the team 50+ hours annually — freeing engineering bandwidth for <strong>[X — feature work? other priorities?]</strong>.
+                    </li>
+
+                    <!-- Bullet 2: Maintainability -->
+                    <li class="relative pl-4">
+                        <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                        <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-0.5 rounded mr-1">REWRITTEN</span>
+                        Refactored <strong>[X — how many?]</strong> Python modules by <strong>[X — what specifically? extracting functions? adding type hints? restructuring classes?]</strong>, reducing codebase complexity by <strong>[X]%</strong> and cutting future update time by 10+ hours — enabling <strong>[X — the next engineer? the team?]</strong> to onboard and ship changes <strong>[X]x</strong> faster.
+                    </li>
+
+                    <!-- Bullet 3: OpenAI cost optimization -->
+                    <li class="relative pl-4">
+                        <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                        <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-0.5 rounded mr-1">REWRITTEN</span>
+                        Discovered that the existing pipeline was re-summarizing <strong>[X — all?]</strong> job descriptions on every run via OpenAI's API, costing approximately <strong>$[X]/year</strong>; redesigned the logic to only process new or updated postings, slashing API costs by 97% (from <strong>$[X]</strong> to <strong>$[X]/year</strong>) — directly reducing the company's operating expenses.
+                    </li>
+
+                    <!-- Bullet 4: Website launch -->
+                    <li class="relative pl-4">
+                        <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                        <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-0.5 rounded mr-1">REWRITTEN</span>
+                        Built and launched the company's public job board website on WordPress, customizing the HTML, CSS, and PHP template to display <strong>[X]</strong> scraped postings with <strong>[X — search? filters? categories?]</strong> — the site attracted <strong>[X — visitors/month? users? sign-ups?]</strong> within the first <strong>[X]</strong> weeks of launch.
+                    </li>
+                </ul>
+            </div>
+
+            <!-- University Projects -->
+            <div class="mb-6" style="break-before: page;">
+                <h4 class="text-sm font-extrabold text-slate-900 uppercase tracking-widest border-b-2 border-emerald-600 pb-1 mb-3">University Projects</h4>
+
+                <!-- Interactive Pumpkins -->
+                <div class="mb-5">
+                    <div class="flex justify-between items-start mb-1">
+                        <div>
+                            <p class="font-bold text-slate-900">Interactive Pumpkins — Facial Expression Detection System</p>
+                            <p class="text-slate-600 text-sm">Texas Tech University — Project Lab 2</p>
+                        </div>
+                        <p class="text-slate-500 text-sm">Aug – Oct 2022</p>
+                    </div>
+
+                    <ul class="space-y-3 text-sm text-slate-700 ml-4">
+                        <li class="relative pl-4">
+                            <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                            <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-0.5 rounded mr-1">REWRITTEN</span>
+                            Engineered the embedded software layer for a Raspberry Pi–based facial expression detection system using Python, OpenCV, and DeepFace — the system recognized <strong>[X — how many?]</strong> distinct expressions in real-time and triggered <strong>[X]</strong> unique pumpkin responses with <strong>[X]%</strong> detection accuracy.
+                        </li>
+                        <li class="relative pl-4">
+                            <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                            <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-0.5 rounded mr-1">REWRITTEN</span>
+                            Designed the software architecture flowchart before writing any code, mapping all edge cases and data paths — this upfront planning eliminated <strong>[X]</strong> integration errors and saved the <strong>[X]</strong>-person team over 5 hours of debugging time.
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Robocop -->
+                <div class="mb-5">
+                    <div class="flex justify-between items-start mb-1">
+                        <div>
+                            <p class="font-bold text-slate-900">Robocop — Autonomous Rover with Target Detection</p>
+                            <p class="text-slate-600 text-sm">Texas Tech University — Project Lab 1</p>
+                        </div>
+                        <p class="text-slate-500 text-sm">Jan – May 2022</p>
+                    </div>
+
+                    <ul class="space-y-3 text-sm text-slate-700 ml-4">
+                        <li class="relative pl-4">
+                            <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                            <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-0.5 rounded mr-1">REWRITTEN</span>
+                            Self-taught Verilog in under 30 days, then programmed a Xilinx Artix-7 FPGA to autonomously navigate a rover chassis along a metallic path using inductive proximity sensors — the rover completed the <strong>[X — course? test track?]</strong> with <strong>[X]%</strong> path-following accuracy.
+                        </li>
+                        <li class="relative pl-4">
+                            <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                            <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-0.5 rounded mr-1">REWRITTEN</span>
+                            Developed the target detection and strike module in Verilog — the system decoded blinking LED signals, displayed status characters on a seven-segment display, and autonomously fired a projectile when it identified a red LED signal, successfully hitting the target in <strong>[X out of X]</strong> test runs.
+                        </li>
+                        <li class="relative pl-4">
+                            <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                            <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-0.5 rounded mr-1">REWRITTEN</span>
+                            Owned the integration testing process across <strong>[X]</strong> subsystems, systematically combining and validating components in staged builds — this approach caught <strong>[X]</strong> interface errors early and saved the team 10+ hours of rework time.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- University Involvement -->
+            <div class="mb-6">
+                <h4 class="text-sm font-extrabold text-slate-900 uppercase tracking-widest border-b-2 border-emerald-600 pb-1 mb-3">Leadership</h4>
+
+                <div class="mb-2">
+                    <div class="flex justify-between items-start mb-1">
+                        <div>
+                            <p class="font-bold text-slate-900">Treasurer & Practice Lead</p>
+                            <p class="text-slate-600 text-sm">Texas Tech Swim Club</p>
+                        </div>
+                        <p class="text-slate-500 text-sm">Aug 2021 – May 2024</p>
+                    </div>
+                </div>
+
+                <ul class="space-y-3 text-sm text-slate-700 ml-4">
+                    <li class="relative pl-4">
+                        <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-amber-500 rounded-full"></span>
+                        <span class="bg-amber-100 text-amber-800 text-xs font-bold px-2 py-0.5 rounded mr-1">CONSIDER REMOVING</span>
+                        <span class="text-slate-400 line-through">Managed budget, collected dues from 50 members, and organized fundraisers. Led swim practices once a week. Provided coaching to swimmers by giving feedback on stroke and technique.</span>
+                        <p class="text-amber-700 text-xs mt-1 italic">→ If keeping: "Managed a $[X] annual budget for a 50-member athletic club, collecting dues from all members at a [X]% on-time rate and organizing [X] fundraisers that raised $[X] — funding [X — travel? equipment? event entry fees?]. Led weekly practices and coached [X] swimmers on stroke technique, contributing to [X — any team results? meet placements? membership growth?]."</p>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Skills -->
+            <div>
+                <h4 class="text-sm font-extrabold text-slate-900 uppercase tracking-widest border-b-2 border-emerald-600 pb-1 mb-3">Technical Skills</h4>
+                <div class="text-sm text-slate-700">
+                    <p><strong>Languages:</strong> Python (multiprocessing, OpenCV, DeepFace, API integration), C (embedded systems), Verilog (FPGA programming — Xilinx Artix-7)</p>
+                    <p class="mt-1"><strong>Hardware:</strong> Raspberry Pi, FPGA (Xilinx Artix-7), microcontrollers, electrical schematics, lab instrumentation</p>
+                    <p class="mt-1"><strong>Web:</strong> WordPress (HTML/CSS/PHP customization), Git & GitHub</p>
+                </div>
+            </div>
+
+        </div>
+        <!-- RESUME END -->
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SECTION 4: BEFORE & AFTER                    -->
+    <!-- ============================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 p-8 page-break">
+        <div class="flex items-center gap-3 mb-6">
+            <div class="w-8 h-8 rounded-lg bg-purple-600 text-white flex items-center justify-center text-sm font-bold">⚡</div>
+            <h2 class="text-2xl font-extrabold text-slate-900">Before & After — Best Examples</h2>
+        </div>
+
+        <div class="space-y-6">
+            <!-- Example 1: OpenAI cost optimization -->
+            <div class="rounded-xl overflow-hidden border border-slate-200">
+                <div class="bg-red-50 p-5 border-b border-red-200">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-red-600 text-white font-bold text-xs">✗</span>
+                        <span class="text-red-700 font-bold text-sm">ORIGINAL (Doer Level)</span>
+                    </div>
+                    <p class="text-red-800 text-sm">"Optimized Python scripts to summarize job descriptions, through OpenAI's API, only on new or updated postings, cutting annual costs by approximately 97%."</p>
+                </div>
+                <div class="bg-emerald-50 p-5">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-emerald-600 text-white font-bold text-xs">✓</span>
+                        <span class="text-emerald-700 font-bold text-sm">REWRITTEN (Impact Standard + Dragon Slayer)</span>
+                    </div>
+                    <p class="text-emerald-800 text-sm">"Discovered that the existing pipeline was re-summarizing all job descriptions on every run via OpenAI's API, costing approximately $[X]/year; redesigned the logic to only process new or updated postings, slashing API costs by 97% (from $[X] to $[X]/year) — directly reducing the company's operating expenses."</p>
+                </div>
+            </div>
+
+            <!-- Example 2: Made code more maintainable -->
+            <div class="rounded-xl overflow-hidden border border-slate-200">
+                <div class="bg-red-50 p-5 border-b border-red-200">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-red-600 text-white font-bold text-xs">✗</span>
+                        <span class="text-red-700 font-bold text-sm">ORIGINAL (Doer Level)</span>
+                    </div>
+                    <p class="text-red-800 text-sm">"Made code more maintainable resulting in 10 plus hours of time savings for future updates."</p>
+                </div>
+                <div class="bg-emerald-50 p-5">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-emerald-600 text-white font-bold text-xs">✓</span>
+                        <span class="text-emerald-700 font-bold text-sm">REWRITTEN (Impact Standard)</span>
+                    </div>
+                    <p class="text-emerald-800 text-sm">"Refactored [X] Python modules by [extracting functions / adding type hints / restructuring classes], reducing codebase complexity by [X]% and cutting future update time by 10+ hours — enabling the next engineer to onboard and ship changes [X]x faster."</p>
+                </div>
+            </div>
+
+            <!-- Example 3: Learned Verilog -->
+            <div class="rounded-xl overflow-hidden border border-slate-200">
+                <div class="bg-red-50 p-5 border-b border-red-200">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-red-600 text-white font-bold text-xs">✗</span>
+                        <span class="text-red-700 font-bold text-sm">ORIGINAL (Doer Level)</span>
+                    </div>
+                    <p class="text-red-800 text-sm">"Learned how to program a FPGA in Verilog rapidly in 1 month; thereafter, programming a rover chassis to follow a metallic path in Verilog using a Xilinx Artix-7 FPGA and inductive proximity sensors."</p>
+                </div>
+                <div class="bg-emerald-50 p-5">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-emerald-600 text-white font-bold text-xs">✓</span>
+                        <span class="text-emerald-700 font-bold text-sm">REWRITTEN (Impact Standard + Dragon Slayer)</span>
+                    </div>
+                    <p class="text-emerald-800 text-sm">"Self-taught Verilog in under 30 days, then programmed a Xilinx Artix-7 FPGA to autonomously navigate a rover chassis along a metallic path using inductive proximity sensors — the rover completed the [course/test track] with [X]% path-following accuracy."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SECTION 5: ACTION ITEMS                      -->
+    <!-- ============================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 p-8 page-break">
+        <div class="flex items-center gap-3 mb-6">
+            <div class="w-8 h-8 rounded-lg bg-emerald-700 text-white flex items-center justify-center text-sm font-bold">🎯</div>
+            <h2 class="text-2xl font-extrabold text-slate-900">Summary: What Jacob Needs to Do</h2>
+        </div>
+
+        <div class="space-y-4">
+            <div class="flex items-start gap-4 p-5 bg-emerald-50 rounded-xl border border-emerald-200">
+                <div class="w-10 h-10 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-lg flex-shrink-0">1</div>
+                <div>
+                    <p class="font-bold text-emerald-900 text-lg">Anchor the 97% cost cut with a dollar amount</p>
+                    <p class="text-emerald-700 text-sm mt-1">97% is a strong number — but it means nothing without context. Was that savings from $10,000/year to $300/year? Or from $100 to $3? Go back and calculate the actual dollar amount. "Slashed API costs by 97%, saving $[X]/year" is the difference between a good bullet and a great one.</p>
+                </div>
+            </div>
+
+            <div class="flex items-start gap-4 p-5 bg-emerald-50 rounded-xl border border-emerald-200">
+                <div class="w-10 h-10 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-lg flex-shrink-0">2</div>
+                <div>
+                    <p class="font-bold text-emerald-900 text-lg">Fill in every [X] placeholder above</p>
+                    <p class="text-emerald-700 text-sm mt-1">The rewritten bullets have the structure right — but only Jacob knows the actual numbers. Go through each [X] and plug in the real data. If you don't remember exactly, estimate conservatively. A conservative estimate is infinitely better than no number at all.</p>
+                </div>
+            </div>
+
+            <div class="flex items-start gap-4 p-5 bg-emerald-50 rounded-xl border border-emerald-200">
+                <div class="w-10 h-10 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-lg flex-shrink-0">3</div>
+                <div>
+                    <p class="font-bold text-emerald-900 text-lg">Add Dragon Slayer context to top 3 bullets</p>
+                    <p class="text-emerald-700 text-sm mt-1">Especially the multiprocessing optimization, the OpenAI cost cut, and the website launch. What was the pain before? How slow was the old pipeline? How much were they spending before you fixed it? What happened when Jacob's website went live vs. how they handled it before? Paint the problem, then the solution.</p>
+                </div>
+            </div>
+
+            <div class="flex items-start gap-4 p-5 bg-emerald-50 rounded-xl border border-emerald-200">
+                <div class="w-10 h-10 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-lg flex-shrink-0">4</div>
+                <div>
+                    <p class="font-bold text-emerald-900 text-lg">Kill "Co-led," "Made," and "Learned" as openers</p>
+                    <p class="text-emerald-700 text-sm mt-1">Replace every hedge verb. "Co-led" → "Led" (if true) or describe the specific thing you did. "Made" → "Refactored." "Learned" → "Self-taught X, then [did Y]." Own your contributions.</p>
+                </div>
+            </div>
+
+            <div class="flex items-start gap-4 p-5 bg-emerald-50 rounded-xl border border-emerald-200">
+                <div class="w-10 h-10 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-lg flex-shrink-0">5</div>
+                <div>
+                    <p class="font-bold text-emerald-900 text-lg">Decide: swim club stays or goes</p>
+                    <p class="text-emerald-700 text-sm mt-1">If Jacob can quantify leadership impact (budget size, membership growth, fundraiser revenue, coaching outcomes), keep it and rewrite it. If not, cut it and use that space for an additional technical project, open-source contribution, or the Costa Rica study abroad experience — anything with more substance.</p>
+                </div>
+            </div>
+
+            <div class="flex items-start gap-4 p-5 bg-emerald-50 rounded-xl border border-emerald-200">
+                <div class="w-10 h-10 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-lg flex-shrink-0">6</div>
+                <div>
+                    <p class="font-bold text-emerald-900 text-lg">Add website launch metrics</p>
+                    <p class="text-emerald-700 text-sm mt-1">Jacob launched a real website that people used. That's impressive — but the bullet doesn't capture any of the results. How many job postings does it show? How many visitors in the first month? Is it still running? Those metrics turn "launched a website" from a task into a business accomplishment.</p>
+                </div>
+            </div>
+
+            <div class="flex items-start gap-4 p-5 bg-emerald-50 rounded-xl border border-emerald-200">
+                <div class="w-10 h-10 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-lg flex-shrink-0">7</div>
+                <div>
+                    <p class="font-bold text-emerald-900 text-lg">Enrich the skills section with usage context</p>
+                    <p class="text-emerald-700 text-sm mt-1">Instead of "Programming Languages: C and Python" — write "Python (multiprocessing, OpenCV, DeepFace, API integration)" and "Verilog (FPGA programming — Xilinx Artix-7)." Show a recruiter that you've actually USED these tools in real projects, not just listed them.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SECTION 6: WHAT'S WORKING                    -->
+    <!-- ============================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 p-8 page-break">
+        <div class="flex items-center gap-3 mb-6">
+            <div class="w-8 h-8 rounded-lg bg-lime-500 text-white flex items-center justify-center text-sm font-bold">✓</div>
+            <h2 class="text-2xl font-extrabold text-slate-900">What's Already Working</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="bg-lime-50 border border-lime-200 rounded-xl p-5">
+                <p class="font-bold text-lime-900">Real metrics already present</p>
+                <p class="text-lime-700 text-sm mt-1">50+ hours saved, 10+ hours saved, 97% cost reduction, 5 hours saved — Jacob already has the instinct to quantify. The numbers just need dollar anchors and business context to reach Impact Standard.</p>
+            </div>
+            <div class="bg-lime-50 border border-lime-200 rounded-xl p-5">
+                <p class="font-bold text-lime-900">Strong 3.88 GPA</p>
+                <p class="text-lime-700 text-sm mt-1">Near-4.0 GPA in Computer Engineering at Texas Tech is impressive and shows academic rigor. This is a trust signal for early-career roles — keep it prominent.</p>
+            </div>
+            <div class="bg-lime-50 border border-lime-200 rounded-xl p-5">
+                <p class="font-bold text-lime-900">Real internship with real output</p>
+                <p class="text-lime-700 text-sm mt-1">Jacob built and shipped production code — a scraping pipeline, an AI-powered summarization system, and a public website. This isn't "observed meetings" internship filler. It's real engineering work that just needs better framing.</p>
+            </div>
+            <div class="bg-lime-50 border border-lime-200 rounded-xl p-5">
+                <p class="font-bold text-lime-900">Tools mentioned in context</p>
+                <p class="text-lime-700 text-sm mt-1">Python, multiprocessing, OpenAI API, OpenCV, DeepFace, Verilog, Xilinx Artix-7, Raspberry Pi — these all appear naturally within bullet points, not just as a dead list. This is exactly what we teach.</p>
+            </div>
+            <div class="bg-lime-50 border border-lime-200 rounded-xl p-5">
+                <p class="font-bold text-lime-900">Diverse engineering range</p>
+                <p class="text-lime-700 text-sm mt-1">Jacob spans embedded (FPGA/Verilog), computer vision (OpenCV/DeepFace), backend automation (Python/multiprocessing), and web development (WordPress). For an early-career engineer, this breadth is a differentiator — it shows adaptability and fast ramp-up.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SECTION 7: SCORECARD                         -->
+    <!-- ============================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 p-8 page-break">
+        <div class="flex items-center gap-3 mb-6">
+            <div class="w-8 h-8 rounded-lg bg-slate-800 text-lime-300 flex items-center justify-center text-sm font-bold">📋</div>
+            <h2 class="text-2xl font-extrabold text-slate-900">Scorecard: Impact Bullet Builder™ Criteria</h2>
+        </div>
+
+        <div class="overflow-x-auto">
+            <table class="w-full text-sm">
+                <thead>
+                    <tr class="border-b-2 border-slate-200">
+                        <th class="text-left py-3 pl-3 text-slate-900 font-bold">Criteria</th>
+                        <th class="text-center py-3 text-slate-900 font-bold w-20">Score</th>
+                        <th class="text-left py-3 text-slate-900 font-bold">Notes</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-100">
+                    <tr>
+                        <td class="py-3 pl-3 font-semibold text-slate-700">Accomplishments (not duties)</td>
+                        <td class="py-3 text-center"><span class="font-mono-num font-bold text-amber-500">4/10</span></td>
+                        <td class="py-3 text-slate-500">Work experience bullets hint at accomplishments (saved time, cut costs, launched something). Project bullets read more like lab write-ups.</td>
+                    </tr>
+                    <tr>
+                        <td class="py-3 pl-3 font-semibold text-slate-700">Metrics / Quantification</td>
+                        <td class="py-3 text-center"><span class="font-mono-num font-bold text-amber-500">5/10</span></td>
+                        <td class="py-3 text-slate-500">Several metrics present (50hrs, 10hrs, 97%, 5hrs, 10hrs) — more than most new grads. But no dollar amounts and project sections are metric-free.</td>
+                    </tr>
+                    <tr>
+                        <td class="py-3 pl-3 font-semibold text-slate-700">How / Method Shown</td>
+                        <td class="py-3 text-center"><span class="font-mono-num font-bold text-amber-500">6/10</span></td>
+                        <td class="py-3 text-slate-500">Good. Python, multiprocessing, OpenAI API, OpenCV, DeepFace, Verilog, Xilinx FPGA, WordPress all appear in context. Strongest element of the resume.</td>
+                    </tr>
+                    <tr>
+                        <td class="py-3 pl-3 font-semibold text-slate-700">Why / Business Impact</td>
+                        <td class="py-3 text-center"><span class="font-mono-num font-bold text-red-500">2/10</span></td>
+                        <td class="py-3 text-slate-500">"Hours saved" is the closest thing to impact, but no bullet connects to a dollar amount, a business outcome, or a "why the CEO cares" statement.</td>
+                    </tr>
+                    <tr>
+                        <td class="py-3 pl-3 font-semibold text-slate-700">Me-in-We Extractor™</td>
+                        <td class="py-3 text-center"><span class="font-mono-num font-bold text-amber-500">4/10</span></td>
+                        <td class="py-3 text-slate-500">"Co-led," "with a team of students," "Led a collaborative effort" — Jacob's specific contributions are blurred by team language in the projects section.</td>
+                    </tr>
+                    <tr>
+                        <td class="py-3 pl-3 font-semibold text-slate-700">Dragon Slayer Context</td>
+                        <td class="py-3 text-center"><span class="font-mono-num font-bold text-red-500">1/10</span></td>
+                        <td class="py-3 text-slate-500">No problem-first framing on any bullet. The 97% cost cut screams for a "before" story but doesn't have one.</td>
+                    </tr>
+                    <tr>
+                        <td class="py-3 pl-3 font-semibold text-slate-700">Action Verbs</td>
+                        <td class="py-3 text-center"><span class="font-mono-num font-bold text-amber-500">5/10</span></td>
+                        <td class="py-3 text-slate-500">Mix of strong (Designed, Optimized, Implemented, Launched) and weak (Made, Learned, Co-led, Provided). The weak ones are in prominent positions.</td>
+                    </tr>
+                    <tr>
+                        <td class="py-3 pl-3 font-semibold text-slate-700">Bullet Quality Consistency</td>
+                        <td class="py-3 text-center"><span class="font-mono-num font-bold text-red-500">3/10</span></td>
+                        <td class="py-3 text-slate-500">Wide variance. Work experience is decent, projects are mid-tier, swim club is pure filler. Quality should be uniform across all sections.</td>
+                    </tr>
+                    <tr class="bg-slate-50 font-bold">
+                        <td class="py-4 pl-3 text-slate-900 text-base">OVERALL SCORE</td>
+                        <td class="py-4 text-center"><span class="font-mono-num text-xl text-red-500">30/100</span></td>
+                        <td class="py-4 text-slate-700">Tier: "The Doer" — bordering Achiever, needs impact framing</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="mt-6 bg-emerald-900 text-white rounded-xl p-6">
+            <p class="font-bold text-lg mb-2">The Good News</p>
+            <p class="text-emerald-200 text-sm">Jacob has the strongest raw material of most new grads we see: a real software internship where he shipped production code, a 97% cost reduction stat that just needs a dollar anchor, a near-4.0 GPA, and hands-on experience spanning embedded systems, computer vision, and web development. He already quantifies — he just doesn't contextualize. Applying the Impact Bullet Builder formula would likely jump this resume from 30/100 to 70+ in a single session. The foundation is solid — it just needs the framework.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center py-8 text-slate-400 text-sm">
+        <p>Analysis prepared by LaunchToLead | Impact Bullet Builder™ Framework</p>
+        <p class="mt-1">launchtolead.io/free</p>
+    </footer>
+
+</div>
+
+</body>
+</html>

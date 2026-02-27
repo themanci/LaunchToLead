@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Analysis — Jesus Dominguez | LaunchToLead</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .font-mono-num { font-family: 'Space Grotesk', monospace; }
+
+        /* Download PDF Button */
+        #download-btn {
+            position: fixed; top: 20px; right: 20px; z-index: 9999;
+            background: linear-gradient(135deg, #a3e635, #14b8a6); color: #052e16;
+            font-family: 'Plus Jakarta Sans', sans-serif; font-size: 16px; font-weight: 800;
+            padding: 14px 32px; border: none; border-radius: 50px; cursor: pointer;
+            box-shadow: 0 8px 30px rgba(163,230,53,0.3);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        #download-btn:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(163,230,53,0.4); }
+
+        /* ============================================ */
+        /* PRINT STYLES — Letter pages, proper breaks   */
+        /* ============================================ */
+        @media print {
+            @page {
+                size: letter;
+                margin: 0.5in 0.65in;
+            }
+
+            body {
+                background: white !important;
+                color: #1e293b !important;
+                padding: 0 !important;
+                margin: 0 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
+            #download-btn { display: none !important; }
+
+            .page-break { break-before: page; }
+
+            .keep-together { break-inside: avoid; }
+
+            .space-y-4 > div,
+            .space-y-6 > div,
+            .grid > div { break-inside: avoid; }
+
+            section .mb-5 { break-inside: avoid; }
+
+            ul.space-y-3 > li { break-inside: avoid; }
+
+            tbody tr { break-inside: avoid; }
+
+            .rounded-xl.overflow-hidden { break-inside: avoid; }
+
+            h2, h3, h4 { break-after: avoid; }
+
+            section {
+                box-shadow: none !important;
+                border: 1px solid #e2e8f0 !important;
+            }
+
+            .max-w-4xl { max-width: 100% !important; }
+
+            .bg-red-900, .bg-amber-800, .bg-emerald-900 {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-700">
+
+<!-- Download PDF Button -->
+<button id="download-btn" onclick="window.print()">Download PDF</button>
+
+<!-- ============================================ -->
+<!-- HEADER                                        -->
+<!-- ============================================ -->
+<header class="bg-emerald-900 text-white py-6 px-6">
+    <div class="max-w-4xl mx-auto">
+        <div class="flex items-center gap-3 mb-4">
+            <div class="bg-white text-emerald-900 w-10 h-10 rounded-xl flex items-center justify-center font-bold text-sm shadow">L²</div>
+            <span class="text-xl font-bold">Launch<span class="font-light text-lime-300">ToLead</span></span>
+        </div>
+        <h1 class="text-3xl font-extrabold mb-1">Resume Analysis & Rewrite</h1>
+        <p class="text-emerald-200">Jesus Dominguez — Civil Engineering</p>
+        <p class="text-emerald-400/60 text-sm mt-1">Analyzed against the Impact Bullet Builder™ framework</p>
+    </div>
+</header>
+
+<div class="max-w-4xl mx-auto px-6 py-10 space-y-10">
+
+    <!-- ============================================ -->
+    <!-- SECTION 1: OVERALL SCORE                     -->
+    <!-- ============================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 overflow-hidden">
+        <div class="p-8">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="w-8 h-8 rounded-lg bg-red-500 text-white flex items-center justify-center text-sm font-bold">📊</div>
+                <h2 class="text-2xl font-extrabold text-slate-900">Overall Score</h2>
+            </div>
+
+            <div class="flex items-center gap-8 mb-6">
+                <div class="text-center">
+                    <p class="font-mono-num text-6xl font-extrabold text-red-500">20</p>
+                    <p class="text-slate-500 text-sm">out of 100</p>
+                </div>
+                <div class="flex-1">
+                    <div class="h-4 bg-slate-100 rounded-full overflow-hidden mb-2">
+                        <div class="h-full rounded-full" style="width: 20%; background: linear-gradient(to right, #ef4444, #f97316);"></div>
+                    </div>
+                    <div class="flex justify-between text-xs text-slate-400">
+                        <span>0 — Invisible</span>
+                        <span>50 — Achiever</span>
+                        <span>100 — Impact Standard</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="bg-red-50 border border-red-200 rounded-xl p-4 text-center">
+                    <p class="font-mono-num text-2xl font-bold text-red-500">2/10</p>
+                    <p class="text-red-700 text-xs font-semibold mt-1">Accomplishments</p>
+                    <p class="text-red-400 text-[10px]">All duty descriptions</p>
+                </div>
+                <div class="bg-red-50 border border-red-200 rounded-xl p-4 text-center">
+                    <p class="font-mono-num text-2xl font-bold text-red-500">1/10</p>
+                    <p class="text-red-700 text-xs font-semibold mt-1">Metrics</p>
+                    <p class="text-red-400 text-[10px]">Zero quantification</p>
+                </div>
+                <div class="bg-amber-50 border border-amber-200 rounded-xl p-4 text-center">
+                    <p class="font-mono-num text-2xl font-bold text-amber-500">4/10</p>
+                    <p class="text-amber-700 text-xs font-semibold mt-1">How / Method</p>
+                    <p class="text-amber-400 text-[10px]">Tools listed but not in bullets</p>
+                </div>
+                <div class="bg-red-50 border border-red-200 rounded-xl p-4 text-center">
+                    <p class="font-mono-num text-2xl font-bold text-red-500">0/10</p>
+                    <p class="text-red-700 text-xs font-semibold mt-1">Why / Business Impact</p>
+                    <p class="text-red-400 text-[10px]">No impact on any bullet</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Verdict -->
+        <div class="bg-red-900 text-white p-6">
+            <p class="font-bold text-lg mb-2">Verdict: "The Doer" Tier — Currently Invisible</p>
+            <p class="text-red-200 text-sm">This resume reads like a course syllabus and a list of job duties. Every bullet describes <strong>what</strong> was done but never <strong>why it mattered</strong>. There are zero quantified results — no dollar amounts, no percentages, no scale, no time savings. The capstone project was done for a real city (Hood River) and that context is completely wasted. The entrepreneurial experience shows real initiative but is presented so generically it could be anyone's resume. A recruiter would skip this in under 6 seconds.</p>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SECTION 2: KEY ISSUES IDENTIFIED             -->
+    <!-- ============================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 p-8 page-break">
+        <div class="flex items-center gap-3 mb-6">
+            <div class="w-8 h-8 rounded-lg bg-red-500 text-white flex items-center justify-center text-sm font-bold">🔍</div>
+            <h2 class="text-2xl font-extrabold text-slate-900">Key Issues Identified</h2>
+        </div>
+
+        <div class="space-y-4">
+            <div class="flex items-start gap-3 bg-red-50 rounded-xl p-5 border border-red-200">
+                <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-red-600 text-white font-bold text-sm flex-shrink-0">1</span>
+                <div>
+                    <p class="font-bold text-red-900">Zero quantified results on the entire resume</p>
+                    <p class="text-red-700 text-sm mt-1">There is not a single number, dollar amount, percentage, or metric anywhere on this resume. "Two retaining walls" is the closest thing to a count and it's buried in a task description. The Impact Bullet Builder requires a <strong>Metric</strong> in every single bullet — right now the score is 0/10 in a category that carries the most weight with hiring managers.</p>
+                </div>
+            </div>
+
+            <div class="flex items-start gap-3 bg-red-50 rounded-xl p-5 border border-red-200">
+                <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-red-600 text-white font-bold text-sm flex-shrink-0">2</span>
+                <div>
+                    <p class="font-bold text-red-900">No business impact on any bullet — the "Why" is completely missing</p>
+                    <p class="text-red-700 text-sm mt-1">Every bullet stops at "what I did." None explain why it mattered. "Designed two retaining walls per ODOT standards" — okay, so what? Did they prevent slope failure on a $2M project? Did the design save construction cost vs. alternatives? Did they pass review on the first submission? Without the <strong>Why</strong>, the hiring manager has no reason to be impressed.</p>
+                </div>
+            </div>
+
+            <div class="flex items-start gap-3 bg-red-50 rounded-xl p-5 border border-red-200">
+                <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-red-600 text-white font-bold text-sm flex-shrink-0">3</span>
+                <div>
+                    <p class="font-bold text-red-900">Resume formatting error — bullets appear BEFORE the employer name</p>
+                    <p class="text-red-700 text-sm mt-1">In the Work Experience section, the bullet points are listed <strong>above</strong> the company name, title, and dates. This is backwards. The reader sees "Walked job sites to identify safety hazards" with no idea who the employer is or what role this person held. The header line "Dennis 7 Dee's Landscaping | Crew Lead | June 2019 - February 2024" appears <strong>after</strong> the bullets. This is immediately confusing and looks like an oversight — it signals to a recruiter that the candidate didn't proofread.</p>
+                </div>
+            </div>
+
+            <div class="flex items-start gap-3 bg-red-50 rounded-xl p-5 border border-red-200">
+                <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-red-600 text-white font-bold text-sm flex-shrink-0">4</span>
+                <div>
+                    <p class="font-bold text-red-900">"Walked job sites" is one of the weakest opening verbs possible</p>
+                    <p class="text-red-700 text-sm mt-1">"Walked" tells the reader about physical locomotion, not professional accomplishment. This was actually a <strong>safety leadership</strong> activity — Jesus was identifying hazards and planning safe work as a Crew Lead. That's a real responsibility with real stakes. The verb and framing completely bury the value. Per the Impact Bullet Builder: never start with a weak or passive verb.</p>
+                </div>
+            </div>
+
+            <div class="flex items-start gap-3 bg-red-50 rounded-xl p-5 border border-red-200">
+                <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-red-600 text-white font-bold text-sm flex-shrink-0">5</span>
+                <div>
+                    <p class="font-bold text-red-900">No Dragon Slayer context anywhere</p>
+                    <p class="text-red-700 text-sm mt-1">Every bullet jumps straight to the task. None of them paint the problem first. The capstone project was for the <strong>City of Hood River</strong> — a real municipality with real constraints, real budgets, real terrain challenges. That Dragon Slayer context is gold and it's completely absent. "The bigger the monster you slay, the bigger the hero you become."</p>
+                </div>
+            </div>
+
+            <div class="flex items-start gap-3 bg-amber-50 rounded-xl p-5 border border-amber-200">
+                <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-amber-500 text-white font-bold text-sm flex-shrink-0">6</span>
+                <div>
+                    <p class="font-bold text-amber-900">Entrepreneurial experience is massively underutilized</p>
+                    <p class="text-amber-700 text-sm mt-1">Running your own shoe business for 6 years shows initiative, financial acumen, and self-discipline. "Analyzed market trends to develop effective pricing strategies" could be powerful if it had numbers: revenue generated, profit margins, customer base size. Right now it's written so generically it sounds like a ChatGPT template. This is a differentiator — most civil engineering students don't have 6 years of business ownership on their resume.</p>
+                </div>
+            </div>
+
+            <div class="flex items-start gap-3 bg-amber-50 rounded-xl p-5 border border-amber-200">
+                <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-amber-500 text-white font-bold text-sm flex-shrink-0">7</span>
+                <div>
+                    <p class="font-bold text-amber-900">Tools listed in project headers instead of embedded in bullets</p>
+                    <p class="text-amber-700 text-sm mt-1">"Tools Used: ArcGIS Pro, Civil 3D, ODOT Standards" appears as a separate line under each project title. This wastes space and separates the tool from its impact. Per the Impact Bullet Builder: show skills in action. "Processed LiDAR data <strong>in ArcGIS Pro</strong>" is better — but it still needs metrics and impact layered on top.</p>
+                </div>
+            </div>
+
+            <div class="flex items-start gap-3 bg-amber-50 rounded-xl p-5 border border-amber-200">
+                <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-amber-500 text-white font-bold text-sm flex-shrink-0">8</span>
+                <div>
+                    <p class="font-bold text-amber-900">Grammatical/formatting inconsistencies signal carelessness</p>
+                    <p class="text-amber-700 text-sm mt-1">"utilized" starts with a lowercase letter. "Creaw Lead" appears to be a typo of "Crew Lead." Missing periods at the end of some bullets but not others. These details matter — civil engineering is a precision discipline. If the resume has errors, a hiring manager will wonder about the calculations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SECTION 3: REWRITTEN RESUME                  -->
+    <!-- ============================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 p-8 page-break">
+        <div class="flex items-center gap-3 mb-2">
+            <div class="w-8 h-8 rounded-lg bg-emerald-700 text-white flex items-center justify-center text-sm font-bold">✍️</div>
+            <h2 class="text-2xl font-extrabold text-slate-900">Rewritten Resume — Impact Bullet Builder™ Applied</h2>
+        </div>
+        <p class="text-slate-500 text-sm mb-8"><strong>[X]</strong> = placeholder where Jesus needs to provide missing information (metrics, specifics, or context we can't know from the outside)</p>
+
+        <!-- RESUME START -->
+        <div class="border-2 border-slate-200 rounded-2xl p-8 bg-slate-50">
+
+            <!-- Header -->
+            <div class="text-center mb-6 pb-6 border-b-2 border-slate-300">
+                <h3 class="text-2xl font-extrabold text-slate-900">Jesus Dominguez</h3>
+                <p class="text-slate-600 text-sm mt-1">Jesus.Dominguez.CE@Gmail.com | (503) 482-3868 | linkedin.com/in/JDominguez-CE</p>
+            </div>
+
+            <!-- Education -->
+            <div class="mb-6">
+                <h4 class="text-sm font-extrabold text-slate-900 uppercase tracking-widest border-b-2 border-emerald-600 pb-1 mb-3">Education</h4>
+                <div>
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <p class="font-bold text-slate-900">Bachelor of Science: Civil Engineering</p>
+                            <p class="text-slate-600 text-sm">Portland State University, Portland, OR</p>
+                            <p class="text-slate-500 text-xs mt-1">Relevant Courses: Structural Analysis, Reinforced Concrete, Timber Design, Steel Design, Intro to Earthquake Engineering, Geotechnical Design</p>
+                        </div>
+                        <p class="text-slate-500 text-sm">June 2025</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Projects -->
+            <div class="mb-6">
+                <h4 class="text-sm font-extrabold text-slate-900 uppercase tracking-widest border-b-2 border-emerald-600 pb-1 mb-3">Engineering Projects</h4>
+
+                <!-- Capstone: Multi-Use Path -->
+                <div class="mb-5">
+                    <div class="flex justify-between items-start mb-1">
+                        <div>
+                            <p class="font-bold text-slate-900">Multi-Use Path Design — City of Hood River <span class="text-xs bg-lime-100 text-lime-800 font-bold px-2 py-0.5 rounded ml-2">🏛️ REAL MUNICIPAL CLIENT</span></p>
+                            <p class="text-slate-600 text-sm">Portland State University — Senior Capstone</p>
+                        </div>
+                        <p class="text-slate-500 text-sm">2025</p>
+                    </div>
+
+                    <ul class="space-y-3 text-sm text-slate-700 ml-4">
+                        <li class="relative pl-4">
+                            <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                            <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-0.5 rounded mr-1">REWRITTEN</span>
+                            Processed <strong>[X]</strong> acres of LiDAR and topographic survey data in ArcGIS Pro, building a high-fidelity surface model that fed Civil 3D corridor analysis for a <strong>[X]</strong>-mile multi-use path for the City of Hood River — enabling the design team to evaluate <strong>[X]</strong> alignment alternatives and identify the route with <strong>[X]%</strong> less earthwork than the initial proposal.
+                        </li>
+                        <li class="relative pl-4">
+                            <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                            <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-0.5 rounded mr-1">REWRITTEN</span>
+                            Led sidewalk widening design across <strong>[X]</strong> linear feet of corridor, producing <strong>[X]</strong> grading alignments and cross-sections in Civil 3D that accounted for <strong>[X]</strong> ft of elevation change — delivering a design that met ADA accessibility requirements while reducing estimated earthwork costs by <strong>$[X]</strong> vs. the original alignment.
+                        </li>
+                        <li class="relative pl-4">
+                            <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                            <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-0.5 rounded mr-1">REWRITTEN</span>
+                            Designed 2 retaining walls (up to <strong>[X]</strong> ft high) per ODOT standards, verifying stability against bearing failure, sliding, and overturning using conservative soil parameters — achieving safety factors of <strong>[X]</strong> and <strong>[X]</strong> respectively, exceeding ODOT minimums by <strong>[X]%</strong> and passing city review on <strong>[X — first submission?]</strong>.
+                        </li>
+                        <li class="relative pl-4">
+                            <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                            <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-0.5 rounded mr-1">REWRITTEN</span>
+                            Finalized reinforcement detailing for both walls by matching calculated structural demands to standardized ODOT wall types — eliminating the need for custom fabrication and saving an estimated <strong>$[X]</strong> in construction costs vs. a non-standard design.
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Visitor Center Structural Design -->
+                <div class="mb-5" style="break-before: page;">
+                    <div class="flex justify-between items-start mb-1">
+                        <div>
+                            <p class="font-bold text-slate-900">Visitor Center Structural Design — San Juan Island National Historic Park</p>
+                            <p class="text-slate-600 text-sm">Portland State University — Senior Capstone</p>
+                        </div>
+                        <p class="text-slate-500 text-sm">2025</p>
+                    </div>
+
+                    <ul class="space-y-3 text-sm text-slate-700 ml-4">
+                        <li class="relative pl-4">
+                            <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                            <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-0.5 rounded mr-1">REWRITTEN</span>
+                            Designed the complete timber structural system for a <strong>[X]</strong> sq-ft visitor center at San Juan Island National Historic Park — sizing joists, glulam beams, posts, shear walls, and diaphragms across <strong>[X]</strong> load combinations per NDS 2018 and SDPWS 2021 to withstand <strong>[X]</strong> mph design wind speeds in a coastal exposure.
+                        </li>
+                        <li class="relative pl-4">
+                            <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                            <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-0.5 rounded mr-1">REWRITTEN</span>
+                            Sized <strong>[X]</strong> structural members and <strong>[X]</strong> connections using dead, live, and wind load combinations, ensuring all members met code strength and serviceability requirements with utilization ratios under <strong>[X]%</strong> — designed roof diaphragm system using APA Q225J for sheathing, achieving <strong>[X]</strong> lb/ft lateral capacity.
+                        </li>
+                        <li class="relative pl-4">
+                            <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                            <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-0.5 rounded mr-1">REWRITTEN</span>
+                            Delivered a <strong>[X]</strong>-page structural calculation package in full compliance with NDS 2018 and APA standards — package served as the basis for <strong>[X — what? construction drawings? permitting submission? client presentation?]</strong>.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Work Experience -->
+            <div class="mb-6">
+                <h4 class="text-sm font-extrabold text-slate-900 uppercase tracking-widest border-b-2 border-emerald-600 pb-1 mb-3">Work Experience</h4>
+
+                <!-- Landscaping -->
+                <div class="mb-5">
+                    <div class="flex justify-between items-start mb-1">
+                        <div>
+                            <p class="font-bold text-slate-900">Crew Lead</p>
+                            <p class="text-slate-600 text-sm">Dennis 7 Dee's Landscaping, Portland, OR</p>
+                        </div>
+                        <p class="text-slate-500 text-sm">June 2019 – Feb 2024</p>
+                    </div>
+
+                    <ul class="space-y-3 text-sm text-slate-700 ml-4">
+                        <li class="relative pl-4">
+                            <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-red-500 rounded-full"></span>
+                            <span class="bg-red-100 text-red-800 text-xs font-bold px-2 py-0.5 rounded mr-1">REMOVE OR REWRITE</span>
+                            <span class="text-slate-400 line-through">Walked job sites to identify safety hazards and plan the safest way to complete work.</span>
+                            <p class="text-red-700 text-xs mt-1 italic">→ "Walked" is one of the weakest possible verbs. Rewrite as: "Conducted pre-work safety assessments on [X]+ job sites over 5 years, identifying and mitigating [X] hazards before crew mobilization — maintaining a [X]-incident safety record across a [X]-person crew and [X]+ projects."</p>
+                        </li>
+                        <li class="relative pl-4">
+                            <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                            <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-0.5 rounded mr-1">REWRITTEN</span>
+                            Consulted with <strong>[X]+</strong> residential and commercial clients to scope landscape projects valued at <strong>$[X]–$[X]</strong> each, translating client vision into actionable site plans based on soil conditions, drainage, and grading constraints — earning a <strong>[X]%</strong> repeat business rate and <strong>[X]</strong> client referrals.
+                        </li>
+                        <li class="relative pl-4">
+                            <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-amber-500 rounded-full"></span>
+                            <span class="bg-amber-100 text-amber-800 text-xs font-bold px-2 py-0.5 rounded mr-1">CONSIDER REMOVING</span>
+                            <span class="text-slate-400 line-through">Performed full clean-outs of overgrown or damaged areas including removal of brush, debris and unwanted trees.</span>
+                            <p class="text-amber-700 text-xs mt-1 italic">→ This is a physical task, not an accomplishment. If keeping: "Managed [X]+ site restoration projects across properties up to [X] acres, coordinating crew schedules and equipment logistics to complete clean-outs [X]% faster than the company's average timeline — generating $[X]K in repeat business."</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Shoe Business -->
+                <div class="mb-5" style="break-before: page;">
+                    <div class="flex justify-between items-start mb-1">
+                        <div>
+                            <p class="font-bold text-slate-900">Owner & Founder</p>
+                            <p class="text-slate-600 text-sm">Independent E-Commerce Business (Footwear), Portland, OR</p>
+                        </div>
+                        <p class="text-slate-500 text-sm">June 2018 – Feb 2024</p>
+                    </div>
+
+                    <ul class="space-y-3 text-sm text-slate-700 ml-4">
+                        <li class="relative pl-4">
+                            <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                            <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-0.5 rounded mr-1">REWRITTEN</span>
+                            Founded and operated a footwear resale business for 6 years while pursuing a civil engineering degree — analyzing market trends across <strong>[X]+</strong> product categories to set competitive pricing, achieving <strong>[X]%</strong> average profit margins on <strong>$[X]K</strong> in cumulative revenue.
+                        </li>
+                        <li class="relative pl-4">
+                            <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                            <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-0.5 rounded mr-1">REWRITTEN</span>
+                            Built a multi-platform marketing engine across <strong>[X]</strong> social media and e-commerce channels, growing the customer base to <strong>[X]+</strong> buyers and generating <strong>$[X]K</strong> in online sales — all while self-funding <strong>[X]%</strong> of college tuition through business profits.
+                        </li>
+                        <li class="relative pl-4">
+                            <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                            <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-0.5 rounded mr-1">REWRITTEN</span>
+                            Managed end-to-end supply chain operations — sourcing, inventory tracking, and fulfillment — for <strong>[X]+</strong> SKUs, maintaining a <strong>[X]%</strong> on-time fulfillment rate and <strong>[X]-star</strong> average customer rating while operating as a solo entrepreneur.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Skills -->
+            <div>
+                <h4 class="text-sm font-extrabold text-slate-900 uppercase tracking-widest border-b-2 border-emerald-600 pb-1 mb-3">Technical Skills</h4>
+                <div class="text-sm text-slate-700">
+                    <p><strong>Civil Design & Modeling:</strong> Civil 3D (corridor analysis, grading alignments, cross-sections), ArcGIS Pro (LiDAR processing, surface modeling), AutoCAD (plan production)</p>
+                    <p class="mt-1"><strong>Structural Analysis:</strong> Timber design per NDS 2018 / SDPWS 2021, retaining wall stability analysis (bearing, sliding, overturning), reinforcement detailing per ODOT standards</p>
+                    <p class="mt-1"><strong>Geotechnical:</strong> LPile (lateral pile analysis), GeoStudio (slope stability, seepage)</p>
+                    <p class="mt-1"><strong>Professional:</strong> Bluebeam (plan review & markup), Microsoft Excel (structural calculations), Bilingual — English & Spanish</p>
+                </div>
+            </div>
+
+        </div>
+        <!-- RESUME END -->
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SECTION 4: BEFORE & AFTER                    -->
+    <!-- ============================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 p-8 page-break">
+        <div class="flex items-center gap-3 mb-6">
+            <div class="w-8 h-8 rounded-lg bg-purple-600 text-white flex items-center justify-center text-sm font-bold">⚡</div>
+            <h2 class="text-2xl font-extrabold text-slate-900">Before & After — Best Examples</h2>
+        </div>
+
+        <div class="space-y-6">
+            <!-- Example 1 -->
+            <div class="rounded-xl overflow-hidden border border-slate-200">
+                <div class="bg-red-50 p-5 border-b border-red-200">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-red-600 text-white font-bold text-xs">✗</span>
+                        <span class="text-red-700 font-bold text-sm">ORIGINAL (Doer Level)</span>
+                    </div>
+                    <p class="text-red-800 text-sm">"Walked job sites to identify safety hazards and plan the safest way to complete work."</p>
+                </div>
+                <div class="bg-emerald-50 p-5">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-emerald-600 text-white font-bold text-xs">✓</span>
+                        <span class="text-emerald-700 font-bold text-sm">REWRITTEN (Impact Standard)</span>
+                    </div>
+                    <p class="text-emerald-800 text-sm">"Conducted pre-work safety assessments on [X]+ job sites over 5 years, identifying and mitigating [X] hazards before crew mobilization — maintaining a [X]-incident safety record across a [X]-person crew and [X]+ projects."</p>
+                </div>
+            </div>
+
+            <!-- Example 2 -->
+            <div class="rounded-xl overflow-hidden border border-slate-200">
+                <div class="bg-red-50 p-5 border-b border-red-200">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-red-600 text-white font-bold text-xs">✗</span>
+                        <span class="text-red-700 font-bold text-sm">ORIGINAL (Doer Level)</span>
+                    </div>
+                    <p class="text-red-800 text-sm">"Designed two retaining walls per ODOT standards; verified stability against bearing, sliding, and overturning using conservative soil parameters."</p>
+                </div>
+                <div class="bg-emerald-50 p-5">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-emerald-600 text-white font-bold text-xs">✓</span>
+                        <span class="text-emerald-700 font-bold text-sm">REWRITTEN (Impact Standard + Dragon Slayer)</span>
+                    </div>
+                    <p class="text-emerald-800 text-sm">"Designed 2 retaining walls (up to [X] ft high) per ODOT standards, verifying stability against bearing failure, sliding, and overturning using conservative soil parameters — achieving safety factors of [X] and [X] respectively, exceeding ODOT minimums by [X]% and passing city review on first submission."</p>
+                </div>
+            </div>
+
+            <!-- Example 3 -->
+            <div class="rounded-xl overflow-hidden border border-slate-200">
+                <div class="bg-red-50 p-5 border-b border-red-200">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-red-600 text-white font-bold text-xs">✗</span>
+                        <span class="text-red-700 font-bold text-sm">ORIGINAL (Doer Level)</span>
+                    </div>
+                    <p class="text-red-800 text-sm">"Analyzed market trends to develop effective pricing strategies and maximize profitability."</p>
+                </div>
+                <div class="bg-emerald-50 p-5">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-emerald-600 text-white font-bold text-xs">✓</span>
+                        <span class="text-emerald-700 font-bold text-sm">REWRITTEN (Impact Standard)</span>
+                    </div>
+                    <p class="text-emerald-800 text-sm">"Founded and operated a footwear resale business for 6 years while pursuing a civil engineering degree — analyzing market trends across [X]+ product categories to set competitive pricing, achieving [X]% average profit margins on $[X]K in cumulative revenue."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SECTION 5: ACTION ITEMS                      -->
+    <!-- ============================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 p-8 page-break">
+        <div class="flex items-center gap-3 mb-6">
+            <div class="w-8 h-8 rounded-lg bg-emerald-700 text-white flex items-center justify-center text-sm font-bold">🎯</div>
+            <h2 class="text-2xl font-extrabold text-slate-900">Summary: What Jesus Needs to Do</h2>
+        </div>
+
+        <div class="space-y-4">
+            <div class="flex items-start gap-4 p-5 bg-emerald-50 rounded-xl border border-emerald-200">
+                <div class="w-10 h-10 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-lg flex-shrink-0">1</div>
+                <div>
+                    <p class="font-bold text-emerald-900 text-lg">Add a number to EVERY single bullet</p>
+                    <p class="text-emerald-700 text-sm mt-1">This is priority #1. Go through each bullet and answer: How many? How big? How much money? How long? What percentage? Even conservative estimates are better than nothing. "Approximately 15 projects" beats zero numbers. Right now the resume has zero metrics — that needs to be 100%.</p>
+                </div>
+            </div>
+
+            <div class="flex items-start gap-4 p-5 bg-emerald-50 rounded-xl border border-emerald-200">
+                <div class="w-10 h-10 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-lg flex-shrink-0">2</div>
+                <div>
+                    <p class="font-bold text-emerald-900 text-lg">Fill in every [X] placeholder in the rewrite above</p>
+                    <p class="text-emerald-700 text-sm mt-1">The rewritten bullets have the right structure — but only Jesus knows the real numbers. How many acres of LiDAR data? How tall were the retaining walls? How many clients served? How much revenue from the shoe business? Go through each [X] and fill in the truth.</p>
+                </div>
+            </div>
+
+            <div class="flex items-start gap-4 p-5 bg-emerald-50 rounded-xl border border-emerald-200">
+                <div class="w-10 h-10 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-lg flex-shrink-0">3</div>
+                <div>
+                    <p class="font-bold text-emerald-900 text-lg">Fix the formatting — employer name ABOVE bullets</p>
+                    <p class="text-emerald-700 text-sm mt-1">The current resume has bullets listed before the company name and title. This is backwards and immediately confusing. Company, Title, Dates should always appear FIRST, then the bullet points underneath. This is a quick fix that dramatically improves readability.</p>
+                </div>
+            </div>
+
+            <div class="flex items-start gap-4 p-5 bg-emerald-50 rounded-xl border border-emerald-200">
+                <div class="w-10 h-10 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-lg flex-shrink-0">4</div>
+                <div>
+                    <p class="font-bold text-emerald-900 text-lg">Lean into the City of Hood River — that's your Dragon Slayer</p>
+                    <p class="text-emerald-700 text-sm mt-1">You did a capstone project for a real municipality with real constraints. Lead with that. "On a multi-use path project commissioned by the City of Hood River with [X] ft of elevation change across [X] terrain..." — now the reader knows the stakes. Most students have hypothetical projects. You have a real one. Use it.</p>
+                </div>
+            </div>
+
+            <div class="flex items-start gap-4 p-5 bg-emerald-50 rounded-xl border border-emerald-200">
+                <div class="w-10 h-10 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-lg flex-shrink-0">5</div>
+                <div>
+                    <p class="font-bold text-emerald-900 text-lg">Reframe the landscaping experience as leadership</p>
+                    <p class="text-emerald-700 text-sm mt-1">You were a Crew Lead for 5 years. That means crew management, client communication, site assessment, budget awareness, and safety responsibility. Those are civil engineering soft skills disguised as landscaping bullets. Rewrite them to emphasize the leadership, project management, and client-facing aspects.</p>
+                </div>
+            </div>
+
+            <div class="flex items-start gap-4 p-5 bg-emerald-50 rounded-xl border border-emerald-200">
+                <div class="w-10 h-10 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-lg flex-shrink-0">6</div>
+                <div>
+                    <p class="font-bold text-emerald-900 text-lg">Quantify the shoe business — it's a differentiator</p>
+                    <p class="text-emerald-700 text-sm mt-1">Running your own business for 6 years while getting a CE degree shows initiative that 99% of applicants don't have. But the bullets are so generic they could be anyone. Drop in the real numbers: total revenue, profit margins, customer count, platform ratings. Make it concrete and it becomes a conversation starter in every interview.</p>
+                </div>
+            </div>
+
+            <div class="flex items-start gap-4 p-5 bg-emerald-50 rounded-xl border border-emerald-200">
+                <div class="w-10 h-10 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-lg flex-shrink-0">7</div>
+                <div>
+                    <p class="font-bold text-emerald-900 text-lg">Kill weak verbs and fix typos</p>
+                    <p class="text-emerald-700 text-sm mt-1">"Walked" → "Conducted." "utilized" (lowercase) → "Built." "Creaw Lead" → "Crew Lead." Fix every inconsistency. In civil engineering, precision matters — if the resume has errors, a hiring manager will question the calculations too.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SECTION 6: WHAT'S WORKING                    -->
+    <!-- ============================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 p-8 page-break">
+        <div class="flex items-center gap-3 mb-6">
+            <div class="w-8 h-8 rounded-lg bg-lime-500 text-white flex items-center justify-center text-sm font-bold">✓</div>
+            <h2 class="text-2xl font-extrabold text-slate-900">What's Already Working</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="bg-lime-50 border border-lime-200 rounded-xl p-5">
+                <p class="font-bold text-lime-900">Real municipal capstone project</p>
+                <p class="text-lime-700 text-sm mt-1">The City of Hood River is a real client with real project constraints. Most students have hypothetical designs — Jesus has one that could actually be built. This is a major differentiator that just needs proper framing and Dragon Slayer context.</p>
+            </div>
+            <div class="bg-lime-50 border border-lime-200 rounded-xl p-5">
+                <p class="font-bold text-lime-900">6 years of entrepreneurship</p>
+                <p class="text-lime-700 text-sm mt-1">Running a business while earning a CE degree shows initiative, financial literacy, time management, and self-discipline. Once quantified, this becomes one of the strongest differentiators on the resume — most 22-year-olds can't claim 6 years of business ownership.</p>
+            </div>
+            <div class="bg-lime-50 border border-lime-200 rounded-xl p-5">
+                <p class="font-bold text-lime-900">Bilingual — English & Spanish</p>
+                <p class="text-lime-700 text-sm mt-1">In civil engineering and construction, bilingual professionals are in high demand for client communication and field coordination. This is a genuine competitive advantage, especially in the Pacific Northwest market. Don't let it get buried in a skills list.</p>
+            </div>
+            <div class="bg-lime-50 border border-lime-200 rounded-xl p-5">
+                <p class="font-bold text-lime-900">Strong tool coverage for entry-level CE</p>
+                <p class="text-lime-700 text-sm mt-1">ArcGIS Pro, Civil 3D, AutoCAD, LPile, GeoStudio, Bluebeam — this is a solid software toolkit for a new grad civil engineer. The tools are mentioned in bullets (not just listed), which is the right instinct. Just needs metrics and impact layered on top.</p>
+            </div>
+            <div class="bg-lime-50 border border-lime-200 rounded-xl p-5">
+                <p class="font-bold text-lime-900">5 years as Crew Lead — real leadership</p>
+                <p class="text-lime-700 text-sm mt-1">Crew Lead at a landscaping company means managing people, coordinating logistics, handling clients, and owning safety. These are transferable project management and leadership skills. Most new grad engineers have zero leadership experience. Jesus has 5 years of it.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SECTION 7: SCORECARD                         -->
+    <!-- ============================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 p-8 page-break">
+        <div class="flex items-center gap-3 mb-6">
+            <div class="w-8 h-8 rounded-lg bg-slate-800 text-lime-300 flex items-center justify-center text-sm font-bold">📋</div>
+            <h2 class="text-2xl font-extrabold text-slate-900">Scorecard: Impact Bullet Builder™ Criteria</h2>
+        </div>
+
+        <div class="overflow-x-auto">
+            <table class="w-full text-sm">
+                <thead>
+                    <tr class="border-b-2 border-slate-200">
+                        <th class="text-left py-3 pl-3 text-slate-900 font-bold">Criteria</th>
+                        <th class="text-center py-3 text-slate-900 font-bold w-20">Score</th>
+                        <th class="text-left py-3 text-slate-900 font-bold">Notes</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-100">
+                    <tr>
+                        <td class="py-3 pl-3 font-semibold text-slate-700">Accomplishments (not duties)</td>
+                        <td class="py-3 text-center"><span class="font-mono-num font-bold text-red-500">2/10</span></td>
+                        <td class="py-3 text-slate-500">Nearly every bullet is a duty or task description. "Processed LiDAR data," "Walked job sites," "Performed full clean-outs" — all describe what was done, not what was accomplished.</td>
+                    </tr>
+                    <tr>
+                        <td class="py-3 pl-3 font-semibold text-slate-700">Metrics / Quantification</td>
+                        <td class="py-3 text-center"><span class="font-mono-num font-bold text-red-500">1/10</span></td>
+                        <td class="py-3 text-slate-500">Zero quantified results. "Two retaining walls" is the only number and it's a count, not an impact metric. No $, no %, no time, no scale.</td>
+                    </tr>
+                    <tr>
+                        <td class="py-3 pl-3 font-semibold text-slate-700">How / Method Shown</td>
+                        <td class="py-3 text-center"><span class="font-mono-num font-bold text-amber-500">4/10</span></td>
+                        <td class="py-3 text-slate-500">Tools are mentioned (ArcGIS Pro, Civil 3D, NDS 2018, ODOT) but mostly in separate "Tools Used" headers rather than embedded in bullet impact statements.</td>
+                    </tr>
+                    <tr>
+                        <td class="py-3 pl-3 font-semibold text-slate-700">Why / Business Impact</td>
+                        <td class="py-3 text-center"><span class="font-mono-num font-bold text-red-500">0/10</span></td>
+                        <td class="py-3 text-slate-500">Not a single bullet explains why the work mattered. No cost savings, no risk avoided, no client outcome, no project delivery impact. Complete blank.</td>
+                    </tr>
+                    <tr>
+                        <td class="py-3 pl-3 font-semibold text-slate-700">Me-in-We Extractor™</td>
+                        <td class="py-3 text-center"><span class="font-mono-num font-bold text-amber-500">4/10</span></td>
+                        <td class="py-3 text-slate-500">Most bullets use "I" verbs which is decent. But no clarity on personal vs. team contribution in the capstone projects. "Led sidewalk widening design" is good — this is the strongest personal ownership on the resume.</td>
+                    </tr>
+                    <tr>
+                        <td class="py-3 pl-3 font-semibold text-slate-700">Dragon Slayer Context</td>
+                        <td class="py-3 text-center"><span class="font-mono-num font-bold text-red-500">0/10</span></td>
+                        <td class="py-3 text-slate-500">Zero problem context on any bullet. No stakes, no "what was at risk," no before/after. The Hood River project has massive Dragon Slayer potential — completely unused.</td>
+                    </tr>
+                    <tr>
+                        <td class="py-3 pl-3 font-semibold text-slate-700">Action Verbs</td>
+                        <td class="py-3 text-center"><span class="font-mono-num font-bold text-red-500">3/10</span></td>
+                        <td class="py-3 text-slate-500">"Walked," "Performed," and "utilized" (lowercase) are weak. "Led," "Designed," and "Processed" are stronger. Mix is inconsistent — needs a full verb audit.</td>
+                    </tr>
+                    <tr>
+                        <td class="py-3 pl-3 font-semibold text-slate-700">Bullet Quality Consistency</td>
+                        <td class="py-3 text-center"><span class="font-mono-num font-bold text-red-500">2/10</span></td>
+                        <td class="py-3 text-slate-500">Quality varies wildly. Project bullets have some technical substance. Work experience bullets are generic to the point of being interchangeable with any applicant. Formatting error (bullets before employer name) adds to inconsistency.</td>
+                    </tr>
+                    <tr class="bg-slate-50 font-bold">
+                        <td class="py-4 pl-3 text-slate-900 text-base">OVERALL SCORE</td>
+                        <td class="py-4 text-center"><span class="font-mono-num text-xl text-red-500">20/100</span></td>
+                        <td class="py-4 text-slate-700">Tier: "The Doer" — resume is functionally invisible to hiring managers</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="mt-6 bg-emerald-900 text-white rounded-xl p-6">
+            <p class="font-bold text-lg mb-2">The Good News</p>
+            <p class="text-emerald-200 text-sm">The raw material here is surprisingly strong. Jesus has a real municipal capstone project (City of Hood River), 6 years of entrepreneurship, 5 years of crew leadership, bilingual capability, and a solid civil engineering toolkit. The problem is not the experience — <strong>it's the communication</strong>. Every piece of experience is presented as a duty instead of an impact. Applying the Impact Bullet Builder formula to this resume could realistically jump it from 20/100 to 70+ in a single session. The foundation is there — Jesus just needs to learn to tell the story of his impact, not the list of his tasks.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center py-8 text-slate-400 text-sm">
+        <p>Analysis prepared by LaunchToLead | Impact Bullet Builder™ Framework</p>
+        <p class="mt-1">launchtolead.io/free</p>
+    </footer>
+
+</div>
+
+</body>
+</html>

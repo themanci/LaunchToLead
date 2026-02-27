@@ -166,7 +166,7 @@
                                 '<ul class="space-y-2 text-sm text-white">' +
                                     '<li class="flex items-start gap-2">' +
                                         '<span class="text-emerald-500 mt-0.5">?</span>' +
-                                        '<span><strong class="text-emerald-300">Walk through our 21-Day Launch Blueprint</strong> program</span></li>' +
+                                        '<span><strong class="text-emerald-300">Walk through our 21-Day Accelerator</strong> program</span></li>' +
                                     '<li class="flex items-start gap-2">' +
                                         '<span class="text-emerald-500 mt-0.5">?</span>' +
                                         '<span><strong class="text-emerald-300">Identify your key pain points</strong> in the job search</span></li>' +

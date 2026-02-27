@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Resume is NOT Fine — LaunchToLead Infographic</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #e8e8e8;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+
+  .canvas {
+    width: 1080px;
+    background: #FFFEF8;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* ── TITLE BANNER ── */
+  .title-banner {
+    background: linear-gradient(135deg, #0d1f0d 0%, #14291a 50%, #0f1f14 100%);
+    padding: 54px 56px 50px;
+    text-align: center;
+    position: relative;
+  }
+  .title-banner::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, #a3e635, #14b8a6, #a3e635);
+  }
+  .title-main {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 68px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.15;
+  }
+  .title-main .hl {
+    color: #a3e635;
+    text-decoration: underline;
+    text-decoration-color: #a3e635;
+    text-underline-offset: 8px;
+    text-decoration-thickness: 5px;
+  }
+  .title-main .hl-red {
+    color: #f87171;
+    text-decoration: underline;
+    text-decoration-color: #f87171;
+    text-underline-offset: 8px;
+    text-decoration-thickness: 5px;
+  }
+  .title-sub {
+    font-size: 26px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.7);
+    margin-top: 14px;
+    line-height: 1.45;
+  }
+
+  /* ── SECTION GRID ── */
+  .grid-row {
+    display: flex;
+    gap: 18px;
+    padding: 18px 28px 0;
+  }
+
+  /* ── SECTION BOX ── */
+  .section-box {
+    border-radius: 16px;
+    padding: 30px 28px 26px;
+    flex: 1;
+    position: relative;
+    border: 1.5px solid rgba(0,0,0,0.06);
+  }
+
+  /* ── COLOR THEMES ── */
+  .bg-lime    { background: #F3FDDA; }
+  .bg-teal    { background: #DFFAF5; }
+  .bg-yellow  { background: #FFF9DB; }
+  .bg-peach   { background: #FFF0E4; }
+  .bg-pink    { background: #FFE8EE; }
+  .bg-lavender{ background: #EDE8FF; }
+  .bg-mint    { background: #E0FFF0; }
+  .bg-red-soft{ background: #FFF0F0; }
+  .bg-green-soft { background: #F0FFF4; }
+
+  /* ── NUMBER BADGE ── */
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    color: #fff;
+    margin-right: 14px;
+    flex-shrink: 0;
+  }
+  .badge-emerald { background: #65a30d; }
+  .badge-teal    { background: #0d9488; }
+  .badge-amber   { background: #d97706; }
+  .badge-rose    { background: #e11d48; }
+  .badge-violet  { background: #7c3aed; }
+  .badge-red     { background: #dc2626; }
+
+  /* ── SECTION HEADERS ── */
+  .section-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+  .section-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    color: #1a1a1a;
+    line-height: 1.15;
+  }
+
+  /* ── BODY TEXT ── */
+  .body {
+    font-size: 21px;
+    line-height: 1.5;
+    color: #333;
+    font-weight: 500;
+  }
+  .body strong {
+    font-weight: 800;
+    color: #1a1a1a;
+  }
+  .body .accent {
+    color: #65a30d;
+    font-weight: 800;
+  }
+  .body .accent-red {
+    color: #dc2626;
+    font-weight: 800;
+  }
+
+  /* ── CALLOUT STRIP ── */
+  .callout-strip {
+    background: linear-gradient(90deg, #14b8a6, #65a30d);
+    padding: 18px 32px;
+    margin: 18px 28px 0;
+    border-radius: 12px;
+    text-align: center;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    color: #fff;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+  .callout-strip-red {
+    background: linear-gradient(90deg, #dc2626, #b91c1c);
+    padding: 18px 32px;
+    margin: 18px 28px 0;
+    border-radius: 12px;
+    text-align: center;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    color: #fff;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+
+  /* ── BULLET CARD ── */
+  .bullet-card {
+    border-radius: 12px;
+    padding: 22px 24px;
+    margin-top: 14px;
+    font-size: 19px;
+    line-height: 1.55;
+    color: #333;
+    font-weight: 500;
+    position: relative;
+    padding-left: 48px;
+  }
+  .bullet-card::before {
+    content: '';
+    position: absolute;
+    left: 22px;
+    top: 30px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+  }
+  .bullet-card.bad {
+    background: rgba(220,38,38,0.06);
+    border: 1.5px solid rgba(220,38,38,0.15);
+    border-left: 4px solid #dc2626;
+  }
+  .bullet-card.bad::before {
+    background: #dc2626;
+  }
+  .bullet-card.good {
+    background: rgba(101,163,13,0.08);
+    border: 1.5px solid rgba(101,163,13,0.2);
+    border-left: 4px solid #65a30d;
+  }
+  .bullet-card.good::before {
+    background: #65a30d;
+  }
+
+  /* ── METRIC HIGHLIGHT ── */
+  .metric {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    color: #65a30d;
+  }
+
+  /* ── FORMULA VISUAL ── */
+  .formula-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin: 20px 0 12px;
+  }
+  .formula-pill {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    padding: 14px 22px;
+    border-radius: 12px;
+    text-align: center;
+  }
+  .formula-pill.blue {
+    background: rgba(59,130,246,0.12);
+    border: 2px solid rgba(59,130,246,0.25);
+    color: #2563eb;
+  }
+  .formula-pill.amber {
+    background: rgba(217,119,6,0.12);
+    border: 2px solid rgba(217,119,6,0.25);
+    color: #d97706;
+  }
+  .formula-pill.teal {
+    background: rgba(13,148,136,0.12);
+    border: 2px solid rgba(13,148,136,0.25);
+    color: #0d9488;
+  }
+  .formula-pill.violet {
+    background: rgba(124,58,237,0.12);
+    border: 2px solid rgba(124,58,237,0.25);
+    color: #7c3aed;
+  }
+  .formula-plus {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 26px;
+    color: #999;
+  }
+  .formula-equals {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 800;
+    font-size: 28px;
+    color: #333;
+  }
+  .formula-result {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 800;
+    font-size: 28px;
+    color: #65a30d;
+    background: rgba(163,230,53,0.15);
+    border: 2px solid rgba(101,163,13,0.3);
+    padding: 14px 28px;
+    border-radius: 12px;
+  }
+
+  /* ── VERDICT TAG ── */
+  .verdict-tag {
+    display: inline-block;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 5px 14px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+  }
+  .verdict-tag.red {
+    background: rgba(220,38,38,0.1);
+    color: #dc2626;
+  }
+  .verdict-tag.green {
+    background: rgba(101,163,13,0.12);
+    color: #65a30d;
+  }
+
+  /* ── KEY POINT ── */
+  .key-point {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  .key-point .arrow {
+    color: #65a30d;
+    font-weight: 700;
+    font-size: 22px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  /* ── BOTTOM BANNER ── */
+  .bottom-banner {
+    background: linear-gradient(135deg, #0d1f0d 0%, #14291a 50%, #0f1f14 100%);
+    margin: 22px 28px 28px;
+    border-radius: 16px;
+    padding: 30px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+  }
+  .bottom-banner::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #a3e635, #14b8a6, #a3e635);
+  }
+  .bottom-left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  .logo-circle {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #a3e635, #14b8a6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 26px;
+    color: #0d1f0d;
+  }
+  .bottom-text .name {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 26px;
+    color: #fff;
+  }
+  .bottom-text .tagline {
+    font-size: 18px;
+    color: rgba(255,255,255,0.6);
+    margin-top: 2px;
+  }
+  .bottom-cta {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    color: #0d1f0d;
+    background: #a3e635;
+    padding: 14px 28px;
+    border-radius: 10px;
+  }
+
+  /* ── QUOTE BLOCK ── */
+  .quote-block {
+    font-size: 24px;
+    font-style: italic;
+    color: #555;
+    line-height: 1.5;
+    padding: 0 8px;
+    margin: 8px 0;
+    font-weight: 500;
+  }
+  .quote-block strong {
+    color: #1a1a1a;
+    font-weight: 800;
+    font-style: normal;
+  }
+</style>
+</head>
+<body>
+
+<div class="canvas">
+
+  <!-- ═══ TITLE BANNER ═══ -->
+  <div class="title-banner">
+    <div class="title-main">"My Resume is <span class="hl-red">Fine</span>"</div>
+    <div class="title-sub">What everyone tells me — and what it <em>actually</em> looks like.<br>Here's a real before &amp; after.</div>
+  </div>
+
+  <!-- ═══ BEFORE STRIP ═══ -->
+  <div class="callout-strip-red">
+    ✗ &nbsp; BEFORE — ORIGINAL BULLET POINTS &nbsp; ✗
+  </div>
+
+  <!-- ═══ BEFORE SECTION ═══ -->
+  <div class="grid-row">
+    <div class="section-box bg-red-soft" style="flex: 1 1 100%;">
+      <div class="section-header">
+        <span class="badge badge-red">✗</span>
+        <span class="section-title">The "Doer" Bullets</span>
+      </div>
+      <div class="bullet-card bad">
+        Embedded software testing on large ag products.
+      </div>
+      <div class="bullet-card bad">
+        Using tools like Vehicle Spy for problem-solving and issue resolution in automotive ECU designs (BCM, IPC, SDM, EPS, EBCM, VCU, etc.)
+      </div>
+      <div class="bullet-card bad">
+        Identifying and resolving manufacturing process failures in products.
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ AFTER STRIP ═══ -->
+  <div class="callout-strip">
+    ✓ &nbsp; AFTER — WORKING WITH ME &nbsp; ✓
+  </div>
+
+  <!-- ═══ AFTER SECTION ═══ -->
+  <div class="grid-row">
+    <div class="section-box bg-green-soft" style="flex: 1 1 100%;">
+      <div class="section-header">
+        <span class="badge badge-emerald">✓</span>
+        <span class="section-title">The "Impact" Bullets</span>
+      </div>
+      <div class="bullet-card good">
+        Executed <span class="metric">200+</span> embedded software test cases across <span class="metric">5</span> agricultural product platforms, identifying <span class="metric">30+</span> critical defects pre-production through CAN bus message analysis — preventing potential field failures on equipment valued at <span class="metric">$150K+</span> per unit.
+      </div>
+      <div class="bullet-card good">
+        Diagnosed and resolved <span class="metric">20+</span> ECU calibration anomalies across BCM, IPC, SDM, EPS, EBCM, and VCU modules using Vehicle Spy — reducing re-test cycles by <span class="metric">30%</span> and accelerating validation timelines for <span class="metric">2</span> vehicle programs.
+      </div>
+      <div class="bullet-card good">
+        Diagnosed <span class="metric">35+</span> manufacturing process failures across <span class="metric">2</span> production lines within an <span class="metric">8-week</span> engagement, performing root cause analysis on circuit boards and tracking FPY/PPM data — contributing to a <span class="metric">4%</span> improvement in first pass yield.
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ THE FORMULA ═══ -->
+  <div class="grid-row">
+    <div class="section-box bg-lime" style="flex: 1 1 100%;">
+      <div class="section-header">
+        <span class="section-title">What Changed? One Formula.</span>
+      </div>
+      <div class="formula-row">
+        <div class="formula-pill blue">Accomplishment</div>
+        <span class="formula-plus">+</span>
+        <div class="formula-pill amber">Metric</div>
+        <span class="formula-plus">+</span>
+        <div class="formula-pill teal">How</div>
+        <span class="formula-plus">+</span>
+        <div class="formula-pill violet">Why</div>
+        <span class="formula-equals">=</span>
+        <div class="formula-result">IMPACT</div>
+      </div>
+      <div class="body" style="text-align: center; margin-top: 8px;">
+        Your resume has to <strong class="accent">SHOW your value</strong> on its own — you won't be standing next to it to explain.
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ CTA STRIP ═══ -->
+  <div class="callout-strip" style="font-size:22px; text-transform:none; letter-spacing:0;">
+    Comment "<strong>RESUME</strong>" below for a FREE audit &nbsp;·&nbsp; Grab my FREE guide in the first comment ↓
+  </div>
+
+  <!-- ═══ BOTTOM BANNER ═══ -->
+  <div class="bottom-banner">
+    <div class="bottom-left">
+      <div class="logo-circle">L²</div>
+      <div class="bottom-text">
+        <div class="name">LaunchToLead</div>
+        <div class="tagline">Helping engineers launch careers that lead</div>
+      </div>
+    </div>
+    <div class="bottom-cta">FOLLOW FOR MORE ▸</div>
+  </div>
+
+</div>
+
+</body>
+</html>
