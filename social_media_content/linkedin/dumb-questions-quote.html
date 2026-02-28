@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Minimalist Quote — Dumb Questions</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #333;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px;
+  }
+
+  .canvas {
+    width: 1080px;
+    height: 1080px;
+    background: #0a0a0a;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 60px 64px;
+  }
+
+  /* ── TOP BAR ── */
+  .top-bar {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+  }
+  .avatar {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+  .name-block {
+    display: flex;
+    flex-direction: column;
+  }
+  .name {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 30px;
+    color: #fff;
+  }
+  .handle {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 20px;
+    color: rgba(255,255,255,0.45);
+    font-style: italic;
+    margin-top: 2px;
+  }
+  .li-icon {
+    width: 44px;
+    height: 44px;
+    background: #0a66c2;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 800;
+    font-size: 28px;
+    color: #fff;
+    margin-left: 8px;
+  }
+
+  /* ── QUOTE ── */
+  .quote {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 56px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.35;
+    letter-spacing: -0.5px;
+  }
+  .quote .accent {
+    color: #a3e635;
+  }
+  .quote .dim {
+    color: rgba(255,255,255,0.35);
+  }
+
+  /* ── SPACER ── */
+  .spacer {
+    flex: 1;
+  }
+</style>
+</head>
+<body>
+
+<div class="canvas">
+
+  <!-- ═══ TOP BAR ═══ -->
+  <div class="top-bar">
+    <img class="avatar" src="../../pictures/mansour/headshot_square.png" alt="Mansour Manci">
+    <div class="name-block">
+      <div class="name">Mansour Manci</div>
+      <div class="handle">@launchtolead</div>
+    </div>
+    <div class="li-icon">in</div>
+  </div>
+
+  <div class="spacer"></div>
+
+  <!-- ═══ QUOTE ═══ -->
+  <div class="quote">
+    The best engineering conversations I've ever witnessed started with:<br><br>
+    <span class="accent">"I'm going to ask a dumb question here..."</span>
+  </div>
+
+  <div class="spacer"></div>
+
+</div>
+
+</body>
+</html>

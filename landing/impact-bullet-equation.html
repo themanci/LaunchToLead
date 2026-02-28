@@ -60,201 +60,269 @@
 <body class="bg-white text-slate-700 font-sans antialiased overflow-x-hidden">
 
 <!-- ============================================ -->
-<!-- HEADER — Logo centered, links to main site   -->
+<!-- HEADER — Logo centered, thin                  -->
 <!-- ============================================ -->
-<header class="bg-white border-b border-slate-100 py-4 px-4">
-    <div class="max-w-4xl mx-auto flex justify-center">
-        <a href="https://launchtolead.io" class="inline-flex items-center gap-2.5 hover:opacity-80 transition">
-            <div class="bg-brand-primary text-white w-9 h-9 rounded-lg flex items-center justify-center font-bold text-sm shadow-sm">
-                L²
-            </div>
-            <span class="text-xl font-bold text-slate-900">Launch<span class="font-light text-brand-secondary">ToLead</span></span>
+<header class="bg-white border-b border-slate-100 py-3 px-4">
+    <div class="max-w-2xl mx-auto flex justify-center">
+        <a href="https://launchtolead.io" class="inline-flex items-center gap-2 hover:opacity-80 transition">
+            <div class="bg-brand-primary text-white w-7 h-7 rounded-md flex items-center justify-center font-bold text-xs shadow-sm">L²</div>
+            <span class="text-lg font-bold text-slate-900">Launch<span class="font-light text-brand-secondary">ToLead</span></span>
         </a>
     </div>
 </header>
 
 <main class="relative overflow-hidden">
-    <!-- Background effects -->
-    <div class="absolute inset-0 bg-dots opacity-20 pointer-events-none"></div>
-    <div class="absolute top-0 right-0 -mr-20 -mt-20 w-80 h-80 bg-teal-100 rounded-full blur-3xl opacity-60 pointer-events-none" aria-hidden="true"></div>
-    <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 bg-lime-100 rounded-full blur-3xl opacity-60 pointer-events-none" aria-hidden="true"></div>
-
-    <div class="max-w-2xl mx-auto px-4 relative z-10">
+    <div class="max-w-xl mx-auto px-4 relative z-10">
 
     <!-- ============================================ -->
-    <!-- SECTION 1: HEADLINE + SUBHEADLINE             -->
+    <!-- ABOVE THE FOLD — Headline + Before/After +   -->
+    <!-- Testimonials + Form (must fit mobile screen)  -->
     <!-- ============================================ -->
-    <section class="pt-10 pb-2 text-center">
-        <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 leading-tight mb-4">
-            <span class="block text-brand-secondary text-2xl md:text-3xl uppercase tracking-wide mb-2">100% FREE</span>
-            Is your resume struggling to land you interviews? The principles laid out in this guide WILL change that.
+    <section class="pt-6 pb-2 text-center">
+        <h1 class="text-2xl md:text-3xl font-extrabold text-slate-900 leading-tight mb-2">
+            Get Your Free Resume Guide<br class="md:hidden"/>...in Under 30 Seconds.
         </h1>
-        <p class="text-base md:text-lg text-slate-600 leading-relaxed max-w-xl mx-auto mb-2">
-            Other engineers have already used them to land interviews and offers at John Deere, SpaceX, Google, GE & Ford.
-        </p>
-        <p class="text-sm text-slate-500 max-w-xl mx-auto">
-            Built by me, a former John Deere Engineering Manager & Staff Engineer with years of hiring and recruiting experience.
+        <p class="text-sm md:text-base text-slate-600 leading-relaxed max-w-md mx-auto">
+            The formula engineers have used to land offers at Google, SpaceX, Ford, John Deere and GE.
         </p>
     </section>
 
     <!-- ============================================ -->
-    <!-- SOCIAL PROOF — Company name bar               -->
+    <!-- BEFORE / AFTER — Compact, all 4 elements     -->
+    <!-- ============================================ -->
+    <section class="pb-2 pt-2">
+        <div class="rounded-xl overflow-hidden border border-slate-200">
+            <!-- Before -->
+            <div class="bg-red-50 px-4 py-2.5 border-b border-red-100">
+                <div class="flex items-start gap-2">
+                    <span class="text-red-400 text-sm font-bold mt-0.5 shrink-0">Before:</span>
+                    <p class="text-red-800 text-xs italic leading-snug">"Developed features for web application and improved system performance."</p>
+                </div>
+            </div>
+            <!-- After -->
+            <div class="bg-emerald-50 px-4 py-2.5">
+                <div class="flex items-start gap-2">
+                    <span class="text-emerald-600 text-sm font-bold mt-0.5 shrink-0">After:</span>
+                    <p class="text-emerald-900 text-xs leading-snug">
+                        "<span class="underline decoration-blue-300 decoration-1">Rebuilt checkout API</span> 
+                        <span class="underline decoration-teal-300 decoration-1">reducing load time by 60%</span>, 
+                        <span class="underline decoration-cyan-300 decoration-1">using Node.js and Redis caching</span>, 
+                        <span class="underline decoration-lime-300 decoration-1">driving $340K additional annual revenue</span>."
+                    </p>
+                </div>
+            </div>
+            <!-- Formula key — thin row -->
+            <div class="bg-slate-50 px-4 py-1.5 flex items-center justify-center gap-3 text-[10px] font-bold border-t border-slate-100">
+                <span class="text-blue-500">Accomplishment</span>
+                <span class="text-slate-300">+</span>
+                <span class="text-teal-500">Metric</span>
+                <span class="text-slate-300">+</span>
+                <span class="text-cyan-500">How</span>
+                <span class="text-slate-300">+</span>
+                <span class="text-lime-600">Why</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- TESTIMONIALS — Two tight 1-liners            -->
+    <!-- ============================================ -->
+    <section class="pb-2 pt-1">
+        <div class="space-y-1.5">
+            <div class="flex items-start gap-2 px-1">
+                <span class="text-amber-400 text-xs mt-0.5 shrink-0">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                <p class="text-xs text-slate-600"><span class="italic">"Went from zero callbacks to interviews at SpaceX, Google, GE and Bridgestone."</span> — <span class="font-semibold text-slate-800">Karen B.</span></p>
+            </div>
+            <div class="flex items-start gap-2 px-1">
+                <span class="text-amber-400 text-xs mt-0.5 shrink-0">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                <p class="text-xs text-slate-600"><span class="italic">"Used this to land an offer at Ford Motor Company."</span> — <span class="font-semibold text-slate-800">Sarah K.</span></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- FORM — Name + Email + CTA                     -->
     <!-- ============================================ -->
     <section class="pb-6 pt-2">
-        <div class="flex items-center justify-center gap-4 md:gap-6 flex-wrap">
-            <span class="text-sm md:text-base font-bold text-slate-300 tracking-wide">John Deere</span>
-            <span class="text-slate-200">&bull;</span>
-            <span class="text-sm md:text-base font-bold text-slate-300 tracking-wide">SpaceX</span>
-            <span class="text-slate-200">&bull;</span>
-            <span class="text-sm md:text-base font-bold text-slate-300 tracking-wide">Google</span>
-            <span class="text-slate-200">&bull;</span>
-            <span class="text-sm md:text-base font-bold text-slate-300 tracking-wide">GE</span>
-            <span class="text-slate-200">&bull;</span>
-            <span class="text-sm md:text-base font-bold text-slate-300 tracking-wide">Ford</span>
-        </div>
-    </section>
-
-    <!-- ============================================ -->
-    <!-- SECTION 2: HERO IMAGE — Headshot + Lead Magnet -->
-    <!-- ============================================ -->
-    <section class="pb-8">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-stretch max-w-md md:max-w-none mx-auto">
-            <!-- Headshot -->
-            <div class="rounded-2xl overflow-hidden shadow-lg border border-slate-100 bg-slate-50 aspect-square md:aspect-auto">
-                <img src="../pictures/mansour/headshot.webp" 
-                     alt="Mansour Manci — Career Coach & Founder of Launch to Lead" 
-                     class="w-full h-full object-cover object-[center_20%]"
-                     loading="eager">
-            </div>
-            <!-- Lead Magnet Cover -->
-            <div class="rounded-2xl overflow-hidden shadow-lg border border-slate-100 relative min-h-[320px] md:min-h-0" style="background: linear-gradient(160deg, #022c22 0%, #064e3b 35%, #0d9488 70%, #065f46 100%);">
-                <!-- Decorative elements -->
-                <div style="position: absolute; inset: 0; opacity: 0.05; background-image: radial-gradient(#a3e635 1px, transparent 1px); background-size: 18px 18px; pointer-events: none;"></div>
-                <div style="position: absolute; top: -30px; right: -30px; width: 120px; height: 120px; border-radius: 50%; background: radial-gradient(circle, rgba(163,230,53,0.12) 0%, transparent 70%); pointer-events: none;"></div>
-                <div style="position: absolute; bottom: -40px; left: -40px; width: 140px; height: 140px; border-radius: 50%; background: radial-gradient(circle, rgba(20,184,166,0.1) 0%, transparent 70%); pointer-events: none;"></div>
-                <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 200px; height: 200px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.04); pointer-events: none;"></div>
-
-                <div class="relative z-10 flex flex-col items-center justify-center text-white text-center p-6 md:p-5 h-full">
-                    <!-- Logo -->
-                    <div class="inline-flex items-center gap-2 mb-3">
-                        <div class="bg-white text-emerald-900 w-8 h-8 md:w-7 md:h-7 rounded-lg flex items-center justify-center font-bold text-xs md:text-[10px]">L²</div>
-                        <span class="text-sm md:text-xs font-bold">Launch<span class="font-light text-lime-300">ToLead</span></span>
+        <div class="border border-slate-200 rounded-xl p-4 bg-white shadow-sm">
+            <form id="lead-form" class="space-y-3" onsubmit="return handleSubmit(event)">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div>
+                        <label for="firstName" class="block text-xs font-semibold text-slate-600 mb-1">First Name</label>
+                        <input type="text" id="firstName" name="firstName" required placeholder="Your first name"
+                               class="w-full px-3 py-2.5 rounded-lg border border-slate-300 text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-brand-secondary focus:border-brand-secondary transition">
                     </div>
-
-                    <!-- Badge -->
-                    <div class="inline-flex items-center gap-1.5 px-3 py-1.5 md:py-1 rounded-full mb-3" style="background: rgba(163,230,53,0.1); border: 1px solid rgba(163,230,53,0.25);">
-                        <svg class="w-3.5 h-3.5 md:w-3 md:h-3 text-lime-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-                        <span class="text-xs md:text-[10px] font-bold uppercase text-lime-300 tracking-wider">Free Resume Guide</span>
+                    <div>
+                        <label for="email" class="block text-xs font-semibold text-slate-600 mb-1">Email</label>
+                        <input type="email" id="email" name="email" required placeholder="you@email.com"
+                               class="w-full px-3 py-2.5 rounded-lg border border-slate-300 text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-brand-secondary focus:border-brand-secondary transition">
                     </div>
-
-                    <!-- Title -->
-                    <h3 class="text-xl md:text-lg font-extrabold leading-snug mb-3">Impact Bullet<br/>Builder™</h3>
-
-                    <!-- Mini formula pills -->
-                    <div class="flex items-center gap-1.5 md:gap-1 flex-wrap justify-center mb-3">
-                        <div class="px-2.5 md:px-2 py-1.5 md:py-1 rounded-md text-[11px] md:text-[9px] font-bold" style="background: rgba(59,130,246,0.15); border: 1px solid rgba(59,130,246,0.3); color: #93c5fd;">Accomplishment</div>
-                        <span class="text-white/30 text-xs md:text-[10px]">+</span>
-                        <div class="px-2.5 md:px-2 py-1.5 md:py-1 rounded-md text-[11px] md:text-[9px] font-bold" style="background: rgba(20,184,166,0.15); border: 1px solid rgba(20,184,166,0.3); color: #5eead4;">Metric</div>
-                        <span class="text-white/30 text-xs md:text-[10px]">+</span>
-                        <div class="px-2.5 md:px-2 py-1.5 md:py-1 rounded-md text-[11px] md:text-[9px] font-bold" style="background: rgba(6,182,212,0.15); border: 1px solid rgba(6,182,212,0.3); color: #67e8f9;">How</div>
-                        <span class="text-white/30 text-xs md:text-[10px]">+</span>
-                        <div class="px-2.5 md:px-2 py-1.5 md:py-1 rounded-md text-[11px] md:text-[9px] font-bold" style="background: rgba(163,230,53,0.15); border: 1px solid rgba(163,230,53,0.3); color: #d9f99d;">Why</div>
-                    </div>
-
-                    <!-- Stats row -->
-                    <div class="flex items-center gap-4 md:gap-3 mb-3">
-                        <div class="text-center">
-                            <p class="font-mono-num text-xl md:text-lg font-bold text-lime-300" style="text-shadow: 0 0 12px rgba(163,230,53,0.3);">40%+</p>
-                            <p class="text-emerald-300/50 text-[10px] md:text-[8px]">callback rate</p>
-                        </div>
-                        <div class="w-px h-6 bg-white/10"></div>
-                        <div class="text-center">
-                            <p class="font-mono-num text-xl md:text-lg font-bold text-teal-300" style="text-shadow: 0 0 12px rgba(20,184,166,0.3);">14</p>
-                            <p class="text-emerald-300/50 text-[10px] md:text-[8px]">pages</p>
-                        </div>
-                        <div class="w-px h-6 bg-white/10"></div>
-                        <div class="text-center">
-                            <p class="font-mono-num text-xl md:text-lg font-bold text-cyan-300" style="text-shadow: 0 0 12px rgba(6,182,212,0.3);">4-Part</p>
-                            <p class="text-emerald-300/50 text-[10px] md:text-[8px]">formula</p>
-                        </div>
-                    </div>
-
-                    <!-- Subtitle -->
-                    <p class="text-emerald-200/60 text-xs md:text-[10px] leading-snug">Stop Applying Into the Void</p>
-                    <div class="w-10 h-0.5 mx-auto mt-2" style="background: linear-gradient(90deg, transparent, #a3e635, transparent);"></div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ============================================ -->
-    <!-- SECTION 3: WHAT'S INSIDE                      -->
-    <!-- ============================================ -->
-    <section class="pb-6">
-        <div class="bg-brand-light/60 border border-emerald-100 rounded-2xl p-6 md:p-8">
-            <h2 class="text-lg md:text-xl font-extrabold text-slate-900 mb-4">What You'll Get Inside <span class="text-brand-secondary font-bold">(14 pages)</span></h2>
-            <div class="space-y-3">
-                <div class="flex items-start gap-3">
-                    <span class="text-brand-accent text-lg leading-none mt-0.5">&#10003;</span>
-                    <p class="text-sm md:text-base text-slate-700"><strong class="text-slate-900">The 4-Part Impact Bullet Formula</strong> — the exact structure that turns boring resume lines into interview-winning bullets</p>
-                </div>
-                <div class="flex items-start gap-3">
-                    <span class="text-brand-accent text-lg leading-none mt-0.5">&#10003;</span>
-                    <p class="text-sm md:text-base text-slate-700"><strong class="text-slate-900">Before & After Resume Examples</strong> — see real bullets transformed from generic to specific (from engineers who landed offers)</p>
-                </div>
-                <div class="flex items-start gap-3">
-                    <span class="text-brand-accent text-lg leading-none mt-0.5">&#10003;</span>
-                    <p class="text-sm md:text-base text-slate-700"><strong class="text-slate-900">The Scoring System</strong> — rate your own resume bullets out of 100 so you know exactly where you stand before you apply</p>
-                </div>
-                <div class="flex items-start gap-3">
-                    <span class="text-brand-accent text-lg leading-none mt-0.5">&#10003;</span>
-                    <p class="text-sm md:text-base text-slate-700"><strong class="text-slate-900">The #1 Mistake</strong> that makes 90% of engineering resumes look identical — and how to fix it in under 10 minutes</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ============================================ -->
-    <!-- SECTION 4: LEAD QUALIFICATION FORM            -->
-    <!-- ============================================ -->
-    <section class="pb-8">
-        <div class="bg-white/70 backdrop-blur-sm border border-slate-200 rounded-2xl p-6 md:p-8">
-            <form id="lead-form" class="space-y-4" onsubmit="return handleSubmit(event)">
-                <!-- Testimonial — social proof before the form -->
-                <div class="bg-brand-light/50 border border-emerald-100 rounded-xl p-4 text-center">
-                    <div class="flex items-center justify-center gap-0.5 mb-2">
-                        <span class="text-amber-400 text-sm">&#9733;</span>
-                        <span class="text-amber-400 text-sm">&#9733;</span>
-                        <span class="text-amber-400 text-sm">&#9733;</span>
-                        <span class="text-amber-400 text-sm">&#9733;</span>
-                        <span class="text-amber-400 text-sm">&#9733;</span>
-                    </div>
-                    <p class="text-sm text-slate-600 italic leading-relaxed">"I used the Impact Bullet Builder on my resume and went from zero callbacks to interviews at SpaceX, Google, GE and Bridgestone. I had no idea my resume was the problem."</p>
-                    <p class="text-xs font-bold text-slate-800 mt-2">— Karen B., Launch to Lead Graduate</p>
-                </div>
-
-                <!-- First Name -->
-                <div>
-                    <label for="firstName" class="block text-sm font-semibold text-slate-700 mb-1">First Name</label>
-                    <input type="text" id="firstName" name="firstName" required placeholder="Your first name"
-                           class="w-full px-4 py-3 rounded-xl border border-slate-300 text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-brand-secondary focus:border-brand-secondary transition">
-                </div>
-
-                <!-- Email -->
-                <div>
-                    <label for="email" class="block text-sm font-semibold text-slate-700 mb-1">Email</label>
-                    <input type="email" id="email" name="email" required placeholder="you@email.com"
-                           class="w-full px-4 py-3 rounded-xl border border-slate-300 text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-brand-secondary focus:border-brand-secondary transition">
-                </div>
-
-                <!-- CTA Button -->
                 <button type="submit" 
-                        class="w-full py-4 bg-brand-primary hover:bg-brand-secondary text-white font-extrabold text-lg rounded-xl transition-all hover:shadow-lg hover:shadow-teal-500/20 active:scale-[0.98]">
-                    Claim Your Free Guide Now →
+                        class="w-full py-3 bg-brand-primary hover:bg-brand-secondary text-white font-extrabold text-base rounded-lg transition-all hover:shadow-lg hover:shadow-teal-500/20 active:scale-[0.98]">
+                    Get Your Free Guide
                 </button>
             </form>
+            <p class="text-[10px] text-slate-400 text-center mt-2">14-page PDF. Delivered to your inbox instantly. No spam.</p>
+        </div>
+    </section>
 
-            <p class="text-xs text-slate-400 text-center mt-4">We respect your privacy. Unsubscribe at any time.</p>
+
+    <!-- ============================================================ -->
+    <!--          BELOW THE FOLD — Reinforcement content              -->
+    <!-- ============================================================ -->
+
+
+    <!-- ============================================ -->
+    <!-- LEAD MAGNET COVER IMAGE                       -->
+    <!-- ============================================ -->
+    <section class="pb-6">
+        <div class="rounded-2xl overflow-hidden shadow-lg border border-slate-100 relative" style="background: linear-gradient(160deg, #022c22 0%, #064e3b 35%, #0d9488 70%, #065f46 100%);">
+            <div style="position: absolute; inset: 0; opacity: 0.05; background-image: radial-gradient(#a3e635 1px, transparent 1px); background-size: 18px 18px; pointer-events: none;"></div>
+            <div class="relative z-10 flex flex-col items-center justify-center text-white text-center p-8">
+                <div class="inline-flex items-center gap-2 mb-3">
+                    <div class="bg-white text-emerald-900 w-7 h-7 rounded-lg flex items-center justify-center font-bold text-[10px]">L²</div>
+                    <span class="text-sm font-bold">Launch<span class="font-light text-lime-300">ToLead</span></span>
+                </div>
+                <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full mb-3" style="background: rgba(163,230,53,0.1); border: 1px solid rgba(163,230,53,0.25);">
+                    <span class="text-xs font-bold uppercase text-lime-300 tracking-wider">Free Resume Guide</span>
+                </div>
+                <h3 class="text-xl font-extrabold leading-snug mb-3">Impact Bullet Builder</h3>
+                <div class="flex items-center gap-1.5 flex-wrap justify-center mb-4">
+                    <div class="px-2 py-1 rounded-md text-[10px] font-bold" style="background: rgba(59,130,246,0.15); border: 1px solid rgba(59,130,246,0.3); color: #93c5fd;">Accomplishment</div>
+                    <span class="text-white/30 text-[10px]">+</span>
+                    <div class="px-2 py-1 rounded-md text-[10px] font-bold" style="background: rgba(20,184,166,0.15); border: 1px solid rgba(20,184,166,0.3); color: #5eead4;">Metric</div>
+                    <span class="text-white/30 text-[10px]">+</span>
+                    <div class="px-2 py-1 rounded-md text-[10px] font-bold" style="background: rgba(6,182,212,0.15); border: 1px solid rgba(6,182,212,0.3); color: #67e8f9;">How</div>
+                    <span class="text-white/30 text-[10px]">+</span>
+                    <div class="px-2 py-1 rounded-md text-[10px] font-bold" style="background: rgba(163,230,53,0.15); border: 1px solid rgba(163,230,53,0.3); color: #d9f99d;">Why</div>
+                </div>
+                <div class="flex items-center gap-4">
+                    <div class="text-center">
+                        <p class="font-mono-num text-lg font-bold text-lime-300">40%+</p>
+                        <p class="text-emerald-300/50 text-[9px]">callback rate</p>
+                    </div>
+                    <div class="w-px h-5 bg-white/10"></div>
+                    <div class="text-center">
+                        <p class="font-mono-num text-lg font-bold text-teal-300">14</p>
+                        <p class="text-emerald-300/50 text-[9px]">pages</p>
+                    </div>
+                    <div class="w-px h-5 bg-white/10"></div>
+                    <div class="text-center">
+                        <p class="font-mono-num text-lg font-bold text-cyan-300">4-Part</p>
+                        <p class="text-emerald-300/50 text-[9px]">formula</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- WHAT'S INSIDE — Plain, specific preview       -->
+    <!-- ============================================ -->
+    <section class="pb-6">
+        <div class="bg-brand-light/60 border border-emerald-100 rounded-2xl p-5 md:p-6">
+            <h2 class="text-lg font-extrabold text-slate-900 mb-4">What's Inside <span class="text-brand-secondary font-bold">(14 pages)</span></h2>
+            <div class="space-y-2.5">
+                <div class="flex items-start gap-2.5">
+                    <span class="text-brand-accent text-sm leading-none mt-0.5 shrink-0">&#10003;</span>
+                    <p class="text-sm text-slate-700"><strong class="text-slate-900">The 4-part formula</strong> — how to combine what you did, the numbers, the method, and the business impact into one sentence.</p>
+                </div>
+                <div class="flex items-start gap-2.5">
+                    <span class="text-brand-accent text-sm leading-none mt-0.5 shrink-0">&#10003;</span>
+                    <p class="text-sm text-slate-700"><strong class="text-slate-900">The value pyramid</strong> — how to tell if your bullet reads like a job duty, an achievement, or a real impact statement (and how to move it up).</p>
+                </div>
+                <div class="flex items-start gap-2.5">
+                    <span class="text-brand-accent text-sm leading-none mt-0.5 shrink-0">&#10003;</span>
+                    <p class="text-sm text-slate-700"><strong class="text-slate-900">Pulling your contribution from team work</strong> — how to separate what you personally did from what the team did, without sounding selfish.</p>
+                </div>
+                <div class="flex items-start gap-2.5">
+                    <span class="text-brand-accent text-sm leading-none mt-0.5 shrink-0">&#10003;</span>
+                    <p class="text-sm text-slate-700"><strong class="text-slate-900">Adding context to your results</strong> — how to describe the problem you solved so your result sounds as impressive as it actually was.</p>
+                </div>
+                <div class="flex items-start gap-2.5">
+                    <span class="text-brand-accent text-sm leading-none mt-0.5 shrink-0">&#10003;</span>
+                    <p class="text-sm text-slate-700"><strong class="text-slate-900">Before and after examples</strong> — real resume bullets rewritten across mechanical, software, electrical, and industrial engineering roles.</p>
+                </div>
+                <div class="flex items-start gap-2.5">
+                    <span class="text-brand-accent text-sm leading-none mt-0.5 shrink-0">&#10003;</span>
+                    <p class="text-sm text-slate-700"><strong class="text-slate-900">Finding metrics you didn't know you had</strong> — a list of questions to pull out numbers like time saved, cost reduced, or people impacted.</p>
+                </div>
+                <div class="flex items-start gap-2.5">
+                    <span class="text-brand-accent text-sm leading-none mt-0.5 shrink-0">&#10003;</span>
+                    <p class="text-sm text-slate-700"><strong class="text-slate-900">A 5-point checklist to score your bullets</strong> — run each one through this test before you submit. If it fails, you rewrite it.</p>
+                </div>
+                <div class="flex items-start gap-2.5">
+                    <span class="text-brand-accent text-sm leading-none mt-0.5 shrink-0">&#10003;</span>
+                    <p class="text-sm text-slate-700"><strong class="text-slate-900">How your resume bullets become interview answers</strong> — each bullet is a compressed story you can expand when an interviewer asks a behavioral question.</p>
+                </div>
+                <div class="flex items-start gap-2.5">
+                    <span class="text-brand-accent text-sm leading-none mt-0.5 shrink-0">&#10003;</span>
+                    <p class="text-sm text-slate-700"><strong class="text-slate-900">Customizing your resume to each job posting</strong> — how to match your bullets to a specific role in minutes so you don't get filtered out by ATS software.</p>
+                </div>
+                <div class="flex items-start gap-2.5">
+                    <span class="text-brand-accent text-sm leading-none mt-0.5 shrink-0">&#10003;</span>
+                    <p class="text-sm text-slate-700"><strong class="text-slate-900">A fill-in-the-blank worksheet</strong> — build your own bullets step by step with guided prompts for each part of the formula.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SECOND BEFORE/AFTER (reinforcement)           -->
+    <!-- ============================================ -->
+    <section class="pb-6">
+        <div class="rounded-xl overflow-hidden border border-slate-200">
+            <div class="bg-red-50 px-4 py-3 border-b border-red-100">
+                <p class="text-xs font-bold text-red-400 uppercase tracking-wider mb-1">Before</p>
+                <p class="text-red-800 text-sm italic">"Collaborated with team members on projects and maintained spreadsheets."</p>
+            </div>
+            <div class="bg-emerald-50 px-4 py-3">
+                <p class="text-xs font-bold text-emerald-500 uppercase tracking-wider mb-1">After</p>
+                <p class="text-emerald-900 text-sm">"<span class="underline decoration-blue-300 decoration-1">Automated tracking for 3 major programs</span>, <span class="underline decoration-teal-300 decoration-1">saving 85% of manual reporting time</span>, <span class="underline decoration-cyan-300 decoration-1">using Power BI dashboards</span>, <span class="underline decoration-lime-300 decoration-1">enabling daily executive visibility across a $12M portfolio</span>."</p>
+            </div>
+        </div>
+        <p class="text-xs text-slate-400 text-center mt-2">Same experience. Same person. Completely different outcome.</p>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- ABOUT MANSOUR — Brief credibility              -->
+    <!-- ============================================ -->
+    <section class="pb-6">
+        <div class="flex items-start gap-4 bg-slate-50 rounded-xl p-4 border border-slate-100">
+            <div class="w-16 h-16 rounded-full overflow-hidden shrink-0 border-2 border-brand-secondary">
+                <img src="../pictures/mansour/headshot.webp" 
+                     alt="Mansour — Career Coach" 
+                     class="w-full h-full object-cover object-[center_20%]"
+                     loading="lazy">
+            </div>
+            <div>
+                <p class="text-sm text-slate-700 leading-relaxed">
+                    <strong class="text-slate-900">Built by Mansour</strong> — Former John Deere Engineering Manager & Staff Engineer. 8 years of hiring, recruiting, and coaching engineers to land top-tier engineering jobs.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- BOTTOM CTA — Repeat form for scrollers        -->
+    <!-- ============================================ -->
+    <section class="pb-8">
+        <div class="border border-brand-secondary/30 rounded-xl p-4 bg-brand-light/30">
+            <p class="text-center text-sm font-bold text-slate-800 mb-3">Get the free 14-page guide now.</p>
+            <form id="lead-form-bottom" class="space-y-3" onsubmit="return handleSubmit(event)">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <input type="text" name="firstName" required placeholder="First name"
+                           class="w-full px-3 py-2.5 rounded-lg border border-slate-300 text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-brand-secondary focus:border-brand-secondary transition">
+                    <input type="email" name="email" required placeholder="you@email.com"
+                           class="w-full px-3 py-2.5 rounded-lg border border-slate-300 text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-brand-secondary focus:border-brand-secondary transition">
+                </div>
+                <button type="submit" 
+                        class="w-full py-3 bg-brand-primary hover:bg-brand-secondary text-white font-extrabold text-base rounded-lg transition-all hover:shadow-lg hover:shadow-teal-500/20 active:scale-[0.98]">
+                    Get Your Free Guide
+                </button>
+            </form>
+            <p class="text-[10px] text-slate-400 text-center mt-2">Delivered to your inbox instantly. No spam.</p>
         </div>
     </section>
 
@@ -266,17 +334,12 @@
 <!-- ============================================ -->
 <footer class="bg-brand-primary text-emerald-100 mt-4">
     <div class="max-w-2xl mx-auto px-4 py-10">
-        <!-- Logo & Link -->
         <div class="text-center mb-6">
             <a href="https://launchtolead.io" class="inline-flex items-center gap-2.5 hover:opacity-80 transition">
-                <div class="bg-white text-brand-primary w-9 h-9 rounded-lg flex items-center justify-center font-bold text-sm">
-                    L²
-                </div>
+                <div class="bg-white text-brand-primary w-9 h-9 rounded-lg flex items-center justify-center font-bold text-sm">L²</div>
                 <span class="text-xl font-bold text-white">Launch<span class="font-light text-brand-accent">ToLead</span></span>
             </a>
         </div>
-
-        <!-- Disclaimer -->
         <div class="border-t border-emerald-800 pt-6">
             <p class="text-xs text-emerald-400 leading-relaxed text-center max-w-xl mx-auto">
                 <strong class="text-emerald-300">Results Disclaimer:</strong> The results mentioned on this page are not typical and are not a guarantee of your success. Mansour Manci is an experienced engineer and career coach, and your results will vary depending on your education, effort, application, experience, and background. We do not guarantee that you will land a specific job, receive a specific salary, or achieve any particular career outcome by using our coaching services or materials. Every individual's situation is unique, and outcomes depend on many factors beyond our control. We do not provide employment placement, financial, investment, tax, or legal advice. Client stories and testimonials are shared for informational purposes only and reflect individual experiences. The information contained within this page is the property of Launch to Lead Engineering.
@@ -292,9 +355,13 @@
     async function handleSubmit(e) {
         e.preventDefault();
 
-        const firstName = document.getElementById('firstName').value.trim();
-        const email = document.getElementById('email').value.trim();
-        const submitBtn = e.target.querySelector('button[type="submit"]');
+        // Support both top and bottom forms
+        const form = e.target;
+        const firstNameInput = form.querySelector('[name="firstName"]');
+        const emailInput = form.querySelector('[name="email"]');
+        const firstName = firstNameInput.value.trim();
+        const email = emailInput.value.trim();
+        const submitBtn = form.querySelector('button[type="submit"]');
 
         // Disable button while submitting
         submitBtn.disabled = true;
