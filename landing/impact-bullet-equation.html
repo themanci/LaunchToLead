@@ -367,7 +367,7 @@
         submitBtn.disabled = true;
         submitBtn.textContent = 'Sending...';
 
-        // Fire GA4 event
+        // Fire GA4 event (beacon transport survives page navigation)
         if (typeof gtag === 'function') {
             const utm = typeof getUtmData === 'function' ? getUtmData() : {};
             gtag('event', 'lead_form_submit', {
@@ -375,7 +375,8 @@
                 'traffic_source': utm.traffic_source || 'Direct',
                 'utm_source': utm.utm_source || '',
                 'utm_medium': utm.utm_medium || '',
-                'utm_campaign': utm.utm_campaign || ''
+                'utm_campaign': utm.utm_campaign || '',
+                'transport_type': 'beacon'
             });
         }
 

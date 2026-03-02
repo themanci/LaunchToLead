@@ -177,6 +177,15 @@
             'utm_campaign': utm.utm_campaign || ''
         });
     }
+
+    // LinkedIn: Fire event-based conversion as backup to URL-rule.
+    // To get the conversion_id: Campaign Manager → Analyze → Conversion Tracking
+    // → create or open the "Lead - Impact Bullet Builder Download" conversion
+    // → the numeric ID appears in the URL or conversion details.
+    // Replace YOUR_CONVERSION_ID below with that number.
+    // if (typeof lintrk === 'function') {
+    //     lintrk('track', { conversion_id: YOUR_CONVERSION_ID });
+    // }
 </script>
 
 </body>
