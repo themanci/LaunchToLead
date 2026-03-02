@@ -2,18 +2,19 @@
  * UTM Tracker for LaunchToLead.io
  * 
  * Captures UTM parameters and attribution data on first landing,
- * stores them in sessionStorage so they persist across page navigations
- * within a single funnel session, and exposes a getUtmData() function
- * that any page can call to retrieve the stored attribution data.
+ * stores them in localStorage (with a 30-day TTL) so they persist
+ * across page navigations AND across browser sessions (e.g., user
+ * downloads the PDF, closes the tab, returns via PDF CTA weeks later).
  * 
  * Funnel flow:
  *   impact-bullet-equation.html → thank-you.html → offer.html → booking-confirmed.html
  * 
  * How it works:
  *   1. On every page load, checks the URL for UTM params
- *   2. If UTMs are found in the URL (first landing from an ad), stores them in sessionStorage
- *   3. If no UTMs in the URL, existing sessionStorage values are preserved from earlier pages
+ *   2. If UTMs are found in the URL (first landing from an ad), stores them in localStorage with a TTL
+ *   3. If no UTMs in the URL, existing localStorage values are preserved (if not expired)
  *   4. Any page can call getUtmData() to get the full attribution object
+ *   5. Data expires after 30 days to prevent stale attribution
  * 
  * Tracked parameters:
  *   - utm_source    (e.g., "linkedin", "google", "facebook")
@@ -33,6 +34,7 @@
 
 (function () {
     var STORAGE_KEY = 'ltl_utm_data';
+    var TTL_MS = 30 * 24 * 60 * 60 * 1000; // 30 days
     var UTM_PARAMS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
 
     // =============================================
@@ -55,7 +57,7 @@
     var liFatId = urlParams.get('li_fat_id');
 
     // =============================================
-    // 2. STORE OR RETRIEVE FROM SESSIONSTORAGE
+    // 2. STORE OR RETRIEVE FROM LOCALSTORAGE
     // =============================================
     if (hasUtmsInUrl) {
         // New ad click or campaign visit — store fresh UTM data
@@ -71,11 +73,7 @@
         dataToStore.landing_page = window.location.pathname;
         dataToStore.landed_at = new Date().toISOString();
 
-        try {
-            sessionStorage.setItem(STORAGE_KEY, JSON.stringify(dataToStore));
-        } catch (e) {
-            // sessionStorage not available (private browsing in some browsers)
-        }
+        saveToStorage(dataToStore);
     } else if (liFatId) {
         // No UTMs but li_fat_id present — store it and mark as LinkedIn
         var existing = loadFromStorage();
@@ -86,12 +84,10 @@
                 existing.utm_medium = 'paid';
                 existing.traffic_source = 'LinkedIn Ads';
             }
-            try {
-                sessionStorage.setItem(STORAGE_KEY, JSON.stringify(existing));
-            } catch (e) {}
+            saveToStorage(existing);
         }
     }
-    // If neither UTMs nor li_fat_id in URL, sessionStorage keeps whatever was stored on a previous page
+    // If neither UTMs nor li_fat_id in URL, localStorage keeps whatever was stored (if not expired)
 
     // =============================================
     // 3. DERIVE TRAFFIC SOURCE LABEL
@@ -117,12 +113,29 @@
     }
 
     // =============================================
-    // 4. HELPER: LOAD FROM STORAGE
+    // 4. HELPERS: LOAD / SAVE WITH TTL
     // =============================================
+    function saveToStorage(data) {
+        try {
+            var wrapper = { data: data, expires: Date.now() + TTL_MS };
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(wrapper));
+        } catch (e) {
+            // localStorage not available (private browsing in some browsers)
+        }
+    }
+
     function loadFromStorage() {
         try {
-            var raw = sessionStorage.getItem(STORAGE_KEY);
-            if (raw) return JSON.parse(raw);
+            var raw = localStorage.getItem(STORAGE_KEY);
+            if (raw) {
+                var wrapper = JSON.parse(raw);
+                // Check TTL — if expired, clear and return empty
+                if (wrapper.expires && Date.now() > wrapper.expires) {
+                    localStorage.removeItem(STORAGE_KEY);
+                    return {};
+                }
+                return wrapper.data || {};
+            }
         } catch (e) {}
         return {};
     }

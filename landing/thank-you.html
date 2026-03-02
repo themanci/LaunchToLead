@@ -25,6 +25,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
     <title>Check Your Inbox! | Launch to Lead</title>
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -57,13 +58,11 @@
 <body class="bg-white text-slate-700 font-sans antialiased min-h-screen flex flex-col overflow-x-hidden">
 
 <!-- HEADER -->
-<header class="bg-white border-b border-slate-100 py-4 px-4">
-    <div class="max-w-4xl mx-auto flex justify-center">
-        <a href="https://launchtolead.io" class="inline-flex items-center gap-2.5 hover:opacity-80 transition">
-            <div class="bg-brand-primary text-white w-9 h-9 rounded-lg flex items-center justify-center font-bold text-sm shadow-sm">
-                L²
-            </div>
-            <span class="text-xl font-bold text-slate-900">Launch<span class="font-light text-brand-secondary">ToLead</span></span>
+<header class="bg-white border-b border-slate-100 py-3 px-4">
+    <div class="max-w-2xl mx-auto flex justify-center">
+        <a href="https://launchtolead.io" class="inline-flex items-center gap-2 hover:opacity-80 transition">
+            <div class="bg-brand-primary text-white w-7 h-7 rounded-md flex items-center justify-center font-bold text-xs shadow-sm">L²</div>
+            <span class="text-lg font-bold text-slate-900">Launch<span class="font-light text-brand-secondary">ToLead</span></span>
         </a>
     </div>
 </header>
@@ -72,58 +71,89 @@
 <main class="flex-1">
 
 <!-- ============================================ -->
-<!-- SECTION 1: CONFIRMATION + PDF PREVIEW        -->
+<!-- SECTION 1: CONFIRMATION                      -->
 <!-- ============================================ -->
-<div class="px-4 py-12 md:py-16 relative overflow-hidden">
-    <div class="absolute inset-0 bg-dots opacity-20 pointer-events-none"></div>
-    <div class="absolute top-0 right-0 -mr-20 -mt-20 w-80 h-80 bg-teal-100 rounded-full blur-3xl opacity-60 pointer-events-none" aria-hidden="true"></div>
-    <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 bg-lime-100 rounded-full blur-3xl opacity-60 pointer-events-none" aria-hidden="true"></div>
-
-    <div class="max-w-xl mx-auto relative z-10">
-        <!-- Headline + inbox note -->
-        <div class="text-center">
-            <h1 class="text-2xl md:text-3xl font-extrabold text-slate-900 mb-2 leading-tight">
-                <span id="user-greeting"></span>Your FREE PDF guide is on the way!
-            </h1>
-            <p class="text-sm text-slate-500 leading-relaxed">
-                Check your inbox — it should arrive in the next few minutes. If you don't see it, check your spam/junk folder.
-            </p>
-        </div>
-
-        <!-- CTA to offer page -->
-        <div class="mt-8">
-            <a href="offer.html?name=" id="offer-cta-link" class="block relative overflow-hidden bg-gradient-to-r from-brand-primary to-emerald-700 text-white rounded-2xl p-6 md:p-8 text-center shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all group border-2 border-emerald-400/30">
-                <div class="absolute inset-0 bg-gradient-to-r from-emerald-400/10 to-teal-400/10 group-hover:from-emerald-400/20 group-hover:to-teal-400/20 transition"></div>
-                <div class="relative z-10">
-                    <p class="text-xl md:text-2xl font-extrabold leading-snug mb-3">While you wait, learn about my full program that landed Karen at Google and Sarah at Ford.</p>
-                    <span class="inline-flex items-center gap-2 px-6 py-2.5 bg-brand-accent text-brand-primary font-extrabold text-sm rounded-full group-hover:scale-105 transition-transform shadow-lg">
-                        Learn More
-                        <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
-                    </span>
-                </div>
-            </a>
-        </div>
+<div class="px-4 pt-8 pb-2">
+    <div class="max-w-xl mx-auto text-center">
+        <h1 class="text-xl md:text-2xl font-extrabold text-slate-900 mb-1 leading-tight">
+            <span id="user-greeting"></span>Your guide is on the way.
+        </h1>
+        <p class="text-sm text-slate-400">
+            Don't see it? Check your spam or junk folder.
+        </p>
     </div>
 </div>
 
 <!-- ============================================ -->
-<!-- SECTION 2: KAREN VIDEO TESTIMONIAL           -->
+<!-- SECTION 2: PERSONALIZED COACHING BRIDGE      -->
 <!-- ============================================ -->
-<div class="px-4 py-10 bg-white">
+<div class="px-4 py-4">
+    <div class="max-w-xl mx-auto">
+        <p class="text-sm text-slate-600 mb-3">
+            This guide will help solve your resume problem, but what about the <strong class="text-slate-900">other two problems</strong>?
+        </p>
+
+        <p class="text-center text-base font-bold text-slate-900 mb-2">
+            To land that job, you will <span class="text-brand-secondary font-extrabold">STILL</span> need:
+        </p>
+
+        <!-- Steps 2 & 3 with sub-bullets -->
+        <div class="space-y-2 mb-4">
+            <!-- Step 2 -->
+            <div class="rounded-lg px-3 py-2 bg-slate-50 border border-slate-200">
+                <div class="flex items-center gap-2.5">
+                    <div class="w-5 h-5 rounded-full bg-slate-300 text-white flex items-center justify-center font-bold text-[10px] shrink-0">2</div>
+                    <p class="text-sm font-semibold text-slate-900">Interview Stories / Examples That:</p>
+                </div>
+                <div class="pl-[30px] mt-1.5 space-y-1">
+                    <p class="text-xs text-slate-500">• <strong class="text-slate-700">Stand out</strong> from other candidates</p>
+                    <p class="text-xs text-slate-500">• <strong class="text-slate-700">Capitalize</strong> on your experience</p>
+                    <p class="text-xs text-slate-500">• <strong class="text-slate-700">Convey</strong> your impact</p>
+                    <p class="text-xs text-slate-500">• <strong class="text-slate-700">Show</strong> your value</p>
+                </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="rounded-lg px-3 py-2 bg-slate-50 border border-slate-200">
+                <div class="flex items-center gap-2.5">
+                    <div class="w-5 h-5 rounded-full bg-slate-300 text-white flex items-center justify-center font-bold text-[10px] shrink-0">3</div>
+                    <p class="text-sm font-semibold text-slate-900">Mock Interview Preparation That:</p>
+                </div>
+                <div class="pl-[30px] mt-1.5 space-y-1">
+                    <p class="text-xs text-slate-500">• Teaches you what interviewers <strong class="text-slate-700">actually want</strong></p>
+                    <p class="text-xs text-slate-500">• Structures your answers so they're <strong class="text-slate-700">easy to follow</strong></p>
+                    <p class="text-xs text-slate-500">• Answers follow-up questions <strong class="text-slate-700">before they're asked</strong></p>
+                    <p class="text-xs text-slate-500">• Builds <strong class="text-slate-700">real confidence</strong>, not just hope</p>
+                </div>
+            </div>
+        </div>
+
+        <p class="text-sm text-slate-600 mb-3 text-center">
+            My <strong class="text-slate-900">full program</strong> delivers all of this and more with personalized, 1-on-1 coaching from a former engineering manager who's been on both sides of the table numerous times and knows what gets you hired.
+        </p>
+
+        <!-- CTA -->
+        <a href="offer.html?name=" id="offer-cta-link" class="block bg-brand-primary hover:bg-brand-secondary text-white rounded-lg px-4 py-3 text-center transition-all hover:shadow-lg hover:shadow-teal-500/20 active:scale-[0.98]">
+            <p class="font-bold text-sm">Learn More About Full Program</p>
+        </a>
+    </div>
+</div>
+
+<!-- ============================================ -->
+<!-- SECTION 3: KAREN VIDEO TESTIMONIAL           -->
+<!-- ============================================ -->
+<div class="px-4 pt-2 pb-8 bg-white">
     <div class="max-w-lg mx-auto">
-        <div class="text-center mb-5">
-            <span class="inline-block px-3 py-1 bg-emerald-100 text-emerald-700 text-xs font-bold rounded-full uppercase tracking-widest mb-2">Real Results</span>
-            <h2 class="text-xl md:text-2xl font-extrabold text-slate-900">See What Happened When Karen Used the Full System</h2>
-            <p class="text-sm text-slate-500 mt-1">She started with the same free guide you just downloaded.</p>
+        <div class="text-center mb-4">
+            <h2 class="text-lg font-extrabold text-slate-900">Karen started with the guide, but after the full program landed <strong class="text-emerald-600">Google</strong>. Listen.</h2>
         </div>
         <div class="rounded-2xl overflow-hidden border-2 border-emerald-200 shadow-xl bg-slate-900 relative cursor-pointer group" id="karen-video-container" onclick="var v=document.getElementById('karen-video');this.querySelector('.karen-thumb').classList.add('hidden');v.classList.remove('hidden');v.play();">
-            <!-- Custom thumbnail for clarity -->
-            <div class="karen-thumb flex flex-col items-center justify-center py-10 md:py-14">
-                <img src="../testimonials/pictures/karen_bickford.webp" alt="Karen B." class="w-24 h-24 md:w-32 md:h-32 rounded-full object-cover border-4 border-emerald-300 shadow-xl mb-3">
+            <div class="karen-thumb flex flex-col items-center justify-center py-8 md:py-12">
+                <img src="../testimonials/pictures/karen_bickford.webp" alt="Karen B." class="w-20 h-20 md:w-28 md:h-28 rounded-full object-cover border-4 border-emerald-300 shadow-xl mb-3">
                 <p class="text-white font-bold text-sm mb-0.5">Karen B.</p>
                 <p class="text-emerald-300 text-xs mb-3">Offers from SpaceX, Google, GE &amp; Bridgestone</p>
-                <div class="w-14 h-14 rounded-full bg-emerald-500 bg-opacity-90 flex items-center justify-center shadow-lg group-hover:bg-opacity-100 transition-all group-hover:scale-110">
-                    <svg class="w-6 h-6 text-white ml-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                <div class="w-12 h-12 rounded-full bg-emerald-500 bg-opacity-90 flex items-center justify-center shadow-lg group-hover:bg-opacity-100 transition-all group-hover:scale-110">
+                    <svg class="w-5 h-5 text-white ml-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                 </div>
             </div>
             <video
