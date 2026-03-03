@@ -376,6 +376,7 @@
                 'utm_source': utm.utm_source || '',
                 'utm_medium': utm.utm_medium || '',
                 'utm_campaign': utm.utm_campaign || '',
+                'utm_content': utm.utm_content || '',
                 'transport_type': 'beacon'
             });
         }
@@ -401,6 +402,7 @@
             if (utm.utm_source) formData.append('fields[utm_source]', utm.utm_source);
             if (utm.utm_medium) formData.append('fields[utm_medium]', utm.utm_medium);
             if (utm.utm_campaign) formData.append('fields[utm_campaign]', utm.utm_campaign);
+            if (utm.utm_content) formData.append('fields[utm_content]', utm.utm_content);
             if (utm.traffic_source) formData.append('fields[traffic_source]', utm.traffic_source);
 
             await fetch('https://app.kit.com/forms/8815632/subscriptions', {
