@@ -92,18 +92,17 @@
 <div class="bg-gradient-to-b from-slate-900 to-slate-800 text-white relative overflow-hidden">
     <div class="absolute inset-0 bg-dots opacity-10 pointer-events-none"></div>
     <div class="max-w-3xl mx-auto px-4 py-12 md:py-16 text-center relative z-10">
-        <p class="text-brand-accent font-bold text-sm uppercase tracking-widest mb-4">IMPORTANT — Before You Check Your Email, Watch This</p>
+        <p class="text-brand-accent font-bold text-sm uppercase tracking-widest mb-4">21-DAY ACCELERATOR PROGRAM</p>
         
         <h1 class="text-3xl md:text-4xl font-extrabold leading-tight mb-4">
-            <span id="offer-greeting"></span>Tired of Feeling Invisible to Recruiters?<br class="hidden md:block">
-            Let Me Tell You About My 21-Day Accelerator Program.
+            <span id="offer-greeting"></span>Let me tell you about my full coaching program.
         </h1>
 
         <p class="text-lg md:text-xl text-brand-accent font-bold mb-3">
-            I can teach you the systems that landed me at John Deere and helped engineers get six-figure offers at SpaceX, Google &amp; more.
+            Resume. Interview prep. Confident delivery. All three — covered in 21 days of 1-on-1 coaching.
         </p>
         <p class="text-slate-300 mb-8 max-w-xl mx-auto">
-            Here's how you can become one of them.
+            Watch this short video to see how it works.
         </p>
 
         <!-- VSL Video -->
@@ -131,7 +130,7 @@
                     <div class="mx-auto mb-4 w-20 h-20 md:w-24 md:h-24 rounded-full bg-brand-primary flex items-center justify-center shadow-lg" style="box-shadow: 0 0 30px rgba(37,99,235,0.5);">
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 md:w-12 md:h-12 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                     </div>
-                    <p class="text-white font-extrabold text-xl md:text-2xl mb-1 drop-shadow-lg">Watch This Before You Do Anything Else</p>
+                    <p class="text-white font-extrabold text-xl md:text-2xl mb-1 drop-shadow-lg">See How It Works</p>
                     <p class="text-brand-accent font-bold text-base md:text-lg tracking-wide uppercase">▶ Tap to Play</p>
                 </div>
             </div>
@@ -906,6 +905,7 @@
             if (utm.utm_source) formData.append('fields[utm_source]', utm.utm_source);
             if (utm.utm_medium) formData.append('fields[utm_medium]', utm.utm_medium);
             if (utm.utm_campaign) formData.append('fields[utm_campaign]', utm.utm_campaign);
+            if (utm.utm_content) formData.append('fields[utm_content]', utm.utm_content);
             if (utm.traffic_source) formData.append('fields[traffic_source]', utm.traffic_source);
 
             await fetch('https://app.kit.com/forms/9087434/subscriptions', {
@@ -929,7 +929,8 @@
                 'traffic_source': utm.traffic_source || 'Direct',
                 'utm_source': utm.utm_source || '',
                 'utm_medium': utm.utm_medium || '',
-                'utm_campaign': utm.utm_campaign || ''
+                'utm_campaign': utm.utm_campaign || '',
+                'utm_content': utm.utm_content || ''
             });
         }
 
