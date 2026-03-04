@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Relationship Accelerator — Proposal | LaunchToLead</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .font-mono-num { font-family: 'Space Grotesk', monospace; }
+
+        #download-btn {
+            position: fixed; top: 20px; right: 20px; z-index: 9999;
+            background: linear-gradient(135deg, #a3e635, #14b8a6); color: #052e16;
+            font-family: 'Plus Jakarta Sans', sans-serif; font-size: 16px; font-weight: 800;
+            padding: 14px 32px; border: none; border-radius: 50px; cursor: pointer;
+            box-shadow: 0 8px 30px rgba(163,230,53,0.3);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        #download-btn:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(163,230,53,0.4); }
+
+        @media print {
+            @page { size: letter; margin: 0.45in 0.55in; }
+            body {
+                background: white !important; color: #1e293b !important;
+                padding: 0 !important; margin: 0 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                font-size: 93%;
+            }
+            #download-btn { display: none !important; }
+
+            /* Page break control */
+            .page-break { break-before: page; }
+            .no-page-break-print { break-before: auto !important; }
+            .keep-together { break-inside: avoid; }
+            section { break-inside: avoid; box-shadow: none !important; border: 1px solid #e2e8f0 !important; }
+            h2, h3 { break-after: avoid; orphans: 3; widows: 3; }
+
+            /* Allow the session blocks to break between sessions but not mid-session */
+            .print-allow-break { break-inside: auto !important; overflow: visible !important; }
+            .session-block { break-inside: avoid; }
+
+            /* Global spacing — tighter for 3 pages */
+            .max-w-4xl { max-width: 100% !important; }
+            .space-y-10 > * + * { margin-top: 1rem !important; }
+
+            /* Color preservation */
+            .bg-emerald-900, .bg-slate-900 {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            .bg-amber-50, .bg-indigo-50, .bg-lime-50, .bg-emerald-50, .bg-purple-50, .bg-slate-50 {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
+            /* Header print sizing */
+            header { padding-top: 1.5rem !important; padding-bottom: 1.5rem !important; }
+            header h1 { font-size: 1.6rem !important; }
+
+            /* Tighten grid gaps for print */
+            .grid { gap: 0.4rem !important; }
+
+            /* Page 3 density — compact sections */
+            .print-compact { padding: 1rem 1.25rem !important; }
+            .print-compact h2 { font-size: 1.1rem !important; }
+            .print-compact .mb-4 { margin-bottom: 0.5rem !important; }
+            .print-compact .mb-6 { margin-bottom: 0.75rem !important; }
+            .print-compact .p-4 { padding: 0.5rem 0.75rem !important; }
+            .print-compact .p-6 { padding: 0.75rem 1rem !important; }
+            .print-compact .p-8 { padding: 1rem 1.25rem !important; }
+
+            /* Session block density (Page 2) */
+            .session-block { padding: 0.75rem 1.25rem !important; }
+            .session-block ul { margin-top: 0.25rem !important; }
+            .session-block li { margin-bottom: 0 !important; }
+
+            /* Hide rounded corners that cause overflow clip issues */
+            .print-allow-break { border-radius: 0.5rem !important; }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-700">
+
+<button id="download-btn" onclick="window.print()">Download PDF</button>
+
+<!-- HEADER -->
+<header class="bg-emerald-900 text-white py-10 px-6">
+    <div class="max-w-4xl mx-auto">
+        <div class="flex items-center gap-3 mb-6">
+            <div class="bg-white text-emerald-900 w-10 h-10 rounded-xl flex items-center justify-center font-bold text-sm shadow">L²</div>
+            <span class="text-xl font-bold">Launch<span class="font-light text-lime-300">ToLead</span></span>
+        </div>
+        <p class="text-lime-300 text-sm font-semibold uppercase tracking-widest mb-2">Coaching Proposal</p>
+        <h1 class="text-4xl font-extrabold mb-2">Business Relationship Accelerator</h1>
+        <p class="text-emerald-200 text-lg">A 4-session group coaching program for engineering founders who want to build client relationships that win business.</p>
+        <div class="mt-6 flex gap-6 text-sm text-emerald-300">
+            <span>Prepared for: <strong class="text-white">Asjad Pasha</strong></span>
+            <span>Date: <strong class="text-white">March 2, 2026</strong></span>
+            <span>Prepared by: <strong class="text-white">Mansour Manci</strong></span>
+        </div>
+    </div>
+</header>
+
+<div class="max-w-4xl mx-auto px-6 py-10 space-y-10">
+
+    <!-- THE CHALLENGE -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 p-8">
+        <div class="flex items-center gap-3 mb-4">
+            <div class="w-8 h-8 rounded-lg bg-amber-500 text-white flex items-center justify-center text-sm font-bold">🎯</div>
+            <h2 class="text-2xl font-extrabold text-slate-900">The Challenge</h2>
+        </div>
+        <p class="text-slate-600">Your team has 40 years of engineering expertise, real manufacturing capabilities, and a strong product. The challenge isn't the product — it's the conversation that happens <strong>before</strong> the product gets discussed. Engineers lead with specs. Buyers decide on trust first, specs second.</p>
+    </section>
+
+    <!-- THE APPROACH -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 p-8">
+        <div class="flex items-center gap-3 mb-4">
+            <div class="w-8 h-8 rounded-lg bg-emerald-700 text-white flex items-center justify-center text-sm font-bold">💡</div>
+            <h2 class="text-2xl font-extrabold text-slate-900">The Approach</h2>
+        </div>
+        <p class="text-slate-600 mb-6">LaunchToLead's engineering communication coaching combined with relationship-building frameworks from our partnership with <strong>Hansen Beck</strong>. Built for engineers who need to connect with customers as trusted partners, not salespeople.</p>
+
+        <div class="grid md:grid-cols-2 gap-4">
+            <div class="bg-slate-50 rounded-xl p-5 border border-slate-200">
+                <h3 class="font-bold text-slate-900 mb-3">The FAR Framework</h3>
+                <p class="text-slate-500 text-sm mb-3">The Fully Activated Recommendation — 3 ways to build trust:</p>
+                <ul class="text-slate-600 text-sm space-y-2">
+                    <li><strong class="text-emerald-700">Be Useful</strong> — Add value before they ask</li>
+                    <li><strong class="text-emerald-700">Give a Boost</strong> — Make people feel like they matter</li>
+                    <li><strong class="text-emerald-700">Provide Security</strong> — Rational (specs, data) AND emotional ("call me at 2 AM")</li>
+                </ul>
+            </div>
+            <div class="bg-slate-50 rounded-xl p-5 border border-slate-200">
+                <h3 class="font-bold text-slate-900 mb-3">The Customer Journey</h3>
+                <p class="text-slate-500 text-sm mb-3">The sequence every buyer moves through before saying "yes":</p>
+                <ul class="text-slate-600 text-sm space-y-2">
+                    <li><strong class="text-emerald-700">❤️ Heart</strong> — Mobilise emotional energy first</li>
+                    <li><strong class="text-emerald-700">🧠 Head</strong> — Then satisfy the analytical mind</li>
+                    <li><strong class="text-emerald-700">🤝 Hand</strong> — Fulfil every expectation — and more</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROGRAM FORMAT -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 p-8 page-break">
+        <div class="flex items-center gap-3 mb-4">
+            <div class="w-8 h-8 rounded-lg bg-indigo-600 text-white flex items-center justify-center text-sm font-bold">📋</div>
+            <h2 class="text-2xl font-extrabold text-slate-900">Program Format</h2>
+        </div>
+        <div class="grid md:grid-cols-4 gap-3">
+            <div class="bg-indigo-50 rounded-xl p-4 border border-indigo-200 text-center">
+                <p class="font-mono-num text-2xl font-bold text-indigo-700">4 × 2hr</p>
+                <p class="text-slate-500 text-xs mt-1">Sessions</p>
+            </div>
+            <div class="bg-indigo-50 rounded-xl p-4 border border-indigo-200 text-center">
+                <p class="font-mono-num text-2xl font-bold text-indigo-700">2 + 2</p>
+                <p class="text-slate-500 text-xs mt-1">Back-to-back days, 1-week break</p>
+            </div>
+            <div class="bg-indigo-50 rounded-xl p-4 border border-indigo-200 text-center">
+                <p class="font-mono-num text-2xl font-bold text-indigo-700">~10</p>
+                <p class="text-slate-500 text-xs mt-1">Days total span</p>
+            </div>
+            <div class="bg-indigo-50 rounded-xl p-4 border border-indigo-200 text-center">
+                <p class="font-mono-num text-2xl font-bold text-indigo-700">Zoom</p>
+                <p class="text-slate-500 text-xs mt-1">Virtual, recorded</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- WEEK 1: LEARNING BLOCK -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 overflow-hidden print-allow-break">
+        <div class="bg-slate-900 text-white p-5">
+            <p class="text-lime-400 text-xs font-bold uppercase tracking-widest mb-1">Week 1 — Learning Block</p>
+            <h2 class="text-xl font-extrabold">Sessions 1 & 2</h2>
+        </div>
+
+        <!-- Session 1 -->
+        <div class="p-6 border-b border-slate-200 session-block">
+            <div class="flex items-center gap-3 mb-3">
+                <div class="font-mono-num text-2xl font-extrabold text-lime-600">01</div>
+                <div>
+                    <h3 class="font-bold text-slate-900">The FAR Foundation</h3>
+                    <p class="text-slate-400 text-xs">Day 1 · 2 hours · "Why People Buy From People"</p>
+                </div>
+            </div>
+            <ul class="text-slate-600 text-sm space-y-1 ml-10">
+                <li>• Situation mapping — each person's role, goals, and customer challenges</li>
+                <li>• FAR framework deep-dive (Be Useful, Give a Boost, Provide Security)</li>
+                <li>• The engineer's trap: <strong>Needs are technical, Wants are emotional</strong> — we're in the Wants business</li>
+                <li>• Pre-meeting prep system & "Throwing Pebbles" — open-ended questions that make customers <em>dream with you</em></li>
+            </ul>
+        </div>
+
+        <!-- Session 2 -->
+        <div class="p-6 session-block">
+            <div class="flex items-center gap-3 mb-3">
+                <div class="font-mono-num text-2xl font-extrabold text-lime-600">02</div>
+                <div>
+                    <h3 class="font-bold text-slate-900">The Art of Genuine Conversation</h3>
+                    <p class="text-slate-400 text-xs">Day 2 · 2 hours · "Stop Pitching, Start Listening"</p>
+                </div>
+            </div>
+            <ul class="text-slate-600 text-sm space-y-1 ml-10">
+                <li>• The conversation flow — start with the person, not the product</li>
+                <li>• Active listening: the 2-second pause, the "echo back," and listening for what's underneath</li>
+                <li>• "The Customer's Brainchild" — reinforce their vision so the solution feels like their idea</li>
+                <li>• 3 live role-play rounds: warm buyer, all-business buyer, and the team handoff</li>
+            </ul>
+            <div class="mt-3 ml-10 bg-amber-50 rounded-lg px-4 py-2 border border-amber-200 inline-block">
+                <p class="text-amber-800 text-xs font-semibold">↓ 1-WEEK BREAK — Real conversations, prospect outreach, come back ready to apply ↓</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- WEEK 2: APPLICATION BLOCK -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 overflow-hidden print-allow-break">
+        <div class="bg-slate-900 text-white p-5">
+            <p class="text-lime-400 text-xs font-bold uppercase tracking-widest mb-1">Week 2 — Application Block</p>
+            <h2 class="text-xl font-extrabold">Sessions 3 & 4</h2>
+        </div>
+
+        <!-- Session 3 -->
+        <div class="p-6 border-b border-slate-200 session-block">
+            <div class="flex items-center gap-3 mb-3">
+                <div class="font-mono-num text-2xl font-extrabold text-lime-600">03</div>
+                <div>
+                    <h3 class="font-bold text-slate-900">Reading the Room & Managing the Meeting</h3>
+                    <p class="text-slate-400 text-xs">Day 3 · 2 hours · "The Two-Act Customer Meeting"</p>
+                </div>
+            </div>
+            <ul class="text-slate-600 text-sm space-y-1 ml-10">
+                <li>• Week-break debrief — what happened in real conversations?</li>
+                <li>• The Two-Act Meeting: <strong>Heart</strong> first (rapport, vision) → <strong>Head + Hand</strong> second (substance, delivery)</li>
+                <li>• Audience adaptation — supply chain vs. VP vs. technical SME</li>
+                <li>• The follow-up system: 24-hour recap, 1-week value-add, ongoing touchpoints</li>
+                <li>• Full mock meeting simulation with group debrief</li>
+            </ul>
+        </div>
+
+        <!-- Session 4 -->
+        <div class="p-6 session-block">
+            <div class="flex items-center gap-3 mb-3">
+                <div class="font-mono-num text-2xl font-extrabold text-lime-600">04</div>
+                <div>
+                    <h3 class="font-bold text-slate-900">Putting It All Together</h3>
+                    <p class="text-slate-400 text-xs">Day 4 · 2 hours · "Dress Rehearsal & Your Meeting Playbook"</p>
+                </div>
+            </div>
+            <ul class="text-slate-600 text-sm space-y-1 ml-10">
+                <li>• Full dress rehearsal using a <strong>real prospect</strong> the team plans to approach</li>
+                <li>• Build your 1-page Meeting Playbook — pre-meeting, during, and post-meeting SOP</li>
+                <li>• 30-60-90 day habit plan so the skills compound, not fade</li>
+                <li>• Individual commitments and close</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- WHAT YOU GET -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 p-6 page-break print-compact">
+        <div class="flex items-center gap-3 mb-4">
+            <div class="w-7 h-7 rounded-lg bg-lime-500 text-white flex items-center justify-center text-xs font-bold">✓</div>
+            <h2 class="text-xl font-extrabold text-slate-900">What Your Team Gets</h2>
+        </div>
+        <div class="grid md:grid-cols-3 gap-2">
+            <div class="bg-lime-50 border border-lime-200 rounded-lg p-3 keep-together">
+                <p class="font-bold text-lime-900 text-sm">FAR Framework & Customer Journey</p>
+                <p class="text-lime-700 text-xs mt-0.5">Two systems for every customer interaction</p>
+            </div>
+            <div class="bg-lime-50 border border-lime-200 rounded-lg p-3 keep-together">
+                <p class="font-bold text-lime-900 text-sm">1-Page Meeting Playbook</p>
+                <p class="text-lime-700 text-xs mt-0.5">Reusable SOP built in Session 4</p>
+            </div>
+            <div class="bg-lime-50 border border-lime-200 rounded-lg p-3 keep-together">
+                <p class="font-bold text-lime-900 text-sm">Live Role-Play in Every Session</p>
+                <p class="text-lime-700 text-xs mt-0.5">Practice before it counts</p>
+            </div>
+            <div class="bg-lime-50 border border-lime-200 rounded-lg p-3 keep-together">
+                <p class="font-bold text-lime-900 text-sm">Session Recordings</p>
+                <p class="text-lime-700 text-xs mt-0.5">Review anytime</p>
+            </div>
+            <div class="bg-lime-50 border border-lime-200 rounded-lg p-3 keep-together">
+                <p class="font-bold text-lime-900 text-sm">30-60-90 Day Plan</p>
+                <p class="text-lime-700 text-xs mt-0.5">Skills that stick and compound</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- INVESTMENT -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 overflow-hidden print-compact">
+        <div class="p-6">
+            <div class="flex items-center gap-3 mb-4">
+                <div class="w-7 h-7 rounded-lg bg-emerald-700 text-white flex items-center justify-center text-xs font-bold">💰</div>
+                <h2 class="text-xl font-extrabold text-slate-900">Investment</h2>
+            </div>
+            <div class="bg-emerald-50 rounded-xl p-5 border border-emerald-200">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-emerald-900 font-bold text-lg">Business Relationship Accelerator</p>
+                        <p class="text-emerald-700 text-sm">4 sessions × 2 hours · small group · all materials included</p>
+                    </div>
+                    <div class="text-right">
+                        <p class="font-mono-num text-4xl font-extrabold text-emerald-700">$2,000</p>
+                        <p class="text-emerald-600 text-sm font-semibold">per person</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bg-slate-900 text-white px-6 py-3">
+            <p class="text-slate-400 text-sm"><strong class="text-white">Payment:</strong> 50% due at booking. Remaining 50% due before Session 3. Invoicing via Stripe.</p>
+        </div>
+    </section>
+
+    <!-- SCHEDULE -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 p-6 print-compact">
+        <div class="flex items-center gap-3 mb-3">
+            <div class="w-7 h-7 rounded-lg bg-purple-600 text-white flex items-center justify-center text-xs font-bold">📅</div>
+            <h2 class="text-xl font-extrabold text-slate-900">Schedule</h2>
+        </div>
+        <div class="flex items-center gap-3 text-sm">
+            <div class="bg-purple-50 border border-purple-200 rounded-lg p-3 flex-1 text-center">
+                <p class="font-bold text-purple-800">Day 1 & 2</p>
+                <p class="text-slate-400 text-xs">Back-to-back · Learning</p>
+            </div>
+            <div class="text-amber-500 font-bold text-xs text-center px-1">1 WEEK<br>BREAK</div>
+            <div class="bg-purple-50 border border-purple-200 rounded-lg p-3 flex-1 text-center">
+                <p class="font-bold text-purple-800">Day 3 & 4</p>
+                <p class="text-slate-400 text-xs">Back-to-back · Application</p>
+            </div>
+        </div>
+        <p class="text-slate-500 text-xs mt-2">We'll coordinate times once confirmed. Total span: ~10 days.</p>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 p-5 print-compact">
+        <div class="flex items-center gap-4">
+            <img src="../pictures/mansour/headshot_square.png" alt="Mansour Manci" class="w-14 h-14 rounded-xl object-cover flex-shrink-0">
+            <div>
+                <h3 class="text-sm font-bold text-slate-900">Mansour Manci <span class="font-normal text-emerald-600">· Founder, LaunchToLead</span></h3>
+                <p class="text-slate-500 text-xs mt-1">7 years at John Deere, 4 promotions in a timeframe that typically takes 15+. Partnered with <strong>Hansen Beck</strong> for leadership and sales training.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEXT STEPS -->
+    <section class="bg-emerald-900 text-white rounded-2xl shadow-lg p-6 print-compact">
+        <div class="flex items-center gap-3 mb-3">
+            <div class="w-7 h-7 rounded-lg bg-lime-400 text-emerald-900 flex items-center justify-center text-xs font-bold">→</div>
+            <h2 class="text-xl font-extrabold">Next Steps</h2>
+        </div>
+        <div class="grid md:grid-cols-3 gap-3">
+            <div class="flex items-start gap-2">
+                <div class="w-7 h-7 rounded-full bg-lime-400 text-emerald-900 flex items-center justify-center font-bold text-xs flex-shrink-0">1</div>
+                <div>
+                    <p class="font-bold text-sm">Reply to confirm</p>
+                    <p class="text-emerald-300 text-xs">Confirm participant count</p>
+                </div>
+            </div>
+            <div class="flex items-start gap-2">
+                <div class="w-7 h-7 rounded-full bg-lime-400 text-emerald-900 flex items-center justify-center font-bold text-xs flex-shrink-0">2</div>
+                <div>
+                    <p class="font-bold text-sm">Pick your dates</p>
+                    <p class="text-emerald-300 text-xs">2 days + 1 week + 2 days</p>
+                </div>
+            </div>
+            <div class="flex items-start gap-2">
+                <div class="w-7 h-7 rounded-full bg-lime-400 text-emerald-900 flex items-center justify-center font-bold text-xs flex-shrink-0">3</div>
+                <div>
+                    <p class="font-bold text-sm">Pre-work assigned</p>
+                    <p class="text-emerald-300 text-xs">Pick your target prospect</p>
+                </div>
+            </div>
+        </div>
+        <div class="mt-4 pt-3 border-t border-emerald-700 text-center">
+            <p class="text-white font-bold text-sm">Mansour Manci · mansour@launchtolead.io · launchtolead.io</p>
+        </div>
+    </section>
+
+</div>
+
+</body>
+</html>

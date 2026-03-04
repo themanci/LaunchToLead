@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedIn Carousel – Dinosaur vs Mammal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background: #e5e5e5; display: flex; flex-direction: column; align-items: center; gap: 40px; padding: 40px; }
+
+        .slide {
+            width: 1080px; height: 1080px;
+            position: relative; overflow: hidden;
+            page-break-after: always;
+            page-break-inside: avoid;
+            flex-shrink: 0;
+            background: #f5f3f0;
+        }
+        .slide:last-child { page-break-after: avoid; }
+
+        @page { margin: 0; size: 1080px 1080px; }
+        @media print {
+            body { padding: 0; gap: 0; background: white; }
+        }
+
+        /* Paper texture overlay */
+        .paper-texture {
+            position: absolute; inset: 0; pointer-events: none; z-index: 1;
+            background-image:
+                url("data:image/svg+xml,%3Csvg viewBox='0 0 600 600' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E");
+            background-size: 300px 300px;
+        }
+        /* Subtle crease lines */
+        .paper-creases {
+            position: absolute; inset: 0; pointer-events: none; z-index: 2; opacity: 0.03;
+            background:
+                linear-gradient(127deg, transparent 42%, rgba(0,0,0,0.25) 42.5%, transparent 43%),
+                linear-gradient(52deg, transparent 56%, rgba(0,0,0,0.2) 56.5%, transparent 57%),
+                linear-gradient(160deg, transparent 30%, rgba(0,0,0,0.15) 30.3%, transparent 30.6%);
+        }
+
+        /* Bottom bar */
+        .bottom-bar {
+            position: absolute; bottom: 0; left: 0; right: 0; height: 64px;
+            display: flex; align-items: center; padding: 0 52px; z-index: 20;
+        }
+        .page-counter {
+            font-family: 'Space Grotesk', monospace;
+            font-weight: 700; font-size: 16px; color: #999;
+        }
+        .progress-track {
+            flex: 1; height: 4px; background: #ddd; border-radius: 2px;
+            margin-left: 16px; margin-right: 52px; position: relative;
+        }
+        .progress-fill {
+            height: 100%; background: #1a1a1a; border-radius: 2px; position: relative;
+        }
+        .progress-fill::after {
+            content: ''; position: absolute; right: -6px; top: -4px;
+            width: 12px; height: 12px; background: #1a1a1a; border-radius: 50%;
+        }
+
+        /* Swipe arrow */
+        .swipe-arrow { position: absolute; bottom: 80px; right: 52px; z-index: 20; }
+
+        /* Content layer */
+        .content { position: relative; z-index: 10; height: 100%; }
+
+        /* Sketch line-art style */
+        .sketch { stroke-linecap: round; stroke-linejoin: round; }
+    </style>
+</head>
+<body>
+
+<!-- ════════════════════════════════════════════════════════════════ -->
+<!-- SLIDE 1: COVER                                                  -->
+<!-- ════════════════════════════════════════════════════════════════ -->
+<div class="slide">
+    <div class="paper-texture"></div>
+    <div class="paper-creases"></div>
+
+    <!-- Sketch T-Rex line art -->
+    <svg width="480" height="520" viewBox="0 0 480 520" style="position: absolute; bottom: 40px; right: 20px; z-index: 5;" class="sketch">
+        <path d="M200,320 Q160,280 170,240 Q180,200 220,180 Q260,160 310,160 Q350,162 370,180 Q395,200 400,230 Q405,260 395,290 Q380,330 350,350 Q320,370 280,375 Q240,378 210,360 Z" fill="none" stroke="#1a1a1a" stroke-width="2.5" opacity="0.6"/>
+        <path d="M370,180 Q390,155 420,140 Q450,128 470,135 Q485,142 480,160 Q478,175 465,185 Q450,195 430,198 Q410,200 395,200" fill="none" stroke="#1a1a1a" stroke-width="2.5" opacity="0.6"/>
+        <path d="M395,200 Q420,210 445,208 Q465,205 475,195 Q480,188 475,180" fill="none" stroke="#1a1a1a" stroke-width="2.5" opacity="0.6"/>
+        <path d="M415,198 L420,210 L425,198 M435,196 L440,208 L445,196 M455,192 L458,202 L462,192" fill="none" stroke="#1a1a1a" stroke-width="1.8" opacity="0.5"/>
+        <circle cx="445" cy="148" r="8" fill="none" stroke="#1a1a1a" stroke-width="2" opacity="0.6"/>
+        <circle cx="447" cy="147" r="3" fill="#1a1a1a" opacity="0.5"/>
+        <path d="M340,230 Q355,240 360,255 Q362,262 355,265" fill="none" stroke="#1a1a1a" stroke-width="2" opacity="0.5"/>
+        <path d="M355,265 L350,270 M355,265 L360,268" fill="none" stroke="#1a1a1a" stroke-width="1.5" opacity="0.5"/>
+        <path d="M250,370 Q245,410 240,445 Q238,460 225,465 Q215,462 220,450 L215,465" fill="none" stroke="#1a1a1a" stroke-width="2.5" opacity="0.6"/>
+        <path d="M310,368 Q315,410 320,445 Q322,460 335,465 Q345,462 340,450 L345,465" fill="none" stroke="#1a1a1a" stroke-width="2.5" opacity="0.6"/>
+        <path d="M200,320 Q150,310 110,330 Q80,350 50,340 Q30,330 20,310" fill="none" stroke="#1a1a1a" stroke-width="2.5" opacity="0.6"/>
+        <path d="M240,172 L250,140 L265,170 M275,165 L285,132 L298,162 M310,162 L322,130 L335,165" fill="none" stroke="#1a1a1a" stroke-width="2" opacity="0.45"/>
+        <path d="M230,240 Q260,235 280,245" fill="none" stroke="#1a1a1a" stroke-width="1" opacity="0.15"/>
+        <path d="M250,275 Q280,268 310,280" fill="none" stroke="#1a1a1a" stroke-width="1" opacity="0.15"/>
+        <path d="M240,310 Q270,305 300,312" fill="none" stroke="#1a1a1a" stroke-width="1" opacity="0.15"/>
+    </svg>
+
+    <div class="content" style="display: flex; flex-direction: column; justify-content: center; padding: 100px 80px;">
+        <h1 style="font-size: 82px; font-weight: 900; color: #1a1a1a; line-height: 1.1; margin-bottom: 40px; max-width: 680px;">
+            Are you working for a Dinosaur or a Mammal?
+        </h1>
+        <p style="font-size: 30px; font-weight: 500; color: #888; line-height: 1.5; max-width: 500px;">
+            Why knowing the difference is the most underrated career skill in engineering.
+        </p>
+    </div>
+
+    <svg class="swipe-arrow" width="64" height="48" viewBox="0 0 64 48">
+        <path d="M4,24 L52,24 M40,10 L56,24 L40,38" fill="none" stroke="#e84393" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <div class="bottom-bar">
+        <span class="page-counter">1 / 8</span>
+        <div class="progress-track"><div class="progress-fill" style="width: 12.5%;"></div></div>
+    </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════════════ -->
+<!-- SLIDE 2: THE STAR WARS ANALOGY                                  -->
+<!-- ════════════════════════════════════════════════════════════════ -->
+<div class="slide">
+    <div class="paper-texture"></div>
+    <div class="paper-creases"></div>
+
+    <!-- Sketch: Imperial helmet -->
+    <svg width="320" height="360" viewBox="0 0 320 360" style="position: absolute; bottom: 80px; right: 40px; z-index: 5;" class="sketch">
+        <path d="M160,80 Q100,80 80,130 Q65,170 80,210 Q95,245 130,260 Q160,270 190,260 Q225,245 240,210 Q255,170 240,130 Q220,80 160,80 Z" fill="none" stroke="#1a1a1a" stroke-width="2.5" opacity="0.5"/>
+        <path d="M115,160 Q130,145 160,142 Q190,145 205,160 Q210,170 205,180 Q190,195 160,198 Q130,195 115,180 Q110,170 115,160 Z" fill="none" stroke="#1a1a1a" stroke-width="2" opacity="0.4"/>
+        <ellipse cx="140" cy="168" rx="14" ry="10" fill="none" stroke="#1a1a1a" stroke-width="1.5" opacity="0.35"/>
+        <ellipse cx="180" cy="168" rx="14" ry="10" fill="none" stroke="#1a1a1a" stroke-width="1.5" opacity="0.35"/>
+        <path d="M148,205 L148,225 M155,205 L155,228 M162,205 L162,225 M169,205 L169,228" fill="none" stroke="#1a1a1a" stroke-width="1.5" opacity="0.3"/>
+        <path d="M130,245 Q145,270 160,275 Q175,270 190,245" fill="none" stroke="#1a1a1a" stroke-width="2" opacity="0.4"/>
+    </svg>
+
+    <div class="content" style="display: flex; flex-direction: column; justify-content: center; padding: 100px 80px;">
+        <p style="font-size: 46px; font-weight: 900; color: #1a1a1a; line-height: 1.35; margin-bottom: 48px; max-width: 600px;">
+            Imagine joining the Galactic Empire then complaining there's too much protocol to fly a TIE Fighter.
+        </p>
+        <div style="width: 60px; height: 4px; background: #1a1a1a; margin-bottom: 48px;"></div>
+        <p style="font-size: 36px; font-weight: 600; color: #888; line-height: 1.4; max-width: 520px;">
+            If you wanted to be scrappy, you should've joined the Rebellion.
+        </p>
+    </div>
+
+    <svg class="swipe-arrow" width="64" height="48" viewBox="0 0 64 48">
+        <path d="M4,24 L52,24 M40,10 L56,24 L40,38" fill="none" stroke="#e84393" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <div class="bottom-bar">
+        <span class="page-counter">2 / 8</span>
+        <div class="progress-track"><div class="progress-fill" style="width: 25%;"></div></div>
+    </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════════════ -->
+<!-- SLIDE 3: THE PROBLEM                                            -->
+<!-- ════════════════════════════════════════════════════════════════ -->
+<div class="slide">
+    <div class="paper-texture"></div>
+    <div class="paper-creases"></div>
+
+    <!-- Sketch: confused engineer (shrugging) -->
+    <svg width="320" height="400" viewBox="0 0 320 400" style="position: absolute; bottom: 60px; right: 30px; z-index: 5;" class="sketch">
+        <circle cx="160" cy="100" r="45" fill="none" stroke="#1a1a1a" stroke-width="2.5" opacity="0.5"/>
+        <path d="M120,75 Q130,50 160,45 Q190,50 200,75" fill="none" stroke="#1a1a1a" stroke-width="2" opacity="0.4"/>
+        <path d="M140,92 Q145,88 150,92" fill="none" stroke="#1a1a1a" stroke-width="2" opacity="0.5"/>
+        <path d="M170,92 Q175,88 180,92" fill="none" stroke="#1a1a1a" stroke-width="2" opacity="0.5"/>
+        <path d="M148,118 Q155,122 162,116 Q168,122 175,118" fill="none" stroke="#1a1a1a" stroke-width="1.8" opacity="0.4"/>
+        <path d="M80,60 Q82,42 95,38 Q108,38 110,50 Q110,58 100,62 L100,70" fill="none" stroke="#1a1a1a" stroke-width="2" opacity="0.3"/>
+        <circle cx="100" cy="78" r="2.5" fill="#1a1a1a" opacity="0.3"/>
+        <path d="M220,50 Q222,35 232,32 Q242,32 244,42 Q244,48 237,51 L237,57" fill="none" stroke="#1a1a1a" stroke-width="1.8" opacity="0.25"/>
+        <circle cx="237" cy="63" r="2" fill="#1a1a1a" opacity="0.25"/>
+        <path d="M160,145 L160,250" fill="none" stroke="#1a1a1a" stroke-width="2.5" opacity="0.5"/>
+        <path d="M160,180 Q130,165 110,175 Q100,182 105,195" fill="none" stroke="#1a1a1a" stroke-width="2" opacity="0.45"/>
+        <path d="M160,180 Q190,165 210,175 Q220,182 215,195" fill="none" stroke="#1a1a1a" stroke-width="2" opacity="0.45"/>
+        <path d="M105,195 L98,190 M105,195 L100,200 M105,195 L108,202" fill="none" stroke="#1a1a1a" stroke-width="1.5" opacity="0.35"/>
+        <path d="M215,195 L222,190 M215,195 L220,200 M215,195 L212,202" fill="none" stroke="#1a1a1a" stroke-width="1.5" opacity="0.35"/>
+        <path d="M160,250 Q150,300 140,340 L130,360" fill="none" stroke="#1a1a1a" stroke-width="2.5" opacity="0.5"/>
+        <path d="M160,250 Q170,300 180,340 L190,360" fill="none" stroke="#1a1a1a" stroke-width="2.5" opacity="0.5"/>
+    </svg>
+
+    <div class="content" style="display: flex; flex-direction: column; justify-content: center; padding: 100px 80px;">
+        <p style="font-size: 54px; font-weight: 900; color: #1a1a1a; line-height: 1.2; margin-bottom: 48px; max-width: 580px;">
+            The problem isn't the company.
+        </p>
+        <p style="font-size: 44px; font-weight: 700; color: #888; line-height: 1.3; max-width: 560px; margin-bottom: 56px;">
+            It's your lack of environmental awareness.
+        </p>
+        <div style="width: 60px; height: 4px; background: #1a1a1a; margin-bottom: 48px;"></div>
+        <p style="font-size: 26px; font-weight: 500; color: #aaa; line-height: 1.6; max-width: 500px;">
+            In the corporate "Circle of Life", you're either working for a Dinosaur or a Mammal. Both exist. Both play by different rules.
+        </p>
+    </div>
+
+    <svg class="swipe-arrow" width="64" height="48" viewBox="0 0 64 48">
+        <path d="M4,24 L52,24 M40,10 L56,24 L40,38" fill="none" stroke="#e84393" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <div class="bottom-bar">
+        <span class="page-counter">3 / 8</span>
+        <div class="progress-track"><div class="progress-fill" style="width: 37.5%;"></div></div>
+    </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════════════ -->
+<!-- SLIDE 4: THE DINOSAUR                                           -->
+<!-- ════════════════════════════════════════════════════════════════ -->
+<div class="slide">
+    <div class="paper-texture"></div>
+    <div class="paper-creases"></div>
+
+    <!-- Sketch: friendly dinosaur -->
+    <svg width="420" height="460" viewBox="0 0 420 460" style="position: absolute; bottom: 30px; right: -10px; z-index: 5;" class="sketch">
+        <path d="M180,280 Q140,250 150,210 Q160,170 200,150 Q240,135 280,140 Q320,148 340,175 Q360,205 355,240 Q348,280 320,310 Q290,335 250,340 Q210,342 185,320 Z" fill="none" stroke="#1a1a1a" stroke-width="2.5" opacity="0.55"/>
+        <path d="M300,150 Q310,120 320,90 Q330,65 350,50 Q365,42 375,50" fill="none" stroke="#1a1a1a" stroke-width="2.5" opacity="0.55"/>
+        <path d="M375,50 Q395,45 405,55 Q412,68 405,80 Q395,90 380,88 Q365,85 358,75 Q355,65 360,55" fill="none" stroke="#1a1a1a" stroke-width="2.5" opacity="0.55"/>
+        <circle cx="388" cy="62" r="5" fill="none" stroke="#1a1a1a" stroke-width="1.8" opacity="0.5"/>
+        <circle cx="389" cy="61" r="2" fill="#1a1a1a" opacity="0.45"/>
+        <path d="M392,72 Q398,78 405,74" fill="none" stroke="#1a1a1a" stroke-width="1.5" opacity="0.4"/>
+        <path d="M305,200 Q320,205 328,218 Q330,225 325,228" fill="none" stroke="#1a1a1a" stroke-width="2" opacity="0.45"/>
+        <path d="M325,228 L322,234 M325,228 L330,232" fill="none" stroke="#1a1a1a" stroke-width="1.5" opacity="0.35"/>
+        <path d="M220,335 Q215,375 210,405 Q208,418 195,422 L190,430" fill="none" stroke="#1a1a1a" stroke-width="2.5" opacity="0.55"/>
+        <path d="M275,335 Q280,375 285,405 Q287,418 300,422 L305,430" fill="none" stroke="#1a1a1a" stroke-width="2.5" opacity="0.55"/>
+        <path d="M185,430 L180,435 M190,430 L192,436 M195,428 L200,434" fill="none" stroke="#1a1a1a" stroke-width="1.5" opacity="0.4"/>
+        <path d="M300,430 L295,435 M305,430 L303,436 M310,428 L305,434" fill="none" stroke="#1a1a1a" stroke-width="1.5" opacity="0.4"/>
+        <path d="M185,315 Q140,330 100,320 Q65,310 40,330 Q25,345 15,335" fill="none" stroke="#1a1a1a" stroke-width="2.5" opacity="0.55"/>
+        <path d="M215,142 L222,115 L232,145 M245,137 L252,108 L262,140 M275,140 L285,112 L295,145" fill="none" stroke="#1a1a1a" stroke-width="1.8" opacity="0.35"/>
+        <path d="M210,230 Q240,225 265,235" fill="none" stroke="#1a1a1a" stroke-width="1" opacity="0.12"/>
+        <path d="M215,260 Q245,255 270,262" fill="none" stroke="#1a1a1a" stroke-width="1" opacity="0.12"/>
+        <path d="M220,290 Q248,285 272,292" fill="none" stroke="#1a1a1a" stroke-width="1" opacity="0.12"/>
+    </svg>
+
+    <div class="content" style="display: flex; flex-direction: column; justify-content: center; padding: 100px 80px;">
+        <p style="font-size: 22px; font-weight: 700; color: #aaa; text-transform: uppercase; letter-spacing: 4px; margin-bottom: 20px;">The Enterprise</p>
+        <h2 style="font-size: 72px; font-weight: 900; color: #1a1a1a; line-height: 1.05; margin-bottom: 56px;">The Dinosaur.</h2>
+
+        <p style="font-size: 28px; font-weight: 700; color: #1a1a1a; margin-bottom: 12px;">Strength</p>
+        <p style="font-size: 26px; font-weight: 500; color: #777; line-height: 1.5; margin-bottom: 40px; max-width: 540px;">Massive scale. Turn a bolt here, it affects millions of lives. Resources to solve "impossible" problems.</p>
+
+        <p style="font-size: 28px; font-weight: 700; color: #1a1a1a; margin-bottom: 12px;">Constraint</p>
+        <p style="font-size: 26px; font-weight: 500; color: #777; line-height: 1.5; margin-bottom: 40px; max-width: 540px;">"Neural lag." Decisions take time because the skeleton is heavy and the stakes are high.</p>
+
+        <p style="font-size: 28px; font-weight: 700; color: #1a1a1a; margin-bottom: 12px;">Advice</p>
+        <p style="font-size: 26px; font-weight: 500; color: #777; line-height: 1.5; max-width: 540px;">Don't make it "scurry." Direct its massive power correctly. Play to <strong style="color: #1a1a1a;">stability.</strong></p>
+    </div>
+
+    <svg class="swipe-arrow" width="64" height="48" viewBox="0 0 64 48">
+        <path d="M4,24 L52,24 M40,10 L56,24 L40,38" fill="none" stroke="#e84393" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <div class="bottom-bar">
+        <span class="page-counter">4 / 8</span>
+        <div class="progress-track"><div class="progress-fill" style="width: 50%;"></div></div>
+    </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════════════ -->
+<!-- SLIDE 5: THE MAMMAL                                             -->
+<!-- ════════════════════════════════════════════════════════════════ -->
+<div class="slide">
+    <div class="paper-texture"></div>
+    <div class="paper-creases"></div>
+
+    <!-- Sketch: fox/small creature -->
+    <svg width="380" height="380" viewBox="0 0 380 380" style="position: absolute; bottom: 50px; right: 10px; z-index: 5;" class="sketch">
+        <path d="M160,220 Q120,210 110,240 Q100,270 120,290 Q140,305 180,310 Q220,312 260,305 Q290,295 295,270 Q298,245 280,225 Q260,210 230,208 Q195,208 165,215 Z" fill="none" stroke="#1a1a1a" stroke-width="2.5" opacity="0.55"/>
+        <path d="M260,210 Q290,185 305,165 Q315,150 310,135 Q305,125 290,130 Q280,135 275,150 Q270,165 265,180" fill="none" stroke="#1a1a1a" stroke-width="2.5" opacity="0.55"/>
+        <circle cx="295" cy="152" r="35" fill="none" stroke="#1a1a1a" stroke-width="2.5" opacity="0.55"/>
+        <path d="M275,125 L268,85 L290,118" fill="none" stroke="#1a1a1a" stroke-width="2" opacity="0.5"/>
+        <path d="M298,118 L305,78 L318,115" fill="none" stroke="#1a1a1a" stroke-width="2" opacity="0.5"/>
+        <path d="M275,118 L272,98" fill="none" stroke="#1a1a1a" stroke-width="1" opacity="0.2"/>
+        <path d="M305,115 L307,95" fill="none" stroke="#1a1a1a" stroke-width="1" opacity="0.2"/>
+        <circle cx="305" cy="145" r="6" fill="none" stroke="#1a1a1a" stroke-width="1.8" opacity="0.5"/>
+        <circle cx="306" cy="144" r="2.5" fill="#1a1a1a" opacity="0.45"/>
+        <ellipse cx="325" cy="158" rx="5" ry="3.5" fill="#1a1a1a" opacity="0.35"/>
+        <path d="M328,155 L350,148 M328,158 L352,158 M328,162 L348,168" fill="none" stroke="#1a1a1a" stroke-width="1" opacity="0.2"/>
+        <path d="M320,162 Q322,168 318,172" fill="none" stroke="#1a1a1a" stroke-width="1.2" opacity="0.35"/>
+        <path d="M150,305 Q145,335 142,360 L138,375" fill="none" stroke="#1a1a1a" stroke-width="2" opacity="0.5"/>
+        <path d="M195,310 Q192,340 190,360 L188,375" fill="none" stroke="#1a1a1a" stroke-width="2" opacity="0.5"/>
+        <path d="M235,308 Q237,340 240,360 L242,375" fill="none" stroke="#1a1a1a" stroke-width="2" opacity="0.5"/>
+        <path d="M265,302 Q268,335 272,360 L275,375" fill="none" stroke="#1a1a1a" stroke-width="2" opacity="0.5"/>
+        <path d="M130,280 Q100,265 80,240 Q65,220 70,195 Q78,175 95,180 Q110,188 105,210" fill="none" stroke="#1a1a1a" stroke-width="2.5" opacity="0.55"/>
+        <path d="M80,230 Q75,220 80,210" fill="none" stroke="#1a1a1a" stroke-width="1.2" opacity="0.2"/>
+        <path d="M90,215 Q82,205 88,195" fill="none" stroke="#1a1a1a" stroke-width="1.2" opacity="0.2"/>
+    </svg>
+
+    <div class="content" style="display: flex; flex-direction: column; justify-content: center; padding: 100px 80px;">
+        <p style="font-size: 22px; font-weight: 700; color: #aaa; text-transform: uppercase; letter-spacing: 4px; margin-bottom: 20px;">The Startup</p>
+        <h2 style="font-size: 72px; font-weight: 900; color: #1a1a1a; line-height: 1.05; margin-bottom: 56px;">The Mammal.</h2>
+
+        <p style="font-size: 28px; font-weight: 700; color: #1a1a1a; margin-bottom: 12px;">Strength</p>
+        <p style="font-size: 26px; font-weight: 500; color: #777; line-height: 1.5; margin-bottom: 40px; max-width: 480px;">Speed and mutation. Pivot your entire strategy in a single afternoon.</p>
+
+        <p style="font-size: 28px; font-weight: 700; color: #1a1a1a; margin-bottom: 12px;">Constraint</p>
+        <p style="font-size: 26px; font-weight: 500; color: #777; line-height: 1.5; margin-bottom: 40px; max-width: 480px;">Vulnerability. No safety net. No 50-year legacy to lean on.</p>
+
+        <p style="font-size: 28px; font-weight: 700; color: #1a1a1a; margin-bottom: 12px;">Advice</p>
+        <p style="font-size: 26px; font-weight: 500; color: #777; line-height: 1.5; max-width: 480px;">Don't complain about lack of "process." You <em>are</em> the process. Play to <strong style="color: #1a1a1a;">agility.</strong></p>
+    </div>
+
+    <svg class="swipe-arrow" width="64" height="48" viewBox="0 0 64 48">
+        <path d="M4,24 L52,24 M40,10 L56,24 L40,38" fill="none" stroke="#e84393" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <div class="bottom-bar">
+        <span class="page-counter">5 / 8</span>
+        <div class="progress-track"><div class="progress-fill" style="width: 62.5%;"></div></div>
+    </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════════════ -->
+<!-- SLIDE 6: SIDE BY SIDE                                           -->
+<!-- ════════════════════════════════════════════════════════════════ -->
+<div class="slide">
+    <div class="paper-texture"></div>
+    <div class="paper-creases"></div>
+
+    <div class="content" style="display: flex; flex-direction: column; justify-content: center; padding: 100px 80px;">
+        <p style="font-size: 22px; font-weight: 700; color: #aaa; text-transform: uppercase; letter-spacing: 4px; margin-bottom: 20px;">Know Your Habitat</p>
+        <h2 style="font-size: 56px; font-weight: 900; color: #1a1a1a; line-height: 1.15; margin-bottom: 64px;">You can nudge — but don't fight its nature.</h2>
+
+        <div style="display: flex; gap: 48px; margin-bottom: 64px;">
+            <!-- Dino side -->
+            <div style="flex: 1;">
+                <svg width="80" height="65" viewBox="0 0 100 80" class="sketch" style="margin-bottom: 16px;">
+                    <path d="M30,50 Q20,40 25,30 Q35,18 55,18 Q72,20 78,32 Q82,42 76,52 Q68,60 50,62 Q35,62 28,55Z" fill="none" stroke="#1a1a1a" stroke-width="2" opacity="0.4"/>
+                    <path d="M72,22 Q80,12 90,14 Q95,18 92,25 Q88,30 80,30" fill="none" stroke="#1a1a1a" stroke-width="2" opacity="0.4"/>
+                    <circle cx="87" cy="18" r="2.5" fill="#1a1a1a" opacity="0.3"/>
+                    <path d="M42,15 L45,5 L50,16 M55,14 L58,4 L62,15" fill="none" stroke="#1a1a1a" stroke-width="1.2" opacity="0.25"/>
+                </svg>
+                <p style="font-size: 36px; font-weight: 900; color: #1a1a1a; margin-bottom: 16px;">Dinosaur</p>
+                <p style="font-size: 26px; font-weight: 600; color: #555; line-height: 1.45; margin-bottom: 12px;">Push it to be 5% more nimble.</p>
+                <p style="font-size: 24px; font-weight: 500; color: #aaa; line-height: 1.45;">But know its limits. It will never scurry.</p>
+            </div>
+            <!-- Mammal side -->
+            <div style="flex: 1;">
+                <svg width="80" height="65" viewBox="0 0 100 80" class="sketch" style="margin-bottom: 16px;">
+                    <circle cx="60" cy="40" r="22" fill="none" stroke="#1a1a1a" stroke-width="2" opacity="0.4"/>
+                    <polygon points="45,25 42,5 56,22" fill="none" stroke="#1a1a1a" stroke-width="1.5" opacity="0.35"/>
+                    <polygon points="58,20 60,0 72,18" fill="none" stroke="#1a1a1a" stroke-width="1.5" opacity="0.35"/>
+                    <circle cx="65" cy="36" r="3" fill="none" stroke="#1a1a1a" stroke-width="1.5" opacity="0.35"/>
+                    <circle cx="66" cy="35.5" r="1.2" fill="#1a1a1a" opacity="0.3"/>
+                    <ellipse cx="76" cy="42" rx="3" ry="2" fill="#1a1a1a" opacity="0.25"/>
+                    <path d="M30,38 Q18,30 22,18" fill="none" stroke="#1a1a1a" stroke-width="2" opacity="0.35"/>
+                </svg>
+                <p style="font-size: 36px; font-weight: 900; color: #1a1a1a; margin-bottom: 16px;">Mammal</p>
+                <p style="font-size: 26px; font-weight: 600; color: #555; line-height: 1.45; margin-bottom: 12px;">Push it to be more organized.</p>
+                <p style="font-size: 24px; font-weight: 500; color: #aaa; line-height: 1.45;">But don't stifle its speed. It will never stomp.</p>
+            </div>
+        </div>
+
+        <div style="width: 60px; height: 4px; background: #1a1a1a; margin-bottom: 36px;"></div>
+        <p style="font-size: 26px; font-weight: 600; color: #888; line-height: 1.5; max-width: 700px;">
+            Success rewards the Mammal by turning it into a Dinosaur — too large to stomp out the smaller competitors now nibbling at its feet.
+        </p>
+    </div>
+
+    <svg class="swipe-arrow" width="64" height="48" viewBox="0 0 64 48">
+        <path d="M4,24 L52,24 M40,10 L56,24 L40,38" fill="none" stroke="#e84393" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <div class="bottom-bar">
+        <span class="page-counter">6 / 8</span>
+        <div class="progress-track"><div class="progress-fill" style="width: 75%;"></div></div>
+    </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════════════ -->
+<!-- SLIDE 7: TRY BOTH                                               -->
+<!-- ════════════════════════════════════════════════════════════════ -->
+<div class="slide">
+    <div class="paper-texture"></div>
+    <div class="paper-creases"></div>
+
+    <!-- Sketch: person at fork in road -->
+    <svg width="360" height="400" viewBox="0 0 360 400" style="position: absolute; bottom: 50px; right: 20px; z-index: 5;" class="sketch">
+        <circle cx="180" cy="95" r="28" fill="none" stroke="#1a1a1a" stroke-width="2.5" opacity="0.5"/>
+        <path d="M180,123 L180,220" fill="none" stroke="#1a1a1a" stroke-width="2.5" opacity="0.5"/>
+        <path d="M180,160 Q155,170 148,195 Q145,205 155,208" fill="none" stroke="#1a1a1a" stroke-width="2" opacity="0.45"/>
+        <path d="M180,160 Q205,170 212,195 Q215,205 205,208" fill="none" stroke="#1a1a1a" stroke-width="2" opacity="0.45"/>
+        <path d="M180,220 Q170,270 158,310 L150,335" fill="none" stroke="#1a1a1a" stroke-width="2.5" opacity="0.5"/>
+        <path d="M180,220 Q190,270 202,310 L210,335" fill="none" stroke="#1a1a1a" stroke-width="2.5" opacity="0.5"/>
+        <path d="M180,340 L180,360" fill="none" stroke="#1a1a1a" stroke-width="3" opacity="0.2"/>
+        <path d="M180,360 Q140,370 90,365 Q50,360 20,370" fill="none" stroke="#1a1a1a" stroke-width="2.5" opacity="0.2"/>
+        <path d="M180,360 Q220,370 270,365 Q310,360 340,370" fill="none" stroke="#1a1a1a" stroke-width="2.5" opacity="0.2"/>
+    </svg>
+
+    <div class="content" style="display: flex; flex-direction: column; justify-content: center; padding: 100px 80px;">
+        <h2 style="font-size: 60px; font-weight: 900; color: #1a1a1a; line-height: 1.15; margin-bottom: 56px; max-width: 560px;">If you get the chance — try both.</h2>
+
+        <p style="font-size: 30px; font-weight: 600; color: #555; line-height: 1.5; margin-bottom: 32px; max-width: 520px;">
+            Only ever at a Dinosaur?<br/><span style="color: #aaa;">You'll forget how to move fast.</span>
+        </p>
+
+        <p style="font-size: 30px; font-weight: 600; color: #555; line-height: 1.5; margin-bottom: 56px; max-width: 520px;">
+            Only ever at a Mammal?<br/><span style="color: #aaa;">You won't understand how to scale.</span>
+        </p>
+
+        <div style="width: 60px; height: 4px; background: #1a1a1a; margin-bottom: 40px;"></div>
+
+        <p style="font-size: 28px; font-weight: 800; color: #1a1a1a; line-height: 1.4; max-width: 560px;">
+            The best engineers understand the organism — and play to its strengths.
+        </p>
+    </div>
+
+    <svg class="swipe-arrow" width="64" height="48" viewBox="0 0 64 48">
+        <path d="M4,24 L52,24 M40,10 L56,24 L40,38" fill="none" stroke="#e84393" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <div class="bottom-bar">
+        <span class="page-counter">7 / 8</span>
+        <div class="progress-track"><div class="progress-fill" style="width: 87.5%;"></div></div>
+    </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════════════ -->
+<!-- SLIDE 8: CTA / CLOSER                                          -->
+<!-- ════════════════════════════════════════════════════════════════ -->
+<div class="slide">
+    <div class="paper-texture"></div>
+    <div class="paper-creases"></div>
+
+    <!-- Sketch: T-Rex looking bewildered at tiny burrow -->
+    <svg width="500" height="350" viewBox="0 0 500 350" style="position: absolute; bottom: 50px; left: 50%; transform: translateX(-50%); z-index: 5;" class="sketch">
+        <path d="M20,280 Q100,275 200,280 Q300,285 400,280 Q450,278 490,280" fill="none" stroke="#1a1a1a" stroke-width="2" opacity="0.15"/>
+        <path d="M340,280 Q345,255 360,248 Q380,242 395,250 Q405,258 405,280" fill="none" stroke="#1a1a1a" stroke-width="2.5" opacity="0.4"/>
+        <path d="M330,282 Q335,278 340,280" fill="none" stroke="#1a1a1a" stroke-width="1" opacity="0.15"/>
+        <path d="M405,280 Q412,276 418,280" fill="none" stroke="#1a1a1a" stroke-width="1" opacity="0.15"/>
+        <path d="M100,200 Q80,170 90,140 Q110,100 160,90 Q200,85 230,100 Q255,118 260,150 Q262,180 248,210 Q230,240 200,255 Q160,265 125,245 Z" fill="none" stroke="#1a1a1a" stroke-width="2.5" opacity="0.5"/>
+        <path d="M248,150 Q270,130 295,125 Q315,122 325,135 Q330,145 325,155 Q318,165 300,168 Q280,170 265,165" fill="none" stroke="#1a1a1a" stroke-width="2.5" opacity="0.5"/>
+        <circle cx="308" cy="138" r="6" fill="none" stroke="#1a1a1a" stroke-width="1.8" opacity="0.45"/>
+        <circle cx="310" cy="137" r="2.5" fill="#1a1a1a" opacity="0.4"/>
+        <path d="M300,128 Q308,122 318,126" fill="none" stroke="#1a1a1a" stroke-width="1.8" opacity="0.35"/>
+        <path d="M235,185 Q260,195 278,210 Q285,218 280,225" fill="none" stroke="#1a1a1a" stroke-width="2" opacity="0.4"/>
+        <path d="M140,255 L132,280" fill="none" stroke="#1a1a1a" stroke-width="2.5" opacity="0.5"/>
+        <path d="M195,250 L200,280" fill="none" stroke="#1a1a1a" stroke-width="2.5" opacity="0.5"/>
+        <path d="M105,235 Q70,245 45,235 Q25,225 20,240" fill="none" stroke="#1a1a1a" stroke-width="2.5" opacity="0.5"/>
+        <path d="M130,92 L135,70 L145,92 M158,88 L163,66 L170,90 M185,88 L192,68 L200,92" fill="none" stroke="#1a1a1a" stroke-width="1.5" opacity="0.3"/>
+        <path d="M310,105 Q315,95 320,105" fill="none" stroke="#1a1a1a" stroke-width="1.5" opacity="0.2"/>
+        <path d="M325,98 Q330,88 335,98" fill="none" stroke="#1a1a1a" stroke-width="1.5" opacity="0.2"/>
+    </svg>
+
+    <div class="content" style="display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 100px 80px; text-align: center;">
+        <p style="font-size: 52px; font-weight: 900; color: #1a1a1a; line-height: 1.2; margin-bottom: 40px; max-width: 780px;">
+            Stop complaining that a T-Rex can't hide in a burrow.
+        </p>
+        <div style="width: 60px; height: 4px; background: #1a1a1a; margin-bottom: 40px;"></div>
+        <p style="font-size: 38px; font-weight: 700; color: #888; line-height: 1.35; margin-bottom: 80px; max-width: 650px;">
+            Understand the organism.<br/>Play to its strengths.
+        </p>
+
+        <!-- Author -->
+        <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 16px;">
+            <div style="width: 52px; height: 52px; border-radius: 50%; border: 2px solid #ccc; display: flex; align-items: center; justify-content: center;">
+                <span style="font-weight: 900; font-size: 20px; color: #555;">M</span>
+            </div>
+            <div style="text-align: left;">
+                <p style="font-weight: 800; font-size: 20px; color: #1a1a1a;">Mansour Manci</p>
+                <p style="font-weight: 500; font-size: 16px; color: #aaa;">Engineering Career Coach · LaunchToLead.io</p>
+            </div>
+        </div>
+        <p style="font-size: 20px; font-weight: 500; color: #bbb; margin-top: 12px;">Found this helpful? Repost to help another engineer.</p>
+    </div>
+
+    <div class="bottom-bar">
+        <span class="page-counter">8 / 8</span>
+        <div class="progress-track"><div class="progress-fill" style="width: 100%;"></div></div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Relationship Accelerator — Proposal | LaunchToLead</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .font-mono-num { font-family: 'Space Grotesk', monospace; }
+
+        #download-btn {
+            position: fixed; top: 20px; right: 20px; z-index: 9999;
+            background: linear-gradient(135deg, #a3e635, #14b8a6); color: #052e16;
+            font-family: 'Plus Jakarta Sans', sans-serif; font-size: 16px; font-weight: 800;
+            padding: 14px 32px; border: none; border-radius: 50px; cursor: pointer;
+            box-shadow: 0 8px 30px rgba(163,230,53,0.3);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        #download-btn:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(163,230,53,0.4); }
+
+        @media print {
+            @page { size: letter; margin: 0.5in 0.65in; }
+            body {
+                background: white !important; color: #1e293b !important;
+                padding: 0 !important; margin: 0 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            #download-btn { display: none !important; }
+            .page-break { break-before: page; }
+            .keep-together { break-inside: avoid; }
+            .space-y-4 > div, .space-y-6 > div, .grid > div { break-inside: avoid; }
+            h2, h3, h4 { break-after: avoid; }
+            section { box-shadow: none !important; border: 1px solid #e2e8f0 !important; }
+            .max-w-4xl { max-width: 100% !important; }
+            .bg-emerald-900, .bg-slate-900 {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-700">
+
+<button id="download-btn" onclick="window.print()">Download PDF</button>
+
+<!-- ============================================ -->
+<!-- HEADER                                        -->
+<!-- ============================================ -->
+<header class="bg-emerald-900 text-white py-10 px-6">
+    <div class="max-w-4xl mx-auto">
+        <div class="flex items-center gap-3 mb-6">
+            <div class="bg-white text-emerald-900 w-10 h-10 rounded-xl flex items-center justify-center font-bold text-sm shadow">L²</div>
+            <span class="text-xl font-bold">Launch<span class="font-light text-lime-300">ToLead</span></span>
+        </div>
+        <p class="text-lime-300 text-sm font-semibold uppercase tracking-widest mb-2">Coaching Proposal</p>
+        <h1 class="text-4xl font-extrabold mb-2">Business Relationship Accelerator</h1>
+        <p class="text-emerald-200 text-lg">A 4-session group coaching program for engineering founders who want to build client relationships that win business.</p>
+        <div class="mt-6 flex gap-6 text-sm text-emerald-300">
+            <span>Prepared for: <strong class="text-white">Asjad Pasha</strong></span>
+            <span>Date: <strong class="text-white">March 2, 2026</strong></span>
+            <span>Prepared by: <strong class="text-white">Mansour Manci</strong></span>
+        </div>
+    </div>
+</header>
+
+<div class="max-w-4xl mx-auto px-6 py-10 space-y-10">
+
+    <!-- ============================================ -->
+    <!-- THE CHALLENGE                                 -->
+    <!-- ============================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 p-8">
+        <div class="flex items-center gap-3 mb-6">
+            <div class="w-8 h-8 rounded-lg bg-amber-500 text-white flex items-center justify-center text-sm font-bold">🎯</div>
+            <h2 class="text-2xl font-extrabold text-slate-900">The Challenge</h2>
+        </div>
+
+        <p class="text-slate-600 mb-4">Your team has deep engineering expertise, real manufacturing capabilities, and a 40-year track record of technical excellence. The challenge isn't the product — it's the conversation that happens <strong>before</strong> the product ever gets discussed.</p>
+
+        <div class="grid md:grid-cols-2 gap-4 mt-6">
+            <div class="bg-amber-50 border border-amber-200 rounded-xl p-5">
+                <p class="font-bold text-amber-900">The Engineering Default</p>
+                <p class="text-amber-700 text-sm mt-1">Engineers lead with specs, data, and capabilities. That's how we think. But the supply chain manager sitting across the table makes their initial decision based on trust, rapport, and gut feel — the specs are the tiebreaker, not the opener.</p>
+            </div>
+            <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-5">
+                <p class="font-bold text-emerald-900">The Relationship Advantage</p>
+                <p class="text-emerald-700 text-sm mt-1">When a customer trusts you as a person — not just a vendor — they call you first, give you second chances, and recommend you to their network. That's the difference between chasing business and attracting it.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- THE APPROACH                                  -->
+    <!-- ============================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 p-8 page-break">
+        <div class="flex items-center gap-3 mb-6">
+            <div class="w-8 h-8 rounded-lg bg-emerald-700 text-white flex items-center justify-center text-sm font-bold">💡</div>
+            <h2 class="text-2xl font-extrabold text-slate-900">The Approach</h2>
+        </div>
+
+        <p class="text-slate-600 mb-4">This program combines LaunchToLead's engineering communication coaching with relationship-building frameworks from our partnership with <strong>Hansen Beck</strong>, a leadership and sales training firm. The result is a program built specifically for engineers who need to connect with customers — not as salespeople, but as trusted partners.</p>
+
+        <div class="bg-slate-50 rounded-xl p-6 border border-slate-200 mt-4">
+            <h3 class="font-bold text-slate-900 text-lg mb-3">Core Framework: The Fully Activated Recommendation (FAR)</h3>
+            <p class="text-slate-600 text-sm mb-4">People make decisions emotionally first, then rationalize them. The FAR framework gives your team 3 specific ways to build the trust that wins business:</p>
+            <div class="grid md:grid-cols-3 gap-4">
+                <div class="bg-white rounded-lg p-4 border border-slate-200 text-center">
+                    <p class="font-mono-num text-3xl font-bold text-emerald-600 mb-2">1</p>
+                    <p class="font-bold text-slate-900">Be Useful</p>
+                    <p class="text-slate-500 text-xs mt-1">Solve a problem before they ask. Share insight, make introductions, add value first.</p>
+                </div>
+                <div class="bg-white rounded-lg p-4 border border-slate-200 text-center">
+                    <p class="font-mono-num text-3xl font-bold text-emerald-600 mb-2">2</p>
+                    <p class="font-bold text-slate-900">Give a Boost</p>
+                    <p class="text-slate-500 text-xs mt-1">Make people feel like they matter. Genuine recognition. Authentic interest in who they are.</p>
+                </div>
+                <div class="bg-white rounded-lg p-4 border border-slate-200 text-center">
+                    <p class="font-mono-num text-3xl font-bold text-emerald-600 mb-2">3</p>
+                    <p class="font-bold text-slate-900">Provide Security</p>
+                    <p class="text-slate-500 text-xs mt-1">Rational (data, specs, reliability) AND emotional ("I will get out of bed for you").</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-slate-50 rounded-xl p-6 border border-slate-200 mt-4">
+            <h3 class="font-bold text-slate-900 text-lg mb-3">The Customer Journey: Heart → Head → Hand</h3>
+            <p class="text-slate-600 text-sm mb-4">Alongside FAR, we'll follow Hansen Beck's 3-step Customer Journey — the sequence every buyer moves through before they say "yes." Engineers who understand this sequence stop guessing and start leading the conversation with purpose.</p>
+            <div class="grid md:grid-cols-3 gap-4">
+                <div class="bg-white rounded-lg p-4 border border-slate-200 text-center">
+                    <p class="text-2xl mb-2">❤️</p>
+                    <p class="font-bold text-slate-900">Heart</p>
+                    <p class="text-slate-500 text-xs mt-1">Mobilise the customer's emotional energy. Spark excitement and desire before facts and specs. Needs are technical — Wants are emotional. We're in the Wants business.</p>
+                </div>
+                <div class="bg-white rounded-lg p-4 border border-slate-200 text-center">
+                    <p class="text-2xl mb-2">🧠</p>
+                    <p class="font-bold text-slate-900">Head</p>
+                    <p class="text-slate-500 text-xs mt-1">Satisfy the customer's analytical mind. Once they're emotionally engaged, they'll ask the hard questions — and your team will be ready with substance.</p>
+                </div>
+                <div class="bg-white rounded-lg p-4 border border-slate-200 text-center">
+                    <p class="text-2xl mb-2">🤝</p>
+                    <p class="font-bold text-slate-900">Hand</p>
+                    <p class="text-slate-500 text-xs mt-1">Fulfil every expectation you created together — and more. Demonstrate that you can deliver, not just talk. This is where trust converts to business.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- PROGRAM OVERVIEW                              -->
+    <!-- ============================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 p-8 page-break">
+        <div class="flex items-center gap-3 mb-6">
+            <div class="w-8 h-8 rounded-lg bg-indigo-600 text-white flex items-center justify-center text-sm font-bold">📋</div>
+            <h2 class="text-2xl font-extrabold text-slate-900">Program Overview</h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-4 mb-6">
+            <div class="bg-indigo-50 rounded-xl p-5 border border-indigo-200">
+                <p class="text-indigo-700 text-sm font-semibold">FORMAT</p>
+                <p class="text-slate-900 font-bold text-lg">4 sessions × 2 hours</p>
+                <p class="text-slate-500 text-sm">Small group coaching (up to 3 participants)</p>
+            </div>
+            <div class="bg-indigo-50 rounded-xl p-5 border border-indigo-200">
+                <p class="text-indigo-700 text-sm font-semibold">CADENCE</p>
+                <p class="text-slate-900 font-bold text-lg">2 + 2 Intensive Format</p>
+                <p class="text-slate-500 text-sm">2 back-to-back days, 1 week break, 2 more back-to-back days</p>
+            </div>
+            <div class="bg-indigo-50 rounded-xl p-5 border border-indigo-200">
+                <p class="text-indigo-700 text-sm font-semibold">DELIVERY</p>
+                <p class="text-slate-900 font-bold text-lg">Virtual (Zoom)</p>
+                <p class="text-slate-500 text-sm">Recorded for review between sessions</p>
+            </div>
+            <div class="bg-indigo-50 rounded-xl p-5 border border-indigo-200">
+                <p class="text-indigo-700 text-sm font-semibold">INCLUDES</p>
+                <p class="text-slate-900 font-bold text-lg">Live role-plays every session</p>
+                <p class="text-slate-500 text-sm">Pre-work + real-world practice during 1-week break</p>
+            </div>
+        </div>
+
+        <div class="bg-amber-50 rounded-xl p-5 border border-amber-200 mt-4">
+            <p class="font-bold text-amber-900 text-sm">📝 Pre-Work (assigned before Day 1)</p>
+            <p class="text-amber-700 text-sm mt-1">Each participant selects 1 real target prospect company and researches 1 specific person at that company. This ensures we hit the ground running on Day 1 with real scenarios — not hypotheticals.</p>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SESSION 1                                     -->
+    <!-- ============================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 overflow-hidden page-break">
+        <div class="bg-slate-900 text-white p-6">
+            <div class="flex items-center gap-3">
+                <div class="font-mono-num text-3xl font-extrabold text-lime-400">01</div>
+                <div>
+                    <h3 class="text-xl font-bold">The FAR Foundation</h3>
+                    <p class="text-slate-400 text-sm">"Why People Buy From People" · Day 1 · 2 hours</p>
+                </div>
+            </div>
+        </div>
+        <div class="p-6 space-y-4">
+            <div class="flex items-start gap-3 keep-together">
+                <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-emerald-100 text-emerald-700 font-bold text-xs flex-shrink-0 mt-0.5">15m</span>
+                <div>
+                    <p class="font-bold text-slate-900">Opening & Situation Mapping</p>
+                    <p class="text-slate-600 text-sm">Each participant shares their role, what a "win" looks like in the next 6 months, and what's hardest about interfacing with potential customers. This surfaces the real pain points the program will address.</p>
+                </div>
+            </div>
+            <div class="flex items-start gap-3 keep-together">
+                <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-emerald-100 text-emerald-700 font-bold text-xs flex-shrink-0 mt-0.5">30m</span>
+                <div>
+                    <p class="font-bold text-slate-900">The FAR Framework — Be Useful, Give a Boost, Provide Security</p>
+                    <p class="text-slate-600 text-sm">Full introduction to the Fully Activated Recommendation framework from our Hansen Beck partnership. We'll break down the 3 pillars and the two types of security (rational + emotional). Group discussion: Which pillar do you naturally lean on? Which feels most foreign?</p>
+                </div>
+            </div>
+            <div class="flex items-start gap-3 keep-together">
+                <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-emerald-100 text-emerald-700 font-bold text-xs flex-shrink-0 mt-0.5">30m</span>
+                <div>
+                    <p class="font-bold text-slate-900">The Engineer's Sales Trap — Wants vs. Needs</p>
+                    <p class="text-slate-600 text-sm">Engineers default to rational security (specs, data) because it's what we trust. But here's the reframe: <strong>Needs are technical. Wants are emotional. We're in the Wants business.</strong> The supply chain manager decides on emotion first, then rationalizes with specs. We'll cover the "Two-Act Meeting" concept — the Heart portion (Act 1) and the Head/Hand portion (Act 2). You don't get to Act 2 if you lose Act 1.</p>
+                </div>
+            </div>
+            <div class="flex items-start gap-3 keep-together">
+                <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-emerald-100 text-emerald-700 font-bold text-xs flex-shrink-0 mt-0.5">30m</span>
+                <div>
+                    <p class="font-bold text-slate-900">The Pre-Meeting Prep System & "Throwing Pebbles"</p>
+                    <p class="text-slate-600 text-sm">Every customer meeting should be prepared for. We'll build a repeatable prep process: company research (15 min), stakeholder research (10 min), and 3 open-ended questions — what Hansen Beck calls "Throwing Pebbles." The goal isn't just to gather information; it's to get the customer to <strong>dream with you</strong> — to describe their vision out loud so you become part of it from the start.</p>
+                </div>
+            </div>
+            <div class="flex items-start gap-3 keep-together">
+                <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-amber-100 text-amber-700 font-bold text-xs flex-shrink-0 mt-0.5">15m</span>
+                <div>
+                    <p class="font-bold text-slate-900">Overnight Prep</p>
+                    <p class="text-slate-600 text-sm">Refine the 3 open-ended "Pebble" questions from today's session. Map out what "Be Useful," "Give a Boost," and "Provide Security" would look like for your pre-assigned prospect.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SESSION 2                                     -->
+    <!-- ============================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 overflow-hidden page-break">
+        <div class="bg-slate-900 text-white p-6">
+            <div class="flex items-center gap-3">
+                <div class="font-mono-num text-3xl font-extrabold text-lime-400">02</div>
+                <div>
+                    <h3 class="text-xl font-bold">The Art of Genuine Conversation</h3>
+                    <p class="text-slate-400 text-sm">"Stop Pitching, Start Listening" · Day 2 · 2 hours</p>
+                </div>
+            </div>
+        </div>
+        <div class="p-6 space-y-4">
+            <div class="flex items-start gap-3 keep-together">
+                <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-emerald-100 text-emerald-700 font-bold text-xs flex-shrink-0 mt-0.5">20m</span>
+                <div>
+                    <p class="font-bold text-slate-900">Day 1 Recap & Question Coaching</p>
+                    <p class="text-slate-600 text-sm">Review the refined FAR questions from overnight. Each person presents their prospect and we coach together — separating genuinely curious questions from secretly transactional ones.</p>
+                </div>
+            </div>
+            <div class="flex items-start gap-3 keep-together">
+                <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-emerald-100 text-emerald-700 font-bold text-xs flex-shrink-0 mt-0.5">30m</span>
+                <div>
+                    <p class="font-bold text-slate-900">The Conversation Flow System & "The Customer's Brainchild"</p>
+                    <p class="text-slate-600 text-sm">The opening sequence: Start with the person, not the product. "How's your day going?" → "Fine." → "What does fine look like?" Keep throwing pebbles until you get open-ended answers. Find a genuine personal connection. Then use Hansen Beck's "Customer's Brainchild" technique — reinforce their vision so they feel the solution was their idea from the start. The prospect brings it back to business; you follow their lead.</p>
+                </div>
+            </div>
+            <div class="flex items-start gap-3 keep-together">
+                <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-emerald-100 text-emerald-700 font-bold text-xs flex-shrink-0 mt-0.5">20m</span>
+                <div>
+                    <p class="font-bold text-slate-900">Active Listening Deep Dive</p>
+                    <p class="text-slate-600 text-sm">The 3 levels of listening: waiting to talk (most people), hearing the words (better), and listening for what's underneath (FAR level). Practical techniques: the 2-second pause, the "echo back" method, and responding to what they said — not pivoting to your agenda.</p>
+                </div>
+            </div>
+            <div class="flex items-start gap-3 keep-together">
+                <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-indigo-100 text-indigo-700 font-bold text-xs flex-shrink-0 mt-0.5">40m</span>
+                <div>
+                    <p class="font-bold text-slate-900">Role-Play Block — 3 Rounds</p>
+                    <p class="text-slate-600 text-sm"><strong>Round 1:</strong> Practice the opening sequence — personal opener → connection → let them bring it back to business. <strong>Round 2:</strong> Same scenario but with a different buyer personality (friendly vs. all-business). <strong>Round 3:</strong> The team handoff scenario — how to transition from the relationship conversation to the technical deep-dive without losing the warmth. Group debrief after each round.</p>
+                </div>
+            </div>
+            <div class="flex items-start gap-3 keep-together">
+                <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-amber-100 text-amber-700 font-bold text-xs flex-shrink-0 mt-0.5">10m</span>
+                <div>
+                    <p class="font-bold text-slate-900">Week Break Assignment</p>
+                    <p class="text-slate-600 text-sm">Over the next week, practice the opening sequence in 2-3 real conversations (colleagues, vendors, anyone). Journal what happened. Send 1 "Be Useful" touchpoint to your target prospect. Research a second prospect company for our Week 2 mock meetings. Come back ready to apply everything live.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SESSION 3                                     -->
+    <!-- ============================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 overflow-hidden page-break">
+        <div class="bg-slate-900 text-white p-6">
+            <div class="flex items-center gap-3">
+                <div class="font-mono-num text-3xl font-extrabold text-lime-400">03</div>
+                <div>
+                    <h3 class="text-xl font-bold">Reading the Room & Managing the Meeting</h3>
+                    <p class="text-slate-400 text-sm">"The Two-Act Customer Meeting" · Day 3 · 2 hours</p>
+                </div>
+            </div>
+        </div>
+        <div class="p-6 space-y-4">
+            <div class="flex items-start gap-3 keep-together">
+                <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-emerald-100 text-emerald-700 font-bold text-xs flex-shrink-0 mt-0.5">15m</span>
+                <div>
+                    <p class="font-bold text-slate-900">Week Break Debrief</p>
+                    <p class="text-slate-600 text-sm">How did the real-world conversations go over the past week? What surprised you? Who sent a "Be Useful" touchpoint? What was the response? This is the most important debrief of the program — real results from real practice.</p>
+                </div>
+            </div>
+            <div class="flex items-start gap-3 keep-together">
+                <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-emerald-100 text-emerald-700 font-bold text-xs flex-shrink-0 mt-0.5">40m</span>
+                <div>
+                    <p class="font-bold text-slate-900">The Two-Act Meeting Framework (Heart → Head → Hand)</p>
+                    <p class="text-slate-600 text-sm"><strong>Act 1 — Heart (Emotional Energy):</strong> The supply chain manager leads. Your job is to listen, throw pebbles, and understand THEIR vision. Adapt your language to the audience — supply chain cares about reliability and lead time; VPs care about total cost of ownership. Remember: Wants before Needs. <strong>Act 2 — Head + Hand (Analytical Mind & Delivery):</strong> When the SMEs join, satisfy the analytical mind with substance, then demonstrate you can deliver. We'll cover handoff scripts, visual aids (spec sheets, process flows), and how the buyer's psychology shifts from "reasons to buy" to "excuses not to buy" as real money enters the picture.</p>
+                </div>
+            </div>
+            <div class="flex items-start gap-3 keep-together">
+                <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-emerald-100 text-emerald-700 font-bold text-xs flex-shrink-0 mt-0.5">20m</span>
+                <div>
+                    <p class="font-bold text-slate-900">The Follow-Up System</p>
+                    <p class="text-slate-600 text-sm">The meeting is 20% of the relationship. Within 24 hours: recap email referencing something personal (boost), attach requested technical data (rational security), include your cell number (emotional security). Within 1 week: send something useful. Ongoing: monthly touchpoints that maintain the relationship independently of transactions.</p>
+                </div>
+            </div>
+            <div class="flex items-start gap-3 keep-together">
+                <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-indigo-100 text-indigo-700 font-bold text-xs flex-shrink-0 mt-0.5">40m</span>
+                <div>
+                    <p class="font-bold text-slate-900">Full Mock Meeting Simulation</p>
+                    <p class="text-slate-600 text-sm">Complete simulation of a customer meeting from cold open to close. I'll play the supply chain manager and technical SME. Your team runs the full meeting: rapport building → business discussion → technical handoff → close with next steps. Full group debrief with specific feedback on each person's performance.</p>
+                </div>
+            </div>
+            <div class="flex items-start gap-3 keep-together">
+                <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-amber-100 text-amber-700 font-bold text-xs flex-shrink-0 mt-0.5">5m</span>
+                <div>
+                    <p class="font-bold text-slate-900">Overnight Prep</p>
+                    <p class="text-slate-600 text-sm">Build a pre-meeting prep packet for a REAL upcoming prospect using everything from Days 1-3. Prepare 3-5 visual aids for technical discussions. Draft a follow-up email template the team can customize after meetings.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SESSION 4                                     -->
+    <!-- ============================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 overflow-hidden page-break">
+        <div class="bg-slate-900 text-white p-6">
+            <div class="flex items-center gap-3">
+                <div class="font-mono-num text-3xl font-extrabold text-lime-400">04</div>
+                <div>
+                    <h3 class="text-xl font-bold">Putting It All Together</h3>
+                    <p class="text-slate-400 text-sm">"Live Dress Rehearsal & Your Meeting Playbook" · Day 4 · 2 hours</p>
+                </div>
+            </div>
+        </div>
+        <div class="p-6 space-y-4">
+            <div class="flex items-start gap-3 keep-together">
+                <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-emerald-100 text-emerald-700 font-bold text-xs flex-shrink-0 mt-0.5">15m</span>
+                <div>
+                    <p class="font-bold text-slate-900">Homework Review</p>
+                    <p class="text-slate-600 text-sm">Review each person's real prospect prep packet, visual aids, and follow-up email drafts. Coach on tone, personalization, and FAR balance.</p>
+                </div>
+            </div>
+            <div class="flex items-start gap-3 keep-together">
+                <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-indigo-100 text-indigo-700 font-bold text-xs flex-shrink-0 mt-0.5">45m</span>
+                <div>
+                    <p class="font-bold text-slate-900">Full Dress Rehearsal</p>
+                    <p class="text-slate-600 text-sm">The most realistic simulation of the program — using a REAL prospect the team is planning to approach. The full team participates with assigned roles: relationship lead, business support, and technical closer. Complete run-through from cold open to close, followed by detailed group debrief with specific feedback for each person.</p>
+                </div>
+            </div>
+            <div class="flex items-start gap-3 keep-together">
+                <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-emerald-100 text-emerald-700 font-bold text-xs flex-shrink-0 mt-0.5">30m</span>
+                <div>
+                    <p class="font-bold text-slate-900">Building Your Meeting Playbook</p>
+                    <p class="text-slate-600 text-sm">Together, we'll create a 1-page reusable checklist the team runs before every customer meeting — covering pre-meeting prep (48 hrs before), during-meeting prompts (opening, listening, handoff, close), and post-meeting follow-up (within 24 hrs). This becomes your team's Standard Operating Procedure for business development.</p>
+                </div>
+            </div>
+            <div class="flex items-start gap-3 keep-together">
+                <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-emerald-100 text-emerald-700 font-bold text-xs flex-shrink-0 mt-0.5">20m</span>
+                <div>
+                    <p class="font-bold text-slate-900">30-60-90 Day Habit Plan & Close</p>
+                    <p class="text-slate-600 text-sm"><strong>First 30 days:</strong> Apply the playbook to 2-3 real prospect meetings and debrief internally. <strong>First 60 days:</strong> Each team member sends 1 "Be Useful" touchpoint per week. <strong>First 90 days:</strong> Review results — how many meetings converted? Where is the bottleneck now? Each person states their ONE commitment for how they'll approach the next customer meeting differently.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- WHAT YOU'LL WALK AWAY WITH                    -->
+    <!-- ============================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 p-8 page-break">
+        <div class="flex items-center gap-3 mb-6">
+            <div class="w-8 h-8 rounded-lg bg-lime-500 text-white flex items-center justify-center text-sm font-bold">✓</div>
+            <h2 class="text-2xl font-extrabold text-slate-900">What Your Team Walks Away With</h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-4">
+            <div class="bg-lime-50 border border-lime-200 rounded-xl p-5">
+                <p class="font-bold text-lime-900">The FAR Framework & Customer Journey</p>
+                <p class="text-lime-700 text-sm mt-1">Two interlocking systems: the FAR relationship model (Be Useful, Give a Boost, Provide Security) and the Heart → Head → Hand customer journey. Apply to every customer interaction.</p>
+            </div>
+            <div class="bg-lime-50 border border-lime-200 rounded-xl p-5">
+                <p class="font-bold text-lime-900">A Reusable Meeting Playbook</p>
+                <p class="text-lime-700 text-sm mt-1">A 1-page SOP covering pre-meeting prep, the opening sequence, the business-to-technical handoff, and post-meeting follow-up. Use it before every customer meeting.</p>
+            </div>
+            <div class="bg-lime-50 border border-lime-200 rounded-xl p-5">
+                <p class="font-bold text-lime-900">Live Role-Play in Every Session</p>
+                <p class="text-lime-700 text-sm mt-1">Every session includes hands-on practice — mock meetings, real scenarios, group coaching. You won't just learn the theory; you'll have practiced it before it counts.</p>
+            </div>
+            <div class="bg-lime-50 border border-lime-200 rounded-xl p-5">
+                <p class="font-bold text-lime-900">Active Listening & Conversation Skills</p>
+                <p class="text-lime-700 text-sm mt-1">Practical techniques for asking high-quality open-ended questions, the "echo back" method, and how to let the customer bring the conversation back to business on their terms.</p>
+            </div>
+            <div class="bg-lime-50 border border-lime-200 rounded-xl p-5">
+                <p class="font-bold text-lime-900">A 30-60-90 Day Habit Plan</p>
+                <p class="text-lime-700 text-sm mt-1">A concrete roadmap for the 3 months after the program — so the skills stick and compound, not fade after the last session.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- INVESTMENT                                    -->
+    <!-- ============================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 overflow-hidden page-break">
+        <div class="p-8">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="w-8 h-8 rounded-lg bg-emerald-700 text-white flex items-center justify-center text-sm font-bold">💰</div>
+                <h2 class="text-2xl font-extrabold text-slate-900">Investment</h2>
+            </div>
+
+            <div class="overflow-x-auto">
+                <table class="w-full text-sm">
+                    <thead>
+                        <tr class="border-b-2 border-slate-200">
+                            <th class="text-left py-3 pl-3 text-slate-900 font-bold">Item</th>
+                            <th class="text-left py-3 text-slate-900 font-bold">Details</th>
+                            <th class="text-right py-3 pr-3 text-slate-900 font-bold">Price</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-100">
+                        <tr>
+                            <td class="py-4 pl-3 font-semibold text-slate-700">Business Relationship Accelerator</td>
+                            <td class="py-4 text-slate-500">4 sessions × 2 hours, small group (up to 3)</td>
+                            <td class="py-4 pr-3 text-right font-mono-num font-bold text-slate-900">$2,000 / person</td>
+                        </tr>
+                        <tr>
+                            <td class="py-4 pl-3 font-semibold text-slate-700">Includes</td>
+                            <td class="py-4 text-slate-500" colspan="2">
+                                <ul class="space-y-1">
+                                    <li>✅ All 4 sessions with live role-plays</li>
+                                    <li>✅ Session recordings for review</li>
+                                    <li>✅ Custom Meeting Playbook (built in Session 4)</li>
+
+                                    <li>✅ 30-60-90 day implementation plan</li>
+                                    <li>✅ Hansen Beck FAR framework materials</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="mt-6 bg-emerald-50 rounded-xl p-6 border border-emerald-200">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-emerald-900 font-bold text-lg">Per participant</p>
+                        <p class="text-emerald-700 text-sm">8 hours of group coaching + all materials</p>
+                    </div>
+                    <p class="font-mono-num text-4xl font-extrabold text-emerald-700">$2,000</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-slate-900 text-white p-6">
+            <p class="text-slate-400 text-sm"><strong class="text-white">Payment:</strong> 50% due at booking to reserve the schedule. Remaining 50% due before Session 3. Invoicing available via Stripe.</p>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- TIMELINE                                      -->
+    <!-- ============================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 p-8">
+        <div class="flex items-center gap-3 mb-6">
+            <div class="w-8 h-8 rounded-lg bg-purple-600 text-white flex items-center justify-center text-sm font-bold">📅</div>
+            <h2 class="text-2xl font-extrabold text-slate-900">Proposed Timeline</h2>
+        </div>
+
+        <div class="space-y-4">
+            <div class="bg-purple-50 rounded-xl p-4 border border-purple-200">
+                <p class="text-purple-700 text-xs font-bold uppercase tracking-wider mb-3">Week 1 — The Learning Block</p>
+                <div class="space-y-3">
+                    <div class="flex items-center gap-4 bg-white rounded-lg p-3 border border-slate-200">
+                        <div class="font-mono-num text-lg font-bold text-purple-600 w-16 flex-shrink-0">Day 1</div>
+                        <div>
+                            <p class="font-bold text-slate-900">Session 1 — The FAR Foundation</p>
+                            <p class="text-slate-500 text-sm">Customer Journey (Heart → Head → Hand), FAR framework, Wants vs. Needs, pre-meeting prep</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4 bg-white rounded-lg p-3 border border-slate-200">
+                        <div class="font-mono-num text-lg font-bold text-purple-600 w-16 flex-shrink-0">Day 2</div>
+                        <div>
+                            <p class="font-bold text-slate-900">Session 2 — Genuine Conversation & Listening</p>
+                            <p class="text-slate-500 text-sm">Throwing Pebbles, conversation flow, active listening, 3 role-play rounds</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex items-center justify-center py-2">
+                <div class="bg-amber-100 text-amber-800 text-xs font-bold px-4 py-2 rounded-full border border-amber-300">↓ 1 WEEK BREAK — Real-world practice &amp; prospect outreach ↓</div>
+            </div>
+
+            <div class="bg-purple-50 rounded-xl p-4 border border-purple-200">
+                <p class="text-purple-700 text-xs font-bold uppercase tracking-wider mb-3">Week 2 — The Application Block</p>
+                <div class="space-y-3">
+                    <div class="flex items-center gap-4 bg-white rounded-lg p-3 border border-slate-200">
+                        <div class="font-mono-num text-lg font-bold text-purple-600 w-16 flex-shrink-0">Day 3</div>
+                        <div>
+                            <p class="font-bold text-slate-900">Session 3 — The Two-Act Meeting</p>
+                            <p class="text-slate-500 text-sm">Practice debrief, meeting structure, follow-up system, full mock meeting</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4 bg-white rounded-lg p-3 border border-slate-200">
+                        <div class="font-mono-num text-lg font-bold text-purple-600 w-16 flex-shrink-0">Day 4</div>
+                        <div>
+                            <p class="font-bold text-slate-900">Session 4 — Full Dress Rehearsal & Playbook</p>
+                            <p class="text-slate-500 text-sm">Real prospect simulation, build meeting SOP, 30-60-90 day plan</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <p class="text-slate-500 text-sm mt-6">Sessions are scheduled at a time that works for all participants. We'll coordinate availability once the program is confirmed. Total span: ~10 days.</p>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- ABOUT                                         -->
+    <!-- ============================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 p-8 page-break">
+        <div class="flex items-center gap-3 mb-6">
+            <div class="w-8 h-8 rounded-lg bg-slate-800 text-lime-300 flex items-center justify-center text-sm font-bold">👤</div>
+            <h2 class="text-2xl font-extrabold text-slate-900">About Your Coach</h2>
+        </div>
+
+        <div class="flex items-start gap-6">
+            <img src="../pictures/mansour/headshot_square.png" alt="Mansour Manci" class="w-24 h-24 rounded-2xl object-cover flex-shrink-0">
+            <div>
+                <h3 class="text-xl font-bold text-slate-900">Mansour Manci</h3>
+                <p class="text-emerald-600 font-semibold text-sm">Founder, LaunchToLead</p>
+                <p class="text-slate-600 text-sm mt-3">I spent 7 years at John Deere in engineering, earning 4 promotions in a timeframe that typically takes 15+ years. I now coach engineers on communication, visibility, and career strategy.</p>
+                <p class="text-slate-600 text-sm mt-2">For this program, I've partnered with <strong>Hansen Beck</strong>, a leadership and sales training company, to bring their relationship-building frameworks into the engineering context. The result is a program that bridges the gap between technical expertise and business development — built specifically for engineers who find themselves on the business side of the table.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- NEXT STEPS                                    -->
+    <!-- ============================================ -->
+    <section class="bg-emerald-900 text-white rounded-2xl shadow-lg p-8">
+        <div class="flex items-center gap-3 mb-6">
+            <div class="w-8 h-8 rounded-lg bg-lime-400 text-emerald-900 flex items-center justify-center text-sm font-bold">→</div>
+            <h2 class="text-2xl font-extrabold">Next Steps</h2>
+        </div>
+
+        <div class="space-y-4">
+            <div class="flex items-start gap-4">
+                <div class="w-10 h-10 rounded-full bg-lime-400 text-emerald-900 flex items-center justify-center font-bold text-lg flex-shrink-0">1</div>
+                <div>
+                    <p class="font-bold text-lg">Reply to confirm</p>
+                    <p class="text-emerald-200 text-sm">Let me know this proposal works for you, and confirm the number of participants (2 or 3).</p>
+                </div>
+            </div>
+            <div class="flex items-start gap-4">
+                <div class="w-10 h-10 rounded-full bg-lime-400 text-emerald-900 flex items-center justify-center font-bold text-lg flex-shrink-0">2</div>
+                <div>
+                    <p class="font-bold text-lg">Schedule Session 1</p>
+                    <p class="text-emerald-200 text-sm">We'll find 2 back-to-back days that work for everyone, a week apart — total span of about 10 days.</p>
+                </div>
+            </div>
+            <div class="flex items-start gap-4">
+                <div class="w-10 h-10 rounded-full bg-lime-400 text-emerald-900 flex items-center justify-center font-bold text-lg flex-shrink-0">3</div>
+                <div>
+                    <p class="font-bold text-lg">Get started</p>
+                    <p class="text-emerald-200 text-sm">I'll send a brief pre-session questionnaire so I can tailor Session 1 to your specific industry, target customers, and team dynamics.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-8 pt-6 border-t border-emerald-700 text-center">
+            <p class="text-emerald-300 text-sm">Questions? Reach out anytime.</p>
+            <p class="text-white font-bold mt-1">Mansour Manci · mansour@launchtolead.io · launchtolead.io</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center py-8 text-slate-400 text-sm">
+        <p>Proposal prepared by LaunchToLead · In partnership with Hansen Beck</p>
+        <p class="mt-1">launchtolead.io</p>
+    </footer>
+
+</div>
+
+</body>
+</html>
