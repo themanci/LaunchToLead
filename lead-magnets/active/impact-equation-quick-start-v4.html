@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Impact Bullet Builder™ — Free Starter Guide | LaunchToLead</title>
+    <title>Launch to Lead Resume Guide | LaunchToLead</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="../../tailwind-config.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -106,8 +106,36 @@
         .amber-glow { box-shadow: 0 0 30px rgba(245,158,11,0.12); }
         .check-badge { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 50%; background: #064e3b; color: #a3e635; font-weight: 700; flex-shrink: 0; }
         .x-badge { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 50%; background: #7f1d1d; color: #fca5a5; font-weight: 700; flex-shrink: 0; }
-        .page { min-height: 100vh; }
+        .page { min-height: 100vh; position: relative; }
         @page { margin: 0; size: letter; }
+
+        /* ── Section Progress Nav Bar (top) ── */
+        .progress-nav { position: absolute; top: 0; left: 0; right: 0; z-index: 50; pointer-events: none; display: flex; align-items: center; height: 22px; padding: 0 12px; gap: 0; }
+        .pn-step { display: flex; align-items: center; gap: 0; flex: 1; position: relative; }
+        .pn-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; opacity: 0.2; position: relative; z-index: 2; }
+        .pn-dot.pn-active { width: 10px; height: 10px; opacity: 1; }
+        .pn-dot.pn-done { opacity: 0.6; }
+        .pn-line { flex: 1; height: 2px; opacity: 0.1; }
+        .pn-line.pn-done { opacity: 0.35; }
+        .pn-num { font-size: 5px; font-weight: 700; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); margin-top: 1px; white-space: nowrap; opacity: 0.3; letter-spacing: 0.3px; }
+        .pn-num.pn-active { opacity: 1; font-size: 6px; font-weight: 800; }
+        .pn-num.pn-done { opacity: 0.5; }
+        /* Light variant */
+        .pn-light .pn-dot { background: #cbd5e1; }
+        .pn-light .pn-dot.pn-active { background: #064e3b; box-shadow: 0 0 6px rgba(6,78,59,0.3); }
+        .pn-light .pn-dot.pn-done { background: #14b8a6; }
+        .pn-light .pn-line { background: #cbd5e1; }
+        .pn-light .pn-line.pn-done { background: #14b8a6; }
+        .pn-light .pn-num { color: #64748b; }
+        .pn-light .pn-num.pn-active { color: #064e3b; }
+        /* Dark variant */
+        .pn-dark .pn-dot { background: rgba(255,255,255,0.15); }
+        .pn-dark .pn-dot.pn-active { background: #a3e635; box-shadow: 0 0 6px rgba(163,230,53,0.4); }
+        .pn-dark .pn-dot.pn-done { background: #5eead4; }
+        .pn-dark .pn-line { background: rgba(255,255,255,0.1); }
+        .pn-dark .pn-line.pn-done { background: rgba(94,234,212,0.3); }
+        .pn-dark .pn-num { color: rgba(255,255,255,0.4); }
+        .pn-dark .pn-num.pn-active { color: #a3e635; }
 
         /* ── Premium graphic helpers ── */
         .dot-pattern { background-image: radial-gradient(rgba(255,255,255,0.07) 1px, transparent 1px); background-size: 20px 20px; }
@@ -163,21 +191,16 @@
                 </div>
             </div>
             
-            <!-- Badge -->
-            <div class="inline-flex items-center gap-2 glass px-5 py-2.5 rounded-full mb-8">
-                <svg class="w-5 h-5 text-lime-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                </svg>
-                <span class="text-sm font-semibold tracking-wide uppercase text-lime-200">Launch Path</span>
-                <span class="text-white/40">•</span>
-                <span class="text-sm text-white/70">Free Starter Guide</span>
+            <!-- FREE Resume Guide callout -->
+            <div class="mb-6">
+                <span class="text-2xl md:text-4xl font-extrabold tracking-wider uppercase" style="color: #a3e635; text-shadow: 0 0 30px rgba(163,230,53,0.3);">FREE RESUME GUIDE</span>
             </div>
             
             <!-- Title -->
             <h1 class="text-5xl md:text-7xl font-extrabold mb-4 leading-[1.1] tracking-tight">
-                The Impact Bullet<br/>Builder<span class="text-lime-300">™</span>
+                The Impact Bullet<br/>Builder
             </h1>
-            <p class="text-xl md:text-2xl text-emerald-100/90 mb-6 font-light tracking-wide">Starter Guide</p>
+            <p class="text-lg md:text-xl text-emerald-100/80 mb-6 font-light leading-relaxed max-w-xl mx-auto">Rewrite your resume bullets to convey your impact and value, not your job descriptions and responsibilities.</p>
             
             <div class="w-20 h-1.5 bg-gradient-to-r from-lime-400 to-emerald-300 mx-auto mb-8 rounded-full"></div>
             
@@ -185,29 +208,32 @@
                 The exact formula I used to land my first engineering role at John Deere — and my clients have used to land jobs at Google, SpaceX, GE, Ford, and more.
             </p>
 
-            <!-- 3-stat row -->
-            <div class="grid grid-cols-3 gap-4 max-w-lg mx-auto mb-12">
-                <div class="glass rounded-xl px-3 py-4 stat-ring" style="box-shadow: 0 0 25px rgba(163,230,53,0.1);">
-                    <p class="font-mono-num text-3xl font-bold text-lime-300">30</p>
-                    <p class="text-xs text-emerald-200/70 mt-1">Minutes To Complete</p>
-                </div>
-                <div class="glass rounded-xl px-3 py-4 stat-ring" style="box-shadow: 0 0 25px rgba(163,230,53,0.1);">
-                    <p class="font-mono-num text-3xl font-bold text-lime-300">4</p>
-                    <p class="text-xs text-emerald-200/70 mt-1">Part Formula</p>
-                </div>
-                <div class="glass rounded-xl px-3 py-4 stat-ring" style="box-shadow: 0 0 25px rgba(163,230,53,0.1);">
-                    <p class="font-mono-num text-3xl font-bold text-lime-300">40%+</p>
-                    <p class="text-xs text-emerald-200/70 mt-1">Callback Rate</p>
+            <!-- What's Inside -->
+            <div class="max-w-md mx-auto mb-10">
+                <p class="text-xs text-emerald-300/60 font-bold uppercase tracking-[3px] mb-4">What's Inside</p>
+                <div class="grid grid-cols-2 gap-x-6 gap-y-2 text-left">
+                    <div class="flex items-center gap-2"><span class="text-lime-400/70 text-xs font-mono-num font-bold">01</span><span class="text-emerald-100/80 text-sm">Why Your Resume Is Invisible</span></div>
+                    <div class="flex items-center gap-2"><span class="text-lime-400/70 text-xs font-mono-num font-bold">02</span><span class="text-emerald-100/80 text-sm">What Most Engineers Write</span></div>
+                    <div class="flex items-center gap-2"><span class="text-lime-400/70 text-xs font-mono-num font-bold">03</span><span class="text-emerald-100/80 text-sm">Demonstrate What You Did</span></div>
+                    <div class="flex items-center gap-2"><span class="text-lime-400/70 text-xs font-mono-num font-bold">04</span><span class="text-emerald-100/80 text-sm">The 4-Part Impact Formula</span></div>
+                    <div class="flex items-center gap-2"><span class="text-lime-400/70 text-xs font-mono-num font-bold">05</span><span class="text-emerald-100/80 text-sm">The Dragon Slayer Technique</span></div>
+                    <div class="flex items-center gap-2"><span class="text-lime-400/70 text-xs font-mono-num font-bold">06</span><span class="text-emerald-100/80 text-sm">Examples Across 6+ Disciplines</span></div>
+                    <div class="flex items-center gap-2"><span class="text-lime-400/70 text-xs font-mono-num font-bold">07</span><span class="text-emerald-100/80 text-sm">Finding Hidden Metrics</span></div>
+                    <div class="flex items-center gap-2"><span class="text-lime-400/70 text-xs font-mono-num font-bold">08</span><span class="text-emerald-100/80 text-sm">The BS Meter Checklist</span></div>
+                    <div class="flex items-center gap-2"><span class="text-lime-400/70 text-xs font-mono-num font-bold">09</span><span class="text-emerald-100/80 text-sm">Before & After Transformations</span></div>
+                    <div class="flex items-center gap-2"><span class="text-lime-400/70 text-xs font-mono-num font-bold">10</span><span class="text-emerald-100/80 text-sm">Bullets = Interview Answers</span></div>
+                    <div class="flex items-center gap-2"><span class="text-lime-400/70 text-xs font-mono-num font-bold">11</span><span class="text-emerald-100/80 text-sm">How to Tailor for Each Job</span></div>
+                    <div class="flex items-center gap-2"><span class="text-lime-400/70 text-xs font-mono-num font-bold">12</span><span class="text-emerald-100/80 text-sm">Practice Worksheet</span></div>
                 </div>
             </div>
             
             <!-- Author -->
-            <div class="flex items-center justify-center gap-4">
-                <img src="../../pictures/mansour/headshot_square.png" alt="Mansour Manci" class="w-16 h-16 rounded-full border-2 border-white/30 object-cover">
+            <div class="flex items-center justify-center gap-5">
+                <img src="../../pictures/mansour/headshot_square.png" alt="Mansour Manci" class="w-24 h-24 rounded-full border-2 border-white/30 object-cover" style="box-shadow: 0 8px 30px rgba(0,0,0,0.3);">
                 <div class="text-left">
-                    <p class="text-white font-semibold">Mansour Manci</p>
-                    <p class="text-emerald-200/70 text-sm">Career Coach & Founder, LaunchToLead</p>
-                    <p class="text-emerald-300/50 text-xs mt-0.5">4 Promotions · 7 Years at John Deere</p>
+                    <p class="text-white font-bold text-xl">Mansour Manci</p>
+                    <p class="text-emerald-200/80 text-base">Engineering Career Coach & Founder</p>
+                    <p class="text-emerald-300/50 text-sm">Launch to Lead</p>
                 </div>
             </div>
             
@@ -425,10 +451,10 @@
 <div class="page p-10 md:p-14 bg-gradient-to-br from-slate-50 to-teal-50 flex flex-col justify-center">
     <div class="max-w-4xl mx-auto">
         <div class="flex items-center gap-3 mb-3">
-            <div class="w-8 h-8 rounded-lg bg-slate-800 text-lime-300 flex items-center justify-center text-sm font-bold">0</div>
-            <span class="text-teal-700 font-bold text-sm uppercase tracking-widest">Before You Start</span>
+            <div class="w-8 h-8 rounded-lg bg-teal-700 text-white flex items-center justify-center text-sm font-bold">03</div>
+            <span class="text-teal-700 font-bold text-sm uppercase tracking-widest">Your Contribution</span>
         </div>
-        <h2 class="text-4xl font-extrabold text-slate-900 mb-2 tracking-tight">The Me-in-We Extractor™</h2>
+        <h2 class="text-4xl font-extrabold text-slate-900 mb-2 tracking-tight">Demonstrate What You Did, Not What the Team Did</h2>
         <p class="text-slate-600 text-lg mb-8">Before applying the formula, do this 5-minute fix first.</p>
 
         <!-- Instruction -->
@@ -496,15 +522,15 @@
 <div class="page-break"></div>
 
 <!-- ================================================================ -->
-<!-- PAGE 5: THE IMPACT BULLET BUILDER™ FORMULA                       -->
+<!-- PAGE 5: THE IMPACT BULLET BUILDER FORMULA                        -->
 <!-- ================================================================ -->
 <div class="page p-10 md:p-14 bg-white flex flex-col justify-center">
     <div class="max-w-4xl mx-auto">
         <div class="flex items-center gap-3 mb-3">
-            <div class="w-8 h-8 rounded-lg bg-emerald-700 text-white flex items-center justify-center text-sm font-bold">03</div>
+            <div class="w-8 h-8 rounded-lg bg-emerald-700 text-white flex items-center justify-center text-sm font-bold">04</div>
             <span class="text-emerald-700 font-bold text-sm uppercase tracking-widest">The Formula</span>
         </div>
-        <h2 class="text-4xl font-extrabold text-slate-900 mb-2 tracking-tight">The Impact Bullet Builder™</h2>
+        <h2 class="text-4xl font-extrabold text-slate-900 mb-2 tracking-tight">The Impact Bullet Builder</h2>
         <p class="text-slate-500 text-lg mb-8">A 4-part formula that turns vague job duties into specific, brag-worthy accomplishments</p>
 
         <!-- Formula banner -->
@@ -627,17 +653,18 @@
     
     <div class="max-w-4xl mx-auto relative z-10">
         <div class="flex items-center gap-3 mb-3">
-            <div class="w-8 h-8 rounded-lg bg-purple-600 text-white flex items-center justify-center text-sm font-bold" style="box-shadow: 0 0 20px rgba(168,85,247,0.3);">04</div>
-            <span class="text-purple-300 font-bold text-sm uppercase tracking-widest">Advanced Technique</span>
+            <div class="w-8 h-8 rounded-lg bg-purple-600 text-white flex items-center justify-center text-sm font-bold" style="box-shadow: 0 0 20px rgba(168,85,247,0.3);">05</div>
+            <span class="text-purple-300 font-bold text-sm uppercase tracking-widest">Context Technique</span>
         </div>
-        <h2 class="text-4xl font-extrabold text-white mb-2 tracking-tight">The Dragon Slayer <span style="font-size: 2.5rem;">🐉</span></h2>
-        <p class="text-slate-400 text-lg mb-8">The bigger the monster you slay, the bigger the hero you become.</p>
+        <h2 class="text-4xl font-extrabold text-white mb-2 tracking-tight">The Dragon Slayer</h2>
+        <p class="text-slate-400 text-lg mb-8">The bigger the problem you solved, the more impressive your result becomes.</p>
 
         <!-- Concept -->
         <div class="rounded-2xl p-8 mb-6 no-break" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(168,85,247,0.2); backdrop-filter: blur(12px);">
+            <p class="text-sm text-slate-400 italic mb-4">I know — it's a corny name. But trust me, it will help you remember this technique, and it's one of the most important ones in this guide.</p>
             <p class="text-lg text-slate-300 leading-relaxed mb-4">
                 Most engineers jump straight to the result: <em class="text-purple-300">"Reduced latency by 60%."</em> That's good — but it's missing <strong class="text-white">context</strong>. 
-                When you paint the pain of the problem first, your solution becomes dramatically more impressive.
+                When you describe the problem you solved first, your solution becomes dramatically more impressive.
             </p>
             <p class="text-purple-300 font-semibold">
                 The top 10% of interview candidates spend 40% of their answer on the problem — not 10%. They let the interviewer <em>feel</em> the weight before revealing the fix.
@@ -726,7 +753,7 @@
 <div class="page page-tight p-10 md:p-14 bg-white flex flex-col justify-center">
     <div class="max-w-4xl mx-auto">
         <div class="flex items-center gap-3 mb-3">
-            <div class="w-8 h-8 rounded-lg bg-emerald-700 text-white flex items-center justify-center text-sm font-bold">05</div>
+            <div class="w-8 h-8 rounded-lg bg-emerald-700 text-white flex items-center justify-center text-sm font-bold">06</div>
             <span class="text-emerald-700 font-bold text-sm uppercase tracking-widest">Real Examples</span>
         </div>
         <h2 class="text-4xl font-extrabold text-slate-900 mb-2 tracking-tight">Impact Bullets by Discipline</h2>
@@ -814,8 +841,8 @@
 <div class="page p-10 md:p-14 bg-gradient-to-br from-slate-50 to-emerald-50 flex flex-col justify-center">
     <div class="max-w-4xl mx-auto">
         <div class="flex items-center gap-3 mb-3">
-            <div class="w-8 h-8 rounded-lg bg-amber-500 text-white flex items-center justify-center text-sm font-bold">06</div>
-            <span class="text-amber-600 font-bold text-sm uppercase tracking-widest">Common Question</span>
+            <div class="w-8 h-8 rounded-lg bg-amber-500 text-white flex items-center justify-center text-sm font-bold">07</div>
+            <span class="text-amber-600 font-bold text-sm uppercase tracking-widest">Finding Metrics</span>
         </div>
         <h2 class="text-4xl font-extrabold text-slate-900 mb-2 tracking-tight">"But I Don't Have Metrics!"</h2>
         <p class="text-slate-500 text-lg mb-6">You do. Here's how to find or estimate them.</p>
@@ -965,10 +992,10 @@
     
     <div class="max-w-4xl mx-auto relative z-10">
         <div class="flex items-center gap-3 mb-3">
-            <div class="w-8 h-8 rounded-lg text-white flex items-center justify-center text-sm font-bold" style="background: linear-gradient(135deg, #ea580c, #f97316); box-shadow: 0 0 20px rgba(249,115,22,0.3);">07</div>
+            <div class="w-8 h-8 rounded-lg text-white flex items-center justify-center text-sm font-bold" style="background: linear-gradient(135deg, #ea580c, #f97316); box-shadow: 0 0 20px rgba(249,115,22,0.3);">08</div>
             <span class="text-orange-400 font-bold text-sm uppercase tracking-widest">Quality Check</span>
         </div>
-        <h2 class="text-4xl font-extrabold text-white mb-2 tracking-tight">The BS Meter™ Checklist</h2>
+        <h2 class="text-4xl font-extrabold text-white mb-2 tracking-tight">The BS Meter Checklist</h2>
         <p class="text-slate-400 text-lg mb-6">Run every bullet through this 5-point test. If it fails any, rewrite it.</p>
 
         <!-- Visual gauge bar -->
@@ -1068,10 +1095,10 @@
     
     <div class="max-w-4xl mx-auto relative z-10">
         <div class="flex items-center gap-3 mb-3">
-            <div class="w-8 h-8 rounded-lg bg-emerald-700 text-white flex items-center justify-center text-sm font-bold">08</div>
+            <div class="w-8 h-8 rounded-lg bg-emerald-700 text-white flex items-center justify-center text-sm font-bold">09</div>
             <span class="text-emerald-700 font-bold text-sm uppercase tracking-widest">Full Transformation</span>
         </div>
-        <h2 class="text-4xl font-extrabold text-slate-900 mb-2 tracking-tight">From Invisible to <span class="gradient-text">Irresistible</span></h2>
+        <h2 class="text-4xl font-extrabold text-slate-900 mb-2 tracking-tight">From Invisible to <span class="gradient-text">Impossible to Ignore</span></h2>
         <p class="text-slate-500 text-lg mb-8">Watch the formula transform a real resume bullet step by step</p>
 
         <!-- Side-by-side Before/After with center arrow -->
@@ -1133,13 +1160,13 @@
                 <p class="text-emerald-300/70 text-xs font-bold tracking-[3px] uppercase mb-2">The Result</p>
                 <div class="flex items-center justify-center gap-6">
                     <div>
-                        <p class="font-mono-num text-4xl font-extrabold text-red-400" style="text-shadow: 0 0 20px rgba(239,68,68,0.3);">2%</p>
-                        <p class="text-red-300/60 text-xs mt-1">response rate</p>
+                        <p class="font-mono-num text-4xl font-extrabold text-red-400" style="text-shadow: 0 0 20px rgba(239,68,68,0.3);">0</p>
+                        <p class="text-red-300/60 text-xs mt-1">callbacks</p>
                     </div>
                     <div class="text-3xl text-white/30 font-light">→</div>
                     <div>
-                        <p class="font-mono-num text-4xl font-extrabold text-lime-300" style="text-shadow: 0 0 20px rgba(163,230,53,0.3);">40%+</p>
-                        <p class="text-lime-300/60 text-xs mt-1">callback rate</p>
+                        <p class="font-mono-num text-4xl font-extrabold text-lime-300" style="text-shadow: 0 0 20px rgba(163,230,53,0.3);">Multiple</p>
+                        <p class="text-lime-300/60 text-xs mt-1">offers</p>
                     </div>
                 </div>
             </div>
@@ -1192,8 +1219,8 @@
 <div class="page p-10 md:p-14 bg-gradient-to-br from-slate-50 to-indigo-50 flex flex-col justify-center">
     <div class="max-w-4xl mx-auto">
         <div class="flex items-center gap-3 mb-3">
-            <div class="w-8 h-8 rounded-lg bg-indigo-600 text-white flex items-center justify-center text-sm font-bold">09</div>
-            <span class="text-indigo-600 font-bold text-sm uppercase tracking-widest">Hidden Benefit</span>
+            <div class="w-8 h-8 rounded-lg bg-indigo-600 text-white flex items-center justify-center text-sm font-bold">10</div>
+            <span class="text-indigo-600 font-bold text-sm uppercase tracking-widest">Interview Prep</span>
         </div>
         <h2 class="text-4xl font-extrabold text-slate-900 mb-2 tracking-tight">Your Bullets <span class="text-indigo-600">=</span> Interview Answers</h2>
         <p class="text-slate-500 text-lg mb-8">Every impact bullet you write is a compressed STAR story waiting to expand</p>
@@ -1302,11 +1329,11 @@
 <div class="page p-10 md:p-14 bg-white flex flex-col justify-center">
     <div class="max-w-4xl mx-auto">
         <div class="flex items-center gap-3 mb-3">
-            <div class="bg-gradient-to-r from-amber-400 to-orange-400 text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Bonus</div>
-            <span class="text-amber-600 font-bold text-sm uppercase tracking-widest">Speed System</span>
+            <div class="w-8 h-8 rounded-lg bg-amber-500 text-white flex items-center justify-center text-sm font-bold">11</div>
+            <span class="text-amber-600 font-bold text-sm uppercase tracking-widest">Tailoring</span>
         </div>
-        <h2 class="text-4xl font-extrabold text-slate-900 mb-2 tracking-tight">The 4-Minute Tailored Bullet System™</h2>
-        <p class="text-slate-500 text-lg mb-8">How to customize your resume for every job posting in under 4 minutes</p>
+        <h2 class="text-4xl font-extrabold text-slate-900 mb-2 tracking-tight">How to Tailor Your Resume to Each Job Posting</h2>
+        <p class="text-slate-500 text-lg mb-8">Customize your resume for every application in under 4 minutes</p>
 
         <!-- Context -->
         <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-6 no-break">
@@ -1402,7 +1429,7 @@
 <div class="page p-10 md:p-14 bg-slate-50 flex flex-col justify-center">
     <div class="max-w-4xl mx-auto">
         <div class="flex items-center gap-3 mb-3">
-            <div class="w-8 h-8 rounded-lg bg-emerald-700 text-white flex items-center justify-center text-sm font-bold">10</div>
+            <div class="w-8 h-8 rounded-lg bg-emerald-700 text-white flex items-center justify-center text-sm font-bold">12</div>
             <span class="text-emerald-700 font-bold text-sm uppercase tracking-widest">Your Turn</span>
         </div>
         <h2 class="text-4xl font-extrabold text-slate-900 mb-2 tracking-tight">Transform Your Resume Right Now</h2>
@@ -1513,45 +1540,47 @@
 
             <!-- Pain reminder -->
             <div class="rounded-2xl p-5 mb-5 text-left" style="background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1);">
-                <h3 class="text-base font-bold text-red-300 mb-3">Still Struggling With:</h3>
+                <h3 class="text-base font-bold text-red-300 mb-3">A Great Resume Is Just the Start</h3>
+                <p class="text-slate-300 text-sm mb-3">You now have the formula. But a formula without feedback is guesswork. If you're still dealing with any of these, the full program was built for you:</p>
                 <ul class="space-y-1.5 text-red-200 text-sm">
-                    <li class="flex items-center gap-2"><span class="text-red-400">✗</span> Not knowing which companies are actually hiring in your field?</li>
-                    <li class="flex items-center gap-2"><span class="text-red-400">✗</span> Bombing interviews because you can't tell your story under pressure?</li>
-                    <li class="flex items-center gap-2"><span class="text-red-400">✗</span> Getting ghosted after "great" final rounds?</li>
-                    <li class="flex items-center gap-2"><span class="text-red-400">✗</span> Feeling like an imposter compared to other candidates?</li>
+                    <li class="flex items-center gap-2"><span class="text-red-400">✗</span> Your resume gets callbacks but your interviews aren't converting to offers</li>
+                    <li class="flex items-center gap-2"><span class="text-red-400">✗</span> You know your experiences are strong but can't articulate them under pressure</li>
+                    <li class="flex items-center gap-2"><span class="text-red-400">✗</span> You've never had a realistic mock interview with someone who's actually hired engineers</li>
+                    <li class="flex items-center gap-2"><span class="text-red-400">✗</span> You want personalized feedback on your specific resume, not generic templates</li>
                 </ul>
             </div>
 
             <!-- Full program -->
             <div class="rounded-2xl p-5 mb-5 text-left" style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15);">
-                <h3 class="text-lg font-bold mb-4 text-center">The Full 21-Day 1-on-1 Engineering Career Accelerator</h3>
+                <h3 class="text-lg font-bold mb-4 text-center">The 21-Day Engineering Career Accelerator</h3>
+                <p class="text-emerald-200/70 text-sm mb-4 text-center">3 sessions. All 1-on-1. Personalized to your background.</p>
                 <div class="space-y-2 text-sm">
                     <div class="flex items-start gap-3">
                         <span class="text-lime-300 text-base mt-0.5">✓</span>
                         <div>
-                            <strong>3 × 90-Minute 1-on-1 Coaching Sessions</strong>
-                            <p class="text-emerald-200/70 text-xs mt-0.5">Resume rebuild, interview preparation, and live mock interview</p>
+                            <strong>Session 1: Your Resume Rebuilt</strong>
+                            <p class="text-emerald-200/70 text-xs mt-0.5">We rebuild your resume from scratch so it reads like accomplishments, not job descriptions</p>
                         </div>
                     </div>
                     <div class="flex items-start gap-3">
                         <span class="text-lime-300 text-base mt-0.5">✓</span>
                         <div>
-                            <strong>40+ Templates, Checklists & Scripts</strong>
-                            <p class="text-emerald-200/70 text-xs mt-0.5">Resume templates, interview story templates, and more</p>
+                            <strong>Session 2: Interview Stories Mastered</strong>
+                            <p class="text-emerald-200/70 text-xs mt-0.5">We extract your most impactful experiences and structure them so they land with interviewers</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <span class="text-lime-300 text-base mt-0.5">✓</span>
+                        <div>
+                            <strong>Session 3: Live Mock Interview with Direct Feedback</strong>
+                            <p class="text-emerald-200/70 text-xs mt-0.5">I interview you like a real hiring manager would and tell you exactly what to improve</p>
                         </div>
                     </div>
                     <div class="flex items-start gap-3">
                         <span class="text-lime-300 text-base mt-0.5">✓</span>
                         <div>
                             <strong>40+ Bonus Materials</strong>
-                            <p class="text-emerald-200/70 text-xs mt-0.5">Templates, scripts, checklists, and guides delivered throughout the program</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start gap-3">
-                        <span class="text-lime-300 text-base mt-0.5">✓</span>
-                        <div>
-                            <strong>Email Support Between Sessions</strong>
-                            <p class="text-emerald-200/70 text-xs mt-0.5">Personalized feedback and accountability throughout your 21-day journey</p>
+                            <p class="text-emerald-200/70 text-xs mt-0.5">Templates, scripts, checklists, session recordings, and access to the Skool community</p>
                         </div>
                     </div>
                 </div>
@@ -1559,9 +1588,9 @@
 
             <!-- Guarantee -->
             <div class="rounded-xl px-5 py-3 mb-5 inline-block" style="background: rgba(52,211,153,0.1); border: 1px solid rgba(52,211,153,0.2);">
-                <p class="text-emerald-100 font-semibold text-sm">🛡️ The Guarantee</p>
+                <p class="text-emerald-100 font-semibold text-sm">🛡️ My Guarantee</p>
                 <p class="text-emerald-200/70 text-xs mt-1.5 max-w-md">
-                    Complete all three sessions and the homework. If you don't end up with a transformed resume and the confidence to crush any interview — I keep working with you at no extra charge.
+                    Complete all three sessions and do the work. If you don't walk away with a transformed resume and the confidence to walk into any interview prepared — I keep working with you at no extra charge.
                 </p>
             </div>
 
@@ -1570,7 +1599,7 @@
                 <a href="https://launchtolead.io/landing/offer.html" class="inline-block bg-lime-400 hover:bg-lime-300 text-emerald-900 font-bold text-lg px-10 py-4 rounded-full transition-all duration-300 transform hover:scale-105 shadow-xl shadow-lime-400/20">
                     See The Full Program
                 </a>
-                <p class="text-emerald-200/60 text-sm mt-2">Free Career Launch Call — no pressure, no obligation</p>
+                <p class="text-emerald-200/60 text-sm mt-2">See if you're a fit — no pressure, no obligation</p>
             </div>
 
             <!-- Author sign-off -->
@@ -1582,11 +1611,47 @@
                 </div>
             </div>
         <div class="mt-4 pt-3 border-t border-white/10">
-                <p class="text-emerald-300/40 text-xs">© 2026 LaunchToLead. Part of The Launch Method™ curriculum.</p>
+                <p class="text-emerald-300/40 text-xs">© 2026 LaunchToLead.</p>
             </div>
         </div>
     </div>
 </div>
+
+<script>
+(function() {
+    // 12 numbered sections (pages 2–13), skip cover (0) and CTA (13)
+    var labels = [
+        '01','02','03','04','05','06','07','08','09','10','11','12'
+    ];
+    var darkPages = {5:1, 8:1}; // page indices that are dark (Dragon Slayer=5, BS Meter=8)
+    var pages = document.querySelectorAll('.page');
+    // Pages 1–12 in 0-indexed = indices 1–12
+    for (var p = 1; p <= 12; p++) {
+        if (p >= pages.length) break;
+        var page = pages[p];
+        var currentStep = p - 1; // 0-based step index (step 0 = page index 1)
+        var theme = darkPages[p] ? 'pn-dark' : 'pn-light';
+        var html = '<div class="progress-nav ' + theme + '">';
+        for (var i = 0; i < labels.length; i++) {
+            var dotCls = i < currentStep ? 'pn-done' : (i === currentStep ? 'pn-active' : '');
+            var numCls = i < currentStep ? 'pn-done' : (i === currentStep ? 'pn-active' : '');
+            // dot with number underneath
+            html += '<div class="pn-step" style="flex:0;">';
+            html += '<div style="position:relative;display:flex;flex-direction:column;align-items:center;">';
+            html += '<span class="pn-dot ' + dotCls + '"></span>';
+            html += '<span class="pn-num ' + numCls + '">' + labels[i] + '</span>';
+            html += '</div></div>';
+            // connecting line (except after last)
+            if (i < labels.length - 1) {
+                var lineCls = i < currentStep ? 'pn-done' : '';
+                html += '<div class="pn-step"><div class="pn-line ' + lineCls + '"></div></div>';
+            }
+        }
+        html += '</div>';
+        page.insertAdjacentHTML('afterbegin', html);
+    }
+})();
+</script>
 
 </body>
 </html>

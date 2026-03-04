@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedIn Ads — Early Engineers Creative Tests</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: #1a1a1a;
+            min-height: 100vh;
+            padding: 40px;
+        }
+
+        h1 {
+            color: #fff;
+            font-size: 24px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            color: #94a3b8;
+            font-size: 14px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            justify-content: center;
+        }
+
+        .card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .card-label {
+            color: #14b8a6;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+
+        /* ============================== */
+        /* AD CREATIVE — 1080×1080        */
+        /* ============================== */
+        .ad {
+            width: 1080px;
+            height: 1080px;
+            background: #000;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .ad .ad-text {
+            color: #fff;
+            font-size: 46px;
+            font-weight: 400;
+            line-height: 1.35;
+            text-align: center;
+            max-width: 760px;
+            padding: 0 60px;
+        }
+
+        .ad .ad-text .punchline {
+            font-weight: 700;
+            font-size: 54px;
+            display: block;
+            margin-top: 16px;
+        }
+
+        .ad .ad-logo {
+            position: absolute;
+            bottom: 100px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .ad .logo-icon {
+            width: 48px;
+            height: 48px;
+            background: #064e3b;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-weight: 800;
+            font-size: 18px;
+        }
+
+        .ad .logo-text {
+            color: #fff;
+            font-size: 20px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .ad .logo-text span {
+            font-weight: 300;
+            color: #14b8a6;
+        }
+
+        /* ---- Scale controls ---- */
+        .scale-controls {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .scale-controls button {
+            background: #334155;
+            color: #fff;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            margin: 0 4px;
+            font-family: inherit;
+        }
+
+        .scale-controls button:hover {
+            background: #475569;
+        }
+
+        .scale-controls button.active {
+            background: #14b8a6;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>LinkedIn Ads — Early Engineers × Creative Tests</h1>
+    <p class="subtitle">Hook: "Engineer with 1-2 years experience not satisfied with your current role?" &nbsp;|&nbsp; 3 new creatives + original</p>
+
+    <div class="scale-controls">
+        <button onclick="setScale(0.35)" class="active">35%</button>
+        <button onclick="setScale(0.5)">50%</button>
+        <button onclick="setScale(0.75)">75%</button>
+        <button onclick="setScale(1)">100%</button>
+    </div>
+
+    <div class="grid" id="grid">
+
+        <!-- ================================ -->
+        <!-- CREATIVE A: "Let me help you."   -->
+        <!-- ================================ -->
+        <div class="card">
+            <p class="card-label">Creative A — "Let me help you."</p>
+            <div class="ad" style="transform: scale(0.35); transform-origin: top center;">
+                <p class="ad-text">
+                    Engineer with 1-2 years<br>
+                    experience not satisfied<br>
+                    with your current role?
+                    <span class="punchline">Let me help you.</span>
+                </p>
+                <div class="ad-logo">
+                    <div class="logo-icon">L²</div>
+                    <p class="logo-text">Launch<span>ToLead</span></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================================ -->
+        <!-- CREATIVE B: "You'll need to fix  -->
+        <!--              your resume."       -->
+        <!-- ================================ -->
+        <div class="card">
+            <p class="card-label">Creative B — "You'll need to fix your resume."</p>
+            <div class="ad" style="transform: scale(0.35); transform-origin: top center;">
+                <p class="ad-text">
+                    Engineer with 1-2 years<br>
+                    experience not satisfied<br>
+                    with your current role?
+                    <span class="punchline">You'll need to fix<br>your resume.</span>
+                </p>
+                <div class="ad-logo">
+                    <div class="logo-icon">L²</div>
+                    <p class="logo-text">Launch<span>ToLead</span></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================================ -->
+        <!-- CREATIVE C: "Try this."          -->
+        <!-- ================================ -->
+        <div class="card">
+            <p class="card-label">Creative C — "Try this."</p>
+            <div class="ad" style="transform: scale(0.35); transform-origin: top center;">
+                <p class="ad-text">
+                    Engineer with 1-2 years<br>
+                    experience not satisfied<br>
+                    with your current role?
+                    <span class="punchline">Try this.</span>
+                </p>
+                <div class="ad-logo">
+                    <div class="logo-icon">L²</div>
+                    <p class="logo-text">Launch<span>ToLead</span></p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function setScale(scale) {
+            document.querySelectorAll('.ad').forEach(ad => {
+                ad.style.transform = `scale(${scale})`;
+            });
+            document.querySelectorAll('.scale-controls button').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+    </script>
+
+</body>
+</html>

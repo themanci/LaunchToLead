@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedIn Graphic – Manager Respect</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            width: 1080px; height: 1080px;
+            overflow: hidden;
+            font-family: 'Anton', sans-serif;
+        }
+
+        @page { margin: 0; size: 1080px 1080px; }
+        @media print {
+            body { width: 1080px; height: 1080px; overflow: hidden; }
+        }
+
+        .room {
+            width: 1080px; height: 1080px;
+            position: relative; overflow: hidden;
+            /* Deep brand-green boardroom */
+            background: radial-gradient(ellipse at 50% 15%, #0d6b50 0%, #064e3b 40%, #032e23 100%);
+        }
+
+        /* Ceiling light glow — teal tinted */
+        .ceiling-light-glow {
+            position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+            width: 800px; height: 260px;
+            background: radial-gradient(ellipse at 50% 0%, rgba(20,184,166,0.28) 0%, transparent 70%);
+        }
+        /* Recessed strip */
+        .ceiling-light {
+            position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+            width: 420px; height: 18px;
+            background: linear-gradient(to bottom, rgba(163,230,53,0.55) 0%, rgba(20,184,166,0.3) 60%, transparent 100%);
+            filter: blur(8px);
+        }
+        /* Ceiling band */
+        .ceiling {
+            position: absolute; top: 0; left: 0; right: 0;
+            height: 80px;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.35) 0%, transparent 100%);
+        }
+
+        /* Glass wall verticals */
+        .glass-frame {
+            position: absolute; top: 60px; right: 150px; bottom: 110px;
+            width: 3px;
+            background: linear-gradient(to bottom, transparent, rgba(163,230,53,0.12) 20%, rgba(163,230,53,0.12) 80%, transparent);
+        }
+        .glass-frame-2 {
+            position: absolute; top: 60px; right: 320px; bottom: 110px;
+            width: 2px;
+            background: linear-gradient(to bottom, transparent, rgba(20,184,166,0.1) 25%, rgba(20,184,166,0.1) 75%, transparent);
+        }
+
+        /* Floor / table */
+        .floor {
+            position: absolute; bottom: 0; left: 0; right: 0; height: 140px;
+            background: linear-gradient(to top, rgba(2,18,13,0.85) 0%, rgba(3,30,22,0.6) 55%, transparent 100%);
+        }
+        .table-edge {
+            position: absolute; bottom: 104px; left: 0; right: 0; height: 6px;
+            background: linear-gradient(to right, rgba(163,230,53,0.0), rgba(163,230,53,0.25) 30%, rgba(163,230,53,0.25) 70%, rgba(163,230,53,0.0));
+        }
+        .table-surface {
+            position: absolute; bottom: 0; left: 0; right: 0; height: 105px;
+            background: linear-gradient(to top, #021812 0%, #032e23 70%, transparent 100%);
+            opacity: 0.9;
+        }
+
+        /* Noise texture */
+        .wall-texture {
+            position: absolute; inset: 0; pointer-events: none;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+            background-size: 400px 400px;
+        }
+        /* Vignette */
+        .vignette {
+            position: absolute; inset: 0; pointer-events: none;
+            background: radial-gradient(ellipse at 50% 50%, transparent 35%, rgba(2,15,10,0.55) 100%);
+        }
+
+        /* Accent horizontal rule */
+        .accent-rule {
+            position: absolute; top: 0; left: 0; right: 0; height: 6px;
+            background: linear-gradient(to right, #064e3b, #14b8a6 40%, #a3e635 70%, #14b8a6 100%);
+        }
+
+        /* Text content — centered */
+        .content {
+            position: absolute; inset: 0;
+            display: flex; flex-direction: column;
+            justify-content: center; align-items: center;
+            text-align: center;
+            padding: 80px 80px 190px 80px;
+            z-index: 10;
+        }
+
+        h1 {
+            font-family: 'Anton', sans-serif;
+            font-size: 108px;
+            line-height: 1.0;
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-shadow: 0 4px 32px rgba(2,15,10,0.5);
+        }
+        h1 span.accent { color: #a3e635; }
+
+        /* Bottom branding */
+        .branding {
+            position: absolute; bottom: 0; left: 0; right: 0;
+            height: 108px;
+            display: flex; align-items: center; justify-content: center;
+            gap: 18px; z-index: 20;
+            border-top: 1px solid rgba(163,230,53,0.18);
+        }
+        .logo-mark {
+            width: 40px; height: 40px; border-radius: 8px;
+            background: linear-gradient(135deg, #14b8a6, #a3e635);
+            display: flex; align-items: center; justify-content: center;
+        }
+        .logo-mark svg { display: block; }
+        .brand-text {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .brand-name {
+            font-size: 28px; font-weight: 800;
+            color: #ffffff; letter-spacing: 0.5px;
+        }
+        .brand-name span { color: #a3e635; }
+        .brand-url {
+            font-size: 18px; font-weight: 500;
+            color: rgba(255,255,255,0.45);
+            letter-spacing: 0.5px;
+        }
+    </style>
+</head>
+<body>
+<div class="room">
+    <div class="accent-rule"></div>
+    <div class="ceiling-light-glow"></div>
+    <div class="ceiling"></div>
+    <div class="ceiling-light"></div>
+    <div class="wall-texture"></div>
+    <div class="glass-frame"></div>
+    <div class="glass-frame-2"></div>
+    <div class="table-surface"></div>
+    <div class="table-edge"></div>
+    <div class="floor"></div>
+    <div class="vignette"></div>
+
+    <div class="content">
+        <h1>The respect<br>you want<br>from your<br>manager<br>starts with<br><span class="accent">the respect</span><br>you give.</h1>
+    </div>
+
+    <div class="branding">
+        <div class="logo-mark">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M5 17L12 7L19 17" stroke="#064e3b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M8 17L12 11L16 17" stroke="#064e3b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </div>
+        <div class="brand-text">
+            <div class="brand-name">Launch<span>To</span>Lead</div>
+            <div class="brand-url">LaunchToLead.io</div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Career Fair Prep Checklist — LinkedIn Post + Graphic</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #e8e8e8;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    gap: 60px;
+  }
+
+  /* ── POST COPY SECTION ── */
+  .post-copy {
+    max-width: 680px;
+    width: 100%;
+    background: #fff;
+    border-radius: 12px;
+    padding: 40px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  }
+
+  .post-copy h2 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #064e3b;
+    margin-bottom: 6px;
+  }
+
+  .post-copy .label {
+    font-size: 11px;
+    font-weight: 700;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+  }
+
+  .post-copy pre {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 14px;
+    line-height: 1.7;
+    color: #1e293b;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  .post-copy .hashtags {
+    margin-top: 16px;
+    font-size: 13px;
+    color: #0077b5;
+  }
+
+  /* ── SCALE CONTROLS ── */
+  .scale-controls {
+    text-align: center;
+  }
+
+  .scale-controls button {
+    background: #334155;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    margin: 0 4px;
+    font-family: inherit;
+  }
+
+  .scale-controls button:hover { background: #475569; }
+  .scale-controls button.active { background: #14b8a6; }
+
+  /* ── GRAPHIC — 1080×1080 (LinkedIn square) ── */
+  .canvas {
+    width: 1080px;
+    background: #FFFEF8;
+    position: relative;
+    overflow: hidden;
+    transform-origin: top center;
+  }
+
+  /* Title Banner */
+  .title-banner {
+    background: linear-gradient(135deg, #0d1f0d 0%, #14291a 50%, #0f1f14 100%);
+    padding: 32px 48px 28px;
+    text-align: center;
+    position: relative;
+  }
+  .title-banner::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #a3e635, #14b8a6, #a3e635);
+  }
+  .title-eyebrow {
+    font-size: 14px;
+    font-weight: 700;
+    color: #a3e635;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 8px;
+  }
+  .title-main {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 46px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.15;
+  }
+  .title-main .hl {
+    color: #a3e635;
+  }
+  .title-sub {
+    font-size: 18px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.65);
+    margin-top: 6px;
+  }
+
+  /* Timeline Content */
+  .timeline {
+    padding: 24px 44px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px 32px;
+  }
+
+  .phase {
+    display: flex;
+    gap: 14px;
+  }
+
+  .phase-marker {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40px;
+    flex-shrink: 0;
+  }
+
+  .phase-dot {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 14px;
+    color: #fff;
+    flex-shrink: 0;
+  }
+
+  .phase-line {
+    width: 3px;
+    flex: 1;
+    margin-top: 4px;
+    border-radius: 2px;
+  }
+
+  .phase-content {
+    flex: 1;
+  }
+
+  .phase-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 21px;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 6px;
+  }
+
+  .phase-items {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+
+  .phase-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 15.5px;
+    color: #334155;
+    line-height: 1.3;
+  }
+
+  .phase-item .check {
+    color: #14b8a6;
+    font-size: 14px;
+    margin-top: 2px;
+    flex-shrink: 0;
+  }
+
+  /* Color variants */
+  .dot-week { background: #064e3b; }
+  .line-week { background: linear-gradient(to bottom, #064e3b, #0d9488); }
+
+  .dot-days { background: #0d9488; }
+  .line-days { background: linear-gradient(to bottom, #0d9488, #14b8a6); }
+
+  .dot-night { background: #14b8a6; }
+  .line-night { background: linear-gradient(to bottom, #14b8a6, #65a30d); }
+
+  .dot-day { background: #65a30d; }
+
+  /* Footer */
+  .graphic-footer {
+    background: linear-gradient(135deg, #0d1f0d, #14291a);
+    padding: 16px 44px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 24px;
+  }
+
+  .footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .footer-logo-icon {
+    width: 40px;
+    height: 40px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 16px;
+    color: #fff;
+  }
+
+  .footer-logo-text {
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+  }
+
+  .footer-logo-text span {
+    font-weight: 300;
+    color: #14b8a6;
+  }
+
+  .footer-cta {
+    font-size: 15px;
+    color: #a3e635;
+    font-weight: 600;
+  }
+</style>
+</head>
+<body>
+
+<!-- ════════════════════════════════════════ -->
+<!-- SECTION 1: LINKEDIN POST COPY          -->
+<!-- ════════════════════════════════════════ -->
+<div class="post-copy">
+  <p class="label">LinkedIn Post Copy — Copy & Paste</p>
+  <h2>Career Fair Prep Checklist</h2>
+  <pre>
+Most students walk into career fairs with no plan.
+
+They wander booth to booth, wait in random lines, and leave with nothing.
+
+Here's the prep checklist I give my clients.
+
+𝟳 𝗱𝗮𝘆𝘀 𝗯𝗲𝗳𝗼𝗿𝗲:
+→ Get the company list from your career center
+→ Pick your top 5-10 targets
+→ Research each one (what they do, open roles, recent news)
+→ Update your resume and print 20-30 copies
+→ Prepare 2-3 specific questions per company
+→ Practice a 60-90 second pitch out loud
+
+𝟮-𝟯 𝗱𝗮𝘆𝘀 𝗯𝗲𝗳𝗼𝗿𝗲:
+→ Create a one-page cheat sheet (companies, roles, questions)
+→ Check the venue map and plan your route
+→ Apply online to your targets (many companies prefer this)
+→ Prepare your outfit — business casual, no wrinkles
+
+𝗡𝗶𝗴𝗵𝘁 𝗯𝗲𝗳𝗼𝗿𝗲:
+→ Lay out your outfit
+→ Pack your bag (resumes, pen, notepad, water)
+→ Review your cheat sheet one more time
+→ Get a full night's sleep
+
+𝗗𝗮𝘆 𝗼𝗳:
+→ Eat before you go — you'll be standing for hours
+→ Arrive in the first 30 minutes (shorter lines, fresh recruiters)
+→ Warm up at a backup company — don't start with your #1
+→ Hit your top 5 in the first hour
+→ Take notes after EVERY conversation
+→ Ask for a business card or email before you walk away
+
+One thing most people skip:
+
+Follow up within 24 hours. A short email thanking them and referencing something specific from your conversation.
+
+That's how a career fair turns into actual interviews.</pre>
+  <p class="hashtags">#EngineeringCareers #CareerFair #JobSearch #NewGrad #CareerAdvice #Engineering #ResumeHelp</p>
+</div>
+
+<!-- ════════════════════════════════════════ -->
+<!-- SECTION 2: GRAPHIC                     -->
+<!-- ════════════════════════════════════════ -->
+<div class="scale-controls">
+  <button onclick="setScale(0.4)" class="active">40%</button>
+  <button onclick="setScale(0.6)">60%</button>
+  <button onclick="setScale(0.8)">80%</button>
+  <button onclick="setScale(1)">100%</button>
+</div>
+
+<div class="canvas" id="canvas" style="transform: scale(0.4);">
+
+  <!-- TITLE -->
+  <div class="title-banner">
+    <p class="title-eyebrow">Before Your Next Career Fair</p>
+    <h1 class="title-main">The <span class="hl">Career Fair</span> Prep Checklist</h1>
+    <p class="title-sub">What to do 7 days out, 2 days out, and day of</p>
+  </div>
+
+  <!-- TIMELINE -->
+  <div class="timeline">
+
+    <!-- 1 WEEK BEFORE -->
+    <div class="phase">
+      <div class="phase-marker">
+        <div class="phase-dot dot-week">7d</div>
+        <div class="phase-line line-week"></div>
+      </div>
+      <div class="phase-content">
+        <h3 class="phase-title">1 Week Before</h3>
+        <div class="phase-items">
+          <div class="phase-item"><span class="check">✓</span> Pick your top 5-10 target companies</div>
+          <div class="phase-item"><span class="check">✓</span> Research each one (roles, news, culture)</div>
+          <div class="phase-item"><span class="check">✓</span> Prep 2-3 questions per company</div>
+          <div class="phase-item"><span class="check">✓</span> Practice your 60-90 sec pitch</div>
+          <div class="phase-item"><span class="check">✓</span> Update & print 20-30 resumes</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2-3 DAYS BEFORE -->
+    <div class="phase">
+      <div class="phase-marker">
+        <div class="phase-dot dot-days">2d</div>
+        <div class="phase-line line-days"></div>
+      </div>
+      <div class="phase-content">
+        <h3 class="phase-title">2-3 Days Before</h3>
+        <div class="phase-items">
+          <div class="phase-item"><span class="check">✓</span> Create a one-page company cheat sheet</div>
+          <div class="phase-item"><span class="check">✓</span> Check venue map & plan your route</div>
+          <div class="phase-item"><span class="check">✓</span> Apply online to target companies</div>
+          <div class="phase-item"><span class="check">✓</span> Prep outfit — business casual, no wrinkles</div>
+          <div class="phase-item"><span class="check">✓</span> Practice pitch with a friend 10+ times</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- NIGHT BEFORE -->
+    <div class="phase">
+      <div class="phase-marker">
+        <div class="phase-dot dot-night">🌙</div>
+        <div class="phase-line line-night"></div>
+      </div>
+      <div class="phase-content">
+        <h3 class="phase-title">Night Before</h3>
+        <div class="phase-items">
+          <div class="phase-item"><span class="check">✓</span> Lay out outfit + shoes + accessories</div>
+          <div class="phase-item"><span class="check">✓</span> Pack bag: resumes, pen, notepad, water</div>
+          <div class="phase-item"><span class="check">✓</span> Review cheat sheet one more time</div>
+          <div class="phase-item"><span class="check">✓</span> Get a full night's sleep</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DAY OF -->
+    <div class="phase">
+      <div class="phase-marker">
+        <div class="phase-dot dot-day">☀️</div>
+      </div>
+      <div class="phase-content">
+        <h3 class="phase-title">Day Of</h3>
+        <div class="phase-items">
+          <div class="phase-item"><span class="check">✓</span> Eat before you go</div>
+          <div class="phase-item"><span class="check">✓</span> Arrive in the first 30 minutes</div>
+          <div class="phase-item"><span class="check">✓</span> Warm up at a backup booth first</div>
+          <div class="phase-item"><span class="check">✓</span> Hit your top 5 in the first hour</div>
+          <div class="phase-item"><span class="check">✓</span> Take notes after every conversation</div>
+          <div class="phase-item"><span class="check">✓</span> Get contact info → follow up in 24hrs</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <div class="graphic-footer">
+    <div class="footer-logo">
+      <div class="footer-logo-icon">L²</div>
+      <p class="footer-logo-text">Launch<span>ToLead</span></p>
+    </div>
+    <p class="footer-cta">LaunchToLead.io</p>
+  </div>
+
+</div>
+
+<script>
+function setScale(scale) {
+  document.getElementById('canvas').style.transform = `scale(${scale})`;
+  document.querySelectorAll('.scale-controls button').forEach(btn => btn.classList.remove('active'));
+  event.target.classList.add('active');
+}
+</script>
+
+</body>
+</html>
