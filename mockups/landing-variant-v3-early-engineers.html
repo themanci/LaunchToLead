@@ -60,6 +60,12 @@
 <body class="bg-white text-slate-700 font-sans antialiased overflow-x-hidden">
 
 <!-- ============================================ -->
+<!-- VARIANT: V3 — "Early Engineers" audience       -->
+<!-- Callout: Engineer with 1-2 years experience   -->
+<!-- not satisfied with your current role?         -->
+<!-- ============================================ -->
+
+<!-- ============================================ -->
 <!-- HEADER — Logo centered, thin                  -->
 <!-- ============================================ -->
 <header class="bg-white border-b border-slate-100 py-3 px-4">
@@ -75,15 +81,33 @@
     <div class="max-w-xl mx-auto px-4 relative z-10">
 
     <!-- ============================================ -->
-    <!-- ABOVE THE FOLD — Headline + Before/After +   -->
-    <!-- Testimonials + Form (must fit mobile screen)  -->
+    <!-- V3 ABOVE THE FOLD — Form FIRST, then headline -->
+    <!-- Email-only (no first name), minimal friction  -->
     <!-- ============================================ -->
-    <section id="section-headline" class="pt-6 pb-2 text-center">
-        <h1 id="variant-h1" class="text-2xl md:text-3xl font-extrabold text-slate-900 leading-tight mb-2">
-            Get Your Free Resume Guide<br class="md:hidden"/>...in Under 30 Seconds.
+
+    <!-- FORM — Email only, at the very top -->
+    <section class="pt-6 pb-2">
+        <div class="border border-slate-200 rounded-xl p-4 bg-white shadow-sm">
+            <p class="text-center text-sm text-slate-600 mb-2">Where should I send it?</p>
+            <form id="lead-form" class="space-y-3" onsubmit="return handleSubmit(event)">
+                <input type="email" id="email" name="email" required placeholder="you@email.com"
+                       class="w-full px-3 py-2.5 rounded-lg border border-slate-300 text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-brand-secondary focus:border-brand-secondary transition">
+                <button type="submit" 
+                        class="w-full py-3 bg-brand-primary hover:bg-brand-secondary text-white font-extrabold text-base rounded-lg transition-all hover:shadow-lg hover:shadow-teal-500/20 active:scale-[0.98]">
+                    Submit
+                </button>
+            </form>
+            <p class="text-[10px] text-slate-400 text-center mt-2">14-page PDF. Scroll down to see what's inside.</p>
+        </div>
+    </section>
+
+    <!-- HEADLINE + SUBHEADLINE — Below form -->
+    <section class="pb-2 pt-2 text-center">
+        <h1 class="text-2xl md:text-3xl font-extrabold text-slate-900 leading-tight mb-2">
+            Resume Guide for<br class="md:hidden"/> Early-Career Engineers
         </h1>
-        <p id="variant-sub" class="text-sm md:text-base text-slate-600 leading-relaxed max-w-md mx-auto">
-            The formula engineers have used to land offers at Google, SpaceX, Ford, John Deere and GE.
+        <p class="text-sm md:text-base text-slate-600 leading-relaxed max-w-md mx-auto">
+            Show the impact and value of your engineering experiences to hiring teams.
         </p>
     </section>
 
@@ -131,39 +155,12 @@
         <div class="space-y-1.5">
             <div class="flex items-start gap-2 px-1">
                 <span class="text-amber-400 text-xs mt-0.5 shrink-0">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                <p class="text-xs text-slate-600"><span class="italic">"Went from zero callbacks to interviews at SpaceX, Google, GE and Bridgestone."</span> — <span class="font-semibold text-slate-800">Karen B.</span></p>
+                <p class="text-xs text-slate-600"><span class="italic">"Zero callbacks to SpaceX, Google & GE interviews."</span> — <span class="font-semibold text-slate-800">Karen B.</span></p>
             </div>
             <div class="flex items-start gap-2 px-1">
                 <span class="text-amber-400 text-xs mt-0.5 shrink-0">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                <p class="text-xs text-slate-600"><span class="italic">"Used this to land an offer at Ford Motor Company."</span> — <span class="font-semibold text-slate-800">Sarah K.</span></p>
+                <p class="text-xs text-slate-600"><span class="italic">"Landed an offer at Ford Motor Company."</span> — <span class="font-semibold text-slate-800">Sarah K.</span></p>
             </div>
-        </div>
-    </section>
-
-    <!-- ============================================ -->
-    <!-- FORM — Name + Email + CTA                     -->
-    <!-- ============================================ -->
-    <section id="section-top-form" class="pb-6 pt-2">
-        <div class="border border-slate-200 rounded-xl p-4 bg-white shadow-sm">
-            <form id="lead-form" class="space-y-3" onsubmit="return handleSubmit(event)">
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    <div>
-                        <label for="firstName" class="block text-xs font-semibold text-slate-600 mb-1">First Name</label>
-                        <input type="text" id="firstName" name="firstName" required placeholder="Your first name"
-                               class="w-full px-3 py-2.5 rounded-lg border border-slate-300 text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-brand-secondary focus:border-brand-secondary transition">
-                    </div>
-                    <div>
-                        <label for="email" class="block text-xs font-semibold text-slate-600 mb-1">Email</label>
-                        <input type="email" id="email" name="email" required placeholder="you@email.com"
-                               class="w-full px-3 py-2.5 rounded-lg border border-slate-300 text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-brand-secondary focus:border-brand-secondary transition">
-                    </div>
-                </div>
-                <button type="submit" 
-                        class="variant-cta w-full py-3 bg-brand-primary hover:bg-brand-secondary text-white font-extrabold text-base rounded-lg transition-all hover:shadow-lg hover:shadow-teal-500/20 active:scale-[0.98]">
-                    Get Your Free Guide
-                </button>
-            </form>
-            <p id="top-form-subtext" class="text-[10px] text-slate-400 text-center mt-2">14-page PDF. Delivered to your inbox instantly. No spam.</p>
         </div>
     </section>
 
@@ -176,7 +173,7 @@
     <!-- ============================================ -->
     <!-- LEAD MAGNET COVER IMAGE                       -->
     <!-- ============================================ -->
-    <section class="pb-6">
+    <section class="pb-6 pt-4">
         <div class="rounded-2xl overflow-hidden shadow-lg border border-slate-100 relative" style="background: linear-gradient(160deg, #022c22 0%, #064e3b 35%, #0d9488 70%, #065f46 100%);">
             <div style="position: absolute; inset: 0; opacity: 0.05; background-image: radial-gradient(#a3e635 1px, transparent 1px); background-size: 18px 18px; pointer-events: none;"></div>
             <div class="relative z-10 flex flex-col items-center justify-center text-white text-center p-8">
@@ -306,23 +303,20 @@
 
     <!-- ============================================ -->
     <!-- BOTTOM CTA — Repeat form for scrollers        -->
+    <!-- Email-only (no first name) to match V3        -->
     <!-- ============================================ -->
     <section class="pb-8">
         <div class="border border-brand-secondary/30 rounded-xl p-4 bg-brand-light/30">
             <p class="text-center text-sm font-bold text-slate-800 mb-3">Get the free 14-page guide now.</p>
             <form id="lead-form-bottom" class="space-y-3" onsubmit="return handleSubmit(event)">
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    <input type="text" name="firstName" required placeholder="First name"
-                           class="w-full px-3 py-2.5 rounded-lg border border-slate-300 text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-brand-secondary focus:border-brand-secondary transition">
-                    <input type="email" name="email" required placeholder="you@email.com"
-                           class="w-full px-3 py-2.5 rounded-lg border border-slate-300 text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-brand-secondary focus:border-brand-secondary transition">
-                </div>
+                <input type="email" name="email" required placeholder="you@email.com"
+                       class="w-full px-3 py-2.5 rounded-lg border border-slate-300 text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-brand-secondary focus:border-brand-secondary transition">
                 <button type="submit" 
-                        class="variant-cta w-full py-3 bg-brand-primary hover:bg-brand-secondary text-white font-extrabold text-base rounded-lg transition-all hover:shadow-lg hover:shadow-teal-500/20 active:scale-[0.98]">
-                    Get Your Free Guide
+                        class="w-full py-3 bg-brand-primary hover:bg-brand-secondary text-white font-extrabold text-base rounded-lg transition-all hover:shadow-lg hover:shadow-teal-500/20 active:scale-[0.98]">
+                    Submit
                 </button>
             </form>
-            <p id="bottom-form-subtext" class="text-[10px] text-slate-400 text-center mt-2">Delivered to your inbox instantly. No spam.</p>
+            <p class="text-[10px] text-slate-400 text-center mt-2">14-page PDF. Scroll down to see what's inside.</p>
         </div>
     </section>
 
@@ -351,19 +345,18 @@
     </div>
 </footer>
 
-<script defer src="landing-variants.js"></script>
 <script>
     async function handleSubmit(e) {
         e.preventDefault();
 
         // Support both top and bottom forms
         const form = e.target;
-        const firstNameInput = form.querySelector('[name="firstName"]');
         const emailInput = form.querySelector('[name="email"]');
-        const firstName = firstNameInput ? firstNameInput.value.trim() : '';
         const email = emailInput.value.trim();
         const submitBtn = form.querySelector('button[type="submit"]');
-        const variantId = window.__ltlVariantId || 'v1-control';
+
+        // V3: No first name field — email only
+        const firstName = '';
 
         // Disable button while submitting
         submitBtn.disabled = true;
@@ -374,7 +367,7 @@
             const utm = typeof getUtmData === 'function' ? getUtmData() : {};
             gtag('event', 'lead_form_submit', {
                 'page_location': window.location.pathname,
-                'page_variant': variantId,
+                'page_variant': 'v3-early-engineers',
                 'traffic_source': utm.traffic_source || 'Direct',
                 'utm_source': utm.utm_source || '',
                 'utm_medium': utm.utm_medium || '',
@@ -398,7 +391,7 @@
         try {
             const formData = new FormData();
             formData.append('email_address', email);
-            if (firstName) formData.append('first_name', firstName);
+            // V3: No first name submitted
 
             // Append UTM attribution data
             const utm = typeof getUtmData === 'function' ? getUtmData() : {};
@@ -407,7 +400,9 @@
             if (utm.utm_campaign) formData.append('fields[utm_campaign]', utm.utm_campaign);
             if (utm.utm_content) formData.append('fields[utm_content]', utm.utm_content);
             if (utm.traffic_source) formData.append('fields[traffic_source]', utm.traffic_source);
-            formData.append('fields[page_variant]', variantId);
+
+            // Tag this subscriber as V3 variant
+            formData.append('fields[page_variant]', 'v3-early-engineers');
 
             await fetch('https://app.kit.com/forms/8815632/subscriptions', {
                 method: 'POST',
@@ -418,10 +413,8 @@
             // Continue with redirect even if Kit fails — don't block the user
         }
 
-        // Redirect (include name only if collected)
-        window.location.href = firstName
-            ? 'thank-you.html?name=' + encodeURIComponent(firstName)
-            : 'thank-you.html';
+        // Send to thank-you page (no name param since V3 doesn't collect it)
+        window.location.href = 'thank-you.html';
 
         return false;
     }
