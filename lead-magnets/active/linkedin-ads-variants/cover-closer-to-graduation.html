@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cover Page — Closer to Graduation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+        @page { size: letter portrait; margin: 0; }
+        .page {
+            width: 8.5in;
+            height: 11in;
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .content { padding: 0 1.2in; }
+        .hook {
+            font-size: 36px;
+            font-weight: 600;
+            color: #fff;
+            line-height: 1.35;
+            margin-bottom: 16px;
+        }
+        .hook .accent { color: #14b8a6; font-weight: 700; }
+        .punchline {
+            font-size: 42px;
+            font-weight: 900;
+            color: #fff;
+            line-height: 1.25;
+        }
+        .brand {
+            position: absolute;
+            bottom: 72px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+        .brand-logo {
+            width: 40px;
+            height: 40px;
+            background: #064e3b;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            font-weight: 800;
+            color: #fff;
+        }
+        .brand-name {
+            font-size: 16px;
+            font-weight: 700;
+            color: #fff;
+            letter-spacing: 0.3px;
+        }
+        .brand-name .light { font-weight: 400; color: #14b8a6; }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <div class="content">
+            <div class="hook"><span class="accent">Engineering</span> student getting closer and closer to graduation with no job lined up?</div>
+            <div class="punchline">I can help you.</div>
+        </div>
+        <div class="brand">
+            <div class="brand-logo">L²</div>
+            <div class="brand-name">Launch<span class="light">ToLead</span></div>
+        </div>
+    </div>
+</body>
+</html>
