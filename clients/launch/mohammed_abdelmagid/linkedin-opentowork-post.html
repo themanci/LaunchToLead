@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohammed K. Abdelmagid – #OpenToWork LinkedIn Post + Graphic</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        @page { margin: 0; size: 1080px 1080px; }
+        @media print {
+            .post-copy { display: none; }
+            body { background: transparent; padding: 0; }
+            .graphic { box-shadow: none; }
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: #1a1a1a;
+            padding: 48px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 56px;
+        }
+
+        /* ─── POST COPY SECTION ─────────────────────────────── */
+        .post-copy {
+            max-width: 1080px; width: 100%;
+            background: #111;
+            border: 1px solid #2a2a2a;
+            border-radius: 16px;
+            padding: 48px 56px;
+            color: #e0e0e0;
+        }
+        .post-copy h2 {
+            font-size: 13px; letter-spacing: 3px; text-transform: uppercase;
+            color: #555; font-weight: 700; margin-bottom: 32px;
+            font-family: 'Space Mono', monospace;
+        }
+        .post-copy .post-text {
+            font-size: 17px; line-height: 1.8; color: #ccc;
+            white-space: pre-wrap;
+        }
+        .post-copy .post-text strong { color: #fff; font-weight: 700; }
+        .post-copy .hashtags {
+            margin-top: 32px;
+            font-family: 'Space Mono', monospace;
+            font-size: 14px; color: #4a90d9;
+            line-height: 2;
+        }
+
+        /* ─── GRAPHIC ───────────────────────────────────────── */
+        .graphic {
+            width: 1080px; height: 1080px;
+            position: relative; overflow: hidden;
+            flex-shrink: 0;
+            background: #080c0a;
+            box-shadow: 0 32px 80px rgba(0,0,0,0.6);
+        }
+
+        /* Animated gradient orbs */
+        .orb-1 {
+            position: absolute; top: -120px; right: -80px;
+            width: 600px; height: 600px; border-radius: 50%;
+            background: radial-gradient(circle, rgba(20,184,166,0.18) 0%, transparent 65%);
+            pointer-events: none;
+        }
+        .orb-2 {
+            position: absolute; bottom: -60px; left: -100px;
+            width: 520px; height: 520px; border-radius: 50%;
+            background: radial-gradient(circle, rgba(163,230,53,0.1) 0%, transparent 65%);
+            pointer-events: none;
+        }
+        .orb-3 {
+            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+            width: 900px; height: 900px; border-radius: 50%;
+            background: radial-gradient(circle, rgba(6,78,59,0.15) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        /* Grid lines */
+        .grid {
+            position: absolute; inset: 0; pointer-events: none; opacity: 0.04;
+            background-image:
+                linear-gradient(rgba(255,255,255,1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px);
+            background-size: 72px 72px;
+        }
+
+        /* Top accent bar */
+        .top-bar {
+            position: absolute; top: 0; left: 0; right: 0; height: 5px;
+            background: linear-gradient(to right, #064e3b, #14b8a6 35%, #a3e635 65%, #14b8a6 100%);
+            z-index: 10;
+        }
+
+        /* Open to work pill */
+        .otw-pill {
+            position: absolute; top: 40px; left: 64px;
+            display: flex; align-items: center; gap: 10px;
+            background: rgba(163,230,53,0.12);
+            border: 1px solid rgba(163,230,53,0.35);
+            border-radius: 100px;
+            padding: 10px 22px;
+            z-index: 10;
+        }
+        .otw-dot {
+            width: 10px; height: 10px; border-radius: 50%;
+            background: #a3e635;
+            box-shadow: 0 0 10px rgba(163,230,53,0.9), 0 0 20px rgba(163,230,53,0.4);
+        }
+        .otw-text {
+            font-family: 'Space Mono', monospace;
+            font-size: 14px; font-weight: 700; color: #a3e635;
+            letter-spacing: 2px; text-transform: uppercase;
+        }
+
+        /* Main content */
+        .main {
+            position: absolute; top: 130px; left: 64px; right: 64px;
+            z-index: 10;
+        }
+
+        .name {
+            font-size: 80px; font-weight: 900; color: #fff;
+            line-height: 0.95; letter-spacing: -2px;
+            margin-bottom: 20px;
+        }
+        .name .last { color: #14b8a6; }
+
+        .title-line {
+            font-size: 24px; font-weight: 600; color: rgba(255,255,255,0.55);
+            letter-spacing: 1px; margin-bottom: 44px;
+        }
+        .title-line span { color: rgba(255,255,255,0.8); }
+
+        /* Stats row */
+        .stats {
+            display: flex; gap: 0; margin-bottom: 48px;
+        }
+        .stat {
+            flex: 1; padding: 22px 24px;
+            border-left: 1px solid rgba(255,255,255,0.08);
+        }
+        .stat:first-child { border-left: none; padding-left: 0; }
+        .stat-num {
+            font-family: 'Space Mono', monospace;
+            font-size: 36px; font-weight: 700; color: #a3e635;
+            line-height: 1; margin-bottom: 6px;
+        }
+        .stat-label {
+            font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.4);
+            text-transform: uppercase; letter-spacing: 1.5px;
+        }
+
+        /* Skills */
+        .skills-label {
+            font-family: 'Space Mono', monospace;
+            font-size: 12px; color: rgba(20,184,166,0.7);
+            letter-spacing: 3px; text-transform: uppercase;
+            margin-bottom: 14px;
+        }
+        .skills-label span { color: rgba(255,255,255,0.2); margin-right: 8px; }
+
+        .pills {
+            display: flex; flex-wrap: wrap; gap: 10px;
+            margin-bottom: 40px;
+        }
+        .pill {
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-family: 'Space Mono', monospace;
+            font-size: 13px; font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+        .pill-teal {
+            background: rgba(20,184,166,0.12);
+            border: 1px solid rgba(20,184,166,0.3);
+            color: #14b8a6;
+        }
+        .pill-lime {
+            background: rgba(163,230,53,0.1);
+            border: 1px solid rgba(163,230,53,0.25);
+            color: #a3e635;
+        }
+        .pill-white {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.5);
+        }
+
+        /* What I'm looking for card */
+        .looking-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-left: 3px solid #14b8a6;
+            border-radius: 0 8px 8px 0;
+            padding: 20px 28px;
+            margin-bottom: 40px;
+        }
+        .looking-card-label {
+            font-family: 'Space Mono', monospace;
+            font-size: 11px; color: #14b8a6;
+            letter-spacing: 2px; text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+        .looking-card-text {
+            font-size: 19px; font-weight: 600; color: rgba(255,255,255,0.75);
+            line-height: 1.5;
+        }
+        .looking-card-text strong { color: #fff; }
+
+        /* CTA */
+        .cta {
+            display: flex; align-items: center; gap: 20px;
+        }
+        .cta-dm {
+            display: flex; align-items: center; gap: 12px;
+            background: #14b8a6;
+            border-radius: 6px;
+            padding: 14px 28px;
+        }
+        .cta-dm-text {
+            font-size: 18px; font-weight: 800; color: #fff;
+            letter-spacing: 0.5px;
+        }
+        .cta-email {
+            font-family: 'Space Mono', monospace;
+            font-size: 14px; color: rgba(255,255,255,0.35);
+        }
+
+        /* School badge */
+        .school-badge {
+            position: absolute; top: 44px; right: 64px;
+            text-align: right; z-index: 10;
+        }
+        .school-badge-main {
+            font-size: 16px; font-weight: 800; color: rgba(255,255,255,0.6);
+            letter-spacing: 0.5px;
+        }
+        .school-badge-sub {
+            font-family: 'Space Mono', monospace;
+            font-size: 11px; color: rgba(255,255,255,0.25);
+            margin-top: 4px;
+            line-height: 1.5;
+        }
+        .school-badge-gpa {
+            margin-top: 8px;
+            display: inline-flex; align-items: center; gap: 6px;
+            background: rgba(163,230,53,0.08);
+            border: 1px solid rgba(163,230,53,0.2);
+            border-radius: 4px;
+            padding: 4px 12px;
+        }
+        .school-badge-gpa span {
+            font-family: 'Space Mono', monospace;
+            font-size: 12px; color: #a3e635; font-weight: 700;
+        }
+
+        /* Bottom bar */
+        .bottom {
+            position: absolute; bottom: 0; left: 0; right: 0;
+            height: 72px;
+            border-top: 1px solid rgba(255,255,255,0.06);
+            display: flex; align-items: center;
+            padding: 0 64px;
+            z-index: 10;
+            justify-content: space-between;
+        }
+        .bottom-hashtags {
+            font-family: 'Space Mono', monospace;
+            font-size: 13px; color: rgba(255,255,255,0.2);
+            letter-spacing: 0.5px;
+        }
+        .bottom-hashtags span { color: rgba(20,184,166,0.5); }
+        .bottom-flag {
+            font-family: 'Space Mono', monospace;
+            font-size: 13px; color: rgba(255,255,255,0.2);
+        }
+        .bottom-flag span { color: rgba(163,230,53,0.5); }
+    </style>
+</head>
+<body>
+
+    <!-- ──────────────────────────────────────────── -->
+    <!-- POST COPY                                    -->
+    <!-- ──────────────────────────────────────────── -->
+    <div class="post-copy">
+        <h2>// LinkedIn Post Copy — Mohammed K. Abdelmagid</h2>
+        <div class="post-text"><strong>#OpenToWork — Summer 2026 Internship in Mechanical / Manufacturing Engineering</strong>
+
+I'm a junior at UW-Madison studying Biological Systems Engineering with a Machinery Systems focus — which is a long way of saying I love figuring out how mechanical systems work and building them with my hands.
+
+My favorite class in college was Geometric Modeling. Not because it was easy — because I got to go from a sketch on paper to a real manufacturable part in SolidWorks and AutoCAD. That's the part of engineering I'm in it for: taking something from concept to physical reality.
+
+<strong>Here's what I've built so far:</strong>
+
+→ <strong>Crane Project</strong> — Designed counterweight and pulley systems in SolidWorks, iterated the design 10 times, and came in at 50% under budget ($11 of $20). Integrated NI myDAQ motor wiring and digital I/O logic for hands-free remote operation. Hit our target velocity of 0.029 m/s on final eval.
+
+→ <strong>Thermal Oven Design</strong> — Owned the main oven body, then integrated 11 separate components from teammates into the final assembly in a 1.5-day sprint using SolidWorks and 5 new design tools. Applied GD&T to produce manufacturable drawings that ensured proper assembly across all subsystems.
+
+These aren't internship projects. They're academic work that taught me to design under constraints, iterate fast, and deliver on a deadline.
+
+<strong>What doesn't show up on a project list:</strong>
+
+For 3 years I was an Aquatics Instructor and Lifeguard at Lifetime Fitness. That's 200+ swim lessons taught, new instructors trained and mentored, and 20+ commendations from parents and managers. You learn a lot about leadership, communication under pressure, and showing up consistently when people's safety depends on you.
+
+I'm also Finance Chair at Dance Marathon — where I tracked weekly fundraising totals, reconciled proceeds, and helped coordinate events that raised $40,000 total, including a 5K run. And I'm an active member of Alpha Lambda Mu, a values-based fraternity where I've planned fundraising initiatives and built real brotherhood through mentorship and accountability.
+
+<strong>What I'm looking for:</strong>
+
+A summer 2026 internship in mechanical engineering, manufacturing, or design engineering. I want to be in a shop, on a floor, or at a workstation where I'm solving real problems — not watching.
+
+I'm proficient in SolidWorks, Fusion 360, AutoCAD, and 3-D printing. I've used shop machines — drill press, lathes, mills. I can write Python and MATLAB scripts when the work calls for it. And I speak Arabic fluently.
+
+I'm a U.S. citizen. Based in Madison, WI / Chicago, IL. Willing to relocate anywhere.
+
+<strong>I've sent out 50+ applications in the last 90 days.</strong> No callbacks yet. So here I am, putting myself out there a different way.
+
+If your team needs an engineering intern who designs with precision, leads without being asked, and will outwork expectations from day one — let's talk.
+
+<strong>📩 DM me or email mabdelmagid015@gmail.com</strong>
+📞 (312) 599-8120
+📍 Chicago, IL / Madison, WI — will relocate</div>
+
+        <div class="hashtags">#OpenToWork &nbsp;#MechanicalEngineering &nbsp;#ManufacturingEngineering &nbsp;#SummerInternship &nbsp;#Internship2026 &nbsp;#SolidWorks &nbsp;#DesignEngineering &nbsp;#UWMadison &nbsp;#NewGrad &nbsp;#EngineeringJobs &nbsp;#Hiring &nbsp;#MachinerySystems</div>
+    </div>
+
+    <!-- ──────────────────────────────────────────── -->
+    <!-- GRAPHIC (print this page only to PDF)        -->
+    <!-- ──────────────────────────────────────────── -->
+    <div class="graphic">
+        <div class="top-bar"></div>
+        <div class="orb-1"></div>
+        <div class="orb-2"></div>
+        <div class="orb-3"></div>
+        <div class="grid"></div>
+
+        <!-- Open to work pill -->
+        <div class="otw-pill">
+            <div class="otw-dot"></div>
+            <span class="otw-text">#OpenToWork</span>
+        </div>
+
+        <!-- School badge top right -->
+        <div class="school-badge">
+            <div class="school-badge-main">UW-Madison</div>
+            <div class="school-badge-sub">B.S. Biological Systems Engineering<br>Machinery Systems · May 2027</div>
+            <div style="display:flex; justify-content:flex-end; margin-top:8px; gap:8px;">
+                <div class="school-badge-gpa"><span>U.S. Citizen</span></div>
+            </div>
+        </div>
+
+        <!-- Main content -->
+        <div class="main">
+            <div class="name">MOHAMMED<br><span class="last">ABDELMAGID</span></div>
+            <div class="title-line"><span>Mechanical</span> · Manufacturing · <span>Design Engineering</span> Intern</div>
+
+            <!-- Stats -->
+            <div class="stats">
+                <div class="stat">
+                    <div class="stat-num">3yr</div>
+                    <div class="stat-label">Leadership Exp.</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-num">$40K</div>
+                    <div class="stat-label">Funds Raised</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-num">200+</div>
+                    <div class="stat-label">Lessons Taught</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-num">EN/AR</div>
+                    <div class="stat-label">Bilingual</div>
+                </div>
+            </div>
+
+            <!-- Skills -->
+            <div class="skills-label"><span>//</span> Design &amp; CAD</div>
+            <div class="pills">
+                <div class="pill pill-teal">SolidWorks</div>
+                <div class="pill pill-teal">Fusion 360</div>
+                <div class="pill pill-teal">AutoCAD</div>
+                <div class="pill pill-teal">GD&amp;T</div>
+                <div class="pill pill-lime">3-D Printing</div>
+                <div class="pill pill-lime">Drill Press</div>
+                <div class="pill pill-lime">Lathes &amp; Mills</div>
+                <div class="pill pill-white">Python</div>
+                <div class="pill pill-white">MATLAB</div>
+                <div class="pill pill-white">Excel</div>
+            </div>
+
+            <!-- Leadership -->
+            <div class="skills-label"><span>//</span> Leadership</div>
+            <div class="pills" style="margin-bottom: 32px;">
+                <div class="pill pill-lime">Finance Chair · Dance Marathon</div>
+                <div class="pill pill-white">Alpha Lambda Mu Fraternity</div>
+                <div class="pill pill-white">Aquatics Instructor · 3 yrs</div>
+            </div>
+
+            <!-- Looking for -->
+            <div class="looking-card">
+                <div class="looking-card-label">Seeking — Summer 2026</div>
+                <div class="looking-card-text">
+                    <strong>Mechanical · Manufacturing · Design Engineering</strong> internship. Hands-on work where I'm solving real problems — not watching.
+                </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="cta">
+                <div class="cta-dm">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M22 6l-10 7L2 6" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <span class="cta-dm-text">DM me on LinkedIn</span>
+                </div>
+                <div class="cta-email">mabdelmagid015@gmail.com</div>
+            </div>
+        </div>
+
+        <!-- Bottom bar -->
+        <div class="bottom">
+            <div class="bottom-hashtags">
+                <span>#OpenToWork</span> &nbsp;#MechE &nbsp;#Manufacturing &nbsp;<span>#Internship2026</span> &nbsp;#SolidWorks
+            </div>
+            <div class="bottom-flag"><span>(312) 599-8120</span> &nbsp;·&nbsp; Chicago / Madison &nbsp;·&nbsp; Will Relocate</div>
+        </div>
+    </div>
+
+</body>
+</html>
