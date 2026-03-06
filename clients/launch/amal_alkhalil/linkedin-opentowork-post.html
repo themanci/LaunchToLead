@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amal Alkhalil – #OpenToWork LinkedIn Post + Graphic</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        @page { margin: 0; size: 1080px 1080px; }
+        @media print {
+            .post-copy { display: none; }
+            body { background: transparent; padding: 0; }
+            .graphic { box-shadow: none; }
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: #1a1a1a;
+            padding: 48px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 56px;
+        }
+
+        /* ─── POST COPY SECTION ─────────────────────────────── */
+        .post-copy {
+            max-width: 1080px; width: 100%;
+            background: #111;
+            border: 1px solid #2a2a2a;
+            border-radius: 16px;
+            padding: 48px 56px;
+            color: #e0e0e0;
+        }
+        .post-copy h2 {
+            font-size: 13px; letter-spacing: 3px; text-transform: uppercase;
+            color: #555; font-weight: 700; margin-bottom: 32px;
+            font-family: 'Space Mono', monospace;
+        }
+        .post-copy .post-text {
+            font-size: 17px; line-height: 1.8; color: #ccc;
+            white-space: pre-wrap;
+        }
+        .post-copy .post-text strong { color: #fff; font-weight: 700; }
+        .post-copy .hashtags {
+            margin-top: 32px;
+            font-family: 'Space Mono', monospace;
+            font-size: 14px; color: #4a90d9;
+            line-height: 2;
+        }
+
+        /* ─── GRAPHIC ───────────────────────────────────────── */
+        .graphic {
+            width: 1080px; height: 1080px;
+            position: relative; overflow: hidden;
+            flex-shrink: 0;
+            background: #080c0a;
+            box-shadow: 0 32px 80px rgba(0,0,0,0.6);
+        }
+
+        .orb-1 {
+            position: absolute; top: -120px; right: -80px;
+            width: 600px; height: 600px; border-radius: 50%;
+            background: radial-gradient(circle, rgba(20,184,166,0.18) 0%, transparent 65%);
+            pointer-events: none;
+        }
+        .orb-2 {
+            position: absolute; bottom: -60px; left: -100px;
+            width: 520px; height: 520px; border-radius: 50%;
+            background: radial-gradient(circle, rgba(163,230,53,0.1) 0%, transparent 65%);
+            pointer-events: none;
+        }
+        .orb-3 {
+            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+            width: 900px; height: 900px; border-radius: 50%;
+            background: radial-gradient(circle, rgba(6,78,59,0.15) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .grid {
+            position: absolute; inset: 0; pointer-events: none; opacity: 0.04;
+            background-image:
+                linear-gradient(rgba(255,255,255,1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px);
+            background-size: 72px 72px;
+        }
+
+        .top-bar {
+            position: absolute; top: 0; left: 0; right: 0; height: 5px;
+            background: linear-gradient(to right, #064e3b, #14b8a6 35%, #a3e635 65%, #14b8a6 100%);
+            z-index: 10;
+        }
+
+        .otw-pill {
+            position: absolute; top: 40px; left: 64px;
+            display: flex; align-items: center; gap: 10px;
+            background: rgba(163,230,53,0.12);
+            border: 1px solid rgba(163,230,53,0.35);
+            border-radius: 100px;
+            padding: 10px 22px;
+            z-index: 10;
+        }
+        .otw-dot {
+            width: 10px; height: 10px; border-radius: 50%;
+            background: #a3e635;
+            box-shadow: 0 0 10px rgba(163,230,53,0.9), 0 0 20px rgba(163,230,53,0.4);
+        }
+        .otw-text {
+            font-family: 'Space Mono', monospace;
+            font-size: 14px; font-weight: 700; color: #a3e635;
+            letter-spacing: 2px; text-transform: uppercase;
+        }
+
+        .main {
+            position: absolute; top: 125px; left: 64px; right: 64px;
+            z-index: 10;
+        }
+
+        .name {
+            font-size: 96px; font-weight: 900; color: #fff;
+            line-height: 0.95; letter-spacing: -2px;
+            margin-bottom: 20px;
+        }
+        .name .last { color: #14b8a6; }
+
+        .title-line {
+            font-size: 24px; font-weight: 600; color: rgba(255,255,255,0.55);
+            letter-spacing: 1px; margin-bottom: 44px;
+        }
+        .title-line span { color: rgba(255,255,255,0.8); }
+
+        .stats {
+            display: flex; gap: 0; margin-bottom: 44px;
+        }
+        .stat {
+            flex: 1; padding: 22px 24px;
+            border-left: 1px solid rgba(255,255,255,0.08);
+        }
+        .stat:first-child { border-left: none; padding-left: 0; }
+        .stat-num {
+            font-family: 'Space Mono', monospace;
+            font-size: 36px; font-weight: 700; color: #a3e635;
+            line-height: 1; margin-bottom: 6px;
+        }
+        .stat-label {
+            font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.4);
+            text-transform: uppercase; letter-spacing: 1.5px;
+        }
+
+        .skills-label {
+            font-family: 'Space Mono', monospace;
+            font-size: 12px; color: rgba(20,184,166,0.7);
+            letter-spacing: 3px; text-transform: uppercase;
+            margin-bottom: 14px;
+        }
+        .skills-label span { color: rgba(255,255,255,0.2); margin-right: 8px; }
+
+        .pills {
+            display: flex; flex-wrap: wrap; gap: 10px;
+            margin-bottom: 40px;
+        }
+        .pill {
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-family: 'Space Mono', monospace;
+            font-size: 13px; font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+        .pill-teal {
+            background: rgba(20,184,166,0.12);
+            border: 1px solid rgba(20,184,166,0.3);
+            color: #14b8a6;
+        }
+        .pill-lime {
+            background: rgba(163,230,53,0.1);
+            border: 1px solid rgba(163,230,53,0.25);
+            color: #a3e635;
+        }
+        .pill-white {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.5);
+        }
+
+        .looking-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-left: 3px solid #14b8a6;
+            border-radius: 0 8px 8px 0;
+            padding: 20px 28px;
+            margin-bottom: 40px;
+        }
+        .looking-card-label {
+            font-family: 'Space Mono', monospace;
+            font-size: 11px; color: #14b8a6;
+            letter-spacing: 2px; text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+        .looking-card-text {
+            font-size: 19px; font-weight: 600; color: rgba(255,255,255,0.75);
+            line-height: 1.5;
+        }
+        .looking-card-text strong { color: #fff; }
+
+        .cta {
+            display: flex; align-items: center; gap: 20px;
+        }
+        .cta-dm {
+            display: flex; align-items: center; gap: 12px;
+            background: #14b8a6;
+            border-radius: 6px;
+            padding: 14px 28px;
+        }
+        .cta-dm-text {
+            font-size: 18px; font-weight: 800; color: #fff;
+            letter-spacing: 0.5px;
+        }
+        .cta-email {
+            font-family: 'Space Mono', monospace;
+            font-size: 14px; color: rgba(255,255,255,0.35);
+        }
+
+        .school-badge {
+            position: absolute; top: 44px; right: 64px;
+            text-align: right; z-index: 10;
+        }
+        .school-badge-main {
+            font-size: 16px; font-weight: 800; color: rgba(255,255,255,0.6);
+            letter-spacing: 0.5px;
+        }
+        .school-badge-sub {
+            font-family: 'Space Mono', monospace;
+            font-size: 11px; color: rgba(255,255,255,0.25);
+            margin-top: 4px;
+            line-height: 1.5;
+        }
+        .school-badge-gpa {
+            margin-top: 8px;
+            display: inline-flex; align-items: center; gap: 6px;
+            background: rgba(163,230,53,0.08);
+            border: 1px solid rgba(163,230,53,0.2);
+            border-radius: 4px;
+            padding: 4px 12px;
+        }
+        .school-badge-gpa span {
+            font-family: 'Space Mono', monospace;
+            font-size: 12px; color: #a3e635; font-weight: 700;
+        }
+
+        .bottom {
+            position: absolute; bottom: 0; left: 0; right: 0;
+            height: 72px;
+            border-top: 1px solid rgba(255,255,255,0.06);
+            display: flex; align-items: center;
+            padding: 0 64px;
+            z-index: 10;
+            justify-content: space-between;
+        }
+        .bottom-hashtags {
+            font-family: 'Space Mono', monospace;
+            font-size: 13px; color: rgba(255,255,255,0.2);
+            letter-spacing: 0.5px;
+        }
+        .bottom-hashtags span { color: rgba(20,184,166,0.5); }
+        .bottom-flag {
+            font-family: 'Space Mono', monospace;
+            font-size: 13px; color: rgba(255,255,255,0.2);
+        }
+        .bottom-flag span { color: rgba(163,230,53,0.5); }
+    </style>
+</head>
+<body>
+
+    <!-- ──────────────────────────────────────────── -->
+    <!-- POST COPY                                    -->
+    <!-- ──────────────────────────────────────────── -->
+    <div class="post-copy">
+        <h2>// LinkedIn Post Copy — Amal Alkhalil</h2>
+        <div class="post-text"><strong>#OpenToWork — Summer 2026 Electrical Engineering / Embedded Systems Internship</strong>
+
+I'm building a humanoid robot in my apartment.
+
+It's about 30 cm tall. I modeled every mechanical component in Shapr3D, 3D-printed the chassis, wired a motorized differential drive system with obstacle detection, and programmed it in Python on a Raspberry Pi. Right now it navigates autonomously at ~0.25 m/s. Next version gets computer vision and animatronic eyes — 3 servos for horizontal, vertical, and 90° eyelid actuation.
+
+Nobody assigned this to me. There's no class credit. I just wanted to see if I could make a machine move, see, and eventually interact like a living thing.
+
+<strong>That's the kind of engineer I am.</strong>
+
+Before the robot, I built a cat detection and automated door system — a real-time embedded vision pipeline using a Raspberry Pi 4, OpenCV DNN models, and a PIR motion sensor. It detects my cat with ~85% accuracy, zero false positives across 3 iterative development cycles, and triggers an actuator to open the door within 1–2 seconds. I added PIR sensing specifically to cut unnecessary computation and save power.
+
+These aren't hypothetical. They're running in my home right now.
+
+<strong>What else I've been doing:</strong>
+
+→ <strong>Co-founded Zuhoor's Scent</strong> — a physical consumer product business. Launched 3 products, drove ~30% sales growth in month one through targeted social media, ran in-person customer testing, led 2 logo redesigns and 2 packaging changes, and built the e-commerce site from scratch. This isn't a class project — it's a real business with real customers and real revenue.
+
+→ <strong>Founded NoorFit Club</strong> (Jan 2026) — started a fitness community on campus from nothing. I'm not just a member of clubs. I build them.
+
+→ <strong>Active member of NSBE, Sales Engineering Club, and Wind Energy Student Organization</strong> at Iowa State since Jan 2025.
+
+<strong>My background:</strong>
+
+I'm from Niamey, Niger. French is my native language. I came to Iowa State, changed my major twice (undecided → software engineering → electrical engineering), and found my passion at the intersection of hardware and software — embedded systems, sensing, and things that physically move in the real world.
+
+My first internship was at Al Izza in Niger when I was in high school — auditing transport data for 2 buses per day, validating 100+ records daily, building Excel-based workflows to catch 5–10 data inconsistencies per day. That's where I learned that engineering isn't just circuits and code. It's making messy systems reliable.
+
+GPA: 3.46. Graduating May 2027 from Iowa State with a B.S. in Software Engineering and a deep focus on electrical engineering and embedded systems coursework (including biosensors).
+
+<strong>What I want:</strong>
+
+A summer 2026 internship in electrical engineering, embedded systems, or hardware-software integration — where I can work on things that exist in the physical world. Prosthetics, robotics, sensing systems, autonomous machines. A company like John Deere where engineering actually moves things.
+
+I write in C and Python. I work with Raspberry Pi, OpenCV, 3D printing, servo motors, PIR sensors, and actuators. I design in Shapr3D. And I ship — every project I've started, I've finished or I'm still building.
+
+<strong>📩 DM me or email amoula.alk@gmail.com</strong>
+📞 515-357-8302
+📍 Ames, Iowa — open to relocation anywhere</div>
+
+        <div class="hashtags">#OpenToWork &nbsp;#ElectricalEngineering &nbsp;#EmbeddedSystems &nbsp;#Robotics &nbsp;#SummerInternship &nbsp;#Internship2026 &nbsp;#RaspberryPi &nbsp;#OpenCV &nbsp;#IowaState &nbsp;#ComputerVision &nbsp;#Hiring &nbsp;#WomenInEngineering &nbsp;#EngineeringJobs</div>
+    </div>
+
+    <!-- ──────────────────────────────────────────── -->
+    <!-- GRAPHIC (print this page only to PDF)        -->
+    <!-- ──────────────────────────────────────────── -->
+    <div class="graphic">
+        <div class="top-bar"></div>
+        <div class="orb-1"></div>
+        <div class="orb-2"></div>
+        <div class="orb-3"></div>
+        <div class="grid"></div>
+
+        <!-- Open to work pill -->
+        <div class="otw-pill">
+            <div class="otw-dot"></div>
+            <span class="otw-text">#OpenToWork</span>
+        </div>
+
+        <!-- School badge top right -->
+        <div class="school-badge">
+            <div class="school-badge-main">Iowa State University</div>
+            <div class="school-badge-sub">B.S. Software Engineering<br>EE Focus · May 2027</div>
+            <div style="display:flex; justify-content:flex-end; margin-top:8px; gap:8px;">
+                <div class="school-badge-gpa"><span>GPA 3.46</span></div>
+            </div>
+        </div>
+
+        <!-- Main content -->
+        <div class="main">
+            <div class="name">AMAL<br><span class="last">ALKHALIL</span></div>
+            <div class="title-line"><span>Embedded Systems</span> · Robotics · <span>Hardware-Software</span> Integration</div>
+
+            <!-- Stats -->
+            <div class="stats">
+                <div class="stat">
+                    <div class="stat-num">~85%</div>
+                    <div class="stat-label">CV Detection Acc.</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-num">0</div>
+                    <div class="stat-label">False Positives</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-num">30%</div>
+                    <div class="stat-label">Sales Growth Mo. 1</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-num">FR/EN</div>
+                    <div class="stat-label">Bilingual</div>
+                </div>
+            </div>
+
+            <!-- Skills -->
+            <div class="skills-label"><span>//</span> Embedded &amp; Hardware</div>
+            <div class="pills">
+                <div class="pill pill-teal">Raspberry Pi</div>
+                <div class="pill pill-teal">OpenCV</div>
+                <div class="pill pill-teal">PIR Sensors</div>
+                <div class="pill pill-teal">Servo Motors</div>
+                <div class="pill pill-lime">Python</div>
+                <div class="pill pill-lime">C</div>
+                <div class="pill pill-lime">3D Printing</div>
+                <div class="pill pill-white">Shapr3D</div>
+                <div class="pill pill-white">Actuators</div>
+                <div class="pill pill-white">DNN Models</div>
+            </div>
+
+            <!-- Leadership -->
+            <div class="skills-label"><span>//</span> Builder</div>
+            <div class="pills" style="margin-bottom: 32px;">
+                <div class="pill pill-lime">Founder · NoorFit Club</div>
+                <div class="pill pill-lime">Co-Founder · Zuhoor's Scent</div>
+                <div class="pill pill-white">NSBE · SEC · WESO</div>
+            </div>
+
+            <!-- Looking for -->
+            <div class="looking-card">
+                <div class="looking-card-label">Seeking — Summer 2026</div>
+                <div class="looking-card-text">
+                    <strong>Electrical Engineering · Embedded Systems · Robotics</strong> internship. Prosthetics, autonomous systems, anything that moves in the real world.
+                </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="cta">
+                <div class="cta-dm">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M22 6l-10 7L2 6" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <span class="cta-dm-text">DM me on LinkedIn</span>
+                </div>
+                <div class="cta-email">amoula.alk@gmail.com</div>
+            </div>
+        </div>
+
+        <!-- Bottom bar -->
+        <div class="bottom">
+            <div class="bottom-hashtags">
+                <span>#OpenToWork</span> &nbsp;#EmbeddedSystems &nbsp;#Robotics &nbsp;<span>#Internship2026</span> &nbsp;#WomenInEng
+            </div>
+            <div class="bottom-flag"><span>515.357.8302</span> &nbsp;·&nbsp; Ames, IA &nbsp;·&nbsp; linkedin.com/in/amal-alkhalil</div>
+        </div>
+    </div>
+
+</body>
+</html>

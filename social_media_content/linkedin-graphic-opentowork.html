@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedIn Graphic – #OpenToWork Post</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            width: 1080px;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: #0a0f0d;
+            color: #fff;
+        }
+
+        @page { margin: 0; size: 1080px 1350px; }
+        @media print {
+            body { width: 1080px; }
+            .page { page-break-after: avoid; }
+        }
+
+        .page {
+            width: 1080px;
+            min-height: 1350px;
+            background: #0a0f0d;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Top accent bar */
+        .top-bar {
+            width: 100%; height: 6px; flex-shrink: 0;
+            background: linear-gradient(to right, #064e3b, #14b8a6 40%, #a3e635 75%, #14b8a6 100%);
+        }
+
+        /* Subtle background geometry */
+        .bg-geo {
+            position: absolute; top: 0; right: 0;
+            width: 420px; height: 420px;
+            border: 1.5px solid rgba(20,184,166,0.1);
+            border-radius: 50%;
+            transform: translate(140px, -140px);
+            pointer-events: none;
+        }
+        .bg-geo-2 {
+            position: absolute; top: 0; right: 0;
+            width: 280px; height: 280px;
+            border: 1px solid rgba(163,230,53,0.07);
+            border-radius: 50%;
+            transform: translate(90px, -90px);
+            pointer-events: none;
+        }
+        .bg-noise {
+            position: absolute; inset: 0; pointer-events: none; z-index: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+            background-size: 400px 400px;
+        }
+
+        /* Hero section */
+        .hero {
+            padding: 48px 64px 44px;
+            position: relative; z-index: 1;
+        }
+
+        .badge {
+            display: inline-flex; align-items: center; gap: 10px;
+            border: 1px solid rgba(20,184,166,0.4);
+            border-radius: 4px;
+            padding: 8px 18px;
+            margin-bottom: 32px;
+        }
+        .badge-dot {
+            width: 8px; height: 8px; border-radius: 50%;
+            background: #14b8a6;
+            box-shadow: 0 0 8px rgba(20,184,166,0.8);
+        }
+        .badge-text {
+            font-family: 'Space Mono', monospace;
+            font-size: 13px; font-weight: 700;
+            color: #14b8a6;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            font-size: 90px; font-weight: 900;
+            line-height: 0.98;
+            text-transform: uppercase;
+            color: #ffffff;
+            margin-bottom: 28px;
+            letter-spacing: -1px;
+        }
+        h1 .accent { color: #a3e635; }
+
+        .subtitle {
+            font-size: 22px; font-weight: 400;
+            color: rgba(255,255,255,0.55);
+            line-height: 1.6; max-width: 640px;
+        }
+
+        /* Divider */
+        .divider-line {
+            margin: 0 64px;
+            height: 1px;
+            background: linear-gradient(to right, rgba(20,184,166,0.3), transparent);
+            position: relative; z-index: 1;
+        }
+
+        /* Framework section */
+        .framework {
+            padding: 36px 64px 0;
+            position: relative; z-index: 1;
+        }
+        .framework-label {
+            font-family: 'Space Mono', monospace;
+            font-size: 13px; font-weight: 700;
+            color: rgba(255,255,255,0.25);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+        }
+        .framework-label span { color: rgba(163,230,53,0.4); margin-right: 8px; }
+
+        /* Cards grid */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+        .card {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 8px;
+            padding: 28px 28px 24px;
+            position: relative;
+            overflow: hidden;
+        }
+        .card:hover { border-color: rgba(20,184,166,0.25); }
+
+        .card-num {
+            position: absolute; top: 12px; right: 18px;
+            font-size: 72px; font-weight: 900;
+            color: rgba(255,255,255,0.04);
+            line-height: 1;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            user-select: none;
+        }
+
+        .card-category {
+            font-family: 'Space Mono', monospace;
+            font-size: 11px; font-weight: 700;
+            color: #14b8a6;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+
+        .card-title {
+            font-size: 22px; font-weight: 800;
+            color: #ffffff;
+            line-height: 1.25;
+            margin-bottom: 12px;
+        }
+
+        .card-body {
+            font-family: 'Space Mono', monospace;
+            font-size: 13px; line-height: 1.65;
+            color: rgba(255,255,255,0.45);
+        }
+        .card-body .not { color: rgba(255,255,255,0.35); }
+        .card-body .but { color: #a3e635; }
+
+        /* Wide card (card 5) */
+        .card-wide {
+            background: rgba(163,230,53,0.05);
+            border: 1px solid rgba(163,230,53,0.2);
+            border-radius: 8px;
+            padding: 28px 36px 24px;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 0;
+        }
+        .card-wide .card-num {
+            font-size: 96px;
+            color: rgba(163,230,53,0.05);
+        }
+        .card-wide .card-category { color: #a3e635; }
+        .card-wide .card-body .but { color: #14b8a6; }
+
+        /* Bottom bar */
+        .bottom {
+            margin-top: auto;
+            padding: 28px 64px 32px;
+            display: flex; align-items: center;
+            justify-content: space-between;
+            position: relative; z-index: 1;
+            border-top: 1px solid rgba(255,255,255,0.06);
+        }
+        .bottom-left {
+            font-size: 18px; font-weight: 700;
+            color: rgba(255,255,255,0.5);
+            max-width: 340px; line-height: 1.4;
+        }
+        .bottom-left span { color: #ffffff; }
+
+        .bottom-right { display: flex; align-items: center; gap: 14px; }
+        .logo-mark {
+            width: 38px; height: 38px; border-radius: 7px;
+            background: linear-gradient(135deg, #14b8a6, #a3e635);
+            display: flex; align-items: center; justify-content: center;
+            flex-shrink: 0;
+        }
+        .brand-name {
+            font-size: 22px; font-weight: 800; color: #fff;
+        }
+        .brand-name span { color: #a3e635; }
+        .brand-url {
+            font-family: 'Space Mono', monospace;
+            font-size: 13px; color: rgba(255,255,255,0.35);
+            margin-top: 2px;
+        }
+
+        .hashtags {
+            padding: 0 64px 36px;
+            font-family: 'Space Mono', monospace;
+            font-size: 13px;
+            color: rgba(20,184,166,0.5);
+            letter-spacing: 0.5px;
+            position: relative; z-index: 1;
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+    <div class="top-bar"></div>
+    <div class="bg-geo"></div>
+    <div class="bg-geo-2"></div>
+    <div class="bg-noise"></div>
+
+    <!-- Hero -->
+    <div class="hero">
+        <div class="badge">
+            <div class="badge-dot"></div>
+            <span class="badge-text">For Engineers on the Job Search</span>
+        </div>
+        <h1>Your <span class="accent">#OpenToWork</span><br>post is too<br>vague.</h1>
+        <p class="subtitle">"Working on something interesting" means nothing to a hiring manager.<br>Here's what to actually say — in 5 steps.</p>
+    </div>
+
+    <div class="divider-line"></div>
+
+    <!-- Framework -->
+    <div class="framework">
+        <div class="framework-label"><span>//</span> The Framework</div>
+
+        <div class="cards-grid">
+            <!-- Card 1 -->
+            <div class="card">
+                <div class="card-num">01</div>
+                <div class="card-category">Discipline &amp; Specialty</div>
+                <div class="card-title">Get specific about<br>your stack</div>
+                <div class="card-body">
+                    <span class="not">Not: "Software Engineer"</span><br>
+                    <span class="but">But: "Backend · distributed<br>systems · data pipelines"</span>
+                </div>
+            </div>
+            <!-- Card 2 -->
+            <div class="card">
+                <div class="card-num">02</div>
+                <div class="card-category">Company Type</div>
+                <div class="card-title">Who do you want<br>to work for?</div>
+                <div class="card-body">
+                    <span class="not">Enterprise? Mid-size?</span><br>
+                    <span class="but">Early-stage startup?</span><br>
+                    <span class="not">Lead with what you know best.</span>
+                </div>
+            </div>
+            <!-- Card 3 -->
+            <div class="card">
+                <div class="card-num">03</div>
+                <div class="card-category">Problem Space</div>
+                <div class="card-title">Name the problems<br>you want to solve</div>
+                <div class="card-body">
+                    <span class="not">Skip "interesting challenges."</span><br>
+                    <span class="but">Try: "Real-time data · fintech ·<br>small senior team"</span>
+                </div>
+            </div>
+            <!-- Card 4 -->
+            <div class="card">
+                <div class="card-num">04</div>
+                <div class="card-category">What You Bring</div>
+                <div class="card-title">1–2 concrete wins,<br>zero buzzwords</div>
+                <div class="card-body">
+                    <span class="not">Not "passionate team player."</span><br>
+                    <span class="but">But: "0→prod twice, solo<br>backend engineer both times"</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 5 wide -->
+        <div class="card-wide">
+            <div class="card-num">05</div>
+            <div class="card-category">How to Reach You</div>
+            <div class="card-title">Remove all friction from the path to you</div>
+            <div class="card-body">
+                <span class="not">DM? Email? A Calendly link?</span><br>
+                <span class="but">→ The easier you make it, the more people follow through.</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hashtags -->
+    <div class="hashtags" style="margin-top: 28px;">
+        #opentowork &nbsp; #engineering &nbsp; #jobsearch &nbsp; #careertips
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="bottom">
+        <div class="bottom-left">Give people enough information to <span>want to act.</span></div>
+        <div class="bottom-right">
+            <div class="logo-mark">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                    <path d="M5 17L12 7L19 17" stroke="#064e3b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M8 17L12 11L16 17" stroke="#064e3b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <div>
+                <div class="brand-name">Launch<span>To</span>Lead</div>
+                <div class="brand-url">LaunchToLead.io</div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

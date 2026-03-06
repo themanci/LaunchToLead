@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Osaid Samman – #OpenToWork LinkedIn Post + Graphic</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        @page { margin: 0; size: 1080px 1080px; }
+        @media print {
+            .post-copy { display: none; }
+            body { background: transparent; padding: 0; }
+            .graphic { box-shadow: none; }
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: #1a1a1a;
+            padding: 48px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 56px;
+        }
+
+        /* ─── POST COPY SECTION ─────────────────────────────── */
+        .post-copy {
+            max-width: 1080px; width: 100%;
+            background: #111;
+            border: 1px solid #2a2a2a;
+            border-radius: 16px;
+            padding: 48px 56px;
+            color: #e0e0e0;
+        }
+        .post-copy h2 {
+            font-size: 13px; letter-spacing: 3px; text-transform: uppercase;
+            color: #555; font-weight: 700; margin-bottom: 32px;
+            font-family: 'Space Mono', monospace;
+        }
+        .post-copy .post-text {
+            font-size: 17px; line-height: 1.8; color: #ccc;
+            white-space: pre-wrap;
+        }
+        .post-copy .post-text strong { color: #fff; font-weight: 700; }
+        .post-copy .hashtags {
+            margin-top: 32px;
+            font-family: 'Space Mono', monospace;
+            font-size: 14px; color: #4a90d9;
+            line-height: 2;
+        }
+
+        /* ─── GRAPHIC ───────────────────────────────────────── */
+        .graphic {
+            width: 1080px; height: 1080px;
+            position: relative; overflow: hidden;
+            flex-shrink: 0;
+            background: #080c0a;
+            box-shadow: 0 32px 80px rgba(0,0,0,0.6);
+        }
+
+        /* Animated gradient orbs */
+        .orb-1 {
+            position: absolute; top: -120px; right: -80px;
+            width: 600px; height: 600px; border-radius: 50%;
+            background: radial-gradient(circle, rgba(20,184,166,0.18) 0%, transparent 65%);
+            pointer-events: none;
+        }
+        .orb-2 {
+            position: absolute; bottom: -60px; left: -100px;
+            width: 520px; height: 520px; border-radius: 50%;
+            background: radial-gradient(circle, rgba(163,230,53,0.1) 0%, transparent 65%);
+            pointer-events: none;
+        }
+        .orb-3 {
+            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+            width: 900px; height: 900px; border-radius: 50%;
+            background: radial-gradient(circle, rgba(6,78,59,0.15) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        /* Grid lines */
+        .grid {
+            position: absolute; inset: 0; pointer-events: none; opacity: 0.04;
+            background-image:
+                linear-gradient(rgba(255,255,255,1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px);
+            background-size: 72px 72px;
+        }
+
+        /* Top accent bar */
+        .top-bar {
+            position: absolute; top: 0; left: 0; right: 0; height: 5px;
+            background: linear-gradient(to right, #064e3b, #14b8a6 35%, #a3e635 65%, #14b8a6 100%);
+            z-index: 10;
+        }
+
+        /* Open to work pill */
+        .otw-pill {
+            position: absolute; top: 40px; left: 64px;
+            display: flex; align-items: center; gap: 10px;
+            background: rgba(163,230,53,0.12);
+            border: 1px solid rgba(163,230,53,0.35);
+            border-radius: 100px;
+            padding: 10px 22px;
+            z-index: 10;
+        }
+        .otw-dot {
+            width: 10px; height: 10px; border-radius: 50%;
+            background: #a3e635;
+            box-shadow: 0 0 10px rgba(163,230,53,0.9), 0 0 20px rgba(163,230,53,0.4);
+        }
+        .otw-text {
+            font-family: 'Space Mono', monospace;
+            font-size: 14px; font-weight: 700; color: #a3e635;
+            letter-spacing: 2px; text-transform: uppercase;
+        }
+
+        /* Main content */
+        .main {
+            position: absolute; top: 130px; left: 64px; right: 64px;
+            z-index: 10;
+        }
+
+        .name {
+            font-size: 96px; font-weight: 900; color: #fff;
+            line-height: 0.95; letter-spacing: -2px;
+            margin-bottom: 20px;
+        }
+        .name .last { color: #14b8a6; }
+
+        .title-line {
+            font-size: 28px; font-weight: 600; color: rgba(255,255,255,0.55);
+            letter-spacing: 1px; margin-bottom: 48px;
+        }
+        .title-line span { color: rgba(255,255,255,0.8); }
+
+        /* Stats row */
+        .stats {
+            display: flex; gap: 0; margin-bottom: 56px;
+        }
+        .stat {
+            flex: 1; padding: 24px 28px;
+            border-left: 1px solid rgba(255,255,255,0.08);
+        }
+        .stat:first-child { border-left: none; padding-left: 0; }
+        .stat-num {
+            font-family: 'Space Mono', monospace;
+            font-size: 40px; font-weight: 700; color: #a3e635;
+            line-height: 1; margin-bottom: 6px;
+        }
+        .stat-label {
+            font-size: 14px; font-weight: 600; color: rgba(255,255,255,0.4);
+            text-transform: uppercase; letter-spacing: 1.5px;
+        }
+
+        /* Skills */
+        .skills-label {
+            font-family: 'Space Mono', monospace;
+            font-size: 12px; color: rgba(20,184,166,0.7);
+            letter-spacing: 3px; text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+        .skills-label span { color: rgba(255,255,255,0.2); margin-right: 8px; }
+
+        .pills {
+            display: flex; flex-wrap: wrap; gap: 10px;
+            margin-bottom: 52px;
+        }
+        .pill {
+            padding: 8px 18px;
+            border-radius: 4px;
+            font-family: 'Space Mono', monospace;
+            font-size: 13px; font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+        .pill-teal {
+            background: rgba(20,184,166,0.12);
+            border: 1px solid rgba(20,184,166,0.3);
+            color: #14b8a6;
+        }
+        .pill-lime {
+            background: rgba(163,230,53,0.1);
+            border: 1px solid rgba(163,230,53,0.25);
+            color: #a3e635;
+        }
+        .pill-white {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.5);
+        }
+
+        /* What I'm looking for card */
+        .looking-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-left: 3px solid #14b8a6;
+            border-radius: 0 8px 8px 0;
+            padding: 20px 28px;
+            margin-bottom: 48px;
+        }
+        .looking-card-label {
+            font-family: 'Space Mono', monospace;
+            font-size: 11px; color: #14b8a6;
+            letter-spacing: 2px; text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+        .looking-card-text {
+            font-size: 20px; font-weight: 600; color: rgba(255,255,255,0.75);
+            line-height: 1.5;
+        }
+        .looking-card-text strong { color: #fff; }
+
+        /* CTA */
+        .cta {
+            display: flex; align-items: center; gap: 20px;
+        }
+        .cta-dm {
+            display: flex; align-items: center; gap: 12px;
+            background: #14b8a6;
+            border-radius: 6px;
+            padding: 14px 28px;
+        }
+        .cta-dm-text {
+            font-size: 18px; font-weight: 800; color: #fff;
+            letter-spacing: 0.5px;
+        }
+        .cta-email {
+            font-family: 'Space Mono', monospace;
+            font-size: 14px; color: rgba(255,255,255,0.35);
+        }
+
+        /* School badge */
+        .school-badge {
+            position: absolute; top: 44px; right: 64px;
+            text-align: right; z-index: 10;
+        }
+        .school-badge-main {
+            font-size: 16px; font-weight: 800; color: rgba(255,255,255,0.6);
+            letter-spacing: 0.5px;
+        }
+        .school-badge-sub {
+            font-family: 'Space Mono', monospace;
+            font-size: 12px; color: rgba(255,255,255,0.25);
+            margin-top: 4px;
+        }
+        .school-badge-gpa {
+            margin-top: 8px;
+            display: inline-flex; align-items: center; gap: 6px;
+            background: rgba(163,230,53,0.08);
+            border: 1px solid rgba(163,230,53,0.2);
+            border-radius: 4px;
+            padding: 4px 12px;
+        }
+        .school-badge-gpa span {
+            font-family: 'Space Mono', monospace;
+            font-size: 12px; color: #a3e635; font-weight: 700;
+        }
+
+        /* Bottom bar */
+        .bottom {
+            position: absolute; bottom: 0; left: 0; right: 0;
+            height: 72px;
+            border-top: 1px solid rgba(255,255,255,0.06);
+            display: flex; align-items: center;
+            padding: 0 64px;
+            z-index: 10;
+            justify-content: space-between;
+        }
+        .bottom-hashtags {
+            font-family: 'Space Mono', monospace;
+            font-size: 13px; color: rgba(255,255,255,0.2);
+            letter-spacing: 0.5px;
+        }
+        .bottom-hashtags span { color: rgba(20,184,166,0.5); }
+        .bottom-flag {
+            font-family: 'Space Mono', monospace;
+            font-size: 13px; color: rgba(255,255,255,0.2);
+        }
+        .bottom-flag span { color: rgba(163,230,53,0.5); }
+    </style>
+</head>
+<body>
+
+    <!-- ──────────────────────────────────────────── -->
+    <!-- POST COPY                                    -->
+    <!-- ──────────────────────────────────────────── -->
+    <div class="post-copy">
+        <h2>// LinkedIn Post Copy — Osaid Samman</h2>
+        <div class="post-text"><strong>#OpenToWork</strong>
+
+I've been making things with computers since I was a kid.
+
+Before college I was building video games from scratch. That's what pulled me into Computer Engineering at Iowa State — I wanted to understand how things actually work, from the code all the way down to the hardware.
+
+4 years later I graduated with a 3.33 GPA, a Dean's List distinction, and a Business minor because I wanted to understand <strong>why</strong> things get built — not just how.
+
+<strong>Here's what I've actually built:</strong>
+
+→ A full-stack academic scheduling platform (React, Node.js, Sequelize) that serves 100+ university departments. Turned a 2-week manual process into a 1-hour automated workflow.
+
+→ A budgeting app on Android (Java, Spring Boot, SQL) that handles real-time financial tracking and multi-user sync.
+
+→ An autonomous vehicle programmed in C that navigates obstacle courses without human input.
+
+→ A client website (freelance) — currently in production.
+
+<strong>But here's what doesn't show up on a resume:</strong>
+
+I was Secretary of the Muslim Students' Association at Iowa State. That wasn't for a grade. That was volunteer leadership — organizing events, managing communications, serving a community. I chose that on top of a full engineering courseload because I believe leadership isn't something you wait to be assigned. You step into it.
+
+I was also nominated team leader for my Senior Design capstone by my teammates. Not because I asked for it — because they saw how I show up in a team.
+
+<strong>What I'm looking for:</strong>
+
+Infrastructure, networking, and systems engineering roles are at the top of my list. But I'm also a strong fit for software engineering, full-stack development, and embedded systems positions.
+
+I want to work somewhere my engineering actually matters — where I'm close enough to the decisions that I can see the impact of what I build. A company like Cisco would be a dream, but I'm open to any team where the work is real and the people care.
+
+<strong>What I bring to the table:</strong>
+
+• Full stack: React, TypeScript, Node.js, Express, REST APIs, MongoDB, Docker
+• Systems: C, VHDL, MIPS Assembly, embedded firmware
+• Java ecosystem: Spring Boot, Android, SQL
+• Languages: English + Arabic (bilingual)
+• Mindset: I understand the recruiter's perspective. I can tell my story with structure and clarity. And I don't just apply — I prepare.
+
+<strong>I've submitted 50+ applications.</strong> No callbacks yet. But I'm not complaining — I'm getting sharper. Every rejection is just a rep.
+
+If your team needs a Computer Engineer who can build across the full stack, go low-level when needed, lead without being asked, and communicate in two languages — let's talk.
+
+<strong>📩 DM me here or email osaidsamman@gmail.com</strong>
+📞 515-993-0554
+📍 Based in Ames, Iowa — open to remote / hybrid / relocation</div>
+
+        <div class="hashtags">#OpenToWork &nbsp;#SoftwareEngineering &nbsp;#ComputerEngineering &nbsp;#FullStack &nbsp;#NewGrad &nbsp;#Infrastructure &nbsp;#NetworkEngineering &nbsp;#IowaState &nbsp;#Cisco &nbsp;#EmbeddedSystems &nbsp;#Hiring &nbsp;#EngineeringJobs</div>
+    </div>
+
+    <!-- ──────────────────────────────────────────── -->
+    <!-- GRAPHIC (print this page only to PDF)        -->
+    <!-- ──────────────────────────────────────────── -->
+    <div class="graphic">
+        <div class="top-bar"></div>
+        <div class="orb-1"></div>
+        <div class="orb-2"></div>
+        <div class="orb-3"></div>
+        <div class="grid"></div>
+
+        <!-- Open to work pill -->
+        <div class="otw-pill">
+            <div class="otw-dot"></div>
+            <span class="otw-text">#OpenToWork</span>
+        </div>
+
+        <!-- School badge top right -->
+        <div class="school-badge">
+            <div class="school-badge-main">Iowa State University</div>
+            <div class="school-badge-sub">B.S. Computer Engineering · May 2025</div>
+            <div style="display:flex; justify-content:flex-end; margin-top:8px; gap:8px;">
+                <div class="school-badge-gpa"><span>GPA 3.33</span></div>
+                <div class="school-badge-gpa"><span>Dean's List</span></div>
+            </div>
+        </div>
+
+        <!-- Main content -->
+        <div class="main">
+            <div class="name">OSAID<br><span class="last">SAMMAN</span></div>
+            <div class="title-line"><span>Computer Engineer</span> · Infrastructure · <span>Full Stack</span> · Embedded</div>
+
+            <!-- Stats -->
+            <div class="stats">
+                <div class="stat">
+                    <div class="stat-num">3.33</div>
+                    <div class="stat-label">GPA · Dean's List</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-num">100+</div>
+                    <div class="stat-label">Depts Served</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-num">2wk→1hr</div>
+                    <div class="stat-label">Process Automated</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-num">EN/AR</div>
+                    <div class="stat-label">Bilingual</div>
+                </div>
+            </div>
+
+            <!-- Skills -->
+            <div class="skills-label"><span>//</span> Stack</div>
+            <div class="pills">
+                <div class="pill pill-teal">React</div>
+                <div class="pill pill-teal">Node.js</div>
+                <div class="pill pill-teal">TypeScript</div>
+                <div class="pill pill-teal">REST APIs</div>
+                <div class="pill pill-lime">Java</div>
+                <div class="pill pill-lime">Spring Boot</div>
+                <div class="pill pill-lime">C</div>
+                <div class="pill pill-lime">Python</div>
+                <div class="pill pill-white">VHDL</div>
+                <div class="pill pill-white">MIPS Assembly</div>
+                <div class="pill pill-white">Docker</div>
+                <div class="pill pill-white">MongoDB</div>
+            </div>
+
+            <!-- Leadership -->
+            <div class="skills-label" style="margin-top: 4px;"><span>//</span> Leadership</div>
+            <div class="pills" style="margin-bottom: 36px;">
+                <div class="pill pill-lime">MSA Secretary (Volunteer)</div>
+                <div class="pill pill-white">Senior Design Team Lead</div>
+                <div class="pill pill-white">Freelance Web Developer</div>
+            </div>
+
+            <!-- Looking for -->
+            <div class="looking-card">
+                <div class="looking-card-label">What I'm looking for</div>
+                <div class="looking-card-text">
+                    <strong>Infrastructure · Networking · Systems Engineering</strong> — or full-stack / embedded roles. Dream company: Cisco. Ready to relocate.
+                </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="cta">
+                <div class="cta-dm">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M22 6l-10 7L2 6" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <span class="cta-dm-text">DM me on LinkedIn</span>
+                </div>
+                <div class="cta-email">osaidsamman@gmail.com</div>
+            </div>
+        </div>
+
+        <!-- Bottom bar -->
+        <div class="bottom">
+            <div class="bottom-hashtags">
+                <span>#OpenToWork</span> &nbsp;#ComputerEngineering &nbsp;#Infrastructure &nbsp;<span>#FullStack</span> &nbsp;#NewGrad
+            </div>
+            <div class="bottom-flag"><span>515.993.0554</span> &nbsp;·&nbsp; Ames, IA &nbsp;·&nbsp; linkedin.com/in/osaidsamman</div>
+        </div>
+    </div>
+
+</body>
+</html>
