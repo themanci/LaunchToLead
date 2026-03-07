@@ -168,10 +168,10 @@
             <div class="hidden md:flex items-center space-x-6">
                 <a href="about.html" class="${getLinkClasses('about')}">About</a>
                 <a href="success-stories.html" class="${getLinkClasses('success-stories')}">Success Stories</a>
-                <a href="vault.html" class="${getLinkClasses('vault')}">Free Resources</a>
+                <a href="landing/impact-bullet-equation.html" class="${getLinkClasses('vault')}">FREE Resume Guide</a>
                 ${getSocialDropdownHTML()}
                 <a href="landing/offer.html?source=site" class="${getLinkClasses('contact', true)}">
-                    Ready To Launch
+                    See If You're a Fit
                 </a>
             </div>
             <!-- Mobile menu button -->
@@ -193,8 +193,8 @@
         <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             <a href="about.html" class="${getMobileLinkClasses('about')}">About</a>
             <a href="success-stories.html" class="${getMobileLinkClasses('success-stories')}">Success Stories</a>
-            <a href="vault.html" class="${getMobileLinkClasses('vault')}">Free Resources</a>
-            <a href="landing/offer.html?source=site" class="${getMobileLinkClasses('contact', true)}">Ready To Launch</a>
+            <a href="landing/impact-bullet-equation.html" class="${getMobileLinkClasses('vault')}">FREE Resume Guide</a>
+            <a href="landing/offer.html?source=site" class="${getMobileLinkClasses('contact', true)}">See If You're a Fit</a>
             ${getMobileSocialHTML()}
         </div>
     </div>
