@@ -188,11 +188,23 @@
         }
     }
 
+    function firePageView() {
+        if (typeof gtag === 'function') {
+            gtag('event', 'page_view', {
+                page_variant: window.__ltlVariantId || 'v1-control'
+            });
+        }
+    }
+
     // Execute
     var key = pickVariant();
     if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', function () { applyVariant(key); });
+        document.addEventListener('DOMContentLoaded', function () {
+            applyVariant(key);
+            firePageView();
+        });
     } else {
         applyVariant(key);
+        firePageView();
     }
 })();
