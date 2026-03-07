@@ -99,17 +99,16 @@ async function generateLinkedInVariants(browser) {
         // Render cover page
         const coverBuffer = await htmlToPdfBuffer(browser, coverHtml);
 
-        // Create merged PDF: cover page + main pages 2-end (skip main's cover)
+        // Create merged PDF: black ad cover + ALL main guide pages
         const mergedDoc = await PDFDocument.create();
 
-        // Copy cover page(s)
+        // Copy black cover page(s)
         const coverDoc = await PDFDocument.load(coverBuffer);
         const coverPages = await mergedDoc.copyPages(coverDoc, coverDoc.getPageIndices());
         coverPages.forEach(p => mergedDoc.addPage(p));
 
-        // Copy main pages 2–15 (indices 1 through end)
-        const mainPageIndices = Array.from({ length: mainPageCount - 1 }, (_, i) => i + 1);
-        const mainPages = await mergedDoc.copyPages(mainDoc, mainPageIndices);
+        // Copy ALL main guide pages (1–15)
+        const mainPages = await mergedDoc.copyPages(mainDoc, mainDoc.getPageIndices());
         mainPages.forEach(p => mergedDoc.addPage(p));
 
         // Save

@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Analysis — Subodh Kulkarni | LaunchToLead</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .font-mono-num { font-family: 'Space Grotesk', monospace; }
+
+        #download-btn {
+            position: fixed; top: 20px; right: 20px; z-index: 9999;
+            background: linear-gradient(135deg, #a3e635, #14b8a6); color: #052e16;
+            font-family: 'Plus Jakarta Sans', sans-serif; font-size: 16px; font-weight: 800;
+            padding: 14px 32px; border: none; border-radius: 50px; cursor: pointer;
+            box-shadow: 0 8px 30px rgba(163,230,53,0.3);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        #download-btn:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(163,230,53,0.4); }
+
+        @media print {
+            @page { size: letter; margin: 0.5in 0.65in; }
+            body {
+                background: white !important; color: #1e293b !important;
+                padding: 0 !important; margin: 0 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            #download-btn { display: none !important; }
+            .page-break { break-before: page; }
+            .keep-together { break-inside: avoid; }
+            .space-y-4 > div, .space-y-6 > div, .grid > div { break-inside: avoid; }
+            section .mb-5 { break-inside: avoid; }
+            ul.space-y-3 > li { break-inside: avoid; }
+            tbody tr { break-inside: avoid; }
+            .rounded-xl.overflow-hidden { break-inside: avoid; }
+            h2, h3, h4 { break-after: avoid; }
+            section { box-shadow: none !important; border: 1px solid #e2e8f0 !important; }
+            .max-w-4xl { max-width: 100% !important; }
+            .bg-red-900, .bg-amber-800, .bg-emerald-900 {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-700">
+
+<button id="download-btn" onclick="window.print()">Download PDF</button>
+
+<!-- HEADER -->
+<header class="bg-emerald-900 text-white py-6 px-6">
+    <div class="max-w-4xl mx-auto">
+        <div class="flex items-center gap-3 mb-4">
+            <div class="bg-white text-emerald-900 w-10 h-10 rounded-xl flex items-center justify-center font-bold text-sm shadow">L&sup2;</div>
+            <span class="text-xl font-bold">Launch<span class="font-light text-lime-300">ToLead</span></span>
+        </div>
+        <h1 class="text-3xl font-extrabold mb-1">Resume Analysis &amp; Rewrite</h1>
+        <p class="text-emerald-200">Subodh Kulkarni, Ph.D. &mdash; Program Quality Engineer</p>
+        <p class="text-emerald-400/60 text-sm mt-1">Analyzed against the Impact Bullet Builder&trade; framework</p>
+    </div>
+</header>
+
+<div class="max-w-4xl mx-auto px-6 py-10 space-y-10">
+
+    <!-- ============================================ -->
+    <!-- SECTION 1: OVERALL SCORE                     -->
+    <!-- ============================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 overflow-hidden">
+        <div class="p-8">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="w-8 h-8 rounded-lg bg-amber-500 text-white flex items-center justify-center text-sm font-bold">1</div>
+                <h2 class="text-2xl font-extrabold text-slate-900">Overall Score</h2>
+            </div>
+
+            <div class="flex items-center gap-8 mb-6">
+                <div class="text-center">
+                    <p class="font-mono-num text-6xl font-extrabold text-amber-500">62</p>
+                    <p class="text-slate-500 text-sm">out of 100</p>
+                </div>
+                <div class="flex-1">
+                    <div class="h-4 bg-slate-100 rounded-full overflow-hidden mb-2">
+                        <div class="h-full rounded-full" style="width: 62%; background: linear-gradient(to right, #f59e0b, #84cc16);"></div>
+                    </div>
+                    <div class="flex justify-between text-xs text-slate-400">
+                        <span>0 &mdash; Invisible</span>
+                        <span>50 &mdash; Achiever</span>
+                        <span>100 &mdash; Impact Standard</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-4 text-center">
+                    <p class="font-mono-num text-2xl font-bold text-emerald-600">7/10</p>
+                    <p class="text-emerald-700 text-xs font-semibold mt-1">Accomplishments</p>
+                    <p class="text-emerald-400 text-[10px]">Most bullets have real results</p>
+                </div>
+                <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-4 text-center">
+                    <p class="font-mono-num text-2xl font-bold text-emerald-600">7/10</p>
+                    <p class="text-emerald-700 text-xs font-semibold mt-1">Metrics</p>
+                    <p class="text-emerald-400 text-[10px]">Multiple %, $, hours &mdash; good density</p>
+                </div>
+                <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-4 text-center">
+                    <p class="font-mono-num text-2xl font-bold text-emerald-600">7/10</p>
+                    <p class="text-emerald-700 text-xs font-semibold mt-1">How / Method</p>
+                    <p class="text-emerald-400 text-[10px]">FMEA, EPDP, Systems Eng shown in context</p>
+                </div>
+                <div class="bg-amber-50 border border-amber-200 rounded-xl p-4 text-center">
+                    <p class="font-mono-num text-2xl font-bold text-amber-500">5/10</p>
+                    <p class="text-amber-700 text-xs font-semibold mt-1">Why / Business Impact</p>
+                    <p class="text-amber-400 text-[10px]">Some $ exist but most metrics lack CEO-level framing</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Verdict -->
+        <div class="bg-amber-800 text-white p-6">
+            <p class="font-bold text-lg mb-2">Verdict: "The Achiever" Tier &mdash; Strong Foundation, Missing the Final Layer</p>
+            <p class="text-amber-100 text-sm">This resume is significantly stronger than most. Subodh has real metrics &mdash; 70% defect reductions, 90% repeat issue elimination, $125K/year savings, $500K in grants, 350+ engineering hours saved. Those numbers are rare and valuable. The problem: they're buried in bullets that are 3&ndash;4 lines long, the "before" state is never painted (no Dragon Slayer framing), and most metrics aren't anchored to a dollar amount or CEO-level outcome. The resume also has 10 bullets for the current role &mdash; it should have 5 of the absolute best. With tighter editing, Dragon Slayer context, and dollar translation on the strongest metrics, this resume could reach 80&ndash;85.</p>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SECTION 2: KEY ISSUES IDENTIFIED             -->
+    <!-- ============================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 p-8 page-break">
+        <div class="flex items-center gap-3 mb-6">
+            <div class="w-8 h-8 rounded-lg bg-red-500 text-white flex items-center justify-center text-sm font-bold">2</div>
+            <h2 class="text-2xl font-extrabold text-slate-900">Key Issues Identified</h2>
+        </div>
+
+        <div class="space-y-4">
+            <div class="flex items-start gap-3 bg-red-50 rounded-xl p-5 border border-red-200 keep-together">
+                <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-red-600 text-white font-bold text-sm flex-shrink-0">1</span>
+                <div>
+                    <p class="font-bold text-red-900">Bullets are too long &mdash; 3&ndash;4 lines each, trying to do too much</p>
+                    <p class="text-red-700 text-sm mt-1">Almost every bullet crams 2&ndash;3 separate accomplishments into one sentence. Example: the MY26 bullet packs in <strong>8 features, 9 engineers, EPDP gates, AND on-time release</strong> &mdash; that's 4 separate proof points fighting for attention in one sentence. The reader skims and retains none of it. Per the Impact Bullet Builder: <strong>one bullet = one accomplishment = one impact</strong>. Split the strongest metrics into their own bullets, cut the weakest ones entirely.</p>
+                </div>
+            </div>
+
+            <div class="flex items-start gap-3 bg-red-50 rounded-xl p-5 border border-red-200 keep-together">
+                <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-red-600 text-white font-bold text-sm flex-shrink-0">2</span>
+                <div>
+                    <p class="font-bold text-red-900">No Dragon Slayer framing on any bullet</p>
+                    <p class="text-red-700 text-sm mt-1">"Reduced repeat defects by 70%" is a great metric &mdash; but the reader doesn't know what was broken before. Was there a crisis? Were defects climbing? Was a program at risk of missing launch? Per the <strong>Dragon Slayer</strong> technique: paint the monster first, THEN show how you slayed it. "Repeat defects on the MY26 program were trending 3x above the prior year; implemented systematic root cause tracking that reduced CARs by 70% YoY" &mdash; now the reader feels the weight of the result.</p>
+                </div>
+            </div>
+
+            <div class="flex items-start gap-3 bg-red-50 rounded-xl p-5 border border-red-200 keep-together">
+                <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-red-600 text-white font-bold text-sm flex-shrink-0">3</span>
+                <div>
+                    <p class="font-bold text-red-900">"Over the years" appears multiple times &mdash; vague and weakens the metric</p>
+                    <p class="text-red-700 text-sm mt-1">"Reduced repeat issues by 50% over the years" and "achieving 90% repeat defect reduction over the years" &mdash; over HOW many years? 1 year? 5 years? This vague phrasing makes impressive numbers feel accidental rather than intentional. Replace with a specific timeframe: "within 18 months," "across 3 model years," "over a 2-year production cycle." Precision signals credibility.</p>
+                </div>
+            </div>
+
+            <div class="flex items-start gap-3 bg-red-50 rounded-xl p-5 border border-red-200 keep-together">
+                <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-red-600 text-white font-bold text-sm flex-shrink-0">4</span>
+                <div>
+                    <p class="font-bold text-red-900">Too many bullets on the current role &mdash; 10 is too many</p>
+                    <p class="text-red-700 text-sm mt-1">The Program Quality Engineer role has 10 bullets. A hiring manager or recruiter spends 6&ndash;8 seconds per section. With 10 bullets, the strongest accomplishments (70% defect reduction, 350+ hours saved, 75% frame rework reduction) are competing for attention with weak bullets like "Successfully executed a special quality assurance project for 135 PMGNs" &mdash; which says nothing about the result. <strong>Keep 4&ndash;5 of the absolute best. Cut the rest ruthlessly.</strong></p>
+                </div>
+            </div>
+
+            <div class="flex items-start gap-3 bg-red-50 rounded-xl p-5 border border-red-200 keep-together">
+                <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-red-600 text-white font-bold text-sm flex-shrink-0">5</span>
+                <div>
+                    <p class="font-bold text-red-900">"Helped identifying" &mdash; hedge language + grammatical error</p>
+                    <p class="text-red-700 text-sm mt-1">"Helped identifying and escalated program risks..." is both grammatically incorrect ("helped identify") and uses hedge language. "Helped" is the weakest opener you can use &mdash; it signals you were adjacent to the work, not doing it. Per the <strong>Me-in-We Extractor</strong>: what specifically did YOU identify? What risk? What was the quantified impact? If the answer is "I found the sensor support failure mode that was going to delay Yield 3.0" &mdash; say that.</p>
+                </div>
+            </div>
+
+            <div class="flex items-start gap-3 bg-amber-50 rounded-xl p-5 border border-amber-200 keep-together">
+                <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-amber-500 text-white font-bold text-sm flex-shrink-0">6</span>
+                <div>
+                    <p class="font-bold text-amber-900">Summary section is generic claims without proof</p>
+                    <p class="text-amber-700 text-sm mt-1">"Known for execution, flexibility, and agility" and "Data driven decision maker with strong analytical skills" &mdash; these are <strong>BS Meter</strong> violations. Anyone can claim these traits. A summary should be the highlight reel: "Quality engineering leader with $125K+ in documented cost savings, 70&ndash;90% defect reductions across 4 combine programs, and $500K+ in secured research grants." Let the numbers prove the execution and the analytical skills.</p>
+                </div>
+            </div>
+
+            <div class="flex items-start gap-3 bg-amber-50 rounded-xl p-5 border border-amber-200 keep-together">
+                <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-amber-500 text-white font-bold text-sm flex-shrink-0">7</span>
+                <div>
+                    <p class="font-bold text-amber-900">Weak bullets taking up space alongside strong ones</p>
+                    <p class="text-amber-700 text-sm mt-1">"Successfully executed a special quality assurance project for 135 PMGNs" (what project? what result?), "Revised HX work instructions..." (task description with no metric), and "Planned and executed educational and training programs..." (no numbers, no impact). These dilute the resume. The $125K savings at Pella, the $250K bonus in India, and the 70%+ defect reductions at Deere &mdash; THOSE should dominate. Remove anything that can't answer "so what?"</p>
+                </div>
+            </div>
+
+            <div class="flex items-start gap-3 bg-amber-50 rounded-xl p-5 border border-amber-200 keep-together">
+                <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-amber-500 text-white font-bold text-sm flex-shrink-0">8</span>
+                <div>
+                    <p class="font-bold text-amber-900">Metrics exist but most aren't translated to dollars</p>
+                    <p class="text-amber-700 text-sm mt-1">"Saved 350+ engineering hours" &mdash; at what loaded rate? If an engineer's loaded cost is ~$80/hr, that's $28,000+/year in recovered capacity. "Reduced FEE frame rework by 75% (30 hrs/week saved)" &mdash; that's potentially $125K+/year in labor savings. The numbers are strong enough to translate &mdash; they just haven't been. A few dollar anchors on the biggest metrics would push this resume from Achiever to Impact Standard.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SECTION 3: BULLET-BY-BULLET BREAKDOWN        -->
+    <!-- ============================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 p-8 page-break">
+        <div class="flex items-center gap-3 mb-2">
+            <div class="w-8 h-8 rounded-lg bg-indigo-600 text-white flex items-center justify-center text-sm font-bold">3</div>
+            <h2 class="text-2xl font-extrabold text-slate-900">Bullet-by-Bullet Breakdown</h2>
+        </div>
+        <p class="text-slate-500 text-sm mb-6">Each bullet scored on the Impact Bullet Builder&trade; scale: <strong class="text-emerald-600">Strong (7&ndash;10)</strong>, <strong class="text-amber-600">Needs Work (4&ndash;6)</strong>, <strong class="text-red-600">Weak (1&ndash;3)</strong></p>
+
+        <!-- John Deere - Program Quality Engineer -->
+        <div class="mb-8">
+            <h3 class="text-lg font-extrabold text-slate-900 mb-1">Program Quality Engineer &mdash; John Deere (2017&ndash;Present)</h3>
+            <p class="text-slate-400 text-xs mb-4">Current role &mdash; 10 bullets listed, recommend trimming to 5</p>
+
+            <div class="space-y-4">
+                <!-- Bullet 1 -->
+                <div class="border-l-4 border-emerald-500 pl-4 keep-together">
+                    <div class="flex items-center gap-2 mb-1">
+                        <span class="font-mono-num text-xs font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded">7/10</span>
+                        <span class="text-xs text-emerald-600 font-semibold">STRONG</span>
+                    </div>
+                    <p class="text-sm text-slate-600 italic mb-2">"Led end-to-end quality delivery for the MY26 Large Combine program across 8 customer-facing features...working with 9 quality engineers through all EPDP gates to on-time release."</p>
+                    <p class="text-sm text-slate-700"><strong>What works:</strong> Scope (8 features, 9 engineers), specific program name, clear outcome (on-time release).</p>
+                    <p class="text-sm text-slate-700"><strong>What's missing:</strong> What was at stake if it WASN'T on time? Revenue protected? What was the dollar value of launching on schedule? Dragon Slayer framing would elevate this significantly.</p>
+                </div>
+
+                <!-- Bullet 2 -->
+                <div class="border-l-4 border-emerald-500 pl-4 keep-together">
+                    <div class="flex items-center gap-2 mb-1">
+                        <span class="font-mono-num text-xs font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded">8/10</span>
+                        <span class="text-xs text-emerald-600 font-semibold">STRONG</span>
+                    </div>
+                    <p class="text-sm text-slate-600 italic mb-2">"Reduced repeat defects (CARs) by 70% year-over-year on the MY26 program by implementing systematic root cause tracking, resolved 80+ new non-conformances..."</p>
+                    <p class="text-sm text-slate-700"><strong>What works:</strong> Excellent metric (70%), clear method, volume numbers (80+ NCCAs, 1,400 events). One of the strongest bullets on the resume.</p>
+                    <p class="text-sm text-slate-700"><strong>What's missing:</strong> Too long &mdash; this is 2&ndash;3 bullets jammed into one. The "20%+ improvement in customer productivity" at the end feels tacked on. Split: make the 70% CAR reduction its own bullet, and the 1,400 events its own.</p>
+                </div>
+
+                <!-- Bullet 3 -->
+                <div class="border-l-4 border-emerald-500 pl-4 keep-together">
+                    <div class="flex items-center gap-2 mb-1">
+                        <span class="font-mono-num text-xs font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded">7/10</span>
+                        <span class="text-xs text-emerald-600 font-semibold">STRONG</span>
+                    </div>
+                    <p class="text-sm text-slate-600 italic mb-2">"Delivered the MY25 Yield 3.0 yield monitoring program using a Systems Engineering approach, achieving 90% repeat defect reduction..."</p>
+                    <p class="text-sm text-slate-700"><strong>What works:</strong> 90% is an outstanding metric. Systems Engineering approach shows methodology. Stakeholder visibility (factory leadership, product council).</p>
+                    <p class="text-sm text-slate-700"><strong>What's missing:</strong> "Over the years" is vague. Replace with a specific timeframe. Also too long &mdash; mixing the metric with the stakeholder presentations weakens both.</p>
+                </div>
+
+                <!-- Bullet 4 -->
+                <div class="border-l-4 border-emerald-500 pl-4 keep-together">
+                    <div class="flex items-center gap-2 mb-1">
+                        <span class="font-mono-num text-xs font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded">7/10</span>
+                        <span class="text-xs text-emerald-600 font-semibold">STRONG</span>
+                    </div>
+                    <p class="text-sm text-slate-600 italic mb-2">"Reduced pre-production wire harness failures across 80+ machines by collaborating with suppliers and design engineers..."</p>
+                    <p class="text-sm text-slate-700"><strong>What works:</strong> Proactive quality work (before machines left the factory), real technical detail, volume (200+ NCCAs, 500 events, 50% reduction).</p>
+                    <p class="text-sm text-slate-700"><strong>What's missing:</strong> "Over the years" again. What was the cost of a single wire harness failure in the field? That dollar number would make this bullet unforgettable.</p>
+                </div>
+
+                <!-- Bullet 5 -->
+                <div class="border-l-4 border-amber-500 pl-4 keep-together">
+                    <div class="flex items-center gap-2 mb-1">
+                        <span class="font-mono-num text-xs font-bold text-amber-600 bg-amber-50 px-2 py-0.5 rounded">6/10</span>
+                        <span class="text-xs text-amber-600 font-semibold">NEEDS WORK</span>
+                    </div>
+                    <p class="text-sm text-slate-600 italic mb-2">"Established the first-ever Verification Build (VB) process for wire harness programs..."</p>
+                    <p class="text-sm text-slate-700"><strong>What works:</strong> "First-ever" is powerful &mdash; shows innovation. "Influencing without authority" is a leadership signal.</p>
+                    <p class="text-sm text-slate-700"><strong>What's missing:</strong> So what? What happened after the VB process was established? How many defects did it prevent? How much time or cost did it save? The result is completely absent.</p>
+                </div>
+
+                <!-- Bullet 6 -->
+                <div class="border-l-4 border-emerald-500 pl-4 keep-together">
+                    <div class="flex items-center gap-2 mb-1">
+                        <span class="font-mono-num text-xs font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded">7/10</span>
+                        <span class="text-xs text-emerald-600 font-semibold">STRONG</span>
+                    </div>
+                    <p class="text-sm text-slate-600 italic mb-2">"Drove quality for sensors and electrical components integration...Completed 126 sensor application reviews...250+ parts across FMEA, DPAR, PPAP, and NCCA processes &mdash; reducing repeat issues by 90%."</p>
+                    <p class="text-sm text-slate-700"><strong>What works:</strong> Extremely specific (126 reviews, 250+ parts, 90% reduction). Shows breadth of quality processes.</p>
+                    <p class="text-sm text-slate-700"><strong>What's missing:</strong> "Drove quality" is a vague opener. Start with the result: "Reduced sensor-related repeat issues by 90%..."</p>
+                </div>
+
+                <!-- Bullet 7 -->
+                <div class="border-l-4 border-red-500 pl-4 keep-together">
+                    <div class="flex items-center gap-2 mb-1">
+                        <span class="font-mono-num text-xs font-bold text-red-600 bg-red-50 px-2 py-0.5 rounded">2/10</span>
+                        <span class="text-xs text-red-600 font-semibold">WEAK &mdash; CUT</span>
+                    </div>
+                    <p class="text-sm text-slate-600 italic mb-2">"Successfully executed a special quality assurance project for 135 PMGNs."</p>
+                    <p class="text-sm text-slate-700"><strong>Problem:</strong> "Successfully executed" is filler. What was the project? What was the outcome? What was special about it? This bullet says nothing about impact. <strong>Recommendation: Remove entirely unless you can attach a specific result.</strong></p>
+                </div>
+
+                <!-- Bullet 8 -->
+                <div class="border-l-4 border-emerald-500 pl-4 keep-together">
+                    <div class="flex items-center gap-2 mb-1">
+                        <span class="font-mono-num text-xs font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded">8/10</span>
+                        <span class="text-xs text-emerald-600 font-semibold">STRONG</span>
+                    </div>
+                    <p class="text-sm text-slate-600 italic mb-2">"Saved 350+ engineering hours by consolidating redundant FGR and DPAR review meetings into a unified process, later adopted globally..."</p>
+                    <p class="text-sm text-slate-700"><strong>What works:</strong> Clear metric, clear method, and the global adoption is a powerful proof point. This is one of the best bullets on the resume.</p>
+                    <p class="text-sm text-slate-700"><strong>What's missing:</strong> Translate the hours to dollars. At ~$80/hr loaded rate, that's ~$28,000+/year. That number makes this bullet hit harder.</p>
+                </div>
+
+                <!-- Bullet 9 -->
+                <div class="border-l-4 border-emerald-500 pl-4 keep-together">
+                    <div class="flex items-center gap-2 mb-1">
+                        <span class="font-mono-num text-xs font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded">7/10</span>
+                        <span class="text-xs text-emerald-600 font-semibold">STRONG</span>
+                    </div>
+                    <p class="text-sm text-slate-600 italic mb-2">"Reduced FEE frame rework by 75% during LPB activities (equivalent to 30 hours/week saved) and created a repair solution for the field..."</p>
+                    <p class="text-sm text-slate-700"><strong>What works:</strong> 75% reduction, 30 hrs/week is vivid. The field repair solution shows end-to-end ownership.</p>
+                    <p class="text-sm text-slate-700"><strong>What's missing:</strong> 30 hrs/week = ~$125K+/year in labor savings. Say it. Also, the automated data collection at the end is a separate accomplishment &mdash; give it its own bullet or cut it.</p>
+                </div>
+
+                <!-- Bullet 10 -->
+                <div class="border-l-4 border-red-500 pl-4 keep-together">
+                    <div class="flex items-center gap-2 mb-1">
+                        <span class="font-mono-num text-xs font-bold text-red-600 bg-red-50 px-2 py-0.5 rounded">3/10</span>
+                        <span class="text-xs text-red-600 font-semibold">WEAK &mdash; REWRITE OR CUT</span>
+                    </div>
+                    <p class="text-sm text-slate-600 italic mb-2">"Helped identifying and escalated program risks with quantified impact on a sensor support failures on Yield 3.0..."</p>
+                    <p class="text-sm text-slate-700"><strong>Problem:</strong> Grammatically incorrect ("helped identifying"), hedge language ("helped"), and vague. What specific risk? What was the quantified impact? What redesign? This bullet undersells what was likely meaningful work. Either rewrite with specifics or merge the Yield 3.0 content into bullet 3.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Module Leader -->
+        <div class="mb-8">
+            <h3 class="text-lg font-extrabold text-slate-900 mb-1">Module Leader, Quality Services &mdash; John Deere (2016&ndash;2017)</h3>
+            <div class="space-y-4">
+                <div class="border-l-4 border-emerald-500 pl-4 keep-together">
+                    <div class="flex items-center gap-2 mb-1">
+                        <span class="font-mono-num text-xs font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded">7/10</span>
+                        <span class="text-xs text-emerald-600 font-semibold">STRONG</span>
+                    </div>
+                    <p class="text-sm text-slate-600 italic mb-2">"Led a 35-inspector team across multiple shifts, managing qualification, staffing, scheduling, and performance, reducing absenteeism impact by ~20%..."</p>
+                    <p class="text-sm text-slate-700"><strong>What works:</strong> Team size (35), specific result (20% absenteeism reduction), shows people leadership.</p>
+                    <p class="text-sm text-slate-700"><strong>What's missing:</strong> What was the dollar or operational cost of absenteeism before? "Semi-automated staff planning" &mdash; what tool? How?</p>
+                </div>
+
+                <div class="border-l-4 border-emerald-500 pl-4 keep-together">
+                    <div class="flex items-center gap-2 mb-1">
+                        <span class="font-mono-num text-xs font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded">9/10</span>
+                        <span class="text-xs text-emerald-600 font-semibold">EXCELLENT</span>
+                    </div>
+                    <p class="text-sm text-slate-600 italic mb-2">"Implemented 100% cross-training of Combine and FEE line inspectors for the first time in HX history, eliminating overtime violations and saving ~$30,000 per year..."</p>
+                    <p class="text-sm text-slate-700"><strong>What works:</strong> Dollar amount, "first time in HX history," clear cause-and-effect. <strong>This is the gold standard on this resume.</strong> It has the "what" (cross-training), the "first-ever" hook, and the "so what" ($30K/year). Every other bullet should aspire to this structure.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quality Engineer OFP -->
+        <div class="mb-8">
+            <h3 class="text-lg font-extrabold text-slate-900 mb-1">Quality Engineer &mdash; John Deere (2014&ndash;2016)</h3>
+            <div class="space-y-4">
+                <div class="border-l-4 border-emerald-500 pl-4 keep-together">
+                    <div class="flex items-center gap-2 mb-1">
+                        <span class="font-mono-num text-xs font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded">7/10</span>
+                        <span class="text-xs text-emerald-600 font-semibold">STRONG</span>
+                    </div>
+                    <p class="text-sm text-slate-600 italic mb-2">"Addressed the top 5 warranty issues on combines, eliminating 50% of associated defects..."</p>
+                    <p class="text-sm text-slate-700"><strong>What works:</strong> "Top 5 warranty issues" gives immediate context. 50% elimination + 80% ladder damage reduction. Impressive breadth.</p>
+                    <p class="text-sm text-slate-700"><strong>What's missing:</strong> The warranty cost savings. If the top 5 warranty issues were costing $X million per year and you cut them by 50%, that's the headline.</p>
+                </div>
+
+                <div class="border-l-4 border-red-500 pl-4 keep-together">
+                    <div class="flex items-center gap-2 mb-1">
+                        <span class="font-mono-num text-xs font-bold text-red-600 bg-red-50 px-2 py-0.5 rounded">3/10</span>
+                        <span class="text-xs text-red-600 font-semibold">WEAK &mdash; CUT</span>
+                    </div>
+                    <p class="text-sm text-slate-600 italic mb-2">"Revised HX work instructions for non-conforming material processes and timelines, standardizing quality response across the factory."</p>
+                    <p class="text-sm text-slate-700"><strong>Problem:</strong> Pure task description. No metric, no outcome, no "so what." What did standardizing the response actually change? Did response time improve? Did defects decrease? Without a result, this is filler.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Earlier roles - abbreviated -->
+        <div class="mb-8">
+            <h3 class="text-lg font-extrabold text-slate-900 mb-1">Earlier Roles &mdash; Highlights</h3>
+            <div class="space-y-4">
+                <div class="border-l-4 border-emerald-500 pl-4 keep-together">
+                    <div class="flex items-center gap-2 mb-1">
+                        <span class="font-mono-num text-xs font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded">9/10</span>
+                        <span class="text-xs text-emerald-600 font-semibold">EXCELLENT</span>
+                    </div>
+                    <p class="text-sm text-slate-600 italic mb-2"><strong>Pella:</strong> "Reduced daily part rejection by 20% on painted mullions and jambs (~$125,000/year savings)..."</p>
+                    <p class="text-sm text-slate-700">Dollar amount + percentage + root cause detail. Outstanding bullet. One of the best on the entire resume.</p>
+                </div>
+
+                <div class="border-l-4 border-emerald-500 pl-4 keep-together">
+                    <div class="flex items-center gap-2 mb-1">
+                        <span class="font-mono-num text-xs font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded">9/10</span>
+                        <span class="text-xs text-emerald-600 font-semibold">EXCELLENT</span>
+                    </div>
+                    <p class="text-sm text-slate-600 italic mb-2"><strong>Univ. of Arkansas:</strong> "Secured over $500,000 in grants as Principal Investigator and collaborator. Published 35+ peer-reviewed articles..."</p>
+                    <p class="text-sm text-slate-700">$500K in grants + 35 publications + named organizations. No notes &mdash; keep as-is.</p>
+                </div>
+
+                <div class="border-l-4 border-emerald-500 pl-4 keep-together">
+                    <div class="flex items-center gap-2 mb-1">
+                        <span class="font-mono-num text-xs font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded">8/10</span>
+                        <span class="text-xs text-emerald-600 font-semibold">STRONG</span>
+                    </div>
+                    <p class="text-sm text-slate-600 italic mb-2"><strong>Walchandnagar Industries:</strong> "Led QC/QA activities for a 6,000 metric ton fabricated nuclear power plant steel structure...contributing to a $250,000 early-completion bonus..."</p>
+                    <p class="text-sm text-slate-700">Impressive scope (nuclear + defense), dollar amount, government-level recognition. Very strong.</p>
+                </div>
+
+                <div class="border-l-4 border-red-500 pl-4 keep-together">
+                    <div class="flex items-center gap-2 mb-1">
+                        <span class="font-mono-num text-xs font-bold text-red-600 bg-red-50 px-2 py-0.5 rounded">3/10</span>
+                        <span class="text-xs text-red-600 font-semibold">WEAK</span>
+                    </div>
+                    <p class="text-sm text-slate-600 italic mb-2"><strong>Sr. Research Assistant:</strong> "Completed 3 major precision agriculture research projects...within time..."</p>
+                    <p class="text-sm text-slate-700">"Within time" is filler, reads like a course summary. Either add publication impact (citations, adoption) or condense to one line.</p>
+                </div>
+
+                <div class="border-l-4 border-amber-500 pl-4 keep-together">
+                    <div class="flex items-center gap-2 mb-1">
+                        <span class="font-mono-num text-xs font-bold text-amber-600 bg-amber-50 px-2 py-0.5 rounded">4/10</span>
+                        <span class="text-xs text-amber-600 font-semibold">NEEDS WORK</span>
+                    </div>
+                    <p class="text-sm text-slate-600 italic mb-2"><strong>Elpro International:</strong> "Increased manufacturing efficiency by 3%..."</p>
+                    <p class="text-sm text-slate-700">3% is a small number with no dollar context. Given this is 30 years ago, consider whether this role even needs a bullet. If kept, anchor the 3% to production volume or cost impact.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SECTION 4: REWRITTEN RESUME                  -->
+    <!-- ============================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 p-8 page-break">
+        <div class="flex items-center gap-3 mb-2">
+            <div class="w-8 h-8 rounded-lg bg-emerald-700 text-white flex items-center justify-center text-sm font-bold">4</div>
+            <h2 class="text-2xl font-extrabold text-slate-900">Rewritten Resume &mdash; Impact Bullet Builder&trade; Applied</h2>
+        </div>
+        <p class="text-slate-500 text-sm mb-8"><strong>[X]</strong> = placeholder where Subodh needs to provide missing information</p>
+
+        <div class="border-2 border-slate-200 rounded-2xl p-8 bg-slate-50">
+
+            <!-- Header -->
+            <div class="text-center mb-6 pb-6 border-b-2 border-slate-300">
+                <h3 class="text-2xl font-extrabold text-slate-900">Subodh Kulkarni, Ph.D.</h3>
+                <p class="text-slate-600 text-sm mt-1">Kulkarnisubodhs@johndeere.com | 479-595-2218 | US Citizen</p>
+            </div>
+
+            <!-- Summary -->
+            <div class="mb-6">
+                <h4 class="text-sm font-extrabold text-slate-900 uppercase tracking-widest border-b-2 border-emerald-600 pb-1 mb-3">Summary</h4>
+                <p class="text-sm text-slate-700">Quality engineering leader with 30+ years across OEMs, defense, aerospace, and precision agriculture. Drove 70&ndash;90% repeat defect reductions across multiple John Deere combine programs, delivered $125K+ in documented annual cost savings at Pella, and secured $500K+ in research grants. Systems Engineering certified (Caltech). Partnered with suppliers, design engineers, and cross-functional teams to ship complex programs on time while reducing field failures.</p>
+            </div>
+
+            <!-- Experience -->
+            <div class="mb-6">
+                <h4 class="text-sm font-extrabold text-slate-900 uppercase tracking-widest border-b-2 border-emerald-600 pb-1 mb-3">Experience</h4>
+
+                <!-- JD - PQE -->
+                <div class="mb-5">
+                    <div class="flex justify-between items-start mb-2">
+                        <div>
+                            <p class="font-bold text-slate-900">Program Quality Engineer</p>
+                            <p class="text-slate-600 text-sm">John Deere Research and Development Center</p>
+                        </div>
+                        <p class="text-slate-500 text-sm">2017 &ndash; Present</p>
+                    </div>
+                    <ul class="space-y-3 text-sm text-slate-700 ml-4">
+                        <li class="relative pl-4">
+                            <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                            <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-0.5 rounded mr-1">REWRITTEN</span>
+                            Reduced repeat defects (CARs) by 70% year-over-year on the MY26 Large Combine program &mdash; <strong>[X &mdash; what was the defect trend before? Were CARs climbing?]</strong> &mdash; by implementing systematic root cause tracking across 8 customer-facing features and coordinating resolution of 80+ non-conformances with 9 quality engineers through all EPDP gates.
+                        </li>
+                        <li class="relative pl-4">
+                            <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                            <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-0.5 rounded mr-1">REWRITTEN</span>
+                            Achieved 90% repeat defect reduction on the MY25 Yield 3.0 yield monitoring program within <strong>[X &mdash; specific timeframe, e.g., "2 model years"]</strong> using a Systems Engineering approach, resolving 30+ NCCAs and ~200 field events while presenting risk mitigation plans to factory leadership and product council.
+                        </li>
+                        <li class="relative pl-4">
+                            <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                            <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-0.5 rounded mr-1">REWRITTEN</span>
+                            Saved an estimated <strong>$28,000+/year [confirm rate]</strong> in engineering capacity by consolidating redundant FGR and DPAR review meetings into a single unified process &mdash; eliminating 350+ hours/year of duplicate reviews; the new process was later adopted globally at the direction of the Global Quality Manager.
+                        </li>
+                        <li class="relative pl-4">
+                            <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                            <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-0.5 rounded mr-1">REWRITTEN</span>
+                            Reduced FEE frame rework by 75% during LPB activities, recovering approximately 30 hours/week (<strong>~$[X]/year</strong>) in production labor &mdash; and designed a field repair solution that prevented <strong>[X &mdash; how many?]</strong> machines from requiring factory returns.
+                        </li>
+                        <li class="relative pl-4">
+                            <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                            <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-0.5 rounded mr-1">REWRITTEN</span>
+                            Reduced sensor-related repeat issues by 90% on the Grizzly Combine and Caribou FEE programs by executing 126 sensor application reviews and 250+ part evaluations across FMEA, DPAR, PPAP, and NCCA processes &mdash; covering speed, temperature, pressure, proximity, and position sensor types.
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- JD - Module Leader -->
+                <div class="mb-5">
+                    <div class="flex justify-between items-start mb-2">
+                        <div>
+                            <p class="font-bold text-slate-900">Module Leader, Quality Services</p>
+                            <p class="text-slate-600 text-sm">John Deere Harvester Works (Combines)</p>
+                        </div>
+                        <p class="text-slate-500 text-sm">2016 &ndash; 2017</p>
+                    </div>
+                    <ul class="space-y-3 text-sm text-slate-700 ml-4">
+                        <li class="relative pl-4">
+                            <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                            <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-0.5 rounded mr-1">KEPT</span>
+                            Implemented 100% cross-training of Combine and FEE line inspectors for the first time in HX history, eliminating overtime violations and saving ~$30,000/year during multi-shift factory operations.
+                        </li>
+                        <li class="relative pl-4">
+                            <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                            <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-0.5 rounded mr-1">REWRITTEN</span>
+                            Led a 35-inspector team across multiple shifts; reduced absenteeism-related production disruptions by ~20% by building a semi-automated staffing model that matched inspector qualifications to line requirements in real time.
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- JD - Quality Engineer -->
+                <div class="mb-5">
+                    <div class="flex justify-between items-start mb-2">
+                        <div>
+                            <p class="font-bold text-slate-900">Quality Engineer, OFP</p>
+                            <p class="text-slate-600 text-sm">John Deere Harvester Works (Combines)</p>
+                        </div>
+                        <p class="text-slate-500 text-sm">2014 &ndash; 2016</p>
+                    </div>
+                    <ul class="space-y-3 text-sm text-slate-700 ml-4">
+                        <li class="relative pl-4">
+                            <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                            <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-0.5 rounded mr-1">REWRITTEN</span>
+                            Eliminated 50% of defects associated with the top 5 combine warranty issues &mdash; including an 80% reduction in ladder damage &mdash; by driving corrective actions across suppliers and cross-functional stakeholders, reducing warranty costs by an estimated <strong>$[X]/year</strong>.
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Pella -->
+                <div class="mb-5">
+                    <div class="flex justify-between items-start mb-2">
+                        <div>
+                            <p class="font-bold text-slate-900">Quality Project Manager</p>
+                            <p class="text-slate-600 text-sm">Pella (Windows, Curtain Wall, and Doors)</p>
+                        </div>
+                        <p class="text-slate-500 text-sm">2011 &ndash; 2012</p>
+                    </div>
+                    <ul class="space-y-3 text-sm text-slate-700 ml-4">
+                        <li class="relative pl-4">
+                            <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                            <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-0.5 rounded mr-1">KEPT</span>
+                            Reduced daily part rejection by 20% on painted mullions and jambs (~$125,000/year savings) by revising and implementing preventive maintenance plans for paint curing ovens and conveyor systems, targeting dust and flake deposition root causes.
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- University of Arkansas -->
+                <div class="mb-5">
+                    <div class="flex justify-between items-start mb-2">
+                        <div>
+                            <p class="font-bold text-slate-900">Farm Machinery Specialist</p>
+                            <p class="text-slate-600 text-sm">Division of Agriculture, University of Arkansas</p>
+                        </div>
+                        <p class="text-slate-500 text-sm">2007 &ndash; 2011</p>
+                    </div>
+                    <ul class="space-y-3 text-sm text-slate-700 ml-4">
+                        <li class="relative pl-4">
+                            <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                            <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-0.5 rounded mr-1">KEPT</span>
+                            Secured over $500,000 in grants as Principal Investigator and collaborator. Published 35+ peer-reviewed articles on precision agriculture and machinery performance, earning documented recognition from John Deere, USDA, Cotton Incorporated, and multiple universities.
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- India -->
+                <div class="mb-5">
+                    <div class="flex justify-between items-start mb-2">
+                        <div>
+                            <p class="font-bold text-slate-900">Deputy Chief Engineer (QC &amp; R&amp;D)</p>
+                            <p class="text-slate-600 text-sm">Walchandnagar Industries Limited (Heavy Engineering), India</p>
+                        </div>
+                        <p class="text-slate-500 text-sm">1995 &ndash; 2001</p>
+                    </div>
+                    <ul class="space-y-3 text-sm text-slate-700 ml-4">
+                        <li class="relative pl-4">
+                            <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                            <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-0.5 rounded mr-1">KEPT</span>
+                            Led QC/QA activities for a 6,000 metric ton fabricated nuclear power plant steel structure, plus defense projects including rocket nozzles, booster assemblies, and missile launchers &mdash; contributing to a $250,000 early-completion bonus from the Government of India.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Removed bullets callout -->
+            <div class="bg-red-50 border border-red-200 rounded-xl p-5 mb-6">
+                <p class="font-bold text-red-900 text-sm mb-2">Bullets Removed (Low Impact)</p>
+                <ul class="text-red-700 text-sm space-y-1">
+                    <li>&bull; "Successfully executed a special quality assurance project for 135 PMGNs" &mdash; no result stated</li>
+                    <li>&bull; "Helped identifying and escalated program risks..." &mdash; hedge language, no specifics</li>
+                    <li>&bull; "Revised HX work instructions..." &mdash; task description, no metric</li>
+                    <li>&bull; "Planned and executed educational and training programs..." &mdash; no numbers or impact</li>
+                    <li>&bull; "Completed 3 major precision agriculture research projects...within time" &mdash; filler language</li>
+                    <li>&bull; "Increased manufacturing efficiency by 3%..." &mdash; small number, 30 years ago, no dollar anchor</li>
+                    <li>&bull; Logistics Engineer at J.B. Hunt &mdash; consider removing unless targeting logistics roles</li>
+                </ul>
+            </div>
+
+            <!-- Education, Certs, Skills remain as-is -->
+            <div class="bg-slate-100 border border-slate-200 rounded-xl p-5">
+                <p class="font-bold text-slate-700 text-sm">Education, Certifications, Technical Skills, and Leadership sections:</p>
+                <p class="text-slate-500 text-sm mt-1">These sections are solid as-is. The Systems Engineering certification from Caltech and the NDE certifications add credibility. The community service section (language school, STEAM On Wheels) shows well-rounded leadership. No changes recommended.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SECTION 5: NEXT STEPS                        -->
+    <!-- ============================================ -->
+    <section class="bg-emerald-900 text-white rounded-2xl shadow-lg p-8">
+        <div class="flex items-center gap-3 mb-4">
+            <div class="w-8 h-8 rounded-lg bg-lime-400 text-emerald-900 flex items-center justify-center text-sm font-bold">5</div>
+            <h2 class="text-2xl font-extrabold">Next Steps</h2>
+        </div>
+        <div class="space-y-3">
+            <div class="flex items-start gap-3">
+                <div class="w-7 h-7 rounded-full bg-lime-400 text-emerald-900 flex items-center justify-center font-bold text-sm flex-shrink-0">1</div>
+                <div>
+                    <p class="font-bold">Fill in the [X] placeholders</p>
+                    <p class="text-emerald-300 text-sm">The rewritten bullets have specific gaps noted. Only Subodh knows the exact numbers &mdash; before/after defect counts, dollar values of warranty savings, specific timeframes.</p>
+                </div>
+            </div>
+            <div class="flex items-start gap-3">
+                <div class="w-7 h-7 rounded-full bg-lime-400 text-emerald-900 flex items-center justify-center font-bold text-sm flex-shrink-0">2</div>
+                <div>
+                    <p class="font-bold">Translate hours saved to dollars</p>
+                    <p class="text-emerald-300 text-sm">350+ hours at ~$80/hr = ~$28K. 30 hrs/week at ~$40/hr = ~$62K+/year. These dollar anchors are what separate a 62 from an 80+.</p>
+                </div>
+            </div>
+            <div class="flex items-start gap-3">
+                <div class="w-7 h-7 rounded-full bg-lime-400 text-emerald-900 flex items-center justify-center font-bold text-sm flex-shrink-0">3</div>
+                <div>
+                    <p class="font-bold">Cut to 2 pages max</p>
+                    <p class="text-emerald-300 text-sm">With 30+ years, 2 pages is acceptable. But the current version is too dense. Use the rewritten bullets above, drop the removed bullets, and condense the older roles (2001 and earlier) to 1 bullet each.</p>
+                </div>
+            </div>
+            <div class="flex items-start gap-3">
+                <div class="w-7 h-7 rounded-full bg-lime-400 text-emerald-900 flex items-center justify-center font-bold text-sm flex-shrink-0">4</div>
+                <div>
+                    <p class="font-bold">Add Dragon Slayer framing to the top 3 bullets</p>
+                    <p class="text-emerald-300 text-sm">The 70% CAR reduction, the 90% repeat defect elimination, and the 75% rework reduction &mdash; all three need a "before" state. What was broken? What was at risk? Paint the monster, then show the slay.</p>
+                </div>
+            </div>
+        </div>
+        <div class="mt-6 pt-4 border-t border-emerald-700 text-center">
+            <p class="text-emerald-300 text-sm">Analysis by <strong class="text-white">LaunchToLead</strong> using the Impact Bullet Builder&trade; framework</p>
+            <p class="text-emerald-400 text-xs mt-1">launchtolead.io | mansour@launchtolead.io</p>
+        </div>
+    </section>
+
+</div>
+
+</body>
+</html>
