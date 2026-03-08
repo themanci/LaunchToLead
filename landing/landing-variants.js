@@ -201,9 +201,9 @@
         }
     }
 
-    function firePageView() {
+    function fireVariantView() {
         if (typeof gtag === 'function') {
-            gtag('event', 'page_view', {
+            gtag('event', 'variant_view', {
                 page_variant: window.__ltlVariantId || 'v1-control'
             });
         }
@@ -214,10 +214,10 @@
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', function () {
             applyVariant(key);
-            firePageView();
+            fireVariantView();
         });
     } else {
         applyVariant(key);
-        firePageView();
+        fireVariantView();
     }
 })();
