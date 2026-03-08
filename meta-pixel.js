@@ -89,7 +89,7 @@ function _ltlGetEventUserData() {
     if (path === '/' || path === '/index.html') {
         contentData = { content_name: 'Homepage', content_category: 'Landing Page' };
     } else if (path === '/launch.html') {
-        contentData = { content_name: 'Launch Path', content_category: 'Product Page', content_type: 'product' };
+        contentData = { content_name: 'Engineering Career Accelerator', content_category: 'Product Page', content_type: 'product' };
     } else if (path === '/accelerate.html') {
         contentData = { content_name: 'Accelerate Path', content_category: 'Product Page', content_type: 'product' };
     } else if (path === '/packages.html') {

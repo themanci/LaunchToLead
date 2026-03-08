@@ -1,6 +1,6 @@
 # Coaching Graduates — Referral Program
 
-## Launch Path Graduates
+## Engineering Career Accelerator Graduates
 
 | Name | Code | Referral Email Sent? |
 |------|------|---------------------|

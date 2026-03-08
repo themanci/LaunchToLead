@@ -9,10 +9,10 @@ Additional lead magnets are in the `archive/` folder for future use.
 
 ## ✅ ACTIVE LEAD MAGNETS (3)
 
-### **Launch Path**
+### **Engineering Career Accelerator**
 
 #### **Impact Equation Quick Start** (6 pages)
-**File:** `impact-equation-quick-start.html`
+**File:** `impact-bullet-builder.html`
 - **Target:** Entry-level engineers, job seekers, new grads
 - **Core Value:** Transform resume bullets in 30 minutes using the 4-part Impact Equation formula
 - **Popup Description:** "Impact Resume Toolkit"

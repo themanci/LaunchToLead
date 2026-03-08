@@ -19,7 +19,7 @@ const fs = require('fs');
 const leadMagnets = [
     {
         name: 'impact-equation',
-        html: 'active/impact-equation-quick-start-v4.html',
+        html: 'active/impact-bullet-builder.html',
         pdf: 'Impact-Bullet-Builder.pdf'
     }
 ];
@@ -86,7 +86,7 @@ async function generateLinkedInVariants(browser) {
 
     // 1. Render main guide once and grab pages 2–15
     console.log('  ⏳ Rendering main guide...');
-    const mainBuffer = await htmlToPdfBuffer(browser, 'active/impact-equation-quick-start-v4.html');
+    const mainBuffer = await htmlToPdfBuffer(browser, 'active/impact-bullet-builder.html');
     const mainDoc = await PDFDocument.load(mainBuffer);
     const mainPageCount = mainDoc.getPageCount();
     console.log(`     Main guide: ${mainPageCount} pages`);

@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page Variant System — Reference</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        @media print {
+            body { font-size: 11px; }
+            .no-print { display: none; }
+            .page-break { page-break-before: always; }
+        }
+    </style>
+</head>
+<body class="bg-white text-slate-800 antialiased">
+
+<div class="max-w-4xl mx-auto px-6 py-10">
+
+    <!-- Header -->
+    <div class="border-b-2 border-emerald-600 pb-4 mb-8">
+        <div class="flex items-center justify-between">
+            <div>
+                <h1 class="text-2xl font-extrabold text-slate-900">Landing Page A/B Variant System</h1>
+                <p class="text-sm text-slate-500 mt-1">Impact Bullet Equation Lead Magnet — launchtolead.io</p>
+            </div>
+            <div class="text-right text-xs text-slate-400">
+                <p>Last updated: March 8, 2026</p>
+                <p>File: <code class="bg-slate-100 px-1 rounded">landing/landing-variants.js</code></p>
+                <p>Page: <code class="bg-slate-100 px-1 rounded">landing/impact-bullet-equation.html</code></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- SECTION 1: The 5 Variants                     -->
+    <!-- ============================================ -->
+    <section class="mb-10">
+        <h2 class="text-lg font-bold text-emerald-700 uppercase tracking-wider mb-4">The 5 Variants</h2>
+
+        <!-- V1 -->
+        <div class="border border-slate-200 rounded-lg p-4 mb-3 bg-slate-50">
+            <div class="flex items-start justify-between mb-2">
+                <div>
+                    <span class="inline-block bg-slate-700 text-white text-[10px] font-bold px-2 py-0.5 rounded uppercase mr-2">V1</span>
+                    <span class="font-bold text-slate-900">Control</span>
+                </div>
+                <span class="text-xs text-slate-400">GA4 ID: <code class="bg-white px-1 rounded border">v1-control</code></span>
+            </div>
+            <div class="grid grid-cols-2 gap-4 text-sm">
+                <div>
+                    <p class="text-xs font-bold text-slate-500 uppercase mb-1">Headline</p>
+                    <p class="text-slate-800">"Get Your Free Resume Guide...in Under 30 Seconds."</p>
+                </div>
+                <div>
+                    <p class="text-xs font-bold text-slate-500 uppercase mb-1">Subtitle</p>
+                    <p class="text-slate-800">"The formula engineers have used to land offers at Google, SpaceX, Ford, John Deere and GE."</p>
+                </div>
+            </div>
+            <div class="mt-3 grid grid-cols-4 gap-3 text-xs">
+                <div><span class="font-bold text-slate-500">Form fields:</span> First Name + Email</div>
+                <div><span class="font-bold text-slate-500">Form position:</span> Below headline</div>
+                <div><span class="font-bold text-slate-500">CTA button:</span> "Get Your Free Guide"</div>
+                <div><span class="font-bold text-slate-500">Form prompt:</span> (none)</div>
+            </div>
+        </div>
+
+        <!-- V2 -->
+        <div class="border border-blue-200 rounded-lg p-4 mb-3 bg-blue-50/30">
+            <div class="flex items-start justify-between mb-2">
+                <div>
+                    <span class="inline-block bg-blue-600 text-white text-[10px] font-bold px-2 py-0.5 rounded uppercase mr-2">V2</span>
+                    <span class="font-bold text-slate-900">Paid — Graduating Soon</span>
+                    <span class="text-xs text-blue-500 ml-2">utm_content contains "graduating-soon"</span>
+                </div>
+                <span class="text-xs text-slate-400">GA4 ID: <code class="bg-white px-1 rounded border">v2-graduating-soon</code></span>
+            </div>
+            <div class="grid grid-cols-2 gap-4 text-sm">
+                <div>
+                    <p class="text-xs font-bold text-slate-500 uppercase mb-1">Headline</p>
+                    <p class="text-slate-800">"Resume Guide for Engineering Students"</p>
+                </div>
+                <div>
+                    <p class="text-xs font-bold text-slate-500 uppercase mb-1">Subtitle</p>
+                    <p class="text-slate-800">"Show the impact of your classwork, projects, and internships to hiring teams."</p>
+                </div>
+            </div>
+            <div class="mt-3 grid grid-cols-4 gap-3 text-xs">
+                <div><span class="font-bold text-slate-500">Form fields:</span> Email only</div>
+                <div><span class="font-bold text-slate-500">Form position:</span> Above headline</div>
+                <div><span class="font-bold text-slate-500">CTA button:</span> "Submit"</div>
+                <div><span class="font-bold text-slate-500">Form prompt:</span> "Where should I send it?"</div>
+            </div>
+        </div>
+
+        <!-- V3 -->
+        <div class="border border-blue-200 rounded-lg p-4 mb-3 bg-blue-50/30">
+            <div class="flex items-start justify-between mb-2">
+                <div>
+                    <span class="inline-block bg-blue-600 text-white text-[10px] font-bold px-2 py-0.5 rounded uppercase mr-2">V3</span>
+                    <span class="font-bold text-slate-900">Paid — Early-Career Engineers</span>
+                    <span class="text-xs text-blue-500 ml-2">utm_content contains "early-engineers"</span>
+                </div>
+                <span class="text-xs text-slate-400">GA4 ID: <code class="bg-white px-1 rounded border">v3-early-engineers</code></span>
+            </div>
+            <div class="grid grid-cols-2 gap-4 text-sm">
+                <div>
+                    <p class="text-xs font-bold text-slate-500 uppercase mb-1">Headline</p>
+                    <p class="text-slate-800">"Resume Guide for Early-Career Engineers"</p>
+                </div>
+                <div>
+                    <p class="text-xs font-bold text-slate-500 uppercase mb-1">Subtitle</p>
+                    <p class="text-slate-800">"Show the impact and value of your engineering experiences to hiring teams."</p>
+                </div>
+            </div>
+            <div class="mt-3 grid grid-cols-4 gap-3 text-xs">
+                <div><span class="font-bold text-slate-500">Form fields:</span> Email only</div>
+                <div><span class="font-bold text-slate-500">Form position:</span> Above headline</div>
+                <div><span class="font-bold text-slate-500">CTA button:</span> "Submit"</div>
+                <div><span class="font-bold text-slate-500">Form prompt:</span> "Where should I send it?"</div>
+            </div>
+        </div>
+
+        <!-- V4 -->
+        <div class="border border-blue-200 rounded-lg p-4 mb-3 bg-blue-50/30">
+            <div class="flex items-start justify-between mb-2">
+                <div>
+                    <span class="inline-block bg-blue-600 text-white text-[10px] font-bold px-2 py-0.5 rounded uppercase mr-2">V4</span>
+                    <span class="font-bold text-slate-900">Paid — Recently Graduated</span>
+                    <span class="text-xs text-blue-500 ml-2">utm_content contains "recently-graduated"</span>
+                </div>
+                <span class="text-xs text-slate-400">GA4 ID: <code class="bg-white px-1 rounded border">v4-recently-graduated</code></span>
+            </div>
+            <div class="grid grid-cols-2 gap-4 text-sm">
+                <div>
+                    <p class="text-xs font-bold text-slate-500 uppercase mb-1">Headline</p>
+                    <p class="text-slate-800">"Resume Guide for Recent Engineering Graduates"</p>
+                </div>
+                <div>
+                    <p class="text-xs font-bold text-slate-500 uppercase mb-1">Subtitle</p>
+                    <p class="text-slate-800">"Show the impact of your classwork, projects, and internships to hiring teams."</p>
+                </div>
+            </div>
+            <div class="mt-3 grid grid-cols-4 gap-3 text-xs">
+                <div><span class="font-bold text-slate-500">Form fields:</span> Email only</div>
+                <div><span class="font-bold text-slate-500">Form position:</span> Above headline</div>
+                <div><span class="font-bold text-slate-500">CTA button:</span> "Submit"</div>
+                <div><span class="font-bold text-slate-500">Form prompt:</span> "Where should I send it?"</div>
+            </div>
+        </div>
+
+        <!-- V5 -->
+        <div class="border border-emerald-200 rounded-lg p-4 mb-3 bg-emerald-50/30">
+            <div class="flex items-start justify-between mb-2">
+                <div>
+                    <span class="inline-block bg-emerald-600 text-white text-[10px] font-bold px-2 py-0.5 rounded uppercase mr-2">V5</span>
+                    <span class="font-bold text-slate-900">Unpaid — All Engineers</span>
+                    <span class="text-xs text-emerald-500 ml-2">No utm_content (organic, direct, social, Skool, etc.)</span>
+                </div>
+                <span class="text-xs text-slate-400">GA4 ID: <code class="bg-white px-1 rounded border">v5-organic</code></span>
+            </div>
+            <div class="grid grid-cols-2 gap-4 text-sm">
+                <div>
+                    <p class="text-xs font-bold text-slate-500 uppercase mb-1">Headline</p>
+                    <p class="text-slate-800">"Resume Guide for Engineers"</p>
+                </div>
+                <div>
+                    <p class="text-xs font-bold text-slate-500 uppercase mb-1">Subtitle</p>
+                    <p class="text-slate-800">"For engineering students, recent grads, and early-career engineers." + "Show the impact of your classwork, projects, and experiences to hiring teams."</p>
+                </div>
+            </div>
+            <div class="mt-3 grid grid-cols-4 gap-3 text-xs">
+                <div><span class="font-bold text-slate-500">Form fields:</span> Email only</div>
+                <div><span class="font-bold text-slate-500">Form position:</span> Above headline</div>
+                <div><span class="font-bold text-slate-500">CTA button:</span> "Submit"</div>
+                <div><span class="font-bold text-slate-500">Form prompt:</span> "Where should I send it?"</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SECTION 2: Traffic Routing                    -->
+    <!-- ============================================ -->
+    <section class="mb-10">
+        <h2 class="text-lg font-bold text-emerald-700 uppercase tracking-wider mb-4">Traffic Routing — Who Sees What</h2>
+
+        <table class="w-full text-sm border-collapse">
+            <thead>
+                <tr class="bg-slate-100">
+                    <th class="text-left py-2 px-3 border border-slate-200 font-bold">Traffic Source</th>
+                    <th class="text-left py-2 px-3 border border-slate-200 font-bold">How They Arrive</th>
+                    <th class="text-left py-2 px-3 border border-slate-200 font-bold">What Happens</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="py-2 px-3 border border-slate-200 font-semibold">LinkedIn Ads</td>
+                    <td class="py-2 px-3 border border-slate-200">URL has <code class="bg-slate-100 px-1 rounded text-xs">utm_content=graduating-soon</code> (or early-engineers, recently-graduated)</td>
+                    <td class="py-2 px-3 border border-slate-200">50/50 split: <strong>v1</strong> vs matching variant (<strong>v2</strong>, <strong>v3</strong>, or <strong>v4</strong>)</td>
+                </tr>
+                <tr class="bg-slate-50">
+                    <td class="py-2 px-3 border border-slate-200 font-semibold">Unpaid Traffic</td>
+                    <td class="py-2 px-3 border border-slate-200">No <code class="bg-slate-100 px-1 rounded text-xs">utm_content</code> — LinkedIn posts, Skool, Facebook, direct, SEO, etc.</td>
+                    <td class="py-2 px-3 border border-slate-200">50/50 split: <strong>v1</strong> vs <strong>v5</strong></td>
+                </tr>
+                <tr>
+                    <td class="py-2 px-3 border border-slate-200 font-semibold">Testing / Preview</td>
+                    <td class="py-2 px-3 border border-slate-200">URL has <code class="bg-slate-100 px-1 rounded text-xs">?variant=v5</code> (or v1, v2, v3, v4)</td>
+                    <td class="py-2 px-3 border border-slate-200">Forces that variant — bypasses all split logic</td>
+                </tr>
+                <tr class="bg-slate-50">
+                    <td class="py-2 px-3 border border-slate-200 font-semibold">Returning Visitor</td>
+                    <td class="py-2 px-3 border border-slate-200">Has <code class="bg-slate-100 px-1 rounded text-xs">ltl_variant</code> in localStorage</td>
+                    <td class="py-2 px-3 border border-slate-200">Locked to their first assignment forever</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SECTION 3: 50/50 Split Mechanics              -->
+    <!-- ============================================ -->
+    <section class="mb-10">
+        <h2 class="text-lg font-bold text-emerald-700 uppercase tracking-wider mb-4">50/50 Split Mechanics</h2>
+
+        <div class="bg-slate-50 border border-slate-200 rounded-lg p-4 text-sm">
+            <p class="mb-3">Each audience segment has its own counter stored in <code class="bg-white px-1 rounded border text-xs">localStorage</code>. The counter increments on every new visitor. <strong>Odd = v1 (control), Even = variant.</strong></p>
+            <p class="mb-3">This guarantees a perfect 50/50 at every even number of visitors — critical at low traffic volumes.</p>
+
+            <table class="w-full text-xs border-collapse">
+                <thead>
+                    <tr class="bg-white">
+                        <th class="text-left py-1.5 px-2 border border-slate-200">Counter Key</th>
+                        <th class="text-left py-1.5 px-2 border border-slate-200">Segment</th>
+                        <th class="text-left py-1.5 px-2 border border-slate-200">Odd Count →</th>
+                        <th class="text-left py-1.5 px-2 border border-slate-200">Even Count →</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="py-1.5 px-2 border border-slate-200"><code>ltl_counter_graduating-soon</code></td>
+                        <td class="py-1.5 px-2 border border-slate-200">Paid — students</td>
+                        <td class="py-1.5 px-2 border border-slate-200">v1</td>
+                        <td class="py-1.5 px-2 border border-slate-200">v2</td>
+                    </tr>
+                    <tr class="bg-white">
+                        <td class="py-1.5 px-2 border border-slate-200"><code>ltl_counter_early-engineers</code></td>
+                        <td class="py-1.5 px-2 border border-slate-200">Paid — early career</td>
+                        <td class="py-1.5 px-2 border border-slate-200">v1</td>
+                        <td class="py-1.5 px-2 border border-slate-200">v3</td>
+                    </tr>
+                    <tr>
+                        <td class="py-1.5 px-2 border border-slate-200"><code>ltl_counter_recently-graduated</code></td>
+                        <td class="py-1.5 px-2 border border-slate-200">Paid — recent grads</td>
+                        <td class="py-1.5 px-2 border border-slate-200">v1</td>
+                        <td class="py-1.5 px-2 border border-slate-200">v4</td>
+                    </tr>
+                    <tr class="bg-white">
+                        <td class="py-1.5 px-2 border border-slate-200"><code>ltl_counter_unpaid</code></td>
+                        <td class="py-1.5 px-2 border border-slate-200">Unpaid — all engineers</td>
+                        <td class="py-1.5 px-2 border border-slate-200">v1</td>
+                        <td class="py-1.5 px-2 border border-slate-200">v5</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SECTION 4: Tracking / Data Flow               -->
+    <!-- ============================================ -->
+    <section class="mb-10">
+        <h2 class="text-lg font-bold text-emerald-700 uppercase tracking-wider mb-4">Tracking — Where Data Goes</h2>
+
+        <table class="w-full text-sm border-collapse">
+            <thead>
+                <tr class="bg-slate-100">
+                    <th class="text-left py-2 px-3 border border-slate-200 font-bold">System</th>
+                    <th class="text-left py-2 px-3 border border-slate-200 font-bold">Event</th>
+                    <th class="text-left py-2 px-3 border border-slate-200 font-bold">Variant Field</th>
+                    <th class="text-left py-2 px-3 border border-slate-200 font-bold">Example Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="py-2 px-3 border border-slate-200 font-semibold">GA4</td>
+                    <td class="py-2 px-3 border border-slate-200"><code class="bg-slate-100 px-1 rounded text-xs">page_view</code></td>
+                    <td class="py-2 px-3 border border-slate-200"><code class="bg-slate-100 px-1 rounded text-xs">page_variant</code></td>
+                    <td class="py-2 px-3 border border-slate-200"><code class="text-xs">v5-organic</code></td>
+                </tr>
+                <tr class="bg-slate-50">
+                    <td class="py-2 px-3 border border-slate-200 font-semibold">GA4</td>
+                    <td class="py-2 px-3 border border-slate-200"><code class="bg-slate-100 px-1 rounded text-xs">lead_form_submit</code></td>
+                    <td class="py-2 px-3 border border-slate-200"><code class="bg-slate-100 px-1 rounded text-xs">page_variant</code></td>
+                    <td class="py-2 px-3 border border-slate-200"><code class="text-xs">v5-organic</code></td>
+                </tr>
+                <tr>
+                    <td class="py-2 px-3 border border-slate-200 font-semibold">Kit (ConvertKit)</td>
+                    <td class="py-2 px-3 border border-slate-200">Subscriber created</td>
+                    <td class="py-2 px-3 border border-slate-200"><code class="bg-slate-100 px-1 rounded text-xs">fields[page_variant]</code></td>
+                    <td class="py-2 px-3 border border-slate-200"><code class="text-xs">v5-organic</code></td>
+                </tr>
+                <tr class="bg-slate-50">
+                    <td class="py-2 px-3 border border-slate-200 font-semibold">Kit (ConvertKit)</td>
+                    <td class="py-2 px-3 border border-slate-200">Subscriber created</td>
+                    <td class="py-2 px-3 border border-slate-200"><code class="bg-slate-100 px-1 rounded text-xs">fields[utm_source]</code>, <code class="bg-slate-100 px-1 rounded text-xs">fields[utm_medium]</code>, etc.</td>
+                    <td class="py-2 px-3 border border-slate-200"><code class="text-xs">linkedin</code>, <code class="text-xs">paid-social</code></td>
+                </tr>
+                <tr>
+                    <td class="py-2 px-3 border border-slate-200 font-semibold">Meta Pixel</td>
+                    <td class="py-2 px-3 border border-slate-200"><code class="bg-slate-100 px-1 rounded text-xs">Lead</code></td>
+                    <td class="py-2 px-3 border border-slate-200">—</td>
+                    <td class="py-2 px-3 border border-slate-200">Tracked by landing URL, not variant</td>
+                </tr>
+                <tr class="bg-slate-50">
+                    <td class="py-2 px-3 border border-slate-200 font-semibold">LinkedIn Insight</td>
+                    <td class="py-2 px-3 border border-slate-200">Page view on thank-you page</td>
+                    <td class="py-2 px-3 border border-slate-200">—</td>
+                    <td class="py-2 px-3 border border-slate-200">URL-rule conversion</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SECTION 5: Selection Priority                 -->
+    <!-- ============================================ -->
+    <section class="mb-10">
+        <h2 class="text-lg font-bold text-emerald-700 uppercase tracking-wider mb-4">Selection Priority (Decision Tree)</h2>
+
+        <div class="bg-slate-50 border border-slate-200 rounded-lg p-5 text-sm space-y-3">
+            <div class="flex items-start gap-3">
+                <span class="bg-slate-700 text-white text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center shrink-0">1</span>
+                <div>
+                    <p class="font-bold text-slate-900">URL has <code class="bg-white px-1 rounded border text-xs">?variant=v5</code>?</p>
+                    <p class="text-slate-600">→ Force that variant. Used for testing/preview only.</p>
+                </div>
+            </div>
+            <div class="flex items-start gap-3">
+                <span class="bg-slate-700 text-white text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center shrink-0">2</span>
+                <div>
+                    <p class="font-bold text-slate-900">Returning visitor? (<code class="bg-white px-1 rounded border text-xs">ltl_variant</code> in localStorage)</p>
+                    <p class="text-slate-600">→ Use stored variant. Locked forever.</p>
+                </div>
+            </div>
+            <div class="flex items-start gap-3">
+                <span class="bg-slate-700 text-white text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center shrink-0">3</span>
+                <div>
+                    <p class="font-bold text-slate-900">URL has <code class="bg-white px-1 rounded border text-xs">utm_content</code>? (paid ads)</p>
+                    <p class="text-slate-600">→ Map to audience variant (v2/v3/v4), 50/50 split vs v1.</p>
+                </div>
+            </div>
+            <div class="flex items-start gap-3">
+                <span class="bg-slate-700 text-white text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center shrink-0">4</span>
+                <div>
+                    <p class="font-bold text-slate-900">No utm_content? (unpaid traffic)</p>
+                    <p class="text-slate-600">→ 50/50 split: v1 vs v5. Counter key: <code class="bg-white px-1 rounded border text-xs">ltl_counter_unpaid</code>.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SECTION 6: Preview URLs                       -->
+    <!-- ============================================ -->
+    <section class="mb-10">
+        <h2 class="text-lg font-bold text-emerald-700 uppercase tracking-wider mb-4">Preview URLs (Force Any Variant)</h2>
+
+        <div class="bg-slate-50 border border-slate-200 rounded-lg p-4 text-sm space-y-2 font-mono">
+            <p><span class="text-slate-500">v1:</span> launchtolead.io/landing/impact-bullet-equation.html<span class="text-emerald-600 font-bold">?variant=v1</span></p>
+            <p><span class="text-slate-500">v2:</span> launchtolead.io/landing/impact-bullet-equation.html<span class="text-blue-600 font-bold">?variant=v2</span></p>
+            <p><span class="text-slate-500">v3:</span> launchtolead.io/landing/impact-bullet-equation.html<span class="text-blue-600 font-bold">?variant=v3</span></p>
+            <p><span class="text-slate-500">v4:</span> launchtolead.io/landing/impact-bullet-equation.html<span class="text-blue-600 font-bold">?variant=v4</span></p>
+            <p><span class="text-slate-500">v5:</span> launchtolead.io/landing/impact-bullet-equation.html<span class="text-emerald-600 font-bold">?variant=v5</span></p>
+        </div>
+        <p class="text-xs text-slate-400 mt-2">Note: Clear <code class="bg-slate-100 px-1 rounded">ltl_variant</code> from localStorage in DevTools if you want to re-test the split assignment.</p>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SECTION 7: Implementation Timeline            -->
+    <!-- ============================================ -->
+    <section class="mb-10">
+        <h2 class="text-lg font-bold text-emerald-700 uppercase tracking-wider mb-4">Implementation Timeline</h2>
+
+        <div class="space-y-3 text-sm">
+            <div class="flex items-start gap-3">
+                <div class="w-24 shrink-0 text-xs text-slate-400 pt-0.5">Earlier 2026</div>
+                <div class="border-l-2 border-blue-300 pl-3">
+                    <p class="font-bold text-slate-900">v1 (control) — original landing page</p>
+                    <p class="text-slate-600">Full form (name + email), headline + before/after + testimonials above fold.</p>
+                </div>
+            </div>
+            <div class="flex items-start gap-3">
+                <div class="w-24 shrink-0 text-xs text-slate-400 pt-0.5">Earlier 2026</div>
+                <div class="border-l-2 border-blue-300 pl-3">
+                    <p class="font-bold text-slate-900">v2, v3, v4 — paid ad variants</p>
+                    <p class="text-slate-600">Audience-specific headlines for LinkedIn ads. Email-only, form above headline. 50/50 split vs v1 per audience segment.</p>
+                </div>
+            </div>
+            <div class="flex items-start gap-3">
+                <div class="w-24 shrink-0 text-xs text-slate-400 pt-0.5">March 8, 2026</div>
+                <div class="border-l-2 border-emerald-400 pl-3">
+                    <p class="font-bold text-slate-900">v5 — unpaid traffic variant</p>
+                    <p class="text-slate-600">General "Resume Guide for Engineers" headline for all non-paid traffic. Email-only, form above headline. 50/50 split vs v1. Counter: <code class="bg-slate-100 px-1 rounded text-xs">ltl_counter_unpaid</code>.</p>
+                </div>
+            </div>
+            <div class="flex items-start gap-3">
+                <div class="w-24 shrink-0 text-xs text-slate-400 pt-0.5">March 8, 2026</div>
+                <div class="border-l-2 border-slate-300 pl-3">
+                    <p class="font-bold text-slate-900">Page count updated: 14 → 15 pages</p>
+                    <p class="text-slate-600">Updated across all 5 variants (JS) and 4 HTML references (top subtext, bottom CTA, What's Inside, cover image).</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div class="border-t border-slate-200 pt-4 mt-8 text-xs text-slate-400 text-center">
+        <p>Launch to Lead Engineering — Internal Reference Document</p>
+        <p class="mt-1">Generated March 8, 2026 &middot; Print to PDF: Ctrl+P → Save as PDF</p>
+    </div>
+
+</div>
+
+</body>
+</html>
