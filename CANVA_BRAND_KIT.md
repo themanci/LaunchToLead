@@ -28,7 +28,7 @@ Copy these values into your Canva Brand Kit (Brand > Brand Kit).
 
 ## 🚀 SERVICE-SPECIFIC COLORS
 
-### Launch Path (Emerald/Teal - Job Search)
+### Engineering Career Accelerator (Emerald/Teal - Job Search)
 *Uses the primary brand colors above*
 
 | Color Name | Hex Code | Use For |

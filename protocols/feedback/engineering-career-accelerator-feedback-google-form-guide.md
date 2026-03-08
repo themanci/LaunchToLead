@@ -1,11 +1,11 @@
-# Launch Path Feedback - Google Form Setup Guide
+# Engineering Career Accelerator Feedback - Google Form Setup Guide
 
 Use this document to create a Google Form. Copy each question and set up the question type as indicated.
 
 ---
 
 ## Form Title
-**Launch Path Program Completion Feedback**
+**Engineering Career Accelerator Program Completion Feedback**
 
 ## Form Description
 Your honest feedback helps me improve the program for future clients. Thank you for taking the time to share your experience.
@@ -29,7 +29,7 @@ Your honest feedback helps me improve the program for future clients. Thank you 
 ## SECTION 2: Overall Experience
 
 ### Question 3
-- **Question:** How would you rate your overall experience with the Launch Path program?
+- **Question:** How would you rate your overall experience with the Engineering Career Accelerator program?
 - **Type:** Linear scale
 - **Scale:** 1 to 5
 - **Labels:** 1 = Poor, 5 = Excellent
@@ -41,7 +41,7 @@ Your honest feedback helps me improve the program for future clients. Thank you 
 - **Required:** No
 
 ### Question 5
-- **Question:** How likely are you to recommend the Launch Path to a friend or colleague?
+- **Question:** How likely are you to recommend the Engineering Career Accelerator to a friend or colleague?
 - **Type:** Linear scale
 - **Scale:** 0 to 10
 - **Labels:** 0 = Not at all likely, 10 = Extremely likely
@@ -168,7 +168,7 @@ Your honest feedback helps me improve the program for future clients. Thank you 
 ## SECTION 5: Impact & Outcomes
 
 ### Question 23
-- **Question:** How has the Launch Path helped you? (Select all that apply)
+- **Question:** How has the Engineering Career Accelerator helped you? (Select all that apply)
 - **Type:** Checkboxes
 - **Options:**
   - My resume is significantly stronger
@@ -258,7 +258,7 @@ Your honest feedback helps me improve the program for future clients. Thank you 
 ## SECTION 9: Testimonial (Optional)
 
 ### Question 35
-- **Question:** In your own words, how would you describe your experience with the Launch Path?
+- **Question:** In your own words, how would you describe your experience with the Engineering Career Accelerator?
 - **Description:** This could be used as a testimonial (with your permission)
 - **Type:** Paragraph
 - **Required:** No
@@ -307,7 +307,7 @@ Your honest feedback helps me improve the program for future clients. Thank you 
 - **Limit to 1 response:** Yes
 - **Edit after submit:** Yes
 - **See summary charts:** Yes
-- **Confirmation message:** Thank you for your feedback! Your insights help me continuously improve the Launch Path program. I'm grateful for the trust you placed in me during your career transition. - Mansour
+- **Confirmation message:** Thank you for your feedback! Your insights help me continuously improve the Engineering Career Accelerator program. I'm grateful for the trust you placed in me during your career transition. - Mansour
 
 ---
 

@@ -17,7 +17,7 @@
 
 ## Strategic Focus
 
-**Niche:** Right now I want to double down hard on the Launch path niche. I will keep the pivot and accelerate pages on my site as "Coming Soon" with waitlist signup, but marketing/advertising and grand slam offers will all be poured into Launch. Once this niche shows promise and return, I will add pivot first, then accelerate after.
+**Niche:** Right now I want to double down hard on the Engineering Career Accelerator niche. I will keep the pivot and accelerate pages on my site as "Coming Soon" with waitlist signup, but marketing/advertising and grand slam offers will all be poured into Launch. Once this niche shows promise and return, I will add pivot first, then accelerate after.
 
 ---
 

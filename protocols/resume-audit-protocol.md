@@ -15,7 +15,7 @@
 
 ## Step 2: Load the Impact Bullet Builder™ Principles
 
-Read `lead-magnets/active/impact-equation-quick-start-v4.html` to refresh all scoring criteria. The core framework:
+Read `lead-magnets/active/impact-bullet-builder.html` to refresh all scoring criteria. The core framework:
 
 ### The Formula (every bullet must have all 4)
 
@@ -300,7 +300,7 @@ After creating the HTML file, give the user a brief summary:
 
 ## Reference Files
 
-- **Impact Bullet Builder source:** `lead-magnets/active/impact-equation-quick-start-v4.html`
+- **Impact Bullet Builder source:** `lead-magnets/active/impact-bullet-builder.html`
 - **Example completed audit (print-friendly v2):** `resumes/potential_clients/neehal_surayavanshi_analysis_v2.html`
 - **Example completed audit (print-friendly v2):** `resumes/potential_clients/steven_de_alwis_analysis_v2.html`
 - **Resume input folder:** `resumes/potential_clients/`

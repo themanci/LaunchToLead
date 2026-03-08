@@ -1,6 +1,6 @@
-# Launch Path Completion Feedback Summary
+# Engineering Career Accelerator Completion Feedback Summary
 
-> **Source:** `launch_path_completion_feedback.xlsx` (Google Form)
+> **Source:** `engineering_career_accelerator_completion_feedback.xlsx` (Google Form)
 > **Respondents:** Mohammed Abdelmagid (completed Jan 22, 2026) & Osaid Samman (completed Feb 1, 2026)
 > **Date analyzed:** February 18, 2026
 
@@ -175,7 +175,7 @@ These are gaps surfaced by Mohammed and Osaid that are **not covered** by any of
 ### NEW IDEA A: 🎥 The Pre-Session Video Walkthrough Series
 **Source:** Osaid's suggestion — "make videos giving that same information... you would only have to make the video once"
 **What It Is:** Short (3-5 min) video walkthroughs for each pre-session module — Resume Self-Eval, Story Vault, Mock Prep — that make the static HTML materials come alive.
-**Lead Magnet Angle:** Could be repurposed as a free "Launch Path Preview" video series — gives potential clients a taste of the coaching before they buy. Think "free masterclass" energy.
+**Lead Magnet Angle:** Could be repurposed as a free "Engineering Career Accelerator Preview" video series — gives potential clients a taste of the coaching before they buy. Think "free masterclass" energy.
 **Why It's New:** None of our brainstorm ideas are video-based. This is a format innovation, not just a topic innovation.
 **Action:** Record once → embed in pre-session materials → repurpose as top-of-funnel content.
 
@@ -190,7 +190,7 @@ These are gaps surfaced by Mohammed and Osaid that are **not covered** by any of
 - Estimated time to complete
 - How to write it as an Impact Equation bullet on your resume
 **Lead Magnet Angle:** Students constantly ask "what projects should I do?" This answers it definitively, by discipline.
-**Why It's New:** None of our 10 brainstorm ideas or 8 backlog ideas cover project selection/portfolio building. This fills a clear gap in the Launch path.
+**Why It's New:** None of our 10 brainstorm ideas or 8 backlog ideas cover project selection/portfolio building. This fills a clear gap in the Engineering Career Accelerator.
 **Action:** Start with SWE + MechE (highest demand), expand to other disciplines.
 
 ---
@@ -233,7 +233,7 @@ These are gaps surfaced by Mohammed and Osaid that are **not covered** by any of
 > "I feel as though now, working with Mansour has given me much more insight as well the skills necessary to feel as though once given an opportunity, I'll be in a much better position to succeed as a young engineer."
 
 ### Osaid Samman ✅ (Anonymous only; no video)
-> "My experience with Launch Path has been tremendous. Mansour is very experienced and well spoken and being able to learn from his experience has been delightful and beneficial."
+> "My experience with Engineering Career Accelerator has been tremendous. Mansour is very experienced and well spoken and being able to learn from his experience has been delightful and beneficial."
 
 > "I understand more of the recruiter's mindset when they are interviewing. So now I tell my stories and interview according to that, and it goes better."
 
