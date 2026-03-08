@@ -1,15 +1,22 @@
 /**
- * Landing Page A/B/C/D Variant System
+ * Landing Page A/B Variant System
  * Swaps above-the-fold content based on audience segment.
  *
+ * Variants:
+ *   v1  — Control (default HTML, no DOM changes)
+ *   v2  — Paid: graduating-soon audience
+ *   v3  — Paid: early-career engineers audience
+ *   v4  — Paid: recently-graduated audience
+ *   v5  — Organic: general engineers (no utm_content)
+ *
  * Selection priority:
- *   1. ?variant=v2 URL param (testing/preview)
+ *   1. ?variant=v5 URL param (testing/preview)
  *   2. Returning visitor (localStorage — locked to first assignment)
  *   3. utm_content mapping from LinkedIn ads (50/50 counter split: V1 vs audience variant)
- *   4. Default: v1 (control — no DOM changes)
+ *   4. Organic traffic (no utm_content) → 50/50 counter split: V1 vs V5
  *
  * 50/50 Split Logic:
- *   Each audience segment has its own counter in localStorage.
+ *   Each segment has its own counter in localStorage.
  *   Odd count → V1 (control), Even count → audience variant.
  *   This guarantees a perfect 50/50 split at every even number of visitors,
  *   which is critical at low traffic volumes (<50/week).
@@ -26,7 +33,7 @@
             headline: 'Get Your Free Resume Guide<br class="md:hidden"/>...in Under 30 Seconds.',
             sub: 'The formula engineers have used to land offers at Google, SpaceX, Ford, John Deere and GE.',
             ctaText: 'Get Your Free Guide',
-            topSubtext: '14-page PDF. Delivered to your inbox instantly. No spam.',
+            topSubtext: '15-page PDF. Delivered to your inbox instantly. No spam.',
             bottomSubtext: 'Delivered to your inbox instantly. No spam.'
         },
         v2: {
@@ -37,8 +44,8 @@
             headline: 'Resume Guide for<br class="md:hidden"/> Engineering Students',
             sub: 'Show the impact of your classwork, projects, and internships to hiring teams.',
             ctaText: 'Submit',
-            topSubtext: '14-page PDF. Scroll down to see what\'s inside.',
-            bottomSubtext: '14-page PDF. Scroll down to see what\'s inside.'
+            topSubtext: '15-page PDF. Scroll down to see what\'s inside.',
+            bottomSubtext: '15-page PDF. Scroll down to see what\'s inside.'
         },
         v3: {
             id: 'v3-early-engineers',
@@ -48,8 +55,8 @@
             headline: 'Resume Guide for<br class="md:hidden"/> Early-Career Engineers',
             sub: 'Show the impact and value of your engineering experiences to hiring teams.',
             ctaText: 'Submit',
-            topSubtext: '14-page PDF. Scroll down to see what\'s inside.',
-            bottomSubtext: '14-page PDF. Scroll down to see what\'s inside.'
+            topSubtext: '15-page PDF. Scroll down to see what\'s inside.',
+            bottomSubtext: '15-page PDF. Scroll down to see what\'s inside.'
         },
         v4: {
             id: 'v4-recently-graduated',
@@ -59,8 +66,19 @@
             headline: 'Resume Guide for Recent<br/> Engineering Graduates',
             sub: 'Show the impact of your classwork, projects, and internships to hiring teams.',
             ctaText: 'Submit',
-            topSubtext: '14-page PDF. Scroll down to see what\'s inside.',
-            bottomSubtext: '14-page PDF. Scroll down to see what\'s inside.'
+            topSubtext: '15-page PDF. Scroll down to see what\'s inside.',
+            bottomSubtext: '15-page PDF. Scroll down to see what\'s inside.'
+        },
+        v5: {
+            id: 'v5-organic',
+            moveFormUp: true,
+            hasFirstName: false,
+            formPrompt: 'Where should I send it?',
+            headline: 'Resume Guide for Engineers',
+            sub: '<span class="block text-xs text-slate-500 mb-1">For engineering students, recent grads, and early-career engineers.</span>Show the impact of your classwork, projects, and experiences to hiring teams.',
+            ctaText: 'Submit',
+            topSubtext: '15-page PDF. Scroll down to see what\'s inside.',
+            bottomSubtext: '15-page PDF. Scroll down to see what\'s inside.'
         }
     };
 
@@ -101,8 +119,13 @@
             }
         }
 
-        // 4. Default (no utm_content, no stored variant)
-        return 'v1';
+        // 4. Organic traffic (no utm_content) → 50/50 split: v1 vs v5
+        var organicKey = 'ltl_counter_unpaid';
+        var organicCount = 0;
+        try { organicCount = parseInt(localStorage.getItem(organicKey) || '0', 10); } catch (e) {}
+        organicCount++;
+        try { localStorage.setItem(organicKey, String(organicCount)); } catch (e) {}
+        return (organicCount % 2 === 1) ? 'v1' : 'v5';
     }
 
     function applyVariant(key) {
