@@ -12,14 +12,13 @@
  * Selection priority:
  *   1. ?variant=v5 URL param (testing/preview)
  *   2. Returning visitor (localStorage — locked to first assignment)
- *   3. utm_content mapping from LinkedIn ads (50/50 counter split: V1 vs audience variant)
- *   4. Organic traffic (no utm_content) → 50/50 counter split: V1 vs V5
+ *   3. utm_content mapping from LinkedIn ads (50/50 random: V1 vs audience variant)
+ *   4. Organic traffic (no utm_content) → 50/50 random: V1 vs V5
  *
  * 50/50 Split Logic:
- *   Each segment has its own counter in localStorage.
- *   Odd count → V1 (control), Even count → audience variant.
- *   This guarantees a perfect 50/50 split at every even number of visitors,
- *   which is critical at low traffic volumes (<50/week).
+ *   Math.random() coin flip on first visit, then locked via localStorage.
+ *   Previous counter-based approach was broken — localStorage is per-browser,
+ *   so every visitor was "visitor #1" and always got v1.
  */
 (function () {
     'use strict';
@@ -83,6 +82,8 @@
     };
 
     // utm_content substring → audience variant key
+    // Destination URLs use: utm_content=early-engineers-fix-your-resume
+    // .indexOf() matches the prefix before the ad name
     var UTM_MAP = {
         'graduating-soon': 'v2',
         'early-engineers': 'v3',
@@ -102,30 +103,19 @@
             if (stored && VARIANTS[stored]) return stored;
         } catch (e) {}
 
-        // 3. utm_content from LinkedIn ads → 50/50 counter split
+        // 3. utm_content from LinkedIn ads → 50/50 random split
         var utmContent = params.get('utm_content') || '';
         if (utmContent) {
             for (var pattern in UTM_MAP) {
                 if (utmContent.indexOf(pattern) !== -1) {
                     var audienceVariant = UTM_MAP[pattern];
-                    // Counter-based 50/50: odd visitors → v1, even → audience variant
-                    var counterKey = 'ltl_counter_' + pattern;
-                    var count = 0;
-                    try { count = parseInt(localStorage.getItem(counterKey) || '0', 10); } catch (e) {}
-                    count++;
-                    try { localStorage.setItem(counterKey, String(count)); } catch (e) {}
-                    return (count % 2 === 1) ? 'v1' : audienceVariant;
+                    return Math.random() < 0.5 ? 'v1' : audienceVariant;
                 }
             }
         }
 
-        // 4. Organic traffic (no utm_content) → 50/50 split: v1 vs v5
-        var organicKey = 'ltl_counter_unpaid';
-        var organicCount = 0;
-        try { organicCount = parseInt(localStorage.getItem(organicKey) || '0', 10); } catch (e) {}
-        organicCount++;
-        try { localStorage.setItem(organicKey, String(organicCount)); } catch (e) {}
-        return (organicCount % 2 === 1) ? 'v1' : 'v5';
+        // 4. Organic traffic (no utm_content) → 50/50 random split: v1 vs v5
+        return Math.random() < 0.5 ? 'v1' : 'v5';
     }
 
     function applyVariant(key) {
