@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook Cover Photo — Mansour Tajri</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: #1a1a1a;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            gap: 20px;
+            padding: 40px;
+        }
+
+        .instructions {
+            background: #2a2a2a;
+            color: #ccc;
+            padding: 16px 24px;
+            border-radius: 8px;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 13px;
+            line-height: 1.6;
+            max-width: 820px;
+            width: 100%;
+        }
+        .instructions strong { color: #a3e635; }
+
+        /* ── COVER ── 820 × 312 px ─────────────────────────────────── */
+        .banner {
+            width: 820px;
+            height: 312px;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: linear-gradient(135deg, #0a1a0f 0%, #0d2318 40%, #040d07 100%);
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Subtle grid texture */
+        .banner::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(163, 230, 53, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(163, 230, 53, 0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        /* Left accent bar */
+        .accent-bar {
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(180deg, transparent 0%, #a3e635 40%, #65a30d 100%);
+        }
+
+        /* Speech bubble — Follow Me */
+        /* On Facebook the profile photo sits bottom-left, so bubble goes top-left */
+        .follow-bubble {
+            position: absolute;
+            left: 28px;
+            top: 20px;
+            z-index: 10;
+            background: #a3e635;
+            color: #0a1a0f;
+            font-size: 14px;
+            font-weight: 800;
+            letter-spacing: 0.04em;
+            padding: 8px 16px;
+            border-radius: 10px;
+            white-space: nowrap;
+        }
+
+        /* Arrow pointing down toward headshot */
+        .follow-bubble::after {
+            content: '';
+            position: absolute;
+            bottom: -14px;
+            left: 20px;
+            border: 8px solid transparent;
+            border-top-color: #a3e635;
+            border-bottom: none;
+        }
+
+        .content {
+            position: absolute;
+            z-index: 2;
+            left: 310px;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 28px;
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .eyebrow {
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: #4ade80;
+            margin-bottom: 8px;
+            opacity: 0.85;
+        }
+
+        .headline {
+            font-size: 24px;
+            font-weight: 800;
+            color: #f1f5f9;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            margin-bottom: 10px;
+        }
+
+        .headline .accent {
+            color: #a3e635;
+        }
+
+        .subline {
+            font-size: 14px;
+            font-weight: 400;
+            color: rgba(255,255,255,0.5);
+            line-height: 1.5;
+        }
+
+        .dl-btn {
+            background: #a3e635;
+            color: #0a1a0f;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 15px;
+            font-weight: 700;
+            border: none;
+            padding: 14px 32px;
+            border-radius: 8px;
+            cursor: pointer;
+            letter-spacing: 0.03em;
+        }
+        .dl-btn:hover { background: #bef264; }
+
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+    <div class="instructions">
+        Click the button to download the cover photo as a PNG.
+        Upload to Facebook Profile or Company Page → Edit cover photo → Upload.
+        Renders at <strong>820 × 312 px</strong> (Facebook standard).
+    </div>
+
+    <button class="dl-btn" onclick="downloadBanner()">⬇ Download Cover PNG</button>
+
+    <div class="banner">
+        <div class="accent-bar"></div>
+
+        <div class="follow-bubble">Follow Me</div>
+
+        <div class="content">
+            <div class="eyebrow">Former John Deere</div>
+
+            <div class="headline">
+                Engineer. Scrum Master. Product Owner.<br>
+                Manager. Staff Engineer. <span class="accent">Now Coach.</span>
+            </div>
+
+            <div class="subline">
+                I coach young engineers to do what actually works, not theory.
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+function downloadBanner() {
+    const banner = document.querySelector('.banner');
+    html2canvas(banner, {
+        width: 820,
+        height: 312,
+        scale: 2,
+        useCORS: true,
+        backgroundColor: null
+    }).then(canvas => {
+        const link = document.createElement('a');
+        link.download = 'facebook-cover.png';
+        link.href = canvas.toDataURL('image/png', 1.0);
+        link.click();
+    });
+}
+</script>
+</html>
