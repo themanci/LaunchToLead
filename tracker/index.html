@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weekly Metrics — Launch to Lead</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: #0a0a0a;
+            color: #e2e8f0;
+            min-height: 100vh;
+            padding: 40px 24px;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        header {
+            margin-bottom: 40px;
+        }
+
+        header h1 {
+            font-size: 28px;
+            font-weight: 800;
+            color: #f1f5f9;
+            margin-bottom: 6px;
+        }
+
+        header p {
+            color: #64748b;
+            font-size: 14px;
+        }
+
+        /* ── Week selector ── */
+        .week-bar {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 28px;
+            flex-wrap: wrap;
+        }
+
+        .week-bar label {
+            font-size: 14px;
+            font-weight: 600;
+            color: #94a3b8;
+        }
+
+        .week-bar input[type="date"] {
+            background: #1e293b;
+            border: 1px solid #334155;
+            color: #e2e8f0;
+            padding: 8px 14px;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 14px;
+        }
+
+        .week-bar button {
+            padding: 8px 18px;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            transition: background 0.15s;
+        }
+
+        .btn-save {
+            background: #a3e635;
+            color: #0a1a0f;
+        }
+        .btn-save:hover { background: #bef264; }
+
+        .btn-secondary {
+            background: #1e293b;
+            color: #94a3b8;
+            border: 1px solid #334155;
+        }
+        .btn-secondary:hover { background: #334155; color: #e2e8f0; }
+
+        .btn-danger {
+            background: #1e293b;
+            color: #ef4444;
+            border: 1px solid #7f1d1d;
+        }
+        .btn-danger:hover { background: #7f1d1d; color: #fca5a5; }
+
+        /* ── Metric cards ── */
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 32px;
+        }
+
+        .metric-card {
+            background: #111827;
+            border: 1px solid #1e293b;
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .metric-card.calculated {
+            border-style: dashed;
+        }
+
+        .metric-label {
+            font-size: 12px;
+            font-weight: 600;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 8px;
+        }
+
+        .metric-input {
+            width: 100%;
+            background: #0f172a;
+            border: 1px solid #334155;
+            color: #f1f5f9;
+            padding: 10px 14px;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 22px;
+            font-weight: 700;
+        }
+
+        .metric-input:focus {
+            outline: none;
+            border-color: #a3e635;
+        }
+
+        .metric-input.readonly {
+            background: #1a1a2e;
+            border-color: transparent;
+            color: #94a3b8;
+            cursor: default;
+        }
+
+        .metric-hint {
+            font-size: 11px;
+            color: #475569;
+            margin-top: 6px;
+        }
+
+        .metric-status {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 4px;
+            margin-top: 6px;
+        }
+
+        .status-green { background: #14532d; color: #4ade80; }
+        .status-red { background: #7f1d1d; color: #fca5a5; }
+        .status-neutral { background: #1e293b; color: #64748b; }
+
+        /* ── Score summary ── */
+        .score-bar {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            background: #111827;
+            border: 1px solid #1e293b;
+            border-radius: 12px;
+            padding: 20px 24px;
+            margin-bottom: 36px;
+        }
+
+        .score-label {
+            font-size: 14px;
+            font-weight: 600;
+            color: #94a3b8;
+        }
+
+        .score-value {
+            font-size: 28px;
+            font-weight: 800;
+        }
+
+        .score-fraction {
+            font-size: 16px;
+            color: #64748b;
+            font-weight: 400;
+        }
+
+        /* ── History table ── */
+        .history-section h2 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: #f1f5f9;
+        }
+
+        .history-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+            margin-bottom: 16px;
+        }
+
+        .history-table th {
+            text-align: left;
+            padding: 10px 12px;
+            background: #111827;
+            color: #64748b;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            font-size: 11px;
+            border-bottom: 1px solid #1e293b;
+            white-space: nowrap;
+        }
+
+        .history-table td {
+            padding: 10px 12px;
+            border-bottom: 1px solid #1e293b;
+            color: #cbd5e1;
+        }
+
+        .history-table tr:hover td {
+            background: rgba(163, 230, 53, 0.03);
+        }
+
+        .history-table tr.active-row td {
+            background: rgba(163, 230, 53, 0.06);
+            color: #f1f5f9;
+            font-weight: 600;
+        }
+
+        .cell-green { color: #4ade80; }
+        .cell-red { color: #f87171; }
+
+        .empty-state {
+            text-align: center;
+            padding: 40px;
+            color: #475569;
+            font-size: 14px;
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 720px) {
+            .metrics-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Weekly Scorecard</h1>
+            <p>9 metrics. Under 5 minutes. Every Monday.</p>
+        </header>
+
+        <div class="week-bar">
+            <label>Week of:</label>
+            <input type="date" id="weekDate">
+            <button class="btn-save" onclick="saveWeek()">Save Week</button>
+            <button class="btn-secondary" onclick="newWeek()">+ New Week</button>
+            <button class="btn-secondary" onclick="exportCSV()">⬇ Export CSV</button>
+            <button class="btn-danger" onclick="deleteWeek()">Delete Week</button>
+        </div>
+
+        <div class="metrics-grid" id="metricsGrid"></div>
+
+        <div class="score-bar">
+            <span class="score-label">This Week's Score:</span>
+            <span class="score-value" id="scoreValue">—</span>
+            <span class="score-fraction" id="scoreFraction"></span>
+        </div>
+
+        <div class="history-section">
+            <h2>History</h2>
+            <div id="historyContainer"></div>
+        </div>
+    </div>
+
+    <script>
+    const STORAGE_KEY = 'ltl_weekly_metrics';
+
+    const METRICS = [
+        { id: 'adSpend',       label: 'Ad Spend ($)',             type: 'input',  prefix: '$', target: null,  hint: 'LinkedIn Campaign Manager → total spend' },
+        { id: 'landingViews',  label: 'Lead Magnet Page Views',   type: 'input',  prefix: '',  target: 150,   hint: 'GA4 → variant_view event count' },
+        { id: 'leads',         label: 'New Leads (Opt-Ins)',      type: 'input',  prefix: '',  target: 10,    hint: 'GA4 → lead_form_submit or Kit dashboard' },
+        { id: 'cpl',           label: 'Cost Per Lead',            type: 'calc',   prefix: '$', target: 15,    hint: 'Auto: Ad Spend ÷ Leads (lower is better)', lower: true },
+        { id: 'offerViews',    label: 'Offer Page Views',         type: 'input',  prefix: '',  target: null,  hint: 'GA4 → page_view filtered to /landing/offer' },
+        { id: 'callsBooked',   label: 'Calls Booked',             type: 'input',  prefix: '',  target: 3,     hint: 'Calendly count' },
+        { id: 'clientsClosed',  label: 'Clients Closed',           type: 'input',  prefix: '',  target: 1,     hint: 'New paying clients this week' },
+        { id: 'revenue',       label: 'Revenue ($)',              type: 'input',  prefix: '$', target: null,  hint: 'Stripe dashboard' },
+        { id: 'cpa',           label: 'Cost Per Acquisition',     type: 'calc',   prefix: '$', target: null,  hint: 'Auto: Ad Spend ÷ Clients Closed', lower: true },
+    ];
+
+    let data = loadData();
+    let currentWeek = null;
+
+    function loadData() {
+        try {
+            const raw = localStorage.getItem(STORAGE_KEY);
+            return raw ? JSON.parse(raw) : [];
+        } catch { return []; }
+    }
+
+    function saveData() {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+    }
+
+    function getMonday(d) {
+        const date = new Date(d);
+        const day = date.getDay();
+        const diff = date.getDate() - day + (day === 0 ? -6 : 1);
+        date.setDate(diff);
+        return date.toISOString().split('T')[0];
+    }
+
+    function init() {
+        const today = getMonday(new Date());
+        const existing = data.find(w => w.week === today);
+        if (existing) {
+            currentWeek = today;
+        } else if (data.length > 0) {
+            currentWeek = data[data.length - 1].week;
+        } else {
+            currentWeek = today;
+            data.push({ week: today, metrics: {} });
+            saveData();
+        }
+        document.getElementById('weekDate').value = currentWeek;
+        renderMetrics();
+        renderHistory();
+    }
+
+    function getWeekData() {
+        return data.find(w => w.week === currentWeek) || { week: currentWeek, metrics: {} };
+    }
+
+    function renderMetrics() {
+        const grid = document.getElementById('metricsGrid');
+        const weekData = getWeekData();
+        grid.innerHTML = '';
+
+        METRICS.forEach(m => {
+            const card = document.createElement('div');
+            card.className = 'metric-card' + (m.type === 'calc' ? ' calculated' : '');
+
+            const val = m.type === 'calc' ? calcMetric(m.id, weekData.metrics) : (weekData.metrics[m.id] ?? '');
+            const displayVal = m.type === 'calc' ? (val === null ? '—' : val.toFixed(2)) : val;
+
+            const statusHTML = getStatusHTML(m, val);
+
+            card.innerHTML = `
+                <div class="metric-label">${m.label}</div>
+                <input class="metric-input ${m.type === 'calc' ? 'readonly' : ''}"
+                       type="${m.type === 'calc' ? 'text' : 'number'}"
+                       step="any"
+                       data-id="${m.id}"
+                       value="${displayVal}"
+                       ${m.type === 'calc' ? 'readonly' : ''}
+                       placeholder="0">
+                ${statusHTML}
+                <div class="metric-hint">${m.hint}</div>
+            `;
+
+            if (m.type === 'input') {
+                const input = card.querySelector('input');
+                input.addEventListener('input', () => {
+                    weekData.metrics[m.id] = input.value === '' ? '' : parseFloat(input.value);
+                    recalc();
+                });
+            }
+
+            grid.appendChild(card);
+        });
+
+        updateScore();
+    }
+
+    function calcMetric(id, metrics) {
+        const spend = parseFloat(metrics.adSpend) || 0;
+        if (id === 'cpl') {
+            const leads = parseFloat(metrics.leads) || 0;
+            return leads > 0 ? spend / leads : null;
+        }
+        if (id === 'cpa') {
+            const clients = parseFloat(metrics.clientsClosed) || 0;
+            return clients > 0 ? spend / clients : null;
+        }
+        return null;
+    }
+
+    function getStatusHTML(m, val) {
+        if (m.target === null || val === '' || val === null) {
+            return '<span class="metric-status status-neutral">—</span>';
+        }
+        const numVal = parseFloat(val);
+        if (isNaN(numVal)) return '<span class="metric-status status-neutral">—</span>';
+
+        const hit = m.lower ? numVal <= m.target : numVal >= m.target;
+        const cls = hit ? 'status-green' : 'status-red';
+        const icon = hit ? '✓' : '✗';
+        const dir = m.lower ? '≤' : '≥';
+        return `<span class="metric-status ${cls}">${icon} target: ${dir} ${m.prefix}${m.target}</span>`;
+    }
+
+    function recalc() {
+        const weekData = getWeekData();
+        document.querySelectorAll('.metric-input').forEach(input => {
+            const id = input.dataset.id;
+            const m = METRICS.find(x => x.id === id);
+            if (m.type === 'calc') {
+                const val = calcMetric(id, weekData.metrics);
+                input.value = val === null ? '—' : val.toFixed(2);
+                const card = input.closest('.metric-card');
+                const statusEl = card.querySelector('.metric-status');
+                if (statusEl) statusEl.outerHTML = getStatusHTML(m, val);
+            }
+        });
+        updateScore();
+    }
+
+    function updateScore() {
+        const weekData = getWeekData();
+        let hit = 0;
+        let total = 0;
+
+        METRICS.forEach(m => {
+            if (m.target === null) return;
+            total++;
+            const val = m.type === 'calc' ? calcMetric(m.id, weekData.metrics) : weekData.metrics[m.id];
+            if (val === '' || val === null || val === undefined) return;
+            const numVal = parseFloat(val);
+            if (isNaN(numVal)) return;
+            if (m.lower ? numVal <= m.target : numVal >= m.target) hit++;
+        });
+
+        const scoreEl = document.getElementById('scoreValue');
+        const fracEl = document.getElementById('scoreFraction');
+
+        if (total === 0) {
+            scoreEl.textContent = '—';
+            fracEl.textContent = '';
+            return;
+        }
+
+        scoreEl.textContent = `${hit}/${total}`;
+        scoreEl.style.color = hit >= Math.ceil(total * 0.7) ? '#4ade80' : (hit >= Math.ceil(total * 0.4) ? '#fbbf24' : '#f87171');
+        fracEl.textContent = hit === total ? 'Green' : `${total - hit} missed`;
+    }
+
+    function saveWeek() {
+        const weekData = getWeekData();
+        const idx = data.findIndex(w => w.week === currentWeek);
+
+        // Read current values from inputs
+        document.querySelectorAll('.metric-input:not(.readonly)').forEach(input => {
+            weekData.metrics[input.dataset.id] = input.value === '' ? '' : parseFloat(input.value);
+        });
+
+        if (idx >= 0) {
+            data[idx] = weekData;
+        } else {
+            data.push(weekData);
+            data.sort((a, b) => a.week.localeCompare(b.week));
+        }
+
+        saveData();
+        renderHistory();
+
+        // Flash save button
+        const btn = document.querySelector('.btn-save');
+        btn.textContent = '✓ Saved';
+        setTimeout(() => { btn.textContent = 'Save Week'; }, 1200);
+    }
+
+    function newWeek() {
+        const today = getMonday(new Date());
+        const existing = data.find(w => w.week === today);
+        if (!existing) {
+            data.push({ week: today, metrics: {} });
+            data.sort((a, b) => a.week.localeCompare(b.week));
+            saveData();
+        }
+        currentWeek = today;
+        document.getElementById('weekDate').value = today;
+        renderMetrics();
+        renderHistory();
+    }
+
+    function deleteWeek() {
+        if (!confirm(`Delete week ${currentWeek}? This cannot be undone.`)) return;
+        data = data.filter(w => w.week !== currentWeek);
+        saveData();
+        if (data.length > 0) {
+            currentWeek = data[data.length - 1].week;
+        } else {
+            currentWeek = getMonday(new Date());
+            data.push({ week: currentWeek, metrics: {} });
+            saveData();
+        }
+        document.getElementById('weekDate').value = currentWeek;
+        renderMetrics();
+        renderHistory();
+    }
+
+    function loadWeek(week) {
+        currentWeek = week;
+        document.getElementById('weekDate').value = week;
+        renderMetrics();
+        renderHistory();
+    }
+
+    // Date picker change
+    document.getElementById('weekDate').addEventListener('change', function() {
+        const selected = this.value;
+        const monday = getMonday(selected);
+        this.value = monday;
+
+        const existing = data.find(w => w.week === monday);
+        if (!existing) {
+            data.push({ week: monday, metrics: {} });
+            data.sort((a, b) => a.week.localeCompare(b.week));
+            saveData();
+        }
+        currentWeek = monday;
+        renderMetrics();
+        renderHistory();
+    });
+
+    function renderHistory() {
+        const container = document.getElementById('historyContainer');
+
+        if (data.length === 0) {
+            container.innerHTML = '<div class="empty-state">No weeks recorded yet.</div>';
+            return;
+        }
+
+        const headers = ['Week', ...METRICS.map(m => m.label.replace(/\(.*\)/, '').trim())];
+        let html = '<table class="history-table"><thead><tr>';
+        headers.forEach(h => { html += `<th>${h}</th>`; });
+        html += '</tr></thead><tbody>';
+
+        // Show newest first
+        const sorted = [...data].reverse();
+        sorted.forEach(w => {
+            const isActive = w.week === currentWeek;
+            html += `<tr class="${isActive ? 'active-row' : ''}" style="cursor:pointer" onclick="loadWeek('${w.week}')">`;
+            html += `<td>${w.week}</td>`;
+
+            METRICS.forEach(m => {
+                let val;
+                if (m.type === 'calc') {
+                    val = calcMetric(m.id, w.metrics);
+                    val = val === null ? '—' : `${m.prefix}${val.toFixed(2)}`;
+                } else {
+                    val = w.metrics[m.id];
+                    val = (val === '' || val === undefined) ? '—' : `${m.prefix}${val}`;
+                }
+
+                let cls = '';
+                if (m.target !== null && val !== '—') {
+                    const numVal = parseFloat(val.replace('$', ''));
+                    if (!isNaN(numVal)) {
+                        cls = (m.lower ? numVal <= m.target : numVal >= m.target) ? 'cell-green' : 'cell-red';
+                    }
+                }
+
+                html += `<td class="${cls}">${val}</td>`;
+            });
+
+            html += '</tr>';
+        });
+
+        html += '</tbody></table>';
+        container.innerHTML = html;
+    }
+
+    function exportCSV() {
+        if (data.length === 0) { alert('No data to export.'); return; }
+
+        const headers = ['Week', ...METRICS.map(m => m.label)];
+        const rows = data.map(w => {
+            const vals = METRICS.map(m => {
+                if (m.type === 'calc') {
+                    const v = calcMetric(m.id, w.metrics);
+                    return v === null ? '' : v.toFixed(2);
+                }
+                const v = w.metrics[m.id];
+                return (v === '' || v === undefined) ? '' : v;
+            });
+            return [w.week, ...vals];
+        });
+
+        let csv = headers.join(',') + '\n';
+        rows.forEach(r => { csv += r.join(',') + '\n'; });
+
+        const blob = new Blob([csv], { type: 'text/csv' });
+        const link = document.createElement('a');
+        link.download = 'weekly-metrics.csv';
+        link.href = URL.createObjectURL(blob);
+        link.click();
+        URL.revokeObjectURL(link.href);
+    }
+
+    init();
+    </script>
+</body>
+</html>
