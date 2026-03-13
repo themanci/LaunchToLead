@@ -165,6 +165,18 @@
         <!-- Decorative glow -->
         <div style="position: absolute; top: -60px; right: -40px; width: 300px; height: 300px; background: rgba(20,184,166,0.12); border-radius: 50%; filter: blur(60px);"></div>
 
+        <!-- Starburst audit callout -->
+        <div style="position: absolute; top: 10px; right: 10px; z-index: 20; width: 180px; height: 180px;">
+            <svg viewBox="0 0 200 200" style="position: absolute; inset: 0; width: 100%; height: 100%; filter: drop-shadow(0 3px 8px rgba(0,0,0,0.35));">
+                <polygon points="197,100 157.9,115.5 184.9,149 142.4,142.4 149,184.9 115.5,157.9 100,197 84.5,157.9 51,184.9 57.6,142.4 15.1,149 42.1,115.5 3,100 42.1,84.5 15.1,51 57.6,57.6 51,15.1 84.5,42.1 100,3 115.5,42.1 149,15.1 142.4,57.6 184.9,51 157.9,84.5" fill="#facc15" stroke="#eab308" stroke-width="1.5"/>
+            </svg>
+            <div style="position: relative; z-index: 2; width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 18px;">
+                <p style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 900; font-size: 11px; color: #064e3b; line-height: 1.2; text-transform: uppercase; letter-spacing: -0.3px;">Free Resume<br>Audit</p>
+                <p style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 7px; color: #065f46; margin-top: 4px; text-transform: uppercase; letter-spacing: 0.5px;">Included with<br>this PDF!</p>
+                <p style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 600; font-size: 6px; color: #047857; margin-top: 3px;">See last page</p>
+            </div>
+        </div>
+
         <div class="relative z-10">
             <!-- Logo -->
             <div class="flex items-center gap-3 mb-8">
@@ -216,6 +228,8 @@
                     <div class="flex items-center gap-2.5"><span class="text-teal-500 text-xs font-mono-num font-bold">13</span><span class="text-slate-700 text-sm">Bonus: Using AI to Help</span></div>
                 </div>
             </div>
+
+            <!-- Audit callout moved to hero starburst -->
         </div>
 
         <!-- Author + footer -->
@@ -571,112 +585,125 @@
     </div>
 </div>
 
+
 <div class="page-break"></div>
 
 <!-- ================================================================ -->
 <!-- PAGE 7: FINDING HIDDEN METRICS                                   -->
 <!-- ================================================================ -->
-<div class="page p-10 md:p-14 bg-white flex flex-col justify-center">
+<div class="page page-tight p-10 md:p-14 bg-white flex flex-col justify-center" style="position: relative;">
+    <!-- Starburst audit callout — mid-guide -->
+    <div style="position: absolute; top: 8px; right: 8px; z-index: 20; width: 156px; height: 156px;">
+        <svg viewBox="0 0 200 200" style="position: absolute; inset: 0; width: 100%; height: 100%; filter: drop-shadow(0 2px 6px rgba(0,0,0,0.15));">
+            <polygon points="197,100 157.9,115.5 184.9,149 142.4,142.4 149,184.9 115.5,157.9 100,197 84.5,157.9 51,184.9 57.6,142.4 15.1,149 42.1,115.5 3,100 42.1,84.5 15.1,51 57.6,57.6 51,15.1 84.5,42.1 100,3 115.5,42.1 149,15.1 142.4,57.6 184.9,51 157.9,84.5" fill="#facc15" stroke="#eab308" stroke-width="1.5"/>
+        </svg>
+        <div style="position: relative; z-index: 2; width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 15px;">
+            <p style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 900; font-size: 9px; color: #064e3b; line-height: 1.2; text-transform: uppercase;">Free Resume<br>Audit</p>
+            <p style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 6px; color: #065f46; margin-top: 3px; text-transform: uppercase; letter-spacing: 0.5px;">Included with<br>this PDF!</p>
+            <p style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 600; font-size: 5px; color: #047857; margin-top: 2px;">See last page</p>
+        </div>
+    </div>
+
     <div class="max-w-4xl mx-auto">
         <div class="flex items-center gap-3 mb-3">
             <div class="w-8 h-8 rounded-lg bg-amber-500 text-white flex items-center justify-center text-sm font-bold">06</div>
             <span class="text-amber-600 font-bold text-sm uppercase tracking-widest">Finding Metrics</span>
         </div>
-        <h2 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-3 tracking-tight">"But I Don't Have Metrics!"</h2>
-        <p class="text-slate-500 text-xl mb-6">You do. Here's how to find or estimate them.</p>
+        <h2 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-2 tracking-tight">"But I Don't Have Metrics!"</h2>
+        <p class="text-slate-500 text-lg mb-4">You do. Here's how to find or estimate them.</p>
 
         <!-- 5 ways -->
-        <div class="space-y-4 mb-8">
-            <div class="rounded-xl p-5 no-break" style="background: #f8fafc; border-left: 5px solid #10b981;">
-                <div class="flex items-start gap-3">
-                    <div class="w-7 h-7 bg-emerald-500 text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">1</div>
+        <div class="space-y-2 mb-4">
+            <div class="rounded-xl p-3 no-break" style="background: #f8fafc; border-left: 4px solid #10b981;">
+                <div class="flex items-start gap-2">
+                    <div class="w-6 h-6 bg-emerald-500 text-white rounded-full flex items-center justify-center font-bold text-xs flex-shrink-0">1</div>
                     <div>
-                        <p class="font-bold text-slate-800 text-lg">Ask your manager or team lead</p>
-                        <p class="text-slate-600 text-lg">"What was the business impact of [project]?" — They often have data you don't.</p>
+                        <p class="font-bold text-slate-800">Ask your manager or team lead</p>
+                        <p class="text-slate-600 text-sm">"What was the business impact of [project]?" — They often have data you don't.</p>
                     </div>
                 </div>
             </div>
-            <div class="rounded-xl p-5 no-break" style="background: #f8fafc; border-left: 5px solid #10b981;">
-                <div class="flex items-start gap-3">
-                    <div class="w-7 h-7 bg-emerald-500 text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">2</div>
+            <div class="rounded-xl p-3 no-break" style="background: #f8fafc; border-left: 4px solid #10b981;">
+                <div class="flex items-start gap-2">
+                    <div class="w-6 h-6 bg-emerald-500 text-white rounded-full flex items-center justify-center font-bold text-xs flex-shrink-0">2</div>
                     <div>
-                        <p class="font-bold text-slate-800 text-lg">Check company dashboards &amp; reports</p>
-                        <p class="text-slate-600 text-lg">Quarterly reports, Jira stats, project retrospectives, internal KPI dashboards.</p>
+                        <p class="font-bold text-slate-800">Check company dashboards &amp; reports</p>
+                        <p class="text-slate-600 text-sm">Quarterly reports, Jira stats, project retrospectives, internal KPI dashboards.</p>
                     </div>
                 </div>
             </div>
-            <div class="rounded-xl p-5 no-break" style="background: #f8fafc; border-left: 5px solid #10b981;">
-                <div class="flex items-start gap-3">
-                    <div class="w-7 h-7 bg-emerald-500 text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">3</div>
+            <div class="rounded-xl p-3 no-break" style="background: #f8fafc; border-left: 4px solid #10b981;">
+                <div class="flex items-start gap-2">
+                    <div class="w-6 h-6 bg-emerald-500 text-white rounded-full flex items-center justify-center font-bold text-xs flex-shrink-0">3</div>
                     <div>
-                        <p class="font-bold text-slate-800 text-lg">Calculate time savings (see formula below ↓)</p>
-                        <p class="text-slate-600 text-lg">Most impactful source — works for any automation, process fix, or tool you built.</p>
+                        <p class="font-bold text-slate-800">Calculate time savings (see formula below ↓)</p>
+                        <p class="text-slate-600 text-sm">Most impactful source — works for any automation, process fix, or tool you built.</p>
                     </div>
                 </div>
             </div>
-            <div class="rounded-xl p-5 no-break" style="background: #f8fafc; border-left: 5px solid #10b981;">
-                <div class="flex items-start gap-3">
-                    <div class="w-7 h-7 bg-emerald-500 text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">4</div>
+            <div class="rounded-xl p-3 no-break" style="background: #f8fafc; border-left: 4px solid #10b981;">
+                <div class="flex items-start gap-2">
+                    <div class="w-6 h-6 bg-emerald-500 text-white rounded-full flex items-center justify-center font-bold text-xs flex-shrink-0">4</div>
                     <div>
-                        <p class="font-bold text-slate-800 text-lg">Use conservative estimates with qualifiers</p>
-                        <p class="text-slate-600 text-lg">"Reduced processing time by approximately 30%" — Better than no number at all.</p>
+                        <p class="font-bold text-slate-800">Use conservative estimates with qualifiers</p>
+                        <p class="text-slate-600 text-sm">"Reduced processing time by ~30%" — Better than no number at all.</p>
                     </div>
                 </div>
             </div>
-            <div class="rounded-xl p-5 no-break" style="background: #f8fafc; border-left: 5px solid #10b981;">
-                <div class="flex items-start gap-3">
-                    <div class="w-7 h-7 bg-emerald-500 text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">5</div>
+            <div class="rounded-xl p-3 no-break" style="background: #f8fafc; border-left: 4px solid #10b981;">
+                <div class="flex items-start gap-2">
+                    <div class="w-6 h-6 bg-emerald-500 text-white rounded-full flex items-center justify-center font-bold text-xs flex-shrink-0">5</div>
                     <div>
-                        <p class="font-bold text-slate-800 text-lg">Count scope and scale</p>
-                        <p class="text-slate-600 text-lg">"Served 500+ users" or "Deployed across 3 facilities" — Scale is a metric too.</p>
+                        <p class="font-bold text-slate-800">Count scope and scale</p>
+                        <p class="text-slate-600 text-sm">"Served 500+ users" or "Deployed across 3 facilities" — Scale is a metric too.</p>
                     </div>
                 </div>
             </div>
         </div>
 
         <!-- Time savings calculator -->
-        <div class="rounded-xl p-6 mb-6 no-break" style="background: #064e3b;">
+        <div class="rounded-xl p-4 mb-4 no-break" style="background: #064e3b;">
             <div class="text-white">
-                <h3 class="text-xl font-bold mb-1">⏱️ The Time Savings Calculator</h3>
-                <p class="text-emerald-200/70 text-sm mb-5">The single biggest "aha moment" for engineers who think they don't have metrics.</p>
+                <h3 class="text-lg font-bold mb-1">⏱️ The Time Savings Calculator</h3>
+                <p class="text-emerald-200/70 text-xs mb-3">The single biggest "aha moment" for engineers who think they don't have metrics.</p>
                 
-                <div class="rounded-lg p-5 mb-4" style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);">
+                <div class="rounded-lg p-3 mb-3" style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);">
                     <div class="grid grid-cols-5 gap-3 items-center text-center">
                         <div>
-                            <p class="text-emerald-300/70 text-xs mb-2 font-semibold uppercase tracking-wider">Time saved/day</p>
-                            <div class="rounded-lg px-3 py-3" style="background: rgba(59,130,246,0.12); border: 1px solid rgba(59,130,246,0.25);">
-                                <p class="font-mono-num text-2xl font-bold text-blue-300">30 min</p>
+                            <p class="text-emerald-300/70 text-xs mb-1 font-semibold uppercase tracking-wider">Time saved/day</p>
+                            <div class="rounded-lg px-2 py-2" style="background: rgba(59,130,246,0.12); border: 1px solid rgba(59,130,246,0.25);">
+                                <p class="font-mono-num text-xl font-bold text-blue-300">30 min</p>
                             </div>
                         </div>
-                        <div class="font-mono-num text-2xl font-bold text-white/30">×</div>
+                        <div class="font-mono-num text-xl font-bold text-white/30">×</div>
                         <div>
-                            <p class="text-emerald-300/70 text-xs mb-2 font-semibold uppercase tracking-wider">People affected</p>
-                            <div class="rounded-lg px-3 py-3" style="background: rgba(20,184,166,0.12); border: 1px solid rgba(20,184,166,0.25);">
-                                <p class="font-mono-num text-2xl font-bold text-teal-300">5</p>
+                            <p class="text-emerald-300/70 text-xs mb-1 font-semibold uppercase tracking-wider">People affected</p>
+                            <div class="rounded-lg px-2 py-2" style="background: rgba(20,184,166,0.12); border: 1px solid rgba(20,184,166,0.25);">
+                                <p class="font-mono-num text-xl font-bold text-teal-300">5</p>
                             </div>
                         </div>
-                        <div class="font-mono-num text-2xl font-bold text-white/30">×</div>
+                        <div class="font-mono-num text-xl font-bold text-white/30">×</div>
                         <div>
-                            <p class="text-emerald-300/70 text-xs mb-2 font-semibold uppercase tracking-wider">Working days/yr</p>
-                            <div class="rounded-lg px-3 py-3" style="background: rgba(163,230,53,0.12); border: 1px solid rgba(163,230,53,0.25);">
-                                <p class="font-mono-num text-2xl font-bold text-lime-300">250</p>
+                            <p class="text-emerald-300/70 text-xs mb-1 font-semibold uppercase tracking-wider">Working days/yr</p>
+                            <div class="rounded-lg px-2 py-2" style="background: rgba(163,230,53,0.12); border: 1px solid rgba(163,230,53,0.25);">
+                                <p class="font-mono-num text-xl font-bold text-lime-300">250</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Result -->
-                <div class="text-center rounded-lg py-4 px-6" style="background: rgba(163,230,53,0.06); border: 2px solid rgba(163,230,53,0.2);">
-                    <p class="text-emerald-300/70 text-sm mb-1">= 625 hours/year × $50/hr =</p>
-                    <p class="font-mono-num text-4xl font-extrabold" style="color: #a3e635;">$31,250</p>
-                    <p class="text-emerald-200/60 text-xs mt-2 uppercase tracking-wider font-semibold">saved annually — put this on your resume</p>
+                <div class="text-center rounded-lg py-3 px-4" style="background: rgba(163,230,53,0.06); border: 2px solid rgba(163,230,53,0.2);">
+                    <p class="text-emerald-300/70 text-xs mb-1">= 625 hours/year × $50/hr =</p>
+                    <p class="font-mono-num text-3xl font-extrabold" style="color: #a3e635;">$31,250</p>
+                    <p class="text-emerald-200/60 text-xs mt-1 uppercase tracking-wider font-semibold">saved annually — put this on your resume</p>
                 </div>
             </div>
         </div>
 
         <!-- Common metrics grid -->
-        <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 no-break">
-            <h4 class="font-bold text-amber-900 text-lg mb-3">Common Metrics by Category</h4>
+        <div class="bg-amber-50 border border-amber-200 rounded-xl p-3 no-break">
+            <h4 class="font-bold text-amber-900 text-base mb-2">Common Metrics by Category</h4>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
                 <div>
                     <p class="font-semibold text-amber-800 mb-1.5">Time &amp; Efficiency</p>
@@ -921,12 +948,25 @@
     </div>
 </div>
 
+
 <div class="page-break"></div>
 
 <!-- ================================================================ -->
 <!-- PAGE 11: HOW TO TAILOR TO EACH JOB POSTING                      -->
 <!-- ================================================================ -->
-<div class="page p-10 md:p-14 bg-white flex flex-col justify-center">
+<div class="page p-10 md:p-14 bg-white flex flex-col justify-center" style="position: relative;">
+    <!-- Starburst audit callout — late-guide -->
+    <div style="position: absolute; top: 8px; right: 8px; z-index: 20; width: 156px; height: 156px;">
+        <svg viewBox="0 0 200 200" style="position: absolute; inset: 0; width: 100%; height: 100%; filter: drop-shadow(0 2px 6px rgba(0,0,0,0.15));">
+            <polygon points="197,100 157.9,115.5 184.9,149 142.4,142.4 149,184.9 115.5,157.9 100,197 84.5,157.9 51,184.9 57.6,142.4 15.1,149 42.1,115.5 3,100 42.1,84.5 15.1,51 57.6,57.6 51,15.1 84.5,42.1 100,3 115.5,42.1 149,15.1 142.4,57.6 184.9,51 157.9,84.5" fill="#facc15" stroke="#eab308" stroke-width="1.5"/>
+        </svg>
+        <div style="position: relative; z-index: 2; width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 15px;">
+            <p style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 900; font-size: 9px; color: #064e3b; line-height: 1.2; text-transform: uppercase;">Free Resume<br>Audit</p>
+            <p style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 6px; color: #065f46; margin-top: 3px; text-transform: uppercase; letter-spacing: 0.5px;">Included with<br>this PDF!</p>
+            <p style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 600; font-size: 5px; color: #047857; margin-top: 2px;">See last page</p>
+        </div>
+    </div>
+
     <div class="max-w-4xl mx-auto">
         <div class="flex items-center gap-3 mb-3">
             <div class="w-8 h-8 rounded-lg bg-amber-500 text-white flex items-center justify-center text-sm font-bold">10</div>
@@ -1099,9 +1139,7 @@
             <!-- Original -->
             <div>
                 <label class="block text-lg font-bold text-slate-900 mb-2">Your Original Bullet:</label>
-                <div class="border-2 border-slate-300 rounded-lg p-5 min-h-[70px] bg-slate-50">
-                    <p class="text-slate-400 italic text-sm">Write your current bullet here...</p>
-                </div>
+                <textarea rows="2" placeholder="Write your current bullet here..." class="w-full border-2 border-slate-300 rounded-lg p-4 min-h-[60px] bg-slate-50 text-slate-800 text-sm resize-none" style="font-family: 'Plus Jakarta Sans', sans-serif;"></textarea>
             </div>
 
             <div class="h-px bg-slate-200"></div>
@@ -1110,27 +1148,19 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                     <label class="block font-bold text-blue-700 mb-2">1. Accomplishment — What specific thing did you achieve?</label>
-                    <div class="border-2 border-blue-200 rounded-lg p-4 min-h-[60px] bg-blue-50">
-                        <p class="text-slate-400 italic text-xs">Example: "Redesigned API architecture" (not "Responsible for API maintenance")</p>
-                    </div>
+                    <textarea rows="2" placeholder='Example: "Redesigned API architecture" (not "Responsible for API maintenance")' class="w-full border-2 border-blue-200 rounded-lg p-3 min-h-[50px] bg-blue-50 text-slate-800 text-xs resize-none" style="font-family: 'Plus Jakarta Sans', sans-serif;"></textarea>
                 </div>
                 <div>
                     <label class="block font-bold text-teal-700 mb-2">2. Metric — What was the result?</label>
-                    <div class="border-2 border-teal-200 rounded-lg p-4 min-h-[60px] bg-teal-50">
-                        <p class="text-slate-400 italic text-xs">Example: "Reduced response time by 60%"</p>
-                    </div>
+                    <textarea rows="2" placeholder='Example: "Reduced response time by 60%"' class="w-full border-2 border-teal-200 rounded-lg p-3 min-h-[50px] bg-teal-50 text-slate-800 text-xs resize-none" style="font-family: 'Plus Jakarta Sans', sans-serif;"></textarea>
                 </div>
                 <div>
                     <label class="block font-bold text-cyan-700 mb-2">3. How — What method/tech?</label>
-                    <div class="border-2 border-cyan-200 rounded-lg p-4 min-h-[60px] bg-cyan-50">
-                        <p class="text-slate-400 italic text-xs">Example: "Using GraphQL and Redis caching"</p>
-                    </div>
+                    <textarea rows="2" placeholder='Example: "Using GraphQL and Redis caching"' class="w-full border-2 border-cyan-200 rounded-lg p-3 min-h-[50px] bg-cyan-50 text-slate-800 text-xs resize-none" style="font-family: 'Plus Jakarta Sans', sans-serif;"></textarea>
                 </div>
                 <div>
                     <label class="block font-bold text-lime-700 mb-2">4. Why — Business impact?</label>
-                    <div class="border-2 border-lime-200 rounded-lg p-4 min-h-[60px] bg-lime-50">
-                        <p class="text-slate-400 italic text-xs">Example: "Supporting 50K+ concurrent users"</p>
-                    </div>
+                    <textarea rows="2" placeholder='Example: "Supporting 50K+ concurrent users"' class="w-full border-2 border-lime-200 rounded-lg p-3 min-h-[50px] bg-lime-50 text-slate-800 text-xs resize-none" style="font-family: 'Plus Jakarta Sans', sans-serif;"></textarea>
                 </div>
             </div>
 
@@ -1139,9 +1169,7 @@
             <!-- Final bullet -->
             <div>
                 <label class="block text-lg font-bold text-emerald-800 mb-2">Your New Impact Bullet:</label>
-                <div class="border-4 border-emerald-400 rounded-lg p-5 min-h-[80px] bg-emerald-50">
-                    <p class="text-slate-400 italic text-sm">Combine all 4 parts into one clear, complete sentence...</p>
-                </div>
+                <textarea rows="2" placeholder="Combine all 4 parts into one clear, complete sentence..." class="w-full border-4 border-emerald-400 rounded-lg p-4 min-h-[60px] bg-emerald-50 text-slate-800 text-sm resize-none font-semibold" style="font-family: 'Plus Jakarta Sans', sans-serif;"></textarea>
             </div>
 
         </div>
@@ -1215,67 +1243,51 @@
     <div class="relative" style="background: linear-gradient(135deg, #022c22 0%, #064e3b 40%, #0d9488 100%); padding: 2rem 2.5rem;">
         <div style="position: absolute; inset: 0; background-image: radial-gradient(rgba(255,255,255,0.07) 1px, transparent 1px); background-size: 20px 20px;"></div>
         <div class="relative z-10">
-            <p class="text-emerald-300/60 text-xs font-bold uppercase tracking-[3px] mb-2">What's Next</p>
-            <h2 class="text-3xl md:text-4xl font-extrabold text-white tracking-tight">Getting a Great Engineering Job Takes 3 Things</h2>
+            <p class="text-emerald-300/60 text-sm font-bold uppercase tracking-[3px] mb-2">Free Resume Audit</p>
+            <h2 class="text-4xl font-extrabold text-white tracking-tight">Now Let's See How <em>Your</em> <span style="margin-left: 0.15em;">Resume</span> Scores</h2>
         </div>
     </div>
 
     <!-- ── Content section ── -->
     <div class="flex-1 flex flex-col justify-between px-10 py-6">
         <div>
-            <div class="space-y-3 mb-5">
-                <!-- Thing 1 -->
-                <div class="rounded-xl p-5 no-break" style="background: #f8fafc; border-left: 5px solid #14b8a6;">
-                    <div class="flex items-start gap-4">
-                        <div class="w-9 h-9 rounded-lg flex items-center justify-center font-bold text-lg flex-shrink-0" style="background: #064e3b; color: #a3e635;">1</div>
-                        <div>
-                            <h3 class="text-lg font-bold text-slate-900 mb-1">A resume that gets interviews</h3>
-                            <p class="text-slate-600 text-base leading-relaxed">Your resume needs to clearly show what you accomplished, how you did it, and why it mattered — not just list your job duties.</p>
-                        </div>
-                    </div>
-                </div>
+            <!-- Intro context -->
+            <p class="text-slate-700 text-xl leading-relaxed mb-5">You just learned the 4-part formula. Now find out how your resume measures up.</p>
 
-                <!-- Thing 2 -->
-                <div class="rounded-xl p-5 no-break" style="background: #f8fafc; border-left: 5px solid #14b8a6;">
-                    <div class="flex items-start gap-4">
-                        <div class="w-9 h-9 rounded-lg flex items-center justify-center font-bold text-lg flex-shrink-0" style="background: #064e3b; color: #a3e635;">2</div>
-                        <div>
-                            <h3 class="text-lg font-bold text-slate-900 mb-1">Interview answers that show your value</h3>
-                            <p class="text-slate-600 text-base leading-relaxed">When they ask "tell me about a time when...", you need specific examples ready that show the impact you've had and the value you'd bring to their team.</p>
-                        </div>
-                    </div>
+            <!-- What you get -->
+            <h3 class="text-2xl font-extrabold text-slate-900 mb-4">Here's what you'll get back:</h3>
+            <div class="grid grid-cols-2 gap-4 mb-6">
+                <div class="rounded-lg p-4" style="background: #f0fdf4; border: 1.5px solid #86efac;">
+                    <p class="text-emerald-800 text-lg font-bold">Overall score out of 100</p>
+                    <p class="text-emerald-700 text-base mt-1">With 4 sub-scores so you know exactly where you're strong and where you're losing points.</p>
                 </div>
-
-                <!-- Thing 3 -->
-                <div class="rounded-xl p-5 no-break" style="background: #f8fafc; border-left: 5px solid #14b8a6;">
-                    <div class="flex items-start gap-4">
-                        <div class="w-9 h-9 rounded-lg flex items-center justify-center font-bold text-lg flex-shrink-0" style="background: #064e3b; color: #a3e635;">3</div>
-                        <div>
-                            <h3 class="text-lg font-bold text-slate-900 mb-1">The ability to perform under pressure in the interview</h3>
-                            <p class="text-slate-600 text-base leading-relaxed">Knowing your stories isn't enough — you need to deliver them clearly and confidently. That takes practice with real feedback.</p>
-                        </div>
-                    </div>
+                <div class="rounded-lg p-4" style="background: #f0fdf4; border: 1.5px solid #86efac;">
+                    <p class="text-emerald-800 text-lg font-bold">Your specific issues identified</p>
+                    <p class="text-emerald-700 text-base mt-1">Not generic advice. The actual problems on your resume, ranked by how much they hurt you.</p>
+                </div>
+                <div class="rounded-lg p-4" style="background: #f0fdf4; border: 1.5px solid #86efac;">
+                    <p class="text-emerald-800 text-lg font-bold">Before and after rewrites</p>
+                    <p class="text-emerald-700 text-base mt-1">Your real bullets rewritten using the formula from this guide, so you can see the difference side by side.</p>
+                </div>
+                <div class="rounded-lg p-4" style="background: #f0fdf4; border: 1.5px solid #86efac;">
+                    <p class="text-emerald-800 text-lg font-bold">Action items to fix it</p>
+                    <p class="text-emerald-700 text-base mt-1">Prioritized list of what to change first to get the biggest improvement in the least time.</p>
                 </div>
             </div>
 
-            <!-- This guide covers #1 -->
-            <div class="rounded-xl p-5 mb-5 no-break" style="background: #f0fdf4; border: 1.5px solid #86efac;">
-                <p class="text-slate-800 text-lg leading-relaxed"><strong class="text-emerald-700">This guide covers #1.</strong> The formula, the examples, and the worksheet are all designed to help you rewrite your resume so it gets callbacks.</p>
+            <!-- Primary CTA -->
+            <div class="rounded-xl p-6 mb-5 no-break" style="background: linear-gradient(135deg, #022c22, #064e3b); border: 1.5px solid #14b8a6;">
+                <div class="text-center">
+                    <p class="text-white text-xl font-extrabold mb-3">Email Your Resume for a Free Audit</p>
+                    <p class="font-extrabold text-2xl mb-3" style="font-family: 'Space Grotesk', monospace; color: #a3e635; letter-spacing: 0.5px;">audit@launchtolead.io</p>
+                    <p class="text-emerald-200/80 text-base leading-relaxed">Attach your resume as a PDF, Word doc, or even a screenshot.<br>I'll send your personalized audit back within 12 hours — usually much sooner.</p>
+                </div>
             </div>
 
-            <!-- If you want help with all three -->
-            <div class="rounded-xl p-5 mb-5 no-break" style="background: #f8fafc; border: 1px solid #e2e8f0;">
-                <h3 class="text-lg font-bold text-slate-900 mb-2">If you want help with all three</h3>
-                <p class="text-slate-600 text-base leading-relaxed mb-2">I built a program for engineers who want personalized, hands-on help. We go deeper on the resume, then tackle the interview side — building your story arsenal, practicing delivery, and getting direct feedback from someone who's been on both sides of the hiring table.</p>
-                <p class="text-slate-600 text-base leading-relaxed">It's 1-on-1, specific to your background, and you'll walk away with preparation you're genuinely confident in.</p>
-            </div>
-
-            <!-- CTA -->
-            <div class="text-center mb-5">
-                <a href="https://launchtolead.io/landing/offer.html" class="inline-block px-10 py-3.5 rounded-full font-bold text-base" style="background: linear-gradient(135deg, #064e3b, #0d9488); color: #a3e635; box-shadow: 0 4px 20px rgba(6,78,59,0.3);">
-                    Learn More About the Full Program
-                </a>
-                <p class="text-slate-400 text-sm mt-2">No pressure. Just see if it's a fit.</p>
+            <!-- Secondary CTA: Full Program -->
+            <div class="rounded-xl p-4 no-break" style="background: #f8fafc; border: 1px solid #e2e8f0;">
+                <p class="text-slate-700 text-base leading-relaxed"><strong class="text-slate-900">Already know you want hands-on help?</strong> I also offer a coaching program that covers the full resume rewrite, interview prep, and mock interviews.</p>
+                <p class="text-base font-bold mt-2" style="font-family: 'Space Grotesk', monospace;"><a id="offer-link" href="https://launchtolead.io/coaching" class="text-emerald-600 hover:underline" style="text-decoration: underline;">launchtolead.io/coaching</a></p>
             </div>
         </div>
 
@@ -1290,7 +1302,7 @@
                 </div>
             </div>
             <div class="mt-4 pt-3 border-t border-slate-100 text-center">
-                <p class="text-slate-300 text-xs">© 2026 LaunchToLead.</p>
+                <p class="text-slate-300 text-xs">&copy; 2026 LaunchToLead.</p>
             </div>
         </div>
     </div>
