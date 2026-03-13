@@ -25,14 +25,11 @@ const leadMagnets = [
 ];
 
 // ── LinkedIn Document Ad variants ────────────────────────────────────
-// Each gets the variant cover (1 page) + main guide pages 2–15
+// Each gets the variant cover (1 page) + main guide pages (with per-ad tracking links)
 const linkedInVariants = [
-    { cover: 'cover-classmates-landing-jobs.html', slug: 'classmates-landing-jobs' },
-    { cover: 'cover-closer-to-graduation.html',    slug: 'closer-to-graduation' },
-    { cover: 'cover-fix-your-resume.html',          slug: 'fix-your-resume' },
-    { cover: 'cover-hail-mary.html',                slug: 'hail-mary' },
-    { cover: 'cover-resume-is-the-problem.html',    slug: 'resume-is-the-problem' },
-    { cover: 'cover-try-this.html',                  slug: 'try-this' },
+    { cover: 'cover-closer-to-graduation.html',    slug: 'closer-to-graduation',    audience: 'graduating-soon' },
+    { cover: 'cover-resume-is-the-problem.html',    slug: 'resume-is-the-problem',   audience: 'recently-graduated' },
+    { cover: 'cover-try-this.html',                  slug: 'try-this',                audience: 'early-engineers' },
 ];
 
 // ── Helpers ──────────────────────────────────────────────────────────
@@ -43,7 +40,7 @@ function ensureDir(dirPath) {
     }
 }
 
-async function htmlToPdfBuffer(browser, htmlFile) {
+async function htmlToPdfBuffer(browser, htmlFile, linkOverrides) {
     const page = await browser.newPage();
     const htmlPath = path.resolve(__dirname, htmlFile);
     await page.goto(`file://${htmlPath}`, {
@@ -52,6 +49,17 @@ async function htmlToPdfBuffer(browser, htmlFile) {
     });
     // Wait for Tailwind CSS CDN + fonts to load
     await new Promise(r => setTimeout(r, 3000));
+
+    // Inject per-variant tracking links into the last page
+    if (linkOverrides) {
+        await page.evaluate(({ auditMailto, offerUrl }) => {
+            const auditLink = document.getElementById('audit-link');
+            if (auditLink) auditLink.href = auditMailto;
+            const offerLink = document.getElementById('offer-link');
+            if (offerLink) offerLink.href = offerUrl;
+        }, linkOverrides);
+    }
+
     const buffer = await page.pdf({
         format: 'Letter',
         printBackground: true,
@@ -80,38 +88,42 @@ async function generateStandalone(browser, lm) {
 // ── Generate LinkedIn variant PDFs ───────────────────────────────────
 
 async function generateLinkedInVariants(browser) {
-    const variantsDir = path.resolve(__dirname, 'active/linkedin-ads-variants');
     const outDir = path.resolve(__dirname, 'pdfs/linkedin-variants');
     ensureDir(outDir);
 
-    // 1. Render main guide once and grab pages 2–15
-    console.log('  ⏳ Rendering main guide...');
-    const mainBuffer = await htmlToPdfBuffer(browser, 'active/impact-bullet-builder.html');
-    const mainDoc = await PDFDocument.load(mainBuffer);
-    const mainPageCount = mainDoc.getPageCount();
-    console.log(`     Main guide: ${mainPageCount} pages`);
-
-    // 2. For each variant, render its cover and merge
     for (const variant of linkedInVariants) {
         const coverHtml = path.join('active/linkedin-ads-variants', variant.cover);
         console.log(`  ⏳ ${variant.slug}...`);
 
+        // Build per-variant tracking links
+        const auditSubject = encodeURIComponent(`Free Resume Audit [Source: ${variant.slug}]`);
+        const auditBody = encodeURIComponent(
+            `Hi Mansour,\n\nPlease audit my resume. I've attached it to this email.\n\nThanks!`
+        );
+        const auditMailto = `mailto:audit@launchtolead.io?subject=${auditSubject}&body=${auditBody}`;
+        const offerUrl = `https://launchtolead.io/coaching?utm_source=pdf&utm_medium=lead-magnet&utm_campaign=resume-guide&utm_content=${variant.slug}`;
+
         // Render cover page
         const coverBuffer = await htmlToPdfBuffer(browser, coverHtml);
 
-        // Create merged PDF: black ad cover + ALL main guide pages
+        // Render main guide with per-variant tracking links injected
+        console.log(`     Rendering guide with ${variant.slug} tracking links...`);
+        const mainBuffer = await htmlToPdfBuffer(browser, 'active/impact-bullet-builder.html', {
+            auditMailto,
+            offerUrl
+        });
+        const mainDoc = await PDFDocument.load(mainBuffer);
+
+        // Create merged PDF: cover + all main guide pages
         const mergedDoc = await PDFDocument.create();
 
-        // Copy black cover page(s)
         const coverDoc = await PDFDocument.load(coverBuffer);
         const coverPages = await mergedDoc.copyPages(coverDoc, coverDoc.getPageIndices());
         coverPages.forEach(p => mergedDoc.addPage(p));
 
-        // Copy ALL main guide pages (1–15)
         const mainPages = await mergedDoc.copyPages(mainDoc, mainDoc.getPageIndices());
         mainPages.forEach(p => mergedDoc.addPage(p));
 
-        // Save
         const mergedBytes = await mergedDoc.save();
         const outPath = path.join(outDir, `Impact-Bullet-Builder-${variant.slug}.pdf`);
         fs.writeFileSync(outPath, mergedBytes);

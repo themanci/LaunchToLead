@@ -13,7 +13,7 @@
 
 ---
 
-## Step 2: Load the Impact Bullet Builder™ Principles
+## Step 2: Load the Impact Bullet Builder Principles
 
 Read `lead-magnets/active/impact-bullet-builder.html` to refresh all scoring criteria. The core framework:
 
@@ -32,15 +32,15 @@ Accomplishment + Metric + How + Why = IMPACT
 
 ### Key Principles to Check
 
-1. **Me-in-We Extractor™** — Flag any "we/team/group" language. Replace with the candidate's specific personal contribution. "Assisted with" is a resume killer.
-2. **Dragon Slayer Technique** — Paint the pain/problem FIRST, then show the accomplishment. The bigger the monster, the bigger the hero. 3 ways to add context:
+1. **Personal Ownership** — Flag any "we/team/group" language. Replace with the candidate's specific personal contribution. "Assisted with" is a resume killer.
+2. **Problem Context / "So What?"** — Paint the pain/problem FIRST, then show the accomplishment. The bigger the context, the bigger the impact. 3 ways to add context:
    - Stakes: "On a $4.2M project with zero margin for delay..."
    - Before/After: "Reduced from 12 hours to 45 minutes..."
    - Scale: "Across 14 manufacturing sites..."
-3. **Pyramid of Value** — Classify each bullet:
-   - **Doer** (duties, ignored by recruiters) → "Responsible for maintaining..."
-   - **Achiever** (tasks + some numbers, considered) → "Maintained 15 servers..."
-   - **Impact Standard** (full formula, gets hired) → "Redesigned server architecture, reducing downtime by 74%..."
+3. **Three Tiers of Value** — Classify each bullet:
+   - **★ You Did What Was Asked** (duties, ignored by recruiters) → "Responsible for maintaining..."
+   - **★★ You Went Above and Beyond** (tasks + some numbers, considered) → "Maintained 15 servers..."
+   - **★★★ You Spread the Impact Far and Wide** (full formula, gets hired) → "Redesigned server architecture, reducing downtime by 74%..."
 4. **BS Meter** — No vague claims without proof. "Excellent communicator" means nothing. Show it.
 5. **Action Verbs** — Never start with "Responsible for," "Duties included," "Assisted with," "Helped with," "Contributed to," or "Supported." Use strong verbs: Engineered, Designed, Built, Automated, Reduced, etc.
 6. **Skills in Context** — Don't just list tools in a Skills section. Show them IN the bullets. "PSS/E" alone = weak. "Ran 40+ PSS/E contingency simulations" = strong.
@@ -57,7 +57,7 @@ Go through each bullet on the resume and evaluate it against all 4 components of
 - Does it explain **why it matters** (business impact)?
 - Does it use **passive/weak language** ("Assisted," "Helped," "Responsible for")?
 - Is there any **"we/team" language** that hides personal contribution?
-- Is there **Dragon Slayer context** (problem painted before the solution)?
+- Is there **problem context** (the "So What?" — why did this work matter)?
 
 ---
 
@@ -66,6 +66,13 @@ Go through each bullet on the resume and evaluate it against all 4 components of
 Save as `resumes/potential_clients/{candidate_name}_analysis.html`
 
 The HTML file must include these 7 sections in order:
+
+### Voice & Tone
+
+- **Write in 2nd person** — address the candidate directly as "you" / "your." The audit should read as if the coach is talking directly to the client.
+- **Engineering-appropriate, factual, straight-to-the-point.** No hype, no salesy language, no exclamation marks in the analysis.
+- **No cheesy taglines.** No "No pitch. No pressure. Just a plan." or similar.
+- **CTA calls it a "Career Launch Call"** — not a strategy call, not a 15-min call.
 
 ### Section 1: Overall Score (out of 100)
 
@@ -79,10 +86,9 @@ Score the resume on a 0–100 scale with a visual progress bar. Include 4 sub-sc
 | Why / Business Impact  | /10    | Does the reader know why the CEO would care?         |
 
 **Scoring tiers:**
-- 0–30: **"The Doer"** — resume is functionally invisible
-- 31–50: **"The Achiever"** — has some numbers but missing impact
-- 51–75: **"Almost There"** — structure is right, needs polish
-- 76–100: **"Impact Standard"** — ready to land interviews
+- 0–30: **★ “You Did What Was Asked”** — resume is functionally invisible
+- 31–60: **★★ “You Went Above and Beyond”** — has some numbers but missing full impact
+- 61–100: **★★★ “You Spread the Impact Far and Wide”** — ready to land interviews
 
 Include a verdict banner at the bottom of this section with the tier name and a 2-3 sentence explanation.
 
@@ -110,8 +116,8 @@ Rewrite the ENTIRE resume using the Impact Bullet Builder formula. Rules:
 ### Section 4: Before & After Examples
 
 Pick the 3 most dramatic transformations and show them side-by-side:
-- Red box: Original bullet (labeled "Doer Level")
-- Green box: Rewritten bullet (labeled "Impact Standard")
+- Red box: Original bullet (labeled "★ Level")
+- Green box: Rewritten bullet (labeled "★★★ Level")
 
 This section demonstrates the value of the framework visually.
 
@@ -136,18 +142,18 @@ A detailed scoring table with 8 criteria:
 | Metrics / Quantification    | X/10  | Specific observation         |
 | How / Method Shown          | X/10  | Specific observation         |
 | Why / Business Impact       | X/10  | Specific observation         |
-| Me-in-We Extractor™         | X/10  | Specific observation         |
-| Dragon Slayer Context       | X/10  | Specific observation         |
+| Personal Ownership (not "we/team") | X/10  | Specific observation         |
+| Problem Context / "So What?"        | X/10  | Specific observation         |
 | Action Verbs                | X/10  | Specific observation         |
 | Bullet Quality Consistency  | X/10  | Specific observation         |
 | **OVERALL**                 | XX/100| Tier name + one-line verdict |
 
-End with an emerald "Good News" banner that highlights the candidate's potential and what applying the framework would unlock.
+End with an emerald "Good News" banner that highlights the candidate's potential and what applying the framework would unlock. **Write in 2nd person** ("You have...", "Your experience...") — not 3rd person about the candidate.
 
 ### Footer
 
 ```
-Analysis prepared by LaunchToLead | Impact Bullet Builder™ Framework
+Analysis prepared by LaunchToLead | Impact Bullet Builder Framework
 launchtolead.io/free
 ```
 
@@ -298,10 +304,50 @@ After creating the HTML file, give the user a brief summary:
 
 ---
 
+## Lead Magnet Audit (Lighter Version)
+
+> **Trigger phrase:** "Run a lead magnet resume audit"  
+> **Template:** `resumes/lead-magnet-audit-template.html`  
+> **Purpose:** Free audit for cold leads from LinkedIn ads / lead magnet downloads. Delivers enough value to build trust → book a call. NOT the full client audit.
+
+### Differences from Full Audit
+
+| Element               | Full Audit         | Lead Magnet Audit       |
+| --------------------- | ------------------ | ----------------------- |
+| Key Issues            | 5–8                | **3–5** (highest impact) |
+| Bullets Rewritten     | All bullets        | **Top 3–5 only**         |
+| Before/After Examples | 3                  | **2–3**                  |
+| Action Items          | 5–8                | **3–5**                  |
+| What's Working        | 3–5                | 3–5 (same)              |
+| Scorecard             | Full 8-criteria    | Full 8-criteria (same)  |
+| CTA at Bottom         | None (client work) | **Link to coaching page** (launchtolead.io/coaching) |
+
+### How to Use the Template
+
+1. Copy `resumes/lead-magnet-audit-template.html` → `resumes/potential_clients/{name}_audit.html`
+2. Replace all `{{PLACEHOLDER}}` values with real analysis
+3. Pick the **3–5 issues that would move the score the most** — not every issue
+4. Rewrite the candidate's **3–5 strongest bullets** (ones with the most potential)
+5. Add a note in the rewritten section: "In the full coaching program, we rewrite every bullet"
+6. Keep the CTA link pointing to `https://launchtolead.io/coaching` with `utm_content={{CANDIDATE_SLUG}}` for tracking. This redirects to the offer page (preserving UTMs) where they qualify and can book a Career Launch Call — the audit CTA should send them there, not directly to Calendly.
+7. Export via Ctrl+P → "Save as PDF" and email to the candidate
+
+### Scoring Color Reference
+
+| Score Range | Score Color      | Sub-score BG                                           | Verdict BG       |
+| ----------- | ---------------- | ------------------------------------------------------ | ---------------- |
+| 0–3/10      | `text-red-500`   | `bg-red-50 border-red-200 / text-red-500 / red-700`   | `bg-red-900`     |
+| 4–5/10      | `text-amber-500` | `bg-amber-50 border-amber-200 / text-amber-500 / amber-700` | `bg-amber-800` |
+| 6–7/10      | `text-emerald-500`| `bg-emerald-50 border-emerald-200 / text-emerald-500 / emerald-700` | `bg-emerald-800` |
+| 8–10/10     | `text-lime-500`  | `bg-lime-50 border-lime-200 / text-lime-500 / lime-700` | `bg-emerald-900` |
+
+---
+
 ## Reference Files
 
 - **Impact Bullet Builder source:** `lead-magnets/active/impact-bullet-builder.html`
 - **Example completed audit (print-friendly v2):** `resumes/potential_clients/neehal_surayavanshi_analysis_v2.html`
 - **Example completed audit (print-friendly v2):** `resumes/potential_clients/steven_de_alwis_analysis_v2.html`
+- **Lead magnet audit template:** `resumes/lead-magnet-audit-template.html`
 - **Resume input folder:** `resumes/potential_clients/`
 - **Print export protocol (carousels only):** `protocols/html-to-pdf-export.md`
