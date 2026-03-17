@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Forms Setup — University Club Partnerships</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: #0a0a0a;
+            color: #e2e8f0;
+            padding: 48px 40px;
+            line-height: 1.6;
+        }
+
+        .page { max-width: 900px; margin: 0 auto; }
+
+        h1 { font-size: 28px; font-weight: 800; color: #f1f5f9; margin-bottom: 4px; }
+        .subtitle { font-size: 14px; color: #64748b; margin-bottom: 44px; }
+
+        h2 {
+            font-size: 20px; font-weight: 700; color: #a3e635;
+            margin-top: 44px; margin-bottom: 16px;
+            padding-bottom: 8px; border-bottom: 1px solid #1e293b;
+        }
+
+        h3 { font-size: 15px; font-weight: 700; color: #cbd5e1; margin-top: 24px; margin-bottom: 8px; }
+
+        p, li { font-size: 14px; color: #94a3b8; line-height: 1.7; }
+        ul, ol { padding-left: 22px; margin-bottom: 12px; }
+        li { margin-bottom: 6px; }
+        li strong { color: #e2e8f0; font-weight: 600; }
+
+        .form-label { color: #f1f5f9; font-weight: 700; }
+
+        .card {
+            background: #111827; border: 1px solid #1e293b;
+            border-radius: 10px; padding: 20px 24px; margin: 14px 0;
+        }
+        .card-accent { border-left: 3px solid #a3e635; }
+        .card-warn  { border-left: 3px solid #fbbf24; }
+        .card-blue  { border-left: 3px solid #38bdf8; }
+        .card-red   { border-left: 3px solid #ef4444; }
+
+        .step {
+            display: flex; gap: 14px; padding: 14px 0;
+            border-bottom: 1px solid #111827;
+        }
+        .step:last-child { border-bottom: none; }
+        .step-num {
+            background: #1e293b; color: #a3e635;
+            font-size: 12px; font-weight: 800;
+            min-width: 28px; height: 28px; border-radius: 6px;
+            display: flex; align-items: center; justify-content: center;
+            flex-shrink: 0; margin-top: 2px;
+        }
+        .step-content { flex: 1; }
+
+        .field-block {
+            background: #0f172a; border: 1px solid #1e293b;
+            border-radius: 8px; padding: 16px 20px; margin: 10px 0;
+        }
+        .field-block .field-name {
+            color: #a3e635; font-weight: 700; font-size: 14px; margin-bottom: 4px;
+        }
+        .field-block .field-type {
+            color: #64748b; font-size: 12px; text-transform: uppercase;
+            letter-spacing: 0.06em; margin-bottom: 6px;
+        }
+        .field-block .field-desc {
+            color: #94a3b8; font-size: 13px;
+        }
+
+        .tag {
+            display: inline-block; font-size: 10px; font-weight: 700;
+            letter-spacing: 0.1em; text-transform: uppercase;
+            padding: 2px 8px; border-radius: 3px; margin-left: 6px;
+        }
+        .tag-req  { background: #14532d; color: #4ade80; }
+        .tag-opt  { background: #1e293b; color: #64748b; }
+
+        .divider { border: none; border-top: 1px solid #1e293b; margin: 40px 0; }
+
+        .copy-text {
+            background: #0f172a; border: 1px solid #1e293b;
+            border-radius: 8px; padding: 16px 20px;
+            font-size: 13px; color: #cbd5e1; line-height: 1.8;
+            white-space: pre-wrap; margin: 10px 0;
+        }
+        .copy-text em { color: #a3e635; font-style: normal; font-weight: 600; }
+
+        .footer {
+            margin-top: 48px; padding-top: 20px;
+            border-top: 1px solid #1e293b;
+            font-size: 12px; color: #334155;
+        }
+
+        .form-tag {
+            display: inline-block; font-size: 11px; font-weight: 700;
+            letter-spacing: 0.08em; text-transform: uppercase;
+            padding: 4px 12px; border-radius: 4px; margin-bottom: 8px;
+        }
+        .form-tag-a { background: #1e3a20; color: #4ade80; }
+        .form-tag-b { background: #1e293b; color: #38bdf8; }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <h1>Google Forms Setup Guide</h1>
+    <p class="subtitle">Step-by-step instructions for two university club partnership intake forms</p>
+
+    <div class="card card-accent">
+        <p><strong>Form A:</strong> <span class="form-tag form-tag-a">GOECE</span> Graduate Organization of Electrical and Computer Engineering — <strong>includes resume upload</strong> (first 10 get free audit)</p>
+        <p style="margin-top: 8px;"><strong>Form B:</strong> <span class="form-tag form-tag-b">GradSWE</span> Graduate Society of Women Engineers — <strong>no resume upload</strong> (president collects resumes manually and sends to you)</p>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <hr class="divider">
+    <h2><span class="form-tag form-tag-a">FORM A</span> GOECE — Resume Audit + Session Registration</h2>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <h3>Step-by-step creation</h3>
+
+    <div class="card">
+        <div class="step">
+            <div class="step-num">1</div>
+            <div class="step-content">
+                <p>Go to <strong>forms.google.com</strong> → click <strong>Blank form</strong> (or the <strong>+</strong> button)</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-num">2</div>
+            <div class="step-content">
+                <p><strong>Form title:</strong></p>
+                <div class="copy-text">Free Resume Audit + Live Workshop — GOECE</div>
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-num">3</div>
+            <div class="step-content">
+                <p><strong>Form description:</strong></p>
+                <div class="copy-text">I'm partnering with GOECE to offer 10 free resume audits to club members — first come, first served.
+
+Submit your resume and info below. The first 10 complete submissions will receive a full written audit returned via email. Everyone who fills out this form (audited or not) is invited to the 1-hour live group session where I'll walk through the biggest issues I found across all resumes (anonymized) and open the floor for Q&A.
+
+Even if you're not in the first 10, showing up to the live session means you'll hear real feedback on real resumes — that alone is worth your time.
+
+<em>PDF resumes only. One submission per person.</em></div>
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-num">4</div>
+            <div class="step-content">
+                <p>Now add each question below. For each one: click the <strong>+</strong> (add question) button, set the question type, paste the title and description, and toggle <strong>Required</strong> on/off as noted.</p>
+            </div>
+        </div>
+    </div>
+
+    <h3>Questions to add (in order)</h3>
+
+    <div class="field-block">
+        <div class="field-name">Question 1: Full Name <span class="tag tag-req">Required</span></div>
+        <div class="field-type">Short answer</div>
+        <div class="field-desc">No description needed. Toggle Required ON.</div>
+    </div>
+
+    <div class="field-block">
+        <div class="field-name">Question 2: Email Address <span class="tag tag-req">Required</span></div>
+        <div class="field-type">Short answer</div>
+        <div class="field-desc">
+            Click the three-dot menu (⋮) at bottom-right of the question → <strong>Response validation</strong><br>
+            Set to: <strong>Text</strong> → <strong>Email address</strong><br>
+            Custom error message: <em>Please enter a valid email address</em><br>
+            Toggle Required ON.
+        </div>
+    </div>
+
+    <div class="field-block">
+        <div class="field-name">Question 3: University <span class="tag tag-req">Required</span></div>
+        <div class="field-type">Short answer</div>
+        <div class="field-desc">No description needed. Toggle Required ON.</div>
+    </div>
+
+    <div class="field-block">
+        <div class="field-name">Question 4: Class Standing <span class="tag tag-req">Required</span></div>
+        <div class="field-type">Dropdown</div>
+        <div class="field-desc">
+            Add these options (one per line):<br>
+            • Freshman<br>
+            • Sophomore<br>
+            • Junior<br>
+            • Senior<br>
+            • Graduate (Master's)<br>
+            • Graduate (PhD)<br><br>
+            Toggle Required ON.
+        </div>
+    </div>
+
+    <div class="field-block">
+        <div class="field-name">Question 5: Major / Concentration <span class="tag tag-req">Required</span></div>
+        <div class="field-type">Short answer</div>
+        <div class="field-desc">
+            Description: <em>e.g. Electrical Engineering, Computer Engineering, Computer Science</em><br>
+            Toggle Required ON.
+        </div>
+    </div>
+
+    <div class="field-block">
+        <div class="field-name">Question 6: Expected Graduation Date <span class="tag tag-req">Required</span></div>
+        <div class="field-type">Short answer</div>
+        <div class="field-desc">
+            Description: <em>Month and year (e.g. May 2027)</em><br>
+            Toggle Required ON.
+        </div>
+    </div>
+
+    <div class="field-block">
+        <div class="field-name">Question 7: What type of role are you targeting? <span class="tag tag-req">Required</span></div>
+        <div class="field-type">Short answer</div>
+        <div class="field-desc">
+            Description: <em>e.g. "embedded systems internship," "full-time firmware role," "product engineering co-op," "hardware design"</em><br>
+            Toggle Required ON.
+        </div>
+    </div>
+
+    <div class="field-block">
+        <div class="field-name">Question 8: What are your top pain points in the job hunt right now? <span class="tag tag-req">Required</span></div>
+        <div class="field-type">Paragraph</div>
+        <div class="field-desc">
+            Description: <em>What's frustrating you most? Not hearing back? Don't know how to describe your projects? Unsure what roles to even target? Be specific — this helps me tailor the live session to your actual problems.</em><br>
+            Toggle Required ON.
+        </div>
+    </div>
+
+    <div class="field-block">
+        <div class="field-name">Question 9: Any specific questions you'd like me to cover during the live session? <span class="tag tag-opt">Optional</span></div>
+        <div class="field-type">Paragraph</div>
+        <div class="field-desc">
+            Description: <em>Anything you want me to address — resume formatting, how to write bullet points, how to talk about research or coursework, career pivots, etc.</em><br>
+            Toggle Required OFF.
+        </div>
+    </div>
+
+    <div class="field-block">
+        <div class="field-name">Question 10: Upload Your Resume (PDF only) <span class="tag tag-req">Required</span></div>
+        <div class="field-type">File upload</div>
+        <div class="field-desc">
+            <strong>Important:</strong> When you select "File upload" as the question type, Google will ask you to confirm that uploaded files will be stored in your Google Drive. Click <strong>Continue</strong>.<br><br>
+            Settings for the file upload question:<br>
+            • Check <strong>Allow only specific file types</strong> → select <strong>PDF</strong> only<br>
+            • <strong>Maximum number of files:</strong> 1<br>
+            • <strong>Maximum file size:</strong> 10 MB<br><br>
+            Toggle Required ON.
+        </div>
+    </div>
+
+    <h3>Form settings (gear icon ⚙️ at top)</h3>
+
+    <div class="card card-warn">
+        <ul>
+            <li><strong>Responses tab:</strong> Turn ON <strong>Collect email addresses</strong> (adds a verified email field at the top — acts as a backup to your Question 2, and lets Google notify you of new responses)</li>
+            <li><strong>Responses tab:</strong> Turn ON <strong>Limit to 1 response</strong> (prevents duplicate submissions)</li>
+            <li><strong>Presentation tab:</strong> Turn OFF <strong>Show link to submit another response</strong></li>
+            <li><strong>Presentation tab → Confirmation message:</strong> Paste the text below</li>
+        </ul>
+    </div>
+
+    <div class="copy-text">Thanks for submitting! Here's what happens next:
+
+• If you're in the first 10, you'll receive your written resume audit via email within 3–5 business days.
+• Everyone who submitted will be invited to the 1-hour live group session — even if you weren't in the first 10, you'll benefit from hearing the feedback and Q&A.
+• Keep an eye on your email for the Zoom link and schedule.
+
+Questions? Reply to the email you receive or reach out to your club leadership.</div>
+
+    <h3>After creating: link the responses to a spreadsheet</h3>
+
+    <div class="card">
+        <div class="step">
+            <div class="step-num">1</div>
+            <div class="step-content"><p>Click the <strong>Responses</strong> tab at the top of your form</p></div>
+        </div>
+        <div class="step">
+            <div class="step-num">2</div>
+            <div class="step-content"><p>Click the green <strong>Sheets icon</strong> (Link to Sheets)</p></div>
+        </div>
+        <div class="step">
+            <div class="step-num">3</div>
+            <div class="step-content"><p>Select <strong>Create a new spreadsheet</strong> → name it <em>GOECE Resume Audit Submissions</em></p></div>
+        </div>
+        <div class="step">
+            <div class="step-num">4</div>
+            <div class="step-content"><p>Responses will auto-populate into the sheet. When you hit 10 valid entries, go back to the form and toggle <strong>Accepting responses</strong> OFF (top of Responses tab).</p></div>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <hr class="divider">
+    <h2><span class="form-tag form-tag-b">FORM B</span> GradSWE — Live Session Registration</h2>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <div class="card card-blue">
+        <p><strong>Key difference:</strong> No resume upload on this form. The GradSWE president will collect resumes manually from the first 10 members and send them to you directly. This form is purely for session registration and collecting info to prep for the live call.</p>
+    </div>
+
+    <h3>Step-by-step creation</h3>
+
+    <div class="card">
+        <div class="step">
+            <div class="step-num">1</div>
+            <div class="step-content">
+                <p>Go to <strong>forms.google.com</strong> → click <strong>Blank form</strong></p>
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-num">2</div>
+            <div class="step-content">
+                <p><strong>Form title:</strong></p>
+                <div class="copy-text">Free Resume Workshop Registration — GradSWE</div>
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-num">3</div>
+            <div class="step-content">
+                <p><strong>Form description:</strong></p>
+                <div class="copy-text">I'm partnering with GradSWE to host a free 1-hour live resume workshop for club members.
+
+During the session, I'll walk through the biggest resume mistakes I see from engineering students and new grads, share frameworks for writing high-impact bullet points, and open the floor for 30 minutes of Q&A.
+
+Fill out this form to register and help me tailor the session to what you actually need.
+
+<em>For resume audits: your club president is collecting resumes separately — reach out to them directly if you want to be one of the 10 selected for a free written audit.</em></div>
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-num">4</div>
+            <div class="step-content">
+                <p>Add each question below.</p>
+            </div>
+        </div>
+    </div>
+
+    <h3>Questions to add (in order)</h3>
+
+    <div class="field-block">
+        <div class="field-name">Question 1: Full Name <span class="tag tag-req">Required</span></div>
+        <div class="field-type">Short answer</div>
+        <div class="field-desc">Toggle Required ON.</div>
+    </div>
+
+    <div class="field-block">
+        <div class="field-name">Question 2: Email Address <span class="tag tag-req">Required</span></div>
+        <div class="field-type">Short answer</div>
+        <div class="field-desc">
+            Response validation: <strong>Text</strong> → <strong>Email address</strong><br>
+            Custom error message: <em>Please enter a valid email address</em><br>
+            Toggle Required ON.
+        </div>
+    </div>
+
+    <div class="field-block">
+        <div class="field-name">Question 3: University <span class="tag tag-req">Required</span></div>
+        <div class="field-type">Short answer</div>
+        <div class="field-desc">Toggle Required ON.</div>
+    </div>
+
+    <div class="field-block">
+        <div class="field-name">Question 4: Class Standing <span class="tag tag-req">Required</span></div>
+        <div class="field-type">Dropdown</div>
+        <div class="field-desc">
+            Options:<br>
+            • Freshman<br>
+            • Sophomore<br>
+            • Junior<br>
+            • Senior<br>
+            • Graduate (Master's)<br>
+            • Graduate (PhD)<br><br>
+            Toggle Required ON.
+        </div>
+    </div>
+
+    <div class="field-block">
+        <div class="field-name">Question 5: Major / Concentration <span class="tag tag-req">Required</span></div>
+        <div class="field-type">Short answer</div>
+        <div class="field-desc">
+            Description: <em>e.g. Electrical Engineering, Computer Engineering, Biomedical Engineering</em><br>
+            Toggle Required ON.
+        </div>
+    </div>
+
+    <div class="field-block">
+        <div class="field-name">Question 6: Expected Graduation Date <span class="tag tag-req">Required</span></div>
+        <div class="field-type">Short answer</div>
+        <div class="field-desc">
+            Description: <em>Month and year (e.g. May 2027)</em><br>
+            Toggle Required ON.
+        </div>
+    </div>
+
+    <div class="field-block">
+        <div class="field-name">Question 7: What type of role are you targeting? <span class="tag tag-req">Required</span></div>
+        <div class="field-type">Short answer</div>
+        <div class="field-desc">
+            Description: <em>e.g. "power systems internship," "full-time software role," "systems engineering co-op," "hardware design"</em><br>
+            Toggle Required ON.
+        </div>
+    </div>
+
+    <div class="field-block">
+        <div class="field-name">Question 8: What are your top pain points in the job hunt right now? <span class="tag tag-req">Required</span></div>
+        <div class="field-type">Paragraph</div>
+        <div class="field-desc">
+            Description: <em>What's frustrating you most? Not hearing back? Don't know how to describe your projects? Unsure what roles to even target? Be specific — this helps me tailor the session to your actual problems.</em><br>
+            Toggle Required ON.
+        </div>
+    </div>
+
+    <div class="field-block">
+        <div class="field-name">Question 9: Any specific questions you'd like me to cover during the live session? <span class="tag tag-opt">Optional</span></div>
+        <div class="field-type">Paragraph</div>
+        <div class="field-desc">
+            Description: <em>Anything you want me to address — resume formatting, how to write bullet points, how to talk about research or coursework, career pivots, etc.</em><br>
+            Toggle Required OFF.
+        </div>
+    </div>
+
+    <h3>Form settings (gear icon ⚙️ at top)</h3>
+
+    <div class="card card-warn">
+        <ul>
+            <li><strong>Responses tab:</strong> Turn ON <strong>Collect email addresses</strong></li>
+            <li><strong>Responses tab:</strong> Turn ON <strong>Limit to 1 response</strong></li>
+            <li><strong>Presentation tab:</strong> Turn OFF <strong>Show link to submit another response</strong></li>
+            <li><strong>Presentation tab → Confirmation message:</strong> Paste the text below</li>
+        </ul>
+    </div>
+
+    <div class="copy-text">You're registered! Here's what to expect:
+
+• You'll receive the Zoom link and session date via email from your club leadership.
+• If you want to be one of the 10 who receive a free written resume audit, reach out to your GradSWE president directly — she's collecting resumes separately.
+• Come ready with questions — 30 minutes of the session is open Q&A.
+
+See you there!</div>
+
+    <h3>After creating: link the responses to a spreadsheet</h3>
+
+    <div class="card">
+        <div class="step">
+            <div class="step-num">1</div>
+            <div class="step-content"><p>Click the <strong>Responses</strong> tab → green <strong>Sheets icon</strong></p></div>
+        </div>
+        <div class="step">
+            <div class="step-num">2</div>
+            <div class="step-content"><p>Name it <em>GradSWE Workshop Registrations</em></p></div>
+        </div>
+        <div class="step">
+            <div class="step-num">3</div>
+            <div class="step-content"><p>This form stays open — no 10-person cutoff since it's registration, not audit intake. Close it the day of the session if you want.</p></div>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <hr class="divider">
+    <h2>Side-by-Side Comparison</h2>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <table style="width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 14px;">
+        <tr>
+            <th style="text-align: left; padding: 10px 14px; background: #1e293b; color: #94a3b8; font-weight: 600; font-size: 12px; text-transform: uppercase; width: 40%;">Feature</th>
+            <th style="text-align: center; padding: 10px 14px; background: #1e3a20; color: #4ade80; font-weight: 600; font-size: 12px; text-transform: uppercase; width: 30%;">GOECE (Form A)</th>
+            <th style="text-align: center; padding: 10px 14px; background: #0c2d48; color: #38bdf8; font-weight: 600; font-size: 12px; text-transform: uppercase; width: 30%;">GradSWE (Form B)</th>
+        </tr>
+        <tr>
+            <td style="padding: 10px 14px; border-bottom: 1px solid #1e293b; color: #cbd5e1;">Resume upload on form</td>
+            <td style="padding: 10px 14px; border-bottom: 1px solid #1e293b; color: #4ade80; text-align: center;">✓ Yes (PDF only)</td>
+            <td style="padding: 10px 14px; border-bottom: 1px solid #1e293b; color: #ef4444; text-align: center;">✗ No (president collects)</td>
+        </tr>
+        <tr>
+            <td style="padding: 10px 14px; border-bottom: 1px solid #1e293b; color: #cbd5e1;">Close form at 10 entries</td>
+            <td style="padding: 10px 14px; border-bottom: 1px solid #1e293b; color: #4ade80; text-align: center;">✓ Yes (manual close)</td>
+            <td style="padding: 10px 14px; border-bottom: 1px solid #1e293b; color: #ef4444; text-align: center;">✗ No (stays open)</td>
+        </tr>
+        <tr>
+            <td style="padding: 10px 14px; border-bottom: 1px solid #1e293b; color: #cbd5e1;">Purpose</td>
+            <td style="padding: 10px 14px; border-bottom: 1px solid #1e293b; color: #94a3b8; text-align: center;">Audit intake + registration</td>
+            <td style="padding: 10px 14px; border-bottom: 1px solid #1e293b; color: #94a3b8; text-align: center;">Registration only</td>
+        </tr>
+        <tr>
+            <td style="padding: 10px 14px; border-bottom: 1px solid #1e293b; color: #cbd5e1;">Number of questions</td>
+            <td style="padding: 10px 14px; border-bottom: 1px solid #1e293b; color: #94a3b8; text-align: center;">10</td>
+            <td style="padding: 10px 14px; border-bottom: 1px solid #1e293b; color: #94a3b8; text-align: center;">9</td>
+        </tr>
+        <tr>
+            <td style="padding: 10px 14px; border-bottom: 1px solid #1e293b; color: #cbd5e1;">Shared fields</td>
+            <td colspan="2" style="padding: 10px 14px; border-bottom: 1px solid #1e293b; color: #94a3b8; text-align: center;">Name, Email, University, Class Standing, Major, Grad Date, Target Role, Pain Points, Questions</td>
+        </tr>
+    </table>
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <hr class="divider">
+    <h2>Quick Tips</h2>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <div class="card card-accent">
+        <ul>
+            <li><strong>Customize the theme:</strong> Click the palette icon (🎨) at top → pick a dark header color or upload your own banner image to look more polished.</li>
+            <li><strong>Preview before sharing:</strong> Click the eye icon (👁) at top-right to see what students will see.</li>
+            <li><strong>Get notifications:</strong> In the Responses tab, click the three-dot menu → <strong>Get email notifications for new responses</strong>. This way you know the moment someone submits.</li>
+            <li><strong>Shorten the link:</strong> When you click Send, you can check <strong>Shorten URL</strong> to get a cleaner link for the club leader to share.</li>
+            <li><strong>Duplicate for future clubs:</strong> Once Form A is built, you can duplicate it (three-dot menu on Google Forms homepage → Make a copy) and just change the club name in the title and description. Same for Form B.</li>
+        </ul>
+    </div>
+
+    <div class="footer">
+        Launch to Lead — launchtolead.io — Google Forms Setup Guide v1
+    </div>
+
+</div>
+</body>
+</html>

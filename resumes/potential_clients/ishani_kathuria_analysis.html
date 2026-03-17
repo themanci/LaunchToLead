@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full Resume Audit — Ishani Kathuria | LaunchToLead</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .font-mono-num { font-family: 'Space Grotesk', monospace; }
+
+        #download-btn {
+            position: fixed; top: 20px; right: 20px; z-index: 9999;
+            background: linear-gradient(135deg, #a3e635, #14b8a6); color: #052e16;
+            font-family: 'Plus Jakarta Sans', sans-serif; font-size: 16px; font-weight: 800;
+            padding: 14px 32px; border: none; border-radius: 50px; cursor: pointer;
+            box-shadow: 0 8px 30px rgba(163,230,53,0.3);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        #download-btn:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(163,230,53,0.4); }
+
+        @media print {
+            @page { size: letter; margin: 0.5in 0.65in; }
+            body {
+                background: white !important; color: #1e293b !important;
+                padding: 0 !important; margin: 0 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            #download-btn { display: none !important; }
+            .no-print { display: none !important; }
+            .page-break { break-before: page; }
+            .keep-together { break-inside: avoid; }
+            .space-y-4 > div, .space-y-6 > div, .grid > div { break-inside: avoid; }
+            section .mb-5 { break-inside: avoid; }
+            ul.space-y-3 > li { break-inside: avoid; }
+            tbody tr { break-inside: avoid; }
+            .rounded-xl.overflow-hidden { break-inside: avoid; }
+            h2, h3, h4 { break-after: avoid; }
+            section { box-shadow: none !important; border: 1px solid #e2e8f0 !important; }
+            .max-w-4xl { max-width: 100% !important; }
+            .bg-amber-800, .bg-emerald-900 {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-700">
+
+<button id="download-btn" onclick="window.print()">Download PDF</button>
+
+<!-- ============================================ -->
+<!-- HEADER                                        -->
+<!-- ============================================ -->
+<header class="bg-emerald-900 text-white py-6 px-6">
+    <div class="max-w-4xl mx-auto">
+        <div class="flex items-center gap-3 mb-4">
+            <div class="bg-white text-emerald-900 w-10 h-10 rounded-xl flex items-center justify-center font-bold text-sm shadow">L²</div>
+            <span class="text-xl font-bold">Launch<span class="font-light text-lime-300">ToLead</span></span>
+        </div>
+        <div class="flex items-center gap-2 mb-2">
+            <span class="bg-lime-400/20 text-lime-300 text-xs font-bold px-3 py-1 rounded-full">FULL AUDIT</span>
+        </div>
+        <h1 class="text-3xl font-extrabold mb-1">Resume Audit Report</h1>
+        <p class="text-emerald-200">Ishani Kathuria — M.S. Applied Artificial Intelligence (Purdue University Northwest)</p>
+        <p class="text-emerald-400/60 text-sm mt-1">Scored against the Impact Bullet Builder framework</p>
+    </div>
+</header>
+
+<div class="max-w-4xl mx-auto px-6 py-10 space-y-10">
+
+    <!-- ============================================ -->
+    <!-- SECTION 1: OVERALL SCORE                     -->
+    <!-- ============================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 overflow-hidden">
+        <div class="p-8">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="w-8 h-8 rounded-lg bg-amber-500 text-white flex items-center justify-center text-sm font-bold">01</div>
+                <h2 class="text-2xl font-extrabold text-slate-900">Overall Score</h2>
+            </div>
+
+            <div class="flex items-center gap-8 mb-6">
+                <div class="text-center">
+                    <p class="font-mono-num text-6xl font-extrabold text-amber-500">44</p>
+                    <p class="text-slate-500 text-sm">out of 100</p>
+                </div>
+                <div class="flex-1">
+                    <div class="h-4 bg-slate-100 rounded-full overflow-hidden mb-2">
+                        <div class="h-full rounded-full" style="width: 44%; background: linear-gradient(to right, #f59e0b, #eab308);"></div>
+                    </div>
+                    <div class="flex justify-between text-xs text-slate-400">
+                        <span>0 — ★ What Was Asked</span>
+                        <span>50 — ★★ Above &amp; Beyond</span>
+                        <span>100 — ★★★ Impact</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="bg-amber-50 border border-amber-200 rounded-xl p-4 text-center">
+                    <p class="font-mono-num text-2xl font-bold text-amber-500">5/10</p>
+                    <p class="text-amber-700 text-xs font-semibold mt-1">Accomplishments</p>
+                    <p class="text-amber-500 text-[10px]">AWS bullets show results; rest are descriptions</p>
+                </div>
+                <div class="bg-amber-50 border border-amber-200 rounded-xl p-4 text-center">
+                    <p class="font-mono-num text-2xl font-bold text-amber-500">5/10</p>
+                    <p class="text-amber-700 text-xs font-semibold mt-1">Metrics</p>
+                    <p class="text-amber-500 text-[10px]">6 strong metrics at AWS, zero everywhere else</p>
+                </div>
+                <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-4 text-center">
+                    <p class="font-mono-num text-2xl font-bold text-emerald-500">8/10</p>
+                    <p class="text-emerald-700 text-xs font-semibold mt-1">How / Method</p>
+                    <p class="text-emerald-500 text-[10px]">Excellent technical detail throughout</p>
+                </div>
+                <div class="bg-amber-50 border border-amber-200 rounded-xl p-4 text-center">
+                    <p class="font-mono-num text-2xl font-bold text-amber-500">4/10</p>
+                    <p class="text-amber-700 text-xs font-semibold mt-1">Why / Impact</p>
+                    <p class="text-amber-500 text-[10px]">Only AWS bullets connect to business outcomes</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- VERDICT BANNER -->
+        <div class="bg-amber-800 text-white p-6">
+            <p class="font-bold text-lg">★★ — You've Shown Impact Where It Counts</p>
+            <p class="text-sm opacity-80 mt-1">Your AWS experience reads like a senior engineer's portfolio — 6 strong metrics, clear technical ownership, real business outcomes. But the rest of your resume doesn't match. The research assistant role, all three early positions, and every project bullet have zero quantification. A hiring manager who reads top-to-bottom hits a cliff after your AWS section. You clearly know how to write impact bullets — you just haven't applied the same standard to the other 70% of your resume.</p>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SECTION 2: KEY ISSUES (6 issues)             -->
+    <!-- ============================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 p-8 page-break">
+        <div class="flex items-center gap-3 mb-6">
+            <div class="w-8 h-8 rounded-lg bg-red-600 text-white flex items-center justify-center text-sm font-bold">02</div>
+            <h2 class="text-2xl font-extrabold text-slate-900">Key Issues Identified</h2>
+        </div>
+
+        <div class="space-y-4">
+            <!-- ISSUE 1 -->
+            <div class="flex items-start gap-4 p-5 bg-red-50 rounded-xl border border-red-200 keep-together">
+                <div class="w-8 h-8 rounded-full bg-red-600 text-white flex items-center justify-center font-bold text-sm flex-shrink-0">1</div>
+                <div>
+                    <p class="font-bold text-red-900">Three early roles are single-bullet throwaway lines</p>
+                    <p class="text-red-700 text-sm mt-1">Planet E-Com, Deloitte, and Docplus each have exactly one bullet with zero metrics. "Engineered web scraping pipelines... to improve the accuracy of education consultation software" — improved it from what to what? By how much? For how many users? These 2-month stints currently read as resume filler. Either expand each with a real outcome, or consolidate them into a single "Early Experience" section so they don't drag down the overall quality.</p>
+                </div>
+            </div>
+
+            <!-- ISSUE 2 -->
+            <div class="flex items-start gap-4 p-5 bg-red-50 rounded-xl border border-red-200 keep-together">
+                <div class="w-8 h-8 rounded-full bg-red-600 text-white flex items-center justify-center font-bold text-sm flex-shrink-0">2</div>
+                <div>
+                    <p class="font-bold text-red-900">Research assistant bullets describe ongoing work with no results</p>
+                    <p class="text-red-700 text-sm mt-1">"Conducting applied research on RAG systems, focusing on retrieval quality, hallucination reduction, and end-to-end latency optimization" — that's a project description, not a result. Even preliminary results would be stronger: "Improved retrieval accuracy by X% on Y benchmark" or "Reduced hallucination rate by X% using Z approach." Present tense is fine for ongoing work, but the bullets still need to show what has been achieved so far, not just what you're working on.</p>
+                </div>
+            </div>
+
+            <!-- ISSUE 3 -->
+            <div class="flex items-start gap-4 p-5 bg-red-50 rounded-xl border border-red-200 keep-together">
+                <div class="w-8 h-8 rounded-full bg-red-600 text-white flex items-center justify-center font-bold text-sm flex-shrink-0">3</div>
+                <div>
+                    <p class="font-bold text-red-900">Six project bullets, zero metrics</p>
+                    <p class="text-red-700 text-sm mt-1">TrustworthyRAG, AutoRedTeam, and DeepFakeGuard are genuinely impressive projects — multi-agent red-teaming, multimodal knowledge graphs, in-browser deepfake detection. But not a single bullet has a number: no dataset sizes, no accuracy scores, no speed benchmarks, no user counts. "Optimized streaming inference pipelines to achieve sub-second latency" is the closest — and even that could say "achieved 340ms average latency on consumer hardware." The technical depth is there; the "so what?" is missing.</p>
+                </div>
+            </div>
+
+            <!-- ISSUE 4 -->
+            <div class="flex items-start gap-4 p-5 bg-amber-50 rounded-xl border border-amber-200 keep-together">
+                <div class="w-8 h-8 rounded-full bg-amber-500 text-white flex items-center justify-center font-bold text-sm flex-shrink-0">4</div>
+                <div>
+                    <p class="font-bold text-amber-900">Massive quality gap between AWS and everything else</p>
+                    <p class="text-amber-700 text-sm mt-1">Your AWS section is ★★★ — 4 bullets with 6 metrics, clear accomplishments, business outcomes. Then the quality drops to ★ for everything else. A hiring manager reading top-to-bottom will notice this discontinuity. It signals that you either learned how to write impact bullets at AWS (and haven't applied it elsewhere) or that a recruiter helped polish only that section. Neither impression helps. Apply the same standard to every section.</p>
+                </div>
+            </div>
+
+            <!-- ISSUE 5 -->
+            <div class="flex items-start gap-4 p-5 bg-amber-50 rounded-xl border border-amber-200 keep-together">
+                <div class="w-8 h-8 rounded-full bg-amber-500 text-white flex items-center justify-center font-bold text-sm flex-shrink-0">5</div>
+                <div>
+                    <p class="font-bold text-amber-900">Even the strong bullets lack "before" context</p>
+                    <p class="text-amber-700 text-sm mt-1">The log summarization bullet has a great metric (2.5 hours → 30 minutes) but doesn't explain what was happening before. Were on-call engineers spending half their shifts on root-cause analysis? Was the team drowning in unstructured logs? Adding one clause of "before" context makes the metric land harder: "On-call engineers were spending 2.5+ hours per incident sifting through unstructured logs; built an LLM-based summarization system that cut analysis time to 30 minutes." Same metric, 3x the impact.</p>
+                </div>
+            </div>
+
+            <!-- ISSUE 6 -->
+            <div class="flex items-start gap-4 p-5 bg-amber-50 rounded-xl border border-amber-200 keep-together">
+                <div class="w-8 h-8 rounded-full bg-amber-500 text-white flex items-center justify-center font-bold text-sm flex-shrink-0">6</div>
+                <div>
+                    <p class="font-bold text-amber-900">Four publications listed but never leveraged</p>
+                    <p class="text-amber-700 text-sm mt-1">You have four published papers — Springer 2025, IEEE 2023, Springer 2023, IEEE 2022. That's a genuine differentiator for an early-career engineer. But they're buried in a one-line list at the bottom, completely disconnected from the rest of the resume. "Conversational AI for Supporting Children with Autism" (Springer 2025) is the kind of headline a project bullet should lead with. Link publications to the relevant project or research bullets — "Published in Springer 2025" at the end of a project bullet is a credibility accelerator.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SECTION 3: ALL BULLETS REWRITTEN              -->
+    <!-- ============================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 p-8 page-break">
+        <div class="flex items-center gap-3 mb-6">
+            <div class="w-8 h-8 rounded-lg bg-emerald-600 text-white flex items-center justify-center text-sm font-bold">03</div>
+            <h2 class="text-2xl font-extrabold text-slate-900">All Bullets — Rewritten</h2>
+        </div>
+
+        <p class="text-slate-500 text-sm mb-6">Every bullet on your resume, rewritten using the Impact Bullet Builder formula (Accomplishment + Metric + How + Why). Your AWS bullets need minor polish; the rest need substantial rework. Brackets like <code class="bg-slate-100 px-1 rounded text-xs">[X]</code> are placeholders — only you know the real numbers.</p>
+
+        <!-- RESEARCH ASSISTANT -->
+        <div class="mb-8">
+            <h3 class="text-lg font-bold text-slate-900 mb-4 flex items-center gap-2">
+                <span class="bg-purple-100 text-purple-700 text-xs font-bold px-3 py-1 rounded-full">RESEARCH</span>
+                Purdue University — AI Research Assistant
+            </h3>
+            <div class="bg-slate-50 border border-slate-200 rounded-xl p-6 space-y-6">
+                <!-- Bullet 1 -->
+                <div class="keep-together">
+                    <div class="bg-red-50 rounded-lg p-4 mb-2 border-l-4 border-red-400">
+                        <p class="text-xs text-red-500 font-bold mb-1">ORIGINAL</p>
+                        <p class="text-red-800 text-sm">"Conducting applied research on Retrieval-Augmented Generation (RAG) systems, focusing on retrieval quality, hallucination reduction, and end-to-end latency optimization for LLM-based applications."</p>
+                    </div>
+                    <div class="bg-emerald-50 rounded-lg p-4 border-l-4 border-emerald-400">
+                        <p class="text-xs text-emerald-600 font-bold mb-1">REWRITTEN</p>
+                        <p class="text-emerald-800 text-sm">"Conducting applied research on RAG systems, improving retrieval accuracy by [X]% and reducing hallucination rates by [X]% across [X] benchmark datasets — optimizing end-to-end query latency from [X]ms to [X]ms for LLM-based question answering applications."</p>
+                    </div>
+                </div>
+                <!-- Bullet 2 -->
+                <div class="keep-together">
+                    <div class="bg-red-50 rounded-lg p-4 mb-2 border-l-4 border-red-400">
+                        <p class="text-xs text-red-500 font-bold mb-1">ORIGINAL</p>
+                        <p class="text-red-800 text-sm">"Evaluating retrieval strategies using Recall@K and nDCG to optimize real-world question answering performance."</p>
+                    </div>
+                    <div class="bg-emerald-50 rounded-lg p-4 border-l-4 border-emerald-400">
+                        <p class="text-xs text-emerald-600 font-bold mb-1">REWRITTEN</p>
+                        <p class="text-emerald-800 text-sm">"Evaluated [X] retrieval strategies (dense, sparse, hybrid) using Recall@K and nDCG metrics across [X] QA benchmarks, identifying a hybrid approach that improved retrieval accuracy by [X]% over the baseline dense retriever — findings directly inform the lab's production RAG system design."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- AWS SDE -->
+        <div class="mb-8 page-break">
+            <h3 class="text-lg font-bold text-slate-900 mb-4 flex items-center gap-2">
+                <span class="bg-amber-100 text-amber-700 text-xs font-bold px-3 py-1 rounded-full">POLISH</span>
+                Amazon Web Services — Software Development Engineer
+            </h3>
+            <p class="text-slate-400 text-xs mb-4">These bullets are already strong. The rewrites add "before" context, scope, and downstream impact to push them from ★★★ to a polished ★★★.</p>
+            <div class="bg-slate-50 border border-slate-200 rounded-xl p-6 space-y-6">
+                <!-- Bullet 1 -->
+                <div class="keep-together">
+                    <div class="bg-amber-50 rounded-lg p-4 mb-2 border-l-4 border-amber-400">
+                        <p class="text-xs text-amber-500 font-bold mb-1">ORIGINAL (already ★★★)</p>
+                        <p class="text-amber-800 text-sm">"Built and deployed LLM-based log summarization systems for production services, reducing root-cause analysis time from 2.5 hours to 30 minutes."</p>
+                    </div>
+                    <div class="bg-emerald-50 rounded-lg p-4 border-l-4 border-emerald-400">
+                        <p class="text-xs text-emerald-600 font-bold mb-1">POLISHED</p>
+                        <p class="text-emerald-800 text-sm">"Built and deployed LLM-based log summarization systems across [X] production services at AWS, cutting root-cause analysis time from 2.5 hours to 30 minutes (95% reduction) — saving the on-call team an estimated [X] engineering hours per week during incident response."</p>
+                    </div>
+                </div>
+                <!-- Bullet 2 -->
+                <div class="keep-together">
+                    <div class="bg-amber-50 rounded-lg p-4 mb-2 border-l-4 border-amber-400">
+                        <p class="text-xs text-amber-500 font-bold mb-1">ORIGINAL (already ★★–★★★)</p>
+                        <p class="text-amber-800 text-sm">"Designed internal AI chatbots for developer support workflows, improving resolution efficiency for routine operational queries by 40%."</p>
+                    </div>
+                    <div class="bg-emerald-50 rounded-lg p-4 border-l-4 border-emerald-400">
+                        <p class="text-xs text-emerald-600 font-bold mb-1">POLISHED</p>
+                        <p class="text-emerald-800 text-sm">"Designed and shipped internal AI chatbots serving [X]+ developers across AWS, automating resolution of routine operational queries and improving ticket close time by 40% — reducing escalation volume to senior engineers by [X]%."</p>
+                    </div>
+                </div>
+                <!-- Bullet 3 -->
+                <div class="keep-together">
+                    <div class="bg-amber-50 rounded-lg p-4 mb-2 border-l-4 border-amber-400">
+                        <p class="text-xs text-amber-500 font-bold mb-1">ORIGINAL (already ★★★)</p>
+                        <p class="text-amber-800 text-sm">"Automated region-build and deployment pipelines for 15+ OpenSearch services using AWS infrastructure tooling, reducing manual intervention by 80% and accelerating launch timelines by 3 weeks."</p>
+                    </div>
+                    <div class="bg-emerald-50 rounded-lg p-4 border-l-4 border-emerald-400">
+                        <p class="text-xs text-emerald-600 font-bold mb-1">POLISHED</p>
+                        <p class="text-emerald-800 text-sm">"Automated region-build and deployment pipelines for 15+ OpenSearch services using CloudFormation and Step Functions, eliminating 80% of manual intervention and accelerating new-region launch timelines by 3 weeks — enabling [X] region launches in [timeframe] with zero deployment failures."</p>
+                    </div>
+                </div>
+                <!-- Bullet 4 -->
+                <div class="keep-together">
+                    <div class="bg-amber-50 rounded-lg p-4 mb-2 border-l-4 border-amber-400">
+                        <p class="text-xs text-amber-500 font-bold mb-1">ORIGINAL (already ★★★)</p>
+                        <p class="text-amber-800 text-sm">"Developed proactive anomaly and bug detection systems to identify failures pre-release, reducing external customer-reported issues by 30%."</p>
+                    </div>
+                    <div class="bg-emerald-50 rounded-lg p-4 border-l-4 border-emerald-400">
+                        <p class="text-xs text-emerald-600 font-bold mb-1">POLISHED</p>
+                        <p class="text-emerald-800 text-sm">"Developed proactive anomaly and bug detection systems monitoring [X] services pre-release, catching [X]+ potential failures before deployment — reducing external customer-reported issues by 30% and preventing an estimated [X] Sev-2 incidents per quarter."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- EARLY ROLES -->
+        <div class="mb-8 page-break">
+            <h3 class="text-lg font-bold text-slate-900 mb-4 flex items-center gap-2">
+                <span class="bg-red-100 text-red-700 text-xs font-bold px-3 py-1 rounded-full">REWRITE</span>
+                Early Roles — Planet E-Com, Deloitte, Docplus
+            </h3>
+            <div class="bg-slate-50 border border-slate-200 rounded-xl p-6 space-y-6">
+                <!-- Planet E-Com -->
+                <div class="keep-together">
+                    <p class="text-xs text-slate-400 font-bold uppercase tracking-wide mb-1">Planet E-Com Solutions — Data and Algorithm Lead (May–Jul 2022)</p>
+                    <div class="bg-red-50 rounded-lg p-4 mb-2 border-l-4 border-red-400">
+                        <p class="text-xs text-red-500 font-bold mb-1">ORIGINAL</p>
+                        <p class="text-red-800 text-sm">"Engineered web scraping pipelines and data processing algorithms in Python to improve the accuracy of education consultation software."</p>
+                    </div>
+                    <div class="bg-emerald-50 rounded-lg p-4 border-l-4 border-emerald-400">
+                        <p class="text-xs text-emerald-600 font-bold mb-1">REWRITTEN</p>
+                        <p class="text-emerald-800 text-sm">"Engineered web scraping pipelines processing [X]+ data sources and built data-matching algorithms in Python that improved education consultation software matching accuracy from [X]% to [X]% — enabling more precise university recommendations for [X]+ student users."</p>
+                    </div>
+                </div>
+                <!-- Deloitte -->
+                <div class="keep-together">
+                    <p class="text-xs text-slate-400 font-bold uppercase tracking-wide mb-1">Deloitte — AI Automation Intern (Jun–Jul 2022)</p>
+                    <div class="bg-red-50 rounded-lg p-4 mb-2 border-l-4 border-red-400">
+                        <p class="text-xs text-red-500 font-bold mb-1">ORIGINAL</p>
+                        <p class="text-red-800 text-sm">"Developed hybrid RPA solutions using Automation Anywhere and Python, automating complex internal reporting tasks."</p>
+                    </div>
+                    <div class="bg-emerald-50 rounded-lg p-4 border-l-4 border-emerald-400">
+                        <p class="text-xs text-emerald-600 font-bold mb-1">REWRITTEN</p>
+                        <p class="text-emerald-800 text-sm">"Developed hybrid RPA workflows using Automation Anywhere and Python that automated [X] internal reporting tasks, reducing manual report generation time from [X] hours to [X] minutes — freeing [X]+ analyst hours per week for higher-value work."</p>
+                    </div>
+                </div>
+                <!-- Docplus -->
+                <div class="keep-together">
+                    <p class="text-xs text-slate-400 font-bold uppercase tracking-wide mb-1">Docplus Online — AI Developer &amp; Lead (Jul–Nov 2021)</p>
+                    <div class="bg-red-50 rounded-lg p-4 mb-2 border-l-4 border-red-400">
+                        <p class="text-xs text-red-500 font-bold mb-1">ORIGINAL</p>
+                        <p class="text-red-800 text-sm">"Engineered Python-based AI pipelines for translation models and gender identification, coordinating technical implementation across 40+ developers."</p>
+                    </div>
+                    <div class="bg-emerald-50 rounded-lg p-4 border-l-4 border-emerald-400">
+                        <p class="text-xs text-emerald-600 font-bold mb-1">REWRITTEN</p>
+                        <p class="text-emerald-800 text-sm">"Led technical implementation of Python-based AI pipelines for multilingual translation and gender identification across a 40+ developer team — the translation model achieved [X]% accuracy across [X] languages and was deployed to [X]+ end users."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PROJECTS -->
+        <div class="page-break">
+            <h3 class="text-lg font-bold text-slate-900 mb-4 flex items-center gap-2">
+                <span class="bg-red-100 text-red-700 text-xs font-bold px-3 py-1 rounded-full">REWRITE</span>
+                Projects — TrustworthyRAG, AutoRedTeam, DeepFakeGuard
+            </h3>
+            <div class="bg-slate-50 border border-slate-200 rounded-xl p-6 space-y-6">
+                <!-- TrustworthyRAG B1 -->
+                <div class="keep-together">
+                    <p class="text-xs text-slate-400 font-bold uppercase tracking-wide mb-1">TrustworthyRAG</p>
+                    <div class="bg-red-50 rounded-lg p-4 mb-2 border-l-4 border-red-400">
+                        <p class="text-xs text-red-500 font-bold mb-1">ORIGINAL</p>
+                        <p class="text-red-800 text-sm">"Designed a query-adaptive learned fusion (QALF) mechanism to dynamically route queries across vector, graph, and keyword retrieval systems."</p>
+                    </div>
+                    <div class="bg-emerald-50 rounded-lg p-4 border-l-4 border-emerald-400">
+                        <p class="text-xs text-emerald-600 font-bold mb-1">REWRITTEN</p>
+                        <p class="text-emerald-800 text-sm">"Designed a query-adaptive learned fusion (QALF) mechanism that dynamically routes queries across vector, graph, and keyword retrieval systems — improving retrieval F1 by [X]% over single-mode baselines on [X] benchmark dataset."</p>
+                    </div>
+                </div>
+                <!-- TrustworthyRAG B2 -->
+                <div class="keep-together">
+                    <div class="bg-red-50 rounded-lg p-4 mb-2 border-l-4 border-red-400">
+                        <p class="text-xs text-red-500 font-bold mb-1">ORIGINAL</p>
+                        <p class="text-red-800 text-sm">"Built a multimodal knowledge graph ingesting unstructured text and images to enable multi-hop reasoning and complex retrieval workflows."</p>
+                    </div>
+                    <div class="bg-emerald-50 rounded-lg p-4 border-l-4 border-emerald-400">
+                        <p class="text-xs text-emerald-600 font-bold mb-1">REWRITTEN</p>
+                        <p class="text-emerald-800 text-sm">"Built a multimodal knowledge graph ingesting [X]+ documents and images, enabling multi-hop reasoning across [X] relationship types — reduced hallucination rate by [X]% compared to standard RAG on complex multi-step queries."</p>
+                    </div>
+                </div>
+                <!-- AutoRedTeam B1 -->
+                <div class="keep-together">
+                    <p class="text-xs text-slate-400 font-bold uppercase tracking-wide mb-1">AutoRedTeam</p>
+                    <div class="bg-red-50 rounded-lg p-4 mb-2 border-l-4 border-red-400">
+                        <p class="text-xs text-red-500 font-bold mb-1">ORIGINAL</p>
+                        <p class="text-red-800 text-sm">"Engineered a multi-agent adversarial evaluation framework (Attacker, Target, Judge) to stress-test LLM safety and robustness."</p>
+                    </div>
+                    <div class="bg-emerald-50 rounded-lg p-4 border-l-4 border-emerald-400">
+                        <p class="text-xs text-emerald-600 font-bold mb-1">REWRITTEN</p>
+                        <p class="text-emerald-800 text-sm">"Engineered a multi-agent red-teaming framework (Attacker, Target, Judge) that automatically generates [X]+ adversarial prompts per run to stress-test LLM safety — identified [X] previously unknown jailbreak vectors across GPT-4, Gemini, and Llama 3."</p>
+                    </div>
+                </div>
+                <!-- AutoRedTeam B2 -->
+                <div class="keep-together">
+                    <div class="bg-red-50 rounded-lg p-4 mb-2 border-l-4 border-red-400">
+                        <p class="text-xs text-red-500 font-bold mb-1">ORIGINAL</p>
+                        <p class="text-red-800 text-sm">"Implemented provider-agnostic LLM integrations (GPT-4, Gemini, Llama 3) with a real-time React-based visualization interface."</p>
+                    </div>
+                    <div class="bg-emerald-50 rounded-lg p-4 border-l-4 border-emerald-400">
+                        <p class="text-xs text-emerald-600 font-bold mb-1">REWRITTEN</p>
+                        <p class="text-emerald-800 text-sm">"Implemented provider-agnostic integrations across 3 LLM families (GPT-4, Gemini, Llama 3) with a real-time React dashboard visualizing attack success rates, safety scores, and failure categories — used by [X] researchers to evaluate model robustness."</p>
+                    </div>
+                </div>
+                <!-- DeepFakeGuard B1 -->
+                <div class="keep-together">
+                    <p class="text-xs text-slate-400 font-bold uppercase tracking-wide mb-1">DeepFakeGuard</p>
+                    <div class="bg-red-50 rounded-lg p-4 mb-2 border-l-4 border-red-400">
+                        <p class="text-xs text-red-500 font-bold mb-1">ORIGINAL</p>
+                        <p class="text-red-800 text-sm">"Built a client-side AI forensic tool using Transformers.js to detect synthetic audio directly in-browser, preserving user privacy."</p>
+                    </div>
+                    <div class="bg-emerald-50 rounded-lg p-4 border-l-4 border-emerald-400">
+                        <p class="text-xs text-emerald-600 font-bold mb-1">REWRITTEN</p>
+                        <p class="text-emerald-800 text-sm">"Built a client-side deepfake audio detection tool using Transformers.js that runs entirely in-browser with zero server dependencies, preserving user privacy — achieved [X]% detection accuracy on a [X]-sample test set of synthetic vs. authentic audio clips."</p>
+                    </div>
+                </div>
+                <!-- DeepFakeGuard B2 -->
+                <div class="keep-together">
+                    <div class="bg-red-50 rounded-lg p-4 mb-2 border-l-4 border-red-400">
+                        <p class="text-xs text-red-500 font-bold mb-1">ORIGINAL</p>
+                        <p class="text-red-800 text-sm">"Optimized streaming inference pipelines to achieve sub-second latency without server-side dependencies."</p>
+                    </div>
+                    <div class="bg-emerald-50 rounded-lg p-4 border-l-4 border-emerald-400">
+                        <p class="text-xs text-emerald-600 font-bold mb-1">REWRITTEN</p>
+                        <p class="text-emerald-800 text-sm">"Optimized the streaming inference pipeline to achieve [X]ms average detection latency (sub-second) on consumer hardware — enabling real-time deepfake screening without cloud compute costs."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SECTION 4: BEFORE & AFTER (3 examples)       -->
+    <!-- ============================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 p-8 page-break">
+        <div class="flex items-center gap-3 mb-6">
+            <div class="w-8 h-8 rounded-lg bg-purple-600 text-white flex items-center justify-center text-sm font-bold">04</div>
+            <h2 class="text-2xl font-extrabold text-slate-900">Before &amp; After — Best Examples</h2>
+        </div>
+
+        <div class="space-y-6">
+            <!-- EXAMPLE 1 -->
+            <div class="rounded-xl overflow-hidden border border-slate-200 keep-together">
+                <div class="bg-red-50 p-5 border-b border-red-200">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-red-600 text-white font-bold text-xs">✗</span>
+                        <span class="text-red-700 font-bold text-sm">BEFORE (★ Level) — Research Assistant</span>
+                    </div>
+                    <p class="text-red-800 text-sm">"Conducting applied research on Retrieval-Augmented Generation (RAG) systems, focusing on retrieval quality, hallucination reduction, and end-to-end latency optimization for LLM-based applications."</p>
+                </div>
+                <div class="bg-emerald-50 p-5">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-emerald-600 text-white font-bold text-xs">✓</span>
+                        <span class="text-emerald-700 font-bold text-sm">AFTER (★★★ Level)</span>
+                    </div>
+                    <p class="text-emerald-800 text-sm">"Conducting applied research on RAG systems under Prof. [Name], improving retrieval accuracy by [X]% and reducing hallucination rates by [X]% across [X] benchmark datasets — optimizing end-to-end query latency from [X]ms to [X]ms, with findings accepted for publication at [venue]."</p>
+                    <p class="text-emerald-600 text-xs mt-2 italic">What changed: Added metrics (accuracy %, hallucination %, latency numbers), added scope (benchmark count), connected to publication. Same work, completely different impression.</p>
+                </div>
+            </div>
+
+            <!-- EXAMPLE 2 -->
+            <div class="rounded-xl overflow-hidden border border-slate-200 keep-together">
+                <div class="bg-red-50 p-5 border-b border-red-200">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-red-600 text-white font-bold text-xs">✗</span>
+                        <span class="text-red-700 font-bold text-sm">BEFORE (★ Level) — Docplus Online</span>
+                    </div>
+                    <p class="text-red-800 text-sm">"Engineered Python-based AI pipelines for translation models and gender identification, coordinating technical implementation across 40+ developers."</p>
+                </div>
+                <div class="bg-emerald-50 p-5">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-emerald-600 text-white font-bold text-xs">✓</span>
+                        <span class="text-emerald-700 font-bold text-sm">AFTER (★★★ Level)</span>
+                    </div>
+                    <p class="text-emerald-800 text-sm">"Led a 40+ developer team in building Python-based AI pipelines for multilingual translation and gender identification — the translation model achieved [X]% accuracy across [X] languages, serving [X]+ end users and reducing manual translation workload by [X]%."</p>
+                    <p class="text-emerald-600 text-xs mt-2 italic">What changed: Led with the team size (your strongest number), added model accuracy, language count, user impact, and business outcome. The "40+ developers" fact went from buried context to a leadership headline.</p>
+                </div>
+            </div>
+
+            <!-- EXAMPLE 3 -->
+            <div class="rounded-xl overflow-hidden border border-slate-200 keep-together">
+                <div class="bg-red-50 p-5 border-b border-red-200">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-red-600 text-white font-bold text-xs">✗</span>
+                        <span class="text-red-700 font-bold text-sm">BEFORE (★★ Level) — DeepFakeGuard</span>
+                    </div>
+                    <p class="text-red-800 text-sm">"Optimized streaming inference pipelines to achieve sub-second latency without server-side dependencies."</p>
+                </div>
+                <div class="bg-emerald-50 p-5">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-emerald-600 text-white font-bold text-xs">✓</span>
+                        <span class="text-emerald-700 font-bold text-sm">AFTER (★★★ Level)</span>
+                    </div>
+                    <p class="text-emerald-800 text-sm">"Optimized the streaming inference pipeline to achieve [X]ms average detection latency on consumer-grade hardware (M1 MacBook Air) — enabling real-time deepfake audio screening without cloud compute costs, with the tool demoed to [X] users at [event/class]."</p>
+                    <p class="text-emerald-600 text-xs mt-2 italic">What changed: "Sub-second" became a specific millisecond value, added hardware context, quantified user reach. A vague speed claim became a concrete engineering achievement.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SECTION 5: ACTION ITEMS (6 items)            -->
+    <!-- ============================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 p-8 page-break">
+        <div class="flex items-center gap-3 mb-6">
+            <div class="w-8 h-8 rounded-lg bg-emerald-700 text-white flex items-center justify-center text-sm font-bold">05</div>
+            <h2 class="text-2xl font-extrabold text-slate-900">Your Top Action Items</h2>
+        </div>
+
+        <div class="space-y-4">
+            <!-- ACTION 1 -->
+            <div class="flex items-start gap-4 p-5 bg-emerald-50 rounded-xl border border-emerald-200 keep-together">
+                <div class="w-10 h-10 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-lg flex-shrink-0">1</div>
+                <div>
+                    <p class="font-bold text-emerald-900 text-lg">Add metrics to every non-AWS bullet</p>
+                    <p class="text-emerald-700 text-sm mt-1">Your AWS bullets prove you know how to quantify impact — 2.5h→30min, 40%, 80%, 3 weeks, 30%. Now apply the same standard everywhere else. For each research, project, and early-role bullet, ask: "How many? How much? How fast? How accurate?" Even estimates are better than no number. "Improved matching accuracy from ~60% to ~85%" beats "improved the accuracy of education consultation software" every time.</p>
+                </div>
+            </div>
+
+            <!-- ACTION 2 -->
+            <div class="flex items-start gap-4 p-5 bg-emerald-50 rounded-xl border border-emerald-200 keep-together">
+                <div class="w-10 h-10 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-lg flex-shrink-0">2</div>
+                <div>
+                    <p class="font-bold text-emerald-900 text-lg">Quantify every project with accuracy, speed, or scale numbers</p>
+                    <p class="text-emerald-700 text-sm mt-1">TrustworthyRAG, AutoRedTeam, and DeepFakeGuard are technically sophisticated — but without numbers they read like course descriptions, not engineering work. What was the retrieval F1? How many adversarial prompts did AutoRedTeam generate? What was DeepFakeGuard's detection accuracy? What dataset did you benchmark against? You built these — you have the numbers in your notebooks or experiment logs. Put them on the page.</p>
+                </div>
+            </div>
+
+            <!-- ACTION 3 -->
+            <div class="flex items-start gap-4 p-5 bg-emerald-50 rounded-xl border border-emerald-200 keep-together">
+                <div class="w-10 h-10 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-lg flex-shrink-0">3</div>
+                <div>
+                    <p class="font-bold text-emerald-900 text-lg">Add "before" context to your AWS bullets</p>
+                    <p class="text-emerald-700 text-sm mt-1">Your metrics are strong but they float without context. "Reducing root-cause analysis time from 2.5 hours to 30 minutes" becomes much more powerful as: "On-call engineers were spending 2.5+ hours per incident manually reading logs; built an LLM summarization system that cut analysis to 30 minutes." One clause of "before" state makes the reader feel the pain you solved. Do this for all four AWS bullets.</p>
+                </div>
+            </div>
+
+            <!-- ACTION 4 -->
+            <div class="flex items-start gap-4 p-5 bg-emerald-50 rounded-xl border border-emerald-200 keep-together">
+                <div class="w-10 h-10 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-lg flex-shrink-0">4</div>
+                <div>
+                    <p class="font-bold text-emerald-900 text-lg">Expand or consolidate the three early roles</p>
+                    <p class="text-emerald-700 text-sm mt-1">Planet E-Com (2 months), Deloitte (1 month), and Docplus (4 months) each have one bullet. That's three sections of your resume with minimal content. Two options: (1) Add 1–2 more bullets per role with real outcomes. (2) Merge them into a single "Early Experience" block with the strongest bullet from each — this saves vertical space and removes the impression of resume padding.</p>
+                </div>
+            </div>
+
+            <!-- ACTION 5 -->
+            <div class="flex items-start gap-4 p-5 bg-emerald-50 rounded-xl border border-emerald-200 keep-together">
+                <div class="w-10 h-10 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-lg flex-shrink-0">5</div>
+                <div>
+                    <p class="font-bold text-emerald-900 text-lg">Connect publications to your project and research bullets</p>
+                    <p class="text-emerald-700 text-sm mt-1">Four published papers (2× Springer, 2× IEEE) are buried at the bottom in a single line. Link them to the relevant work: if TrustworthyRAG led to a publication, end that project bullet with "— published in [venue] 2025." If the Autism paper came from your Purdue research, mention it in the research assistant section. Published work is a credibility multiplier — but only if the reader connects it to your actual work.</p>
+                </div>
+            </div>
+
+            <!-- ACTION 6 -->
+            <div class="flex items-start gap-4 p-5 bg-emerald-50 rounded-xl border border-emerald-200 keep-together">
+                <div class="w-10 h-10 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-lg flex-shrink-0">6</div>
+                <div>
+                    <p class="font-bold text-emerald-900 text-lg">Add a 2–3 line professional summary at the top</p>
+                    <p class="text-emerald-700 text-sm mt-1">Your resume jumps straight into Education with no summary. A hiring manager scanning for 7 seconds has no anchor. Add 2–3 lines after your name: "AI/ML engineer with 2 years at AWS building LLM-based production systems — deployed log summarization tools that cut incident response time by 95%, automated deployment pipelines for 15+ services, and published 4 research papers in AI/ML (Springer, IEEE). Currently pursuing M.S. in Applied AI at Purdue (4.0 GPA)." That's your pitch in 7 seconds.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SECTION 6: WHAT'S WORKING                    -->
+    <!-- ============================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 p-8 page-break">
+        <div class="flex items-center gap-3 mb-6">
+            <div class="w-8 h-8 rounded-lg bg-lime-500 text-white flex items-center justify-center text-sm font-bold">06</div>
+            <h2 class="text-2xl font-extrabold text-slate-900">What's Already Working</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="bg-lime-50 border border-lime-200 rounded-xl p-5 keep-together">
+                <p class="font-bold text-lime-900">AWS bullets are genuinely ★★★</p>
+                <p class="text-lime-700 text-sm mt-1">Four bullets with six strong metrics — 2.5h→30min, 40%, 15+ services, 80%, 3 weeks, 30%. These are among the strongest bullets we've audited. You clearly learned how to show impact at AWS. The framework is already in your head — it just needs to be applied to the rest of the resume.</p>
+            </div>
+            <div class="bg-lime-50 border border-lime-200 rounded-xl p-5 keep-together">
+                <p class="font-bold text-lime-900">Exceptional technical depth for early career</p>
+                <p class="text-lime-700 text-sm mt-1">LLM log summarization, multi-agent red-teaming, RAG with learned fusion, in-browser deepfake detection — this isn't a generic "built CRUD apps" portfolio. The breadth (GenAI, MLOps, full-stack, research) and depth (production AWS systems + published research) put you in rare company for someone 2 years out of undergrad.</p>
+            </div>
+            <div class="bg-lime-50 border border-lime-200 rounded-xl p-5 keep-together">
+                <p class="font-bold text-lime-900">Strong action verbs throughout</p>
+                <p class="text-lime-700 text-sm mt-1">"Built," "Designed," "Automated," "Developed," "Engineered," "Implemented," "Optimized" — every bullet starts with a strong, specific verb. No "Assisted with..." or "Involved in..." or "Responsible for..." This alone puts you ahead of most resumes at your experience level.</p>
+            </div>
+            <div class="bg-lime-50 border border-lime-200 rounded-xl p-5 keep-together">
+                <p class="font-bold text-lime-900">Published research + AWS certifications</p>
+                <p class="text-lime-700 text-sm mt-1">Four publications (Springer + IEEE) plus two AWS certifications (AI Practitioner + Cloud Practitioner) add proof points that most early-career engineers don't have. Combined with a 4.0 GPA at Purdue, the academic credibility is strong. These just need to be better integrated into the experience narrative.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SECTION 7: SCORECARD                         -->
+    <!-- ============================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 p-8 page-break">
+        <div class="flex items-center gap-3 mb-6">
+            <div class="w-8 h-8 rounded-lg bg-slate-800 text-lime-300 flex items-center justify-center text-sm font-bold">07</div>
+            <h2 class="text-2xl font-extrabold text-slate-900">Scorecard: Impact Bullet Builder Criteria</h2>
+        </div>
+
+        <div class="overflow-x-auto">
+            <table class="w-full text-sm">
+                <thead>
+                    <tr class="border-b-2 border-slate-200">
+                        <th class="text-left py-3 pl-3 text-slate-900 font-bold">Criteria</th>
+                        <th class="text-center py-3 text-slate-900 font-bold w-20">Score</th>
+                        <th class="text-left py-3 text-slate-900 font-bold">Notes</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-100">
+                    <tr>
+                        <td class="py-3 pl-3 font-semibold text-slate-700">Accomplishments (not duties)</td>
+                        <td class="py-3 text-center"><span class="font-mono-num font-bold text-amber-500">5/10</span></td>
+                        <td class="py-3 text-slate-500">AWS bullets are clear accomplishments with outcomes. Research bullets are activity descriptions. Early roles and projects describe work done without stating what changed as a result.</td>
+                    </tr>
+                    <tr>
+                        <td class="py-3 pl-3 font-semibold text-slate-700">Metrics / Quantification</td>
+                        <td class="py-3 text-center"><span class="font-mono-num font-bold text-amber-500">5/10</span></td>
+                        <td class="py-3 text-slate-500">AWS section has 6 strong metrics across 4 bullets — excellent. But 11 of 15 total bullets have zero numbers. "40+ developers" and "sub-second latency" are the only metrics outside AWS.</td>
+                    </tr>
+                    <tr>
+                        <td class="py-3 pl-3 font-semibold text-slate-700">How / Method Shown</td>
+                        <td class="py-3 text-center"><span class="font-mono-num font-bold text-emerald-500">8/10</span></td>
+                        <td class="py-3 text-slate-500">Strongest category. RAG, Recall@K, nDCG, CloudFormation, Step Functions, Transformers.js, QALF, Automation Anywhere — specific tools and methods named consistently. You show the "how" well.</td>
+                    </tr>
+                    <tr>
+                        <td class="py-3 pl-3 font-semibold text-slate-700">Why / Business Impact</td>
+                        <td class="py-3 text-center"><span class="font-mono-num font-bold text-amber-500">4/10</span></td>
+                        <td class="py-3 text-slate-500">AWS connects to outcomes: faster incident response, improved dev efficiency, accelerated launches, fewer customer issues. Nothing else on the resume answers "why does this matter to the business?"</td>
+                    </tr>
+                    <tr>
+                        <td class="py-3 pl-3 font-semibold text-slate-700">Personal Ownership (not "we/team")</td>
+                        <td class="py-3 text-center"><span class="font-mono-num font-bold text-emerald-500">8/10</span></td>
+                        <td class="py-3 text-slate-500">Strong personal voice throughout. "Built," "Designed," "Automated" — no hiding behind "the team" or "we." Clear individual ownership on every bullet. This is a real strength.</td>
+                    </tr>
+                    <tr>
+                        <td class="py-3 pl-3 font-semibold text-slate-700">Problem Context / "So What?"</td>
+                        <td class="py-3 text-center"><span class="font-mono-num font-bold text-red-500">3/10</span></td>
+                        <td class="py-3 text-slate-500">Only the log summarization bullet has a "before" state (2.5h → 30min). No other bullet explains what the situation was before you intervened. Context is what makes metrics emotional — without it, numbers are just numbers.</td>
+                    </tr>
+                    <tr>
+                        <td class="py-3 pl-3 font-semibold text-slate-700">Action Verbs</td>
+                        <td class="py-3 text-center"><span class="font-mono-num font-bold text-emerald-500">8/10</span></td>
+                        <td class="py-3 text-slate-500">Consistently strong: Built, Designed, Automated, Developed, Engineered, Implemented, Conducted, Optimized. No weak verbs like "Assisted," "Participated," or "Helped." Well above average.</td>
+                    </tr>
+                    <tr>
+                        <td class="py-3 pl-3 font-semibold text-slate-700">Bullet Quality Consistency</td>
+                        <td class="py-3 text-center"><span class="font-mono-num font-bold text-red-500">3/10</span></td>
+                        <td class="py-3 text-slate-500">The biggest issue. AWS bullets are ★★★ — then everything else drops to ★. The gap is jarring. A hiring manager will notice the inconsistency and wonder what happened. Apply the AWS standard everywhere.</td>
+                    </tr>
+                    <tr class="bg-slate-50 font-bold">
+                        <td class="py-4 pl-3 text-slate-900 text-base">OVERALL SCORE</td>
+                        <td class="py-4 text-center"><span class="font-mono-num text-xl text-amber-500">44/100</span></td>
+                        <td class="py-4 text-slate-700">★★ — Above &amp; Beyond. Strong in pockets, inconsistent overall.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="mt-6 bg-emerald-900 text-white rounded-xl p-6">
+            <p class="font-bold text-lg mb-2">The Good News</p>
+            <p class="text-emerald-200 text-sm">You've already proven you can write ★★★ bullets — your AWS section is the proof. The formula is in your head: accomplishment + metric + how + why. You just haven't applied it to the other 70% of your resume. Your technical depth (LLM production systems, multi-agent frameworks, RAG research, in-browser ML), published research (4 papers), and AWS pedigree give you raw material that most early-career engineers would kill for. Applying the Impact Bullet Builder framework consistently across research, projects, and early roles would realistically push this resume from 44/100 to 75+ in a single focused rewrite session — because the work is already done. The numbers exist in your experiment logs, your deployment dashboards, and your project repos. They just need to be written down.</p>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- CTA: SEE THE PROGRAM                         -->
+    <!-- ============================================ -->
+    <section class="rounded-2xl overflow-hidden shadow-lg border border-emerald-300 page-break">
+        <div class="bg-emerald-900 text-white p-8 text-center">
+            <p class="text-lime-300 text-sm font-bold uppercase tracking-widest mb-2">What's Next</p>
+            <h2 class="text-3xl font-extrabold mb-3">Want Help Fixing All of This?</h2>
+            <p class="text-emerald-200 max-w-xl mx-auto mb-6">This audit rewrote every bullet on your resume to show you the potential. Getting the real numbers in — and structuring the full narrative — is what the program is built to do.</p>
+
+            <div class="bg-emerald-800/50 rounded-xl p-5 max-w-xl mx-auto mb-6 text-left">
+                <p class="text-white font-bold text-base mb-3">The 21-Day Accelerator Program</p>
+                <p class="text-emerald-200 text-sm mb-3">3 × 90-minute 1-on-1 sessions over 3 weeks:</p>
+                <div class="space-y-2">
+                    <div class="flex items-start gap-2">
+                        <span class="text-lime-400 font-bold text-sm mt-0.5">1.</span>
+                        <p class="text-emerald-100 text-sm"><strong>Resume Rebuilt</strong> — Every bullet rewritten with the Impact Bullet Builder formula. Not placeholders. Real numbers from your actual work.</p>
+                    </div>
+                    <div class="flex items-start gap-2">
+                        <span class="text-lime-400 font-bold text-sm mt-0.5">2.</span>
+                        <p class="text-emerald-100 text-sm"><strong>Interview Stories Mastered</strong> — Your master story bank built and structured in the format interviewers want to hear.</p>
+                    </div>
+                    <div class="flex items-start gap-2">
+                        <span class="text-lime-400 font-bold text-sm mt-0.5">3.</span>
+                        <p class="text-emerald-100 text-sm"><strong>Live Mock Interview</strong> — A full practice interview with direct feedback so you walk in ready.</p>
+                    </div>
+                </div>
+                <p class="text-emerald-300 text-xs mt-3">You leave with: a rebuilt resume, master story bank, mock interview notes, all session recordings, and 40+ bonus materials.</p>
+            </div>
+
+            <div class="space-y-3">
+                <p class="text-emerald-300 text-sm">View the program, watch the video, and see if you're a fit:</p>
+                <p class="font-extrabold text-2xl" style="font-family: 'Space Grotesk', monospace;"><a href="https://launchtolead.io/coaching?utm_source=audit&utm_medium=email&utm_campaign=free-audit&utm_content=ishani-kathuria" style="color: #a3e635; text-decoration: underline;">launchtolead.io/coaching</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center py-8 text-slate-400 text-sm">
+        <p>Full audit prepared by LaunchToLead | Impact Bullet Builder Framework</p>
+        <p class="mt-1">launchtolead.io/free</p>
+    </footer>
+
+</div>
+
+</body>
+</html>

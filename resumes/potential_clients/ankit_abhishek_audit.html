@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Resume Audit — Ankit Abhishek | LaunchToLead</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .font-mono-num { font-family: 'Space Grotesk', monospace; }
+
+        #download-btn {
+            position: fixed; top: 20px; right: 20px; z-index: 9999;
+            background: linear-gradient(135deg, #a3e635, #14b8a6); color: #052e16;
+            font-family: 'Plus Jakarta Sans', sans-serif; font-size: 16px; font-weight: 800;
+            padding: 14px 32px; border: none; border-radius: 50px; cursor: pointer;
+            box-shadow: 0 8px 30px rgba(163,230,53,0.3);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        #download-btn:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(163,230,53,0.4); }
+
+        @media print {
+            @page { size: letter; margin: 0.5in 0.65in; }
+            body {
+                background: white !important; color: #1e293b !important;
+                padding: 0 !important; margin: 0 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            #download-btn { display: none !important; }
+            .no-print { display: none !important; }
+            .page-break { break-before: page; }
+            .keep-together { break-inside: avoid; }
+            .space-y-4 > div, .space-y-6 > div, .grid > div { break-inside: avoid; }
+            section .mb-5 { break-inside: avoid; }
+            ul.space-y-3 > li { break-inside: avoid; }
+            tbody tr { break-inside: avoid; }
+            .rounded-xl.overflow-hidden { break-inside: avoid; }
+            h2, h3, h4 { break-after: avoid; }
+            section { box-shadow: none !important; border: 1px solid #e2e8f0 !important; }
+            .max-w-4xl { max-width: 100% !important; }
+            .bg-red-900, .bg-amber-800, .bg-emerald-900 {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-700">
+
+<button id="download-btn" onclick="window.print()">Download PDF</button>
+
+<!-- ============================================ -->
+<!-- HEADER                                        -->
+<!-- ============================================ -->
+<header class="bg-emerald-900 text-white py-6 px-6">
+    <div class="max-w-4xl mx-auto">
+        <div class="flex items-center gap-3 mb-4">
+            <div class="bg-white text-emerald-900 w-10 h-10 rounded-xl flex items-center justify-center font-bold text-sm shadow">L²</div>
+            <span class="text-xl font-bold">Launch<span class="font-light text-lime-300">ToLead</span></span>
+        </div>
+        <div class="flex items-center gap-2 mb-2">
+            <span class="bg-lime-400/20 text-lime-300 text-xs font-bold px-3 py-1 rounded-full">FREE AUDIT</span>
+        </div>
+        <h1 class="text-3xl font-extrabold mb-1">Resume Audit Report</h1>
+        <p class="text-emerald-200">Ankit Abhishek — MSc Data Science, BTech Computer Science</p>
+        <p class="text-emerald-400/60 text-sm mt-1">Scored against the Impact Bullet Builder framework</p>
+    </div>
+</header>
+
+<div class="max-w-4xl mx-auto px-6 py-10 space-y-10">
+
+    <!-- ============================================ -->
+    <!-- SECTION 1: OVERALL SCORE                     -->
+    <!-- ============================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 overflow-hidden">
+        <div class="p-8">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="w-8 h-8 rounded-lg bg-red-500 text-white flex items-center justify-center text-sm font-bold">01</div>
+                <h2 class="text-2xl font-extrabold text-slate-900">Overall Score</h2>
+            </div>
+
+            <div class="flex items-center gap-8 mb-6">
+                <div class="text-center">
+                    <p class="font-mono-num text-6xl font-extrabold text-amber-500">38</p>
+                    <p class="text-slate-500 text-sm">out of 100</p>
+                </div>
+                <div class="flex-1">
+                    <div class="h-4 bg-slate-100 rounded-full overflow-hidden mb-2">
+                        <div class="h-full rounded-full" style="width: 38%; background: linear-gradient(to right, #f59e0b, #fbbf24);"></div>
+                    </div>
+                    <div class="flex justify-between text-xs text-slate-400">
+                        <span>0–30 ★ What Was Asked</span>
+                        <span>31–60 ★★ Above &amp; Beyond</span>
+                        <span>61–100 ★★★ Impact</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <!-- SUB-SCORE 1: Accomplishments -->
+                <div class="bg-amber-50 rounded-xl p-4 text-center">
+                    <p class="font-mono-num text-2xl font-bold text-amber-600">5/10</p>
+                    <p class="text-amber-400 text-xs font-semibold mt-1">Accomplishments</p>
+                    <p class="text-amber-300 text-[10px]">Work bullets yes, summary no</p>
+                </div>
+                <!-- SUB-SCORE 2: Metrics -->
+                <div class="bg-amber-50 rounded-xl p-4 text-center">
+                    <p class="font-mono-num text-2xl font-bold text-amber-600">5/10</p>
+                    <p class="text-amber-400 text-xs font-semibold mt-1">Metrics</p>
+                    <p class="text-amber-300 text-[10px]">Numbers exist but float alone</p>
+                </div>
+                <!-- SUB-SCORE 3: How / Method -->
+                <div class="bg-amber-50 rounded-xl p-4 text-center">
+                    <p class="font-mono-num text-2xl font-bold text-amber-600">4/10</p>
+                    <p class="text-amber-400 text-xs font-semibold mt-1">How / Method</p>
+                    <p class="text-amber-300 text-[10px]">Missing from work bullets</p>
+                </div>
+                <!-- SUB-SCORE 4: Why / Impact -->
+                <div class="bg-red-50 rounded-xl p-4 text-center">
+                    <p class="font-mono-num text-2xl font-bold text-red-600">3/10</p>
+                    <p class="text-red-400 text-xs font-semibold mt-1">Why / Impact</p>
+                    <p class="text-red-300 text-[10px]">No bullet answers "so what?"</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- VERDICT BANNER -->
+        <div class="bg-amber-800 text-white p-6">
+            <p class="font-bold text-lg">★★ You Went Above and Beyond</p>
+            <p class="text-sm opacity-80 mt-1">Your resume has real numbers and accomplishment-driven language — that puts you ahead of most engineers. But numbers without context are just decoration. The gap is the "how" and the "why" — without them, a hiring manager sees metrics but can't feel the impact.</p>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SECTION 2: KEY ISSUES (4)                    -->
+    <!-- ============================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 p-8 page-break">
+        <div class="flex items-center gap-3 mb-6">
+            <div class="w-8 h-8 rounded-lg bg-red-600 text-white flex items-center justify-center text-sm font-bold">02</div>
+            <h2 class="text-2xl font-extrabold text-slate-900">Key Issues Identified</h2>
+        </div>
+
+        <div class="space-y-4">
+            <!-- ISSUE 1 -->
+            <div class="flex items-start gap-4 p-5 bg-red-50 rounded-xl border border-red-200 keep-together">
+                <div class="w-8 h-8 rounded-full bg-red-600 text-white flex items-center justify-center font-bold text-sm flex-shrink-0">1</div>
+                <div>
+                    <p class="font-bold text-red-900">Identity Mismatch — Software Engineer Resume Positioned as Data Engineer</p>
+                    <p class="text-red-700 text-sm mt-1">Your professional summary says "Data Engineer," but every work experience bullet describes software engineering — React Native apps, production features, Windows deployments. A recruiter scanning for Data Engineers won't see themselves in your experience section. Your actual DE skills (Kafka, Spark, Hive, ETL) only appear in two academic projects at the bottom. The strongest evidence for the role you want is buried where it has the least visibility.</p>
+                </div>
+            </div>
+
+            <!-- ISSUE 2 -->
+            <div class="flex items-start gap-4 p-5 bg-red-50 rounded-xl border border-red-200 keep-together">
+                <div class="w-8 h-8 rounded-full bg-red-600 text-white flex items-center justify-center font-bold text-sm flex-shrink-0">2</div>
+                <div>
+                    <p class="font-bold text-red-900">Metrics Without Meaning — Numbers That Don't Connect to Outcomes</p>
+                    <p class="text-red-700 text-sm mt-1">You have numbers — 70%, 95%, 5,000+ — but they float without context. "Improving feature efficiency by 30%" — what does that mean in hours saved, revenue protected, or engineering time freed up? And your two data engineering projects, which should be your strongest selling points, have zero metrics. How many records per second? How many patients monitored? How many ATM transactions processed? Numbers alone don't impress. Numbers connected to outcomes do.</p>
+                </div>
+            </div>
+
+            <!-- ISSUE 3 -->
+            <div class="flex items-start gap-4 p-5 bg-amber-50 rounded-xl border border-amber-200 keep-together">
+                <div class="w-8 h-8 rounded-full bg-amber-500 text-white flex items-center justify-center font-bold text-sm flex-shrink-0">3</div>
+                <div>
+                    <p class="font-bold text-amber-900">Professional Summary Is a Skills List, Not a Value Proposition</p>
+                    <p class="text-amber-700 text-sm mt-1">"Data Engineer with 2+ years of experience... Strong in data cleaning... Experienced collaborator..." — this could appear on any data engineer's resume. Your summary should tell a hiring manager what you've accomplished and why they should keep reading. Right now it repeats skills already visible in your Skills section and doesn't include a single metric or accomplishment.</p>
+                </div>
+            </div>
+
+            <!-- ISSUE 4 -->
+            <div class="flex items-start gap-4 p-5 bg-amber-50 rounded-xl border border-amber-200 keep-together">
+                <div class="w-8 h-8 rounded-full bg-amber-500 text-white flex items-center justify-center font-bold text-sm flex-shrink-0">4</div>
+                <div>
+                    <p class="font-bold text-amber-900">"How" Is Missing From Every Work Bullet</p>
+                    <p class="text-amber-700 text-sm mt-1">Your work bullets have accomplishments and metrics but never reveal how you achieved them. "Re-architected core systems to cut bugs by 70%" — which systems? What architecture changes? What tools or patterns? The "how" is what proves you actually did the work, and it's what lets a recruiter mentally place you in their tech stack. Without it, even impressive numbers feel unverifiable.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SECTION 3: TOP BULLETS REWRITTEN (4)         -->
+    <!-- ============================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 p-8 page-break">
+        <div class="flex items-center gap-3 mb-6">
+            <div class="w-8 h-8 rounded-lg bg-emerald-600 text-white flex items-center justify-center text-sm font-bold">03</div>
+            <h2 class="text-2xl font-extrabold text-slate-900">Your Top Bullets — Rewritten</h2>
+        </div>
+
+        <p class="text-slate-500 text-sm mb-6">Below are your <strong>4 strongest bullets</strong> rewritten using the Impact Bullet Builder formula (Accomplishment + Metric + How + Why). These rewrites show you what's possible — the rest of your resume has the same potential.</p>
+
+        <div class="bg-slate-50 border border-slate-200 rounded-xl p-6 space-y-6">
+            <!-- REWRITE 1 -->
+            <div class="keep-together">
+                <p class="text-xs text-slate-400 font-bold uppercase tracking-wide mb-1">Work Experience — Software Engineer, Tech Mahindra</p>
+                <div class="bg-red-50 rounded-lg p-4 mb-2 border-l-4 border-red-400">
+                    <p class="text-xs text-red-500 font-bold mb-1">ORIGINAL</p>
+                    <p class="text-red-800 text-sm">Re-architected core systems to cut bugs by 70% and improve performance by 25%.</p>
+                </div>
+                <div class="bg-emerald-50 rounded-lg p-4 border-l-4 border-emerald-400">
+                    <p class="text-xs text-emerald-600 font-bold mb-1">REWRITTEN — ★★★ Level</p>
+                    <p class="text-emerald-800 text-sm">Re-architected [X system/module] using [framework/design pattern], reducing production bugs by 70% and improving response time by 25% — freeing an estimated [X] engineering hours per sprint previously lost to debugging and rework.</p>
+                </div>
+            </div>
+
+            <!-- REWRITE 2 -->
+            <div class="keep-together">
+                <p class="text-xs text-slate-400 font-bold uppercase tracking-wide mb-1">Work Experience — Software Engineer, Tech Mahindra</p>
+                <div class="bg-red-50 rounded-lg p-4 mb-2 border-l-4 border-red-400">
+                    <p class="text-xs text-red-500 font-bold mb-1">ORIGINAL</p>
+                    <p class="text-red-800 text-sm">Ran zero-downtime Windows deployments, reducing incident resolution time from 12 to 4 hours with 99.9% uptime.</p>
+                </div>
+                <div class="bg-emerald-50 rounded-lg p-4 border-l-4 border-emerald-400">
+                    <p class="text-xs text-emerald-600 font-bold mb-1">REWRITTEN — ★★★ Level</p>
+                    <p class="text-emerald-800 text-sm">Managed zero-downtime Windows deployments using [CI/CD tool or deployment process], cutting incident resolution time from 12 hours to 4 hours and maintaining 99.9% uptime across [X] production services — protecting [X] end users from service disruptions.</p>
+                </div>
+            </div>
+
+            <!-- REWRITE 3 -->
+            <div class="keep-together">
+                <p class="text-xs text-slate-400 font-bold uppercase tracking-wide mb-1">Project — Patient Alert ETL Pipeline</p>
+                <div class="bg-red-50 rounded-lg p-4 mb-2 border-l-4 border-red-400">
+                    <p class="text-xs text-red-500 font-bold mb-1">ORIGINAL</p>
+                    <p class="text-red-800 text-sm">Built a scalable real-time health monitoring pipeline using Kafka, Spark, Hive, HBase, and HDFS to detect vital-sign threshold breaches. Enabled timely patient and doctor notifications via SNS, improving alert accuracy and response time.</p>
+                </div>
+                <div class="bg-emerald-50 rounded-lg p-4 border-l-4 border-emerald-400">
+                    <p class="text-xs text-emerald-600 font-bold mb-1">REWRITTEN — ★★★ Level</p>
+                    <p class="text-emerald-800 text-sm">Engineered a real-time patient monitoring pipeline processing [X] vital-sign readings per second using Kafka for ingestion, Spark Streaming for threshold detection, and HBase for sub-second lookups — triggering automated SNS alerts that reduced clinician response time from [X] minutes to [X] minutes across [X] monitored patients.</p>
+                </div>
+            </div>
+
+            <!-- REWRITE 4 -->
+            <div class="keep-together">
+                <p class="text-xs text-slate-400 font-bold uppercase tracking-wide mb-1">Project — Spar Nord Bank ATM Analytics</p>
+                <div class="bg-red-50 rounded-lg p-4 mb-2 border-l-4 border-red-400">
+                    <p class="text-xs text-red-500 font-bold mb-1">ORIGINAL</p>
+                    <p class="text-red-800 text-sm">Designed and implemented a Hive and Spark ETL pipeline to process ATM transactional and weather data into a star-schema warehouse, building dimensional and fact tables to enable SQL analytics for insights on ATM demand, refill optimization, and weather impact.</p>
+                </div>
+                <div class="bg-emerald-50 rounded-lg p-4 border-l-4 border-emerald-400">
+                    <p class="text-xs text-emerald-600 font-bold mb-1">REWRITTEN — ★★★ Level</p>
+                    <p class="text-emerald-800 text-sm">Designed a Hive and Spark ETL pipeline processing [X]M+ ATM transactions and correlated weather records into a star-schema warehouse with [X] dimension tables — enabling SQL analytics that identified [X]% improvement opportunities in ATM refill scheduling and reduced cash shortage incidents by [X]%.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-4 bg-emerald-50 border border-emerald-200 rounded-xl p-4">
+            <p class="text-emerald-800 text-sm"><strong>Note:</strong> Brackets like <code class="bg-emerald-100 px-1 rounded text-xs">[X]</code> are placeholders — only you know the real numbers. Fill them in with your best estimate. A conservative guess beats no number at all.</p>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SECTION 4: BEFORE & AFTER (3 examples)       -->
+    <!-- ============================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 p-8 page-break">
+        <div class="flex items-center gap-3 mb-6">
+            <div class="w-8 h-8 rounded-lg bg-purple-600 text-white flex items-center justify-center text-sm font-bold">04</div>
+            <h2 class="text-2xl font-extrabold text-slate-900">Before & After — Best Examples</h2>
+        </div>
+
+        <div class="space-y-6">
+            <!-- EXAMPLE 1 -->
+            <div class="rounded-xl overflow-hidden border border-slate-200 keep-together">
+                <div class="bg-red-50 p-5 border-b border-red-200">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-red-600 text-white font-bold text-xs">✗</span>
+                        <span class="text-red-700 font-bold text-sm">BEFORE (★ Level)</span>
+                    </div>
+                    <p class="text-red-800 text-sm">Re-architected core systems to cut bugs by 70% and improve performance by 25%.</p>
+                </div>
+                <div class="bg-emerald-50 p-5">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-emerald-600 text-white font-bold text-xs">✓</span>
+                        <span class="text-emerald-700 font-bold text-sm">AFTER (★★★ Level)</span>
+                    </div>
+                    <p class="text-emerald-800 text-sm">Re-architected [X system/module] using [framework/design pattern], reducing production bugs by 70% and improving response time by 25% — freeing an estimated [X] engineering hours per sprint previously lost to debugging and rework.</p>
+                </div>
+            </div>
+
+            <!-- EXAMPLE 2 -->
+            <div class="rounded-xl overflow-hidden border border-slate-200 keep-together">
+                <div class="bg-red-50 p-5 border-b border-red-200">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-red-600 text-white font-bold text-xs">✗</span>
+                        <span class="text-red-700 font-bold text-sm">BEFORE (★ Level)</span>
+                    </div>
+                    <p class="text-red-800 text-sm">Built a scalable real-time health monitoring pipeline using Kafka, Spark, Hive, HBase, and HDFS to detect vital-sign threshold breaches. Enabled timely patient and doctor notifications via SNS, improving alert accuracy and response time.</p>
+                </div>
+                <div class="bg-emerald-50 p-5">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-emerald-600 text-white font-bold text-xs">✓</span>
+                        <span class="text-emerald-700 font-bold text-sm">AFTER (★★★ Level)</span>
+                    </div>
+                    <p class="text-emerald-800 text-sm">Engineered a real-time patient monitoring pipeline processing [X] vital-sign readings per second using Kafka for ingestion, Spark Streaming for threshold detection, and HBase for sub-second lookups — triggering automated SNS alerts that reduced clinician response time from [X] minutes to [X] minutes across [X] monitored patients.</p>
+                </div>
+            </div>
+
+            <!-- EXAMPLE 3 -->
+            <div class="rounded-xl overflow-hidden border border-slate-200 keep-together">
+                <div class="bg-red-50 p-5 border-b border-red-200">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-red-600 text-white font-bold text-xs">✗</span>
+                        <span class="text-red-700 font-bold text-sm">BEFORE (★ Level)</span>
+                    </div>
+                    <p class="text-red-800 text-sm">Designed and implemented a Hive and Spark ETL pipeline to process ATM transactional and weather data into a star-schema warehouse, building dimensional and fact tables to enable SQL analytics for insights on ATM demand, refill optimization, and weather impact.</p>
+                </div>
+                <div class="bg-emerald-50 p-5">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-emerald-600 text-white font-bold text-xs">✓</span>
+                        <span class="text-emerald-700 font-bold text-sm">AFTER (★★★ Level)</span>
+                    </div>
+                    <p class="text-emerald-800 text-sm">Designed a Hive and Spark ETL pipeline processing [X]M+ ATM transactions and correlated weather records into a star-schema warehouse with [X] dimension tables — enabling SQL analytics that identified [X]% improvement opportunities in ATM refill scheduling and reduced cash shortage incidents by [X]%.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SECTION 5: ACTION ITEMS (4)                  -->
+    <!-- ============================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 p-8 page-break">
+        <div class="flex items-center gap-3 mb-6">
+            <div class="w-8 h-8 rounded-lg bg-emerald-700 text-white flex items-center justify-center text-sm font-bold">05</div>
+            <h2 class="text-2xl font-extrabold text-slate-900">Your Top Action Items</h2>
+        </div>
+
+        <div class="space-y-4">
+            <!-- ACTION 1 -->
+            <div class="flex items-start gap-4 p-5 bg-emerald-50 rounded-xl border border-emerald-200 keep-together">
+                <div class="w-10 h-10 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-lg flex-shrink-0">1</div>
+                <div>
+                    <p class="font-bold text-emerald-900 text-lg">Align Your Resume Identity With Your Target Role</p>
+                    <p class="text-emerald-700 text-sm mt-1">Right now your summary says "Data Engineer" but your experience section reads "Software Engineer." Rewrite your professional summary around your strongest data engineering accomplishment and reframe your work bullets to highlight the data-related aspects of your Tech Mahindra role — data flows, system integrations, performance monitoring, analytics.</p>
+                </div>
+            </div>
+
+            <!-- ACTION 2 -->
+            <div class="flex items-start gap-4 p-5 bg-emerald-50 rounded-xl border border-emerald-200 keep-together">
+                <div class="w-10 h-10 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-lg flex-shrink-0">2</div>
+                <div>
+                    <p class="font-bold text-emerald-900 text-lg">Add Metrics to Both Data Engineering Projects</p>
+                    <p class="text-emerald-700 text-sm mt-1">Your projects are your strongest evidence for DE roles, but neither one has a single number. Go back and add: volume (records processed per second/day), scale (number of data sources, table count), speed (latency, processing time), and outcome (accuracy improvement, cost reduction). Even estimates based on project specs are better than no numbers.</p>
+                </div>
+            </div>
+
+            <!-- ACTION 3 -->
+            <div class="flex items-start gap-4 p-5 bg-emerald-50 rounded-xl border border-emerald-200 keep-together">
+                <div class="w-10 h-10 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-lg flex-shrink-0">3</div>
+                <div>
+                    <p class="font-bold text-emerald-900 text-lg">Show the "How" in Every Work Bullet</p>
+                    <p class="text-emerald-700 text-sm mt-1">Go through each bullet and add the specific tool, technology, or method you used to achieve the result. "Re-architected core systems" becomes "Re-architected the [module] using [framework/pattern]." The "how" is what lets a recruiter mentally place you in their tech stack — and it's what proves you actually did the work.</p>
+                </div>
+            </div>
+
+            <!-- ACTION 4 -->
+            <div class="flex items-start gap-4 p-5 bg-emerald-50 rounded-xl border border-emerald-200 keep-together">
+                <div class="w-10 h-10 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-lg flex-shrink-0">4</div>
+                <div>
+                    <p class="font-bold text-emerald-900 text-lg">Connect Every Metric to a Business Outcome</p>
+                    <p class="text-emerald-700 text-sm mt-1">After every number, ask yourself "so what?" 70% fewer bugs → how much engineering time freed up? 99.9% uptime → how much revenue or how many users protected? 95% client satisfaction → what did the client renew or expand as a result? Answer that question in the bullet. That's the difference between a ★★ and ★★★ score.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SECTION 6: WHAT'S WORKING                    -->
+    <!-- ============================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 p-8 page-break">
+        <div class="flex items-center gap-3 mb-6">
+            <div class="w-8 h-8 rounded-lg bg-lime-500 text-white flex items-center justify-center text-sm font-bold">06</div>
+            <h2 class="text-2xl font-extrabold text-slate-900">What's Already Working</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <!-- POSITIVE 1 -->
+            <div class="bg-lime-50 border border-lime-200 rounded-xl p-5 keep-together">
+                <p class="font-bold text-lime-900">Strong Action Verbs Throughout</p>
+                <p class="text-lime-700 text-sm mt-1">Shipped, Released, Re-architected, Owned, Ran, Built, Designed — every bullet starts with a strong, active verb. No "Responsible for" or "Assisted with" anywhere. This is already better than most resumes.</p>
+            </div>
+            <!-- POSITIVE 2 -->
+            <div class="bg-lime-50 border border-lime-200 rounded-xl p-5 keep-together">
+                <p class="font-bold text-lime-900">Personal Ownership — No "We/Team" Language</p>
+                <p class="text-lime-700 text-sm mt-1">Every bullet uses first-person ownership. You don't hide behind "the team" or "we." This shows confidence and accountability — exactly what hiring managers look for.</p>
+            </div>
+            <!-- POSITIVE 3 -->
+            <div class="bg-lime-50 border border-lime-200 rounded-xl p-5 keep-together">
+                <p class="font-bold text-lime-900">Real Metrics in Work Experience</p>
+                <p class="text-lime-700 text-sm mt-1">You already have numbers: 5,000+ users, 95% satisfaction, 70% bug reduction, 40+ features, 99.9% uptime, 12→4 hour resolution. Most resumes have zero. These just need to be connected to outcomes.</p>
+            </div>
+            <!-- POSITIVE 4 -->
+            <div class="bg-lime-50 border border-lime-200 rounded-xl p-5 keep-together">
+                <p class="font-bold text-lime-900">Relevant Technical Depth in Projects</p>
+                <p class="text-lime-700 text-sm mt-1">Your project bullets name specific tools in context — Kafka, Spark, Hive, HBase, HDFS, SNS, star-schema. This is exactly the right approach. These tools are shown doing something, not just listed in a skills table.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SECTION 7: SCORECARD                         -->
+    <!-- ============================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 p-8 page-break">
+        <div class="flex items-center gap-3 mb-6">
+            <div class="w-8 h-8 rounded-lg bg-slate-800 text-lime-300 flex items-center justify-center text-sm font-bold">07</div>
+            <h2 class="text-2xl font-extrabold text-slate-900">Scorecard: Impact Bullet Builder Criteria</h2>
+        </div>
+
+        <div class="overflow-x-auto">
+            <table class="w-full text-sm">
+                <thead>
+                    <tr class="border-b-2 border-slate-200">
+                        <th class="text-left py-3 pl-3 text-slate-900 font-bold">Criteria</th>
+                        <th class="text-center py-3 text-slate-900 font-bold w-20">Score</th>
+                        <th class="text-left py-3 text-slate-900 font-bold">Notes</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-100">
+                    <tr>
+                        <td class="py-3 pl-3 font-semibold text-slate-700">Accomplishments (not duties)</td>
+                        <td class="py-3 text-center"><span class="font-mono-num font-bold text-amber-500">5/10</span></td>
+                        <td class="py-3 text-slate-500">Work bullets are accomplishments; summary and projects read like descriptions</td>
+                    </tr>
+                    <tr>
+                        <td class="py-3 pl-3 font-semibold text-slate-700">Metrics / Quantification</td>
+                        <td class="py-3 text-center"><span class="font-mono-num font-bold text-amber-500">5/10</span></td>
+                        <td class="py-3 text-slate-500">Work bullets have numbers; both DE projects have zero metrics</td>
+                    </tr>
+                    <tr>
+                        <td class="py-3 pl-3 font-semibold text-slate-700">How / Method Shown</td>
+                        <td class="py-3 text-center"><span class="font-mono-num font-bold text-amber-500">4/10</span></td>
+                        <td class="py-3 text-slate-500">Projects name tools in context; work bullets are method-free</td>
+                    </tr>
+                    <tr>
+                        <td class="py-3 pl-3 font-semibold text-slate-700">Why / Business Impact</td>
+                        <td class="py-3 text-center"><span class="font-mono-num font-bold text-red-500">3/10</span></td>
+                        <td class="py-3 text-slate-500">No bullet connects a metric to a business outcome</td>
+                    </tr>
+                    <tr>
+                        <td class="py-3 pl-3 font-semibold text-slate-700">Personal Ownership (not "we/team")</td>
+                        <td class="py-3 text-center"><span class="font-mono-num font-bold text-emerald-500">7/10</span></td>
+                        <td class="py-3 text-slate-500">Consistent first-person ownership — no "we/team" language anywhere</td>
+                    </tr>
+                    <tr>
+                        <td class="py-3 pl-3 font-semibold text-slate-700">Problem Context / "So What?"</td>
+                        <td class="py-3 text-center"><span class="font-mono-num font-bold text-red-500">2/10</span></td>
+                        <td class="py-3 text-slate-500">Only the deployment bullet (12→4 hrs) gives before/after framing</td>
+                    </tr>
+                    <tr>
+                        <td class="py-3 pl-3 font-semibold text-slate-700">Action Verbs</td>
+                        <td class="py-3 text-center"><span class="font-mono-num font-bold text-emerald-500">7/10</span></td>
+                        <td class="py-3 text-slate-500">Strong and varied — Shipped, Re-architected, Owned, Engineered, Designed</td>
+                    </tr>
+                    <tr>
+                        <td class="py-3 pl-3 font-semibold text-slate-700">Bullet Quality Consistency</td>
+                        <td class="py-3 text-center"><span class="font-mono-num font-bold text-amber-500">4/10</span></td>
+                        <td class="py-3 text-slate-500">Work bullets are stronger than projects; summary is weakest section</td>
+                    </tr>
+                    <tr class="bg-slate-50 font-bold">
+                        <td class="py-4 pl-3 text-slate-900 text-base">OVERALL SCORE</td>
+                        <td class="py-4 text-center"><span class="font-mono-num text-xl text-amber-500">38/100</span></td>
+                        <td class="py-4 text-slate-700">★★ You Went Above and Beyond — has numbers, missing impact</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="mt-6 bg-emerald-900 text-white rounded-xl p-6">
+            <p class="font-bold text-lg mb-2">The Good News</p>
+            <p class="text-emerald-200 text-sm">Your resume already has something most engineers' resumes don't — real numbers and accomplishment-driven language. You're not starting from scratch. The gap isn't effort or experience; it's framework. Your work bullets show you've made real impact, but without the "how" and "why" components, that impact stays invisible to hiring managers. Add those two layers — and align your identity around data engineering — and your score moves from ★★ into ★★★ territory.</p>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- CTA: SEE THE PROGRAM                         -->
+    <!-- ============================================ -->
+    <section class="rounded-2xl overflow-hidden shadow-lg border border-emerald-300 page-break">
+        <div class="bg-emerald-900 text-white p-8 text-center">
+            <p class="text-lime-300 text-sm font-bold uppercase tracking-widest mb-2">What's Next</p>
+            <h2 class="text-3xl font-extrabold mb-3">Want Help Fixing All of This?</h2>
+            <p class="text-emerald-200 max-w-xl mx-auto mb-6">This audit covered your top 4 bullets. The other bullets on your resume have the same potential — they just need the same treatment.</p>
+
+            <div class="bg-emerald-800/50 rounded-xl p-5 max-w-xl mx-auto mb-6 text-left">
+                <p class="text-white font-bold text-base mb-3">The 21-Day Accelerator Program</p>
+                <p class="text-emerald-200 text-sm mb-3">3 x 90-minute 1-on-1 sessions over 3 weeks:</p>
+                <div class="space-y-2">
+                    <div class="flex items-start gap-2">
+                        <span class="text-lime-400 font-bold text-sm mt-0.5">1.</span>
+                        <p class="text-emerald-100 text-sm"><strong>Resume Rebuilt</strong> — Every bullet rewritten with the Impact Bullet Builder formula. Not 4 bullets. All of them.</p>
+                    </div>
+                    <div class="flex items-start gap-2">
+                        <span class="text-lime-400 font-bold text-sm mt-0.5">2.</span>
+                        <p class="text-emerald-100 text-sm"><strong>Interview Stories Mastered</strong> — Your master story bank built and structured in the format interviewers want to hear.</p>
+                    </div>
+                    <div class="flex items-start gap-2">
+                        <span class="text-lime-400 font-bold text-sm mt-0.5">3.</span>
+                        <p class="text-emerald-100 text-sm"><strong>Live Mock Interview</strong> — A full practice interview with direct feedback so you walk in ready.</p>
+                    </div>
+                </div>
+                <p class="text-emerald-300 text-xs mt-3">You leave with: a rebuilt resume, master story bank, mock interview notes, all session recordings, and 40+ bonus materials.</p>
+            </div>
+
+            <div class="space-y-3">
+                <p class="text-emerald-300 text-sm">View the program, watch the video, and see if you're a fit:</p>
+                <p class="font-extrabold text-2xl" style="font-family: 'Space Grotesk', monospace;"><a href="https://launchtolead.io/coaching?utm_source=audit&utm_medium=email&utm_campaign=free-audit&utm_content=ankit-abhishek" style="color: #a3e635; text-decoration: underline;">launchtolead.io/coaching</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center py-8 text-slate-400 text-sm">
+        <p>Free audit prepared by LaunchToLead | Impact Bullet Builder Framework</p>
+        <p class="mt-1">launchtolead.io/free</p>
+    </footer>
+
+</div>
+
+</body>
+</html>

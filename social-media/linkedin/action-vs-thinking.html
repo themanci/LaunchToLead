@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Action vs Overthinking — LinkedIn Graphic</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: #111;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            gap: 24px;
+            padding: 40px;
+        }
+
+        .instructions {
+            background: #2a2a2a;
+            color: #ccc;
+            padding: 16px 24px;
+            border-radius: 8px;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 13px;
+            line-height: 1.6;
+            max-width: 1080px;
+            width: 100%;
+        }
+        .instructions strong { color: #a3e635; }
+
+        .dl-btn {
+            background: #a3e635;
+            color: #0a1a0f;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 15px;
+            font-weight: 700;
+            border: none;
+            padding: 14px 32px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        .dl-btn:hover { background: #bef264; }
+
+        /* ── THE CARD ── 1080×1080 ─────────────────────────────── */
+        .card {
+            width: 1080px;
+            height: 1080px;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+        }
+
+        /* ── LEFT HALF: The Problem ── */
+        .half-left {
+            width: 50%;
+            height: 100%;
+            background: #0a0a0a;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 60px 40px;
+            position: relative;
+        }
+
+        .half-left::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 10%;
+            bottom: 10%;
+            width: 1px;
+            background: linear-gradient(180deg, transparent, #334155, transparent);
+        }
+
+        .side-label {
+            position: absolute;
+            top: 40px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+        }
+
+        .side-label-left {
+            color: #ef4444;
+        }
+
+        .side-label-right {
+            color: #a3e635;
+        }
+
+        .big-word {
+            font-size: 120px;
+            font-weight: 900;
+            line-height: 1;
+            letter-spacing: -0.04em;
+            text-align: center;
+        }
+
+        .big-word-think {
+            color: #1e293b;
+            -webkit-text-stroke: 2px #475569;
+            position: relative;
+        }
+
+        .big-word-do {
+            color: #a3e635;
+            text-shadow: 0 0 60px rgba(163, 230, 53, 0.3);
+        }
+
+        .loop-icon {
+            margin-top: 24px;
+            font-size: 48px;
+            color: #334155;
+            animation: spin 4s linear infinite;
+        }
+
+        @keyframes spin {
+            100% { transform: rotate(360deg); }
+        }
+
+        .left-subtext {
+            color: #64748b;
+            font-size: 18px;
+            font-weight: 500;
+            text-align: center;
+            margin-top: 20px;
+            line-height: 1.5;
+        }
+
+        .left-subtext em {
+            color: #ef4444;
+            font-style: normal;
+            font-weight: 700;
+        }
+
+        /* ── RIGHT HALF: The Solution ── */
+        .half-right {
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(175deg, #0d1a0f 0%, #0a1a0f 50%, #071209 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 60px 40px;
+            position: relative;
+        }
+
+        .right-subtext {
+            color: #94a3b8;
+            font-size: 18px;
+            font-weight: 500;
+            text-align: center;
+            margin-top: 24px;
+            line-height: 1.5;
+        }
+
+        .right-subtext strong {
+            color: #e2e8f0;
+        }
+
+        .arrow-down {
+            margin-top: 28px;
+            font-size: 36px;
+            color: #a3e635;
+            opacity: 0.7;
+        }
+
+        .result-text {
+            margin-top: 16px;
+            font-size: 22px;
+            font-weight: 800;
+            color: #a3e635;
+            text-align: center;
+            letter-spacing: 0.02em;
+        }
+
+        /* ── Center quote bar ── */
+        .center-bar {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+            background: #f1f5f9;
+            color: #0a0a0a;
+            font-size: 14px;
+            font-weight: 800;
+            padding: 10px 20px;
+            border-radius: 20px;
+            white-space: nowrap;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            box-shadow: 0 4px 30px rgba(0,0,0,0.5);
+        }
+
+        /* ── Bottom branding ── */
+        .bottom-bar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 64px;
+            background: rgba(0,0,0,0.6);
+            backdrop-filter: blur(8px);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 40px;
+            z-index: 5;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .brand-icon {
+            width: 28px;
+            height: 28px;
+            background: linear-gradient(135deg, #a3e635, #65a30d);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            font-weight: 900;
+            color: #0a1a0f;
+        }
+
+        .brand-name {
+            font-size: 15px;
+            font-weight: 700;
+            color: #94a3b8;
+            letter-spacing: 0.04em;
+        }
+
+        .brand-url {
+            font-size: 13px;
+            color: #64748b;
+            font-weight: 500;
+        }
+
+        /* ── Top-left attribution ── */
+        .attribution {
+            position: absolute;
+            top: 40px;
+            left: 40px;
+            z-index: 5;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .attr-avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: #1e293b;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: 800;
+            color: #a3e635;
+        }
+
+        .attr-name {
+            font-size: 13px;
+            font-weight: 600;
+            color: #64748b;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+    <div class="instructions">
+        Click <strong>Download</strong> below. LinkedIn optimal: <strong>1080 × 1080 px</strong>.
+    </div>
+    <button class="dl-btn" onclick="downloadCard()">⬇ Download Graphic</button>
+
+    <div class="card" id="card">
+        <!-- Left: The Trap -->
+        <div class="half-left">
+            <div class="side-label side-label-left">THE TRAP</div>
+            <div class="big-word big-word-think">THINK</div>
+            <div class="loop-icon">⟳</div>
+            <div class="left-subtext">
+                Same thoughts.<br>
+                Same loop.<br>
+                <em>Anxiety increases.</em>
+            </div>
+        </div>
+
+        <!-- Center badge -->
+        <div class="center-bar">OR</div>
+
+        <!-- Right: The Fix -->
+        <div class="half-right">
+            <div class="side-label side-label-right">THE FIX</div>
+            <div class="big-word big-word-do">DO.</div>
+            <div class="right-subtext">
+                Identify one action.<br>
+                Execute <strong>aggressively</strong>.<br>
+                Watch anxiety drop.
+            </div>
+            <div class="arrow-down">↓</div>
+            <div class="result-text">Sleep like a baby.</div>
+        </div>
+
+        <!-- Bottom branding -->
+        <div class="bottom-bar">
+            <div class="brand">
+                <div class="brand-icon">L</div>
+                <span class="brand-name">Launch to Lead</span>
+            </div>
+            <span class="brand-url">launchtolead.io</span>
+        </div>
+    </div>
+
+<script>
+function downloadCard() {
+    const card = document.getElementById('card');
+    html2canvas(card, {
+        width: 1080,
+        height: 1080,
+        scale: 2,
+        useCORS: true,
+        backgroundColor: null
+    }).then(canvas => {
+        const link = document.createElement('a');
+        link.download = 'linkedin-action-vs-thinking.png';
+        link.href = canvas.toDataURL('image/png', 1.0);
+        link.click();
+    });
+}
+</script>
+</body>
+</html>

@@ -257,7 +257,7 @@
     <div class="container">
         <header>
             <h1>Weekly Scorecard</h1>
-            <p>9 metrics. Under 5 minutes. Every Monday.</p>
+            <p>9 metrics. Under 5 minutes. Every Sunday.</p>
         </header>
 
         <div class="week-bar">
@@ -304,7 +304,8 @@
     function loadData() {
         try {
             const raw = localStorage.getItem(STORAGE_KEY);
-            return raw ? JSON.parse(raw) : [];
+            if (!raw) return [];
+            return JSON.parse(raw);
         } catch { return []; }
     }
 
@@ -312,16 +313,34 @@
         localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
     }
 
-    function getMonday(d) {
-        const date = new Date(d);
-        const day = date.getDay();
-        const diff = date.getDate() - day + (day === 0 ? -6 : 1);
-        date.setDate(diff);
-        return date.toISOString().split('T')[0];
+    function parseLocalDate(s) {
+        const [y, m, d] = s.split('-').map(Number);
+        return new Date(y, m - 1, d);
+    }
+
+    function formatDateStr(date) {
+        const y = date.getFullYear();
+        const m = String(date.getMonth() + 1).padStart(2, '0');
+        const d = String(date.getDate()).padStart(2, '0');
+        return `${y}-${m}-${d}`;
+    }
+
+    function getSunday(d) {
+        const date = (typeof d === 'string') ? parseLocalDate(d) : new Date(d);
+        date.setDate(date.getDate() - date.getDay());
+        return formatDateStr(date);
+    }
+
+    function formatWeekRange(sundayStr) {
+        const sun = parseLocalDate(sundayStr);
+        const sat = new Date(sun);
+        sat.setDate(sat.getDate() + 6);
+        const mo = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+        return `${mo[sun.getMonth()]} ${sun.getDate()} – ${mo[sat.getMonth()]} ${sat.getDate()}`;
     }
 
     function init() {
-        const today = getMonday(new Date());
+        const today = getSunday(new Date());
         const existing = data.find(w => w.week === today);
         if (existing) {
             currentWeek = today;
@@ -480,7 +499,7 @@
     }
 
     function newWeek() {
-        const today = getMonday(new Date());
+        const today = getSunday(new Date());
         const existing = data.find(w => w.week === today);
         if (!existing) {
             data.push({ week: today, metrics: {} });
@@ -500,7 +519,7 @@
         if (data.length > 0) {
             currentWeek = data[data.length - 1].week;
         } else {
-            currentWeek = getMonday(new Date());
+            currentWeek = getSunday(new Date());
             data.push({ week: currentWeek, metrics: {} });
             saveData();
         }
@@ -519,16 +538,16 @@
     // Date picker change
     document.getElementById('weekDate').addEventListener('change', function() {
         const selected = this.value;
-        const monday = getMonday(selected);
-        this.value = monday;
+        const sunday = getSunday(selected);
+        this.value = sunday;
 
-        const existing = data.find(w => w.week === monday);
+        const existing = data.find(w => w.week === sunday);
         if (!existing) {
-            data.push({ week: monday, metrics: {} });
+            data.push({ week: sunday, metrics: {} });
             data.sort((a, b) => a.week.localeCompare(b.week));
             saveData();
         }
-        currentWeek = monday;
+        currentWeek = sunday;
         renderMetrics();
         renderHistory();
     });
@@ -551,7 +570,7 @@
         sorted.forEach(w => {
             const isActive = w.week === currentWeek;
             html += `<tr class="${isActive ? 'active-row' : ''}" style="cursor:pointer" onclick="loadWeek('${w.week}')">`;
-            html += `<td>${w.week}</td>`;
+            html += `<td>${formatWeekRange(w.week)}</td>`;
 
             METRICS.forEach(m => {
                 let val;

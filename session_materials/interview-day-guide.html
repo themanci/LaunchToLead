@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interview Day Guide — Launch to Lead</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+                        mono: ['"Space Grotesk"', 'monospace'],
+                    },
+                    colors: {
+                        brand: {
+                            primary: '#064e3b',
+                            secondary: '#14b8a6',
+                            accent: '#a3e635',
+                            light: '#ecfdf5',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @media print {
+            body { -webkit-print-color-adjust: exact; print-color-adjust: exact; background: white !important; }
+            section { padding-top: 0.75rem !important; padding-bottom: 0.75rem !important; }
+            .hero-print { padding-top: 1rem !important; padding-bottom: 1rem !important; }
+            .hero-print h1 { font-size: 1.75rem !important; margin-bottom: 0.25rem !important; }
+            .hero-print p { font-size: 0.875rem !important; }
+            .hero-print .mb-8 { margin-bottom: 0.5rem !important; }
+            .tip-card {
+                box-shadow: none !important;
+                page-break-inside: auto !important;
+                overflow: visible !important;
+                padding: 0.75rem !important;
+                border: 1px solid #e2e8f0 !important;
+            }
+            .tip-card h3 { font-size: 0.95rem !important; margin-bottom: 0.35rem !important; }
+            .bullet-list { margin: 0 !important; }
+            .bullet-list li { color: #334155 !important; font-size: 12px !important; line-height: 1.4 !important; margin-bottom: 2px !important; padding-top: 0 !important; padding-bottom: 0 !important; }
+            .no-break { page-break-inside: auto !important; }
+            .grid { gap: 0.5rem !important; }
+            .mb-8 { margin-bottom: 0.5rem !important; }
+        }
+        .tip-card { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+        .tip-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+        .bullet-list li { position: relative; padding-left: 1.25rem; }
+        .bullet-list li::before { content: ''; position: absolute; left: 0; top: 0.55em; width: 6px; height: 6px; border-radius: 50%; background-color: #14b8a6; }
+    </style>
+</head>
+<body class="font-sans antialiased bg-slate-50">
+
+    <!-- ================================================================ -->
+    <!-- HERO                                                              -->
+    <!-- ================================================================ -->
+    <section class="bg-gradient-to-br from-slate-900 to-slate-800 text-white py-16 md:py-20 hero-print">
+        <div class="max-w-5xl mx-auto px-6 md:px-10 text-center">
+            <div class="inline-flex items-center gap-2 bg-white/10 rounded-full px-4 py-2 text-sm font-semibold text-teal-300 mb-8 backdrop-blur-sm">
+                Launch to Lead — Session 2
+            </div>
+            <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-4">
+                Interview Day Guide
+            </h1>
+            <p class="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto">
+                Everything before, during, and after the interview — from setup to follow-up.
+            </p>
+        </div>
+    </section>
+
+    <!-- ================================================================ -->
+    <!-- 01 — BEFORE THE INTERVIEW                                         -->
+    <!-- ================================================================ -->
+    <section class="py-12 md:py-16">
+        <div class="max-w-5xl mx-auto px-6 md:px-10">
+            <div class="flex items-center gap-3 mb-8">
+                <span class="font-mono text-sm font-bold text-teal-600 bg-teal-50 px-3 py-1 rounded-full">01</span>
+                <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900">Before the Interview</h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- Tech Setup -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 tip-card no-break">
+                    <h3 class="text-lg font-bold text-slate-800 mb-4">Tech & Environment Check</h3>
+                    <ul class="bullet-list space-y-2 text-slate-600 text-[15px]">
+                        <li>Test camera, microphone, and speakers <strong>15 minutes early</strong></li>
+                        <li><strong>Lighting:</strong> front-facing, daylight bulbs or ring light — no backlighting or windows behind you</li>
+                        <li><strong>Camera:</strong> eye level, head + shoulders in frame, not too close or far</li>
+                        <li><strong>Audio priority:</strong> USB mic > wired earbuds > wireless > never laptop mic</li>
+                        <li>Clean, non-distracting background — no clutter, no open doors with people walking by</li>
+                        <li>Close unnecessary apps and tabs to prevent notifications</li>
+                        <li>Have your phone nearby as a backup if tech fails</li>
+                        <li>Have water within reach</li>
+                    </ul>
+                </div>
+
+                <!-- Appearance -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 tip-card no-break">
+                    <h3 class="text-lg font-bold text-slate-800 mb-4">Look the Part</h3>
+                    <ul class="bullet-list space-y-2 text-slate-600 text-[15px]">
+                        <li>Dress professionally <strong>even for remote interviews</strong> — a suit jacket goes a long way on camera</li>
+                        <li>Be presentable: hair, grooming, clean background</li>
+                        <li>It signals respect and seriousness, regardless of the company's dress code</li>
+                        <li>Avoid busy patterns or bright colors on camera — solid colors work best</li>
+                    </ul>
+                </div>
+
+                <!-- Materials Ready -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 tip-card no-break">
+                    <h3 class="text-lg font-bold text-slate-800 mb-4">Have Your Materials Ready</h3>
+                    <ul class="bullet-list space-y-2 text-slate-600 text-[15px]">
+                        <li>Print or pull up your <strong>list of interview examples</strong> (or resume if you don't have a separate list)</li>
+                        <li>Have the job description open for quick reference</li>
+                        <li>Write the <strong>interviewer's name</strong> somewhere visible so you can use it naturally</li>
+                        <li>Have a notepad ready for jotting down question keywords</li>
+                        <li>If you have <strong>visual aids</strong> (diagrams, dashboards, before/after slides), have them ready to screen-share</li>
+                        <li>Have your reference list accessible — be ready to mention it if the conversation goes well</li>
+                    </ul>
+                </div>
+
+                <!-- Mental Prep -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 tip-card no-break">
+                    <h3 class="text-lg font-bold text-slate-800 mb-4">Mental Prep</h3>
+                    <ul class="bullet-list space-y-2 text-slate-600 text-[15px]">
+                        <li>Research the company: mission, recent news, team structure, culture</li>
+                        <li>Review the job description line by line — know which of your stories map to which requirements</li>
+                        <li>Map your <strong>3-5 strongest stories</strong> to the role's likely competencies (see Story Preparation below)</li>
+                        <li>Take 3 deep breaths before joining to settle nerves</li>
+                        <li>Smile when the call starts — they can hear it in your voice</li>
+                        <li>Remember: they <em>want</em> you to do well. They have an open role to fill.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================================================================ -->
+    <!-- 02 — STORY PREPARATION                                            -->
+    <!-- ================================================================ -->
+    <section class="py-12 md:py-16 bg-slate-100">
+        <div class="max-w-5xl mx-auto px-6 md:px-10">
+            <div class="flex items-center gap-3 mb-8">
+                <span class="font-mono text-sm font-bold text-teal-600 bg-teal-50 px-3 py-1 rounded-full">02</span>
+                <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900">Story Preparation</h2>
+            </div>
+
+            <p class="text-slate-600 text-[15px] mb-6 max-w-3xl">
+                Don't walk in and hope you'll think of good stories on the spot. Map your experiences to common competencies <em>before</em> the interview so you're ready to pull the right story for any question.
+            </p>
+
+            <!-- Competency Story Map -->
+            <div class="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-slate-100 mb-6 no-break">
+                <h3 class="text-lg font-bold text-slate-800 mb-4">Competency Story Map</h3>
+                <p class="text-slate-600 text-[15px] mb-4">
+                    Take your 3-5 best experiences and map them to the competencies they can demonstrate. One story can cover multiple competencies.
+                </p>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm text-left">
+                        <thead>
+                            <tr class="bg-slate-50 text-slate-700">
+                                <th class="px-4 py-3 font-bold rounded-tl-lg">Common Competency</th>
+                                <th class="px-4 py-3 font-bold">What They're Looking For</th>
+                                <th class="px-4 py-3 font-bold rounded-tr-lg">Your Story</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-slate-600">
+                            <tr class="border-t border-slate-100">
+                                <td class="px-4 py-3 font-medium">Leadership</td>
+                                <td class="px-4 py-3">Influencing outcomes, taking ownership, guiding a team</td>
+                                <td class="px-4 py-3 italic text-slate-400">(fill in before interview)</td>
+                            </tr>
+                            <tr class="border-t border-slate-100 bg-slate-50/50">
+                                <td class="px-4 py-3 font-medium">Problem Solving</td>
+                                <td class="px-4 py-3">Analytical thinking, breaking down complexity, creative solutions</td>
+                                <td class="px-4 py-3 italic text-slate-400">(fill in before interview)</td>
+                            </tr>
+                            <tr class="border-t border-slate-100">
+                                <td class="px-4 py-3 font-medium">Teamwork</td>
+                                <td class="px-4 py-3">Collaboration, conflict resolution, supporting others</td>
+                                <td class="px-4 py-3 italic text-slate-400">(fill in before interview)</td>
+                            </tr>
+                            <tr class="border-t border-slate-100 bg-slate-50/50">
+                                <td class="px-4 py-3 font-medium">Initiative</td>
+                                <td class="px-4 py-3">Self-starting, going beyond what's asked, proactive</td>
+                                <td class="px-4 py-3 italic text-slate-400">(fill in before interview)</td>
+                            </tr>
+                            <tr class="border-t border-slate-100">
+                                <td class="px-4 py-3 font-medium">Communication</td>
+                                <td class="px-4 py-3">Clarity, persuasion, adapting to your audience</td>
+                                <td class="px-4 py-3 italic text-slate-400">(fill in before interview)</td>
+                            </tr>
+                            <tr class="border-t border-slate-100 bg-slate-50/50">
+                                <td class="px-4 py-3 font-medium">Adaptability</td>
+                                <td class="px-4 py-3">Handling change, learning fast, dealing with ambiguity</td>
+                                <td class="px-4 py-3 italic text-slate-400">(fill in before interview)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- 3 Tiers of Impact -->
+            <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 no-break">
+                <h3 class="text-lg font-bold text-slate-800 mb-3">3 Tiers of Impact (Quick Reminder)</h3>
+                <p class="text-slate-600 text-[15px] mb-4">
+                    We covered this in the STAR+2 Framework. For every story you prepare, make sure you can speak to impact at all three tiers:
+                </p>
+                <div class="grid md:grid-cols-3 gap-3">
+                    <div class="bg-teal-50 rounded-xl px-4 py-3 text-center">
+                        <p class="text-sm font-bold text-teal-800">Personal</p>
+                        <p class="text-xs text-teal-700">What you learned or how you grew</p>
+                    </div>
+                    <div class="bg-teal-50 rounded-xl px-4 py-3 text-center">
+                        <p class="text-sm font-bold text-teal-800">Team</p>
+                        <p class="text-xs text-teal-700">How it helped your team or changed how they work</p>
+                    </div>
+                    <div class="bg-teal-50 rounded-xl px-4 py-3 text-center">
+                        <p class="text-sm font-bold text-teal-800">Organization</p>
+                        <p class="text-xs text-teal-700">Revenue, cost savings, efficiency — use real numbers</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================================================================ -->
+    <!-- 03 — WHEN THE INTERVIEW STARTS                                    -->
+    <!-- ================================================================ -->
+    <section class="py-12 md:py-16">
+        <div class="max-w-5xl mx-auto px-6 md:px-10">
+            <div class="flex items-center gap-3 mb-8">
+                <span class="font-mono text-sm font-bold text-teal-600 bg-teal-50 px-3 py-1 rounded-full">03</span>
+                <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900">When the Interview Starts</h2>
+            </div>
+
+            <!-- Be Transparent -->
+            <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 mb-6 no-break">
+                <h3 class="text-lg font-bold text-slate-800 mb-4">Be Transparent About Your Notes</h3>
+                <p class="text-slate-600 text-[15px] mb-3">
+                    If you have a reference sheet or list of examples, say so right at the start:
+                </p>
+                <div class="bg-slate-50 border-l-4 border-teal-500 rounded-r-lg px-5 py-4 mb-3">
+                    <p class="text-slate-700 text-[15px] italic">"I have a list of my experiences here just for reference — I wanted to make sure I give you the best examples."</p>
+                </div>
+                <p class="text-slate-500 text-[15px]">
+                    This removes any suspicion that you're Googling answers or using AI. Interviewers appreciate the honesty, and it's completely normal. Same goes for your reference list — if you have one ready, it's fine to mention: "I also have a reference list available if you'd like it."
+                </p>
+            </div>
+
+            <!-- W.A.R.M. -->
+            <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 mb-6 no-break">
+                <h3 class="text-lg font-bold text-slate-800 mb-4">Build Rapport — Be a Person, Not a Robot</h3>
+                <p class="text-slate-600 text-[15px] mb-4">
+                    You're not a robot answering questions. Be a person they'd want to work with. Match their energy, react genuinely, and find common ground.
+                </p>
+                <div class="grid sm:grid-cols-2 gap-3">
+                    <div class="bg-emerald-50 rounded-xl px-4 py-3">
+                        <p class="text-sm font-bold text-emerald-800 mb-1">Welcome</p>
+                        <p class="text-sm text-emerald-700">Open with energy: "Thanks so much for taking the time — I've been looking forward to this."</p>
+                    </div>
+                    <div class="bg-emerald-50 rounded-xl px-4 py-3">
+                        <p class="text-sm font-bold text-emerald-800 mb-1">Acknowledge</p>
+                        <p class="text-sm text-emerald-700">React genuinely to what they say. Not just "uh huh" — try "Oh, that's really interesting" or "That makes a lot of sense."</p>
+                    </div>
+                    <div class="bg-emerald-50 rounded-xl px-4 py-3">
+                        <p class="text-sm font-bold text-emerald-800 mb-1">Relate</p>
+                        <p class="text-sm text-emerald-700">Find common ground: shared schooling, similar experiences, mutual interests. Don't force it — if it's not natural, skip it.</p>
+                    </div>
+                    <div class="bg-emerald-50 rounded-xl px-4 py-3">
+                        <p class="text-sm font-bold text-emerald-800 mb-1">Mirror</p>
+                        <p class="text-sm text-emerald-700">Match their pace and energy — fast talker? Speed up. Calm and deliberate? Ease your pace. Pay attention to their tone.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================================================================ -->
+    <!-- 04 — YOUR INTRODUCTION                                            -->
+    <!-- ================================================================ -->
+    <section class="py-12 md:py-16 bg-slate-100">
+        <div class="max-w-5xl mx-auto px-6 md:px-10">
+            <div class="flex items-center gap-3 mb-8">
+                <span class="font-mono text-sm font-bold text-teal-600 bg-teal-50 px-3 py-1 rounded-full">04</span>
+                <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900">Your Introduction</h2>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-slate-100 mb-6 no-break">
+                <p class="text-slate-600 text-[15px] mb-5">
+                    When they say "Tell me about yourself" — keep it <strong>short and simple</strong>. The goal is not to eat up time. Save the depth for your behavioral answers.
+                </p>
+
+                <h3 class="text-base font-bold text-slate-800 mb-4">What to Cover (60–90 seconds):</h3>
+                <div class="space-y-3 mb-6">
+                    <div class="flex items-start gap-3">
+                        <span class="font-mono text-sm font-bold text-white bg-brand-primary rounded-lg w-7 h-7 flex items-center justify-center flex-shrink-0 mt-0.5">1</span>
+                        <p class="text-slate-700 text-[15px]"><strong>Who you are</strong> — your name, your major or current role</p>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <span class="font-mono text-sm font-bold text-white bg-brand-primary rounded-lg w-7 h-7 flex items-center justify-center flex-shrink-0 mt-0.5">2</span>
+                        <p class="text-slate-700 text-[15px]"><strong>Your favorite class, project, or work experience</strong> — and <em>why</em> it was your favorite</p>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <span class="font-mono text-sm font-bold text-white bg-brand-primary rounded-lg w-7 h-7 flex items-center justify-center flex-shrink-0 mt-0.5">3</span>
+                        <p class="text-slate-700 text-[15px]"><strong>Why you're passionate about engineering</strong> — what drives you, what excites you about the field</p>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <span class="font-mono text-sm font-bold text-white bg-brand-primary rounded-lg w-7 h-7 flex items-center justify-center flex-shrink-0 mt-0.5">4</span>
+                        <p class="text-slate-700 text-[15px]"><strong>What you're looking to get into</strong> — the type of role or career you're interested in, with overlap to the role you're interviewing for</p>
+                    </div>
+                </div>
+
+                <div class="bg-amber-50 border border-amber-200 rounded-xl px-5 py-4 no-break">
+                    <p class="text-sm font-bold text-amber-800 mb-1">Key Principle</p>
+                    <p class="text-sm text-amber-700">
+                        Keep it light. Show enthusiasm. Don't deep-dive your resume or over-explain past roles. If they ask curious follow-up questions, answer them — but don't volunteer a 5-minute monologue. Your behavioral answers are where you spend your time.
+                    </p>
+                </div>
+            </div>
+
+            <!-- What NOT to do -->
+            <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 no-break">
+                <h3 class="text-base font-bold text-slate-800 mb-3">Common Mistakes in the Intro</h3>
+                <div class="grid sm:grid-cols-2 gap-3 text-sm">
+                    <div class="bg-red-50 rounded-lg px-4 py-3 text-red-700">Reciting your entire resume chronologically</div>
+                    <div class="bg-red-50 rounded-lg px-4 py-3 text-red-700">Talking for 3+ minutes without stopping</div>
+                    <div class="bg-red-50 rounded-lg px-4 py-3 text-red-700">Being too vague: "I like solving problems"</div>
+                    <div class="bg-red-50 rounded-lg px-4 py-3 text-red-700">Underselling yourself or being self-deprecating</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================================================================ -->
+    <!-- 05 — BODY LANGUAGE & PRESENCE                                     -->
+    <!-- ================================================================ -->
+    <section class="py-12 md:py-16">
+        <div class="max-w-5xl mx-auto px-6 md:px-10">
+            <div class="flex items-center gap-3 mb-8">
+                <span class="font-mono text-sm font-bold text-teal-600 bg-teal-50 px-3 py-1 rounded-full">05</span>
+                <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900">Body Language & Presence</h2>
+            </div>
+
+            <p class="text-slate-600 text-[15px] mb-6 max-w-3xl">
+                On video, body language matters even more because the frame is tight. Small changes make a big difference in how confident and engaged you appear.
+            </p>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 tip-card no-break">
+                    <h3 class="font-bold text-slate-800 mb-3">Eye Contact</h3>
+                    <ul class="bullet-list space-y-2 text-slate-600 text-[15px]">
+                        <li>Look at your <strong>camera lens</strong>, not the screen — this is what creates "eye contact" for the interviewer</li>
+                        <li>Put a sticky note near your camera as a reminder</li>
+                        <li>When listening, it's fine to look at the screen to watch their face — switch back to the camera when you're speaking</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 tip-card no-break">
+                    <h3 class="font-bold text-slate-800 mb-3">Posture & Position</h3>
+                    <ul class="bullet-list space-y-2 text-slate-600 text-[15px]">
+                        <li>Sit up straight — don't slouch or lean back</li>
+                        <li>Lean slightly forward when they're speaking to show engagement</li>
+                        <li>Keep your shoulders relaxed, not tense</li>
+                        <li>Stay centered in the frame — don't drift left/right</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 tip-card no-break">
+                    <h3 class="font-bold text-slate-800 mb-3">Hands & Gestures</h3>
+                    <ul class="bullet-list space-y-2 text-slate-600 text-[15px]">
+                        <li>Use natural hand gestures — they add energy and emphasis</li>
+                        <li>Keep hands visible in frame when possible</li>
+                        <li>Don't fidget, click pens, or play with things</li>
+                        <li>Avoid touching your face repeatedly</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 tip-card no-break">
+                    <h3 class="font-bold text-slate-800 mb-3">Energy & Expression</h3>
+                    <ul class="bullet-list space-y-2 text-slate-600 text-[15px]">
+                        <li>Smile genuinely — especially at the start and when they share something interesting</li>
+                        <li>Nod to show you're tracking what they're saying</li>
+                        <li>Match their energy level — don't be flat if they're enthusiastic, and vice versa</li>
+                        <li>Bring slightly more energy than you think you need — video dampens it</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================================================================ -->
+    <!-- 06 — ANSWERING BEHAVIORAL QUESTIONS                               -->
+    <!-- ================================================================ -->
+    <section class="py-12 md:py-16 bg-slate-100">
+        <div class="max-w-5xl mx-auto px-6 md:px-10">
+            <div class="flex items-center gap-3 mb-8">
+                <span class="font-mono text-sm font-bold text-teal-600 bg-teal-50 px-3 py-1 rounded-full">06</span>
+                <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900">Answering Behavioral Questions</h2>
+            </div>
+
+            <!-- STAR+2 Quick Reference -->
+            <div class="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-slate-100 mb-6 no-break">
+                <h3 class="text-lg font-bold text-slate-800 mb-2">STAR+2 Quick Reference</h3>
+                <p class="text-slate-600 text-[15px] mb-5">
+                    This is covered in detail in your STAR+2 Framework guide. Here's the quick reminder for interview day:
+                </p>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-3 mb-5">
+                    <div class="bg-slate-50 rounded-xl px-4 py-3 text-center">
+                        <p class="text-sm font-bold text-brand-primary mb-1">S — Situation</p>
+                        <p class="text-xs text-slate-500">Set the scene. Where, when, what team.</p>
+                    </div>
+                    <div class="bg-slate-50 rounded-xl px-4 py-3 text-center">
+                        <p class="text-sm font-bold text-brand-primary mb-1">T — Task</p>
+                        <p class="text-xs text-slate-500">Your specific responsibility.</p>
+                    </div>
+                    <div class="bg-slate-50 rounded-xl px-4 py-3 text-center">
+                        <p class="text-sm font-bold text-brand-primary mb-1">A — Action</p>
+                        <p class="text-xs text-slate-500">What YOU did. Be specific.</p>
+                    </div>
+                    <div class="bg-slate-50 rounded-xl px-4 py-3 text-center">
+                        <p class="text-sm font-bold text-brand-primary mb-1">R — Result</p>
+                        <p class="text-xs text-slate-500">Outcome + numbers if possible.</p>
+                    </div>
+                    <div class="bg-teal-50 rounded-xl px-4 py-3 text-center">
+                        <p class="text-sm font-bold text-teal-700 mb-1">+1 — Lessons Learned</p>
+                        <p class="text-xs text-teal-600">What you took away from it.</p>
+                    </div>
+                    <div class="bg-teal-50 rounded-xl px-4 py-3 text-center">
+                        <p class="text-sm font-bold text-teal-700 mb-1">+2 — If I Could Go Back</p>
+                        <p class="text-xs text-teal-600">What you'd do differently.</p>
+                    </div>
+                </div>
+                <div class="bg-amber-50 border border-amber-200 rounded-xl px-5 py-4">
+                    <p class="text-sm font-bold text-amber-800 mb-1">Target Time</p>
+                    <p class="text-sm text-amber-700">
+                        6-8 minutes per question. Spend the bulk of time on Action and Result. The +2 are what set you apart — they show self-awareness and growth mindset.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Storytelling Tips -->
+            <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 no-break">
+                <h3 class="text-lg font-bold text-slate-800 mb-4">Storytelling Tips</h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="font-bold text-slate-700 text-sm mb-2">DO:</h4>
+                        <ul class="bullet-list space-y-2 text-slate-600 text-[15px]">
+                            <li>Say <strong>"I"</strong> not "we" — they're evaluating <em>you</em></li>
+                            <li>Use specific numbers: "reduced by 40%" not "improved a lot"</li>
+                            <li>Name your role clearly — "I was the lead" or "I was the one who..."</li>
+                            <li>Show your decision-making process, not just the final answer</li>
+                            <li>Include context on why it mattered — stakes raise interest</li>
+                            <li>Vary your tone when telling the story — build toward the result</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-700 text-sm mb-2">DON'T:</h4>
+                        <ul class="bullet-list space-y-2 text-slate-600 text-[15px]">
+                            <li>Narrate every detail of the timeline — hit the key points</li>
+                            <li>Use jargon the interviewer won't understand</li>
+                            <li>Talk about "we" the entire time without clarifying your role</li>
+                            <li>Skip the result — "and then it worked out" is not a result</li>
+                            <li>Badmouth former colleagues, managers, or companies</li>
+                            <li>Use the same story for every question</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================================================================ -->
+    <!-- 07 — PAUSING & THINKING                                           -->
+    <!-- ================================================================ -->
+    <section class="py-12 md:py-16">
+        <div class="max-w-5xl mx-auto px-6 md:px-10">
+            <div class="flex items-center gap-3 mb-8">
+                <span class="font-mono text-sm font-bold text-teal-600 bg-teal-50 px-3 py-1 rounded-full">07</span>
+                <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900">Pausing & Thinking</h2>
+            </div>
+
+            <p class="text-slate-600 text-[15px] mb-6 max-w-3xl">
+                Pausing is not a weakness. Taking time to think shows you're being thoughtful, not scrambling. Here's what's completely okay to do:
+            </p>
+
+            <div class="grid md:grid-cols-2 gap-5">
+                <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-100 tip-card no-break">
+                    <h3 class="font-bold text-slate-800 mb-2">Take a Pause</h3>
+                    <p class="text-slate-600 text-[15px]">
+                        A <strong>1-minute pause</strong> to think is completely fine. Say: <em>"Give me just a minute to think of a good example for that."</em> This is normal and expected. Don't feel rushed.
+                    </p>
+                </div>
+
+                <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-100 tip-card no-break">
+                    <h3 class="font-bold text-slate-800 mb-2">Ask to Repeat</h3>
+                    <p class="text-slate-600 text-[15px]">
+                        Always okay to ask them to repeat or rephrase. <em>"Could you say that one more time?"</em> Better to answer the right question well than the wrong question confidently.
+                    </p>
+                </div>
+
+                <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-100 tip-card no-break">
+                    <h3 class="font-bold text-slate-800 mb-2">Skip and Come Back</h3>
+                    <p class="text-slate-600 text-[15px]">
+                        If you're stuck, ask to skip and return at the end: <em>"Can we come back to that one? I want to give you a strong answer."</em> If you're still stuck when you circle back, it's perfectly fine to ask for a different question.
+                    </p>
+                </div>
+
+                <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-100 tip-card no-break">
+                    <h3 class="font-bold text-slate-800 mb-2">Clarify the Competency</h3>
+                    <p class="text-slate-600 text-[15px]">
+                        If a question could go multiple directions, ask: <em>"Is this more about [aspect A] or [aspect B]?"</em> This ensures you give them the answer they're actually looking for — and it shows you're thinking critically.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Power Pause -->
+            <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 mt-6 no-break">
+                <h3 class="font-bold text-slate-800 mb-3">The Power Pause</h3>
+                <p class="text-slate-600 text-[15px] mb-3">
+                    Intentional pausing is a sign of confidence, not uncertainty. Use it strategically:
+                </p>
+                <ul class="bullet-list space-y-2 text-slate-600 text-[15px]">
+                    <li><strong>Before answering:</strong> A 3-5 second pause after they ask shows you're considering your best answer. It's the opposite of rambling.</li>
+                    <li><strong>Before your Result:</strong> A brief pause before sharing the outcome builds anticipation and gives it weight.</li>
+                    <li><strong>After a key number:</strong> "We reduced defects by 60%." [pause] — Let the number land.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================================================================ -->
+    <!-- 08 — TIME MANAGEMENT                                              -->
+    <!-- ================================================================ -->
+    <section class="py-12 md:py-16 bg-slate-100">
+        <div class="max-w-5xl mx-auto px-6 md:px-10">
+            <div class="flex items-center gap-3 mb-8">
+                <span class="font-mono text-sm font-bold text-teal-600 bg-teal-50 px-3 py-1 rounded-full">08</span>
+                <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900">Time Management</h2>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-slate-100 no-break">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h3 class="font-bold text-slate-800 mb-3">Track Your Time</h3>
+                        <ul class="bullet-list space-y-2 text-slate-600 text-[15px]">
+                            <li>Use a <strong>stopwatch or timer</strong> — your phone face-up on the desk or the Windows clock are fine</li>
+                            <li>It's not weird — it shows you're organized</li>
+                            <li>Reset the timer at the start of each answer</li>
+                            <li>If you're past 8 minutes, wrap up the Result and keep the +2 brief</li>
+                            <li>If you're under 4 minutes, you're probably not giving enough detail in Action</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-slate-800 mb-3">Ask How Many Questions</h3>
+                        <p class="text-slate-600 text-[15px] mb-3">
+                            It's perfectly fine — and smart — to ask:
+                        </p>
+                        <div class="bg-slate-50 border-l-4 border-teal-500 rounded-r-lg px-4 py-3 mb-3">
+                            <p class="text-slate-700 text-[15px] italic">"I'd like to manage my time well — how many questions are we covering today?"</p>
+                        </div>
+                        <p class="text-slate-600 text-[15px]">
+                            This shows you're organized and time-conscious. You can then pace yourself: if there are 4 questions in 60 minutes, you have roughly 12-15 minutes per question (including their follow-ups). That's plenty of time for STAR+2.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================================================================ -->
+    <!-- 09 — DELIVERY TIPS                                                -->
+    <!-- ================================================================ -->
+    <section class="py-12 md:py-16">
+        <div class="max-w-5xl mx-auto px-6 md:px-10">
+            <div class="flex items-center gap-3 mb-8">
+                <span class="font-mono text-sm font-bold text-teal-600 bg-teal-50 px-3 py-1 rounded-full">09</span>
+                <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900">Delivery Tips</h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 tip-card no-break">
+                    <h3 class="font-bold text-slate-800 mb-3">Voice & Tone</h3>
+                    <ul class="bullet-list space-y-2 text-slate-600 text-[15px]">
+                        <li>Vary your tone — monotone kills engagement</li>
+                        <li>Emphasize key words and numbers: "We saved <strong>fifteen thousand</strong> dollars per quarter"</li>
+                        <li>Don't rush — confidence has a pace</li>
+                        <li>Pause before key results for emphasis</li>
+                        <li>Smile while talking — it changes your tone even on audio-only calls</li>
+                        <li>For phone calls, stand up — it projects more energy in your voice</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 tip-card no-break">
+                    <h3 class="font-bold text-slate-800 mb-3">Active Listening</h3>
+                    <ul class="bullet-list space-y-2 text-slate-600 text-[15px]">
+                        <li>Wait 1 second after they finish before you respond — don't cut them off</li>
+                        <li>React to what they say — engage, don't just wait for your turn</li>
+                        <li>Use their name 2-3 times naturally throughout the interview</li>
+                        <li>If they share something personal (weekend plans, sports), engage with it briefly</li>
+                        <li>Nod and give verbal affirmations: "Right," "That makes sense," "Absolutely"</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 tip-card no-break">
+                    <h3 class="font-bold text-slate-800 mb-3">When You Don't Know</h3>
+                    <ul class="bullet-list space-y-2 text-slate-600 text-[15px]">
+                        <li>Be honest — never fake an answer</li>
+                        <li>"I'm not sure of the exact answer, but my approach would be to..."</li>
+                        <li>"I haven't encountered that specific scenario, but a related experience I had was..."</li>
+                        <li>Intellectual honesty > false confidence — interviewers can tell when you're making it up</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 tip-card no-break">
+                    <h3 class="font-bold text-slate-800 mb-3">Visual Aids</h3>
+                    <p class="text-slate-600 text-[15px] mb-3">
+                        If you have diagrams, before/after comparisons, or results dashboards from your projects — bring them. It transforms you from "someone who said smart things" into "the one who showed me their work."
+                    </p>
+                    <ul class="bullet-list space-y-2 text-slate-600 text-[15px]">
+                        <li><strong>Virtual:</strong> "I have a quick visual — mind if I share my screen for 30 seconds?"</li>
+                        <li><strong>In-person:</strong> Printed one-pagers in a folder. Pull them out casually.</li>
+                        <li>Keep them simple — one slide, one chart, one comparison. Not a presentation.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================================================================ -->
+    <!-- 10 — ASKING QUESTIONS                                             -->
+    <!-- ================================================================ -->
+    <section class="py-12 md:py-16 bg-slate-100">
+        <div class="max-w-5xl mx-auto px-6 md:px-10">
+            <div class="flex items-center gap-3 mb-8">
+                <span class="font-mono text-sm font-bold text-teal-600 bg-teal-50 px-3 py-1 rounded-full">10</span>
+                <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900">"Do You Have Any Questions?"</h2>
+            </div>
+
+            <!-- What NOT to ask -->
+            <div class="bg-red-50 border border-red-200 rounded-2xl p-6 mb-6 no-break">
+                <h3 class="font-bold text-red-800 mb-3">Don't Ask These in the Interview</h3>
+                <p class="text-red-700 text-[15px] mb-3">
+                    These are HR/process questions. Ask them in your follow-up email to the recruiter — not to the hiring manager or team members.
+                </p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="bg-red-100 text-red-700 text-sm px-3 py-1 rounded-full">Benefits</span>
+                    <span class="bg-red-100 text-red-700 text-sm px-3 py-1 rounded-full">Start date</span>
+                    <span class="bg-red-100 text-red-700 text-sm px-3 py-1 rounded-full">Relocation</span>
+                    <span class="bg-red-100 text-red-700 text-sm px-3 py-1 rounded-full">Salary</span>
+                    <span class="bg-red-100 text-red-700 text-sm px-3 py-1 rounded-full">Vacation</span>
+                    <span class="bg-red-100 text-red-700 text-sm px-3 py-1 rounded-full">Hiring timeline</span>
+                    <span class="bg-red-100 text-red-700 text-sm px-3 py-1 rounded-full">Anything you could Google</span>
+                </div>
+            </div>
+
+            <!-- What TO ask -->
+            <div class="bg-emerald-50 border border-emerald-200 rounded-2xl p-6 mb-6 no-break">
+                <h3 class="font-bold text-emerald-800 mb-3">Ask Questions That Let You Show More Value</h3>
+                <p class="text-emerald-700 text-[15px] mb-4">
+                    This is your <strong>second chance to demonstrate fit</strong>. Don't waste it on logistics. Ask questions that open the door for you to share more of your experience.
+                </p>
+                <div class="space-y-4">
+                    <div class="bg-white/70 rounded-xl px-5 py-4">
+                        <p class="text-sm font-bold text-emerald-800 mb-2">The Best Question — The Gap Closer</p>
+                        <p class="text-emerald-700 text-[15px] italic mb-3">
+                            "Knowing what you've learned about me today — what would you say is one of my biggest gaps or lacking experiences compared to others who were successful in this role, or something that might make it hard for me to succeed?"
+                        </p>
+                        <p class="text-emerald-600 text-[15px]">
+                            When they answer, you close the gap with an experience they didn't hear about: <em>"That's interesting — I actually didn't get to share my experience with [X], which I think is relevant here because..."</em>
+                        </p>
+                        <p class="text-emerald-600 text-sm mt-2">
+                            You're turning a potential weakness into a strength. You're also showing that you're coachable, self-aware, and not afraid of feedback.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Good questions list -->
+            <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 no-break">
+                <h3 class="font-bold text-slate-800 mb-4">Other Strong Questions</h3>
+                <p class="text-slate-600 text-[15px] mb-3">These show genuine interest in the role and the team, not just yourself:</p>
+                <ul class="bullet-list space-y-2.5 text-slate-600 text-[15px]">
+                    <li>"What does success look like in the first 90 days?"</li>
+                    <li>"What's the biggest challenge on this team right now?"</li>
+                    <li>"What do you wish you'd known when you started in this role?"</li>
+                    <li>"How does the team collaborate on a day-to-day basis?"</li>
+                    <li>"What's the career growth path for someone in this position?"</li>
+                    <li>"What do you enjoy most about working here?"</li>
+                    <li>"How does this team measure success?"</li>
+                    <li>"What would be the first project or problem I'd be working on?"</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================================================================ -->
+    <!-- 11 — DEALBREAKERS                                                 -->
+    <!-- ================================================================ -->
+    <section class="py-12 md:py-16">
+        <div class="max-w-5xl mx-auto px-6 md:px-10">
+            <div class="flex items-center gap-3 mb-8">
+                <span class="font-mono text-sm font-bold text-teal-600 bg-teal-50 px-3 py-1 rounded-full">11</span>
+                <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900">Dealbreakers</h2>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-slate-100 mb-6 no-break">
+                <h3 class="text-lg font-bold text-slate-800 mb-4">Never Bring Up Dealbreakers Before You Have an Offer</h3>
+                <p class="text-slate-600 text-[15px] mb-4">
+                    If the role requires relocating somewhere you don't want to go, has a schedule you can't work with, or includes something you'd never agree to — <strong>do not bring it up during the interview</strong>. Not in the phone screen, not in the behavioral round, not in the Q&A.
+                </p>
+                <p class="text-slate-600 text-[15px] mb-4">
+                    If they ask directly, be agreeable and redirect:
+                </p>
+                <div class="bg-slate-50 border-l-4 border-teal-500 rounded-r-lg px-5 py-4 mb-5">
+                    <p class="text-slate-700 text-[15px] italic">"For right now, I'm really just focused on making sure I'm a fit for the role and the role is a fit for me. I'm sure we can work out the details if there's an offer extended."</p>
+                </div>
+
+                <h4 class="font-bold text-slate-800 text-[15px] mb-3">Why This Matters</h4>
+                <ul class="bullet-list space-y-2 text-slate-600 text-[15px] mb-5">
+                    <li>Raising concerns early puts you on the "difficult" or "high maintenance" list before they even know your value</li>
+                    <li>You don't know how strong a candidate you are yet — you could be far and away their top choice</li>
+                    <li>If you're their #1 pick and candidate #2 is significantly weaker, they may be willing to negotiate on things you assumed were non-negotiable</li>
+                    <li><strong>You have leverage when an offer is extended, not before</strong></li>
+                </ul>
+
+                <div class="bg-amber-50 border border-amber-200 rounded-xl px-5 py-4 no-break">
+                    <p class="text-sm font-bold text-amber-800 mb-1">Bottom Line</p>
+                    <p class="text-sm text-amber-700">
+                        The time to negotiate is after they've decided they want you. That's when you have maximum leverage. Before that, your only job is to be the best candidate in the room.
+                    </p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 no-break">
+                <h3 class="font-bold text-slate-800 mb-3">Common Topics to Defer Until After an Offer</h3>
+                <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-3 text-[15px]">
+                    <div class="bg-slate-50 rounded-lg px-4 py-3 text-slate-600">Relocation requirements</div>
+                    <div class="bg-slate-50 rounded-lg px-4 py-3 text-slate-600">Salary / compensation</div>
+                    <div class="bg-slate-50 rounded-lg px-4 py-3 text-slate-600">Remote vs. on-site</div>
+                    <div class="bg-slate-50 rounded-lg px-4 py-3 text-slate-600">Travel requirements</div>
+                    <div class="bg-slate-50 rounded-lg px-4 py-3 text-slate-600">Start date conflicts</div>
+                    <div class="bg-slate-50 rounded-lg px-4 py-3 text-slate-600">Shift / schedule preferences</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================================================================ -->
+    <!-- 12 — CLOSING THE INTERVIEW                                        -->
+    <!-- ================================================================ -->
+    <section class="py-12 md:py-16 bg-slate-100">
+        <div class="max-w-5xl mx-auto px-6 md:px-10">
+            <div class="flex items-center gap-3 mb-8">
+                <span class="font-mono text-sm font-bold text-teal-600 bg-teal-50 px-3 py-1 rounded-full">12</span>
+                <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900">Closing the Interview</h2>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-slate-100 mb-6 no-break">
+                <h3 class="text-lg font-bold text-slate-800 mb-4">End Strong (30-60 seconds)</h3>
+                <p class="text-slate-600 text-[15px] mb-4">The last impression matters as much as the first. Don't just trail off — close deliberately.</p>
+                <ul class="bullet-list space-y-2 text-slate-600 text-[15px] mb-5">
+                    <li>Express genuine enthusiasm — mention something <strong>specific</strong> from the conversation that excited you</li>
+                    <li>Reiterate your interest: "I'm really excited about this role, especially after hearing about [specific thing]."</li>
+                    <li>Express confidence without arrogance: "I'm confident I can make a real impact here."</li>
+                    <li>Confirm next steps: "What should I expect from here?"</li>
+                    <li>Thank them sincerely for their time</li>
+                </ul>
+
+                <div class="bg-slate-50 border-l-4 border-teal-500 rounded-r-lg px-5 py-4">
+                    <p class="text-slate-700 text-[15px] italic">"This has been a great conversation — I'm even more excited about this role after hearing about [specific thing you discussed]. I'm confident in my ability to contribute here, and I'd love the opportunity to join the team. Thank you for your time."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================================================================ -->
+    <!-- 13 — AFTER THE INTERVIEW                                          -->
+    <!-- ================================================================ -->
+    <section class="py-12 md:py-16">
+        <div class="max-w-5xl mx-auto px-6 md:px-10">
+            <div class="flex items-center gap-3 mb-8">
+                <span class="font-mono text-sm font-bold text-teal-600 bg-teal-50 px-3 py-1 rounded-full">13</span>
+                <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900">After the Interview</h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+
+                <!-- Thank-You Email -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 tip-card no-break">
+                    <h3 class="text-lg font-bold text-slate-800 mb-4">Thank-You Email (Within 24 Hours)</h3>
+                    <p class="text-slate-600 text-[15px] mb-3">Sending one email to the whole interview panel is fine — no need to send individual emails to each person.</p>
+                    <ul class="bullet-list space-y-2.5 text-slate-600 text-[15px]">
+                        <li>Highlight your <strong>interest in the role</strong> — what specifically excites you about it</li>
+                        <li>Explain <strong>why you like the role</strong> — reference something specific from the conversation</li>
+                        <li>Reinforce <strong>why you're a good fit</strong> — connect your experience to what they need</li>
+                        <li>Drop your <strong>references</strong> — "I'd also like to share a few references who can speak to my work: [names/contact info]"</li>
+                        <li>Keep it brief — <strong>5-7 sentences</strong></li>
+                        <li>Proofread carefully — typos undermine credibility</li>
+                    </ul>
+                </div>
+
+                <!-- Self-Debrief -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 tip-card no-break">
+                    <h3 class="text-lg font-bold text-slate-800 mb-4">Self-Debrief (Same Day)</h3>
+                    <p class="text-slate-600 text-[15px] mb-3">
+                        While it's fresh, write down:
+                    </p>
+                    <ul class="bullet-list space-y-2 text-slate-600 text-[15px]">
+                        <li>Which questions went well and which felt weak</li>
+                        <li>What stories you used — so you don't repeat them in the next round</li>
+                        <li>Any follow-up items you promised ("I'll send you that link")</li>
+                        <li>What you'd do differently next time</li>
+                        <li>Key things the interviewer shared about the role or team</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- If You Don't Get the Offer -->
+            <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 mt-6 no-break">
+                <h3 class="text-lg font-bold text-slate-800 mb-3">If You Don't Get the Offer</h3>
+                <p class="text-slate-600 text-[15px] mb-4">
+                    Respond gracefully. Their first choice might not work out. Other roles might open up. The hiring manager might move companies and remember you. Always leave the door open.
+                </p>
+                <div class="grid sm:grid-cols-2 gap-3 text-[15px]">
+                    <div class="bg-slate-50 rounded-lg px-4 py-3 text-slate-600">Thank them for the process and their time</div>
+                    <div class="bg-slate-50 rounded-lg px-4 py-3 text-slate-600">Express interest in future opportunities</div>
+                    <div class="bg-slate-50 rounded-lg px-4 py-3 text-slate-600">Ask for feedback: "Even a sentence or two would help me improve"</div>
+                    <div class="bg-slate-50 rounded-lg px-4 py-3 text-slate-600">Connect on LinkedIn to stay on their radar</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================================================================ -->
+    <!-- 14 — PHONE SCREEN TIPS                                            -->
+    <!-- ================================================================ -->
+    <section class="py-12 md:py-16 bg-slate-100">
+        <div class="max-w-5xl mx-auto px-6 md:px-10">
+            <div class="flex items-center gap-3 mb-8">
+                <span class="font-mono text-sm font-bold text-teal-600 bg-teal-50 px-3 py-1 rounded-full">14</span>
+                <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900">Phone Screen Tips</h2>
+            </div>
+
+            <p class="text-slate-600 text-[15px] mb-6 max-w-3xl">
+                Phone screens are usually 20-30 minutes with a recruiter or hiring manager. They're shorter and more conversational than full behavioral interviews, but they're still an evaluation. Treat them seriously.
+            </p>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 tip-card no-break">
+                    <h3 class="font-bold text-slate-800 mb-3">Phone-Specific Tips</h3>
+                    <ul class="bullet-list space-y-2 text-slate-600 text-[15px]">
+                        <li><strong>Stand up</strong> when you take the call — it projects more energy</li>
+                        <li>Smile while talking — they can hear it even on the phone</li>
+                        <li>Have your resume printed and in front of you</li>
+                        <li>Use a quiet room with no background noise</li>
+                        <li>Ask for the interviewer's email at the end so you can send a thank-you</li>
+                        <li>Have a pen and paper, not a keyboard — typing sounds are distracting</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 tip-card no-break">
+                    <h3 class="font-bold text-slate-800 mb-3">Common Phone Screen Questions</h3>
+                    <ul class="bullet-list space-y-2 text-slate-600 text-[15px]">
+                        <li><strong>Fit:</strong> "Why this company?" "Why this role?" — have specific reasons ready</li>
+                        <li><strong>Background:</strong> "Walk me through your resume" — 2-3 minute version, not your full intro</li>
+                        <li><strong>Availability / Relocation / Salary:</strong> Deflect all of these — "I'm flexible and really just focused on finding the right fit. I'm sure we can work out the details if there's an offer extended." (See section 11 — Dealbreakers)</li>
+                        <li><strong>Interest level:</strong> "Where else are you interviewing?" — be honest about having options without playing games</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================================================================ -->
+    <!-- 15 — SPECIAL SCENARIOS                                            -->
+    <!-- ================================================================ -->
+    <section class="py-12 md:py-16">
+        <div class="max-w-5xl mx-auto px-6 md:px-10">
+            <div class="flex items-center gap-3 mb-8">
+                <span class="font-mono text-sm font-bold text-teal-600 bg-teal-50 px-3 py-1 rounded-full">15</span>
+                <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900">Special Scenarios</h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- Panel Interviews -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 tip-card no-break">
+                    <h3 class="font-bold text-slate-800 mb-3">Panel Interviews</h3>
+                    <ul class="bullet-list space-y-2 text-slate-600 text-[15px]">
+                        <li>Write down every panelist's name and role at the start</li>
+                        <li>Direct your answer to the person who asked, but make eye contact with the whole group</li>
+                        <li>Use panelists' names when responding: "That's a great question, Sarah"</li>
+                        <li>Pay attention to non-verbal cues from quiet panelists — they're still evaluating you</li>
+                        <li>Send individual thank-you emails to each panelist afterward</li>
+                    </ul>
+                </div>
+
+                <!-- Technical Interviews -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 tip-card no-break">
+                    <h3 class="font-bold text-slate-800 mb-3">Technical Interviews</h3>
+                    <ul class="bullet-list space-y-2 text-slate-600 text-[15px]">
+                        <li>Think out loud — they care about your process, not just the answer</li>
+                        <li>Ask clarifying questions before diving in: "Can I assume...?"</li>
+                        <li>If you're stuck, explain what you've tried and where you're blocked</li>
+                        <li>It's okay to say "I'd look this up in practice" — they know nobody memorizes everything</li>
+                        <li>If they give hints, take them — it shows you're coachable, not weak</li>
+                    </ul>
+                </div>
+
+                <!-- Group / Case Interviews -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 tip-card no-break">
+                    <h3 class="font-bold text-slate-800 mb-3">Group Activities or Case Interviews</h3>
+                    <ul class="bullet-list space-y-2 text-slate-600 text-[15px]">
+                        <li>Lead without dominating — invite quieter people in: "What do you think, [name]?"</li>
+                        <li>Build on others' ideas rather than always pushing your own</li>
+                        <li>Volunteer for roles like timekeeper or note-taker — it shows initiative</li>
+                        <li>Be collaborative, not competitive — they're watching how you work with others</li>
+                    </ul>
+                </div>
+
+                <!-- Virtual Dining / Social -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 tip-card no-break">
+                    <h3 class="font-bold text-slate-800 mb-3">Informal / Social Rounds</h3>
+                    <ul class="bullet-list space-y-2 text-slate-600 text-[15px]">
+                        <li>These are still an evaluation — stay professional</li>
+                        <li>Ask about their experience, not just the company</li>
+                        <li>Don't over-drink if it's a dinner interview</li>
+                        <li>Be curious and engaged — show genuine interest in the people, not just the job</li>
+                        <li>These are often "culture fit" assessments — be yourself, but the professional version</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================================================================ -->
+    <!-- FOOTER                                                            -->
+    <!-- ================================================================ -->
+    <footer class="bg-brand-primary py-8">
+        <div class="max-w-5xl mx-auto px-6 md:px-10 text-center">
+            <p class="text-emerald-200 text-sm">Launch to Lead — Interview Day Guide — Confidential</p>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Resume Audit — Soufiane Talmoust | LaunchToLead</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .font-mono-num { font-family: 'Space Grotesk', monospace; }
+
+        #download-btn {
+            position: fixed; top: 20px; right: 20px; z-index: 9999;
+            background: linear-gradient(135deg, #a3e635, #14b8a6); color: #052e16;
+            font-family: 'Plus Jakarta Sans', sans-serif; font-size: 16px; font-weight: 800;
+            padding: 14px 32px; border: none; border-radius: 50px; cursor: pointer;
+            box-shadow: 0 8px 30px rgba(163,230,53,0.3);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        #download-btn:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(163,230,53,0.4); }
+
+        @media print {
+            @page { size: letter; margin: 0.5in 0.65in; }
+            body {
+                background: white !important; color: #1e293b !important;
+                padding: 0 !important; margin: 0 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            #download-btn { display: none !important; }
+            .no-print { display: none !important; }
+            .page-break { break-before: page; }
+            .keep-together { break-inside: avoid; }
+            .space-y-4 > div, .space-y-6 > div, .grid > div { break-inside: avoid; }
+            section .mb-5 { break-inside: avoid; }
+            ul.space-y-3 > li { break-inside: avoid; }
+            tbody tr { break-inside: avoid; }
+            .rounded-xl.overflow-hidden { break-inside: avoid; }
+            h2, h3, h4 { break-after: avoid; }
+            section { box-shadow: none !important; border: 1px solid #e2e8f0 !important; }
+            .max-w-4xl { max-width: 100% !important; }
+            .bg-red-900, .bg-amber-800, .bg-emerald-900 {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-700">
+
+<button id="download-btn" onclick="window.print()">Download PDF</button>
+
+<!-- ============================================ -->
+<!-- HEADER                                        -->
+<!-- ============================================ -->
+<header class="bg-emerald-900 text-white py-6 px-6">
+    <div class="max-w-4xl mx-auto">
+        <div class="flex items-center gap-3 mb-4">
+            <div class="bg-white text-emerald-900 w-10 h-10 rounded-xl flex items-center justify-center font-bold text-sm shadow">L²</div>
+            <span class="text-xl font-bold">Launch<span class="font-light text-lime-300">ToLead</span></span>
+        </div>
+        <div class="flex items-center gap-2 mb-2">
+            <span class="bg-lime-400/20 text-lime-300 text-xs font-bold px-3 py-1 rounded-full">FREE AUDIT</span>
+        </div>
+        <h1 class="text-3xl font-extrabold mb-1">Resume Audit Report</h1>
+        <p class="text-emerald-200">Soufiane Talmoust — B.Sc. Agricultural Engineering (Iowa State University)</p>
+        <p class="text-emerald-400/60 text-sm mt-1">Scored against the Impact Bullet Builder™ framework</p>
+    </div>
+</header>
+
+<div class="max-w-4xl mx-auto px-6 py-10 space-y-10">
+
+    <!-- ============================================ -->
+    <!-- SECTION 1: OVERALL SCORE                     -->
+    <!-- ============================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 overflow-hidden">
+        <div class="p-8">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="w-8 h-8 rounded-lg bg-red-500 text-white flex items-center justify-center text-sm font-bold">01</div>
+                <h2 class="text-2xl font-extrabold text-slate-900">Overall Score</h2>
+            </div>
+
+            <div class="flex items-center gap-8 mb-6">
+                <div class="text-center">
+                    <p class="font-mono-num text-6xl font-extrabold text-red-500">18</p>
+                    <p class="text-slate-500 text-sm">out of 100</p>
+                </div>
+                <div class="flex-1">
+                    <div class="h-4 bg-slate-100 rounded-full overflow-hidden mb-2">
+                        <div class="h-full rounded-full" style="width: 18%; background: linear-gradient(to right, #ef4444, #f97316);"></div>
+                    </div>
+                    <div class="flex justify-between text-xs text-slate-400">
+                        <span>0 — Invisible</span>
+                        <span>50 — Achiever</span>
+                        <span>100 — Impact Standard</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="bg-red-50 border border-red-200 rounded-xl p-4 text-center">
+                    <p class="font-mono-num text-2xl font-bold text-red-500">2/10</p>
+                    <p class="text-red-700 text-xs font-semibold mt-1">Accomplishments</p>
+                    <p class="text-red-400 text-[10px]">Every bullet is a responsibility description</p>
+                </div>
+                <div class="bg-red-50 border border-red-200 rounded-xl p-4 text-center">
+                    <p class="font-mono-num text-2xl font-bold text-red-500">1/10</p>
+                    <p class="text-red-700 text-xs font-semibold mt-1">Metrics</p>
+                    <p class="text-red-400 text-[10px]">Zero numbers anywhere on the resume</p>
+                </div>
+                <div class="bg-amber-50 border border-amber-200 rounded-xl p-4 text-center">
+                    <p class="font-mono-num text-2xl font-bold text-amber-500">4/10</p>
+                    <p class="text-amber-700 text-xs font-semibold mt-1">How / Method</p>
+                    <p class="text-amber-400 text-[10px]">Some domain context but no specifics</p>
+                </div>
+                <div class="bg-red-50 border border-red-200 rounded-xl p-4 text-center">
+                    <p class="font-mono-num text-2xl font-bold text-red-500">1/10</p>
+                    <p class="text-red-700 text-xs font-semibold mt-1">Why / Impact</p>
+                    <p class="text-red-400 text-[10px]">No business outcomes described anywhere</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- VERDICT BANNER -->
+        <div class="bg-red-900 text-white p-6">
+            <p class="font-bold text-lg">Tier: "The Doer"</p>
+            <p class="text-sm opacity-80 mt-1">This resume reads like a job description, not a record of results. Every bullet tells the reader what Soufiane was responsible for — but never what happened because of his work. A hiring manager scanning this for 7 seconds has no reason to stop and read more carefully. The expertise is clearly there — it's just invisible in the current format.</p>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SECTION 2: KEY ISSUES (4 issues)             -->
+    <!-- ============================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 p-8 page-break">
+        <div class="flex items-center gap-3 mb-6">
+            <div class="w-8 h-8 rounded-lg bg-red-600 text-white flex items-center justify-center text-sm font-bold">02</div>
+            <h2 class="text-2xl font-extrabold text-slate-900">Key Issues Identified</h2>
+        </div>
+
+        <div class="space-y-4">
+            <!-- ISSUE 1 -->
+            <div class="flex items-start gap-4 p-5 bg-red-50 rounded-xl border border-red-200 keep-together">
+                <div class="w-8 h-8 rounded-full bg-red-600 text-white flex items-center justify-center font-bold text-sm flex-shrink-0">1</div>
+                <div>
+                    <p class="font-bold text-red-900">Zero metrics on the entire resume</p>
+                    <p class="text-red-700 text-sm mt-1">There is not a single number, percentage, dollar amount, or quantity anywhere in the work experience. No revenue generated, no markets sized, no projects valued, no clients served with a count, no cost savings, no timelines met. Soufiane has 8+ years of international experience across 15+ countries — that's quantifiable, but none of it shows up in the bullets. Without numbers, the resume is a list of job descriptions.</p>
+                </div>
+            </div>
+
+            <!-- ISSUE 2 -->
+            <div class="flex items-start gap-4 p-5 bg-red-50 rounded-xl border border-red-200 keep-together">
+                <div class="w-8 h-8 rounded-full bg-red-600 text-white flex items-center justify-center font-bold text-sm flex-shrink-0">2</div>
+                <div>
+                    <p class="font-bold text-red-900">Every bullet describes a responsibility, not a result</p>
+                    <p class="text-red-700 text-sm mt-1">"Led technical and commercial support" — for how many projects? What happened? "Advised poultry producers" — and what changed because of that advice? "Developed deep understanding" — that's a personal learning, not a business outcome. Every bullet answers "what were you responsible for?" when it should answer "what changed because you were there?"</p>
+                </div>
+            </div>
+
+            <!-- ISSUE 3 -->
+            <div class="flex items-start gap-4 p-5 bg-red-50 rounded-xl border border-red-200 keep-together">
+                <div class="w-8 h-8 rounded-full bg-red-600 text-white flex items-center justify-center font-bold text-sm flex-shrink-0">3</div>
+                <div>
+                    <p class="font-bold text-red-900">No dates or scope on the family business / independent projects</p>
+                    <p class="text-red-700 text-sm mt-1">The second experience block has no dates at all, and the bullets are vague enough to describe almost anyone in agribusiness. "Hands-on experience in broiler and breeder production systems" tells us nothing about what was built, how large it was, what the output was, or what happened as a result. This section either needs concrete numbers and specific project outcomes, or it should be restructured into named projects with results.</p>
+                </div>
+            </div>
+
+            <!-- ISSUE 4 -->
+            <div class="flex items-start gap-4 p-5 bg-amber-50 rounded-xl border border-amber-200 keep-together">
+                <div class="w-8 h-8 rounded-full bg-amber-500 text-white flex items-center justify-center font-bold text-sm flex-shrink-0">4</div>
+                <div>
+                    <p class="font-bold text-amber-900">The "Professional Profile" and "Core Areas of Expertise" sections take up half the page but add nothing</p>
+                    <p class="text-amber-700 text-sm mt-1">The profile paragraph and the 10-item expertise list are generic category labels — "Poultry sector market analysis," "Investment risk assessment in emerging markets." These could describe any consultant in the space. That real estate would be far more valuable filled with specific project outcomes: markets assessed, feasibility studies delivered, investments sized, systems designed. Show the work, not the category.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SECTION 3: TOP BULLETS REWRITTEN (4 rewrites) -->
+    <!-- ============================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 p-8 page-break">
+        <div class="flex items-center gap-3 mb-6">
+            <div class="w-8 h-8 rounded-lg bg-emerald-600 text-white flex items-center justify-center text-sm font-bold">03</div>
+            <h2 class="text-2xl font-extrabold text-slate-900">Your Top Bullets — Rewritten</h2>
+        </div>
+
+        <p class="text-slate-500 text-sm mb-6">Below are your <strong>4 strongest bullets</strong> rewritten using the Impact Bullet Builder™ formula. <span class="text-emerald-600 font-semibold">In the full coaching program, we rewrite every bullet on your resume</span> — but these rewrites alone will show you what's possible.</p>
+
+        <div class="bg-slate-50 border border-slate-200 rounded-xl p-6 space-y-6">
+            <!-- REWRITE 1 -->
+            <div class="keep-together">
+                <p class="text-xs text-slate-400 font-bold uppercase tracking-wide mb-1">Sales Manager — Val-Co</p>
+                <div class="bg-red-50 rounded-lg p-4 mb-2 border-l-4 border-red-400">
+                    <p class="text-xs text-red-500 font-bold mb-1">ORIGINAL</p>
+                    <p class="text-red-800 text-sm">"Led technical and commercial support for poultry projects across Africa and the Middle East."</p>
+                </div>
+                <div class="bg-emerald-50 rounded-lg p-4 border-l-4 border-emerald-400">
+                    <p class="text-xs text-emerald-600 font-bold mb-1">REWRITTEN — Impact Standard</p>
+                    <p class="text-emerald-800 text-sm">"Provided technical and commercial support for [X] poultry infrastructure projects across [X] countries in Africa and the Middle East, helping clients select and commission equipment systems worth $[X] in total project value — contributing to [X]% regional revenue growth for Val-Co over [X] years."</p>
+                </div>
+            </div>
+
+            <!-- REWRITE 2 -->
+            <div class="keep-together">
+                <p class="text-xs text-slate-400 font-bold uppercase tracking-wide mb-1">Sales Manager — Val-Co</p>
+                <div class="bg-red-50 rounded-lg p-4 mb-2 border-l-4 border-red-400">
+                    <p class="text-xs text-red-500 font-bold mb-1">ORIGINAL</p>
+                    <p class="text-red-800 text-sm">"Developed dealer and distributor network across Africa and the Middle East."</p>
+                </div>
+                <div class="bg-emerald-50 rounded-lg p-4 border-l-4 border-emerald-400">
+                    <p class="text-xs text-emerald-600 font-bold mb-1">REWRITTEN — Impact Standard</p>
+                    <p class="text-emerald-800 text-sm">"Built Val-Co's dealer and distributor network from [X] to [X] partners across [X] countries in Africa and the Middle East, establishing the company's presence in [X] previously unserved markets — the network now accounts for $[X] in annual regional sales."</p>
+                </div>
+            </div>
+
+            <!-- REWRITE 3 -->
+            <div class="keep-together">
+                <p class="text-xs text-slate-400 font-bold uppercase tracking-wide mb-1">Sales Manager — Val-Co</p>
+                <div class="bg-red-50 rounded-lg p-4 mb-2 border-l-4 border-red-400">
+                    <p class="text-xs text-red-500 font-bold mb-1">ORIGINAL</p>
+                    <p class="text-red-800 text-sm">"Advised poultry producers, hatcheries, and integrators on equipment selection, system design, and operational efficiency."</p>
+                </div>
+                <div class="bg-emerald-50 rounded-lg p-4 border-l-4 border-emerald-400">
+                    <p class="text-xs text-emerald-600 font-bold mb-1">REWRITTEN — Impact Standard</p>
+                    <p class="text-emerald-800 text-sm">"Consulted with [X]+ poultry producers, hatcheries, and integrators on equipment selection and system design — recommendations led to [X]% improvement in hatch rates / [X]% reduction in feed conversion costs / [X] units of increased production capacity for clients across [X] countries."</p>
+                </div>
+            </div>
+
+            <!-- REWRITE 4 -->
+            <div class="keep-together">
+                <p class="text-xs text-slate-400 font-bold uppercase tracking-wide mb-1">Independent Projects</p>
+                <div class="bg-red-50 rounded-lg p-4 mb-2 border-l-4 border-red-400">
+                    <p class="text-xs text-red-500 font-bold mb-1">ORIGINAL</p>
+                    <p class="text-red-800 text-sm">"Conducted informal but high-level market assessments to evaluate investment feasibility, supply-demand gaps, and regulatory constraints."</p>
+                </div>
+                <div class="bg-emerald-50 rounded-lg p-4 border-l-4 border-emerald-400">
+                    <p class="text-xs text-emerald-600 font-bold mb-1">REWRITTEN — Impact Standard</p>
+                    <p class="text-emerald-800 text-sm">"Conducted [X] independent market assessments across Morocco, Côte d'Ivoire, and the Middle East, evaluating supply-demand gaps, regulatory barriers, and investment feasibility for poultry infrastructure projects valued at $[X]M combined — findings informed go/no-go decisions for [X] planned hatchery and feed mill investments."</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-4 bg-emerald-50 border border-emerald-200 rounded-xl p-4">
+            <p class="text-emerald-800 text-sm"><strong>Note:</strong> Brackets like <code class="bg-emerald-100 px-1 rounded text-xs">[X]</code> are placeholders — only you know the real numbers. Fill them in with your best estimate. A conservative guess beats no number at all.</p>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SECTION 4: BEFORE & AFTER (2 examples)       -->
+    <!-- ============================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 p-8 page-break">
+        <div class="flex items-center gap-3 mb-6">
+            <div class="w-8 h-8 rounded-lg bg-purple-600 text-white flex items-center justify-center text-sm font-bold">04</div>
+            <h2 class="text-2xl font-extrabold text-slate-900">Before &amp; After — Best Examples</h2>
+        </div>
+
+        <div class="space-y-6">
+            <!-- EXAMPLE 1 -->
+            <div class="rounded-xl overflow-hidden border border-slate-200 keep-together">
+                <div class="bg-red-50 p-5 border-b border-red-200">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-red-600 text-white font-bold text-xs">X</span>
+                        <span class="text-red-700 font-bold text-sm">BEFORE (Doer Level)</span>
+                    </div>
+                    <p class="text-red-800 text-sm">"Developed dealer and distributor network across Africa and the Middle East."</p>
+                </div>
+                <div class="bg-emerald-50 p-5">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-emerald-600 text-white font-bold text-xs">O</span>
+                        <span class="text-emerald-700 font-bold text-sm">AFTER (Impact Standard + Dragon Slayer)</span>
+                    </div>
+                    <p class="text-emerald-800 text-sm">"Val-Co had no distribution presence in Sub-Saharan Africa when I started; built a dealer and distributor network of [X] partners across [X] countries from scratch, opening [X] previously unserved markets — the network generated $[X] in first-year sales and now accounts for [X]% of the company's international revenue."</p>
+                </div>
+            </div>
+
+            <!-- EXAMPLE 2 -->
+            <div class="rounded-xl overflow-hidden border border-slate-200 keep-together">
+                <div class="bg-red-50 p-5 border-b border-red-200">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-red-600 text-white font-bold text-xs">X</span>
+                        <span class="text-red-700 font-bold text-sm">BEFORE (Doer Level)</span>
+                    </div>
+                    <p class="text-red-800 text-sm">"Involved in planning and development of hatchery and poultry production projects in Morocco, Côte d'Ivoire, and the Middle East."</p>
+                </div>
+                <div class="bg-emerald-50 p-5">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-emerald-600 text-white font-bold text-xs">O</span>
+                        <span class="text-emerald-700 font-bold text-sm">AFTER (Impact Standard)</span>
+                    </div>
+                    <p class="text-emerald-800 text-sm">"Led the planning and development of [X] hatchery and poultry production projects in Morocco, Côte d'Ivoire, and the Middle East — including a [X]-unit broiler operation in [country] with a total investment of $[X]M and a projected [X]-year payback period."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SECTION 5: ACTION ITEMS (4 items)            -->
+    <!-- ============================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 p-8 page-break">
+        <div class="flex items-center gap-3 mb-6">
+            <div class="w-8 h-8 rounded-lg bg-emerald-700 text-white flex items-center justify-center text-sm font-bold">05</div>
+            <h2 class="text-2xl font-extrabold text-slate-900">Your Top Action Items</h2>
+        </div>
+
+        <div class="space-y-4">
+            <!-- ACTION 1 -->
+            <div class="flex items-start gap-4 p-5 bg-emerald-50 rounded-xl border border-emerald-200 keep-together">
+                <div class="w-10 h-10 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-lg flex-shrink-0">1</div>
+                <div>
+                    <p class="font-bold text-emerald-900 text-lg">Add a number to every single bullet</p>
+                    <p class="text-emerald-700 text-sm mt-1">Go through each bullet and ask: "How many? How much? How big? How fast?" For the Val-Co role: how many countries did you work in? How many projects did you support? What was the total dollar value of equipment you helped specify? How many dealers did you recruit? How much revenue did your network generate? You have 8 years of international work — the numbers exist, they're just not on the page.</p>
+                </div>
+            </div>
+
+            <!-- ACTION 2 -->
+            <div class="flex items-start gap-4 p-5 bg-emerald-50 rounded-xl border border-emerald-200 keep-together">
+                <div class="w-10 h-10 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-lg flex-shrink-0">2</div>
+                <div>
+                    <p class="font-bold text-emerald-900 text-lg">Replace the "Professional Profile" with a 3-line summary that has real numbers</p>
+                    <p class="text-emerald-700 text-sm mt-1">Instead of "International poultry sector specialist with strong expertise in rapid market diagnostics..." — write something like: "Poultry sector consultant with 8+ years of experience across 15 countries in Africa and the Middle East. Supported $[X]M in equipment projects, built a distribution network of [X] partners from scratch, and conducted [X] market feasibility studies for hatchery and feed mill investments." Same person, completely different impression.</p>
+                </div>
+            </div>
+
+            <!-- ACTION 3 -->
+            <div class="flex items-start gap-4 p-5 bg-emerald-50 rounded-xl border border-emerald-200 keep-together">
+                <div class="w-10 h-10 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-lg flex-shrink-0">3</div>
+                <div>
+                    <p class="font-bold text-emerald-900 text-lg">Kill the "Core Areas of Expertise" list or replace it with specific project wins</p>
+                    <p class="text-emerald-700 text-sm mt-1">A 10-item list of capabilities ("Rapid livestock market diagnostics," "Investment risk assessment in emerging markets") reads as a list of things you claim to do. It doesn't prove anything. Either cut it entirely and use the space for more experience bullets, or replace each item with a one-line proof point: "Hatchery feasibility: Assessed [X] hatchery investments across 4 countries, totaling $[X]M in planned capital."</p>
+                </div>
+            </div>
+
+            <!-- ACTION 4 -->
+            <div class="flex items-start gap-4 p-5 bg-emerald-50 rounded-xl border border-emerald-200 keep-together">
+                <div class="w-10 h-10 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-lg flex-shrink-0">4</div>
+                <div>
+                    <p class="font-bold text-emerald-900 text-lg">Add dates and structure to the independent projects</p>
+                    <p class="text-emerald-700 text-sm mt-1">The "Family Business / Independent Projects" section has no dates and reads as filler. Either add real dates and convert each bullet to a specific project with outcomes — "Led the development of a [X]-bird broiler operation in Morocco (2019–2021), achieving [X]% flock survival rate and [X] kg average live weight at [X] days" — or split it into named projects like a portfolio.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SECTION 6: WHAT'S WORKING                    -->
+    <!-- ============================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 p-8 page-break">
+        <div class="flex items-center gap-3 mb-6">
+            <div class="w-8 h-8 rounded-lg bg-lime-500 text-white flex items-center justify-center text-sm font-bold">06</div>
+            <h2 class="text-2xl font-extrabold text-slate-900">What's Already Working</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="bg-lime-50 border border-lime-200 rounded-xl p-5 keep-together">
+                <p class="font-bold text-lime-900">Serious geographic breadth</p>
+                <p class="text-lime-700 text-sm mt-1">15+ countries across Africa and the Middle East is rare and valuable. Morocco, Algeria, Côte d'Ivoire, Kenya, Sudan, Saudi Arabia, UAE — that's not a list you see on most resumes. It signals adaptability, cross-cultural fluency, and comfort operating in complex markets. Just quantify it and put it front-and-center.</p>
+            </div>
+            <div class="bg-lime-50 border border-lime-200 rounded-xl p-5 keep-together">
+                <p class="font-bold text-lime-900">Trilingual (English, French, Arabic)</p>
+                <p class="text-lime-700 text-sm mt-1">Fluency in three languages — two of which are critical for the African and Middle Eastern poultry markets — is a genuine differentiator. Most competitors in this space speak one or two. This is a trust accelerator with clients, government stakeholders, and development institutions.</p>
+            </div>
+            <div class="bg-lime-50 border border-lime-200 rounded-xl p-5 keep-together">
+                <p class="font-bold text-lime-900">Rare full-stack domain knowledge</p>
+                <p class="text-lime-700 text-sm mt-1">Soufiane operates at every level of the poultry value chain: production systems (Ross breeders/broilers), hatchery economics, feed cost structures, equipment specification, market analysis, and investment feasibility. That combined technical + commercial expertise is hard to find — it just needs to show up in the bullets, not just in a category list.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SECTION 7: SCORECARD                         -->
+    <!-- ============================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 p-8 page-break">
+        <div class="flex items-center gap-3 mb-6">
+            <div class="w-8 h-8 rounded-lg bg-slate-800 text-lime-300 flex items-center justify-center text-sm font-bold">07</div>
+            <h2 class="text-2xl font-extrabold text-slate-900">Scorecard: Impact Bullet Builder™ Criteria</h2>
+        </div>
+
+        <div class="overflow-x-auto">
+            <table class="w-full text-sm">
+                <thead>
+                    <tr class="border-b-2 border-slate-200">
+                        <th class="text-left py-3 pl-3 text-slate-900 font-bold">Criteria</th>
+                        <th class="text-center py-3 text-slate-900 font-bold w-20">Score</th>
+                        <th class="text-left py-3 text-slate-900 font-bold">Notes</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-100">
+                    <tr>
+                        <td class="py-3 pl-3 font-semibold text-slate-700">Accomplishments (not duties)</td>
+                        <td class="py-3 text-center"><span class="font-mono-num font-bold text-red-500">2/10</span></td>
+                        <td class="py-3 text-slate-500">Every bullet describes a responsibility. "Led support," "Advised producers," "Developed understanding" — none of these tell us what happened as a result.</td>
+                    </tr>
+                    <tr>
+                        <td class="py-3 pl-3 font-semibold text-slate-700">Metrics / Quantification</td>
+                        <td class="py-3 text-center"><span class="font-mono-num font-bold text-red-500">1/10</span></td>
+                        <td class="py-3 text-slate-500">Zero numbers on the entire resume. No dollar amounts, no counts, no percentages, no timeframes with outcomes attached.</td>
+                    </tr>
+                    <tr>
+                        <td class="py-3 pl-3 font-semibold text-slate-700">How / Method Shown</td>
+                        <td class="py-3 text-center"><span class="font-mono-num font-bold text-amber-500">4/10</span></td>
+                        <td class="py-3 text-slate-500">Some domain context exists — Ross strains mentioned, hatchery/feed mill referenced. But no specific tools, methodologies, analytical frameworks, or technical approaches are named.</td>
+                    </tr>
+                    <tr>
+                        <td class="py-3 pl-3 font-semibold text-slate-700">Why / Business Impact</td>
+                        <td class="py-3 text-center"><span class="font-mono-num font-bold text-red-500">1/10</span></td>
+                        <td class="py-3 text-slate-500">No bullet connects to a business outcome. What revenue did the distribution network generate? What investments did the feasibility studies enable? What did clients gain from the advisory work?</td>
+                    </tr>
+                    <tr>
+                        <td class="py-3 pl-3 font-semibold text-slate-700">Me-in-We Extractor™</td>
+                        <td class="py-3 text-center"><span class="font-mono-num font-bold text-amber-500">4/10</span></td>
+                        <td class="py-3 text-slate-500">"Involved in planning and development" hides personal contribution. "Assist in large scale key note projects planning" is vague. Most bullets do use "I" language, which is good — just needs substance behind it.</td>
+                    </tr>
+                    <tr>
+                        <td class="py-3 pl-3 font-semibold text-slate-700">Dragon Slayer Context</td>
+                        <td class="py-3 text-center"><span class="font-mono-num font-bold text-red-500">1/10</span></td>
+                        <td class="py-3 text-slate-500">No problem-first framing anywhere. The distribution network build is a perfect Dragon Slayer opportunity (no presence → built from scratch) but it's presented as a flat statement.</td>
+                    </tr>
+                    <tr>
+                        <td class="py-3 pl-3 font-semibold text-slate-700">Action Verbs</td>
+                        <td class="py-3 text-center"><span class="font-mono-num font-bold text-red-500">3/10</span></td>
+                        <td class="py-3 text-slate-500">"Involved in," "Assist in," "Hands-on experience in" are weak openers. "Led," "Advised," and "Developed" are better but still need stronger outcomes attached.</td>
+                    </tr>
+                    <tr>
+                        <td class="py-3 pl-3 font-semibold text-slate-700">Bullet Quality Consistency</td>
+                        <td class="py-3 text-center"><span class="font-mono-num font-bold text-red-500">2/10</span></td>
+                        <td class="py-3 text-slate-500">Every bullet is at the same (low) level. No bullet stands out as stronger than the others. Uniformly "Doer" tier — which means the fix will also be uniform: add metrics and outcomes everywhere.</td>
+                    </tr>
+                    <tr class="bg-slate-50 font-bold">
+                        <td class="py-4 pl-3 text-slate-900 text-base">OVERALL SCORE</td>
+                        <td class="py-4 text-center"><span class="font-mono-num text-xl text-red-500">18/100</span></td>
+                        <td class="py-4 text-slate-700">Tier: "The Doer" — expertise is clearly there, presentation isn't</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="mt-6 bg-emerald-900 text-white rounded-xl p-6">
+            <p class="font-bold text-lg mb-2">The Good News</p>
+            <p class="text-emerald-200 text-sm">Soufiane has something most consultants don't: genuine multi-country, full-value-chain experience in a specialized and high-demand niche (poultry infrastructure in Africa and the Middle East). He's fluent in three relevant languages, has hands-on production experience AND high-level advisory capability, and has been doing this for 8+ years across 15+ countries. The raw material here is strong — it's just completely invisible in the current resume format. Applying the Impact Bullet Builder framework would likely jump this resume from 18/100 to 60+ in a single session, because the numbers and outcomes exist — they just haven't been written down yet.</p>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- CTA: BOOK A CALL                             -->
+    <!-- ============================================ -->
+    <section class="rounded-2xl overflow-hidden shadow-lg border border-emerald-300 page-break">
+        <div class="bg-emerald-900 text-white p-8 text-center">
+            <p class="text-lime-300 text-sm font-bold uppercase tracking-widest mb-2">What's Next</p>
+            <h2 class="text-3xl font-extrabold mb-3">Want the Full Rewrite?</h2>
+            <p class="text-emerald-200 max-w-xl mx-auto mb-6">This audit covered your top 4 bullets. In a <strong>free 15-minute strategy call</strong>, we'll map out the full rewrite plan for every bullet on your resume — plus discuss your consulting positioning and how to present your work to development institutions and private-sector clients.</p>
+
+            <div class="space-y-4">
+                <a href="https://calendly.com/launchtolead/15min?utm_source=audit&utm_medium=email&utm_campaign=free-audit&utm_content=soufiane-talmoust"
+                   class="inline-block bg-lime-400 text-emerald-950 font-extrabold text-lg px-10 py-4 rounded-full shadow-lg hover:bg-lime-300 transition-all no-underline"
+                   style="text-decoration: none;">
+                    Book Your Free 15-Min Strategy Call
+                </a>
+                <p class="text-emerald-400 text-sm">No pitch. No pressure. Just a plan.</p>
+            </div>
+        </div>
+
+        <div class="bg-emerald-50 p-6">
+            <p class="text-emerald-900 font-bold text-center mb-4">What we'll cover on the call:</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-2xl mx-auto">
+                <div class="text-center">
+                    <div class="w-10 h-10 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold mx-auto mb-2">1</div>
+                    <p class="text-emerald-800 text-sm font-semibold">Full rewrite roadmap</p>
+                    <p class="text-emerald-600 text-xs">Every bullet, not just the top 4</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-10 h-10 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold mx-auto mb-2">2</div>
+                    <p class="text-emerald-800 text-sm font-semibold">Positioning strategy</p>
+                    <p class="text-emerald-600 text-xs">How to present for FAO/UNDP/World Bank</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-10 h-10 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold mx-auto mb-2">3</div>
+                    <p class="text-emerald-800 text-sm font-semibold">Consulting profile</p>
+                    <p class="text-emerald-600 text-xs">Turn experience into project wins</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center py-8 text-slate-400 text-sm">
+        <p>Free audit prepared by LaunchToLead | Impact Bullet Builder™ Framework</p>
+        <p class="mt-1">launchtolead.io/free</p>
+    </footer>
+
+</div>
+
+</body>
+</html>

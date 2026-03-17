@@ -5,9 +5,10 @@
  *   npm install puppeteer pdf-lib
  * 
  * Usage:
- *   node generate-pdfs.js                    # Generate all PDFs (standalone + LinkedIn variants)
+ *   node generate-pdfs.js                    # Generate all PDFs (standalone + all LinkedIn variants)
  *   node generate-pdfs.js impact-equation    # Generate specific guide only
- *   node generate-pdfs.js linkedin           # Generate only the 6 LinkedIn variant PDFs
+ *   node generate-pdfs.js linkedin           # Generate only the original 3 LinkedIn variant PDFs
+ *   node generate-pdfs.js doc-v2             # Generate only the 15 Document Ad V2 variant PDFs
  */
 
 const puppeteer = require('puppeteer');
@@ -24,12 +25,35 @@ const leadMagnets = [
     }
 ];
 
-// ── LinkedIn Document Ad variants ────────────────────────────────────
+// ── LinkedIn Document Ad variants (original) ────────────────────────
 // Each gets the variant cover (1 page) + main guide pages (with per-ad tracking links)
 const linkedInVariants = [
     { cover: 'cover-closer-to-graduation.html',    slug: 'closer-to-graduation',    audience: 'graduating-soon' },
     { cover: 'cover-resume-is-the-problem.html',    slug: 'resume-is-the-problem',   audience: 'recently-graduated' },
     { cover: 'cover-try-this.html',                  slug: 'try-this',                audience: 'early-engineers' },
+];
+
+// ── Document Ad V2 variants (15 callout-test ads) ────────────────────
+// Campaign: "2026 Q1 Leads (Document V2)" — testing 15 callouts, constant body copy
+const docV2Variants = [
+    // Graduating Soon (5)
+    { cover: 'cover-gradsoon-1.html', slug: 'gradsoon-1', adName: 'DocAd_GradSoon1_13Mar2026' },
+    { cover: 'cover-gradsoon-2.html', slug: 'gradsoon-2', adName: 'DocAd_GradSoon2_13Mar2026' },
+    { cover: 'cover-gradsoon-3.html', slug: 'gradsoon-3', adName: 'DocAd_GradSoon3_13Mar2026' },
+    { cover: 'cover-gradsoon-4.html', slug: 'gradsoon-4', adName: 'DocAd_GradSoon4_13Mar2026' },
+    { cover: 'cover-gradsoon-5.html', slug: 'gradsoon-5', adName: 'DocAd_GradSoon5_13Mar2026' },
+    // Recent Graduates (5)
+    { cover: 'cover-recentgrad-1.html', slug: 'recentgrad-1', adName: 'DocAd_RecentGrad1_13Mar2026' },
+    { cover: 'cover-recentgrad-2.html', slug: 'recentgrad-2', adName: 'DocAd_RecentGrad2_13Mar2026' },
+    { cover: 'cover-recentgrad-3.html', slug: 'recentgrad-3', adName: 'DocAd_RecentGrad3_13Mar2026' },
+    { cover: 'cover-recentgrad-4.html', slug: 'recentgrad-4', adName: 'DocAd_RecentGrad4_13Mar2026' },
+    { cover: 'cover-recentgrad-5.html', slug: 'recentgrad-5', adName: 'DocAd_RecentGrad5_13Mar2026' },
+    // Early Engineers (5)
+    { cover: 'cover-earlyeng-1.html', slug: 'earlyeng-1', adName: 'DocAd_EarlyEng1_13Mar2026' },
+    { cover: 'cover-earlyeng-2.html', slug: 'earlyeng-2', adName: 'DocAd_EarlyEng2_13Mar2026' },
+    { cover: 'cover-earlyeng-3.html', slug: 'earlyeng-3', adName: 'DocAd_EarlyEng3_13Mar2026' },
+    { cover: 'cover-earlyeng-4.html', slug: 'earlyeng-4', adName: 'DocAd_EarlyEng4_13Mar2026' },
+    { cover: 'cover-earlyeng-5.html', slug: 'earlyeng-5', adName: 'DocAd_EarlyEng5_13Mar2026' },
 ];
 
 // ── Helpers ──────────────────────────────────────────────────────────
@@ -131,6 +155,49 @@ async function generateLinkedInVariants(browser) {
     }
 }
 
+// ── Generate Document Ad V2 variant PDFs (15 callout tests) ──────────
+// Uses the pre-printed Impact-Bullet-Builder_V2.pdf as the base guide,
+// prepends each cover page, and outputs to pdfs/linkedin-variants/
+
+async function generateDocV2Variants(browser) {
+    const outDir = path.resolve(__dirname, 'pdfs/linkedin-variants');
+    ensureDir(outDir);
+
+    // Load the pre-printed V2 guide once
+    const basePdfPath = path.resolve(__dirname, 'pdfs/Impact-Bullet-Builder_V2.pdf');
+    if (!fs.existsSync(basePdfPath)) {
+        console.log(`  ❌ Base PDF not found: ${basePdfPath}`);
+        console.log('     Print Impact-Bullet-Builder_V2.pdf first, then re-run.');
+        return;
+    }
+    const basePdfBytes = fs.readFileSync(basePdfPath);
+    console.log(`  📖 Loaded base guide: Impact-Bullet-Builder_V2.pdf`);
+
+    for (const variant of docV2Variants) {
+        const coverHtml = path.join('active/linkedin-ads-variants/doc-v2', variant.cover);
+        console.log(`  ⏳ ${variant.slug}...`);
+
+        // Render cover page from HTML
+        const coverBuffer = await htmlToPdfBuffer(browser, coverHtml);
+
+        // Merge: cover page + pre-printed V2 guide
+        const mergedDoc = await PDFDocument.create();
+
+        const coverDoc = await PDFDocument.load(coverBuffer);
+        const coverPages = await mergedDoc.copyPages(coverDoc, coverDoc.getPageIndices());
+        coverPages.forEach(p => mergedDoc.addPage(p));
+
+        const baseDoc = await PDFDocument.load(basePdfBytes);
+        const basePages = await mergedDoc.copyPages(baseDoc, baseDoc.getPageIndices());
+        basePages.forEach(p => mergedDoc.addPage(p));
+
+        const mergedBytes = await mergedDoc.save();
+        const outPath = path.join(outDir, `IBB-${variant.slug}.pdf`);
+        fs.writeFileSync(outPath, mergedBytes);
+        console.log(`  ✅ IBB-${variant.slug}.pdf (${mergedDoc.getPageCount()} pages)`);
+    }
+}
+
 // ── Main ─────────────────────────────────────────────────────────────
 
 async function main() {
@@ -143,16 +210,17 @@ async function main() {
     try {
         // Determine what to generate
         const doLinkedIn = !arg || arg === 'linkedin';
-        const doStandalone = !arg || (arg && arg !== 'linkedin');
+        const doDocV2 = !arg || arg === 'doc-v2';
+        const doStandalone = !arg || (arg && arg !== 'linkedin' && arg !== 'doc-v2');
 
         // Standalone guides
         if (doStandalone) {
             let toGenerate = leadMagnets;
-            if (arg && arg !== 'linkedin') {
+            if (arg && arg !== 'linkedin' && arg !== 'doc-v2') {
                 toGenerate = leadMagnets.filter(lm => lm.name.includes(arg));
                 if (toGenerate.length === 0) {
                     console.log(`❌ No guide found matching: ${arg}`);
-                    console.log('Available:', leadMagnets.map(lm => lm.name).join(', '), '+ linkedin');
+                    console.log('Available:', leadMagnets.map(lm => lm.name).join(', '), '+ linkedin + doc-v2');
                     process.exit(1);
                 }
             }
@@ -163,10 +231,17 @@ async function main() {
             console.log('');
         }
 
-        // LinkedIn variants
+        // LinkedIn variants (original)
         if (doLinkedIn) {
-            console.log('📱 LinkedIn Document Ad variants:');
+            console.log('📱 LinkedIn Document Ad variants (original):');
             await generateLinkedInVariants(browser);
+            console.log('');
+        }
+
+        // Document Ad V2 variants (15 callout tests)
+        if (doDocV2) {
+            console.log('📱 Document Ad V2 variants (15 callout tests):');
+            await generateDocV2Variants(browser);
             console.log('');
         }
     } finally {

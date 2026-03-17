@@ -1,60 +1,76 @@
-# Funnel Action Plan — March 2026 (v4)
+# Funnel Action Plan — March 2026 (v5)
 
-> **v4 updated March 12, 2026.** Execution in progress.
-> 3 document ads only (try-this, closer-to-graduation, resume-is-the-problem).
-> Manual audit via `audit@launchtolead.io`. mailto: tracking in PDF last page.
-> Lead magnet audit template created. generate-pdfs.js updated with per-variant tracking.
-> **v4 changes:** IBB guide polished (starburst callouts restructured & resized, spacing fix).
-> Audit CTA redirected from Calendly → offer page. Audit voice changed to 2nd person.
-> Protocol updated with Voice & Tone section. Soufiane example audit fully updated.
+> **v5 updated March 14, 2026.** Document Ads V2 campaign LIVE.
+> 15 document ads (5 per avatar) launched for callout testing.
+> Pre-printed Impact-Bullet-Builder_V2.pdf used as base guide (no per-variant tracking in PDF).
+> Tracking via LinkedIn Campaign Manager (ad-level attribution) + GA4 (UTMs via ad set tracking params) + LinkedIn Insight Tag conversions.
+> Headshot + L² brand footer added to all cover pages.
+> **v5 changes:** New campaign "2026 Q1 Leads (Document V2)" live with 15 ads.
+> New LinkedIn conversion: Offer Page Visit (`launchtolead.io/landing/offer`).
+> PDF generation simplified: cover page + pre-printed V2 guide (no re-rendering per variant).
+> Output: `lead-magnets/pdfs/linkedin-variants/IBB-{slug}.pdf`
 
 ---
 
 ## Phase 1: Convert to All-Document Ads on LinkedIn
 
 ### 1A — PDF Generation (DONE)
-- [x] Updated `lead-magnets/generate-pdfs.js` to render 3 variants with per-variant tracking
-- [x] **3 active ads** (slugs used in all tracking):
-  - `try-this` — Early engineers (1-2 years experience, not satisfied)
+- [x] Updated `lead-magnets/generate-pdfs.js` — now uses pre-printed `Impact-Bullet-Builder_V2.pdf` as base
+- [x] **15 active ads** (V2 campaign — callout testing, constant body copy):
+
+  **Graduating Soon (5):**
+  - `gradsoon-1` — Engineering students / applying to countless jobs
+  - `gradsoon-2` — Engineers graduating this Spring / school taught engineering not hiring
+  - `gradsoon-3` — Engineering graduate students / resume reads like a job description
+  - `gradsoon-4` — Engineers graduating soon / audited 100+ resumes
+  - `gradsoon-5` — Engineers nearing graduation / GPA won't land interviews
+
+  **Recent Graduates (5):**
+  - `recentgrad-1` — Recent engineering grads / still applying with no interviews
+  - `recentgrad-2` — Engineering graduates / no job lined up
+  - `recentgrad-3` — Recent engineering grads / resume reads like a job description
+  - `recentgrad-4` — Engineering grads / turn "managed a project" into interviews
+  - `recentgrad-5` — Engineering recent grads / job market isn't the only reason
+
+  **Early Engineers (5):**
+  - `earlyeng-1` — Engineers with 1–3 years / stuck in a role you've outgrown
+  - `earlyeng-2` — Early-career engineers / having experience vs showing it
+  - `earlyeng-3` — Engineers looking to switch / what you did vs what changed
+  - `earlyeng-4` — Engineers with a few years / Google, SpaceX, GE, Ford, Deere
+  - `earlyeng-5` — Engineer ready for a better role? / resume hasn't been updated
+
+- [x] Cover pages: black bg, teal audience text, white hook, headshot (bottom-left), L² brand (bottom-right)
+- [x] HTML files: `lead-magnets/active/linkedin-ads-variants/doc-v2/cover-{slug}.html`
+- [x] Merged PDFs: `lead-magnets/pdfs/linkedin-variants/IBB-{slug}.pdf` (16 pages each)
+- [x] **3 legacy ads** still available (original campaign — may be paused/retired):
+  - `try-this` — Early engineers (1-2 years experience)
   - `closer-to-graduation` — Engineering students approaching graduation
   - `resume-is-the-problem` — Recent grads still job hunting
-- [x] Last page of PDF rewritten with dual CTAs:
-  - **Primary:** "Get Your Free Resume Audit" → `mailto:audit@launchtolead.io` with subject `Resume Audit Request [Source: {slug}]`
-  - **Secondary:** "Learn More About the Full Program" → offer page with UTM
-- [x] Each variant renders a separate PDF with unique tracking links burned in
-- [ ] **TODO:** Run `node generate-pdfs.js linkedin` to generate the 3 PDFs
-- [ ] **TODO:** Upload new PDFs to LinkedIn Campaign Manager as document ads
 
 ### 1A½ — IBB Guide Polish (DONE — v4)
 - [x] Starburst "FREE RESUME AUDIT" callouts added to 3 pages (cover, mid-guide, late-guide)
-  - Moved INSIDE `.page` divs as `position: absolute` overlays (prevents phantom pages)
-  - Cover: 180px, mid/late: 156px, no rotation, top-right corner
-  - Message: "FREE RESUME AUDIT / Included with this PDF! / See last page"
-- [x] Spacing fix on last page title: `<span style="margin-left: 0.15em;">Resume</span>` (CSS margin survives `tracking-tight`)
-- [x] IBB terminology aligned across audit template, protocol, and example audits (★ system, 4-part formula)
-- [ ] **TODO:** Verify IBB pages fit within default PDF margins (Ctrl+P test)
+- [x] Spacing fix on last page title
+- [x] IBB terminology aligned across audit template, protocol, and example audits
+- [x] V2 guide printed to `pdfs/Impact-Bullet-Builder_V2.pdf` — used as base for all 15 variant PDFs
 
-### 1B — LinkedIn Confirmation Page URLs
-- [ ] Set "Learn More" URL per ad in LinkedIn Campaign Manager:
-  - try-this: `https://launchtolead.io/landing/offer.html?utm_source=linkedin&utm_medium=paid&utm_campaign=resume-guide&utm_content=try-this-confirmation`
-  - closer-to-graduation: `https://launchtolead.io/landing/offer.html?utm_source=linkedin&utm_medium=paid&utm_campaign=resume-guide&utm_content=closer-to-graduation-confirmation`
-  - resume-is-the-problem: `https://launchtolead.io/landing/offer.html?utm_source=linkedin&utm_medium=paid&utm_campaign=resume-guide&utm_content=resume-is-the-problem-confirmation`
+### 1B — LinkedIn Campaign Setup (DONE — v5)
+- [x] Campaign: "2026 Q1 Leads (Document V2)"
+- [x] Lead gen form: headline "Get Your Free Resume Guide...in under 30 seconds."
+- [x] Confirmation page: directs to page 7 (formula page), CTA → `/coaching` → offer page
+- [x] Headline: `FREE Resume Guide for Engineers` (same for all 15)
+- [x] Introductory text: constant body copy across all 15 (testing callouts only)
+- [x] Ad naming: `DocAd_[avatar][number]_13Mar2026`
+- [x] Ad set: `callout_test_all_eng` (single ad set, wide engineering targeting)
+- [x] Ad set tracking: `utm_term={{AD_SET_NAME}}&account_id={{ACCOUNT_ID}}&utm_campaign={{CAMPAIGN_NAME}}&utm_content={{AD_NAME}}&utm_source=LinkedIn&utm_medium=paid_social`
+- [x] 3 conversions attached: IBB Download, Offer Page Visit (NEW), Booking Confirmed
+- [x] **LAUNCHED — March 14, 2026** ✅
 
-### 1C — Swap ads
-- [ ] Launch 3 document ads
-- [ ] Monitor 48-72 hours — confirm lead gen form working and leads flowing to Kit
-- [ ] Kill ALL single image ads once document ads confirmed live
-- [ ] Budget: ~$45-50/day split across 3 ad sets
-
-### 1D — Retire old pages
-- [ ] Remove lead magnet landing page (landing/impact-bullet-equation.html) from active funnel — keep file
-- [ ] Remove thank-you page (landing/thank-you.html) from active funnel — keep file
-- [ ] Add "Get Free Resume Guide" Kit form on homepage (index.html) for organic visitors
-  - UTM: `utm_source=website&utm_medium=homepage-form`
-
-### 1E — Set up audit email
-- [ ] **TODO:** Create `audit@launchtolead.io` email address (Google Workspace / forwarding)
-- [ ] Configure email forwarding to Mansour's main inbox if using alias
+### 1C — Monitor & Optimize
+- [ ] Monitor 48-72 hours (by March 16-17) — confirm leads flowing
+- [ ] Identify top-performing callouts per avatar group
+- [ ] Pause underperformers, concentrate budget on winners
+- [ ] Phase 2: Test body copy variations with winning callouts
+- [ ] Phase 3: Test cover page graphic styles with winning callout + body copy
 
 ---
 
@@ -156,41 +172,40 @@
 ### UTM Parameter Reference
 | Source | utm_source | utm_medium | utm_campaign | utm_content |
 |---|---|---|---|---|
-| Document Ad — Early Engineers | linkedin | paid | resume-guide | try-this |
-| Document Ad — Graduating Soon | linkedin | paid | resume-guide | closer-to-graduation |
-| Document Ad — Recently Graduated | linkedin | paid | resume-guide | resume-is-the-problem |
-| LinkedIn Confirmation — Early Eng. | linkedin | paid | resume-guide | try-this-confirmation |
-| LinkedIn Confirmation — Grad Soon | linkedin | paid | resume-guide | closer-to-graduation-confirmation |
-| LinkedIn Confirmation — Recent Grad | linkedin | paid | resume-guide | resume-is-the-problem-confirmation |
-| PDF Last Page — Offer Link | pdf | lead-magnet | resume-guide | {slug} |
+| Document Ad V2 (all 15) | LinkedIn | paid_social | {{CAMPAIGN_NAME}} | {{AD_NAME}} (e.g., DocAd_GradSoon1_13Mar2026) |
+| Lead Gen Form Confirmation CTA | linkedin | lead_gen_form | 2026_q1_leads_doc_v2 | confirmation |
+| Audit Report CTA → Offer Page | audit | email | free-audit | {candidate-slug} |
+| PDF Last Page — Offer Link | pdf | lead-magnet | resume-guide | {slug} *(legacy 3-ad PDFs only)* |
 | PDF Last Page — Audit mailto: | *(tracked via email subject line: `[Source: {slug}]`)* | | | |
 | LinkedIn Organic Post | linkedin | organic | — | post |
 | Website Homepage Form | website | direct | — | homepage-form |
-| Audit Report CTA → Offer Page | audit | email | free-audit | {candidate-slug} |
+
+### LinkedIn Conversion Tracking (3 conversions)
+| Conversion Name | Type | URL Contains |
+|---|---|---|
+| IBB Download | Page load | `launchtolead.io/landing/thank-you` |
+| Offer Page Visit | Page load | `launchtolead.io/landing/offer` |
+| Booking Confirmed | Page load | `launchtolead.io/landing/booking-confirmed` |
 
 ### Funnel Flow
 ```
-LinkedIn Document Ad (3 variants: try-this, closer-to-graduation, resume-is-the-problem)
-  └→ Lead Gen Form (name + email → Kit)
-      ├→ "Learn More" button → Offer Page (with UTM per ad)
-      └→ Kit delivers PDF (unique per variant — tracking links burned in)
-          ├→ PDF last page → Primary CTA: mailto:audit@launchtolead.io [Source: {slug}]
-          ├→ PDF last page → Secondary CTA: Offer page with UTM
-          └→ Kit email sequence starts
-              ├→ Email 3 → "Reply with your resume for a free audit"
-              └→ Email 6 → "Book a 15-min call" (offer page link)
+LinkedIn Document Ad V2 (15 variants — callout testing)
+  └→ Lead Gen Form (email, first name, last name, LinkedIn profile URL)
+      ├→ Confirmation page "Learn More" CTA → /coaching → Offer Page (UTM: confirmation)
+      └→ PDF delivered (cover page + Impact Bullet Builder V2 guide)
+          ├→ Guide last page → Primary CTA: mailto:audit@launchtolead.io
+          ├→ Guide last page → Secondary CTA: Offer page
+          └→ Kit email sequence (Phase 2 — not yet built)
                               ↓
                         Resume arrives at audit@launchtolead.io
-                        Subject line contains [Source: {slug}] for tracking
                               ↓
                         Manual Audit using lead-magnet-audit-template.html
-                        (3-5 issues, top 3-5 bullets rewritten, scorecard)
+                        (3-5 issues, top bullets rewritten, scorecard)
                               ↓
                         Audit PDF emailed back to candidate
-                        CTA at bottom: "See Full Program Details"
-                        (Offer page link with utm_content={candidate-slug})
+                        CTA: "See Full Program Details" → Offer page (utm_content={candidate-slug})
                               ↓
-                        Offer Page → Watch VSL → Qualify → Career Launch Call → $997 Coaching Offer
+                        Offer Page → Watch VSL → Qualify → Career Launch Call → Coaching Offer
 ```
 
 ### Automation Trigger: Switch to n8n
@@ -217,13 +232,14 @@ When audit requests hit **3+ per week**, begin building automated pipeline:
 
 | File | Purpose |
 |---|---|
-| `lead-magnets/generate-pdfs.js` | Generates 3 PDF variants with per-ad tracking links |
+| `lead-magnets/generate-pdfs.js` | Generates 15 V2 PDFs (cover + pre-printed guide) + 3 legacy PDFs |
 | `lead-magnets/active/impact-bullet-builder.html` | Main guide HTML (last page has dual CTAs) |
-| `lead-magnets/active/cover-try-this.html` | Cover page for early engineers ad |
-| `lead-magnets/active/cover-closer-to-graduation.html` | Cover page for graduating soon ad |
-| `lead-magnets/active/cover-resume-is-the-problem.html` | Cover page for recently graduated ad |
+| `lead-magnets/pdfs/Impact-Bullet-Builder_V2.pdf` | Pre-printed V2 guide (base for all 15 variant PDFs) |
+| `lead-magnets/pdfs/linkedin-variants/IBB-{slug}.pdf` | 15 merged variant PDFs (cover + V2 guide) |
+| `lead-magnets/active/linkedin-ads-variants/doc-v2/` | 15 cover page HTML files |
+| `ads/linkedin/3_13_26_new_document_ads/document-ads-v1.md` | V2 campaign planning doc (callouts, body copy, launch checklist) |
 | `resumes/lead-magnet-audit-template.html` | Lighter audit template for cold leads (CTA → offer page) |
-| `resumes/potential_clients/soufiane_talmoust_audit_v2.html` | Example lead magnet audit (2nd person, offer page CTA) |
 | `protocols/resume-audit-protocol.md` | Full audit protocol + lead magnet version + voice/tone guide |
-| `landing/offer.html` | Program offer page — destination for all audit CTAs |
+| `landing/offer.html` | Program offer page — destination for all CTAs |
+| `coaching/index.html` | Redirect: `/coaching` → `/landing/offer.html` (preserves UTMs) |
 | `FUNNEL_ACTION_PLAN.md` | This file |
