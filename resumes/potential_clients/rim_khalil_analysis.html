@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Analysis — Rim Khalil | LaunchToLead</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .font-mono-num { font-family: 'Space Grotesk', monospace; }
+
+        /* Download PDF Button */
+        #download-btn {
+            position: fixed; top: 20px; right: 20px; z-index: 9999;
+            background: linear-gradient(135deg, #a3e635, #14b8a6); color: #052e16;
+            font-family: 'Plus Jakarta Sans', sans-serif; font-size: 16px; font-weight: 800;
+            padding: 14px 32px; border: none; border-radius: 50px; cursor: pointer;
+            box-shadow: 0 8px 30px rgba(163,230,53,0.3);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        #download-btn:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(163,230,53,0.4); }
+
+        @media print {
+            @page {
+                size: letter;
+                margin: 0.5in 0.65in;
+            }
+            body {
+                background: white !important;
+                color: #1e293b !important;
+                padding: 0 !important;
+                margin: 0 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            #download-btn { display: none !important; }
+            .page-break { break-before: page; }
+            .keep-together { break-inside: avoid; }
+            .space-y-4 > div,
+            .space-y-6 > div,
+            .grid > div { break-inside: avoid; }
+            section .mb-5 { break-inside: avoid; }
+            ul.space-y-3 > li { break-inside: avoid; }
+            tbody tr { break-inside: avoid; }
+            .rounded-xl.overflow-hidden { break-inside: avoid; }
+            h2, h3, h4 { break-after: avoid; }
+            section {
+                box-shadow: none !important;
+                border: 1px solid #e2e8f0 !important;
+            }
+            .max-w-4xl { max-width: 100% !important; }
+            .bg-red-900, .bg-amber-800, .bg-emerald-900 {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-700">
+
+<!-- Download PDF Button -->
+<button id="download-btn" onclick="window.print()">Download PDF</button>
+
+<!-- ============================================ -->
+<!-- HEADER                                        -->
+<!-- ============================================ -->
+<header class="bg-emerald-900 text-white py-6 px-6">
+    <div class="max-w-4xl mx-auto">
+        <div class="flex items-center gap-3 mb-4">
+            <div class="bg-white text-emerald-900 w-10 h-10 rounded-xl flex items-center justify-center font-bold text-sm shadow">L²</div>
+            <span class="text-xl font-bold">Launch<span class="font-light text-lime-300">ToLead</span></span>
+        </div>
+        <h1 class="text-3xl font-extrabold mb-1">Resume Analysis & Rewrite</h1>
+        <p class="text-emerald-200">Rim Khalil — Biomedical Engineering</p>
+        <p class="text-emerald-400/60 text-sm mt-1">Analyzed against the Impact Bullet Builder™ framework</p>
+    </div>
+</header>
+
+<div class="max-w-4xl mx-auto px-6 py-10 space-y-10">
+
+    <!-- ============================================ -->
+    <!-- SECTION 1: OVERALL SCORE                     -->
+    <!-- ============================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 overflow-hidden">
+        <div class="p-8">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="w-8 h-8 rounded-lg bg-red-500 text-white flex items-center justify-center text-sm font-bold">📊</div>
+                <h2 class="text-2xl font-extrabold text-slate-900">Overall Score</h2>
+            </div>
+
+            <div class="flex items-center gap-8 mb-6">
+                <div class="text-center">
+                    <p class="font-mono-num text-6xl font-extrabold text-red-500">18</p>
+                    <p class="text-slate-500 text-sm">out of 100</p>
+                </div>
+                <div class="flex-1">
+                    <div class="h-4 bg-slate-100 rounded-full overflow-hidden mb-2">
+                        <div class="h-full rounded-full" style="width: 18%; background: linear-gradient(to right, #ef4444, #f97316);"></div>
+                    </div>
+                    <div class="flex justify-between text-xs text-slate-400">
+                        <span>0 — Invisible</span>
+                        <span>50 — Achiever</span>
+                        <span>100 — Impact Standard</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="bg-red-50 border border-red-200 rounded-xl p-4 text-center">
+                    <p class="font-mono-num text-2xl font-bold text-red-500">2/10</p>
+                    <p class="text-red-700 text-xs font-semibold mt-1">Accomplishments</p>
+                    <p class="text-red-400 text-[10px]">Most bullets describe the process, not the outcome</p>
+                </div>
+                <div class="bg-red-50 border border-red-200 rounded-xl p-4 text-center">
+                    <p class="font-mono-num text-2xl font-bold text-red-500">2/10</p>
+                    <p class="text-red-700 text-xs font-semibold mt-1">Metrics</p>
+                    <p class="text-red-400 text-[10px]">Scale numbers present (8 members, 12 weeks) — impact numbers needed</p>
+                </div>
+                <div class="bg-red-50 border border-red-200 rounded-xl p-4 text-center">
+                    <p class="font-mono-num text-2xl font-bold text-red-500">3/10</p>
+                    <p class="text-red-700 text-xs font-semibold mt-1">How / Method</p>
+                    <p class="text-red-400 text-[10px]">Good tools listed — would be stronger shown inside bullets</p>
+                </div>
+                <div class="bg-red-50 border border-red-200 rounded-xl p-4 text-center">
+                    <p class="font-mono-num text-2xl font-bold text-red-500">1/10</p>
+                    <p class="text-red-700 text-xs font-semibold mt-1">Why / Business Impact</p>
+                    <p class="text-red-400 text-[10px]">No bullet yet connects to a business or client outcome</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Verdict -->
+        <div class="bg-red-900 text-white p-6">
+            <p class="font-bold text-lg mb-2">★ Verdict: "You Did What Was Asked"</p>
+            <p class="text-red-200 text-sm">Your resume right now focuses on what you <em>did</em> but doesn't yet show what <em>happened because of it</em>. You led an 8-person team across two prototype deliveries — that's genuinely impressive for a student — but the resume hasn't given that impact the room it deserves, because process language like "facilitated," "coordinated," and "applied frameworks" takes center stage. The Transferable Skills section, which takes up about 40% of the page, restates your experience in a more general way instead of adding new evidence. The raw material here is strong: 88% WAM, Dean's List twice, EWB Challenge Top 3, a real consulting internship. This is a presentation problem, not a substance problem — and that's the easier kind to fix.</p>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SECTION 2: KEY ISSUES IDENTIFIED             -->
+    <!-- ============================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 p-8 page-break">
+        <div class="flex items-center gap-3 mb-6">
+            <div class="w-8 h-8 rounded-lg bg-red-500 text-white flex items-center justify-center text-sm font-bold">🔍</div>
+            <h2 class="text-2xl font-extrabold text-slate-900">Key Issues Identified</h2>
+        </div>
+
+        <div class="space-y-4">
+            <!-- Issue 1 -->
+            <div class="flex items-start gap-3 bg-red-50 rounded-xl p-5 border border-red-200">
+                <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-red-600 text-white font-bold text-sm flex-shrink-0">1</span>
+                <div>
+                    <p class="font-bold text-red-900">The "Transferable Skills" section is taking up space that could be working much harder for you</p>
+                    <p class="text-red-700 text-sm mt-1">This section takes up roughly 40% of your resume's real estate, and the problem is that each line makes a claim without backing it up with evidence. For example, <em>"Demonstrated ability to respond effectively to changing client requirements"</em> — a hiring manager reading this will think "says who?" You want to <em>show</em> skills through your results, not <em>state</em> them as standalone claims. The good news is that much of what's described here is already covered in your internship bullets — it just needs to be told through specific outcomes instead of restated in a separate section. Removing this section and reallocating the space to results-driven content is the single biggest improvement you can make.</p>
+                </div>
+            </div>
+
+            <!-- Issue 2 -->
+            <div class="flex items-start gap-3 bg-red-50 rounded-xl p-5 border border-red-200">
+                <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-red-600 text-white font-bold text-sm flex-shrink-0">2</span>
+                <div>
+                    <p class="font-bold text-red-900">Your internship bullets describe the process well — now they need the results</p>
+                    <p class="text-red-700 text-sm mt-1">Your four internship bullets — "Led... delivering two prototypes... on schedule," "Facilitated weekly client meetings," "Applied design thinking frameworks," "Coordinated interdependent timelines" — all do a good job explaining what you did. The missing piece is what happened because of it. You delivered two prototypes — did the client adopt them? Did they solve the problem? Was the client spending $[X] on the old process? Did your solution reduce something, improve something, save something? Adding that <strong>Why</strong> to each bullet is what turns "I did this" into "I made this happen."</p>
+                </div>
+            </div>
+
+            <!-- Issue 3 -->
+            <div class="flex items-start gap-3 bg-red-50 rounded-xl p-5 border border-red-200">
+                <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-red-600 text-white font-bold text-sm flex-shrink-0">3</span>
+                <div>
+                    <p class="font-bold text-red-900">Career Objective section isn't helping you stand out</p>
+                    <p class="text-red-700 text-sm mt-1"><em>"Motivated Biomedical Engineering student with a strong sense of curiosity about the medical industry"</em> — the challenge here is that every applicant to a biomedical role could say the same thing. Career objectives were standard practice years ago, but today this space would serve you better as a 2-line professional summary that states your specific target role, your strongest accomplishment, and one differentiator (like your EWB Top 3 placement or your consulting experience). Alternatively, you could remove it entirely and let your experience speak for itself.</p>
+                </div>
+            </div>
+
+            <!-- Issue 4 -->
+            <div class="flex items-start gap-3 bg-red-50 rounded-xl p-5 border border-red-200">
+                <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-red-600 text-white font-bold text-sm flex-shrink-0">4</span>
+                <div>
+                    <p class="font-bold text-red-900">Your technical skills would be stronger shown in action</p>
+                    <p class="text-red-700 text-sm mt-1">You have solid tools — SolidWorks, KNIME, C, Java, Python — but right now they're listed without appearing in any of your experience bullets. A hiring manager wants to see <em>how</em> you used them. Compare: "SolidWorks" on a list vs. "Modeled a [X]-component biomedical prototype in SolidWorks, iterating through [X] design revisions based on client feedback." The second version proves you actually know the tool. Try weaving your tools into your bullets so they pull double duty — showing the skill and the result at the same time. For Python, since you note it's "actively developing," it would be stronger to either reference a project you've started building with it, or hold off on listing it until you can.</p>
+                </div>
+            </div>
+
+            <!-- Issue 5 -->
+            <div class="flex items-start gap-3 bg-red-50 rounded-xl p-5 border border-red-200">
+                <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-red-600 text-white font-bold text-sm flex-shrink-0">5</span>
+                <div>
+                    <p class="font-bold text-red-900">There's an opportunity to add impact metrics throughout</p>
+                    <p class="text-red-700 text-sm mt-1">The numbers you do have — "8-member team," "12-week timeline," "four project outcomes" — are good for showing scale. The next step is adding numbers that show <em>impact</em>: a percentage improvement, a time reduction, an efficiency gain, an error rate that dropped. Your internship delivered two prototypes to a real client — what changed for them? Did a process get faster? Did a manual step get automated? Did accuracy improve? Even conservative estimates ("reduced manual processing time by approximately [X]%") make a big difference. You don't need exact figures — thoughtful approximations work.</p>
+                </div>
+            </div>
+
+            <!-- Issue 6 -->
+            <div class="flex items-start gap-3 bg-amber-50 rounded-xl p-5 border border-amber-200">
+                <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-amber-500 text-white font-bold text-sm flex-shrink-0">6</span>
+                <div>
+                    <p class="font-bold text-amber-900">EWB Challenge Top 3 Finalist deserves more spotlight</p>
+                    <p class="text-amber-700 text-sm mt-1">Being selected as a Top Three Finalist in the Engineers Without Borders Challenge and presenting at the UTS FEIT Capstone Showcase is one of the strongest things on your resume. Right now it's a one-line bullet in "Awards" — and it deserves more room to breathe. What was the project? What problem did you solve for the Dawul Wuru Aboriginal Corporation? What was your engineering contribution? Expanding this into a full project entry with Impact Bullet Builder bullets would give you a section that proves you can engineer solutions to real problems for real communities.</p>
+                </div>
+            </div>
+
+            <!-- Issue 7 -->
+            <div class="flex items-start gap-3 bg-amber-50 rounded-xl p-5 border border-amber-200">
+                <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-amber-500 text-white font-bold text-sm flex-shrink-0">7</span>
+                <div>
+                    <p class="font-bold text-amber-900">High school entry can be removed to free up space</p>
+                    <p class="text-amber-700 text-sm mt-1">You're in your 4th year of a Bachelor of Engineering at UTS with an 88% WAM and two Dean's List recognitions — your university credentials speak for themselves. At this stage, the secondary school certificate from 2022 isn't adding to your story for a hiring manager. Removing it frees up space you can use for a project entry or additional experience details.</p>
+                </div>
+            </div>
+
+            <!-- Issue 8 -->
+            <div class="flex items-start gap-3 bg-amber-50 rounded-xl p-5 border border-amber-200">
+                <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-amber-500 text-white font-bold text-sm flex-shrink-0">8</span>
+                <div>
+                    <p class="font-bold text-amber-900">Activities section would be stronger with specific contributions</p>
+                    <p class="text-amber-700 text-sm mt-1">IEEE, Engineers Australia, Australian Bioinformatics and Computational Biology Society, Lucy Mentoring Program — you've clearly been engaged beyond the classroom, which is great. The next step is showing what you <em>did</em> within these organizations. Did you attend any conferences? Present anything? Organize a workshop? Mentor anyone? If you contributed something specific in any of these, add a bullet for it. For the ones where it's purely a membership, consider whether the space might serve you better elsewhere.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SECTION 3: REWRITTEN RESUME                  -->
+    <!-- ============================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 p-8 page-break">
+        <div class="flex items-center gap-3 mb-2">
+            <div class="w-8 h-8 rounded-lg bg-emerald-700 text-white flex items-center justify-center text-sm font-bold">✍️</div>
+            <h2 class="text-2xl font-extrabold text-slate-900">Rewritten Resume — Impact Bullet Builder™ Applied</h2>
+        </div>
+        <p class="text-slate-500 text-sm mb-8"><strong>[X]</strong> = placeholder where you need to provide missing information (metrics, specifics, or context only you know)</p>
+
+        <!-- RESUME START -->
+        <div class="border-2 border-slate-200 rounded-2xl p-8 bg-slate-50">
+
+            <!-- Header -->
+            <div class="text-center mb-6 pb-6 border-b-2 border-slate-300">
+                <h3 class="text-2xl font-extrabold text-slate-900">Rim Khalil</h3>
+                <p class="text-slate-600 text-sm mt-1">Rim.mkhalil@gmail.com | linkedin.com/in/rim-khalil-7949b9280 | rim-khalil-portfolio.netlify.app</p>
+            </div>
+
+            <!-- Career Objective → REMOVED -->
+            <div class="mb-6 bg-red-50 border border-red-200 rounded-xl p-4">
+                <span class="bg-red-100 text-red-800 text-xs font-bold px-2 py-0.5 rounded">REMOVE</span>
+                <p class="text-red-700 text-sm mt-2 line-through">"Motivated Biomedical Engineering student with a strong sense of curiosity about the medical industry, complemented by leadership experience and a genuine interest in consulting and management. Seeking opportunities to apply my technical and interpersonal skills in roles that sit at the intersection of biomedical engineering and impactful healthcare solutions."</p>
+                <p class="text-red-600 text-xs mt-2 italic">→ Replace with nothing — or a 2-line professional summary: "Biomedical Engineering Honours student (88% WAM) with hands-on consulting experience delivering prototypes for healthcare clients. Seeking [X — specific target role, e.g. biomedical product development, medical device engineering, healthcare consulting]."</p>
+            </div>
+
+            <!-- Transferable Skills → REMOVED -->
+            <div class="mb-6 bg-red-50 border border-red-200 rounded-xl p-4">
+                <span class="bg-red-100 text-red-800 text-xs font-bold px-2 py-0.5 rounded">REMOVE ENTIRE SECTION</span>
+                <p class="text-red-700 text-sm mt-2 font-bold line-through">Transferable Skills</p>
+                <p class="text-red-600 text-xs mt-2 italic">→ Delete all 6 "skill descriptions." They duplicate content from your Experience section in a vaguer format. All claims here ("Leadership and Team Supervision," "Design Thinking," "Communication") should be proven through results in your bullets, not stated as standalone claims. This frees up ~40% of your resume for impactful content.</p>
+            </div>
+
+            <!-- Education -->
+            <div class="mb-6">
+                <h4 class="text-sm font-extrabold text-slate-900 uppercase tracking-widest border-b-2 border-emerald-600 pb-1 mb-3">Education</h4>
+                <div class="flex justify-between items-start">
+                    <div>
+                        <p class="font-bold text-slate-900">Bachelor of Engineering (Honours) — Biomedical Engineering</p>
+                        <p class="text-slate-600 text-sm">University of Technology Sydney (UTS)</p>
+                        <p class="text-slate-500 text-xs mt-1">WAM: 88% | GPA: 6.71 | Dean's List 2024 & 2025</p>
+                    </div>
+                    <p class="text-slate-500 text-sm">Feb 2023 – Nov 2026</p>
+                </div>
+                <div class="mt-2 bg-red-50 border border-red-200 rounded-lg p-3">
+                    <span class="bg-red-100 text-red-800 text-xs font-bold px-2 py-0.5 rounded">REMOVE</span>
+                    <span class="text-red-700 text-sm ml-2 line-through">Secondary School Certificate — Rawdat El-Fayhaa Secondary School (2009–2022)</span>
+                    <p class="text-red-600 text-xs mt-1 italic">→ You're in year 4 of an engineering degree with an 88% WAM. High school adds no value.</p>
+                </div>
+            </div>
+
+            <!-- Experience: Internship -->
+            <div class="mb-6">
+                <h4 class="text-sm font-extrabold text-slate-900 uppercase tracking-widest border-b-2 border-emerald-600 pb-1 mb-3">Experience</h4>
+
+                <div class="mb-2">
+                    <div class="flex justify-between items-start mb-1">
+                        <div>
+                            <p class="font-bold text-slate-900">Biomedical Engineering Consultant Intern</p>
+                            <p class="text-slate-600 text-sm">Optik Consultancy | ALLIGA | Project Based</p>
+                        </div>
+                        <p class="text-slate-500 text-sm">Nov 2025 – Feb 2026</p>
+                    </div>
+                </div>
+
+                <ul class="space-y-3 text-sm text-slate-700 ml-4">
+                    <li class="relative pl-4">
+                        <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                        <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-0.5 rounded mr-1">REWRITTEN</span>
+                        Led an 8-member multidisciplinary team across two parallel sub-teams to deliver two functional prototypes for <strong>[X — client name or industry, e.g. "a healthcare device manufacturer"]</strong>, solving <strong>[X — what was the unmet user need? e.g. "a manual patient monitoring process that took [X] hours daily"]</strong> — both solutions were accepted by the client and <strong>[X — adopted? moved to next phase? selected for further development?]</strong>.
+                    </li>
+                    <li class="relative pl-4">
+                        <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                        <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-0.5 rounded mr-1">REWRITTEN</span>
+                        Owned the client communication process across 12 weekly meetings, translating ambiguous requirements into <strong>[X — how many?]</strong> clear engineering specifications — this prevented <strong>[X — rework? scope creep? misalignment?]</strong> and kept both sub-teams building toward the same validated direction.
+                    </li>
+                    <li class="relative pl-4">
+                        <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                        <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-0.5 rounded mr-1">REWRITTEN</span>
+                        Modeled <strong>[X — what component? the prototype housing? a medical device part?]</strong> in SolidWorks, iterating through <strong>[X]</strong> design revisions based on client feedback and <strong>[X — user testing? FEA results? ergonomic analysis?]</strong> — the final design met <strong>[X — what standard or criteria? biocompatibility requirements? manufacturing constraints?]</strong>.
+                    </li>
+                    <li class="relative pl-4">
+                        <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                        <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-0.5 rounded mr-1">REWRITTEN</span>
+                        Analyzed <strong>[X — what kind of data? user behavior data? clinical data? sensor readings?]</strong> using KNIME to identify <strong>[X — patterns? bottlenecks? user needs?]</strong>, producing a data-driven recommendation that <strong>[X — informed the prototype design? changed the project direction? validated the hypothesis?]</strong> and was included in the final technical report delivered to the client.
+                    </li>
+                    <li class="relative pl-4">
+                        <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                        <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-0.5 rounded mr-1">REWRITTEN</span>
+                        Authored two technical reports and delivered the final showcase presentation to <strong>[X — how many?]</strong> client stakeholders, receiving <strong>[X — what feedback? "positive client review"? "invitation to continue the engagement"? a specific quote?]</strong>.
+                    </li>
+                </ul>
+            </div>
+
+            <!-- EWB Challenge → Elevated to Project -->
+            <div class="mb-6" style="break-before: page;">
+                <h4 class="text-sm font-extrabold text-slate-900 uppercase tracking-widest border-b-2 border-emerald-600 pb-1 mb-3">Projects</h4>
+
+                <div class="mb-5">
+                    <div class="flex justify-between items-start mb-1">
+                        <div>
+                            <p class="font-bold text-slate-900">Engineers Without Borders Challenge — Dawul Wuru Aboriginal Corporation</p>
+                            <p class="text-slate-600 text-sm">University of Technology Sydney — <span class="text-emerald-600 font-semibold">Top 3 Finalist</span> | Selected for FEIT Capstone Showcase</p>
+                        </div>
+                        <p class="text-slate-500 text-sm">2023</p>
+                    </div>
+
+                    <ul class="space-y-3 text-sm text-slate-700 ml-4">
+                        <li class="relative pl-4">
+                            <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                            <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-0.5 rounded mr-1">REWRITTEN</span>
+                            Designed <strong>[X — what? a water system? a health monitoring tool? a community resource?]</strong> for the Dawul Wuru Aboriginal Corporation to address <strong>[X — what specific need?]</strong>, using <strong>[X — what engineering approach/tools?]</strong> — the solution was selected as a Top 3 Finalist out of <strong>[X — how many submissions?]</strong> entries.
+                        </li>
+                        <li class="relative pl-4">
+                            <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                            <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-0.5 rounded mr-1">REWRITTEN</span>
+                            Presented the solution at the UTS FEIT Capstone Showcase to <strong>[X — audience size?]</strong> faculty, industry judges, and students, demonstrating <strong>[X — feasibility? community impact? technical rigor?]</strong> of the proposed design.
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Add more projects if they exist -->
+                <div class="bg-amber-50 border border-amber-200 rounded-xl p-4 mt-4">
+                    <span class="bg-amber-100 text-amber-800 text-xs font-bold px-2 py-0.5 rounded">ADD MORE PROJECTS</span>
+                    <p class="text-amber-700 text-sm mt-2">With the Transferable Skills section removed and high school deleted, you now have significant space to add 1–2 more academic or personal projects. Think about: any capstone work, lab research, independent biomedical projects, data analysis coursework, or SolidWorks design work. Every project should have 2–3 Impact Bullet Builder bullets.</p>
+                </div>
+            </div>
+
+            <!-- Teaching Role -->
+            <div class="mb-6">
+                <div class="mb-2">
+                    <div class="flex justify-between items-start mb-1">
+                        <div>
+                            <p class="font-bold text-slate-900">Arabic Teacher (Part-time)</p>
+                            <p class="text-slate-600 text-sm">AlFirdaus College, Blacktown</p>
+                        </div>
+                        <p class="text-slate-500 text-sm">Feb 2024 – Present</p>
+                    </div>
+                </div>
+
+                <ul class="space-y-3 text-sm text-slate-700 ml-4">
+                    <li class="relative pl-4">
+                        <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-amber-500 rounded-full"></span>
+                        <span class="bg-amber-100 text-amber-800 text-xs font-bold px-2 py-0.5 rounded mr-1">CONSIDER REMOVING</span>
+                        <span class="text-slate-400 line-through">"Researched and curated learning resources to support student success across varied learning needs."</span>
+                        <p class="text-amber-700 text-xs mt-1 italic">→ If keeping: "Designed and curated <strong>[X]</strong> differentiated learning resources for <strong>[X — how many students?]</strong> students across <strong>[X]</strong> grade levels, adapting materials for <strong>[X — specific learning needs, e.g. ESL learners, advanced students]</strong> — student <strong>[X — test scores? engagement? completion rates?]</strong> improved by <strong>[X]%</strong> over <strong>[X]</strong> semesters."</p>
+                    </li>
+                    <li class="relative pl-4">
+                        <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-amber-500 rounded-full"></span>
+                        <span class="bg-amber-100 text-amber-800 text-xs font-bold px-2 py-0.5 rounded mr-1">CONSIDER REMOVING</span>
+                        <span class="text-slate-400 line-through">"Collaborated with colleagues, parents, and stakeholders to support student outcomes."</span>
+                        <p class="text-amber-700 text-xs mt-1 italic">→ If keeping: "Coordinated with <strong>[X — how many?]</strong> parents, <strong>[X]</strong> fellow teachers, and school administration to develop individualized support plans for <strong>[X]</strong> students — recognized as <strong>Best Work Trainee 2024</strong> for the quality and consistency of these efforts."</p>
+                    </li>
+                    <li class="relative pl-4">
+                        <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-red-500 rounded-full"></span>
+                        <span class="bg-red-100 text-red-800 text-xs font-bold px-2 py-0.5 rounded mr-1">REMOVE</span>
+                        <span class="text-slate-400 line-through">"Balanced teaching responsibilities with full-time university studies, demonstrating strong time management."</span>
+                        <p class="text-red-600 text-xs mt-1 italic">→ The reader can already see from your dates that you worked and studied simultaneously — it comes through naturally. This bullet would be better replaced with a specific teaching accomplishment or removed to save space.</p>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Awards -->
+            <div class="mb-6">
+                <h4 class="text-sm font-extrabold text-slate-900 uppercase tracking-widest border-b-2 border-emerald-600 pb-1 mb-3">Awards & Recognition</h4>
+                <ul class="space-y-2 text-sm text-slate-700 ml-4">
+                    <li class="relative pl-4">
+                        <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                        <strong>Top 3 Finalist</strong> — Engineers Without Borders Challenge (Dawul Wuru Aboriginal Corporation 2023); selected to present at the UTS FEIT Capstone Showcase
+                    </li>
+                    <li class="relative pl-4">
+                        <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                        <strong>Dean's List 2024 & 2025</strong> — University of Technology Sydney, for outstanding academic performance (WAM 88%)
+                    </li>
+                    <li class="relative pl-4">
+                        <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                        <strong>Best Work Trainee 2024</strong> — AlFirdaus College, recognized for exceptional performance and dedication
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Activities → Condensed -->
+            <div class="mb-6">
+                <h4 class="text-sm font-extrabold text-slate-900 uppercase tracking-widest border-b-2 border-emerald-600 pb-1 mb-3">Leadership & Involvement</h4>
+                <ul class="space-y-2 text-sm text-slate-700 ml-4">
+                    <li class="relative pl-4">
+                        <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                        <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-0.5 rounded mr-1">REWRITTEN</span>
+                        <strong>Lucy Mentoring Program</strong> (2024, 2025) — Mentored by professionals at ResMed and UTS; <strong>[X — what skill did you develop? what career clarity did you gain? did you present anything? was there a project outcome?]</strong>
+                    </li>
+                    <li class="relative pl-4">
+                        <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                        <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-0.5 rounded mr-1">REWRITTEN</span>
+                        <strong>IEEE Member</strong> — Engineering in Medicine and Biology Society (EMBS), Women in Engineering (WiE); <strong>[X — attended any conferences? organized any events? participated in any competitions?]</strong>
+                    </li>
+                    <li class="relative pl-4">
+                        <span class="absolute left-0 top-2 w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                        <strong>STEM Outreach Volunteer</strong> — UTS (Mar–Aug 2024); <strong>[X — what did you do? mentored students? led workshops? how many students impacted?]</strong>
+                    </li>
+                </ul>
+                <div class="bg-amber-50 border border-amber-200 rounded-lg p-3 mt-3">
+                    <p class="text-amber-700 text-xs italic">→ For Engineers Australia and Australian Bioinformatics and Computational Biology Society — if you've contributed something specific (event, presentation, committee work), add a bullet. If they're memberships without active involvement, the space might serve you better elsewhere.</p>
+                </div>
+            </div>
+
+            <!-- Technical Skills → Enriched -->
+            <div>
+                <h4 class="text-sm font-extrabold text-slate-900 uppercase tracking-widest border-b-2 border-emerald-600 pb-1 mb-3">Technical Skills</h4>
+                <div class="text-sm text-slate-700">
+                    <p><strong>Programming:</strong> C (intermediate — <strong>[X — what did you build with it?]</strong>), Java (intermediate — <strong>[X — coursework? data structures?]</strong>)</p>
+                    <p class="mt-1"><strong>Data & Analytics:</strong> KNIME (data exploration, visualization, predictive modeling — <strong>[X — used in which project?]</strong>)</p>
+                    <p class="mt-1"><strong>Design & Modeling:</strong> SolidWorks (3D modeling of biomedical components — <strong>[X — used in internship? coursework? number of models?]</strong>)</p>
+                    <p class="mt-1"><strong>Research:</strong> Laboratory procedures, experimental design, literature reviews, scientific report writing, budgeting and resource estimation</p>
+                    <p class="mt-1"><strong>Languages:</strong> English (Fluent), Arabic (Fluent), Turkish (Conversational)</p>
+                </div>
+                <div class="bg-red-50 border border-red-200 rounded-lg p-3 mt-3">
+                    <span class="bg-red-100 text-red-800 text-xs font-bold px-2 py-0.5 rounded">REMOVE</span>
+                    <span class="text-red-700 text-sm ml-2 line-through">Microsoft Office Suite (Excel, Word, PowerPoint, Outlook)</span>
+                    <p class="text-red-600 text-xs mt-1 italic">→ Office proficiency is assumed for any engineering role at this point. This space would serve you better showcasing the tools that actually differentiate you.</p>
+                </div>
+                <div class="bg-red-50 border border-red-200 rounded-lg p-3 mt-2">
+                    <span class="bg-red-100 text-red-800 text-xs font-bold px-2 py-0.5 rounded">REMOVE OR REFRAME</span>
+                    <span class="text-red-700 text-sm ml-2 line-through">Python (actively developing)</span>
+                    <p class="text-red-600 text-xs mt-1 italic">→ "Actively developing" may unintentionally signal that you're not yet comfortable with it. It would be stronger to either reference a project you've started building with Python, or wait to list it until you have something concrete to point to.</p>
+                </div>
+            </div>
+
+        </div>
+        <!-- RESUME END -->
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SECTION 4: BEFORE & AFTER                    -->
+    <!-- ============================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 p-8 page-break">
+        <div class="flex items-center gap-3 mb-6">
+            <div class="w-8 h-8 rounded-lg bg-purple-600 text-white flex items-center justify-center text-sm font-bold">⚡</div>
+            <h2 class="text-2xl font-extrabold text-slate-900">Before & After — Best Examples</h2>
+        </div>
+
+        <div class="space-y-6">
+            <!-- Example 1: Team leadership -->
+            <div class="rounded-xl overflow-hidden border border-slate-200">
+                <div class="bg-red-50 p-5 border-b border-red-200">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-red-600 text-white font-bold text-xs">✗</span>
+                        <span class="text-red-700 font-bold text-sm">ORIGINAL (★ Level — Duty Description)</span>
+                    </div>
+                    <p class="text-red-800 text-sm">"Led an 8-member multidisciplinary team across two parallel sub-teams over a 12-week client-facing project, successfully delivering two prototypes, two technical reports, and a final showcase on schedule."</p>
+                </div>
+                <div class="bg-emerald-50 p-5">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-emerald-600 text-white font-bold text-xs">✓</span>
+                        <span class="text-emerald-700 font-bold text-sm">REWRITTEN (★★★ Level — Impact Standard)</span>
+                    </div>
+                    <p class="text-emerald-800 text-sm">"Led an 8-member multidisciplinary team across two parallel sub-teams to deliver two functional prototypes for [client/industry], solving [specific unmet user need, e.g. a manual process that took X hours daily] — both solutions were accepted by the client and [adopted / moved to next phase / selected for further development]."</p>
+                </div>
+            </div>
+
+            <!-- Example 2: Transferable Skills claim vs. real bullet -->
+            <div class="rounded-xl overflow-hidden border border-slate-200">
+                <div class="bg-red-50 p-5 border-b border-red-200">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-red-600 text-white font-bold text-xs">✗</span>
+                        <span class="text-red-700 font-bold text-sm">ORIGINAL (Transferable Skills Section — Claim Without Evidence)</span>
+                    </div>
+                    <p class="text-red-800 text-sm">"Demonstrated ability to respond effectively to changing client requirements, unexpected challenges, and shifting team dynamics across a 12-week multidisciplinary internship, maintaining focus, motivation, and consistent performance across two simultaneous product tracks."</p>
+                </div>
+                <div class="bg-emerald-50 p-5">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-emerald-600 text-white font-bold text-xs">✓</span>
+                        <span class="text-emerald-700 font-bold text-sm">WHAT IT SHOULD BECOME (Real Bullet in Experience)</span>
+                    </div>
+                    <p class="text-emerald-800 text-sm">"Adapted mid-project when the client changed [X — scope? specifications? target user?] after Week [X], restructuring the timeline and reassigning [X] team members to a new workstream — delivered the revised prototype [on time / X days ahead of schedule] without requesting a deadline extension."</p>
+                </div>
+            </div>
+
+            <!-- Example 3: Teaching bullet -->
+            <div class="rounded-xl overflow-hidden border border-slate-200">
+                <div class="bg-red-50 p-5 border-b border-red-200">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-red-600 text-white font-bold text-xs">✗</span>
+                        <span class="text-red-700 font-bold text-sm">ORIGINAL (★ Level — Needs a Specific Outcome)</span>
+                    </div>
+                    <p class="text-red-800 text-sm">"Collaborated with colleagues, parents, and stakeholders to support student outcomes."</p>
+                </div>
+                <div class="bg-emerald-50 p-5">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-emerald-600 text-white font-bold text-xs">✓</span>
+                        <span class="text-emerald-700 font-bold text-sm">REWRITTEN (★★★ Level — Shows Impact)</span>
+                    </div>
+                    <p class="text-emerald-800 text-sm">"Coordinated with [X] parents, [X] fellow teachers, and school administration to develop individualized support plans for [X] students — recognized as Best Work Trainee 2024 for the quality and consistency of these efforts."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SECTION 5: ACTION ITEMS                      -->
+    <!-- ============================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 p-8 page-break">
+        <div class="flex items-center gap-3 mb-6">
+            <div class="w-8 h-8 rounded-lg bg-emerald-700 text-white flex items-center justify-center text-sm font-bold">🎯</div>
+            <h2 class="text-2xl font-extrabold text-slate-900">Action Items — What You Need to Do</h2>
+        </div>
+
+        <div class="space-y-4">
+            <div class="flex items-start gap-4 p-5 bg-emerald-50 rounded-xl border border-emerald-200">
+                <div class="w-10 h-10 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-lg flex-shrink-0">1</div>
+                <div>
+                    <p class="font-bold text-emerald-900 text-lg">Remove the Transferable Skills section and reallocate the space</p>
+                    <p class="text-emerald-700 text-sm mt-1">This is the single highest-impact change you can make. The claims in that section are already covered by your Experience bullets — and experience bullets are more convincing because they come with context. Removing the section frees up ~40% of your resume for content that shows your value through results — more project entries, more internship details, or stronger bullet points with metrics.</p>
+                </div>
+            </div>
+
+            <div class="flex items-start gap-4 p-5 bg-emerald-50 rounded-xl border border-emerald-200">
+                <div class="w-10 h-10 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-lg flex-shrink-0">2</div>
+                <div>
+                    <p class="font-bold text-emerald-900 text-lg">Expand the EWB Challenge into a full project entry</p>
+                    <p class="text-emerald-700 text-sm mt-1">Being a Top 3 Finalist is your strongest accomplishment. It's currently a one-line award buried at the bottom. Elevate it to a "Projects" section with 2–3 bullets: what you designed, for whom, what it solved, and the fact that it beat out [X] other submissions. This is the kind of content that makes a recruiter stop scrolling.</p>
+                </div>
+            </div>
+
+            <div class="flex items-start gap-4 p-5 bg-emerald-50 rounded-xl border border-emerald-200">
+                <div class="w-10 h-10 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-lg flex-shrink-0">3</div>
+                <div>
+                    <p class="font-bold text-emerald-900 text-lg">Add "what happened" to every internship bullet</p>
+                    <p class="text-emerald-700 text-sm mt-1">You led a team, facilitated meetings, applied frameworks, and coordinated timelines. But what <em>changed</em> because of your work? Did the client adopt the prototypes? Did your process save the team from rework? Did the client come back for a second engagement? Think about the outcome of each action and append it to the bullet. "Led... delivering two prototypes" → "Led... delivering two prototypes that [were adopted by / solved X for / reduced X by]."</p>
+                </div>
+            </div>
+
+            <div class="flex items-start gap-4 p-5 bg-emerald-50 rounded-xl border border-emerald-200">
+                <div class="w-10 h-10 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-lg flex-shrink-0">4</div>
+                <div>
+                    <p class="font-bold text-emerald-900 text-lg">Show your tools inside your bullets, not in a separate list</p>
+                    <p class="text-emerald-700 text-sm mt-1">SolidWorks and KNIME are listed in your Technical Skills but are invisible in your bullets. Did you use SolidWorks to model the internship prototypes? Did you use KNIME to analyze data for a project? Move these tools into your experience bullets: "Modeled [X component] in SolidWorks," "Analyzed [X data] in KNIME." This simultaneously proves you know the tool AND shows what you did with it.</p>
+                </div>
+            </div>
+
+            <div class="flex items-start gap-4 p-5 bg-emerald-50 rounded-xl border border-emerald-200">
+                <div class="w-10 h-10 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-lg flex-shrink-0">5</div>
+                <div>
+                    <p class="font-bold text-emerald-900 text-lg">Fill in every [X] placeholder in the rewritten resume</p>
+                    <p class="text-emerald-700 text-sm mt-1">The rewritten resume above has the right structure — your job is to fill in the details only you know. What was the unmet user need? How many design iterations? What data did you analyze? What was the client's reaction? Go through each [X] and plug in real numbers. Estimates are fine — "approximately 40% faster" beats no number at all.</p>
+                </div>
+            </div>
+
+            <div class="flex items-start gap-4 p-5 bg-emerald-50 rounded-xl border border-emerald-200">
+                <div class="w-10 h-10 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-lg flex-shrink-0">6</div>
+                <div>
+                    <p class="font-bold text-emerald-900 text-lg">Remove the Career Objective and high school entry</p>
+                    <p class="text-emerald-700 text-sm mt-1">The Career Objective as written could apply to any biomedical engineering student — it doesn't yet differentiate you. And at this stage in your engineering degree, the high school entry isn't adding to your story. Both are taking up space that could go toward project details, metrics, and results that set you apart.</p>
+                </div>
+            </div>
+
+            <div class="flex items-start gap-4 p-5 bg-emerald-50 rounded-xl border border-emerald-200">
+                <div class="w-10 h-10 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-lg flex-shrink-0">7</div>
+                <div>
+                    <p class="font-bold text-emerald-900 text-lg">Add 1–2 more academic projects</p>
+                    <p class="text-emerald-700 text-sm mt-1">Once you remove the Transferable Skills section, Career Objective, and high school, you'll have significant space. Think about coursework projects, lab work, or any independent engineering projects where you built, analyzed, or designed something. Each one needs 2–3 Impact Bullet Builder bullets with Accomplishment + Metric + How + Why.</p>
+                </div>
+            </div>
+
+            <div class="flex items-start gap-4 p-5 bg-emerald-50 rounded-xl border border-emerald-200">
+                <div class="w-10 h-10 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-lg flex-shrink-0">8</div>
+                <div>
+                    <p class="font-bold text-emerald-900 text-lg">Replace Microsoft Office with context for your stronger tools</p>
+                    <p class="text-emerald-700 text-sm mt-1">Office proficiency is assumed for engineering roles at this point — it won't move the needle for a hiring manager. That space would be better used adding context to the tools that actually set you apart: SolidWorks, KNIME, C, or Java — what did you build or analyze with each one?</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SECTION 6: WHAT'S WORKING                    -->
+    <!-- ============================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 p-8 page-break">
+        <div class="flex items-center gap-3 mb-6">
+            <div class="w-8 h-8 rounded-lg bg-lime-500 text-white flex items-center justify-center text-sm font-bold">✓</div>
+            <h2 class="text-2xl font-extrabold text-slate-900">What's Already Working</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="bg-lime-50 border border-lime-200 rounded-xl p-5">
+                <p class="font-bold text-lime-900">Outstanding academics</p>
+                <p class="text-lime-700 text-sm mt-1">88% WAM, 6.71 GPA, and Dean's List in both 2024 and 2025 in a Biomedical Engineering Honours program. This is a powerful trust signal — especially for a student. Keep it prominent and let it anchor your credibility.</p>
+            </div>
+            <div class="bg-lime-50 border border-lime-200 rounded-xl p-5">
+                <p class="font-bold text-lime-900">Real consulting internship with real deliverables</p>
+                <p class="text-lime-700 text-sm mt-1">You didn't do a "shadow a professional" internship. You led an 8-person team, delivered two prototypes to a real client, wrote technical reports, and presented at a showcase. The raw material for strong bullets is all here — it just needs outcome-focused reframing.</p>
+            </div>
+            <div class="bg-lime-50 border border-lime-200 rounded-xl p-5">
+                <p class="font-bold text-lime-900">EWB Challenge Top 3 — genuine engineering competition result</p>
+                <p class="text-lime-700 text-sm mt-1">Placing Top 3 in a national engineering challenge and being selected for the Capstone Showcase demonstrates that your engineering solutions can compete at a high level. This just needs expansion from a one-line award into a full project entry.</p>
+            </div>
+            <div class="bg-lime-50 border border-lime-200 rounded-xl p-5">
+                <p class="font-bold text-lime-900">Trilingual — English, Arabic, Turkish</p>
+                <p class="text-lime-700 text-sm mt-1">Fluency in three languages is a genuine differentiator, especially for roles in consulting, medical devices, or global companies. Keep this visible.</p>
+            </div>
+            <div class="bg-lime-50 border border-lime-200 rounded-xl p-5">
+                <p class="font-bold text-lime-900">Diverse professional engagement</p>
+                <p class="text-lime-700 text-sm mt-1">You've been in the Lucy Mentoring Program two years in a row (with mentors from ResMed and UTS), volunteered in STEM outreach, and hold IEEE and Engineers Australia memberships. This shows initiative beyond coursework — it just needs specific accomplishments attached to each one.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SECTION 7: SCORECARD                         -->
+    <!-- ============================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 p-8 page-break">
+        <div class="flex items-center gap-3 mb-6">
+            <div class="w-8 h-8 rounded-lg bg-slate-800 text-lime-300 flex items-center justify-center text-sm font-bold">📋</div>
+            <h2 class="text-2xl font-extrabold text-slate-900">Scorecard: Impact Bullet Builder™ Criteria</h2>
+        </div>
+
+        <div class="overflow-x-auto">
+            <table class="w-full text-sm">
+                <thead>
+                    <tr class="border-b-2 border-slate-200">
+                        <th class="text-left py-3 pl-3 text-slate-900 font-bold">Criteria</th>
+                        <th class="text-center py-3 text-slate-900 font-bold w-20">Score</th>
+                        <th class="text-left py-3 text-slate-900 font-bold">Notes</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-100">
+                    <tr>
+                        <td class="py-3 pl-3 font-semibold text-slate-700">Accomplishments (not duties)</td>
+                        <td class="py-3 text-center"><span class="font-mono-num font-bold text-red-500">2/10</span></td>
+                        <td class="py-3 text-slate-500">Most bullets describe the process — "facilitated," "coordinated," "applied," "collaborated." The strongest one (leading the team to deliver two prototypes) hints at an accomplishment but stops at "on schedule" without stating the client outcome.</td>
+                    </tr>
+                    <tr>
+                        <td class="py-3 pl-3 font-semibold text-slate-700">Metrics / Quantification</td>
+                        <td class="py-3 text-center"><span class="font-mono-num font-bold text-red-500">2/10</span></td>
+                        <td class="py-3 text-slate-500">"8-member team," "12-week timeline," and "four project outcomes" show scale — the next step is adding impact numbers: percentages, time saved, efficiency gains, or outcomes achieved.</td>
+                    </tr>
+                    <tr>
+                        <td class="py-3 pl-3 font-semibold text-slate-700">How / Method Shown</td>
+                        <td class="py-3 text-center"><span class="font-mono-num font-bold text-red-500">3/10</span></td>
+                        <td class="py-3 text-slate-500">SolidWorks, KNIME, C, Java are listed in the skills section but don't yet appear in any bullet. "Design thinking frameworks" is mentioned in context, which is a start. Weaving tools into experience bullets would make both sections stronger.</td>
+                    </tr>
+                    <tr>
+                        <td class="py-3 pl-3 font-semibold text-slate-700">Why / Business Impact</td>
+                        <td class="py-3 text-center"><span class="font-mono-num font-bold text-red-500">1/10</span></td>
+                        <td class="py-3 text-slate-500">No bullet yet connects to a business outcome or problem solved. "Addressing an identified unmet user need" is the closest — expanding on what that need was and what changed when you addressed it would make a big difference.</td>
+                    </tr>
+                    <tr>
+                        <td class="py-3 pl-3 font-semibold text-slate-700">Personal Ownership (not "we/team")</td>
+                        <td class="py-3 text-center"><span class="font-mono-num font-bold text-red-500">3/10</span></td>
+                        <td class="py-3 text-slate-500">"Led" is a strong opener — more of that is good. The Transferable Skills section leans on phrases like "Demonstrated ability" and "Developed strong attention to detail," which don't tell the reader what you specifically did. There's room to make your personal contributions clearer throughout.</td>
+                    </tr>
+                    <tr>
+                        <td class="py-3 pl-3 font-semibold text-slate-700">Problem Context / "So What?"</td>
+                        <td class="py-3 text-center"><span class="font-mono-num font-bold text-red-500">1/10</span></td>
+                        <td class="py-3 text-slate-500">No bullet yet sets up the problem before showing the solution. The prototypes addressed an "unmet user need" — telling the reader what that need was, how it was affecting the client, and why solving it mattered would add significant weight to your strongest bullets.</td>
+                    </tr>
+                    <tr>
+                        <td class="py-3 pl-3 font-semibold text-slate-700">Action Verbs</td>
+                        <td class="py-3 text-center"><span class="font-mono-num font-bold text-amber-500">4/10</span></td>
+                        <td class="py-3 text-slate-500">"Led" and "Facilitated" are decent openers. But "Applied," "Coordinated," "Researched," "Collaborated," "Balanced," and especially "Demonstrated" and "Developed" (in the Transferable Skills section) are mid-to-weak. Many bullets open with process verbs rather than impact verbs.</td>
+                    </tr>
+                    <tr>
+                        <td class="py-3 pl-3 font-semibold text-slate-700">Bullet Quality Consistency</td>
+                        <td class="py-3 text-center"><span class="font-mono-num font-bold text-red-500">2/10</span></td>
+                        <td class="py-3 text-slate-500">The Transferable Skills section takes up significant space without evidence to back it up. The internship bullets have good structure but follow a similar process-oriented pattern. The teaching bullets would benefit from specific outcomes. And the strongest accomplishment (EWB Top 3) deserves more room than a one-liner in Awards.</td>
+                    </tr>
+                    <tr class="bg-slate-50 font-bold">
+                        <td class="py-4 pl-3 text-slate-900 text-base">OVERALL SCORE</td>
+                        <td class="py-4 text-center"><span class="font-mono-num text-xl text-red-500">18/100</span></td>
+                        <td class="py-4 text-slate-700">★ "You Did What Was Asked" — strong foundation, needs outcome framing</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="mt-6 bg-emerald-900 text-white rounded-xl p-6">
+            <p class="font-bold text-lg mb-2">The Good News</p>
+            <p class="text-emerald-200 text-sm">This is a presentation challenge, not a substance one. You have an 88% WAM with back-to-back Dean's List in a rigorous Honours program. You led an 8-person team on a real consulting engagement and delivered two prototypes to a real client. You placed Top 3 in a national engineering challenge. You work part-time as a teacher while managing all of this and won Best Work Trainee for it. You're trilingual. The raw material here is genuinely strong — it just needs outcome-focused framing, stronger structure, and some metrics to let it come through. Applying the Impact Bullet Builder framework would likely push this resume from 18/100 to 55+ in a single focused session. The foundation is solid; you just need the right framing to let it speak.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center py-8 text-slate-400 text-sm">
+        <p>Analysis prepared by LaunchToLead | Impact Bullet Builder™ Framework</p>
+        <p class="mt-1">launchtolead.io/free</p>
+    </footer>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mock Interview Notes — Launch to Lead</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+                        mono: ['"Space Grotesk"', 'monospace'],
+                    },
+                    colors: {
+                        brand: {
+                            primary: '#064e3b',
+                            secondary: '#14b8a6',
+                            accent: '#a3e635',
+                            light: '#ecfdf5',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @media print {
+            .no-print { display: none !important; }
+            body { background: white; font-size: 11px; }
+            .print-break { page-break-before: always; }
+            section { box-shadow: none !important; border: 1px solid #e2e8f0; page-break-inside: auto; }
+            textarea, input[type="text"] {
+                border: 1px solid #cbd5e1 !important;
+                overflow: visible !important;
+                height: auto !important;
+                min-height: 20px !important;
+                max-height: none !important;
+                white-space: pre-wrap !important;
+                word-wrap: break-word !important;
+            }
+            select {
+                border: 1px solid #cbd5e1 !important;
+                white-space: normal !important;
+                overflow: visible !important;
+                height: auto !important;
+            }
+            .star-rating label { font-size: 18px; }
+            input[type="checkbox"] { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .eval-grid { break-inside: avoid; }
+            .bg-slate-50 { break-inside: auto; }
+        }
+        @media screen {
+            textarea { resize: none; }
+        }
+        textarea {
+            overflow: hidden;
+        }
+        .star-rating input { display: none; }
+        .star-rating label {
+            font-size: 28px;
+            color: #cbd5e1;
+            cursor: pointer;
+            transition: color 0.15s;
+        }
+        .star-rating label:hover,
+        .star-rating label:hover ~ label,
+        .star-rating input:checked ~ label {
+            color: #f59e0b;
+        }
+        .star-rating {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: flex-end;
+            gap: 2px;
+        }
+        .star-rating label:hover ~ label,
+        .star-rating input:checked ~ label {
+            color: #f59e0b;
+        }
+        .star-rating label:hover,
+        .star-rating label:hover ~ label {
+            color: #fbbf24;
+        }
+        .save-indicator {
+            transition: opacity 0.3s;
+        }
+        .eval-section {
+            background: #f8fafc;
+            border-radius: 12px;
+            padding: 16px;
+        }
+        .eval-section h4 {
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+        }
+        .eval-client h4 { color: #0369a1; }
+        .eval-coach h4 { color: #064e3b; }
+        .star-rating-sm label { font-size: 22px; }
+        .star-rating-sm { gap: 1px; }
+    </style>
+</head>
+<body class="font-sans antialiased bg-slate-50">
+
+    <!-- Header -->
+    <header class="bg-gradient-to-r from-brand-primary to-teal-700 text-white py-8 print:py-4">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="flex items-center justify-between">
+                <div>
+                    <div class="flex items-center gap-3 mb-2">
+                        <div class="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center font-bold text-lg">L²</div>
+                        <span class="font-semibold text-lg">Launch to Lead</span>
+                    </div>
+                    <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight">Mock Interview Notes</h1>
+                    <p class="text-emerald-200 mt-1">Session 3 — Behavioral Interview Practice</p>
+                </div>
+                <div class="flex items-center gap-3 no-print">
+                    <span id="save-status" class="save-indicator text-emerald-200 text-sm opacity-0">✓ Saved</span>
+                    <button onclick="clearAllData()" class="bg-red-500/20 hover:bg-red-500/40 text-white px-4 py-3 rounded-xl font-semibold transition text-sm">
+                        Clear All
+                    </button>
+                    <button onclick="window.print()" class="bg-white/20 hover:bg-white/30 text-white px-5 py-3 rounded-xl font-semibold transition flex items-center gap-2">
+                        Print / Save PDF
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="max-w-5xl mx-auto px-6 py-8">
+
+        <!-- Client Info -->
+        <section class="bg-white rounded-2xl shadow-sm p-6 mb-6">
+            <h2 class="text-lg font-bold text-slate-800 mb-4">Session Info</h2>
+            <div class="grid md:grid-cols-3 gap-4">
+                <div>
+                    <label class="block text-sm font-semibold text-slate-600 mb-1">Client Name</label>
+                    <input type="text" data-field="client-name" class="w-full border border-slate-300 rounded-lg px-3 py-2 text-slate-800 focus:outline-none focus:ring-2 focus:ring-brand-secondary" placeholder="Enter name">
+                </div>
+                <div>
+                    <label class="block text-sm font-semibold text-slate-600 mb-1">Date</label>
+                    <input type="date" data-field="session-date" class="w-full border border-slate-300 rounded-lg px-3 py-2 text-slate-800 focus:outline-none focus:ring-2 focus:ring-brand-secondary">
+                </div>
+                <div>
+                    <label class="block text-sm font-semibold text-slate-600 mb-1">Target Role / Company</label>
+                    <input type="text" data-field="target-role" class="w-full border border-slate-300 rounded-lg px-3 py-2 text-slate-800 focus:outline-none focus:ring-2 focus:ring-brand-secondary" placeholder="e.g. Software Engineer @ Deere">
+                </div>
+            </div>
+        </section>
+
+        <!-- General Notes -->
+        <section class="bg-white rounded-2xl shadow-sm p-6 mb-6">
+            <h2 class="text-lg font-bold text-slate-800 mb-3">Notes</h2>
+            <textarea data-field="general-notes" class="w-full border border-slate-300 rounded-lg px-3 py-2 text-slate-800 focus:outline-none focus:ring-2 focus:ring-brand-secondary" rows="5" style="overflow:hidden" oninput="autoExpand(this); debounceSave();" placeholder="General notes, observations, reminders..."></textarea>
+        </section>
+
+        <!-- Best Examples -->
+        <section class="bg-white rounded-2xl shadow-sm p-6 mb-6">
+            <h2 class="text-lg font-bold text-slate-800 mb-3">Your Best Examples</h2>
+            <textarea data-field="best-examples" class="w-full border border-slate-300 rounded-lg px-3 py-2 text-slate-800 focus:outline-none focus:ring-2 focus:ring-brand-secondary" rows="5" style="overflow:hidden" oninput="autoExpand(this); debounceSave();" placeholder="List your strongest stories/experiences to pull from during the interview..."></textarea>
+        </section>
+
+        <!-- Question Blocks -->
+        <div id="questions-container"></div>
+
+        <!-- Add Question Button -->
+        <div class="text-center my-6 no-print">
+            <button onclick="addQuestion(); saveAll();" class="bg-brand-primary hover:bg-teal-800 text-white px-6 py-3 rounded-xl font-semibold transition">
+                + Add Another Question
+            </button>
+        </div>
+
+        <!-- Overall Session Notes -->
+        <section class="bg-white rounded-2xl shadow-sm p-6 mb-6 print-break">
+            <h2 class="text-lg font-bold text-slate-800 mb-4">Overall Session Notes</h2>
+            <div class="grid md:grid-cols-2 gap-4">
+                <div>
+                    <label class="block text-sm font-semibold text-slate-600 mb-1">Strengths Observed</label>
+                    <textarea data-field="strengths" class="w-full border border-slate-300 rounded-lg px-3 py-2 text-slate-800 focus:outline-none focus:ring-2 focus:ring-brand-secondary" rows="4" placeholder="What did the client do well across all questions?"></textarea>
+                </div>
+                <div>
+                    <label class="block text-sm font-semibold text-slate-600 mb-1">Areas to Improve</label>
+                    <textarea data-field="improvements" class="w-full border border-slate-300 rounded-lg px-3 py-2 text-slate-800 focus:outline-none focus:ring-2 focus:ring-brand-secondary" rows="4" placeholder="What patterns need work?"></textarea>
+                </div>
+            </div>
+            <div class="mt-4">
+                <label class="block text-sm font-semibold text-slate-600 mb-1">Action Items for Client</label>
+                <textarea data-field="action-items" class="w-full border border-slate-300 rounded-lg px-3 py-2 text-slate-800 focus:outline-none focus:ring-2 focus:ring-brand-secondary" rows="3" placeholder="Specific next steps..."></textarea>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-brand-primary py-6 print:py-2">
+        <div class="max-w-5xl mx-auto px-6 text-center">
+            <p class="text-emerald-200 text-sm">Launch to Lead — Mock Interview Notes — Confidential</p>
+        </div>
+    </footer>
+
+    <script>
+        // ===== Storage key based on the file path so each client copy is independent =====
+        const STORAGE_KEY = 'mock-interview-' + location.pathname.split('/').pop().replace('.html', '');
+
+        const competencies = {
+            "Leadership & Initiative": [
+                { q: "Tell me about a time you took initiative on a project without being asked.", neg: false },
+                { q: "Describe a situation where you had to lead a team or project. What was your approach?", neg: false },
+                { q: "Tell me about a time you identified a problem before others noticed it. What did you do?", neg: false },
+                { q: "Describe a time you went above and beyond what was expected.", neg: false },
+                { q: "Tell me about a time you had to make a decision without all the information you needed.", neg: false },
+                { q: "Describe a time you convinced others to follow your approach or idea.", neg: false },
+                { q: "Tell me about a time your leadership approach didn't work. What happened?", neg: true }
+            ],
+            "Problem-Solving & Technical Judgment": [
+                { q: "Walk me through how you approached a complex technical problem.", neg: false },
+                { q: "Tell me about a time you had to debug a difficult issue. What was your process?", neg: false },
+                { q: "Describe a technical trade-off you had to make. How did you decide?", neg: false },
+                { q: "Tell me about a time you had to learn a new technology or tool quickly.", neg: false },
+                { q: "Describe a time you improved an existing process or system.", neg: false },
+                { q: "Tell me about a project where you had to balance multiple constraints.", neg: false },
+                { q: "Tell me about a technical decision you made that turned out to be wrong.", neg: true },
+                { q: "Describe a time you were stuck on a problem. How did you get unstuck?", neg: true }
+            ],
+            "Teamwork & Collaboration": [
+                { q: "Tell me about a successful team project. What was your role?", neg: false },
+                { q: "Describe a time you had to work with someone difficult. How did you handle it?", neg: false },
+                { q: "Tell me about a time you helped a teammate who was struggling.", neg: false },
+                { q: "Describe a cross-functional project you worked on.", neg: false },
+                { q: "Tell me about a time you received critical feedback. How did you respond?", neg: false },
+                { q: "Describe a conflict you had with a teammate. How did you resolve it?", neg: true },
+                { q: "Tell me about a time a team project didn't go well. What happened?", neg: true },
+                { q: "Describe a time you disagreed with your manager. What did you do?", neg: true }
+            ],
+            "Communication & Influence": [
+                { q: "Tell me about a time you had to explain something technical to a non-technical audience.", neg: false },
+                { q: "Describe a time you had to persuade someone to see your point of view.", neg: false },
+                { q: "Tell me about a presentation you gave. How did you prepare?", neg: false },
+                { q: "Describe a time you had to deliver difficult news or feedback.", neg: false },
+                { q: "Tell me about a time you failed to communicate effectively. What happened?", neg: true },
+                { q: "Describe a time you couldn't convince someone. What did you learn?", neg: true }
+            ],
+            "Adaptability & Learning": [
+                { q: "Tell me about a time you had to adapt to a significant change.", neg: false },
+                { q: "Describe a situation where you had to learn something new under pressure.", neg: false },
+                { q: "Tell me about a time priorities shifted mid-project. How did you handle it?", neg: false },
+                { q: "Describe how you approach learning a new skill or technology.", neg: false },
+                { q: "Tell me about a time you struggled to adapt to something new.", neg: true },
+                { q: "Describe a time you were outside your comfort zone. How did it go?", neg: true }
+            ],
+            "Failure & Self-Awareness": [
+                { q: "Tell me about a time you failed. What did you learn?", neg: true },
+                { q: "Describe a mistake you made at work. How did you handle it?", neg: true },
+                { q: "What's the worst decision you've made? What happened?", neg: true },
+                { q: "Tell me about a time you realized you were wrong about something.", neg: true },
+                { q: "Describe a time you received negative feedback. How did you respond?", neg: true },
+                { q: "Tell me about a project that didn't meet expectations. What went wrong?", neg: true },
+                { q: "What's your biggest weakness? Give me an example of how it's affected your work.", neg: true },
+                { q: "Tell me about a time you had to admit you didn't know something.", neg: true }
+            ],
+            "Drive & Motivation": [
+                { q: "What got you interested in engineering/this field?", neg: false },
+                { q: "What's a project you're most proud of? Why?", neg: false },
+                { q: "Where do you see yourself in 5 years?", neg: false },
+                { q: "What do you do to stay current in your field?", neg: false },
+                { q: "Tell me about a side project or personal initiative in engineering.", neg: false },
+                { q: "Why are you interested in this role/company specifically?", neg: false }
+            ]
+        };
+
+        let questionCount = 0;
+        let saveTimeout = null;
+
+        // ===== Save / Load =====
+        function getStorageKey() {
+            return STORAGE_KEY;
+        }
+
+        function gatherData() {
+            const data = {};
+            // Session info
+            document.querySelectorAll('[data-field]').forEach(el => {
+                if (el.type === 'checkbox') {
+                    data[el.dataset.field] = el.checked;
+                } else {
+                    data[el.dataset.field] = el.value;
+                }
+            });
+            // Question blocks
+            data.questionCount = questionCount;
+            data.questions = [];
+            for (let i = 1; i <= questionCount; i++) {
+                const section = document.getElementById(`question-${i}`);
+                if (!section) continue;
+                const q = { id: i };
+                const selects = section.querySelectorAll('select');
+                q.competency = selects[0] ? selects[0].value : '';
+                q.question = selects[1] ? selects[1].value : '';
+                const customInput = document.getElementById(`q-custom-${i}`);
+                q.customQuestion = customInput ? customInput.value : '';
+                const textareas = section.querySelectorAll('textarea');
+                q.situation = textareas[0] ? textareas[0].value : '';
+                q.task = textareas[1] ? textareas[1].value : '';
+                q.action = textareas[2] ? textareas[2].value : '';
+                q.result = textareas[3] ? textareas[3].value : '';
+                q.lessonsLearned = textareas[4] ? textareas[4].value : '';
+                q.ifICouldGoBack = textareas[5] ? textareas[5].value : '';
+                q.selfAssessment = textareas[6] ? textareas[6].value : '';
+                q.coachFeedback = textareas[7] ? textareas[7].value : '';
+                const checkboxes = section.querySelectorAll('input[type="checkbox"]');
+                q.clientAnswered = checkboxes[0] ? checkboxes[0].checked : false;
+                q.clientCompetency = checkboxes[1] ? checkboxes[1].checked : false;
+                q.coachAnswered = checkboxes[2] ? checkboxes[2].checked : false;
+                q.coachCompetency = checkboxes[3] ? checkboxes[3].checked : false;
+                const clientRating = section.querySelector(`input[name="client-rating-${i}"]:checked`);
+                q.clientRating = clientRating ? clientRating.value : '';
+                const clientDelivery = section.querySelector(`input[name="client-delivery-${i}"]:checked`);
+                q.clientDelivery = clientDelivery ? clientDelivery.value : '';
+                const coachRating = section.querySelector(`input[name="coach-rating-${i}"]:checked`);
+                q.coachRating = coachRating ? coachRating.value : '';
+                const coachDelivery = section.querySelector(`input[name="coach-delivery-${i}"]:checked`);
+                q.coachDelivery = coachDelivery ? coachDelivery.value : '';
+                data.questions.push(q);
+            }
+            return data;
+        }
+
+        function saveAll() {
+            const data = gatherData();
+            try {
+                localStorage.setItem(getStorageKey(), JSON.stringify(data));
+                flashSaveIndicator();
+            } catch (e) {
+                // Storage full or unavailable — silent fail
+            }
+        }
+
+        function scheduleSave() {
+            clearTimeout(saveTimeout);
+            saveTimeout = setTimeout(saveAll, 500);
+        }
+
+        function flashSaveIndicator() {
+            const el = document.getElementById('save-status');
+            el.style.opacity = '1';
+            setTimeout(() => { el.style.opacity = '0'; }, 1500);
+        }
+
+        function loadData() {
+            const raw = localStorage.getItem(getStorageKey());
+            if (!raw) return null;
+            try {
+                return JSON.parse(raw);
+            } catch (e) {
+                return null;
+            }
+        }
+
+        function restoreData(data) {
+            // Session info fields
+            document.querySelectorAll('[data-field]').forEach(el => {
+                const val = data[el.dataset.field];
+                if (val === undefined) return;
+                if (el.type === 'checkbox') {
+                    el.checked = val;
+                } else {
+                    el.value = val;
+                }
+            });
+            // Question blocks
+            if (data.questions && data.questions.length > 0) {
+                data.questions.forEach(q => {
+                    addQuestion();
+                    const n = questionCount;
+                    const section = document.getElementById(`question-${n}`);
+                    if (!section) return;
+                    const selects = section.querySelectorAll('select');
+                    // Set competency and trigger question dropdown population
+                    if (selects[0] && q.competency) {
+                        selects[0].value = q.competency;
+                        updateQuestions(selects[0], n);
+                        // Now set question
+                        if (selects[1] && q.question) {
+                            selects[1].value = q.question;
+                            if (q.question === '__custom__') {
+                                const customInput = document.getElementById(`q-custom-${n}`);
+                                if (customInput) {
+                                    customInput.style.display = 'block';
+                                    customInput.value = q.customQuestion || '';
+                                }
+                            }
+                        }
+                    }
+                    const textareas = section.querySelectorAll('textarea');
+                    if (textareas[0]) textareas[0].value = q.situation || '';
+                    if (textareas[1]) textareas[1].value = q.task || '';
+                    if (textareas[2]) textareas[2].value = q.action || '';
+                    if (textareas[3]) textareas[3].value = q.result || '';
+                    if (textareas[4]) textareas[4].value = q.lessonsLearned || '';
+                    if (textareas[5]) textareas[5].value = q.ifICouldGoBack || '';
+                    if (textareas[6]) textareas[6].value = q.selfAssessment || '';
+                    if (textareas[7]) textareas[7].value = q.coachFeedback || '';
+                    const checkboxes = section.querySelectorAll('input[type="checkbox"]');
+                    if (checkboxes[0]) checkboxes[0].checked = q.clientAnswered || false;
+                    if (checkboxes[1]) checkboxes[1].checked = q.clientCompetency || false;
+                    if (checkboxes[2]) checkboxes[2].checked = q.coachAnswered || false;
+                    if (checkboxes[3]) checkboxes[3].checked = q.coachCompetency || false;
+                    if (q.clientRating) { const el = document.getElementById(`c-star${q.clientRating}-${n}`); if (el) el.checked = true; }
+                    if (q.clientDelivery) { const el = document.getElementById(`cd-star${q.clientDelivery}-${n}`); if (el) el.checked = true; }
+                    if (q.coachRating) { const el = document.getElementById(`m-star${q.coachRating}-${n}`); if (el) el.checked = true; }
+                    if (q.coachDelivery) { const el = document.getElementById(`md-star${q.coachDelivery}-${n}`); if (el) el.checked = true; }
+                });
+            } else {
+                // No saved questions — start with 5 empty
+                for (let i = 0; i < 5; i++) addQuestion();
+            }
+        }
+
+        function clearAllData() {
+            if (!confirm('Clear all notes? This cannot be undone.')) return;
+            localStorage.removeItem(getStorageKey());
+            location.reload();
+        }
+
+        // ===== Question Block Builder =====
+        function addQuestion() {
+            questionCount++;
+            const n = questionCount;
+            const container = document.getElementById('questions-container');
+
+            const section = document.createElement('section');
+            section.className = 'bg-white rounded-2xl shadow-sm p-6 mb-6' + (n > 1 ? ' print-break' : '');
+            section.id = `question-${n}`;
+
+            const compOptions = Object.keys(competencies).map(c => `<option value="${c}">${c}</option>`).join('');
+
+            section.innerHTML = `
+                <div class="flex items-center justify-between mb-4">
+                    <h2 class="text-lg font-bold text-slate-800">Question ${n}</h2>
+                    <button onclick="removeQuestion(this)" class="no-print text-slate-400 hover:text-red-500 text-sm transition">Remove</button>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-4 mb-4">
+                    <div>
+                        <label class="block text-sm font-semibold text-slate-600 mb-1">Competency</label>
+                        <select onchange="updateQuestions(this, ${n}); scheduleSave();" class="w-full border border-slate-300 rounded-lg px-3 py-2 text-slate-800 bg-white focus:outline-none focus:ring-2 focus:ring-brand-secondary">
+                            <option value="">— Select Competency —</option>
+                            ${compOptions}
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-slate-600 mb-1">Question</label>
+                        <select id="q-select-${n}" onchange="handleQuestionSelect(this, ${n}); scheduleSave();" class="w-full border border-slate-300 rounded-lg px-3 py-2 text-slate-800 bg-white focus:outline-none focus:ring-2 focus:ring-brand-secondary">
+                            <option value="">— Select a question —</option>
+                        </select>
+                        <textarea id="q-custom-${n}" class="w-full border border-slate-300 rounded-lg px-3 py-2 text-slate-800 mt-2 focus:outline-none focus:ring-2 focus:ring-brand-secondary" rows="1" style="display:none; overflow:hidden;" oninput="autoExpand(this); debounceSave();" placeholder="Type or paste your custom question..."></textarea>
+                    </div>
+                </div>
+
+                <div class="bg-slate-50 rounded-xl p-4 mb-4">
+                    <p class="text-sm font-bold text-slate-500 uppercase tracking-wide mb-3">STAR+2 Notes</p>
+                    <div class="grid md:grid-cols-2 gap-3">
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-500 mb-1">S — Situation</label>
+                            <textarea class="w-full border border-slate-200 rounded-lg px-3 py-2 text-sm text-slate-800 focus:outline-none focus:ring-2 focus:ring-brand-secondary" rows="2" placeholder="How did they set the scene?"></textarea>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-500 mb-1">T — Task</label>
+                            <textarea class="w-full border border-slate-200 rounded-lg px-3 py-2 text-sm text-slate-800 focus:outline-none focus:ring-2 focus:ring-brand-secondary" rows="2" placeholder="What was their specific role?"></textarea>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-500 mb-1">A — Action</label>
+                            <textarea class="w-full border border-slate-200 rounded-lg px-3 py-2 text-sm text-slate-800 focus:outline-none focus:ring-2 focus:ring-brand-secondary" rows="3" placeholder="What did they do? Steps, tools, decisions..."></textarea>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-500 mb-1">R — Result</label>
+                            <textarea class="w-full border border-slate-200 rounded-lg px-3 py-2 text-sm text-slate-800 focus:outline-none focus:ring-2 focus:ring-brand-secondary" rows="3" placeholder="What was the outcome? Numbers?"></textarea>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-500 mb-1">+1 — Lessons Learned</label>
+                            <textarea class="w-full border border-slate-200 rounded-lg px-3 py-2 text-sm text-slate-800 focus:outline-none focus:ring-2 focus:ring-brand-secondary" rows="2" placeholder="Did they share what they took away?"></textarea>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-500 mb-1">+2 — If I Could Go Back</label>
+                            <textarea class="w-full border border-slate-200 rounded-lg px-3 py-2 text-sm text-slate-800 focus:outline-none focus:ring-2 focus:ring-brand-secondary" rows="2" placeholder="Did they say what they'd do differently?"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-4 mb-4">
+                    <div>
+                        <label class="block text-sm font-semibold text-slate-600 mb-1">Client Self-Assessment</label>
+                        <textarea class="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm text-slate-800 focus:outline-none focus:ring-2 focus:ring-brand-secondary" rows="2" placeholder="How did the client think they did?"></textarea>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-slate-600 mb-1">Coach Feedback</label>
+                        <textarea class="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm text-slate-800 focus:outline-none focus:ring-2 focus:ring-brand-secondary" rows="2" placeholder="Your notes / feedback for client..."></textarea>
+                    </div>
+                </div>
+
+                <!-- Evaluation Grid: Client + Coach -->
+                <div class="grid md:grid-cols-2 gap-4 pt-3 border-t border-slate-200 eval-grid">
+                    <!-- Client Self-Rating -->
+                    <div class="eval-section eval-client">
+                        <h4>Client Self-Rating</h4>
+                        <div class="flex flex-col gap-3">
+                            <label class="flex items-center gap-2 text-sm text-slate-700 cursor-pointer">
+                                <input type="checkbox" onchange="scheduleSave()" class="w-4 h-4 accent-sky-600 rounded">
+                                <span>Answered the question</span>
+                            </label>
+                            <label class="flex items-center gap-2 text-sm text-slate-700 cursor-pointer">
+                                <input type="checkbox" onchange="scheduleSave()" class="w-4 h-4 accent-sky-600 rounded">
+                                <span>Addressed the competency</span>
+                            </label>
+                            <div class="flex items-center gap-2">
+                                <span class="text-sm text-slate-600">Response:</span>
+                                <div class="star-rating star-rating-sm" id="client-rating-${n}">
+                                    <input type="radio" name="client-rating-${n}" id="c-star5-${n}" value="5" onchange="scheduleSave()"><label for="c-star5-${n}">★</label>
+                                    <input type="radio" name="client-rating-${n}" id="c-star4-${n}" value="4" onchange="scheduleSave()"><label for="c-star4-${n}">★</label>
+                                    <input type="radio" name="client-rating-${n}" id="c-star3-${n}" value="3" onchange="scheduleSave()"><label for="c-star3-${n}">★</label>
+                                    <input type="radio" name="client-rating-${n}" id="c-star2-${n}" value="2" onchange="scheduleSave()"><label for="c-star2-${n}">★</label>
+                                    <input type="radio" name="client-rating-${n}" id="c-star1-${n}" value="1" onchange="scheduleSave()"><label for="c-star1-${n}">★</label>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <span class="text-sm text-slate-600">Delivery:</span>
+                                <div class="star-rating star-rating-sm" id="client-delivery-${n}">
+                                    <input type="radio" name="client-delivery-${n}" id="cd-star5-${n}" value="5" onchange="scheduleSave()"><label for="cd-star5-${n}">★</label>
+                                    <input type="radio" name="client-delivery-${n}" id="cd-star4-${n}" value="4" onchange="scheduleSave()"><label for="cd-star4-${n}">★</label>
+                                    <input type="radio" name="client-delivery-${n}" id="cd-star3-${n}" value="3" onchange="scheduleSave()"><label for="cd-star3-${n}">★</label>
+                                    <input type="radio" name="client-delivery-${n}" id="cd-star2-${n}" value="2" onchange="scheduleSave()"><label for="cd-star2-${n}">★</label>
+                                    <input type="radio" name="client-delivery-${n}" id="cd-star1-${n}" value="1" onchange="scheduleSave()"><label for="cd-star1-${n}">★</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Coach Rating -->
+                    <div class="eval-section eval-coach">
+                        <h4>Coach Rating</h4>
+                        <div class="flex flex-col gap-3">
+                            <label class="flex items-center gap-2 text-sm text-slate-700 cursor-pointer">
+                                <input type="checkbox" onchange="scheduleSave()" class="w-4 h-4 accent-brand-primary rounded">
+                                <span>Answered the question</span>
+                            </label>
+                            <label class="flex items-center gap-2 text-sm text-slate-700 cursor-pointer">
+                                <input type="checkbox" onchange="scheduleSave()" class="w-4 h-4 accent-brand-primary rounded">
+                                <span>Addressed the competency</span>
+                            </label>
+                            <div class="flex items-center gap-2">
+                                <span class="text-sm text-slate-600">Response:</span>
+                                <div class="star-rating star-rating-sm" id="coach-rating-${n}">
+                                    <input type="radio" name="coach-rating-${n}" id="m-star5-${n}" value="5" onchange="scheduleSave()"><label for="m-star5-${n}">★</label>
+                                    <input type="radio" name="coach-rating-${n}" id="m-star4-${n}" value="4" onchange="scheduleSave()"><label for="m-star4-${n}">★</label>
+                                    <input type="radio" name="coach-rating-${n}" id="m-star3-${n}" value="3" onchange="scheduleSave()"><label for="m-star3-${n}">★</label>
+                                    <input type="radio" name="coach-rating-${n}" id="m-star2-${n}" value="2" onchange="scheduleSave()"><label for="m-star2-${n}">★</label>
+                                    <input type="radio" name="coach-rating-${n}" id="m-star1-${n}" value="1" onchange="scheduleSave()"><label for="m-star1-${n}">★</label>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <span class="text-sm text-slate-600">Delivery:</span>
+                                <div class="star-rating star-rating-sm" id="coach-delivery-${n}">
+                                    <input type="radio" name="coach-delivery-${n}" id="md-star5-${n}" value="5" onchange="scheduleSave()"><label for="md-star5-${n}">★</label>
+                                    <input type="radio" name="coach-delivery-${n}" id="md-star4-${n}" value="4" onchange="scheduleSave()"><label for="md-star4-${n}">★</label>
+                                    <input type="radio" name="coach-delivery-${n}" id="md-star3-${n}" value="3" onchange="scheduleSave()"><label for="md-star3-${n}">★</label>
+                                    <input type="radio" name="coach-delivery-${n}" id="md-star2-${n}" value="2" onchange="scheduleSave()"><label for="md-star2-${n}">★</label>
+                                    <input type="radio" name="coach-delivery-${n}" id="md-star1-${n}" value="1" onchange="scheduleSave()"><label for="md-star1-${n}">★</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            container.appendChild(section);
+        }
+
+        function removeQuestion(btn) {
+            btn.closest('section').remove();
+            scheduleSave();
+        }
+
+        function handleQuestionSelect(select, n) {
+            const customInput = document.getElementById(`q-custom-${n}`);
+            if (select.value === '__custom__') {
+                customInput.style.display = 'block';
+                customInput.focus();
+            } else {
+                customInput.style.display = 'none';
+                customInput.value = '';
+            }
+        }
+
+        function updateQuestions(select, n) {
+            const qSelect = document.getElementById(`q-select-${n}`);
+            qSelect.innerHTML = '<option value="">— Select a question —</option>';
+            const comp = select.value;
+            if (comp && competencies[comp]) {
+                competencies[comp].forEach(item => {
+                    const opt = document.createElement('option');
+                    opt.value = item.q;
+                    opt.textContent = item.q;
+                    if (item.neg) {
+                        opt.style.color = '#dc2626';
+                    }
+                    qSelect.appendChild(opt);
+                });
+            }
+            // Always add custom option at the end
+            const customOpt = document.createElement('option');
+            customOpt.value = '__custom__';
+            customOpt.textContent = '✏️ Custom question...';
+            customOpt.style.fontStyle = 'italic';
+            customOpt.style.color = '#6b7280';
+            qSelect.appendChild(customOpt);
+            // Hide custom input when competency changes
+            const customInput = document.getElementById(`q-custom-${n}`);
+            if (customInput) { customInput.style.display = 'none'; customInput.value = ''; }
+        }
+
+        // ===== Auto-expand textareas =====
+        function autoExpand(el) {
+            el.style.height = 'auto';
+            el.style.height = el.scrollHeight + 'px';
+        }
+        document.addEventListener('input', function(e) {
+            if (e.target.tagName === 'TEXTAREA') autoExpand(e.target);
+            scheduleSave();
+        });
+        document.addEventListener('change', scheduleSave);
+
+        // ===== Init: load saved data or start fresh =====
+        const saved = loadData();
+        if (saved) {
+            restoreData(saved);
+        } else {
+            for (let i = 0; i < 5; i++) addQuestion();
+        }
+        // Auto-expand all textareas after load
+        document.querySelectorAll('textarea').forEach(autoExpand);
+
+        // ===== Expand all textareas for print =====
+        function expandAllForPrint() {
+            document.querySelectorAll('textarea').forEach(ta => {
+                ta.style.overflow = 'visible';
+                ta.style.height = 'auto';
+                ta.style.height = ta.scrollHeight + 'px';
+            });
+        }
+        window.addEventListener('beforeprint', expandAllForPrint);
+        window.addEventListener('afterprint', () => {
+            document.querySelectorAll('textarea').forEach(ta => {
+                ta.style.overflow = 'hidden';
+                autoExpand(ta);
+            });
+        });
+    </script>
+</body>
+</html>

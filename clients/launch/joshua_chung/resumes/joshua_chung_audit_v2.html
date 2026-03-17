@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Joshua Chung — Free Resume Audit | LaunchToLead</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --brand-primary: #064e3b;
+    --brand-secondary: #14b8a6;
+    --brand-accent: #a3e635;
+    --brand-light: #ecfdf5;
+    --slate-900: #0f172a;
+    --slate-700: #334155;
+    --slate-600: #475569;
+    --slate-200: #e2e8f0;
+    --slate-50: #f8fafc;
+    --red-500: #ef4444;
+    --amber-500: #f59e0b;
+    --green-600: #16a34a;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background: var(--slate-50);
+    color: var(--slate-700);
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  .download-btn {
+    position: fixed; top: 20px; right: 20px;
+    background: var(--brand-primary); color: white;
+    border: none; padding: 10px 22px; border-radius: 9999px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 700; font-size: 13px; cursor: pointer;
+    box-shadow: 0 4px 20px rgba(6,78,59,0.3); z-index: 1000;
+  }
+  .download-btn:hover { background: var(--brand-secondary); }
+  .page-wrapper { max-width: 900px; margin: 0 auto; padding: 40px 20px 60px; }
+
+  .report-header {
+    background: var(--brand-primary); color: white;
+    padding: 40px; border-radius: 16px; margin-bottom: 28px;
+  }
+  .header-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px; }
+  .header-logo { display: flex; align-items: center; gap: 10px; }
+  .logo-mark {
+    width: 40px; height: 40px; background: rgba(255,255,255,0.12);
+    border-radius: 10px; display: flex; align-items: center; justify-content: center;
+    font-size: 16px; font-weight: 800; letter-spacing: -1px;
+  }
+  .logo-text { font-size: 20px; font-weight: 700; }
+  .logo-text span { color: var(--brand-accent); }
+  .free-badge {
+    background: var(--brand-accent); color: var(--brand-primary);
+    font-size: 11px; font-weight: 800; text-transform: uppercase;
+    letter-spacing: 0.08em; padding: 4px 14px; border-radius: 9999px;
+  }
+  .header-title { font-size: 30px; font-weight: 800; margin-bottom: 6px; }
+  .header-sub { font-size: 15px; color: rgba(255,255,255,0.75); margin-bottom: 3px; }
+  .header-tag {
+    display: inline-block;
+    background: rgba(163,230,53,0.15); border: 1px solid var(--brand-accent);
+    color: var(--brand-accent); padding: 3px 12px; border-radius: 9999px;
+    font-size: 11px; font-weight: 600; text-transform: uppercase;
+    letter-spacing: 0.05em; margin-top: 14px;
+  }
+
+  .section {
+    background: white; border-radius: 16px; padding: 36px;
+    margin-bottom: 24px; box-shadow: 0 4px 20px -2px rgba(6,78,59,0.08);
+  }
+  .section-title {
+    font-size: 18px; font-weight: 800; color: var(--brand-primary);
+    padding-bottom: 14px; border-bottom: 2px solid var(--brand-light);
+    margin-bottom: 24px; display: flex; align-items: center; gap: 10px;
+  }
+  .section-num {
+    background: var(--brand-primary); color: white;
+    width: 28px; height: 28px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 700; flex-shrink: 0;
+  }
+
+  .score-row { display: flex; align-items: center; gap: 36px; margin-bottom: 28px; }
+  .score-big {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 88px; font-weight: 700; color: var(--brand-primary); line-height: 1; flex-shrink: 0;
+  }
+  .score-big span { font-size: 34px; color: var(--slate-600); }
+  .score-right { flex: 1; }
+  .pb-label { font-size: 13px; font-weight: 700; color: var(--slate-900); margin-bottom: 8px; }
+  .pb-bg { width: 100%; height: 16px; background: var(--slate-200); border-radius: 9999px; overflow: hidden; margin-bottom: 6px; }
+  .pb-fill { height: 100%; background: linear-gradient(90deg, var(--brand-primary), var(--brand-secondary)); border-radius: 9999px; }
+  .pb-labels { display: flex; justify-content: space-between; font-size: 10px; color: var(--slate-600); font-weight: 600; }
+  .sub-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 12px; margin-bottom: 24px; }
+  .sub-card { background: var(--brand-light); border-radius: 10px; padding: 14px; text-align: center; }
+  .sub-val { font-family: 'Space Grotesk', sans-serif; font-size: 30px; font-weight: 700; color: var(--brand-primary); line-height: 1; }
+  .sub-val span { font-size: 15px; color: var(--slate-600); }
+  .sub-label { font-size: 11px; font-weight: 600; color: var(--slate-600); margin-top: 4px; }
+  .verdict {
+    background: linear-gradient(135deg, var(--brand-primary), var(--brand-secondary));
+    color: white; padding: 22px 26px; border-radius: 12px;
+  }
+  .verdict-tier { font-size: 18px; font-weight: 800; margin-bottom: 6px; }
+  .verdict-text { font-size: 14px; opacity: 0.92; line-height: 1.65; }
+
+  .issue { padding: 18px 20px; border-radius: 10px; margin-bottom: 14px; border-left: 4px solid; }
+  .issue-crit { background: #fff5f5; border-color: var(--red-500); }
+  .issue-imp  { background: #fffbeb; border-color: var(--amber-500); }
+  .issue-row  { display: flex; gap: 12px; align-items: flex-start; }
+  .ib { width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 800; flex-shrink: 0; margin-top: 1px; }
+  .ib-c { background: var(--red-500); color: white; }
+  .ib-i { background: var(--amber-500); color: white; }
+  .issue-title { font-size: 14px; font-weight: 700; color: var(--slate-900); margin-bottom: 6px; }
+  .issue-desc { font-size: 13px; line-height: 1.65; }
+  .issue-quote { background: rgba(0,0,0,0.05); border-radius: 6px; padding: 8px 12px; margin-top: 8px; font-size: 12px; font-style: italic; color: var(--slate-600); }
+
+  .rw-block { margin-bottom: 28px; }
+  .rw-ctx { background: var(--slate-50); border: 1px solid var(--slate-200); border-radius: 8px; padding: 10px 14px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--slate-600); margin-bottom: 10px; }
+  .rw-before { background: #fff5f5; border: 1px solid #fecaca; border-radius: 8px; padding: 14px; margin-bottom: 8px; }
+  .rw-after  { background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 14px; }
+  .rw-lbl { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 6px; }
+  .rw-before .rw-lbl { color: var(--red-500); }
+  .rw-after  .rw-lbl { color: var(--green-600); }
+  .rw-txt { font-size: 13px; line-height: 1.7; }
+  .rw-before .rw-txt { color: #991b1b; }
+  .rw-after  .rw-txt { color: #166534; }
+  .ph { color: var(--brand-secondary); font-weight: 600; }
+  .ph-note { font-size: 12px; color: var(--slate-600); font-style: italic; margin-top: 10px; background: rgba(0,0,0,0.03); padding: 8px 12px; border-radius: 6px; }
+
+  .ba { margin-bottom: 28px; border: 1px solid var(--slate-200); border-radius: 12px; overflow: hidden; }
+  .ba-ctx { background: var(--slate-50); padding: 10px 16px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--slate-600); border-bottom: 1px solid var(--slate-200); }
+  .ba-b { background: #fff5f5; padding: 16px; border-bottom: 1px solid var(--slate-200); }
+  .ba-a { background: #f0fdf4; padding: 16px; }
+  .ba-lbl { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px; }
+  .ba-b .ba-lbl { color: var(--red-500); }
+  .ba-a .ba-lbl { color: var(--green-600); }
+  .ba-txt { font-size: 13px; line-height: 1.7; }
+  .ba-b .ba-txt { color: #991b1b; }
+  .ba-a .ba-txt { color: #166534; }
+
+  .ai { display: flex; gap: 14px; padding: 16px; background: var(--brand-light); border-radius: 10px; margin-bottom: 12px; align-items: flex-start; }
+  .ai-num { width: 30px; height: 30px; background: var(--brand-primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 800; flex-shrink: 0; }
+  .ai-title { font-size: 14px; font-weight: 700; color: var(--brand-primary); margin-bottom: 4px; }
+  .ai-desc { font-size: 13px; line-height: 1.65; }
+
+  .wi { display: flex; gap: 12px; padding: 14px; background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 10px; margin-bottom: 10px; }
+  .wi-chk { width: 22px; height: 22px; background: var(--green-600); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; flex-shrink: 0; margin-top: 1px; }
+  .wi-title { font-size: 14px; font-weight: 700; color: #166534; margin-bottom: 3px; }
+  .wi-desc { font-size: 13px; color: #166534; line-height: 1.55; }
+
+  .sc-table { width: 100%; border-collapse: collapse; }
+  .sc-table th { background: var(--brand-primary); color: white; padding: 12px 14px; text-align: left; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; }
+  .sc-table td { padding: 12px 14px; border-bottom: 1px solid var(--slate-200); font-size: 13px; vertical-align: top; }
+  .sc-table tr:nth-child(even) td { background: var(--slate-50); }
+  .sc-table tr.tr-total td { background: var(--brand-primary); color: white; font-weight: 700; font-size: 14px; }
+  .sc-score { font-family: 'Space Grotesk', sans-serif; font-size: 18px; font-weight: 700; color: var(--brand-primary); text-align: center; white-space: nowrap; }
+  .sc-score-total { font-family: 'Space Grotesk', sans-serif; font-size: 22px; font-weight: 700; color: var(--brand-accent); text-align: center; }
+  .good-news { background: linear-gradient(135deg, var(--brand-primary), var(--brand-secondary)); color: white; padding: 26px; border-radius: 12px; margin-top: 24px; }
+  .good-news-title { font-size: 16px; font-weight: 800; margin-bottom: 8px; }
+  .good-news-text { font-size: 14px; line-height: 1.7; opacity: 0.95; }
+
+  .cta-section {
+    background: linear-gradient(135deg, var(--slate-900), #1e293b);
+    color: white; padding: 40px; border-radius: 16px; margin-bottom: 24px;
+  }
+  .cta-title { font-size: 24px; font-weight: 800; margin-bottom: 8px; text-align: center; }
+  .cta-sub { font-size: 15px; color: rgba(255,255,255,0.78); margin-bottom: 28px; line-height: 1.6; text-align: center; }
+  .cta-steps { list-style: none; margin-bottom: 0; }
+  .cta-steps li { display: flex; gap: 14px; align-items: flex-start; padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
+  .cta-steps li:last-child { border-bottom: none; }
+  .cta-step-num { width: 28px; height: 28px; border-radius: 50%; background: var(--brand-secondary); color: white; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 800; flex-shrink: 0; }
+  .cta-step-title { font-size: 14px; font-weight: 700; margin-bottom: 3px; }
+  .cta-step-desc { font-size: 13px; color: rgba(255,255,255,0.75); line-height: 1.55; }
+  .cta-deliverables { background: rgba(255,255,255,0.07); border-radius: 10px; padding: 18px 20px; font-size: 13px; color: rgba(255,255,255,0.85); line-height: 1.8; }
+
+  .report-footer { text-align: center; padding: 32px; color: var(--slate-600); font-size: 13px; }
+  .report-footer a { color: var(--brand-secondary); }
+
+  @media print {
+    * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    body { background: white; }
+    .download-btn { display: none !important; }
+    .page-wrapper { padding: 20px; max-width: 100%; }
+
+    /* Header, Section 1, and Section 2 all flow together — no breaks between them */
+    .report-header { margin-bottom: 20px; }
+    .section { box-shadow: none; border: 1px solid #e2e8f0; margin-bottom: 16px; page-break-inside: auto; }
+
+    /* Explicit breaks only at major chapter boundaries */
+    .break-before { page-break-before: always; }
+    .cta-section  { page-break-before: always; }
+
+    /* Never split these mid-card */
+    .issue    { page-break-inside: avoid; }
+    .rw-block { page-break-inside: avoid; }
+    .ba       { page-break-inside: avoid; }
+    .ai       { page-break-inside: avoid; }
+    .wi       { page-break-inside: avoid; }
+    .verdict  { page-break-inside: avoid; }
+    .good-news { page-break-inside: avoid; }
+    .sub-grid { page-break-inside: avoid; }
+    .ph-note  { page-break-inside: avoid; }
+    .sc-table tr { page-break-inside: avoid; }
+    .section-title { page-break-after: avoid; }
+  }
+  @media (max-width: 620px) {
+    .sub-grid { grid-template-columns: repeat(2,1fr); }
+    .score-row { flex-direction: column; gap: 16px; }
+    .score-big { font-size: 64px; }
+  }
+</style>
+</head>
+<body>
+
+<button class="download-btn" onclick="window.print()">↓ Download PDF</button>
+
+<div class="page-wrapper">
+
+  <!-- HEADER -->
+  <div class="report-header">
+    <div class="header-top">
+      <div class="header-logo">
+        <div class="logo-mark">L²</div>
+        <div class="logo-text">Launch<span>ToLead</span></div>
+      </div>
+      <div class="free-badge">Free Audit</div>
+    </div>
+    <div class="header-title">Resume Audit Report</div>
+    <div class="header-sub">Joshua Chung — B.S. Mechanical Engineering, UC Riverside (2025)</div>
+    <div class="header-sub">NASA Micro-g NExT · Bridge Capstone · Mechanical Design · AI Robotics Lab</div>
+    <div class="header-tag">Scored against the Impact Bullet Builder™ Framework · 13 Bullets Analyzed</div>
+  </div>
+
+  <!-- SECTION 1: SCORE -->
+  <div class="section">
+    <div class="section-title"><span class="section-num">1</span> Overall Score</div>
+    <div class="score-row">
+      <div class="score-big">51<span>/100</span></div>
+      <div class="score-right">
+        <div class="pb-label">Your Resume Score</div>
+        <div class="pb-bg"><div class="pb-fill" style="width:51%"></div></div>
+        <div class="pb-labels">
+          <span>10–30 ★ What Was Asked</span>
+          <span>31–60 ★★ Above &amp; Beyond</span>
+          <span>61–100 ★★★ Impact</span>
+        </div>
+      </div>
+    </div>
+    <div class="sub-grid">
+      <div class="sub-card">
+        <div class="sub-val">4<span>/10</span></div>
+        <div class="sub-label">Accomplishments</div>
+      </div>
+      <div class="sub-card">
+        <div class="sub-val">4<span>/10</span></div>
+        <div class="sub-label">Metrics</div>
+      </div>
+      <div class="sub-card">
+        <div class="sub-val">10<span>/10</span></div>
+        <div class="sub-label">How / Method</div>
+      </div>
+      <div class="sub-card">
+        <div class="sub-val">2<span>/10</span></div>
+        <div class="sub-label">Why / Impact</div>
+      </div>
+    </div>
+    <div class="verdict">
+      <div class="verdict-tier">★★ &nbsp;You Went Above and Beyond</div>
+      <div class="verdict-text">51/100 puts this resume in the middle tier — solidly above ★-level work, but with a clear ceiling. The tooling and methodology section is perfect: SolidWorks, FEA, GD&T, Roboflow, CNC machining all named throughout. What's holding the score back is a near-total absence of "Why" and zero problem context across all 13 bullets. This resume shows what you built. It doesn't yet show what changed because you built it — and that's the entire gap between ★★ and ★★★.</div>
+    </div>
+  </div>
+
+  <!-- SECTION 2: KEY ISSUES -->
+  <div class="section">
+    <div class="section-title"><span class="section-num">2</span> Key Issues Identified</div>
+
+    <div class="issue issue-crit">
+      <div class="issue-row">
+        <span class="ib ib-c">1</span>
+        <div>
+          <div class="issue-title">"Why" is almost entirely missing — 11 of 13 bullets stop before the business outcome</div>
+          <div class="issue-desc">The IBB formula requires every bullet to close the loop: why did this result matter? Only 2 bullets on this resume do that — the bridge efficiency bullet (structural efficiency ratio of 276) and the Roboflow bullet (cutting preparation time by 20%). Every other bullet ends at the deliverable or the specification, not the consequence. "Resulting in a lightweight design ergonomically suitable for astronaut use" is a design requirement — it's not the same as a stated outcome. What did the lightweight design enable? Faster EVA deployment? Fit within a mass budget that cleared a NASA review gate? That one sentence is the difference between a spec-compliant resume and a standout one.</div>
+          <div class="issue-quote">"Designed a lunar payload subsystem device...resulting in a lightweight and ergonomically suitable for astronaut use" — ends at a requirement, not an outcome.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="issue issue-crit">
+      <div class="issue-row">
+        <span class="ib ib-c">2</span>
+        <div>
+          <div class="issue-title">Zero problem context across all 13 bullets</div>
+          <div class="issue-desc">Not a single bullet on this resume frames what you walked into before you fixed it. Problem context is what makes a result feel earned rather than assumed — and it's the lowest-scoring criterion at 1/10. The format is simple: one sentence before the accomplishment that establishes stakes, constraints, or the before-state. "With no existing cam mechanism validated for EVA glove use..." or "On a bridge design that had failed at 1,800g in the prior iteration..." reframes everything that follows. Without context, a hiring manager reads your results and thinks "that's what the project asked for." With context, they read it and think "that's what you solved."</div>
+          <div class="issue-quote">0 of 13 bullets include stakes, before/after framing, or scale context of any kind.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="issue issue-crit">
+      <div class="issue-row">
+        <span class="ib ib-c">3</span>
+        <div>
+          <div class="issue-title">Most bullets describe tasks completed, not accomplishments achieved</div>
+          <div class="issue-desc">8 of 13 bullets describe what you did — designed, developed, implemented, performed, created — without stating what changed because you did it. The IBB test is simple: if someone else with the same job title could write this exact bullet, it's a duty description, not an accomplishment. "Performed design verification and testing using FEA and measurement tools validating the device against strict specifications" tells a hiring manager you ran tests. It doesn't tell them what the tests confirmed, what failure modes were eliminated, or what milestone the validation cleared. The fix is almost always one clause: add the outcome of the action, not just the action itself.</div>
+          <div class="issue-quote">"Created documentation and decision matrices, detailing the trade-offs, performance metrics, and clean sheet design process to support subsystem integration" — describes the deliverable with no outcome stated.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="issue issue-imp">
+      <div class="issue-row">
+        <span class="ib ib-i">4</span>
+        <div>
+          <div class="issue-title">Metrics missing from 8 of 13 bullets</div>
+          <div class="issue-desc">The two strongest bullets on the resume — the bridge efficiency (5,240g / ratio of 276) and the Roboflow processing (100+ frames, 20% time reduction) — work because they have numbers. Eight other bullets have no specific quantity at all. For capstone and project work, common sources include: load capacity tested, iteration count, mass/weight targets met, tolerances achieved, time to complete a process step, number of components in an assembly, or FEA stress values vs. material limits. "3+ prototype iterations" is a start; "3 prototype iterations that reduced mass by [X]% while meeting NASA's [X]kg mass budget" is the target.</div>
+          <div class="issue-quote">"Developed a cam-based mechanical system and manually operated digging mechanism using Solidworks Simulation ensuring EVA glove compatibility..." — no number, no before/after comparison.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 3: TOP BULLETS REWRITTEN -->
+  <div class="section break-before">
+    <div class="section-title"><span class="section-num">3</span> Top Bullets — Rewritten</div>
+    <p style="font-size:13px; color:var(--slate-600); margin-bottom:20px; font-style:italic;">The 5 bullets with the highest improvement potential — each already has at least 2 of the 4 IBB components and gains the most from closing the missing gaps.</p>
+
+    <div class="rw-block">
+      <div class="rw-ctx">NASA Micro-g NExT Capstone — Lunar Payload Device Design</div>
+      <div class="rw-before">
+        <div class="rw-lbl">✕ Original</div>
+        <div class="rw-txt">Designed a lunar payload subsystem device using Solidworks integrating multiple mechanical subsystems to collect and store 1-5 mm of lunar regolith resulting in a lightweight and ergonomically suitable for astronaut use</div>
+      </div>
+      <div class="rw-after">
+        <div class="rw-lbl">✓ Rewritten</div>
+        <div class="rw-txt">Designed a lunar regolith collection and storage subsystem in SolidWorks — integrating <span class="ph">[X]</span> mechanical subsystems capable of capturing 1–5 mm particles — achieving a <span class="ph">[X]</span> kg final mass that met NASA's EVA ergonomics constraints and cleared the program's design review milestone.</div>
+      </div>
+    </div>
+
+    <div class="rw-block">
+      <div class="rw-ctx">NASA Micro-g NExT Capstone — Manufacturing & Prototyping</div>
+      <div class="rw-before">
+        <div class="rw-lbl">✕ Original</div>
+        <div class="rw-txt">Implemented manufacturing and assembly processes with 3D printing and CNC machining producing 3+ prototype iterations allowing for easy part replacement while aligning with NASA interface constraints</div>
+      </div>
+      <div class="rw-after">
+        <div class="rw-lbl">✓ Rewritten</div>
+        <div class="rw-txt">Produced 3+ prototype iterations using 3D printing and CNC machining — each incorporating a modular part replacement design — reducing redesign turnaround time by an estimated <span class="ph">[X]</span>% and achieving full compliance with NASA interface constraints by final submission.</div>
+      </div>
+    </div>
+
+    <div class="rw-block">
+      <div class="rw-ctx">Bridge Capstone — Structural Performance</div>
+      <div class="rw-before">
+        <div class="rw-lbl">✕ Original</div>
+        <div class="rw-txt">Engineered a bridge supporting 5240 grams of load, achieving a structural efficiency ratio of 276 through weight reduction and simulation driven design</div>
+      </div>
+      <div class="rw-after">
+        <div class="rw-lbl">✓ Rewritten</div>
+        <div class="rw-txt">Engineered a truss bridge sustaining 5,240g of load with a structural efficiency ratio of 276 — ranking in the top <span class="ph">[X]</span>% of the class — by iterating truss geometry through SolidWorks FEA simulation across 3+ design cycles to systematically eliminate failure sites and minimize structural weight.</div>
+      </div>
+    </div>
+
+    <div class="rw-block">
+      <div class="rw-ctx">Bridge Capstone — FEA & Structural Analysis</div>
+      <div class="rw-before">
+        <div class="rw-lbl">✕ Original</div>
+        <div class="rw-txt">Led structural analysis and FEA on a truss bridge to identify stress concentrations and predict failure sites under distributed loads</div>
+      </div>
+      <div class="rw-after">
+        <div class="rw-lbl">✓ Rewritten</div>
+        <div class="rw-txt">Led structural FEA on a truss bridge to map stress concentrations and predict failure sites under distributed loads — findings directly informed geometry changes that increased load capacity from <span class="ph">[X]</span>g to 5,240g across 3 design iterations.</div>
+      </div>
+    </div>
+
+    <div class="rw-block">
+      <div class="rw-ctx">AI Robotics Laboratory — Computer Vision Processing</div>
+      <div class="rw-before">
+        <div class="rw-lbl">✕ Original</div>
+        <div class="rw-txt">Processed 100+ robotic manipulation frames using computer vision tools like Roboflow, cutting preparation time by 20%</div>
+      </div>
+      <div class="rw-after">
+        <div class="rw-lbl">✓ Rewritten</div>
+        <div class="rw-txt">Processed 100+ robotic manipulation frames using Roboflow, cutting dataset preparation time by 20% — accelerating the lab's training pipeline and enabling the team to run <span class="ph">[X]</span> additional model iterations within the same project timeline.</div>
+      </div>
+    </div>
+
+    <div class="ph-note">Brackets like <strong style="color:var(--brand-secondary);">[X]</strong> are placeholders — only you know the real numbers. Fill them in with your best estimate. A conservative guess beats no number at all.</div>
+  </div>
+
+  <!-- SECTION 4: BEFORE & AFTER -->
+  <div class="section break-before">
+    <div class="section-title"><span class="section-num">4</span> Before &amp; After — Best Examples</div>
+
+    <div class="ba">
+      <div class="ba-ctx">Example 1 &nbsp;·&nbsp; Bridge Capstone — FEA Lead &nbsp;·&nbsp; Tier Jump: ★ → ★★★</div>
+      <div class="ba-b">
+        <div class="ba-lbl">✕ BEFORE (★ Level)</div>
+        <div class="ba-txt">Led structural analysis and FEA on a truss bridge to identify stress concentrations and predict failure sites under distributed loads</div>
+      </div>
+      <div class="ba-a">
+        <div class="ba-lbl">✓ AFTER (★★★ Level)</div>
+        <div class="ba-txt">Led structural FEA on a truss bridge to map stress concentrations and predict failure sites under distributed loads — findings directly informed geometry changes that increased load capacity from [X]g to 5,240g across 3 design iterations, contributing to a final structural efficiency ratio of 276.</div>
+      </div>
+    </div>
+
+    <div class="ba">
+      <div class="ba-ctx">Example 2 &nbsp;·&nbsp; NASA Capstone — Manufacturing &nbsp;·&nbsp; Tier Jump: ★★ → ★★★</div>
+      <div class="ba-b">
+        <div class="ba-lbl">✕ BEFORE (★★ Level)</div>
+        <div class="ba-txt">Implemented manufacturing and assembly processes with 3D printing and CNC machining producing 3+ prototype iterations allowing for easy part replacement while aligning with NASA interface constraints</div>
+      </div>
+      <div class="ba-a">
+        <div class="ba-lbl">✓ AFTER (★★★ Level)</div>
+        <div class="ba-txt">Produced 3+ prototype iterations using 3D printing and CNC machining — each incorporating a modular part replacement design — reducing redesign turnaround by an estimated [X]% and achieving full compliance with NASA interface constraints by final submission.</div>
+      </div>
+    </div>
+
+    <div class="ba">
+      <div class="ba-ctx">Example 3 &nbsp;·&nbsp; AI Robotics Lab — Roboflow &nbsp;·&nbsp; Why Extended: ★★ → ★★★</div>
+      <div class="ba-b">
+        <div class="ba-lbl">✕ BEFORE (★★ Level)</div>
+        <div class="ba-txt">Processed 100+ robotic manipulation frames using computer vision tools like Roboflow, cutting preparation time by 20%</div>
+      </div>
+      <div class="ba-a">
+        <div class="ba-lbl">✓ AFTER (★★★ Level)</div>
+        <div class="ba-txt">Processed 100+ robotic manipulation frames using Roboflow, cutting dataset preparation time by 20% — accelerating the lab's training pipeline and enabling the team to run [X] additional model iterations within the same project timeline.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 5: ACTION ITEMS -->
+  <div class="section">
+    <div class="section-title"><span class="section-num">5</span> Top Action Items</div>
+
+    <div class="ai">
+      <div class="ai-num">1</div>
+      <div>
+        <div class="ai-title">Add "Why" to every bullet — what changed because of what you built?</div>
+        <div class="ai-desc">For each bullet, ask one question after the result: "So what?" What did the design enable? What milestone did the test clear? What risk did it eliminate? The answer — even estimated — is your "Why." For NASA work specifically: did the device clear a design review? Meet a mass budget? Pass a fit check? Those outcomes exist; they just need to be stated. This single edit moves more bullets from ★★ to ★★★ than any other change on this resume.</div>
+      </div>
+    </div>
+
+    <div class="ai">
+      <div class="ai-num">2</div>
+      <div>
+        <div class="ai-title">Add one sentence of context to each role's strongest bullet</div>
+        <div class="ai-desc">You don't need context on every bullet — start with your best one per role. For the bridge: what was the prior iteration's load capacity before your FEA work? For NASA: what was the design constraint you were working against (mass limit, EVA glove force limit, regolith particle range)? A single framing sentence — "Working within NASA's [X]kg EVA tool mass budget..." — makes everything that follows land harder. Context is what makes results feel earned.</div>
+      </div>
+    </div>
+
+    <div class="ai">
+      <div class="ai-num">3</div>
+      <div>
+        <div class="ai-title">Add numbers to the 8 bullets that currently have none</div>
+        <div class="ai-desc">For project and capstone work, look for: load values tested, mass/weight targets, tolerances achieved, FEA stress values vs. material yield limits, number of components in the assembly, time to complete a key process step, or percentage improvement from one iteration to the next. If you genuinely don't have a number, a before/after comparison or a scale statement ("across a 6-member team," "for a 12-week capstone") is better than nothing. Numbers are what interviewers ask about — put them on the page so the conversation starts there.</div>
+      </div>
+    </div>
+
+    <div class="ai">
+      <div class="ai-num">4</div>
+      <div>
+        <div class="ai-title">Replace "Collaborated" and "Supported" with specific owned actions</div>
+        <div class="ai-desc">"Collaborated with a team to design, fabricate, and test 3+ bridge iterations" and "Supported validation design efforts" both hide your personal contribution. What specifically did you own? Did you run the FEA? Set up the test rig? Define the load increments? Replacing "Collaborated with a team" with "Owned the FEA analysis across 3 bridge iterations, identifying the truss node geometry changes that..." takes the same fact and makes it yours. "Supported" is on the banned list for a reason — it signals a secondary role even when you weren't playing one.</div>
+      </div>
+    </div>
+
+    <div class="ai">
+      <div class="ai-num">5</div>
+      <div>
+        <div class="ai-title">Strengthen the Mechanical Design & Assembly role with outcomes</div>
+        <div class="ai-desc">Both bullets in this role ("Developed engineering drawings... applying GD&T" and "Created structured assembly procedure and BOM") describe deliverables with no stated outcome. What did the GD&T callouts enable — first-pass manufacturability? A specific tolerance stack requirement met? What was the BOM for — how many components, what type of system? One concrete detail per bullet turns these from task descriptions into contribution statements. This role is recent (Feb 2026) and deserves to be as strong as the capstone work.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 6: WHAT'S WORKING -->
+  <div class="section">
+    <div class="section-title"><span class="section-num">6</span> What's Already Working</div>
+
+    <div class="wi">
+      <div class="wi-chk">✓</div>
+      <div>
+        <div class="wi-title">Tools and methods are named throughout — 10/10 on "How"</div>
+        <div class="wi-desc">SolidWorks, SolidWorks Simulation, FEA, 3D printing, CNC machining, GD&T, Roboflow, additive manufacturing — specific tools appear in nearly every bullet. This is exactly what the IBB "How" component requires, and it's the single strongest criterion on the resume. Hiring managers and ATS systems both reward named tools, and you've done it consistently.</div>
+      </div>
+    </div>
+
+    <div class="wi">
+      <div class="wi-chk">✓</div>
+      <div>
+        <div class="wi-title">The two strongest bullets are genuinely strong</div>
+        <div class="wi-desc">The bridge efficiency bullet (5,240g / ratio of 276) and the Roboflow bullet (100+ frames / 20% time reduction) both have accomplishment, metric, and partial "Why." They demonstrate that you understand how to structure a high-impact bullet — the goal is to apply that same structure to the other 11 entries.</div>
+      </div>
+    </div>
+
+    <div class="wi">
+      <div class="wi-chk">✓</div>
+      <div>
+        <div class="wi-title">Strong action verbs on 12 of 13 bullets</div>
+        <div class="wi-desc">Designed, Developed, Implemented, Led, Engineered, Processed — almost every bullet opens with a clear action verb. Only one bullet ("Supported...") fails this test. The mechanical quality of your bullet structure is solid; the gap is in content, not format.</div>
+      </div>
+    </div>
+
+    <div class="wi">
+      <div class="wi-chk">✓</div>
+      <div>
+        <div class="wi-title">NASA project is a legitimate differentiator — make it work harder</div>
+        <div class="wi-desc">Very few entry-level mechanical engineering candidates have a NASA-affiliated capstone on their resume. That project name earns a second look from hiring managers. Right now the bullets under it are doing only partial justice to what was accomplished. With stronger "Why" framing and problem context, the NASA section alone could carry the interview conversation at a top-tier company.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 7: SCORECARD -->
+  <div class="section break-before">
+    <div class="section-title"><span class="section-num">7</span> Full Scorecard</div>
+    <table class="sc-table">
+      <thead>
+        <tr>
+          <th style="width:34%">Criteria</th>
+          <th style="width:11%; text-align:center;">Score</th>
+          <th>Observation</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>1. Accomplishments (not duties)</strong></td>
+          <td class="sc-score">4/10</td>
+          <td>5 of 13 bullets describe clear accomplishments. The remaining 8 describe tasks completed or deliverables produced without stating the outcome. Common pattern: "Performed X to validate Y" — the validation result is never stated.</td>
+        </tr>
+        <tr>
+          <td><strong>2. Metrics / Quantification</strong></td>
+          <td class="sc-score">4/10</td>
+          <td>5 of 13 bullets contain a specific number. The bridge efficiency and Roboflow bullets are well-quantified. The NASA bullets have partial numbers (1–5 mm, 3+ iterations) but most lack load values, mass targets, tolerance specs, or performance comparisons.</td>
+        </tr>
+        <tr>
+          <td><strong>3. How / Method Shown</strong></td>
+          <td class="sc-score">10/10</td>
+          <td>12 of 13 bullets name a specific tool, method, or technology. This is the strongest criterion on the resume by a wide margin. SolidWorks, FEA, CNC machining, GD&T, Roboflow, and additive manufacturing all appear in context, not just in a skills list.</td>
+        </tr>
+        <tr>
+          <td><strong>4. Why / Business Impact</strong></td>
+          <td class="sc-score">2/10</td>
+          <td>2 of 13 bullets connect the result to a meaningful outcome. The structural efficiency ratio of 276 implies competitive performance, and the 20% preparation time reduction is a clear time-saving outcome. All other bullets end at the deliverable or design spec.</td>
+        </tr>
+        <tr>
+          <td><strong>5. Personal Ownership</strong></td>
+          <td class="sc-score">8/10</td>
+          <td>10 of 13 bullets use first-person active framing. Fails on "Collaborated with a team to design, fabricate..." (bullet 7), "Supported validation design efforts" (bullet 8), and "Collaborated on a 3-finger robotic gripper" (bullet 12). All three have a specific owned action underneath — it just needs to be named.</td>
+        </tr>
+        <tr>
+          <td><strong>6. Problem Context / "So What?"</strong></td>
+          <td class="sc-score">1/10</td>
+          <td>0 of 13 bullets include any stakes, before/after framing, or scale context. This is the lowest-scoring criterion and the highest single-impact improvement available. No bullet establishes what you walked into before you solved it.</td>
+        </tr>
+        <tr>
+          <td><strong>7. Action Verbs</strong></td>
+          <td class="sc-score">10/10</td>
+          <td>12 of 13 bullets start with a strong action verb. One failure: "Supported validation design efforts..." — "Supported" is a passive, secondary-role verb. The other 12 are clean.</td>
+        </tr>
+        <tr>
+          <td><strong>8. Bullet Quality Consistency</strong></td>
+          <td class="sc-score">2/10</td>
+          <td>2 bullets at ★★★, 3 at ★★, 8 at ★. The majority of bullets are ★-level with only a few exceptions — this places the score at the bottom of the 1–2 range. Addressing issues 1–3 above would move most bullets to ★★ or ★★★ and push this criterion to 6+ on its own.</td>
+        </tr>
+        <tr class="tr-total">
+          <td><strong>OVERALL SCORE</strong></td>
+          <td class="sc-score-total">51/100</td>
+          <td><strong>★★ — You Went Above and Beyond.</strong> Middle tier. The tooling foundation is strong. The path to ★★★ requires adding "Why" and problem context — both are content edits, not structural ones.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="good-news">
+      <div class="good-news-title">The Good News</div>
+      <div class="good-news-text">A 51 with a perfect 10/10 on "How" and 8/10 on ownership at the entry level tells you something important: you know how to describe your work precisely and you take ownership of your contributions. That's a harder problem to fix than the one you actually have. Your gap — missing "Why" and missing context — is a framing problem, not an experience problem. The accomplishments are real. The NASA project is real. The bridge performance is real. You just haven't yet connected those results to the outcomes that a hiring manager cares about. That's the entire edit from 51 to 75+: one clause per bullet that answers "so what did that enable?" Add those, and this resume looks like someone who's been doing this for years.</div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-section" style="padding:26px 36px;">
+    <div style="text-align:center; margin-bottom:6px;">
+      <span style="font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:0.12em; color:var(--brand-accent);">What's Next</span>
+    </div>
+    <div class="cta-title" style="font-size:20px; margin-bottom:6px;">Want Help Fixing All of This?</div>
+    <div class="cta-sub" style="font-size:13px; margin-bottom:16px;">This audit covered your top 5 bullets. The other bullets on your resume have the same potential — they just need the same treatment.</div>
+
+    <div style="background:rgba(255,255,255,0.07); border-radius:12px; padding:16px 20px; margin-bottom:16px;">
+      <div style="font-size:14px; font-weight:800; color:white; margin-bottom:3px;">The 21-Day Accelerator Program</div>
+      <div style="font-size:12px; color:rgba(255,255,255,0.72); margin-bottom:10px;">3 × 90-minute 1-on-1 sessions over 3 weeks:</div>
+      <ul class="cta-steps" style="margin-bottom:10px;">
+        <li style="padding:8px 0;">
+          <div class="cta-step-num">1</div>
+          <div>
+            <div class="cta-step-title" style="font-size:13px;">Resume Rebuilt</div>
+            <div class="cta-step-desc" style="font-size:12px;">Every bullet rewritten with the Impact Bullet Builder formula. Not 5 bullets. All of them.</div>
+          </div>
+        </li>
+        <li style="padding:8px 0;">
+          <div class="cta-step-num">2</div>
+          <div>
+            <div class="cta-step-title" style="font-size:13px;">Interview Stories Mastered</div>
+            <div class="cta-step-desc" style="font-size:12px;">Your master story bank built and structured in the format interviewers want to hear.</div>
+          </div>
+        </li>
+        <li style="padding:8px 0;">
+          <div class="cta-step-num">3</div>
+          <div>
+            <div class="cta-step-title" style="font-size:13px;">Live Mock Interview</div>
+            <div class="cta-step-desc" style="font-size:12px;">A full practice interview with direct feedback so you walk in ready.</div>
+          </div>
+        </li>
+      </ul>
+      <div class="cta-deliverables" style="padding:10px 14px; font-size:12px;">
+        You leave with: a rebuilt resume · master story bank · mock interview notes · all session recordings · and 40+ bonus materials.
+      </div>
+    </div>
+
+    <div style="text-align:center;">
+      <div style="font-size:12px; color:rgba(255,255,255,0.72); margin-bottom:8px;">View the program, watch the video, and see if you're a fit:</div>
+      <a href="https://launchtolead.io/coaching?utm_source=audit&utm_medium=email&utm_campaign=free-audit&utm_content=joshua-chung" style="font-size:18px; font-weight:800; color:var(--brand-accent); text-decoration:underline;">launchtolead.io/coaching</a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="report-footer">
+    <p>Free audit prepared by LaunchToLead &nbsp;|&nbsp; Impact Bullet Builder™ Framework</p>
+    <p style="margin-top:6px;"><a href="https://launchtolead.io/free">launchtolead.io/free</a></p>
+  </div>
+
+</div>
+</body>
+</html>

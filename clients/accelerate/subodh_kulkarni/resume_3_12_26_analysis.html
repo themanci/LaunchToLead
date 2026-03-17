@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Analysis — Subodh Kulkarni, Ph.D. | LaunchToLead</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .font-mono-num { font-family: 'Space Grotesk', monospace; }
+
+        /* Download PDF Button */
+        #download-btn {
+            position: fixed; top: 20px; right: 20px; z-index: 9999;
+            background: linear-gradient(135deg, #a3e635, #14b8a6); color: #052e16;
+            font-family: 'Plus Jakarta Sans', sans-serif; font-size: 16px; font-weight: 800;
+            padding: 14px 32px; border: none; border-radius: 50px; cursor: pointer;
+            box-shadow: 0 8px 30px rgba(163,230,53,0.3);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        #download-btn:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(163,230,53,0.4); }
+
+        @media print {
+            @page {
+                size: letter;
+                margin: 0.5in 0.65in;
+            }
+            body {
+                background: white !important;
+                color: #1e293b !important;
+                padding: 0 !important;
+                margin: 0 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            #download-btn { display: none !important; }
+            .page-break { break-before: page; }
+            .keep-together { break-inside: avoid; }
+            .space-y-4 > div,
+            .space-y-6 > div,
+            .grid > div { break-inside: avoid; }
+            section .mb-5 { break-inside: avoid; }
+            ul.space-y-3 > li { break-inside: avoid; }
+            tbody tr { break-inside: avoid; }
+            .rounded-xl.overflow-hidden { break-inside: avoid; }
+            h2, h3, h4 { break-after: avoid; }
+            section {
+                box-shadow: none !important;
+                border: 1px solid #e2e8f0 !important;
+            }
+            .max-w-4xl { max-width: 100% !important; }
+            .bg-red-900, .bg-amber-800, .bg-emerald-900 {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-700">
+
+<!-- Download PDF Button -->
+<button id="download-btn" onclick="window.print()">Download PDF</button>
+
+<!-- ============================================ -->
+<!-- HEADER                                        -->
+<!-- ============================================ -->
+<header class="bg-emerald-900 text-white py-6 px-6">
+    <div class="max-w-4xl mx-auto">
+        <div class="flex items-center gap-3 mb-4">
+            <div class="bg-white text-emerald-900 w-10 h-10 rounded-xl flex items-center justify-center font-bold text-sm shadow">L²</div>
+            <span class="text-xl font-bold">Launch<span class="font-light text-lime-300">ToLead</span></span>
+        </div>
+        <h1 class="text-3xl font-extrabold mb-1">Resume Analysis & Rewrite</h1>
+        <p class="text-emerald-200">Subodh Kulkarni, Ph.D. — Quality Engineering Leadership</p>
+        <p class="text-emerald-400/60 text-sm mt-1">Analyzed against the Impact Bullet Builder™ framework</p>
+    </div>
+</header>
+
+<div class="max-w-4xl mx-auto px-6 py-10 space-y-10">
+
+    <!-- ============================================ -->
+    <!-- SECTION 1: OVERALL SCORE                     -->
+    <!-- ============================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 overflow-hidden">
+        <div class="p-8">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="w-8 h-8 rounded-lg bg-amber-500 text-white flex items-center justify-center text-sm font-bold">📊</div>
+                <h2 class="text-2xl font-extrabold text-slate-900">Overall Score</h2>
+            </div>
+
+            <div class="flex items-center gap-8 mb-6">
+                <div class="text-center">
+                    <p class="font-mono-num text-6xl font-extrabold text-amber-500">51</p>
+                    <p class="text-slate-500 text-sm">out of 100</p>
+                </div>
+                <div class="flex-1">
+                    <div class="h-4 bg-slate-100 rounded-full overflow-hidden mb-2">
+                        <div class="h-full rounded-full" style="width: 51%; background: linear-gradient(to right, #f59e0b, #eab308);"></div>
+                    </div>
+                    <div class="flex justify-between text-xs text-slate-400">
+                        <span>0 — Invisible</span>
+                        <span>50 — Achiever</span>
+                        <span>100 — Impact Standard</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-4 text-center">
+                    <p class="font-mono-num text-2xl font-bold text-emerald-500">7/10</p>
+                    <p class="text-emerald-700 text-xs font-semibold mt-1">Accomplishments</p>
+                    <p class="text-emerald-500 text-[10px]">Most bullets are real accomplishments, not duties</p>
+                </div>
+                <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-4 text-center">
+                    <p class="font-mono-num text-2xl font-bold text-emerald-500">8/10</p>
+                    <p class="text-emerald-700 text-xs font-semibold mt-1">Metrics</p>
+                    <p class="text-emerald-500 text-[10px]">Strong quantification — percentages, dollars, team sizes</p>
+                </div>
+                <div class="bg-amber-50 border border-amber-200 rounded-xl p-4 text-center">
+                    <p class="font-mono-num text-2xl font-bold text-amber-500">6/10</p>
+                    <p class="text-amber-700 text-xs font-semibold mt-1">How / Method</p>
+                    <p class="text-amber-500 text-[10px]">Methods shown but heavy on internal acronyms an outsider won't know</p>
+                </div>
+                <div class="bg-amber-50 border border-amber-200 rounded-xl p-4 text-center">
+                    <p class="font-mono-num text-2xl font-bold text-amber-500">5/10</p>
+                    <p class="text-amber-700 text-xs font-semibold mt-1">Why / Business Impact</p>
+                    <p class="text-amber-500 text-[10px]">Some bullets show $ impact — several strong ones stop at the metric</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Verdict -->
+        <div class="bg-amber-800 text-white p-6">
+            <p class="font-bold text-lg mb-2">★★ Verdict: "You Went Above and Beyond"</p>
+            <p class="text-amber-200 text-sm">Your resume is already significantly stronger than most engineering resumes — you have real accomplishments with real numbers, and that puts you ahead of the vast majority. The gap between where you are and ★★★ is narrower than you might think. The main things holding you back are: (1) many of your best bullets try to pack two or three accomplishments into one sentence, which dilutes the punch of each, (2) several of your strongest metrics (70% defect reduction, 90% sensor issue reduction) stop short of translating the result into what it meant for the business in dollars or production uptime, and (3) heavy use of internal John Deere acronyms makes it hard for anyone outside your organization to quickly understand the value you delivered. Fixing these would likely push you past 70.</p>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SECTION 2: KEY ISSUES IDENTIFIED             -->
+    <!-- ============================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 p-8 page-break">
+        <div class="flex items-center gap-3 mb-6">
+            <div class="w-8 h-8 rounded-lg bg-red-500 text-white flex items-center justify-center text-sm font-bold">🔍</div>
+            <h2 class="text-2xl font-extrabold text-slate-900">Key Issues Identified</h2>
+        </div>
+
+        <div class="space-y-4">
+            <!-- Issue 1 -->
+            <div class="flex items-start gap-3 bg-red-50 rounded-xl p-5 border border-red-200">
+                <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-red-600 text-white font-bold text-sm flex-shrink-0">1</span>
+                <div>
+                    <p class="font-bold text-red-900">Many bullets are doing double or triple duty — and each accomplishment loses impact because of it</p>
+                    <p class="text-red-700 text-sm mt-1">Your first John Deere bullet is a great example: <em>"Reduced repeat defects (CARs) by 70% year-over-year from 83 to 16 on the MY26 program... resolved 57 new non-conformances and dispositioned ~1,400 field automation events."</em> That's actually two strong accomplishments crammed into one sentence. The 70% defect reduction deserves its own bullet where it can breathe and include the business impact. The 57 NCRs and 1,400 events is a separate achievement with its own scale. When you pack them together, a recruiter skimming for 6 seconds will absorb neither fully. This pattern shows up in at least 5 of your bullets — splitting them would immediately make each one land harder.</p>
+                </div>
+            </div>
+
+            <!-- Issue 2 -->
+            <div class="flex items-start gap-3 bg-red-50 rounded-xl p-5 border border-red-200">
+                <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-red-600 text-white font-bold text-sm flex-shrink-0">2</span>
+                <div>
+                    <p class="font-bold text-red-900">Internal jargon is making your resume harder to read than it needs to be</p>
+                    <p class="text-red-700 text-sm mt-1">EPDP, FGR, DPAR, LPB, DTAC, HX, ISG, FEE-HD, CARs, MY25, MY26 — you use at least 11 internal acronyms throughout the resume. You know what these mean, and your current colleagues know, but a hiring manager at another company (or even another function at John Deere) won't. The strongest bullets on your resume — like the FGR/DPAR meeting consolidation that saved $30K/year — would land even harder if the reader didn't have to stop and decode the acronyms first. Where possible, spell out what the process is in plain engineering language and keep the acronym as a parenthetical if it's a recognized standard.</p>
+                </div>
+            </div>
+
+            <!-- Issue 3 -->
+            <div class="flex items-start gap-3 bg-red-50 rounded-xl p-5 border border-red-200">
+                <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-red-600 text-white font-bold text-sm flex-shrink-0">3</span>
+                <div>
+                    <p class="font-bold text-red-900">Your strongest quantified bullets stop short of the "Why" — the business impact</p>
+                    <p class="text-red-700 text-sm mt-1">You reduced sensor-related repeat issues by 90% over 4 years. That's an outstanding metric. But the bullet doesn't tell the reader what that 90% reduction <em>meant</em> — how many field failures were prevented? How much warranty cost or unplanned downtime did this avoid? How many machines stayed in the field instead of coming back? The same gap shows up on your 70% CAR reduction bullet. You have the "what" and the "how" — the missing piece is the "so what?" that connects the metric to a business result. In several cases you likely know the answer or can estimate it conservatively.</p>
+                </div>
+            </div>
+
+            <!-- Issue 4 -->
+            <div class="flex items-start gap-3 bg-red-50 rounded-xl p-5 border border-red-200">
+                <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-red-600 text-white font-bold text-sm flex-shrink-0">4</span>
+                <div>
+                    <p class="font-bold text-red-900">No bullet sets up the problem before showing the result</p>
+                    <p class="text-red-700 text-sm mt-1">Every bullet on your resume starts with the solution. This is fine — it's the standard resume format — but the Impact Bullet Builder's "Problem Context" principle says that framing the <em>before</em> state makes the <em>after</em> result feel much bigger. For example, your 75% frame rework reduction is strong on its own. But if the reader first understood that frames were requiring X hours of rework per unit, costing $X/week in production delays, and that this was an escalating problem — then the 75% reduction hits much harder. Even one sentence of context before the result changes how the accomplishment reads.</p>
+                </div>
+            </div>
+
+            <!-- Issue 5 -->
+            <div class="flex items-start gap-3 bg-amber-50 rounded-xl p-5 border border-amber-200">
+                <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-amber-500 text-white font-bold text-sm flex-shrink-0">5</span>
+                <div>
+                    <p class="font-bold text-amber-900">Early career bullets are significantly weaker than your recent work</p>
+                    <p class="text-amber-700 text-sm mt-1">Your John Deere, Pella, and J.B. Hunt bullets are strong — full of metrics and results. But the Research Assistant bullet (<em>"Completed 3 major precision agriculture research projects... within time"</em>) and the Production Engineer bullet (<em>"Increased manufacturing efficiency by 3%"</em>) drop back to the ★ level. For a 30+ year career, this is normal — but it creates an uneven reading experience. Consider condensing these older roles to 1 sentence each, or rewriting them to highlight the most impressive result from each period.</p>
+                </div>
+            </div>
+
+            <!-- Issue 6 -->
+            <div class="flex items-start gap-3 bg-amber-50 rounded-xl p-5 border border-amber-200">
+                <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-amber-500 text-white font-bold text-sm flex-shrink-0">6</span>
+                <div>
+                    <p class="font-bold text-amber-900">University/Extension role has a duty-description bullet that doesn't match the rest of your resume's quality</p>
+                    <p class="text-amber-700 text-sm mt-1"><em>"Planned and executed educational and training programs on machinery and precision ag technologies at local, regional, state, and national level as a university's extension representative."</em> — This is a role description, not an accomplishment. How many programs? How many people trained? Did your training lead to any measurable adoption, behavior change, or cost savings for the farmers you worked with? Your other bullets from this period (the $500K in grants, the published research) are strong. This one would either benefit from specific outcomes or could be consolidated into the grant/research bullet.</p>
+                </div>
+            </div>
+
+            <!-- Issue 7 -->
+            <div class="flex items-start gap-3 bg-amber-50 rounded-xl p-5 border border-amber-200">
+                <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-amber-500 text-white font-bold text-sm flex-shrink-0">7</span>
+                <div>
+                    <p class="font-bold text-amber-900">Summary bullet 4 describes how you work, not what you achieved</p>
+                    <p class="text-amber-700 text-sm mt-1"><em>"Partnered with suppliers, design engineers, and cross-functional teams to ship complex programs on time while reducing field failures."</em> — Your first three summary bullets are excellent: they each state a specific result with a metric. This fourth one describes your <em>approach</em> (partnering, cross-functional) rather than a <em>result</em>. It would be stronger as either a specific quantified claim (e.g., "Managed quality across [X] supplier relationships spanning [X] product lines") or replaced with another headline-worthy metric from your career.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SECTION 3: REWRITTEN RESUME                  -->
+    <!-- ============================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 p-8 page-break">
+        <div class="flex items-center gap-3 mb-6">
+            <div class="w-8 h-8 rounded-lg bg-emerald-500 text-white flex items-center justify-center text-sm font-bold">✏️</div>
+            <h2 class="text-2xl font-extrabold text-slate-900">Rewritten Resume</h2>
+            <span class="text-xs bg-emerald-100 text-emerald-700 px-2 py-1 rounded-full">Impact Bullet Builder™ Applied</span>
+        </div>
+        <p class="text-slate-500 text-sm mb-6">Every bullet rewritten using the Accomplishment + Metric + How + Why formula. <span class="text-amber-600 font-semibold">[X]</span> = placeholder for details only you would know.</p>
+
+        <!-- Summary -->
+        <div class="mb-8">
+            <h3 class="text-lg font-bold text-emerald-900 border-b border-emerald-200 pb-2 mb-4">Summary</h3>
+            <ul class="space-y-3">
+                <li class="flex items-start gap-2">
+                    <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-bold bg-emerald-100 text-emerald-700 mt-0.5 flex-shrink-0">REWRITTEN</span>
+                    <span class="text-slate-700 text-sm">Quality engineering leader with 30+ years across OEMs, defense, aerospace, and precision agriculture — drove 70–90% repeat defect reductions across multiple John Deere combine programs, with documented cost savings exceeding $200K annually.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                    <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-bold bg-emerald-100 text-emerald-700 mt-0.5 flex-shrink-0">REWRITTEN</span>
+                    <span class="text-slate-700 text-sm">Secured $500K+ in research grants as Principal Investigator, published 35+ peer-reviewed articles, and earned Systems Engineering certification from Caltech.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                    <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-bold bg-emerald-100 text-emerald-700 mt-0.5 flex-shrink-0">REWRITTEN</span>
+                    <span class="text-slate-700 text-sm">Built and led quality teams of up to 35 inspectors across multi-shift operations, implementing cross-functional programs that were adopted globally within the organization.</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- John Deere R&D -->
+        <div class="mb-8">
+            <h3 class="text-lg font-bold text-slate-900 mb-1">Program Quality Engineer</h3>
+            <p class="text-slate-500 text-sm mb-3">John Deere Research and Development Center, USA — 2017–Present</p>
+            <ul class="space-y-3">
+                <li class="flex items-start gap-2">
+                    <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-bold bg-emerald-100 text-emerald-700 mt-0.5 flex-shrink-0">REWRITTEN</span>
+                    <span class="text-slate-700 text-sm">Reduced repeat defects by 70% year-over-year (83 → 16 corrective actions) on the MY26 combine program by implementing systematic root-cause tracking across 9 engineers — preventing an estimated [X field failures / $X in warranty costs] that would have carried into the next model year.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                    <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-bold bg-emerald-100 text-emerald-700 mt-0.5 flex-shrink-0">REWRITTEN</span>
+                    <span class="text-slate-700 text-sm">Resolved 57 new non-conformances and dispositioned ~1,400 field automation events across the combine harvester and integrated sensor programs through the enterprise product delivery process — reducing [X — average resolution time? backlog? escalation rate?] and keeping [X product line(s)] on schedule for production release.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                    <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-bold bg-emerald-100 text-emerald-700 mt-0.5 flex-shrink-0">REWRITTEN</span>
+                    <span class="text-slate-700 text-sm">Achieved 90% repeat defect reduction on the MY25 Yield 3.0 program over 3 years and 3 phases using a systems engineering approach — resolving 30 corrective actions and 200+ field events while presenting risk mitigation plans to senior leadership and the product council, resulting in [X — on-time launch? production uptime improvement? estimated $ in avoided field failures?].</span>
+                </li>
+                <li class="flex items-start gap-2">
+                    <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-bold bg-emerald-100 text-emerald-700 mt-0.5 flex-shrink-0">REWRITTEN</span>
+                    <span class="text-slate-700 text-sm">Saved an estimated 350+ engineering hours ($30,000/year) by consolidating redundant final gate review and design/process audit meetings into a single unified process — later adopted globally under the direction of the Global Quality Manager, scaling the time savings across [X sites / X teams].</span>
+                </li>
+                <li class="flex items-start gap-2">
+                    <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-bold bg-emerald-100 text-emerald-700 mt-0.5 flex-shrink-0">REWRITTEN</span>
+                    <span class="text-slate-700 text-sm">Reduced frame rework on the front-end equipment HD program by 75% during limited production build, recovering approximately 30 hours/week ($40,000 during the build phase alone) in production labor.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                    <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-bold bg-emerald-100 text-emerald-700 mt-0.5 flex-shrink-0">REWRITTEN</span>
+                    <span class="text-slate-700 text-sm">Developed a dealer technical assistance solution that prevented approximately 100 frames from being returned to the factory — avoiding an estimated [$ in reverse logistics, rework, and dealer downtime costs].</span>
+                </li>
+                <li class="flex items-start gap-2">
+                    <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-bold bg-emerald-100 text-emerald-700 mt-0.5 flex-shrink-0">REWRITTEN</span>
+                    <span class="text-slate-700 text-sm">Reduced sensor-related repeat issues by 90% over 4 years on the combine and front-end equipment programs by leading 23 cross-functional application reviews with multi-decade team members and suppliers across 126 sensors — preventing [X field failures / $X in warranty claims] and establishing a repeatable review framework for future sensor integration.</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Module Leader -->
+        <div class="mb-8">
+            <h3 class="text-lg font-bold text-slate-900 mb-1">Module Leader, Quality Services</h3>
+            <p class="text-slate-500 text-sm mb-3">John Deere Harvester Works (Combines), USA — 2016–2017</p>
+            <ul class="space-y-3">
+                <li class="flex items-start gap-2">
+                    <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-bold bg-emerald-100 text-emerald-700 mt-0.5 flex-shrink-0">REWRITTEN</span>
+                    <span class="text-slate-700 text-sm">Implemented 100% cross-training of combine and front-end equipment line inspectors for the first time in Harvester Works history, eliminating overtime compliance issues and saving ~$30,000/year across multi-shift factory operations.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                    <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-bold bg-emerald-100 text-emerald-700 mt-0.5 flex-shrink-0">REWRITTEN</span>
+                    <span class="text-slate-700 text-sm">Led a 35-inspector team across multiple production shifts, reducing absenteeism-related production disruptions by ~20% by building a semi-automated staffing model that matched inspector certifications to line requirements in real time — recovering approximately [X hours/week in lost production time / $X in temporary staffing costs].</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Quality Engineer OFP -->
+        <div class="mb-8">
+            <h3 class="text-lg font-bold text-slate-900 mb-1">Quality Engineer, OFP</h3>
+            <p class="text-slate-500 text-sm mb-3">John Deere Harvester Works (Combines), USA — 2014–2016</p>
+            <ul class="space-y-3">
+                <li class="flex items-start gap-2">
+                    <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-bold bg-emerald-100 text-emerald-700 mt-0.5 flex-shrink-0">REWRITTEN</span>
+                    <span class="text-slate-700 text-sm">Drove approximately 50% reduction in defects across the top 5 combine warranty issues — including an 80% reduction in ladder damage — by leading corrective actions across suppliers and cross-functional stakeholders, reducing warranty costs by $85,000/year for the product lines managed.</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Logistics Engineer -->
+        <div class="mb-8" style="break-before: page;">
+            <h3 class="text-lg font-bold text-slate-900 mb-1">Logistics Engineer</h3>
+            <p class="text-slate-500 text-sm mb-3">J.B. Hunt Transport Services, Arkansas, USA — 2013</p>
+            <ul class="space-y-3">
+                <li class="flex items-start gap-2">
+                    <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-bold bg-emerald-100 text-emerald-700 mt-0.5 flex-shrink-0">REWRITTEN</span>
+                    <span class="text-slate-700 text-sm">Built a SQL-based back-end cost optimization system for intermodal logistics routing decisions, enabling an estimated $250,000 in annual savings by eliminating unnecessary empty-container return hauls to departure depots.</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Quality Project Manager, Pella -->
+        <div class="mb-8">
+            <h3 class="text-lg font-bold text-slate-900 mb-1">Quality Project Manager</h3>
+            <p class="text-slate-500 text-sm mb-3">Pella Corporation (Windows, Curtain Wall & Doors), Missouri, USA — 2011–2012</p>
+            <ul class="space-y-3">
+                <li class="flex items-start gap-2">
+                    <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-bold bg-emerald-100 text-emerald-700 mt-0.5 flex-shrink-0">REWRITTEN</span>
+                    <span class="text-slate-700 text-sm">Reduced daily part rejection by 20% on painted mullions and jambs (~$125,000/year in savings) by root-causing dust and flake deposition issues and revising preventive maintenance plans for paint curing ovens and conveyor systems.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                    <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-bold bg-emerald-100 text-emerald-700 mt-0.5 flex-shrink-0">REWRITTEN</span>
+                    <span class="text-slate-700 text-sm">Reduced scuff-related product rejection by 10% (~$[X]/year in rework savings) by redesigning material stacking methods and revising operational handling guidelines for window and curtain wall assemblies.</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Farm Machinery Specialist -->
+        <div class="mb-8">
+            <h3 class="text-lg font-bold text-slate-900 mb-1">Farm Machinery Specialist</h3>
+            <p class="text-slate-500 text-sm mb-3">Division of Agriculture, University of Arkansas, USA — 2007–2011</p>
+            <ul class="space-y-3">
+                <li class="flex items-start gap-2">
+                    <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-bold bg-emerald-100 text-emerald-700 mt-0.5 flex-shrink-0">REWRITTEN</span>
+                    <span class="text-slate-700 text-sm">Secured over $500,000 in research grants as Principal Investigator and collaborator, spanning cotton picker soil compaction ($50K), ATV accident simulation ($40K), and [X additional projects] — earning documented recognition from John Deere, USDA, Cotton Incorporated, and multiple universities.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                    <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-bold bg-emerald-100 text-emerald-700 mt-0.5 flex-shrink-0">REWRITTEN</span>
+                    <span class="text-slate-700 text-sm">Published 35+ peer-reviewed articles on precision agriculture and machinery performance, with findings contributing to [X — improved equipment design? Updated USDA guidelines? Industry practice changes?] and cited by [X] subsequent studies.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                    <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-bold bg-emerald-100 text-emerald-700 mt-0.5 flex-shrink-0">REWRITTEN</span>
+                    <span class="text-slate-700 text-sm">Designed and delivered [X] educational programs on precision ag technologies to [X] farmers and industry professionals at local, regional, state, and national levels — resulting in [X — adoption of new equipment practices? measurable yield improvements? program continuation?].</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Sr. Research Assistant -->
+        <div class="mb-8">
+            <h3 class="text-lg font-bold text-slate-900 mb-1">Sr. Research Assistant</h3>
+            <p class="text-slate-500 text-sm mb-3">Agricultural Engineering, University of South Dakota and University of Arkansas — 2001–2006</p>
+            <ul class="space-y-3">
+                <li class="flex items-start gap-2">
+                    <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-bold bg-emerald-100 text-emerald-700 mt-0.5 flex-shrink-0">REWRITTEN</span>
+                    <span class="text-slate-700 text-sm">Led 3 precision agriculture research projects (sugarbeet, cotton, soybean) from design through publication — producing [X] peer-reviewed journal articles, [X] conference proceedings, and a doctoral dissertation, with findings contributing to [X specific outcome or field advancement].</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Deputy Chief Engineer -->
+        <div class="mb-8" style="break-before: page;">
+            <h3 class="text-lg font-bold text-slate-900 mb-1">Deputy Chief Engineer (QC & R&D)</h3>
+            <p class="text-slate-500 text-sm mb-3">Walchandnagar Industries Limited (Heavy Engineering), India — 1995–2001</p>
+            <ul class="space-y-3">
+                <li class="flex items-start gap-2">
+                    <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-bold bg-emerald-100 text-emerald-700 mt-0.5 flex-shrink-0">REWRITTEN</span>
+                    <span class="text-slate-700 text-sm">Led QC/QA for a 6,000 metric-ton fabricated steel structure for a nuclear power plant, plus defense-critical components (rocket nozzles, booster assemblies, missile launchers) — delivering ahead of schedule and contributing to a $250,000 early-completion bonus from the Government of India.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                    <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-bold bg-emerald-100 text-emerald-700 mt-0.5 flex-shrink-0">REWRITTEN</span>
+                    <span class="text-slate-700 text-sm">Managed end-to-end R&D for a walk-behind sugarcane harvester from ideation through design, manufacturing, and field testing — building 25 prototypes and [X — achieving commercial deployment? Securing production contract? Demonstrating X% improvement in harvesting efficiency over manual methods?].</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Production Engineer -->
+        <div class="mb-8">
+            <h3 class="text-lg font-bold text-slate-900 mb-1">Production Engineer</h3>
+            <p class="text-slate-500 text-sm mb-3">Elpro International Limited (X-Ray Machines), India — 1994–1995</p>
+            <ul class="space-y-3">
+                <li class="flex items-start gap-2">
+                    <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-bold bg-amber-100 text-amber-700 mt-0.5 flex-shrink-0">CONSIDER REMOVING</span>
+                    <span class="text-slate-700 text-sm"><span class="line-through text-slate-400">"Increased manufacturing efficiency by 3% as process engineer for medical X-ray machine and press shop operations."</span></span>
+                </li>
+                <li class="ml-9">
+                    <p class="text-amber-600 text-xs italic">→ At 30+ years into your career, a 3% efficiency improvement from a 1-year role early in your career isn't adding to your story. If you want to keep this role, consider rewriting it with the strongest result from that period. Otherwise, this space would serve you better if reallocated to expanding your stronger bullets.</p>
+                </li>
+                <li class="flex items-start gap-2 mt-2">
+                    <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-bold bg-emerald-100 text-emerald-700 mt-0.5 flex-shrink-0">IF KEEPING</span>
+                    <span class="text-slate-700 text-sm">Improved medical X-ray machine manufacturing throughput by 3% by [X — redesigning the process flow? Reducing changeover time? Optimizing press shop sequencing?], increasing monthly output by approximately [X units] during a period of [X — growing demand? Capacity constraints?].</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Technical Skills -->
+        <div class="mb-8">
+            <h3 class="text-lg font-bold text-emerald-900 border-b border-emerald-200 pb-2 mb-4">Technical Skills</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
+                <div>
+                    <p class="font-semibold text-slate-900 mb-1">Quality Systems & Tools</p>
+                    <p class="text-slate-600">FMEA (System & Process), 8D/NCCA Management, Root Cause Analysis, EPDP, Value-Based Quality</p>
+                </div>
+                <div>
+                    <p class="font-semibold text-slate-900 mb-1">Data & Analytics</p>
+                    <p class="text-slate-600">Statistical Process Control, SQL, R/RStudio, SAS, JMP, SAP (Quality & HR modules)</p>
+                </div>
+                <div>
+                    <p class="font-semibold text-slate-900 mb-1">Engineering Tools</p>
+                    <p class="text-slate-600">AutoCAD, Pro/E, ANSYS, SolidWorks, ArcGIS, ENVI, ERDAS IMAGINE</p>
+                    <p class="text-amber-600 text-xs italic mt-1">→ Consider noting which of these you've used recently vs. historically. ANSYS, SolidWorks, Pro/E, ArcGIS, ENVI and ERDAS IMAGINE don't appear in any of your bullets — weaving them into experience entries or noting relevant project context would make them more credible.</p>
+                </div>
+                <div>
+                    <p class="font-semibold text-slate-900 mb-1">Standards</p>
+                    <p class="text-slate-600">JD Internal Standards, ASNT/ISNT NDE Standards</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Certifications -->
+        <div class="mb-8">
+            <h3 class="text-lg font-bold text-emerald-900 border-b border-emerald-200 pb-2 mb-4">Certifications</h3>
+            <ul class="space-y-2 text-sm text-slate-700">
+                <li>Systems Engineering Fundamentals — Caltech, 2022</li>
+                <li>Business Analytics Certification — University of Iowa, 2019</li>
+                <li>Level II Certifications in NDE (Magnetic Particles, Ultrasonic, Liquid Penetrant) — ISNT/ASNT, 1997–1999</li>
+            </ul>
+        </div>
+
+        <!-- Leadership & Community -->
+        <div class="mb-8">
+            <h3 class="text-lg font-bold text-emerald-900 border-b border-emerald-200 pb-2 mb-4">Leadership & Community Service</h3>
+            <ul class="space-y-3">
+                <li class="flex items-start gap-2">
+                    <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-bold bg-emerald-100 text-emerald-700 mt-0.5 flex-shrink-0">REWRITTEN</span>
+                    <span class="text-slate-700 text-sm">Founded and led a community language school with 8 teachers and 27 students — established curriculum, recruited staff, built operations from scratch, and successfully transitioned leadership to ensure long-term continuity.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                    <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-bold bg-emerald-100 text-emerald-700 mt-0.5 flex-shrink-0">REWRITTEN</span>
+                    <span class="text-slate-700 text-sm">Raised and donated approximately $30,000 to non-profit organizations through the sale of handcrafted wooden cultural artifacts and personal contributions — supporting education and secure housing for underprivileged and orphaned children.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                    <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-bold bg-emerald-100 text-emerald-700 mt-0.5 flex-shrink-0">REWRITTEN</span>
+                    <span class="text-slate-700 text-sm">Organized [X] scientific toy-making workshops, free STEM tutoring sessions, and inspirational lecture series for youth and adults in the local community — reaching approximately [X] participants.</span>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SECTION 4: BEFORE & AFTER EXAMPLES           -->
+    <!-- ============================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 p-8 page-break">
+        <div class="flex items-center gap-3 mb-6">
+            <div class="w-8 h-8 rounded-lg bg-lime-500 text-white flex items-center justify-center text-sm font-bold">⚡</div>
+            <h2 class="text-2xl font-extrabold text-slate-900">Before & After</h2>
+            <span class="text-xs bg-slate-100 text-slate-600 px-2 py-1 rounded-full">3 Most Impactful Transformations</span>
+        </div>
+
+        <div class="space-y-6">
+            <!-- Example 1: Sensor bullet — overloaded and missing Why -->
+            <div class="rounded-xl overflow-hidden border border-slate-200">
+                <div class="bg-red-50 p-5 border-b border-red-200">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-red-600 text-white font-bold text-xs">✗</span>
+                        <span class="text-red-700 font-bold text-sm">ORIGINAL (★★ Level — Strong Metric, Missing Impact + Overloaded)</span>
+                    </div>
+                    <p class="text-red-800 text-sm">"Reduced sensor related repeat issue by 90% over 4 years on the Combine and FEE programs by executing 23 various sensor application review meetings that included multi-decade team members and suppliers on 126 sensors, and processed 250+ parts evaluation conducting EPDP processes, covering speed, temperature, pressure, position, and proximity sensors."</p>
+                </div>
+                <div class="bg-emerald-50 p-5">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-emerald-600 text-white font-bold text-xs">✓</span>
+                        <span class="text-emerald-700 font-bold text-sm">REWRITTEN (★★★ Level — Focused, Clear Impact)</span>
+                    </div>
+                    <p class="text-emerald-800 text-sm">"Reduced sensor-related repeat issues by 90% over 4 years on the combine and front-end equipment programs by leading 23 cross-functional application reviews with suppliers across 126 sensors — preventing an estimated [X field failures / $X in warranty claims] and establishing a repeatable review framework adopted for future sensor integration programs."</p>
+                </div>
+            </div>
+
+            <!-- Example 2: Extension/training duty bullet -->
+            <div class="rounded-xl overflow-hidden border border-slate-200">
+                <div class="bg-red-50 p-5 border-b border-red-200">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-red-600 text-white font-bold text-xs">✗</span>
+                        <span class="text-red-700 font-bold text-sm">ORIGINAL (★ Level — Duty Description)</span>
+                    </div>
+                    <p class="text-red-800 text-sm">"Planned and executed educational and training programs on machinery and precision ag technologies at local, regional, state, and national level as a university's extension representative."</p>
+                </div>
+                <div class="bg-emerald-50 p-5">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-emerald-600 text-white font-bold text-xs">✓</span>
+                        <span class="text-emerald-700 font-bold text-sm">REWRITTEN (★★★ Level — Shows Scale + Outcome)</span>
+                    </div>
+                    <p class="text-emerald-800 text-sm">"Designed and delivered [X] precision agriculture training programs to [X] farmers and industry professionals across local, state, and national venues — contributing to [X% adoption of GPS-guided machinery / X measurable outcome] among participating farm operations."</p>
+                </div>
+            </div>
+
+            <!-- Example 3: Research Assistant bullet -->
+            <div class="rounded-xl overflow-hidden border border-slate-200">
+                <div class="bg-red-50 p-5 border-b border-red-200">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-red-600 text-white font-bold text-xs">✗</span>
+                        <span class="text-red-700 font-bold text-sm">ORIGINAL (★ Level — Completion Statement, Not Accomplishment)</span>
+                    </div>
+                    <p class="text-red-800 text-sm">"Completed 3 major precision agriculture research projects in sugarbeet, cotton and Soybean within time and published results in the form of peer reviewed journal articles, proceedings, and presentation at international Conferences and my thesis and dissertations as a graduate student."</p>
+                </div>
+                <div class="bg-emerald-50 p-5">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-emerald-600 text-white font-bold text-xs">✓</span>
+                        <span class="text-emerald-700 font-bold text-sm">REWRITTEN (★★★ Level — Specific, Outcome-Focused)</span>
+                    </div>
+                    <p class="text-emerald-800 text-sm">"Led 3 precision agriculture research projects (sugarbeet, cotton, soybean) from experimental design through publication — producing [X] peer-reviewed journal articles and [X] international conference presentations, with findings contributing to [X — improved precision planting protocols? Updated industry guidelines? Quantifiable yield improvements?]."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SECTION 5: ACTION ITEMS                      -->
+    <!-- ============================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 p-8 page-break">
+        <div class="flex items-center gap-3 mb-6">
+            <div class="w-8 h-8 rounded-lg bg-blue-500 text-white flex items-center justify-center text-sm font-bold">✅</div>
+            <h2 class="text-2xl font-extrabold text-slate-900">Action Items</h2>
+        </div>
+
+        <div class="space-y-4">
+            <!-- Action 1 -->
+            <div class="flex items-start gap-3">
+                <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-emerald-600 text-white font-bold text-sm flex-shrink-0">1</span>
+                <div>
+                    <p class="font-bold text-slate-900">Split overloaded bullets into individual accomplishments</p>
+                    <p class="text-slate-600 text-sm mt-1">At least 5 of your bullets contain 2–3 distinct accomplishments packed into one sentence. Separate each one into its own bullet so each result can include its own metric, method, and business impact. This alone will make the resume read more clearly and give each achievement the room it deserves.</p>
+                </div>
+            </div>
+
+            <!-- Action 2 -->
+            <div class="flex items-start gap-3">
+                <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-emerald-600 text-white font-bold text-sm flex-shrink-0">2</span>
+                <div>
+                    <p class="font-bold text-slate-900">Add the "Why" to your strongest quantified bullets</p>
+                    <p class="text-slate-600 text-sm mt-1">Your 70% CAR reduction, 90% sensor issue reduction, and 20% absenteeism reduction bullets all have great metrics but stop short of saying what that meant for the business. Estimate the dollar impact, production uptime gained, or field failures prevented. Even conservative approximations make these bullets significantly stronger.</p>
+                </div>
+            </div>
+
+            <!-- Action 3 -->
+            <div class="flex items-start gap-3">
+                <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-emerald-600 text-white font-bold text-sm flex-shrink-0">3</span>
+                <div>
+                    <p class="font-bold text-slate-900">Replace internal acronyms with plain-language descriptions</p>
+                    <p class="text-slate-600 text-sm mt-1">Spell out EPDP, FGR, DPAR, LPB, DTAC, HX, ISG, FEE-HD, and CARs on first use — or replace them entirely with what the process/program actually is. A hiring manager outside John Deere should be able to understand every bullet without needing a decoder. Keep the acronym in parentheses if it's an industry-recognized standard.</p>
+                </div>
+            </div>
+
+            <!-- Action 4 -->
+            <div class="flex items-start gap-3">
+                <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-emerald-600 text-white font-bold text-sm flex-shrink-0">4</span>
+                <div>
+                    <p class="font-bold text-slate-900">Add problem context to your top 3 bullets</p>
+                    <p class="text-slate-600 text-sm mt-1">Pick the 3 accomplishments you're most proud of and add a brief "before" state. For example, before the 75% frame rework reduction — what was the situation? How much rework was happening? What was it costing? Setting up the problem makes the solution feel much bigger. You don't need to do this for every bullet — just the top 3.</p>
+                </div>
+            </div>
+
+            <!-- Action 5 -->
+            <div class="flex items-start gap-3">
+                <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-emerald-600 text-white font-bold text-sm flex-shrink-0">5</span>
+                <div>
+                    <p class="font-bold text-slate-900">Condense or strengthen early career entries</p>
+                    <p class="text-slate-600 text-sm mt-1">The Research Assistant and Production Engineer roles are noticeably weaker than your recent work. For a 30+ year career, consider either condensing each to a single strong bullet that shows the best result from that period, or removing the weaker role (Elpro) entirely. The space would be better used expanding your John Deere bullets with problem context and business impact.</p>
+                </div>
+            </div>
+
+            <!-- Action 6 -->
+            <div class="flex items-start gap-3">
+                <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-emerald-600 text-white font-bold text-sm flex-shrink-0">6</span>
+                <div>
+                    <p class="font-bold text-slate-900">Replace Summary bullet 4 with a quantified result</p>
+                    <p class="text-slate-600 text-sm mt-1">Your first three summary bullets are strong — they each lead with specific metrics. The fourth ("Partnered with suppliers, design engineers, and cross-functional teams to ship complex programs on time while reducing field failures") describes how you work rather than what you achieved. Replace it with another headline-worthy metric, or state the scope of your supplier/program management more specifically (e.g., "[X] supplier relationships across [X] product lines").</p>
+                </div>
+            </div>
+
+            <!-- Action 7 -->
+            <div class="flex items-start gap-3">
+                <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-emerald-600 text-white font-bold text-sm flex-shrink-0">7</span>
+                <div>
+                    <p class="font-bold text-slate-900">Show your engineering software tools in context</p>
+                    <p class="text-slate-600 text-sm mt-1">ANSYS, SolidWorks, Pro/E, ArcGIS, ENVI, and ERDAS IMAGINE are all listed in Technical Skills but don't appear in any bullet. If these are tools you used in your research or early engineering work, add a brief mention inside the relevant bullet (e.g., "using ArcGIS for spatial yield mapping"). If they're outdated, consider removing them — a shorter, fully contextualized skills list is stronger than a long one with tools you can't point to.</p>
+                </div>
+            </div>
+
+            <!-- Action 8 -->
+            <div class="flex items-start gap-3">
+                <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-emerald-600 text-white font-bold text-sm flex-shrink-0">8</span>
+                <div>
+                    <p class="font-bold text-slate-900">Fix the typo: "supplies" → "suppliers"</p>
+                    <p class="text-slate-600 text-sm mt-1">In the Quality Engineer (OFP) bullet: "driving corrective actions across supplies and cross-functional stakeholders" should read "suppliers." Small typos can undermine otherwise strong content.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SECTION 6: WHAT'S ALREADY WORKING            -->
+    <!-- ============================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 p-8 page-break">
+        <div class="flex items-center gap-3 mb-6">
+            <div class="w-8 h-8 rounded-lg bg-emerald-500 text-white flex items-center justify-center text-sm font-bold">💪</div>
+            <h2 class="text-2xl font-extrabold text-slate-900">What's Already Working</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-5">
+                <p class="font-bold text-emerald-900 mb-1">Heavy quantification throughout</p>
+                <p class="text-emerald-700 text-sm">70%, 90%, 75%, 80%, 50%, 20%, $125K, $250K, $40K, $30K — most engineers struggle to put even one metric on their resume. You have metrics in almost every bullet. This is a major strength.</p>
+            </div>
+            <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-5">
+                <p class="font-bold text-emerald-900 mb-1">Strong action verbs</p>
+                <p class="text-emerald-700 text-sm">Reduced, Achieved, Saved, Implemented, Led, Delivered, Secured — your verbs are consistently strong and specific. No "Responsible for" or "Duties included" anywhere on the resume.</p>
+            </div>
+            <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-5">
+                <p class="font-bold text-emerald-900 mb-1">Clear personal ownership</p>
+                <p class="text-emerald-700 text-sm">Your bullets make it clear what <em>you</em> did — no hiding behind "we" or "the team." This is exactly what hiring managers are looking for. They're hiring you, and your resume makes your individual contribution clear.</p>
+            </div>
+            <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-5">
+                <p class="font-bold text-emerald-900 mb-1">★★★ "Spread the Impact" bullet already exists</p>
+                <p class="text-emerald-700 text-sm">Your meeting consolidation bullet (saved $30K/year, adopted globally) is a textbook ★★★ — you solved a problem, quantified the savings, and the solution was scaled beyond your team. This is the standard to bring the rest of the resume up to.</p>
+            </div>
+            <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-5">
+                <p class="font-bold text-emerald-900 mb-1">Impressive career breadth and depth</p>
+                <p class="text-emerald-700 text-sm">Nuclear power plants, defense systems, precision agriculture, combine manufacturing, logistics, window/door manufacturing, X-ray machines — this range of industries with consistent quality engineering results shows remarkable adaptability and transferability.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SECTION 7: FULL SCORECARD                    -->
+    <!-- ============================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 overflow-hidden page-break">
+        <div class="p-8">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="w-8 h-8 rounded-lg bg-slate-700 text-white flex items-center justify-center text-sm font-bold">📋</div>
+                <h2 class="text-2xl font-extrabold text-slate-900">Full Scorecard</h2>
+            </div>
+
+            <div class="overflow-x-auto">
+                <table class="w-full text-sm">
+                    <thead>
+                        <tr class="border-b-2 border-slate-200">
+                            <th class="text-left py-3 text-slate-900 font-bold">Criteria</th>
+                            <th class="text-center py-3 text-slate-900 font-bold w-20">Score</th>
+                            <th class="text-left py-3 text-slate-900 font-bold">Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b border-slate-100">
+                            <td class="py-3 font-semibold text-slate-700">Accomplishments (not duties)</td>
+                            <td class="py-3 text-center"><span class="font-mono-num font-bold text-emerald-500">7/10</span></td>
+                            <td class="py-3 text-slate-500">Most bullets are real accomplishments — "Reduced," "Saved," "Achieved," "Implemented." The extension training bullet and research assistant entry drop to duty-level description. Overall your recent work is strongly accomplishment-oriented.</td>
+                        </tr>
+                        <tr class="border-b border-slate-100">
+                            <td class="py-3 font-semibold text-slate-700">Metrics / Quantification</td>
+                            <td class="py-3 text-center"><span class="font-mono-num font-bold text-emerald-500">8/10</span></td>
+                            <td class="py-3 text-slate-500">Outstanding quantification by any standard — percentages, dollar amounts, team sizes, and reduction figures appear throughout. A few bullets (training programs, research assistant, Pella scuff reduction) would benefit from translating their metrics into dollar impact.</td>
+                        </tr>
+                        <tr class="border-b border-slate-100">
+                            <td class="py-3 font-semibold text-slate-700">How / Method Shown</td>
+                            <td class="py-3 text-center"><span class="font-mono-num font-bold text-amber-500">6/10</span></td>
+                            <td class="py-3 text-slate-500">Methods are shown in many bullets (systematic root-cause tracking, systems engineering approach, SQL-based back-end, preventive maintenance plans). Heavy reliance on internal acronyms (EPDP, FGR, DPAR, LPB, DTAC) obscures the method for outside readers. Several listed tools (ANSYS, SolidWorks, ArcGIS) don't appear in any bullet.</td>
+                        </tr>
+                        <tr class="border-b border-slate-100">
+                            <td class="py-3 font-semibold text-slate-700">Why / Business Impact</td>
+                            <td class="py-3 text-center"><span class="font-mono-num font-bold text-amber-500">5/10</span></td>
+                            <td class="py-3 text-slate-500">Some bullets connect all the way to business impact ($30K/year savings, $125K/year savings, $250K logistics savings, $40K recovery). But several of your strongest metrics (70% CAR reduction, 90% sensor issue reduction, 20% absenteeism reduction) stop at the percentage without converting it to dollars or business outcome.</td>
+                        </tr>
+                        <tr class="border-b border-slate-100">
+                            <td class="py-3 font-semibold text-slate-700">Personal Ownership (not "we/team")</td>
+                            <td class="py-3 text-center"><span class="font-mono-num font-bold text-emerald-500">8/10</span></td>
+                            <td class="py-3 text-slate-500">Strong individual ownership voice throughout. No "we" or "the team" language. Your bullets consistently frame what you personally did — "Led," "Implemented," "Reduced," "Delivered," "Secured." This is one of the resume's genuine strengths.</td>
+                        </tr>
+                        <tr class="border-b border-slate-100">
+                            <td class="py-3 font-semibold text-slate-700">Problem Context / "So What?"</td>
+                            <td class="py-3 text-center"><span class="font-mono-num font-bold text-red-500">4/10</span></td>
+                            <td class="py-3 text-slate-500">Very few bullets set up the before-state or problem. Most jump straight to the result. The cross-training bullet hints at context ("for the first time in HX history") which makes it stand out. Applying this pattern — describing the problem or starting condition before the result — to your top 3–5 bullets would significantly increase their resonance.</td>
+                        </tr>
+                        <tr class="border-b border-slate-100">
+                            <td class="py-3 font-semibold text-slate-700">Action Verbs</td>
+                            <td class="py-3 text-center"><span class="font-mono-num font-bold text-emerald-500">8/10</span></td>
+                            <td class="py-3 text-slate-500">Consistently strong verb selection: Reduced, Achieved, Saved, Implemented, Led, Delivered, Secured, Obtained. No instances of "Responsible for," "Duties included," or "Helped with." One of the strongest areas of your resume.</td>
+                        </tr>
+                        <tr class="border-b border-slate-200">
+                            <td class="py-3 font-semibold text-slate-700">Bullet Quality Consistency</td>
+                            <td class="py-3 text-center"><span class="font-mono-num font-bold text-amber-500">5/10</span></td>
+                            <td class="py-3 text-slate-500">Wide quality range across the resume. Your recent John Deere bullets and Pella bullets are ★★ to ★★★ level. The research assistant bullet, training programs bullet, and production engineer bullet drop to ★ level. The overloaded multi-accomplishment bullets also create inconsistency in readability. Leveling up the weaker bullets and splitting the overloaded ones would bring the overall consistency closer to your best work.</td>
+                        </tr>
+                        <tr class="bg-slate-50 border-t-2 border-slate-300">
+                            <td class="py-4 font-bold text-slate-900 text-lg">OVERALL</td>
+                            <td class="py-4 text-center"><span class="font-mono-num text-2xl font-extrabold text-amber-500">51/100</span></td>
+                            <td class="py-4 text-slate-700">★★ "You Went Above and Beyond" — strong foundation with real metrics, needs impact framing and consistency to reach ★★★</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Good News Banner -->
+        <div class="bg-emerald-900 text-white p-6">
+            <p class="font-bold text-lg mb-2">Good News</p>
+            <p class="text-emerald-200 text-sm">Your resume is already in a stronger position than most engineering resumes — you have real accomplishments, real numbers, and clear personal ownership, which puts you ahead of the vast majority. The gap between 51 and 70+ is not about finding new accomplishments; it's about presenting the ones you already have more effectively. Splitting overloaded bullets so each achievement stands on its own, adding the "so what?" business impact to your strongest metrics, translating internal acronyms into language any hiring manager can understand, and adding brief problem context to your top 3 stories — these changes would likely push you past 70 in a focused working session. You already have ★★★-level work on this resume (the meeting consolidation bullet is a textbook example). The goal is to bring the rest of your bullets up to match the standard you've already demonstrated you can reach.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center py-8 text-slate-400 text-xs">
+        <p>Analysis prepared by LaunchToLead | Impact Bullet Builder Framework</p>
+        <p>launchtolead.io/free</p>
+    </footer>
+
+</div>
+</body>
+</html>

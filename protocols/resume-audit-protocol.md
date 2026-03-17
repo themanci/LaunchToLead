@@ -70,6 +70,15 @@ The HTML file must include these 7 sections in order:
 ### Voice & Tone
 
 - **Write in 2nd person** — address the candidate directly as "you" / "your." The audit should read as if the coach is talking directly to the client.
+- **Tone: helpful friend who happens to be an expert.** Be factual, be direct, don't sugar-coat — but never be inflammatory, condescending, or mean. The goal is to make the candidate feel like they have a clear path forward, not like they should feel bad about themselves.
+  - ✅ "This section is taking up space that could be working harder for you" — direct, actionable
+  - ❌ "This section is a structural disaster" — harsh, demoralizing
+  - ✅ "This bullet describes what you did, but doesn't show what happened because of it" — factual, educational
+  - ❌ "This is pure filler" — dismissive
+  - ✅ "Hiring managers won't get much from this as written" — honest, frames it from the reader's perspective
+  - ❌ "This adds zero value" — absolute language that stings
+- **Never use words like:** disaster, filler, dead, invisible, kills/killer (as in "resume killer"), pure filler, BS, thin, red flag, zero value. These make people defensive instead of motivated.
+- **Frame problems as opportunities.** Instead of "your skills section is a dead list," say "your skills section would be stronger if the tools showed up inside your experience bullets."
 - **Engineering-appropriate, factual, straight-to-the-point.** No hype, no salesy language, no exclamation marks in the analysis.
 - **No cheesy taglines.** No "No pitch. No pressure. Just a plan." or similar.
 - **CTA calls it a "Career Launch Call"** — not a strategy call, not a 15-min call.
