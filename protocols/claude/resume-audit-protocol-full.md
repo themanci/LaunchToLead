@@ -135,6 +135,41 @@ Maximum: 10 × 8 × 1.25 = 100. Minimum: 1 × 8 × 1.25 = 10.
 
 ---
 
+## Graduate & Research Track Scoring Adjustments
+
+For candidates who are **currently enrolled, recently graduated with limited industry experience, or research-track engineers** (grad students, lab assistants, thesis writers), apply these adjustments before scoring.
+
+### Bullet Scope
+Include bullets from coursework projects, research lab work, thesis work, club/extracurricular engineering projects, and internships alongside any industry work. Treat all of these as in-scope bullets for scoring.
+
+### Metric Proxies (Academic Context)
+Industry engineers have % improvements, $ figures, and user counts. Graduates often don't. These count as passing metrics for academic candidates:
+- Sample sizes, dataset sizes, trial counts
+- Performance context: "1 of 6 teams selected to advance," "top 20% of 120-student cohort"
+- Lab precision or error reduction: "reduced experimental error from ±12% to ±3%"
+- Time savings within a project: "cut simulation runtime from 4 hours to 45 minutes"
+- Scope indicators: "designed for 200+ units," "analyzed 5,000+ data points"
+
+A specific number = pass, even if academic. Vague words ("multiple," "several," "various") still fail.
+
+### Why / Business Impact (Academic Context)
+Interpret broadly for graduates:
+- Research: "enabling future deployment in X field" or "supporting the lab’s Y grant"
+- Projects: "reducing redesign cycles," "improving prototype reliability for field testing"
+
+A why statement connecting to real-world application counts — no dollar figure required.
+
+### Score Interpretation for Graduates
+A score of 40–55 is strong for a graduate candidate. Note this in the audit:
+> "For a candidate at your stage, this score reflects solid foundations. The gap to ★★★ is mostly about adding metrics and business-impact framing — skills you’ll build quickly once you’re in the field."
+
+### Tone Adjustments
+- Normalize the metric gap: "You don’t have 5 years of project data yet — but academic data, lab results, and project outcomes all count."
+- Emphasize untapped material: capstone, thesis, lab work, and club projects are underused by most students.
+- Never penalize for classroom experience. If projects are well-described with context and method, the foundation is there.
+
+---
+
 ## Section Structure (7 Sections)
 
 The output HTML must contain these 7 sections in this order. Design using the LaunchToLead brand from `brand_context.md`. Make it visually polished and print-friendly (Ctrl+P → PDF export).

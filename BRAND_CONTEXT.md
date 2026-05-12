@@ -22,7 +22,7 @@
 ## 2. Founder — Mansour Manci
 
 ### Background
-- 8 years at John Deere
+- 10 years of engineering career experience (8 at John Deere, plus early career work)
 - 4 promotions, 4 career pivots (Mechanical → Embedded Software → Systems Engineering → Engineering Leadership/Management)
 - Sat on both sides of the hiring table — applied to jobs, interviewed candidates, and hired engineers
 - Built the program to teach everything he learned about landing engineering roles and standing out in interviews
@@ -71,6 +71,7 @@
 | `brand-surface` | `#ffffff` | White | Default surface |
 
 **Additional UI colors used:**
+- `#0f172a` — deep dark background used in pop-ups, graphic overlays, and dark-mode sections (Tailwind: slate-950 equivalent)
 - `slate-900` — dark text, dark sections (hero alternatives, pricing blocks)
 - `slate-600` — body text
 - `slate-50` — alternate section backgrounds
@@ -400,11 +401,16 @@ Website → "See If You're a Fit" CTA → Offer Page
 
 ### Career Launch Call Protocol
 - 15-minute hard stop for pre-qualified prospects
+- **Full protocol:** `protocols/discovery_call/discovery_call_protocol_v4.html`
 - "The Hormozi Frame" — You Are the Doctor, Tonality = Certain, Scarcity Is Real
 - "The Shot Glass Close" — 3 concentrated sessions, no upsell
-- Phase 1 (0-3 min): Opening + 4 qualifying questions + red flags
-- Phase 2 (3-7 min): Diagnose & Connect
-- Phase 3 (7-15 min): Present program + close
+- **Context:** By the time someone books this call, they've been through the full funnel (ad → lead magnet → offer page VSL → qualifying form → pre-call VSL). They are 80% sold — confirm fit, don't re-sell.
+- Pre-call prep (2 min before): Review qualifying form answers + optional LinkedIn check (photo, graduation date, projects)
+- Phase 1 (0–3 min): Set the Frame & Finish Qualifying — Opening script + 3–4 qualifying questions + red flag disqualifiers
+- Phase 2 (3–7 min): Diagnose & Connect — Mirror their words back, diagnose 1–2 root causes, drop one matching client story (Karen/Sarah/Jonah/Mohammed)
+- Phase 3 (7–10 min): The Prescription — Map each of the 3 sessions to their specific pain + deploy Shot Glass Close
+- Phase 4 (10–12 min): The Close — Acceptance frame ("I'd like to accept you") → $997 full or 3 × $349 per session
+- Phase 5 (12–15 min): Objection Handling — Use agree-reframe-close; most common: "too expensive" and "need to think about it"
 
 ---
 
@@ -498,6 +504,7 @@ $$\text{Value} = \frac{\text{Dream Outcome} \times \text{Perceived Likelihood}}{
 | **Mohamed I.** | Contract Engineer → Permanent + Software Pivot | "My interview skills got better and felt more confident." |
 | **AJ M.** | Invisible → Promoted to Engineer II (18 months) | "Mansour taught me visibility and self-advocacy." |
 | **Ebuka O.** | Maximized Internship Impact at Fortune 100 Company | N/A |
+| **Austin** | Mechanical Engineer → Product Manager (discipline pivot via IBB framework) | TBD |
 
 ### Video Testimonial
 - Karen B. — Full video testimonial used on success stories page and offer page

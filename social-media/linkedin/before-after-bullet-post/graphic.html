@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Before/After Resume Bullet — LinkedIn Graphic</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 40px;
+        }
+
+        /* LinkedIn recommended: 1200x1200 for single image posts */
+        .card {
+            width: 1200px;
+            height: 1200px;
+            background: #064e3b;
+            border-radius: 0;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        /* Top accent bar */
+        .accent-bar {
+            height: 6px;
+            background: linear-gradient(90deg, #14b8a6, #a3e635);
+            flex-shrink: 0;
+        }
+
+        /* Header */
+        .header {
+            padding: 48px 56px 32px;
+            text-align: center;
+            flex-shrink: 0;
+        }
+
+        .header h1 {
+            font-size: 42px;
+            font-weight: 800;
+            color: #ffffff;
+            line-height: 1.2;
+            letter-spacing: -0.5px;
+        }
+
+        .header h1 span {
+            color: #a3e635;
+        }
+
+        .header .subtitle {
+            font-size: 20px;
+            font-weight: 400;
+            color: #99c2b5;
+            margin-top: 10px;
+        }
+
+        /* Content area */
+        .content {
+            flex: 1;
+            padding: 0 56px;
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+        }
+
+        /* Before/After sections */
+        .section {
+            border-radius: 16px;
+            padding: 32px 36px;
+            position: relative;
+        }
+
+        .section-before {
+            background: rgba(239, 68, 68, 0.08);
+            border: 2px solid rgba(239, 68, 68, 0.25);
+        }
+
+        .section-after {
+            background: rgba(163, 230, 53, 0.08);
+            border: 2px solid rgba(163, 230, 53, 0.25);
+        }
+
+        .label {
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .label-before {
+            color: #f87171;
+        }
+
+        .label-after {
+            color: #a3e635;
+        }
+
+        .label .icon {
+            font-size: 20px;
+        }
+
+        .star-rating {
+            font-size: 14px;
+            font-weight: 600;
+            padding: 4px 12px;
+            border-radius: 20px;
+            margin-left: auto;
+        }
+
+        .star-before {
+            background: rgba(239, 68, 68, 0.15);
+            color: #f87171;
+        }
+
+        .star-after {
+            background: rgba(163, 230, 53, 0.15);
+            color: #a3e635;
+        }
+
+        .bullet-text {
+            font-size: 22px;
+            font-weight: 500;
+            line-height: 1.55;
+            color: #e2e8f0;
+            font-style: italic;
+        }
+
+        .section-before .bullet-text {
+            color: #c4b5b5;
+        }
+
+        /* Arrow divider */
+        .arrow-divider {
+            text-align: center;
+            font-size: 32px;
+            color: #14b8a6;
+            flex-shrink: 0;
+            line-height: 1;
+        }
+
+        /* Formula bar */
+        .formula-bar {
+            margin: 0 56px;
+            padding: 24px 36px;
+            background: rgba(20, 184, 166, 0.1);
+            border: 1px solid rgba(20, 184, 166, 0.2);
+            border-radius: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 16px;
+            flex-shrink: 0;
+        }
+
+        .formula-item {
+            font-size: 16px;
+            font-weight: 600;
+            color: #ffffff;
+            padding: 6px 16px;
+            background: rgba(20, 184, 166, 0.15);
+            border-radius: 8px;
+        }
+
+        .formula-plus {
+            font-size: 18px;
+            font-weight: 700;
+            color: #14b8a6;
+        }
+
+        .formula-equals {
+            font-size: 18px;
+            font-weight: 700;
+            color: #a3e635;
+        }
+
+        .formula-result {
+            font-size: 16px;
+            font-weight: 800;
+            color: #064e3b;
+            padding: 6px 20px;
+            background: #a3e635;
+            border-radius: 8px;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 28px 56px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-shrink: 0;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .brand-mark {
+            width: 40px;
+            height: 40px;
+            background: #a3e635;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            font-weight: 800;
+            color: #064e3b;
+        }
+
+        .brand-text {
+            font-size: 18px;
+            color: #ffffff;
+        }
+
+        .brand-text strong {
+            font-weight: 700;
+        }
+
+        .brand-text span {
+            font-weight: 300;
+            color: #14b8a6;
+        }
+
+        .footer-cta {
+            font-size: 16px;
+            font-weight: 600;
+            color: #14b8a6;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="accent-bar"></div>
+
+        <!-- Header -->
+        <div class="header">
+            <h1>Same Job. <span>Completely Different Bullet.</span></h1>
+            <div class="subtitle">The before/after that gets you hired.</div>
+        </div>
+
+        <!-- Content -->
+        <div class="content">
+            <!-- BEFORE -->
+            <div class="section section-before">
+                <div class="label label-before">
+                    <span class="icon">✗</span> Before
+                    <span class="star-rating star-before">★ Duty Description</span>
+                </div>
+                <div class="bullet-text">
+                    "Responsible for testing embedded software systems and reporting results to the team."
+                </div>
+            </div>
+
+            <!-- Arrow -->
+            <div class="arrow-divider">↓</div>
+
+            <!-- AFTER -->
+            <div class="section section-after">
+                <div class="label label-after">
+                    <span class="icon">✓</span> After
+                    <span class="star-rating star-after">★★★ Impact Bullet</span>
+                </div>
+                <div class="bullet-text">
+                    "Designed and executed 47 automated test cases for the brake controller ECU using CANalyzer and Python, catching 3 critical defects before production — preventing a recall estimated at $2.4M."
+                </div>
+            </div>
+        </div>
+
+        <!-- Formula -->
+        <div class="formula-bar">
+            <span class="formula-item">Accomplishment</span>
+            <span class="formula-plus">+</span>
+            <span class="formula-item">Metric</span>
+            <span class="formula-plus">+</span>
+            <span class="formula-item">How</span>
+            <span class="formula-plus">+</span>
+            <span class="formula-item">Why</span>
+            <span class="formula-equals">=</span>
+            <span class="formula-result">IMPACT</span>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <div class="brand">
+                <div class="brand-mark">L²</div>
+                <div class="brand-text"><strong>Launch</strong><span>ToLead</span></div>
+            </div>
+            <div class="footer-cta">launchtolead.io</div>
+        </div>
+    </div>
+</body>
+</html>
