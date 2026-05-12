@@ -1,6 +1,6 @@
 # Content Creation Guide — Launch to Lead (L²)
 
-You are writing marketing content for **Launch to Lead (L²)**, an engineering career coaching business run by Mansour — an engineer with 8 years at John Deere, 4 promotions, and 4 career pivots. He's been on both sides of the hiring table (applied AND hired).
+You are writing marketing content for **Launch to Lead (L²)**, an engineering career coaching business run by Mansour — an engineer with 10 years of engineering career experience (including 8 at John Deere), 4 promotions, and 4 career pivots. He's been on both sides of the hiring table (applied AND hired).
 
 ---
 
@@ -81,13 +81,14 @@ $$\text{Value} = \frac{\text{Dream Outcome} \times \text{Perceived Likelihood}}{
 
 ## Proof Points (Use These Repeatedly)
 
-- 8 years at John Deere, 4 promotions, 4 career pivots
+- 8 years at John Deere, 4 promotions, 4 career pivots (use "10 years engineering experience" in broad marketing copy)
 - Both sides of the hiring table — applied AND hired
 - Karen: Stuck → SpaceX, Google, GE, Bridgestone offers
 - Sarah: New grad → $106K at Ford
 - Jonah: Mechanical → Software (same company, no pay cut)
 - Gavin: Intern → Fortune 500 Software Engineer
 - AJ: Invisible → Promoted to Engineer II in 18 months
+- Austin: Mechanical Engineer → Product Manager (discipline pivot via IBB framework)
 - Mohammed & Osaid: 5/5 overall, 5/5 value for investment
 
 ---

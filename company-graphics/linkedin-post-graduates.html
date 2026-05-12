@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedIn Post — Recent Engineering Graduates</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 1080px;
+            height: 1080px;
+            background: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            overflow: hidden;
+        }
+
+        .card {
+            width: 1080px;
+            height: 1080px;
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 100px 100px 80px 100px;
+            position: relative;
+        }
+
+        .profile-row {
+            display: flex;
+            align-items: center;
+            gap: 22px;
+            margin-bottom: 52px;
+        }
+
+        .avatar {
+            width: 88px;
+            height: 88px;
+            border-radius: 50%;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .profile-info {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .profile-name {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 30px;
+            font-weight: 700;
+            color: #fff;
+            line-height: 1;
+        }
+
+        .verified svg {
+            width: 28px;
+            height: 28px;
+        }
+
+        .profile-handle {
+            font-size: 24px;
+            font-weight: 400;
+            color: #71717a;
+            line-height: 1;
+        }
+
+        .post-text {
+            color: #fff;
+            line-height: 1.45;
+            letter-spacing: -0.3px;
+        }
+
+        .tag-line {
+            font-size: 40px;
+            font-weight: 800;
+            display: block;
+            margin-bottom: 36px;
+        }
+
+        .body-line {
+            font-size: 40px;
+            font-weight: 500;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .body-line.gap {
+            margin-bottom: 36px;
+        }
+
+        .emphasis {
+            font-weight: 800;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+
+        <div class="profile-row">
+            <img class="avatar" src="C:\Coding\coachingBusiness\launch-to-lead\pictures\mansour\headshot.png" alt="Mansour Manci">
+            <div class="profile-info">
+                <div class="profile-name">
+                    Mansour Manci
+                    <span class="verified">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="12" fill="#0A66C2"/>
+                            <path d="M7 12.5l3.5 3.5 6.5-7" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </span>
+                </div>
+                <div class="profile-handle">@launchtolead.io</div>
+            </div>
+        </div>
+
+        <div class="post-text">
+            <span class="tag-line">**Recent Engineering Graduates**</span>
+            <span class="body-line">Did the job market get tougher? Yes.</span>
+            <span class="body-line gap">Is there more competition for entry level engineering jobs now? Yes.</span>
+            <span class="body-line">This leaves you with two options:</span>
+            <span class="body-line"><span class="emphasis">Option A</span> — complain about it.</span>
+            <span class="body-line"><span class="emphasis">Option B</span> — compete and win.</span>
+            <span class="body-line" style="margin-top: 28px;">I can help you do the latter.</span>
+            <span class="body-line">Comment <span class="emphasis">"let's go"</span> to learn more.</span>
+        </div>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Subodh Kulkarni — Free Resume Audit | LaunchToLead</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --brand-primary: #064e3b;
+    --brand-secondary: #14b8a6;
+    --brand-accent: #a3e635;
+    --brand-light: #ecfdf5;
+    --slate-900: #0f172a;
+    --slate-700: #334155;
+    --slate-600: #475569;
+    --slate-200: #e2e8f0;
+    --slate-50: #f8fafc;
+    --red-500: #ef4444;
+    --amber-500: #f59e0b;
+    --green-600: #16a34a;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background: var(--slate-50);
+    color: var(--slate-700);
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  .download-btn {
+    position: fixed; top: 20px; right: 20px;
+    background: var(--brand-primary); color: white;
+    border: none; padding: 10px 22px; border-radius: 9999px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 700; font-size: 13px; cursor: pointer;
+    box-shadow: 0 4px 20px rgba(6,78,59,0.3); z-index: 1000;
+  }
+  .download-btn:hover { background: var(--brand-secondary); }
+  .page-wrapper { max-width: 900px; margin: 0 auto; padding: 40px 20px 60px; }
+
+  /* HEADER */
+  .report-header {
+    background: var(--brand-primary); color: white;
+    padding: 40px; border-radius: 16px; margin-bottom: 28px;
+  }
+  .header-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px; }
+  .header-logo { display: flex; align-items: center; gap: 10px; }
+  .logo-mark {
+    width: 40px; height: 40px; background: rgba(255,255,255,0.12);
+    border-radius: 10px; display: flex; align-items: center; justify-content: center;
+    font-size: 16px; font-weight: 800; letter-spacing: -1px;
+  }
+  .logo-text { font-size: 20px; font-weight: 700; }
+  .logo-text span { color: var(--brand-accent); }
+  .free-badge {
+    background: var(--brand-accent); color: var(--brand-primary);
+    font-size: 11px; font-weight: 800; text-transform: uppercase;
+    letter-spacing: 0.08em; padding: 4px 14px; border-radius: 9999px;
+  }
+  .header-title { font-size: 30px; font-weight: 800; margin-bottom: 6px; }
+  .header-sub { font-size: 15px; color: rgba(255,255,255,0.75); margin-bottom: 3px; }
+  .header-tag {
+    display: inline-block;
+    background: rgba(163,230,53,0.15); border: 1px solid var(--brand-accent);
+    color: var(--brand-accent); padding: 3px 12px; border-radius: 9999px;
+    font-size: 11px; font-weight: 600; text-transform: uppercase;
+    letter-spacing: 0.05em; margin-top: 14px;
+  }
+
+  /* SECTIONS */
+  .section {
+    background: white; border-radius: 16px; padding: 36px;
+    margin-bottom: 24px; box-shadow: 0 4px 20px -2px rgba(6,78,59,0.08);
+  }
+  .section-title {
+    font-size: 18px; font-weight: 800; color: var(--brand-primary);
+    padding-bottom: 14px; border-bottom: 2px solid var(--brand-light);
+    margin-bottom: 24px; display: flex; align-items: center; gap: 10px;
+  }
+  .section-num {
+    background: var(--brand-primary); color: white;
+    width: 28px; height: 28px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 700; flex-shrink: 0;
+  }
+
+  /* SCORE */
+  .score-row { display: flex; align-items: center; gap: 36px; margin-bottom: 28px; }
+  .score-big {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 88px; font-weight: 700; color: var(--brand-primary); line-height: 1; flex-shrink: 0;
+  }
+  .score-big span { font-size: 34px; color: var(--slate-600); }
+  .score-right { flex: 1; }
+  .pb-label { font-size: 13px; font-weight: 700; color: var(--slate-900); margin-bottom: 8px; }
+  .pb-bg { width: 100%; height: 16px; background: var(--slate-200); border-radius: 9999px; overflow: hidden; margin-bottom: 6px; }
+  .pb-fill { height: 100%; background: linear-gradient(90deg, var(--brand-primary), var(--brand-secondary)); border-radius: 9999px; }
+  .pb-labels { display: flex; justify-content: space-between; font-size: 10px; color: var(--slate-600); font-weight: 600; }
+  .sub-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 12px; margin-bottom: 24px; }
+  .sub-card { background: var(--brand-light); border-radius: 10px; padding: 14px; text-align: center; }
+  .sub-val { font-family: 'Space Grotesk', sans-serif; font-size: 30px; font-weight: 700; color: var(--brand-primary); line-height: 1; }
+  .sub-val span { font-size: 15px; color: var(--slate-600); }
+  .sub-label { font-size: 11px; font-weight: 600; color: var(--slate-600); margin-top: 4px; }
+  .verdict {
+    background: linear-gradient(135deg, var(--brand-primary), var(--brand-secondary));
+    color: white; padding: 22px 26px; border-radius: 12px;
+  }
+  .verdict-tier { font-size: 18px; font-weight: 800; margin-bottom: 6px; }
+  .verdict-text { font-size: 14px; opacity: 0.92; line-height: 1.65; }
+
+  /* ISSUES */
+  .issue { padding: 18px 20px; border-radius: 10px; margin-bottom: 14px; border-left: 4px solid; }
+  .issue-crit { background: #fff5f5; border-color: var(--red-500); }
+  .issue-imp  { background: #fffbeb; border-color: var(--amber-500); }
+  .issue-row  { display: flex; gap: 12px; align-items: flex-start; }
+  .ib { width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 800; flex-shrink: 0; margin-top: 1px; }
+  .ib-c { background: var(--red-500); color: white; }
+  .ib-i { background: var(--amber-500); color: white; }
+  .issue-title { font-size: 14px; font-weight: 700; color: var(--slate-900); margin-bottom: 6px; }
+  .issue-desc { font-size: 13px; line-height: 1.65; }
+  .issue-quote { background: rgba(0,0,0,0.05); border-radius: 6px; padding: 8px 12px; margin-top: 8px; font-size: 12px; font-style: italic; color: var(--slate-600); }
+
+  /* REWRITES */
+  .rw-block { margin-bottom: 28px; }
+  .rw-ctx { background: var(--slate-50); border: 1px solid var(--slate-200); border-radius: 8px; padding: 10px 14px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--slate-600); margin-bottom: 10px; }
+  .rw-before { background: #fff5f5; border: 1px solid #fecaca; border-radius: 8px; padding: 14px; margin-bottom: 8px; }
+  .rw-after  { background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 14px; }
+  .rw-lbl { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 6px; }
+  .rw-before .rw-lbl { color: var(--red-500); }
+  .rw-after  .rw-lbl { color: var(--green-600); }
+  .rw-txt { font-size: 13px; line-height: 1.7; }
+  .rw-before .rw-txt { color: #991b1b; }
+  .rw-after  .rw-txt { color: #166534; }
+  .ph { color: var(--brand-secondary); font-weight: 600; }
+  .ph-note { font-size: 12px; color: var(--slate-600); font-style: italic; margin-top: 10px; background: rgba(0,0,0,0.03); padding: 8px 12px; border-radius: 6px; }
+
+  /* BEFORE/AFTER */
+  .ba { margin-bottom: 28px; border: 1px solid var(--slate-200); border-radius: 12px; overflow: hidden; }
+  .ba-ctx { background: var(--slate-50); padding: 10px 16px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--slate-600); border-bottom: 1px solid var(--slate-200); }
+  .ba-b { background: #fff5f5; padding: 16px; border-bottom: 1px solid var(--slate-200); }
+  .ba-a { background: #f0fdf4; padding: 16px; }
+  .ba-lbl { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px; }
+  .ba-b .ba-lbl { color: var(--red-500); }
+  .ba-a .ba-lbl { color: var(--green-600); }
+  .ba-txt { font-size: 13px; line-height: 1.7; }
+  .ba-b .ba-txt { color: #991b1b; }
+  .ba-a .ba-txt { color: #166534; }
+
+  /* ACTION ITEMS */
+  .ai { display: flex; gap: 14px; padding: 16px; background: var(--brand-light); border-radius: 10px; margin-bottom: 12px; align-items: flex-start; }
+  .ai-num { width: 30px; height: 30px; background: var(--brand-primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 800; flex-shrink: 0; }
+  .ai-title { font-size: 14px; font-weight: 700; color: var(--brand-primary); margin-bottom: 4px; }
+  .ai-desc { font-size: 13px; line-height: 1.65; }
+
+  /* WORKING */
+  .wi { display: flex; gap: 12px; padding: 14px; background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 10px; margin-bottom: 10px; }
+  .wi-chk { width: 22px; height: 22px; background: var(--green-600); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; flex-shrink: 0; margin-top: 1px; }
+  .wi-title { font-size: 14px; font-weight: 700; color: #166534; margin-bottom: 3px; }
+  .wi-desc { font-size: 13px; color: #166534; line-height: 1.55; }
+
+  /* SCORECARD */
+  .sc-table { width: 100%; border-collapse: collapse; }
+  .sc-table th { background: var(--brand-primary); color: white; padding: 12px 14px; text-align: left; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; }
+  .sc-table td { padding: 12px 14px; border-bottom: 1px solid var(--slate-200); font-size: 13px; vertical-align: top; }
+  .sc-table tr:nth-child(even) td { background: var(--slate-50); }
+  .sc-table tr.tr-total td { background: var(--brand-primary); color: white; font-weight: 700; font-size: 14px; }
+  .sc-score { font-family: 'Space Grotesk', sans-serif; font-size: 18px; font-weight: 700; color: var(--brand-primary); text-align: center; white-space: nowrap; }
+  .sc-score-total { font-family: 'Space Grotesk', sans-serif; font-size: 22px; font-weight: 700; color: var(--brand-accent); text-align: center; }
+  .good-news { background: linear-gradient(135deg, var(--brand-primary), var(--brand-secondary)); color: white; padding: 26px; border-radius: 12px; margin-top: 24px; }
+  .good-news-title { font-size: 16px; font-weight: 800; margin-bottom: 8px; }
+  .good-news-text { font-size: 14px; line-height: 1.7; opacity: 0.95; }
+
+  /* CTA */
+  .cta-section {
+    background: linear-gradient(135deg, var(--slate-900), #1e293b);
+    color: white; padding: 40px; border-radius: 16px; margin-bottom: 24px;
+  }
+  .cta-title { font-size: 24px; font-weight: 800; margin-bottom: 8px; }
+  .cta-sub { font-size: 15px; color: rgba(255,255,255,0.78); margin-bottom: 28px; line-height: 1.6; }
+  .cta-steps { list-style: none; margin-bottom: 28px; }
+  .cta-steps li {
+    display: flex; gap: 14px; align-items: flex-start;
+    padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  .cta-steps li:last-child { border-bottom: none; }
+  .cta-step-num {
+    width: 28px; height: 28px; border-radius: 50%;
+    background: var(--brand-secondary); color: white;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 800; flex-shrink: 0;
+  }
+  .cta-step-title { font-size: 14px; font-weight: 700; margin-bottom: 3px; }
+  .cta-step-desc { font-size: 13px; color: rgba(255,255,255,0.75); line-height: 1.55; }
+  .cta-deliverables {
+    background: rgba(255,255,255,0.07); border-radius: 10px;
+    padding: 18px 20px; margin-bottom: 28px; font-size: 13px;
+    color: rgba(255,255,255,0.85); line-height: 1.8;
+  }
+  .cta-deliverables strong { color: white; }
+  .cta-btn {
+    display: inline-block;
+    background: var(--brand-accent); color: var(--brand-primary);
+    font-size: 15px; font-weight: 800; padding: 16px 36px;
+    border-radius: 9999px; text-decoration: none;
+    box-shadow: 0 4px 20px rgba(163,230,53,0.3);
+  }
+  .cta-btn:hover { opacity: 0.92; }
+
+  /* FOOTER */
+  .report-footer { text-align: center; padding: 32px; color: var(--slate-600); font-size: 13px; }
+  .report-footer a { color: var(--brand-secondary); }
+
+  /* PRINT */
+  @media print {
+    body { background: white; }
+    .download-btn { display: none !important; }
+    .page-wrapper { padding: 0; max-width: 100%; }
+    .section { box-shadow: none; border: 1px solid #e2e8f0; }
+    .report-header { page-break-after: always; }
+    .section { page-break-before: always; page-break-inside: auto; }
+    .ba { page-break-inside: avoid; }
+    .rw-block { page-break-inside: avoid; }
+    .issue { page-break-inside: avoid; }
+    .sc-table tr { page-break-inside: avoid; }
+    .cta-section { page-break-before: always; }
+    * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+
+  @media (max-width: 620px) {
+    .sub-grid { grid-template-columns: repeat(2,1fr); }
+    .score-row { flex-direction: column; gap: 16px; }
+    .score-big { font-size: 64px; }
+  }
+</style>
+</head>
+<body>
+
+<button class="download-btn" onclick="window.print()">↓ Download PDF</button>
+
+<div class="page-wrapper">
+
+  <!-- HEADER -->
+  <div class="report-header">
+    <div class="header-top">
+      <div class="header-logo">
+        <div class="logo-mark">L²</div>
+        <div class="logo-text">Launch<span>ToLead</span></div>
+      </div>
+      <div class="free-badge">Free Audit</div>
+    </div>
+    <div class="header-title">Resume Audit Report</div>
+    <div class="header-sub">Subodh Kulkarni, Ph.D. — Quality Engineering Leadership</div>
+    <div class="header-sub">30+ Years Experience · John Deere · Pella · J.B. Hunt · Walchandnagar Industries</div>
+    <div class="header-tag">Scored against the Impact Bullet Builder™ Framework · 18 Bullets Analyzed</div>
+  </div>
+
+  <!-- SECTION 1: SCORE -->
+  <div class="section">
+    <div class="section-title"><span class="section-num">1</span> Overall Score</div>
+    <div class="score-row">
+      <div class="score-big">76<span>/100</span></div>
+      <div class="score-right">
+        <div class="pb-label">Your Resume Score</div>
+        <div class="pb-bg"><div class="pb-fill" style="width:76%"></div></div>
+        <div class="pb-labels">
+          <span>10–30 ★ What Was Asked</span>
+          <span>31–60 ★★ Above &amp; Beyond</span>
+          <span>61–100 ★★★ Impact</span>
+        </div>
+      </div>
+    </div>
+    <div class="sub-grid">
+      <div class="sub-card">
+        <div class="sub-val">9<span>/10</span></div>
+        <div class="sub-label">Accomplishments</div>
+      </div>
+      <div class="sub-card">
+        <div class="sub-val">10<span>/10</span></div>
+        <div class="sub-label">Metrics</div>
+      </div>
+      <div class="sub-card">
+        <div class="sub-val">7<span>/10</span></div>
+        <div class="sub-label">How / Method</div>
+      </div>
+      <div class="sub-card">
+        <div class="sub-val">6<span>/10</span></div>
+        <div class="sub-label">Why / Impact</div>
+      </div>
+    </div>
+    <div class="verdict">
+      <div class="verdict-tier">★★★ &nbsp;You Spread the Impact Far and Wide</div>
+      <div class="verdict-text">76/100 puts this resume in the top tier of the IBB framework. The metrics density across your John Deere career is strong — specific percentages, dollar figures, and event counts appear throughout, which is significantly above average at this experience level. The gap to 85+ is narrow and specific: the "Why" component is missing from roughly a third of your bullets, and problem context is almost entirely absent. Those two edits are the entire job from here.</div>
+    </div>
+  </div>
+
+  <!-- SECTION 2: KEY ISSUES -->
+  <div class="section">
+    <div class="section-title"><span class="section-num">2</span> Key Issues Identified</div>
+
+    <div class="issue issue-crit">
+      <div class="issue-row">
+        <span class="ib ib-c">1</span>
+        <div>
+          <div class="issue-title">Missing "Why" on your three biggest achievements</div>
+          <div class="issue-desc">Your strongest bullets — 70% CAR reduction on MY26, 90% defect reduction on MY25, and 90% sensor defect elimination — all stop at the metric without stating the downstream business consequence. The IBB formula requires a stated "Why": what did the defect reduction prevent or enable? Warranty claim avoidance? Production schedule protection? Field failure cost reduction? Even an estimate with a qualifier closes the loop: "preventing an estimated $[X] in annual warranty exposure" is materially stronger than leaving the business significance to the reader's imagination. This gap affects roughly 8 of 18 bullets and is the highest-impact edit available.</div>
+          <div class="issue-quote">"Reduced repeat defects (CARs) by 70% year-over-year from 83 to 16 on the MY26 program..." — strong metric, no stated downstream business outcome.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="issue issue-crit">
+      <div class="issue-row">
+        <span class="ib ib-c">2</span>
+        <div>
+          <div class="issue-title">Problem context is nearly absent across all 18 bullets</div>
+          <div class="issue-desc">Only 7 of 18 bullets include any framing of stakes, before/after comparison, or scale that explains why the result was difficult or significant. Without context, a strong result reads as assumed rather than earned. Adding one sentence per bullet — "On a $[X]M program with unresolved CARs across 3 prior phases..." or "After two years of recurring sensor field failures with no systemic fix in place..." — flips the read from "what you did" to "why it mattered that you specifically did it." This is the lowest-scoring criterion at 4/10 and the single highest-impact improvement available across the entire resume.</div>
+          <div class="issue-quote">11 of 18 bullets contain no problem framing, before/after comparison, or scale statement of any kind.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="issue issue-imp">
+      <div class="issue-row">
+        <span class="ib ib-i">3</span>
+        <div>
+          <div class="issue-title">Two duty-level bullets are pulling down an otherwise top-tier resume</div>
+          <div class="issue-desc">The extension teaching bullet ("Planned and executed educational and training programs...") and the graduate research assistant bullet ("Completed 3 major precision agriculture research projects...") are the only ★-level entries on the page. They describe what you were doing, not what changed because you did it. At 30 years of experience, these are the entries most likely to be skimmed past or raise questions. Both need outcome-first rewrites or should be consolidated into a single aggregate impact statement with audience size, publication count, and adoption outcome.</div>
+          <div class="issue-quote">"Planned and executed educational and training programs on machinery and precision ag technologies..." — no metrics, no audience size, no outcome stated.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="issue issue-imp">
+      <div class="issue-row">
+        <span class="ib ib-i">4</span>
+        <div>
+          <div class="issue-title">NDE certifications are disconnected from where you used them</div>
+          <div class="issue-desc">Your Level II NDE certifications (UT, MT, LP) are listed in the Certifications section — disconnected from the Walchandnagar bullet where you applied them on a nuclear power plant and defense fabrication project. Certifications in a list describe what you hold; certifications inside an experience bullet describe what you did with them. Moving the method names into the bullet — "applying ISNT/ASNT Level II NDE methods (UT, MT, LP) to achieve zero structural non-conformances" — directly connects credential to outcome and makes both stronger.</div>
+          <div class="issue-quote">"Led QC/QA activities for a 6,000 metric ton fabricated nuclear power plant steel structure..." — NDE methods applied are listed separately in Certifications, not in the bullet where they were used.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 3: TOP BULLETS REWRITTEN -->
+  <div class="section">
+    <div class="section-title"><span class="section-num">3</span> Top Bullets — Rewritten</div>
+    <p style="font-size:13px; color:var(--slate-600); margin-bottom:20px; font-style:italic;">The 5 bullets with the highest improvement potential — each already has 2–3 of the 4 IBB components and gains the most from closing the missing gaps.</p>
+
+    <!-- Bullet 1 -->
+    <div class="rw-block">
+      <div class="rw-ctx">Program Quality Engineer · John Deere R&amp;D — MY26 Program</div>
+      <div class="rw-before">
+        <div class="rw-lbl">✕ Original</div>
+        <div class="rw-txt">Reduced repeat defects (CARs) by 70% year-over-year from 83 to 16 on the MY26 program by implementing systematic root cause tracking across 9 engineers, resolved 57 new non-conformances and dispositioned ~1,400 field automation events across HX and ISG through all EPDP.</div>
+      </div>
+      <div class="rw-after">
+        <div class="rw-lbl">✓ Rewritten</div>
+        <div class="rw-txt">Drove a 70% year-over-year reduction in repeat CARs on the MY26 combine program — from 83 to 16 open defects — by implementing a structured root cause tracking system across 9 cross-functional engineers, eliminating downstream warranty exposure and keeping the program on schedule through full EPDP; dispositioned 57 new non-conformances and ~1,400 field automation events across HX and ISG.</div>
+      </div>
+    </div>
+
+    <!-- Bullet 2 -->
+    <div class="rw-block">
+      <div class="rw-ctx">Program Quality Engineer · John Deere R&amp;D — MY25 Yield 3.0</div>
+      <div class="rw-before">
+        <div class="rw-lbl">✕ Original</div>
+        <div class="rw-txt">Achieved 90% repeat defect reduction on MY25 - Yield 3.0 program within 3 years and 3 phases using system engineering approach; resolved 30 CARs and 200 plus field events while presenting risk mitigation plans to leadership and product council.</div>
+      </div>
+      <div class="rw-after">
+        <div class="rw-lbl">✓ Rewritten</div>
+        <div class="rw-txt">Achieved 90% reduction in repeat defects on the MY25 Yield 3.0 program across 3 development phases over 3 years by applying a systems engineering framework to close 30 CARs and resolve 200+ field events — presenting risk mitigation plans directly to product council and enabling informed go/no-go decisions that protected the program schedule on a high-visibility combine platform.</div>
+      </div>
+    </div>
+
+    <!-- Bullet 3 -->
+    <div class="rw-block">
+      <div class="rw-ctx">Program Quality Engineer · John Deere R&amp;D — Sensor Program</div>
+      <div class="rw-before">
+        <div class="rw-lbl">✕ Original</div>
+        <div class="rw-txt">Reduced sensor related repeat issue by 90% over 4 years on the Combine and FEE programs by executing 23 various sensor application review meetings that included multi-decade team members and suppliers on 126 sensors, and processed 250+ parts evaluation conducting EPDP processes, covering speed, temperature, pressure, position, and proximity sensors.</div>
+      </div>
+      <div class="rw-after">
+        <div class="rw-lbl">✓ Rewritten</div>
+        <div class="rw-txt">Eliminated 90% of recurring sensor-related defects across the Combine and FEE programs over 4 years — reducing field failure exposure across 126 sensors in 5 application categories and preventing an estimated <span class="ph">[X]</span> in annual warranty costs — by leading 23 structured application review sessions with long-tenured engineers and suppliers and processing 250+ part evaluations through EPDP.</div>
+      </div>
+    </div>
+
+    <!-- Bullet 4 -->
+    <div class="rw-block">
+      <div class="rw-ctx">Deputy Chief Engineer · Walchandnagar Industries — Nuclear/Defense QC</div>
+      <div class="rw-before">
+        <div class="rw-lbl">✕ Original</div>
+        <div class="rw-txt">Led QC/QA activities for a 6,000 metric ton fabricated nuclear power plant steel structure, plus defense projects including rocket nozzles, cones, booster assemblies, and missile launchers — contributing to a $250,000 early-completion bonus from the Government of India.</div>
+      </div>
+      <div class="rw-after">
+        <div class="rw-lbl">✓ Rewritten</div>
+        <div class="rw-txt">Directed QC/QA engineering for a 6,000 metric ton nuclear power plant steel structure and concurrent defense fabrications — including rocket nozzles, booster assemblies, and missile launchers — applying ISNT/ASNT Level II NDE methods (UT, MT, LP) to achieve zero structural non-conformances, directly enabling a $250,000 early-completion bonus from the Government of India.</div>
+      </div>
+    </div>
+
+    <!-- Bullet 5 -->
+    <div class="rw-block">
+      <div class="rw-ctx">Sr. Research Assistant · University of Arkansas — Grad Research</div>
+      <div class="rw-before">
+        <div class="rw-lbl">✕ Original</div>
+        <div class="rw-txt">Completed 3 major precision agriculture research projects in sugarbeet, cotton and Soybean within time and published results in the form of peer reviewed journal articles, proceedings, and presentation at international Conferences and my thesis and dissertations as a graduate student.</div>
+      </div>
+      <div class="rw-after">
+        <div class="rw-lbl">✓ Rewritten</div>
+        <div class="rw-txt">Led 3 precision agriculture field research projects in sugarbeet, cotton, and soybean — all completed on schedule — generating <span class="ph">[X]</span> peer-reviewed publications and <span class="ph">[X]</span> international conference presentations that established foundational data for USDA and industry-sponsored precision ag programs, fulfilling dual M.S. and Ph.D. dissertation requirements.</div>
+      </div>
+    </div>
+
+    <div class="ph-note">Brackets like <strong style="color:var(--brand-secondary);">[X]</strong> are placeholders — only you know the real numbers. Fill them in with your best estimate. A conservative guess beats no number at all.</div>
+  </div>
+
+  <!-- SECTION 4: BEFORE & AFTER -->
+  <div class="section">
+    <div class="section-title"><span class="section-num">4</span> Before &amp; After — Best Examples</div>
+
+    <div class="ba">
+      <div class="ba-ctx">Example 1 &nbsp;·&nbsp; Sr. Research Assistant — Grad Projects &nbsp;·&nbsp; Tier Jump: ★ → ★★★</div>
+      <div class="ba-b">
+        <div class="ba-lbl">✕ BEFORE (★ Level)</div>
+        <div class="ba-txt">Completed 3 major precision agriculture research projects in sugarbeet, cotton and Soybean within time and published results in the form of peer reviewed journal articles, proceedings, and presentation at international Conferences and my thesis and dissertations as a graduate student.</div>
+      </div>
+      <div class="ba-a">
+        <div class="ba-lbl">✓ AFTER (★★★ Level)</div>
+        <div class="ba-txt">Led 3 precision agriculture field research projects in sugarbeet, cotton, and soybean — all completed on schedule — generating [X] peer-reviewed publications and [X] international conference presentations that established foundational data for USDA and industry-sponsored precision ag programs, fulfilling dual M.S. and Ph.D. dissertation requirements.</div>
+      </div>
+    </div>
+
+    <div class="ba">
+      <div class="ba-ctx">Example 2 &nbsp;·&nbsp; Deputy Chief Engineer — Nuclear/Defense &nbsp;·&nbsp; Ownership + Method Fix: ★★ → ★★★</div>
+      <div class="ba-b">
+        <div class="ba-lbl">✕ BEFORE (★★ Level)</div>
+        <div class="ba-txt">Led QC/QA activities for a 6,000 metric ton fabricated nuclear power plant steel structure, plus defense projects including rocket nozzles, cones, booster assemblies, and missile launchers — contributing to a $250,000 early-completion bonus from the Government of India.</div>
+      </div>
+      <div class="ba-a">
+        <div class="ba-lbl">✓ AFTER (★★★ Level)</div>
+        <div class="ba-txt">Directed QC/QA engineering for a 6,000 metric ton nuclear power plant steel structure and concurrent defense fabrications — including rocket nozzles, booster assemblies, and missile launchers — applying ISNT/ASNT Level II NDE methods (UT, MT, LP) to achieve zero structural non-conformances, directly enabling a $250,000 early-completion bonus from the Government of India.</div>
+      </div>
+    </div>
+
+    <div class="ba">
+      <div class="ba-ctx">Example 3 &nbsp;·&nbsp; Program Quality Engineer — Sensor Defects &nbsp;·&nbsp; Why Added: ★★ → ★★★</div>
+      <div class="ba-b">
+        <div class="ba-lbl">✕ BEFORE (★★ Level)</div>
+        <div class="ba-txt">Reduced sensor related repeat issue by 90% over 4 years on the Combine and FEE programs by executing 23 various sensor application review meetings that included multi-decade team members and suppliers on 126 sensors, and processed 250+ parts evaluation conducting EPDP processes, covering speed, temperature, pressure, position, and proximity sensors.</div>
+      </div>
+      <div class="ba-a">
+        <div class="ba-lbl">✓ AFTER (★★★ Level)</div>
+        <div class="ba-txt">Eliminated 90% of recurring sensor-related defects across the Combine and FEE programs over 4 years — reducing field failure exposure across 126 sensors in 5 application categories and preventing an estimated [X] in annual warranty costs — by leading 23 structured application review sessions with long-tenured engineers and suppliers and processing 250+ part evaluations through EPDP.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 5: ACTION ITEMS -->
+  <div class="section">
+    <div class="section-title"><span class="section-num">5</span> Top Action Items</div>
+
+    <div class="ai">
+      <div class="ai-num">1</div>
+      <div>
+        <div class="ai-title">Add "Why" to the three flagship JD defect-reduction bullets</div>
+        <div class="ai-desc">The MY26 (70% CAR), MY25 (90% reduction), and sensor (90% elimination) bullets all stop at the metric without closing the loop to business consequence. For each, add one clause: warranty claim avoidance, field failure cost reduction, or production schedule protection. This is the single highest-leverage edit on this entire resume and requires only one sentence per bullet.</div>
+      </div>
+    </div>
+
+    <div class="ai">
+      <div class="ai-num">2</div>
+      <div>
+        <div class="ai-title">Add problem context to your top 5 JD bullets</div>
+        <div class="ai-desc">For the Program Quality Engineer bullets, add one framing sentence that establishes what you walked into: the state of the program before your involvement, the scale of what was at risk, or the history of the problem. Format: "On a $[X]M program with [X] CARs unresolved across prior phases..." This is the lowest-scoring criterion (4/10) and turns results from impressive to earned.</div>
+      </div>
+    </div>
+
+    <div class="ai">
+      <div class="ai-num">3</div>
+      <div>
+        <div class="ai-title">Rewrite or consolidate the two ★-level bullets at the bottom</div>
+        <div class="ai-desc">The extension teaching and graduate research bullets are the only entries dragging consistency down. Both need outcome framing with at least one metric — audience size, publication count, adoption outcome. If those numbers aren't available, consolidate both into a single aggregate statement. One strong combined entry outperforms two weak separate ones at the bottom of a 30-year career resume.</div>
+      </div>
+    </div>
+
+    <div class="ai">
+      <div class="ai-num">4</div>
+      <div>
+        <div class="ai-title">Move your NDE certifications into the Walchandnagar bullet</div>
+        <div class="ai-desc">Credentials in a certifications list describe what you hold. Credentials inside an experience bullet describe what you did with them. Add "applying ISNT/ASNT Level II NDE methods (UT, MT, LP)" directly into the nuclear fabrication bullet. This connects the credential to the context where it mattered, and makes both the bullet and the certification section stronger.</div>
+      </div>
+    </div>
+
+    <div class="ai">
+      <div class="ai-num">5</div>
+      <div>
+        <div class="ai-title">Fix the single weak action verb — "Estimated 50% reduction..."</div>
+        <div class="ai-desc">Replace "Estimated 50% reduction of defects..." with "Reduced warranty-related defects by ~50%..." The tilde (~) is the clean, professional convention for signaling an estimate. The qualifier belongs after the action, not as the first word. This is a 30-second fix that removes the only action verb failure on the resume.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 6: WHAT'S WORKING -->
+  <div class="section">
+    <div class="section-title"><span class="section-num">6</span> What's Already Working</div>
+
+    <div class="wi">
+      <div class="wi-chk">✓</div>
+      <div>
+        <div class="wi-title">Metrics density throughout the John Deere roles is well above average</div>
+        <div class="wi-desc">Nearly every JD bullet contains a specific number — percentages, dollar figures, event counts, and part counts. "From 83 to 16," "350+ hours," "~30 hours/week," "126 sensors," "250+ parts." This level of specificity is rare at this experience level and is the primary reason the score lands in the top tier.</div>
+      </div>
+    </div>
+
+    <div class="wi">
+      <div class="wi-chk">✓</div>
+      <div>
+        <div class="wi-title">Eight bullets already contain explicit dollar-value business outcomes</div>
+        <div class="wi-desc">$30K, $40K, $85K, $125K, $250K, $500K+ across multiple roles. Attaching specific dollar figures to specific actions is exactly what the IBB "Why" component targets, and you've done it on more bullets than most candidates at this level manage across an entire resume.</div>
+      </div>
+    </div>
+
+    <div class="wi">
+      <div class="wi-chk">✓</div>
+      <div>
+        <div class="wi-title">Near-perfect personal ownership throughout</div>
+        <div class="wi-desc">Almost no collective framing ("we," "team," "group"). You consistently own the action — "by implementing," "by consolidating," "by building," "by executing." Only one bullet uses shared-credit language ("contributing to a $250,000 bonus"), and that's a straightforward fix.</div>
+      </div>
+    </div>
+
+    <div class="wi">
+      <div class="wi-chk">✓</div>
+      <div>
+        <div class="wi-title">Strong action verbs on 17 of 18 bullets</div>
+        <div class="wi-desc">Only one bullet opens with a weak framing word. Every other bullet uses a clear, direct action verb — Reduced, Achieved, Saved, Led, Implemented, Delivered, Secured, Directed. This scores 10/10 on the rubric.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 7: SCORECARD -->
+  <div class="section">
+    <div class="section-title"><span class="section-num">7</span> Full Scorecard</div>
+    <table class="sc-table">
+      <thead>
+        <tr>
+          <th style="width:34%">Criteria</th>
+          <th style="width:11%; text-align:center;">Score</th>
+          <th>Observation</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>1. Accomplishments (not duties)</strong></td>
+          <td class="sc-score">9/10</td>
+          <td>15 of 18 bullets describe genuine accomplishments. Extension teaching, grad research, and the sugarcane harvester R&amp;D bullet describe tasks without stated outcomes.</td>
+        </tr>
+        <tr>
+          <td><strong>2. Metrics / Quantification</strong></td>
+          <td class="sc-score">10/10</td>
+          <td>17 of 18 bullets contain a specific number. Only the extension teaching bullet has no meaningful metric. One of the strongest possible scores on this criterion.</td>
+        </tr>
+        <tr>
+          <td><strong>3. How / Method Shown</strong></td>
+          <td class="sc-score">7/10</td>
+          <td>11 of 18 bullets name a specific tool, method, or process. NDE certifications (UT, MT, LP) are in Certifications but not connected to the Walchandnagar bullet. Grant methodology is missing from the University of Arkansas bullets.</td>
+        </tr>
+        <tr>
+          <td><strong>4. Why / Business Impact</strong></td>
+          <td class="sc-score">6/10</td>
+          <td>10 of 18 bullets connect results to business outcomes. The three flagship JD defect bullets stop at the metric. This is the criterion with the most room to improve in the current role.</td>
+        </tr>
+        <tr>
+          <td><strong>5. Personal Ownership</strong></td>
+          <td class="sc-score">10/10</td>
+          <td>17 of 18 bullets use first-person active framing. One exception: "contributing to a $250,000 bonus" — replace with direct ownership language.</td>
+        </tr>
+        <tr>
+          <td><strong>6. Problem Context / "So What?"</strong></td>
+          <td class="sc-score">4/10</td>
+          <td>Only 7 of 18 bullets include stakes, before/after framing, or scale context. Lowest-scoring criterion. Strong results need context to feel earned rather than assumed.</td>
+        </tr>
+        <tr>
+          <td><strong>7. Action Verbs</strong></td>
+          <td class="sc-score">10/10</td>
+          <td>17 of 18 bullets start with a strong action verb. Only bullet 8 ("Estimated 50% reduction...") fails — a 30-second fix.</td>
+        </tr>
+        <tr>
+          <td><strong>8. Bullet Quality Consistency</strong></td>
+          <td class="sc-score">5/10</td>
+          <td>Spread from ★ (2 bullets) to ★★★ (majority). The 2-tier spread places this in the 3–5 range. Removing or rewriting the two ★-level entries would push this to 7–8 and lift the overall score noticeably.</td>
+        </tr>
+        <tr class="tr-total">
+          <td><strong>OVERALL SCORE</strong></td>
+          <td class="sc-score-total">76/100</td>
+          <td><strong>★★★ — You Spread the Impact Far and Wide.</strong> Top-tier score. The path to 85+ is two focused edits: close the "Why" gap on the core JD bullets, and add problem context throughout.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="good-news">
+      <div class="good-news-title">The Good News</div>
+      <div class="good-news-text">A 76/100 means the hard work is already done. Your results across 30 years are real, specific, and measurable in ways most candidates can't match. The path from 76 to 85+ doesn't require finding new accomplishments — it requires one or two sentences per bullet. One that closes the "why this mattered to the business" loop. One that frames what you walked into before you fixed it. The metrics foundation is there. The ownership is there. The action verbs are there. You're not rebuilding — you're refining.</div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <div class="cta-title">Want Help Fixing All of This?</div>
+    <div class="cta-sub">This audit covered your top 5 bullets and highest-impact issues. The other bullets on your resume have the same potential — they just need the same treatment, applied consistently across every role.</div>
+    <ul class="cta-steps">
+      <li>
+        <div class="cta-step-num">1</div>
+        <div>
+          <div class="cta-step-title">Resume Rebuilt</div>
+          <div class="cta-step-desc">Every bullet rewritten using the Impact Bullet Builder formula. Not a template — a complete rebuild based on your actual experience.</div>
+        </div>
+      </li>
+      <li>
+        <div class="cta-step-num">2</div>
+        <div>
+          <div class="cta-step-title">Interview Stories Mastered</div>
+          <div class="cta-step-desc">Build a master story bank structured in STAR format — mapped to the specific competencies interviewers probe at the senior engineering level.</div>
+        </div>
+      </li>
+      <li>
+        <div class="cta-step-num">3</div>
+        <div>
+          <div class="cta-step-title">Live Mock Interview with Direct Feedback</div>
+          <div class="cta-step-desc">Full practice interview with real-time critique — same structure as what you'll face for senior quality engineering and systems roles.</div>
+        </div>
+      </li>
+    </ul>
+    <div class="cta-deliverables">
+      <strong>You leave with:</strong> a fully rebuilt resume · master story bank · mock interview notes · all session recordings · 40+ bonus materials and templates
+    </div>
+    <a href="https://launchtolead.io/coaching?utm_source=audit&utm_medium=email&utm_campaign=free-audit&utm_content=subodh-kulkarni" class="cta-btn">See If You're a Fit →</a>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="report-footer">
+    <p>Free audit prepared by LaunchToLead &nbsp;|&nbsp; Impact Bullet Builder™ Framework</p>
+    <p style="margin-top:6px;"><a href="https://launchtolead.io/free">launchtolead.io/free</a></p>
+  </div>
+
+</div>
+</body>
+</html>
