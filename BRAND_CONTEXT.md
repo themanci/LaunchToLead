@@ -180,9 +180,10 @@ Shared component (`navigation.js`) injected into `#navigation-container`:
 
 **The core product. All marketing and advertising is focused here.**
 
-- **Price:** $997 (or 3 payments of $349)
-- **Format:** 3 × 90-minute 1-on-1 sessions over 21 days
+- **Price:** $997 (payment plan: $249 before session 1, remainder before session 2)
+- **Format:** 4 × 1-hour 1-on-1 sessions over 4 weeks (1 per week)
 - **Capacity:** 10 clients/month
+- **Continuation:** Month 2+ available at $495/month — 2 sessions/month, 1 every 2 weeks (optional, client's choice — no obligation after Month 1)
 
 #### Program Structure
 
@@ -191,9 +192,10 @@ Shared component (`navigation.js`) injected into `#navigation-container`:
 | 1 | Your Resume Rebuilt | Turn boring job responsibilities into highly impactful accomplishments using the Impact Bullet Builder formula |
 | 2 | Interview Stories/Examples Mastered | Build master story bank, structure stories to show value in the format interviewers want |
 | 3 | Live Mock Interview with Direct Feedback | Real interview simulation with real-time critique and gap-fixing |
+| 4 | Job Search Strategy & Offer Prep | Application strategy, networking protocols, negotiation scripts, and 30-day action plan |
 
 #### Core Deliverables
-1. 3 × 90-minute 1-on-1 coaching sessions
+1. 4 × 1-hour 1-on-1 coaching sessions
 2. Complete resume rebuild
 3. 15+ STAR examples mapped & memorized
 4. Full behavioral mock interview with feedback
@@ -209,8 +211,18 @@ Shared component (`navigation.js`) injected into `#navigation-container`:
 - Salary Negotiation Scripts
 - …and 30+ more checklists & templates
 
-#### Guarantee
-"Finish all 3 sessions, and if you don't leave with everything above and the complete confidence to crush any interview, I will keep working with you until you do."
+#### Guarantee (Two-Part)
+
+**Guarantee 1 — After Session 1**
+If you're not happy and don't feel it's valuable after the first session, we both walk away. No further commitment, no questions asked, no feelings hurt. You keep everything from session 1 — at minimum a powerful resume to start landing interviews.
+
+**Guarantee 2 — Complete the Full Month**
+Complete all 4 sessions, do the homework, and submit 50+ job applications. If you do, you are guaranteed to walk away with:
+- A fully rebuilt resume that shows value and impact
+- A story vault of documented interview examples with competency mapping complete
+- In-depth mock interview practice with detailed feedback (recording, transcript, and notes)
+
+If we complete the month and those three deliverables are not in your hands, I continue working with you at no additional charge until they are.
 
 #### Client Materials Breakdown
 
@@ -386,7 +398,7 @@ Website → "See If You're a Fit" CTA → Offer Page
 5. Program structure: 3 weeks breakdown
 6. Karen video testimonial (full story)
 7. Meet your coach + deliverables checklist + guarantee
-8. Your Investment: ROI math ($7K/month lost) → **$997** revealed, or 3 × $349
+8. Your Investment: ROI math ($7K/month lost) → **$997** revealed, or $249 now / remainder before session 2
 9. Qualifying form (see below)
 10. FAQ / Objection handling (6 objections + 2 FAQs)
 11. Final CTA
@@ -403,13 +415,13 @@ Website → "See If You're a Fit" CTA → Offer Page
 - 15-minute hard stop for pre-qualified prospects
 - **Full protocol:** `protocols/discovery_call/discovery_call_protocol_v4.html`
 - "The Hormozi Frame" — You Are the Doctor, Tonality = Certain, Scarcity Is Real
-- "The Shot Glass Close" — 3 concentrated sessions, no upsell
+- "The Shot Glass Close" — 4 focused sessions, no upsell
 - **Context:** By the time someone books this call, they've been through the full funnel (ad → lead magnet → offer page VSL → qualifying form → pre-call VSL). They are 80% sold — confirm fit, don't re-sell.
 - Pre-call prep (2 min before): Review qualifying form answers + optional LinkedIn check (photo, graduation date, projects)
 - Phase 1 (0–3 min): Set the Frame & Finish Qualifying — Opening script + 3–4 qualifying questions + red flag disqualifiers
 - Phase 2 (3–7 min): Diagnose & Connect — Mirror their words back, diagnose 1–2 root causes, drop one matching client story (Karen/Sarah/Jonah/Mohammed)
-- Phase 3 (7–10 min): The Prescription — Map each of the 3 sessions to their specific pain + deploy Shot Glass Close
-- Phase 4 (10–12 min): The Close — Acceptance frame ("I'd like to accept you") → $997 full or 3 × $349 per session
+- Phase 3 (7–10 min): The Prescription — Map each of the 4 sessions to their specific pain + deploy Shot Glass Close
+- Phase 4 (10–12 min): The Close — Acceptance frame ("I'd like to accept you") → $997 full or $249 now + remainder before session 2
 - Phase 5 (12–15 min): Objection Handling — Use agree-reframe-close; most common: "too expensive" and "need to think about it"
 
 ---
@@ -627,7 +639,7 @@ These are proprietary method names used throughout the program:
 | "Already tried coaching/resume services" | Most use HR frameworks, not engineering-specific. Mansour hires engineers as an engineer. |
 | "Don't have time for 21 days" | Less than 5 hours total commitment. 3 sessions. |
 | "Is this for my engineering major?" | All disciplines. The frameworks are universal. |
-| "How much does it cost?" | $997 or 3 payments of $349. |
+| "How much does it cost?" | $997 full, or $249 before session 1 and remainder before session 2. |
 | "What if I don't have much experience?" | Most engineers undervalue what they have. We can brainstorm independent projects too. |
 | "How far in advance should I start?" | Ideally 3-6 months before career fairs or heavy application season. |
 | "Why 3 sessions instead of more?" | Against stringing clients along for "lifetime value." Concentrated, efficient, 21 days, done. |
