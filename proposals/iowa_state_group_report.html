@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Group Resume Audit Report — Iowa State Graduate Engineering Cohort | LaunchToLead</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --brand-primary: #064e3b; --brand-secondary: #14b8a6; --brand-accent: #a3e635;
+    --brand-light: #ecfdf5; --slate-900: #0f172a; --slate-700: #334155;
+    --slate-600: #475569; --slate-200: #e2e8f0; --slate-50: #f8fafc;
+    --red-500: #ef4444; --amber-500: #f59e0b; --green-600: #16a34a;
+    --indigo-600: #4f46e5;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--slate-50); color: var(--slate-700); font-size: 14px; line-height: 1.7; }
+  .download-btn { position: fixed; top: 20px; right: 20px; background: var(--brand-primary); color: white; border: none; padding: 10px 22px; border-radius: 9999px; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 13px; cursor: pointer; box-shadow: 0 4px 20px rgba(6,78,59,0.3); z-index: 1000; }
+  .page-wrapper { max-width: 960px; margin: 0 auto; padding: 40px 20px 80px; }
+  .report-header { background: var(--brand-primary); color: white; padding: 48px; border-radius: 16px; margin-bottom: 32px; }
+  .header-logo { display: flex; align-items: center; gap: 12px; margin-bottom: 28px; }
+  .logo-mark { width: 44px; height: 44px; background: rgba(255,255,255,0.12); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 17px; font-weight: 800; letter-spacing: -1px; }
+  .logo-text { font-size: 22px; font-weight: 700; }
+  .logo-text span { color: var(--brand-accent); }
+  .header-title { font-size: 34px; font-weight: 800; margin-bottom: 8px; line-height: 1.1; }
+  .header-sub { font-size: 16px; color: rgba(255,255,255,0.75); margin-bottom: 4px; }
+  .header-meta { display: flex; gap: 12px; margin-top: 20px; flex-wrap: wrap; }
+  .meta-pill { background: rgba(163,230,53,0.15); border: 1px solid rgba(163,230,53,0.3); color: var(--brand-accent); font-size: 12px; font-weight: 600; padding: 4px 14px; border-radius: 9999px; letter-spacing: 0.04em; }
+  .section { background: white; border-radius: 16px; padding: 40px; margin-bottom: 28px; box-shadow: 0 4px 20px -2px rgba(6,78,59,0.08); }
+  .section-title { font-size: 20px; font-weight: 800; color: var(--brand-primary); padding-bottom: 16px; border-bottom: 2px solid var(--brand-light); margin-bottom: 28px; display: flex; align-items: center; gap: 10px; }
+  .section-num { background: var(--brand-primary); color: white; width: 30px; height: 30px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; flex-shrink: 0; }
+  h3 { font-size: 16px; font-weight: 700; color: var(--slate-900); margin-bottom: 10px; margin-top: 24px; }
+  h3:first-child { margin-top: 0; }
+  p { font-size: 14px; line-height: 1.75; margin-bottom: 14px; color: var(--slate-700); }
+  p:last-child { margin-bottom: 0; }
+
+  /* Score overview grid */
+  .score-overview { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 32px; }
+  .score-card { background: var(--brand-light); border-radius: 12px; padding: 20px; text-align: center; }
+  .score-val { font-family: 'Space Grotesk', sans-serif; font-size: 42px; font-weight: 700; color: var(--brand-primary); line-height: 1; margin-bottom: 4px; }
+  .score-val span { font-size: 20px; color: var(--slate-600); }
+  .score-label { font-size: 12px; font-weight: 600; color: var(--slate-600); text-transform: uppercase; letter-spacing: 0.06em; }
+  .score-sub { font-size: 11px; color: var(--slate-600); margin-top: 4px; }
+
+  /* Criterion bar chart */
+  .criterion-grid { display: flex; flex-direction: column; gap: 12px; }
+  .crit-row { display: flex; align-items: center; gap: 14px; }
+  .crit-label { font-size: 13px; font-weight: 600; color: var(--slate-900); width: 200px; flex-shrink: 0; }
+  .crit-bar-bg { flex: 1; height: 18px; background: var(--slate-200); border-radius: 9999px; overflow: hidden; }
+  .crit-bar-fill { height: 100%; border-radius: 9999px; }
+  .bar-strong { background: linear-gradient(90deg, var(--brand-primary), var(--brand-secondary)); }
+  .bar-mid    { background: linear-gradient(90deg, var(--amber-500), #fbbf24); }
+  .bar-gap    { background: linear-gradient(90deg, var(--red-500), #f87171); }
+  .crit-val { font-family: 'Space Grotesk', sans-serif; font-size: 14px; font-weight: 700; color: var(--slate-900); width: 40px; text-align: right; flex-shrink: 0; }
+  .crit-badge { font-size: 10px; font-weight: 700; padding: 2px 10px; border-radius: 9999px; flex-shrink: 0; text-transform: uppercase; letter-spacing: 0.06em; }
+  .badge-strong { background: var(--brand-light); color: var(--brand-primary); }
+  .badge-mid    { background: #fffbeb; color: #92400e; }
+  .badge-gap    { background: #fff5f5; color: #991b1b; }
+
+  /* Finding blocks */
+  .finding { border-radius: 12px; padding: 22px 24px; margin-bottom: 16px; border-left: 4px solid; }
+  .finding-crit { background: #fff5f5; border-color: var(--red-500); }
+  .finding-imp  { background: #fffbeb; border-color: var(--amber-500); }
+  .finding-pos  { background: #f0fdf4; border-color: var(--green-600); }
+  .finding-row  { display: flex; gap: 14px; align-items: flex-start; }
+  .fb { width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 800; flex-shrink: 0; margin-top: 1px; }
+  .fb-c { background: var(--red-500); color: white; }
+  .fb-i { background: var(--amber-500); color: white; }
+  .fb-p { background: var(--green-600); color: white; }
+  .finding-title { font-size: 15px; font-weight: 700; color: var(--slate-900); margin-bottom: 8px; }
+  .finding-stat { display: inline-block; background: rgba(0,0,0,0.06); border-radius: 6px; padding: 2px 10px; font-size: 12px; font-weight: 700; margin-left: 8px; vertical-align: middle; }
+  .finding-desc { font-size: 13px; line-height: 1.75; }
+  .finding-example { background: rgba(0,0,0,0.04); border-radius: 6px; padding: 10px 14px; margin-top: 10px; font-size: 12px; font-style: italic; color: var(--slate-600); }
+
+  /* Advice blocks */
+  .advice { display: flex; gap: 16px; padding: 20px; background: var(--brand-light); border-radius: 12px; margin-bottom: 14px; align-items: flex-start; }
+  .advice-num { width: 32px; height: 32px; background: var(--brand-primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 800; flex-shrink: 0; }
+  .advice-title { font-size: 15px; font-weight: 700; color: var(--brand-primary); margin-bottom: 6px; }
+  .advice-desc { font-size: 13px; line-height: 1.75; }
+  .advice-example { background: white; border-radius: 8px; padding: 12px 14px; margin-top: 10px; font-size: 12.5px; line-height: 1.7; }
+  .before-tag { font-size: 10px; font-weight: 800; text-transform: uppercase; color: var(--red-500); letter-spacing: 0.08em; display: block; margin-bottom: 4px; }
+  .after-tag  { font-size: 10px; font-weight: 800; text-transform: uppercase; color: var(--green-600); letter-spacing: 0.08em; display: block; margin-top: 10px; margin-bottom: 4px; }
+  .before-txt { color: #991b1b; font-style: italic; }
+  .after-txt  { color: #166534; font-style: italic; }
+
+  /* Distribution table */
+  .dist-table { width: 100%; border-collapse: collapse; }
+  .dist-table th { background: var(--brand-primary); color: white; padding: 12px 16px; text-align: left; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; }
+  .dist-table td { padding: 12px 16px; border-bottom: 1px solid var(--slate-200); font-size: 13px; vertical-align: middle; }
+  .dist-table tr:nth-child(even) td { background: var(--slate-50); }
+  .dist-table td:nth-child(2) { font-family: 'Space Grotesk', sans-serif; font-weight: 700; color: var(--brand-primary); font-size: 15px; }
+
+  .callout { background: linear-gradient(135deg, var(--brand-primary), var(--brand-secondary)); color: white; padding: 28px 32px; border-radius: 14px; margin-bottom: 28px; }
+  .callout-title { font-size: 18px; font-weight: 800; margin-bottom: 10px; }
+  .callout-text { font-size: 14px; line-height: 1.75; opacity: 0.95; }
+
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 0; }
+  .col-card { background: var(--slate-50); border-radius: 12px; padding: 22px; border: 1px solid var(--slate-200); }
+  .col-card-title { font-size: 14px; font-weight: 800; color: var(--brand-primary); margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+  .col-card ul { list-style: none; }
+  .col-card ul li { font-size: 13px; line-height: 1.7; padding: 6px 0; border-bottom: 1px solid var(--slate-200); display: flex; align-items: flex-start; gap: 8px; }
+  .col-card ul li:last-child { border-bottom: none; }
+  .li-dot-g { width: 8px; height: 8px; border-radius: 50%; background: var(--green-600); flex-shrink: 0; margin-top: 6px; }
+  .li-dot-r { width: 8px; height: 8px; border-radius: 50%; background: var(--red-500); flex-shrink: 0; margin-top: 6px; }
+
+  .report-footer { text-align: center; padding: 40px; color: var(--slate-600); font-size: 13px; }
+  .report-footer a { color: var(--brand-secondary); }
+
+  @media print {
+    * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    body { background: white; }
+    .download-btn { display: none !important; }
+    .page-wrapper { padding: 20px; max-width: 100%; }
+    .section { box-shadow: none; border: 1px solid #e2e8f0; margin-bottom: 20px; page-break-inside: auto; }
+    .break-before { page-break-before: always; }
+    .finding { page-break-inside: avoid; }
+    .advice { page-break-inside: avoid; }
+    .callout { page-break-inside: avoid; }
+    .two-col { page-break-inside: avoid; }
+    .crit-row { page-break-inside: avoid; }
+    .section-title { page-break-after: avoid; }
+    h3 { page-break-after: avoid; }
+  }
+</style>
+</head>
+<body>
+<button class="download-btn" onclick="window.print()">↓ Download PDF</button>
+<div class="page-wrapper">
+
+  <!-- HEADER -->
+  <div class="report-header">
+    <div class="header-logo">
+      <div class="logo-mark">L²</div>
+      <div class="logo-text">Launch<span>ToLead</span></div>
+    </div>
+    <div class="header-title">Group Resume Audit Report<br>Iowa State Graduate Engineering Cohort</div>
+    <div class="header-sub">Impact Bullet Builder™ Framework · Graduate/Industry Variant Applied</div>
+    <div class="header-sub">Anonymized Group Summary — For Internal Club Use</div>
+    <div class="header-meta">
+      <span class="meta-pill">8 Candidates Audited</span>
+      <span class="meta-pill">Electrical &amp; Computer Engineering · Computer Science</span>
+      <span class="meta-pill">PhD and M.S. Candidates</span>
+      <span class="meta-pill">Spring 2026</span>
+    </div>
+  </div>
+
+  <!-- SECTION 1: SCORE OVERVIEW -->
+  <div class="section">
+    <div class="section-title"><span class="section-num">1</span> Score Overview</div>
+
+    <div class="score-overview">
+      <div class="score-card">
+        <div class="score-val">50<span>/100</span></div>
+        <div class="score-label">Group Average</div>
+        <div class="score-sub">★★ Above &amp; Beyond</div>
+      </div>
+      <div class="score-card">
+        <div class="score-val">39<span>/100</span></div>
+        <div class="score-label">Lowest Score</div>
+        <div class="score-sub">★★ with clear path forward</div>
+      </div>
+      <div class="score-card">
+        <div class="score-val">66<span>/100</span></div>
+        <div class="score-label">Highest Score</div>
+        <div class="score-sub">★★★ Industry-weighted profile</div>
+      </div>
+      <div class="score-card">
+        <div class="score-val">7<span>/8</span></div>
+        <div class="score-label">Landed in ★★</div>
+        <div class="score-sub">One candidate reached ★★★</div>
+      </div>
+    </div>
+
+    <p>All 8 candidates landed in ★★ territory — "You Went Above and Beyond" — which means the work is genuinely there. The research backgrounds, technical depth, and publication records across this group are strong. The gap from 50 to 70+ isn't a gap in experience or ability. It's a gap in how the experience is communicated on the page.</p>
+    <p>The one candidate who reached ★★★ got there primarily because the majority of their resume documented industry engineering work — where outcomes like latency improvements and user adoption metrics are easier to state than research findings. That context is worth understanding: it's not that industry resumes are inherently better, it's that the IBB framework rewards stated outcomes, and industry work tends to produce named, quantifiable outcomes more visibly than ongoing research does. The research candidates in this group have equally real results — they just haven't been written down yet.</p>
+
+    <div style="margin-top:28px;">
+      <h3>Score Distribution by Candidate (anonymized)</h3>
+      <table class="dist-table" style="margin-top:12px;">
+        <thead><tr><th>Candidate Profile</th><th>Score</th><th>Tier</th><th>Primary Research Area</th></tr></thead>
+        <tbody>
+          <tr><td>Candidate A — Ph.D., Computer Engineering</td><td>39</td><td>★★</td><td>LLM/VLM Evaluation · Medical AI</td></tr>
+          <tr><td>Candidate B — Ph.D., Computer Engineering</td><td>41</td><td>★★</td><td>Wireless Comms · Spectrum Sharing · GNN</td></tr>
+          <tr><td>Candidate C — Ph.D., Electrical Engineering</td><td>41</td><td>★★</td><td>Perovskite Solar Cell · Microelectronics</td></tr>
+          <tr><td>Candidate D — Ph.D., Electrical Engineering</td><td>45</td><td>★★</td><td>Power Systems Planning · Renewable Energy</td></tr>
+          <tr><td>Candidate E — Ph.D., Computer Science</td><td>51</td><td>★★</td><td>AI/Robotics · Computer Vision</td></tr>
+          <tr><td>Candidate F — M.S., Computer Engineering</td><td>56</td><td>★★</td><td>Quantum Security · Intrusion Detection</td></tr>
+          <tr><td>Candidate G — Ph.D., Electrical Engineering</td><td>59</td><td>★★</td><td>RF/MW · IC Design · PLL Design</td></tr>
+          <tr><td>Candidate H — Ph.D., Computer Science</td><td>66</td><td>★★★</td><td>AI Engineering · LLM Systems · RAG</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- SECTION 2: CRITERION ANALYSIS -->
+  <div class="section break-before">
+    <div class="section-title"><span class="section-num">2</span> Where the Group Stands — Criterion by Criterion</div>
+    <p style="margin-bottom:24px;">Each resume was scored across 8 criteria. The group averages below reveal a consistent pattern: strong technical framing and personal ownership, weak quantification and problem context.</p>
+
+    <div class="criterion-grid">
+      <div class="crit-row">
+        <div class="crit-label">How / Method Shown</div>
+        <div class="crit-bar-bg"><div class="crit-bar-fill bar-strong" style="width:67.5%"></div></div>
+        <div class="crit-val">6.75</div>
+        <div class="crit-badge badge-strong">Group Strength</div>
+      </div>
+      <div class="crit-row">
+        <div class="crit-label">Personal Ownership</div>
+        <div class="crit-bar-bg"><div class="crit-bar-fill bar-strong" style="width:82.5%"></div></div>
+        <div class="crit-val">8.25</div>
+        <div class="crit-badge badge-strong">Group Strength</div>
+      </div>
+      <div class="crit-row">
+        <div class="crit-label">Action Verbs</div>
+        <div class="crit-bar-bg"><div class="crit-bar-fill bar-strong" style="width:80%"></div></div>
+        <div class="crit-val">8.00</div>
+        <div class="crit-badge badge-strong">Group Strength</div>
+      </div>
+      <div class="crit-row">
+        <div class="crit-label">Why / Business Impact</div>
+        <div class="crit-bar-bg"><div class="crit-bar-fill bar-mid" style="width:50%"></div></div>
+        <div class="crit-val">5.00</div>
+        <div class="crit-badge badge-mid">Developing</div>
+      </div>
+      <div class="crit-row">
+        <div class="crit-label">Accomplishments</div>
+        <div class="crit-bar-bg"><div class="crit-bar-fill bar-mid" style="width:42.5%"></div></div>
+        <div class="crit-val">4.25</div>
+        <div class="crit-badge badge-mid">Developing</div>
+      </div>
+      <div class="crit-row">
+        <div class="crit-label">Bullet Quality Consistency</div>
+        <div class="crit-bar-bg"><div class="crit-bar-fill bar-mid" style="width:33.8%"></div></div>
+        <div class="crit-val">3.38</div>
+        <div class="crit-badge badge-mid">Developing</div>
+      </div>
+      <div class="crit-row">
+        <div class="crit-label">Metrics / Quantification</div>
+        <div class="crit-bar-bg"><div class="crit-bar-fill bar-gap" style="width:28.8%"></div></div>
+        <div class="crit-val">2.88</div>
+        <div class="crit-badge badge-gap">Primary Gap</div>
+      </div>
+      <div class="crit-row">
+        <div class="crit-label">Problem Context</div>
+        <div class="crit-bar-bg"><div class="crit-bar-fill bar-gap" style="width:23.8%"></div></div>
+        <div class="crit-val">2.38</div>
+        <div class="crit-badge badge-gap">Primary Gap</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 3: WHAT THE GROUP IS DOING WELL -->
+  <div class="section">
+    <div class="section-title"><span class="section-num">3</span> What the Group Is Doing Well</div>
+
+    <div class="finding finding-pos">
+      <div class="finding-row"><span class="fb fb-p">✓</span><div>
+        <div class="finding-title">Technical depth is named and in context — 6.75/10 on How/Method</div>
+        <div class="finding-desc">Across all 8 candidates, specific tools, methods, and frameworks appear inside the bullet text where they were used — not just in skills sections or role headers. Graph neural networks, GAMS/CPLEX optimization, TensorRT inference optimization, PyTorch-PennyLane hybrid workflows, MUSIC direction-finding algorithms, SEM/XRD characterization — specific technical approaches appear throughout. This is harder to do than it looks and it matters. Hiring engineers read bullet text, not skills lists. The group's instinct to show the tool in context is correct and above average.</div>
+      </div></div>
+    </div>
+
+    <div class="finding finding-pos">
+      <div class="finding-row"><span class="fb fb-p">✓</span><div>
+        <div class="finding-title">Personal ownership of work is strong — 8.25/10 on Ownership</div>
+        <div class="finding-desc">Most candidates consistently use first-person active voice. "Designed," "Developed," "Built," "Implemented," "Investigated," "Architected," "Fabricated" — the group default is to own their work clearly rather than hiding behind "we," "the team," or passive constructions. This signals confidence and clarity about individual contribution, which matters at every level of hiring from intern to research scientist.</div>
+      </div></div>
+    </div>
+
+    <div class="finding finding-pos">
+      <div class="finding-row"><span class="fb fb-p">✓</span><div>
+        <div class="finding-title">Engineering purpose framing shows up consistently — 5.0/10 on Why</div>
+        <div class="finding-desc">Several candidates demonstrate genuine understanding of why their work matters beyond the research itself. "To enable data-driven spectrum management," "sufficient fidelity for planning-study analyses," "to evaluate photon-to-electron conversion," "for improving device reliability in high-frequency and space applications" — these phrases connect the work to an engineering outcome rather than describing it in isolation. This is the most advanced writing skill in the IBB framework and the group is developing it. The gap is that this framing isn't yet paired with a specific measurement.</div>
+      </div></div>
+    </div>
+
+    <div class="finding finding-pos">
+      <div class="finding-row"><span class="fb fb-p">✓</span><div>
+        <div class="finding-title">Every candidate has external validation — publications, awards, or industry recognition</div>
+        <div class="finding-desc">Across the 8 candidates: IEEE journal papers, conference publications, IEEE BHI EMBS posters, NSF-sponsored scholar recognition, a utility patent, MITACS international research funding, Y Combinator startup experience, collaboration with RTE France, and GRE perfect scores. This group has real credentials that go well beyond coursework. The problem is that on most of these resumes, these credentials are listed in a publications or honors section and never connected to the experience bullets that earned them — which means a hiring manager reading the experience section sees activity descriptions, not verified contributions.</div>
+      </div></div>
+    </div>
+  </div>
+
+  <!-- SECTION 4: THE GAPS -->
+  <div class="section break-before">
+    <div class="section-title"><span class="section-num">4</span> The Common Gaps — What's Holding Scores Back</div>
+
+    <div class="finding finding-crit">
+      <div class="finding-row"><span class="fb fb-c">1</span><div>
+        <div class="finding-title">Almost no quantitative results anywhere <span class="finding-stat">6 of 8 candidates scored 1–2/10 on Metrics</span></div>
+        <div class="finding-desc">The group average on Metrics is 2.88/10 — the lowest scoring criterion. This is the single biggest gap and the single biggest opportunity. Every research domain represented in this group produces measurable outputs: power conversion efficiency percentages, interference reduction in dB, model accuracy and F1 scores, inference time in milliseconds, entanglement fidelity values, XRD crystallinity indices, throughput in Mbps. These numbers exist in lab notebooks, experiment logs, poster presentations, and code output files. They are not on the resumes. The most common pattern: a bullet describes a sophisticated experimental setup or methodology with zero performance figure attached to it. The result is that technically impressive work reads like a description of intent rather than a record of achievement.</div>
+        <div class="finding-example">"Built an ML-DL hybrid pipeline using VGG19, ResNet50, and EfficientNetB0 with five classifiers and ensemble learning." — Three architectures, five classifiers, ensemble methods. Zero accuracy figures. The IEEE poster for this exact work had the performance numbers. They weren't on the resume.</div>
+      </div></div>
+    </div>
+
+    <div class="finding finding-crit">
+      <div class="finding-row"><span class="fb fb-c">2</span><div>
+        <div class="finding-title">PhD research is underdeveloped or invisible on every resume <span class="finding-stat">8 of 8 candidates</span></div>
+        <div class="finding-desc">This is the defining structural issue across the entire group. Every candidate's PhD research — the most important signal for any industry role in AI, hardware, power systems, or semiconductor engineering — appears either as a single vague sentence, a list of topic areas, or not at all. "Working on Neural Network, architecture search, benchmark design, and reliability analysis." "Conducting research on optimal temperature sensor placement for ICs." "Exploring evaluation frameworks for reasoning consistency." These descriptions tell a hiring engineer nothing about what the research produces or why it matters. The research section should be the centerpiece of a PhD candidate's resume. For this group, it's typically the weakest section by a significant margin.</div>
+        <div class="finding-example">One candidate's current PhD research on mathematical attribution for LLM training data in RLHF — directly relevant to alignment and interpretability hiring at every major AI company — appeared only as a one-line "Research focus" note in the Education section. Zero bullets. Zero outputs. Zero methods named.</div>
+      </div></div>
+    </div>
+
+    <div class="finding finding-crit">
+      <div class="finding-row"><span class="fb fb-c">3</span><div>
+        <div class="finding-title">No problem context — results appear without baselines <span class="finding-stat">Group average 2.38/10</span></div>
+        <div class="finding-desc">The second-lowest criterion score across the group. Almost no bullet on any of these resumes establishes what existed before the work, what problem the research addresses, or what gap in prior approaches motivated the contribution. A hiring manager reading a resume bullet needs to understand three things: what was the situation, what did you do, and what changed? Most bullets in this group answer only the middle question. The result is that even strong contributions read as activities rather than solutions. The one exception pattern that appeared across multiple candidates — "using only 202 real images" to explain why synthetic data generation mattered, "steps from 11 to 4" as an explicit before/after — consistently produced the strongest bullets on those resumes. The technique is known; it just isn't being applied consistently.</div>
+        <div class="finding-example">"Reduced a ~90,000-bus system to ~900 buses with fidelity sufficient for the intended planning-study analyses." — This bullet works precisely because it gives both the before-state (90,000 buses, too large to study directly) and the after-state (900 buses, planning-study viable). It's the single best bullet across the entire group. It works because it shows context.</div>
+      </div></div>
+    </div>
+
+    <div class="finding finding-imp">
+      <div class="finding-row"><span class="fb fb-i">4</span><div>
+        <div class="finding-title">Present-participle bullets signal ongoing activity, not completed work <span class="finding-stat">5 of 8 candidates</span></div>
+        <div class="finding-desc">Five candidates had bullets opening with present participles: "Exploring," "Working on," "Developing," "Supporting," "Representing," "Designing." These verb forms signal that the work is in progress and hasn't produced anything yet — which may be technically true for ongoing PhD research, but it creates the worst possible impression in a hiring context. The fix is to either use past tense for completed phases of the work ("Developed an evaluation framework for...") or to use present tense with a stated output ("Developing an evaluation framework that has produced [X] benchmark results to date"). The tense itself is less important than whether the bullet states an output. "Exploring evaluation frameworks" has no output. "Developing evaluation frameworks — producing [X] benchmark results across [X] model families" has one.</div>
+        <div class="finding-example">"Exploring evaluation frameworks for reasoning consistency, abstention behavior, and error analysis in large language and vision-language models." → "Developed evaluation protocols for reasoning consistency and abstention behavior in LLMs and VLMs — producing [X] benchmark results across [X] model families, with findings targeting [venue] publication."</div>
+      </div></div>
+    </div>
+
+    <div class="finding finding-imp">
+      <div class="finding-row"><span class="fb fb-i">5</span><div>
+        <div class="finding-title">Publications are disconnected from the bullets that produced them <span class="finding-stat">5 of 8 candidates</span></div>
+        <div class="finding-desc">Most candidates list publications in a separate section at the bottom of the resume. Very few connect those publications to the experience bullets or project entries that generated them. This is a missed opportunity at every level. A publication listed separately says "I have publications." A publication linked inside an experience bullet says "This work that I described produced a verifiable, peer-reviewed output." The difference matters to any hiring manager evaluating research credibility. The fix is simple: add "with findings published in [venue]" or "published at [conference, year]" to the relevant bullet. The publication record across this group is strong. The connection to the work that produced it is almost entirely absent.</div>
+        <div class="finding-example">IEEE BHI EMBS poster, IEEE Transactions on Power Systems, SPIE Medical Imaging, IEEE IBCAST — all listed in publications sections. None linked to the experience or project bullets that produced them. A reader has to cross-reference two separate sections to make the connection, and most won't.</div>
+      </div></div>
+    </div>
+
+    <div class="finding finding-imp">
+      <div class="finding-row"><span class="fb fb-i">6</span><div>
+        <div class="finding-title">Industry internships and roles are significantly undersold <span class="finding-stat">Observed in 4 candidates</span></div>
+        <div class="finding-desc">Several candidates have real industry experience — software engineering internships at major companies, a role at a Y Combinator startup, 8 years at a national research institute — and the bullets for those roles are either missing entirely (dates-only entries) or describe activities without outcomes. For a PhD candidate, industry experience is a significant differentiator that signals the ability to deliver in a non-academic environment. Leaving it underdeveloped wastes the signal. One candidate had four software engineering internships at major Indian tech companies listed with zero bullets — a choice that signals "I worked there but have nothing to say about it," which is the worst possible read.</div>
+        <div class="finding-example">Software Engineering Intern — [Major B2B Platform], Jun 2020 – Aug 2020 [no bullets]. Two months at a company with 150+ million registered users. No description of any engineering work done there.</div>
+      </div></div>
+    </div>
+  </div>
+
+  <!-- SECTION 5: STRUCTURAL PATTERNS -->
+  <div class="section">
+    <div class="section-title"><span class="section-num">5</span> Structural Patterns Specific to Graduate Candidates</div>
+    <p>Beyond the bullet-level issues, several structural patterns appeared that are specific to graduate students transitioning from academic to industry-oriented documents. These aren't bullet quality problems — they're document architecture problems that affect how the entire resume reads.</p>
+
+    <div class="two-col" style="margin-top:20px;">
+      <div class="col-card">
+        <div class="col-card-title" style="color:var(--red-500);">⚠ Structural Problems Found</div>
+        <ul>
+          <li><span class="li-dot-r"></span><div><strong>Academic CV format sent to industry:</strong> One candidate submitted a 4-page document with a full page of certification badges — the standard academic CV format that semiconductor company recruiters will not read past page 2 of.</div></li>
+          <li><span class="li-dot-r"></span><div><strong>Coursework listed as "projects":</strong> One candidate's entire "Academic Projects" section mapped 1:1 to course names. These are transcripts, not research contributions. It creates a credibility gap with anyone familiar with the curriculum.</div></li>
+          <li><span class="li-dot-r"></span><div><strong>Research described only in Education or Summary:</strong> Multiple candidates' most important work appeared only as a note in the Education section's research focus line — not as bullets in a Research or RA section where hiring managers actually look.</div></li>
+          <li><span class="li-dot-r"></span><div><strong>Dates-only internship entries:</strong> Some candidates listed internships with no bullets at all — which is worse than omitting them entirely, because it signals that nothing notable happened there.</div></li>
+        </ul>
+      </div>
+      <div class="col-card">
+        <div class="col-card-title" style="color:var(--green-600);">✓ Structural Approaches That Worked</div>
+        <ul>
+          <li><span class="li-dot-g"></span><div><strong>Project section used well:</strong> Several candidates used a dedicated Projects section effectively to surface research work that doesn't have its own RA role entry. This is the right structure for PhD candidates — use it to showcase contributions, not just list topics.</div></li>
+          <li><span class="li-dot-g"></span><div><strong>Tool stack attributed per project:</strong> The practice of listing tools used in a project header or subheading — even when not in the bullet itself — is better than not listing them. It should move into the bullet text, but the instinct to attribute is correct.</div></li>
+          <li><span class="li-dot-g"></span><div><strong>Achievements section:</strong> Candidates who maintained a dedicated Achievements or Honors section with specific competitive credentials (ranked competition wins, scholarship amounts, percentile scores) created a strong signal that didn't get buried in the experience narrative.</div></li>
+          <li><span class="li-dot-g"></span><div><strong>Keeping the resume to 2 pages:</strong> Most candidates maintained appropriate length. The industry target for a co-op/internship application is 1–2 pages regardless of academic pedigree.</div></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 6: ADVICE -->
+  <div class="section break-before">
+    <div class="section-title"><span class="section-num">6</span> Concrete Advice for the Group</div>
+    <p style="margin-bottom:28px;">Based on the patterns across all 8 audits, here are the 6 highest-impact changes this group can make. These aren't generic resume tips — they're specifically calibrated to what this cohort is doing and what's holding scores back.</p>
+
+    <div class="advice"><div class="advice-num">1</div><div>
+      <div class="advice-title">Add one performance metric to each research bullet — the numbers are in your lab notebooks</div>
+      <div class="advice-desc">This single change would move the group average more than any other. Every research domain in this group produces measurable outputs at every experimental step. Power conversion efficiency. Model accuracy and F1. Interference reduction in dB. Entanglement fidelity. Inference time in milliseconds. XRD crystallinity index. Throughput in Mbps. These numbers exist — they're in your code output, your lab notebooks, your poster files, and your experiment logs. Not a single one needs to be invented or estimated; they've already been measured. The habit to build is simple: every time you write a bullet that ends with "improving X" or "enabling Y," ask yourself: improving by how much? enabling for how many? The answer is almost always available.</div>
+      <div class="advice-example">
+        <span class="before-tag">Before</span>
+        <span class="before-txt">"Developed an ML-DL hybrid pipeline for skin cancer detection, evaluating robustness on visually degraded samples."</span>
+        <span class="after-tag">After</span>
+        <span class="after-txt">"Developed a VGG19/ResNet50/EfficientNetB0 ensemble pipeline for skin cancer detection — achieving [X]% accuracy on visually degraded samples, outperforming the standalone baseline by [X]%."</span>
+      </div>
+    </div></div>
+
+    <div class="advice"><div class="advice-num">2</div><div>
+      <div class="advice-title">Treat your PhD research section like your most important job — write it like an employer will read it</div>
+      <div class="advice-desc">The RA role is the primary evidence that you can do research. Right now most of you are describing your research the way you'd explain it to another grad student: "working on X, investigating Y, exploring Z." An industry hiring engineer at Ericsson, Intel, EPRI, or a national lab reads your RA bullet asking a different question: what did you build, what did you find, and what does it enable? The answer to that question needs to be in the bullet. You don't need final published results to write a strong research bullet. You need three things: a named approach (what you're building or using), a scope indicator (how many scenarios, models, nodes, or measurements), and a direction (what you're targeting or what preliminary results show). Those three pieces are available from day one of a PhD program.</div>
+      <div class="advice-example">
+        <span class="before-tag">Before</span>
+        <span class="before-txt">"Working on Neural Network, architecture search, benchmark design, and reliability analysis."</span>
+        <span class="after-tag">After</span>
+        <span class="after-txt">"Designing evaluation frameworks for reasoning consistency and abstention behavior in LLMs — building benchmark protocols across [X] model families and [X] reasoning task types, targeting failure mode identification for safety-critical AI deployment with findings presented at [venue]."</span>
+      </div>
+    </div></div>
+
+    <div class="advice"><div class="advice-num">3</div><div>
+      <div class="advice-title">Connect your publications to the bullets that produced them — don't make a hiring manager cross-reference two sections</div>
+      <div class="advice-desc">Every person in this group has peer-reviewed publications or conference presentations. Almost none of you have linked those publications to the experience or project bullets that generated them. The publication listed at the bottom of the page says "I have published research." The same publication linked inside an experience bullet says "this specific work I described produced a verifiable, peer-reviewed contribution that experts in my field evaluated and accepted." The second statement is more than twice as credible to a hiring manager. The edit is four words: "with findings published at [venue]." Add it to the bullet. Do it for every publication you have.</div>
+    </div></div>
+
+    <div class="advice"><div class="advice-num">4</div><div>
+      <div class="advice-title">Add one "before" sentence to each major role — frame what you walked into</div>
+      <div class="advice-desc">The single best bullet across all 8 resumes was: "Reduced a ~90,000-bus system to ~900 buses with fidelity sufficient for the intended planning-study analyses." It works because it shows a before-state (90,000 buses, too large to use directly in planning studies), a method (reduction pipeline), and an after-state (900 buses, planning-viable). Most other bullets show only the after-state. A hiring manager reading "improved performance by 40%" has no baseline to evaluate whether 40% is impressive, expected, or trivial. "Improved performance by 40% from a system that was previously timing out on 20% of production requests" is a statement they can evaluate. The context doesn't have to be dramatic — it just has to exist.</div>
+    </div></div>
+
+    <div class="advice"><div class="advice-num">5</div><div>
+      <div class="advice-title">Convert present participles to completed contributions — "Exploring" is not an accomplishment</div>
+      <div class="advice-desc">If your bullet starts with "Exploring," "Working on," "Supporting," "Helping," or "Contributing to" — rewrite it. These verb forms signal ongoing activity without a stated output. Even if the work is genuinely ongoing, you can reframe it: describe what the work has produced to date, what it's targeting, and what methods you're using. The phrase "with initial results showing [X]" added to an otherwise-present-participle bullet transforms it from an activity log to a research record with stated progress. You've all been doing this work for months or years. Something has come out of it. State what that is, even if it's preliminary.</div>
+    </div></div>
+
+    <div class="advice"><div class="advice-num">6</div><div>
+      <div class="advice-title">If you have industry experience — especially at major companies — write it as though it matters, because it does</div>
+      <div class="advice-desc">For several candidates, the industry experience on the resume is treated as a footnote to the research work. It shouldn't be. A software engineering internship at a company with 150 million registered users, a role at a Y Combinator startup, or 8 years at a national research institute are credentials that most PhD applicants don't have. They signal something your research work alone can't signal: that you've delivered in a non-academic environment, on a real product, under real constraints. If you have that experience, write it as if an employer will read it — because they will, and they'll weight it more than you think. Dates-only entries are the worst possible use of that space.</div>
+    </div></div>
+  </div>
+
+  <!-- SECTION 7: FINAL CALLOUT -->
+  <div class="callout">
+    <div class="callout-title">The Core Message for This Group</div>
+    <div class="callout-text">The research is real. The publications are real. The technical depth is real. The external recognition — NSF, IEEE, Y Combinator, international collaborations, gold medals — is real. None of that is the problem. The problem is that a hiring engineer reading these resumes can't easily see what the research has produced, because the results aren't stated. The gap between ★★ and ★★★ for this group is not a gap in experience or ability. It's a gap in translation — converting what you know your research achieved into language that a non-expert hiring manager can evaluate in 30 seconds. That translation is a learnable skill. It takes practice. But it starts with one habit: every time you write a bullet that describes work you did, ask yourself what changed because of it — and write that down too.</div>
+  </div>
+
+  <!-- SECTION 8: THE IBB FORMULA REFERENCE -->
+  <div class="section">
+    <div class="section-title"><span class="section-num">7</span> The IBB Formula — Quick Reference</div>
+    <p>Every bullet is evaluated against four components. A ★★★ bullet has all four. A ★ bullet typically has one or fewer.</p>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px;">
+      <div style="background:var(--brand-light);border-radius:12px;padding:20px;">
+        <div style="font-family:'Space Grotesk',sans-serif;font-size:28px;font-weight:700;color:var(--brand-primary);margin-bottom:8px;">A</div>
+        <div style="font-size:14px;font-weight:700;color:var(--slate-900);margin-bottom:6px;">Accomplishment</div>
+        <div style="font-size:13px;color:var(--slate-600);">Describes something you DID with a result — not a duty, not a responsibility, not a standing task. The bullet tells a story that could only be told about you in this specific role.</div>
+      </div>
+      <div style="background:var(--brand-light);border-radius:12px;padding:20px;">
+        <div style="font-family:'Space Grotesk',sans-serif;font-size:28px;font-weight:700;color:var(--brand-primary);margin-bottom:8px;">M</div>
+        <div style="font-size:14px;font-weight:700;color:var(--slate-900);margin-bottom:6px;">Metric</div>
+        <div style="font-size:13px;color:var(--slate-600);">A specific number: %, dB, ms, accuracy score, dataset size, node count, user count — anything that gives the claim a floor to stand on. "Multiple," "several," and "significant" are not metrics.</div>
+      </div>
+      <div style="background:var(--brand-light);border-radius:12px;padding:20px;">
+        <div style="font-family:'Space Grotesk',sans-serif;font-size:28px;font-weight:700;color:var(--brand-primary);margin-bottom:8px;">H</div>
+        <div style="font-size:14px;font-weight:700;color:var(--slate-900);margin-bottom:6px;">How / Method</div>
+        <div style="font-size:13px;color:var(--slate-600);">A specific tool, algorithm, framework, or methodology named in the bullet text — not in a header or skills section. "Using GAMS and CPLEX," "via PyTorch and PennyLane," "with TensorRT FP16 quantization."</div>
+      </div>
+      <div style="background:var(--brand-light);border-radius:12px;padding:20px;">
+        <div style="font-family:'Space Grotesk',sans-serif;font-size:28px;font-weight:700;color:var(--brand-primary);margin-bottom:8px;">W</div>
+        <div style="font-size:14px;font-weight:700;color:var(--slate-900);margin-bottom:6px;">Why / Impact</div>
+        <div style="font-size:13px;color:var(--slate-600);">Connects the result to an engineering purpose: what it enables, what it replaces, what becomes possible because of it. "Enabling planning studies at a fraction of prior computational cost" is Why. "Improving performance" is not.</div>
+      </div>
+    </div>
+
+    <div style="background:var(--slate-900);border-radius:12px;padding:20px 24px;margin-top:20px;color:white;">
+      <div style="font-size:13px;font-weight:700;color:var(--brand-accent);margin-bottom:8px;text-transform:uppercase;letter-spacing:0.06em;">The test for any bullet</div>
+      <div style="font-size:14px;line-height:1.75;color:rgba(255,255,255,0.9);">Could someone else with the same job title have written this exact bullet? If yes, it's describing the role — not the person. A strong bullet is specific enough that it could only have been written by someone who did that specific thing, got that specific result, using that specific approach, for that specific reason.</div>
+    </div>
+  </div>
+
+  <div class="report-footer">
+    <p><strong>Analysis prepared by LaunchToLead</strong> &nbsp;|&nbsp; Impact Bullet Builder™ Framework</p>
+    <p style="margin-top:6px;">Questions? <a href="https://launchtolead.io">launchtolead.io</a> &nbsp;|&nbsp; Free guide: <a href="https://launchtolead.io/free">launchtolead.io/free</a></p>
+  </div>
+
+</div>
+</body>
+</html>

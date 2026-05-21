@@ -1,0 +1,1238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Story Analysis — L² Coaching Review</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap');
+
+  :root {
+    --bg: #f5f4f0;
+    --surface: #ffffff;
+    --surface2: #f0efeb;
+    --border: #ddd9d0;
+    --text: #1a1a18;
+    --muted: #6b6b63;
+    --accent: #1a472a;
+    --accent-light: #e8f5e9;
+    --teal: #0d5c63;
+    --star3: #1a472a;
+    --star3-bg: #e8f5e9;
+    --star2: #7a4f00;
+    --star2-bg: #fff8e1;
+    --star1: #8b1a1a;
+    --star1-bg: #fdecea;
+    --tag-missing: #8b1a1a;
+    --tag-missing-bg: #fdecea;
+    --tag-weak: #7a4f00;
+    --tag-weak-bg: #fff8e1;
+    --tag-good: #1a472a;
+    --tag-good-bg: #e8f5e9;
+    --tag-add: #0d5c63;
+    --tag-add-bg: #e0f4f6;
+    --tag-empty: #4a3060;
+    --tag-empty-bg: #f0ebfc;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+  }
+
+  header {
+    background: var(--accent);
+    color: #fff;
+    padding: 28px 40px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .header-top {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .logo-chip {
+    background: #a3e635;
+    color: #0f172a;
+    font-family: 'DM Mono', monospace;
+    font-weight: 500;
+    font-size: 0.78rem;
+    padding: 4px 12px;
+    border-radius: 4px;
+    letter-spacing: 0.04em;
+  }
+
+  header h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: -0.01em;
+  }
+
+  header p {
+    font-size: 0.83rem;
+    color: rgba(255,255,255,0.65);
+    max-width: 680px;
+  }
+
+  .legend {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 14px 40px;
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .legend-label {
+    font-size: 0.72rem;
+    color: var(--muted);
+    font-family: 'DM Mono', monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .legend-items {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .star-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.78rem;
+    font-family: 'DM Mono', monospace;
+    padding: 3px 12px;
+    border-radius: 20px;
+    font-weight: 500;
+  }
+
+  .star-chip.s3 { background: var(--star3-bg); color: var(--star3); }
+  .star-chip.s2 { background: var(--star2-bg); color: var(--star2); }
+  .star-chip.s1 { background: var(--star1-bg); color: var(--star1); }
+  .star-chip.empty { background: var(--tag-empty-bg); color: var(--tag-empty); }
+
+  .tag-legend {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-family: 'DM Mono', monospace;
+    padding: 2px 9px;
+    border-radius: 4px;
+  }
+
+  .tag.missing { background: var(--tag-missing-bg); color: var(--tag-missing); }
+  .tag.weak { background: var(--tag-weak-bg); color: var(--tag-weak); }
+  .tag.good { background: var(--tag-good-bg); color: var(--tag-good); }
+  .tag.add { background: var(--tag-add-bg); color: var(--tag-add); }
+  .tag.empty { background: var(--tag-empty-bg); color: var(--tag-empty); }
+
+  .nav {
+    background: var(--surface2);
+    border-bottom: 1px solid var(--border);
+    padding: 10px 40px;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .nav a {
+    font-size: 0.75rem;
+    font-family: 'DM Mono', monospace;
+    color: var(--muted);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 4px 12px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: all 0.15s;
+  }
+
+  .nav a:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+  }
+
+  .main {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 32px 24px 80px;
+  }
+
+  .section-block {
+    margin-bottom: 52px;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--border);
+  }
+
+  .section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--muted);
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    padding: 3px 10px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .section-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text);
+  }
+
+  .story-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    margin-bottom: 18px;
+    overflow: hidden;
+  }
+
+  .card-header {
+    padding: 16px 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    border-bottom: 1px solid var(--border);
+    background: var(--surface2);
+  }
+
+  .story-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--muted);
+    min-width: 24px;
+    padding-top: 2px;
+  }
+
+  .card-header-text {
+    flex: 1;
+  }
+
+  .story-name {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 6px;
+  }
+
+  .card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    align-items: center;
+  }
+
+  .rating-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.78rem;
+    font-family: 'DM Mono', monospace;
+    padding: 3px 12px;
+    border-radius: 20px;
+    font-weight: 500;
+  }
+
+  .rating-badge.s3 { background: var(--star3-bg); color: var(--star3); }
+  .rating-badge.s2 { background: var(--star2-bg); color: var(--star2); }
+  .rating-badge.s1 { background: var(--star1-bg); color: var(--star1); }
+  .rating-badge.empty { background: var(--tag-empty-bg); color: var(--tag-empty); }
+
+  .card-body {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  @media (max-width: 640px) {
+    .card-body { grid-template-columns: 1fr; }
+    .full-width { grid-column: 1; }
+  }
+
+  .panel {
+    border-radius: 6px;
+    padding: 14px 16px;
+    border: 1px solid transparent;
+  }
+
+  .panel.strengths {
+    background: var(--tag-good-bg);
+    border-color: #c8e6c9;
+  }
+
+  .panel.gaps {
+    background: var(--tag-missing-bg);
+    border-color: #ffcdd2;
+  }
+
+  .panel.add {
+    background: var(--tag-add-bg);
+    border-color: #b2ebf2;
+  }
+
+  .panel.verdict {
+    background: #fafaf8;
+    border-color: var(--border);
+  }
+
+  .panel.empty-panel {
+    background: var(--tag-empty-bg);
+    border-color: #d8c8f0;
+    grid-column: 1 / -1;
+  }
+
+  .full-width {
+    grid-column: 1 / -1;
+  }
+
+  .panel-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 10px;
+    font-weight: 500;
+  }
+
+  .panel.strengths .panel-title { color: var(--tag-good); }
+  .panel.gaps .panel-title { color: var(--tag-missing); }
+  .panel.add .panel-title { color: var(--tag-add); }
+  .panel.verdict .panel-title { color: var(--muted); }
+  .panel.empty-panel .panel-title { color: var(--tag-empty); }
+
+  .panel ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .panel ul li {
+    font-size: 0.85rem;
+    color: var(--text);
+    padding: 4px 0;
+    padding-left: 14px;
+    position: relative;
+    line-height: 1.55;
+  }
+
+  .panel.strengths ul li::before { content: "✓"; position: absolute; left: 0; color: var(--tag-good); font-size: 0.75rem; top: 5px; }
+  .panel.gaps ul li::before { content: "✗"; position: absolute; left: 0; color: var(--tag-missing); font-size: 0.75rem; top: 5px; }
+  .panel.add ul li::before { content: "→"; position: absolute; left: 0; color: var(--tag-add); font-size: 0.75rem; top: 5px; }
+
+  .verdict-text {
+    font-size: 0.87rem;
+    color: var(--text);
+    line-height: 1.65;
+  }
+
+  .verdict-text strong {
+    font-weight: 600;
+  }
+
+  .priority-flag {
+    display: inline-block;
+    font-size: 0.68rem;
+    font-family: 'DM Mono', monospace;
+    background: #fff3e0;
+    color: #e65100;
+    border: 1px solid #ffcc80;
+    padding: 2px 9px;
+    border-radius: 4px;
+    margin-left: 8px;
+  }
+
+  .intro-section {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 24px;
+    margin-bottom: 32px;
+  }
+
+  .intro-section h3 {
+    font-family: 'Syne', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--text);
+  }
+
+  .summary-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 12px;
+    margin-bottom: 28px;
+  }
+
+  .stat-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px;
+    text-align: center;
+  }
+
+  .stat-num {
+    font-family: 'Syne', sans-serif;
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .stat-label {
+    font-size: 0.75rem;
+    color: var(--muted);
+    font-family: 'DM Mono', monospace;
+  }
+
+  .stat-box.s3 .stat-num { color: var(--star3); }
+  .stat-box.s2 .stat-num { color: var(--star2); }
+  .stat-box.s1 .stat-num { color: var(--star1); }
+  .stat-box.empty-s .stat-num { color: var(--tag-empty); }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-top">
+    <span class="logo-chip">L²</span>
+    <h1>Competency Story Analysis</h1>
+  </div>
+  <p>Reviewed against the IBB framework (★★★ = Full formula: Accomplishment + Metric + How + Why, impact spread far and wide). Each story flagged for strengths, gaps, and specific additions needed.</p>
+</header>
+
+<div class="legend">
+  <span class="legend-label">Rating →</span>
+  <div class="legend-items">
+    <span class="star-chip s3">★★★ Spread Impact Far &amp; Wide</span>
+    <span class="star-chip s2">★★ Above &amp; Beyond</span>
+    <span class="star-chip s1">★ Duty / Incomplete</span>
+    <span class="star-chip empty">⬜ Placeholder Only</span>
+  </div>
+  <span class="legend-label" style="margin-left:8px">Flags →</span>
+  <div class="tag-legend">
+    <span class="tag good">STRONG</span>
+    <span class="tag missing">MISSING METRIC</span>
+    <span class="tag weak">WEAK RESULT</span>
+    <span class="tag add">ADD THIS</span>
+    <span class="tag empty">NO CONTENT</span>
+  </div>
+</div>
+
+<div class="nav">
+  <a href="#summary">Summary</a>
+  <a href="#intro">Intro</a>
+  <a href="#dsr">DSR</a>
+  <a href="#ogi">OGI</a>
+  <a href="#cwi">CWI</a>
+  <a href="#lc">LC</a>
+  <a href="#si">SI</a>
+  <a href="#msd">MSD</a>
+</div>
+
+<div class="main">
+
+  <!-- SUMMARY -->
+  <div id="summary" class="section-block">
+    <div class="section-header">
+      <span class="section-label">Overview</span>
+      <span class="section-title">Score Summary</span>
+    </div>
+
+    <div class="summary-stats">
+      <div class="stat-box s3">
+        <div class="stat-num">2</div>
+        <div class="stat-label">★★★ Interview-Ready</div>
+      </div>
+      <div class="stat-box s2">
+        <div class="stat-num">8</div>
+        <div class="stat-label">★★ Need Metric Work</div>
+      </div>
+      <div class="stat-box s1">
+        <div class="stat-num">2</div>
+        <div class="stat-label">★ Weak / Incomplete</div>
+      </div>
+      <div class="stat-box empty-s">
+        <div class="stat-num">5</div>
+        <div class="stat-label">⬜ Placeholders</div>
+      </div>
+    </div>
+
+    <div class="intro-section">
+      <h3>Key Pattern Across All Stories</h3>
+      <p style="font-size:0.88rem; color:var(--text); line-height:1.7; margin-bottom:12px">
+        The <strong>Actions sections are detailed and strong</strong> — there is real depth and personal ownership throughout. The consistent weakness is the <strong>Results section</strong>. Across the file, results repeatedly end at the process output level ("new policy created," "SharePoint set up," "clean point received") rather than the business outcome level ("reduced DPM by X%," "saved $Y in warranty," "freed Z hours/week").
+      </p>
+      <p style="font-size:0.88rem; color:var(--text); line-height:1.7; margin-bottom:12px">
+        The missing step in almost every story is the <strong>"So what?" chain</strong> — the candidate stops one level too early. Each story below identifies what that next level looks like.
+      </p>
+      <p style="font-size:0.88rem; color:var(--text); line-height:1.7;">
+        The two best stories are <strong>MSD-02 (FLP Harness)</strong> and <strong>MSD-01 (FK Frame Fixture)</strong>. Both should be the reference points for how to bring every other story up.
+      </p>
+    </div>
+  </div>
+
+  <!-- INTRODUCTION -->
+  <div id="intro" class="section-block">
+    <div class="section-header">
+      <span class="section-label">Intro</span>
+      <span class="section-title">Tell About Yourself</span>
+    </div>
+
+    <div class="story-card">
+      <div class="card-header">
+        <span class="story-num">—</span>
+        <div class="card-header-text">
+          <div class="story-name">Self-Introduction Draft</div>
+          <div class="card-tags">
+            <span class="rating-badge s1">★ Needs Full Rewrite</span>
+            <span class="tag missing">NO METRICS</span>
+            <span class="tag weak">ALL CLAIMS, NO EVIDENCE</span>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="panel gaps">
+          <div class="panel-title">What's Missing / Weak</div>
+          <ul>
+            <li>"Self-driven," "passionate," "compartmentalize my thoughts" — all self-described traits with zero evidence. An interviewer will not believe these unless they're shown.</li>
+            <li>No promotions mentioned. No tenure. No scope of responsibility stated (how many machines? what programs?). No single headline result to anchor the intro.</li>
+            <li>"Quality / complexity / impact of the story shows the breadth..." — this is framing that should not be said out loud. Let the story prove it.</li>
+            <li>Rambling structure makes it hard to follow. A "Tell me about yourself" answer should be 90 seconds max, three beats: where you've been → what you've driven → why you're here.</li>
+          </ul>
+        </div>
+        <div class="panel add">
+          <div class="panel-title">How to Fix It</div>
+          <ul>
+            <li>Start with a concrete anchor: title, tenure, scope. e.g., "I've been a Lead Electrical QE at John Deere for [X] years, supporting factory builds like the Mercury Grizzly and Caribou across electrical wire harness quality."</li>
+            <li>One headline accomplishment with a number: e.g., "Most recently I drove resolution of a supplier non-conformance that affected 100+ machines across two product lines, catching it before a single unit shipped to a customer."</li>
+            <li>Then bridge to the role: "I'm looking to bring that combination of technical depth and cross-functional leadership into [target role]."</li>
+            <li>Cut everything about "compartmentalizing thoughts," "irons in the fire," and "tail end of quality." These are distractions.</li>
+          </ul>
+        </div>
+        <div class="panel verdict full-width">
+          <div class="panel-title">Bottom Line</div>
+          <p class="verdict-text">This intro as written would not make a strong first impression. It's a working draft — the raw ingredients are there but it reads like notes, not a prepared answer. Needs to be rebuilt as a 90-second spoken structure with one anchor number and one forward-looking statement.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DRIVING SUSTAINABLE RESULTS -->
+  <div id="dsr" class="section-block">
+    <div class="section-header">
+      <span class="section-label">DSR</span>
+      <span class="section-title">Driving Sustainable Results</span>
+    </div>
+
+    <!-- DSR 01 -->
+    <div class="story-card">
+      <div class="card-header">
+        <span class="story-num">01</span>
+        <div class="card-header-text">
+          <div class="story-name">Caribou FEE — Gage Wheel + Connector Indexing</div>
+          <div class="card-tags">
+            <span class="rating-badge s2">★★ Above &amp; Beyond</span>
+            <span class="tag missing">MISSING: COST/DPM IMPACT</span>
+            <span class="tag weak">WEAK RESULT</span>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="panel strengths">
+          <div class="panel-title">What's Strong</div>
+          <ul>
+            <li>Clear personal ownership — "I led," "I set up," "I developed the plan."</li>
+            <li>Good cross-functional detail — Hydraulic, Electrical, Manufacturing all named.</li>
+            <li>Two separate root causes identified and addressed (algorithm fix + bracket design change).</li>
+            <li>Timeline stated: 6 weeks. Specific.</li>
+          </ul>
+        </div>
+        <div class="panel gaps">
+          <div class="panel-title">What's Missing</div>
+          <ul>
+            <li><strong>No DPM numbers.</strong> Story mentions "reduce DPM" as the goal but never states what it was before or after.</li>
+            <li><strong>No cost quantification.</strong> 2 defects/machine × how many machines per build? What does a field failure cost in warranty? That number exists — go find it.</li>
+            <li>"No more complaints" is not a result. That's anecdotal. Convert it to a metric.</li>
+            <li>Positive feedback from supervisors is noted twice but takes up space where results should be.</li>
+          </ul>
+        </div>
+        <div class="panel add full-width">
+          <div class="panel-title">Specific Additions Needed</div>
+          <ul>
+            <li>Before/after DPM: "Reduced runoff DPM from [X] to [Y] for these two defect types."</li>
+            <li>Scale: How many machines in the Caribou FEE build? If 40 machines × 2 defects = 80 defects eliminated — say that.</li>
+            <li>Business link: "Field failures in this category carry a warranty cost of approximately $[X] per incident" — ask your manager for this data if you don't have it.</li>
+            <li>Running change note: "Solution incorporated into ECM for current and future production" — this is the "spread far and wide" element that's missing.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- DSR 02 -->
+    <div class="story-card">
+      <div class="card-header">
+        <span class="story-num">02</span>
+        <div class="card-header-text">
+          <div class="story-name">Multicoupler Connector Housing — Micro-Crack, China Supplier</div>
+          <div class="card-tags">
+            <span class="rating-badge s2">★★ Above &amp; Beyond</span>
+            <span class="tag missing">MISSING: WARRANTY $, FIELD FAILURE COUNT</span>
+            <span class="tag weak">2-YEAR TIMELINE UNEXPLAINED</span>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="panel strengths">
+          <div class="panel-title">What's Strong</div>
+          <ul>
+            <li>Scale is impressive: 6,000+ connectors inspected by supplier.</li>
+            <li>Capital investment escalation — shows understanding of supplier economics and how to push through resistance.</li>
+            <li>Two-pronged fix: process change + geometry/design change. Not a band-aid.</li>
+            <li>Part is JD-exclusive — shows uniqueness of the challenge.</li>
+          </ul>
+        </div>
+        <div class="panel gaps">
+          <div class="panel-title">What's Missing</div>
+          <ul>
+            <li><strong>No warranty data.</strong> How many field failures per year were attributed to this defect before the fix? What did each warranty claim cost?</li>
+            <li><strong>The 2-year timeline is a liability if not addressed.</strong> Interviewer will ask "why 2 years?" — the story needs to explain the delay (capital investment at supplier, TE resistance) and show you were actively driving throughout.</li>
+            <li>"Clean point received" and "don't foresee the issue" are not results. They're process checkpoints.</li>
+            <li>What happened to existing units already in the field? Were there recalls? DTAC documents? Service campaigns?</li>
+          </ul>
+        </div>
+        <div class="panel add full-width">
+          <div class="panel-title">Specific Additions Needed</div>
+          <ul>
+            <li>Reframe the timeline: "This required 2 years because it necessitated a capital investment at a single-source international supplier — I maintained pressure throughout via [specific escalation method] and received the confirmed clean point [date]."</li>
+            <li>Add field failure data: "Before the fix, this defect was responsible for approximately [X] warranty claims per year at $[Y] each."</li>
+            <li>Add the "sustainable" element (this is DSR): "Containment and secondary inspection processes implemented prevent recurrence regardless of supplier changes."</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- DSR 03 -->
+    <div class="story-card">
+      <div class="card-header">
+        <span class="story-num">03</span>
+        <div class="card-header-text">
+          <div class="story-name">Grizzly Rice Machines — Loading Auger Harness Wear</div>
+          <div class="card-tags">
+            <span class="rating-badge s1">★ Incomplete</span>
+            <span class="tag missing">RESULTS SECTION NEARLY EMPTY</span>
+            <span class="tag weak">JUST A DATE AS THE RESULT</span>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="panel strengths">
+          <div class="panel-title">What's Strong</div>
+          <ul>
+            <li>Good domain-specific insight: recognized abrasive nature of rice as the failure mechanism.</li>
+            <li>Two-fold solution (re-route + steel conduit) shows methodical thinking.</li>
+            <li>Navigated customs delay and supplier pipeline issues — shows real-world resourcefulness.</li>
+          </ul>
+        </div>
+        <div class="panel gaps">
+          <div class="panel-title">What's Missing</div>
+          <ul>
+            <li><strong>Results section is essentially a date: "7/20/2023. GSN best shipping date."</strong> This is the weakest results section in the entire file. There is no outcome here — just a timestamp.</li>
+            <li>How many Grizzly Rice machines affected? What was the warranty claim rate before?</li>
+            <li>What did harness replacement cost in the field vs. the redesign cost?</li>
+            <li>Was the steel conduit adopted across other harsh-environment programs? That would be the ★★★ "spread far and wide" element.</li>
+          </ul>
+        </div>
+        <div class="panel add full-width">
+          <div class="panel-title">Specific Additions Needed</div>
+          <ul>
+            <li>This story needs a complete results rewrite. Minimum: number of machines affected, warranty claims eliminated, timeline from discovery to clean point, and whether the fix was adopted elsewhere.</li>
+            <li>If this story can't produce numbers, consider whether it's worth including over a stronger story. Right now, it is the weakest story in the file and should either be developed or replaced.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- OPERATING GLOBALLY AND INCLUSIVELY -->
+  <div id="ogi" class="section-block">
+    <div class="section-header">
+      <span class="section-label">OGI</span>
+      <span class="section-title">Operating Globally &amp; Inclusively</span>
+    </div>
+
+    <div class="story-card">
+      <div class="card-header">
+        <span class="story-num">01</span>
+        <div class="card-header-text">
+          <div class="story-name">ETEC Build — India &amp; Mexico Cross-Border Team, 157 NCCAs</div>
+          <div class="card-tags">
+            <span class="rating-badge s2">★★ Above &amp; Beyond</span>
+            <span class="tag missing">MISSING: DEFECT RATE BEFORE/AFTER</span>
+            <span class="tag add">ADD: REPEAT RATE IN NEXT BUILD</span>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="panel strengths">
+          <div class="panel-title">What's Strong</div>
+          <ul>
+            <li>Strong scale: 13 cross-border team members (9 Mexico, 4 India), COVID context adds stakes.</li>
+            <li>Structured approach: Pareto charts, bucketed by type and part number — shows methodology, not just effort.</li>
+            <li>157 issues → now 281 in Mercury DB across 3 years — the ongoing scope makes this ★★★ territory if quantified.</li>
+            <li>Took their expertise seriously: "They knew the products better than I did" — good framing for inclusivity competency.</li>
+          </ul>
+        </div>
+        <div class="panel gaps">
+          <div class="panel-title">What's Missing</div>
+          <ul>
+            <li>"Significant reduction" is vague. Compared to what baseline? What was the defect rate in the previous build? What was it after?</li>
+            <li>"Multiple badges" is not a result — remove or move to the lesson section.</li>
+            <li>What is the cost of an unresolved NCCA? What downstream problems were avoided?</li>
+            <li>The "next build" metric is the gold standard here — quantify: "Zero of the 157 resolved issues reappeared in the subsequent build."</li>
+          </ul>
+        </div>
+        <div class="panel add full-width">
+          <div class="panel-title">Specific Additions Needed</div>
+          <ul>
+            <li>Add the recurrence rate in the next build: "Of the 157 issues resolved, [X] were observed in the subsequent build vs. [Y] in the prior build — a [Z]% reduction in repeat defects."</li>
+            <li>Add the economic framing: each NCCA going into production unresolved carries some cost — get that number from your manager or use a conservative estimate.</li>
+            <li>The Mercury DB ongoing example (281 issues) is the "spread far and wide" element — explicitly frame it as such: "The process I built for ETEC was then applied to the Mercury build, where I'm currently driving resolution of 281 issues."</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="story-card">
+      <div class="card-header">
+        <span class="story-num">02–03</span>
+        <div class="card-header-text">
+          <div class="story-name">ROY Project — Employee Experience Team &amp; Survey Results</div>
+          <div class="card-tags">
+            <span class="rating-badge empty">⬜ No Content</span>
+            <span class="tag empty">PLACEHOLDER ONLY</span>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="panel empty-panel">
+          <div class="panel-title">Action Required</div>
+          <ul style="list-style:none; padding:0;">
+            <li style="font-size:0.88rem; color:var(--text); line-height:1.65; padding: 4px 0;">Both ROY project entries are completely empty. This is the weakest section in the file by volume — only one real story for a core competency. These need to be written before interviews. The OGI competency typically requires demonstrating cross-cultural collaboration AND perspective-taking — a single ETEC story is thin coverage for a full competency category.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- COMMUNICATING WITH IMPACT -->
+  <div id="cwi" class="section-block">
+    <div class="section-header">
+      <span class="section-label">CWI</span>
+      <span class="section-title">Communicating with Impact</span>
+    </div>
+
+    <!-- CWI 01 -->
+    <div class="story-card">
+      <div class="card-header">
+        <span class="story-num">01</span>
+        <div class="card-header-text">
+          <div class="story-name">Sensor O-Ring / Tailboard Disposal — Work Instruction Gap</div>
+          <div class="card-tags">
+            <span class="rating-badge s1">★ Too Thin</span>
+            <span class="tag weak">SINGLE EVENT, MINIMAL SCALE</span>
+            <span class="tag missing">NO QUANTIFIED IMPACT</span>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="panel strengths">
+          <div class="panel-title">What's Strong</div>
+          <ul>
+            <li>Identified a real process gap and drove a policy change — not just complaining about it.</li>
+            <li>The "so what" is clear in principle: wrong dispositions waste expensive parts.</li>
+          </ul>
+        </div>
+        <div class="panel gaps">
+          <div class="panel-title">What's Missing</div>
+          <ul>
+            <li>This is a single disposal event that led to a new instruction. That is a ★ story — it describes a reaction to one incident, not a sustained leadership action.</li>
+            <li>What is the cost of a tailboard assembly? What would the cost have been if this happened 5 more times before the policy was fixed?</li>
+            <li>How many U1s were affected by the new policy? Was it adopted beyond this team?</li>
+            <li>The "communication" element is thin — talking with a manager and a supervisor is standard. What made this impactful communication?</li>
+          </ul>
+        </div>
+        <div class="panel verdict full-width">
+          <div class="panel-title">Recommendation</div>
+          <p class="verdict-text">Consider whether this story is worth keeping. It is the weakest story in the CWI section. If it stays, the only way to strengthen it is to add: cost of the disposed assembly, number of U1s who received the updated instruction, and whether the policy change prevented future incidents (with a count). Otherwise, the X9 Nitro story (CWI-02) is a much stronger example of communication impact.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CWI 02 -->
+    <div class="story-card">
+      <div class="card-header">
+        <span class="story-num">02</span>
+        <div class="card-header-text">
+          <div class="story-name">X9 — Nitro Connector Controller Meeting Restructure</div>
+          <div class="card-tags">
+            <span class="rating-badge s2">★★ Above &amp; Beyond</span>
+            <span class="tag good">STRONG OWNERSHIP</span>
+            <span class="tag missing">MISSING: TIME/MEETINGS SAVED, PROJECT OUTCOME</span>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="panel strengths">
+          <div class="panel-title">What's Strong</div>
+          <ul>
+            <li>Strong ownership moment: interrupted a failing meeting, built structure in real time, asked for feedback after. This is genuinely above and beyond.</li>
+            <li>Initiative to create the SharePoint and send to PMs of affected programs — impact reached beyond the room.</li>
+            <li>2-month context: the problem had been going on before they arrived — shows urgency and pattern recognition.</li>
+          </ul>
+        </div>
+        <div class="panel gaps">
+          <div class="panel-title">What's Missing</div>
+          <ul>
+            <li>What happened to the connector change? Did the project progress accelerate after this intervention? By how much?</li>
+            <li>How many programs were affected? How many PMs received the SharePoint link?</li>
+            <li>"Progression of the project is clear to all" — clear to how many people? Over how long? That's the outcome.</li>
+            <li>Did this SharePoint or QNote approach get adopted for other programs? That's the "spread far and wide" element.</li>
+          </ul>
+        </div>
+        <div class="panel add full-width">
+          <div class="panel-title">Specific Additions Needed</div>
+          <ul>
+            <li>Add program scope: "SharePoint shared with PMs across [X] affected programs."</li>
+            <li>Add outcome: "The connector transition was completed by [date] — [X] weeks ahead of where progress had been tracking."</li>
+            <li>If this structure was adopted elsewhere: "The QNote meeting structure I introduced was adopted for [X] other programs going forward."</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- CWI 03 -->
+    <div class="story-card">
+      <div class="card-header">
+        <span class="story-num">03</span>
+        <div class="card-header-text">
+          <div class="story-name">ISG Vision Events — 6 Months to Single Point of Contact</div>
+          <div class="card-tags">
+            <span class="rating-badge s2">★★ Above &amp; Beyond</span>
+            <span class="tag good">STRONG PERSISTENCE &amp; ESCALATION</span>
+            <span class="tag missing">MISSING: EVENT CLOSURE RATE BEFORE/AFTER</span>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="panel strengths">
+          <div class="panel-title">What's Strong</div>
+          <ul>
+            <li>Six-month persistent effort that escalated to software delivery director level — this is real organizational communication impact.</li>
+            <li>Systemic fix, not a workaround — new work instruction and single POC assigned.</li>
+            <li>Included all units ISG services, not just their own — broad impact.</li>
+          </ul>
+        </div>
+        <div class="panel gaps">
+          <div class="panel-title">What's Missing</div>
+          <ul>
+            <li>The 14-day closure guideline is mentioned in the situation but never closed in the results. What was the before/after event closure rate?</li>
+            <li>How many events per month/year went through this process? Scale matters here — fixing a process that handles 10 events/year vs. 200 events/year is very different.</li>
+            <li>"New work instruction" is an output, not a result. The result is: events are now closed within 14 days at [X]% compliance vs. [Y]% before.</li>
+          </ul>
+        </div>
+        <div class="panel add full-width">
+          <div class="panel-title">Specific Additions Needed</div>
+          <ul>
+            <li>Add event volume: "This process handles approximately [X] vision events per [period]."</li>
+            <li>Add closure rate improvement: "Before the change, [X]% of events were closed within the 14-day guideline. After: [Y]%."</li>
+            <li>Add time savings: "Eliminated approximately [X] hours/month of follow-up work across [Y] QEs."</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LEADING CHANGE -->
+  <div id="lc" class="section-block">
+    <div class="section-header">
+      <span class="section-label">LC</span>
+      <span class="section-title">Leading Change</span>
+    </div>
+
+    <div class="story-card">
+      <div class="card-header">
+        <span class="story-num">01</span>
+        <div class="card-header-text">
+          <div class="story-name">Cross-Training 33 U1 Inspectors — First of Its Kind at Harvester Works</div>
+          <div class="card-tags">
+            <span class="rating-badge s2">★★ Above &amp; Beyond</span>
+            <span class="tag good">STRONG CHANGE MANAGEMENT STRUCTURE</span>
+            <span class="tag missing">MISSING: BUSINESS OUTCOME METRICS</span>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="panel strengths">
+          <div class="panel-title">What's Strong</div>
+          <ul>
+            <li>"First of its kind at Harvester Works history" — this is the single most important phrase in this story and should be stated first, not buried at the end.</li>
+            <li>33 people, 100% cross-training — specific and impressive scope.</li>
+            <li>Change management process was real: Union negotiation, overtime incentive, individual resistance addressed, phased by priority.</li>
+            <li>15–20% absenteeism rate is a strong context anchor — use it harder.</li>
+          </ul>
+        </div>
+        <div class="panel gaps">
+          <div class="panel-title">What's Missing</div>
+          <ul>
+            <li><strong>No business outcome.</strong> What happened to production coverage after cross-training? Did absenteeism impact drop? How many times did cross-training actually get used to fill a gap? That is the proof that the change was sustainable.</li>
+            <li>"Many people thanked me" and "Some people liked it" are not results. Remove these.</li>
+            <li>What was the cost of 15–20% absenteeism to production before? Even an estimate strengthens the story significantly.</li>
+            <li>If this was "first of its kind" — was it then adopted by other module leaders? That's the ★★★ spread.</li>
+          </ul>
+        </div>
+        <div class="panel add full-width">
+          <div class="panel-title">Specific Additions Needed</div>
+          <ul>
+            <li>Lead with the achievement: "I designed and executed the first cross-functional inspector training program in Harvester Works history — 33 U1s, 100% certified across FEE and Combine lines."</li>
+            <li>Close the business loop: "Following cross-training, even at 15–20% daily absenteeism, we maintained [X]% staffing coverage in high-priority zones — eliminating the production impact that had previously required [Y]."</li>
+            <li>Adoption: "The model was subsequently adopted by [X other module leaders / teams]." If not adopted, note it as a lesson learned gap.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="story-card">
+      <div class="card-header">
+        <span class="story-num">02</span>
+        <div class="card-header-text">
+          <div class="story-name">Leading Change — Story 2</div>
+          <div class="card-tags">
+            <span class="rating-badge empty">⬜ No Content</span>
+            <span class="tag empty">PLACEHOLDER ONLY</span>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="panel empty-panel">
+          <div class="panel-title">Action Required</div>
+          <ul style="list-style:none;">
+            <li style="font-size:0.88rem; color:var(--text); line-height:1.65;">No content entered. Having only one story for LC is a risk — interviewers often probe with follow-up questions or ask for a second example. Priority: fill this in before interviews.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STIMULATING INNOVATION -->
+  <div id="si" class="section-block">
+    <div class="section-header">
+      <span class="section-label">SI</span>
+      <span class="section-title">Stimulating Innovation</span>
+    </div>
+
+    <!-- SI 01 -->
+    <div class="story-card">
+      <div class="card-header">
+        <span class="story-num">01</span>
+        <div class="card-header-text">
+          <div class="story-name">Caribou Frames — Gage Redesign + Wireless JDAAT Digital Data Collection</div>
+          <div class="card-tags">
+            <span class="rating-badge s2">★★ Above &amp; Beyond</span>
+            <span class="tag good">STRONG "HOW" DETAIL</span>
+            <span class="tag missing">MISSING: FRAMES MEASURED, TIME SAVINGS QUANTIFIED</span>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="panel strengths">
+          <div class="panel-title">What's Strong</div>
+          <ul>
+            <li>"Doubled the speed of data collection" — a real metric, just needs the baseline (from X minutes to Y minutes).</li>
+            <li>Excellent technical depth: toggle clamps, saddle redesign, MicroRidge wireless transmitter, JDAAT integration, categorical decision logic. This is ★★★ "How."</li>
+            <li>Multi-layer innovation: physical → digital → logical. Not a single tweak.</li>
+            <li>"Subjectivity in decision making was theoretically nullified" — strong framing but needs proof (reduction in borderline rejections or repeat measurements).</li>
+          </ul>
+        </div>
+        <div class="panel gaps">
+          <div class="panel-title">What's Missing</div>
+          <ul>
+            <li>"Proof of concept handed over to OFP" — what happened after? Was it implemented? If yes, at what scale? If not, why? This is a critical gap for the results section.</li>
+            <li>No frame count: how many frames were measured per build? What did "doubled speed" translate to in total hours saved per build?</li>
+            <li>"Time was reduced" — by how much? If you doubled speed, give the actual numbers: "from 4 minutes to 2 minutes per frame × 200 frames = 400 minutes saved."</li>
+          </ul>
+        </div>
+        <div class="panel add full-width">
+          <div class="panel-title">Specific Additions Needed</div>
+          <ul>
+            <li>Add implementation status: was the proof of concept adopted into production? If yes: "Now in use for [X] frames per build cycle." That's the ★★★ element.</li>
+            <li>Quantify time savings: baseline measurement time × frames per build × time reduction % = total hours saved per cycle.</li>
+            <li>Add the data quality improvement: how many measurement errors or re-inspections were eliminated?</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- SI 02 -->
+    <div class="story-card">
+      <div class="card-header">
+        <span class="story-num">02</span>
+        <div class="card-header-text">
+          <div class="story-name">PhD Research — SCN Soybean Cyst Nematode Geospatial Models</div>
+          <div class="card-tags">
+            <span class="rating-badge s2">★★★ (Academic) / ★★ (Industry Context)</span>
+            <span class="tag good">BEST METRICS IN FILE</span>
+            <span class="tag weak">FRAMING MISMATCH FOR MANUFACTURING INTERVIEW</span>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="panel strengths">
+          <div class="panel-title">What's Strong</div>
+          <ul>
+            <li>Best quantified results in the entire file: 3x accuracy improvement, 2.5x RMSE improvement, 120 quadrants, 3 years of data.</li>
+            <li>"First time used for predicting impact of SCN infestation on spectral response" — original contribution is a strong claim.</li>
+            <li>National and international researcher engagement — shows broad thinking and network.</li>
+            <li>Real-world application stated: site-specific seeding and nematicide application.</li>
+          </ul>
+        </div>
+        <div class="panel gaps">
+          <div class="panel-title">What's Missing / Warning</div>
+          <ul>
+            <li><strong>The "30–100% yield loss causing millions of dollars" context is set up in the Situation but never closed in Results.</strong> What does a 3x accuracy improvement mean in terms of yield saved or nematicide cost reduced per acre? The chain is broken.</li>
+            <li>This story may feel disconnected to a manufacturing hiring panel. The technical vocabulary (geospatial regression, spectral response, spatial autocorrelation) is unfamiliar to most engineering managers outside ag-tech research.</li>
+            <li>No deployment scale: who actually used this work? Was it published? Adopted by a company or extension service?</li>
+          </ul>
+        </div>
+        <div class="panel add full-width">
+          <div class="panel-title">Specific Additions Needed</div>
+          <ul>
+            <li>Close the economic loop: "A 3x improvement in prediction accuracy allows farmers to reduce nematicide application to targeted areas, estimated to save $[X]/acre at scale — vs. blanket application across the entire field."</li>
+            <li>For a manufacturing innovation audience: frame it as systems thinking + data-driven decision making: "Challenged the assumption that spatial independence held — built a spatial regression model from scratch to test it — proved a 3x accuracy gain." That is the innovation frame they can understand.</li>
+            <li>State publication/adoption status if applicable — a cited paper or university extension adoption is the "spread far and wide" element for academic work.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="story-card">
+      <div class="card-header">
+        <span class="story-num">03</span>
+        <div class="card-header-text">
+          <div class="story-name">Vision Process Automation</div>
+          <div class="card-tags">
+            <span class="rating-badge empty">⬜ No Content</span>
+            <span class="tag empty">PLACEHOLDER ONLY</span>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="panel empty-panel">
+          <div class="panel-title">Action Required</div>
+          <ul style="list-style:none;">
+            <li style="font-size:0.88rem; color:var(--text); line-height:1.65;">No content. Given automation and vision system responsibilities are a current part of this role, this story could be one of the strongest in the file. High priority to develop. Likely connects to the 1,400 vision events summary mentioned in MSD.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAKING SOUND DECISIONS -->
+  <div id="msd" class="section-block">
+    <div class="section-header">
+      <span class="section-label">MSD</span>
+      <span class="section-title">Making Sound Decisions</span>
+    </div>
+
+    <!-- MSD 01 -->
+    <div class="story-card">
+      <div class="card-header">
+        <span class="story-num">01</span>
+        <div class="card-header-text">
+          <div class="story-name">Caribou FK Frame — 25% FPY → 90%+ via 0.5mm Fixture Shim Adjustment</div>
+          <div class="card-tags">
+            <span class="rating-badge s2">★★★ (Close)</span>
+            <span class="tag good">STRONG DATA-DRIVEN DECISION</span>
+            <span class="tag add">ADD: TOTAL HOURS + COST SAVED</span>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="panel strengths">
+          <div class="panel-title">What's Strong</div>
+          <ul>
+            <li>FPY before/after is the best ratio in the file: 25% → 90%+. Strong and specific.</li>
+            <li>3 hours of rework saved per frame on 90% of 50 ft frames — this is a real metric. Just needs total frames to complete the calculation.</li>
+            <li>Overcame resistance from MEs and DEs — shows ability to push through organizational friction with data and management alignment.</li>
+            <li>CMM validation on Saturday — shows rigor and urgency together.</li>
+            <li>DTAC document created for already-shipped frames — shows systemic thinking beyond the factory floor.</li>
+          </ul>
+        </div>
+        <div class="panel gaps">
+          <div class="panel-title">What's Missing</div>
+          <ul>
+            <li>Total frames in the build: "90% of 50 ft frames" — how many total 50 ft frames? 20? 50? 200? That number converts the "3 hours saved" into a total impact figure.</li>
+            <li>Dollar value of 3 hours × labor/rework rate × frame count = total savings. That number is calculable and should be stated.</li>
+            <li>Warranty cost avoided: how many belt-rub failures would have reached the field? What does each field failure cost?</li>
+          </ul>
+        </div>
+        <div class="panel add full-width">
+          <div class="panel-title">Specific Additions Needed (One Calculation Away from ★★★)</div>
+          <ul>
+            <li>Total frames in the build × 90% × 3 hours saved = total hours eliminated. At a conservative rework rate of $75/hr, that's the dollar figure.</li>
+            <li>State the warranty risk: "Without the fix, belt-rub failures in the field carry an estimated warranty cost of $[X] per incident — this change eliminated that risk for [Y] frames."</li>
+            <li>This is the story to develop first. It's one calculation away from being the strongest story in the file.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- MSD 02 -->
+    <div class="story-card">
+      <div class="card-header">
+        <span class="story-num">02</span>
+        <div class="card-header-text">
+          <div class="story-name">FLP Harness — Twisted Cable Non-Conformance, ~100 Machines (S + X Series)</div>
+          <div class="card-tags">
+            <span class="rating-badge s2">★★★ Best Story in File</span>
+            <span class="tag good">HIGHEST STAKES, BEST OWNERSHIP</span>
+            <span class="tag add">SHARPEN THE DOLLAR FIGURE</span>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="panel strengths">
+          <div class="panel-title">What's Strong</div>
+          <ul>
+            <li><strong>Best story in the entire file.</strong> High stakes, undetectable defect, proactive detection before field failures, real-time crisis management across Friday-to-Monday, cross-functional leadership at scale.</li>
+            <li>Specific: 70mm untwist vs. 10mm spec. Not vague.</li>
+            <li>Timeline is specific and impressive: problem detected ~5PM Friday, Monday morning meeting set, corrected parts expedited.</li>
+            <li>Both S Series and X Series affected — shows scope across product lines.</li>
+            <li>Opportunity connection: noticed this during a conversation about an unrelated issue — shows vigilance and breadth of awareness.</li>
+            <li>Quantified rework time: 10 min (X) and 20 min (S) — specific. 20 hours total rework.</li>
+          </ul>
+        </div>
+        <div class="panel gaps">
+          <div class="panel-title">What's Missing</div>
+          <ul>
+            <li>"Tens of thousands of dollars in spec updates" — make this specific. What would the spec updates have actually cost? What is the basis for that estimate? A vague large-number claim is weaker than "approximately $40,000 in engineering change orders that would have been required."</li>
+            <li>Field failure cost: what is the cost of a FLP system failure in the field (customer downtime, warranty, safety implication)? That number multiplied by 100 machines is the true risk mitigated.</li>
+            <li>Long-term fix: did this trigger a PPAP change or incoming inspection process for MURAT? What is the systemic fix beyond the immediate rework?</li>
+          </ul>
+        </div>
+        <div class="panel add full-width">
+          <div class="panel-title">Minor Sharpening Needed</div>
+          <ul>
+            <li>Replace "tens of thousands" with a specific number with a source: "Estimated $[X]K in engineering change orders based on similar spec update projects."</li>
+            <li>Add the systemic fix: "Following the crisis, I drove implementation of incoming inspection criteria for MURAT harnesses — preventing recurrence on future builds."</li>
+            <li>Add FLP system context for interviewers unfamiliar with it: one sentence on what a FLP failure looks like in the field (automation failure, combine stops mid-harvest, etc.) — this makes the stakes concrete to any audience.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- MSD 03 -->
+    <div class="story-card">
+      <div class="card-header">
+        <span class="story-num">03</span>
+        <div class="card-header-text">
+          <div class="story-name">5-Speed Gearbox — Missing Wire, 30 Jumpers in 6 Hours</div>
+          <div class="card-tags">
+            <span class="rating-badge s2">★★ Above &amp; Beyond</span>
+            <span class="tag good">STRONG URGENCY + FAST THINKING</span>
+            <span class="tag missing">MISSING: LINE DOWNTIME COST, MACHINES SAVED</span>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="panel strengths">
+          <div class="panel-title">What's Strong</div>
+          <ul>
+            <li>6 hours from discovery to solution before the next batch hit the line — this is the headline. Lead with it.</li>
+            <li>"By fluke" discovery via a casual conversation — shows network-driven risk awareness, which is exactly what the lesson learned names.</li>
+            <li>Disabled testing for that harness specifically to avoid spurious QNotes — shows systems thinking under pressure (not just tactical fix).</li>
+            <li>30 jumper cables is a specific, memorable detail.</li>
+          </ul>
+        </div>
+        <div class="panel gaps">
+          <div class="panel-title">What's Missing</div>
+          <ul>
+            <li><strong>No cost of what was avoided.</strong> Line downtime at a John Deere combine facility is expensive — what does an hour of line stoppage cost? What would pulling installed gearboxes have cost in labor? If even an estimate is available, this story goes from ★★ to ★★★.</li>
+            <li>How many machines were at risk? "The next batch" — how many machines?</li>
+            <li>Was a permanent fix implemented for the design error? What happened after the jumpers — did the design get corrected?</li>
+          </ul>
+        </div>
+        <div class="panel add full-width">
+          <div class="panel-title">Specific Additions Needed</div>
+          <ul>
+            <li>Add machine count: "Prevented line stoppage for [X] machines that were scheduled to hit the line within 6 hours."</li>
+            <li>Add cost framing: "Avoiding gearbox rework on [X] installed units — at approximately [Y] hours per gearbox — saved an estimated [Z] hours of heavy repair."</li>
+            <li>Add resolution: "The design error was corrected by the DE and incorporated into the next ECM cycle."</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- MSD 04 -->
+    <div class="story-card">
+      <div class="card-header">
+        <span class="story-num">04</span>
+        <div class="card-header-text">
+          <div class="story-name">Year-End Summary — 1,400 Vision Events</div>
+          <div class="card-tags">
+            <span class="rating-badge empty">⬜ No Content</span>
+            <span class="tag empty">PLACEHOLDER ONLY</span>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="panel empty-panel">
+          <div class="panel-title">Action Required</div>
+          <ul style="list-style:none;">
+            <li style="font-size:0.88rem; color:var(--text); line-height:1.65; margin-bottom:8px;">No content. However, 1,400 vision events is a significant data point — the insight and analysis from that summary could be one of the stronger MSD stories if developed. It directly supports data-driven decision making at scale. Consider connecting this to the SI Vision Process Automation placeholder.</li>
+            <li style="font-size:0.88rem; color:var(--text); line-height:1.65;">Priority to develop if time allows before interviews — but MSD-01 and MSD-02 are already strong anchors for this competency.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

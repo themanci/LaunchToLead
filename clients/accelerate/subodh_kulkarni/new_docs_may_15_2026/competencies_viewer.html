@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Competency Stories — Interview Prep</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap');
+
+  :root {
+    --bg: #0d1117;
+    --surface: #161b22;
+    --surface2: #1c2128;
+    --border: #30363d;
+    --text: #e6edf3;
+    --muted: #8b949e;
+    --accent: #58a6ff;
+    --green: #3fb950;
+    --yellow: #d29922;
+    --orange: #f0883e;
+    --red: #f85149;
+    --purple: #bc8cff;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'IBM Plex Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+
+  header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 20px 32px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  header h1 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text);
+    font-family: 'IBM Plex Mono', monospace;
+  }
+
+  header span {
+    color: var(--muted);
+    font-size: 0.8rem;
+  }
+
+  .nav-pills {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    padding: 16px 32px;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 61px;
+    z-index: 99;
+  }
+
+  .nav-pill {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    color: var(--muted);
+    padding: 5px 14px;
+    border-radius: 20px;
+    font-size: 0.78rem;
+    cursor: pointer;
+    transition: all 0.15s;
+    text-decoration: none;
+    font-family: 'IBM Plex Mono', monospace;
+  }
+
+  .nav-pill:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  .main {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 32px 24px 80px;
+  }
+
+  .competency-section {
+    margin-bottom: 56px;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .section-badge {
+    background: var(--accent);
+    color: #000;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .section-badge.green { background: var(--green); }
+  .section-badge.yellow { background: var(--yellow); }
+  .section-badge.orange { background: var(--orange); }
+  .section-badge.purple { background: var(--purple); }
+  .section-badge.red { background: var(--red); }
+
+  .section-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text);
+  }
+
+  .story-count {
+    font-size: 0.78rem;
+    color: var(--muted);
+    margin-left: auto;
+    font-family: 'IBM Plex Mono', monospace;
+  }
+
+  .story-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    margin-bottom: 20px;
+    overflow: hidden;
+  }
+
+  .story-card-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 20px;
+    background: var(--surface2);
+    border-bottom: 1px solid var(--border);
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .story-card-header:hover {
+    background: #1f2937;
+  }
+
+  .story-index {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--muted);
+    min-width: 28px;
+  }
+
+  .story-title {
+    font-size: 0.92rem;
+    font-weight: 500;
+    color: var(--text);
+    flex: 1;
+  }
+
+  .placeholder-tag {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.68rem;
+    padding: 2px 8px;
+    background: #2d1b1b;
+    color: var(--red);
+    border: 1px solid #4a1f1f;
+    border-radius: 4px;
+  }
+
+  .chevron {
+    color: var(--muted);
+    font-size: 0.8rem;
+    transition: transform 0.2s;
+  }
+
+  .chevron.open { transform: rotate(90deg); }
+
+  .story-body {
+    display: none;
+    padding: 20px;
+  }
+
+  .story-body.open { display: block; }
+
+  .star-field {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 8px 16px;
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .field-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--muted);
+    padding-top: 2px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .field-value {
+    font-size: 0.88rem;
+    color: var(--text);
+    line-height: 1.65;
+  }
+
+  .lesson-box {
+    background: #1a2332;
+    border: 1px solid #2d3f58;
+    border-radius: 6px;
+    padding: 12px 16px;
+    margin-top: 12px;
+  }
+
+  .lesson-box .lesson-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.68rem;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 6px;
+  }
+
+  .lesson-box .lesson-text {
+    font-size: 0.85rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .intro-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 24px;
+    margin-bottom: 32px;
+  }
+
+  .intro-card h3 {
+    font-size: 0.8rem;
+    font-family: 'IBM Plex Mono', monospace;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 12px;
+  }
+
+  .intro-card p {
+    font-size: 0.9rem;
+    color: var(--text);
+    line-height: 1.7;
+    margin-bottom: 10px;
+  }
+
+  .competency-bullets {
+    margin-top: 14px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .comp-chip {
+    font-size: 0.78rem;
+    font-family: 'IBM Plex Mono', monospace;
+    color: var(--green);
+    background: #0d2118;
+    border: 1px solid #1a4030;
+    padding: 3px 12px;
+    border-radius: 4px;
+  }
+
+  .empty-story {
+    padding: 16px 20px;
+    font-size: 0.85rem;
+    color: var(--muted);
+    font-style: italic;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>📋 Competency Stories</h1>
+  <span>Interview Preparation — Read-Only View</span>
+</header>
+
+<div class="nav-pills">
+  <a href="#intro" class="nav-pill">Introduction</a>
+  <a href="#dsr" class="nav-pill">Driving Sustainable Results</a>
+  <a href="#ogi" class="nav-pill">Operating Globally &amp; Inclusively</a>
+  <a href="#cwi" class="nav-pill">Communicating with Impact</a>
+  <a href="#lc" class="nav-pill">Leading Change</a>
+  <a href="#si" class="nav-pill">Stimulating Innovation</a>
+  <a href="#msd" class="nav-pill">Making Sound Decisions</a>
+</div>
+
+<div class="main">
+
+  <!-- INTRODUCTION -->
+  <div id="intro" class="competency-section">
+    <div class="section-header">
+      <span class="section-badge" style="background:#58a6ff">Intro</span>
+      <span class="section-title">Tell About Yourself</span>
+    </div>
+    <div class="intro-card">
+      <h3>Summary Statement</h3>
+      <p>I am a self-driven/motivated passionate quality professional with recent success stories of leading and executing quality MY projects and shop and factory builds (Mercury Grizzly, Caribou). I am also a program QE for MY29. I make a difference and impact the community I live in as a service leader, more importantly I can put a lot of irons in the fire simultaneously and work on them. Lately I learned that I could compartmentalize my thoughts which gives me an agility and ability to work on multiple projects.</p>
+      <p>I worked as build lead while fulfilling my regular duties as a lead electrical wire harness quality engineer. I am looking forward to growth opportunity where I can utilize my strong technical background and wider understanding, data analytics and people skills towards enterprise technology stack and subsequently coach the team on what I grasp.</p>
+      <p>I like quality function where I get a chance to lead and drive actions for betterment of product quality while working closely with cross functional teams. I like interaction with operators, technicians, leadership facilitation, working with safety coordinators and aligning members with our goals.</p>
+      <p>We in quality are always at the tail end or trailing end, therefore I starve to bring process efficiencies and save time for team members on some redundant and mundane processes.</p>
+      <p>Quality / complexity / impact of the story shows the breadth of my knowledge, experience, and leadership capabilities.</p>
+      <div class="competency-bullets">
+        <span class="comp-chip">Driving Sustainable Results</span>
+        <span class="comp-chip">Operating Globally &amp; Inclusively</span>
+        <span class="comp-chip">Communicating with Impact</span>
+        <span class="comp-chip">Leading Change</span>
+        <span class="comp-chip">Stimulating Innovation</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- DRIVING SUSTAINABLE RESULTS -->
+  <div id="dsr" class="competency-section">
+    <div class="section-header">
+      <span class="section-badge green">DSR</span>
+      <span class="section-title">Driving Sustainable Results</span>
+      <span class="story-count">3 stories</span>
+    </div>
+
+    <div class="story-card">
+      <div class="story-card-header" onclick="toggle(this)">
+        <span class="story-index">01</span>
+        <span class="story-title">Caribou FEE Build — Repeated Runoff Issues (Gage Wheel + Connector Indexing)</span>
+        <span class="chevron">▶</span>
+      </div>
+      <div class="story-body">
+        <div class="star-field">
+          <span class="field-label">Situation</span>
+          <span class="field-value">Caribou FEE build was almost complete and as a lead electrical QE I was pulled to address QIT repeated issues at Runoff. A couple of repeated issues were gage wheel not moving and indexing of an inline connector being difficult. The failure mode can cause non-functional system.</span>
+
+          <span class="field-label">Task</span>
+          <span class="field-value">As a lead I wanted to address these issues to reduce the DPM. Field failures because of these issues mean increase in DPM. Good thing here was the run off operator was diligent and vocal and kept recording his observations. Root cause analysis indicated that for gage wheel issue a lag in the signal caused initial delay and for indexing of connector, the bracket did not have an expected design slot to arrest the rotary motion.</span>
+
+          <span class="field-label">Actions</span>
+          <span class="field-value">I led the investigations by visiting Run off station, interviewing PV&amp;V engineer and operators and also line operators. Reviewed prints and models, operator procedures and created an evidence package. I developed a plan and structure on how to proceed. Got cross functional team including senior engineers for the root cause analysis. I set up recurring meetings with engineers from Hydraulic, electrical, and Manufacturing departments and stated urgency to address the issues. Goals were set to resolve these issues before next production cycle or have a running change to include in current ECM. Got an agreement from all on it. Positive feedback from supervisors, Senior QEs on how I was directing/driving the actions and kept everyone on the topic/track and about my direct approach. Solutions were tested and implemented.</span>
+
+          <span class="field-label">Results</span>
+          <span class="field-value">Design change bracket for connector and modified the algorithms to successfully addressed the issues within 6 weeks. 2 defects per machine at the runoff were addressed within 6 weeks. Positive feedback from supervisors, Senior QEs on how I was directing/driving the actions. Solutions were tested and implemented. No more complaints from operators or on the line regarding these issues.</span>
+        </div>
+        <div class="lesson-box">
+          <div class="lesson-label">Lesson Learned</div>
+          <div class="lesson-text">Challenge the cross functional team member to bring changes on the components that are not working well. Could have driven actions to change the connector design and help the design engineer to find a new connector. Over time we now have a new square connector that does not need indexing.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="story-card">
+      <div class="story-card-header" onclick="toggle(this)">
+        <span class="story-index">02</span>
+        <span class="story-title">Multicoupler Connector Housing — Micro-Crack / Supplier Material Defect (China)</span>
+        <span class="chevron">▶</span>
+      </div>
+      <div class="story-body">
+        <div class="star-field">
+          <span class="field-label">Situation</span>
+          <span class="field-value">Multicoupler Connector Housing had a micro-crack, potential of leaking and functional impact.</span>
+
+          <span class="field-label">Task</span>
+          <span class="field-value">As a lead I wanted to put this issue to bed for good and reduce warranty associated with it.</span>
+
+          <span class="field-label">Actions</span>
+          <span class="field-value">Led the investigations gathering the team. Root cause analysis indicated that the material coming from a supplier in China had this issue because of their stamping stroke was longer and created stress in the material. Drove actions — supplier was requested to change the processes, geometry/design of the housing also changed. Containment and secondary inspection processes were implemented. Escalated the importance as it needed a huge capital investment at the supplier. This part is only specifically designed for John Deere. TE is hard to work with. Multiple follow-ups with the team and supplier. Found a single source of truth. Multiple meetings and follow ups with teams, assigned tasks and action items and finally solution implemented. Finally received a date and proof in terms of pictures of implemented solution and processes.</span>
+
+          <span class="field-label">Results</span>
+          <span class="field-value">Clean point/change date received. 6,000+ connectors were inspected by supplier. 2 full years of waiting time from day we knew the problem to complete implementation. Done 2 weeks back. Issue not expected to recur.</span>
+        </div>
+        <div class="lesson-box">
+          <div class="lesson-label">Lesson Learned</div>
+          <div class="lesson-text">Ask for testing results beforehand and make sure they are included in the PPAP. Could have asked for X-Ray or material integration test earlier.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="story-card">
+      <div class="story-card-header" onclick="toggle(this)">
+        <span class="story-index">03</span>
+        <span class="story-title">Grizzly Rice Machines — Loading Auger Grain Tank Wire Harness Damage</span>
+        <span class="chevron">▶</span>
+      </div>
+      <div class="story-body">
+        <div class="star-field">
+          <span class="field-label">Situation</span>
+          <span class="field-value">Loading Auger Grain tank wire harness getting damaged/worn out in Grizzly Rice machines.</span>
+
+          <span class="field-label">Task</span>
+          <span class="field-value">As a lead I wanted to put this issue to bed for good and reduce warranty associated with it.</span>
+
+          <span class="field-label">Actions</span>
+          <span class="field-value">Led the investigations gathering the team. Root cause analysis indicated that higher mass flow rate impacts and abrasive nature of rice wears the conduit faster. Two-fold solution — route the harness differently and use a steel conduit in the projected area to protect it. Deviation was written with planned solution. However, implementation was delayed because of supplier processes of requotes and agreements. Reviewed warranty data. Followed up with the OFP/CPE QEs, SM and supplier. Found a single source of truth. Looked for alternatives to get samples or rework the existing harnesses from PDC. Got the sample that from supplier were stuck in Mexican customs, made sure the machines will have them based on priority when they will go out of door. Multiple meetings and follow ups with teams, assigned tasks and action items and finally solution implemented.</span>
+
+          <span class="field-label">Results</span>
+          <span class="field-value">Date and clean point: 7/20/2023. GSN best shipping date.</span>
+        </div>
+        <div class="lesson-box">
+          <div class="lesson-label">Lesson Learned</div>
+          <div class="lesson-text">Do not assume that material will sustain extreme conditions — ask for requirements and work for application review. Could have used experience of working in rice and asked for PV&amp;V tests for abrasion and wear.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- OPERATING GLOBALLY AND INCLUSIVELY -->
+  <div id="ogi" class="competency-section">
+    <div class="section-header">
+      <span class="section-badge yellow">OGI</span>
+      <span class="section-title">Operating Globally &amp; Inclusively</span>
+      <span class="story-count">1 story + 2 placeholders</span>
+    </div>
+
+    <div class="story-card">
+      <div class="story-card-header" onclick="toggle(this)">
+        <span class="story-index">01</span>
+        <span class="story-title">ETEC Build — Leading India &amp; Mexico Cross-Border Quality Team (157 NCCAs)</span>
+        <span class="chevron">▶</span>
+      </div>
+      <div class="story-body">
+        <div class="star-field">
+          <span class="field-label">Situation</span>
+          <span class="field-value">Responsible for leading the quality integration and working with ETEC — India &amp; Mexico teams. Before SOP, problems needed to be addressed to avoid repetitions of issues.</span>
+
+          <span class="field-label">Task</span>
+          <span class="field-value">Needed to deal with 150+ issues/NCCA.</span>
+
+          <span class="field-label">Actions</span>
+          <span class="field-value">Supported 9 members from Mexico and 4 members from India teams. It was Covid time, so I was their point of contact and eyes and ears. Reviewed descriptions of all issues and deciphered the information. Bucketed the problems by creating Pareto charts bucketing types — suppliers, design etc. — and also based on part numbers and harness owners. Set up weekly meetings for groups and daily meetings with members. They knew the products better than I did. Took their opinions on what we could do to address the issues. Assigned and drove actions with timelines, provided input on actions to be taken, helped them understand why we needed to address issues by stating the importance of the build and how it would impact serviceability. Valued their thoughts especially their technical backgrounds, way of working, understanding of routing issues etc. and understood the ways the NCCAs were handled before. Young and dynamic team members helped a lot.</span>
+
+          <span class="field-label">Results</span>
+          <span class="field-value">Addressed over 157 build issues/NCCA within 6 months' time. Defect matrix indicated significant reduction of the type of issues seen previously. Positive feedback from team members on the diligent and genuine approach to help others and direct approach towards achieving goals. Issues not repeated in the next build. Multiple badges received for the work. This is ongoing for last three years — dealing with 281 issues in Mercury DB.</span>
+        </div>
+        <div class="lesson-box">
+          <div class="lesson-label">Lesson Learned</div>
+          <div class="lesson-text">Start with openness, no prejudices, right mindset and intentions about knowing the people, think of globalized team, and off-the-work discussions before meetings. Not all people will have the same mindset of staying with the company for a long time — especially new people may use the initial employment as a stepping stone.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="story-card">
+      <div class="story-card-header" onclick="toggle(this)">
+        <span class="story-index">02</span>
+        <span class="story-title">ROY Project — Employee Experience Team</span>
+        <span class="placeholder-tag">⚠ Placeholder — No Content</span>
+        <span class="chevron">▶</span>
+      </div>
+      <div class="empty-story">No story content entered yet. Placeholder only.</div>
+    </div>
+
+    <div class="story-card">
+      <div class="story-card-header" onclick="toggle(this)">
+        <span class="story-index">03</span>
+        <span class="story-title">ROY Project — Employee Survey Results</span>
+        <span class="placeholder-tag">⚠ Placeholder — No Content</span>
+        <span class="chevron">▶</span>
+      </div>
+      <div class="empty-story">No story content entered yet. Placeholder only.</div>
+    </div>
+  </div>
+
+  <!-- COMMUNICATING WITH IMPACT -->
+  <div id="cwi" class="competency-section">
+    <div class="section-header">
+      <span class="section-badge orange">CWI</span>
+      <span class="section-title">Communicating with Impact</span>
+      <span class="story-count">3 stories</span>
+    </div>
+
+    <div class="story-card">
+      <div class="story-card-header" onclick="toggle(this)">
+        <span class="story-index">01</span>
+        <span class="story-title">Sensor O-Ring / Tailboard Assembly Disposal — Work Instruction Gap</span>
+        <span class="chevron">▶</span>
+      </div>
+      <div class="story-body">
+        <div class="star-field">
+          <span class="field-label">Situation</span>
+          <span class="field-value">A tag was for a leaky hydraulic fitting, however a U1 disposed a brand new tailboard assembly as trash, just because it was kept in a non-conforming area.</span>
+
+          <span class="field-label">Task</span>
+          <span class="field-value">Need to have clear work instructions for the disposition and times.</span>
+
+          <span class="field-label">Actions</span>
+          <span class="field-value">Reviewed current work instruction with the manager, identified the gaps and communicated with the supervisor of those U1s what needs to be followed.</span>
+
+          <span class="field-label">Results</span>
+          <span class="field-value">A new policy of the disposition and addition of disposition guidelines by QE on the NC tag for the U1s. The decision is solely made by QE and is executed by U1.</span>
+        </div>
+        <div class="lesson-box">
+          <div class="lesson-label">Lesson Learned</div>
+          <div class="lesson-text">Understand the mindset of inspectors, their work load, expectations, way of working and dependability. Could have put a tag there stating "do not throw this tailboard for any reasons" as an exception to current processes.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="story-card">
+      <div class="story-card-header" onclick="toggle(this)">
+        <span class="story-index">02</span>
+        <span class="story-title">X9 — Nitro Connector Controller Meeting (Scattered Discussion → Structured Progress)</span>
+        <span class="chevron">▶</span>
+      </div>
+      <div class="story-body">
+        <div class="star-field">
+          <span class="field-label">Situation</span>
+          <span class="field-value">X9 updates — Nitro Connector Controller meeting. Discussions were going scattered for the last 2 months since I came to know I was going to support this change in connector. Senior engineer/automation was asking around with no clear direction.</span>
+
+          <span class="field-label">Task</span>
+          <span class="field-value">To bring the team on the same page on progress.</span>
+
+          <span class="field-label">Actions</span>
+          <span class="field-value">Meeting started. 5 minutes in, 7 members, no one was comprehending what was going on. I interrupted politely. Began stating the problem and took initiative to start QNote and record the meeting notes in a structure based on the topic we wanted to discuss, progress expected and time and actions included with assignee. Sent the link to project managers of affected programs. At the end of the meeting asked for feedback on my initiative and management style of support and leadership showing. Also reached out to the communication and process lead who helps create SharePoint pages for the building and programs.</span>
+
+          <span class="field-label">Results</span>
+          <span class="field-value">SharePoint place created. Progression of the project is clear to all. We know the roadblocks and go-to persons and help needed. Expected outcomes and resources to do that. This is an example of ownership and leadership, leadership authority, passion, and drive.</span>
+        </div>
+        <div class="lesson-box">
+          <div class="lesson-label">Lesson Learned</div>
+          <div class="lesson-text">Pushing the senior engineers to clearly state the requirements would have helped. Could have asked the design engineer to show a clear statement about what is changing and what are the timelines.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="story-card">
+      <div class="story-card-header" onclick="toggle(this)">
+        <span class="story-index">03</span>
+        <span class="story-title">ISG Vision Events — Streamlining Assignment Process (6 Months → Single Point of Contact)</span>
+        <span class="chevron">▶</span>
+      </div>
+      <div class="story-body">
+        <div class="star-field">
+          <span class="field-label">Situation</span>
+          <span class="field-value">Automation quality responsibilities involved disposition vision meetings. Realized that for the ISG it's difficult to find a correct owner and there is a lot of follow-up needed, resulting in delays in following the guidelines of 14-day event closure.</span>
+
+          <span class="field-label">Task</span>
+          <span class="field-value">Took a task to make the process streamlined and reduce the delays and follow-ups.</span>
+
+          <span class="field-label">Actions</span>
+          <span class="field-value">Started talking with teammates and counterparts in ISG. After six months of continuous and persistent efforts finally got to visit with ISG Quality Manager to take the task on him and include all other units that ISG provides services to and bring their managers to discuss the issues going on with their processes. Provided my input. The topic was stretched up to software delivery director level.</span>
+
+          <span class="field-label">Results</span>
+          <span class="field-value">Now have a new work instructions and it is decided to have a single point of contact to distribute and assign the ISG events.</span>
+        </div>
+        <div class="lesson-box">
+          <div class="lesson-label">Lesson Learned</div>
+          <div class="lesson-text">If you want to save your time, take some others' time and delegate the work to them. Consistent efforts help even though they are painful.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LEADING CHANGE -->
+  <div id="lc" class="competency-section">
+    <div class="section-header">
+      <span class="section-badge purple">LC</span>
+      <span class="section-title">Leading Change</span>
+      <span class="story-count">1 story + 1 placeholder</span>
+    </div>
+
+    <div class="story-card">
+      <div class="story-card-header" onclick="toggle(this)">
+        <span class="story-index">01</span>
+        <span class="story-title">Cross-Training 33 U1 Inspectors — First of Its Kind at Harvester Works</span>
+        <span class="chevron">▶</span>
+      </div>
+      <div class="story-body">
+        <div class="star-field">
+          <span class="field-label">Situation</span>
+          <span class="field-value">Absenteeism was a problem. Around 15–20% inspectors were absent every day, similar to any other departments. The inspectors were not on CIPP plans so it was more towards lack of motivation. FEE inspectors never worked in Combine Side and vice versa.</span>
+
+          <span class="field-label">Task</span>
+          <span class="field-value">As a Module leader I wanted 100% cross-training of U1s across FEE and Combine so that in case of heavy absenteeism I could staff 100% in the areas of high priority. Wanted to train all U1s for inspection in FEE and Combine to address the absenteeism.</span>
+
+          <span class="field-label">Actions</span>
+          <span class="field-value">First communicated the need and plan to my supervisor. Set up a meeting with Union. Worked with my people, told them why I was doing it, what are the advantages to business and people. Also told them I would make sure they were awarded flat overtime across the board for the training period. Made a plan based on priorities. Daily staffing on test track and fire walls was my priority. There was a lot of resistance based on schedule/individuals' interests/advantages of the staggered starts of FEE/Combine department. Had to work with them to get the best possible outcome. Needed to challenge the mindsets and get the training imposed as needed. 100% training was achieved and there was a departmental celebration.</span>
+
+          <span class="field-label">Results</span>
+          <span class="field-value">Able to get all 33 U1s 100% cross-trained for all functions. It was a business need. Many people thanked me. Some people liked it as they were not needed to be moved and were able to keep working on their own spot. First of its kind in Harvester Works history.</span>
+        </div>
+        <div class="lesson-box">
+          <div class="lesson-label">Lesson Learned</div>
+          <div class="lesson-text">Should have asked the leader before me what are the challenges and how she was coping with it. What could I have done differently — not to accept the job? Was that my nature to supervise the people, especially the wage employees, or was I doing it because of the requirements?</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="story-card">
+      <div class="story-card-header" onclick="toggle(this)">
+        <span class="story-index">02</span>
+        <span class="story-title">Leading Change — Story 2</span>
+        <span class="placeholder-tag">⚠ Placeholder — No Content</span>
+        <span class="chevron">▶</span>
+      </div>
+      <div class="empty-story">No story content entered yet. Placeholder only.</div>
+    </div>
+  </div>
+
+  <!-- STIMULATING INNOVATION -->
+  <div id="si" class="competency-section">
+    <div class="section-header">
+      <span class="section-badge" style="background:#db61a2">SI</span>
+      <span class="section-title">Stimulating Innovation</span>
+      <span class="story-count">2 stories + 1 placeholder</span>
+    </div>
+
+    <div class="story-card">
+      <div class="story-card-header" onclick="toggle(this)">
+        <span class="story-index">01</span>
+        <span class="story-title">Caribou Frames — Gage Redesign + Wireless Digital Data Collection (JDAAT)</span>
+        <span class="chevron">▶</span>
+      </div>
+      <div class="story-body">
+        <div class="star-field">
+          <span class="field-label">Situation</span>
+          <span class="field-value">Was using a gage for Caribou Frames. It was functional but not designed as per metrological principles — used C clamps causing deformation during tightening and saddle on indicator was obstructing components. The dial gage was getting damaged because of repetitive and frequent use. Decision making for U1 was not easy if we needed to measure each frame during production.</span>
+
+          <span class="field-label">Task</span>
+          <span class="field-value">Needed to continue data collection as well as find ways to make the process simpler and easier in decision making to accept or reject the frame.</span>
+
+          <span class="field-label">Actions</span>
+          <span class="field-value">Worked with the tool maker to make flat-ended toggle clamps for holding the gage against the frame, which reduced deformation. Changed the shape of the saddle to a smaller and shorter round for stability and surface matching. To make data collection digital, worked with MicroRidge company to get the wireless data transmitter from gages and worked on connecting to JDAAT. Wrote the logic in order to make decision making easier for an inspector — instead of numerical number crunching, categorical decision making was made possible. Proof of concept established and handed over to OFP.</span>
+
+          <span class="field-label">Results</span>
+          <span class="field-value">Step toward automation — seed project. Reduced inefficiencies of data collection — doubled the speed of data collection, time was reduced. Made sure that data validation takes place. Subjectivity in decision making was theoretically nullified.</span>
+        </div>
+        <div class="lesson-box">
+          <div class="lesson-label">Lesson Learned</div>
+          <div class="lesson-text">Make sure that the process you inherited from others is abiding by engineering principles. Could have helped the engineer to improve her processes first and not started work before the process was improved — it took a lot of time. Delegation could have been a smarter way.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="story-card">
+      <div class="story-card-header" onclick="toggle(this)">
+        <span class="story-index">02</span>
+        <span class="story-title">PhD Research — SCN (Soybean Cyst Nematode) Geospatial Regression Models</span>
+        <span class="chevron">▶</span>
+      </div>
+      <div class="story-body">
+        <div class="star-field">
+          <span class="field-label">Situation</span>
+          <span class="field-value">Hired as a doctoral student. Project was to deal with Soybean Cyst Nematode infestation in fields that could cause 30–100% yield loss and losing millions of dollars. The issue is this is a soil-borne pathogen which is difficult to detect. Engineering solutions were needed.</span>
+
+          <span class="field-label">Task</span>
+          <span class="field-value">To research current work done on this, management practices, methods of addressing it and come up with a viable proposal of a solution to further the knowledge.</span>
+
+          <span class="field-label">Actions</span>
+          <span class="field-value">Extensive literature review. Talked with researchers nationally and internationally. Some work was done to understand spectral signatures of crop canopies and yields, to see if pathogens can be detected using spectroscopy and aerial images. Proposed that work was needed on understanding the spatial structure of pathogens, their spatial distribution in the field and how it impacts accuracy of predictive models. Collected data on two fields — one large field and one plot study — over three years. Spectral response of crops was the response variable; SCN populations, soil type/texture, environmental factors such as rain, temp, plant height etc. were independent variables. All attributed with GPS location. Involved multiple data collection campaigns with various spatial and temporal resolutions. Data mining, filtering, writing algorithms, tweaking existing algorithms for data mining — representative data set over 120 quadrants.</span>
+
+          <span class="field-label">Results</span>
+          <span class="field-value">Applying spatial structure, geospatial regression models improved the relationships. Accuracy improved three-fold. Root mean square error for yield prediction improved by 2.5x and spectral response variable models three times. This approach of using spatial regression was first time used for predicting impact of SCN infestation on spectral response — unique and original contribution towards map-based farming / site-specific crop management. Best practices: a.) control/adjust nematicide application in areas where needed most, b.) sow SCN-resistant cultivar in areas where infestation occurs.</span>
+        </div>
+        <div class="lesson-box">
+          <div class="lesson-label">Lesson Learned</div>
+          <div class="lesson-text">Learning algorithms or computer coding for MATLAB would have helped. Lesson learned — evaluate whom you are working with and what are their motives.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="story-card">
+      <div class="story-card-header" onclick="toggle(this)">
+        <span class="story-index">03</span>
+        <span class="story-title">Vision Process Automation</span>
+        <span class="placeholder-tag">⚠ Placeholder — No Content</span>
+        <span class="chevron">▶</span>
+      </div>
+      <div class="empty-story">No story content entered yet. Placeholder only.</div>
+    </div>
+  </div>
+
+  <!-- MAKING SOUND DECISIONS -->
+  <div id="msd" class="competency-section">
+    <div class="section-header">
+      <span class="section-badge red">MSD</span>
+      <span class="section-title">Making Sound Decisions</span>
+      <span class="story-count">3 stories + 1 placeholder</span>
+    </div>
+
+    <div class="story-card">
+      <div class="story-card-header" onclick="toggle(this)">
+        <span class="story-index">01</span>
+        <span class="story-title">Caribou FK Frame — 25% FPY → Fixture Shim Adjustment (50 ft Alignment)</span>
+        <span class="chevron">▶</span>
+      </div>
+      <div class="story-body">
+        <div class="star-field">
+          <span class="field-label">Situation</span>
+          <span class="field-value">Pulled to help SOP fabrication of Caribou FK Frame build, as pandemic restricted travel of engineers from India. There was an alignment issue between skid plate and cutter bar. The misalignment causes belt rubs, warranty issues, PIPs. First pass yield was around 25% only, needed rework of 3 hours. Inconvenient to the repairman as well. Need to build 8 frames a day for production targets.</span>
+
+          <span class="field-label">Task</span>
+          <span class="field-value">As lead QE, interested in solving the problem by monitoring the reject rate, collecting data on frames, and recording before the build was complete.</span>
+
+          <span class="field-label">Actions</span>
+          <span class="field-value">First studied the problem and monitored trends by collecting data using a gage. Sorted and segregated data based on frame sizes. Realized alignment existed on 50 ft frames more than other sizes (35, 40, 45). Started focused monitoring of the manufacturing process, collected data on 50+ frames specifically in a few weeks, identified and established hypothesis and trends. Based on geometry of the fixture and frame, and magnitude of misalignment, proposed a shim reduction of 0.5 mm from one side of the weld fixture. Evaluated that this maneuvering was risky during production or on weekdays. There was resistance and reluctance from MEs and DEs to make any changes to fixture and prints at this stage. Manager was supportive. Discussed with FEE side quality supervisor, ME Staff Engineer, and Managers — decided to adjust the fixture by removing 0.5 mm shim on Friday to minimize production impact. Frame was inspected on CMM on Saturday on urgent basis and found that it worked. Problem resolved.</span>
+
+          <span class="field-label">Results</span>
+          <span class="field-value">Alignment for rest of the frames was within 5 mm. For each frame, saved 3 hours of work on almost 90% of 50 ft frames. Only one or two frames needed repair attributed to operator adjusting the fixture. Saved rubbing of belts and field failures for customers and warranty issues. Created DTAC document for repair on frames already built and sent to dealers. Fortunately only a few frames were sent to dealers by the time solution was worked out. MEs, repairman, FEE supervisor, ME supervisor all were happy with the result.</span>
+        </div>
+        <div class="lesson-box">
+          <div class="lesson-label">Lesson Learned</div>
+          <div class="lesson-text">What fixtures have been used and what data of their inspection shows — could have studied first. Given the chance would have been a part of the fixture qualification process.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="story-card">
+      <div class="story-card-header" onclick="toggle(this)">
+        <span class="story-index">02</span>
+        <span class="story-title">FLP Harness — Twisted Cable Non-Conformance (S Series + X Series, ~100 Machines)</span>
+        <span class="chevron">▶</span>
+      </div>
+      <div class="story-body">
+        <div class="star-field">
+          <span class="field-label">Situation</span>
+          <span class="field-value">Forward-Looking Perception (FLP) is an automation feature on latest combines. Functional accuracy of harnesses for this feature (AXE105253) is critical. Harnesses are used to receive signals for controller from camera and there is a critical aspect of harness assembly — necessary to have twisted and jacketed cables at four different connections. This harness is used for S Series and X Series machines. If the harnesses are not twisted as per specifications, signals received will be low or attenuated and will cause intermittent controller functions. Signal-related issues are not detectable in SMART tests or end-of-line testing. A few functional issues were witnessed in the field identified as quality issues by supplier during LPB-2023. Supplier never built these types of harnesses before LPB. Harnesses supplied by MURAT in Turkey.</span>
+
+          <span class="field-label">Task</span>
+          <span class="field-value">Make sure that harnesses installed are good and issues are not seen after the machine leaves the factory. Good quality parts go to the customer.</span>
+
+          <span class="field-label">Actions</span>
+          <span class="field-value">Had checked similar harnesses from the supplier in warehouse before they came to factory. Checking harness on X Series line — product owner mentioned an operator efficiency-related issue. That led to investigating the topic and reviewing the harness for twist. Realized the harnesses were not twisted to specification — instead of 10 mm of untwist, the untwist was 30+ mm. Wanted the whole conduit to be removed. Had previously talked with the supplier rep in Waterloo on other topics and knew he was going to Chicago — immediately called him and told him to stop by the factory on the way. He came after a couple of hours. Pulled the harness apart — revealed that the untwist was more than 70 mm and it was the case on all connectors on the particular harness. Immediate escalation — called the line QE and ME, educated them on problem and severity, took the opinion of product owner and asked about impact of repairing vs. replacing harnesses on the go, directed line QE to write QNotes on machines built so far and a few more for the next couple of weeks. Documented the build issue. Wrote an email marked "Urgent and Important" to supplier contacts. Immediately set up a meeting with John Deere cross-functional team including leads, PMs, and SM for first thing Monday morning. Asked the supplier rep to talk with their folks urgently and change the manufacturing process over the weekend. This was done Friday afternoon at approximately 5 PM. On Monday, came in early — checked S Series harness and realized the same issue was there too. Held internal meeting, discussed the situation, provided the plan, assigned tasks to cross-functional team members, QNoted all machines to be built based on rate. Connected with warehouse and PDC to quarantine parts. Requested SM folks to get with supplier and ship corrected parts. Asked for identification on corrected part. Planned the rework strategy and estimated repair time — approximately 10 minutes for X Series, 20 minutes for S Series.</span>
+
+          <span class="field-label">Results</span>
+          <span class="field-value">Expedited corrected harness from supplier. Made their process better, educated them on processes and expectations, then continued to build machines on the go. Around 50 machines on S Series and X Series each needed replacement of harnesses. 20 hours of rework altogether. Saved potential spec updates of tens of thousands of dollars to the company.</span>
+        </div>
+        <div class="lesson-box">
+          <div class="lesson-label">Lesson Learned</div>
+          <div class="lesson-text">Would have asked the design engineers the corner conditions and print requirements on the changes.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="story-card">
+      <div class="story-card-header" onclick="toggle(this)">
+        <span class="story-index">03</span>
+        <span class="story-title">5-Speed Gearbox Harness — Missing Wire Discovered Day-Of (30 Jumpers in 6 Hours)</span>
+        <span class="chevron">▶</span>
+      </div>
+      <div class="story-body">
+        <div class="star-field">
+          <span class="field-label">Situation</span>
+          <span class="field-value">Supporting the build, electrical wire harnesses were my responsibilities. Early morning while talking with a colleague by chance came to know that on a 5-speed harness, a wire was missing — and the issue happened in the design process.</span>
+
+          <span class="field-label">Task</span>
+          <span class="field-value">To stop bleeding and prevent downstream chaos because there would be a lot of DTCs, and find an alternate solution.</span>
+
+          <span class="field-label">Actions</span>
+          <span class="field-value">Started with the DE — called him, asked what are the needs of the hour. Contacted shop technician and asked to help in the crucial hour to make 30 jumper cables. Worked to disable the testing particular to that wire harness so unwanted QNotes would not be created. Got the jumpers from the shop to factory — all this was done in record time of 6 hours before the next batch of the machines with those gearboxes hit the line.</span>
+
+          <span class="field-label">Results</span>
+          <span class="field-value">Saved downtime on the line. Saved rework of pulling off installed gearboxes and a lot of heavy repair work including closing the QNotes.</span>
+        </div>
+        <div class="lesson-box">
+          <div class="lesson-label">Lesson Learned</div>
+          <div class="lesson-text">Network and talking with colleagues helps to identify the problems earlier.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="story-card">
+      <div class="story-card-header" onclick="toggle(this)">
+        <span class="story-index">04</span>
+        <span class="story-title">Year-End Summary with Insight on 1,400 Vision Events</span>
+        <span class="placeholder-tag">⚠ Placeholder — No Content</span>
+        <span class="chevron">▶</span>
+      </div>
+      <div class="empty-story">No story content entered yet. Placeholder only.</div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  function toggle(header) {
+    const body = header.nextElementSibling;
+    const chevron = header.querySelector('.chevron');
+    body.classList.toggle('open');
+    chevron.classList.toggle('open');
+  }
+</script>
+</body>
+</html>

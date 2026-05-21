@@ -1,0 +1,1216 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IBB Webinar — GO-ECpE × LaunchToLead | May 2026</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <style>    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html, body {
+      width: 100%; height: 100%;
+      overflow: hidden;
+      background: #f8fafc;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: #334155;
+    }
+
+    /* â”€â”€ NAV BAR â”€â”€ */
+    .nav-bar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      display: flex; align-items: center; gap: 14px;
+      padding: 0 20px; height: 44px;
+      background: rgba(255,255,255,0.97);
+      border-bottom: 1px solid #e2e8f0;
+      backdrop-filter: blur(8px);
+    }
+    .nav-logo { font-size: 13px; font-weight: 800; color: #064e3b; letter-spacing: -0.3px; white-space: nowrap; }
+    .nav-logo span { color: #94a3b8; font-weight: 400; margin-left: 8px; font-size: 12px; }
+    .progress-track { flex: 1; height: 3px; background: #e2e8f0; border-radius: 2px; min-width: 60px; }
+    .progress-fill { height: 100%; background: linear-gradient(90deg, #064e3b, #14b8a6); border-radius: 2px; transition: width 0.35s ease; }
+    .nav-counter { font-size: 12px; font-weight: 700; color: #94a3b8; font-family: 'Space Grotesk', sans-serif; white-space: nowrap; min-width: 55px; text-align: right; }
+    .nav-btn {
+      background: none; border: 1px solid #e2e8f0; color: #94a3b8;
+      width: 28px; height: 28px; border-radius: 6px; cursor: pointer;
+      font-size: 12px; display: flex; align-items: center; justify-content: center;
+      transition: all 0.15s ease; flex-shrink: 0;
+    }
+    .nav-btn:hover { border-color: #064e3b; color: #064e3b; }
+    .nav-btn:disabled { opacity: 0.3; cursor: default; }
+    .nav-hint { font-size: 10px; color: #cbd5e1; white-space: nowrap; }
+
+    /* â”€â”€ SLIDES LAYER â”€â”€ */
+    #slides { position: fixed; top: 44px; left: 0; right: 0; bottom: 0; }
+
+    .slide {
+      position: absolute; inset: 0;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      padding: 36px 72px;
+      opacity: 0; pointer-events: none;
+      transition: opacity 0.3s ease;
+      overflow: hidden;
+    }
+    .slide.active { opacity: 1; pointer-events: auto; }
+
+    .slide-inner { width: 100%; max-width: 1020px; }
+
+    /* â”€â”€ TYPOGRAPHY â”€â”€ */
+    .eyebrow {
+      display: inline-block; font-size: 11px; font-weight: 700;
+      letter-spacing: 0.11em; text-transform: uppercase;
+      color: #064e3b; margin-bottom: 10px;
+      background: #ecfdf5; padding: 3px 12px; border-radius: 999px;
+    }
+    .slide-title {
+      font-size: 40px; font-weight: 800; line-height: 1.1;
+      color: #0f172a; margin-bottom: 14px;
+    }
+    .slide-title .lime { color: #064e3b; }
+    .slide-title .teal { color: #0d9488; }
+    .slide-sub { font-size: 17px; color: #64748b; line-height: 1.6; margin-bottom: 26px; }
+
+    /* â”€â”€ CARDS â”€â”€ */
+    .card {
+      background: white; border: 1px solid #e2e8f0; border-radius: 12px;
+      padding: 18px 22px;
+    }
+    .card-lime  { border-left: 3px solid #064e3b; }
+    .card-red   { border-left: 3px solid #ef4444; }
+    .card-amber { border-left: 3px solid #d97706; }
+    .card-green { border-left: 3px solid #16a34a; }
+
+    /* â”€â”€ GRIDS â”€â”€ */
+    .g2 { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .g4 { display: grid; grid-template-columns: repeat(4,1fr); gap: 14px; }
+    .g2-65 { display: grid; grid-template-columns: 1fr 1.2fr; gap: 32px; align-items: start; }
+
+    /* â”€â”€ STAT CARDS â”€â”€ */
+    .stat-card {
+      background: #ecfdf5; border: 1px solid #d1fae5; border-radius: 12px;
+      padding: 20px; text-align: center;
+    }
+    .stat-val { font-family:'Space Grotesk',sans-serif; font-size:42px; font-weight:700; color:#064e3b; line-height:1; }
+    .stat-val small { font-size:20px; color:#94a3b8; }
+    .stat-label { font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:#64748b; margin-top:5px; }
+
+    /* â”€â”€ BIG LETTER CARDS â”€â”€ */
+    .letter-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-top:20px; }
+    .letter-card {
+      background:white; border:1px solid #e2e8f0; border-radius:14px;
+      padding:20px 16px; text-align:center;
+    }
+    .letter-big { font-family:'Space Grotesk',sans-serif; font-size:56px; font-weight:700; line-height:1; margin-bottom:6px; }
+    .letter-name { font-size:14px; font-weight:700; color:#0f172a; margin-bottom:4px; }
+    .letter-desc { font-size:12px; color:#64748b; line-height:1.5; }
+
+    /* â”€â”€ BAR CHART â”€â”€ */
+    .bar-row { display:flex; align-items:center; gap:10px; margin-bottom:10px; }
+    .bar-label { font-size:13px; font-weight:600; color:#334155; width:196px; flex-shrink:0; }
+    .bar-track { flex:1; height:15px; background:#e2e8f0; border-radius:999px; overflow:hidden; }
+    .bar-fill { height:100%; border-radius:999px; }
+    .bar-green { background:linear-gradient(90deg,#064e3b,#14b8a6); }
+    .bar-amber { background:linear-gradient(90deg,#d97706,#f59e0b); }
+    .bar-red   { background:linear-gradient(90deg,#dc2626,#ef4444); }
+    .bar-val { font-family:'Space Grotesk',sans-serif; font-size:13px; font-weight:700; color:#334155; width:33px; text-align:right; flex-shrink:0; }
+    .bar-badge { font-size:10px; font-weight:800; text-transform:uppercase; letter-spacing:0.05em; padding:2px 9px; border-radius:999px; flex-shrink:0; }
+    .bg-green { background:#ecfdf5; color:#064e3b; }
+    .bg-amber { background:#fffbeb; color:#92400e; }
+    .bg-red   { background:#fef2f2; color:#991b1b; }
+
+    /* â”€â”€ DEMO PANELS â”€â”€ */
+    .before-panel {
+      background:#fef2f2; border:1px solid #fecaca; border-radius:10px; padding:14px 18px; margin-bottom:10px;
+    }
+    .after-panel {
+      background:#f0fdf4; border:1px solid #bbf7d0; border-radius:10px; padding:14px 18px;
+    }
+    .demo-lbl { font-size:10px; font-weight:800; letter-spacing:0.11em; text-transform:uppercase; margin-bottom:5px; }
+    .demo-lbl-b { color:#dc2626; }
+    .demo-lbl-a { color:#16a34a; }
+    .demo-txt { font-size:15px; line-height:1.65; font-style:italic; }
+    .demo-txt-b { color:#991b1b; }
+    .demo-txt-a { color:#166534; }
+    .amhw-row { display:flex; flex-wrap:wrap; gap:7px; margin-top:10px; }
+    .tag {
+      font-size:11px; font-weight:700; padding:3px 11px; border-radius:999px;
+    }
+    .tag-a { background:#ecfdf5; color:#064e3b; border:1px solid #a7f3d0; }
+    .tag-m { background:#fffbeb; color:#92400e; border:1px solid #fde68a; }
+    .tag-h { background:#eff6ff; color:#1e40af; border:1px solid #bfdbfe; }
+    .tag-w { background:#faf5ff; color:#6b21a8; border:1px solid #e9d5ff; }
+
+    /* â”€â”€ BULLET LIST â”€â”€ */
+    .blist { list-style:none; padding:0; }
+    .blist li {
+      display:flex; gap:10px; align-items:flex-start;
+      padding:9px 0; border-bottom:1px solid #f1f5f9;
+      font-size:14px; color:#475569; line-height:1.6;
+    }
+    .blist li:last-child { border-bottom:none; }
+    .bdot { width:7px; height:7px; border-radius:50%; flex-shrink:0; margin-top:6px; }
+    .lime  { background:#a3e635; }
+    .red   { background:#ef4444; }
+    .amber { background:#f59e0b; }
+    .tealc { background:#14b8a6; }
+
+    /* â”€â”€ NUMBERED LIST â”€â”€ */
+    .nlist { list-style:none; }
+    .nlist li {
+      display:flex; gap:14px; align-items:flex-start;
+      padding:10px 14px; border-radius:9px; margin-bottom:7px;
+      background:white; border:1px solid #e2e8f0;
+    }
+    .ncir {
+      width:28px; height:28px; border-radius:50%; background:#064e3b;
+      color:white; font-size:13px; font-weight:800;
+      display:flex; align-items:center; justify-content:center; flex-shrink:0;
+    }
+    .ntxt { font-size:13px; color:#475569; line-height:1.6; }
+    .ntxt strong { color:#0f172a; display:block; font-size:14px; margin-bottom:2px; }
+
+    /* â”€â”€ BIG QUOTE â”€â”€ */
+    .big-quote {
+      text-align:center; padding:28px 36px; border-radius:14px;
+      background:#f8fafc; border:1px solid #e2e8f0; margin:16px 0;
+      font-size:22px; font-weight:700; color:#0f172a; line-height:1.5;
+    }
+    .big-quote .hl { color:#064e3b; }
+
+    /* â”€â”€ FORMULA â”€â”€ */
+    .formula {
+      background:#ecfdf5; border:1px solid #d1fae5; border-radius:14px;
+      padding:20px 28px; text-align:center;
+      font-size:16px; color:#0f172a; line-height:1.9; margin:16px 0;
+    }
+    .fa { color:#064e3b; font-weight:700; }
+    .fm { color:#b45309; font-weight:700; }
+    .fh { color:#0369a1; font-weight:700; }
+    .fw { color:#7c3aed; font-weight:700; }
+
+    /* â”€â”€ AGENDA â”€â”€ */
+    .ag-item {
+      display:flex; align-items:flex-start; gap:14px;
+      padding:10px 14px; border-radius:8px; margin-bottom:7px;
+      background:white; border:1px solid #e2e8f0;
+      font-size:14px; color:#475569;
+    }
+    .ag-item.hot { background:#ecfdf5; border-color:#a7f3d0; color:#065f46; }
+    .ag-num { font-family:'Space Grotesk',sans-serif; font-size:18px; font-weight:700; color:#e2e8f0; width:24px; flex-shrink:0; padding-top:1px; }
+    .ag-item.hot .ag-num { color:#064e3b; }
+    .ag-time { font-size:11px; color:#94a3b8; margin-left:auto; flex-shrink:0; padding-top:3px; }
+    .ag-item.hot .ag-time { color:#059669; }
+
+    /* â”€â”€ ABOUT CREDS â”€â”€ */
+    .cred {
+      display:flex; gap:10px; padding:9px 0;
+      border-bottom:1px solid #f1f5f9;
+      font-size:13px; color:#64748b; line-height:1.55;
+    }
+    .cred:last-child { border-bottom:none; }
+    .cred-ico { font-size:15px; flex-shrink:0; margin-top:1px; }
+
+    /* â”€â”€ RESULT CARDS â”€â”€ */
+    .rc {
+      display:flex; gap:10px; align-items:flex-start;
+      background:white; border:1px solid #e2e8f0; border-radius:9px;
+      padding:11px 14px; margin-bottom:9px;
+    }
+    .rc-ico {
+      width:32px; height:32px; border-radius:7px; background:#ecfdf5;
+      display:flex; align-items:center; justify-content:center; font-size:14px; flex-shrink:0;
+    }
+    .rc-title { font-size:12px; font-weight:700; color:#064e3b; margin-bottom:2px; }
+    .rc-sub { font-size:11px; color:#94a3b8; line-height:1.4; }
+
+    /* â”€â”€ PAIN QUOTES â”€â”€ */
+    .pq {
+      font-size:13px; color:#64748b; font-style:italic; line-height:1.65;
+      padding:12px 16px; background:white; border-radius:8px;
+      border-left:3px solid #e2e8f0; margin-bottom:9px;
+    }
+    .pq cite { display:block; font-size:11px; color:#94a3b8; font-style:normal; margin-top:4px; }
+
+    /* â”€â”€ SCORE TABLE â”€â”€ */
+    .stbl { width:100%; border-collapse:collapse; font-size:12px; margin-top:12px; }
+    .stbl th { background:#064e3b; color:white; padding:7px 10px; text-align:left; font-size:10px; text-transform:uppercase; letter-spacing:0.06em; }
+    .stbl td { padding:7px 10px; border-bottom:1px solid #f1f5f9; color:#475569; }
+    .stbl tr:last-child td { border-bottom:none; }
+    .sval { font-family:'Space Grotesk',sans-serif; font-size:15px; font-weight:700; }
+
+    /* â”€â”€ QA CARDS â”€â”€ */
+    .qa-card {
+      display:flex; gap:12px; align-items:flex-start;
+      padding:13px 16px; border-radius:9px; margin-bottom:9px;
+      background:white; border:1px solid #e2e8f0;
+    }
+    .qa-q { width:26px; height:26px; border-radius:999px; background:#064e3b; color:white; font-size:12px; font-weight:800; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+    .qa-txt { font-size:14px; color:#334155; line-height:1.6; }
+
+    /* â”€â”€ STEP TRANSITION â”€â”€ */
+    [data-step] { transition: opacity 0.4s ease, transform 0.4s ease; }
+
+    /* â”€â”€ FOOTER â”€â”€ */
+    .sfooter {
+      position:absolute; bottom:16px; left:50%; transform:translateX(-50%);
+      font-size:10px; color:#cbd5e1; text-align:center; white-space:nowrap; pointer-events:none;
+    }
+
+    /* â”€â”€ TITLE SLIDE â”€â”€ */
+    .title-pill {
+      display:inline-block; background:#ecfdf5; color:#064e3b;
+      font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.1em;
+      padding:5px 14px; border-radius:999px; margin-bottom:18px; border:1px solid #a7f3d0;
+    }
+    .title-main { font-size:54px; font-weight:800; line-height:1.05; color:#0f172a; margin-bottom:12px; }
+    .title-main .lime { color:#064e3b; }
+    .meta-row { display:flex; justify-content:center; align-items:center; gap:20px; font-size:14px; color:#64748b; margin-top:28px; }
+    .meta-sep { color:#e2e8f0; }
+
+    /* â”€â”€ CLOSE SLIDE â”€â”€ */
+    .close-quote { font-size:26px; font-weight:700; text-align:center; line-height:1.55; color:#0f172a; }
+    .close-links { display:flex; justify-content:center; gap:28px; margin-top:24px; font-size:14px; color:#64748b; }
+    .close-links .item strong { display:block; margin-bottom:3px; }
+    .close-sep { width:1px; background:#e2e8f0; }
+
+    /* â”€â”€ RESPONSIVE â”€â”€ */
+    @media (max-height:680px) {
+      .slide { padding:24px 56px; }
+      .slide-title { font-size:32px; }
+      .title-main { font-size:42px; }
+    }
+
+    /* ── PRINT / PDF ── */
+    .btn-print {
+      width: auto !important; padding: 0 12px !important;
+      font-size: 11px !important; font-weight: 700 !important;
+      letter-spacing: 0.03em; gap: 4px;
+    }
+
+    @media print {
+      @page { size: 11in 8.5in; margin: 0; }
+
+      html, body {
+        overflow: visible !important;
+        height: auto !important;
+        background: #f8fafc !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .nav-bar, .btn-print { display: none !important; }
+
+      #slides {
+        position: static !important;
+        height: auto !important;
+        overflow: visible !important;
+      }
+
+      .slide {
+        position: relative !important;
+        inset: auto !important;
+        opacity: 1 !important;
+        pointer-events: auto !important;
+        display: flex !important;
+        width: 11in !important;
+        height: 8.5in !important;
+        padding: 0.55in 0.9in !important;
+        page-break-after: always;
+        break-after: page;
+        overflow: hidden !important;
+      }
+
+      .slide:last-child {
+        page-break-after: avoid;
+        break-after: avoid;
+      }
+
+      /* Reveal all step-animated content */
+      [data-step] {
+        opacity: 1 !important;
+        transform: none !important;
+        pointer-events: auto !important;
+      }
+
+      .sfooter {
+        position: absolute;
+        bottom: 14px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV BAR -->
+<div class="nav-bar">
+  <div class="nav-logo">L² <span>GO-ECpE × LaunchToLead | IBB Webinar · May 2026</span></div>
+  <div class="progress-track"><div class="progress-fill" id="pfill" style="width:4%"></div></div>
+  <div class="nav-counter" id="counter">1 / 25</div>
+  <button class="nav-btn" id="btnPrev" onclick="go(-1)">&#8592;</button>
+  <button class="nav-btn" id="btnNext" onclick="go(1)">&#8594;</button>
+  <div class="nav-hint">Space / &#8594; advance</div>
+  <button class="nav-btn btn-print" onclick="window.print()" title="Save as PDF">⎙ PDF</button>
+</div>
+
+<div id="slides">
+
+  <!-- ══════════════════════════════════════════════════════
+       SLIDE 1 — TITLE
+  ══════════════════════════════════════════════════════ -->
+  <div class="slide active">
+    <div class="slide-inner" style="text-align:center;">
+      <div class="title-pill">Iowa State University · GO-ECpE · May 19, 2026</div>
+      <div class="title-main">What Makes a Powerful<br><span class="lime">Engineering Resume?</span></div>
+      <div class="meta-row">
+        <div>Mansour Manci</div>
+        <div class="meta-sep">|</div>
+        <div>Engineering Career Coach</div>
+        <div class="meta-sep">|</div>
+        <div style="color:#064e3b;">LaunchToLead.io</div>
+      </div>
+    </div>
+    <div class="sfooter">GO-ECpE × LaunchToLead | Impact Bullet Builder™ Framework | May 2026</div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════
+       SLIDE 2 — ABOUT ME
+  ══════════════════════════════════════════════════════ -->
+  <div class="slide">
+    <div class="slide-inner">
+      <div class="eyebrow">Your Host</div>
+      <div class="slide-title" style="font-size:32px;margin-bottom:20px;">Who Am I — and Why Does This Matter?</div>
+      <div class="g2-65" style="grid-template-columns:1fr 1.05fr;gap:28px;">
+        <div>
+          <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.09em;color:#064e3b;margin-bottom:12px;">Background</div>
+          <div class="cred"><span class="cred-ico">🎓</span><div><strong style="color:#0f172a;">M.Eng. + B.S. Mechanical Engineering</strong><br>Iowa State University — <em style="color:#064e3b;">your school</em></div></div>
+          <div class="cred"><span class="cred-ico">⚙️</span><div><strong style="color:#0f172a;">10 years engineering career · 8 at John Deere</strong><br>4 promotions · 4 discipline pivots</div></div>
+          <div class="cred"><span class="cred-ico">🔄</span><div><strong style="color:#0f172a;">Mech → Embedded Software → Systems → Eng. Leadership</strong><br>Navigated every transition from inside the same company</div></div>
+          <div class="cred"><span class="cred-ico">🤝</span><div><strong style="color:#0f172a;">Both sides of the hiring table</strong><br>Applied to jobs · Hired engineers as manager · Interviewed candidates</div></div>
+          <div class="cred"><span class="cred-ico">🎓</span><div><strong style="color:#0f172a;">Systems Engineering Certificate</strong><br>California Institute of Technology (Caltech)</div></div>
+        </div>
+        <div>
+          <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.09em;color:#064e3b;margin-bottom:12px;">Client Results</div>
+          <ul style="list-style:none;padding:0;margin:0;">
+            <li style="display:flex;gap:10px;border-bottom:1px solid #f1f5f9;padding:8px 0;font-size:13px;color:#475569;"><span style="color:#064e3b;font-weight:700;flex-shrink:0;">→</span><span>Helped clients land roles at Fortune 100 companies</span></li>
+            <li style="display:flex;gap:10px;border-bottom:1px solid #f1f5f9;padding:8px 0;font-size:13px;color:#475569;"><span style="color:#064e3b;font-weight:700;flex-shrink:0;">→</span><span>Coached new graduates into their first full-time engineering roles</span></li>
+            <li style="display:flex;gap:10px;border-bottom:1px solid #f1f5f9;padding:8px 0;font-size:13px;color:#475569;"><span style="color:#064e3b;font-weight:700;flex-shrink:0;">→</span><span>Coached entry-level engineers into their first promotions</span></li>
+            <li style="display:flex;gap:10px;border-bottom:1px solid #f1f5f9;padding:8px 0;font-size:13px;color:#475569;"><span style="color:#064e3b;font-weight:700;flex-shrink:0;">→</span><span>Coached engineers into senior and staff-level roles</span></li>
+            <li style="display:flex;gap:10px;border-bottom:1px solid #f1f5f9;padding:8px 0;font-size:13px;color:#475569;"><span style="color:#064e3b;font-weight:700;flex-shrink:0;">→</span><span>Worked across software, hardware, power, systems, and mechanical engineering</span></li>
+            <li style="display:flex;gap:10px;padding:8px 0;font-size:13px;color:#475569;"><span style="color:#064e3b;font-weight:700;flex-shrink:0;">→</span><span>Clients placed at companies across defense, tech, energy, and manufacturing</span></li>
+          </ul>
+          <div style="margin-top:16px;padding:12px 16px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:9px;font-size:12px;color:#64748b;line-height:1.75;">
+            <strong style="color:#0f172a;">Disclaimers:</strong><br>
+            1. This is what has worked for me and others I've coached — your situation may vary.<br>
+            2. Resume writing is part science, part art.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════
+       SLIDE 3 — AGENDA
+  ══════════════════════════════════════════════════════ -->
+  <div class="slide">
+    <div class="slide-inner">
+      <div class="eyebrow">Today's Session</div>
+      <div class="slide-title" style="font-size:36px;margin-bottom:22px;">What We're Covering Today</div>
+      <div class="ag-item"><div class="ag-num">1</div><div>Why great engineers don't hear back — the actual root cause</div><div class="ag-time">5 min</div></div>
+      <div class="ag-item"><div class="ag-num">2</div><div>The 4-Part Impact Bullet Builder™ Framework — A · M · H · W</div><div class="ag-time">10 min</div></div>
+      <div class="ag-item"><div class="ag-num">3</div><div>Your Group's Report Card — Strengths &amp; Gaps from all 8 audits</div><div class="ag-time">8 min</div></div>
+      <div class="ag-item"><div class="ag-num">4</div><div>Your Survey Responses — Pain points you submitted</div><div class="ag-time">2 min</div></div>
+      <div class="ag-item hot"><div class="ag-num">5</div><div>🔴 Live Demo — 3 Bullet Transformations (interactive)</div><div class="ag-time">10 min</div></div>
+      <div class="ag-item"><div class="ag-num">6</div><div>The 6 Highest-Impact Changes for This Cohort</div><div class="ag-time">5 min</div></div>
+      <div class="ag-item"><div class="ag-num">7</div><div>Open Q&amp;A</div><div class="ag-time">10 min</div></div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════
+       SLIDE 4 — THE CORE PROBLEM
+  ══════════════════════════════════════════════════════ -->
+  <div class="slide">
+    <div class="slide-inner" style="text-align:center;">
+      <div class="eyebrow">The Core Issue</div>
+      <div class="slide-title" style="margin-bottom:20px;">The experience is real.<br>How it's packaged and presented is a problem.</div>
+      <div class="big-quote">
+        "The gap between ★★ and ★★★ is <span class="hl">not a gap in experience or ability.</span><br>
+        It's a gap in translation — and translation is a <span class="hl">learnable skill.</span>"
+      </div>
+      <div class="g4" style="margin-top:20px;">
+        <div class="stat-card"><div class="stat-val">50<small>/100</small></div><div class="stat-label">Group Average</div></div>
+        <div class="stat-card"><div class="stat-val">39</div><div class="stat-label">Lowest Score</div></div>
+        <div class="stat-card"><div class="stat-val">66</div><div class="stat-label">Highest Score</div></div>
+        <div class="stat-card"><div class="stat-val">7<small>/8</small></div><div class="stat-label">Landed in ★★</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════
+       SLIDE 5 — 4 REASONS YOUR RESUME IS INVISIBLE
+  ══════════════════════════════════════════════════════ -->
+  <div class="slide">
+    <div class="slide-inner">
+      <div class="eyebrow">The Root Cause</div>
+      <div class="slide-title" style="font-size:36px;margin-bottom:20px;">Why Great Engineers Get Ignored</div>
+      <div class="g2" style="gap:14px;">
+        <div class="card card-red" style="padding:18px 20px;">
+          <div style="font-size:24px;font-weight:800;color:#ef4444;margin-bottom:7px;">✗</div>
+          <div style="font-size:14px;font-weight:700;color:#0f172a;margin-bottom:4px;">Bullets read like job duties, not accomplishments</div>
+          <div style="font-size:12px;color:#64748b;line-height:1.65;">"Responsible for managing the test pipeline" — a duty. Hiring managers see hundreds. They all sound the same.</div>
+        </div>
+        <div class="card card-red" style="padding:18px 20px;">
+          <div style="font-size:24px;font-weight:800;color:#ef4444;margin-bottom:7px;">✗</div>
+          <div style="font-size:14px;font-weight:700;color:#0f172a;margin-bottom:4px;">No numbers backing up any claims</div>
+          <div style="font-size:12px;color:#64748b;line-height:1.65;">"Improved efficiency" means nothing. By how much? Over how many nodes? Across what time period?</div>
+        </div>
+        <div class="card card-red" style="padding:18px 20px;">
+          <div style="font-size:24px;font-weight:800;color:#ef4444;margin-bottom:7px;">✗</div>
+          <div style="font-size:14px;font-weight:700;color:#0f172a;margin-bottom:4px;">No detail on HOW you actually did it</div>
+          <div style="font-size:12px;color:#64748b;line-height:1.65;">Your tools and methods should appear inside the bullet — not just in a skills section at the bottom of the page.</div>
+        </div>
+        <div class="card card-red" style="padding:18px 20px;">
+          <div style="font-size:24px;font-weight:800;color:#ef4444;margin-bottom:7px;">✗</div>
+          <div style="font-size:14px;font-weight:700;color:#0f172a;margin-bottom:4px;">The engineering impact is nowhere to be found</div>
+          <div style="font-size:12px;color:#64748b;line-height:1.65;">Why did the work matter? What did it enable? If a hiring engineer can't tell — the resume goes in the pile.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════
+       SLIDE 6 — THE SYMPTOM YOU ALL KNOW
+  ══════════════════════════════════════════════════════ -->
+  <div class="slide">
+    <div class="slide-inner" style="text-align:center;">
+      <div class="eyebrow">What You're Experiencing</div>
+      <div class="slide-title" style="margin-bottom:16px;">The Symptom You All Described</div>
+      <div style="font-size:17px;color:#475569;margin-bottom:14px;">5 of 8 of you wrote the same thing in your survey:</div>
+      <div class="big-quote" style="font-size:34px;padding:40px 48px;margin-bottom:20px;">
+        <span class="hl">"Not hearing back at all."</span>
+      </div>
+      <div style="padding:18px 28px;background:#f8fafc;border-radius:12px;border:1px solid #e2e8f0;font-size:15px;color:#94a3b8;max-width:680px;margin:0 auto;">
+        This isn't a competition problem.<br>
+        It's a <strong style="color:#0f172a;">communication problem.</strong><br>
+        The work is real. The results just aren't making it onto the page.
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════
+       SLIDE 7 — IBB INTRO
+  ══════════════════════════════════════════════════════ -->
+  <div class="slide">
+    <div class="slide-inner" style="text-align:center;">
+      <div class="eyebrow">The Framework</div>
+      <div class="slide-title" style="margin-bottom:8px;">The Impact Bullet Builder™</div>
+      <div class="slide-sub" style="margin-bottom:0;">A 4-part formula for turning engineering and research work into recruiter-readable results</div>
+      <div class="letter-grid">
+        <div class="letter-card"><div class="letter-big" style="color:#064e3b;">A</div><div class="letter-name">Accomplishment</div><div class="letter-desc">What did you DO — with a result?</div></div>
+        <div class="letter-card"><div class="letter-big" style="color:#b45309;">M</div><div class="letter-name">Metric</div><div class="letter-desc">A specific number with a unit</div></div>
+        <div class="letter-card"><div class="letter-big" style="color:#0369a1;">H</div><div class="letter-name">How / Method</div><div class="letter-desc">Tool, algorithm, or framework — named in the bullet</div></div>
+        <div class="letter-card"><div class="letter-big" style="color:#7c3aed;">W</div><div class="letter-name">Why / Impact</div><div class="letter-desc">What does it enable, replace, or make possible?</div></div>
+      </div>
+      <div style="margin-top:20px;font-size:13px;color:#334155;">
+        Formula used by engineers who landed roles at Google · SpaceX · John Deere · Ford Motor Company · GE
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════
+       SLIDE 8 — A: ACCOMPLISHMENT
+  ══════════════════════════════════════════════════════ -->
+  <div class="slide">
+    <div class="slide-inner">
+      <div class="g2" style="align-items:center;gap:36px;">
+        <div style="text-align:center;">
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:140px;font-weight:700;color:#064e3b;line-height:1;">A</div>
+          <div style="font-size:20px;font-weight:700;color:#0f172a;">Accomplishment</div>
+        </div>
+        <div>
+          <div style="font-size:15px;color:#94a3b8;line-height:1.75;margin-bottom:18px;">Something you <strong style="color:#0f172a;">DID with a result</strong> — not a duty, not a responsibility, not an ongoing standing task.</div>
+          <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;padding:16px 18px;margin-bottom:14px;">
+            <div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;color:#475569;margin-bottom:6px;">The Test</div>
+            <div style="font-size:14px;color:#475569;font-style:italic;">"Could someone else with the same job title have written this exact bullet?"</div>
+            <div style="font-size:12px;color:#064e3b;margin-top:5px;font-weight:600;">If yes → it's describing the role, not you. Rewrite it.</div>
+          </div>
+          <div class="before-panel" style="margin-bottom:8px;">
+            <div class="demo-lbl demo-lbl-b">★ Duty</div>
+            <div class="demo-txt demo-txt-b">"Responsible for maintaining integration test infrastructure."</div>
+          </div>
+          <div class="after-panel">
+            <div class="demo-lbl demo-lbl-a">★★★ Accomplishment</div>
+            <div class="demo-txt demo-txt-a">"Redesigned the integration test pipeline — reducing suite runtime by 62% and eliminating flaky failures across 14 CI environments."</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════
+       SLIDE 9 — M: METRIC
+  ══════════════════════════════════════════════════════ -->
+  <div class="slide">
+    <div class="slide-inner">
+      <div class="g2" style="align-items:center;gap:36px;">
+        <div style="text-align:center;">
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:140px;font-weight:700;color:#b45309;line-height:1;">M</div>
+          <div style="font-size:20px;font-weight:700;color:#0f172a;">Metric</div>
+        </div>
+        <div>
+          <div style="font-size:15px;color:#94a3b8;line-height:1.75;margin-bottom:18px;">A <strong style="color:#0f172a;">specific number</strong> that gives the claim a floor to stand on.</div>
+          <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;padding:16px 18px;margin-bottom:12px;">
+            <div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;color:#b45309;margin-bottom:8px;">What Counts for EE/CE/CS Research</div>
+            <div style="font-size:13px;color:#475569;line-height:1.9;">% · dB · ms · accuracy · F1 score · BLEU score<br>dataset size · node count · throughput (Mbps)<br>PCE (%) · XRD crystallinity index · entanglement fidelity<br>kW · publication venue · benchmark rank</div>
+          </div>
+          <div class="card card-red" style="padding:12px 16px;margin-bottom:10px;">
+            <div style="font-size:10px;font-weight:800;text-transform:uppercase;color:#ef4444;margin-bottom:3px;">Not Metrics</div>
+            <div style="font-size:13px;color:#64748b;">"several" · "multiple" · "significant" · "improved" · "various" · "many"</div>
+          </div>
+          <div style="padding:12px 16px;background:#ecfdf5;border-radius:8px;border:1px solid #14532d;font-size:13px;color:#065f46;">
+            💡 The number is already in your lab notebook, code output, or poster file.<br>It just hasn't made it to your resume yet.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════
+       SLIDE 10 — H: HOW / METHOD
+  ══════════════════════════════════════════════════════ -->
+  <div class="slide">
+    <div class="slide-inner">
+      <div class="g2" style="align-items:center;gap:36px;">
+        <div style="text-align:center;">
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:140px;font-weight:700;color:#0369a1;line-height:1;">H</div>
+          <div style="font-size:20px;font-weight:700;color:#0f172a;">How / Method</div>
+        </div>
+        <div>
+          <div style="font-size:15px;color:#94a3b8;line-height:1.75;margin-bottom:18px;">Name the specific <strong style="color:#0f172a;">tool, algorithm, or framework</strong> inside the bullet text — not in the role header, not in the skills section.</div>
+          <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;padding:16px 18px;margin-bottom:12px;">
+            <div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;color:#0369a1;margin-bottom:10px;">Examples</div>
+            <div style="font-size:13px;color:#475569;line-height:1.9;">✓ <strong>"using GAMS and CPLEX"</strong><br>✓ <strong>"via a PyTorch-PennyLane hybrid workflow"</strong><br>✓ <strong>"with TensorRT FP16 quantization"</strong><br>✓ <strong>"using the MUSIC direction-finding algorithm"</strong><br>✓ <strong>"via SEM and XRD characterization"</strong></div>
+          </div>
+          <div style="padding:12px 16px;background:#f8fafc;border-radius:8px;border:1px solid #e2e8f0;font-size:13px;color:#64748b;line-height:1.6;">
+            Your group scored <strong style="color:#064e3b;">6.75/10</strong> here — above average. The instinct to name tools in context is right. Keep doing it.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════
+       SLIDE 11 — W: WHY / IMPACT
+  ══════════════════════════════════════════════════════ -->
+  <div class="slide">
+    <div class="slide-inner">
+      <div class="g2" style="align-items:center;gap:36px;">
+        <div style="text-align:center;">
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:140px;font-weight:700;color:#7c3aed;line-height:1;">W</div>
+          <div style="font-size:20px;font-weight:700;color:#0f172a;">Why / Impact</div>
+        </div>
+        <div>
+          <div style="font-size:15px;color:#94a3b8;line-height:1.75;margin-bottom:18px;">Connect the result to an <strong style="color:#0f172a;">engineering purpose</strong>. What does it enable? What does it replace? What becomes possible because of it?</div>
+          <div class="card card-red" style="padding:14px 18px;margin-bottom:10px;">
+            <div style="font-size:10px;font-weight:800;text-transform:uppercase;color:#ef4444;margin-bottom:4px;">✗ Not Why</div>
+            <div style="font-size:13px;color:#94a3b8;font-style:italic;">"Improving performance" &nbsp;/&nbsp; "Enhancing system efficiency"</div>
+          </div>
+          <div class="after-panel" style="padding:16px 18px;">
+            <div class="demo-lbl demo-lbl-a" style="margin-bottom:8px;">✓ Why — with engineering purpose</div>
+            <div style="font-size:13px;color:#065f46;line-height:1.9;">
+              ✓ "Enabling real-time spectrum allocation without centralized coordination"<br>
+              ✓ "Enabling planning studies at a fraction of prior computational cost"<br>
+              ✓ "Enabling deployment in clinical settings with limited labeled data"
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════
+       SLIDE 12 — THE FULL FORMULA
+  ══════════════════════════════════════════════════════ -->
+  <div class="slide">
+    <div class="slide-inner" style="text-align:center;">
+      <div class="eyebrow">Put It Together</div>
+      <div class="slide-title" style="font-size:34px;margin-bottom:16px;">The Full Formula</div>
+      <div class="formula">
+        <span class="fa">[Strong Verb] + [What You Built]</span>
+        using <span class="fh">[Tool / Method]</span> —<br>
+        achieving <span class="fm">[Metric]</span>, enabling <span class="fw">[Why / Impact]</span>
+      </div>
+      <div class="before-panel" style="text-align:left;margin-bottom:10px;">
+        <div class="demo-lbl demo-lbl-b">★ Before — vague action, no number, no method, no impact</div>
+        <div class="demo-txt demo-txt-b">"Worked on a machine learning model to improve the accuracy of image classification."</div>
+      </div>
+      <div class="after-panel" style="text-align:left;margin-bottom:18px;">
+        <div class="demo-lbl demo-lbl-a">★★★ After — all 4 components</div>
+        <div class="demo-txt demo-txt-a">"<span style="color:#064e3b;font-style:normal;font-weight:700;">Built</span> a convolutional neural network <span style="color:#0369a1;font-style:normal;font-weight:700;">in PyTorch</span> for defect detection in manufactured parts — achieving <span style="color:#b45309;font-style:normal;font-weight:700;">93% accuracy on 8,000 test images</span>, up from a 71% baseline, enabling <span style="color:#7c3aed;font-style:normal;font-weight:700;">automated quality screening without manual inspection</span>."</div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;">
+          <span class="tag tag-a">A — Built · improved over baseline</span>
+          <span class="tag tag-m">M — 93% accuracy · 8,000 images · 22-pt gain</span>
+          <span class="tag tag-h">H — Convolutional neural network · PyTorch</span>
+          <span class="tag tag-w">W — Automated production quality screening</span>
+        </div>
+      </div>
+      <div style="display:flex;justify-content:center;gap:18px;font-size:13px;color:#475569;">
+        <span>★ = 1 component</span><span style="color:#cbd5e1;">|</span>
+        <span>★★ = 2–3 components</span><span style="color:#cbd5e1;">|</span>
+        <span style="color:#064e3b;font-weight:700;">★★★ = all four</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════
+       SLIDE 13 — SCORE OVERVIEW
+  ══════════════════════════════════════════════════════ -->
+  <div class="slide">
+    <div class="slide-inner">
+      <div class="eyebrow">Your Group's Report</div>
+      <div class="slide-title" style="font-size:34px;margin-bottom:18px;">Your Group's Report Card</div>
+      <div class="g4" style="margin-bottom:18px;">
+        <div class="stat-card"><div class="stat-val">50<small>/100</small></div><div class="stat-label">Group Average ★★</div></div>
+        <div class="stat-card"><div class="stat-val">39</div><div class="stat-label">Lowest Score</div></div>
+        <div class="stat-card"><div class="stat-val">66</div><div class="stat-label">Highest Score ★★★</div></div>
+        <div class="stat-card"><div class="stat-val">7<small>/8</small></div><div class="stat-label">Landed in ★★</div></div>
+      </div>
+      <div class="card" style="padding:20px 24px;margin-top:4px;">
+        <div style="font-size:14px;color:#475569;line-height:1.9;">
+          Scores ranged from <strong style="color:#0f172a;">39 to 66 out of 100.</strong>
+          7 of 8 candidates landed in the ★★ band — solid technical work, but the translation to the page wasn't there yet.
+          One candidate reached ★★★. The difference wasn't research quality.
+          It was how clearly the work was described.
+        </div>
+        <div style="margin-top:16px;font-size:13px;color:#64748b;line-height:1.75;">
+          The group spans AI, wireless communications, power systems, semiconductor devices, computer vision, quantum security, and RF design —
+          different fields, same pattern of gaps.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════
+       SLIDE 14 — GROUP STRENGTHS
+  ══════════════════════════════════════════════════════ -->
+  <div class="slide">
+    <div class="slide-inner">
+      <div class="eyebrow">Criterion Analysis</div>
+      <div class="slide-title" style="font-size:34px;margin-bottom:8px;">How Your Group Scored on the Framework</div>
+      <div class="slide-sub" style="font-size:14px;margin-bottom:20px;">Group averages on the 4 IBB components — scored across all 8 resumes (max 10.0 each)</div>
+      <div class="bar-row"><div class="bar-label">A — Accomplishment</div><div class="bar-track"><div class="bar-fill bar-amber" style="width:42.5%"></div></div><div class="bar-val">4.25</div><div class="bar-badge bg-amber">Developing</div></div>
+      <div class="bar-row"><div class="bar-label">M — Metric</div><div class="bar-track"><div class="bar-fill bar-red" style="width:28.8%"></div></div><div class="bar-val">2.88</div><div class="bar-badge bg-red">Primary Gap</div></div>
+      <div class="bar-row"><div class="bar-label">H — How / Method</div><div class="bar-track"><div class="bar-fill bar-green" style="width:67.5%"></div></div><div class="bar-val">6.75</div><div class="bar-badge bg-green">Group Strength</div></div>
+      <div class="bar-row"><div class="bar-label">W — Why / Impact</div><div class="bar-track"><div class="bar-fill bar-amber" style="width:50%"></div></div><div class="bar-val">5.0</div><div class="bar-badge bg-amber">Developing</div></div>
+      <div class="g2" style="gap:14px;margin-top:22px;">
+        <div class="card" style="padding:16px 18px;">
+          <div style="font-size:12px;font-weight:700;color:#16a34a;margin-bottom:5px;">What is working</div>
+          <div style="font-size:13px;color:#475569;line-height:1.65;">The <strong style="color:#0f172a;">How</strong> score (6.75) is the group's strength — tools and methods appear inside bullets, not just in the skills section. That instinct is right.</div>
+        </div>
+        <div class="card" style="padding:16px 18px;">
+          <div style="font-size:12px;font-weight:700;color:#dc2626;margin-bottom:5px;">The biggest gap</div>
+          <div style="font-size:13px;color:#475569;line-height:1.65;"><strong style="color:#0f172a;">Metrics</strong> (2.88) is the lowest score. Every research domain in this group produces numbers. They just aren't on the page yet.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════
+       SLIDE 15 — THE 3 PATTERNS
+  ══════════════════════════════════════════════════════ -->
+  <div class="slide">
+    <div class="slide-inner">
+      <div class="eyebrow">The Core Finding</div>
+      <div class="slide-title" style="font-size:34px;margin-bottom:16px;">The Three Patterns Holding This Group Back</div>
+      <div class="g2" style="gap:14px;margin-bottom:14px;">
+        <div class="card card-red" style="padding:16px 18px;">
+          <div style="font-size:12px;font-weight:700;color:#ef4444;margin-bottom:6px;">No numbers — 6 of 8 scored 1–2 on Metrics</div>
+          <div style="font-size:13px;color:#475569;line-height:1.65;">Every research domain in this group produces measurable results — accuracy rates, efficiency gains, time reductions, signal levels. Those numbers exist in your lab notebooks and code output. They just are not on the page.</div>
+        </div>
+        <div class="card card-red" style="padding:16px 18px;">
+          <div style="font-size:12px;font-weight:700;color:#ef4444;margin-bottom:6px;">No before-state — results appear without context</div>
+          <div style="font-size:13px;color:#475569;line-height:1.65;">"Improved performance by 40%" means nothing without a baseline. The strongest bullet in this group worked because it showed both states — reduced a 90,000-element system to 900. Before and after, in the same sentence.</div>
+        </div>
+      </div>
+      <div class="card card-red" style="padding:16px 18px;">
+        <div style="font-size:12px;font-weight:700;color:#ef4444;margin-bottom:6px;">PhD research is the weakest section on every resume — 8 of 8</div>
+        <div style="font-size:13px;color:#475569;line-height:1.65;">The most important credential on a PhD resume is consistently described the least clearly. Phrases like "Exploring evaluation frameworks" or "Working on neural network architectures" describe <em>activities</em>, not <em>outputs</em>. They tell a hiring engineer nothing about what you built, what you found, or what it enables. One candidate's PhD research on a topic directly relevant to every major AI company appeared as a single line in the Education section — zero bullets, zero outputs, zero methods named.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════
+       SLIDE 16 — PHD RESEARCH PROBLEM (part 1)
+  ══════════════════════════════════════════════════════ -->
+  <div class="slide">
+    <div class="slide-inner">
+      <div class="eyebrow">The Defining Issue</div>
+      <div class="slide-title" style="font-size:32px;margin-bottom:14px;">Your Most Important Credential Is Your Weakest Section</div>
+      <div style="padding:12px 20px;background:#fff5f5;border:1px solid #fecaca;border-radius:10px;font-size:14px;color:#991b1b;text-align:center;margin-bottom:16px;font-weight:600;">
+        8 of 8 resumes — PhD research is underdeveloped or invisible, across every domain in this group.
+      </div>
+      <div class="g2" style="gap:14px;">
+        <div>
+          <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.09em;color:#ef4444;margin-bottom:10px;">What was found</div>
+          <ul style="list-style:none;padding:0;margin:0;">
+            <li style="display:flex;gap:10px;border-bottom:1px solid #f1f5f9;padding:8px 0;font-size:13px;color:#475569;"><span style="color:#ef4444;font-weight:700;flex-shrink:0;">✗</span><span>Research buried as a single line in Education under "Research Focus" — not written as experience bullets</span></li>
+            <li style="display:flex;gap:10px;border-bottom:1px solid #f1f5f9;padding:8px 0;font-size:13px;color:#475569;"><span style="color:#ef4444;font-weight:700;flex-shrink:0;">✗</span><span>Bullets open with: "Exploring…" / "Working on…" / "Investigating…" — these signal activity, not output</span></li>
+            <li style="display:flex;gap:10px;border-bottom:1px solid #f1f5f9;padding:8px 0;font-size:13px;color:#475569;"><span style="color:#ef4444;font-weight:700;flex-shrink:0;">✗</span><span>Publications listed at the bottom of the resume — never connected to the bullet that produced them</span></li>
+            <li style="display:flex;gap:10px;padding:8px 0;font-size:13px;color:#475569;"><span style="color:#ef4444;font-weight:700;flex-shrink:0;">✗</span><span>One candidate's research directly relevant to AI alignment hiring appeared as one sentence. Zero bullets. Zero outputs. Zero methods.</span></li>
+          </ul>
+        </div>
+        <div>
+          <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.09em;color:#ef4444;margin-bottom:10px;">What it looks like</div>
+          <div style="padding:12px 16px;background:#fff5f5;border:1px solid #fecaca;border-radius:8px;margin-bottom:10px;">
+            <div style="font-size:11px;font-weight:700;color:#991b1b;margin-bottom:5px;">Real example — from this group's audits</div>
+            <div style="font-size:13px;color:#0f172a;line-height:1.65;font-style:italic;">"Working on Neural Network, architecture search, benchmark design, and reliability analysis."</div>
+          </div>
+          <div style="padding:12px 14px;background:#f8fafc;border-radius:8px;border:1px solid #e2e8f0;font-size:13px;color:#475569;line-height:1.65;">
+            A hiring engineer sees: a list of topics. No tool. No output. No scale. No number. Nothing that tells them what exists now that did not exist before.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════
+       SLIDE 16B — PHD RESEARCH PROBLEM (part 2: the fix)
+  ══════════════════════════════════════════════════════ -->
+  <div class="slide">
+    <div class="slide-inner">
+      <div class="eyebrow">The Fix</div>
+      <div class="slide-title" style="font-size:32px;margin-bottom:16px;">Write Your Research Like Your Most Important Job</div>
+      <div class="g2" style="gap:18px;">
+        <div>
+          <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.09em;color:#064e3b;margin-bottom:10px;">Every research bullet needs these 3 things</div>
+          <div class="card" style="padding:14px 18px;margin-bottom:10px;">
+            <div style="font-size:13px;font-weight:700;color:#0f172a;margin-bottom:3px;">1. Named approach</div>
+            <div style="font-size:12px;color:#64748b;">What you built, developed, or are using — not just the topic area</div>
+          </div>
+          <div class="card" style="padding:14px 18px;margin-bottom:10px;">
+            <div style="font-size:13px;font-weight:700;color:#0f172a;margin-bottom:3px;">2. Scope or scale</div>
+            <div style="font-size:12px;color:#64748b;">How many models, samples, nodes, test cases — give it ground to stand on</div>
+          </div>
+          <div class="card" style="padding:14px 18px;margin-bottom:10px;">
+            <div style="font-size:13px;font-weight:700;color:#0f172a;margin-bottom:3px;">3. Result or direction</div>
+            <div style="font-size:12px;color:#64748b;">What it is targeting, what preliminary results show, or what was published. You do not need final results to write this.</div>
+          </div>
+          <div style="padding:10px 14px;background:#ecfdf5;border-radius:8px;border:1px solid #a7f3d0;font-size:12px;color:#065f46;line-height:1.6;">
+            Add "with findings published at [venue]" to any bullet tied to a paper. Four words. Every time.
+          </div>
+        </div>
+        <div>
+          <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.09em;color:#064e3b;margin-bottom:10px;">Before and after</div>
+          <div style="padding:12px 16px;background:#fff5f5;border:1px solid #fecaca;border-radius:8px;margin-bottom:10px;">
+            <div style="font-size:11px;font-weight:700;color:#991b1b;margin-bottom:5px;">Before — activity, no output</div>
+            <div style="font-size:13px;color:#0f172a;line-height:1.65;font-style:italic;">"Working on Neural Network, architecture search, benchmark design, and reliability analysis."</div>
+          </div>
+          <div style="padding:12px 16px;background:#ecfdf5;border:1px solid #a7f3d0;border-radius:8px;">
+            <div style="font-size:11px;font-weight:700;color:#065f46;margin-bottom:5px;">After — named approach + scope + direction + publication</div>
+            <div style="font-size:13px;color:#0f172a;line-height:1.65;font-style:italic;">"Designing evaluation frameworks for reasoning consistency and error behavior in large language models — building benchmark protocols across 6 model families and 4 reasoning task types, targeting failure mode identification for safety-critical deployment, with findings presented at [venue]."</div>
+          </div>
+          <div style="margin-top:10px;font-size:12px;color:#64748b;font-style:italic;">Same research. Same work. Completely different read.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════
+       SLIDE 17 — SURVEY PAIN POINTS
+  ══════════════════════════════════════════════════════ -->
+  <div class="slide">
+    <div class="slide-inner">
+      <div class="eyebrow">What You Told Me</div>
+      <div class="slide-title" style="font-size:34px;margin-bottom:20px;">Your Survey Responses</div>
+      <div class="pq">"I am not hearing back at all."<cite>— Hadia · Wireless Eng. Co-op applicant</cite></div>
+      <div class="pq">"I struggle to translate PhD projects into clear, concise resume bullets that match what recruiters are looking for."<cite>— Himani · AI/ML, PhD</cite></div>
+      <div class="pq">"PhD research-level projects are often irrelevant for industry — how do you cater to this problem?"<cite>— Zaid · Robotics, PhD</cite></div>
+      <div class="pq">"Not hearing back, or getting rejected due to high competition."<cite>— Zohreh · Power Systems internship applicant</cite></div>
+      <div class="pq">"Not hearing back from employers after applying — not even getting a reason."<cite>— Sibtain · AI Engineer (LLM), PhD</cite></div>
+      <div style="padding:14px 20px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;font-size:14px;color:#94a3b8;margin-top:4px;">
+        All of these trace to the same root cause: <strong style="color:#0f172a;">the results aren't stated on the page.</strong><br>
+        Not a competition problem. Not an experience problem. A translation problem.
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════
+       SLIDE 18B — 6 HIGHEST-IMPACT CHANGES (before demos)
+  ══════════════════════════════════════════════════════ -->
+  <div class="slide">
+    <div class="slide-inner">
+      <div class="eyebrow">Action Plan</div>
+      <div class="slide-title" style="font-size:34px;margin-bottom:18px;">The 6 Highest-Impact Changes</div>
+      <ol class="nlist">
+        <li><div class="ncir">1</div><div class="ntxt"><strong>Add 1 number to every research bullet</strong>The number already exists — in your code output, lab notebook, poster, or experiment log. You do not need to invent it. Just write it down.</div></li>
+        <li><div class="ncir">2</div><div class="ntxt"><strong>Treat your PhD research section like your most important job</strong>It is. Write it as a role with bullets — not as a topic list in the Education section. Named approach + scope + result or direction.</div></li>
+        <li><div class="ncir">3</div><div class="ntxt"><strong>Connect every publication to the bullet that produced it</strong>Add "with findings published at [venue]" directly in the experience bullet. Four words. Do it for every paper.</div></li>
+        <li><div class="ncir">4</div><div class="ntxt"><strong>Give every major contribution a before-state</strong>"Improved X" has no weight without a baseline. The group's strongest bullet worked because it showed before and after in the same sentence.</div></li>
+        <li><div class="ncir">5</div><div class="ntxt"><strong>Convert present participles to outputs</strong>Replace "Exploring…" / "Working on…" / "Investigating…" with what the work has produced — even if it's preliminary. "Developing X — with initial results showing Y" is always stronger.</div></li>
+        <li><div class="ncir">6</div><div class="ntxt"><strong>Write your industry experience like it matters</strong>Internships, co-ops, and full-time roles are a differentiator for PhD candidates. Dates-only entries are worse than omitting them. Every industry role needs bullets.</div></li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════
+       SLIDE 19 — LIVE DEMO INTRO
+  ══════════════════════════════════════════════════════ -->
+  <div class="slide">
+    <div class="slide-inner" style="text-align:center;">
+      <div class="eyebrow">Live Demo</div>
+      <div class="slide-title" style="margin-bottom:12px;">10-Minute Transformation Exercise</div>
+      <div class="slide-sub" style="margin-bottom:28px;">3 bullets. Patterns I found across your group's resumes. Let's fix them live.</div>
+      <div class="g2" style="text-align:left;gap:14px;margin-bottom:22px;">
+        <div class="card card-lime" style="padding:18px 20px;">
+          <div style="font-weight:700;color:#0f172a;margin-bottom:8px;">How This Works</div>
+          <ul class="blist" style="padding:0;">
+            <li style="border:none;padding:5px 0;font-size:13px;"><span class="bdot lime"></span><span>Step 1: I show the BEFORE bullet</span></li>
+            <li style="border:none;padding:5px 0;font-size:13px;"><span class="bdot lime"></span><span>Step 2: We diagnose — what's missing?</span></li>
+            <li style="border:none;padding:5px 0;font-size:13px;"><span class="bdot lime"></span><span>Step 3: Press → to reveal the AFTER, tagged by A · M · H · W</span></li>
+          </ul>
+        </div>
+        <div class="card" style="padding:18px 20px;">
+          <div style="font-weight:700;color:#0f172a;margin-bottom:8px;">The 3 Domains</div>
+          <ul class="blist" style="padding:0;">
+            <li style="border:none;padding:5px 0;font-size:13px;"><span class="bdot amber"></span><span>Demo 1 — Wireless / RF Research</span></li>
+            <li style="border:none;padding:5px 0;font-size:13px;"><span class="bdot amber"></span><span>Demo 2 — AI / ML Pipeline</span></li>
+            <li style="border:none;padding:5px 0;font-size:13px;"><span class="bdot amber"></span><span>Demo 3 — Power Systems / Circuit Design</span></li>
+          </ul>
+        </div>
+      </div>
+      <div style="font-size:13px;color:#334155;">Press <strong style="color:#64748b;">→</strong> on each demo slide to reveal the After panel</div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════
+       SLIDE 19 — DEMO #1: MACHINE LEARNING
+  ══════════════════════════════════════════════════════ -->
+  <div class="slide" data-steps="2">
+    <div class="slide-inner">
+      <div class="eyebrow">Demo #1 — Machine Learning Research</div>
+      <div class="slide-title" style="font-size:28px;margin-bottom:18px;">Image Classification — Applying the Formula</div>
+
+      <div data-step="1">
+        <div class="before-panel" style="margin-bottom:10px;">
+          <div class="demo-lbl demo-lbl-b">BEFORE — missing Metric, How, and Why</div>
+          <div class="demo-txt demo-txt-b">"Developed a deep learning model to improve accuracy for image classification tasks."</div>
+        </div>
+        <div style="padding:12px 16px;background:#f8fafc;border-radius:8px;border:1px solid #e2e8f0;">
+          <div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:0.09em;color:#b45309;margin-bottom:5px;">What's missing?</div>
+          <div style="font-size:13px;color:#475569;line-height:1.65;">The verb "Developed" is a solid start — but <strong style="color:#ef4444;">no number</strong> ("improve" by how much?), <strong style="color:#ef4444;">no method named</strong> (what kind of model?), <strong style="color:#ef4444;">no impact</strong> (where does this get used?).</div>
+        </div>
+      </div>
+
+      <div data-step="2" style="margin-top:12px;">
+        <div class="after-panel">
+          <div class="demo-lbl demo-lbl-a">AFTER — all 4 components</div>
+          <div class="demo-txt demo-txt-a">"Developed a <span style="color:#0369a1;font-style:normal;font-weight:700;">convolutional neural network in PyTorch</span> for defect detection in manufactured parts — achieving <span style="color:#b45309;font-style:normal;font-weight:700;">93% accuracy on 8,000 test images</span>, up from a 71% baseline, enabling <span style="color:#7c3aed;font-style:normal;font-weight:700;">automated quality screening without manual inspection on the production line</span>."</div>
+          <div class="amhw-row">
+            <span class="tag tag-a">A — Developed · improved over baseline</span>
+            <span class="tag tag-m">M — 93% accuracy · 8,000 images · 22-pt gain</span>
+            <span class="tag tag-h">H — Convolutional neural network · PyTorch</span>
+            <span class="tag tag-w">W — Automated production line quality screening</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════
+       SLIDE 20 — DEMO #2: CIRCUIT / POWER
+  ══════════════════════════════════════════════════════ -->
+  <div class="slide" data-steps="2">
+    <div class="slide-inner">
+      <div class="eyebrow">Demo #2 — Circuit Design / Power Systems</div>
+      <div class="slide-title" style="font-size:28px;margin-bottom:18px;">Circuit Optimization — Applying the Formula</div>
+
+      <div data-step="1">
+        <div class="before-panel" style="margin-bottom:10px;">
+          <div class="demo-lbl demo-lbl-b">BEFORE — vague action, no number, no tool, no impact</div>
+          <div class="demo-txt demo-txt-b">"Designed and tested a circuit to reduce power consumption in embedded systems."</div>
+        </div>
+        <div style="padding:12px 16px;background:#f8fafc;border-radius:8px;border:1px solid #e2e8f0;">
+          <div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:0.09em;color:#b45309;margin-bottom:5px;">What's missing?</div>
+          <div style="font-size:13px;color:#475569;line-height:1.65;"><strong style="color:#ef4444;">No number</strong> — power reduced by how much? <strong style="color:#ef4444;">No tool named</strong> — what software or bench equipment? <strong style="color:#ef4444;">No impact</strong> — what does lower power consumption actually enable?</div>
+        </div>
+      </div>
+
+      <div data-step="2" style="margin-top:12px;">
+        <div class="after-panel">
+          <div class="demo-lbl demo-lbl-a">AFTER — all 4 components</div>
+          <div class="demo-txt demo-txt-a">"Designed a low-power voltage regulator <span style="color:#0369a1;font-style:normal;font-weight:700;">using LTspice simulation and bench testing</span> — reducing idle power draw by <span style="color:#b45309;font-style:normal;font-weight:700;">38% vs. the baseline design</span> and extending estimated battery life by <span style="color:#b45309;font-style:normal;font-weight:700;">14 hours</span>, enabling <span style="color:#7c3aed;font-style:normal;font-weight:700;">deployment in field sensors with a 3-year battery target</span>."</div>
+          <div class="amhw-row">
+            <span class="tag tag-a">A — Designed · reducing power draw</span>
+            <span class="tag tag-m">M — 38% reduction vs. baseline · 14-hr battery gain</span>
+            <span class="tag tag-h">H — LTspice simulation + bench testing</span>
+            <span class="tag tag-w">W — Field sensors with 3-year battery target</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════
+       SLIDE 21 — DEMO #3: SOFTWARE / DATA
+  ══════════════════════════════════════════════════════ -->
+  <div class="slide" data-steps="2">
+    <div class="slide-inner">
+      <div class="eyebrow">Demo #3 — Software / Data Engineering</div>
+      <div class="slide-title" style="font-size:28px;margin-bottom:18px;">Data Pipeline — Applying the Formula</div>
+
+      <div data-step="1">
+        <div class="before-panel" style="margin-bottom:10px;">
+          <div class="demo-lbl demo-lbl-b">BEFORE — activity description, no result</div>
+          <div class="demo-txt demo-txt-b">"Worked on a data processing pipeline to improve the speed of the data analysis workflow."</div>
+        </div>
+        <div style="padding:12px 16px;background:#f8fafc;border-radius:8px;border:1px solid #e2e8f0;">
+          <div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:0.09em;color:#b45309;margin-bottom:5px;">What's missing?</div>
+          <div style="font-size:13px;color:#475569;line-height:1.65;"><strong style="color:#ef4444;">"Worked on" signals activity, not output.</strong> No number on how much faster. No tool named. No reason why the speed mattered. Could have been written by anyone in any data role.</div>
+        </div>
+      </div>
+
+      <div data-step="2" style="margin-top:12px;">
+        <div class="after-panel">
+          <div class="demo-lbl demo-lbl-a">AFTER — all 4 components</div>
+          <div class="demo-txt demo-txt-a">"Rebuilt a data processing pipeline <span style="color:#0369a1;font-style:normal;font-weight:700;">in Python using parallel processing and vectorized operations</span> — reducing analysis runtime from <span style="color:#b45309;font-style:normal;font-weight:700;">4.5 hours to 22 minutes</span> on a dataset of <span style="color:#b45309;font-style:normal;font-weight:700;">2.3 million records</span>, enabling <span style="color:#7c3aed;font-style:normal;font-weight:700;">same-day results for field engineers who previously waited overnight</span>."</div>
+          <div class="amhw-row">
+            <span class="tag tag-a">A — Rebuilt · reducing runtime</span>
+            <span class="tag tag-m">M — 4.5 hr to 22 min · 2.3M records</span>
+            <span class="tag tag-h">H — Python · parallel processing · vectorization</span>
+            <span class="tag tag-w">W — Same-day results for field engineers</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════
+       SLIDE 22 — WRITING PHD EXPERIENCE FOR INDUSTRY (part 1)
+  ══════════════════════════════════════════════════════ -->
+  <div class="slide">
+    <div class="slide-inner">
+      <div class="eyebrow">PhD to Industry Translation</div>
+      <div class="slide-title" style="font-size:32px;margin-bottom:14px;">Writing PhD Experience for Industry</div>
+      <div class="card" style="padding:14px 18px;margin-bottom:16px;">
+        <div style="font-size:14px;color:#475569;line-height:1.75;">This is a <strong style="color:#0f172a;">translation problem, not a content problem.</strong> Your research produced real engineering outputs — they just need to be described in language that a hiring engineer can parse in 6 seconds.</div>
+      </div>
+      <div class="g2" style="gap:16px;">
+        <div>
+          <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.09em;color:#ef4444;margin-bottom:8px;">1. Replace the research goal with the engineering problem</div>
+          <div style="padding:10px 14px;background:#fff5f5;border:1px solid #fecaca;border-radius:7px;margin-bottom:6px;">
+            <div style="font-size:10px;font-weight:700;color:#991b1b;margin-bottom:4px;">Academic framing</div>
+            <div style="font-size:13px;color:#0f172a;line-height:1.6;font-style:italic;">"Investigated the thermal properties of novel polymer composites under cyclic loading conditions."</div>
+          </div>
+          <div style="padding:10px 14px;background:#ecfdf5;border:1px solid #a7f3d0;border-radius:7px;">
+            <div style="font-size:10px;font-weight:700;color:#065f46;margin-bottom:4px;">Industry framing</div>
+            <div style="font-size:13px;color:#0f172a;line-height:1.6;font-style:italic;">"Existing thermal materials failed above 150°C under mechanical stress — a gap blocking adoption in electric vehicle battery designs."</div>
+          </div>
+        </div>
+        <div>
+          <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.09em;color:#ef4444;margin-bottom:8px;">2. Replace "studied / explored" with what you built or produced</div>
+          <div style="padding:10px 14px;background:#fff5f5;border:1px solid #fecaca;border-radius:7px;margin-bottom:6px;">
+            <div style="font-size:10px;font-weight:700;color:#991b1b;margin-bottom:4px;">Academic framing</div>
+            <div style="font-size:13px;color:#0f172a;line-height:1.6;font-style:italic;">"Investigated machine learning approaches for anomaly detection in industrial sensor data."</div>
+          </div>
+          <div style="padding:10px 14px;background:#ecfdf5;border:1px solid #a7f3d0;border-radius:7px;">
+            <div style="font-size:10px;font-weight:700;color:#065f46;margin-bottom:4px;">Industry framing</div>
+            <div style="font-size:13px;color:#0f172a;line-height:1.6;font-style:italic;">"Built an anomaly detection model on 14 months of industrial sensor data — achieving 91% precision at a 0.3% false positive rate on the held-out test set."</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════
+       SLIDE 23 — WRITING PHD EXPERIENCE FOR INDUSTRY (part 2)
+  ══════════════════════════════════════════════════════ -->
+  <div class="slide">
+    <div class="slide-inner">
+      <div class="eyebrow">PhD to Industry Translation</div>
+      <div class="slide-title" style="font-size:32px;margin-bottom:14px;">Two More Rewrites — and the Checklist</div>
+      <div class="g2" style="gap:16px;">
+        <div>
+          <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.09em;color:#ef4444;margin-bottom:8px;">3. Attach your results directly to the technique used</div>
+          <div style="padding:10px 14px;background:#fff5f5;border:1px solid #fecaca;border-radius:7px;margin-bottom:6px;">
+            <div style="font-size:10px;font-weight:700;color:#991b1b;margin-bottom:4px;">Academic framing</div>
+            <div style="font-size:13px;color:#0f172a;line-height:1.6;font-style:italic;">"Characterized thin film morphology using scanning electron microscopy and atomic force microscopy."</div>
+          </div>
+          <div style="padding:10px 14px;background:#ecfdf5;border:1px solid #a7f3d0;border-radius:7px;margin-bottom:14px;">
+            <div style="font-size:10px;font-weight:700;color:#065f46;margin-bottom:4px;">Industry framing</div>
+            <div style="font-size:13px;color:#0f172a;line-height:1.6;font-style:italic;">"Used electron and atomic-force microscopy to resolve domain sizes of 18–24 nm with surface roughness below 0.4 nm — establishing parameters that guided deposition optimization."</div>
+          </div>
+          <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.09em;color:#ef4444;margin-bottom:8px;">4. End with what it enables — not what it contributes</div>
+          <div style="padding:10px 14px;background:#fff5f5;border:1px solid #fecaca;border-radius:7px;margin-bottom:6px;">
+            <div style="font-size:10px;font-weight:700;color:#991b1b;margin-bottom:4px;">Academic framing</div>
+            <div style="font-size:13px;color:#0f172a;line-height:1.6;font-style:italic;">"...contributing to the understanding of charge transport in perovskite solar cells."</div>
+          </div>
+          <div style="padding:10px 14px;background:#ecfdf5;border:1px solid #a7f3d0;border-radius:7px;">
+            <div style="font-size:10px;font-weight:700;color:#065f46;margin-bottom:4px;">Industry framing</div>
+            <div style="font-size:13px;color:#0f172a;line-height:1.6;font-style:italic;">"...identifying the doping level that maximized carrier mobility without accelerating degradation — informing process conditions for stable, high-efficiency device fabrication."</div>
+          </div>
+        </div>
+        <div>
+          <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.09em;color:#064e3b;margin-bottom:10px;">5-question checklist before submitting any PhD bullet</div>
+          <ol style="list-style:none;padding:0;margin:0;">
+            <li style="display:flex;gap:10px;padding:9px 0;border-bottom:1px solid #f1f5f9;font-size:13px;color:#475569;"><span style="color:#064e3b;font-weight:700;min-width:20px;flex-shrink:0;">1.</span><span><strong style="color:#0f172a;">Context:</strong> Does it say what was broken or unavailable before?</span></li>
+            <li style="display:flex;gap:10px;padding:9px 0;border-bottom:1px solid #f1f5f9;font-size:13px;color:#475569;"><span style="color:#064e3b;font-weight:700;min-width:20px;flex-shrink:0;">2.</span><span><strong style="color:#0f172a;">Accomplishment:</strong> Does it name what you built, fabricated, modeled, or ran?</span></li>
+            <li style="display:flex;gap:10px;padding:9px 0;border-bottom:1px solid #f1f5f9;font-size:13px;color:#475569;"><span style="color:#064e3b;font-weight:700;min-width:20px;flex-shrink:0;">3.</span><span><strong style="color:#0f172a;">Metric:</strong> Does it include at least one number from your actual results?</span></li>
+            <li style="display:flex;gap:10px;padding:9px 0;border-bottom:1px solid #f1f5f9;font-size:13px;color:#475569;"><span style="color:#064e3b;font-weight:700;min-width:20px;flex-shrink:0;">4.</span><span><strong style="color:#0f172a;">How:</strong> Does it name the specific tool or technique used?</span></li>
+            <li style="display:flex;gap:10px;padding:9px 0;font-size:13px;color:#475569;"><span style="color:#064e3b;font-weight:700;min-width:20px;flex-shrink:0;">5.</span><span><strong style="color:#0f172a;">Why:</strong> Does it say what an engineer or company can now do because of it?</span></li>
+          </ol>
+          <div style="margin-top:12px;padding:10px 14px;background:#ecfdf5;border:1px solid #a7f3d0;border-radius:8px;font-size:12px;color:#065f46;font-weight:600;">
+            If any of the five are missing, the bullet is not finished yet.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════
+       SLIDE 24 — NEXT STEPS
+  ══════════════════════════════════════════════════════ -->
+  <div class="slide">
+    <div class="slide-inner">
+      <div class="eyebrow">What Comes Next</div>
+      <div class="slide-title" style="font-size:34px;margin-bottom:22px;">Take This Further</div>
+      <div class="g2" style="gap:18px;align-items:start;">
+        <div>
+          <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.09em;color:#064e3b;margin-bottom:12px;">Your Individual Audit</div>
+          <div class="card card-lime" style="margin-bottom:14px;padding:16px 18px;">
+            <div style="font-size:13px;color:#475569;line-height:1.7;">Your personal audit report was delivered to the email you submitted. It includes your score, criterion-by-criterion breakdown, and the top-priority bullets to rewrite first.</div>
+          </div>
+          <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.09em;color:#064e3b;margin-bottom:12px;">Referral Bonus</div>
+          <div class="card" style="padding:16px 18px;">
+            <div style="font-size:13px;color:#475569;line-height:1.7;"><strong style="color:#064e3b;">$200 cash</strong> for any club member who refers someone to the Engineering Career Accelerator. Make sure they mention your name at booking.</div>
+          </div>
+        </div>
+        <div>
+          <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.09em;color:#064e3b;margin-bottom:12px;">The Engineering Career Accelerator</div>
+          <div class="card card-lime" style="margin-bottom:12px;padding:18px 20px;">
+            <div style="font-size:15px;font-weight:700;color:#0f172a;margin-bottom:10px;">3-Session 1-on-1 Coaching Program</div>
+            <ul class="blist" style="padding:0;">
+              <li style="border:none;padding:5px 0;font-size:13px;"><span class="bdot lime"></span><span>Session 1 — Full resume rebuild using IBB™</span></li>
+              <li style="border:none;padding:5px 0;font-size:13px;"><span class="bdot lime"></span><span>Session 2 — Interview story mastery + story vault</span></li>
+              <li style="border:none;padding:5px 0;font-size:13px;"><span class="bdot lime"></span><span>Session 3 — Live mock interview + real-time feedback</span></li>
+            </ul>
+            <div style="margin-top:12px;padding:10px 14px;background:#ecfdf5;border-radius:7px;display:flex;justify-content:space-between;align-items:center;">
+              <div><div style="font-size:13px;font-weight:700;color:#064e3b;">GO-ECpE Club Discount: 50% off</div><div style="font-size:11px;color:#334155;margin-top:1px;">Exclusive to tonight's attendees · Only 10 spots per month</div></div>
+            </div>
+          </div>
+          <div style="padding:14px 16px;background:#f8fafc;border-radius:9px;border:1px solid #e2e8f0;text-align:center;">
+            <div style="font-size:12px;color:#475569;margin-bottom:4px;">Book a free strategy call</div>
+            <div style="font-size:18px;font-weight:800;color:#064e3b;letter-spacing:-0.3px;">LaunchToLead.io</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════
+       SLIDE 25 — CLOSE
+  ══════════════════════════════════════════════════════ -->
+  <div class="slide">
+    <div class="slide-inner" style="text-align:center;">
+      <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:#334155;margin-bottom:18px;">The Core Message</div>
+      <div class="big-quote" style="font-size:22px;padding:36px 44px;margin-bottom:24px;">
+        "The research is real.<br>The publications are real.<br>The technical depth is real.<br><br>
+        The gap is <span class="hl">the translation</span> —<br>and that's a <span class="hl">learnable skill.</span>"
+      </div>
+      <div class="close-links">
+        <div class="item"><strong style="color:#0f172a;">Mansour Manci</strong><span>Engineering Career Coach</span></div>
+        <div class="close-sep"></div>
+        <div class="item"><strong style="color:#064e3b;">LaunchToLead.io</strong><span>Free strategy call available</span></div>
+        <div class="close-sep"></div>
+        <div class="item"><strong style="color:#0f172a;">LinkedIn</strong><span>/in/mansourmanci</span></div>
+      </div>
+      <div style="margin-top:28px;font-size:30px;font-weight:800;color:#064e3b;letter-spacing:-0.5px;">
+        Thank You — Open Q&amp;A
+      </div>
+    </div>
+    <div class="sfooter">© 2026 Launch to Lead Engineering · LaunchToLead.io</div>
+  </div>
+
+</div><!-- /#slides -->
+
+<script>
+  const slides = document.querySelectorAll('.slide');
+  const total = slides.length;
+  let cur = 0, step = 1;
+
+  function steps(i) { return parseInt(slides[i].dataset.steps || '1'); }
+
+  function applyStep() {
+    slides[cur].querySelectorAll('[data-step]').forEach(el => {
+      const show = parseInt(el.dataset.step);
+      const on = step >= show;
+      el.style.opacity = on ? '1' : '0';
+      el.style.transform = on ? 'translateY(0)' : 'translateY(18px)';
+      el.style.pointerEvents = on ? '' : 'none';
+    });
+  }
+
+  function updateUI() {
+    const pct = ((cur + 1) / total * 100).toFixed(1);
+    document.getElementById('pfill').style.width = pct + '%';
+    const extra = steps(cur) > 1 ? ` (${step}/${steps(cur)})` : '';
+    document.getElementById('counter').textContent = `${cur + 1} / ${total}${extra}`;
+    document.getElementById('btnPrev').disabled = cur === 0 && step === 1;
+    document.getElementById('btnNext').disabled = cur === total - 1 && step === steps(cur);
+  }
+
+  function go(dir) {
+    if (dir > 0) {
+      if (step < steps(cur)) { step++; applyStep(); updateUI(); return; }
+      if (cur < total - 1) {
+        slides[cur].classList.remove('active');
+        cur++; step = 1;
+        slides[cur].classList.add('active');
+        applyStep(); updateUI();
+      }
+    } else {
+      if (step > 1) { step--; applyStep(); updateUI(); return; }
+      if (cur > 0) {
+        slides[cur].classList.remove('active');
+        cur--; step = steps(cur);
+        slides[cur].classList.add('active');
+        applyStep(); updateUI();
+      }
+    }
+  }
+
+  function jumpTo(idx) {
+    if (idx < 0 || idx >= total) return;
+    slides[cur].classList.remove('active');
+    cur = idx; step = 1;
+    slides[cur].classList.add('active');
+    applyStep(); updateUI();
+  }
+
+  // Initialize step-hidden elements on all multi-step slides
+  function init() {
+    slides.forEach(s => {
+      s.querySelectorAll('[data-step]').forEach(el => {
+        if (parseInt(el.dataset.step) > 1) {
+          el.style.opacity = '0';
+          el.style.transform = 'translateY(18px)';
+          el.style.pointerEvents = 'none';
+        }
+      });
+    });
+    updateUI();
+  }
+
+  document.addEventListener('keydown', e => {
+    const tag = document.activeElement.tagName;
+    if (tag === 'INPUT' || tag === 'TEXTAREA') return;
+    if (e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === ' ') { e.preventDefault(); go(1); }
+    else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') { e.preventDefault(); go(-1); }
+    else if (e.key === 'Home') { e.preventDefault(); jumpTo(0); }
+    else if (e.key === 'End') { e.preventDefault(); jumpTo(total - 1); }
+  });
+
+  init();
+</script>
+</body>
+</html>

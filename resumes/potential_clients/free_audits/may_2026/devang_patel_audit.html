@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Resume Audit — Devang Patel | LaunchToLead</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .font-mono-num { font-family: 'Space Grotesk', monospace; }
+
+        #download-btn {
+            position: fixed; top: 20px; right: 20px; z-index: 9999;
+            background: linear-gradient(135deg, #a3e635, #14b8a6); color: #052e16;
+            font-family: 'Plus Jakarta Sans', sans-serif; font-size: 16px; font-weight: 800;
+            padding: 14px 32px; border: none; border-radius: 50px; cursor: pointer;
+            box-shadow: 0 8px 30px rgba(163,230,53,0.3);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        #download-btn:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(163,230,53,0.4); }
+
+        @media print {
+            @page { size: letter; margin: 0.5in 0.65in; }
+            body {
+                background: white !important; color: #1e293b !important;
+                padding: 0 !important; margin: 0 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            #download-btn { display: none !important; }
+            .no-print { display: none !important; }
+            .page-break { break-before: page; }
+            .keep-together { break-inside: avoid; }
+            .space-y-4 > div, .space-y-6 > div, .grid > div { break-inside: avoid; }
+            ul.space-y-3 > li { break-inside: avoid; }
+            tbody tr { break-inside: avoid; }
+            .rounded-xl.overflow-hidden { break-inside: avoid; }
+            h2, h3, h4 { break-after: avoid; }
+            section { box-shadow: none !important; border: 1px solid #e2e8f0 !important; }
+            .max-w-4xl { max-width: 100% !important; }
+            .bg-emerald-900, .bg-emerald-800, .bg-red-700 {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-700">
+
+<button id="download-btn" onclick="window.print()">Download PDF</button>
+
+<!-- ============================================================ -->
+<!-- HEADER                                                        -->
+<!-- ============================================================ -->
+<header class="bg-emerald-900 text-white py-6 px-6">
+    <div class="max-w-4xl mx-auto">
+        <div class="flex items-center gap-3 mb-4">
+            <div class="bg-white text-emerald-900 w-10 h-10 rounded-xl flex items-center justify-center font-bold text-sm shadow">L²</div>
+            <span class="text-xl font-bold">Launch<span class="font-light text-lime-300">ToLead</span></span>
+        </div>
+        <div class="flex items-center gap-2 mb-2">
+            <span class="bg-lime-400/20 text-lime-300 text-xs font-bold px-3 py-1 rounded-full">FREE AUDIT</span>
+        </div>
+        <h1 class="text-3xl font-extrabold mb-1">Resume Audit Report</h1>
+        <p class="text-emerald-200">Devang Patel — M.Eng Chemical Engineering, Dalhousie University</p>
+        <p class="text-emerald-400/60 text-sm mt-1">Scored against the Impact Bullet Builder framework</p>
+    </div>
+</header>
+
+<div class="max-w-4xl mx-auto px-6 py-10 space-y-10">
+
+    <!-- ============================================================ -->
+    <!-- SECTION 1: OVERALL SCORE                                      -->
+    <!-- ============================================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 overflow-hidden">
+        <div class="p-8">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="w-8 h-8 rounded-lg bg-emerald-600 text-white flex items-center justify-center text-sm font-bold">01</div>
+                <h2 class="text-2xl font-extrabold text-slate-900">Overall Score</h2>
+            </div>
+
+            <div class="flex items-center gap-8 mb-6">
+                <div class="text-center">
+                    <p class="font-mono-num text-6xl font-extrabold text-amber-500">60</p>
+                    <p class="text-slate-500 text-sm">out of 100</p>
+                </div>
+                <div class="flex-1">
+                    <div class="h-4 bg-slate-100 rounded-full overflow-hidden mb-2">
+                        <div class="h-full rounded-full" style="width: 60%; background: linear-gradient(to right, #d97706, #f59e0b);"></div>
+                    </div>
+                    <div class="flex justify-between text-xs text-slate-400">
+                        <span>10–30 ★ What Was Asked</span>
+                        <span>31–60 ★★ Above &amp; Beyond</span>
+                        <span>61–100 ★★★ Impact</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4 IBB formula sub-scores -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="bg-amber-50 border border-amber-200 rounded-xl p-4 text-center">
+                    <p class="font-mono-num text-2xl font-bold text-amber-600">5/10</p>
+                    <p class="text-amber-700 text-xs font-semibold mt-1">Accomplishments</p>
+                    <p class="text-amber-500 text-xs mt-0.5">5 of 9 bullets describe outcomes; 4 read as observation logs</p>
+                </div>
+                <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-4 text-center">
+                    <p class="font-mono-num text-2xl font-bold text-emerald-600">7/10</p>
+                    <p class="text-emerald-700 text-xs font-semibold mt-1">Metrics</p>
+                    <p class="text-emerald-500 text-xs mt-0.5">7 of 9 bullets have specific numbers — strong instinct</p>
+                </div>
+                <div class="bg-amber-50 border border-amber-200 rounded-xl p-4 text-center">
+                    <p class="font-mono-num text-2xl font-bold text-amber-600">6/10</p>
+                    <p class="text-amber-700 text-xs font-semibold mt-1">How / Method</p>
+                    <p class="text-amber-500 text-xs mt-0.5">Named in 6 of 9 — strong at Epigral, thin at Deepak Nitrite</p>
+                </div>
+                <div class="bg-amber-50 border border-amber-200 rounded-xl p-4 text-center">
+                    <p class="font-mono-num text-2xl font-bold text-amber-600">5/10</p>
+                    <p class="text-amber-700 text-xs font-semibold mt-1">Why / Impact</p>
+                    <p class="text-amber-500 text-xs mt-0.5">5 of 9 connect to an outcome; safety bullets lack stated results</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- VERDICT BANNER -->
+        <div class="bg-emerald-800 text-white p-6">
+            <p class="font-bold text-lg">★★ — Top of the Band. One Rewrite Pass Away From ★★★.</p>
+            <p class="text-sm opacity-80 mt-1">60/100 sits exactly at the ★★/★★★ boundary, and the gap is specific and fixable. Your quantification instinct is genuinely strong — 7 of 9 bullets have numbers, which puts you ahead of most candidates at this career stage. The Lean Six Sigma bullet (12% waste reduction, DMAIC, 2 production lines) is a clean ★★★ with all four framework components. The problem is the half of the resume that doesn't look like that: the three Deepak Nitrite bullets read as an observation log from an intern who watched processes happen, not an engineer who contributed to outcomes. And the safety work at Epigral — PTW issuance, PSSR/HIRA reviews — is described by its volume (30+ permits/day, 10+ reviews) without stating what was preserved or achieved. Fixing those 5 bullets would push this to the mid-70s easily.</p>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SECTION 2: KEY ISSUES IDENTIFIED                              -->
+    <!-- ============================================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 p-8 page-break">
+        <div class="flex items-center gap-3 mb-6">
+            <div class="w-8 h-8 rounded-lg bg-red-600 text-white flex items-center justify-center text-sm font-bold">02</div>
+            <h2 class="text-2xl font-extrabold text-slate-900">Key Issues Identified</h2>
+        </div>
+
+        <div class="space-y-4">
+
+            <!-- ISSUE 1 -->
+            <div class="flex items-start gap-4 p-5 bg-red-50 rounded-xl border border-red-200 keep-together">
+                <div class="w-8 h-8 rounded-full bg-red-600 text-white flex items-center justify-center font-bold text-sm flex-shrink-0">1</div>
+                <div>
+                    <p class="font-bold text-red-900">All three Deepak Nitrite bullets describe what you observed — not what you did or what changed</p>
+                    <p class="text-red-700 text-sm mt-1">The three bullets from your Deepak Nitrite internship read as a process operator log: "Operated and monitored batch chemical processing units," "Conducted daily plant walkthroughs... observed and documented," "Performed data logging and production record documentation." Every verb describes activity or observation, and none states what the work produced. This is a 4-month role at a 2,760 MT/year pharmaceutical intermediates facility — a real, high-stakes chemical environment. The takeaway a hiring manager gets from these bullets is: you went to the plant, you watched things happen, and you wrote them down. That's a record of attendance, not a record of engineering contribution. Even for an internship, there's almost always something you identified, improved, flagged, or enabled. What deviations did you catch and escalate? Did your documentation support any quality release decisions? Was there anything in the production records that caused an action to be taken? That's what belongs in the bullet.</p>
+                </div>
+            </div>
+
+            <!-- ISSUE 2 -->
+            <div class="flex items-start gap-4 p-5 bg-red-50 rounded-xl border border-red-200 keep-together">
+                <div class="w-8 h-8 rounded-full bg-red-600 text-white flex items-center justify-center font-bold text-sm flex-shrink-0">2</div>
+                <div>
+                    <p class="font-bold text-red-900">The safety work at Epigral (PTW, PSSR/HIRA) has scale but no outcome — 30+ permits/day is operationally impressive, but what was the result?</p>
+                    <p class="text-red-700 text-sm mt-1">Issuing 30+ permits to work per day at India's first bio-based ECH facility is a high-volume, high-consequence safety workload. PSSR and HIRA involvement in 10+ project modifications is substantive safety engineering — these aren't checkbox exercises, they're structured hazard identification processes. But both bullets report the activity count and stop there. The "why" is entirely missing: what was the safety record during your time in that role? Did the facility maintain LTI-free operations? Were there modifications that you identified a hazard in and got changed before startup? The PTW bullet says you supervised hot works "to ensure safe work practices" — but every permit issuer says that. What actually happened? Even a general statement like "maintaining zero hot-work incidents over [X] months" or "supporting incident-free restart across all 10 modifications" turns a process description into a result statement.</p>
+                </div>
+            </div>
+
+            <!-- ISSUE 3 -->
+            <div class="flex items-start gap-4 p-5 bg-amber-50 rounded-xl border border-amber-200 keep-together">
+                <div class="w-8 h-8 rounded-full bg-amber-500 text-white flex items-center justify-center font-bold text-sm flex-shrink-0">3</div>
+                <div>
+                    <p class="font-bold text-amber-900">"Actively participated in PSSR and HIRA reviews" sells short work that takes real engineering judgment</p>
+                    <p class="text-amber-700 text-sm mt-1">PSSR (Pre-Startup Safety Review) and HIRA (Hazard Identification and Risk Assessment) are structured, rigorous processes — you can't just show up and sign off. Being involved in 10+ of these for project modifications means you were sitting in rooms making technical safety calls about what was and wasn't acceptable before restarting plant operations. "Actively participated" frames that as attendance. What was your actual role? Did you lead any of the walkthroughs? Were you the one verifying corrective actions were closed before restart? Did you flag anything that wasn't ready? The rewrite is straightforward: replace "participated" with the specific thing you did, and add one outcome. "Coordinated pre-restart compliance verification" and "ensured all 10 modifications restarted without safety non-conformances" would be clean and specific.</p>
+                </div>
+            </div>
+
+            <!-- ISSUE 4 -->
+            <div class="flex items-start gap-4 p-5 bg-amber-50 rounded-xl border border-amber-200 keep-together">
+                <div class="w-8 h-8 rounded-full bg-amber-500 text-white flex items-center justify-center font-bold text-sm flex-shrink-0">4</div>
+                <div>
+                    <p class="font-bold text-amber-900">The ECH production bullet names specs but doesn't say what maintaining those specs required or prevented</p>
+                    <p class="text-amber-700 text-sm mt-1">"Operated high-pressure furnace, vacuum distillation, and azeotropic steam stripping to produce pharmaceutical-grade ECH (≥99.9% purity, &lt;500 ppm water, &lt;0.01% residual DCP)" is technically strong — the spec numbers are real, the equipment is named. But it reads as a job description for any process operator at that facility. What made this work hard? What happened when parameters drifted? Were there any batch rejections or near-misses that you caught before they became out-of-spec product? Even framing this around throughput ("maintaining pharmaceutical-grade purity across [X] production batches over [Y] months") or consistency ("achieving 100% on-spec batch release for downstream API synthesis") turns a list of specifications into a demonstrated result. The high-pressure and azeotropic separation work already signals technical complexity — the bullet just needs to say what that complexity delivered.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SECTION 3: TOP BULLETS — REWRITTEN                            -->
+    <!-- ============================================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 p-8 page-break">
+        <div class="flex items-center gap-3 mb-6">
+            <div class="w-8 h-8 rounded-lg bg-emerald-600 text-white flex items-center justify-center text-sm font-bold">03</div>
+            <h2 class="text-2xl font-extrabold text-slate-900">Top Bullets — Rewritten</h2>
+        </div>
+
+        <p class="text-slate-500 text-sm mb-2">The 4 bullets with the highest improvement potential, rewritten using the Impact Bullet Builder formula (Accomplishment + Metric + How + Why).</p>
+        <p class="text-slate-400 text-xs mb-6 italic">Brackets like <code class="bg-slate-100 px-1 rounded text-xs">[X]</code> are placeholders — only you know the real numbers. A conservative honest estimate beats a blank every time.</p>
+
+        <div class="space-y-6">
+
+            <!-- BULLET 1 -->
+            <div class="keep-together">
+                <p class="text-xs font-bold text-slate-400 uppercase tracking-wide mb-2">Epigral Limited — PSSR / HIRA Safety Reviews</p>
+                <div class="bg-red-50 border border-red-200 rounded-xl p-4 mb-2">
+                    <p class="text-xs font-bold text-red-500 mb-1">BEFORE</p>
+                    <p class="text-red-800 text-sm">Actively participated in PSSR and HIRA reviews for 10+ project modifications, coordinating safety walks and verifying compliance before project restart.</p>
+                </div>
+                <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-4">
+                    <p class="text-xs font-bold text-emerald-600 mb-1">AFTER (★★★ Level)</p>
+                    <p class="text-emerald-900 text-sm">Led compliance verification for 10+ process safety reviews (PSSR) and hazard analyses (HIRA) across plant modifications — coordinating cross-functional safety walks, verifying all corrective actions were closed before restart, and supporting incident-free startup across every reviewed modification at India's first bio-based ECH facility.</p>
+                    <p class="text-xs text-emerald-600 mt-2">Changed: "participated" → "Led compliance verification" (personal ownership); added: incident-free startup outcome (Why); kept: 10+ modifications (Metric) and review type names (How)</p>
+                </div>
+            </div>
+
+            <!-- BULLET 2 -->
+            <div class="keep-together">
+                <p class="text-xs font-bold text-slate-400 uppercase tracking-wide mb-2">Epigral Limited — Permit-to-Work</p>
+                <div class="bg-red-50 border border-red-200 rounded-xl p-4 mb-2">
+                    <p class="text-xs font-bold text-red-500 mb-1">BEFORE</p>
+                    <p class="text-red-800 text-sm">Issued 30+ Permit-to-Work every day to different departments for preventive maintenance/failure emergency (Mech., Elec., Utility) after thorough site inspection and supervising hot works to ensure safe work practices.</p>
+                </div>
+                <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-4">
+                    <p class="text-xs font-bold text-emerald-600 mb-1">AFTER (★★★ Level)</p>
+                    <p class="text-emerald-900 text-sm">Managed 30+ permit-to-work authorizations daily across mechanical, electrical, and utility maintenance activities — conducting pre-work site inspections, supervising hot work in a high-pressure ECH environment, and maintaining zero hot-work incidents over [X] months of operation at a 50 KTPA pharmaceuticals-grade facility.</p>
+                    <p class="text-xs text-emerald-600 mt-2">Added: zero hot-work incidents over [X] months (Why + Metric); connected to 50 KTPA facility stakes (Context); restructured to show outcome, not just process volume</p>
+                </div>
+            </div>
+
+            <!-- BULLET 3 -->
+            <div class="keep-together">
+                <p class="text-xs font-bold text-slate-400 uppercase tracking-wide mb-2">Deepak Nitrite — Plant Walkthroughs</p>
+                <div class="bg-red-50 border border-red-200 rounded-xl p-4 mb-2">
+                    <p class="text-xs font-bold text-red-500 mb-1">BEFORE</p>
+                    <p class="text-red-800 text-sm">Conducted daily plant walkthroughs across MAHCL, HADS, and Multi-Product Plant (MPP) units; observed and documented unit operations including vaporizers, spargers, reactors, and distillation columns.</p>
+                </div>
+                <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-4">
+                    <p class="text-xs font-bold text-emerald-600 mb-1">AFTER (★★★ Level)</p>
+                    <p class="text-emerald-900 text-sm">Conducted daily operational walkthroughs across 3 production units (MAHCL, HADS, MPP) at a 2,760 MT/year pharmaceutical intermediates facility — documenting process parameter deviations in vaporizer, sparger, reactor, and distillation column operations and escalating [X] abnormalities to shift supervisors, preventing production downtime and supporting uninterrupted batch traceability.</p>
+                    <p class="text-xs text-emerald-600 mt-2">Added: 3 units / 2,760 MT/year scale (Metric + Context); deviation count + escalation (Accomplishment); production continuity outcome (Why); removed passive "observed" framing</p>
+                </div>
+            </div>
+
+            <!-- BULLET 4 -->
+            <div class="keep-together">
+                <p class="text-xs font-bold text-slate-400 uppercase tracking-wide mb-2">Deepak Nitrite — Data Logging & Production Records</p>
+                <div class="bg-red-50 border border-red-200 rounded-xl p-4 mb-2">
+                    <p class="text-xs font-bold text-red-500 mb-1">BEFORE</p>
+                    <p class="text-red-800 text-sm">Performed data logging and production record documentation to support batch traceability, quality compliance, and shift handover procedures.</p>
+                </div>
+                <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-4">
+                    <p class="text-xs font-bold text-emerald-600 mb-1">AFTER (★★★ Level)</p>
+                    <p class="text-emerald-900 text-sm">Maintained accurate production records and shift handover documentation for [X] batch runs across 3 processing units — capturing real-time process parameter data and supporting 100% batch traceability for pharmaceutical-grade intermediates in a 2,760 MT/year facility, enabling compliant QA release for downstream chemical synthesis customers.</p>
+                    <p class="text-xs text-emerald-600 mt-2">Added: batch count (Metric); 100% batch traceability (Why); downstream QA release framing (Stakes); removed generic "to support compliance" ending</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SECTION 4: BEFORE & AFTER — BIGGEST TIER JUMPS               -->
+    <!-- ============================================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 p-8 page-break">
+        <div class="flex items-center gap-3 mb-6">
+            <div class="w-8 h-8 rounded-lg bg-violet-600 text-white flex items-center justify-center text-sm font-bold">04</div>
+            <h2 class="text-2xl font-extrabold text-slate-900">Before &amp; After — Biggest Tier Jumps</h2>
+        </div>
+
+        <div class="space-y-8">
+
+            <!-- EXAMPLE 1 -->
+            <div class="keep-together">
+                <p class="text-xs font-bold text-slate-400 uppercase tracking-wide mb-3">Deepak Nitrite — Data Logging</p>
+                <div class="bg-red-50 border-l-4 border-red-500 rounded-xl p-5 mb-3">
+                    <p class="text-xs font-bold text-red-500 mb-2">BEFORE (★ Level)</p>
+                    <p class="text-red-800 text-sm italic">"Performed data logging and production record documentation to support batch traceability, quality compliance, and shift handover procedures."</p>
+                    <p class="text-red-600 text-xs mt-2">Fails: no tool named where any exists (what system?), no volume/scale (how many batches?), no outcome (did compliance hold? was everything released on-spec?), "to support" framing makes the work sound auxiliary. Hiring manager reads: "maintained paper trail."</p>
+                </div>
+                <div class="bg-emerald-50 border-l-4 border-emerald-500 rounded-xl p-5">
+                    <p class="text-xs font-bold text-emerald-600 mb-2">AFTER (★★★ Level)</p>
+                    <p class="text-emerald-900 text-sm italic">"Maintained accurate production records and shift handover documentation for [X] batch runs across 3 processing units — capturing real-time process parameter data and supporting 100% batch traceability for pharmaceutical-grade intermediates, enabling compliant QA release for downstream chemical synthesis customers."</p>
+                    <p class="text-emerald-600 text-xs mt-2">Added: batch count (Metric), 3 units context (Scale), 100% batch traceability (Why), QA release stakes (Impact). All 4 IBB components present.</p>
+                </div>
+            </div>
+
+            <!-- EXAMPLE 2 -->
+            <div class="keep-together">
+                <p class="text-xs font-bold text-slate-400 uppercase tracking-wide mb-3">Epigral Limited — PSSR / HIRA Reviews</p>
+                <div class="bg-red-50 border-l-4 border-red-500 rounded-xl p-5 mb-3">
+                    <p class="text-xs font-bold text-red-500 mb-2">BEFORE (★ Level)</p>
+                    <p class="text-red-800 text-sm italic">"Actively participated in PSSR and HIRA reviews for 10+ project modifications, coordinating safety walks and verifying compliance before project restart."</p>
+                    <p class="text-red-600 text-xs mt-2">Fails: "participated" is an attendance verb — it describes presence, not contribution. The bullet counts the reviews (10+) but reports zero outcome. What happened after you verified compliance? What was the safety result? What was different because of your involvement?</p>
+                </div>
+                <div class="bg-emerald-50 border-l-4 border-emerald-500 rounded-xl p-5">
+                    <p class="text-xs font-bold text-emerald-600 mb-2">AFTER (★★★ Level)</p>
+                    <p class="text-emerald-900 text-sm italic">"Led compliance verification for 10+ PSSR and HIRA reviews across plant modifications — coordinating cross-functional safety walks, closing corrective actions before restart, and supporting incident-free startup across every reviewed modification at India's first bio-based ECH facility."</p>
+                    <p class="text-emerald-600 text-xs mt-2">Changed: "participated" → "Led compliance verification" (Accomplishment). Added: incident-free startup (Why), cross-functional coordination (How), 50 KTPA facility stakes (Context). Tier jump: ★ → ★★★.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SECTION 5: TOP ACTION ITEMS                                    -->
+    <!-- ============================================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 p-8 page-break">
+        <div class="flex items-center gap-3 mb-6">
+            <div class="w-8 h-8 rounded-lg bg-blue-600 text-white flex items-center justify-center text-sm font-bold">05</div>
+            <h2 class="text-2xl font-extrabold text-slate-900">Top Action Items</h2>
+        </div>
+
+        <div class="space-y-4">
+
+            <div class="flex items-start gap-4 p-5 bg-blue-50 rounded-xl border border-blue-200 keep-together">
+                <div class="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold text-sm flex-shrink-0">1</div>
+                <div>
+                    <p class="font-bold text-blue-900">Rewrite all three Deepak Nitrite bullets — each one needs at least one outcome, not just a description of what you did</p>
+                    <p class="text-blue-700 text-sm mt-1">Right now every bullet from that role ends with you watching something happen: "observed and documented," "performed data logging," "operated and monitored." For each one, ask: was there anything I found, flagged, improved, or enabled? Did the data I logged ever catch anything? Did any of my walkthroughs result in an action? Did batch traceability matter for any actual release decision? You don't need dramatic impact for an intern role — even a modest outcome statement ("supporting 100% batch traceability," "escalating [X] process deviations to shift supervisors," "maintaining production continuity across [X] batch runs") transforms the bullets from observation logs into engineering contributions.</p>
+                </div>
+            </div>
+
+            <div class="flex items-start gap-4 p-5 bg-blue-50 rounded-xl border border-blue-200 keep-together">
+                <div class="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold text-sm flex-shrink-0">2</div>
+                <div>
+                    <p class="font-bold text-blue-900">Attach a safety outcome to the PTW and PSSR/HIRA bullets — the scale is already there, you just need the result</p>
+                    <p class="text-blue-700 text-sm mt-1">30+ PTW per day and 10+ PSSR/HIRA reviews for project modifications is impressive throughput for a process engineer at a primary pharmaceutical intermediate facility. You clearly managed a high-volume, high-stakes safety workload. But the bullets don't say what that workload preserved. Think about what your actual safety record was: Did the facility run LTI-free during your tenure? Were there any hot-works incidents? Did any of your HIRA reviews find a gap that changed a project design before startup? Even a phrase like "maintaining zero hot-work incidents over [X] months" or "ensuring incident-free restart across all 10 modifications" connects the volume to a result that matters.</p>
+                </div>
+            </div>
+
+            <div class="flex items-start gap-4 p-5 bg-blue-50 rounded-xl border border-blue-200 keep-together">
+                <div class="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold text-sm flex-shrink-0">3</div>
+                <div>
+                    <p class="font-bold text-blue-900">Your Lean Six Sigma bullet is your best — apply the same structure to the ECH production bullet</p>
+                    <p class="text-blue-700 text-sm mt-1">"Applied Lean Six Sigma (DMAIC) to reduce chemical waste 12% across 2 production lines by optimizing process parameters and standardizing operating practices" is a textbook ★★★ bullet: strong verb (Applied), named methodology (DMAIC), specific result (12%), scale (2 production lines), How (parameter optimization + standardization). The ECH production bullet has great technical detail (high-pressure furnace, vacuum distillation, azeotropic steam stripping, pharmaceutical-grade purity specs) but it describes your operating responsibilities, not your outcomes. The fix is to add one result statement: how many batches achieved on-spec release? Was there any batch rejection rate you maintained below a threshold? Was there any process deviation you caught that prevented an out-of-spec run? Adding that one line elevates the ECH bullet to ★★★ status.</p>
+                </div>
+            </div>
+
+            <div class="flex items-start gap-4 p-5 bg-blue-50 rounded-xl border border-blue-200 keep-together">
+                <div class="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold text-sm flex-shrink-0">4</div>
+                <div>
+                    <p class="font-bold text-blue-900">Your volunteering section has better quantification than your internship — that's worth noticing</p>
+                    <p class="text-blue-700 text-sm mt-1">The food bank bullets ("Improved distribution throughput 15%," "Reduced stock-out occurrences 10%," "150+ clients per week," "100% compliance with cleanliness standards") are better written than three of your four Deepak Nitrite bullets. They state outcomes, have numbers, and explain what they enabled. That's not a problem with your volunteering section — it's a reminder of the standard you already know how to hit. Go back to the Deepak Nitrite role with the same energy you brought to the food bank bullets: what did you measure, what did it show, and what happened because of it?</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SECTION 6: WHAT'S ALREADY WORKING                             -->
+    <!-- ============================================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 p-8 page-break">
+        <div class="flex items-center gap-3 mb-6">
+            <div class="w-8 h-8 rounded-lg bg-emerald-600 text-white flex items-center justify-center text-sm font-bold">06</div>
+            <h2 class="text-2xl font-extrabold text-slate-900">What's Already Working</h2>
+        </div>
+
+        <ul class="space-y-4">
+
+            <li class="flex items-start gap-4 p-4 bg-emerald-50 rounded-xl border border-emerald-200 keep-together">
+                <div class="w-6 h-6 rounded-full bg-emerald-500 text-white flex items-center justify-center font-bold text-xs flex-shrink-0 mt-0.5">✓</div>
+                <div>
+                    <p class="font-bold text-emerald-900">The Lean Six Sigma bullet is a clean ★★★ — this is what every other bullet should be modeled after</p>
+                    <p class="text-emerald-700 text-sm mt-0.5">"Applied Lean Six Sigma (DMAIC) to reduce chemical waste 12% across 2 production lines by optimizing process parameters and standardizing operating practices" — this bullet has all four components: a strong action verb (Applied), a named methodology (DMAIC), a specific quantified result (12% waste reduction), a scale indicator (2 production lines), and a method description (parameter optimization + standardization). It's specific enough that a hiring manager at a chemical company or manufacturing firm can picture exactly what you did and what it produced. This bullet is the proof that you can write at this level. The task is applying the same structure to the other 8.</p>
+                </div>
+            </li>
+
+            <li class="flex items-start gap-4 p-4 bg-emerald-50 rounded-xl border border-emerald-200 keep-together">
+                <div class="w-6 h-6 rounded-full bg-emerald-500 text-white flex items-center justify-center font-bold text-xs flex-shrink-0 mt-0.5">✓</div>
+                <div>
+                    <p class="font-bold text-emerald-900">Metrics are present in 7 of 9 bullets — this is your strongest differentiator</p>
+                    <p class="text-emerald-700 text-sm mt-0.5">Most early-career candidates struggle to get numbers on more than 2–3 bullets. You have numbers in 7 of 9: 1000+ customers/day, 50% onboarding reduction, 100+ SKUs, 10–15 units waste reduction, 99.9% purity / &lt;500 ppm / &lt;0.01% specs, 30+ permits/day, 10+ safety reviews, 12% waste reduction, 2,760 MT/year. This signals a candidate with good engineering instincts — you understand that engineering work produces measurable outputs and you're already putting them on the page. The two bullets without numbers (walkthroughs and data logging) are fixable with one internship data point each.</p>
+                </div>
+            </li>
+
+            <li class="flex items-start gap-4 p-4 bg-emerald-50 rounded-xl border border-emerald-200 keep-together">
+                <div class="w-6 h-6 rounded-full bg-emerald-500 text-white flex items-center justify-center font-bold text-xs flex-shrink-0 mt-0.5">✓</div>
+                <div>
+                    <p class="font-bold text-emerald-900">The Epigral facility context is strong and industry-specific — "India's first bio-based epichlorohydrin facility, 50 KTPA" signals the scale of your environment immediately</p>
+                    <p class="text-emerald-700 text-sm mt-0.5">Process engineers who have worked in pharmaceutical-grade chemical manufacturing at scale are rare in early-career hiring pools. The 50 KTPA production context, the pharmaceutical purity specifications (≥99.9% purity, &lt;500 ppm water, &lt;0.01% residual DCP), and the downstream API synthesis application all signal to a chemical or pharmaceutical company that you've worked in a serious, standards-driven production environment. This context is working for you — it elevates the entire Epigral section. The task is carrying that same specificity into the bullets themselves, not just the company description.</p>
+                </div>
+            </li>
+
+            <li class="flex items-start gap-4 p-4 bg-emerald-50 rounded-xl border border-emerald-200 keep-together">
+                <div class="w-6 h-6 rounded-full bg-emerald-500 text-white flex items-center justify-center font-bold text-xs flex-shrink-0 mt-0.5">✓</div>
+                <div>
+                    <p class="font-bold text-emerald-900">No Frills bullets are better than most candidates write for retail work — they demonstrate operations and people management clearly</p>
+                    <p class="text-emerald-700 text-sm mt-0.5">The No Frills section has two genuinely solid bullets: "trained 5+ new colleagues and cut onboarding time 50%" is a real people-management outcome, and "reducing waste by an estimated 10–15 units per shift" shows operational awareness and ownership even with an estimated figure. These matter for Canadian market hiring — demonstrating that you can operate at high throughput in a fast environment while training others is directly relevant to process and operations roles. The "without any supervision" addition on the inventory bullet also signals autonomy, which is always a positive signal for employers hiring into engineering roles with field exposure.</p>
+                </div>
+            </li>
+
+            <li class="flex items-start gap-4 p-4 bg-emerald-50 rounded-xl border border-emerald-200 keep-together">
+                <div class="w-6 h-6 rounded-full bg-emerald-500 text-white flex items-center justify-center font-bold text-xs flex-shrink-0 mt-0.5">✓</div>
+                <div>
+                    <p class="font-bold text-emerald-900">Action verbs are strong throughout — no passive framing or "responsible for" language anywhere</p>
+                    <p class="text-emerald-700 text-sm mt-0.5">Managed, Monitored, Operated, Issued, Applied, Conducted, Performed, Coordinated, Improved, Maintained, Reduced — not a single "Responsible for," "Assisted with," "Helped," or "Supported" in sight. The one weak verb ("Actively participated") stands out exactly because the rest of the resume doesn't use that framing. You already understand the first rule of resume writing: describe what you did, not what your role was. That foundation makes every other fix in this audit faster and easier.</p>
+                </div>
+            </li>
+
+        </ul>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SECTION 7: FULL SCORECARD                                     -->
+    <!-- ============================================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 overflow-hidden page-break">
+        <div class="p-8">
+            <div class="flex items-center gap-3 mb-4">
+                <div class="w-8 h-8 rounded-lg bg-slate-600 text-white flex items-center justify-center text-sm font-bold">07</div>
+                <h2 class="text-2xl font-extrabold text-slate-900">Full Scorecard</h2>
+            </div>
+
+            <p class="text-slate-500 text-xs mb-5">Scored against 9 in-scope bullets (2 No Frills + 4 Epigral + 3 Deepak Nitrite). Volunteering bullets not included in primary scoring but noted in Action Items.</p>
+
+            <div class="rounded-xl overflow-hidden border border-slate-200">
+                <table class="w-full text-sm">
+                    <thead>
+                        <tr class="bg-slate-800 text-white">
+                            <th class="text-left py-3 px-4 font-semibold">Criterion</th>
+                            <th class="text-center py-3 px-4 font-semibold w-20">Score</th>
+                            <th class="text-left py-3 px-4 font-semibold">Observation</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-100">
+                        <tr class="bg-white keep-together">
+                            <td class="py-3 px-4 font-semibold text-slate-700">1. Accomplishments</td>
+                            <td class="py-3 px-4 text-center"><span class="font-mono-num font-bold text-amber-500">5/10</span></td>
+                            <td class="py-3 px-4 text-slate-500">5 of 9 bullets describe an action with an outcome. No Frills B1 (50% onboarding) and B2 (waste reduction) pass. Epigral B3 (pharmaceutical-grade specs) is a marginal pass — it describes production to a standard. B6 (12% waste) is the strongest. B4 (permit issuance), B5 (participated), B7 (operated/monitored), B8 (walkthroughs/observed), B9 (data logging) all fail — duty descriptions.</td>
+                        </tr>
+                        <tr class="bg-slate-50 keep-together">
+                            <td class="py-3 px-4 font-semibold text-slate-700">2. Metrics / Quantification</td>
+                            <td class="py-3 px-4 text-center"><span class="font-mono-num font-bold text-emerald-600">7/10</span></td>
+                            <td class="py-3 px-4 text-slate-500">7 of 9 bullets have specific numbers. B1: 1000+/5+/50%. B2: 100+/10–15 units. B3: ≥99.9%/&lt;500 ppm/&lt;0.01%. B4: 30+/day. B5: 10+ modifications. B6: 12%/2 lines. B7: 2,760 MT/year. B8 and B9 have zero quantification. Unusually strong for a 1-year post-grad candidate.</td>
+                        </tr>
+                        <tr class="bg-white keep-together">
+                            <td class="py-3 px-4 font-semibold text-slate-700">3. How / Method Shown</td>
+                            <td class="py-3 px-4 text-center"><span class="font-mono-num font-bold text-amber-500">6/10</span></td>
+                            <td class="py-3 px-4 text-slate-500">6 of 9 name a specific method, technique, or equipment. B3: high-pressure furnace, vacuum distillation, azeotropic steam stripping. B5: PSSR, HIRA. B6: DMAIC. B7: SO2 vaporization, HADS reactors, MAHCL crystallization. B8: vaporizers, spargers, reactors, distillation columns — equipment named but framed as observation. B1/B2/B4/B9 do not name a specific method or tool.</td>
+                        </tr>
+                        <tr class="bg-slate-50 keep-together">
+                            <td class="py-3 px-4 font-semibold text-slate-700">4. Why / Business Impact</td>
+                            <td class="py-3 px-4 text-center"><span class="font-mono-num font-bold text-amber-500">5/10</span></td>
+                            <td class="py-3 px-4 text-slate-500">5 of 9 connect to an outcome. B1: customer throughput + onboarding efficiency. B2: waste reduction. B3: batch consistency for pharmaceutical applications. B6: 12% waste reduction. B7: high-value intermediates context. The safety bullets (B4, B5) and Deepak Nitrite observational bullets (B8, B9) state no outcome — what was preserved, prevented, or enabled is absent.</td>
+                        </tr>
+                        <tr class="bg-white keep-together">
+                            <td class="py-3 px-4 font-semibold text-slate-700">5. Personal Ownership</td>
+                            <td class="py-3 px-4 text-center"><span class="font-mono-num font-bold text-emerald-600">8/10</span></td>
+                            <td class="py-3 px-4 text-slate-500">8 of 9 bullets use first-person active ownership framing. B5 ("Actively participated") is the only exception — "participated" is a weak verb that signals presence rather than contribution. All other bullets — Managed, Monitored, Operated, Issued, Applied, Conducted, Performed — describe the candidate as the actor, not a supporting player.</td>
+                        </tr>
+                        <tr class="bg-slate-50 keep-together">
+                            <td class="py-3 px-4 font-semibold text-slate-700">6. Context / Stakes</td>
+                            <td class="py-3 px-4 text-center"><span class="font-mono-num font-bold text-amber-500">5/10</span></td>
+                            <td class="py-3 px-4 text-slate-500">5 of 9 provide meaningful scale or stakes context. B1 (1000+ customers/day, 4 departments), B2 (high-turnover perishable section), B3 (pharmaceutical-grade API synthesis downstream), B7 (2,760 MT/year facility), and B6 (2 production lines) all anchor their scale. B4/B5 list counts but don't frame consequences. B8/B9 have no context.</td>
+                        </tr>
+                        <tr class="bg-white keep-together">
+                            <td class="py-3 px-4 font-semibold text-slate-700">7. Action Verbs</td>
+                            <td class="py-3 px-4 text-center"><span class="font-mono-num font-bold text-emerald-600">8/10</span></td>
+                            <td class="py-3 px-4 text-slate-500">8 of 9 openers are strong and specific: Managed, Monitored, Operated, Issued, Applied, Operated, Conducted, Performed. "Performed" and "Conducted" are generic but not prohibited. B5 ("Actively participated") is the only failure — "participated" describes presence rather than action. No "Responsible for," "Helped," "Assisted," or "Supported" anywhere on the resume.</td>
+                        </tr>
+                        <tr class="bg-slate-50 keep-together">
+                            <td class="py-3 px-4 font-semibold text-slate-700">8. Bullet Quality Consistency</td>
+                            <td class="py-3 px-4 text-center"><span class="font-mono-num font-bold text-red-500">4/10</span></td>
+                            <td class="py-3 px-4 text-slate-500">Tier distribution: B6 (★★★), B1/B2/B3 (★★), B4/B5/B7/B8/B9 (★). 5 of 9 bullets are ★ level — duty descriptions with no accomplishment framing. The entire Deepak Nitrite section is ★. The spread from ★ to ★★★ across the same resume signals inconsistency in how different roles are framed. If the ★ bullets are rewritten, this score moves to 7–8.</td>
+                        </tr>
+                        <tr class="bg-slate-800 text-white keep-together">
+                            <td class="py-3 px-4 font-bold">OVERALL SCORE</td>
+                            <td class="py-3 px-4 text-center"><span class="font-mono-num font-bold text-amber-300 text-lg">60/100</span></td>
+                            <td class="py-3 px-4 text-slate-300">★★ — Strong Foundation, Clear Path to ★★★ &nbsp;|&nbsp; Raw: 48 × 1.25 = 60.0</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- GOOD NEWS BANNER -->
+        <div class="bg-emerald-800 text-white p-6">
+            <p class="font-bold text-base mb-2">The Good News</p>
+            <p class="text-sm opacity-90">You're at 60/100 with real process engineering experience, pharmaceutical-grade production context, and a Lean Six Sigma result on the resume. That's a meaningful foundation. The gap to ★★★ isn't a content problem — you have the right background and the right instincts around quantification. It's a framing problem: half the bullets describe what you did rather than what it produced. The three Deepak Nitrite bullets need outcomes. The safety bullets need results attached to their volume counts. None of this requires fabricating anything — you were there, things happened, you're the one who knows what they were. The distance between a 60 and a 75 is one honest pass through your internship records asking: what actually changed, improved, or got released because of my work? Write those answers into the bullets.</p>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- CTA SECTION                                                    -->
+    <!-- ============================================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 overflow-hidden page-break">
+        <div class="p-8">
+            <div class="flex items-center gap-3 mb-4">
+                <div class="w-8 h-8 rounded-lg bg-lime-500 text-white flex items-center justify-center text-sm font-bold">→</div>
+                <h2 class="text-2xl font-extrabold text-slate-900">Want Help Fixing All of This?</h2>
+            </div>
+
+            <p class="text-slate-600 mb-6">This audit covered your top 4 bullets. The other bullets on your resume have the same potential — and your background in pharmaceutical-grade process engineering is a differentiator that most candidates at this stage don't have. It just needs to be written like it is.</p>
+
+            <div class="bg-slate-50 rounded-xl p-6 border border-slate-200 mb-6">
+                <p class="font-bold text-slate-800 mb-3">The 21-Day Accelerator Program — 3 × 90-minute 1-on-1 sessions:</p>
+                <ul class="space-y-2 text-slate-700 text-sm">
+                    <li class="flex items-start gap-2">
+                        <span class="text-emerald-500 font-bold mt-0.5 flex-shrink-0">1.</span>
+                        <span><strong>Resume Rebuilt</strong> — every bullet rewritten with the Impact Bullet Builder formula: the Deepak Nitrite role transformed from observation logs into engineering contributions, your PTW and PSSR/HIRA safety work written with outcomes, and your DMAIC result used as the anchor standard for everything else</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-emerald-500 font-bold mt-0.5 flex-shrink-0">2.</span>
+                        <span><strong>Interview Stories Mastered</strong> — master story bank built so you can answer any behavioral question cold, with your 12% waste reduction project, ECH production quality work, and safety management experience ready as concrete engineering examples</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-emerald-500 font-bold mt-0.5 flex-shrink-0">3.</span>
+                        <span><strong>Live Mock Interview</strong> — full practice with direct feedback on delivery, story structure, and where your technical credibility is being left on the table</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-4 mb-6">
+                <p class="text-emerald-800 text-sm font-medium">You leave with: a rebuilt resume, master story bank, mock interview notes, all session recordings, and 40+ bonus materials.</p>
+            </div>
+
+            <a href="https://launchtolead.io/coaching?utm_source=audit&utm_medium=email&utm_campaign=free-audit&utm_content=devang-patel"
+               class="inline-block bg-emerald-700 hover:bg-emerald-600 text-white font-bold px-8 py-4 rounded-xl text-lg transition-colors">
+                Book a Career Launch Call →
+            </a>
+            <p class="text-slate-400 text-xs mt-3">This call is where we talk through your situation and where you want to go — no pressure, no pitch. Just a real conversation about what's holding your job search back and what would move the needle fastest.</p>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- FOOTER                                                         -->
+    <!-- ============================================================ -->
+    <footer class="text-center py-6 text-slate-400 text-xs">
+        Free audit prepared by LaunchToLead | Impact Bullet Builder Framework<br>
+        <a href="https://launchtolead.io/free" class="text-emerald-600 hover:underline">launchtolead.io/free</a>
+    </footer>
+
+</div>
+</body>
+</html>
