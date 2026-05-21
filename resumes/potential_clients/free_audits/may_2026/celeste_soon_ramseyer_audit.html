@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Resume Audit — Celeste Soon Ramseyer | LaunchToLead</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .font-mono-num { font-family: 'Space Grotesk', monospace; }
+
+        #download-btn {
+            position: fixed; top: 20px; right: 20px; z-index: 9999;
+            background: linear-gradient(135deg, #a3e635, #14b8a6); color: #052e16;
+            font-family: 'Plus Jakarta Sans', sans-serif; font-size: 16px; font-weight: 800;
+            padding: 14px 32px; border: none; border-radius: 50px; cursor: pointer;
+            box-shadow: 0 8px 30px rgba(163,230,53,0.3);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        #download-btn:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(163,230,53,0.4); }
+
+        @media print {
+            @page { size: letter; margin: 0.5in 0.65in; }
+            body {
+                background: white !important; color: #1e293b !important;
+                padding: 0 !important; margin: 0 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            #download-btn { display: none !important; }
+            .no-print { display: none !important; }
+            .page-break { break-before: page; }
+            .keep-together { break-inside: avoid; }
+            .space-y-4 > div, .space-y-6 > div, .grid > div { break-inside: avoid; }
+            ul.space-y-3 > li { break-inside: avoid; }
+            tbody tr { break-inside: avoid; }
+            .rounded-xl.overflow-hidden { break-inside: avoid; }
+            h2, h3, h4 { break-after: avoid; }
+            section { box-shadow: none !important; border: 1px solid #e2e8f0 !important; }
+            .max-w-4xl { max-width: 100% !important; }
+            .bg-emerald-900, .bg-emerald-800, .bg-red-700 {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-700">
+
+<button id="download-btn" onclick="window.print()">Download PDF</button>
+
+<!-- ============================================================ -->
+<!-- HEADER                                                        -->
+<!-- ============================================================ -->
+<header class="bg-emerald-900 text-white py-6 px-6">
+    <div class="max-w-4xl mx-auto">
+        <div class="flex items-center gap-3 mb-4">
+            <div class="bg-white text-emerald-900 w-10 h-10 rounded-xl flex items-center justify-center font-bold text-sm shadow">L²</div>
+            <span class="text-xl font-bold">Launch<span class="font-light text-lime-300">ToLead</span></span>
+        </div>
+        <div class="flex items-center gap-2 mb-2">
+            <span class="bg-lime-400/20 text-lime-300 text-xs font-bold px-3 py-1 rounded-full">FREE AUDIT</span>
+        </div>
+        <h1 class="text-3xl font-extrabold mb-1">Resume Audit Report</h1>
+        <p class="text-emerald-200">Celeste Soon Ramseyer — B.S. Aerospace Engineering, Cal State Long Beach</p>
+        <p class="text-emerald-400/60 text-sm mt-1">Scored against the Impact Bullet Builder framework</p>
+    </div>
+</header>
+
+<div class="max-w-4xl mx-auto px-6 py-10 space-y-10">
+
+    <!-- ============================================================ -->
+    <!-- SECTION 1: OVERALL SCORE                                      -->
+    <!-- ============================================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 overflow-hidden">
+        <div class="p-8">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="w-8 h-8 rounded-lg bg-emerald-600 text-white flex items-center justify-center text-sm font-bold">01</div>
+                <h2 class="text-2xl font-extrabold text-slate-900">Overall Score</h2>
+            </div>
+
+            <div class="flex items-center gap-8 mb-6">
+                <div class="text-center">
+                    <p class="font-mono-num text-6xl font-extrabold text-emerald-600">66</p>
+                    <p class="text-slate-500 text-sm">out of 100</p>
+                </div>
+                <div class="flex-1">
+                    <div class="h-4 bg-slate-100 rounded-full overflow-hidden mb-2">
+                        <div class="h-full rounded-full" style="width: 66%; background: linear-gradient(to right, #059669, #10b981);"></div>
+                    </div>
+                    <div class="flex justify-between text-xs text-slate-400">
+                        <span>10–30 ★ What Was Asked</span>
+                        <span>31–60 ★★ Above &amp; Beyond</span>
+                        <span>61–100 ★★★ Impact</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4 IBB formula sub-scores -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-4 text-center">
+                    <p class="font-mono-num text-2xl font-bold text-emerald-600">9/10</p>
+                    <p class="text-emerald-700 text-xs font-semibold mt-1">Accomplishments</p>
+                    <p class="text-emerald-500 text-xs mt-0.5">7 of 8 bullets describe outcomes, not duties</p>
+                </div>
+                <div class="bg-red-50 border border-red-200 rounded-xl p-4 text-center">
+                    <p class="font-mono-num text-2xl font-bold text-red-500">2/10</p>
+                    <p class="text-red-700 text-xs font-semibold mt-1">Metrics</p>
+                    <p class="text-red-500 text-xs mt-0.5">Only 1 of 8 bullets has specific numbers</p>
+                </div>
+                <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-4 text-center">
+                    <p class="font-mono-num text-2xl font-bold text-emerald-600">9/10</p>
+                    <p class="text-emerald-700 text-xs font-semibold mt-1">How / Method</p>
+                    <p class="text-emerald-500 text-xs mt-0.5">Tools named in 7 of 8 bullets — exceptional</p>
+                </div>
+                <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-4 text-center">
+                    <p class="font-mono-num text-2xl font-bold text-emerald-600">7/10</p>
+                    <p class="text-emerald-700 text-xs font-semibold mt-1">Why / Impact</p>
+                    <p class="text-emerald-500 text-xs mt-0.5">Present in 5 of 8 bullets — solid foundation</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- VERDICT BANNER -->
+        <div class="bg-emerald-800 text-white p-6">
+            <p class="font-bold text-lg">★★★ — You Spread the Impact Far and Wide. One Metric Pass Away From a Standout Score.</p>
+            <p class="text-sm opacity-80 mt-1">For a December 2025 grad with one short industry engagement, this is a genuinely strong result. You scored 66/100 — solidly in ★★★ territory — on the strength of exceptional tool breadth (Python, NumPy, XFOIL, MATLAB, SolidWorks, FDM/SLA), near-perfect action verbs, and one completely outstanding bullet: the Python performance model for the rocket motor is a textbook ★★★ bullet with 5 real engineering numbers and a result that beat specification by 14.3%. The gap to a higher score is almost entirely one dimension: 7 of your 8 bullets have no specific number, and your context/stakes framing is thin across the board. Adding quantification to your top 4 bullets — even academic-level numbers like dataset sizes, error margins, or timeline savings — would push this into the 80–85 range.</p>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SECTION 2: KEY ISSUES IDENTIFIED (4 issues)                   -->
+    <!-- ============================================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 p-8 page-break">
+        <div class="flex items-center gap-3 mb-6">
+            <div class="w-8 h-8 rounded-lg bg-red-600 text-white flex items-center justify-center text-sm font-bold">02</div>
+            <h2 class="text-2xl font-extrabold text-slate-900">Key Issues Identified</h2>
+        </div>
+
+        <div class="space-y-4">
+
+            <!-- ISSUE 1 -->
+            <div class="flex items-start gap-4 p-5 bg-red-50 rounded-xl border border-red-200 keep-together">
+                <div class="w-8 h-8 rounded-full bg-red-600 text-white flex items-center justify-center font-bold text-sm flex-shrink-0">1</div>
+                <div>
+                    <p class="font-bold text-red-900">7 of 8 bullets have no specific number — one exceptional bullet is doing all the quantification work</p>
+                    <p class="text-red-700 text-sm mt-1">Your Python performance model bullet is a masterclass in quantified engineering results: 13.8 kN average thrust, 60,425 N·s total impulse, 0.71 s ignition, 10,450 m apogee, +14.3% beyond specification. That bullet alone is why your Metrics score isn't a 1. But every other bullet on the resume has zero numbers, including your entire work experience section, your UQ research, your water channel research, and both personal projects. For academic candidates, the IBB framework accepts research-appropriate metrics: how many wind tunnel test cases did your pipeline automate? What was the uncertainty range before vs. after your methodology? How many consoles have you repaired? What Reynolds number range did you confirm? You have the data — it just isn't on the resume.</p>
+                </div>
+            </div>
+
+            <!-- ISSUE 2 -->
+            <div class="flex items-start gap-4 p-5 bg-red-50 rounded-xl border border-red-200 keep-together">
+                <div class="w-8 h-8 rounded-full bg-red-600 text-white flex items-center justify-center font-bold text-sm flex-shrink-0">2</div>
+                <div>
+                    <p class="font-bold text-red-900">Scale and scope are invisible on 6 of 8 bullets — the work is impressive but a hiring manager can't gauge it</p>
+                    <p class="text-red-700 text-sm mt-1">Context framing asks: how big was this? What was at stake? Your Mk-41 VLS-compatible framing in the rocket motor bullet plants a clear flag — that's a real Navy weapon system standard. But everywhere else, the scale is unclear. At the NDA technology company, how many assembly procedures did you translate? How many factory floor workers depended on that documentation? For the airfoil research: how many external submitters were you providing results to? For the water channel: what was the Reynolds number range you validated? Scope statements don't require exact proprietary numbers — even approximate figures or relative context ("supporting [X] active external aerodynamics clients," "Re range of [X] to [Y]") make the work land with a reader who doesn't know your lab.</p>
+                </div>
+            </div>
+
+            <!-- ISSUE 3 -->
+            <div class="flex items-start gap-4 p-5 bg-amber-50 rounded-xl border border-amber-200 keep-together">
+                <div class="w-8 h-8 rounded-full bg-amber-500 text-white flex items-center justify-center font-bold text-sm flex-shrink-0">3</div>
+                <div>
+                    <p class="font-bold text-amber-900">"Collaborated with a PhD researcher" undersells your actual technical contribution</p>
+                    <p class="text-amber-700 text-sm mt-1">The water channel bullet describes real, hands-on analytical work: you set up flow visualization experiments, calculated Reynolds numbers in MATLAB, and validated the experimental setup. That's not assisting — that's contributing core technical labor to a research project. But "Collaborated with a PhD researcher" frames you as a supporting player on someone else's study. The rewrite is simple: lead with the technical action you personally performed. "Calculated Reynolds numbers and confirmed laminar flow agreement in MATLAB" is what you did — the PhD researcher context matters less than the fact that you ran the analysis and your results validated the setup. Changing the opener alone moves this bullet from ★★ to ★★★ territory once you add a number.</p>
+                </div>
+            </div>
+
+            <!-- ISSUE 4 -->
+            <div class="flex items-start gap-4 p-5 bg-amber-50 rounded-xl border border-amber-200 keep-together">
+                <div class="w-8 h-8 rounded-full bg-amber-500 text-white flex items-center justify-center font-bold text-sm flex-shrink-0">4</div>
+                <div>
+                    <p class="font-bold text-amber-900">Personal project bullets are present tense and describe activities rather than outcomes</p>
+                    <p class="text-amber-700 text-sm mt-1">"Perform SMD component replacement and trace-level PCB rework on handheld gaming consoles" — present tense framing ("Perform," "Execute") tells a hiring manager this is something you do rather than something you've accomplished. There's no outcome: how many consoles have you repaired? What was the success rate? What's the most complex repair you've done? Similarly, the modular synthesizer bullet names the tools (SolidWorks/Fusion360, FDM, SLA) but doesn't say whether you finished it, how many modules it has, or what it does. Personal projects exist on an engineering resume to show initiative and technical range — they land much harder when they read like completed technical work, not an ongoing hobby description.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SECTION 3: TOP BULLETS — REWRITTEN (4 bullets)               -->
+    <!-- ============================================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 p-8 page-break">
+        <div class="flex items-center gap-3 mb-6">
+            <div class="w-8 h-8 rounded-lg bg-emerald-600 text-white flex items-center justify-center text-sm font-bold">03</div>
+            <h2 class="text-2xl font-extrabold text-slate-900">Top Bullets — Rewritten</h2>
+        </div>
+
+        <p class="text-slate-500 text-sm mb-2">The 4 bullets with the highest improvement potential, rewritten using the Impact Bullet Builder formula (Accomplishment + Metric + How + Why).</p>
+        <p class="text-slate-400 text-xs mb-6 italic">Brackets like <code class="bg-slate-100 px-1 rounded text-xs">[X]</code> are placeholders — only you know the real numbers. Fill them in with your best honest estimate. A conservative guess beats a blank every time.</p>
+
+        <div class="space-y-6">
+
+            <!-- BULLET 1 -->
+            <div class="keep-together">
+                <p class="text-xs font-bold text-slate-400 uppercase tracking-wide mb-2">Project — Airfoil Uncertainty & Error Analysis Research, CSULB</p>
+                <div class="bg-red-50 border border-red-200 rounded-xl p-4 mb-2">
+                    <p class="text-xs font-bold text-red-500 mb-1">BEFORE</p>
+                    <p class="text-red-800 text-sm">Developed an uncertainty quantification methodology integrating XFOIL simulations with wind tunnel testing to provide calibrated results to external submitters. Engineered a Python/NumPy post-processing pipeline to automate the analysis of experimental wind tunnel data</p>
+                </div>
+                <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-4">
+                    <p class="text-xs font-bold text-emerald-600 mb-1">AFTER (★★★ Level)</p>
+                    <p class="text-emerald-900 text-sm">Developed an uncertainty quantification methodology integrating XFOIL simulations with wind tunnel testing — reducing result uncertainty from ±[X]% to ±[Y]% and delivering calibrated aerodynamic data to [Z]+ external submitters; built a Python/NumPy post-processing pipeline that automated [N]+ experimental datasets, cutting analysis time from [A] hours to [B]</p>
+                    <p class="text-xs text-emerald-600 mt-2">Added: uncertainty reduction range (metric), submitter count (context + metric), dataset volume automated (metric), time saved (why + metric)</p>
+                </div>
+            </div>
+
+            <!-- BULLET 2 -->
+            <div class="keep-together">
+                <p class="text-xs font-bold text-slate-400 uppercase tracking-wide mb-2">Project — Water Channel Laminar Flow Research, CSULB</p>
+                <div class="bg-red-50 border border-red-200 rounded-xl p-4 mb-2">
+                    <p class="text-xs font-bold text-red-500 mb-1">BEFORE</p>
+                    <p class="text-red-800 text-sm">Collaborated with a PhD researcher with water channel flow visualization experiments using green laser illumination in a pump-driven flow loop; calculated Reynolds numbers in MATLAB and confirmed agreement with measured data, validating the experimental setup for laminar flow studies</p>
+                </div>
+                <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-4">
+                    <p class="text-xs font-bold text-emerald-600 mb-1">AFTER (★★★ Level)</p>
+                    <p class="text-emerald-900 text-sm">Conducted laminar flow visualization experiments using green laser illumination in a pump-driven water channel — calculated Reynolds numbers in MATLAB across a Re range of [X] to [Y], confirming agreement with measured data within [Z]% tolerance and validating the experimental setup for a PhD-level research program</p>
+                    <p class="text-xs text-emerald-600 mt-2">Opener changed to own the work; added: Re range (metric), agreement tolerance (metric), PhD research context (stakes/why)</p>
+                </div>
+            </div>
+
+            <!-- BULLET 3 -->
+            <div class="keep-together">
+                <p class="text-xs font-bold text-slate-400 uppercase tracking-wide mb-2">Personal Project — Handheld Console Repair & Modular Synthesizer</p>
+                <div class="bg-red-50 border border-red-200 rounded-xl p-4 mb-2">
+                    <p class="text-xs font-bold text-red-500 mb-1">BEFORE</p>
+                    <p class="text-red-800 text-sm">Perform SMD component replacement and trace-level PCB rework on handheld gaming consoles</p>
+                </div>
+                <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-4">
+                    <p class="text-xs font-bold text-emerald-600 mb-1">AFTER (★★★ Level)</p>
+                    <p class="text-emerald-900 text-sm">Repaired [X]+ handheld gaming consoles through SMD component replacement and trace-level PCB rework — diagnosing faults to the component level with a [Y]% success rate, developing hands-on microelectronics proficiency directly applicable to hardware-heavy engineering roles</p>
+                    <p class="text-xs text-emerald-600 mt-2">Past tense; added: console count (metric), success rate (metric), explicit career relevance (why)</p>
+                </div>
+            </div>
+
+            <!-- BULLET 4 -->
+            <div class="keep-together">
+                <p class="text-xs font-bold text-slate-400 uppercase tracking-wide mb-2">Work Experience — Manufacturing Process Engineer (Contract), NDA Technology Company</p>
+                <div class="bg-red-50 border border-red-200 rounded-xl p-4 mb-2">
+                    <p class="text-xs font-bold text-red-500 mb-1">BEFORE</p>
+                    <p class="text-red-800 text-sm">Standardized and digitized work instruction documentation, adapting process workflows from the original facility to the new deployment</p>
+                </div>
+                <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-4">
+                    <p class="text-xs font-bold text-emerald-600 mb-1">AFTER (★★★ Level)</p>
+                    <p class="text-emerald-900 text-sm">Standardized and digitized [X] manufacturing work instructions in [tool, e.g., Confluence/SharePoint] — adapting process workflows from the source facility to a new deployment site and reducing documentation ambiguity for [Y]+ factory floor staff during a quality-critical production ramp</p>
+                    <p class="text-xs text-emerald-600 mt-2">Added: document count (metric), tool named (how), staff affected (context + metric), production ramp framing (stakes)</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SECTION 4: BEFORE & AFTER — BEST EXAMPLES (2)                 -->
+    <!-- ============================================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 p-8 page-break">
+        <div class="flex items-center gap-3 mb-6">
+            <div class="w-8 h-8 rounded-lg bg-violet-600 text-white flex items-center justify-center text-sm font-bold">04</div>
+            <h2 class="text-2xl font-extrabold text-slate-900">Before &amp; After — Biggest Tier Jumps</h2>
+        </div>
+
+        <div class="space-y-8">
+
+            <!-- EXAMPLE 1 -->
+            <div class="keep-together">
+                <p class="text-xs font-bold text-slate-400 uppercase tracking-wide mb-3">Personal Project — Handheld Console Repair</p>
+                <div class="bg-red-50 border-l-4 border-red-500 rounded-xl p-5 mb-3">
+                    <p class="text-xs font-bold text-red-500 mb-2">BEFORE (★ Level)</p>
+                    <p class="text-red-800 text-sm italic">"Perform SMD component replacement and trace-level PCB rework on handheld gaming consoles"</p>
+                    <p class="text-red-600 text-xs mt-2">Fails: present tense activity description, no count (how many?), no outcome (did they work?), no context (what's the difficulty of trace-level rework?), no career-relevance why. Hiring manager reads: "has a hobby."</p>
+                </div>
+                <div class="bg-emerald-50 border-l-4 border-emerald-500 rounded-xl p-5">
+                    <p class="text-xs font-bold text-emerald-600 mb-2">AFTER (★★★ Level)</p>
+                    <p class="text-emerald-900 text-sm italic">"Repaired [X]+ handheld gaming consoles through SMD component replacement and trace-level PCB rework — diagnosing faults to the component level with a [Y]% success rate, building hands-on microelectronics proficiency directly applicable to hardware-intensive engineering environments"</p>
+                    <p class="text-emerald-600 text-xs mt-2">Added: past tense + count (Accomplishment + Metric), success rate (Metric), microelectronics relevance (Why). All 4 IBB components present.</p>
+                </div>
+            </div>
+
+            <!-- EXAMPLE 2 -->
+            <div class="keep-together">
+                <p class="text-xs font-bold text-slate-400 uppercase tracking-wide mb-3">Work Experience — Manufacturing Process Engineer (Contract)</p>
+                <div class="bg-red-50 border-l-4 border-red-500 rounded-xl p-5 mb-3">
+                    <p class="text-xs font-bold text-red-500 mb-2">BEFORE (★ Level)</p>
+                    <p class="text-red-800 text-sm italic">"Standardized and digitized work instruction documentation, adapting process workflows from the original facility to the new deployment"</p>
+                    <p class="text-red-600 text-xs mt-2">Fails: no tool named, no scale (how many documents?), no business outcome stated ("new deployment" tells us nothing about what was at stake). Could describe any documentation task at any company.</p>
+                </div>
+                <div class="bg-emerald-50 border-l-4 border-emerald-500 rounded-xl p-5">
+                    <p class="text-xs font-bold text-emerald-600 mb-2">AFTER (★★★ Level)</p>
+                    <p class="text-emerald-900 text-sm italic">"Standardized and digitized [X] manufacturing work instructions — adapting process workflows to a new deployment site and reducing documentation ambiguity for [Y]+ factory floor staff during a quality-critical production ramp, directly supporting defect-free ramp-up"</p>
+                    <p class="text-emerald-600 text-xs mt-2">Added: document count (Metric), staff impacted (Context + Metric), production ramp stakes (Why). All 4 IBB components present.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SECTION 5: TOP ACTION ITEMS (4)                               -->
+    <!-- ============================================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 p-8 page-break">
+        <div class="flex items-center gap-3 mb-6">
+            <div class="w-8 h-8 rounded-lg bg-blue-600 text-white flex items-center justify-center text-sm font-bold">05</div>
+            <h2 class="text-2xl font-extrabold text-slate-900">Top Action Items</h2>
+        </div>
+
+        <div class="space-y-4">
+
+            <div class="flex items-start gap-4 p-5 bg-blue-50 rounded-xl border border-blue-200 keep-together">
+                <div class="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold text-sm flex-shrink-0">1</div>
+                <div>
+                    <p class="font-bold text-blue-900">Add numbers to your top 4 research/project bullets — your rocket motor bullet proves you know how to do this</p>
+                    <p class="text-blue-700 text-sm mt-1">The Python performance model bullet has 5 specific engineering numbers and beats specification by 14.3% — it is the strongest single bullet on this resume. Apply the same logic to your UQ research, water channel work, and FSAE capsule. For UQ: how many test cases or external submitters? What was the uncertainty improvement? For water channel: what Reynolds number range, what was the measured-vs-calculated agreement within? These numbers exist from your lab notebooks or reports. Putting them on your resume closes the only major gap between a 66 and an 85+.</p>
+                </div>
+            </div>
+
+            <div class="flex items-start gap-4 p-5 bg-blue-50 rounded-xl border border-blue-200 keep-together">
+                <div class="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold text-sm flex-shrink-0">2</div>
+                <div>
+                    <p class="font-bold text-blue-900">Rewrite the water channel bullet — own the MATLAB analysis, don't frame yourself as the PhD's assistant</p>
+                    <p class="text-blue-700 text-sm mt-1">The technical work you did in that research (reynolds number calculation, experimental validation, data agreement analysis) is exactly what engineering employers want to see. Starting with "Collaborated with a PhD researcher" buries your contribution under someone else's credential. Start with what you personally ran: "Conducted laminar flow visualization experiments and calculated Reynolds numbers in MATLAB..." — then add the PhD research program as context at the end, not at the start. This single change moves the opener from a support framing to a technical ownership framing.</p>
+                </div>
+            </div>
+
+            <div class="flex items-start gap-4 p-5 bg-blue-50 rounded-xl border border-blue-200 keep-together">
+                <div class="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold text-sm flex-shrink-0">3</div>
+                <div>
+                    <p class="font-bold text-blue-900">Convert your personal project bullets from present-tense activity to past-tense accomplishment</p>
+                    <p class="text-blue-700 text-sm mt-1">"Perform" and "Execute" frame your personal projects as ongoing habits rather than completed technical work. Every resume bullet should be past tense and describe something you did, not something you do. Beyond the tense fix: both personal project bullets need an outcome. For the consoles: how many have you repaired? What's your completion rate? For the synthesizer: is it working? How many modules? What voltage rails? Treating your personal projects with the same rigor as your academic work signals to technical interviewers that you approach your own engineering with professional discipline.</p>
+                </div>
+            </div>
+
+            <div class="flex items-start gap-4 p-5 bg-blue-50 rounded-xl border border-blue-200 keep-together">
+                <div class="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold text-sm flex-shrink-0">4</div>
+                <div>
+                    <p class="font-bold text-blue-900">Add scale to your NDA work experience bullet — even rough estimates are credible and expected</p>
+                    <p class="text-blue-700 text-sm mt-1">The NDA constraint means you can't name the company, but it doesn't prevent you from describing scale. "Translated technical work instructions... for the China-side manufacturing team" — how many staff on that team? How many procedure documents did you translate or digitize? Even approximate figures ("20+ factory floor staff," "standardized [X] process documents") anchor the scope of your contribution. The translation and documentation work you did has real business stakes (misunderstood QC instructions in a manufacturing environment can cause defects or recalls) — the bullet should say so, even obliquely.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SECTION 6: WHAT'S ALREADY WORKING (5)                         -->
+    <!-- ============================================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 p-8 page-break">
+        <div class="flex items-center gap-3 mb-6">
+            <div class="w-8 h-8 rounded-lg bg-emerald-600 text-white flex items-center justify-center text-sm font-bold">06</div>
+            <h2 class="text-2xl font-extrabold text-slate-900">What's Already Working</h2>
+        </div>
+
+        <ul class="space-y-4">
+
+            <li class="flex items-start gap-4 p-4 bg-emerald-50 rounded-xl border border-emerald-200 keep-together">
+                <div class="w-6 h-6 rounded-full bg-emerald-500 text-white flex items-center justify-center font-bold text-xs flex-shrink-0 mt-0.5">✓</div>
+                <div>
+                    <p class="font-bold text-emerald-900">Your Python performance model bullet is genuinely ★★★ — this is the kind of bullet engineers remember</p>
+                    <p class="text-emerald-700 text-sm mt-0.5">"Engineered Python performance model that validated 13.8 kN average thrust and 60,425 N·s total impulse, achieving 0.71 s ignition and 10,450 m apogee (+14.3% beyond specification)" — five engineering numbers, a named tool, a clear accomplishment, and a result that beat the specification. This is what every other bullet on the resume is trying to be. It demonstrates that you understand how to quantify your work; the task is applying that same instinct to the remaining 7 bullets.</p>
+                </div>
+            </li>
+
+            <li class="flex items-start gap-4 p-4 bg-emerald-50 rounded-xl border border-emerald-200 keep-together">
+                <div class="w-6 h-6 rounded-full bg-emerald-500 text-white flex items-center justify-center font-bold text-xs flex-shrink-0 mt-0.5">✓</div>
+                <div>
+                    <p class="font-bold text-emerald-900">Tool breadth is exceptional — and specific tools are named inside the bullets, not just in a skills list</p>
+                    <p class="text-emerald-700 text-sm mt-0.5">Python, NumPy, XFOIL, MATLAB, green laser illumination, SolidWorks, Fusion360, FDM, SLA 3D printing, SMD soldering, PCB trace-level rework — and most of these appear inside accomplishment bullets, not just in the skills section. This is exactly the right approach. A skill listed in a section is a claim. A skill named inside an accomplishment ("Engineered Python performance model," "calculated Reynolds numbers in MATLAB") is proof. You're already doing this correctly across most of the resume.</p>
+                </div>
+            </li>
+
+            <li class="flex items-start gap-4 p-4 bg-emerald-50 rounded-xl border border-emerald-200 keep-together">
+                <div class="w-6 h-6 rounded-full bg-emerald-500 text-white flex items-center justify-center font-bold text-xs flex-shrink-0 mt-0.5">✓</div>
+                <div>
+                    <p class="font-bold text-emerald-900">The Mk-41 VLS context immediately signals defense/aerospace industry relevance</p>
+                    <p class="text-emerald-700 text-sm mt-0.5">Naming the Mk-41 Vertical Launching System compatibility standard tells any aerospace or defense engineering recruiter exactly what this project was targeting — a real Navy weapon system interface. This is far stronger than "naval missile project" or "defense-inspired capstone." It shows you understand how real engineering systems are classified and specified, and it differentiates your senior project from the generic capstone that every other aerospace grad is listing. Keep this specific reference; it is doing real work.</p>
+                </div>
+            </li>
+
+            <li class="flex items-start gap-4 p-4 bg-emerald-50 rounded-xl border border-emerald-200 keep-together">
+                <div class="w-6 h-6 rounded-full bg-emerald-500 text-white flex items-center justify-center font-bold text-xs flex-shrink-0 mt-0.5">✓</div>
+                <div>
+                    <p class="font-bold text-emerald-900">Action verbs are perfect — all 8 bullets start with strong, specific engineering verbs</p>
+                    <p class="text-emerald-700 text-sm mt-0.5">Directed, Engineered, Developed, Collaborated, Performed, Executed, Translated, Standardized — not a single "Responsible for," "Duties included," or "Helped with" in sight. This is a 10/10 criterion, and it reflects a candidate who understands that resumes should describe what you did, not what your role involved. The verb quality sets up every bullet for success; the remaining work is adding the data to back them up.</p>
+                </div>
+            </li>
+
+            <li class="flex items-start gap-4 p-4 bg-emerald-50 rounded-xl border border-emerald-200 keep-together">
+                <div class="w-6 h-6 rounded-full bg-emerald-500 text-white flex items-center justify-center font-bold text-xs flex-shrink-0 mt-0.5">✓</div>
+                <div>
+                    <p class="font-bold text-emerald-900">Personal projects show a self-directed engineer who builds things outside of coursework</p>
+                    <p class="text-emerald-700 text-sm mt-0.5">SMD and trace-level PCB rework is genuinely skilled microelectronics work — the kind of hands-on proficiency that aerospace and defense hardware teams actively want and rarely find in new grads. The modular synthesizer project demonstrates that you'll engage with complex, multi-month technical builds independently. These aren't filler entries; they're differentiated proof points. They just need to be written as if you're an engineer describing a technical project, which (with some quantification and past-tense framing) they easily could be.</p>
+                </div>
+            </li>
+
+        </ul>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SECTION 7: FULL SCORECARD                                      -->
+    <!-- ============================================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 overflow-hidden page-break">
+        <div class="p-8">
+            <div class="flex items-center gap-3 mb-4">
+                <div class="w-8 h-8 rounded-lg bg-slate-600 text-white flex items-center justify-center text-sm font-bold">07</div>
+                <h2 class="text-2xl font-extrabold text-slate-900">Full Scorecard</h2>
+            </div>
+
+            <p class="text-slate-500 text-xs mb-5">Scored against 8 in-scope bullets (2 work experience + 6 project bullets). Graduate track rules applied per IBB protocol: academic metrics, research outcomes, and project results all count as passing quantification.</p>
+
+            <div class="rounded-xl overflow-hidden border border-slate-200">
+                <table class="w-full text-sm">
+                    <thead>
+                        <tr class="bg-slate-800 text-white">
+                            <th class="text-left py-3 px-4 font-semibold">Criterion</th>
+                            <th class="text-center py-3 px-4 font-semibold w-20">Score</th>
+                            <th class="text-left py-3 px-4 font-semibold">Observation</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-100">
+                        <tr class="bg-white keep-together">
+                            <td class="py-3 px-4 font-semibold text-slate-700">1. Accomplishments</td>
+                            <td class="py-3 px-4 text-center"><span class="font-mono-num font-bold text-emerald-600">9/10</span></td>
+                            <td class="py-3 px-4 text-slate-500">7 of 8 bullets describe an action with an outcome or deliverable. Only the SMD console repair bullet fails — "Perform... replacement" describes an ongoing activity with no stated result. All project and work experience bullets describe something you built, developed, or validated.</td>
+                        </tr>
+                        <tr class="bg-slate-50 keep-together">
+                            <td class="py-3 px-4 font-semibold text-slate-700">2. Metrics / Quantification</td>
+                            <td class="py-3 px-4 text-center"><span class="font-mono-num font-bold text-red-500">2/10</span></td>
+                            <td class="py-3 px-4 text-slate-500">1 of 8 bullets has specific numbers (the rocket motor Python model — 13.8 kN, 60,425 N·s, 0.71 s, 10,450 m, +14.3%). All other bullets have no quantification at all. Even using graduate-track proxies (sample sizes, error ranges, dataset counts), 7 bullets still fail. Highest-priority fix on the resume.</td>
+                        </tr>
+                        <tr class="bg-white keep-together">
+                            <td class="py-3 px-4 font-semibold text-slate-700">3. How / Method Shown</td>
+                            <td class="py-3 px-4 text-center"><span class="font-mono-num font-bold text-emerald-600">9/10</span></td>
+                            <td class="py-3 px-4 text-slate-500">7 of 8 bullets name a specific tool, technique, or method: trade studies + propellant selection (B3), Python (B4), XFOIL + Python/NumPy (B5), green laser + MATLAB (B6), SMD + PCB rework (B7), SolidWorks/Fusion360 + FDM/SLA (B8), and EN/ZH translation (B1). Only the "Standardized and digitized" documentation bullet (B2) fails — no tool named.</td>
+                        </tr>
+                        <tr class="bg-slate-50 keep-together">
+                            <td class="py-3 px-4 font-semibold text-slate-700">4. Why / Business Impact</td>
+                            <td class="py-3 px-4 text-center"><span class="font-mono-num font-bold text-emerald-600">7/10</span></td>
+                            <td class="py-3 px-4 text-slate-500">5 of 8 pass. Strong: "ensuring accurate implementation... in quality-critical assembly steps" (B1), "for safety and cost" (B3), "+14.3% beyond specification" (B4), "provide calibrated results to external submitters" (B5), "validating experimental setup for laminar flow studies" (B6). Fails: B2 (no impact stated), B7 (no outcome), B8 (no purpose stated).</td>
+                        </tr>
+                        <tr class="bg-white keep-together">
+                            <td class="py-3 px-4 font-semibold text-slate-700">5. Personal Ownership</td>
+                            <td class="py-3 px-4 text-center"><span class="font-mono-num font-bold text-emerald-600">9/10</span></td>
+                            <td class="py-3 px-4 text-slate-500">7 of 8 bullets are first-person active. Only B6 fails: "Collaborated with a PhD researcher" frames the work as a supporting role. All other bullets — Directed, Engineered, Developed, Translated, Standardized, Perform, Execute — read as personal ownership statements.</td>
+                        </tr>
+                        <tr class="bg-slate-50 keep-together">
+                            <td class="py-3 px-4 font-semibold text-slate-700">6. Context / Stakes</td>
+                            <td class="py-3 px-4 text-center"><span class="font-mono-num font-bold text-amber-500">3/10</span></td>
+                            <td class="py-3 px-4 text-slate-500">2 of 8 bullets provide scale or stakes framing. B3 passes with "Mk-41 VLS-compatible" (a real system standard with defense implications). B4 passes with "+14.3% beyond specification" (the specification comparison is inherently a stakes statement). All other bullets describe work without situating it in scope, team size, dataset scale, or before/after comparison.</td>
+                        </tr>
+                        <tr class="bg-white keep-together">
+                            <td class="py-3 px-4 font-semibold text-slate-700">7. Action Verbs</td>
+                            <td class="py-3 px-4 text-center"><span class="font-mono-num font-bold text-emerald-600">10/10</span></td>
+                            <td class="py-3 px-4 text-slate-500">All 8 bullets open with a strong verb: Translated, Standardized, Directed, Engineered, Developed, Collaborated, Perform, Execute. None of the prohibited openers ("Responsible for," "Helped with," "Supported," etc.) appear anywhere on the resume. Note: B7 and B8 use present tense ("Perform," "Execute") — not a scoring failure per the criterion definition, but a style issue to fix.</td>
+                        </tr>
+                        <tr class="bg-slate-50 keep-together">
+                            <td class="py-3 px-4 font-semibold text-slate-700">8. Bullet Quality Consistency</td>
+                            <td class="py-3 px-4 text-center"><span class="font-mono-num font-bold text-amber-500">4/10</span></td>
+                            <td class="py-3 px-4 text-slate-500">Tier distribution: B4 (★★★), B1/B3/B5/B6/B8 (★★), B2/B7 (★). 2-tier spread (★ to ★★★) present: 3–5 score range. Positioned at 4 given the concentration in ★★ and the single ★★★ anchor. If the 2 ★ bullets are replaced/upgraded, this score would reach 6–7.</td>
+                        </tr>
+                        <tr class="bg-slate-800 text-white keep-together">
+                            <td class="py-3 px-4 font-bold">OVERALL SCORE</td>
+                            <td class="py-3 px-4 text-center"><span class="font-mono-num font-bold text-emerald-300 text-lg">66/100</span></td>
+                            <td class="py-3 px-4 text-slate-300">★★★ — You Spread the Impact Far and Wide &nbsp;|&nbsp; Sum: 53 × 1.25 = 66.25 → 66</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- THE GOOD NEWS BANNER -->
+        <div class="bg-emerald-800 text-white p-6">
+            <p class="font-bold text-base mb-2">The Good News</p>
+            <p class="text-sm opacity-90">You're in ★★★ territory as a December 2025 grad with one short industry engagement — that's a genuinely unusual result. Most new-grad resumes land in the 40s and 50s. You're here because you already understand two of the four things that make a resume strong: you describe accomplishments (not duties), and you name specific tools. The two things you still need — numbers and scope context — are the easiest to add, because the underlying work is already there. Your lab reports, project documentation, and design files have all the data. The gap between a 66 and an 82 is one afternoon of pulling numbers and adding scope statements to your top four bullets. You're close.</p>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- CTA SECTION                                                    -->
+    <!-- ============================================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 overflow-hidden page-break">
+        <div class="p-8">
+            <div class="flex items-center gap-3 mb-4">
+                <div class="w-8 h-8 rounded-lg bg-lime-500 text-white flex items-center justify-center text-sm font-bold">→</div>
+                <h2 class="text-2xl font-extrabold text-slate-900">Want Help Fixing All of This?</h2>
+            </div>
+
+            <p class="text-slate-600 mb-6">This audit covered your top 4 bullets. The other bullets on your resume have the same potential — they just need the same treatment applied consistently across every project and every role.</p>
+
+            <div class="bg-slate-50 rounded-xl p-6 border border-slate-200 mb-6">
+                <p class="font-bold text-slate-800 mb-3">The 21-Day Accelerator Program — 3 × 90-minute 1-on-1 sessions:</p>
+                <ul class="space-y-2 text-slate-700 text-sm">
+                    <li class="flex items-start gap-2">
+                        <span class="text-emerald-500 font-bold mt-0.5 flex-shrink-0">1.</span>
+                        <span><strong>Resume Rebuilt</strong> — every bullet rewritten with the Impact Bullet Builder formula, numbers filled in across all bullet points, your Mk-41 and XFOIL work positioned for the aerospace and defense roles you're targeting</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-emerald-500 font-bold mt-0.5 flex-shrink-0">2.</span>
+                        <span><strong>Interview Stories Mastered</strong> — master story bank built in STAR format so you can answer any behavioral question cold, with your rocket motor, water channel, and PCB repair work ready as concrete examples</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-emerald-500 font-bold mt-0.5 flex-shrink-0">3.</span>
+                        <span><strong>Live Mock Interview</strong> — full practice with direct feedback on delivery, story structure, and where you're leaving technical credibility on the table</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-4 mb-6">
+                <p class="text-emerald-800 text-sm font-medium">You leave with: a rebuilt resume, master story bank, mock interview notes, all session recordings, and 40+ bonus materials.</p>
+            </div>
+
+            <a href="https://launchtolead.io/coaching?utm_source=audit&utm_medium=email&utm_campaign=free-audit&utm_content=celeste-soon-ramseyer"
+               class="inline-block bg-emerald-700 hover:bg-emerald-600 text-white font-bold px-8 py-4 rounded-xl text-lg transition-colors">
+                Book a Career Launch Call →
+            </a>
+            <p class="text-slate-400 text-xs mt-3">This call is where we talk through your situation and where you want to go — no pressure, no pitch. Just a real conversation about what's holding your job search back and what would move the needle fastest.</p>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- FOOTER                                                         -->
+    <!-- ============================================================ -->
+    <footer class="text-center py-6 text-slate-400 text-xs">
+        Free audit prepared by LaunchToLead | Impact Bullet Builder Framework<br>
+        <a href="https://launchtolead.io/free" class="text-emerald-600 hover:underline">launchtolead.io/free</a>
+    </footer>
+
+</div>
+</body>
+</html>

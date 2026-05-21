@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Resume Audit — Ethan Welch | LaunchToLead</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .font-mono-num { font-family: 'Space Grotesk', monospace; }
+
+        #download-btn {
+            position: fixed; top: 20px; right: 20px; z-index: 9999;
+            background: linear-gradient(135deg, #a3e635, #14b8a6); color: #052e16;
+            font-family: 'Plus Jakarta Sans', sans-serif; font-size: 16px; font-weight: 800;
+            padding: 14px 32px; border: none; border-radius: 50px; cursor: pointer;
+            box-shadow: 0 8px 30px rgba(163,230,53,0.3);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        #download-btn:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(163,230,53,0.4); }
+
+        @media print {
+            @page { size: letter; margin: 0.5in 0.65in; }
+            body {
+                background: white !important; color: #1e293b !important;
+                padding: 0 !important; margin: 0 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            #download-btn { display: none !important; }
+            .no-print { display: none !important; }
+            .page-break { break-before: page; }
+            .keep-together { break-inside: avoid; }
+            .space-y-4 > div, .space-y-6 > div, .grid > div { break-inside: avoid; }
+            ul.space-y-3 > li { break-inside: avoid; }
+            tbody tr { break-inside: avoid; }
+            .rounded-xl.overflow-hidden { break-inside: avoid; }
+            h2, h3, h4 { break-after: avoid; }
+            section { box-shadow: none !important; border: 1px solid #e2e8f0 !important; }
+            .max-w-4xl { max-width: 100% !important; }
+            .bg-emerald-900, .bg-amber-800, .bg-red-700, .bg-emerald-800 {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-700">
+
+<button id="download-btn" onclick="window.print()">Download PDF</button>
+
+<!-- ============================================================ -->
+<!-- HEADER                                                        -->
+<!-- ============================================================ -->
+<header class="bg-emerald-900 text-white py-6 px-6">
+    <div class="max-w-4xl mx-auto">
+        <div class="flex items-center gap-3 mb-4">
+            <div class="bg-white text-emerald-900 w-10 h-10 rounded-xl flex items-center justify-center font-bold text-sm shadow">L²</div>
+            <span class="text-xl font-bold">Launch<span class="font-light text-lime-300">ToLead</span></span>
+        </div>
+        <div class="flex items-center gap-2 mb-2">
+            <span class="bg-lime-400/20 text-lime-300 text-xs font-bold px-3 py-1 rounded-full">FREE AUDIT</span>
+        </div>
+        <h1 class="text-3xl font-extrabold mb-1">Resume Audit Report</h1>
+        <p class="text-emerald-200">Ethan Welch — B.S. Mechanical Engineering, University of Alabama in Huntsville</p>
+        <p class="text-emerald-400/60 text-sm mt-1">Scored against the Impact Bullet Builder framework</p>
+    </div>
+</header>
+
+<div class="max-w-4xl mx-auto px-6 py-10 space-y-10">
+
+    <!-- ============================================================ -->
+    <!-- SECTION 1: OVERALL SCORE                                      -->
+    <!-- ============================================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 overflow-hidden">
+        <div class="p-8">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="w-8 h-8 rounded-lg bg-amber-500 text-white flex items-center justify-center text-sm font-bold">01</div>
+                <h2 class="text-2xl font-extrabold text-slate-900">Overall Score</h2>
+            </div>
+
+            <div class="flex items-center gap-8 mb-6">
+                <div class="text-center">
+                    <p class="font-mono-num text-6xl font-extrabold text-amber-500">51</p>
+                    <p class="text-slate-500 text-sm">out of 100</p>
+                </div>
+                <div class="flex-1">
+                    <div class="h-4 bg-slate-100 rounded-full overflow-hidden mb-2">
+                        <div class="h-full rounded-full" style="width: 51%; background: linear-gradient(to right, #f59e0b, #eab308);"></div>
+                    </div>
+                    <div class="flex justify-between text-xs text-slate-400">
+                        <span>10–30 ★ What Was Asked</span>
+                        <span>31–60 ★★ Above &amp; Beyond</span>
+                        <span>61–100 ★★★ Impact</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4 IBB formula sub-scores -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="bg-amber-50 border border-amber-200 rounded-xl p-4 text-center">
+                    <p class="font-mono-num text-2xl font-bold text-amber-600">6/10</p>
+                    <p class="text-amber-700 text-xs font-semibold mt-1">Accomplishments</p>
+                    <p class="text-amber-500 text-xs mt-0.5">11 of 19 bullets describe outcomes, not duties</p>
+                </div>
+                <div class="bg-red-50 border border-red-200 rounded-xl p-4 text-center">
+                    <p class="font-mono-num text-2xl font-bold text-red-500">1/10</p>
+                    <p class="text-red-700 text-xs font-semibold mt-1">Metrics</p>
+                    <p class="text-red-500 text-xs mt-0.5">Only 1 of 19 bullets has a specific number</p>
+                </div>
+                <div class="bg-amber-50 border border-amber-200 rounded-xl p-4 text-center">
+                    <p class="font-mono-num text-2xl font-bold text-amber-500">5/10</p>
+                    <p class="text-amber-700 text-xs font-semibold mt-1">How / Method</p>
+                    <p class="text-amber-500 text-xs mt-0.5">Strong in FSAE; mostly absent from Bridgestone</p>
+                </div>
+                <div class="bg-amber-50 border border-amber-200 rounded-xl p-4 text-center">
+                    <p class="font-mono-num text-2xl font-bold text-amber-500">6/10</p>
+                    <p class="text-amber-700 text-xs font-semibold mt-1">Why / Impact</p>
+                    <p class="text-amber-500 text-xs mt-0.5">Present in 10 bullets but often vague</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- VERDICT BANNER -->
+        <div class="bg-amber-800 text-white p-6">
+            <p class="font-bold text-lg">★★ — You Went Above and Beyond. Nine Points From ★★★ Territory.</p>
+            <p class="text-sm opacity-80 mt-1">For a graduating senior, 51/100 reflects a solid foundation — three consecutive Bridgestone internships and a competition-validated FSAE build give you more real material than most people entering the job market. The gap to ★★★ is almost entirely one problem: 18 of your 19 bullets have zero quantification, and the entire Bridgestone 2023 and 2024 sections sit at ★ tier alongside three pure duty descriptions that add nothing. Your FSAE project section — Solid Edge, MSC Patran, inspection-passed prototype — shows exactly what this resume is capable of. Adding numbers and replacing the weakest three bullets across Bridgestone would push this into the 68–75 range.</p>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SECTION 2: KEY ISSUES IDENTIFIED (5 issues)                   -->
+    <!-- ============================================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 p-8 page-break">
+        <div class="flex items-center gap-3 mb-6">
+            <div class="w-8 h-8 rounded-lg bg-red-600 text-white flex items-center justify-center text-sm font-bold">02</div>
+            <h2 class="text-2xl font-extrabold text-slate-900">Key Issues Identified</h2>
+        </div>
+
+        <div class="space-y-4">
+
+            <!-- ISSUE 1 -->
+            <div class="flex items-start gap-4 p-5 bg-red-50 rounded-xl border border-red-200 keep-together">
+                <div class="w-8 h-8 rounded-full bg-red-600 text-white flex items-center justify-center font-bold text-sm flex-shrink-0">1</div>
+                <div>
+                    <p class="font-bold text-red-900">18 of 19 bullets have zero numbers — this alone is the biggest score gap on the resume</p>
+                    <p class="text-red-700 text-sm mt-1">The IBB Metrics criterion asks a simple question: is there a specific number in this bullet? A percentage, a count, a dollar figure, a before/after comparison. Your only number anywhere is "25+" in one Bridgestone 2025 bullet. Every other bullet — three years of Bridgestone, two Terracon bullets, and five of seven FSAE bullets — is completely unquantified. This is the single change that would move your score the most. For your experience level, exact numbers aren't always available, but estimates framed honestly work just as well: "approximately [X] samples across [Y] sites" or "safety factor of [X] under peak load" are both credible and specific. Numbers you don't know can be researched or conservatively estimated — a reasonable guess beats a blank every time.</p>
+                </div>
+            </div>
+
+            <!-- ISSUE 2 -->
+            <div class="flex items-start gap-4 p-5 bg-red-50 rounded-xl border border-red-200 keep-together">
+                <div class="w-8 h-8 rounded-full bg-red-600 text-white flex items-center justify-center font-bold text-sm flex-shrink-0">2</div>
+                <div>
+                    <p class="font-bold text-red-900">Scale and context are almost entirely absent — the work is real, but its scope is invisible</p>
+                    <p class="text-red-700 text-sm mt-1">The IBB Context criterion asks: how big was this? What was at stake? What did "before" look like? Right now, none of your Bridgestone bullets tell a hiring manager how many machines were in the plant, how much inventory was at risk, how long the process took before you improved it, or what the consequence of a missed inspection was. Your FSAE section is slightly better — "Formula SAE electric race vehicle" plants a flag — but still lacks scope statements (how much did you reduce weight? What was the safety factor margin from Patran?). Context framing is the difference between "I did testing" and "I did testing on a 12-machine tire production line running $[X]M in daily output." The work you're describing carries real stakes — the resume just doesn't say so.</p>
+                </div>
+            </div>
+
+            <!-- ISSUE 3 -->
+            <div class="flex items-start gap-4 p-5 bg-red-50 rounded-xl border border-red-200 keep-together">
+                <div class="w-8 h-8 rounded-full bg-red-600 text-white flex items-center justify-center font-bold text-sm flex-shrink-0">3</div>
+                <div>
+                    <p class="font-bold text-red-900">Three bullets are pure duty descriptions that should be replaced or removed entirely</p>
+                    <p class="text-red-700 text-sm mt-1">These three bullets carry zero informational weight and actively pull down your score: <em>"Troubleshooting of heat abnormalities across production machines"</em> (gerund form, no action, no result), <em>"Collaborated with cross-functional production and maintenance teams"</em> (a relationship description, not an accomplishment), and <em>"Aided engineering staff in troubleshooting production issues in fast-paced setting"</em> ("fast-paced setting" is filler, "aided" signals a helper role). None of them tell a hiring manager what you discovered, what you fixed, or what changed because of your involvement. Every resume has a bullet or two like these — the difference between a ★★ and ★★★ resume is recognizing them and replacing them with bullets that show a result.</p>
+                </div>
+            </div>
+
+            <!-- ISSUE 4 -->
+            <div class="flex items-start gap-4 p-5 bg-amber-50 rounded-xl border border-amber-200 keep-together">
+                <div class="w-8 h-8 rounded-full bg-amber-500 text-white flex items-center justify-center font-bold text-sm flex-shrink-0">4</div>
+                <div>
+                    <p class="font-bold text-amber-900">Wide quality gap between your FSAE project and your Bridgestone 2023/2024 sections</p>
+                    <p class="text-amber-700 text-sm mt-1">Your FSAE section names specific tools (Solid Edge, MSC Patran), describes a full design lifecycle from concept to inspection, and shows real engineering judgment. Your Bridgestone 2024 section — four bullets total — has two bullets at ★★★ quality ("Managed thermal imaging analysis project" and "Improved visibility of equipment health") and two at ★ quality ("Troubleshooting of heat abnormalities" and "Collaborated with cross-functional teams"). Your 2023 section is weaker still. A hiring manager skimming for pattern recognition sees a strong FSAE section and then notices that a third of the work experience bullets don't match that quality. Consistency matters: one ★ bullet in a strong section doesn't hurt much; an entire role's worth of them does.</p>
+                </div>
+            </div>
+
+            <!-- ISSUE 5 -->
+            <div class="flex items-start gap-4 p-5 bg-amber-50 rounded-xl border border-amber-200 keep-together">
+                <div class="w-8 h-8 rounded-full bg-amber-500 text-white flex items-center justify-center font-bold text-sm flex-shrink-0">5</div>
+                <div>
+                    <p class="font-bold text-amber-900">Three bullets start with passive or gerund forms — a structural tell that the content is weak</p>
+                    <p class="text-amber-700 text-sm mt-1">"Execution of endurance and performance testing on high value inventory," "Troubleshooting of heat abnormalities across production machines," and "Aided engineering staff in troubleshooting production issues" all start in a way that signals passive involvement. The IBB Action Verbs criterion is simple: lead with a strong past-tense verb that names what you did. "Execution of testing" becomes "Executed endurance and performance tests." "Troubleshooting of abnormalities" becomes "Identified and resolved [X] heat abnormalities." The fix itself is quick — but more importantly, these starts usually signal that the bullet itself needs to be rebuilt from scratch. The opener is a symptom; the missing accomplishment and metric are the disease.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SECTION 3: TOP BULLETS — REWRITTEN (5 bullets)               -->
+    <!-- ============================================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 p-8 page-break">
+        <div class="flex items-center gap-3 mb-6">
+            <div class="w-8 h-8 rounded-lg bg-emerald-600 text-white flex items-center justify-center text-sm font-bold">03</div>
+            <h2 class="text-2xl font-extrabold text-slate-900">Top Bullets — Rewritten</h2>
+        </div>
+
+        <p class="text-slate-500 text-sm mb-2">The 5 bullets with the highest improvement potential, rewritten using the Impact Bullet Builder formula (Accomplishment + Metric + How + Why).</p>
+        <p class="text-slate-400 text-xs mb-6 italic">Brackets like <code class="bg-slate-100 px-1 rounded text-xs">[X]</code> are placeholders — only you know the real numbers. Fill them in with your best honest estimate. A conservative guess beats a blank every time.</p>
+
+        <div class="space-y-6">
+
+            <!-- BULLET 1 -->
+            <div class="keep-together">
+                <p class="text-xs font-bold text-slate-400 uppercase tracking-wide mb-2">Work Experience — Geotechnical Engineering Intern, Terracon</p>
+                <div class="bg-red-50 border border-red-200 rounded-xl p-4 mb-2">
+                    <p class="text-xs font-bold text-red-500 mb-1">BEFORE</p>
+                    <p class="text-red-800 text-sm">Conducted ASTM-compliant material sampling and laboratory testing to evaluate soil and aggregate properties for engineering analysis</p>
+                </div>
+                <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-4">
+                    <p class="text-xs font-bold text-emerald-600 mb-1">AFTER (★★★ Level)</p>
+                    <p class="text-emerald-900 text-sm">Executed ASTM-compliant soil and aggregate sampling across [X] active project sites — running [Y]+ laboratory tests per week and delivering findings that directly supported geotechnical foundation recommendations for [type of structure, e.g., commercial building, highway embankment]</p>
+                    <p class="text-xs text-emerald-600 mt-2">Added: site count and test volume (metrics), ASTM preserved (how), what the findings enabled (why)</p>
+                </div>
+            </div>
+
+            <!-- BULLET 2 -->
+            <div class="keep-together">
+                <p class="text-xs font-bold text-slate-400 uppercase tracking-wide mb-2">Work Experience — Process Engineer Intern, Bridgestone Americas (2025)</p>
+                <div class="bg-red-50 border border-red-200 rounded-xl p-4 mb-2">
+                    <p class="text-xs font-bold text-red-500 mb-1">BEFORE</p>
+                    <p class="text-red-800 text-sm">Lead data-driven waste project, monitoring 25+ assembly machines to reduce abnormalities.</p>
+                </div>
+                <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-4">
+                    <p class="text-xs font-bold text-emerald-600 mb-1">AFTER (★★★ Level)</p>
+                    <p class="text-emerald-900 text-sm">Led data-driven waste reduction project monitoring abnormality frequency across 25+ assembly machines — reducing reported abnormality rate by [X]% over [Y] weeks and enabling maintenance teams to prioritize highest-risk equipment [Z] days faster</p>
+                    <p class="text-xs text-emerald-600 mt-2">Added: outcome metric (% reduction), timeframe (context), downstream why (maintenance prioritization impact)</p>
+                </div>
+            </div>
+
+            <!-- BULLET 3 -->
+            <div class="keep-together">
+                <p class="text-xs font-bold text-slate-400 uppercase tracking-wide mb-2">Work Experience — Process Engineer Intern, Bridgestone Americas (2024)</p>
+                <div class="bg-red-50 border border-red-200 rounded-xl p-4 mb-2">
+                    <p class="text-xs font-bold text-red-500 mb-1">BEFORE</p>
+                    <p class="text-red-800 text-sm">Managed thermal imaging analysis project contributing to waste reduction</p>
+                </div>
+                <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-4">
+                    <p class="text-xs font-bold text-emerald-600 mb-1">AFTER (★★★ Level)</p>
+                    <p class="text-emerald-900 text-sm">Managed thermal imaging analysis project scanning [X] production machines — identifying [Y] heat abnormalities that contributed to an estimated [Z]% reduction in unplanned downtime by enabling targeted maintenance before failures occurred</p>
+                    <p class="text-xs text-emerald-600 mt-2">Added: machine count (metric + context), findings count (metric), before→after downtime framing (why)</p>
+                </div>
+            </div>
+
+            <!-- BULLET 4 -->
+            <div class="keep-together">
+                <p class="text-xs font-bold text-slate-400 uppercase tracking-wide mb-2">Project — Push-bar/Jack-bar, FSAE Electric Vehicle</p>
+                <div class="bg-red-50 border border-red-200 rounded-xl p-4 mb-2">
+                    <p class="text-xs font-bold text-red-500 mb-1">BEFORE</p>
+                    <p class="text-red-800 text-sm">Performed structural analysis using MSC Patran to validate mechanical integrity and ensure compliance with design constraints</p>
+                </div>
+                <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-4">
+                    <p class="text-xs font-bold text-emerald-600 mb-1">AFTER (★★★ Level)</p>
+                    <p class="text-emerald-900 text-sm">Performed FEA structural analysis in MSC Patran under [X] N peak load conditions — confirming a safety factor of [Y] that validated the mechanism for Formula SAE technical inspection and eliminated the need for a redesign cycle before competition</p>
+                    <p class="text-xs text-emerald-600 mt-2">Added: load value and safety factor (metrics), FEA framing (reinforces how), redesign-avoided (concrete why)</p>
+                </div>
+            </div>
+
+            <!-- BULLET 5 -->
+            <div class="keep-together">
+                <p class="text-xs font-bold text-slate-400 uppercase tracking-wide mb-2">Work Experience — Process Engineer Intern, Bridgestone Americas (2023)</p>
+                <div class="bg-red-50 border border-red-200 rounded-xl p-4 mb-2">
+                    <p class="text-xs font-bold text-red-500 mb-1">BEFORE</p>
+                    <p class="text-red-800 text-sm">Lead data collection project aimed at continuous improvement initiatives</p>
+                </div>
+                <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-4">
+                    <p class="text-xs font-bold text-emerald-600 mb-1">AFTER (★★★ Level)</p>
+                    <p class="text-emerald-900 text-sm">Led [X]-week data collection project tracking [Y] process variables across [Z] production lines — using Excel to identify [N] recurring deviations that fed directly into a continuous improvement initiative, reducing repeat occurrences by [%]</p>
+                    <p class="text-xs text-emerald-600 mt-2">Added: project duration and variable count (metrics), Excel (how), what the data enabled (why with outcome)</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SECTION 4: BEFORE & AFTER — BEST EXAMPLES (2)                 -->
+    <!-- ============================================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 p-8 page-break">
+        <div class="flex items-center gap-3 mb-6">
+            <div class="w-8 h-8 rounded-lg bg-violet-600 text-white flex items-center justify-center text-sm font-bold">04</div>
+            <h2 class="text-2xl font-extrabold text-slate-900">Before &amp; After — Biggest Tier Jumps</h2>
+        </div>
+
+        <div class="space-y-8">
+
+            <!-- EXAMPLE 1 -->
+            <div class="keep-together">
+                <p class="text-xs font-bold text-slate-400 uppercase tracking-wide mb-3">Work Experience — Process Engineer Intern, Bridgestone Americas (2024)</p>
+                <div class="bg-red-50 border-l-4 border-red-500 rounded-xl p-5 mb-3">
+                    <p class="text-xs font-bold text-red-500 mb-2">BEFORE (★ Level)</p>
+                    <p class="text-red-800 text-sm italic">"Troubleshooting of heat abnormalities across production machines"</p>
+                    <p class="text-red-600 text-xs mt-2">Fails: gerund opener (not an action verb), no accomplishment, no number, no method, no outcome, no context. Hiring manager can't tell what you found, what you fixed, or whether anything changed.</p>
+                </div>
+                <div class="bg-emerald-50 border-l-4 border-emerald-500 rounded-xl p-5">
+                    <p class="text-xs font-bold text-emerald-600 mb-2">AFTER (★★★ Level)</p>
+                    <p class="text-emerald-900 text-sm italic">"Identified and resolved [X] heat abnormalities across Bridgestone's [Y]-machine tire production line using thermal imaging data — reducing average fault investigation time from [A] hours to [B] hours and preventing an estimated [Z] hours of unplanned downtime per month"</p>
+                    <p class="text-emerald-600 text-xs mt-2">Added: action verb + count (Accomplishment + Metric), thermal imaging (How), downtime prevented (Why + Metric). All 4 IBB components present.</p>
+                </div>
+            </div>
+
+            <!-- EXAMPLE 2 -->
+            <div class="keep-together">
+                <p class="text-xs font-bold text-slate-400 uppercase tracking-wide mb-3">Work Experience — Geotechnical Engineering Intern, Terracon</p>
+                <div class="bg-red-50 border-l-4 border-red-500 rounded-xl p-5 mb-3">
+                    <p class="text-xs font-bold text-red-500 mb-2">BEFORE (★ Level)</p>
+                    <p class="text-red-800 text-sm italic">"Analyzed test data to verify compliance with project specifications and support geotechnical recommendations"</p>
+                    <p class="text-red-600 text-xs mt-2">Fails: ongoing duty description, no numbers, no tool or method named, no outcome. Could describe any engineer doing any kind of analysis.</p>
+                </div>
+                <div class="bg-emerald-50 border-l-4 border-emerald-500 rounded-xl p-5">
+                    <p class="text-xs font-bold text-emerald-600 mb-2">AFTER (★★★ Level)</p>
+                    <p class="text-emerald-900 text-sm italic">"Analyzed [X]+ soil and aggregate test datasets in Excel against ASTM and project specifications — flagging [Y] out-of-spec results that informed geotechnical recommendations for a [type, e.g., multi-family residential] foundation design, preventing specification-noncompliant construction"</p>
+                    <p class="text-emerald-600 text-xs mt-2">Added: dataset count (Metric), Excel + ASTM (How), flagged results count (Accomplishment), construction risk prevented (Why + Consequence).</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SECTION 5: TOP ACTION ITEMS (5)                               -->
+    <!-- ============================================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 p-8 page-break">
+        <div class="flex items-center gap-3 mb-6">
+            <div class="w-8 h-8 rounded-lg bg-blue-600 text-white flex items-center justify-center text-sm font-bold">05</div>
+            <h2 class="text-2xl font-extrabold text-slate-900">Top Action Items</h2>
+        </div>
+
+        <div class="space-y-4">
+
+            <div class="flex items-start gap-4 p-5 bg-blue-50 rounded-xl border border-blue-200 keep-together">
+                <div class="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold text-sm flex-shrink-0">1</div>
+                <div>
+                    <p class="font-bold text-blue-900">Add at least one number to every Bridgestone bullet — start with what you already know from B5</p>
+                    <p class="text-blue-700 text-sm mt-1">You already wrote "25+" for the 2025 waste project, which shows you know how to do this — you just haven't done it consistently. Go role by role: how many machines were in the facility? How many samples did you process? How long did a heat fault investigation typically take? What was the value of tire inventory on the line? Even estimates framed as approximate are credible. Once you have numbers in every role, your Metrics score alone jumps from 1/10 to approximately 7/10, adding 7.5 points to your overall score.</p>
+                </div>
+            </div>
+
+            <div class="flex items-start gap-4 p-5 bg-blue-50 rounded-xl border border-blue-200 keep-together">
+                <div class="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold text-sm flex-shrink-0">2</div>
+                <div>
+                    <p class="font-bold text-blue-900">Delete or fully replace these three bullets — they are doing negative work on your resume</p>
+                    <p class="text-blue-700 text-sm mt-1">"Troubleshooting of heat abnormalities across production machines," "Collaborated with cross-functional production and maintenance teams," and "Aided engineering staff in troubleshooting production issues in fast-paced setting." These three bullets fail on 5–7 of the 8 IBB criteria each. A deleted bullet hurts less than a weak one — but a fully rewritten one is even better. For each of these, ask: what specific problem did I actually solve in this role, and what happened because I solved it?</p>
+                </div>
+            </div>
+
+            <div class="flex items-start gap-4 p-5 bg-blue-50 rounded-xl border border-blue-200 keep-together">
+                <div class="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold text-sm flex-shrink-0">3</div>
+                <div>
+                    <p class="font-bold text-blue-900">Add specific numbers to your FSAE section — you have the data, it just isn't on the resume</p>
+                    <p class="text-blue-700 text-sm mt-1">Your FSAE work is genuinely strong, but five of seven bullets still have no numbers. You ran FEA in MSC Patran — what was the safety factor? You optimized component geometry to reduce weight — how many grams or pounds did you save? You passed inspection — on the first attempt? What was the timeline from concept to inspection clearance? These numbers exist or can be estimated. A project section that names Solid Edge and MSC Patran AND includes a safety factor, a weight reduction, and a competition timeline is a ★★★ project section. Right now it's ★★. One afternoon filling in those values is the difference.</p>
+                </div>
+            </div>
+
+            <div class="flex items-start gap-4 p-5 bg-blue-50 rounded-xl border border-blue-200 keep-together">
+                <div class="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold text-sm flex-shrink-0">4</div>
+                <div>
+                    <p class="font-bold text-blue-900">Upgrade your Terracon bullets with project-level context — what type and scale of work were you supporting?</p>
+                    <p class="text-blue-700 text-sm mt-1">Terracon is your most recent role and the one hiring managers will read first. Both bullets currently describe activity without saying what project they were for or what decision your work enabled. What kind of construction project? What was the site scale? What happens if the geotechnical analysis is wrong? Adding one context statement — even something like "supporting foundation design for a [commercial/residential/infrastructure] development" — immediately anchors the work in a real consequence.</p>
+                </div>
+            </div>
+
+            <div class="flex items-start gap-4 p-5 bg-blue-50 rounded-xl border border-blue-200 keep-together">
+                <div class="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold text-sm flex-shrink-0">5</div>
+                <div>
+                    <p class="font-bold text-blue-900">Name tools explicitly inside your work experience bullets — don't let them live only in your skills section</p>
+                    <p class="text-blue-700 text-sm mt-1">Your skills section lists MATLAB, Python, Excel, SolidWorks, and Thermal Imaging — but most of these never appear inside an actual job bullet. A skill listed in a section is a claim. A skill named inside an accomplishment ("analyzed [X] samples in Excel," "built a thermal fault detection workflow using thermal imaging equipment") is proof. Target the two or three tools you used most at Bridgestone and work them into your existing bullets. This alone lifts your How/Method score and makes the skills section feel earned rather than aspirational.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SECTION 6: WHAT'S ALREADY WORKING (5)                         -->
+    <!-- ============================================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 p-8 page-break">
+        <div class="flex items-center gap-3 mb-6">
+            <div class="w-8 h-8 rounded-lg bg-emerald-600 text-white flex items-center justify-center text-sm font-bold">06</div>
+            <h2 class="text-2xl font-extrabold text-slate-900">What's Already Working</h2>
+        </div>
+
+        <ul class="space-y-4">
+
+            <li class="flex items-start gap-4 p-4 bg-emerald-50 rounded-xl border border-emerald-200 keep-together">
+                <div class="w-6 h-6 rounded-full bg-emerald-500 text-white flex items-center justify-center font-bold text-xs flex-shrink-0 mt-0.5">✓</div>
+                <div>
+                    <p class="font-bold text-emerald-900">Strong action verbs throughout — 16 of 19 bullets start correctly</p>
+                    <p class="text-emerald-700 text-sm mt-0.5">Led, Managed, Conducted, Analyzed, Troubleshot, Designed, Optimized, Fabricated — these are exactly the verbs that signal ownership and output. Only three bullets break this pattern, and those are all fixable in under five minutes. The verb vocabulary is there; the rest of the content just needs to catch up.</p>
+                </div>
+            </li>
+
+            <li class="flex items-start gap-4 p-4 bg-emerald-50 rounded-xl border border-emerald-200 keep-together">
+                <div class="w-6 h-6 rounded-full bg-emerald-500 text-white flex items-center justify-center font-bold text-xs flex-shrink-0 mt-0.5">✓</div>
+                <div>
+                    <p class="font-bold text-emerald-900">Three consecutive Bridgestone summers is a meaningful signal</p>
+                    <p class="text-emerald-700 text-sm mt-0.5">Returning to the same company for three consecutive internship cycles — and being invited back — demonstrates that you performed well enough to warrant re-hire. This is a pattern that experienced hiring managers notice and respect. Make sure your resume does the work of showing what you took on each year: the 2023 role should look more junior, the 2025 role should look like someone who'd been trusted with more. Right now the bullets look roughly similar across all three years. Progression framing will strengthen this signal.</p>
+                </div>
+            </li>
+
+            <li class="flex items-start gap-4 p-4 bg-emerald-50 rounded-xl border border-emerald-200 keep-together">
+                <div class="w-6 h-6 rounded-full bg-emerald-500 text-white flex items-center justify-center font-bold text-xs flex-shrink-0 mt-0.5">✓</div>
+                <div>
+                    <p class="font-bold text-emerald-900">FSAE project shows engineering depth that most new-grad resumes don't have</p>
+                    <p class="text-emerald-700 text-sm mt-0.5">Solid Edge for CAD modeling, MSC Patran for FEA structural validation, full prototype from concept through inspection — this is a complete engineering lifecycle and it uses real industry-adjacent tools. Many new grad resumes have a capstone or a class project listed as a single bullet. You built out seven bullets covering design, analysis, optimization, fabrication, integration, compliance, and validation testing. That depth is a differentiator. It just needs numbers to push it fully into ★★★ territory.</p>
+                </div>
+            </li>
+
+            <li class="flex items-start gap-4 p-4 bg-emerald-50 rounded-xl border border-emerald-200 keep-together">
+                <div class="w-6 h-6 rounded-full bg-emerald-500 text-white flex items-center justify-center font-bold text-xs flex-shrink-0 mt-0.5">✓</div>
+                <div>
+                    <p class="font-bold text-emerald-900">Personal ownership language is clean — 15 of 19 bullets use first-person active construction</p>
+                    <p class="text-emerald-700 text-sm mt-0.5">Most of your bullets are clearly about what you did, not what the team did. This matters because hiring managers are evaluating you, not your team. The four ownership failures are concentrated — three in Bridgestone 2024/2023 and one at Bridgestone 2025 — and all four also have other structural problems that make them candidates for replacement anyway. Once those are gone, your ownership score effectively becomes near-perfect.</p>
+                </div>
+            </li>
+
+            <li class="flex items-start gap-4 p-4 bg-emerald-50 rounded-xl border border-emerald-200 keep-together">
+                <div class="w-6 h-6 rounded-full bg-emerald-500 text-white flex items-center justify-center font-bold text-xs flex-shrink-0 mt-0.5">✓</div>
+                <div>
+                    <p class="font-bold text-emerald-900">Breadth of engineering methods is genuinely varied and shows cross-domain capability</p>
+                    <p class="text-emerald-700 text-sm mt-0.5">ASTM testing at Terracon, thermal imaging and process monitoring at Bridgestone, FEA and CAD at FSAE — most new grad resumes have one type of engineering work. You have three distinct methodological tracks across your experience. That's an asset for engineering roles that value adaptability. The task is to make sure each of those methods is named explicitly inside the bullets that describe the work, not just listed in the skills section.</p>
+                </div>
+            </li>
+
+        </ul>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SECTION 7: FULL SCORECARD                                      -->
+    <!-- ============================================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 overflow-hidden page-break">
+        <div class="p-8">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="w-8 h-8 rounded-lg bg-slate-600 text-white flex items-center justify-center text-sm font-bold">07</div>
+                <h2 class="text-2xl font-extrabold text-slate-900">Full Scorecard</h2>
+            </div>
+
+            <div class="rounded-xl overflow-hidden border border-slate-200">
+                <table class="w-full text-sm">
+                    <thead>
+                        <tr class="bg-slate-800 text-white">
+                            <th class="text-left py-3 px-4 font-semibold">Criterion</th>
+                            <th class="text-center py-3 px-4 font-semibold w-20">Score</th>
+                            <th class="text-left py-3 px-4 font-semibold">Observation</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-100">
+                        <tr class="bg-white keep-together">
+                            <td class="py-3 px-4 font-semibold text-slate-700">1. Accomplishments</td>
+                            <td class="py-3 px-4 text-center"><span class="font-mono-num font-bold text-amber-600">6/10</span></td>
+                            <td class="py-3 px-4 text-slate-500">11 of 19 bullets describe an action with an outcome. The 8 failures are concentrated in Bridgestone 2023/2024 and include three pure duty descriptions (B7, B8, B12) that have no result at all.</td>
+                        </tr>
+                        <tr class="bg-slate-50 keep-together">
+                            <td class="py-3 px-4 font-semibold text-slate-700">2. Metrics / Quantification</td>
+                            <td class="py-3 px-4 text-center"><span class="font-mono-num font-bold text-red-500">1/10</span></td>
+                            <td class="py-3 px-4 text-slate-500">Only 1 of 19 bullets contains a specific number ("25+ assembly machines"). All Terracon, Bridgestone 2024, Bridgestone 2023, and 5 of 7 FSAE bullets have zero quantification. Highest-priority fix on the entire resume.</td>
+                        </tr>
+                        <tr class="bg-white keep-together">
+                            <td class="py-3 px-4 font-semibold text-slate-700">3. How / Method Shown</td>
+                            <td class="py-3 px-4 text-center"><span class="font-mono-num font-bold text-amber-600">5/10</span></td>
+                            <td class="py-3 px-4 text-slate-500">8 of 19 bullets name a specific tool or method: ASTM testing (Terracon), thermal imaging and endurance testing (Bridgestone), rubber compound testing, Solid Edge, MSC Patran, and functional validation testing (FSAE). The remaining 11 bullets have no named method.</td>
+                        </tr>
+                        <tr class="bg-slate-50 keep-together">
+                            <td class="py-3 px-4 font-semibold text-slate-700">4. Why / Business Impact</td>
+                            <td class="py-3 px-4 text-center"><span class="font-mono-num font-bold text-amber-600">6/10</span></td>
+                            <td class="py-3 px-4 text-slate-500">10 of 19 bullets connect to a purpose or outcome. The passing bullets range from strong (FSAE compliance and packaging) to weak ("contributing to product validation," "aimed at continuous improvement"). The 9 failures have no stated purpose at all.</td>
+                        </tr>
+                        <tr class="bg-white keep-together">
+                            <td class="py-3 px-4 font-semibold text-slate-700">5. Personal Ownership</td>
+                            <td class="py-3 px-4 text-center"><span class="font-mono-num font-bold text-emerald-600">8/10</span></td>
+                            <td class="py-3 px-4 text-slate-500">15 of 19 bullets use first-person active language. Fails: "Execution of" (noun form), "Troubleshooting of" (gerund), "Collaborated with teams" (group framing), and "Aided engineering staff" (assistance framing). All 4 are candidates for replacement.</td>
+                        </tr>
+                        <tr class="bg-slate-50 keep-together">
+                            <td class="py-3 px-4 font-semibold text-slate-700">6. Context / Stakes</td>
+                            <td class="py-3 px-4 text-center"><span class="font-mono-num font-bold text-red-500">2/10</span></td>
+                            <td class="py-3 px-4 text-slate-500">Only 2 of 19 bullets provide scale or stakes: "25+ assembly machines" and "Formula SAE electric race vehicle." Every other bullet describes work without situating it in a scope, a before/after, or a statement of what was at risk. Second-highest priority fix after metrics.</td>
+                        </tr>
+                        <tr class="bg-white keep-together">
+                            <td class="py-3 px-4 font-semibold text-slate-700">7. Action Verbs</td>
+                            <td class="py-3 px-4 text-center"><span class="font-mono-num font-bold text-emerald-600">9/10</span></td>
+                            <td class="py-3 px-4 text-slate-500">16 of 19 bullets open with a strong action verb. Three fail: "Execution of" (B4), "Troubleshooting of" (B7), and "Aided" (B12). All three are also structural failures on other criteria — fixing the lead verb is part of a larger bullet rebuild.</td>
+                        </tr>
+                        <tr class="bg-slate-50 keep-together">
+                            <td class="py-3 px-4 font-semibold text-slate-700">8. Bullet Quality Consistency</td>
+                            <td class="py-3 px-4 text-center"><span class="font-mono-num font-bold text-amber-600">4/10</span></td>
+                            <td class="py-3 px-4 text-slate-500">Wide spread: 10 bullets at ★ tier, 5 at ★★, 4 at ★★★. The ★★★ bullets (B5, B6, B13, B14) are concentrated in the 2025 internship and FSAE project. The 2023 and 2024 Bridgestone sections are almost entirely ★. This 2-tier spread scores 3–5; positioned at 4 given the number of ★ bullets.</td>
+                        </tr>
+                        <tr class="bg-slate-800 text-white keep-together">
+                            <td class="py-3 px-4 font-bold">OVERALL SCORE</td>
+                            <td class="py-3 px-4 text-center"><span class="font-mono-num font-bold text-amber-300 text-lg">51/100</span></td>
+                            <td class="py-3 px-4 text-slate-300">★★ — You Went Above and Beyond &nbsp;|&nbsp; Sum: 41 × 1.25 = 51.25 → 51</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- THE GOOD NEWS BANNER -->
+        <div class="bg-emerald-800 text-white p-6">
+            <p class="font-bold text-base mb-2">The Good News</p>
+            <p class="text-sm opacity-90">Three consecutive industry internships at a Fortune 500 manufacturer, plus a competition-validated engineering project that went from CAD model to passing inspection — as a graduating senior, that's a meaningful track record. The gap to ★★★ isn't a missing experience or a wrong career path. It's one very targeted skill: translating what you did into the quantified, context-rich language that hiring managers are trained to look for. You already did the work. You have the tools, the projects, and the progression. The resume just needs to speak about that work the way an experienced engineer would — with numbers, scope, and outcomes. One focused rewrite session applying the IBB formula to your Bridgestone and FSAE sections would push this into the 68–75 range and put it in a completely different tier of candidate.</p>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- CTA SECTION                                                    -->
+    <!-- ============================================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 overflow-hidden page-break">
+        <div class="p-8">
+            <div class="flex items-center gap-3 mb-4">
+                <div class="w-8 h-8 rounded-lg bg-lime-500 text-white flex items-center justify-center text-sm font-bold">→</div>
+                <h2 class="text-2xl font-extrabold text-slate-900">Want Help Fixing All of This?</h2>
+            </div>
+
+            <p class="text-slate-600 mb-6">This audit covered your top 5 bullets. The other bullets on your resume have the same potential — they just need the same treatment applied consistently across every role and every project.</p>
+
+            <div class="bg-slate-50 rounded-xl p-6 border border-slate-200 mb-6">
+                <p class="font-bold text-slate-800 mb-3">The 21-Day Accelerator Program — 3 × 90-minute 1-on-1 sessions:</p>
+                <ul class="space-y-2 text-slate-700 text-sm">
+                    <li class="flex items-start gap-2">
+                        <span class="text-emerald-500 font-bold mt-0.5 flex-shrink-0">1.</span>
+                        <span><strong>Resume Rebuilt</strong> — every bullet rewritten with the Impact Bullet Builder formula, numbers identified, context framing added to your top roles, weak bullets replaced</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-emerald-500 font-bold mt-0.5 flex-shrink-0">2.</span>
+                        <span><strong>Interview Stories Mastered</strong> — master story bank built in STAR format so you can answer any behavioral question cold, with your real Bridgestone and FSAE examples ready</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-emerald-500 font-bold mt-0.5 flex-shrink-0">3.</span>
+                        <span><strong>Live Mock Interview</strong> — full practice with direct feedback on delivery, story structure, and where you're leaving opportunity on the table</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-4 mb-6">
+                <p class="text-emerald-800 text-sm font-medium">You leave with: a rebuilt resume, master story bank, mock interview notes, all session recordings, and 40+ bonus materials.</p>
+            </div>
+
+            <a href="https://launchtolead.io/coaching?utm_source=audit&utm_medium=email&utm_campaign=free-audit&utm_content=ethan-welch"
+               class="inline-block bg-emerald-700 hover:bg-emerald-600 text-white font-bold px-8 py-4 rounded-xl text-lg transition-colors">
+                Book a Career Launch Call →
+            </a>
+            <p class="text-slate-400 text-xs mt-3">This call is where we talk through your situation and where you want to go — no pressure, no pitch. Just a real conversation about what's holding your job search back and what would move the needle fastest.</p>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- FOOTER                                                         -->
+    <!-- ============================================================ -->
+    <footer class="text-center py-6 text-slate-400 text-xs">
+        Free audit prepared by LaunchToLead | Impact Bullet Builder Framework<br>
+        <a href="https://launchtolead.io/free" class="text-emerald-600 hover:underline">launchtolead.io/free</a>
+    </footer>
+
+</div>
+</body>
+</html>
