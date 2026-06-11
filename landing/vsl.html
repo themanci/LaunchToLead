@@ -51,34 +51,6 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* ── Top pill ── */
-    .top-pill {
-      background: #0f172a;
-      color: #fff;
-      padding: 8px 16px;
-      text-align: center;
-    }
-    .top-pill-inner {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-    }
-    .top-pill-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: #ef4444;
-      animation: blink 2s ease-in-out infinite;
-    }
-    @keyframes blink {
-      0%, 100% { opacity: 1; }
-      50%       { opacity: .35; }
-    }
-
     /* ── Site header ── */
     .site-header {
       background: #fff;
@@ -189,38 +161,12 @@
       background: var(--bg-card);
       border: 1px solid var(--border);
       border-radius: 16px;
-      padding: 52px 44px;
+      padding: 48px 44px 64px;
       text-align: center;
       box-shadow: 0 1px 4px rgba(0,0,0,.06);
     }
 
-    /* Arrow pointing up at video */
-    .audition::before {
-      content: '';
-      display: block;
-      width: 0;
-      height: 0;
-      border-left: 16px solid transparent;
-      border-right: 16px solid transparent;
-      border-bottom: 18px solid var(--border);
-      margin: -71px auto 0;
-      position: relative;
-      top: -1px;
-    }
-    .audition::after {
-      content: '';
-      display: block;
-      width: 0;
-      height: 0;
-      border-left: 14px solid transparent;
-      border-right: 14px solid transparent;
-      border-bottom: 17px solid var(--bg-card);
-      margin: -70px auto 0;
-      position: relative;
-      top: 1px;
-    }
-
-    .audition-inner { position: relative; z-index: 1; }
+    .audition-inner { position: relative; }
 
     .audition-tag {
       display: inline-block;
@@ -293,14 +239,6 @@
 </head>
 <body>
 
-<!-- Top pill -->
-<div class="top-pill">
-  <span class="top-pill-inner">
-    <span class="top-pill-dot"></span>
-    1-on-1 Live Coaching &mdash; Only 10 Spots / Month
-  </span>
-</div>
-
 <!-- Site header -->
 <header class="site-header">
   <div class="site-header-inner">
@@ -316,7 +254,7 @@
   <!-- Pre-video text -->
   <div class="pre-video">
     <p class="eyebrow">Before you apply, please watch this short video.</p>
-    <h1>A quick message from Mansour before you fill out your application.</h1>
+    <h1>A quick message before you fill out your application.</h1>
   </div>
 
   <!-- Video placeholder -->

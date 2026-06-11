@@ -53,29 +53,6 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* ── Top pill ── */
-    .top-pill {
-      background: #0f172a;
-      color: #fff;
-      padding: 8px 16px;
-      text-align: center;
-    }
-    .top-pill-inner {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-    }
-    .top-pill-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: #ef4444;
-      animation: blink 2s ease-in-out infinite;
-    }
     @keyframes blink {
       0%, 100% { opacity: 1; }
       50%       { opacity: .35; }
@@ -134,15 +111,13 @@
       gap: 14px;
       margin-bottom: 48px;
     }
-    .doc-logo {
-      background: var(--emerald);
-      color: var(--lime);
-      font-family: 'Space Grotesk', sans-serif;
-      font-weight: 700;
-      font-size: 15px;
-      letter-spacing: .04em;
-      padding: 6px 12px;
-      border-radius: 8px;
+    .doc-avatar {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--teal);
+      flex-shrink: 0;
     }
     .doc-topbar-label {
       color: var(--text-muted);
@@ -560,14 +535,6 @@
 </head>
 <body>
 
-<!-- Top pill -->
-<div class="top-pill">
-  <span class="top-pill-inner">
-    <span class="top-pill-dot"></span>
-    1-on-1 Live Coaching &mdash; Only 10 Spots / Month
-  </span>
-</div>
-
 <!-- Site header -->
 <header class="site-header">
   <div class="site-header-inner">
@@ -582,9 +549,9 @@
 
   <!-- Doc header row -->
   <div class="doc-topbar">
-    <span class="doc-logo">L²</span>
+    <img src="../pictures/mansour/headshot_square.webp" alt="Mansour Manci" class="doc-avatar">
     <div>
-      <div class="doc-topbar-label">Launch To Lead Engineering Career Coaching</div>
+      <div class="doc-topbar-label">Engineering Career Coaching Program</div>
       <div class="doc-topbar-sub">July Cohort</div>
     </div>
   </div>

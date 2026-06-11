@@ -55,34 +55,6 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* ── Top pill ── */
-    .top-pill {
-      background: #0f172a;
-      color: #fff;
-      padding: 8px 16px;
-      text-align: center;
-    }
-    .top-pill-inner {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-    }
-    .top-pill-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: #ef4444;
-      animation: blink 2s ease-in-out infinite;
-    }
-    @keyframes blink {
-      0%, 100% { opacity: 1; }
-      50%       { opacity: .35; }
-    }
-
     /* ── Site header ── */
     .site-header {
       background: #fff;
@@ -448,24 +420,96 @@
     }
     .post-payment-note strong { color: var(--heading); }
 
+    /* ── Conditional fields ── */
+    .conditional-field { display: none; margin-top: 6px; }
+
+    /* ── Field note ── */
+    .field-note {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-top: 4px;
+      margin-bottom: 10px;
+      font-style: italic;
+    }
+
+    /* ── Checkbox group ── */
+    .checkbox-group {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 8px;
+    }
+    .check-label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 15px;
+      color: var(--text);
+      cursor: pointer;
+      font-weight: 400;
+    }
+    .check-label input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+      accent-color: var(--teal);
+      cursor: pointer;
+    }
+
+    /* ── Payment step ── */
+    .step-header {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin-bottom: 24px;
+    }
+    .step-header h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--heading);
+      margin-bottom: 10px;
+      margin-top: 8px;
+    }
+    .step-header p { font-size: 15px; color: var(--text-muted); line-height: 1.7; margin-bottom: 0; }
+    .step-badge {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 4px;
+    }
+
+    /* ── Submit-after-payment block ── */
+    .submit-paid-wrap {
+      margin-top: 28px;
+      background: var(--bg-card);
+      border: 2px solid var(--emerald);
+      border-radius: 12px;
+      padding: 28px 32px;
+      text-align: center;
+    }
+    .submit-paid-note {
+      font-size: 15px;
+      color: var(--text-muted);
+      margin: 8px 0 20px;
+    }
+
     @media (max-width: 640px) {
       .form-section  { padding: 24px 20px; }
       .submit-section { padding: 24px 20px; }
       .field-row     { grid-template-columns: 1fr; }
       .payment-grid  { grid-template-columns: 1fr; }
       .page          { padding: 32px 16px 72px; }
+      .submit-paid-wrap { padding: 24px 20px; }
+      .step-header { padding: 24px 20px; }
     }
   </style>
 </head>
 <body>
-
-<!-- Top pill -->
-<div class="top-pill">
-  <span class="top-pill-inner">
-    <span class="top-pill-dot"></span>
-    1-on-1 Live Coaching &mdash; Only 10 Spots / Month
-  </span>
-</div>
 
 <!-- Site header -->
 <header class="site-header">
@@ -482,273 +526,393 @@
   <!-- Page header -->
   <div class="page-header">
     <span class="section-label">Application — July Cohort</span>
-    <h1>Tell us about yourself.</h1>
-    <p>This helps Mansour make sure the program is the right fit before you talk. It takes about 5 minutes. Be honest — there are no trick questions.</p>
+    <h1>Apply to work together.</h1>
+    <p>This helps me understand where you are and whether the program is the right fit. It takes about 5–10 minutes. Be honest — there are no trick questions.</p>
   </div>
 
   <!-- Form-level error banner -->
-  <div id="formError">Please fill in all required fields before submitting.</div>
+  <div id="formError">Please fill in all required fields before continuing.</div>
 
   <!-- ── Application Form ── -->
-  <!-- TODO: Wire up form submission. Options: Formspree (formspree.io), Netlify Forms, or a custom endpoint.
-       Replace the JS submit handler below with your chosen service's action/method. -->
+  <!-- TODO: Wire up form submission. POST to your chosen endpoint (Formspree, Netlify Forms, custom server, etc.)
+       See the submitAfterPayBtn handler at the bottom of this file. -->
   <div class="form-card" id="formCard">
     <form id="applicationForm" novalidate>
 
-      <!-- Section 1: About You -->
+      <!-- Contact Info -->
       <div class="form-section">
-        <h3>About You</h3>
-
-        <div class="field" data-required>
-          <label for="name">Full Name <span class="req">*</span></label>
-          <input type="text" id="name" name="name" required placeholder="Jane Smith" autocomplete="name">
-          <div class="field-error-msg">Please enter your full name.</div>
-        </div>
-
-        <div class="field" data-required>
-          <label for="email">Email Address <span class="req">*</span></label>
-          <input type="email" id="email" name="email" required placeholder="jane@example.com" autocomplete="email">
-          <div class="field-error-msg">Please enter a valid email address.</div>
-        </div>
-
-        <div class="field">
-          <label for="linkedin">LinkedIn Profile URL <span class="opt">(optional)</span></label>
-          <input type="url" id="linkedin" name="linkedin" placeholder="https://linkedin.com/in/yourname" autocomplete="off">
-        </div>
-      </div>
-
-      <!-- Section 2: Engineering Background -->
-      <div class="form-section">
-        <h3>Your Engineering Background</h3>
-
+        <h3>How to Reach You</h3>
         <div class="field-row">
           <div class="field" data-required>
-            <label for="degree">Degree Type <span class="req">*</span></label>
-            <select id="degree" name="degree" required>
-              <option value="">Select one...</option>
-              <option>Bachelor's</option>
-              <option>Master's</option>
-              <option>PhD</option>
-              <option>Associate's</option>
-              <option>Other</option>
-            </select>
-            <div class="field-error-msg">Please select your degree type.</div>
+            <label for="name">Full Name <span class="req">*</span></label>
+            <input type="text" id="name" name="name" required placeholder="Jane Smith" autocomplete="name">
+            <div class="field-error-msg">Please enter your full name.</div>
           </div>
           <div class="field" data-required>
-            <label for="gradYear">Graduation Year <span class="req">*</span></label>
-            <input type="number" id="gradYear" name="gradYear" required min="1990" max="2030" placeholder="2024">
-            <div class="field-error-msg">Please enter your graduation year.</div>
+            <label for="email">Email Address <span class="req">*</span></label>
+            <input type="email" id="email" name="email" required placeholder="jane@example.com" autocomplete="email">
+            <div class="field-error-msg">Please enter a valid email address.</div>
           </div>
-        </div>
-
-        <div class="field" data-required>
-          <label for="engField">Engineering Field <span class="req">*</span></label>
-          <input type="text" id="engField" name="engField" required placeholder="e.g. Mechanical, Software, Electrical, Civil...">
-          <div class="field-error-msg">Please enter your engineering field.</div>
-        </div>
-
-        <div class="field" data-required>
-          <label for="status">Current Employment Status <span class="req">*</span></label>
-          <select id="status" name="status" required>
-            <option value="">Select one...</option>
-            <option>Looking for my first engineering role</option>
-            <option>Employed but looking to switch roles or companies</option>
-            <option>Student, graduating soon</option>
-            <option>Currently between jobs</option>
-            <option>Other</option>
-          </select>
-          <div class="field-error-msg">Please select your current status.</div>
         </div>
       </div>
 
-      <!-- Section 3: Where You Are Right Now -->
+      <!-- Tier 1: Qualifications -->
       <div class="form-section">
-        <h3>Where You Are Right Now</h3>
+        <h3>Qualifications</h3>
 
-        <div class="field" data-required data-type="radio" data-name="applied">
-          <label>Have you applied to engineering jobs in the last 3 months? <span class="req">*</span></label>
+        <div class="field" data-required data-type="radio" data-name="hasDegree">
+          <label>Do you have an engineering degree? <span class="req">*</span></label>
           <div class="radio-group">
-            <label class="radio-label">
-              <input type="radio" name="applied" value="yes"> Yes, I've been actively applying
-            </label>
-            <label class="radio-label">
-              <input type="radio" name="applied" value="no"> No, I haven't started yet
-            </label>
-            <label class="radio-label">
-              <input type="radio" name="applied" value="starting-soon"> Not yet, but I'm about to start
-            </label>
+            <label class="radio-label"><input type="radio" name="hasDegree" value="yes"> Yes</label>
+            <label class="radio-label"><input type="radio" name="hasDegree" value="completing"> Still completing it</label>
+            <label class="radio-label"><input type="radio" name="hasDegree" value="no"> No</label>
+          </div>
+          <div id="completingField" class="conditional-field">
+            <input type="text" name="gradDate" placeholder="Expected graduation: e.g. May 2026">
           </div>
           <div class="field-error-msg">Please select an option.</div>
         </div>
 
-        <div class="field" data-required style="margin-top: 20px;">
-          <label for="blocking">What's the main thing holding you back right now? <span class="req">*</span></label>
-          <textarea id="blocking" name="blocking" required placeholder="Be honest — this helps Mansour understand where you are and whether he can help. No wrong answers."></textarea>
-          <div class="field-error-msg">Please answer this question.</div>
+        <div class="field" data-required style="margin-top:20px;">
+          <label for="discipline">Engineering Discipline <span class="req">*</span></label>
+          <input type="text" id="discipline" name="discipline" required placeholder="e.g. Mechanical, Software, Electrical, Civil...">
+          <div class="field-error-msg">Please enter your engineering discipline.</div>
+        </div>
+
+        <div class="field" data-required style="margin-top:20px;">
+          <label for="gradMonth">When did you graduate (or expect to)? <span class="req">*</span></label>
+          <input type="text" id="gradMonth" name="gradMonth" required placeholder="e.g. May 2024">
+          <div class="field-error-msg">Please enter your graduation date.</div>
+        </div>
+
+        <div class="field" data-required data-type="radio" data-name="investment" style="margin-top:20px;">
+          <label>Is this a financial investment you're prepared to make? <span class="req">*</span></label>
+          <p class="field-note">The 1-Month Program starts with a $249 refundable deposit and totals $997.</p>
+          <div class="radio-group">
+            <label class="radio-label"><input type="radio" name="investment" value="yes"> Yes, I'm ready</label>
+            <label class="radio-label"><input type="radio" name="investment" value="few-days"> I need a few days to decide</label>
+            <label class="radio-label"><input type="radio" name="investment" value="not-now"> Not at this time</label>
+          </div>
+          <div class="field-error-msg">Please select an option.</div>
         </div>
       </div>
 
-      <!-- Section 4: What You're Looking For -->
+      <!-- Tier 2: Your Situation -->
       <div class="form-section">
-        <h3>What You're Looking For</h3>
+        <h3>Your Situation</h3>
 
-        <div class="field" data-required>
-          <label for="goal">What does success look like for you in the next 90 days? <span class="req">*</span></label>
-          <textarea id="goal" name="goal" required placeholder="What role are you trying to land? What would change in your life if you got it?"></textarea>
+        <div class="field" data-required data-type="radio" data-name="searchLength">
+          <label>How long have you been actively job searching? <span class="req">*</span></label>
+          <div class="radio-group">
+            <label class="radio-label"><input type="radio" name="searchLength" value="less-1mo"> Less than 1 month</label>
+            <label class="radio-label"><input type="radio" name="searchLength" value="1-3mo"> 1–3 months</label>
+            <label class="radio-label"><input type="radio" name="searchLength" value="3-6mo"> 3–6 months</label>
+            <label class="radio-label"><input type="radio" name="searchLength" value="6mo-plus"> 6+ months</label>
+            <label class="radio-label"><input type="radio" name="searchLength" value="not-yet"> Not yet — I'm preparing to start</label>
+          </div>
+          <div class="field-error-msg">Please select an option.</div>
+        </div>
+
+        <div class="field" data-required data-type="radio" data-name="situation" style="margin-top:20px;">
+          <label>What best describes your current situation? <span class="req">*</span></label>
+          <div class="radio-group">
+            <label class="radio-label"><input type="radio" name="situation" value="no-callbacks"> Applying but not getting callbacks or interviews</label>
+            <label class="radio-label"><input type="radio" name="situation" value="interviews-no-offers"> Getting interviews but not receiving offers</label>
+            <label class="radio-label"><input type="radio" name="situation" value="both"> Both — low callbacks and failing interviews when I do get them</label>
+            <label class="radio-label"><input type="radio" name="situation" value="starting-right"> Just starting out — I want to do this right from the beginning</label>
+          </div>
+          <div class="field-error-msg">Please select an option.</div>
+        </div>
+
+        <div class="field" data-required data-type="radio" data-name="effort" style="margin-top:20px;">
+          <label>How would you describe the effort you've put in so far? <span class="req">*</span></label>
+          <div class="radio-group">
+            <label class="radio-label"><input type="radio" name="effort" value="quick-resume"> I have a resume but I put it together quickly and haven't thought much about it</label>
+            <label class="radio-label"><input type="radio" name="effort" value="hard-not-clicking"> I've worked hard on my resume and interview prep but something isn't clicking</label>
+            <label class="radio-label"><input type="radio" name="effort" value="hundreds-apps"> I've sent hundreds of applications with little to show for it</label>
+            <label class="radio-label"><input type="radio" name="effort" value="getting-serious"> I haven't applied to many jobs yet but I'm getting serious now</label>
+          </div>
+          <div class="field-error-msg">Please select an option.</div>
+        </div>
+      </div>
+
+      <!-- Tier 3: Coachability & Background -->
+      <div class="form-section">
+        <h3>Background &amp; Coachability</h3>
+
+        <div class="field" data-required data-type="radio" data-name="prevCoach">
+          <label>Have you worked with a career coach or resume service before? <span class="req">*</span></label>
+          <div class="radio-group">
+            <label class="radio-label"><input type="radio" name="prevCoach" value="no"> No</label>
+            <label class="radio-label"><input type="radio" name="prevCoach" value="yes-helpful"> Yes — and it was helpful</label>
+            <label class="radio-label"><input type="radio" name="prevCoach" value="yes-not-helpful"> Yes — and it wasn't helpful</label>
+          </div>
+          <div id="prevCoachFollowUp" class="conditional-field">
+            <label style="margin-top:14px; display:block; font-size:14px; font-weight:600; color:var(--heading);">What happened and why didn't it work out? <span class="opt">(2–3 sentences)</span></label>
+            <textarea name="prevCoachDetail" rows="3" style="margin-top:6px; min-height:80px;" placeholder="Be honest — no judgment here."></textarea>
+          </div>
+          <div class="field-error-msg">Please select an option.</div>
+        </div>
+
+        <div class="field" data-required data-type="radio" data-name="commitment" style="margin-top:20px;">
+          <label>The program involves real work between sessions — rebuilding resume bullets, building interview stories, and preparing for the mock interview. How do you feel about that commitment? <span class="req">*</span></label>
+          <div class="radio-group">
+            <label class="radio-label"><input type="radio" name="commitment" value="fully-prepared"> I'm fully prepared for it</label>
+            <label class="radio-label"><input type="radio" name="commitment" value="can-make-it-work"> I can make it work</label>
+            <label class="radio-label"><input type="radio" name="commitment" value="not-sure"> I'm not sure I have the bandwidth right now</label>
+          </div>
+          <div class="field-error-msg">Please select an option.</div>
+        </div>
+
+        <div class="field" data-required style="margin-top:20px;">
+          <label for="obstacle">What's your current biggest obstacle — in your own words? <span class="req">*</span></label>
+          <p class="field-note">3–5 sentences. Write honestly — this is the most revealing question in the form.</p>
+          <textarea id="obstacle" name="obstacle" required placeholder="e.g. I've sent 200 applications and don't understand why I'm not getting callbacks. I've revised my resume several times but nothing is changing..."></textarea>
           <div class="field-error-msg">Please answer this question.</div>
         </div>
+
+        <div class="field" data-required style="margin-top:20px;">
+          <label for="whyLtl">What specifically made you reach out to Launch to Lead versus figuring this out on your own? <span class="req">*</span></label>
+          <textarea id="whyLtl" name="whyLtl" required placeholder="e.g. I've been stuck for 6 months and I'm done guessing..."></textarea>
+          <div class="field-error-msg">Please answer this question.</div>
+        </div>
+
+        <div class="field" data-required style="margin-top:20px;">
+          <label for="strengths">What do you feel are your biggest strengths going for you? <span class="req">*</span></label>
+          <textarea id="strengths" name="strengths" required placeholder="Think about your technical skills, real-world experience, personal qualities..."></textarea>
+          <div class="field-error-msg">Please answer this question.</div>
+        </div>
+
+        <div class="field" data-required style="margin-top:20px;">
+          <label for="holdingBack">What has been holding you back from landing that engineering role so far? <span class="req">*</span></label>
+          <textarea id="holdingBack" name="holdingBack" required placeholder="Be as candid as possible."></textarea>
+          <div class="field-error-msg">Please answer this question.</div>
+        </div>
+
+        <div class="field" data-required style="margin-top:20px;">
+          <label for="hearAbout">How did you hear about Launch to Lead? <span class="req">*</span></label>
+          <select id="hearAbout" name="hearAbout" required>
+            <option value="">Select one...</option>
+            <option>LinkedIn</option>
+            <option>Referred by someone</option>
+            <option>Google search</option>
+            <option>YouTube</option>
+            <option>Instagram</option>
+            <option>TikTok</option>
+            <option>Reddit</option>
+            <option>Other</option>
+          </select>
+          <div class="field-error-msg">Please select an option.</div>
+        </div>
+      </div>
+
+      <!-- Logistics -->
+      <div class="form-section">
+        <h3>Logistics</h3>
 
         <div class="field">
-          <label for="extra">Anything else you want Mansour to know? <span class="opt">(optional)</span></label>
-          <textarea id="extra" name="extra" rows="3" style="min-height: 80px;" placeholder="Any context, questions, or notes you want to include."></textarea>
+          <label>General availability for weekly 1-hour sessions <span class="opt">(select all that apply)</span></label>
+          <div class="checkbox-group">
+            <label class="check-label"><input type="checkbox" name="avail" value="weekday-mornings"> Weekday mornings</label>
+            <label class="check-label"><input type="checkbox" name="avail" value="weekday-afternoons"> Weekday afternoons</label>
+            <label class="check-label"><input type="checkbox" name="avail" value="weekday-evenings"> Weekday evenings</label>
+            <label class="check-label"><input type="checkbox" name="avail" value="weekends"> Weekends</label>
+          </div>
+        </div>
+
+        <div class="field" data-required style="margin-top:20px;">
+          <label for="timezone">Time Zone <span class="req">*</span></label>
+          <select id="timezone" name="timezone" required>
+            <option value="">Select your time zone...</option>
+            <optgroup label="United States">
+              <option value="ET">Eastern (ET)</option>
+              <option value="CT">Central (CT)</option>
+              <option value="MT">Mountain (MT)</option>
+              <option value="PT">Pacific (PT)</option>
+              <option value="AKT">Alaska (AKT)</option>
+              <option value="HT">Hawaii (HT)</option>
+            </optgroup>
+            <optgroup label="Other">
+              <option value="UTC">UTC</option>
+              <option value="GMT">GMT / London</option>
+              <option value="CET">Central European (CET)</option>
+              <option value="IST">India (IST)</option>
+              <option value="Other">Other</option>
+            </optgroup>
+          </select>
+          <div class="field-error-msg">Please select your time zone.</div>
         </div>
       </div>
 
-      <!-- Submit -->
+      <!-- Continue button -->
       <div class="submit-section">
-        <button type="submit" class="submit-btn" id="submitBtn">Submit Application →</button>
-        <p class="submit-note">After submitting, you'll receive payment instructions for the $249 deposit to hold your spot.</p>
+        <button type="submit" class="submit-btn" id="continueBtn">Continue to Payment →</button>
+        <p class="submit-note">Next: a $249 refundable deposit holds your spot. You'll choose your payment method on the next screen.</p>
       </div>
 
     </form>
   </div>
 
-  <!-- ══ SUCCESS STATE ══ -->
-  <div id="successState">
+  <!-- ══ PAYMENT STEP ══ -->
+  <div id="paymentStep" style="display:none;">
 
-    <!-- Confirmation header -->
-    <div class="success-header">
-      <div class="success-icon">
-        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-      </div>
-      <h2>Application received.</h2>
-      <p>Thanks for applying. Mansour will review your application personally and reach out within 48 hours. To hold your spot in the July cohort, a <strong style="color: var(--heading);">$249 deposit</strong> is required.</p>
+    <div class="step-header">
+      <div class="step-badge">Step 1 of 2 — Hold Your Spot</div>
+      <h2>Send the $249 deposit to hold your spot.</h2>
+      <p>Your application responses are saved. To submit them for review, send the $249 deposit using one of the options below. This amount is <strong style="color:var(--heading);">fully refunded</strong> if the program isn't the right fit or if Session 1 doesn't deliver.</p>
     </div>
 
-    <!-- Deposit instructions -->
-    <div class="deposit-callout">
-      <h3>One last step: hold your spot with a $249 deposit.</h3>
-      <p>Your spot is reserved once the deposit is received. This amount is <strong>fully refunded</strong> if Mansour doesn't approve your application, or if Session 1 doesn't deliver. Choose whichever payment method is easiest for you below.</p>
-    </div>
-
-    <!-- Payment options -->
     <span class="payment-label">Choose your payment method</span>
     <div class="payment-grid">
-
-      <!-- Stripe -->
       <div class="pay-card featured">
         <div class="pay-icon stripe">S</div>
         <div class="pay-card-name">Stripe</div>
         <div class="pay-card-detail">Pay by card — instant confirmation.</div>
-        <!-- TODO: Replace # with your Stripe payment link for the $249 deposit product -->
+        <!-- TODO: Replace # with your Stripe $249 deposit payment link -->
         <a href="#" class="pay-btn" target="_blank" rel="noopener">Pay by Card →</a>
       </div>
-
-      <!-- Venmo -->
       <div class="pay-card">
         <div class="pay-icon venmo">V</div>
         <div class="pay-card-name">Venmo</div>
-        <div class="pay-card-detail">Send $249 and include your name in the note.</div>
+        <div class="pay-card-detail">Send $249. Include your full name in the note.</div>
         <!-- TODO: Replace with your Venmo @handle -->
         <div class="pay-handle">@your-venmo-handle</div>
       </div>
-
-      <!-- Zelle -->
       <div class="pay-card">
         <div class="pay-icon zelle">Z</div>
         <div class="pay-card-name">Zelle</div>
-        <div class="pay-card-detail">Send $249 and include your name in the memo.</div>
+        <div class="pay-card-detail">Send $249. Include your full name in the memo.</div>
         <!-- TODO: Replace with your Zelle email or phone -->
         <div class="pay-handle">your@email.com</div>
       </div>
-
     </div>
 
-    <!-- Post-payment note -->
+    <div class="submit-paid-wrap">
+      <div class="step-badge">Step 2 of 2 — Submit Your Application</div>
+      <p class="submit-paid-note">Once you've sent the deposit, click below to officially submit your application for review.</p>
+      <button type="button" class="submit-btn" id="submitAfterPayBtn">I've sent my deposit — submit my application →</button>
+      <p class="submit-note" style="margin-top:12px;">You'll hear back within 48 hours. If it's not the right fit, your deposit is returned immediately.</p>
+    </div>
+
+  </div>
+
+  <!-- ══ SUCCESS STATE ══ -->
+  <div id="successState" style="display:none;">
+    <div class="success-header">
+      <div class="success-icon">
+        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+      </div>
+      <h2>Application submitted.</h2>
+      <p>Your application and deposit are received. You'll hear back within 48 hours. If it's not the right fit, the $249 is returned immediately — no awkward conversation.</p>
+    </div>
     <div class="post-payment-note">
-      <p>Once payment is sent, you're all set. <strong>You don't need to confirm it</strong> — Mansour will match your payment to your application and reach out directly within 48 hours. If you have any questions in the meantime, email <strong>mansourmanci@gmail.com</strong>.</p>
+      <p>In the meantime, if you have any questions email <strong>mansourmanci@gmail.com</strong>.</p>
     </div>
-
   </div>
 
 </div>
 
 <script>
-  // ── Form validation + submission handler ──
-  // TODO: To capture application data server-side, replace the handleSubmit function
-  // with a fetch() POST to your chosen endpoint (e.g. Formspree, Netlify Forms, etc.)
-  // Example Formspree: fetch('https://formspree.io/f/YOUR_ID', { method:'POST', body: new FormData(form) })
+  // ── Conditional field: degree completing ──
+  document.querySelectorAll('input[name="hasDegree"]').forEach(function(r) {
+    r.addEventListener('change', function() {
+      document.getElementById('completingField').style.display = this.value === 'completing' ? 'block' : 'none';
+    });
+  });
 
-  var form = document.getElementById('applicationForm');
-  var formCard = document.getElementById('formCard');
-  var successState = document.getElementById('successState');
-  var formError = document.getElementById('formError');
-  var submitBtn = document.getElementById('submitBtn');
+  // ── Conditional field: previous coach follow-up ──
+  document.querySelectorAll('input[name="prevCoach"]').forEach(function(r) {
+    r.addEventListener('change', function() {
+      document.getElementById('prevCoachFollowUp').style.display =
+        (this.value === 'yes-helpful' || this.value === 'yes-not-helpful') ? 'block' : 'none';
+    });
+  });
 
+  // ── References ──
+  var form            = document.getElementById('applicationForm');
+  var formCard        = document.getElementById('formCard');
+  var paymentStep     = document.getElementById('paymentStep');
+  var successState    = document.getElementById('successState');
+  var formError       = document.getElementById('formError');
+  var continueBtn     = document.getElementById('continueBtn');
+  var submitAfterPayBtn = document.getElementById('submitAfterPayBtn');
+
+  // ── Step 1: Validate → show payment ──
   form.addEventListener('submit', function(e) {
     e.preventDefault();
     formError.style.display = 'none';
 
-    var valid = true;
-
-    // Validate text/email/url/number/select/textarea fields
-    var requiredFields = form.querySelectorAll('[data-required]');
-    requiredFields.forEach(function(fieldEl) {
-      var type = fieldEl.getAttribute('data-type');
-
-      if (type === 'radio') {
-        var name = fieldEl.getAttribute('data-name');
-        var checked = form.querySelector('input[name="' + name + '"]:checked');
-        if (!checked) {
-          fieldEl.classList.add('has-error');
-          valid = false;
-        } else {
-          fieldEl.classList.remove('has-error');
-        }
-      } else {
-        var input = fieldEl.querySelector('input, select, textarea');
-        if (!input) return;
-        var val = input.value.trim();
-        var inputValid = val !== '' && input.checkValidity();
-        if (!inputValid) {
-          fieldEl.classList.add('has-error');
-          valid = false;
-        } else {
-          fieldEl.classList.remove('has-error');
-        }
-      }
-    });
-
-    if (!valid) {
+    if (!validateForm()) {
       formError.style.display = 'block';
       formError.scrollIntoView({ behavior: 'smooth', block: 'center' });
       return;
     }
 
-    // Disable submit button to prevent double-submit
-    submitBtn.disabled = true;
-    submitBtn.textContent = 'Submitting...';
+    // Persist form data so it survives a Stripe redirect
+    var data = {};
+    new FormData(form).forEach(function(val, key) {
+      if (data[key]) {
+        data[key] = [].concat(data[key], val); // handle checkboxes
+      } else {
+        data[key] = val;
+      }
+    });
+    try { sessionStorage.setItem('ltl_application', JSON.stringify(data)); } catch(err) {}
 
-    // TODO: Replace this timeout with a real fetch() to your form endpoint.
-    // On success from your endpoint, call showSuccess().
-    // On error, re-enable the button and show an error message.
+    continueBtn.disabled = true;
+    formCard.style.display = 'none';
+    paymentStep.style.display = 'block';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  // ── Step 2: Submit after payment ──
+  submitAfterPayBtn.addEventListener('click', function() {
+    submitAfterPayBtn.disabled = true;
+    submitAfterPayBtn.textContent = 'Submitting...';
+
+    // TODO: POST application data to your endpoint.
+    // Retrieve from sessionStorage (handles Stripe redirect case):
+    // var data = JSON.parse(sessionStorage.getItem('ltl_application') || '{}');
+    // fetch('https://formspree.io/f/YOUR_ID', {
+    //   method: 'POST',
+    //   headers: { 'Content-Type': 'application/json' },
+    //   body: JSON.stringify(data)
+    // }).then(function() { showSuccess(); });
+
+    // Temporary simulation — replace with real fetch above
     setTimeout(function() {
       showSuccess();
-
-      // GA4 conversion event
+      try { sessionStorage.removeItem('ltl_application'); } catch(err) {}
       if (typeof gtag === 'function') {
-        gtag('event', 'application_submitted', {
-          'page_location': window.location.pathname
-        });
+        gtag('event', 'application_submitted', { page_location: window.location.pathname });
       }
     }, 600);
   });
 
   function showSuccess() {
-    formCard.style.display = 'none';
-    formError.style.display = 'none';
+    paymentStep.style.display = 'none';
     successState.style.display = 'block';
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function validateForm() {
+    var valid = true;
+    form.querySelectorAll('[data-required]').forEach(function(fieldEl) {
+      var type = fieldEl.getAttribute('data-type');
+      if (type === 'radio') {
+        var name = fieldEl.getAttribute('data-name');
+        var checked = form.querySelector('input[name="' + name + '"]:checked');
+        if (!checked) { fieldEl.classList.add('has-error'); valid = false; }
+        else           { fieldEl.classList.remove('has-error'); }
+      } else {
+        var input = fieldEl.querySelector('input[required], select[required], textarea[required]');
+        if (!input) return;
+        var ok = input.value.trim() !== '' && input.checkValidity();
+        if (!ok) { fieldEl.classList.add('has-error'); valid = false; }
+        else      { fieldEl.classList.remove('has-error'); }
+      }
+    });
+    return valid;
   }
 </script>
 
