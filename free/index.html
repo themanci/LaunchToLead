@@ -613,6 +613,10 @@
     document.getElementById('resultsSection').classList.remove('hidden');
     document.getElementById('tryAgainSection').classList.remove('hidden');
     document.getElementById('resultsSection').scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+    if (typeof gtag === 'function') {
+      gtag('event', 'bullet_audit_success', { bullet_count: (bullets || []).length });
+    }
   }
 
   function renderBulletCard(b, i) {
