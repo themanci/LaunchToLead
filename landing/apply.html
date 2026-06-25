@@ -805,7 +805,7 @@
       <p>Your application and deposit are received. You'll hear back within 48 hours. If it's not the right fit, the $249 is returned immediately — no awkward conversation.</p>
     </div>
     <div class="post-payment-note">
-      <p>In the meantime, if you have any questions email <strong>mansourmanci@gmail.com</strong>.</p>
+      <p>In the meantime, if you have any questions email <strong>support@launchtolead.io</strong>.</p>
     </div>
   </div>
 
@@ -920,12 +920,13 @@
     .catch(function(err) {
       submitAfterPayBtn.disabled = false;
       submitAfterPayBtn.textContent = 'I\'ve sent my deposit — submit my application →';
-      alert('Something went wrong submitting your application. Please email mansourmanci@gmail.com directly and we\'ll sort it out.');
+      alert('Something went wrong submitting your application. Please email support@launchtolead.io directly and we\'ll sort it out.');
       console.error(err);
     });
   });
 
   function showSuccess() {
+    document.querySelector('.page-header').style.display = 'none';
     paymentStep.style.display = 'none';
     successState.style.display = 'block';
     window.scrollTo({ top: 0, behavior: 'smooth' });
