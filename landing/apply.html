@@ -770,7 +770,7 @@
         <div class="pay-icon stripe">S</div>
         <div class="pay-card-name">Stripe</div>
         <div class="pay-card-detail">Pay by card — instant confirmation.</div>
-        <a href="https://buy.stripe.com/00wdR2gmcfg0fHjb14cwg03" class="pay-btn" target="_blank" rel="noopener">Pay by Card →</a>
+        <a href="https://buy.stripe.com/eVqeV66LC2te7aN2uycwg05" class="pay-btn" target="_blank" rel="noopener">Pay by Card →</a>
       </div>
       <div class="pay-card">
         <div class="pay-icon venmo">V</div>
@@ -786,7 +786,7 @@
       </div>
     </div>
 
-    <div class="submit-paid-wrap">
+    <div class="submit-paid-wrap" id="submitPaidWrap">
       <div class="step-badge">Step 2 of 2 — Submit Your Application</div>
       <p class="submit-paid-note">Once you've sent the deposit, click below to officially submit your application for review.</p>
       <button type="button" class="submit-btn" id="submitAfterPayBtn">I've sent my deposit — submit my application →</button>
@@ -835,6 +835,35 @@
   var formError       = document.getElementById('formError');
   var continueBtn     = document.getElementById('continueBtn');
   var submitAfterPayBtn = document.getElementById('submitAfterPayBtn');
+
+  // ── Stripe redirect return: ?paid=1 ──
+  (function() {
+    var params = new URLSearchParams(window.location.search);
+    if (params.get('paid') !== '1') return;
+
+    // Check we have saved form data from before they left for Stripe
+    var saved;
+    try { saved = JSON.parse(sessionStorage.getItem('ltl_application') || 'null'); } catch(e) { saved = null; }
+    if (!saved) return; // no data — they must have come directly; do nothing
+
+    // Hide form, show payment step with confirmation banner
+    formCard.style.display = 'none';
+    formError.style.display = 'none';
+    paymentStep.style.display = 'block';
+
+    // Insert a confirmation notice above the submit button
+    var wrap = document.getElementById('submitPaidWrap');
+    if (wrap) {
+      var banner = document.createElement('div');
+      banner.style.cssText = 'background:#ecfdf5;border:1px solid #6ee7b7;border-radius:8px;padding:14px 18px;margin-bottom:20px;font-size:14px;color:#065f46;font-weight:600;text-align:center;';
+      banner.textContent = '\u2713 Payment received. Click below to officially submit your application.';
+      wrap.insertBefore(banner, wrap.firstChild);
+    }
+
+    // Clean the URL without reloading
+    window.history.replaceState({}, '', window.location.pathname);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  })();
 
   // ── Step 1: Validate → show payment ──
   form.addEventListener('submit', function(e) {
