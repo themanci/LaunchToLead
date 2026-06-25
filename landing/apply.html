@@ -534,10 +534,12 @@
   <div id="formError">Please fill in all required fields before continuing.</div>
 
   <!-- ── Application Form ── -->
-  <!-- TODO: Wire up form submission. POST to your chosen endpoint (Formspree, Netlify Forms, custom server, etc.)
-       See the submitAfterPayBtn handler at the bottom of this file. -->
   <div class="form-card" id="formCard">
     <form id="applicationForm" novalidate>
+
+      <!-- Formspree metadata -->
+      <input type="hidden" name="_subject" value="New Coaching Application — Launch to Lead">
+      <input type="hidden" name="_replyto" id="replytoField" value="">
 
       <!-- Contact Info -->
       <div class="form-section">
@@ -857,6 +859,11 @@
         data[key] = val;
       }
     });
+    // Mirror email into hidden _replyto field so Formspree threads replies correctly
+    var emailVal = (data.email || '').trim();
+    var replyto = document.getElementById('replytoField');
+    if (replyto && emailVal) replyto.value = emailVal;
+
     try { sessionStorage.setItem('ltl_application', JSON.stringify(data)); } catch(err) {}
 
     continueBtn.disabled = true;
@@ -870,23 +877,31 @@
     submitAfterPayBtn.disabled = true;
     submitAfterPayBtn.textContent = 'Submitting...';
 
-    // TODO: POST application data to your endpoint.
-    // Retrieve from sessionStorage (handles Stripe redirect case):
-    // var data = JSON.parse(sessionStorage.getItem('ltl_application') || '{}');
-    // fetch('https://formspree.io/f/YOUR_ID', {
-    //   method: 'POST',
-    //   headers: { 'Content-Type': 'application/json' },
-    //   body: JSON.stringify(data)
-    // }).then(function() { showSuccess(); });
+    var data = {};
+    try { data = JSON.parse(sessionStorage.getItem('ltl_application') || '{}'); } catch(err) {}
 
-    // Temporary simulation — replace with real fetch above
-    setTimeout(function() {
-      showSuccess();
-      try { sessionStorage.removeItem('ltl_application'); } catch(err) {}
-      if (typeof gtag === 'function') {
-        gtag('event', 'application_submitted', { page_location: window.location.pathname });
+    fetch('https://formspree.io/f/xvzjkwnb', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(data)
+    })
+    .then(function(res) {
+      if (res.ok) {
+        showSuccess();
+        try { sessionStorage.removeItem('ltl_application'); } catch(err) {}
+        if (typeof gtag === 'function') {
+          gtag('event', 'application_submitted', { page_location: window.location.pathname });
+        }
+      } else {
+        return res.json().then(function(body) { throw new Error(body.error || 'Submission failed'); });
       }
-    }, 600);
+    })
+    .catch(function(err) {
+      submitAfterPayBtn.disabled = false;
+      submitAfterPayBtn.textContent = 'I\'ve sent my deposit — submit my application →';
+      alert('Something went wrong submitting your application. Please email mansourmanci@gmail.com directly and we\'ll sort it out.');
+      console.error(err);
+    });
   });
 
   function showSuccess() {
