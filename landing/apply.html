@@ -770,7 +770,7 @@
         <div class="pay-icon stripe">S</div>
         <div class="pay-card-name">Stripe</div>
         <div class="pay-card-detail">Pay by card — instant confirmation.</div>
-        <a href="https://buy.stripe.com/eVqeV66LC2te7aN2uycwg05" class="pay-btn" target="_blank" rel="noopener">Pay by Card →</a>
+        <a href="https://buy.stripe.com/eVqeV66LC2te7aN2uycwg05" class="pay-btn">Pay by Card →</a>
       </div>
       <div class="pay-card">
         <div class="pay-icon venmo">V</div>
@@ -841,17 +841,12 @@
     var params = new URLSearchParams(window.location.search);
     if (params.get('paid') !== '1') return;
 
-    // Check we have saved form data from before they left for Stripe
-    var saved;
-    try { saved = JSON.parse(sessionStorage.getItem('ltl_application') || 'null'); } catch(e) { saved = null; }
-    if (!saved) return; // no data — they must have come directly; do nothing
-
-    // Hide form, show payment step with confirmation banner
+    // Hide form, show payment step
     formCard.style.display = 'none';
     formError.style.display = 'none';
     paymentStep.style.display = 'block';
 
-    // Insert a confirmation notice above the submit button
+    // Insert confirmation banner above submit button
     var wrap = document.getElementById('submitPaidWrap');
     if (wrap) {
       var banner = document.createElement('div');
