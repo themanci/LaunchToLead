@@ -323,10 +323,33 @@
       <p class="body-text">It takes about 5 minutes, tops. There are no trick questions — just be honest about where you are and what you need.</p>
       <p class="pro-tip">Pro tip: Find a quiet spot, settle in, and answer all the questions in one go.</p>
       <p class="warning"><em>Why?</em> If you stop halfway, your answers disappear — and nobody wants to start over.</p>
-      <a href="apply.html" class="cta-btn">Start Your Application →</a>
+      <a href="apply.html" class="cta-btn" id="vslCtaBtn">Start Your Application →</a>
     </div>
   </div>
 
 </div>
 </body>
+<script>
+  document.getElementById('vslCtaBtn').addEventListener('click', function() {
+    if (typeof gtag === 'function') {
+      gtag('event', 'cta_click', { event_category: 'funnel', event_label: 'vsl_page_apply_btn' });
+    }
+  });
+  // Track video play
+  var video = document.querySelector('video');
+  if (video) {
+    var played = false;
+    video.addEventListener('play', function() {
+      if (!played && typeof gtag === 'function') {
+        played = true;
+        gtag('event', 'video_play', { event_category: 'funnel', event_label: 'vsl_video' });
+      }
+    });
+    video.addEventListener('ended', function() {
+      if (typeof gtag === 'function') {
+        gtag('event', 'video_complete', { event_category: 'funnel', event_label: 'vsl_video' });
+      }
+    });
+  }
+</script>
 </html>

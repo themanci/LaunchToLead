@@ -1074,7 +1074,7 @@
           <span><strong style="color: #ffffff;">If it's a fit, we'll send you payment information and get you enrolled!</strong></span>
         </li>
       </ul>
-      <a href="vsl.html" class="cta-btn">Apply to Join us in August →</a>
+      <a href="vsl.html" class="cta-btn" id="offerCtaBtn">Apply to Join us in August →</a>
       <div class="cta-sub">Enrollment Closes July 27 &nbsp;·&nbsp; 10 Seats/month available &nbsp;·&nbsp; Next cohort is in October after this one.</div>
     </div>
   </div>
@@ -1096,5 +1096,12 @@
   <p class="disclaimer">Individual results described on this page are not typical and do not constitute a guarantee of your results. Every candidate's situation is different. Outcomes depend on effort, market conditions, and factors outside of any program. Individual experiences presented here may not be typical. Your results may vary.</p>
 
 </div>
+<script>
+  document.getElementById('offerCtaBtn').addEventListener('click', function() {
+    if (typeof gtag === 'function') {
+      gtag('event', 'cta_click', { event_category: 'funnel', event_label: 'offer_page_apply_btn' });
+    }
+  });
+</script>
 </body>
 </html>
