@@ -9,7 +9,7 @@
     const pages = {
         'index.html': { name: 'home', displayName: 'Home' },
         'success-stories.html': { name: 'success-stories', displayName: 'Success Stories' },
-        'about.html': { name: 'about', displayName: 'About' },
+        'about.html': { name: 'about', displayName: 'About Me' },
         'social.html': { name: 'social', displayName: 'Social' },
         'vault.html': { name: 'vault', displayName: 'The L² Vault' },
         'legal.html': { name: 'legal', displayName: 'Legal' }
@@ -58,15 +58,9 @@
         },
         { 
             name: 'LinkedIn', 
-            url: 'https://www.linkedin.com/company/110177288', 
+            url: 'https://www.linkedin.com/in/launchtolead/', 
             icon: '<i data-lucide="linkedin" class="w-5 h-5"></i>',
             color: '#0A66C2'
-        },
-        { 
-            name: 'YouTube', 
-            url: 'https://youtube.com/@launchtolead?si=ixd6oMJWhG2GhbNp', 
-            icon: '<i data-lucide="youtube" class="w-5 h-5"></i>',
-            color: '#FF0000'
         },
         { 
             name: 'TikTok', 
@@ -81,12 +75,7 @@
             color: '#E4405F'
         },
         { 
-            name: 'X', 
-            url: 'https://x.com/LaunchToLead', 
-            icon: '<svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>',
-            color: '#000000'
-        },
-        { 
+
             name: 'Facebook', 
             url: 'https://www.facebook.com/profile.php?id=61585810773337', 
             icon: '<i data-lucide="facebook" class="w-5 h-5"></i>',
@@ -166,11 +155,11 @@
                 <span class="font-bold text-xl text-brand-primary tracking-tight">Launch<span class="font-light text-brand-secondary">ToLead</span></span>
             </a>
             <div class="hidden md:flex items-center space-x-6">
-                <a href="about.html" class="${getLinkClasses('about')}">About</a>
+                <a href="about.html" class="${getLinkClasses('about')}">About Me</a>
                 <a href="success-stories.html" class="${getLinkClasses('success-stories')}">Success Stories</a>
                 ${getSocialDropdownHTML()}
-                <a href="coaching/" class="${getLinkClasses('contact', true)}">
-                    See If You're a Fit
+                <a href="offer/" class="${getLinkClasses('contact', true)}">
+                    Join Us
                 </a>
             </div>
             <!-- Mobile menu button -->
@@ -190,9 +179,9 @@
     <!-- Mobile menu (animated) -->
     <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-white border-b border-emerald-100 shadow-lg z-50 transform transition-all duration-200 -translate-y-2 opacity-0 pointer-events-none">
         <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <a href="about.html" class="${getMobileLinkClasses('about')}">About</a>
+            <a href="about.html" class="${getMobileLinkClasses('about')}">About Me</a>
             <a href="success-stories.html" class="${getMobileLinkClasses('success-stories')}">Success Stories</a>
-            <a href="coaching/" class="${getMobileLinkClasses('contact', true)}">See If You're a Fit</a>
+            <a href="offer/" class="${getMobileLinkClasses('contact', true)}">Join Us</a>
             ${getMobileSocialHTML()}
         </div>
     </div>

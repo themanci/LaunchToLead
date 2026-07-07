@@ -19,7 +19,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Watch Before You Apply | Launch to Lead</title>
   <meta name="description" content="Watch this short video from Mansour before you fill out your application for the Engineering Career Accelerator.">
-  <link rel="canonical" href="https://launchtolead.io/landing/vsl.html">
+  <link rel="canonical" href="https://launchtolead.io/offer/vsl.html">
   <link rel="icon" type="image/svg+xml" href="../favicon.svg">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -52,6 +52,47 @@
     }
 
     /* ── Site header ── */
+    .urgency-band-1 {
+      background: var(--emerald);
+      padding: 13px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+    .urgency-band-1 span {
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #fff;
+    }
+    .urgency-band-2 {
+      background: var(--lime);
+      padding: 11px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+    .urgency-band-2 .pulse-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: #ef4444;
+      animation: pulse 1.8s ease-in-out infinite;
+      flex-shrink: 0;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(1.3); }
+    }
+    .urgency-band-2 span {
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--emerald);
+    }
     .site-header {
       background: #fff;
       border-bottom: 1px solid var(--border);
@@ -240,6 +281,17 @@
 </head>
 <body>
 
+<!-- Banner 1 -->
+<div class="urgency-band-1">
+  <span>The Engineering First Offer Runway</span>
+</div>
+
+<!-- Banner 2 -->
+<div class="urgency-band-2">
+  <div class="pulse-dot"></div>
+  <span>10 Spots Per Cohort &nbsp;|&nbsp; Apply Now</span>
+</div>
+
 <!-- Site header -->
 <header class="site-header">
   <div class="site-header-inner">
@@ -259,7 +311,7 @@
   </div>
 
   <video controls style="width:100%;border-radius:14px;box-shadow:0 12px 40px rgba(0,0,0,.2);display:block;">
-    <source src="vsl.mp4" type="video/mp4">
+    <source src="../landing/vsl.mp4" type="video/mp4">
   </video>
 
   <!-- Audition / application section -->
@@ -272,7 +324,6 @@
       <p class="pro-tip">Pro tip: Find a quiet spot, settle in, and answer all the questions in one go.</p>
       <p class="warning"><em>Why?</em> If you stop halfway, your answers disappear — and nobody wants to start over.</p>
       <a href="apply.html" class="cta-btn">Start Your Application →</a>
-      <div class="cta-sub">A $249 deposit holds your spot &mdash; fully refunded if it's not a fit, or if Session 1 doesn't deliver.</div>
     </div>
   </div>
 

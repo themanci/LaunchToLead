@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Free Resume Bullet Auditor | Launch to Lead</title>
-  <meta name="description" content="Paste your resume bullet and get an instant IBB framework audit — what's missing, what to fix, and a rewrite. Free, no email required.">
+  <meta name="description" content="Paste your resume bullet and get an instant IBB framework audit — what's missing, what to fix, and a rewrite. Free.">
   <meta property="og:title" content="Free Resume Bullet Auditor | Launch to Lead">
   <meta property="og:description" content="Paste up to 3 resume bullets and get an instant IBB framework diagnosis. Free. No email required.">
   <link rel="icon" type="image/svg+xml" href="../favicon.svg">
@@ -68,6 +68,39 @@
     }
 
     .no-gate-note { font-size: 13px; color: var(--teal); font-weight: 600; }
+
+    /* ── Lead fields ── */
+    .lead-fields {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+    @media (max-width: 540px) { .lead-fields { grid-template-columns: 1fr; } }
+    .lead-field label {
+      display: block;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      color: var(--emerald);
+      margin-bottom: 6px;
+    }
+    .lead-field input {
+      width: 100%;
+      padding: 10px 14px;
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      font-size: 15px;
+      font-family: inherit;
+      color: var(--text);
+      background: #fff;
+      outline: none;
+      transition: border-color .15s;
+    }
+    .lead-field input:focus { border-color: var(--teal); }
+    .lead-field input.field-error { border-color: #ef4444; }
+    .lead-error-msg { font-size: 12px; color: #ef4444; margin-top: 4px; display: none; }
 
     /* ── Form card ── */
     .form-card {
@@ -443,14 +476,28 @@
 
   <!-- Page header -->
   <header class="page-header">
-    <span class="page-label">Free Tool — No Email Required</span>
+    <span class="page-label">Free Tool</span>
     <h1>Resume Bullet Auditor</h1>
     <p class="subtitle">Paste up to 3 resume bullets. Get an instant IBB framework diagnosis — what's missing, why it's hurting you, and a rewrite.</p>
-    <p class="no-gate-note">Free. No account. No email gate. Just paste and go.</p>
+    <p class="no-gate-note">Free. No account required.</p>
   </header>
 
   <!-- Form -->
   <div class="form-card">
+
+    <!-- Lead capture -->
+    <div class="lead-fields">
+      <div class="lead-field">
+        <label for="leadName">Your Name <span style="color:#ef4444;">*</span></label>
+        <input type="text" id="leadName" placeholder="Jane Smith" autocomplete="name">
+        <div class="lead-error-msg" id="leadNameErr">Please enter your name.</div>
+      </div>
+      <div class="lead-field">
+        <label for="leadEmail">Email Address <span style="color:#ef4444;">*</span></label>
+        <input type="email" id="leadEmail" placeholder="jane@example.com" autocomplete="email">
+        <div class="lead-error-msg" id="leadEmailErr">Please enter a valid email.</div>
+      </div>
+    </div>
     <div class="bullet-group" id="bulletGroup1">
       <label>Bullet 1</label>
       <textarea id="bullet1" placeholder="Paste your resume bullet here — exactly as it appears on your resume..."></textarea>
@@ -494,7 +541,7 @@
     <div class="cta-card">
       <h2>This is one bullet. You have 10–15 more.</h2>
       <p>The same problems show up across your whole resume — and we haven't touched your interview stories yet. That's the real work.</p>
-      <a href="../coaching/" class="cta-btn" id="ctaBtn">See if you're a fit for the program →</a>
+      <a href="../offer/" class="cta-btn" id="ctaBtn">See if you're a fit for the program →</a>
       <span class="cta-sub">$249 deposit · fully refunded if Session 1 doesn't deliver</span>
     </div>
   </div>
@@ -544,6 +591,34 @@
   async function runAudit() {
     document.getElementById('errorMsg').classList.add('hidden');
 
+    // Validate name + email
+    const nameVal  = (document.getElementById('leadName').value  || '').trim();
+    const emailVal = (document.getElementById('leadEmail').value || '').trim();
+    let leadValid = true;
+
+    const nameInput  = document.getElementById('leadName');
+    const emailInput = document.getElementById('leadEmail');
+    const nameErr    = document.getElementById('leadNameErr');
+    const emailErr   = document.getElementById('leadEmailErr');
+
+    if (!nameVal) {
+      nameInput.classList.add('field-error');
+      nameErr.style.display = 'block';
+      leadValid = false;
+    } else {
+      nameInput.classList.remove('field-error');
+      nameErr.style.display = 'none';
+    }
+    if (!emailVal || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailVal)) {
+      emailInput.classList.add('field-error');
+      emailErr.style.display = 'block';
+      leadValid = false;
+    } else {
+      emailInput.classList.remove('field-error');
+      emailErr.style.display = 'none';
+    }
+    if (!leadValid) return;
+
     const bullets = [
       (document.getElementById('bullet1').value || '').trim(),
       (document.getElementById('bullet2').value || '').trim(),
@@ -558,6 +633,18 @@
     if (typeof gtag === 'function') {
       gtag('event', 'bullet_audit_run', { bullet_count: bullets.length });
     }
+
+    // Silent lead capture — fire and forget
+    fetch('https://formspree.io/f/xvzjkwnb', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({
+        _subject: 'Free Tool Lead — Launch to Lead',
+        name: nameVal,
+        email: emailVal,
+        source: 'Resume Bullet Auditor'
+      })
+    }).catch(function() {}); // silent — don't block the audit
 
     document.getElementById('auditBtn').disabled = true;
     document.getElementById('loadingMsg').textContent =
@@ -694,7 +781,7 @@
 
   // CTA click tracking
   document.addEventListener('click', function(e) {
-    const link = e.target.closest('a[href*="coaching"]');
+    const link = e.target.closest('a[href*="offer"]');
     if (link && typeof gtag === 'function') {
       gtag('event', 'cta_click', { source: 'bullet_auditor' });
     }

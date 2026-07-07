@@ -17,9 +17,9 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Apply for the July Cohort | Launch to Lead</title>
+  <title>Apply to Join | Launch to Lead</title>
   <meta name="description" content="Apply to the Engineering Career Accelerator coaching program with Mansour Manci. 10 spots per month.">
-  <link rel="canonical" href="https://launchtolead.io/landing/apply.html">
+  <link rel="canonical" href="https://launchtolead.io/offer/apply.html">
   <link rel="icon" type="image/svg+xml" href="../favicon.svg">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -525,7 +525,7 @@
 
   <!-- Page header -->
   <div class="page-header">
-    <span class="section-label">Application — July Cohort</span>
+    <span class="section-label">Your Application</span>
     <h1>Apply to work together.</h1>
     <p>This helps me understand where you are and whether the program is the right fit. It takes about 5–10 minutes. Be honest — there are no trick questions.</p>
   </div>
@@ -587,16 +587,6 @@
           <div class="field-error-msg">Please enter your graduation date.</div>
         </div>
 
-        <div class="field" data-required data-type="radio" data-name="investment" style="margin-top:20px;">
-          <label>Is this a financial investment you're prepared to make? <span class="req">*</span></label>
-          <p class="field-note">The 1-Month Program starts with a $249 refundable deposit and totals $997.</p>
-          <div class="radio-group">
-            <label class="radio-label"><input type="radio" name="investment" value="yes"> Yes, I'm ready</label>
-            <label class="radio-label"><input type="radio" name="investment" value="few-days"> I need a few days to decide</label>
-            <label class="radio-label"><input type="radio" name="investment" value="not-now"> Not at this time</label>
-          </div>
-          <div class="field-error-msg">Please select an option.</div>
-        </div>
       </div>
 
       <!-- Tier 2: Your Situation -->
@@ -746,53 +736,12 @@
         </div>
       </div>
 
-      <!-- Continue button -->
+      <!-- Submit button -->
       <div class="submit-section">
-        <button type="submit" class="submit-btn" id="continueBtn">Continue to Payment →</button>
-        <p class="submit-note">Next: a $249 refundable deposit holds your spot. You'll choose your payment method on the next screen.</p>
+        <button type="submit" class="submit-btn" id="continueBtn">Submit My Application →</button>
       </div>
 
     </form>
-  </div>
-
-  <!-- ══ PAYMENT STEP ══ -->
-  <div id="paymentStep" style="display:none;">
-
-    <div class="step-header">
-      <div class="step-badge">Step 1 of 2 — Hold Your Spot</div>
-      <h2>Send the $249 deposit to hold your spot.</h2>
-      <p>Your application responses are saved. To submit them for review, send the $249 deposit using one of the options below. This amount is <strong style="color:var(--heading);">fully refunded</strong> if the program isn't the right fit or if Session 1 doesn't deliver.</p>
-    </div>
-
-    <span class="payment-label">Choose your payment method</span>
-    <div class="payment-grid">
-      <div class="pay-card featured">
-        <div class="pay-icon stripe">S</div>
-        <div class="pay-card-name">Stripe</div>
-        <div class="pay-card-detail">Pay by card — instant confirmation.</div>
-        <a href="https://buy.stripe.com/eVqeV66LC2te7aN2uycwg05" class="pay-btn">Pay by Card →</a>
-      </div>
-      <div class="pay-card">
-        <div class="pay-icon venmo">V</div>
-        <div class="pay-card-name">Venmo</div>
-        <div class="pay-card-detail">Send $249. Include your full name in the note.</div>
-        <div class="pay-handle">@LaunchToLead</div>
-      </div>
-      <div class="pay-card">
-        <div class="pay-icon zelle">Z</div>
-        <div class="pay-card-name">Zelle</div>
-        <div class="pay-card-detail">Send $249. Include your full name in the memo.</div>
-        <div class="pay-handle">themanci@launchtolead.io</div>
-      </div>
-    </div>
-
-    <div class="submit-paid-wrap" id="submitPaidWrap">
-      <div class="step-badge">Step 2 of 2 — Submit Your Application</div>
-      <p class="submit-paid-note">Once you've sent the deposit, click below to officially submit your application for review.</p>
-      <button type="button" class="submit-btn" id="submitAfterPayBtn">I've sent my deposit — submit my application →</button>
-      <p class="submit-note" style="margin-top:12px;">You'll hear back within 48 hours. If it's not the right fit, your deposit is returned immediately.</p>
-    </div>
-
   </div>
 
   <!-- ══ SUCCESS STATE ══ -->
@@ -802,10 +751,10 @@
         <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
       </div>
       <h2>Application submitted.</h2>
-      <p>Your application and deposit are received. You'll hear back within 48 hours. If it's not the right fit, the $249 is returned immediately — no awkward conversation.</p>
+      <p>We've received your application and will review it within 48 hours. If it looks like a fit, we'll reach out with next steps.</p>
     </div>
     <div class="post-payment-note">
-      <p>In the meantime, if you have any questions email <strong>support@launchtolead.io</strong>.</p>
+      <p>In the meantime, if you have any questions email <strong>contact@launchtolead.io</strong>.</p>
     </div>
   </div>
 
@@ -828,39 +777,13 @@
   });
 
   // ── References ──
-  var form            = document.getElementById('applicationForm');
-  var formCard        = document.getElementById('formCard');
-  var paymentStep     = document.getElementById('paymentStep');
-  var successState    = document.getElementById('successState');
-  var formError       = document.getElementById('formError');
-  var continueBtn     = document.getElementById('continueBtn');
-  var submitAfterPayBtn = document.getElementById('submitAfterPayBtn');
+  var form        = document.getElementById('applicationForm');
+  var formCard    = document.getElementById('formCard');
+  var successState = document.getElementById('successState');
+  var formError   = document.getElementById('formError');
+  var continueBtn = document.getElementById('continueBtn');
 
-  // ── Stripe redirect return: ?paid=1 ──
-  (function() {
-    var params = new URLSearchParams(window.location.search);
-    if (params.get('paid') !== '1') return;
-
-    // Hide form, show payment step
-    formCard.style.display = 'none';
-    formError.style.display = 'none';
-    paymentStep.style.display = 'block';
-
-    // Insert confirmation banner above submit button
-    var wrap = document.getElementById('submitPaidWrap');
-    if (wrap) {
-      var banner = document.createElement('div');
-      banner.style.cssText = 'background:#ecfdf5;border:1px solid #6ee7b7;border-radius:8px;padding:14px 18px;margin-bottom:20px;font-size:14px;color:#065f46;font-weight:600;text-align:center;';
-      banner.textContent = '\u2713 Payment received. Click below to officially submit your application.';
-      wrap.insertBefore(banner, wrap.firstChild);
-    }
-
-    // Clean the URL without reloading
-    window.history.replaceState({}, '', window.location.pathname);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  })();
-
-  // ── Step 1: Validate → show payment ──
+  // ── Submit: Validate → send to Formspree ──
   form.addEventListener('submit', function(e) {
     e.preventDefault();
     formError.style.display = 'none';
@@ -871,11 +794,11 @@
       return;
     }
 
-    // Persist form data so it survives a Stripe redirect
+    // Collect form data
     var data = {};
     new FormData(form).forEach(function(val, key) {
       if (data[key]) {
-        data[key] = [].concat(data[key], val); // handle checkboxes
+        data[key] = [].concat(data[key], val);
       } else {
         data[key] = val;
       }
@@ -885,21 +808,8 @@
     var replyto = document.getElementById('replytoField');
     if (replyto && emailVal) replyto.value = emailVal;
 
-    try { sessionStorage.setItem('ltl_application', JSON.stringify(data)); } catch(err) {}
-
     continueBtn.disabled = true;
-    formCard.style.display = 'none';
-    paymentStep.style.display = 'block';
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-
-  // ── Step 2: Submit after payment ──
-  submitAfterPayBtn.addEventListener('click', function() {
-    submitAfterPayBtn.disabled = true;
-    submitAfterPayBtn.textContent = 'Submitting...';
-
-    var data = {};
-    try { data = JSON.parse(sessionStorage.getItem('ltl_application') || '{}'); } catch(err) {}
+    continueBtn.textContent = 'Submitting...';
 
     fetch('https://formspree.io/f/xvzjkwnb', {
       method: 'POST',
@@ -909,7 +819,6 @@
     .then(function(res) {
       if (res.ok) {
         showSuccess();
-        try { sessionStorage.removeItem('ltl_application'); } catch(err) {}
         if (typeof gtag === 'function') {
           gtag('event', 'application_submitted', { page_location: window.location.pathname });
         }
@@ -918,16 +827,16 @@
       }
     })
     .catch(function(err) {
-      submitAfterPayBtn.disabled = false;
-      submitAfterPayBtn.textContent = 'I\'ve sent my deposit — submit my application →';
-      alert('Something went wrong submitting your application. Please email support@launchtolead.io directly and we\'ll sort it out.');
+      continueBtn.disabled = false;
+      continueBtn.textContent = 'Submit My Application →';
+      alert('Something went wrong submitting your application. Please email contact@launchtolead.io directly and we\'ll sort it out.');
       console.error(err);
     });
   });
 
   function showSuccess() {
     document.querySelector('.page-header').style.display = 'none';
-    paymentStep.style.display = 'none';
+    formCard.style.display = 'none';
     successState.style.display = 'block';
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }

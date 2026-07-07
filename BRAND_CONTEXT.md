@@ -1,7 +1,7 @@
 # Launch to Lead — Complete Brand Context
 
 > **Purpose:** Single-source brand bible for feeding to LLMs. Covers identity, design, programs, pricing, avatars, funnel, tracking, content, protocols, and every key business decision.
-> **Last updated:** June 2026
+> **Last updated:** May 2026
 
 ---
 
@@ -9,9 +9,9 @@
 
 - **Brand Name:** Launch to Lead Engineering (LaunchToLead, L²)
 - **Domain:** launchtolead.io
-- **Tagline:** "1-on-1 engineering career coaching. Resume rebuilds, interview prep, and mock interviews."
-- **Business Model:** Premium 1-on-1 coaching for engineers — NOT group programs, NOT courses, NOT subscription
-- **Scarcity:** Only 10 spots per month (enforced capacity constraint)
+- **Tagline:** "An 8-week program to land your first full-time engineering role — resume, interview stories, and a weekly search system, done in a small cohort."
+- **Business Model:** 8-week group cohort program for recent engineering graduates. NOT 1-on-1 ongoing coaching, NOT a course, NOT pre-recorded content. Structure: kickoff call, 6 weekly missions, wrap-up call, plus Skool community access for the cohort. One private 1:1 session exists only as a limited fast-action bonus (first 3 sign-ups), and 1:1 support is available free after the 8 weeks if any mission is still unclear.
+- **Scarcity:** 10 seats per cohort. Cohorts run on fixed enrollment windows (see individual cohort dates — 2026 dates currently in market; update after each window closes).
 - **Founded:** 2025
 - **Copyright:** © 2026 Launch to Lead Engineering
 - **Email:** contact@launchtolead.io
@@ -22,7 +22,7 @@
 ## 2. Founder — Mansour Manci
 
 ### Background
-- 10 years of engineering career experience (8 at John Deere, plus early career work)
+- 8 years at John Deere
 - 4 promotions, 4 career pivots (Mechanical → Embedded Software → Systems Engineering → Engineering Leadership/Management)
 - Sat on both sides of the hiring table — applied to jobs, interviewed candidates, and hired engineers
 - Built the program to teach everything he learned about landing engineering roles and standing out in interviews
@@ -71,7 +71,6 @@
 | `brand-surface` | `#ffffff` | White | Default surface |
 
 **Additional UI colors used:**
-- `#0f172a` — deep dark background used in pop-ups, graphic overlays, and dark-mode sections (Tailwind: slate-950 equivalent)
 - `slate-900` — dark text, dark sections (hero alternatives, pricing blocks)
 - `slate-600` — body text
 - `slate-50` — alternate section backgrounds
@@ -176,73 +175,52 @@ Shared component (`navigation.js`) injected into `#navigation-container`:
 
 ## 6. Programs & Offers
 
-### 6A. Engineering Career Accelerator (PRIMARY — Launch Path)
+## 6A. Engineering Career Accelerator (PRIMARY — Launch Path)
 
 **The core product. All marketing and advertising is focused here.**
 
-- **Price:** $997 (payment plan: $249 before session 1, remainder before session 2)
-- **Format:** 4 × 1-hour 1-on-1 sessions over 4 weeks (1 per week)
-- **Capacity:** 10 clients/month
-- **Continuation:** Month 2+ available at $495/month — 2 sessions/month, 1 every 2 weeks (optional, client's choice — no obligation after Month 1)
+**Canonical source:** `CLIENTS_--_Offer_Doc.txt` — treat this as the authoritative copy. `CLIENTS_--_Offer_Diamond.txt` is a supporting snapshot and should be kept in sync with it (see bonus-value note below).
 
-#### Program Structure
+#### Promise
+"In 8 weeks, build the resume, interview stories, and job search system to land more interviews with quality engineering companies — and turn those interviews into your first offer."
 
-| Week | Session | Focus |
-|------|---------|-------|
-| 1 | Your Resume Rebuilt | Turn boring job responsibilities into highly impactful accomplishments using the Impact Bullet Builder formula |
-| 2 | Interview Stories/Examples Mastered | Build master story bank, structure stories to show value in the format interviewers want |
-| 3 | Live Mock Interview with Direct Feedback | Real interview simulation with real-time critique and gap-fixing |
-| 4 | Job Search Strategy & Offer Prep | Application strategy, networking protocols, negotiation scripts, and 30-day action plan |
+#### Format
+8-week cohort. Kickoff call → 6 weekly missions → wrap-up/next-steps call. Skool community access included for the full cohort.
 
-#### Core Deliverables
-1. 4 × 1-hour 1-on-1 coaching sessions
-2. Complete resume rebuild
-3. 15+ STAR examples mapped & memorized
-4. Full behavioral mock interview with feedback
-5. All session recordings + notes
-6. Email support between sessions
+#### The 3 Mission Phases
+1. **Get out of the Invisible Candidate Zone** — tighten the resume, clean up project presentation, target the right roles.
+2. **Build the Engineering Storybank** — map skills into interview-ready examples (leadership, problem-solving, teamwork, technical judgment, failure recovery).
+3. **Turn interviews into reps, not roulette** — interview strategy + live mock interviews.
 
-#### Bonus Materials (40+)
-- Quick-Start Resume Template
-- Interview Story Template
-- Cover Letter Builder
-- LinkedIn Optimization Guide
-- First 90 Days Success Plan
-- Salary Negotiation Scripts
-- …and 30+ more checklists & templates
+#### Pricing & Payment
+- **$3,000 paid in full**, or **$450/week for 8 weeks** (paid-in-full saves $600)
+- **Capacity:** 10 seats per cohort
 
-#### Guarantee (Two-Part)
+#### Bonuses (all live in the cohort, no separate purchase)
+1. **Automated resume audit** — delivered immediately on enrollment (fast diagnostic)
+2. **Impact Bullet Builder Framework (in-depth)** — $500 value
+3. **Interview Story Builder Kit** — $500 value
+4. **Engineering Job Search Command Centre** — $500 value
+5. **Skool community access** — included, no separate value stated
+6. **Fast-action bonus:** private 1:1 Resume Rebuild Session — $750 value — for the first 3 people who join before the early deadline each cohort
 
-**Guarantee 1 — After Session 1**
-If you're not happy and don't feel it's valuable after the first session, we both walk away. No further commitment, no questions asked, no feelings hurt. You keep everything from session 1 — at minimum a powerful resume to start landing interviews.
+#### Guarantee
+"Show up, go through the missions, and if you're not happy with the content or experience at any point, I'll buy the program back from you at full price, no questions asked. And if any mission is still unclear after 8 weeks, I'll work with you 1:1 for free until it's clear and complete."
 
-**Guarantee 2 — Complete the Full Month**
-Complete all 4 sessions, do the homework, and submit 50+ job applications. If you do, you are guaranteed to walk away with:
-- A fully rebuilt resume that shows value and impact
-- A story vault of documented interview examples with competency mapping complete
-- In-depth mock interview practice with detailed feedback (recording, transcript, and notes)
+#### The 3 Problems Blocking the Outcome
+1. Not enough interviews
+2. Using weak interview examples
+3. Underperforming in interviews
 
-If we complete the month and those three deliverables are not in your hands, I continue working with you at no additional charge until they are.
+*(Named-method mapping below is unchanged from prior version — still valid content, just delivered inside the cohort's weekly missions rather than 1-on-1 sessions.)*
 
-#### Client Materials Breakdown
+- **Land more interviews with the resume** — Impact Bullet Builder™, Me-in-We Extractor™, Hidden Metrics Finder™, Job Sourcing Strategy™, Application Pipeline™, Warm Intro Protocol™, Referral Request Script™
+- **Use strong interview examples** — High-Impact Story Framework™, 3-Tier Impact Ladder™, Competency Story Map™, Master Story Vault™, Interview Cheat Sheet™
+- **Perform well in interviews** — Power Pause + Story Arsenal™, Numbered Roadmap™, Daily Story Practice™, Research Your Worth System™, Entry-Level Negotiation Scripts™
 
-**Pre-Session 1 (sent immediately on enrollment):**
-- Application Pipeline, Application Timing Strategy, Asset Mindset Shift, Career Center Activation Checklist, Job Board Hierarchy, Job Sourcing Strategy, Networking Mindset Shift, Resource Activation System, Warm Intro Protocol, Email Welcome
+> **Note:** The prior "Client Materials Breakdown" (pre/post Session 1–3 sequencing) was already flagged as pending remap to the 4-session structure — it now needs a second remap, from sessions to the 6-weekly-mission cohort cadence. Content is still valid; sequencing needs rebuilding around the 3 mission phases above.
 
-**Post-Session 1:**
-- Companion Cover Letter, Company Research Deep-Dive, New Grad-Friendly Company List, Email Followup
-
-**Pre-Session 2:**
-- Competency Story Map, High-Impact Story Framework, Interview Types Guide, Numbered Roadmap, Phone Screen Prep Guide, Three-Tier Impact Ladder, Email Prep
-
-**Post-Session 2:**
-- Career Fair Prep, Digital Stage Presence, Elevator Pitch Structure, Follow-Up Protocol, Human Element, Phone Screen Questions, Referral Request Script, Technical Gauntlet, Visual Aid Binder, Email Followup
-
-**Pre-Session 3:**
-- Burnout Prevention System, Entry-Level Negotiation Scripts, Offer Comparison Tool, Rejection Reframe System, Research Your Worth System, Email Prep
-
-**Post-Session 3:**
-- Comparison Trap Escape, Digital Footprint Audit, External Pressure Scripts, First 90-Day Plan, Gap Explanation Scripts, Ghosting Response, Offer Timeline Scripts, Post-Interview Followup, Email Followup
+---
 
 ### 6B. Accelerate Path (FUTURE — Coming Soon)
 
@@ -263,7 +241,9 @@ If we complete the month and those three deliverables are not in your hands, I c
 6. **The Mindset Forge** (20 methods) — 8 mindsets to lose, 7 to gain, 5 IC→Manager transition shifts
 
 #### Accelerate Pre-Session Materials
-- Current Situation Assessment, Green Light Audit, Hard Work Mindset Reset, Visibility Pyramid Overview, Email Template
+Current Situation Assessment, Green Light Audit, Hard Work Mindset Reset, Visibility Pyramid Overview, Email Template
+
+---
 
 ### 6C. Pivot Path (FUTURE — Coming Soon)
 
@@ -271,35 +251,22 @@ Story-driven method about pivoting disciplines within engineering (e.g., Mechani
 
 ---
 
-## 7. Target Customer Avatars
+## 7. Target Customer Avatar
 
-### Avatar 1: Engineering Student Graduating Soon
-- **Profile:** Engineering major (any discipline), 0-1 years until graduation
-- **Pain points:** No job lined up, can't turn coursework/projects into resume content, career fairs feel intimidating, low GPA anxiety, no internship experience
-- **Emotional state:** Anxious, uncertain, watching classmates get offers
-- **Budget sensitivity:** High — student income
-- **LinkedIn ad prefix:** `gradsoon-`
+**Single avatar — per L2_content_creation_guide_v4.md. All content and offer copy is written for this person only.**
 
-### Avatar 2: Recent Engineering Graduate
-- **Profile:** 0-1 year post-graduation, engineering degree
-- **Pain points:** Still applying with no interviews, resume reads like a job description, sent 100+ applications into the void, losing ~$7,000/month while searching
+### Recent Engineering Graduate
+- **Profile:** 0–1 year post-graduation, engineering degree
+- **Core pain:** Sent 100+ applications, zero callbacks, losing ~$7K/month in opportunity cost
+- **Pain points:** Resume reads like a job description, not getting interviews, doesn't know how to present experience or perform in interviews
 - **Emotional state:** Frustrated, defeated, dodging "how's the job hunt going?"
 - **Budget sensitivity:** High — unemployed or underemployed
 - **LinkedIn ad prefix:** `recentgrad-`
 
-### Avatar 3: Early-Career Engineer (1-3 years)
-- **Profile:** Employed engineer, 1-3 years experience
-- **Pain points:** Stuck in role they've outgrown, having experience vs knowing how to show it, resume hasn't been updated since college, want better company/role
-- **Emotional state:** Frustrated, invisible, underpaid, impatient
-- **Budget sensitivity:** Medium — employed but early career
-- **LinkedIn ad prefix:** `earlyeng-`
-
-### Avatar 4: Stuck Mid-Career Engineer (Accelerate Path — future)
-- **Profile:** 5+ years, 2-3+ years without promotion
-- **Pain points:** Watching less-skilled peers advance, getting good reviews but no promotions, imposter syndrome, invisible to leadership
-- **Emotional state:** Resentful, frustrated, considering leaving
-- **Budget sensitivity:** Low — established income
-- **Status:** Not actively marketed yet
+**Deprioritized — not active content/marketing targets:**
+- *Graduating Soon* and *Early-Career (1–3 yr)* segments still exist as real people who may buy, but are no longer the avatar content is written for. Do not build new content, ads, or offer copy around them.
+- *Almost-There Candidate* framing (getting interviews, not offers) in `CLIENTS_--_Upgraded_Avatar_Definition.txt` is explicitly rejected — do not use.
+- *Stuck Mid-Career Engineer* remains reserved for the separate future Accelerate Path offer, not this avatar.
 
 ---
 
@@ -354,18 +321,26 @@ Accomplishment + Metric + How + Why = IMPACT
 - **Conversion bridge:** Thank-you page tells them the guide solves the resume problem but they still need: (1) Interview Stories/Examples, (2) Mock Interview Preparation → CTA to offer page
 - **PDF generation:** `lead-magnets/generate-pdfs.js` merges variant cover pages with pre-printed V2 guide body
 
-### 9B. Free Resume Audit (BRIDGE — manual)
+### 9B. Micro Lead Magnet (ROTATING — monthly)
+- **Format:** Custom AI tool that completely solves one small, specific problem
+- **Delivery:** Fully automated — triggered by content CTA (comment or reply)
+- **Routing:** Auto-routes recipient to the full offer doc after delivery
+- **Cadence:** Rotates monthly (new tool each month)
+- **Purpose:** Mid-funnel bridge from content engagement → offer doc
+- **CTA trigger:** Comment or reply to content (LinkedIn posts, emails, etc.)
+
+### 9C. Free Resume Audit (BRIDGE — manual)
 - **Process:** Candidate emails resume → manual audit using protocol → personalized HTML report → PDF export
 - **Protocol:** `protocols/resume-audit-protocol.md` (7 sections, 0-100 scoring)
 - **Template:** `resumes/lead-magnet-audit-template.html` (lighter version: 3-5 issues, top 3-5 bullets rewritten)
 - **CTA in audit:** "Want Help Fixing All of This?" → offer page with UTM
 - **Turnaround:** "Within 12 hours, usually much sooner"
 
-### 9C. Accelerate Path Starter (narrative lead magnet)
+### 9D. Accelerate Path Starter (narrative lead magnet)
 - Story about getting promoted from Scrum Master/Product Owner to Software PV&V Supervisor at John Deere
 - Themes: volunteering for responsibilities, building visibility, compound effect of demonstrated skills
 
-### 9D. Pivot Path Starter (narrative lead magnet)
+### 9E. Pivot Path Starter (narrative lead magnet)
 - Story about pivoting from mechanical engineering to embedded software at John Deere
 - Themes: self-teaching, "Trojan Horse" methodology, skill demonstration before formal role change
 
@@ -375,15 +350,20 @@ Accomplishment + Metric + How + Why = IMPACT
 
 ### Full Funnel Flow
 ```
+All content (LinkedIn, short-form, long-form, email, everything)
+  ├→ Directly to full offer doc (primary destination)
+  └→ CTA to comment/reply → Micro Lead Magnet (rotating monthly AI tool)
+                                └→ Auto-routes to full offer doc
+
 LinkedIn Document Ad (15 variants, 3 avatars)
   └→ LinkedIn Lead Gen Form (email, first name, last name, LinkedIn URL)
       ├→ Confirmation page CTA → /coaching → Offer Page
       └→ PDF delivered (variant cover + IBB V2 guide)
           ├→ PDF last page → mailto:audit@launchtolead.io (free audit)
           ├→ PDF last page → Offer page
-          └→ Kit email sequence (6 emails over 10 days — not yet built)
-              ├→ Email 3-5: Resume audit offer
-              └→ Email 6: Direct booking CTA
+          └→ Kit email sequence (8 emails over 14 days — built in Kit)
+              ├→ Emails 3-5: Resume audit offer
+              └→ Email 8: Direct booking CTA
 
 Separately:
 Website → Lead Magnet Popup → Kit Form → PDF download → Thank-you page → Offer Page
@@ -395,12 +375,12 @@ Website → "See If You're a Fit" CTA → Offer Page
 2. Hero: "Let me tell you about my full coaching program" + VSL video
 3. Pain section: "What You're Doing Isn't Working" (5 pain points)
 4. Social proof: Alumni testimonials (Karen, Sarah, Gavin, Jonah, AJ)
-5. Program structure: 3 weeks breakdown
+5. Program structure: 4-session month 1 breakdown
 6. Karen video testimonial (full story)
 7. Meet your coach + deliverables checklist + guarantee
-8. Your Investment: ROI math ($7K/month lost) → **$997** revealed, or $249 now / remainder before session 2
+8. Your Investment: ROI math ($7K/month lost) → **$997 month 1** revealed, **$495/month** optional continuation
 9. Qualifying form (see below)
-10. FAQ / Objection handling (6 objections + 2 FAQs)
+10. FAQ / Objection handling
 11. Final CTA
 
 ### Qualifying Form Questions
@@ -413,16 +393,11 @@ Website → "See If You're a Fit" CTA → Offer Page
 
 ### Career Launch Call Protocol
 - 15-minute hard stop for pre-qualified prospects
-- **Full protocol:** `protocols/discovery_call/discovery_call_protocol_v4.html`
 - "The Hormozi Frame" — You Are the Doctor, Tonality = Certain, Scarcity Is Real
-- "The Shot Glass Close" — 4 focused sessions, no upsell
-- **Context:** By the time someone books this call, they've been through the full funnel (ad → lead magnet → offer page VSL → qualifying form → pre-call VSL). They are 80% sold — confirm fit, don't re-sell.
-- Pre-call prep (2 min before): Review qualifying form answers + optional LinkedIn check (photo, graduation date, projects)
-- Phase 1 (0–3 min): Set the Frame & Finish Qualifying — Opening script + 3–4 qualifying questions + red flag disqualifiers
-- Phase 2 (3–7 min): Diagnose & Connect — Mirror their words back, diagnose 1–2 root causes, drop one matching client story (Karen/Sarah/Jonah/Mohammed)
-- Phase 3 (7–10 min): The Prescription — Map each of the 4 sessions to their specific pain + deploy Shot Glass Close
-- Phase 4 (10–12 min): The Close — Acceptance frame ("I'd like to accept you") → $997 full or $249 now + remainder before session 2
-- Phase 5 (12–15 min): Objection Handling — Use agree-reframe-close; most common: "too expensive" and "need to think about it"
+- "The Shot Glass Close" — concentrated sessions, no upsell
+- Phase 1 (0-3 min): Opening + 4 qualifying questions + red flags
+- Phase 2 (3-7 min): Diagnose & Connect
+- Phase 3 (7-15 min): Present program + close
 
 ---
 
@@ -479,19 +454,16 @@ utm_term={{AD_SET_NAME}}&account_id={{ACCOUNT_ID}}&utm_campaign={{CAMPAIGN_NAME}
 ## 12. Homepage Structure & Copywriting Approach
 
 ### Hormozi-Style Sales Page Architecture (index.html)
-The homepage follows Alex Hormozi's $100M Offers value equation:
 
-$$\text{Value} = \frac{\text{Dream Outcome} \times \text{Perceived Likelihood}}{\text{Time Delay} \times \text{Effort \& Sacrifice}}$$
-
-| Section | Hormozi Lever | Content |
-|---------|--------------|---------|
-| 1. Hero | Dream Outcome ↑ | "TAKE YOUR ENGINEERING CAREER TO THE NEXT LEVEL" + photo + 3 biggest reasons + dual CTA |
+| Section | Lever | Content |
+|---------|-------|---------|
+| 1. Hero | Dream Outcome ↑ | Promise statement + photo + 3 biggest reasons + dual CTA |
 | 2. What You've Tried | — | 6 things that don't work (AI resumes, Easy Apply, Googled behavioral Qs, wrong advice, format tweaking, waiting) |
-| 3. The Offer | All 4 levers | 3 weeks breakdown + deliverables + 40+ bonuses + guarantee |
+| 3. The Offer | All levers | 4-session month 1 breakdown + deliverables + bonuses + guarantee |
 | 4. About Coach | Perceived Likelihood ↑ | Mansour bio: 8 years, 4 promotions, both sides of hiring table |
 | 5. Social Proof | Perceived Likelihood ↑ | Featured testimonials (Gavin, Jonah) + quick result cards (Ebuka, Gavin, Sarah) |
-| 6. FAQ | Handle Objections | 6 Qs covering experience, majors, timing, session count, guarantee, target audience |
-| 7. Final CTA | All 4 levers | "If you're tired of repeating what you already know doesn't work, try something that does." |
+| 6. FAQ | Handle Objections | Covering experience, majors, timing, session count, guarantee, target audience |
+| 7. Final CTA | All levers | "If you're tired of repeating what you already know doesn't work, try something that does." |
 
 ### Key Copywriting Patterns
 - **Dual CTA everywhere:** Primary "See If You're a Fit" (emerald) + Secondary "FREE Resume Guide" (outlined)
@@ -516,7 +488,6 @@ $$\text{Value} = \frac{\text{Dream Outcome} \times \text{Perceived Likelihood}}{
 | **Mohamed I.** | Contract Engineer → Permanent + Software Pivot | "My interview skills got better and felt more confident." |
 | **AJ M.** | Invisible → Promoted to Engineer II (18 months) | "Mansour taught me visibility and self-advocacy." |
 | **Ebuka O.** | Maximized Internship Impact at Fortune 100 Company | N/A |
-| **Austin** | Mechanical Engineer → Product Manager (discipline pivot via IBB framework) | TBD |
 
 ### Video Testimonial
 - Karen B. — Full video testimonial used on success stories page and offer page
@@ -525,12 +496,12 @@ $$\text{Value} = \frac{\text{Dream Outcome} \times \text{Perceived Likelihood}}{
 ### Completion Feedback (from Google Forms)
 - **Mohammed Abdelmagid:** Overall 5/5, NPS 8/10, Value 5/5. "Every session had great vibes." "I feel like I've made a friend." Session 3 (mock interview) rated highest.
 - **Osaid Samman:** Overall 5/5, NPS 8/10, Value 5/5. "He has a lot of experience and learning from his experiences has been very valuable."
-- **Top insight:** Mock interview (Session 3) is the #1 value driver. Resume transformation is the #2.
+- **Top insight:** Mock interview is the #1 value driver. Resume transformation is #2.
 - **Feedback themes:** Pre-work can feel tedious (Mohammed), Session 2 front-loads theory (Mohammed rated 3/5), clients want pre-built templates not just instructions (Osaid), clients want video walkthroughs for written materials.
 
 ---
 
-## 14. Email Templates
+## 14. Email Templates & Sequences
 
 | Template | Purpose |
 |----------|---------|
@@ -539,14 +510,17 @@ $$\text{Value} = \frac{\text{Dream Outcome} \times \text{Perceived Likelihood}}{
 | `post-booking-email.html` | Sent after Career Launch Call is booked |
 | `post-coaching-survey-email.html` | Sent after program completion for feedback |
 
-### Planned Email Nurture Sequence (NOT YET BUILT)
-6 emails over 10 days:
+### Email Nurture Sequence (BUILT — live in Kit)
+8 emails over 14 days. All leads routed to this sequence starting at Email 2 (all have already received the guide). Re-engagement email recommended first for leads older than 60-90 days.
+
 1. Immediate: Download link + "In a few days I'll show you something that makes it 10x more useful"
 2. +1 day: One specific tip + before/after example
 3. +3 days: Introduce the resume audit, show 1 example
 4. +5 days: Client story (Sarah K.)
 5. +7 days: 3 common resume mistakes
-6. +10 days: Direct ask — book a free Career Launch Call
+6. +9 days: Resume audit offer (direct)
+7. +11 days: Objection handling / social proof
+8. +14 days: Direct ask — book a free Career Launch Call
 
 ---
 
@@ -579,8 +553,6 @@ $$\text{Value} = \frac{\text{Dream Outcome} \times \text{Perceived Likelihood}}{
 
 ## 16. Named Methods & Frameworks
 
-These are proprietary method names used throughout the program:
-
 ### Resume Methods
 - The Impact Bullet Builder™ (4-Part Formula)
 - The Me-in-We Extractor™
@@ -603,6 +575,7 @@ These are proprietary method names used throughout the program:
 - The Human Element Questions™
 - The Technical Gauntlet™
 - The Digital Stage Presence™
+- The 3-Tier Impact Ladder™
 
 ### Job Search Methods
 - The Job Sourcing Strategy™
@@ -629,35 +602,26 @@ These are proprietary method names used throughout the program:
 
 ---
 
-## 17. Objection Handling & FAQ
+## 17. Objection Handling & FAQ (updated entries only)
 
 | Objection | Response Framework |
 |-----------|-------------------|
-| "Can't I figure this out on my own?" | Yes — but trial and error costs ~$7K/month. Coaching compresses the timeline. |
-| "What if it doesn't work?" | Guarantee: keeps working at no extra charge until all deliverables are met. |
-| "Can't afford it right now" | You're losing $6-8K/month in missed income. $997 = less than half a week of waiting. |
-| "Already tried coaching/resume services" | Most use HR frameworks, not engineering-specific. Mansour hires engineers as an engineer. |
-| "Don't have time for 21 days" | Less than 5 hours total commitment. 3 sessions. |
-| "Is this for my engineering major?" | All disciplines. The frameworks are universal. |
-| "How much does it cost?" | $997 full, or $249 before session 1 and remainder before session 2. |
-| "What if I don't have much experience?" | Most engineers undervalue what they have. We can brainstorm independent projects too. |
-| "How far in advance should I start?" | Ideally 3-6 months before career fairs or heavy application season. |
-| "Why 3 sessions instead of more?" | Against stringing clients along for "lifetime value." Concentrated, efficient, 21 days, done. |
+| "What if it doesn't work?" | If you're not happy at any point, I'll buy the program back from you at full price, no questions asked. If any mission is still unclear after 8 weeks, I'll work with you 1:1 for free until it's resolved. |
+| "Can't afford it right now" | You're losing $6–8K/month in missed income. $3,000 (or $450/week) is a fraction of one month's lost pay. |
+| "Don't have enough time" | 8 weeks, one weekly call plus a weekly mission — built to move fast, not drag out the search. |
+| "How much does it cost?" | $3,000 paid in full, or $450/week for 8 weeks. Paid-in-full saves $600. |
+| "Why 8 weeks?" | It's a focused runway — three phases (resume, stories, interviews) — instead of months of guessing, rewriting, and reapplying on your own. |
+| "Is this 1-on-1 or a group program?" | It's a small cohort (10 seats) with weekly group calls, Skool community access, and free 1:1 support after the program if anything's unclear. |
+
+*(Remaining FAQ rows — discipline coverage, experience level, timing — are unchanged.)*
 
 ---
 
-## 18. Key Business Assumptions & Decisions
+## 18. Key Business Assumptions & Decisions (updated entry only)
 
-1. **Focus on Launch Path first.** Accelerate and Pivot paths exist in design but marketing/ads only go to Engineering Career Accelerator (Launch) until it shows consistent return.
-2. **LinkedIn is the only paid ad platform.** Document ads were chosen for native, high-engagement format. No Meta/Google ads currently.
-3. **Manual processes over automation.** Resume audits are manual. Email nurture sequence not yet built. "Start manual, automate when volume justifies it (3+/week → n8n)."
-4. **No group coaching, no courses, no subscriptions.** Purely 1-on-1, premium, time-boxed.
-5. **Free Skool community for ongoing support.** After 3 paid sessions, clients join free community — no ongoing paid relationship.
-6. **6-second resume rule.** The hook: "Your resume has 6 seconds to impress."
-7. **$7,000/month lost income framing.** Based on U.S. Bureau of Labor Statistics average for entry-level engineering roles.
-8. **Results disclaimer on all testimonial pages:** "Individual experiences presented here may not be typical. Your results may vary."
-9. **Referral program exists** (`referral-program/`) — tracks client referrals with client list and email template.
-10. **University partnerships being explored** — proposals for student clubs (GOECE, GradSWE) with format for guest workshops and club-to-client pipeline.
+4. **8-week group cohort structure.** Not 1-on-1 ongoing coaching, not a self-paced course. 10 seats per cohort, fixed enrollment windows, Skool community included for the cohort duration. One private 1:1 session exists only as the fast-action bonus; further 1:1 is offered free post-program only if a mission is unresolved.
+
+*(All other rows unchanged.)*
 
 ---
 
@@ -666,7 +630,7 @@ These are proprietary method names used throughout the program:
 ### Core Pages
 | File | Purpose |
 |------|---------|
-| `index.html` | Homepage — Hormozi-style sales page |
+| `index.html` | Homepage — sales page |
 | `about.html` | Mansour Manci bio, credentials, career story |
 | `success-stories.html` | Client testimonials with photos, video, full stories |
 | `vault.html` | Redirects → `landing/impact-bullet-equation.html` |
@@ -699,7 +663,7 @@ These are proprietary method names used throughout the program:
 
 ### Key Directories
 | Directory | Contents |
-|-----------|----------|
+|-----------|---------|
 | `ads/` | 35 ad HTML files (meta ad creatives) |
 | `client_materials/` | Pre/post session materials for Launch and Accelerate paths |
 | `clients/` | Individual client files (resumes, audits, comparisons) |
@@ -732,13 +696,14 @@ These are proprietary method names used throughout the program:
 | Career Launch Call | The booking/discovery call (15 min, pre-qualified) |
 | Impact Bullet Builder (IBB) | The 4-part resume bullet formula |
 | Three Tiers of Value | ★ / ★★ / ★★★ rating system for resume bullets |
-| Grand Slam Offer | Hormozi-inspired offer framework document |
+| Grand Slam Offer | Hormozi-inspired offer framework document (historical reference) |
 | The L² Vault | Historical name for free resources page (now redirects to lead magnet) |
 | Emerald Flow | The design system name |
 | Kit | ConvertKit (email marketing platform, rebranded to "Kit") |
 | VSL | Video Sales Letter (on offer page) |
 | Document Ads | LinkedIn ad format — PDF carousel in-feed |
 | ltl_internal | Cookie to exclude internal traffic from analytics |
+| Micro Lead Magnet | Monthly rotating AI tool — content CTA → automated delivery → routes to offer doc |
 
 ---
 

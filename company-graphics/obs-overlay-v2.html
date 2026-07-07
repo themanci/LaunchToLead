@@ -172,17 +172,14 @@
             z-index: -1;
         }
 
-        /* ─── Bottom Center: Credibility Bar ─── */
+        /* ─── Bottom Left: Name / Title Lower-Third ─── */
         .bottom-bar {
             position: absolute;
             bottom: 32px;
-            left: 50%;
-            transform: translateX(-50%);
-            padding: 14px 40px;
+            left: 32px;
+            padding: 14px 32px;
             display: flex;
             align-items: center;
-            gap: 0;
-            white-space: nowrap;
         }
 
         .cred-item {
@@ -234,7 +231,6 @@
                 <div class="brand-name">
                     <span class="launch">Launch</span><span class="to-lead">ToLead</span>
                 </div>
-                <div class="tagline">Former John Deere Engineer • Career Coach</div>
             </div>
         </div>
 
@@ -244,13 +240,12 @@
             <div class="url-text">LaunchToLead.io</div>
         </div>
 
-        <!-- Bottom Center: Credibility Bar -->
+        <!-- Bottom Left: Name / Title Lower-Third -->
         <div class="bottom-bar glass-card">
-            <div class="cred-item"><span class="highlight">52</span> Proven Methods</div>
-            <div class="cred-separator"></div>
-            <div class="cred-item">Engineers at <span class="highlight">Google, SpaceX, Ford</span></div>
-            <div class="cred-separator"></div>
-            <div class="cred-item">Hire-Ready in <span class="highlight">21 Days</span></div>
+            <div style="display:flex; flex-direction:column; gap:4px; align-items:flex-start;">
+                <div style="font-family:'Space Grotesk',sans-serif; font-size:24px; font-weight:700; color:#ffffff; letter-spacing:-0.3px;">Mansour Manci</div>
+                <div style="font-size:15px; font-weight:500; color:#94a3b8; letter-spacing:0.4px; text-transform:uppercase;">Founder &nbsp;&bull;&nbsp; Engineering Career Coach</div>
+            </div>
         </div>
 
     </div>
