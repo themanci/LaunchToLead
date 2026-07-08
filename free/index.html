@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Free Resume Bullet Auditor | Launch to Lead</title>
-  <meta name="description" content="Paste your resume bullet and get an instant IBB framework audit — what's missing, what to fix, and a rewrite. Free.">
-  <meta property="og:title" content="Free Resume Bullet Auditor | Launch to Lead">
-  <meta property="og:description" content="Paste up to 3 resume bullets and get an instant IBB framework diagnosis. Free. No email required.">
+  <title>The Engineering Resume Leak Finder | Launch to Lead</title>
+  <meta name="description" content="Find out exactly why your engineering resume isn't getting interviews — in 60 seconds. Paste a bullet, get a diagnosis and a rewrite. Free.">
+  <meta property="og:title" content="The Engineering Resume Leak Finder | Launch to Lead">
+  <meta property="og:description" content="Paste a resume bullet. In 60 seconds you'll know exactly what's wrong, why it's costing you interviews, and what to write instead. Built on the IBB Framework — not ChatGPT.">
   <link rel="icon" type="image/svg+xml" href="../favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -476,9 +476,9 @@
 
   <!-- Page header -->
   <header class="page-header">
-    <span class="page-label">Free Tool</span>
-    <h1>Resume Bullet Auditor</h1>
-    <p class="subtitle">Paste up to 3 resume bullets. Get an instant IBB framework diagnosis — what's missing, why it's hurting you, and a rewrite.</p>
+    <span class="page-label">Free Tool · Built by an Engineer, for Engineers</span>
+    <h1>Why Isn't Your Resume Getting Interviews?</h1>
+    <p class="subtitle">Paste one bullet. In 60 seconds, you'll know exactly what's wrong, why it's costing you interviews, and what to write instead. Built on the same framework I use with clients — not ChatGPT.</p>
     <p class="no-gate-note">Free. No account required.</p>
   </header>
 
@@ -499,8 +499,8 @@
       </div>
     </div>
     <div class="bullet-group" id="bulletGroup1">
-      <label>Bullet 1</label>
-      <textarea id="bullet1" placeholder="Paste your resume bullet here — exactly as it appears on your resume..."></textarea>
+      <label>Start with your worst bullet — the one you're least confident about.</label>
+      <textarea id="bullet1" placeholder="e.g. &quot;Worked on improving the backend system to make it faster and helped the team with various tasks.&quot;"></textarea>
     </div>
 
     <button class="add-btn" id="addBullet2Btn" onclick="addBullet(2)">+ Add a second bullet</button>
@@ -525,7 +525,7 @@
 
     <div class="error-msg hidden" id="errorMsg">Please paste at least one bullet before auditing.</div>
 
-    <button class="audit-btn" id="auditBtn" onclick="runAudit()">Audit My Bullets →</button>
+    <button class="audit-btn" id="auditBtn" onclick="runAudit()">Find The Leak →</button>
   </div>
 
   <!-- Loading state -->
@@ -539,16 +539,16 @@
     <div id="bulletResults"></div>
     <div class="pattern-card hidden" id="patternNote"></div>
     <div class="cta-card">
-      <h2>This was a lite audit. Here's the bigger picture.</h2>
-      <p>This audit gives you a high level sense of what is lacking in your resume and why it's falling short in presenting your value and impact. If you properly apply these results to your whole resume, it will definitely garnish more attention for you.</p>
-      <p>But here's the thing: <strong>this is just the tip of the iceberg.</strong> In order to land your first full-time engineering job, you need to:</p>
+      <h2>You just found one leak. Most grads have twelve more.</h2>
+      <p>This audit caught what's wrong with your bullets. But a weak resume is only one reason you're not getting interviews. The other leaks are hiding in your positioning, your story, and how you show up in interviews.</p>
+      <p>That's exactly what the 8-week program fixes:</p>
       <ul style="margin: 14px 0 18px; padding-left: 0; list-style: none; display: flex; flex-direction: column; gap: 10px; text-align: left;">
-        <li style="display: flex; gap: 10px; align-items: flex-start; font-size: 15px; line-height: 1.6;"><span style="color: #ef4444; font-weight: 700; flex-shrink: 0; margin-top: 2px;">✕</span> Stop sending out invisible applications</li>
-        <li style="display: flex; gap: 10px; align-items: flex-start; font-size: 15px; line-height: 1.6;"><span style="color: #ef4444; font-weight: 700; flex-shrink: 0; margin-top: 2px;">✕</span> Stop showing up to interviews with an empty toolbox — not knowing what experiences and projects to talk about, or how to talk about them in a way that makes the hiring team want to extend you an offer</li>
-        <li style="display: flex; gap: 10px; align-items: flex-start; font-size: 15px; line-height: 1.6;"><span style="color: #ef4444; font-weight: 700; flex-shrink: 0; margin-top: 2px;">✕</span> Stop panicking before interviews because you don't have a clear strategy and haven't practiced with someone who's been on the other side of the table</li>
+        <li style="display: flex; gap: 10px; align-items: flex-start; font-size: 15px; line-height: 1.6;"><span style="color: #ef4444; font-weight: 700; flex-shrink: 0; margin-top: 2px;">✕</span> Stop sending out invisible applications that never get past the screener</li>
+        <li style="display: flex; gap: 10px; align-items: flex-start; font-size: 15px; line-height: 1.6;"><span style="color: #ef4444; font-weight: 700; flex-shrink: 0; margin-top: 2px;">✕</span> Stop showing up to interviews with an empty toolbox — not knowing what to say or how to say it in a way that makes them want to extend an offer</li>
+        <li style="display: flex; gap: 10px; align-items: flex-start; font-size: 15px; line-height: 1.6;"><span style="color: #ef4444; font-weight: 700; flex-shrink: 0; margin-top: 2px;">✕</span> Stop going it alone without someone who's been on the other side of the table and knows exactly what hiring teams are looking for</li>
       </ul>
-      <p>I'm getting a group together and walking them through how to fix all three of these — and start getting offers extended. Interested in joining us?</p>
-      <a href="../offer/" class="cta-btn" id="ctaBtn">Learn More →</a>
+      <p>I'm walking a small group through how to fix all three — and start getting offers. Spots are limited.</p>
+      <a href="../offer/" class="cta-btn" id="ctaBtn">See How It Works →</a>
     </div>
   </div>
 
@@ -649,13 +649,12 @@
         _subject: 'Free Tool Lead — Launch to Lead',
         name: nameVal,
         email: emailVal,
-        source: 'Resume Bullet Auditor'
+        source: 'Engineering Resume Leak Finder'
       })
     }).catch(function() {}); // silent — don't block the audit
 
     document.getElementById('auditBtn').disabled = true;
-    document.getElementById('loadingMsg').textContent =
-      'Analyzing your bullet' + (bullets.length > 1 ? 's' : '') + '…';
+    startLoadingMessages(bullets.length);
     document.getElementById('loadingState').classList.remove('hidden');
     document.getElementById('resultsSection').classList.add('hidden');
     document.getElementById('tryAgainSection').classList.add('hidden');
@@ -675,6 +674,7 @@
       renderResults(data);
 
     } catch (err) {
+      stopLoadingMessages();
       document.getElementById('loadingState').classList.add('hidden');
       document.getElementById('auditBtn').disabled = false;
       const el = document.getElementById('resultsSection');
@@ -689,8 +689,29 @@
     }
   }
 
+  // ── Loading message cycle ──
+  let _loadingInterval = null;
+  function startLoadingMessages(bulletCount) {
+    const msgs = [
+      'Running your bullet' + (bulletCount > 1 ? 's' : '') + ' through the IBB Framework…',
+      'Checking for missing impact components…',
+      'Identifying what’s costing you interviews…',
+      'Building your rewrite…',
+    ];
+    let idx = 0;
+    document.getElementById('loadingMsg').textContent = msgs[idx];
+    _loadingInterval = setInterval(function() {
+      idx = (idx + 1) % msgs.length;
+      document.getElementById('loadingMsg').textContent = msgs[idx];
+    }, 1800);
+  }
+  function stopLoadingMessages() {
+    if (_loadingInterval) { clearInterval(_loadingInterval); _loadingInterval = null; }
+  }
+
   // ── Render results ──
   function renderResults(data) {
+    stopLoadingMessages();
     document.getElementById('loadingState').classList.add('hidden');
 
     const { bullets, pattern_note } = data;
@@ -700,7 +721,13 @@
 
     if (pattern_note) {
       const el = document.getElementById('patternNote');
-      el.innerHTML = `<div class="pattern-label">What this reveals about your full resume</div><p>${esc(pattern_note)}</p>`;
+      el.innerHTML = `
+        <div class="pattern-label">Here's What I See Across Most Engineering Resumes</div>
+        <div style="display:flex;align-items:flex-start;gap:14px;margin-bottom:12px;">
+          <div style="width:40px;height:40px;border-radius:50%;background:#a3e635;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:700;color:#064e3b;">M</div>
+          <p style="font-size:14px;color:#6ee7b7;font-style:italic;margin-top:8px;">A note from Mohamed:</p>
+        </div>
+        <p>${esc(pattern_note)}</p>`;
       el.classList.remove('hidden');
     }
 
@@ -714,6 +741,8 @@
   }
 
   function renderBulletCard(b, i) {
+    const TIER_LABEL_MAP = { 'Weak': 'Needs Work', 'Developing': 'Getting There', 'Strong': 'Interview-Ready' };
+    if (b.tier_label && TIER_LABEL_MAP[b.tier_label]) b.tier_label = TIER_LABEL_MAP[b.tier_label];
     const TIER_COLOR = { 1: '#dc2626', 2: '#d97706', 3: '#059669' };
     const color = TIER_COLOR[b.tier] || '#dc2626';
 
@@ -765,9 +794,10 @@
         ${issuesHTML}
         ${flagHTML}
         <div class="rewrite-section">
-          <div class="rewrite-label">Rewritten with IBB framework</div>
+          <div class="rewrite-label">Here's How I'd Write It</div>
           <p class="rewrite-text">${esc(b.rewrite || '')}</p>
           ${hasX ? '<p class="rewrite-note">Replace [X] with your actual figures — we never invent numbers. Only you have the real data.</p>' : ''}
+          <p class="rewrite-note" style="margin-top:10px;">Analyzed using the IBB Framework™ — developed through 200+ resume audits with engineering candidates.</p>
         </div>
       </div>`;
   }
