@@ -741,8 +741,8 @@
   }
 
   function renderBulletCard(b, i) {
-    const TIER_LABEL_MAP = { 'Weak': 'Needs Work', 'Developing': 'Getting There', 'Strong': 'Interview-Ready' };
-    if (b.tier_label && TIER_LABEL_MAP[b.tier_label]) b.tier_label = TIER_LABEL_MAP[b.tier_label];
+    const TIER_LABEL_BY_NUM = { 1: 'Needs Work', 2: 'Getting There', 3: 'Interview-Ready' };
+    const tierLabel = TIER_LABEL_BY_NUM[b.tier] || b.tier_label || '';
     const TIER_COLOR = { 1: '#dc2626', 2: '#d97706', 3: '#059669' };
     const color = TIER_COLOR[b.tier] || '#dc2626';
 
@@ -784,7 +784,7 @@
       <div class="bullet-card">
         <div class="bullet-card-header">
           <span class="bullet-num">Bullet ${i + 1}</span>
-          <span class="tier-badge" style="background:${color};">${esc(b.tier_label || '')}</span>
+          <span class="tier-badge" style="background:${color};">${esc(tierLabel)}</span>
         </div>
         <div class="original-bullet">
           <div class="orig-label">Your original</div>
@@ -820,7 +820,7 @@
   document.addEventListener('click', function(e) {
     const link = e.target.closest('a[href*="offer"]');
     if (link && typeof gtag === 'function') {
-      gtag('event', 'cta_click', { source: 'bullet_auditor' });
+      gtag('event', 'cta_click', { source: 'resume_leak_finder' });
     }
   });
 
