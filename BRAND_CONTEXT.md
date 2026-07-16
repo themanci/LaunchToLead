@@ -505,7 +505,7 @@ Not used in the current offer, kept in case a future job-search-focused product 
 
 **Archived (no longer live):** `vault.html`, `social.html`, `free.html`, `leak/index.html` — all moved to `archive/retired-pages/`. `vault.html`'s old redirect target (`landing/impact-bullet-equation.html`) no longer exists either (also archived).
 
-**Clean redirect URLs (July 2026):** `join/index.html` → `offer/index.html`, `apply/index.html` → `offer/apply.html`, `promotion/index.html` → `offer/index.html`. Use these (`launchtolead.io/join`, `/apply`, `/promotion`) as the shareable links in DMs/bio/ads; internal nav links point directly at `offer/index.html` to avoid an extra redirect hop.
+**Clean redirect URLs (July 2026):** `join/index.html` → `offer/index.html`, `apply/index.html` → `offer/index.html`, `promotion/index.html` → `offer/index.html`. All three point to the main offer page, not the application form directly. Use these (`launchtolead.io/join`, `/apply`, `/promotion`) as the shareable links in DMs/bio/ads; internal nav links point directly at `offer/index.html` to avoid an extra redirect hop.
 
 ### Landing Pages
 The entire `landing/` directory is now archived (`landing/archive/`) — `landing/offer.html`, `landing/impact-bullet-equation.html`, and `landing/thank-you.html` no longer exist as live pages. The current offer funnel lives entirely under `offer/` (see Core Pages above).
