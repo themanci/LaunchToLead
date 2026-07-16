@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedIn Banner — Option A (Bright Emerald Split)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: #1a1a1a;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            gap: 20px;
+            padding: 40px;
+        }
+
+        .instructions {
+            background: #2a2a2a;
+            color: #ccc;
+            padding: 16px 24px;
+            border-radius: 8px;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 13px;
+            line-height: 1.6;
+            max-width: 1584px;
+            width: 100%;
+        }
+        .instructions strong { color: #a3e635; }
+
+        .label {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            color: #a3e635;
+            max-width: 1584px;
+            width: 100%;
+        }
+
+        /* ── BANNER ── 1584 × 396 px ─────────────────────────────────── */
+        .banner {
+            width: 1584px;
+            height: 396px;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            /* Bright lime-to-emerald diagonal */
+            background: linear-gradient(120deg, #064e3b 0%, #065f46 35%, #047857 65%, #0f766e 100%);
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Large teal glow blob top-right */
+        .banner::before {
+            content: '';
+            position: absolute;
+            top: -80px;
+            right: -80px;
+            width: 420px;
+            height: 420px;
+            background: radial-gradient(circle, rgba(20,184,166,0.35) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        /* Lime glow blob bottom-left */
+        .banner::after {
+            content: '';
+            position: absolute;
+            bottom: -60px;
+            left: 520px;
+            width: 360px;
+            height: 360px;
+            background: radial-gradient(circle, rgba(163,230,53,0.18) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        /* Dot grid overlay */
+        .dot-grid {
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(rgba(255,255,255,0.06) 1px, transparent 1px);
+            background-size: 28px 28px;
+        }
+
+        /* Bright top accent stripe */
+        .top-stripe {
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #a3e635 0%, #14b8a6 50%, #a3e635 100%);
+        }
+
+        /* Bottom accent stripe */
+        .bottom-stripe {
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #a3e635 0%, #14b8a6 100%);
+            opacity: 0.6;
+        }
+
+        /* Speech bubble — Follow Me */
+        .follow-bubble {
+            position: absolute;
+            left: 68px;
+            top: 24px;
+            z-index: 10;
+            background: #a3e635;
+            color: #042f1e;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            padding: 12px 26px;
+            border-radius: 14px;
+            white-space: nowrap;
+            box-shadow: 0 4px 20px rgba(163,230,53,0.4);
+        }
+        .follow-bubble::after {
+            content: '';
+            position: absolute;
+            bottom: -22px;
+            left: 28px;
+            border: 12px solid transparent;
+            border-top-color: #a3e635;
+            border-bottom: none;
+        }
+
+        .content {
+            position: absolute;
+            z-index: 2;
+            left: 580px;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 60px;
+        }
+
+        /* Brand name pill */
+        .brand-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(163,230,53,0.15);
+            border: 1.5px solid rgba(163,230,53,0.4);
+            border-radius: 100px;
+            padding: 6px 18px 6px 12px;
+            margin-bottom: 18px;
+        }
+        .brand-pill .dot {
+            width: 8px; height: 8px;
+            background: #a3e635;
+            border-radius: 50%;
+        }
+        .brand-pill .brand-text {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 17px;
+            font-weight: 700;
+            color: #a3e635;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .headline {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 56px;
+            font-weight: 700;
+            color: #ffffff;
+            line-height: 1.08;
+            letter-spacing: -0.02em;
+            margin-bottom: 20px;
+        }
+        .headline .hl {
+            color: #a3e635;
+            position: relative;
+        }
+
+        .subline {
+            font-size: 24px;
+            font-weight: 500;
+            color: rgba(255,255,255,0.75);
+            line-height: 1.4;
+        }
+        .subline .teal { color: #5eead4; font-weight: 600; }
+
+        .dl-btn {
+            background: #a3e635;
+            color: #042f1e;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 15px;
+            font-weight: 700;
+            border: none;
+            padding: 14px 32px;
+            border-radius: 8px;
+            cursor: pointer;
+            letter-spacing: 0.03em;
+            margin-top: 24px;
+        }
+        .dl-btn:hover { background: #bef264; }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+    <div class="instructions">
+        <strong>Option A — Bright Emerald Split.</strong> Bold emerald-to-teal gradient, lime pill brand label, large headline, teal subtext accent.
+        Click the button to download as PNG, then upload to LinkedIn Profile → Edit → Background photo.
+        Renders at <strong>1584 × 396 px</strong>.
+    </div>
+
+    <button class="dl-btn" style="margin-top:0" onclick="downloadBanner()">⬇ Download Banner PNG</button>
+
+    <div class="banner">
+        <div class="dot-grid"></div>
+        <div class="top-stripe"></div>
+        <div class="bottom-stripe"></div>
+
+        <div class="follow-bubble">Follow Me ▾</div>
+
+        <div class="content">
+            <div class="brand-pill">
+                <div class="dot"></div>
+                <span class="brand-text">Launch to Lead</span>
+            </div>
+
+            <div class="headline">
+                Get your first full-time<br>
+                <span class="hl">engineering job.</span>
+            </div>
+
+            <div class="subline">
+                8-week cohort · Resume · Interview stories · <span class="teal">Job search system</span>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+function downloadBanner() {
+    const banner = document.querySelector('.banner');
+    html2canvas(banner, {
+        width: 1584,
+        height: 396,
+        scale: 2,
+        useCORS: true,
+        backgroundColor: null
+    }).then(canvas => {
+        const link = document.createElement('a');
+        link.download = 'linkedin-banner-option-a.png';
+        link.href = canvas.toDataURL('image/png', 1.0);
+        link.click();
+    });
+}
+</script>
+</html>
