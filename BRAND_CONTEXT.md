@@ -2,6 +2,7 @@
 
 > **Purpose:** Single-source brand bible for feeding to LLMs. Covers identity, design, programs, pricing, avatars, funnel, tracking, content, protocols, and every key business decision.
 > **Last updated:** July 2026
+> **v6 change:** Section 15 Voice & Tone Guidelines — removed "invisible" from the banned words list and resolved the previously-flagged conflict (it's core positioning language now, fine to use in audit feedback too). Superseded: v5.
 > **v5 change:** Avatar and core offer swapped from recent-grad job search to "The Invisible Performer" (2–5 year engineers stuck without promotion). Sections 1, 6, 7, 13, 16–18 updated to match. Sections 9–12 (funnel infrastructure, ad slugs, homepage/tracking specifics) still reference the old offer's live URLs, pricing, and ad creative — these need a coordinated rebuild, not just a text edit, before they're accurate. Flagged inline below rather than silently rewritten.
 
 ---
@@ -137,9 +138,9 @@
 | Google Analytics 4 | Traffic analytics | `G-L8V47TR52C` |
 | Meta Pixel | Facebook/Instagram ad tracking | `3141490496240983` |
 | Kit (ConvertKit) | Email capture & sequences | Form `#8815632` |
-| Calendly | ⚠️ Likely unused now — Section 10's current funnel is application-based with no discovery call. Confirm whether this integration still serves any purpose before keeping it. | `calendly.com/themanci-launchtolead/career-launch-call` |
+| Calendly | ✅ Confirmed removed (July 2026) — no longer referenced anywhere in `navigation.js` or any live page. This row is historical only. | `calendly.com/themanci-launchtolead/career-launch-call` (retired) |
 | Skool | Free community | `skool.com/launch-to-lead-community-6905` |
-| Google Calendar | Direct scheduling (nav CTA) — same "likely unused" flag as Calendly | Direct link |
+| Google Calendar | ✅ Confirmed removed (July 2026) — no longer referenced anywhere in `navigation.js` or any live page. Historical only. | Retired |
 | Stripe | Payment processing | Product pages created |
 
 ### Analytics Architecture
@@ -150,7 +151,7 @@
 
 ### Navigation Structure
 Shared component (`navigation.js`) injected into `#navigation-container`:
-- **Desktop:** About, Success Stories, Free Resources, Social (dropdown with 7 platforms), "Book a Free Call" CTA button — ⚠️ stale, no discovery call in the current funnel (Section 10); this should point to the application/offer doc instead
+- **Desktop:** About, Success Stories, Legal, "Join Us" CTA button → links directly to `offer/index.html`. ✅ Confirmed (July 2026): the old "Book a Free Call" / Calendly CTA is gone — `navigation.js` now only builds nav for `index.html`, `success-stories.html`, `about.html`, `legal.html`, with the CTA pointing straight at the current offer page.
 - **Mobile:** Same items, hamburger menu
 - **Active page highlighting:** Automatic based on URL
 
@@ -323,7 +324,7 @@ All three paths converge on the full offer doc (launchtolead.io)
 
 - **No LinkedIn funnel.** The old Document Ads, Lead Gen Forms, and LinkedIn Insight Tag conversion events (Section 4/11) are dead — Instagram is the exclusive platform now.
 - **No standalone website funnel.** No popup, no "See If You're a Fit" homepage CTA as a separate path — website traffic isn't a described channel anymore. (Flag: confirm whether `launchtolead.io` is still the offer doc's home, or whether the offer doc lives somewhere else now.)
-- **No discovery call.** The old "Career Launch Call" / Calendly booking step is gone — this is a no-call, application-based enrollment model straight from `CLIENTS_--_Offer_Doc.txt`: apply → Mansour reviews → accepted → pay + join. Calendly's role in Section 4's service table is now stale.
+- **No discovery call.** The old "Career Launch Call" / Calendly booking step is gone — this is a no-call, application-based enrollment model straight from `CLIENTS_--_Offer_Doc.txt`: apply → Mansour reviews → accepted → pay + join. ✅ Confirmed (July 2026): Calendly is fully removed from the live site, not just stale in this doc.
 - **Not accepted:** directed to free content on Instagram or the website — no separate waitlist/feedback flow defined beyond that.
 
 ### Micro Lead Magnet delivery mechanic
@@ -491,22 +492,23 @@ Not used in the current offer, kept in case a future job-search-focused product 
 
 ## 19. File Structure Reference
 
-### Core Pages
+### Core Pages (active, public-facing — July 2026)
 | File | Purpose |
 |------|---------|
 | `index.html` | Homepage — sales page |
 | `about.html` | Mansour Manci bio, credentials, career story |
 | `success-stories.html` | Client testimonials with photos, video, full stories |
-| `vault.html` | Redirects → `landing/impact-bullet-equation.html` |
-| `social.html` | Social media links hub |
 | `legal.html` | Terms, Privacy, Disclaimer, Refund Policy |
+| `offer/index.html` | The Promotion-Ready Engineer Blueprint offer page |
+| `offer/apply.html` | Application form (Step 1 of the funnel — no payment due) |
+| `offer/vsl.html` | Pre-application video page — currently a placeholder graphic ( "Video coming soon" ), real VSL to be recorded and dropped in later |
+
+**Archived (no longer live):** `vault.html`, `social.html`, `free.html`, `leak/index.html` — all moved to `archive/retired-pages/`. `vault.html`'s old redirect target (`landing/impact-bullet-equation.html`) no longer exists either (also archived).
+
+**Clean redirect URLs (July 2026):** `join/index.html` → `offer/index.html`, `apply/index.html` → `offer/apply.html`, `promotion/index.html` → `offer/index.html`. Use these (`launchtolead.io/join`, `/apply`, `/promotion`) as the shareable links in DMs/bio/ads; internal nav links point directly at `offer/index.html` to avoid an extra redirect hop.
 
 ### Landing Pages
-| File | Purpose |
-|------|---------|
-| `landing/offer.html` | Full offer page with VSL, qualifying form, Calendly |
-| `landing/impact-bullet-equation.html` | Lead magnet landing page (free resume guide) |
-| `landing/thank-you.html` | Post-download confirmation + coaching bridge |
+The entire `landing/` directory is now archived (`landing/archive/`) — `landing/offer.html`, `landing/impact-bullet-equation.html`, and `landing/thank-you.html` no longer exist as live pages. The current offer funnel lives entirely under `offer/` (see Core Pages above).
 
 ### JavaScript Modules
 | File | Purpose |
@@ -529,15 +531,17 @@ Not used in the current offer, kept in case a future job-search-focused product 
 | Directory | Contents |
 |-----------|---------|
 | `ads/` | 35 ad HTML files (meta ad creatives) |
+| `apply/`, `join/`, `promotion/` | Clean shareable redirect URLs — each just an `index.html` that instantly forwards to the real `offer/` page (see Core Pages above) |
+| `archive/retired-pages/` | Fully retired pages no longer live anywhere: `vault.html`, `social.html`, `free.html`, `leak/index.html` |
 | `client_materials/` | ⚠️ Directory previously held pre/post session materials for Launch and Accelerate paths — Accelerate content here is now obsolete since the offer was removed; Launch (legacy job-search) content still applies to the old avatar only |
 | `clients/` | Individual client files (resumes, audits, comparisons) |
-| `coaching/` | Redirect to offer page |
 | `company-graphics/` | LinkedIn banner, Skool covers, Stripe product images |
 | `email_templates/` | Kit delivery, promo, post-booking, survey emails |
-| `landing/` | Offer page, lead magnet page, thank-you page |
+| `landing/` | ⚠️ Fully archived (`landing/archive/`) — no live pages remain here; the active offer funnel is under `offer/` |
 | `lead-magnets/` | Active lead magnet files, PDF generation, LinkedIn ad variants |
-| `methods/` | The Launch Method and Accelerate Method documents |
+| `methods/` | ⚠️ Emptied (July 2026) — both The Launch Method and The Accelerate Method documents moved to `methods/archive/`; nothing live remains in this directory |
 | `mockups/` | Design mockups, OBS overlays, video overlay templates |
+| `offer/` | **Active offer funnel** — `index.html` (offer page), `apply.html` (application form), `vsl.html` (pre-application video, currently placeholder) |
 | `offers/` | Grand Slam Offer documents (Launch and Accelerate) |
 | `pictures/` | Mansour headshots and photos |
 | `proposals/` | University partnership proposals, Google Forms guides |
