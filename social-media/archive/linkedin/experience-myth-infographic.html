@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>You Don't Need More Experience — LaunchToLead Infographic</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #e8e8e8;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+
+  .canvas {
+    width: 1080px;
+    background: #FFFEF8;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* ── TITLE BANNER ── */
+  .title-banner {
+    background: linear-gradient(135deg, #0d1f0d 0%, #14291a 50%, #0f1f14 100%);
+    padding: 54px 56px 50px;
+    text-align: center;
+    position: relative;
+  }
+  .title-banner::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, #a3e635, #14b8a6, #a3e635);
+  }
+  .title-main {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 60px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.15;
+  }
+  .title-main .hl {
+    color: #a3e635;
+    text-decoration: underline;
+    text-decoration-color: #a3e635;
+    text-underline-offset: 8px;
+    text-decoration-thickness: 5px;
+  }
+  .title-main .hl-red {
+    color: #f87171;
+    text-decoration: underline;
+    text-decoration-color: #f87171;
+    text-underline-offset: 8px;
+    text-decoration-thickness: 5px;
+  }
+  .title-sub {
+    font-size: 26px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.7);
+    margin-top: 14px;
+    line-height: 1.45;
+  }
+
+  /* ── GRID ROW ── */
+  .grid-row {
+    display: flex;
+    gap: 18px;
+    padding: 18px 28px 0;
+  }
+
+  /* ── SECTION BOX ── */
+  .section-box {
+    border-radius: 16px;
+    padding: 30px 28px 26px;
+    flex: 1;
+    position: relative;
+    border: 1.5px solid rgba(0,0,0,0.06);
+  }
+
+  /* ── COLOR THEMES ── */
+  .bg-lime        { background: #F3FDDA; }
+  .bg-red-soft    { background: #FFF0F0; }
+  .bg-green-soft  { background: #F0FFF4; }
+  .bg-yellow      { background: #FFF9DB; }
+  .bg-peach       { background: #FFF0E4; }
+  .bg-lavender    { background: #EDE8FF; }
+
+  /* ── BADGE ── */
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    color: #fff;
+    margin-right: 14px;
+    flex-shrink: 0;
+  }
+  .badge-emerald { background: #65a30d; }
+  .badge-red     { background: #dc2626; }
+  .badge-amber   { background: #d97706; }
+
+  /* ── SECTION HEADERS ── */
+  .section-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+  .section-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 30px;
+    color: #1a1a1a;
+    line-height: 1.15;
+  }
+
+  /* ── BODY TEXT ── */
+  .body {
+    font-size: 21px;
+    line-height: 1.5;
+    color: #333;
+    font-weight: 500;
+  }
+  .body strong {
+    font-weight: 800;
+    color: #1a1a1a;
+  }
+  .body .accent {
+    color: #65a30d;
+    font-weight: 800;
+  }
+  .body .accent-red {
+    color: #dc2626;
+    font-weight: 800;
+  }
+
+  /* ── CALLOUT STRIP ── */
+  .callout-strip {
+    background: linear-gradient(90deg, #14b8a6, #65a30d);
+    padding: 18px 32px;
+    margin: 18px 28px 0;
+    border-radius: 12px;
+    text-align: center;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    color: #fff;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+  .callout-strip-red {
+    background: linear-gradient(90deg, #dc2626, #b91c1c);
+    padding: 18px 32px;
+    margin: 18px 28px 0;
+    border-radius: 12px;
+    text-align: center;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    color: #fff;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+
+  /* ── BULLET CARD ── */
+  .bullet-card {
+    border-radius: 12px;
+    padding: 22px 24px;
+    margin-top: 14px;
+    font-size: 20px;
+    line-height: 1.55;
+    color: #333;
+    font-weight: 500;
+    position: relative;
+    padding-left: 48px;
+  }
+  .bullet-card::before {
+    content: '';
+    position: absolute;
+    left: 22px;
+    top: 30px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+  }
+  .bullet-card.bad {
+    background: rgba(220,38,38,0.06);
+    border: 1.5px solid rgba(220,38,38,0.15);
+    border-left: 4px solid #dc2626;
+  }
+  .bullet-card.bad::before { background: #dc2626; }
+  .bullet-card.good {
+    background: rgba(101,163,13,0.08);
+    border: 1.5px solid rgba(101,163,13,0.2);
+    border-left: 4px solid #65a30d;
+  }
+  .bullet-card.good::before { background: #65a30d; }
+
+  /* ── METRIC ── */
+  .metric {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    color: #65a30d;
+  }
+
+  /* ── VERDICT TAG ── */
+  .verdict-tag {
+    display: inline-block;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 5px 14px;
+    border-radius: 6px;
+    margin-bottom: 12px;
+  }
+  .verdict-tag.red   { background: rgba(220,38,38,0.1); color: #dc2626; }
+  .verdict-tag.green { background: rgba(101,163,13,0.12); color: #65a30d; }
+
+  /* ── INSIGHT ROW ── */
+  .insight-row {
+    display: flex;
+    gap: 18px;
+    padding: 18px 28px 0;
+  }
+  .insight-box {
+    flex: 1;
+    border-radius: 14px;
+    padding: 26px 24px;
+    border: 1.5px solid rgba(0,0,0,0.06);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .insight-icon {
+    font-size: 34px;
+    line-height: 1;
+  }
+  .insight-label {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    color: #1a1a1a;
+    line-height: 1.2;
+  }
+  .insight-desc {
+    font-size: 18px;
+    color: #555;
+    font-weight: 500;
+    line-height: 1.5;
+  }
+
+  /* ── FORMULA ── */
+  .formula-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin: 20px 0 12px;
+  }
+  .formula-pill {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    padding: 12px 20px;
+    border-radius: 12px;
+    text-align: center;
+  }
+  .formula-pill.blue   { background: rgba(59,130,246,0.12); border: 2px solid rgba(59,130,246,0.25); color: #2563eb; }
+  .formula-pill.amber  { background: rgba(217,119,6,0.12);  border: 2px solid rgba(217,119,6,0.25);  color: #d97706; }
+  .formula-pill.teal   { background: rgba(13,148,136,0.12); border: 2px solid rgba(13,148,136,0.25); color: #0d9488; }
+  .formula-pill.violet { background: rgba(124,58,237,0.12); border: 2px solid rgba(124,58,237,0.25); color: #7c3aed; }
+  .formula-plus   { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 26px; color: #999; }
+  .formula-equals { font-family: 'Space Grotesk', sans-serif; font-weight: 800; font-size: 28px; color: #333; }
+  .formula-result {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 800;
+    font-size: 24px;
+    color: #65a30d;
+    background: rgba(163,230,53,0.15);
+    border: 2px solid rgba(101,163,13,0.3);
+    padding: 12px 24px;
+    border-radius: 12px;
+  }
+
+  /* ── BOTTOM BANNER ── */
+  .bottom-banner {
+    background: linear-gradient(135deg, #0d1f0d 0%, #14291a 50%, #0f1f14 100%);
+    margin: 22px 28px 28px;
+    border-radius: 16px;
+    padding: 30px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+  }
+  .bottom-banner::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #a3e635, #14b8a6, #a3e635);
+  }
+  .bottom-left { display: flex; align-items: center; gap: 20px; }
+  .logo-circle {
+    width: 64px; height: 64px; border-radius: 50%;
+    background: linear-gradient(135deg, #a3e635, #14b8a6);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 26px; color: #0d1f0d;
+  }
+  .bottom-text .name    { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 26px; color: #fff; }
+  .bottom-text .tagline { font-size: 18px; color: rgba(255,255,255,0.6); margin-top: 2px; }
+  .bottom-cta {
+    font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 20px;
+    color: #0d1f0d; background: #a3e635; padding: 14px 28px; border-radius: 10px;
+  }
+</style>
+</head>
+<body>
+
+<div class="canvas">
+
+  <!-- ═══ TITLE BANNER ═══ -->
+  <div class="title-banner">
+    <div class="title-main">"I just need <span class="hl-red">more experience</span>"</div>
+    <div class="title-sub">The #1 myth keeping new grads stuck — and what's actually holding you back.</div>
+  </div>
+
+  <!-- ═══ THE MYTH ═══ -->
+  <div class="callout-strip-red">
+    ✗ &nbsp; THE MYTH &nbsp; ✗
+  </div>
+
+  <div class="grid-row">
+    <div class="section-box bg-red-soft" style="flex: 1 1 100%;">
+      <div class="verdict-tag red">What most new grads believe</div>
+      <div class="section-header">
+        <span class="badge badge-red">✗</span>
+        <span class="section-title">The Problem Is Your Experience</span>
+      </div>
+      <div class="body">
+        You have a degree. You did projects. You had internships.<br>
+        But the callbacks aren't coming — so you must not have <strong>enough to offer yet.</strong>
+      </div>
+      <div class="bullet-card bad">
+        "Worked on a team project to design a filtration system."
+      </div>
+      <div class="bullet-card bad">
+        "Assisted with software testing on embedded systems."
+      </div>
+      <div class="body" style="margin-top:16px;">
+        Recruiters see <span class="accent-red">hundreds of bullets like these</span>. They don't move you forward — not because you're unqualified, but because these bullets don't prove anything.
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ THE REALITY ═══ -->
+  <div class="callout-strip">
+    ✓ &nbsp; THE REALITY &nbsp; ✓
+  </div>
+
+  <div class="grid-row">
+    <div class="section-box bg-green-soft" style="flex: 1 1 100%;">
+      <div class="verdict-tag green">What actually gets you hired</div>
+      <div class="section-header">
+        <span class="badge badge-emerald">✓</span>
+        <span class="section-title">Your Resume Can't Communicate What You've Already Done</span>
+      </div>
+      <div class="body">
+        Same experience. Rewritten to show <span class="accent">what changed because of you.</span>
+      </div>
+      <div class="bullet-card good">
+        Led a <span class="metric">4-person</span> team to design and prototype a water filtration system that reduced contaminant levels by <span class="metric">34%</span> — presented final results to a panel of <span class="metric">3</span> faculty engineers.
+      </div>
+      <div class="bullet-card good">
+        Executed <span class="metric">80+</span> embedded software test cases across <span class="metric">2</span> product platforms, identifying <span class="metric">12</span> critical defects pre-release through CAN bus log analysis.
+      </div>
+      <div class="body" style="margin-top:16px;">
+        Recruiters spend <span class="accent">6 seconds</span> on your resume. Bullets like these do the job — they prove impact without you standing next to them to explain.
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ THE FORMULA ═══ -->
+  <div class="grid-row">
+    <div class="section-box bg-lime" style="flex: 1 1 100%;">
+      <div class="section-header">
+        <span class="section-title">One Formula. Every Bullet.</span>
+      </div>
+      <div class="formula-row">
+        <div class="formula-pill blue">What you did</div>
+        <span class="formula-plus">+</span>
+        <div class="formula-pill amber">A number</div>
+        <span class="formula-plus">+</span>
+        <div class="formula-pill teal">How you did it</div>
+        <span class="formula-plus">+</span>
+        <div class="formula-pill violet">Why it mattered</div>
+        <span class="formula-equals">=</span>
+        <div class="formula-result">INTERVIEW</div>
+      </div>
+      <div class="body" style="text-align: center; margin-top: 8px;">
+        You already have the experience. You just need to <strong class="accent">communicate it like an engineer who's been hired before.</strong>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ THREE QUICK FIXES ═══ -->
+  <div class="insight-row">
+    <div class="insight-box bg-peach">
+      <div class="insight-icon">📄</div>
+      <div class="insight-label">Stop listing tasks</div>
+      <div class="insight-desc">Recruiters know you "assisted" and "worked on." Tell them what moved because of you.</div>
+    </div>
+    <div class="insight-box bg-yellow">
+      <div class="insight-icon">🔢</div>
+      <div class="insight-label">Add a number to every bullet</div>
+      <div class="insight-desc">Even estimates work: team size, hours saved, number of test cases. Numbers = credibility.</div>
+    </div>
+    <div class="insight-box bg-lavender">
+      <div class="insight-icon">🎯</div>
+      <div class="insight-label">End with business impact</div>
+      <div class="insight-desc">Why did your work matter? Cost, time, quality, risk — connect it to something that counts.</div>
+    </div>
+  </div>
+
+  <!-- ═══ CTA STRIP ═══ -->
+  <div class="callout-strip" style="font-size:22px; text-transform:none; letter-spacing:0; margin-top:22px;">
+    Free guide to fix your bullets today → <strong>launchtolead.io/free</strong>
+  </div>
+
+  <!-- ═══ BOTTOM BANNER ═══ -->
+  <div class="bottom-banner">
+    <div class="bottom-left">
+      <div class="logo-circle">L²</div>
+      <div class="bottom-text">
+        <div class="name">LaunchToLead</div>
+        <div class="tagline">Helping engineers launch careers that lead</div>
+      </div>
+    </div>
+    <div class="bottom-cta">FOLLOW FOR MORE ▸</div>
+  </div>
+
+</div>
+
+</body>
+</html>

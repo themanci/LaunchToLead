@@ -46,7 +46,7 @@
 | "Your skills section would be stronger if the tools showed up inside your experience bullets" | "Your skills section is a dead list" |
 
 ### Banned Words
-Never use: disaster, filler, dead, invisible, kills/killer, pure filler, BS, thin, red flag, zero value. These make people defensive instead of motivated.
+Never use: disaster, filler, dead, kills/killer, pure filler, BS, thin, red flag, zero value. These make people defensive instead of motivated.
 
 ### Additional Tone Rules
 - Frame problems as opportunities, not failures.
@@ -225,7 +225,7 @@ The output HTML must contain these 7 sections in this order. Design using the La
 ### Footer (no CTA — this is client work)
 ```
 Analysis prepared by LaunchToLead | Impact Bullet Builder Framework
-launchtolead.io/free
+launchtolead.io
 ```
 
 ---

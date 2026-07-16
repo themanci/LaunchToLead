@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nishtha Chaudhary — Free Resume Audit | LaunchToLead</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --brand-primary: #064e3b;
+    --brand-secondary: #14b8a6;
+    --brand-accent: #a3e635;
+    --brand-light: #ecfdf5;
+    --slate-900: #0f172a;
+    --slate-700: #334155;
+    --slate-600: #475569;
+    --slate-200: #e2e8f0;
+    --slate-50: #f8fafc;
+    --red-500: #ef4444;
+    --amber-500: #f59e0b;
+    --green-600: #16a34a;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background: var(--slate-50);
+    color: var(--slate-700);
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  .download-btn {
+    position: fixed; top: 20px; right: 20px;
+    background: var(--brand-primary); color: white;
+    border: none; padding: 10px 22px; border-radius: 9999px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 700; font-size: 13px; cursor: pointer;
+    box-shadow: 0 4px 20px rgba(6,78,59,0.3); z-index: 1000;
+  }
+  .download-btn:hover { background: var(--brand-secondary); }
+  .page-wrapper { max-width: 900px; margin: 0 auto; padding: 40px 20px 60px; }
+
+  .report-header {
+    background: var(--brand-primary); color: white;
+    padding: 40px; border-radius: 16px; margin-bottom: 28px;
+  }
+  .header-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px; }
+  .header-logo { display: flex; align-items: center; gap: 10px; }
+  .logo-mark {
+    width: 40px; height: 40px; background: rgba(255,255,255,0.12);
+    border-radius: 10px; display: flex; align-items: center; justify-content: center;
+    font-size: 16px; font-weight: 800; letter-spacing: -1px;
+  }
+  .logo-text { font-size: 20px; font-weight: 700; }
+  .logo-text span { color: var(--brand-accent); }
+  .free-badge {
+    background: var(--brand-accent); color: var(--brand-primary);
+    font-size: 11px; font-weight: 800; text-transform: uppercase;
+    letter-spacing: 0.08em; padding: 4px 14px; border-radius: 9999px;
+  }
+  .header-title { font-size: 30px; font-weight: 800; margin-bottom: 6px; }
+  .header-sub { font-size: 15px; color: rgba(255,255,255,0.75); margin-bottom: 3px; }
+  .header-tag {
+    display: inline-block;
+    background: rgba(163,230,53,0.15); border: 1px solid var(--brand-accent);
+    color: var(--brand-accent); padding: 3px 12px; border-radius: 9999px;
+    font-size: 11px; font-weight: 600; text-transform: uppercase;
+    letter-spacing: 0.05em; margin-top: 14px;
+  }
+
+  .section {
+    background: white; border-radius: 16px; padding: 36px;
+    margin-bottom: 24px; box-shadow: 0 4px 20px -2px rgba(6,78,59,0.08);
+  }
+  .section-title {
+    font-size: 18px; font-weight: 800; color: var(--brand-primary);
+    padding-bottom: 14px; border-bottom: 2px solid var(--brand-light);
+    margin-bottom: 24px; display: flex; align-items: center; gap: 10px;
+  }
+  .section-num {
+    background: var(--brand-primary); color: white;
+    width: 28px; height: 28px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 700; flex-shrink: 0;
+  }
+
+  .score-row { display: flex; align-items: center; gap: 36px; margin-bottom: 28px; }
+  .score-big {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 88px; font-weight: 700; color: var(--brand-primary); line-height: 1; flex-shrink: 0;
+  }
+  .score-big span { font-size: 34px; color: var(--slate-600); }
+  .score-right { flex: 1; }
+  .pb-label { font-size: 13px; font-weight: 700; color: var(--slate-900); margin-bottom: 8px; }
+  .pb-bg { width: 100%; height: 16px; background: var(--slate-200); border-radius: 9999px; overflow: hidden; margin-bottom: 6px; }
+  .pb-fill { height: 100%; background: linear-gradient(90deg, var(--brand-primary), var(--brand-secondary)); border-radius: 9999px; }
+  .pb-labels { display: flex; justify-content: space-between; font-size: 10px; color: var(--slate-600); font-weight: 600; }
+  .sub-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 12px; margin-bottom: 24px; }
+  .sub-card { background: var(--brand-light); border-radius: 10px; padding: 14px; text-align: center; }
+  .sub-card-red { background: #fff5f5; border: 1px solid #fecaca; border-radius: 10px; padding: 14px; text-align: center; }
+  .sub-val { font-family: 'Space Grotesk', sans-serif; font-size: 30px; font-weight: 700; color: var(--brand-primary); line-height: 1; }
+  .sub-val-red { font-family: 'Space Grotesk', sans-serif; font-size: 30px; font-weight: 700; color: var(--red-500); line-height: 1; }
+  .sub-val span, .sub-val-red span { font-size: 15px; color: var(--slate-600); }
+  .sub-label { font-size: 11px; font-weight: 600; color: var(--slate-600); margin-top: 4px; }
+  .sub-label-red { font-size: 11px; font-weight: 600; color: #991b1b; margin-top: 4px; }
+  .verdict {
+    background: linear-gradient(135deg, var(--brand-primary), var(--brand-secondary));
+    color: white; padding: 22px 26px; border-radius: 12px;
+  }
+  .verdict-tier { font-size: 18px; font-weight: 800; margin-bottom: 6px; }
+  .verdict-text { font-size: 14px; opacity: 0.92; line-height: 1.65; }
+
+  .issue { padding: 18px 20px; border-radius: 10px; margin-bottom: 14px; border-left: 4px solid; }
+  .issue-crit { background: #fff5f5; border-color: var(--red-500); }
+  .issue-imp  { background: #fffbeb; border-color: var(--amber-500); }
+  .issue-row  { display: flex; gap: 12px; align-items: flex-start; }
+  .ib { width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 800; flex-shrink: 0; margin-top: 1px; }
+  .ib-c { background: var(--red-500); color: white; }
+  .ib-i { background: var(--amber-500); color: white; }
+  .issue-title { font-size: 14px; font-weight: 700; color: var(--slate-900); margin-bottom: 6px; }
+  .issue-desc { font-size: 13px; line-height: 1.65; }
+  .issue-quote { background: rgba(0,0,0,0.05); border-radius: 6px; padding: 8px 12px; margin-top: 8px; font-size: 12px; font-style: italic; color: var(--slate-600); }
+
+  .rw-block { margin-bottom: 28px; }
+  .rw-ctx { background: var(--slate-50); border: 1px solid var(--slate-200); border-radius: 8px; padding: 10px 14px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--slate-600); margin-bottom: 10px; }
+  .rw-before { background: #fff5f5; border: 1px solid #fecaca; border-radius: 8px; padding: 14px; margin-bottom: 8px; }
+  .rw-after  { background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 14px; }
+  .rw-lbl { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 6px; }
+  .rw-before .rw-lbl { color: var(--red-500); }
+  .rw-after  .rw-lbl { color: var(--green-600); }
+  .rw-txt { font-size: 13px; line-height: 1.7; }
+  .rw-before .rw-txt { color: #991b1b; }
+  .rw-after  .rw-txt { color: #166534; }
+  .ph { color: var(--brand-secondary); font-weight: 600; }
+  .ph-note { font-size: 12px; color: var(--slate-600); font-style: italic; margin-top: 10px; background: rgba(0,0,0,0.03); padding: 8px 12px; border-radius: 6px; }
+
+  .ba { margin-bottom: 28px; border: 1px solid var(--slate-200); border-radius: 12px; overflow: hidden; }
+  .ba-ctx { background: var(--slate-50); padding: 10px 16px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--slate-600); border-bottom: 1px solid var(--slate-200); }
+  .ba-b { background: #fff5f5; padding: 16px; border-bottom: 1px solid var(--slate-200); }
+  .ba-a { background: #f0fdf4; padding: 16px; }
+  .ba-lbl { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px; }
+  .ba-b .ba-lbl { color: var(--red-500); }
+  .ba-a .ba-lbl { color: var(--green-600); }
+  .ba-txt { font-size: 13px; line-height: 1.7; }
+  .ba-b .ba-txt { color: #991b1b; }
+  .ba-a .ba-txt { color: #166534; }
+
+  .ai { display: flex; gap: 14px; padding: 16px; background: var(--brand-light); border-radius: 10px; margin-bottom: 12px; align-items: flex-start; }
+  .ai-num { width: 30px; height: 30px; background: var(--brand-primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 800; flex-shrink: 0; }
+  .ai-title { font-size: 14px; font-weight: 700; color: var(--brand-primary); margin-bottom: 4px; }
+  .ai-desc { font-size: 13px; line-height: 1.65; }
+
+  .wi { display: flex; gap: 12px; padding: 14px; background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 10px; margin-bottom: 10px; }
+  .wi-chk { width: 22px; height: 22px; background: var(--green-600); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; flex-shrink: 0; margin-top: 1px; }
+  .wi-title { font-size: 14px; font-weight: 700; color: #166534; margin-bottom: 3px; }
+  .wi-desc { font-size: 13px; color: #166534; line-height: 1.55; }
+
+  .sc-table { width: 100%; border-collapse: collapse; }
+  .sc-table th { background: var(--brand-primary); color: white; padding: 12px 14px; text-align: left; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; }
+  .sc-table td { padding: 12px 14px; border-bottom: 1px solid var(--slate-200); font-size: 13px; vertical-align: top; }
+  .sc-table tr:nth-child(even) td { background: var(--slate-50); }
+  .sc-table tr.tr-total td { background: var(--brand-primary); color: white; font-weight: 700; font-size: 14px; }
+  .sc-score { font-family: 'Space Grotesk', sans-serif; font-size: 18px; font-weight: 700; color: var(--brand-primary); text-align: center; white-space: nowrap; }
+  .sc-score-total { font-family: 'Space Grotesk', sans-serif; font-size: 22px; font-weight: 700; color: var(--brand-accent); text-align: center; }
+  .good-news { background: linear-gradient(135deg, var(--brand-primary), var(--brand-secondary)); color: white; padding: 26px; border-radius: 12px; margin-top: 24px; }
+  .good-news-title { font-size: 16px; font-weight: 800; margin-bottom: 8px; }
+  .good-news-text { font-size: 14px; line-height: 1.7; opacity: 0.95; }
+
+  .cta-section {
+    background: linear-gradient(135deg, var(--slate-900), #1e293b);
+    color: white; padding: 40px; border-radius: 16px; margin-bottom: 24px;
+  }
+  .cta-title { font-size: 24px; font-weight: 800; margin-bottom: 8px; text-align: center; }
+  .cta-sub { font-size: 15px; color: rgba(255,255,255,0.78); margin-bottom: 28px; line-height: 1.6; text-align: center; }
+  .cta-steps { list-style: none; margin-bottom: 28px; }
+  .cta-steps li { display: flex; gap: 14px; align-items: flex-start; padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
+  .cta-steps li:last-child { border-bottom: none; }
+  .cta-step-num { width: 28px; height: 28px; border-radius: 50%; background: var(--brand-secondary); color: white; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 800; flex-shrink: 0; }
+  .cta-step-title { font-size: 14px; font-weight: 700; margin-bottom: 3px; }
+  .cta-step-desc { font-size: 13px; color: rgba(255,255,255,0.75); line-height: 1.55; }
+  .cta-deliverables { background: rgba(255,255,255,0.07); border-radius: 10px; padding: 18px 20px; margin-bottom: 28px; font-size: 13px; color: rgba(255,255,255,0.85); line-height: 1.8; }
+  .cta-btn {
+    display: block; text-align: center;
+    background: var(--brand-accent); color: var(--brand-primary);
+    font-size: 15px; font-weight: 800; padding: 16px 36px;
+    border-radius: 9999px; text-decoration: none;
+    box-shadow: 0 4px 20px rgba(163,230,53,0.3);
+  }
+  .cta-btn:hover { opacity: 0.92; }
+
+  .report-footer { text-align: center; padding: 32px; color: var(--slate-600); font-size: 13px; }
+  .report-footer a { color: var(--brand-secondary); }
+
+  @media print {
+    * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    body { background: white; }
+    .download-btn { display: none !important; }
+    .page-wrapper { padding: 20px; max-width: 100%; }
+    .report-header { margin-bottom: 20px; }
+    .section { box-shadow: none; border: 1px solid #e2e8f0; margin-bottom: 16px; page-break-inside: auto; }
+    .break-before { page-break-before: always; }
+    .cta-section  { page-break-before: always; }
+    .issue    { page-break-inside: avoid; }
+    .rw-block { page-break-inside: avoid; }
+    .ba       { page-break-inside: avoid; }
+    .ai       { page-break-inside: avoid; }
+    .wi       { page-break-inside: avoid; }
+    .verdict  { page-break-inside: avoid; }
+    .good-news { page-break-inside: avoid; }
+    .sub-grid { page-break-inside: avoid; }
+    .ph-note  { page-break-inside: avoid; }
+    .sc-table tr { page-break-inside: avoid; }
+    .section-title { page-break-after: avoid; }
+  }
+  @media (max-width: 620px) {
+    .sub-grid { grid-template-columns: repeat(2,1fr); }
+    .score-row { flex-direction: column; gap: 16px; }
+    .score-big { font-size: 64px; }
+  }
+</style>
+</head>
+<body>
+
+<button class="download-btn" onclick="window.print()">&#8595; Download PDF</button>
+
+<div class="page-wrapper">
+
+  <!-- HEADER -->
+  <div class="report-header">
+    <div class="header-top">
+      <div class="header-logo">
+        <div class="logo-mark">L&sup2;</div>
+        <div class="logo-text">Launch<span>ToLead</span></div>
+      </div>
+      <div class="free-badge">Free Audit</div>
+    </div>
+    <div class="header-title">Resume Audit Report</div>
+    <div class="header-sub">Nishtha Chaudhary &mdash; M.S. Computer Science, Arizona State University (2026)</div>
+    <div class="header-sub">Oracle HCM &middot; LLM Research &middot; Cloud Systems &middot; Adversarial ML &middot; Distributed Systems</div>
+    <div class="header-tag">Scored against the Impact Bullet Builder&trade; Framework &middot; 12 Bullets Analyzed</div>
+  </div>
+
+  <!-- ==========================================
+       SECTION 1: OVERALL SCORE
+  =========================================== -->
+  <div class="section">
+    <div class="section-title"><span class="section-num">1</span> Overall Score</div>
+    <div class="score-row">
+      <div class="score-big">68<span>/100</span></div>
+      <div class="score-right">
+        <div class="pb-label">Your Resume Score</div>
+        <div class="pb-bg"><div class="pb-fill" style="width:68%"></div></div>
+        <div class="pb-labels">
+          <span>10&ndash;30 &#9733; What Was Asked</span>
+          <span>31&ndash;60 &#9733;&#9733; Above &amp; Beyond</span>
+          <span>61&ndash;100 &#9733;&#9733;&#9733; Impact</span>
+        </div>
+      </div>
+    </div>
+    <div class="sub-grid">
+      <div class="sub-card">
+        <div class="sub-val">10<span>/10</span></div>
+        <div class="sub-label">Accomplishments</div>
+      </div>
+      <div class="sub-card">
+        <div class="sub-val">8<span>/10</span></div>
+        <div class="sub-label">Metrics</div>
+      </div>
+      <div class="sub-card">
+        <div class="sub-val">10<span>/10</span></div>
+        <div class="sub-label">How / Method</div>
+      </div>
+      <div class="sub-card-red">
+        <div class="sub-val-red">2<span>/10</span></div>
+        <div class="sub-label-red">Why / Impact</div>
+      </div>
+    </div>
+    <div class="verdict">
+      <div class="verdict-tier">&#9733;&#9733;&#9733; &nbsp;You Spread the Impact Far and Wide &mdash; With One Critical Gap</div>
+      <div class="verdict-text">68/100 puts this resume solidly in &#9733;&#9733;&#9733; territory &mdash; and it's no accident. Your Oracle experience is packed with real numbers (200+ fixes, 30% defect reduction, 40% faster ESS jobs, 1,000+ test cases revamped), your tools are named in context throughout, and almost every bullet starts with a strong action verb. The score reflects genuinely strong foundations. But here's the asymmetry worth understanding: you're scoring near-perfect on six of eight criteria while scoring 2/10 on "Why/Business Impact" and 1/10 on "Problem Context." That gap means every bullet shows <em>what you did</em> without yet showing <em>what changed for the product, the team, or the user because you did it</em>. Fixing that one pattern across all 12 bullets could push this resume to 88&ndash;92 without adding a single new experience &mdash; because the raw material is already here.</div>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       SECTION 2: KEY ISSUES (5)
+  =========================================== -->
+  <div class="section break-before">
+    <div class="section-title"><span class="section-num">2</span> Key Issues Identified</div>
+
+    <!-- Issue 1 -->
+    <div class="issue issue-crit">
+      <div class="issue-row">
+        <div class="ib ib-c">1</div>
+        <div>
+          <div class="issue-title">The &ldquo;Why&rdquo; is missing from 10 of 12 bullets &mdash; by far the biggest gap</div>
+          <div class="issue-desc">The Impact Bullet Builder formula is: <strong>Accomplishment + Metric + How + Why = IMPACT.</strong> You&rsquo;re hitting the first three components consistently. The fourth &mdash; connecting your result to a business outcome, a user impact, or a research advancement &mdash; is absent on almost every bullet. Take your Selenium bullet: you repaired 1,000+ failing test cases and streamlined the pipeline. That&rsquo;s impressive. But a hiring manager reads it and thinks, &ldquo;Okay &mdash; so what changed?&rdquo; How many hours per sprint was manual QA consuming before this? How much faster did releases move after? &ldquo;Accelerating delivery cycles&rdquo; is the direction, but it&rsquo;s not the destination. The same pattern repeats across your Middleware bullet, your Docker bullet, and every project bullet. Your Why score is 2/10, and raising it to 7/10 alone would push your overall score above 85.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Issue 2 -->
+    <div class="issue issue-crit">
+      <div class="issue-row">
+        <div class="ib ib-c">2</div>
+        <div>
+          <div class="issue-title">Zero Dragon Slayer context anywhere &mdash; every bullet jumps straight to the solution</div>
+          <div class="issue-desc">Per the Dragon Slayer framework: the bigger the monster you slay, the bigger the hero you become. Right now, no bullet paints the problem before showing the solution. At Oracle, you worked on production software used by enterprise customers worldwide &mdash; that context has real stakes. Your Selenium framework had 1,000+ failing tests: why were they failing? A platform migration? A dependency update? The cost of those failures to the team is never stated. Your Docker setup reduced local configuration from hours to minutes: what was causing those hours of setup? Was it blocking onboarding? Flaky tests? One well-placed &ldquo;before&rdquo; clause per bullet &mdash; even a single sentence &mdash; transforms a task description into a problem-solving story. Right now only one bullet (Docker) has any before/after framing, and even that stops short of the business impact.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Issue 3 -->
+    <div class="issue issue-crit">
+      <div class="issue-row">
+        <div class="ib ib-c">3</div>
+        <div>
+          <div class="issue-title">&ldquo;Contributed to&rdquo; and &ldquo;Collaborated with cross-functional teams&rdquo; hide your personal ownership</div>
+          <div class="issue-desc">Two of your Oracle bullets open with language that buries what you specifically did. <em>&ldquo;Contributed to the adoption of a Docker-based platform&rdquo;</em> &mdash; did you design the Dockerfile? Write the documentation? Run the onboarding sessions? The word &ldquo;contributed&rdquo; tells a hiring manager you were present for something, not that you drove it. <em>&ldquo;Collaborated with cross-functional teams to enhance Oracle ESS jobs&rdquo;</em> asks the same question: what was your specific contribution to the enhancement? The <strong>Me-in-We Extractor&trade;</strong> principle is direct about this: if you removed yourself from the team, would this bullet still be true? Replace team language with your specific, personal action. &ldquo;Designed the Docker-based testing environment setup&rdquo; is stronger than &ldquo;contributed to adoption.&rdquo; &ldquo;Refactored the LDAP request batching logic in Oracle ESS&rdquo; is stronger than &ldquo;collaborated to enhance.&rdquo;</div>
+          <div class="issue-quote">&ldquo;Contributed to the adoption of a Docker-based platform, to build scalable, standalone testing environments...&rdquo;</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Issue 4 -->
+    <div class="issue issue-imp">
+      <div class="issue-row">
+        <div class="ib ib-i">4</div>
+        <div>
+          <div class="issue-title">Project bullets are split across two lines, diluting the IBB formula on both</div>
+          <div class="issue-desc">Three of your four projects use a two-bullet structure where the first bullet covers the framework/tools (How) and the second covers the results (Metric). This splits the formula in half: neither bullet alone has all four components. For De-Fine Tuning, the first bullet has Accomplishment + How but no Metric or Why; the second bullet has Metric but no How or Why. For the Face Recognition project, same pattern. The fix is straightforward: merge each project&rsquo;s two bullets into one complete &#9733;&#9733;&#9733; bullet that includes all four components. This also creates space to add context and Why that can&rsquo;t fit in split bullets. You don&rsquo;t need two bullets that each say half of something &mdash; you need one bullet that says the whole thing well.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Issue 5 -->
+    <div class="issue issue-imp">
+      <div class="issue-row">
+        <div class="ib ib-i">5</div>
+        <div>
+          <div class="issue-title">Your Oracle Middleware compliance bullet leaves the most important question unanswered</div>
+          <div class="issue-desc"><em>&ldquo;Strengthened Oracle Middleware Extensions by improving the Audit Framework and Flexfield components and resolving 100+ complex UI/accessibility issues, achieving higher compliance with global standards.&rdquo;</em> This is one of the strongest setups on your resume &mdash; 100+ UI/accessibility issues is a real number. But &ldquo;achieving higher compliance with global standards&rdquo; raises more questions than it answers: which standards (WCAG? ARIA? Oracle&rsquo;s internal a11y standards)? What was the compliance level before? What percentage of the targeted issues were resolved? And what does higher compliance enable &mdash; are Oracle&rsquo;s enterprise customers in regulated industries that require this? Adding one sentence that answers &ldquo;what changed because you fixed this, and why did Oracle need it fixed&rdquo; would turn this into the strongest bullet on your resume.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       SECTION 3: TOP BULLETS REWRITTEN (4)
+  =========================================== -->
+  <div class="section break-before">
+    <div class="section-title"><span class="section-num">3</span> Top Bullets &mdash; Rewritten</div>
+    <p style="font-size:13px; color:var(--slate-600); margin-bottom:20px;">The four bullets with the highest improvement potential, rewritten using the full Impact Bullet Builder formula. These were selected because they already have strong foundations &mdash; real metrics, good tools, strong verbs &mdash; and need Why and context to complete the picture.</p>
+    <p class="ph-note">Brackets like <strong>[X]</strong> are placeholders &mdash; only you know the real numbers. Fill them in with your best estimate. A conservative guess beats no number at all.</p>
+    <br>
+
+    <!-- Rewrite 1: Oracle Selenium -->
+    <div class="rw-block">
+      <div class="rw-ctx">Work Experience &mdash; Software Developer, Oracle</div>
+      <div class="rw-before">
+        <div class="rw-lbl">Original</div>
+        <div class="rw-txt">Revamped a Selenium-based testing framework, repairing 1000+ failing test cases and streamlining automated validation pipelines, reducing manual QA effort and accelerating delivery cycles</div>
+      </div>
+      <div class="rw-after">
+        <div class="rw-lbl">Rewritten</div>
+        <div class="rw-txt">Diagnosed and revamped a Selenium-based testing framework where <span class="ph">[X]%</span> of test cases had gone stale after a platform migration &mdash; repairing 1,000+ failing tests and rebuilding automated validation pipelines, cutting manual QA effort by an estimated <span class="ph">[X]</span> hours per release cycle and reducing regression testing time from <span class="ph">[X]</span> days to <span class="ph">[X]</span>, enabling faster sprint-over-sprint delivery across Oracle HCM</div>
+      </div>
+      <div class="ph-note">What to fill in: Why were 1,000+ tests failing (migration? dependency update?)? How many hours was manual QA taking per release before? How many days did regression testing take before vs. after? Even rough estimates work here.</div>
+    </div>
+
+    <!-- Rewrite 2: Oracle Docker -->
+    <div class="rw-block">
+      <div class="rw-ctx">Work Experience &mdash; Software Developer, Oracle</div>
+      <div class="rw-before">
+        <div class="rw-lbl">Original</div>
+        <div class="rw-txt">Contributed to the adoption of a Docker-based platform, to build scalable, standalone testing environments, reducing local setup time from hours to minutes and boosting overall team productivity</div>
+      </div>
+      <div class="rw-after">
+        <div class="rw-lbl">Rewritten</div>
+        <div class="rw-txt">Designed and documented the Docker-based testing environment setup for Oracle HCM engineers &mdash; eliminating a <span class="ph">[X]</span>-hour manual configuration process that had been blocking new engineer onboarding and causing environment-mismatch failures on <span class="ph">[X]%</span> of test runs, cutting setup time to under 15 minutes and enabling <span class="ph">[X]</span> engineers to onboard to the testing environment independently in a single day</div>
+      </div>
+      <div class="ph-note">Key changes: replaced &ldquo;Contributed to&rdquo; with &ldquo;Designed and documented&rdquo; (your specific action), added context for why setup was taking hours, and added a concrete team impact. Adjust the numbers to match reality.</div>
+    </div>
+
+    <!-- Rewrite 3: De-Fine Tuning (merged) -->
+    <div class="rw-block">
+      <div class="rw-ctx">Project &mdash; De-Fine Tuning: Multilingual Unlearning in Large Language Models</div>
+      <div class="rw-before">
+        <div class="rw-lbl">Original (two separate bullets)</div>
+        <div class="rw-txt" style="margin-bottom:8px;">Designed a multilingual unlearning framework by integrating Task Vector Negation with Sequential Unlearning, and fine-tuned LLaMA 3.2B on a Mistral-translated TOFU dataset across English, Hindi, and Korean</div>
+        <div class="rw-txt">Achieved 75-80% forgetting accuracy with less than 10% retention degradation</div>
+      </div>
+      <div class="rw-after">
+        <div class="rw-lbl">Rewritten (merged into one complete bullet)</div>
+        <div class="rw-txt">Designed a multilingual machine unlearning framework for LLMs &mdash; integrating Task Vector Negation with Sequential Unlearning and fine-tuning LLaMA 3.2B across English, Hindi, and Korean on a Mistral-translated TOFU benchmark &mdash; achieving 75&ndash;80% forgetting accuracy with under 10% retention degradation, demonstrating a viable approach for removing training data from deployed AI systems in compliance with GDPR and emerging AI governance frameworks</div>
+      </div>
+      <div class="ph-note">The two original bullets each had half the formula. This merged version has all four components: Accomplishment + Metric + How + Why. The Why (&ldquo;removing training data from deployed AI systems in compliance with GDPR&rdquo;) connects the research to a real-world regulatory need.</div>
+    </div>
+
+    <!-- Rewrite 4: Adversarial Attacks -->
+    <div class="rw-block">
+      <div class="rw-ctx">Project &mdash; Adversarial Attacks on Deep Learning Models | Summer Research Intern</div>
+      <div class="rw-before">
+        <div class="rw-lbl">Original</div>
+        <div class="rw-txt">Implemented FGSM, PGD, and CW adversarial attacks using PyTorch, achieving up to 99% adversarial success rates against ResNet50 on ImageNet and reducing model accuracy by over 90% through parameter optimization</div>
+      </div>
+      <div class="rw-after">
+        <div class="rw-lbl">Rewritten</div>
+        <div class="rw-txt">Implemented and benchmarked FGSM, PGD, and CW adversarial attack pipelines in PyTorch against ResNet50 on ImageNet &mdash; achieving 99% adversarial success and greater than 90% model accuracy degradation through parameter tuning, exposing critical vulnerabilities in production-scale vision classifiers and generating robustness findings that directly informed the lab&rsquo;s model hardening recommendations for security-sensitive deployment contexts</div>
+      </div>
+      <div class="ph-note">The original had three of four IBB components (Accomplishment, Metric, How) but stopped before explaining why this research mattered. The rewrite adds the Why: what do these findings enable or inform?</div>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       SECTION 4: BEFORE & AFTER (3 examples)
+  =========================================== -->
+  <div class="section break-before">
+    <div class="section-title"><span class="section-num">4</span> Before &amp; After &mdash; Greatest Tier Jumps</div>
+
+    <!-- B/A 1: Docker (★ → ★★★) -->
+    <div class="ba">
+      <div class="ba-ctx">Work Experience &mdash; Oracle &nbsp;|&nbsp; Docker Setup Bullet</div>
+      <div class="ba-b">
+        <div class="ba-lbl">BEFORE (&#9733; Level &mdash; fails ownership, Why, and context)</div>
+        <div class="ba-txt">&ldquo;Contributed to the adoption of a Docker-based platform, to build scalable, standalone testing environments, reducing local setup time from hours to minutes and boosting overall team productivity&rdquo;</div>
+      </div>
+      <div class="ba-a">
+        <div class="ba-lbl">AFTER (&#9733;&#9733;&#9733; Level)</div>
+        <div class="ba-txt">&ldquo;Designed and documented the Docker-based testing environment setup for Oracle HCM engineers &mdash; eliminating a <span class="ph">[X]</span>-hour manual configuration process that had been blocking new engineer onboarding and causing environment-mismatch failures on <span class="ph">[X]%</span> of test runs, cutting setup time to under 15 minutes and enabling <span class="ph">[X]</span> engineers to onboard to the testing environment independently in a single day&rdquo;</div>
+      </div>
+    </div>
+
+    <!-- B/A 2: De-Fine Tuning merge (★ → ★★★) -->
+    <div class="ba">
+      <div class="ba-ctx">Project &mdash; De-Fine Tuning &nbsp;|&nbsp; Two &#9733;-level bullets merged into one &#9733;&#9733;&#9733; bullet</div>
+      <div class="ba-b">
+        <div class="ba-lbl">BEFORE (&#9733; Level &mdash; formula split across two bullets; neither is complete)</div>
+        <div class="ba-txt" style="margin-bottom:8px;">&ldquo;Designed a multilingual unlearning framework by integrating Task Vector Negation with Sequential Unlearning, and fine-tuned LLaMA 3.2B on a Mistral-translated TOFU dataset across English, Hindi, and Korean&rdquo;</div>
+        <div class="ba-txt">&ldquo;Achieved 75-80% forgetting accuracy with less than 10% retention degradation&rdquo;</div>
+      </div>
+      <div class="ba-a">
+        <div class="ba-lbl">AFTER (&#9733;&#9733;&#9733; Level &mdash; all four components in one bullet)</div>
+        <div class="ba-txt">&ldquo;Designed a multilingual machine unlearning framework for LLMs &mdash; integrating Task Vector Negation with Sequential Unlearning and fine-tuning LLaMA 3.2B across English, Hindi, and Korean on a Mistral-translated TOFU benchmark &mdash; achieving 75&ndash;80% forgetting accuracy with under 10% retention degradation, demonstrating a viable approach for removing training data from deployed AI systems in compliance with GDPR and emerging AI governance frameworks&rdquo;</div>
+      </div>
+    </div>
+
+    <!-- B/A 3: Adversarial (★★ → ★★★) -->
+    <div class="ba">
+      <div class="ba-ctx">Project &mdash; Adversarial Attacks | Summer Research Intern</div>
+      <div class="ba-b">
+        <div class="ba-lbl">BEFORE (&#9733;&#9733; Level &mdash; strong metrics and How, but no Why)</div>
+        <div class="ba-txt">&ldquo;Implemented FGSM, PGD, and CW adversarial attacks using PyTorch, achieving up to 99% adversarial success rates against ResNet50 on ImageNet and reducing model accuracy by over 90% through parameter optimization&rdquo;</div>
+      </div>
+      <div class="ba-a">
+        <div class="ba-lbl">AFTER (&#9733;&#9733;&#9733; Level)</div>
+        <div class="ba-txt">&ldquo;Implemented and benchmarked FGSM, PGD, and CW adversarial attack pipelines in PyTorch against ResNet50 on ImageNet &mdash; achieving 99% adversarial success and greater than 90% model accuracy degradation through parameter tuning, exposing critical vulnerabilities in production-scale vision classifiers and generating robustness findings that directly informed the lab&rsquo;s model hardening recommendations for security-sensitive deployment contexts&rdquo;</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       SECTION 5: ACTION ITEMS (5)
+  =========================================== -->
+  <div class="section break-before">
+    <div class="section-title"><span class="section-num">5</span> Top Action Items</div>
+
+    <div class="ai">
+      <div class="ai-num">1</div>
+      <div>
+        <div class="ai-title">Add &ldquo;Why&rdquo; to every single bullet &mdash; this is the one change that moves the score the most</div>
+        <div class="ai-desc">For each bullet, ask yourself: &ldquo;So what does this mean for the team, the product, or the user?&rdquo; Keep asking until you hit something a VP or engineering director would care about. For Oracle bullets, that&rsquo;s usually: fewer customer support tickets, faster time-to-ship, less engineer burnout, lower defect escape rate. For research bullets, it&rsquo;s usually: enables X application, advances Y open problem, demonstrates Z approach is viable. Even a single closing clause &mdash; &ldquo;...enabling the team to ship one additional sprint cycle per quarter&rdquo; or &ldquo;...reducing on-call burden during incident response&rdquo; &mdash; clears the Why bar. Start with your Oracle bullets and work through each one.</div>
+      </div>
+    </div>
+
+    <div class="ai">
+      <div class="ai-num">2</div>
+      <div>
+        <div class="ai-title">Merge your split project bullets so each project has one complete &#9733;&#9733;&#9733; bullet</div>
+        <div class="ai-desc">De-Fine Tuning, Face Recognition, and Distributed Event Reservation all split their bullets so Bullet 1 has the How and Bullet 2 has the Metric. Neither is complete on its own. The target is one merged bullet per project (or per major contribution within a project) that contains all four IBB components. Merging also frees up lines you can use to add context (&ldquo;the system needed to handle production-scale traffic&rdquo;) or Why (&ldquo;validating the approach for potential enterprise deployment&rdquo;). You don&rsquo;t need two weak bullets &mdash; you need one strong one.</div>
+      </div>
+    </div>
+
+    <div class="ai">
+      <div class="ai-num">3</div>
+      <div>
+        <div class="ai-title">Replace &ldquo;Contributed to&rdquo; and &ldquo;Collaborated with cross-functional teams&rdquo; with your specific action</div>
+        <div class="ai-desc">Go back to both Oracle bullets and ask: what specifically did you design, build, write, or own? For the Docker bullet, the specific action is almost certainly something like: &ldquo;Wrote the Dockerfile and setup documentation,&rdquo; &ldquo;Led the proof-of-concept and rollout plan,&rdquo; or &ldquo;Designed the containerized environment configuration.&rdquo; For the ESS bullet, the action is likely: &ldquo;Refactored the LDAP batching logic,&rdquo; &ldquo;Rewrote the scheduler configuration,&rdquo; or &ldquo;Implemented the queue optimization.&rdquo; Pick the verb that matches what you actually did and own it.</div>
+      </div>
+    </div>
+
+    <div class="ai">
+      <div class="ai-num">4</div>
+      <div>
+        <div class="ai-title">Add one &ldquo;before&rdquo; clause to each Oracle bullet to set up the Dragon Slayer context</div>
+        <div class="ai-desc">Every Oracle bullet currently jumps straight into what you did without painting the problem first. A single setup clause &mdash; &ldquo;with 1,000+ test cases having gone stale after a platform migration&rdquo; or &ldquo;on a system where setup times were blocking new engineer onboarding&rdquo; &mdash; gives the reader the context to appreciate the solution. You don&rsquo;t need a paragraph. One well-placed em dash and a problem statement is enough. Your Oracle work was in a real production system serving enterprise customers globally &mdash; that context deserves to show up on the resume.</div>
+      </div>
+    </div>
+
+    <div class="ai">
+      <div class="ai-num">5</div>
+      <div>
+        <div class="ai-title">Quantify the outcomes on your Middleware bullet and add the specific standards referenced</div>
+        <div class="ai-desc">The Middleware bullet already has a strong metric (100+ issues resolved). What it&rsquo;s missing is specificity on the compliance side: which accessibility standards (WCAG 2.1 AA? Oracle&rsquo;s VPATs?)? What was the compliance rate or issue count before vs. after? And most importantly &mdash; what does higher compliance enable? For enterprise software like Oracle HCM, accessibility compliance is often a contractual requirement for government and regulated-industry customers. If that context is accurate, one sentence stating it makes this bullet substantially stronger.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       SECTION 6: WHAT'S ALREADY WORKING (5)
+  =========================================== -->
+  <div class="section">
+    <div class="section-title"><span class="section-num">6</span> What&rsquo;s Already Working</div>
+
+    <div class="wi">
+      <div class="wi-chk">&#10003;</div>
+      <div>
+        <div class="wi-title">How / Method score: 10/10 &mdash; tools named in context across every section</div>
+        <div class="wi-desc">Every section of your resume names specific tools used in action: Java, REST APIs, PL/SQL, Selenium in the Oracle work; LLaMA 3.2B, Mistral, Task Vector Negation in your ML research; AWS EC2/S3/SQS, Google Spanner, Elasticsearch in your cloud projects. A hiring manager can immediately see you know the stack and can prove it. This is the clearest signal that you&rsquo;ve thought carefully about how to write a resume &mdash; and it&rsquo;s the foundation that makes everything else improvable.</div>
+      </div>
+    </div>
+
+    <div class="wi">
+      <div class="wi-chk">&#10003;</div>
+      <div>
+        <div class="wi-title">Industry-scale metrics already present throughout Oracle work</div>
+        <div class="wi-desc">200+ bug fixes, 30% defect reduction, ~40% job execution improvement, 100+ UI issues, 1,000+ test cases &mdash; these are real production-scale numbers that immediately signal you worked on a live system with actual stakes. Most early-career engineers struggle to find any numbers at all. You already have them. The gap isn&rsquo;t the absence of metrics &mdash; it&rsquo;s the absence of the &ldquo;Why&rdquo; that those metrics were building toward.</div>
+      </div>
+    </div>
+
+    <div class="wi">
+      <div class="wi-chk">&#10003;</div>
+      <div>
+        <div class="wi-title">Strong action verbs throughout &mdash; 10/10 on the Action Verb criterion</div>
+        <div class="wi-desc">Delivered, Strengthened, Revamped, Designed, Built, Implemented, Improved &mdash; every bullet (except two) opens with a strong, active verb that makes a clear ownership claim. This is one of the most common failure points on engineering resumes and you&rsquo;ve already avoided it. Once you fix the two team-language bullets (&ldquo;Contributed to&rdquo; and &ldquo;Collaborated with teams&rdquo;), this criterion will be perfect across all 12 bullets.</div>
+      </div>
+    </div>
+
+    <div class="wi">
+      <div class="wi-chk">&#10003;</div>
+      <div>
+        <div class="wi-title">Project bullets include impressive performance benchmarks</div>
+        <div class="wi-desc">99.3% face recognition accuracy, 1,000+ concurrent requests handled, sub-second latency, ~4% failure rate under traffic surges, 75&ndash;80% forgetting accuracy with under 10% retention degradation &mdash; these are specific, credible, and measurable results. For a grad student with primarily academic projects, having this level of quantification already built in puts you ahead of the majority of candidates at your stage. The formula just needs the Why layer added on top.</div>
+      </div>
+    </div>
+
+    <div class="wi">
+      <div class="wi-chk">&#10003;</div>
+      <div>
+        <div class="wi-title">Breadth across high-demand technical areas is a genuine differentiator</div>
+        <div class="wi-desc">You have credible work in enterprise Java/Oracle systems, adversarial ML, LLM research, distributed systems on GCP, and cloud infrastructure on AWS &mdash; across two years of Oracle production work and a 4.0 GPA M.S. program. That combination is rare. This resume&rsquo;s job is to make that breadth land as evidence of range and depth, not just a list of keywords. The IBB fixes will do exactly that: each project will tell a complete story instead of just naming the stack.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       SECTION 7: FULL SCORECARD
+  =========================================== -->
+  <div class="section break-before">
+    <div class="section-title"><span class="section-num">7</span> Full Scorecard &mdash; 8 Criteria</div>
+    <p style="font-size:12px; color:var(--slate-600); margin-bottom:16px;">Scoring is based on the percentage of in-scope bullets (all Work Experience and Project bullets = 12 total) that pass each criterion. 0&ndash;10% = 1/10, 11&ndash;20% = 2/10, ..., 91&ndash;100% = 10/10. All 8 criteria contribute equally to the overall score.</p>
+    <table class="sc-table">
+      <thead>
+        <tr>
+          <th style="width:36%">Criteria</th>
+          <th style="width:12%; text-align:center;">Score</th>
+          <th>Observation</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>1. Accomplishments (not duties)</strong></td>
+          <td class="sc-score">10 / 10</td>
+          <td>All 12 bullets describe something you did and a result that followed. Zero duty descriptions, zero &ldquo;Responsible for&rdquo; language. This is the strongest possible score on this criterion.</td>
+        </tr>
+        <tr>
+          <td><strong>2. Metrics / Quantification</strong></td>
+          <td class="sc-score">8 / 10</td>
+          <td>9 of 12 bullets contain specific numbers. The three failures are De-Fine Tuning Bullet 1, Face Recognition Bullet 1, and Distributed System Bullet 1 &mdash; all first-half bullets in split-project pairs. Merging each pair fixes this automatically.</td>
+        </tr>
+        <tr>
+          <td><strong>3. How / Method Shown</strong></td>
+          <td class="sc-score">10 / 10</td>
+          <td>11 of 12 bullets name a specific tool, framework, or method. The one miss is De-Fine Tuning Bullet 2 (the result-only bullet). Again, merging fixes it. Tool naming is genuinely excellent throughout: specific, varied, shown in context rather than in a list.</td>
+        </tr>
+        <tr>
+          <td><strong>4. Why / Business Impact</strong></td>
+          <td class="sc-score" style="color: var(--red-500);">2 / 10</td>
+          <td>Only 2 of 12 bullets connect the result to a business or research outcome: the Oracle HCM defects bullet (&ldquo;reducing customer-reported defects&rdquo;) and the ESS jobs bullet (&ldquo;more reliable user provisioning&rdquo;). Every other bullet stops at the result without explaining why it mattered. This is the single largest improvement opportunity on the resume.</td>
+        </tr>
+        <tr>
+          <td><strong>5. Personal Ownership</strong></td>
+          <td class="sc-score">9 / 10</td>
+          <td>10 of 12 bullets use first-person active language. Two Oracle bullets fail: &ldquo;Contributed to&rdquo; and &ldquo;Collaborated with cross-functional teams.&rdquo; One easy fix for each restores this to 10/10.</td>
+        </tr>
+        <tr>
+          <td><strong>6. Problem Context / &ldquo;So What?&rdquo;</strong></td>
+          <td class="sc-score" style="color: var(--red-500);">1 / 10</td>
+          <td>Only one bullet includes before/after context: the Docker bullet (&ldquo;from hours to minutes&rdquo;). Every other bullet begins with the solution, leaving the reader to guess what was broken or at stake before you stepped in. This is the joint-lowest score alongside Why, and both are fixed by the same habit: one sentence of setup before you describe the solution.</td>
+        </tr>
+        <tr>
+          <td><strong>7. Action Verbs</strong></td>
+          <td class="sc-score">10 / 10</td>
+          <td>11 of 12 bullets open with a strong action verb. The one exception (&ldquo;Contributed to&rdquo;) is on the banned list and is also flagged under Personal Ownership. Every other bullet starts cleanly: Delivered, Strengthened, Revamped, Designed, Built, Implemented, Improved, Achieved.</td>
+        </tr>
+        <tr>
+          <td><strong>8. Bullet Quality Consistency</strong></td>
+          <td class="sc-score">4 / 10</td>
+          <td>The resume has 2 bullets at &#9733;&#9733;&#9733; level (Oracle Bullet 1, Oracle ESS Bullet), 6 at &#9733;&#9733; (has 3 of 4 IBB components), and 4 at &#9733; (the split first-half project bullets). The 2-tier spread between &#9733; and &#9733;&#9733;&#9733; scores 3&ndash;5. Merging the split project bullets and adding Why throughout will immediately compress this to a 1-tier spread.</td>
+        </tr>
+        <tr class="tr-total">
+          <td><strong>OVERALL SCORE</strong></td>
+          <td class="sc-score-total">68 / 100</td>
+          <td><strong>&#9733;&#9733;&#9733; &ldquo;You Spread the Impact Far and Wide&rdquo;</strong> &mdash; A strong foundation with one critical, fixable gap. Six criteria are at 8&ndash;10/10. Two criteria (Why and Context) are at 1&ndash;2/10. Fixing those two moves this to 88&ndash;92 range.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="good-news">
+      <div class="good-news-title">The Good News</div>
+      <div class="good-news-text">You have something most candidates at your stage don&rsquo;t: two years of production experience in a major enterprise software product, a 4.0 GPA in a competitive M.S. program, and technical breadth across LLM research, cloud infrastructure, and adversarial ML. Your resume already scores perfectly on three of the eight criteria &mdash; that&rsquo;s the hard part. The gap that&rsquo;s holding this back from 88+ is a single pattern, repeated across all 12 bullets: every bullet shows <em>what you built</em>, but none yet shows <em>what changed because you built it</em>. That&rsquo;s not an experience gap. It&rsquo;s a framing habit, and it&rsquo;s completely fixable in an afternoon. The potential in this resume is already there &mdash; the rewrites above show exactly what unlocking it looks like.</div>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       CTA SECTION
+  =========================================== -->
+  <div class="cta-section">
+    <div class="cta-title">Want Help Fixing All of This?</div>
+    <div class="cta-sub">This audit covered your top 3&ndash;5 bullets. The other bullets on your resume have the same potential &mdash; they just need the same treatment. Here&rsquo;s what a full rebuild looks like.</div>
+
+    <ul class="cta-steps">
+      <li>
+        <div class="cta-step-num">1</div>
+        <div>
+          <div class="cta-step-title">Resume Rebuilt &mdash; Every Bullet, Not Just the Top 5</div>
+          <div class="cta-step-desc">We go through every bullet on your resume using the Impact Bullet Builder formula. You leave with a complete, rewritten resume scored at 85+ &mdash; not a template, but your actual experience reframed to land the way it deserves.</div>
+        </div>
+      </li>
+      <li>
+        <div class="cta-step-num">2</div>
+        <div>
+          <div class="cta-step-title">Interview Stories Mastered &mdash; Master Story Bank in STAR Format</div>
+          <div class="cta-step-desc">A strong resume gets you the interview. A master story bank gets you the offer. We build your full set of interview stories &mdash; behavioral, technical, and leadership &mdash; so you never blank on &ldquo;Tell me about a time when...&rdquo; again.</div>
+        </div>
+      </li>
+      <li>
+        <div class="cta-step-num">3</div>
+        <div>
+          <div class="cta-step-title">Live Mock Interview &mdash; Full Practice with Direct Feedback</div>
+          <div class="cta-step-desc">One full mock interview session with real-time feedback on your delivery, your stories, and your framing. You leave knowing exactly what to tighten and what to lean into.</div>
+        </div>
+      </li>
+    </ul>
+
+    <div class="cta-deliverables">
+      <strong>You leave with:</strong> a fully rebuilt resume &middot; master story bank &middot; mock interview notes &middot; all session recordings &middot; 40+ bonus materials
+    </div>
+
+    <a class="cta-btn" href="https://launchtolead.io/coaching?utm_source=audit&utm_medium=email&utm_campaign=free-audit&utm_content=nishtha-chaudhary">
+      Watch the Video &amp; Book a Career Launch Call &rarr;
+    </a>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="report-footer">
+    Free audit prepared by LaunchToLead &nbsp;|&nbsp; Impact Bullet Builder&trade; Framework<br>
+    <a href="https://launchtolead.io/free">launchtolead.io/free</a>
+  </div>
+
+</div><!-- end page-wrapper -->
+</body>
+</html>

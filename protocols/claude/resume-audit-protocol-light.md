@@ -46,13 +46,13 @@
 | "Your skills section would be stronger if the tools showed up inside your experience bullets" | "Your skills section is a dead list" |
 
 ### Banned Words
-Never use: disaster, filler, dead, invisible, kills/killer, pure filler, BS, thin, red flag, zero value. These make people defensive instead of motivated.
+Never use: disaster, filler, dead, kills/killer, pure filler, BS, thin, red flag, zero value. These make people defensive instead of motivated.
 
 ### Additional Tone Rules
 - Frame problems as opportunities, not failures.
 - Engineering-appropriate, factual, straight-to-the-point. No hype, no salesy language, no exclamation marks in the analysis.
 - No cheesy taglines. No "No pitch. No pressure. Just a plan." or similar.
-- CTA calls it a "Career Launch Call" — not a strategy call, not a 15-min call.
+- The CTA points to the application for The Promotion-Ready Engineer Blueprint — no discovery call, no "Career Launch Call" language. This is a no-call, application-based funnel (apply → review → accepted → payment + Skool setup).
 
 ---
 
@@ -226,18 +226,15 @@ The output HTML must contain these 7 sections in this order. Design using the La
 ### CTA Section
 - "Want Help Fixing All of This?" heading.
 - "This audit covered your top 3–5 bullets. The other bullets on your resume have the same potential — they just need the same treatment."
-- Description of the 21-Day Accelerator Program (3 × 90-minute 1-on-1 sessions):
-  1. Resume Rebuilt — every bullet rewritten with the Impact Bullet Builder formula
-  2. Interview Stories Mastered — master story bank built in STAR format
-  3. Live Mock Interview — full practice with direct feedback
-- "You leave with: a rebuilt resume, master story bank, mock interview notes, all session recordings, and 40+ bonus materials."
-- Link: `launchtolead.io/coaching` with tracking params: `?utm_source=audit&utm_medium=email&utm_campaign=free-audit&utm_content={candidate-slug}` (slug = lowercase first-last, hyphenated).
-- Note: This link redirects to the offer page where they can watch the video and book a Career Launch Call.
+- Note: this audit is currently written for external/job-search resumes. The active offer (The Promotion-Ready Engineer Blueprint) is for engineers seeking an internal promotion case, not a job search — before running this CTA live, confirm whether the resume-audit angle still fits that avatar, or whether it needs reframing around building a promotion case instead of a resume.
+- If used as-is: reference the current offer (see `offer-doc.md`) — a 6-month founder cohort program to become a Promotion-Ready Engineer, not the retired 21-Day Accelerator.
+- No sales call — the funnel is application-based: fill out the application on the offer doc, get reviewed, and if accepted, sort payment and Skool setup. Do not reference booking a call.
+- Link: `launchtolead.io` (full offer doc) with tracking params: `?utm_source=audit&utm_medium=email&utm_campaign=free-audit&utm_content={candidate-slug}` (slug = lowercase first-last, hyphenated).
 
 ### Footer
 ```
 Free audit prepared by LaunchToLead | Impact Bullet Builder Framework
-launchtolead.io/free
+launchtolead.io
 ```
 
 ---

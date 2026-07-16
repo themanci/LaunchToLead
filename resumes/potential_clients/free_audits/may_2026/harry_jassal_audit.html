@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Resume Audit — Harry Jassal | LaunchToLead</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .font-mono-num { font-family: 'Space Grotesk', monospace; }
+
+        #download-btn {
+            position: fixed; top: 20px; right: 20px; z-index: 9999;
+            background: linear-gradient(135deg, #a3e635, #14b8a6); color: #052e16;
+            font-family: 'Plus Jakarta Sans', sans-serif; font-size: 16px; font-weight: 800;
+            padding: 14px 32px; border: none; border-radius: 50px; cursor: pointer;
+            box-shadow: 0 8px 30px rgba(163,230,53,0.3);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        #download-btn:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(163,230,53,0.4); }
+
+        @media print {
+            @page { size: letter; margin: 0.5in 0.65in; }
+            body {
+                background: white !important; color: #1e293b !important;
+                padding: 0 !important; margin: 0 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            #download-btn { display: none !important; }
+            .no-print { display: none !important; }
+            .page-break { break-before: page; }
+            .keep-together { break-inside: avoid; }
+            .space-y-4 > div, .space-y-6 > div, .grid > div { break-inside: avoid; }
+            ul.space-y-3 > li { break-inside: avoid; }
+            tbody tr { break-inside: avoid; }
+            .rounded-xl.overflow-hidden { break-inside: avoid; }
+            h2, h3, h4 { break-after: avoid; }
+            section { box-shadow: none !important; border: 1px solid #e2e8f0 !important; }
+            .max-w-4xl { max-width: 100% !important; }
+            .bg-emerald-900, .bg-emerald-800 {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-700">
+
+<button id="download-btn" onclick="window.print()">Download PDF</button>
+
+<!-- ============================================================ -->
+<!-- HEADER                                                        -->
+<!-- ============================================================ -->
+<header class="bg-emerald-900 text-white py-6 px-6">
+    <div class="max-w-4xl mx-auto">
+        <div class="flex items-center gap-3 mb-4">
+            <div class="bg-white text-emerald-900 w-10 h-10 rounded-xl flex items-center justify-center font-bold text-sm shadow">L²</div>
+            <span class="text-xl font-bold">Launch<span class="font-light text-lime-300">ToLead</span></span>
+        </div>
+        <div class="flex items-center gap-2 mb-2">
+            <span class="bg-lime-400/20 text-lime-300 text-xs font-bold px-3 py-1 rounded-full">FREE AUDIT</span>
+        </div>
+        <h1 class="text-3xl font-extrabold mb-1">Resume Audit Report</h1>
+        <p class="text-emerald-200">Harry Jassal — Trimble Software Specialist, Vantage New Zealand</p>
+        <p class="text-emerald-400/60 text-sm mt-1">Scored against the Impact Bullet Builder framework</p>
+    </div>
+</header>
+
+<div class="max-w-4xl mx-auto px-6 py-10 space-y-10">
+
+    <!-- ============================================================ -->
+    <!-- SECTION 1: OVERALL SCORE                                      -->
+    <!-- ============================================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 overflow-hidden">
+        <div class="p-8">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="w-8 h-8 rounded-lg bg-emerald-600 text-white flex items-center justify-center text-sm font-bold">01</div>
+                <h2 class="text-2xl font-extrabold text-slate-900">Overall Score</h2>
+            </div>
+
+            <div class="flex items-center gap-8 mb-6">
+                <div class="text-center">
+                    <p class="font-mono-num text-6xl font-extrabold text-amber-500">49</p>
+                    <p class="text-slate-500 text-sm">out of 100</p>
+                </div>
+                <div class="flex-1">
+                    <div class="h-4 bg-slate-100 rounded-full overflow-hidden mb-2">
+                        <div class="h-full rounded-full" style="width: 49%; background: linear-gradient(to right, #d97706, #f59e0b);"></div>
+                    </div>
+                    <div class="flex justify-between text-xs text-slate-400">
+                        <span>10–30 ★ What Was Asked</span>
+                        <span>31–60 ★★ Above &amp; Beyond</span>
+                        <span>61–100 ★★★ Impact</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4 core IBB sub-scores -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="bg-amber-50 border border-amber-200 rounded-xl p-4 text-center">
+                    <p class="font-mono-num text-2xl font-bold text-amber-600">5/10</p>
+                    <p class="text-amber-700 text-xs font-semibold mt-1">Accomplishments</p>
+                    <p class="text-amber-500 text-xs mt-0.5">20 of 44 bullets describe outcomes; 24 are duty descriptions</p>
+                </div>
+                <div class="bg-red-50 border border-red-200 rounded-xl p-4 text-center">
+                    <p class="font-mono-num text-2xl font-bold text-red-600">2/10</p>
+                    <p class="text-red-700 text-xs font-semibold mt-1">Metrics</p>
+                    <p class="text-red-500 text-xs mt-0.5">Only 7 of 44 contain a real number — "dozens" and "significantly" don't count</p>
+                </div>
+                <div class="bg-amber-50 border border-amber-200 rounded-xl p-4 text-center">
+                    <p class="font-mono-num text-2xl font-bold text-amber-600">5/10</p>
+                    <p class="text-amber-700 text-xs font-semibold mt-1">How / Method</p>
+                    <p class="text-amber-500 text-xs mt-0.5">19 of 44 name a tool or method — but missing from the best achievement bullets</p>
+                </div>
+                <div class="bg-red-50 border border-red-200 rounded-xl p-4 text-center">
+                    <p class="font-mono-num text-2xl font-bold text-red-600">2/10</p>
+                    <p class="text-red-700 text-xs font-semibold mt-1">Why / Impact</p>
+                    <p class="text-red-500 text-xs mt-0.5">5 of 44 connect to a business outcome — your wins sit unanchored</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- VERDICT BANNER -->
+        <div class="bg-emerald-800 text-white p-6">
+            <p class="font-bold text-lg">★★ — Real Achievement Data Trapped Inside a Job Description Frame.</p>
+            <p class="text-sm opacity-80 mt-1">49/100 sits in the middle of the ★★ band, and the gap isn't a lack of results — it's a structural problem. You have three years of genuine growth at Vantage: 73% subscription growth in year one, sustained over a second and third year. You have a website redesign that lifted orders 50%. You doubled client enrolments at a prior role. Those numbers belong on a strong resume. But right now they're buried in a separate "Achievements" section that most hiring managers won't weight correctly — and even those achievement bullets are missing the How and Why that would make them act. Meanwhile, 24 of your 44 bullets describe daily responsibilities, not things you accomplished. The fix isn't starting over. It's collapsing the duty/achievement split, adding one sentence per achievement bullet explaining how you got there, and adding one sentence connecting the result to what the business gained. That's the difference between a 49 and a 70+.</p>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SECTION 2: KEY ISSUES IDENTIFIED                              -->
+    <!-- ============================================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 p-8 page-break">
+        <div class="flex items-center gap-3 mb-6">
+            <div class="w-8 h-8 rounded-lg bg-red-600 text-white flex items-center justify-center text-sm font-bold">02</div>
+            <h2 class="text-2xl font-extrabold text-slate-900">Key Issues Identified</h2>
+        </div>
+
+        <div class="space-y-4">
+
+            <!-- ISSUE 1 -->
+            <div class="flex items-start gap-4 p-5 bg-red-50 rounded-xl border border-red-200 keep-together">
+                <div class="w-8 h-8 rounded-full bg-red-600 text-white flex items-center justify-center font-bold text-sm flex-shrink-0">1</div>
+                <div>
+                    <p class="font-bold text-red-900">Splitting duties and achievements into two separate sections buries your wins and cuts your impact in half</p>
+                    <p class="text-red-700 text-sm mt-1">For each role, your CV lists responsibilities first — "Provided technical support," "Managed subscription renewals," "Developed and maintained training materials" — and then a separate "Achievements at Vantage" section below. In practice, a recruiter skims the responsibilities, forms an impression of a support technician, and either stops reading or arrives at the Achievements section having already placed you in a box. Neither outcome serves you. The best-performing resumes don't separate duties from results — they lead with results. The 73%/32%/12% subscription growth figures are among the most compelling numbers on your CV — they should be the first bullet under Vantage, not a footnote after eight lines of job description.</p>
+                </div>
+            </div>
+
+            <!-- ISSUE 2 -->
+            <div class="flex items-start gap-4 p-5 bg-red-50 rounded-xl border border-red-200 keep-together">
+                <div class="w-8 h-8 rounded-full bg-red-600 text-white flex items-center justify-center font-bold text-sm flex-shrink-0">2</div>
+                <div>
+                    <p class="font-bold text-red-900">Your best achievement bullets are missing the "How" — a 73% subscription growth number with no explanation of method leaves a hiring manager guessing</p>
+                    <p class="text-red-700 text-sm mt-1">"Grew software subscriptions numbers by 73% in 2022, 32% in 2023 and 12% in 2024" is a strong result — sustained multi-year growth at a SaaS product is exactly the kind of data point that gets CVs read twice. But the bullet stops at the number. A hiring manager who sees 73% growth immediately wants to know: what did you actually do? Was it the new onboarding workflow you built? The marketing events you led? The self-service training resource you spearheaded? You know the answer — the bullet just doesn't say it. The same issue applies to the enrolment growth bullets in your earlier roles. Numbers without method read as reporting, not ownership. Hiring managers want to see that you understand the mechanism behind your results, not just that the metric moved.</p>
+                </div>
+            </div>
+
+            <!-- ISSUE 3 -->
+            <div class="flex items-start gap-4 p-5 bg-red-50 rounded-xl border border-red-200 keep-together">
+                <div class="w-8 h-8 rounded-full bg-red-600 text-white flex items-center justify-center font-bold text-sm flex-shrink-0">3</div>
+                <div>
+                    <p class="font-bold text-red-900">"Dozens," "hundreds," and "significantly" are failing as metrics — they read as estimates, not evidence</p>
+                    <p class="text-red-700 text-sm mt-1">"Led marketing events, acquiring dozens of new customers through targeted outreach" — "dozens" is a vague quantifier that fails the IBB metric test. The same applies to "Updated hundreds of product prices in NetSuite ERP efficiently" and "Developed an Excel-based pricing system, reducing manual errors significantly." All three of these bullets clearly have a real number behind them — you know how many customers came from those events, how many SKUs you updated in NetSuite, and what the error reduction actually looked like. Precise numbers convert a claim into evidence. "Dozens" doesn't tell a hiring manager whether you acquired 12 new customers or 90. That ambiguity costs you credibility on bullets that should be among your strongest.</p>
+                </div>
+            </div>
+
+            <!-- ISSUE 4 -->
+            <div class="flex items-start gap-4 p-5 bg-amber-50 rounded-xl border border-amber-200 keep-together">
+                <div class="w-8 h-8 rounded-full bg-amber-500 text-white flex items-center justify-center font-bold text-sm flex-shrink-0">4</div>
+                <div>
+                    <p class="font-bold text-amber-900">The "Key Competencies" section is using prime CV real estate for claims that can't be verified</p>
+                    <p class="text-amber-700 text-sm mt-1">Your CV opens with twelve bullet points of soft-skill descriptions: "Proficient in gathering and translating user requirements," "Expert in stakeholder communication," "Proven track record in delivering marketing strategies." Every one of these is something any candidate could copy-paste onto their CV without ever having done it. What makes them real isn't saying them — it's showing them in your experience bullets with specific examples. The space used by this section delays the hiring manager from seeing any evidence of what you've achieved. The competencies aren't wrong — they just belong as proof points inside your work bullets, not as assertions at the top of the page. Replace this section with a focused 3-sentence professional summary that leads with your strongest metric.</p>
+                </div>
+            </div>
+
+            <!-- ISSUE 5 -->
+            <div class="flex items-start gap-4 p-5 bg-amber-50 rounded-xl border border-amber-200 keep-together">
+                <div class="w-8 h-8 rounded-full bg-amber-500 text-white flex items-center justify-center font-bold text-sm flex-shrink-0">5</div>
+                <div>
+                    <p class="font-bold text-amber-900">Almost nothing connects a result to why it mattered for the business — your wins stop before the finish line</p>
+                    <p class="text-amber-700 text-sm mt-1">The Impact Bullet Builder has four components: Accomplishment, Metric, How, and Why. The "Why" is the business outcome — not just what happened, but what the business gained because of it. Your strongest bullet comes closest: "Redesigned company website, increasing visitors and inquiries by 30% and orders by 50%" — the 50% orders increase is the business outcome. That's the only bullet with a Why. Everything else stops before it. "Grew software subscriptions numbers by 73%" — what did that mean for the company? Was that $[X] in new recurring revenue? Did it hit a board target? Did it enable Vantage to expand their service territory? Connecting the metric to a business consequence transforms a number into a business accomplishment a hiring manager can use to evaluate your impact.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SECTION 3: TOP BULLETS — REWRITTEN                            -->
+    <!-- ============================================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 p-8 page-break">
+        <div class="flex items-center gap-3 mb-6">
+            <div class="w-8 h-8 rounded-lg bg-emerald-600 text-white flex items-center justify-center text-sm font-bold">03</div>
+            <h2 class="text-2xl font-extrabold text-slate-900">Top Bullets — Rewritten</h2>
+        </div>
+
+        <p class="text-slate-500 text-sm mb-2">The 5 bullets with the highest improvement potential, rewritten using the Impact Bullet Builder formula (Accomplishment + Metric + How + Why).</p>
+        <p class="text-slate-400 text-xs mb-6 italic">Brackets like <code class="bg-slate-100 px-1 rounded text-xs">[X]</code> are placeholders — only you know the real numbers. A conservative honest estimate beats a blank every time.</p>
+
+        <div class="space-y-6">
+
+            <!-- BULLET 1 -->
+            <div class="keep-together">
+                <p class="text-xs font-bold text-slate-400 uppercase tracking-wide mb-2">Vantage New Zealand — Subscription Growth</p>
+                <div class="bg-red-50 border border-red-200 rounded-xl p-4 mb-2">
+                    <p class="text-xs font-bold text-red-500 mb-1">BEFORE</p>
+                    <p class="text-red-800 text-sm">Grew software subscriptions numbers by 73% in 2022, 32% in 2023 and 12% in 2024.</p>
+                </div>
+                <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-4">
+                    <p class="text-xs font-bold text-emerald-600 mb-1">AFTER (★★★ Level)</p>
+                    <p class="text-emerald-900 text-sm">Drove 73% growth in Trimble Ag Software subscriptions in Year 1 by redesigning the customer onboarding workflow, launching targeted marketing events, and building a self-service training resource — growing the active subscriber base to [X] accounts by end of 2024 and generating an estimated $[Y] in additional recurring revenue for the New Zealand market.</p>
+                    <p class="text-xs text-emerald-600 mt-2">Added: specific methods (onboarding redesign, marketing events, training resource) — the How; recurring revenue impact — the Why; subscriber base scale — Context. Metric (73%) retained. Tier jump: ★★ → ★★★.</p>
+                </div>
+            </div>
+
+            <!-- BULLET 2 -->
+            <div class="keep-together">
+                <p class="text-xs font-bold text-slate-400 uppercase tracking-wide mb-2">Barcode Products — Website Redesign</p>
+                <div class="bg-red-50 border border-red-200 rounded-xl p-4 mb-2">
+                    <p class="text-xs font-bold text-red-500 mb-1">BEFORE</p>
+                    <p class="text-red-800 text-sm">Redesigned company website, increasing visitors and inquiries by 30% and orders by 50%.</p>
+                </div>
+                <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-4">
+                    <p class="text-xs font-bold text-emerald-600 mb-1">AFTER (★★★ Level)</p>
+                    <p class="text-emerald-900 text-sm">Redesigned company website using WordPress and Google Analytics — restructuring product pages for ICT scanning and barcode hardware, implementing Google AdWords campaigns and Facebook retargeting, and rebuilding the site architecture for SEO — driving 30% growth in organic visitors and a 50% increase in online orders within [timeframe].</p>
+                    <p class="text-xs text-emerald-600 mt-2">Added: specific tools (WordPress, Google Analytics, AdWords, Facebook) and method (SEO architecture) — the How. Best bullet already; this brings it to a clean ★★★. The 50% orders increase was already the Why — it just needed the method alongside it.</p>
+                </div>
+            </div>
+
+            <!-- BULLET 3 -->
+            <div class="keep-together">
+                <p class="text-xs font-bold text-slate-400 uppercase tracking-wide mb-2">Wholesale Seeds — Excel Pricing System</p>
+                <div class="bg-red-50 border border-red-200 rounded-xl p-4 mb-2">
+                    <p class="text-xs font-bold text-red-500 mb-1">BEFORE</p>
+                    <p class="text-red-800 text-sm">Developed an Excel-based pricing system, reducing manual errors significantly.</p>
+                </div>
+                <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-4">
+                    <p class="text-xs font-bold text-emerald-600 mb-1">AFTER (★★★ Level)</p>
+                    <p class="text-emerald-900 text-sm">Built an Excel-based pricing automation tool for complex and special-order processing, reducing manual pricing errors by [X]% and cutting per-order processing time from [Y] minutes to [Z] minutes — enabling the sales team to handle [N]% more orders per day without adding headcount during peak season.</p>
+                    <p class="text-xs text-emerald-600 mt-2">Replaced "significantly" with a real percentage (Metric); added time-per-order reduction (second Metric); added capacity impact without additional headcount (Why). The How (Excel) was already there — this fills in the missing three components.</p>
+                </div>
+            </div>
+
+            <!-- BULLET 4 -->
+            <div class="keep-together">
+                <p class="text-xs font-bold text-slate-400 uppercase tracking-wide mb-2">New Zealand Overseas Education — Enrolment Growth</p>
+                <div class="bg-red-50 border border-red-200 rounded-xl p-4 mb-2">
+                    <p class="text-xs font-bold text-red-500 mb-1">BEFORE</p>
+                    <p class="text-red-800 text-sm">Increased client enrolments by 100% and exceeded monthly sales targets.</p>
+                </div>
+                <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-4">
+                    <p class="text-xs font-bold text-emerald-600 mb-1">AFTER (★★★ Level)</p>
+                    <p class="text-emerald-900 text-sm">Doubled client enrolments within [X] months by implementing a structured CRM intake process and reactivating lapsed leads through targeted follow-up campaigns — growing monthly revenue from $[A] to $[B], exceeding the annual sales target by [Z]%, while managing a team of four.</p>
+                    <p class="text-xs text-emerald-600 mt-2">Added: CRM intake + reactivation campaigns (How); revenue growth and % over target (Why); team management context (Scale). "100%" reframed as "doubled" for clarity — same number, stronger read.</p>
+                </div>
+            </div>
+
+            <!-- BULLET 5 -->
+            <div class="keep-together">
+                <p class="text-xs font-bold text-slate-400 uppercase tracking-wide mb-2">Avalon Immigration — Business Development</p>
+                <div class="bg-red-50 border border-red-200 rounded-xl p-4 mb-2">
+                    <p class="text-xs font-bold text-red-500 mb-1">BEFORE</p>
+                    <p class="text-red-800 text-sm">Boosted client enrolments by 40%, visa approvals by 20% and institute partners by 30%.</p>
+                </div>
+                <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-4">
+                    <p class="text-xs font-bold text-emerald-600 mb-1">AFTER (★★★ Level)</p>
+                    <p class="text-emerald-900 text-sm">Grew client enrolments 40%, visa approval rates 20%, and institute partnerships 30% over [X] years by building a structured lead qualification process, developing a referral network among partner institutions, and optimising visa documentation workflows — generating $[Y] in additional annual revenue and expanding the institute partner network from [A] to [B] active relationships.</p>
+                    <p class="text-xs text-emerald-600 mt-2">Added: lead qualification + referral network + documentation workflow (How); revenue and partnership expansion (Why); timeframe and scale context. Three strong metrics (40%/20%/30%) were already there — this fills the How and Why that were missing.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SECTION 4: BEFORE & AFTER — BIGGEST TIER JUMPS               -->
+    <!-- ============================================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 p-8 page-break">
+        <div class="flex items-center gap-3 mb-6">
+            <div class="w-8 h-8 rounded-lg bg-violet-600 text-white flex items-center justify-center text-sm font-bold">04</div>
+            <h2 class="text-2xl font-extrabold text-slate-900">Before &amp; After — Biggest Tier Jumps</h2>
+        </div>
+
+        <div class="space-y-8">
+
+            <!-- EXAMPLE 1 -->
+            <div class="keep-together">
+                <p class="text-xs font-bold text-slate-400 uppercase tracking-wide mb-3">Vantage New Zealand — Subscription Growth (★★ → ★★★)</p>
+                <div class="bg-red-50 border-l-4 border-red-500 rounded-xl p-5 mb-3">
+                    <p class="text-xs font-bold text-red-500 mb-2">BEFORE (★★ Level)</p>
+                    <p class="text-red-800 text-sm italic">"Grew software subscriptions numbers by 73% in 2022, 32% in 2023 and 12% in 2024."</p>
+                    <p class="text-red-600 text-xs mt-2">Passes: Accomplishment (growth verb + real results), Metrics (strong — 73%/32%/12%), Action Verb (Grew), Personal Ownership. Fails: no How (what drove the growth — what did you change or build?), no Why (what did 73% subscription growth mean for the business?), no starting context (how many subscriptions to begin with?). A hiring manager reads: "the number went up." Not: "here's why you'd want this person doing that job for you."</p>
+                </div>
+                <div class="bg-emerald-50 border-l-4 border-emerald-500 rounded-xl p-5">
+                    <p class="text-xs font-bold text-emerald-600 mb-2">AFTER (★★★ Level)</p>
+                    <p class="text-emerald-900 text-sm italic">"Drove 73% growth in Trimble Ag Software subscriptions in Year 1 by redesigning the customer onboarding workflow, launching targeted marketing events, and building a self-service training resource — growing the active subscriber base to [X] accounts by end of 2024 and generating an estimated $[Y] in additional recurring revenue."</p>
+                    <p class="text-emerald-600 text-xs mt-2">All 4 IBB components now present: Accomplishment (drove growth), Metric (73% / subscriber count), How (onboarding redesign + marketing events + training resource), Why (recurring revenue + subscriber scale). Tier jump: ★★ → ★★★.</p>
+                </div>
+            </div>
+
+            <!-- EXAMPLE 2 -->
+            <div class="keep-together">
+                <p class="text-xs font-bold text-slate-400 uppercase tracking-wide mb-3">Vantage New Zealand — Duty Bullet Transformation (★ → ★★★)</p>
+                <div class="bg-red-50 border-l-4 border-red-500 rounded-xl p-5 mb-3">
+                    <p class="text-xs font-bold text-red-500 mb-2">BEFORE (★ Level)</p>
+                    <p class="text-red-800 text-sm italic">"Enhanced organisational processes for improved operational efficiency."</p>
+                    <p class="text-red-600 text-xs mt-2">This bullet fails every component: no specific accomplishment (what process?), no metric (improved by how much?), no method (using what?), no Why (what did the efficiency gain enable?). "Enhanced processes for improved efficiency" could appear on any resume in any industry — it contains exactly zero information about what you specifically did or what it produced for the business. It's a filler line occupying a slot that could hold a real result.</p>
+                </div>
+                <div class="bg-emerald-50 border-l-4 border-emerald-500 rounded-xl p-5">
+                    <p class="text-xs font-bold text-emerald-600 mb-2">AFTER (★★★ Level)</p>
+                    <p class="text-emerald-900 text-sm italic">"Redesigned the subscription lifecycle workflow in Trimble's internal CRM — mapping the full renewal process, identifying [X] bottlenecks, and implementing automated customer notifications — reducing average renewal cycle from [Y] days to [Z] days and increasing on-time renewal rates by [N]%."</p>
+                    <p class="text-emerald-600 text-xs mt-2">Now specific: names the process (subscription lifecycle), the tool (CRM), the method (workflow mapping + automation), the metric (cycle time reduction + renewal rate), and the outcome (faster renewals = better retention). This is the same work — just framed around what it produced. Tier jump: ★ → ★★★.</p>
+                </div>
+            </div>
+
+            <!-- EXAMPLE 3 -->
+            <div class="keep-together">
+                <p class="text-xs font-bold text-slate-400 uppercase tracking-wide mb-3">Wholesale Seeds — NetSuite Data Entry (★ → ★★★)</p>
+                <div class="bg-red-50 border-l-4 border-red-500 rounded-xl p-5 mb-3">
+                    <p class="text-xs font-bold text-red-500 mb-2">BEFORE (★ Level)</p>
+                    <p class="text-red-800 text-sm italic">"Updated hundreds of product prices in NetSuite ERP efficiently."</p>
+                    <p class="text-red-600 text-xs mt-2">Has: NetSuite (How — partial credit) and "hundreds" (metric attempt — fails as vague). "Efficiently" is an empty modifier. No Why: what did updating those prices achieve? A hiring manager can't tell if "hundreds" means 200 or 2,000, whether this was a routine weekly task or a high-stakes seasonal migration, or why it mattered if it was completed on time.</p>
+                </div>
+                <div class="bg-emerald-50 border-l-4 border-emerald-500 rounded-xl p-5">
+                    <p class="text-xs font-bold text-emerald-600 mb-2">AFTER (★★★ Level)</p>
+                    <p class="text-emerald-900 text-sm italic">"Migrated [X] product prices across [Y] SKU categories in NetSuite ERP ahead of the seasonal pricing window — completing the update [Z] days before the deadline and eliminating [N] pricing discrepancies that would have appeared on customer invoices."</p>
+                    <p class="text-emerald-600 text-xs mt-2">Replaced "hundreds" with an exact count, added seasonal deadline context (Stakes), added error-prevention outcome (Why). Transforms a routine admin task into a business-critical one by describing what would have happened without it. Tier jump: ★ → ★★★.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SECTION 5: TOP ACTION ITEMS                                    -->
+    <!-- ============================================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 p-8 page-break">
+        <div class="flex items-center gap-3 mb-6">
+            <div class="w-8 h-8 rounded-lg bg-blue-600 text-white flex items-center justify-center text-sm font-bold">05</div>
+            <h2 class="text-2xl font-extrabold text-slate-900">Top Action Items</h2>
+        </div>
+
+        <div class="space-y-4">
+
+            <div class="flex items-start gap-4 p-5 bg-blue-50 rounded-xl border border-blue-200 keep-together">
+                <div class="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold text-sm flex-shrink-0">1</div>
+                <div>
+                    <p class="font-bold text-blue-900">Collapse the duties-vs-achievements split into a single bullet list per role, and lead with results</p>
+                    <p class="text-blue-700 text-sm mt-1">The current two-section structure means a hiring manager reads eight duty descriptions before seeing any of your wins. Restructure each role to 5–7 bullets that are all achievement-oriented: start with your biggest result for that role, then describe how you operated day-to-day in a way that shows ownership, not just activity. The 73% subscription growth bullet should be the first line under Vantage — that's the number that earns the second look. Every other bullet should show what you built, changed, or achieved, not just what your role included.</p>
+                </div>
+            </div>
+
+            <div class="flex items-start gap-4 p-5 bg-blue-50 rounded-xl border border-blue-200 keep-together">
+                <div class="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold text-sm flex-shrink-0">2</div>
+                <div>
+                    <p class="font-bold text-blue-900">Replace every vague quantifier with the real number — you know them, use them</p>
+                    <p class="text-blue-700 text-sm mt-1">"Dozens of new customers," "hundreds of product prices," "significantly" — each of these is a metric that almost passes. Look up the actual counts: how many customers came from those marketing events? How many SKUs did you update in NetSuite? What was the pricing error reduction? If you don't have the exact figure, use a range: "25–35 new customers" is more credible than "dozens" and still passes the IBB metric test. Precise numbers are what separate CVs that get called back from ones that get screened out in the first pass.</p>
+                </div>
+            </div>
+
+            <div class="flex items-start gap-4 p-5 bg-blue-50 rounded-xl border border-blue-200 keep-together">
+                <div class="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold text-sm flex-shrink-0">3</div>
+                <div>
+                    <p class="font-bold text-blue-900">Add a "How" clause to your five biggest achievement bullets</p>
+                    <p class="text-blue-700 text-sm mt-1">Your best achievement bullets have strong metrics but no method. For the 73% subscription growth: what specifically changed? Was it the onboarding workflow you rebuilt? The marketing events? The self-service training page you spearheaded? For the 100% enrolment increase: what approach or campaign drove that result? Pick the one or two things most responsible for each result and name them in the bullet. This is the difference between "the number went up" and "I know why the number went up and I can do it again" — which is exactly what a hiring manager is evaluating.</p>
+                </div>
+            </div>
+
+            <div class="flex items-start gap-4 p-5 bg-blue-50 rounded-xl border border-blue-200 keep-together">
+                <div class="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold text-sm flex-shrink-0">4</div>
+                <div>
+                    <p class="font-bold text-blue-900">Remove the Key Competencies section and replace it with a 3-sentence professional summary</p>
+                    <p class="text-blue-700 text-sm mt-1">The twelve-point competencies list works against you in two ways: it delays the hiring manager from reaching your actual achievements, and it makes claims without evidence (anyone can write "Expert in stakeholder communication"). If any of those competencies are genuinely differentiating — and some are, like your API integration and SOP development work — they belong as proof inside your experience bullets. Replace the section with a focused summary: your specialisation, your strongest result, and what type of role you're targeting. Three sentences, written in first person, with at least one number.</p>
+                </div>
+            </div>
+
+            <div class="flex items-start gap-4 p-5 bg-blue-50 rounded-xl border border-blue-200 keep-together">
+                <div class="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold text-sm flex-shrink-0">5</div>
+                <div>
+                    <p class="font-bold text-blue-900">Add one business-impact sentence to your top five bullets — the "Why" that completes the story</p>
+                    <p class="text-blue-700 text-sm mt-1">The Why answers: what did the business gain? Revenue generated, customers retained, time saved, cost reduced, or scale reached. Your 50% orders increase from the website redesign already has this — it's your only ★★★ bullet for this reason. For the subscription growth: was that $[X]K in new recurring revenue? For the Excel pricing system: did it save [Y] hours per week? For the Trimble self-learning resource: how many customers used it, and did it reduce inbound support calls? One sentence per bullet connects your work to business value and separates your CV from every candidate who only reported what they did.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SECTION 6: WHAT'S ALREADY WORKING                             -->
+    <!-- ============================================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 p-8 page-break">
+        <div class="flex items-center gap-3 mb-6">
+            <div class="w-8 h-8 rounded-lg bg-emerald-600 text-white flex items-center justify-center text-sm font-bold">06</div>
+            <h2 class="text-2xl font-extrabold text-slate-900">What's Already Working</h2>
+        </div>
+
+        <ul class="space-y-4">
+
+            <li class="flex items-start gap-4 p-4 bg-emerald-50 rounded-xl border border-emerald-200 keep-together">
+                <div class="w-6 h-6 rounded-full bg-emerald-500 text-white flex items-center justify-center font-bold text-xs flex-shrink-0 mt-0.5">✓</div>
+                <div>
+                    <p class="font-bold text-emerald-900">Action verbs are strong throughout — almost every bullet starts with a specific, high-ownership verb</p>
+                    <p class="text-emerald-700 text-sm mt-0.5">Grew, Led, Spearheaded, Revived, Directed, Streamlined, Developed, Built, Redesigned, Boosted, Increased, Implemented — not a single "Responsible for," "Participated in," or "Contributed to" anywhere except two isolated bullets. You already know the first rule of a strong CV: describe what you did, not what your role was. That foundation makes every other fix in this audit faster and easier.</p>
+                </div>
+            </li>
+
+            <li class="flex items-start gap-4 p-4 bg-emerald-50 rounded-xl border border-emerald-200 keep-together">
+                <div class="w-6 h-6 rounded-full bg-emerald-500 text-white flex items-center justify-center font-bold text-xs flex-shrink-0 mt-0.5">✓</div>
+                <div>
+                    <p class="font-bold text-emerald-900">You have real growth metrics across four separate roles — this is rare and valuable</p>
+                    <p class="text-emerald-700 text-sm mt-0.5">73%/32%/12% subscription growth at Vantage. 100% enrolment increase at NZ Overseas Education. 40%/20%/30% at Avalon Immigration. 30% visitor growth and 50% order increase at Barcode Products. Most candidates struggle to produce even one credible growth metric per role. You have substantive numbers across your entire career. They just need to be structured around a method and a business outcome to carry the weight they should.</p>
+                </div>
+            </li>
+
+            <li class="flex items-start gap-4 p-4 bg-emerald-50 rounded-xl border border-emerald-200 keep-together">
+                <div class="w-6 h-6 rounded-full bg-emerald-500 text-white flex items-center justify-center font-bold text-xs flex-shrink-0 mt-0.5">✓</div>
+                <div>
+                    <p class="font-bold text-emerald-900">Personal ownership is clear throughout — the CV reads as "I did this," not "our team did this"</p>
+                    <p class="text-emerald-700 text-sm mt-0.5">42 of 44 bullets are written in first-person active ownership voice. No hiding behind "we," "the team," or "collaborated with." Hiring managers are evaluating the individual — they need to know what you personally drove. You've got this right, which puts you ahead of the large number of candidates who use collective language throughout their CVs and make it impossible to know what they individually contributed.</p>
+                </div>
+            </li>
+
+            <li class="flex items-start gap-4 p-4 bg-emerald-50 rounded-xl border border-emerald-200 keep-together">
+                <div class="w-6 h-6 rounded-full bg-emerald-500 text-white flex items-center justify-center font-bold text-xs flex-shrink-0 mt-0.5">✓</div>
+                <div>
+                    <p class="font-bold text-emerald-900">Technical breadth is credible and specific — NetSuite, Google AdWords, TeamViewer, APIs, Oracle certification, Excel automation</p>
+                    <p class="text-emerald-700 text-sm mt-0.5">The tools you name are real and appropriate for a tech-facing commercial role: NetSuite ERP with an Oracle certification to back it up, Google Ads and Analytics, TeamViewer for remote support delivery, API integrations for third-party data sharing, Excel-based process automation. These signal someone who can operate across both sales-tech and operations stacks. The challenge is that some of your strongest tool mentions — API integrations at Vantage, the cloud storage migration — are stranded inside duty bullets where they get minimum weight. Getting them into achievement bullets with metrics attached gives them the visibility they deserve.</p>
+                </div>
+            </li>
+
+            <li class="flex items-start gap-4 p-4 bg-emerald-50 rounded-xl border border-emerald-200 keep-together">
+                <div class="w-6 h-6 rounded-full bg-emerald-500 text-white flex items-center justify-center font-bold text-xs flex-shrink-0 mt-0.5">✓</div>
+                <div>
+                    <p class="font-bold text-emerald-900">The website redesign bullet (Barcode Products) is the closest to ★★★ on the CV — use it as your template</p>
+                    <p class="text-emerald-700 text-sm mt-0.5">"Redesigned company website, increasing visitors and inquiries by 30% and orders by 50%" has an accomplishment, two metrics, and the result is tied to a clear business outcome (orders = revenue). It's the only bullet on the CV that makes it through three of the four IBB criteria. It just needs the How — what specific tools and approach. Once you add that, it's a clean ★★★ bullet. And once you have one ★★★ bullet, you have a concrete blueprint for what the rest of the CV can look like.</p>
+                </div>
+            </li>
+
+        </ul>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SECTION 7: FULL SCORECARD                                     -->
+    <!-- ============================================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 overflow-hidden page-break">
+        <div class="p-8">
+            <div class="flex items-center gap-3 mb-4">
+                <div class="w-8 h-8 rounded-lg bg-slate-600 text-white flex items-center justify-center text-sm font-bold">07</div>
+                <h2 class="text-2xl font-extrabold text-slate-900">Full Scorecard</h2>
+            </div>
+
+            <p class="text-slate-500 text-xs mb-5">Scored against 44 in-scope bullets across 5 roles: Vantage New Zealand, Wholesale Seeds, Barcode Products, NZ Overseas Education, and Avalon Immigration. The VFS Global mention has no bullets and is not scored.</p>
+
+            <div class="rounded-xl overflow-hidden border border-slate-200">
+                <table class="w-full text-sm">
+                    <thead>
+                        <tr class="bg-slate-800 text-white">
+                            <th class="text-left py-3 px-4 font-semibold">Criterion</th>
+                            <th class="text-center py-3 px-4 font-semibold w-20">Score</th>
+                            <th class="text-left py-3 px-4 font-semibold">Observation</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-100">
+                        <tr class="bg-white keep-together">
+                            <td class="py-3 px-4 font-semibold text-slate-700">1. Accomplishments</td>
+                            <td class="py-3 px-4 text-center"><span class="font-mono-num font-bold text-amber-500">5/10</span></td>
+                            <td class="py-3 px-4 text-slate-500">20 of 44 bullets describe an action with a visible result. The achievement sub-sections at Vantage, Seeds, and Barcode mostly pass. The 30+ duty bullets across all roles — technical support, renewals management, daily admin, system maintenance, team communication, product entries — all fail. They describe standing responsibilities without outcomes.</td>
+                        </tr>
+                        <tr class="bg-slate-50 keep-together">
+                            <td class="py-3 px-4 font-semibold text-slate-700">2. Metrics / Quantification</td>
+                            <td class="py-3 px-4 text-center"><span class="font-mono-num font-bold text-red-500">2/10</span></td>
+                            <td class="py-3 px-4 text-slate-500">7 of 44 pass: subscription growth (73%/32%/12%), website results (30%/50%), enrolments +100%, NetSuite certification ("one of the first"), team size (up to four), 2 staff, and triple metrics (40%/20%/30%). "Dozens," "hundreds," and "significantly" all fail as vague quantifiers per IBB rules. 37 of 44 bullets contain no measurable number.</td>
+                        </tr>
+                        <tr class="bg-white keep-together">
+                            <td class="py-3 px-4 font-semibold text-slate-700">3. How / Method Shown</td>
+                            <td class="py-3 px-4 text-center"><span class="font-mono-num font-bold text-amber-500">5/10</span></td>
+                            <td class="py-3 px-4 text-slate-500">19 of 44 name a specific tool, method, or system: Trimble Ag platform, APIs, marketing events + targeted outreach, Trimble self-learning webpage, TeamViewer, SOP frameworks, cloud storage migration, drone videography, NetSuite ERP, freight systems + dangerous goods, Oracle NetSuite certification, Excel pricing system, NetSuite again, POS/asset tracking/inventory systems, Google AdWords/Analytics/Facebook, business process mapping, social media channels, CRM portals. Notably absent from the best achievement bullets — the 73% growth, 100% enrolment, and multi-metric Avalon bullets all lack a stated method.</td>
+                        </tr>
+                        <tr class="bg-slate-50 keep-together">
+                            <td class="py-3 px-4 font-semibold text-slate-700">4. Why / Business Impact</td>
+                            <td class="py-3 px-4 text-center"><span class="font-mono-num font-bold text-red-500">2/10</span></td>
+                            <td class="py-3 px-4 text-slate-500">5 of 44 connect to a business outcome: subscription scale (revenue/growth), new customer acquisition, website orders +50% (revenue), enrolments + exceeded sales targets, and enrolments/approvals/partners (multi-metric growth). Every duty bullet and most achievement bullets stop at the action or number without stating what the business gained. The template is in the orders +50% bullet — it needs to be applied throughout.</td>
+                        </tr>
+                        <tr class="bg-white keep-together">
+                            <td class="py-3 px-4 font-semibold text-slate-700">5. Personal Ownership</td>
+                            <td class="py-3 px-4 text-center"><span class="font-mono-num font-bold text-emerald-600">10/10</span></td>
+                            <td class="py-3 px-4 text-slate-500">42 of 44 bullets use first-person active ownership framing throughout. The only two failures: "Supported the internal sales pipeline" (Supported = supporting-role framing, not ownership) and "Assisted with month-end finance closings" (Assisted = secondary contributor). All other bullets are clearly authored by someone who owns what they're describing.</td>
+                        </tr>
+                        <tr class="bg-slate-50 keep-together">
+                            <td class="py-3 px-4 font-semibold text-slate-700">6. Context / Stakes</td>
+                            <td class="py-3 px-4 text-center"><span class="font-mono-num font-bold text-red-500">2/10</span></td>
+                            <td class="py-3 px-4 text-slate-500">5 of 44 provide scale or stakes context: subscription growth year-over-year trajectory (2022/2023/2024 comparison), NetSuite certification ("one of the first in the organisation"), overcoming a non-technical background to master NetSuite onboarding, website before/after growth data, and team size (up to four staff). 39 bullets provide no starting state, no scale of operation, and no stakes framing.</td>
+                        </tr>
+                        <tr class="bg-white keep-together">
+                            <td class="py-3 px-4 font-semibold text-slate-700">7. Action Verbs</td>
+                            <td class="py-3 px-4 text-center"><span class="font-mono-num font-bold text-emerald-600">10/10</span></td>
+                            <td class="py-3 px-4 text-slate-500">42 of 44 bullets open with a strong, specific action verb. "Supported" and "Assisted" are the only two failures — both are on the IBB prohibited list. Grew, Led, Spearheaded, Revived, Directed, Streamlined, Developed, Built, Redesigned, Boosted, Increased, Implemented — no "Responsible for," "Helped with," "Involved in," or "Participated in" anywhere on the CV.</td>
+                        </tr>
+                        <tr class="bg-slate-50 keep-together">
+                            <td class="py-3 px-4 font-semibold text-slate-700">8. Bullet Quality Consistency</td>
+                            <td class="py-3 px-4 text-center"><span class="font-mono-num font-bold text-red-500">3/10</span></td>
+                            <td class="py-3 px-4 text-slate-500">Distribution: ★★★: 1 bullet (website redesign +30%/+50%), ★★: ~16 bullets (achievement bullets with metrics but missing How/Why), ★: ~27 bullets (duty descriptions across all roles). 61% of bullets are at ★ level. The spread from ★ to ★★★ across the same CV signals a large framing gap. Collapsing the duty sections into achievement-led bullets would shift ~20 bullets from ★ to ★★ or ★★★ in a single rewrite pass.</td>
+                        </tr>
+                        <tr class="bg-slate-800 text-white keep-together">
+                            <td class="py-3 px-4 font-bold">OVERALL SCORE</td>
+                            <td class="py-3 px-4 text-center"><span class="font-mono-num font-bold text-amber-300 text-lg">49/100</span></td>
+                            <td class="py-3 px-4 text-slate-300">★★ — Real Results, Framing Gap &nbsp;|&nbsp; Raw: 39 × 1.25 = 48.75 → 49</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- GOOD NEWS BANNER -->
+        <div class="bg-emerald-800 text-white p-6">
+            <p class="font-bold text-base mb-2">The Good News</p>
+            <p class="text-sm opacity-90">You're at 49/100 with genuine multi-year growth data across four roles, an Oracle NetSuite certification, real tool proficiency, and strong active-verb writing throughout. The two criteria that are perfect — Personal Ownership and Action Verbs — tell you you're already thinking like someone who owns their work. The gap to 70+ isn't about going back to fabricate anything. It's about taking the real wins that are already on the page and completing the sentence. The 73% subscription growth, the doubled enrolments, the 50% order increase: those are the headlines. Right now they're missing the two clauses that make them compelling — how you did it, and what it meant for the business. Add those, collapse the duty sections into achievement-led narratives, and replace the three vague quantifiers with real numbers. That's the audit in three moves.</p>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- CTA SECTION                                                    -->
+    <!-- ============================================================ -->
+    <section class="bg-white rounded-2xl shadow-lg border border-slate-200 overflow-hidden page-break">
+        <div class="p-8">
+            <div class="flex items-center gap-3 mb-4">
+                <div class="w-8 h-8 rounded-lg bg-lime-500 text-white flex items-center justify-center text-sm font-bold">→</div>
+                <h2 class="text-2xl font-extrabold text-slate-900">Want Help Fixing All of This?</h2>
+            </div>
+
+            <p class="text-slate-600 mb-6">This audit identified your top 5 bullets and the three structural moves that would take your CV from 49 to 70+. The growth data across your four roles is genuinely strong — it just needs to be framed the way a hiring manager reads, not the way job descriptions are written.</p>
+
+            <div class="bg-slate-50 rounded-xl p-6 border border-slate-200 mb-6">
+                <p class="font-bold text-slate-800 mb-3">The 21-Day Accelerator Program — 4 × 1-hour 1-on-1 sessions:</p>
+                <ul class="space-y-2 text-slate-700 text-sm">
+                    <li class="flex items-start gap-2">
+                        <span class="text-emerald-500 font-bold mt-0.5 flex-shrink-0">1.</span>
+                        <span><strong>Resume Rebuilt</strong> — every bullet rewritten with the Impact Bullet Builder formula: the duty/achievement split collapsed, the 73% subscription growth and 50% orders increase used as the anchor standards, and every vague quantifier replaced with a real number you actually own</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-emerald-500 font-bold mt-0.5 flex-shrink-0">2.</span>
+                        <span><strong>Interview Stories Mastered</strong> — master story bank built around your real wins so you can answer any behavioural question without hesitating, with your subscription growth campaign, the website redesign project, and the NetSuite rollout ready as concrete examples with specific numbers</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-emerald-500 font-bold mt-0.5 flex-shrink-0">3.</span>
+                        <span><strong>Live Mock Interview</strong> — full practice session with direct feedback on delivery, story structure, and where your commercial track record across multiple industries is being undersold</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-emerald-500 font-bold mt-0.5 flex-shrink-0">4.</span>
+                        <span><strong>LinkedIn &amp; Positioning</strong> — profile optimised to match your rebuilt resume, with a clear positioning statement that leads with results instead of job titles and surfaces your strongest growth metrics to recruiters</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-4 mb-6">
+                <p class="text-emerald-800 text-sm font-medium">You leave with: a fully rebuilt CV, master story bank, mock interview recording and notes, all session recordings, and 40+ bonus resources.</p>
+            </div>
+
+            <a href="https://launchtolead.io/coaching?utm_source=audit&utm_medium=email&utm_campaign=free-audit&utm_content=harry-jassal"
+               class="inline-block bg-emerald-700 hover:bg-emerald-600 text-white font-bold px-8 py-4 rounded-xl text-lg transition-colors">
+                Book a Career Launch Call →
+            </a>
+            <p class="text-slate-400 text-xs mt-3">This call is where we talk through your situation and where you want to go — no pressure, no pitch. Just a real conversation about what's holding your job search back and what would move the needle fastest.</p>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- FOOTER                                                         -->
+    <!-- ============================================================ -->
+    <footer class="text-center py-6 text-slate-400 text-xs">
+        Free audit prepared by LaunchToLead | Impact Bullet Builder Framework<br>
+        <a href="https://launchtolead.io/free" class="text-emerald-600 hover:underline">launchtolead.io/free</a>
+    </footer>
+
+</div>
+</body>
+</html>

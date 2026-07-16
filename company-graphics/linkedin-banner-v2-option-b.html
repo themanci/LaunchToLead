@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedIn Banner — Option B (Lime Blast)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: #1a1a1a;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            gap: 20px;
+            padding: 40px;
+        }
+
+        .instructions {
+            background: #2a2a2a;
+            color: #ccc;
+            padding: 16px 24px;
+            border-radius: 8px;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 13px;
+            line-height: 1.6;
+            max-width: 1584px;
+            width: 100%;
+        }
+        .instructions strong { color: #a3e635; }
+
+        /* ── BANNER ── 1584 × 396 px ─────────────────────────────────── */
+        .banner {
+            width: 1584px;
+            height: 396px;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            /* Very dark navy base — makes the lime pop hard */
+            background: #060d13;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Massive lime spotlight from right-center */
+        .glow-right {
+            position: absolute;
+            top: -60px;
+            right: -30px;
+            width: 700px;
+            height: 550px;
+            background: radial-gradient(ellipse, rgba(163,230,53,0.22) 0%, rgba(20,184,166,0.08) 45%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        /* Small teal accent glow bottom-left area */
+        .glow-left {
+            position: absolute;
+            bottom: -100px;
+            left: 500px;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(20,184,166,0.12) 0%, transparent 65%);
+            border-radius: 50%;
+        }
+
+        /* Horizontal scan lines — very subtle */
+        .scanlines {
+            position: absolute;
+            inset: 0;
+            background-image: repeating-linear-gradient(
+                0deg,
+                transparent,
+                transparent 3px,
+                rgba(255,255,255,0.012) 3px,
+                rgba(255,255,255,0.012) 4px
+            );
+        }
+
+        /* Bold left accent bar — 3-color */
+        .accent-bar {
+            position: absolute;
+            left: 0; top: 0; bottom: 0;
+            width: 6px;
+            background: linear-gradient(180deg, #a3e635 0%, #14b8a6 60%, #065f46 100%);
+        }
+
+        /* Top lime stripe */
+        .top-stripe {
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #a3e635 0%, #14b8a6 60%, transparent 100%);
+        }
+
+        /* Speech bubble — Follow Me */
+        .follow-bubble {
+            position: absolute;
+            left: 68px;
+            top: 24px;
+            z-index: 10;
+            background: #a3e635;
+            color: #042f1e;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            padding: 12px 26px;
+            border-radius: 14px;
+            white-space: nowrap;
+            box-shadow: 0 0 30px rgba(163,230,53,0.5);
+        }
+        .follow-bubble::after {
+            content: '';
+            position: absolute;
+            bottom: -22px;
+            left: 28px;
+            border: 12px solid transparent;
+            border-top-color: #a3e635;
+            border-bottom: none;
+        }
+
+        .content {
+            position: absolute;
+            z-index: 2;
+            left: 580px;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 50px;
+        }
+
+        /* Eyebrow — L² wordmark style */
+        .eyebrow {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+        .l2-mark {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 20px;
+            color: #042f1e;
+            background: #a3e635;
+            width: 44px; height: 44px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .eyebrow-text {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.45);
+        }
+        .eyebrow-text .brand {
+            color: #a3e635;
+        }
+
+        /* Big punchy headline */
+        .headline {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 62px;
+            font-weight: 700;
+            color: #ffffff;
+            line-height: 1.0;
+            letter-spacing: -0.03em;
+            margin-bottom: 18px;
+        }
+        .headline .hl {
+            /* Lime text with glow */
+            color: #a3e635;
+            text-shadow: 0 0 40px rgba(163,230,53,0.4);
+        }
+
+        /* Divider line */
+        .divider {
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #a3e635, #14b8a6);
+            border-radius: 2px;
+            margin-bottom: 16px;
+        }
+
+        .subline {
+            font-size: 22px;
+            font-weight: 400;
+            color: rgba(255,255,255,0.55);
+            line-height: 1.45;
+        }
+        .subline strong {
+            color: rgba(255,255,255,0.85);
+            font-weight: 600;
+        }
+
+        .dl-btn {
+            background: #a3e635;
+            color: #042f1e;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 15px;
+            font-weight: 700;
+            border: none;
+            padding: 14px 32px;
+            border-radius: 8px;
+            cursor: pointer;
+            letter-spacing: 0.03em;
+        }
+        .dl-btn:hover { background: #bef264; }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+    <div class="instructions">
+        <strong>Option B — Lime Blast.</strong> Dark navy background makes the lime headline glow. L² mark logo, bold headline split across two lines, divider accent, muted subtext. Very high contrast.
+        Click the button to download as PNG, then upload to LinkedIn Profile → Edit → Background photo.
+        Renders at <strong>1584 × 396 px</strong>.
+    </div>
+
+    <button class="dl-btn" onclick="downloadBanner()">⬇ Download Banner PNG</button>
+
+    <div class="banner">
+        <div class="glow-right"></div>
+        <div class="glow-left"></div>
+        <div class="scanlines"></div>
+        <div class="accent-bar"></div>
+        <div class="top-stripe"></div>
+
+        <div class="follow-bubble">Follow Me ▾</div>
+
+        <div class="content">
+            <div class="eyebrow">
+                <div class="l2-mark">L²</div>
+                <div class="eyebrow-text"><span class="brand">Launch to Lead</span> · Engineering Career Coaching</div>
+            </div>
+
+            <div class="headline">
+                Get your first<br>
+                <span class="hl">full-time engineering job.</span>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="subline">
+                <strong>Resume · Interview Stories · Job Search System</strong> — done in 8 weeks.
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+function downloadBanner() {
+    const banner = document.querySelector('.banner');
+    html2canvas(banner, {
+        width: 1584,
+        height: 396,
+        scale: 2,
+        useCORS: true,
+        backgroundColor: null
+    }).then(canvas => {
+        const link = document.createElement('a');
+        link.download = 'linkedin-banner-option-b.png';
+        link.href = canvas.toDataURL('image/png', 1.0);
+        link.click();
+    });
+}
+</script>
+</html>

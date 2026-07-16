@@ -10,8 +10,6 @@
         'index.html': { name: 'home', displayName: 'Home' },
         'success-stories.html': { name: 'success-stories', displayName: 'Success Stories' },
         'about.html': { name: 'about', displayName: 'About Me' },
-        'social.html': { name: 'social', displayName: 'Social' },
-        'vault.html': { name: 'vault', displayName: 'The L² Vault' },
         'legal.html': { name: 'legal', displayName: 'Legal' }
     };
     
@@ -85,57 +83,21 @@
 
     // Generate social dropdown HTML for desktop
     function getSocialDropdownHTML() {
-        let dropdownItems = '';
-        socialLinks.forEach(link => {
-            dropdownItems += `
-                <a href="${link.url}" target="_blank" rel="noopener noreferrer" 
-                   class="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-700 hover:bg-emerald-50 hover:text-brand-primary transition">
-                    <span class="text-slate-500">${link.icon}</span>
-                    <span class="font-medium">${link.name}</span>
-                </a>`;
-        });
-        
         return `
-            <div class="relative group" data-social-dropdown>
-                <button class="text-sm font-medium text-slate-500 hover:text-brand-secondary transition py-1.5 flex items-center gap-1">
-                    Social
-                    <svg class="w-3 h-3 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-                    </svg>
-                </button>
-                <div class="absolute top-full left-0 mt-1 w-48 bg-white rounded-xl shadow-lg border border-slate-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-                    <div class="py-2">
-                        ${dropdownItems}
-                    </div>
-                    <div class="border-t border-slate-100 p-2">
-                        <a href="social.html" class="flex items-center justify-center gap-2 px-3 py-2 text-xs font-semibold text-brand-primary bg-emerald-50 rounded-lg hover:bg-emerald-100 transition">
-                            <i data-lucide="layout-grid" class="w-3 h-3"></i>
-                            View All Platforms
-                        </a>
-                    </div>
-                </div>
-            </div>`;
+            <a href="https://www.instagram.com/launch.to.lead/" target="_blank" rel="noopener noreferrer"
+               class="text-sm font-medium text-slate-500 hover:text-brand-secondary transition py-1.5">
+                Follow
+            </a>`;
     }
 
     // Generate mobile social section HTML
     function getMobileSocialHTML() {
-        let items = '';
-        socialLinks.forEach(link => {
-            items += `
-                <a href="${link.url}" target="_blank" rel="noopener noreferrer" 
-                   class="flex items-center gap-3 px-3 py-2 text-sm text-slate-700 hover:bg-emerald-50 hover:text-brand-primary rounded-md transition">
-                    <span class="text-slate-500">${link.icon}</span>
-                    <span class="font-medium">${link.name}</span>
-                </a>`;
-        });
-        
         return `
             <div class="border-t border-slate-100 mt-2 pt-2">
-                <p class="px-3 py-1 text-xs font-bold text-slate-400 uppercase tracking-wider">Connect</p>
-                ${items}
-                <a href="social.html" class="flex items-center gap-2 mx-3 mt-2 px-3 py-2 text-sm font-semibold text-brand-primary bg-emerald-50 rounded-lg hover:bg-emerald-100 transition justify-center">
-                    <i data-lucide="layout-grid" class="w-4 h-4"></i>
-                    View All Platforms
+                <a href="https://www.instagram.com/launch.to.lead/" target="_blank" rel="noopener noreferrer"
+                   class="flex items-center gap-3 px-3 py-2 text-sm font-medium text-slate-700 hover:bg-emerald-50 hover:text-brand-primary rounded-md transition">
+                    <i data-lucide="instagram" class="w-5 h-5 text-slate-500"></i>
+                    Follow
                 </a>
             </div>`;
     }
@@ -158,7 +120,7 @@
                 <a href="about.html" class="${getLinkClasses('about')}">About Me</a>
                 <a href="success-stories.html" class="${getLinkClasses('success-stories')}">Success Stories</a>
                 ${getSocialDropdownHTML()}
-                <a href="offer/" class="${getLinkClasses('contact', true)}">
+                <a href="offer/index.html" class="${getLinkClasses('contact', true)}">
                     Join Us
                 </a>
             </div>
@@ -181,7 +143,7 @@
         <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             <a href="about.html" class="${getMobileLinkClasses('about')}">About Me</a>
             <a href="success-stories.html" class="${getMobileLinkClasses('success-stories')}">Success Stories</a>
-            <a href="offer/" class="${getMobileLinkClasses('contact', true)}">Join Us</a>
+            <a href="offer/index.html" class="${getMobileLinkClasses('contact', true)}">Join Us</a>
             ${getMobileSocialHTML()}
         </div>
     </div>
