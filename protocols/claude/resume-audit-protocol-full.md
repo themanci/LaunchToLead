@@ -225,7 +225,7 @@ The output HTML must contain these 7 sections in this order. Design using the La
 ### Footer (no CTA — this is client work)
 ```
 Analysis prepared by LaunchToLead | Impact Bullet Builder Framework
-launchtolead.io/free
+launchtolead.io
 ```
 
 ---

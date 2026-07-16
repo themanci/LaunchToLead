@@ -2,19 +2,19 @@
 
 ## Who We Are
 
-Launch to Lead Engineering (L²) is a premium 1-on-1 engineering career coaching business run by Mansour Manci. We help engineers land top-tier roles through resume rebuilds, interview prep, and mock interviews. Our primary product is the 21-Day Engineering Career Accelerator ($997, 3×90-minute sessions). We are NOT an agency, NOT a group program, NOT a recruiter — we are an engineer coaching engineers.
+Launch to Lead Engineering (L²) is a 6-month founder cohort program run by Mansour Manci that helps engineers with 2–5 years' experience — good, solid performers who aren't getting promoted — become Promotion-Ready Engineers. Our primary product is **The Promotion-Ready Engineer Blueprint** ($2,000 founder pricing, or 5×$500; standard price $6,000 after the founder cohort). We are NOT an agency, NOT a recruiter, NOT 1-on-1 ongoing coaching, NOT a self-paced course — we are a small founder cohort with weekly group calls.
 
 ## Brand Context Reference
 
-**Always read `BRAND_CONTEXT.md` in the project root before doing any significant work.** It contains the complete brand bible: colors, design system, programs, pricing, avatars, funnel architecture, ad strategy, named methods, copywriting patterns, testimonials, and file structure. Reference it for any details not covered in these instructions.
+**Always read `BRAND_CONTEXT.md` in the project root before doing any significant work.** It contains the complete brand bible: colors, design system, programs, pricing, avatars, funnel architecture, ad strategy, named methods, copywriting patterns, testimonials, and file structure. Reference it for any details not covered in these instructions. As of July 2026 (v5), the avatar and offer pivoted from recent-grad job search to "The Invisible Performer" — 2–5 year engineers stuck without promotion. Several sections of BRAND_CONTEXT.md are explicitly flagged as needing a coordinated rebuild (funnel infra, ad slugs, homepage/tracking) — read the inline ⚠️ flags before treating any section as settled fact.
 
 ## Voice & Tone
 
 - **Brand voice:** Direct, confident, engineering-appropriate. No hype, no salesy language, no exclamation marks in professional content. Speak like a senior engineer giving career advice to a junior engineer they care about.
 - **Mansour's voice (1st person content):** Conversational, honest about struggles, anti-corporate, values efficiency over fluff. "I'm not HR. I'm not a recruiter. I'm an engineer."
 - **Audit/analysis voice:** Helpful friend who happens to be an expert. Factual, direct, never inflammatory or condescending. Frame problems as opportunities.
-- **Banned words in audits:** disaster, filler, dead, invisible, kills/killer, pure filler, BS, thin, red flag, zero value.
-- **CTA language:** "See If You're a Fit" (primary), "FREE Resume Guide" (secondary), "Career Launch Call" (booking). Never "Book a Call" or "Schedule a Demo."
+- **Banned words in audits:** disaster, filler, dead, invisible, kills/killer, pure filler, BS, thin, red flag, zero value. Note the direct conflict with "Invisible Performer"/"Invisible Impact" as core positioning terms — those stay banned in 1:1 audit feedback specifically, even though "invisible" is the headline word everywhere else.
+- **CTA language:** No discovery call / no "Career Launch Call" in the current funnel — it's application-based (apply → review → accepted → payment + Skool setup). Comment **IMPACT** (cold, ⚠️ not live yet) / Comment **OFFER** (warm) / **launchtolead.io** full offer doc (hot) — see `protocols/claude/content-creation-guide.md`.
 
 ## Design System — "Emerald Flow"
 
@@ -36,27 +36,29 @@ Launch to Lead Engineering (L²) is a premium 1-on-1 engineering career coaching
 
 - **No build tools.** Pure HTML + Tailwind CDN + vanilla JS. No npm, no bundlers, no frameworks.
 - **Hosting:** GitHub Pages, branch `main`, domain `launchtolead.io`.
-- **Analytics on every page:** GA4 (`G-L8V47TR52C`), Meta Pixel (`3141490496240983`), LinkedIn Insight Tag (`8832100`). Always include the internal traffic exclusion cookie check.
-- **Shared navigation:** `<div id="navigation-container"></div><script src="navigation.js"></script>` — never hardcode nav.
-- **Scarcity badge on every page:** "1-on-1 Live Coaching — Only 10 Spots / Month" with pulsing red dot.
+- **Analytics on every page:** GA4 (`G-L8V47TR52C`), Meta Pixel (`3141490496240983`). LinkedIn Insight Tag is discontinued (Instagram is the exclusive marketing platform now — see BRAND_CONTEXT.md Section 10/11). Always include the internal traffic exclusion cookie check.
+- **Shared navigation:** `<div id="navigation-container"></div><script src="navigation.js"></script>` — never hardcode nav. Nav copy referencing "Book a Free Call" is stale and needs updating to route to the application instead.
+- **Scarcity badge on every page:** "Founder Cohort — Only 6 Spots" with pulsing red dot (replaces the old "1-on-1 Live Coaching — Only 10 Spots / Month").
 
 ## Key Business Rules
 
-- **10 spots/month** capacity constraint — always enforce in copy and UI.
-- **$997** (or 3×$349) for Engineering Career Accelerator.
-- **21-day, 3-session** program structure. Don't invent additional sessions.
-- **Guarantee:** "I will keep working with you until you do." Not a money-back guarantee.
-- **ROI framing:** ~$7,000/month lost while job searching (BLS data).
-- **Impact Bullet Builder (IBB):** The 4-part formula: Accomplishment + Metric + How + Why. Three tiers: ★/★★/★★★.
+- **6 founder spots** for the first case-study cohort — always enforce in copy and UI. Cohort starts August 12, 2026; enrollment closes August 9, 2026 or when spots fill.
+- **$2,000 founder pricing** (or 5×$500); standard price **$6,000** after the founder cohort.
+- **6-month program, 2 phases:** first 12 weeks = Build Sprint (kickoff + 9 core missions + closeout); next 12 weeks = Application Sprint (apply the plan at the real job). Skool community access for the full 6 months. Don't invent additional sessions/phases.
+- **Guarantee:** 60-day buyback — "Give the program 60 days. If you show up, complete Missions 1–6, ask for help when you're stuck, and still don't feel like you have a clear Promotion-Ready Plan plus a stronger way to make your impact visible, I'll buy it back from you in full." Not a generic money-back guarantee.
+- **ROI framing:** a stalled promotion can mean $10K–$30K/year in missed income.
+- **Impact Bullet Builder (IBB):** The 4-part formula: Accomplishment + Metric + How + Why. Three tiers: ★/★★/★★★. Avatar-agnostic — reusable for both external resumes and internal promotion cases.
+- **The 3 Program Layers:** Next-Level Work, Known for Impact, Trusted by Seniors (see `protocols/claude/magic-model-details.md`).
+- **The free Engineering Resume Leak Finder tool has been retired** (`/free/`, `/leak/` redirect to homepage; source archived at `archive/retired-tools/resume-leak-finder/`).
 - **Results disclaimer** on any page with testimonials: "Individual experiences presented here may not be typical. Your results may vary."
 
 ## File Organization
 
 - Client files: `clients/{path}/{client_name}/`
-- Protocols: `protocols/`
-- Lead magnets: `lead-magnets/active/`
+- Protocols: `protocols/claude/` (brand context, offer doc, avatar, magic model, hot button map, content creation guide, resume audit protocols)
+- Lead magnets: `lead-magnets/active/` — ⚠️ current lead magnets are archived (built for the old avatar); a new one for The Invisible Performer hasn't been built yet
 - Client materials: `client_materials/launch/` and `client_materials/accelerate/`
-- Ads: `ads/` (HTML creative files)
+- Ads: `ads/` (historical LinkedIn ad creatives — LinkedIn ads are discontinued)
 - Proposals: `proposals/`
 - Always use lowercase-with-hyphens for new filenames. Underscores for client names only.
 
