@@ -1,3 +1,6 @@
+> **Role of this file:** This is the prospect-facing offer doc copy — use this as the canonical source when building the actual application/offer page.
+> **See also `offer-genie.md`:** a full raw build-conversation transcript for this offer. Don't pull page copy from it directly, but mine it for good angles/hooks on what elements to play up in social media posts promoting the offer.
+
 If you’re a solid engineer and your manager keeps giving you some version of, “You’re doing really great,” but the promotion still isn’t happening, this is for you.
 
 I’m starting a new Case Study Group with 6 available spots, and I’m looking for a handful of people to work with to create successful case studies before the official launch of the program.

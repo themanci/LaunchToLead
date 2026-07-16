@@ -405,8 +405,8 @@ All of this needs replacing with the current offer (Section 6A) and current funn
 ### Voice & Tone Guidelines — mostly reusable, one direct conflict flagged
 - **Write in 2nd person** — "you" / "your"
 - **Tone:** Helpful friend who happens to be an expert — factual, direct, never inflammatory/condescending
-- **Banned words:** disaster, filler, dead, invisible, kills/killer, pure filler, BS, thin, red flag, zero value
-- ⚠️ **Direct conflict, still unresolved:** "invisible" is banned in audit feedback, but "Invisible Impact" / "The Invisible Performer" are core positioning terms now. Worth a deliberate call on whether it stays banned in 1:1 audit feedback even though it's the headline word everywhere else.
+- **Banned words:** disaster, filler, dead, kills/killer, pure filler, BS, thin, red flag, zero value
+- **Resolved:** "invisible" is no longer banned — it's fine to use in audit feedback as well as marketing/positioning, matching "Invisible Impact" / "The Invisible Performer" as core brand terms.
 - **Frame problems as opportunities** — not deficiencies
 - **CTA calls it a "Career Launch Call"** — needs renaming/removing along with the rest of the CTA section above
 

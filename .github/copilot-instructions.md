@@ -13,7 +13,7 @@ Launch to Lead Engineering (L²) is a 6-month founder cohort program run by Mans
 - **Brand voice:** Direct, confident, engineering-appropriate. No hype, no salesy language, no exclamation marks in professional content. Speak like a senior engineer giving career advice to a junior engineer they care about.
 - **Mansour's voice (1st person content):** Conversational, honest about struggles, anti-corporate, values efficiency over fluff. "I'm not HR. I'm not a recruiter. I'm an engineer."
 - **Audit/analysis voice:** Helpful friend who happens to be an expert. Factual, direct, never inflammatory or condescending. Frame problems as opportunities.
-- **Banned words in audits:** disaster, filler, dead, invisible, kills/killer, pure filler, BS, thin, red flag, zero value. Note the direct conflict with "Invisible Performer"/"Invisible Impact" as core positioning terms — those stay banned in 1:1 audit feedback specifically, even though "invisible" is the headline word everywhere else.
+- **Banned words in audits:** disaster, filler, dead, kills/killer, pure filler, BS, thin, red flag, zero value. "Invisible" is NOT banned — it's a core positioning term ("Invisible Performer"/"Invisible Impact") and is fine to use anywhere, including audit feedback.
 - **CTA language:** No discovery call / no "Career Launch Call" in the current funnel — it's application-based (apply → review → accepted → payment + Skool setup). Comment **IMPACT** (cold, ⚠️ not live yet) / Comment **OFFER** (warm) / **launchtolead.io** full offer doc (hot) — see `protocols/claude/content-creation-guide.md`.
 
 ## Design System — "Emerald Flow"
