@@ -18,7 +18,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Apply to Join | Launch to Lead</title>
-  <meta name="description" content="Apply to the Engineering Career Accelerator coaching program with Mansour Manci. 10 spots per month.">
+  <meta name="description" content="Apply for one of 6 founder spots in the Promotion-Ready Engineer Blueprint with Mansour Manci.">
   <link rel="canonical" href="https://launchtolead.io/offer/apply.html">
   <link rel="icon" type="image/svg+xml" href="../favicon.svg">
 
@@ -30,21 +30,17 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --emerald:    #064e3b;
-      --teal:       #14b8a6;
-      --lime:       #a3e635;
-      --heading:    #0f172a;
-      --text:       #1e293b;
-      --text-muted: #64748b;
-      --bg-page:    #f8fafc;
-      --bg-card:    #ffffff;
-      --bg-subtle:  #f1f5f9;
-      --border:     #e2e8f0;
-      --border-focus: #14b8a6;
-      --error:      #dc2626;
+      --heading:      #0f172a;
+      --text:         #1e293b;
+      --text-muted:   #64748b;
+      --bg-page:      #eef1f5;
+      --bg-card:      #ffffff;
+      --bg-subtle:    #f5f7fa;
+      --border:       #e2e8f0;
+      --border-focus: #1d4ed8;
+      --accent:       #1d4ed8;
+      --error:        #dc2626;
     }
-
-    html { scroll-behavior: smooth; }
 
     body {
       background: var(--bg-page);
@@ -62,7 +58,7 @@
       padding: 10px 16px;
     }
     .site-header-inner {
-      max-width: 760px;
+      max-width: 700px;
       margin: 0 auto;
       display: flex;
       justify-content: center;
@@ -74,7 +70,7 @@
       text-decoration: none;
     }
     .logo-badge {
-      background: var(--emerald);
+      background: var(--heading);
       color: #fff;
       width: 36px;
       height: 36px;
@@ -85,91 +81,66 @@
       font-family: 'Space Grotesk', sans-serif;
       font-weight: 700;
       font-size: 14px;
-      box-shadow: 0 1px 3px rgba(0,0,0,.15);
     }
     .logo-text {
       font-size: 20px;
       font-weight: 700;
       color: #0f172a;
     }
-    .logo-text span { font-weight: 300; color: var(--teal); }
+    .logo-text span { font-weight: 300; color: var(--text-muted); }
 
-    /* ── Page ── */
-    .page {
-      max-width: 680px;
-      margin: 0 auto;
-      padding: 52px 24px 100px;
+    /* ── Document layout — plain letter card ── */
+    .doc {
+      max-width: 700px;
+      margin: 40px auto 100px;
+      background: var(--bg-card);
+      border-radius: 8px;
+      padding: 48px 56px;
+      box-shadow: 0 1px 3px rgba(0,0,0,.08);
     }
 
-    /* ── Page header ── */
-    .page-header { margin-bottom: 40px; }
-    .section-label {
-      display: block;
-      font-size: 11px;
+    /* ── Doc header ── */
+    .doc-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 22px;
       font-weight: 700;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      color: var(--teal);
-      margin-bottom: 14px;
+      color: var(--heading);
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+    .doc p.intro { color: var(--text); margin-bottom: 32px; }
+
+    /* ── Form sections ── */
+    .form-section { margin-bottom: 36px; }
+    .form-section h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--heading);
+      margin-bottom: 20px;
       padding-bottom: 8px;
       border-bottom: 1px solid var(--border);
     }
-    .page-header h1 {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: clamp(24px, 4vw, 32px);
-      font-weight: 700;
-      color: var(--heading);
-      line-height: 1.25;
-      margin-bottom: 12px;
-    }
-    .page-header p {
-      font-size: 16px;
-      color: var(--text-muted);
-    }
-
-    /* ── Form card ── */
-    .form-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      overflow: hidden;
-    }
-
-    /* ── Form sections ── */
-    .form-section {
-      padding: 32px 36px;
-      border-bottom: 1px solid var(--border);
-    }
-    .form-section:last-of-type { border-bottom: none; }
-    .form-section h3 {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 14px;
-      font-weight: 700;
-      letter-spacing: .06em;
-      text-transform: uppercase;
-      color: var(--emerald);
-      margin-bottom: 24px;
-    }
 
     /* ── Fields ── */
-    .field { margin-bottom: 20px; }
+    .field { margin-bottom: 22px; }
     .field:last-child { margin-bottom: 0; }
     .field-row {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 16px;
-      margin-bottom: 20px;
+      margin-bottom: 22px;
     }
     .field-row .field { margin-bottom: 0; }
 
     label {
       display: block;
-      font-size: 14px;
+      font-size: 15px;
       font-weight: 600;
       color: var(--heading);
-      margin-bottom: 7px;
+      margin-bottom: 8px;
     }
-    .req { color: var(--teal); margin-left: 2px; }
+    .req { color: var(--accent); margin-left: 2px; }
     .opt { color: var(--text-muted); font-weight: 400; font-size: 12px; }
 
     input[type="text"],
@@ -181,13 +152,13 @@
       width: 100%;
       background: var(--bg-page);
       border: 1px solid var(--border);
-      border-radius: 8px;
+      border-radius: 6px;
       padding: 11px 14px;
       font-family: 'Plus Jakarta Sans', sans-serif;
       font-size: 15px;
       color: var(--text);
       outline: none;
-      transition: border-color .15s, box-shadow .15s;
+      transition: border-color .15s;
       -webkit-appearance: none;
     }
     input[type="text"]:focus,
@@ -197,10 +168,9 @@
     select:focus,
     textarea:focus {
       border-color: var(--border-focus);
-      box-shadow: 0 0 0 3px rgba(20,184,166,.12);
     }
     input::placeholder, textarea::placeholder { color: #94a3b8; }
-    textarea { resize: vertical; min-height: 110px; line-height: 1.6; }
+    textarea { resize: vertical; min-height: 100px; line-height: 1.6; }
     select { cursor: pointer; }
 
     /* ── Radio group ── */
@@ -208,7 +178,7 @@
       display: flex;
       flex-direction: column;
       gap: 10px;
-      margin-top: 4px;
+      margin-top: 6px;
     }
     .radio-label {
       display: flex;
@@ -220,10 +190,10 @@
       cursor: pointer;
     }
     .radio-label input[type="radio"] {
-      width: 18px;
-      height: 18px;
+      width: 17px;
+      height: 17px;
       flex-shrink: 0;
-      accent-color: var(--teal);
+      accent-color: var(--accent);
       cursor: pointer;
     }
 
@@ -243,23 +213,22 @@
 
     /* ── Submit section ── */
     .submit-section {
-      padding: 28px 36px 32px;
-      background: var(--bg-subtle);
+      margin-top: 40px;
+      padding-top: 28px;
       border-top: 1px solid var(--border);
       text-align: center;
     }
     .submit-btn {
       display: inline-block;
-      background: var(--emerald);
+      background: var(--heading);
       color: #fff;
       font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: 17px;
+      font-size: 16px;
       font-weight: 700;
-      padding: 16px 44px;
-      border-radius: 8px;
+      padding: 14px 36px;
+      border-radius: 6px;
       border: none;
       cursor: pointer;
-      letter-spacing: .01em;
       transition: opacity .15s;
     }
     .submit-btn:hover { opacity: .88; }
@@ -275,153 +244,29 @@
       display: none;
       background: #fef2f2;
       border: 1px solid #fecaca;
-      border-radius: 8px;
+      border-radius: 6px;
       padding: 14px 18px;
       font-size: 14px;
       color: var(--error);
-      margin-bottom: 20px;
+      margin-bottom: 24px;
     }
 
-    /* ══════════════════════════════════════════
-       SUCCESS STATE
-    ══════════════════════════════════════════ */
+    /* ══ SUCCESS STATE ══ */
     #successState { display: none; }
-
-    .success-header {
-      text-align: center;
-      margin-bottom: 40px;
-    }
-    .success-icon {
-      width: 64px;
-      height: 64px;
-      background: #ecfdf5;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 20px;
-    }
-    .success-icon svg { width: 32px; height: 32px; stroke: var(--emerald); fill: none; stroke-width: 2.5; }
+    .success-header { margin-bottom: 24px; }
     .success-header h2 {
       font-family: 'Space Grotesk', sans-serif;
-      font-size: 28px;
+      font-size: 22px;
       font-weight: 700;
       color: var(--heading);
       margin-bottom: 10px;
     }
-    .success-header p {
-      font-size: 16px;
-      color: var(--text-muted);
-      max-width: 480px;
-      margin: 0 auto;
-      line-height: 1.7;
-    }
-
-    /* ── Deposit callout ── */
-    .deposit-callout {
-      background: var(--emerald);
-      border-radius: 14px;
-      padding: 30px 32px;
-      margin-bottom: 28px;
-      color: #d1fae5;
-      font-size: 15px;
-      line-height: 1.75;
-    }
-    .deposit-callout h3 {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 18px;
-      font-weight: 700;
-      color: #fff;
-      margin-bottom: 10px;
-    }
-    .deposit-callout strong { color: #a3e635; }
-
-    /* ── Payment options ── */
-    .payment-label {
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      color: var(--teal);
-      margin-bottom: 14px;
-      display: block;
-    }
-    .payment-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-      margin-bottom: 28px;
-    }
-    .pay-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 22px 18px;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 10px;
-    }
-    .pay-card.featured { border: 2px solid var(--teal); }
-    .pay-icon {
-      width: 44px;
-      height: 44px;
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Space Grotesk', sans-serif;
-      font-weight: 700;
-      font-size: 15px;
-    }
-    .pay-icon.stripe  { background: #f0f4ff; color: #4f46e5; }
-    .pay-icon.venmo   { background: #e8f7ff; color: #008CFF; }
-    .pay-icon.zelle   { background: #f5f0ff; color: #6d28d9; }
-    .pay-card-name {
-      font-weight: 700;
-      font-size: 15px;
-      color: var(--heading);
-    }
-    .pay-card-detail {
-      font-size: 13px;
-      color: var(--text-muted);
-      line-height: 1.5;
-    }
-    .pay-btn {
-      display: inline-block;
-      background: var(--emerald);
-      color: #fff;
-      font-size: 13px;
-      font-weight: 700;
-      padding: 8px 18px;
-      border-radius: 6px;
-      text-decoration: none;
-      transition: opacity .15s;
-      margin-top: 4px;
-    }
-    .pay-btn:hover { opacity: .88; }
-    .pay-handle {
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--teal);
-      word-break: break-all;
-    }
-
-    /* ── Post-payment note ── */
-    .post-payment-note {
-      background: var(--bg-subtle);
-      border-radius: 10px;
-      padding: 20px 24px;
-      font-size: 14px;
-      color: var(--text-muted);
-      line-height: 1.7;
-      text-align: center;
-    }
+    .success-header p { color: var(--text); }
+    .post-payment-note { color: var(--text-muted); font-size: 14px; }
     .post-payment-note strong { color: var(--heading); }
 
     /* ── Conditional fields ── */
-    .conditional-field { display: none; margin-top: 6px; }
+    .conditional-field { display: none; margin-top: 8px; }
 
     /* ── Field note ── */
     .field-note {
@@ -449,63 +294,16 @@
       font-weight: 400;
     }
     .check-label input[type="checkbox"] {
-      width: 18px;
-      height: 18px;
+      width: 17px;
+      height: 17px;
       flex-shrink: 0;
-      accent-color: var(--teal);
+      accent-color: var(--accent);
       cursor: pointer;
     }
 
-    /* ── Payment step ── */
-    .step-header {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 28px 32px;
-      margin-bottom: 24px;
-    }
-    .step-header h2 {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 22px;
-      font-weight: 700;
-      color: var(--heading);
-      margin-bottom: 10px;
-      margin-top: 8px;
-    }
-    .step-header p { font-size: 15px; color: var(--text-muted); line-height: 1.7; margin-bottom: 0; }
-    .step-badge {
-      display: inline-block;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      color: var(--teal);
-      margin-bottom: 4px;
-    }
-
-    /* ── Submit-after-payment block ── */
-    .submit-paid-wrap {
-      margin-top: 28px;
-      background: var(--bg-card);
-      border: 2px solid var(--emerald);
-      border-radius: 12px;
-      padding: 28px 32px;
-      text-align: center;
-    }
-    .submit-paid-note {
-      font-size: 15px;
-      color: var(--text-muted);
-      margin: 8px 0 20px;
-    }
-
-    @media (max-width: 640px) {
-      .form-section  { padding: 24px 20px; }
-      .submit-section { padding: 24px 20px; }
-      .field-row     { grid-template-columns: 1fr; }
-      .payment-grid  { grid-template-columns: 1fr; }
-      .page          { padding: 32px 16px 72px; }
-      .submit-paid-wrap { padding: 24px 20px; }
-      .step-header { padding: 24px 20px; }
+    @media (max-width: 600px) {
+      .doc { padding: 32px 22px; margin: 0; border-radius: 0; }
+      .field-row { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -521,20 +319,17 @@
   </div>
 </header>
 
-<div class="page">
+<div class="doc">
 
   <!-- Page header -->
-  <div class="page-header">
-    <span class="section-label">Your Application</span>
-    <h1>Apply to work together.</h1>
-    <p>This helps me understand where you are and whether the program is the right fit. It takes about 5–10 minutes. Be honest — there are no trick questions.</p>
-  </div>
+  <div class="doc-title" id="pageTitle">Apply to work together.</div>
+  <p class="intro">This helps me understand where you are and whether the program is the right fit. It takes about 5–10 minutes. Be honest — there are no trick questions.</p>
 
   <!-- Form-level error banner -->
   <div id="formError">Please fill in all required fields before continuing.</div>
 
   <!-- ── Application Form ── -->
-  <div class="form-card" id="formCard">
+  <div id="formCard">
     <form id="applicationForm" novalidate>
 
       <!-- Formspree metadata -->
@@ -562,29 +357,32 @@
       <div class="form-section">
         <h3>Qualifications</h3>
 
-        <div class="field" data-required data-type="radio" data-name="hasDegree">
-          <label>Do you have an engineering degree? <span class="req">*</span></label>
+        <div class="field" data-required data-type="radio" data-name="yearsExperience">
+          <label>How long have you been working as an engineer? <span class="req">*</span></label>
           <div class="radio-group">
-            <label class="radio-label"><input type="radio" name="hasDegree" value="yes"> Yes</label>
-            <label class="radio-label"><input type="radio" name="hasDegree" value="completing"> Still completing it</label>
-            <label class="radio-label"><input type="radio" name="hasDegree" value="no"> No</label>
-          </div>
-          <div id="completingField" class="conditional-field">
-            <input type="text" name="gradDate" placeholder="Expected graduation: e.g. May 2026">
+            <label class="radio-label"><input type="radio" name="yearsExperience" value="less-1"> Less than 1 year</label>
+            <label class="radio-label"><input type="radio" name="yearsExperience" value="1-2"> 1–2 years</label>
+            <label class="radio-label"><input type="radio" name="yearsExperience" value="2-5"> 2–5 years</label>
+            <label class="radio-label"><input type="radio" name="yearsExperience" value="5-plus"> 5+ years</label>
           </div>
           <div class="field-error-msg">Please select an option.</div>
         </div>
 
-        <div class="field" data-required style="margin-top:20px;">
-          <label for="discipline">Engineering Discipline <span class="req">*</span></label>
-          <input type="text" id="discipline" name="discipline" required placeholder="e.g. Mechanical, Software, Electrical, Civil...">
-          <div class="field-error-msg">Please enter your engineering discipline.</div>
+        <div class="field" data-required style="margin-top:22px;">
+          <label for="currentLevel">What's your current title or level? <span class="req">*</span></label>
+          <input type="text" id="currentLevel" name="currentLevel" required placeholder="e.g. Software Engineer II, Senior Mechanical Engineer...">
+          <div class="field-error-msg">Please enter your current title or level.</div>
         </div>
 
-        <div class="field" data-required style="margin-top:20px;">
-          <label for="gradMonth">When did you graduate (or expect to)? <span class="req">*</span></label>
-          <input type="text" id="gradMonth" name="gradMonth" required placeholder="e.g. May 2024">
-          <div class="field-error-msg">Please enter your graduation date.</div>
+        <div class="field" data-required data-type="radio" data-name="reviewStatus" style="margin-top:22px;">
+          <label>How would you describe your last performance review? <span class="req">*</span></label>
+          <div class="radio-group">
+            <label class="radio-label"><input type="radio" name="reviewStatus" value="rough"> Rough — I need to fix the basics first</label>
+            <label class="radio-label"><input type="radio" name="reviewStatus" value="decent-no-change"> Decent, but nothing about my role changed</label>
+            <label class="radio-label"><input type="radio" name="reviewStatus" value="strong-no-promo"> Strong, but I still didn't get promoted</label>
+            <label class="radio-label"><input type="radio" name="reviewStatus" value="not-yet"> Haven't had one yet</label>
+          </div>
+          <div class="field-error-msg">Please select an option.</div>
         </div>
 
       </div>
@@ -593,36 +391,35 @@
       <div class="form-section">
         <h3>Your Situation</h3>
 
-        <div class="field" data-required data-type="radio" data-name="searchLength">
-          <label>How long have you been actively job searching? <span class="req">*</span></label>
+        <div class="field" data-required data-type="radio" data-name="promotionWait">
+          <label>How long have you been waiting on this promotion? <span class="req">*</span></label>
           <div class="radio-group">
-            <label class="radio-label"><input type="radio" name="searchLength" value="less-1mo"> Less than 1 month</label>
-            <label class="radio-label"><input type="radio" name="searchLength" value="1-3mo"> 1–3 months</label>
-            <label class="radio-label"><input type="radio" name="searchLength" value="3-6mo"> 3–6 months</label>
-            <label class="radio-label"><input type="radio" name="searchLength" value="6mo-plus"> 6+ months</label>
-            <label class="radio-label"><input type="radio" name="searchLength" value="not-yet"> Not yet — I'm preparing to start</label>
+            <label class="radio-label"><input type="radio" name="promotionWait" value="less-6mo"> Less than 6 months</label>
+            <label class="radio-label"><input type="radio" name="promotionWait" value="6-12mo"> 6–12 months</label>
+            <label class="radio-label"><input type="radio" name="promotionWait" value="1-2yr"> 1–2 years</label>
+            <label class="radio-label"><input type="radio" name="promotionWait" value="2yr-plus"> 2+ years</label>
           </div>
           <div class="field-error-msg">Please select an option.</div>
         </div>
 
-        <div class="field" data-required data-type="radio" data-name="situation" style="margin-top:20px;">
+        <div class="field" data-required data-type="radio" data-name="situation" style="margin-top:22px;">
           <label>What best describes your current situation? <span class="req">*</span></label>
           <div class="radio-group">
-            <label class="radio-label"><input type="radio" name="situation" value="no-callbacks"> Applying but not getting callbacks or interviews</label>
-            <label class="radio-label"><input type="radio" name="situation" value="interviews-no-offers"> Getting interviews but not receiving offers</label>
-            <label class="radio-label"><input type="radio" name="situation" value="both"> Both — low callbacks and failing interviews when I do get them</label>
-            <label class="radio-label"><input type="radio" name="situation" value="starting-right"> Just starting out — I want to do this right from the beginning</label>
+            <label class="radio-label"><input type="radio" name="situation" value="good-feedback-no-movement"> Getting good feedback, but no real movement</label>
+            <label class="radio-label"><input type="radio" name="situation" value="not-sure-whats-missing"> Not sure what proof or visibility I'm missing</label>
+            <label class="radio-label"><input type="radio" name="situation" value="told-to-wait"> Told to "keep doing what I'm doing" or to wait</label>
+            <label class="radio-label"><input type="radio" name="situation" value="get-ahead"> Just want to get ahead of it before review season</label>
           </div>
           <div class="field-error-msg">Please select an option.</div>
         </div>
 
-        <div class="field" data-required data-type="radio" data-name="effort" style="margin-top:20px;">
-          <label>How would you describe the effort you've put in so far? <span class="req">*</span></label>
+        <div class="field" data-required data-type="radio" data-name="effort" style="margin-top:22px;">
+          <label>How would you describe the effort you've put into your promotion case so far? <span class="req">*</span></label>
           <div class="radio-group">
-            <label class="radio-label"><input type="radio" name="effort" value="quick-resume"> I have a resume but I put it together quickly and haven't thought much about it</label>
-            <label class="radio-label"><input type="radio" name="effort" value="hard-not-clicking"> I've worked hard on my resume and interview prep but something isn't clicking</label>
-            <label class="radio-label"><input type="radio" name="effort" value="hundreds-apps"> I've sent hundreds of applications with little to show for it</label>
-            <label class="radio-label"><input type="radio" name="effort" value="getting-serious"> I haven't applied to many jobs yet but I'm getting serious now</label>
+            <label class="radio-label"><input type="radio" name="effort" value="nothing-structured"> Haven't tried anything structured</label>
+            <label class="radio-label"><input type="radio" name="effort" value="tracked-informally"> Tracked wins informally but nothing organized</label>
+            <label class="radio-label"><input type="radio" name="effort" value="brought-up-vague"> Brought it up with my manager but got vague feedback</label>
+            <label class="radio-label"><input type="radio" name="effort" value="getting-serious"> Just getting serious about it now</label>
           </div>
           <div class="field-error-msg">Please select an option.</div>
         </div>
@@ -633,7 +430,7 @@
         <h3>Background &amp; Coachability</h3>
 
         <div class="field" data-required data-type="radio" data-name="prevCoach">
-          <label>Have you worked with a career coach or resume service before? <span class="req">*</span></label>
+          <label>Have you worked with a career coach before? <span class="req">*</span></label>
           <div class="radio-group">
             <label class="radio-label"><input type="radio" name="prevCoach" value="no"> No</label>
             <label class="radio-label"><input type="radio" name="prevCoach" value="yes-helpful"> Yes — and it was helpful</label>
@@ -646,8 +443,8 @@
           <div class="field-error-msg">Please select an option.</div>
         </div>
 
-        <div class="field" data-required data-type="radio" data-name="commitment" style="margin-top:20px;">
-          <label>The program involves real work between sessions — rebuilding resume bullets, building interview stories, and preparing for the mock interview. How do you feel about that commitment? <span class="req">*</span></label>
+        <div class="field" data-required data-type="radio" data-name="commitment" style="margin-top:22px;">
+          <label>The program involves real weekly missions — auditing real projects, writing impact updates, and applying what we build inside your actual job. How do you feel about that commitment? <span class="req">*</span></label>
           <div class="radio-group">
             <label class="radio-label"><input type="radio" name="commitment" value="fully-prepared"> I'm fully prepared for it</label>
             <label class="radio-label"><input type="radio" name="commitment" value="can-make-it-work"> I can make it work</label>
@@ -656,32 +453,32 @@
           <div class="field-error-msg">Please select an option.</div>
         </div>
 
-        <div class="field" data-required style="margin-top:20px;">
-          <label for="obstacle">What's your current biggest obstacle — in your own words? <span class="req">*</span></label>
+        <div class="field" data-required style="margin-top:22px;">
+          <label for="obstacle">What's your current biggest obstacle to getting promoted — in your own words? <span class="req">*</span></label>
           <p class="field-note">3–5 sentences. Write honestly — this is the most revealing question in the form.</p>
-          <textarea id="obstacle" name="obstacle" required placeholder="e.g. I've sent 200 applications and don't understand why I'm not getting callbacks. I've revised my resume several times but nothing is changing..."></textarea>
+          <textarea id="obstacle" name="obstacle" required placeholder="e.g. My manager keeps saying I'm doing great, but nothing has changed after two review cycles..."></textarea>
           <div class="field-error-msg">Please answer this question.</div>
         </div>
 
-        <div class="field" data-required style="margin-top:20px;">
+        <div class="field" data-required style="margin-top:22px;">
           <label for="whyLtl">What specifically made you reach out to Launch to Lead versus figuring this out on your own? <span class="req">*</span></label>
-          <textarea id="whyLtl" name="whyLtl" required placeholder="e.g. I've been stuck for 6 months and I'm done guessing..."></textarea>
+          <textarea id="whyLtl" name="whyLtl" required placeholder="e.g. I've been stuck for over a year and I'm done guessing..."></textarea>
           <div class="field-error-msg">Please answer this question.</div>
         </div>
 
-        <div class="field" data-required style="margin-top:20px;">
+        <div class="field" data-required style="margin-top:22px;">
           <label for="strengths">What do you feel are your biggest strengths going for you? <span class="req">*</span></label>
           <textarea id="strengths" name="strengths" required placeholder="Think about your technical skills, real-world experience, personal qualities..."></textarea>
           <div class="field-error-msg">Please answer this question.</div>
         </div>
 
-        <div class="field" data-required style="margin-top:20px;">
-          <label for="holdingBack">What has been holding you back from landing that engineering role so far? <span class="req">*</span></label>
+        <div class="field" data-required style="margin-top:22px;">
+          <label for="holdingBack">What has been holding you back from getting promoted so far? <span class="req">*</span></label>
           <textarea id="holdingBack" name="holdingBack" required placeholder="Be as candid as possible."></textarea>
           <div class="field-error-msg">Please answer this question.</div>
         </div>
 
-        <div class="field" data-required style="margin-top:20px;">
+        <div class="field" data-required style="margin-top:22px;">
           <label for="hearAbout">How did you hear about Launch to Lead? <span class="req">*</span></label>
           <select id="hearAbout" name="hearAbout" required>
             <option value="">Select one...</option>
@@ -703,7 +500,7 @@
         <h3>Logistics</h3>
 
         <div class="field">
-          <label>General availability for weekly 1-hour sessions <span class="opt">(select all that apply)</span></label>
+          <label>General availability for weekly sessions <span class="opt">(select all that apply)</span></label>
           <div class="checkbox-group">
             <label class="check-label"><input type="checkbox" name="avail" value="weekday-mornings"> Weekday mornings</label>
             <label class="check-label"><input type="checkbox" name="avail" value="weekday-afternoons"> Weekday afternoons</label>
@@ -712,7 +509,7 @@
           </div>
         </div>
 
-        <div class="field" data-required style="margin-top:20px;">
+        <div class="field" data-required style="margin-top:22px;">
           <label for="timezone">Time Zone <span class="req">*</span></label>
           <select id="timezone" name="timezone" required>
             <option value="">Select your time zone...</option>
@@ -747,9 +544,6 @@
   <!-- ══ SUCCESS STATE ══ -->
   <div id="successState" style="display:none;">
     <div class="success-header">
-      <div class="success-icon">
-        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-      </div>
       <h2>Application submitted.</h2>
       <p>We've received your application and will review it within 48 hours. If it looks like a fit, we'll reach out with next steps.</p>
     </div>
@@ -761,13 +555,6 @@
 </div>
 
 <script>
-  // ── Conditional field: degree completing ──
-  document.querySelectorAll('input[name="hasDegree"]').forEach(function(r) {
-    r.addEventListener('change', function() {
-      document.getElementById('completingField').style.display = this.value === 'completing' ? 'block' : 'none';
-    });
-  });
-
   // ── Conditional field: previous coach follow-up ──
   document.querySelectorAll('input[name="prevCoach"]').forEach(function(r) {
     r.addEventListener('change', function() {
@@ -835,7 +622,8 @@
   });
 
   function showSuccess() {
-    document.querySelector('.page-header').style.display = 'none';
+    document.getElementById('pageTitle').style.display = 'none';
+    document.querySelector('.doc p.intro').style.display = 'none';
     formCard.style.display = 'none';
     successState.style.display = 'block';
     window.scrollTo({ top: 0, behavior: 'smooth' });

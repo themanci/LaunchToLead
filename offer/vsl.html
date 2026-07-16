@@ -30,76 +30,31 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --emerald:    #064e3b;
-      --teal:       #14b8a6;
-      --lime:       #a3e635;
       --heading:    #0f172a;
       --text:       #1e293b;
       --text-muted: #64748b;
-      --bg-page:    #f8fafc;
+      --bg-page:    #eef1f5;
       --bg-card:    #ffffff;
-      --bg-subtle:  #f1f5f9;
       --border:     #e2e8f0;
     }
-
-    html { scroll-behavior: smooth; }
 
     body {
       background: var(--bg-page);
       color: var(--text);
       font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 17px;
+      line-height: 1.75;
       -webkit-font-smoothing: antialiased;
     }
 
     /* ── Site header ── */
-    .urgency-band-1 {
-      background: var(--emerald);
-      padding: 13px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-    }
-    .urgency-band-1 span {
-      font-size: 15px;
-      font-weight: 800;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: #fff;
-    }
-    .urgency-band-2 {
-      background: var(--lime);
-      padding: 11px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-    }
-    .urgency-band-2 .pulse-dot {
-      width: 8px; height: 8px;
-      border-radius: 50%;
-      background: #ef4444;
-      animation: pulse 1.8s ease-in-out infinite;
-      flex-shrink: 0;
-    }
-    @keyframes pulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.5; transform: scale(1.3); }
-    }
-    .urgency-band-2 span {
-      font-size: 13px;
-      font-weight: 800;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--emerald);
-    }
     .site-header {
       background: #fff;
       border-bottom: 1px solid var(--border);
       padding: 10px 16px;
     }
     .site-header-inner {
-      max-width: 900px;
+      max-width: 800px;
       margin: 0 auto;
       display: flex;
       justify-content: center;
@@ -111,7 +66,7 @@
       text-decoration: none;
     }
     .logo-badge {
-      background: var(--emerald);
+      background: var(--heading);
       color: #fff;
       width: 36px;
       height: 36px;
@@ -122,26 +77,28 @@
       font-family: 'Space Grotesk', sans-serif;
       font-weight: 700;
       font-size: 14px;
-      box-shadow: 0 1px 3px rgba(0,0,0,.15);
     }
     .logo-text {
       font-size: 20px;
       font-weight: 700;
       color: #0f172a;
     }
-    .logo-text span { font-weight: 300; color: var(--teal); }
+    .logo-text span { font-weight: 300; color: var(--text-muted); }
 
-    /* ── Page wrapper ── */
-    .page {
-      max-width: 860px;
-      margin: 0 auto;
-      padding: 52px 24px 80px;
+    /* ── Document layout — plain letter card ── */
+    .doc {
+      max-width: 700px;
+      margin: 40px auto 100px;
+      background: var(--bg-card);
+      border-radius: 8px;
+      padding: 48px 56px;
+      box-shadow: 0 1px 3px rgba(0,0,0,.08);
     }
 
     /* ── Pre-video text ── */
     .pre-video {
       text-align: center;
-      margin-bottom: 32px;
+      margin-bottom: 28px;
     }
     .pre-video .eyebrow {
       font-size: 14px;
@@ -151,146 +108,71 @@
     }
     .pre-video h1 {
       font-family: 'Space Grotesk', sans-serif;
-      font-size: clamp(22px, 3.5vw, 30px);
+      font-size: 22px;
       font-weight: 700;
       color: var(--heading);
       line-height: 1.3;
     }
 
-    /* ── Video wrapper ── */
-    .video-wrap {
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      background: #0f172a;
-      border-radius: 14px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 18px;
-      margin-bottom: 56px;
-      box-shadow: 0 12px 40px rgba(0,0,0,.2);
-      overflow: hidden;
-      position: relative;
-    }
-    /* Swap placeholder for real video: replace the .video-wrap div with a <video> or iframe */
-    .video-play-icon {
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      background: rgba(163,230,53,0.12);
-      border: 2px solid rgba(163,230,53,0.35);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .video-play-icon svg {
-      width: 34px;
-      height: 34px;
-      fill: #a3e635;
-      margin-left: 5px;
-    }
-    .video-label {
-      font-size: 14px;
-      color: #64748b;
-      letter-spacing: .05em;
-      font-style: italic;
-    }
+    hr.divider { border: none; border-top: 1px solid var(--border); margin: 36px 0; }
 
-    /* ── Audition section ── */
-    .audition {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 48px 44px 64px;
-      text-align: center;
-      box-shadow: 0 1px 4px rgba(0,0,0,.06);
-      margin-top: 40px;
-    }
-
-    .audition-inner { position: relative; }
-
+    /* ── Audition / application section ── */
+    .audition { text-align: center; }
     .audition-tag {
-      display: inline-block;
-      font-size: 11px;
+      display: block;
+      font-size: 12px;
       font-weight: 700;
-      letter-spacing: .12em;
+      letter-spacing: .1em;
       text-transform: uppercase;
-      color: var(--teal);
-      margin-bottom: 18px;
+      color: var(--text-muted);
+      margin-bottom: 16px;
     }
     .audition h2 {
       font-family: 'Space Grotesk', sans-serif;
-      font-size: clamp(20px, 3vw, 26px);
+      font-size: 20px;
       font-weight: 700;
       color: var(--heading);
-      line-height: 1.3;
+      line-height: 1.35;
       margin-bottom: 14px;
     }
     .audition .tagline {
       font-size: 17px;
       font-weight: 600;
       color: var(--heading);
-      margin-bottom: 20px;
+      margin-bottom: 18px;
     }
     .audition .body-text {
-      font-size: 15px;
-      color: var(--text-muted);
-      line-height: 1.8;
+      font-size: 16px;
+      color: var(--text);
+      line-height: 1.75;
       max-width: 540px;
-      margin: 0 auto 10px;
+      margin: 0 auto 14px;
     }
     .audition .pro-tip {
-      font-size: 14px;
-      color: var(--teal);
+      font-size: 15px;
+      color: var(--text);
       font-style: italic;
       margin-bottom: 6px;
     }
     .audition .warning {
-      font-size: 14px;
+      font-size: 15px;
       color: var(--text-muted);
       font-style: italic;
-      margin-bottom: 36px;
+      margin-bottom: 28px;
     }
-    .cta-btn {
-      display: inline-block;
-      background: var(--emerald);
-      color: #ffffff;
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: 17px;
+    .cta-link {
+      color: #1d4ed8;
+      text-decoration: underline;
       font-weight: 700;
-      padding: 16px 44px;
-      border-radius: 8px;
-      text-decoration: none;
-      letter-spacing: .01em;
-      transition: opacity .15s;
-    }
-    .cta-btn:hover { opacity: .88; }
-    .cta-sub {
-      margin-top: 14px;
-      font-size: 13px;
-      color: var(--text-muted);
+      font-size: 17px;
     }
 
     @media (max-width: 600px) {
-      .page { padding: 32px 16px 60px; }
-      .audition { padding: 40px 20px; }
-      .audition::before, .audition::after { display: none; }
+      .doc { padding: 32px 22px; margin: 0; border-radius: 0; }
     }
   </style>
 </head>
 <body>
-
-<!-- Banner 1 -->
-<div class="urgency-band-1">
-  <span>The Engineering First Offer Runway</span>
-</div>
-
-<!-- Banner 2 -->
-<div class="urgency-band-2">
-  <div class="pulse-dot"></div>
-  <span>10 Spots Per Cohort &nbsp;|&nbsp; Apply Now</span>
-</div>
 
 <!-- Site header -->
 <header class="site-header">
@@ -302,7 +184,7 @@
   </div>
 </header>
 
-<div class="page">
+<div class="doc">
 
   <!-- Pre-video text -->
   <div class="pre-video">
@@ -310,21 +192,21 @@
     <h1>A quick message before you fill out your application.</h1>
   </div>
 
-  <video controls style="width:100%;border-radius:14px;box-shadow:0 12px 40px rgba(0,0,0,.2);display:block;">
+  <video controls style="width:100%;border-radius:8px;display:block;">
     <source src="../landing/vsl.mp4" type="video/mp4">
   </video>
 
+  <hr class="divider">
+
   <!-- Audition / application section -->
   <div class="audition">
-    <div class="audition-inner">
-      <div class="audition-tag">Your Application</div>
-      <h2>We don't take on everyone — and you shouldn't want to work with just anyone.</h2>
-      <p class="tagline">This is your application, so we can make sure it's genuinely the right fit.</p>
-      <p class="body-text">It takes about 5 minutes, tops. There are no trick questions — just be honest about where you are and what you need.</p>
-      <p class="pro-tip">Pro tip: Find a quiet spot, settle in, and answer all the questions in one go.</p>
-      <p class="warning"><em>Why?</em> If you stop halfway, your answers disappear — and nobody wants to start over.</p>
-      <a href="apply.html" class="cta-btn" id="vslCtaBtn">Start Your Application →</a>
-    </div>
+    <span class="audition-tag">Your Application</span>
+    <h2>We don't take on everyone — and you shouldn't want to work with just anyone.</h2>
+    <p class="tagline">This is your application, so we can make sure it's genuinely the right fit.</p>
+    <p class="body-text">It takes about 5 minutes, tops. There are no trick questions — just be honest about where you are and what you need.</p>
+    <p class="pro-tip">Pro tip: Find a quiet spot, settle in, and answer all the questions in one go.</p>
+    <p class="warning"><em>Why?</em> If you stop halfway, your answers disappear — and nobody wants to start over.</p>
+    <a href="apply.html" class="cta-link" id="vslCtaBtn">Start your application →</a>
   </div>
 
 </div>
