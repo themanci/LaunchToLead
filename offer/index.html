@@ -345,10 +345,25 @@
 </div>
 <script>
   document.getElementById('offerCtaBtn').addEventListener('click', function() {
+    var utm = (typeof getUtmData === 'function') ? getUtmData() : {};
+
     if (typeof gtag === 'function') {
-      gtag('event', 'cta_click', { event_category: 'funnel', event_label: 'offer_page_instagram_dm_btn' });
+      gtag('event', 'cta_click', {
+        event_category: 'funnel',
+        event_label: 'offer_page_instagram_dm_btn',
+        traffic_source: utm.traffic_source || 'Direct',
+        utm_source: utm.utm_source || '',
+        utm_medium: utm.utm_medium || '',
+        utm_campaign: utm.utm_campaign || '',
+        utm_content: utm.utm_content || ''
+      });
+    }
+
+    if (typeof fbq === 'function') {
+      fbq('track', 'Lead', { content_name: 'Offer Page — Instagram DM CTA' });
     }
   });
 </script>
+
 </body>
 </html>
