@@ -13,7 +13,7 @@
 - **Domain:** launchtolead.io
 - **Tagline:** "A 6-month program to become a Promotion-Ready Engineer — next-level work, visible impact, and senior trust, built in a small founder cohort."
 - **Business Model:** 6-month founder cohort program for engineers with 2–5 years' experience who are stuck without promotion. NOT 1-on-1 ongoing coaching, NOT a course, NOT pre-recorded content. Structure: kickoff call, first 12 weeks = 9 core missions (Build Sprint), next 12 weeks = Application Sprint applying the plan at work, plus Skool community access for the full 6 months.
-- **Scarcity:** 6 founder spots for the first case-study cohort. Enrollment closes August 9, 2026 or when spots fill; cohort starts August 12, 2026. Standard price moves to $6,000 after the founder cohort — update this section after each cohort window closes.
+- **Scarcity:** 6 founder spots for the first case-study cohort. Enrollment closes August 28, 2026 or when spots fill; cohort starts September 1, 2026. Standard price moves to $6,000 after the founder cohort — update this section after each cohort window closes.
 - **Founded:** 2025
 - **Copyright:** © 2026 Launch to Lead Engineering
 - **Email:** contact@launchtolead.io
@@ -192,12 +192,12 @@ Shared component (`navigation.js`) injected into `#navigation-container`:
 
 #### Pricing & Payment (Founder's Case Study Group)
 - **$2,000 paid in full**, or **5 payments of $500** ($2,500 total — paid-in-full saves $500)
-- **Capacity:** 6 founder spots. Cohort starts August 12, 2026; enrollment closes August 9, 2026 or when spots fill.
+- **Capacity:** 6 founder spots. Cohort starts September 1, 2026; enrollment closes August 28, 2026 or when spots fill.
 - **After this founder cohort:** standard price moves to $6,000.
 
 #### Bonuses
 1. **Founder Fast-Track Roadblock Audit** — worth $750 — private 60-min 1:1 before the cohort starts, first 3 founders only
-2. **Promotion Impact Audit Tool** — worth $500 — for all cohort members, opens August 12; ranks 3 real projects on promotion strength (scope, leverage, business impact, visibility, leadership signal, gaps)
+2. **Promotion Impact Audit Tool** — worth $500 — for all cohort members, opens September 1; ranks 3 real projects on promotion strength (scope, leverage, business impact, visibility, leadership signal, gaps)
 3. **Performance Review Game Plan** — worth $750 — for all cohort members; a guided template/process they complete when a review or manager checkpoint approaches, reviewed by Mansour
 4. **Mock Behavioral Interview** — worth $750 — full 1:1 behavioral interview at the end of the program, first 3 founders only
 
@@ -486,7 +486,7 @@ Not used in the current offer, kept in case a future job-search-focused product 
 
 ## 18. Key Business Assumptions & Decisions
 
-1. **6-month founder cohort structure.** Not 1-on-1 ongoing coaching, not a self-paced course. 6 founder spots for the first cohort, fixed enrollment window (starts Aug 12, closes Aug 9, 2026), Skool community included for the full 6 months. First 12 weeks = Build Sprint (9 core missions); next 12 weeks = Application Sprint. Two bonuses (Roadblock Audit, Mock Behavioral Interview) are limited to the first 3 founders only — everything else is available to all 6.
+1. **6-month founder cohort structure.** Not 1-on-1 ongoing coaching, not a self-paced course. 6 founder spots for the first cohort, fixed enrollment window (starts Sept 1, closes Aug 28, 2026), Skool community included for the full 6 months. First 12 weeks = Build Sprint (9 core missions); next 12 weeks = Application Sprint. Two bonuses (Roadblock Audit, Mock Behavioral Interview) are limited to the first 3 founders only — everything else is available to all 6.
 
 ---
 
