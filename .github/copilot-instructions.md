@@ -2,7 +2,7 @@
 
 ## Who We Are
 
-Launch to Lead Engineering (L²) is a 6-month founder cohort program run by Mansour Manci that helps engineers with 2–5 years' experience — good, solid performers who aren't getting promoted — become Promotion-Ready Engineers. Our primary product is **The Promotion-Ready Engineer Blueprint** ($2,000 founder pricing, or 5×$500; standard price $6,000 after the founder cohort). We are NOT an agency, NOT a recruiter, NOT 1-on-1 ongoing coaching, NOT a self-paced course — we are a small founder cohort with weekly group calls.
+Launch to Lead Engineering (L²) is a 6-month founder cohort program run by Mansour Manci that helps engineers with 2–5 years' experience — good, solid performers who aren't getting promoted — become Promotion-Ready Engineers. Our primary product is **The Promotion-Ready Engineer Blueprint** ($1,000 founder pricing, or 5×$250; standard price $6,000 after the founder cohort). We are NOT an agency, NOT a recruiter, NOT 1-on-1 ongoing coaching, NOT a self-paced course — we are a small founder cohort with weekly group calls.
 
 ## Brand Context Reference
 
@@ -43,7 +43,7 @@ Launch to Lead Engineering (L²) is a 6-month founder cohort program run by Mans
 ## Key Business Rules
 
 - **6 founder spots** for the first case-study cohort — always enforce in copy and UI. Cohort starts September 1, 2026; enrollment closes August 28, 2026 or when spots fill.
-- **$2,000 founder pricing** (or 5×$500); standard price **$6,000** after the founder cohort.
+- **$1,000 founder pricing** (or 5×$250); standard price **$6,000** after the founder cohort.
 - **6-month program, 2 phases:** first 12 weeks = Build Sprint (kickoff + 9 core missions + closeout); next 12 weeks = Application Sprint (apply the plan at the real job). Skool community access for the full 6 months. Don't invent additional sessions/phases.
 - **Guarantee:** 60-day buyback — "Give the program 60 days. If you show up, complete Missions 1–6, ask for help when you're stuck, and still don't feel like you have a clear Promotion-Ready Plan plus a stronger way to make your impact visible, I'll buy it back from you in full." Not a generic money-back guarantee.
 - **ROI framing:** a stalled promotion can mean $10K–$30K/year in missed income.

@@ -191,7 +191,7 @@ Shared component (`navigation.js`) injected into `#navigation-container`:
 3. **Trusted by Seniors** — turn "solid engineer" into "person we trust with more": meet commitments, own outcomes, influence others.
 
 #### Pricing & Payment (Founder's Case Study Group)
-- **$2,000 paid in full**, or **5 payments of $500** ($2,500 total — paid-in-full saves $500)
+- **$1,000 paid in full**, or **5 payments of $250** ($1,250 total — paid-in-full saves $250)
 - **Capacity:** 6 founder spots. Cohort starts September 1, 2026; enrollment closes August 28, 2026 or when spots fill.
 - **After this founder cohort:** standard price moves to $6,000.
 
@@ -472,9 +472,9 @@ Not used in the current offer, kept in case a future job-search-focused product 
 | Objection | Response Framework |
 |-----------|-------------------|
 | "What if it doesn't work?" | Give the program 60 days. If you show up, complete Missions 1–6, and ask for help when you're stuck, and still don't have a clear Promotion-Ready Plan plus a stronger way to make your impact visible, I'll buy it back in full. |
-| "Can't afford it right now" | A stalled promotion can mean $10K–$30K/year in missed income. $2,000 founder pricing (or 5×$500) is a fraction of that. |
+| "Can't afford it right now" | A stalled promotion can mean $10K–$30K/year in missed income. $1,000 founder pricing (or 5×$250) is a fraction of that. |
 | "Don't have enough time" | Weekly Zoom calls — 12 weeks to build the plan, 12 more to apply it inside your actual job, not a second job on top of your job. |
-| "How much does it cost?" | Founder's Case Study price: $2,000 paid in full, or 5 payments of $500 ($2,500 total). Moves to $6,000 after this first cohort. |
+| "How much does it cost?" | Founder's Case Study price: $1,000 paid in full, or 5 payments of $250 ($1,250 total). Moves to $6,000 after this first cohort. |
 | "Why 6 months?" | 12 weeks is enough to build the plan, but real promotion proof needs at least one work cycle to actually create — 6 months gives that runway instead of a rushed, unbelievable promise. |
 | "Is this 1-on-1 or a group program?" | It's a small founder cohort (6 spots) with weekly group calls and Skool community access from day one. |
 | "Will this guarantee I get promoted?" | No — nobody honest can promise that. What's guaranteed is the part you control: the proof you create, how your impact gets seen, and whether senior people trust you as ready for more. |
