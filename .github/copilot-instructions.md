@@ -6,7 +6,7 @@ Launch to Lead Engineering (L²) is a 6-month founder cohort program run by Mans
 
 ## Brand Context Reference
 
-**Always read `BRAND_CONTEXT.md` in the project root before doing any significant work.** It contains the complete brand bible: colors, design system, programs, pricing, avatars, funnel architecture, ad strategy, named methods, copywriting patterns, testimonials, and file structure. Reference it for any details not covered in these instructions. As of July 2026 (v5), the avatar and offer pivoted from recent-grad job search to "The Invisible Performer" — 2–5 year engineers stuck without promotion. Several sections of BRAND_CONTEXT.md are explicitly flagged as needing a coordinated rebuild (funnel infra, ad slugs, homepage/tracking) — read the inline ⚠️ flags before treating any section as settled fact.
+**Always read `L2_MASTER_BRAND_AND_OFFER_CONTEXT.md` in the project root before doing any significant work.** It contains the complete brand bible: colors, design system, programs, pricing, avatars, funnel architecture, named methods, testimonials, and offer copy. For content strategy and Reel production, see `L2_CONTENT_AND_REELS_PLAYBOOK.md`. For resume/audit work, see `L2_IMPACT_AND_RESUME_AUDIT_SYSTEM.md`. For proof points and testimonials, see `L2_PROOF_AND_TESTIMONIAL_LIBRARY.md`. For source priority, open questions, and what recently changed, see `L2_OPERATING_DECISION_LOG.md`. These six files (plus `L2_HANSEN_BECK_SUPPLEMENTAL_SOURCE_LIBRARY.md` and `L2_CURRENT_EXPERIMENTS_AND_ASSET_LIBRARY.md`) replace the old `BRAND_CONTEXT.md` and `protocols/claude/*.md` files, which are now archived at `context-archive/` for historical reference only — do not treat them as current.
 
 ## Voice & Tone
 
@@ -14,7 +14,7 @@ Launch to Lead Engineering (L²) is a 6-month founder cohort program run by Mans
 - **Mansour's voice (1st person content):** Conversational, honest about struggles, anti-corporate, values efficiency over fluff. "I'm not HR. I'm not a recruiter. I'm an engineer."
 - **Audit/analysis voice:** Helpful friend who happens to be an expert. Factual, direct, never inflammatory or condescending. Frame problems as opportunities.
 - **Banned words in audits:** disaster, filler, dead, kills/killer, pure filler, BS, thin, red flag, zero value. "Invisible" is NOT banned — it's a core positioning term ("Invisible Performer"/"Invisible Impact") and is fine to use anywhere, including audit feedback.
-- **CTA language:** No discovery call / no "Career Launch Call" in the current funnel — it's application-based (apply → review → accepted → payment + Skool setup). Comment **IMPACT** (cold, ⚠️ not live yet) / Comment **OFFER** (warm) / **launchtolead.io** full offer doc (hot) — see `protocols/claude/content-creation-guide.md`.
+- **CTA language:** No discovery call, no "Career Launch Call," and no application form in the current funnel — enrollment is a direct Instagram DM ask ("tell me you're in, out, or need more information") → payment details → enrolled. Comment **IMPACT** (cold, ⚠️ not live yet) / Comment **OFFER** (warm) / **launchtolead.io/offer** (hot) — see `L2_CONTENT_AND_REELS_PLAYBOOK.md`.
 
 ## Design System — "Emerald Flow"
 
@@ -42,20 +42,21 @@ Launch to Lead Engineering (L²) is a 6-month founder cohort program run by Mans
 
 ## Key Business Rules
 
-- **6 founder spots** for the first case-study cohort — always enforce in copy and UI. Cohort starts September 1, 2026; enrollment closes August 28, 2026 or when spots fill.
+- **6 founder spots** for the first case-study cohort — always enforce in copy and UI. Cohort starts September 1, 2026; enrollment closes August 28, 2026 or when spots fill. Enrollment is via Instagram DM, not an application form — `offer/apply.html` is retired/orphaned.
 - **$1,000 founder pricing** (or 5×$250); standard price **$6,000** after the founder cohort.
 - **6-month program, 2 phases:** first 12 weeks = Build Sprint (kickoff + 9 core missions + closeout); next 12 weeks = Application Sprint (apply the plan at the real job). Skool community access for the full 6 months. Don't invent additional sessions/phases.
 - **Guarantee:** 60-day buyback — "Give the program 60 days. If you show up, complete Missions 1–6, ask for help when you're stuck, and still don't feel like you have a clear Promotion-Ready Plan plus a stronger way to make your impact visible, I'll buy it back from you in full." Not a generic money-back guarantee.
 - **ROI framing:** a stalled promotion can mean $10K–$30K/year in missed income.
 - **Impact Bullet Builder (IBB):** The 4-part formula: Accomplishment + Metric + How + Why. Three tiers: ★/★★/★★★. Avatar-agnostic — reusable for both external resumes and internal promotion cases.
-- **The 3 Program Layers:** Next-Level Work, Known for Impact, Trusted by Seniors (see `protocols/claude/magic-model-details.md`).
+- **The 3 Program Layers:** Next-Level Work, Known for Impact, Trusted by Seniors (see `L2_MASTER_BRAND_AND_OFFER_CONTEXT.md` and `context-archive/magic-model-details.md`).
 - **The free Engineering Resume Leak Finder tool has been retired** (`/free/`, `/leak/` redirect to homepage; source archived at `archive/retired-tools/resume-leak-finder/`).
 - **Results disclaimer** on any page with testimonials: "Individual experiences presented here may not be typical. Your results may vary."
 
 ## File Organization
 
 - Client files: `clients/{path}/{client_name}/`
-- Protocols: `protocols/claude/` (brand context, offer doc, avatar, magic model, hot button map, content creation guide, resume audit protocols)
+- Canonical context docs: `L2_MASTER_BRAND_AND_OFFER_CONTEXT.md`, `L2_CONTENT_AND_REELS_PLAYBOOK.md`, `L2_PROOF_AND_TESTIMONIAL_LIBRARY.md`, `L2_IMPACT_AND_RESUME_AUDIT_SYSTEM.md`, `L2_OPERATING_DECISION_LOG.md`, `L2_CURRENT_EXPERIMENTS_AND_ASSET_LIBRARY.md`, `L2_HANSEN_BECK_SUPPLEMENTAL_SOURCE_LIBRARY.md` (all at repo root)
+- Superseded docs (historical only): `context-archive/` — old `BRAND_CONTEXT.md`, old `protocols/claude/*.md` files, and the 3 archived context files
 - Lead magnets: `lead-magnets/active/` — ⚠️ current lead magnets are archived (built for the old avatar); a new one for The Invisible Performer hasn't been built yet
 - Client materials: `client_materials/launch/` and `client_materials/accelerate/`
 - Ads: `ads/` (historical LinkedIn ad creatives — LinkedIn ads are discontinued)
