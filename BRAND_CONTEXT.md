@@ -499,9 +499,9 @@ Not used in the current offer, kept in case a future job-search-focused product 
 | `about.html` | Mansour Manci bio, credentials, career story |
 | `success-stories.html` | Client testimonials with photos, video, full stories |
 | `legal.html` | Terms, Privacy, Disclaimer, Refund Policy |
-| `offer/index.html` | The Promotion-Ready Engineer Blueprint offer page |
-| `offer/apply.html` | Application form (Step 1 of the funnel — no payment due) |
-| `offer/vsl.html` | Pre-application video page — currently a placeholder graphic ( "Video coming soon" ), real VSL to be recorded and dropped in later |
+| `offer/index.html` | The Promotion-Ready Engineer Blueprint offer page — CTA is now a direct Instagram DM ask ("tell me you're in, out, or need more information"), not a form |
+| `offer/apply.html` | ⚠️ Retired (Aug 2026) — no longer linked from `offer/index.html` or anywhere else live. The application-based enrollment step has been replaced entirely by the Instagram DM CTA. File still exists on disk but is orphaned. |
+| `offer/vsl.html` | Pre-application video page — still links to `apply.html` ("Start your application →") — ⚠️ not yet updated to match the new DM-based CTA, flagged as a follow-up |
 
 **Archived (no longer live):** `vault.html`, `social.html`, `free.html`, `leak/index.html` — all moved to `archive/retired-pages/`. `vault.html`'s old redirect target (`landing/impact-bullet-equation.html`) no longer exists either (also archived).
 
@@ -541,7 +541,7 @@ The entire `landing/` directory is now archived (`landing/archive/`) — `landin
 | `lead-magnets/` | Active lead magnet files, PDF generation, LinkedIn ad variants |
 | `methods/` | ⚠️ Emptied (July 2026) — both The Launch Method and The Accelerate Method documents moved to `methods/archive/`; nothing live remains in this directory |
 | `mockups/` | Design mockups, OBS overlays, video overlay templates |
-| `offer/` | **Active offer funnel** — `index.html` (offer page), `apply.html` (application form), `vsl.html` (pre-application video, currently placeholder) |
+| `offer/` | **Active offer funnel** — `index.html` (offer page, Instagram DM CTA), `apply.html` (⚠️ retired, orphaned), `vsl.html` (pre-application video, currently placeholder, still references retired `apply.html`) |
 | `offers/` | Grand Slam Offer documents (Launch and Accelerate) |
 | `pictures/` | Mansour headshots and photos |
 | `proposals/` | University partnership proposals, Google Forms guides |

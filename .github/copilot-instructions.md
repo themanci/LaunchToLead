@@ -37,7 +37,7 @@ Launch to Lead Engineering (L²) is a 6-month founder cohort program run by Mans
 - **No build tools.** Pure HTML + Tailwind CDN + vanilla JS. No npm, no bundlers, no frameworks.
 - **Hosting:** GitHub Pages, branch `main`, domain `launchtolead.io`.
 - **Analytics on every page:** GA4 (`G-L8V47TR52C`), Meta Pixel (`3141490496240983`). LinkedIn Insight Tag is discontinued (Instagram is the exclusive marketing platform now — see BRAND_CONTEXT.md Section 10/11). Always include the internal traffic exclusion cookie check.
-- **Shared navigation:** `<div id="navigation-container"></div><script src="navigation.js"></script>` — never hardcode nav. Nav copy referencing "Book a Free Call" is stale and needs updating to route to the application instead.
+- **Shared navigation:** `<div id="navigation-container"></div><script src="navigation.js"></script>` — never hardcode nav. Nav CTA ("Join Us") already routes directly to `offer/index.html` — this is current, no fix needed.
 - **Scarcity badge on every page:** "Founder Cohort — Only 6 Spots" with pulsing red dot (replaces the old "1-on-1 Live Coaching — Only 10 Spots / Month").
 
 ## Key Business Rules

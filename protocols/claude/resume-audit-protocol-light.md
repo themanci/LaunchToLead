@@ -52,7 +52,7 @@ Never use: disaster, filler, dead, kills/killer, pure filler, BS, thin, red flag
 - Frame problems as opportunities, not failures.
 - Engineering-appropriate, factual, straight-to-the-point. No hype, no salesy language, no exclamation marks in the analysis.
 - No cheesy taglines. No "No pitch. No pressure. Just a plan." or similar.
-- The CTA points to the application for The Promotion-Ready Engineer Blueprint — no discovery call, no "Career Launch Call" language. This is a no-call, application-based funnel (apply → review → accepted → payment + Skool setup).
+- The CTA points to the offer page for The Promotion-Ready Engineer Blueprint — no discovery call, no "Career Launch Call" language, and no application form. This is a DM-based funnel: read the offer doc → DM on Instagram (in/out/need more info) → payment details → enrolled.
 
 ---
 

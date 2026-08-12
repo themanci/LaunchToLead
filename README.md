@@ -52,9 +52,8 @@ launch-to-lead/
 Desktop & mobile navigation (4 items + CTA):
 - **About** → `about.html`
 - **Success Stories** → `success-stories.html`
-- **Free Resources** → `vault.html`
-- **Social ▾** → `social.html` (dropdown with individual platform links)
-- **Book a Free Call →** → Google Calendar
+- **Social ▾** → follow link (Instagram)
+- **Join Us →** → `offer/index.html` (direct link to the offer page)
 
 ## 🚀 Deployment
 
