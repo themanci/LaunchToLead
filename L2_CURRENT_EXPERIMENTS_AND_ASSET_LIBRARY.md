@@ -14,9 +14,10 @@
 
 ## Current Campaign Snapshot
 
-- Founder Case Study Group: 6 spots, cohort starts **September 1, 2026**, enrollment closes **August 28, 2026** or when spots fill. Founder pricing is **$1,000 paid in full, or 5 payments of $250**.
-- Enrollment mechanic: Instagram DM ("tell me you're in, out, or need more information") → payment details → enrolled. No application form, no discovery call.
-- This is the second attempt at this cohort window — the first attempt (application-based funnel, Aug 12/Aug 9 dates, $2,000/5×$500 pricing) produced zero signups. The application step, dates, and price were all changed in response before re-launching. Treat the new mechanic/price/dates as the live experiment until there's enough signal to evaluate it.
+- Cohort: 10 spots, cohort starts **September 15, 2026**, sign-up closes **September 11, 2026** or when spots fill. Pricing is **$1,000 paid in full, or 5 payments of $250**. No future/standard price is advertised on the offer page.
+- Enrollment mechanic: short application form (`offer/apply.html`, revived and trimmed to 8 fields) → reviewed within 48 hours → next steps if it's a fit. This replaces the brief Aug 12–20, 2026 DM-only mechanic.
+- Offer page copy (`offer/index.html`) was fully rewritten Aug 20, 2026 to a plain, no-hype "spec sheet" style for the engineer avatar: no italic hook quotes, no highlighter-style `<mark>` emphasis, no rhetorical asides, no founder bonuses, no dollar-valued named tools, and no $6,000 standard-price anchor.
+- This is the third iteration of this cohort's mechanic/pricing/dates within Aug 2026 (application-based → DM-based → application-based again, each time trimming friction/hype differently). Treat the current state as live until there's enough signal to evaluate it.
 - These details are time-sensitive and must be revalidated after the stated enrollment window.
 
 ## Current Content Experiments

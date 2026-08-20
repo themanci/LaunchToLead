@@ -18,7 +18,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Promotion-Ready Engineer Blueprint | Launch to Lead</title>
-  <meta name="description" content="A 6-month founder cohort helping solid engineers build a Promotion-Ready Plan, make their impact visible, and earn senior trust to make a real promotion case.">
+  <meta name="description" content="A 6-month group program for engineers who are doing good work but aren't yet clearly demonstrating that they're ready for the next level.">
   <link rel="canonical" href="https://launchtolead.io/offer/">
   <link rel="icon" type="image/svg+xml" href="../favicon.svg">
 
@@ -36,7 +36,6 @@
       --bg-page:    #eef1f5;
       --bg-card:    #ffffff;
       --border:     #e2e8f0;
-      --mark:       #fef08a;
     }
 
     body {
@@ -110,53 +109,20 @@
       color: var(--text-muted);
       margin-bottom: 28px;
     }
-    .doc-topbar {
-      display: flex;
-      align-items: flex-start;
-      gap: 14px;
-      margin-bottom: 8px;
-    }
-    .doc-avatar {
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      object-fit: cover;
-      flex-shrink: 0;
-      margin-top: 2px;
-    }
-
-    /* ── Intro quote block ── */
-    .intro-quote {
-      border-left: 3px solid var(--heading);
-      padding-left: 20px;
-      margin: 24px 0 32px;
-      font-style: italic;
-      color: var(--text);
-    }
-    .intro-quote p { margin-bottom: 14px; }
-    .intro-quote p:last-child { margin-bottom: 0; }
 
     /* ── Typography ── */
-    h1, h2 {
+    h1, h2, h3 {
       font-family: inherit;
       font-weight: 700;
       color: var(--heading);
       line-height: 1.35;
-      margin: 28px 0 14px;
-      font-size: 20px;
+      margin: 28px 0 12px;
+      font-size: 18px;
     }
-    h1 { font-size: 22px; }
+    h2 { font-size: 20px; }
     p { margin-bottom: 16px; }
     p:last-child { margin-bottom: 0; }
     strong { color: var(--heading); font-weight: 700; }
-
-    /* ── Highlighted key sentence ── */
-    mark {
-      background: var(--mark);
-      color: var(--heading);
-      font-weight: 700;
-      padding: 0 2px;
-    }
 
     /* ── Plain bullet lists ── */
     ul.plain-list {
@@ -165,32 +131,35 @@
       margin: 10px 0 18px;
     }
     ul.plain-list li { margin-bottom: 8px; line-height: 1.6; }
-
-    /* ── Framework/tag list — plain text, no chips ── */
-    .frameworks { margin-top: 10px; color: var(--text-muted); font-size: 15px; }
+    ul.plain-list:last-child { margin-bottom: 0; }
 
     /* ── Simple divider ── */
     .divider { border: none; border-top: 1px solid var(--border); margin: 36px 0; }
 
-    /* ── Testimonial — plain, no card ── */
-    .testimonial { margin: 16px 0; }
-    .testimonial .attribution {
-      margin-top: 2px;
-      font-size: 14px;
-      color: var(--text-muted);
-    }
-
-    /* ── CTA — plain link, not a button ── */
+    /* ── CTA link ── */
     .cta-link {
       color: #1d4ed8;
       text-decoration: underline;
       font-weight: 700;
     }
 
+    /* ── CTA button ── */
+    .cta-button {
+      display: inline-block;
+      background: var(--heading);
+      color: #fff;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      padding: 14px 32px;
+      border-radius: 6px;
+      text-decoration: none;
+      margin: 8px 0 4px;
+    }
+    .cta-button:hover { opacity: .9; }
+
     /* ── Sign-off ── */
     .signoff { margin-top: 40px; }
-    .signoff .name  { margin-top: 20px; font-weight: 700; color: var(--heading); }
-    .signoff .title-line { font-size: 14px; color: var(--text-muted); }
 
     /* ── Disclaimer ── */
     .disclaimer {
@@ -240,59 +209,17 @@
     .who-list.yes li::before { content: "✓"; position: absolute; left: 0; color: #059669; font-weight: 700; }
     .who-list.no li::before  { content: "✕"; position: absolute; left: 0; color: #dc2626; font-weight: 700; }
 
-    /* ── Three-layer model cards ── */
-    .model-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-      margin: 18px 0;
-    }
-    .model-card {
+    /* ── Pricing box ── */
+    .pricing-box {
       background: var(--bg-page);
       border: 1px solid var(--border);
       border-radius: 10px;
-      padding: 16px 18px;
-    }
-    .model-card .num {
-      font-family: 'Space Grotesk', sans-serif;
-      font-weight: 700;
-      font-size: 12px;
-      letter-spacing: .06em;
-      text-transform: uppercase;
-      color: #0d9488;
-      margin-bottom: 6px;
-    }
-    .model-card h4 { font-size: 16px; margin-bottom: 6px; color: var(--heading); }
-    .model-card p { font-size: 14px; margin-bottom: 0; color: var(--text); }
-
-    /* ── Founder bonus items ── */
-    .bonus-item {
-      border-left: 3px solid #a3e635;
-      padding-left: 16px;
-      margin-bottom: 18px;
-    }
-    .bonus-tag {
-      display: block;
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: .08em;
-      font-weight: 800;
-      color: #65a30d;
-      margin-bottom: 4px;
-    }
-
-    /* ── Pricing box ── */
-    .pricing-box {
-      background: linear-gradient(135deg, #f0fdfa, #ecfeff);
-      border: 1px solid #99f6e4;
-      border-radius: 12px;
-      padding: 26px 28px;
+      padding: 24px 28px;
       margin: 18px 0;
-      text-align: center;
     }
     .pricing-box .price-main {
       font-family: 'Space Grotesk', sans-serif;
-      font-size: 34px;
+      font-size: 28px;
       font-weight: 700;
       color: var(--heading);
     }
@@ -301,40 +228,20 @@
       color: var(--text-muted);
       margin-top: 6px;
     }
-    .price-strike { text-decoration: line-through; color: #94a3b8; }
 
-    /* ── Guarantee callout ── */
+    /* ── Guarantee box ── */
     .guarantee-box {
-      background: #0f172a;
-      border-radius: 12px;
-      padding: 26px 28px;
+      background: var(--bg-page);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 22px 26px;
       margin: 18px 0;
     }
-    .guarantee-box p { color: #e2e8f0; margin-bottom: 0; }
-    .guarantee-box mark { background: transparent; color: #a3e635; padding: 0; }
-
-    /* ── Numbered next-steps ── */
-    .steps { margin: 18px 0; }
-    .step-item { display: flex; gap: 14px; margin-bottom: 16px; align-items: flex-start; }
-    .step-num {
-      flex-shrink: 0;
-      width: 28px;
-      height: 28px;
-      border-radius: 50%;
-      background: var(--heading);
-      color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 700;
-      font-size: 14px;
-    }
-    .step-text { padding-top: 3px; }
+    .guarantee-box p { margin-bottom: 0; }
 
     @media (max-width: 600px) {
       .doc { padding: 32px 22px; margin: 0; border-radius: 0; }
       .who-grid { grid-template-columns: 1fr; }
-      .model-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -353,184 +260,206 @@
 <div class="doc">
 
   <!-- Doc header -->
-  <div class="doc-title">The Promotion-Ready Engineer Blueprint</div>
-  <div class="doc-byline">Mansour Manci &nbsp;·&nbsp; Cohort Starts Sept 1 &nbsp;·&nbsp; Enrollment Closes Aug 28 &nbsp;·&nbsp; 6 Founder Spots Only</div>
+  <div class="doc-title">Build a stronger case for your next engineering promotion</div>
+  <div class="doc-byline">10 spots · Cohort starts Sept 15 · Sign-up closes Sept 11</div>
 
-  <!-- ── Opening ── -->
-  <div class="doc-topbar">
-    <img src="../pictures/mansour/headshot_square.webp" alt="Mansour Manci" class="doc-avatar">
-    <div>
-      <p><mark>If you’re a solid engineer and your manager keeps giving you some version of, “You’re doing really great,” but the promotion still isn’t happening, this is for you.</mark></p>
-    </div>
-  </div>
+  <p>A 6-month group program for engineers who are doing good work but aren't yet clearly demonstrating that they're ready for the next level.</p>
 
-  <p>I’m starting a new Case Study Group with 6 available spots, and I’m looking for a handful of people to work with to create successful case studies before the official launch of the program.</p>
+  <p>The program focuses on three things:</p>
 
-  <p>We’ll be starting on September 1st, and enrollment closes August 28th or when the 6 spots are full.</p>
+  <ul class="plain-list">
+    <li>Getting involved in higher-impact work</li>
+    <li>Making your contributions visible to the people who influence promotion decisions</li>
+    <li>Building evidence that you can handle more responsibility, ownership, and leadership</li>
+  </ul>
 
   <hr class="divider">
 
-  <span class="eyebrow">The Promise</span>
+  <span class="eyebrow">Who This Is For</span>
 
-  <p><mark>Over the next 6 months, we’ll turn you from “solid engineer who gets good feedback” into someone with a clear promotion case your manager can actually advocate for.</mark></p>
+  <p>This is for engineers who are performing well but feel stuck at their current level.</p>
 
-  <p>In the first 12 weeks, you’ll build your Promotion-Ready Plan: what proof you need, which projects matter, how to make your impact visible, and what senior trust signals you need to create. Then we’ll spend the next 12 weeks applying it inside your actual job, so this doesn’t stay as a nice career plan in a Google Doc.</p>
+  <p>You may be getting good feedback, completing your work, and doing what is expected of you, but still feel unclear about what you need to do differently to move forward.</p>
 
-  <p>I’m not promising your company promotes you on a specific date. Nobody honest can promise that.</p>
-
-  <p><mark>What I am promising is that we’ll fix the parts you can control: the proof you create, how your impact gets seen, and whether senior people trust you as someone ready for more.</mark></p>
+  <p>The goal is to help you understand what is missing and build a practical plan to address it in your actual job.</p>
 
   <hr class="divider">
 
-  <span class="eyebrow">Why Listen to Me</span>
+  <span class="eyebrow">What We Work On</span>
 
-  <p>I know this path well because I’ve walked it myself. At John Deere, I went from entry-level engineer to junior engineer, scrum master, product owner, engineering manager, and then into a high-level AI and efficiency role across an entire division. All in 7 years.</p>
+  <h3>Getting higher-impact work</h3>
 
-  <p>I learned very quickly that good work matters and is the pre-requisite for promotion…but good work without visibility to the right audience doesn’t move your career very far.</p>
+  <p>We look at the work you are doing today and where you need to demonstrate stronger ownership, broader scope, or more responsibility.</p>
 
-  <p>I’ve also helped engineers make real moves: Austin V. went from stuck senior engineer to staff engineer after working together. Jonah B. and AJ M. moved from entry-level engineers to junior engineers and Karen B. went from a junior engineer at John Deere to a senior engineer at Google.</p>
+  <p>You'll work on things like:</p>
 
-  <p>None of those moves happened because they suddenly became better engineers overnight. They were already good. The shift was that their work started creating clearer proof, the right people started seeing it, and their managers had a stronger case to bring into the room.</p>
+  <ul class="plain-list">
+    <li>Becoming consistently reliable in your current responsibilities</li>
+    <li>Identifying work that better demonstrates next-level capability</li>
+    <li>Taking ownership beyond your normal assignments</li>
+    <li>Having better conversations with your manager about scope and responsibility</li>
+  </ul>
 
-  <p><mark>Different engineers. Different companies. Same pattern: good work starts moving further when the proof, visibility, and trust are there.</mark></p>
+  <h3>Making your impact visible</h3>
 
-  <hr class="divider">
+  <p>Doing good work is important, but the people involved in promotion decisions also need evidence of that work and its impact.</p>
 
-  <span class="eyebrow">Is This You?</span>
+  <p>You'll work on:</p>
 
-  <p><strong>I’m looking for a very specific group of people.</strong></p>
+  <ul class="plain-list">
+    <li>Clearly explaining the impact of your work</li>
+    <li>Sharing results without unnecessary self-promotion</li>
+    <li>Building visibility through real work</li>
+    <li>Creating opportunities to present, document, or share useful work with other teams and leaders</li>
+  </ul>
 
-  <p>This is for the engineer who keeps getting some version of, “You’re doing great,” but then review season comes around and nothing actually changes. You’re closing tickets, helping the team, doing solid work — but somehow the projects that would prove you’re ready keep going to someone else. You don’t want to brag, and you definitely don’t want to become the weird self-promotion person in every meeting. <mark>But you’re starting to realise that if your work was going to speak for itself, it probably would have done it by now.</mark></p>
+  <h3>Building evidence that you can operate at the next level</h3>
 
-  <p>If that sentence annoys you a little because it feels true, you’re probably in the right place.</p>
+  <p>The goal is to build real examples of you taking on more responsibility before you ask someone to promote you into it.</p>
 
-  <div class="who-grid">
-    <div class="who-col yes">
-      <h4>This is for you if</h4>
-      <ul class="who-list yes">
-        <li>You’re technically solid and getting decent-to-good reviews</li>
-        <li>You keep hearing “you’re doing great” with no change in scope or title</li>
-        <li>You’re willing to bring real work from your actual job into this</li>
-      </ul>
-    </div>
-    <div class="who-col no">
-      <h4>Not for you if</h4>
-      <ul class="who-list no">
-        <li>You’re brand-new and still surviving your first year or two</li>
-        <li>You’re getting rough reviews and need to fix the basics first</li>
-        <li>You want to sit back and collect resources without doing the work</li>
-      </ul>
-    </div>
-  </div>
+  <p>That can include:</p>
 
-  <hr class="divider">
-
-  <span class="eyebrow">How It Works</span>
-
-  <p>We build your promotion case in three layers: better proof, better visibility, and more senior trust. We deliver those three layers across two 12-week sprints.</p>
-
-  <div class="model-grid">
-    <div class="model-card">
-      <div class="num">Layer 1</div>
-      <h4>Next-Level Work</h4>
-      <p>Get out of low-leverage tasks and into work that proves you’re ready for more — mastering your workload, making it teachable, and expanding your scope.</p>
-    </div>
-    <div class="model-card">
-      <div class="num">Layer 2</div>
-      <h4>Known for Impact</h4>
-      <p>Stop letting useful work disappear into Jira tickets, Slack threads, and one manager’s memory. Learn to demonstrate value and reach the leaders who need to see it.</p>
-    </div>
-    <div class="model-card">
-      <div class="num">Layer 3</div>
-      <h4>Trusted by Seniors</h4>
-      <p>Turn “solid engineer” into “person we can trust with more” — meeting commitments, owning outcomes, and influencing without authority.</p>
-    </div>
-  </div>
-
-  <p>The first 12 weeks are the <strong>Build Sprint</strong>: kickoff, 9 core missions, and a closeout session that turns those three layers into your Promotion-Ready Plan. The next 12 weeks are the <strong>Application Sprint</strong>, where we take what’s happening inside your job each week and turn it into the next move — the manager conversation, the project to chase, the update to send, or the leadership signal to create.</p>
-
-  <p><mark>By the end of the first 60 days, you should have a clear Promotion-Ready Plan, a better read on what proof you’re missing, and a stronger way to make your impact visible without feeling like a self-promotion gremlin.</mark></p>
+  <ul class="plain-list">
+    <li>Owning problems instead of only completing assigned tasks</li>
+    <li>Training or supporting other engineers</li>
+    <li>Improving processes or documentation</li>
+    <li>Leading parts of projects</li>
+    <li>Working across teams</li>
+    <li>Influencing decisions</li>
+    <li>Following through on commitments with less oversight</li>
+  </ul>
 
   <hr class="divider">
 
-  <span class="eyebrow">What You Get</span>
+  <span class="eyebrow">How The Program Works</span>
 
-  <p>We’ll meet weekly for 6 months, so you’re not trying to decode vague feedback, project choices, and manager conversations on your own. You’ll bring the real stuff from work: the update you’re not sure how to write, the project you’re wondering whether to chase, or the “show more leadership” comment that somehow came with zero useful instructions.</p>
+  <p>The program lasts <strong>6 months</strong> and is split into two parts.</p>
 
-  <p>You’ll also get access to the Skool community from the start, so when something happens between calls, you’re not sitting there trying to decode it alone. Sometimes the thing you’re stuck on is exactly what another engineer just figured out. Lovely when that happens. Saves everyone a headache and a small emotional spiral.</p>
+  <h3>First 3 months: Learn and build</h3>
 
-  <p><mark>You’ll use the Promotion Impact Audit Tool — worth $500 — to score your real projects against scope, leverage, business impact, visibility, and leadership signal</mark>, so you can stop treating busy work and promotion proof like they’re the same thing.</p>
+  <p>We meet as a group every week. Each week, we cover a specific concept related to becoming more promotion-ready and how to apply it in your job. You'll have specific actions to work on between calls.</p>
 
-  <p><mark>And when a review, checkpoint, or promotion conversation gets close, we’ll build your Performance Review Game Plan — worth $750</mark> — so you know what proof to bring, what gaps to name, and how to handle the conversation without rambling like a nervous Jira ticket.</p>
+  <p>The group calls also give you a chance to bring in situations you are dealing with at work, ask questions, and learn from what other engineers in the group are experiencing.</p>
 
-  <hr class="divider">
+  <h3>Next 3 months: Put it into practice</h3>
 
-  <span class="eyebrow">Founder Bonuses</span>
+  <p>The second half is focused on applying what you learned to your actual job. This gives you time to pursue better work, build stronger examples of impact, improve how you communicate with your manager and leaders, and start building real evidence instead of just learning concepts.</p>
 
-  <div class="bonus-item">
-    <span class="bonus-tag">First 3 founders only · worth $750</span>
-    <p><strong>Founder Fast-Track Roadblock Audit.</strong> A private 60-minute 1:1 before the cohort starts, to get ahead of your biggest blocker before week one.</p>
-  </div>
-
-  <div class="bonus-item">
-    <span class="bonus-tag">First 3 founders only · worth $750</span>
-    <p><strong>Mock Behavioral Interview.</strong> A full 1:1 behavioral interview at the end of the program.</p>
-  </div>
-
-  <p style="font-size:14px;color:var(--text-muted);">Together, those are $1,500 in private 1:1 support for the first 3 people who join.</p>
+  <p>The entire program is designed around applying this work to your current career while you are in the program.</p>
 
   <hr class="divider">
 
-  <span class="eyebrow">Pricing</span>
+  <span class="eyebrow">Why This Is A Group Program</span>
 
-  <p>Because this is the first case study group, you’ll get founder pricing in exchange for feedback, implementation, and permission to use your wins as case study material.</p>
+  <p>This is intentionally a group program rather than 1-on-1.</p>
 
-  <div class="pricing-box">
-    <div class="price-main">$1,000 <span style="font-size:16px;font-weight:600;color:var(--text-muted);">paid in full</span></div>
-    <div class="price-alt">or 5 payments of $250 &nbsp;·&nbsp; pay in full and save $250</div>
-    <div class="price-alt" style="margin-top:10px;">Standard price after this founder cohort: <span class="price-strike">$6,000</span></div>
-  </div>
+  <p>Your career situation is unique, but many of the problems engineers run into are not. Someone else may ask a question you hadn't thought to ask. You may see how another engineer handled a difficult manager, found higher-impact work, communicated their results, or dealt with a promotion conversation.</p>
 
-  <p>Depending on your market, company, and level, an engineering promotion can unlock $10K–$30K a year. That’s the upside we’re building toward. But the work here is the part you can control: creating stronger proof, making your impact visible, and giving your manager a real case to advocate for.</p>
+  <p>You get to learn from those situations instead of only learning from your own. You also have a group of engineers working toward similar goals who can share experiences, ideas, and feedback.</p>
+
+  <p>And when the program ends, you don't just walk away having worked with me. You have relationships with other engineers you can continue to lean on as your careers progress.</p>
+
+  <hr class="divider">
+
+  <span class="eyebrow">What You Should Have By The End</span>
+
+  <p>The program does not guarantee that your employer will promote you. Your company, manager, available positions, business conditions, and other factors are outside your control. What we can work on are the things you can control.</p>
+
+  <p>By the end of the program, the goal is for you to have:</p>
+
+  <ul class="plain-list">
+    <li>A clearer understanding of what your next level requires</li>
+    <li>Stronger examples of higher-level work</li>
+    <li>Better evidence of your impact</li>
+    <li>More visibility with the right people</li>
+    <li>More examples of ownership and leadership</li>
+    <li>A stronger case to bring into promotion conversations</li>
+    <li>A repeatable way to manage your career going forward</li>
+  </ul>
 
   <hr class="divider">
 
   <span class="eyebrow">The Guarantee</span>
 
   <div class="guarantee-box">
-    <p><mark>Give the program 60 days. If you show up, complete Missions 1–6, ask for help when you’re stuck, and still don’t have a clear Promotion-Ready Plan plus a stronger way to make your impact visible, I’ll buy it back from you in full. No hard feelings.</mark></p>
+    <p>Give the program 60 days. If you show up, complete the first six assignments, ask for help when you're stuck, and still don't feel like you have a clear plan for becoming promotion-ready and a stronger way to make your impact visible, I'll refund the full $1,000. No complicated process. You just need to actually participate and do the work.</p>
   </div>
-
-  <p>You’ll need to be open to feedback and direction, willing to bring real examples from work, and willing to actually use the tools. This is not a sit-back-and-collect-resources kind of thing. If you want someone to do career magic while you lurk silently in the back, this will annoy both of us.</p>
 
   <hr class="divider">
 
-  <span class="eyebrow">Here’s What to Do Next</span>
+  <span class="eyebrow">Cost</span>
 
-  <div class="steps">
-    <div class="step-item">
-      <div class="step-num">1</div>
-      <div class="step-text"><a href="https://www.instagram.com/launch.to.lead/" class="cta-link" id="offerCtaBtn" target="_blank" rel="noopener noreferrer">DM me on Instagram</a> and tell me you're in, out, or need more information.</div>
+  <div class="pricing-box">
+    <div class="price-main">$1,000 <span style="font-size:15px;font-weight:600;color:var(--text-muted);">paid in full</span></div>
+    <div class="price-alt">or 5 payments of $250</div>
+    <div class="price-alt" style="margin-top:8px;">That covers the full 6 months.</div>
+  </div>
+
+  <hr class="divider">
+
+  <span class="eyebrow">Is This A Good Fit?</span>
+
+  <div class="who-grid">
+    <div class="who-col yes">
+      <h4>Probably a good fit if</h4>
+      <ul class="who-list yes">
+        <li>You're already working as an engineer</li>
+        <li>You generally perform well in your current role</li>
+        <li>You want to move to the next level</li>
+        <li>You feel unclear about what is holding you back</li>
+        <li>You want a better understanding of how promotion decisions actually work</li>
+        <li>You're willing to apply what you learn at work</li>
+      </ul>
     </div>
-    <div class="step-item">
-      <div class="step-num">2</div>
-      <div class="step-text">Once you're in, I’ll send you payment details.</div>
-    </div>
-    <div class="step-item">
-      <div class="step-num">3</div>
-      <div class="step-text">Once payment is confirmed, you’re in!</div>
+    <div class="who-col no">
+      <h4>Probably not a fit if you want</h4>
+      <ul class="who-list no">
+        <li>A guaranteed promotion</li>
+        <li>Someone to do the work for you</li>
+        <li>Resume writing</li>
+        <li>Interview preparation</li>
+        <li>Technical training</li>
+        <li>A shortcut that doesn't require changing how you operate at work</li>
+      </ul>
     </div>
   </div>
+
+  <hr class="divider">
+
+  <span class="eyebrow">Proof This Works</span>
+
+  <p>I post real examples and breakdowns on <a href="https://www.instagram.com/launch.to.lead/" class="cta-link" target="_blank" rel="noopener noreferrer">Instagram</a>, and you can see specific engineer outcomes on the <a href="../success-stories.html" class="cta-link">Success Stories</a> page.</p>
+
+  <hr class="divider">
+
+  <h2 style="margin-top:0;">Frequently Asked Questions</h2>
+
+  <h3>Why isn't this 1-on-1?</h3>
+
+  <p>Because I think the group format makes the program better. In a 1-on-1 conversation, you only get to learn from your own questions and situations. In a group, you also get to hear the questions, experiences, problems, and ideas of other engineers working through many of the same career challenges. You may learn just as much from a situation another engineer brings to the group as you do from your own. It also means you have a community to lean on instead of relying entirely on me, and those relationships don't have to end when the program does.</p>
+
+  <h3>Does this guarantee I'll get promoted?</h3>
+
+  <p>No. Nobody outside your company can honestly guarantee that. Promotion decisions depend on your performance, your manager, company needs, available positions, timing, and other factors. The purpose of the program is to help you improve the things you can control and build a much stronger case for being ready for the next level.</p>
+
+  <h3>What if I'm already doing well at my job?</h3>
+
+  <p>That's who this is primarily for. Doing your current job well is important, but promotion usually requires evidence that you can operate beyond the expectations of your current level. The program focuses on helping you identify and build that evidence.</p>
+
+  <hr class="divider">
+
+  <span class="eyebrow">Interested?</span>
+
+  <p>If this sounds relevant to where you are in your career, you can apply below. The application is short — it just helps me understand your situation before we talk.</p>
+
+  <p><a href="apply.html" class="cta-button" id="offerCtaBtn">Apply to join the group</a></p>
+
+  <p style="font-size:14px;color:var(--text-muted);">If you have questions first, <a href="https://www.instagram.com/launch.to.lead/" class="cta-link" target="_blank" rel="noopener noreferrer">DM me on Instagram</a>.</p>
 
   <!-- Sign-off -->
   <div class="signoff">
     <p>— Mansour</p>
   </div>
-
-  <!-- PS -->
-  <p style="margin-top: 32px;">One more thing. As soon as you’re accepted, I’ll send you the Promotion Proof Snapshot. It’s a simple exercise where you look at one project you’ve already done and figure out whether it’s strong promotion evidence, weak “I was busy” evidence, or secretly better than you’ve been giving yourself credit for.</p>
-
-  <p>You’ll have your first useful piece of promotion clarity before the cohort even starts, which means you won’t be walking into week one cold. You’ll already have something real from your job to work with.</p>
 
   <!-- Disclaimer -->
   <p class="disclaimer">Individual results described on this page are not typical and do not constitute a guarantee of your results. Every candidate's situation is different. Outcomes depend on effort, and factors outside of any program. Individual experiences presented here may not be typical. Your results may vary.</p>
@@ -543,7 +472,7 @@
     if (typeof gtag === 'function') {
       gtag('event', 'cta_click', {
         event_category: 'funnel',
-        event_label: 'offer_page_instagram_dm_btn',
+        event_label: 'offer_page_apply_btn',
         traffic_source: utm.traffic_source || 'Direct',
         utm_source: utm.utm_source || '',
         utm_medium: utm.utm_medium || '',
@@ -553,7 +482,7 @@
     }
 
     if (typeof fbq === 'function') {
-      fbq('track', 'Lead', { content_name: 'Offer Page — Instagram DM CTA' });
+      fbq('track', 'Lead', { content_name: 'Offer Page — Apply CTA' });
     }
   });
 </script>
