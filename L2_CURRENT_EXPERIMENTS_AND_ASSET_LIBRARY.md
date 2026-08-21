@@ -14,11 +14,11 @@
 
 ## Current Campaign Snapshot
 
-- Cohort: 10 spots, cohort starts **September 15, 2026**, sign-up closes **September 11, 2026** or when spots fill. Pricing is **$1,000 paid in full, or 5 payments of $250**. No future/standard price is advertised on the offer page.
-- Enrollment mechanic: short application form (`offer/apply.html`, revived and trimmed to 8 fields) → reviewed within 48 hours → next steps if it's a fit. This replaces the brief Aug 12–20, 2026 DM-only mechanic.
-- Offer page copy (`offer/index.html`) was fully rewritten Aug 20, 2026 to a plain, no-hype "spec sheet" style for the engineer avatar: no italic hook quotes, no highlighter-style `<mark>` emphasis, no rhetorical asides, no founder bonuses, no dollar-valued named tools, and no $6,000 standard-price anchor.
-- This is the third iteration of this cohort's mechanic/pricing/dates within Aug 2026 (application-based → DM-based → application-based again, each time trimming friction/hype differently). Treat the current state as live until there's enough signal to evaluate it.
-- These details are time-sensitive and must be revalidated after the stated enrollment window.
+- **Business model pivot (Aug 20, 2026 evening):** moved from the 6-month group cohort to ongoing 1:1 coaching. Limited to 10 1:1 clients at a time — no cohort dates, no enrollment window. Pricing is **$1,000/month, or $2,750 for 3 months upfront**, no minimum commitment unless prepaid. Guarantee is open-ended (Mansour will manage it manually rather than capping it in writing). Named client outcomes (Karen, Austin, Jonah, AJ) are kept directly on the offer page for this 1:1 version.
+- Enrollment mechanic: short application form (`offer/apply.html`, same 8 fields used for the group-cohort version) → Mansour reaches out if it's a fit → intro conversation before deciding to work together.
+- Offer page copy (`offer/index.html`) was fully rewritten Aug 20, 2026 (twice in one day): first to a plain, no-hype "spec sheet" style for the group-cohort offer, then again that evening to describe the 1:1 coaching pivot in the same plain voice.
+- This is the fourth iteration of this offer's mechanic/pricing/model within Aug 2026 (application-based cohort → DM-based cohort → application-based cohort → 1:1 coaching). Treat the current 1:1 state as live until there's enough signal to evaluate it.
+- These details are time-sensitive and should be revalidated periodically, especially pricing and capacity.
 
 ## Current Content Experiments
 

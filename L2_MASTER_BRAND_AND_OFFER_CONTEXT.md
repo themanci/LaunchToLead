@@ -3,7 +3,8 @@
 > **Purpose:** Primary active source for company identity, founder positioning, avatar, emotional language, offer, Magic Model, funnel, claims, and brand rules.
 > **Built:** 2026-07-27 (ChatGPT project)
 > **Mirrored into this repo:** 2026-08-12 — pricing, dates, and funnel mechanics updated to match live-site decisions made since the ChatGPT build (see `L2_OPERATING_DECISION_LOG.md` → Repo Overrides). This file replaces `BRAND_CONTEXT.md` (now `context-archive/BRAND_CONTEXT_V7.md`) as the canonical brand reference for this repo.
-> **Updated 2026-08-20** — offer page rewritten to a plain, no-hype "spec sheet" style for the engineer avatar (see `offer/index.html`). Spots increased to 10, dates moved to Sept 15/Sept 11, the $6,000 standard-price anchor and all founder bonuses/named-tool dollar values were dropped, and enrollment moved back to a short application form (`offer/apply.html`, revived and trimmed to 8 fields). See `L2_OPERATING_DECISION_LOG.md` for details.
+> **Updated 2026-08-20 (morning)** — offer page rewritten to a plain, no-hype "spec sheet" style for the engineer avatar (see `offer/index.html`). Spots increased to 10, dates moved to Sept 15/Sept 11, the $6,000 standard-price anchor and all founder bonuses/named-tool dollar values were dropped, and enrollment moved back to a short application form (`offer/apply.html`, revived and trimmed to 8 fields). See `L2_OPERATING_DECISION_LOG.md` for details.
+> **Updated 2026-08-20 (evening) — FULL BUSINESS MODEL PIVOT.** Mansour decided to move from the 6-month group cohort model to **ongoing 1:1 coaching**. This is a bigger change than a copy edit — it replaces the entire offer, pricing, guarantee, capacity, and enrollment mechanic described below. The 6-month/cohort/Skool-community/group-call details throughout this file are now historical unless explicitly marked current. See `L2_OPERATING_DECISION_LOG.md` for the full pivot record.
 
 ## Source Priority
 
@@ -17,9 +18,9 @@
 
 - **Brand Name:** Launch to Lead Engineering (LaunchToLead, L²)
 - **Domain:** launchtolead.io
-- **Tagline:** "A 6-month program to become a Promotion-Ready Engineer — next-level work, visible impact, and senior trust, built in a small founder cohort."
-- **Business Model:** 6-month group program for engineers with 2–5 years' experience who are stuck without promotion. NOT 1-on-1 ongoing coaching, NOT a course, NOT pre-recorded content. First 3 months = Learn and build; next 3 months = put it into practice applying the plan at work; Skool community access for the full 6 months.
-- **Scarcity:** 10 spots for this cohort. **Sign-up closes September 11, 2026** or when spots fill; **cohort starts September 15, 2026**. No standard/future price is advertised on the offer page (the $6,000 anchor was dropped — see `L2_OPERATING_DECISION_LOG.md`).
+- **Tagline:** "1:1 coaching to help engineers build a stronger case for their next promotion — higher-level work, visible impact, and a clear promotion case, built one-on-one."
+- **Business Model — CURRENT (as of Aug 20, 2026 evening):** Ongoing 1:1 coaching for engineers with 2–5 years' experience who are stuck without promotion. NOT a group cohort, NOT a course, NOT pre-recorded content. Weekly 1:1 sessions built around what's actually happening in the client's job that week, plus text/voice support between sessions. No fixed program length — open-ended monthly coaching, no minimum commitment unless the client prepays for 3 months.
+- **Capacity:** Limited to 10 1:1 clients at a time (a real calendar constraint, not cohort-style marketing scarcity). No enrollment window/cohort dates — clients can apply any time capacity allows.
 - **Founded:** 2025
 - **Email:** contact@launchtolead.io
 - **Legal Entity:** Sole proprietorship (Mansour Manci)
@@ -44,62 +45,64 @@
 - **Emotional state:** Quietly wondering if being good at the job just isn't enough. Doesn't want to become "the annoying self-promoter with a personal brand and a ring light."
 - **Budget sensitivity:** Employed, moderate — will pay if it's tied to a believable promotion/income jump, not sold as generic motivation.
 
-## 4. Build a Stronger Case for Your Next Engineering Promotion (PRIMARY — active offer)
+## 4. 1:1 Promotion Coaching for Engineers (PRIMARY — active offer, as of Aug 20, 2026 evening)
 
-**Canonical live copy:** `offer/index.html`. **Title/positioning updated 2026-08-20** — the offer page was rewritten in a plain, no-hype, spec-sheet style for engineers with zero tolerance for marketing hype (no italic hook quotes, no highlighter-style emphasis, no rhetorical asides, no dollar-valued bonuses). The doc title on the page is now "Build a stronger case for your next engineering promotion" (previously branded "The Promotion-Ready Engineer Blueprint" in the `<title>`/meta tags only — internal name still used below for reference).
+**Canonical live copy:** `offer/index.html`. **Full business-model pivot (Aug 20, 2026 evening)** — Mansour moved from the 6-month group cohort to ongoing 1:1 coaching. The doc title on the page is now "1:1 Promotion Coaching for Engineers." Same plain, no-hype voice as the Aug 20 morning rewrite (no italic hook quotes, no highlighter-style emphasis, no rhetorical asides) — but named client outcomes (Karen, Austin, Jonah, AJ) are kept on-page for this offer, narrated directly rather than pushed off to Instagram/Success Stories (a deliberate reversal of the group-cohort decision to keep proof off-page).
 
 ### Promise
 
-Over 6 months, turn from "solid engineer who gets good feedback" into someone with a clear promotion case a manager can actually advocate for. First 3 months build the plan; the next 3 months apply it inside the real job. Not a promise that the company promotes on a specific date — the promise is the controllable part: proof, visibility, and trust.
+Become more clearly ready for the next level — not by being louder or trying to impress leadership, but by doing higher-level work, making its impact easier to see, and building evidence that you can handle more responsibility. Three areas: understand the gap, do higher-level work, build the evidence.
 
 ### Format
 
-6-month group program, weekly calls. First 3 months: learn and build (weekly group calls, specific actions between calls). Next 3 months: put it into practice (apply what you learned to your actual job). Skool community access from day one.
+Ongoing 1:1 coaching, one weekly session per client, based on what's actually happening in their job that week (bring real projects, manager conversations, performance feedback, promotion discussions). Plus text/voice support between sessions, feedback before important manager conversations, help deciding which projects/opportunities to pursue, and help preparing for performance reviews and promotion conversations. **No fixed program length** — this is open-ended monthly coaching, not a 6-month cohort.
 
-### The 3 Program Layers (maps to the Magic Model)
+### The 3 Program Layers (still maps to the Magic Model — content/frameworks unchanged by the delivery-format pivot)
 
 1. **Next-Level Work** — master current workload, make work teachable, expand scope.
 2. **Known for Impact** — demonstrate value, spread impact, reach leaders.
 3. **Trusted by Seniors** — meet commitments, own outcomes, influence others.
 
-### Pricing & Payment — **updated Aug 2026**
+### Pricing & Payment — **updated Aug 20, 2026 (evening)**
 
-- **$1,000 paid in full**, or **5 payments of $250** ($1,250 total — paid-in-full saves $250).
-- **Capacity:** 10 spots. Cohort starts **September 15, 2026**; sign-up closes **September 11, 2026** or when spots fill.
-- **No future/standard price is advertised.** The previous $6,000 "standard price after founder cohort" anchor was deliberately removed from the offer page (Aug 2026) — it read as a marketing gimmick to the engineer avatar. Do not reintroduce it without Mansour's explicit request.
-- *(Previously $2,000 / 5×$500 with Aug 12/Aug 9 dates, then $1,000/5×$250 with 6 spots / Sept 1–Aug 28 dates — see `L2_OPERATING_DECISION_LOG.md` for the full history of changes.)*
+- **$1,000 per month**, or **$2,750 for 3 months upfront** (a $250 discount vs. paying month to month).
+- **No minimum commitment** unless the client prepays for 3 months upfront.
+- **Capacity:** limited to 10 1:1 clients at a time — no cohort dates, no enrollment window.
+- *(Previous group-cohort pricing history — $2,000/5×$500, then $1,000/5×$250 with various cohort dates — is now fully superseded; see `L2_OPERATING_DECISION_LOG.md` for the full history.)*
 
 ### Bonuses
 
-**Removed (Aug 2026).** The founder-only bonuses (Roadblock Audit, Mock Behavioral Interview) and the named tools with attached dollar values (Promotion Impact Audit Tool — $500, Performance Review Game Plan — $750) were cut from the offer page. Feedback was that dollar-valued bonus stacking reads as hypey/cringy marketing to this engineer avatar. The underlying deliverables (a promotion audit exercise, a review-prep exercise) may still exist as part of the program, but are not named or priced individually in offer copy going forward.
+None. No founder-only bonuses, no named tools with dollar values — consistent with the "no hype" direction established in the Aug 20 morning rewrite and carried into the 1:1 pivot.
 
-### Guarantee
+### Guarantee — **updated Aug 20, 2026 (evening), intentionally open-ended**
 
-"Give the program 60 days. If you show up, complete the first six assignments, ask for help when you're stuck, and still don't feel like you have a clear plan for becoming promotion-ready and a stronger way to make your impact visible, I'll refund the full $1,000. No complicated process. You just need to actually participate and do the work."
+"Complete your first month. Show up, do the work we agree on, and ask for help when you get stuck. If you still don't have a much clearer understanding of what is holding you back and what you should be doing differently, I'll continue working with you at no additional cost until you do."
 
-### Enrollment Mechanic — **updated Aug 2026**
+This is deliberately open-ended (no stated cap on the free extension). Mansour has explicitly acknowledged the risk and said he'll manage/cut it off manually if a client tries to abuse it — do not add a cap to this wording without his explicit request.
 
-The offer page's closing CTA is now application-based again:
+### Enrollment Mechanic — unchanged mechanic, updated CTA copy
 
-1. Apply via a short form (`offer/apply.html` — revived, dramatically simplified to 8 fields: name, email, years of experience, current title/level, desired role + timeline, what's making you feel stuck, time zone, submit).
-2. Application reviewed within 48 hours; if it looks like a fit, Mansour reaches out with next steps.
-3. Questions before applying go to Instagram DM.
+The offer page's closing CTA is application-based:
 
-**This replaces the DM-only enrollment model** ("tell me you're in, out, or need more info" → payment details → enrolled) that was live from Aug 12, 2026 until this Aug 20, 2026 rewrite. `offer/apply.html` is live again and wired to the same Formspree endpoint (`xvzjkwnb`) used previously — confirmed working via a live test submission on 2026-08-20. `offer/vsl.html` still points to the Instagram DM CTA and was not part of this rewrite.
+1. Fill out a short application (`offer/apply.html` — same 8 fields as the group-cohort version: name, email, years of experience, current title/level, desired role + timeline, what's making you feel stuck, time zone, submit — all still relevant for 1:1 scheduling/context).
+2. Tell Mansour about your role and what you're struggling with (covered by the existing form fields).
+3. If it looks like a fit, Mansour reaches out and they talk before deciding whether to work together. The application's success-state message ("we'll review within 48 hours") is still accurate and consistent with this flow — no change needed there.
+
+`offer/apply.html` is wired to the same Formspree endpoint (`xvzjkwnb`) confirmed working via live test submission on 2026-08-20.
 
 ## 5. Objection Handling & FAQ
 
 | Objection | Response |
 |---|---|
-| "What if it doesn't work?" | The 60-day buyback guarantee. |
-| "Can't afford it right now" | A stalled promotion can mean $10K–$30K/year in missed income; $1,000 pricing (or 5×$250) is a fraction of that. |
-| "Don't have enough time" | Weekly calls, 3 months to build the plan, 3 more to apply it inside your actual job — not a second job on top of your job. |
-| "How much does it cost?" | $1,000 paid in full, or 5 payments of $250 ($1,250 total). No future price increase is advertised. |
-| "Why 6 months?" | 3 months builds the plan; real promotion proof needs at least one work cycle to actually create. |
-| "Is this 1-on-1 or group?" | Group program (10 spots), weekly group calls, Skool community from day one. |
-| "Will this guarantee I get promoted?" | No — nobody honest can promise that. What's guaranteed is the proof, visibility, and trust-building process. |
-| "What if I've only been at my company a year or two?" | Not for brand-new engineers still surviving their first year or two, and not for people getting weak reviews who need to fix the basics first. |
-| "How do I actually join?" | Apply via a short form → reviewed within 48 hours → if it's a fit, next steps follow. |
+| "What if it doesn't work?" | The open-ended guarantee — Mansour keeps working with you at no additional cost until you have a much clearer understanding of what's holding you back. |
+| "Can't afford it right now" | A stalled promotion can mean $10K–$30K/year in missed income; $1,000/month (or $2,750 for 3 months) is a fraction of that. |
+| "Don't have enough time" | One weekly 1:1 session, built around what's actually happening in your job that week — not a second job on top of your job. |
+| "How much does it cost?" | $1,000 per month, or $2,750 for 3 months upfront. No minimum commitment unless you prepay for 3 months. |
+| "Why 1:1 instead of a group or course?" | Your situation, manager, and company are specific to you — 1:1 means the work is based on what's actually happening in your job, not a generic curriculum. |
+| "Is this 1-on-1 or group?" | 1:1 — one client, one weekly session, limited to 10 clients at a time. |
+| "Will this guarantee I get promoted?" | No — nobody honest can promise that. What's guaranteed is a clearer understanding of what's holding you back and what to do differently. |
+| "What if I've only been at my company a year or two?" | The offer page doesn't currently include an explicit "who this is/isn't for" filter (Mansour chose to keep the 1:1 draft as-is without adding one) — treat this as an open question rather than a stated exclusion. |
+| "How do I actually join?" | Fill out a short application → tell Mansour about your role and what you're struggling with → if it looks like a fit, you talk and decide together whether to work together. |
 
 ## 6. Design System — "Emerald Flow"
 
@@ -116,7 +119,7 @@ Fonts: Plus Jakarta Sans (body/UI), Space Grotesk (numbers/scoring). Icons: Luci
 
 - Static HTML + Tailwind CDN, no build tools, no bundlers. GitHub Pages, branch `main`, domain `launchtolead.io`.
 - **Analytics:** GA4 (`G-L8V47TR52C`), Meta Pixel (`3141490496240983`), UTM tracker with `getUtmData()`. The offer page's CTA click now fires a GA `cta_click` event (with UTM/traffic-source params) and a Meta `Lead` event — added Aug 2026.
-- **Funnel:** Instagram organic content (exclusive channel, no LinkedIn ads, no paid campaigns) → offer page (`offer/index.html`) → application (`offer/apply.html`) → reviewed within 48 hours → enrolled. Shareable clean redirect URLs: `/apply`, `/join`, `/promotion` all forward to `offer/index.html`.
+- **Funnel:** Instagram organic content (exclusive channel, no LinkedIn ads, no paid campaigns) → offer page (`offer/index.html`) → application (`offer/apply.html`) → Mansour reaches out if it's a fit → intro conversation → enrolled. Shareable clean redirect URLs: `/apply`, `/join`, `/promotion` all forward to `offer/index.html`.
 - **Navigation:** shared `navigation.js`; nav CTA ("Join Us") already routes directly to `offer/index.html` — confirmed current, not stale.
 
 ## 8. Named Methods & Frameworks (vault — not all currently in active use)
@@ -125,8 +128,11 @@ Impact Bullet Builder™, Master Story Vault™, Numbered Roadmap™, Me-in-We E
 
 ## 9. Key Business Assumptions & Decisions
 
-1. 6-month group program structure, not 1-on-1 ongoing coaching, not a self-paced course. 10 spots, fixed sign-up window (starts Sept 15, closes Sept 11, 2026), Skool community for the full 6 months. No founder-only bonuses or dollar-valued named tools as of the Aug 2026 rewrite.
-2. Enrollment is application-based again, as of Aug 20, 2026 (a short, 8-field form) — reversing the brief DM-only period from Aug 12–20, 2026. See `L2_OPERATING_DECISION_LOG.md` for why.
+1. **Full pivot to ongoing 1:1 coaching (Aug 20, 2026 evening)** — replaces the 6-month group cohort structure entirely. No fixed program length, no Skool community, no cohort dates. Limited to 10 1:1 clients at a time. No founder-only bonuses or dollar-valued named tools (carried forward from the Aug 20 morning no-hype rewrite).
+2. Enrollment is application-based (`offer/apply.html`, 8 fields, unchanged from the group-cohort version — the fields still make sense for 1:1 scheduling/context). Mansour reaches out and talks with the applicant before deciding whether to work together.
+3. Pricing: $1,000/month or $2,750 for 3 months upfront, no minimum commitment unless prepaid.
+4. Guarantee is intentionally open-ended (no stated cap) — Mansour will manage/cut it off manually rather than adding contractual language limiting it.
+5. Named client outcomes (Karen, Austin, Jonah, AJ) are kept directly on the 1:1 offer page — a deliberate reversal of the group-cohort decision to push all proof off-page to Instagram/Success Stories.
 
 ## Note on this repo's mirror
 

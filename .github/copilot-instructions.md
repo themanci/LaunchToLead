@@ -2,7 +2,7 @@
 
 ## Who We Are
 
-Launch to Lead Engineering (L²) is a 6-month group program run by Mansour Manci that helps engineers with 2–5 years' experience — good, solid performers who aren't getting promoted — build a stronger case for their next promotion. Our primary product is a 6-month group program ($1,000 paid in full, or 5×$250; no future/standard price is advertised). We are NOT an agency, NOT a recruiter, NOT 1-on-1 ongoing coaching, NOT a self-paced course — we are a small group cohort with weekly group calls.
+Launch to Lead Engineering (L²) is run by Mansour Manci and helps engineers with 2–5 years' experience — good, solid performers who aren't getting promoted — build a stronger case for their next promotion. Our primary product is **ongoing 1:1 coaching** ($1,000/month, or $2,750 for 3 months upfront; no minimum commitment unless prepaid). We are NOT an agency, NOT a recruiter, NOT a group cohort, NOT a self-paced course — we are 1:1 coaching, one weekly session per client.
 
 ## Brand Context Reference
 
@@ -14,7 +14,7 @@ Launch to Lead Engineering (L²) is a 6-month group program run by Mansour Manci
 - **Mansour's voice (1st person content):** Conversational, honest about struggles, anti-corporate, values efficiency over fluff. "I'm not HR. I'm not a recruiter. I'm an engineer."
 - **Audit/analysis voice:** Helpful friend who happens to be an expert. Factual, direct, never inflammatory or condescending. Frame problems as opportunities.
 - **Banned words in audits:** disaster, filler, dead, kills/killer, pure filler, BS, thin, red flag, zero value. "Invisible" is NOT banned — it's a core positioning term ("Invisible Performer"/"Invisible Impact") and is fine to use anywhere, including audit feedback.
-- **CTA language:** No discovery call, no "Career Launch Call" — enrollment is via a short application form (`offer/apply.html`, 8 fields) reviewed within 48 hours. Comment **IMPACT** (cold, ⚠️ not live yet) / Comment **OFFER** (warm) / **launchtolead.io/offer** (hot) — see `L2_CONTENT_AND_REELS_PLAYBOOK.md`.
+- **CTA language:** No discovery call, no "Career Launch Call" — enrollment is via a short application form (`offer/apply.html`, 8 fields); Mansour reaches out and talks with the applicant before deciding to work together. Comment **IMPACT** (cold, ⚠️ not live yet) / Comment **OFFER** (warm) / **launchtolead.io/offer** (hot) — see `L2_CONTENT_AND_REELS_PLAYBOOK.md`.
 
 ## Design System — "Emerald Flow"
 
@@ -38,18 +38,19 @@ Launch to Lead Engineering (L²) is a 6-month group program run by Mansour Manci
 - **Hosting:** GitHub Pages, branch `main`, domain `launchtolead.io`.
 - **Analytics on every page:** GA4 (`G-L8V47TR52C`), Meta Pixel (`3141490496240983`). LinkedIn Insight Tag is discontinued (Instagram is the exclusive marketing platform now — see BRAND_CONTEXT.md Section 10/11). Always include the internal traffic exclusion cookie check.
 - **Shared navigation:** `<div id="navigation-container"></div><script src="navigation.js"></script>` — never hardcode nav. Nav CTA ("Join Us") already routes directly to `offer/index.html` — this is current, no fix needed.
-- **Scarcity badge on every page:** "10 Spots" language with pulsing red dot (replaces the old "Founder Cohort — Only 6 Spots" and the original "1-on-1 Live Coaching — Only 10 Spots / Month").
+- **Scarcity badge on every page:** "Limited to 10 1:1 Clients at a Time" language with pulsing red dot (replaces the old "10 Spots" cohort-dates language, the earlier "Founder Cohort — Only 6 Spots," and the original "1-on-1 Live Coaching — Only 10 Spots / Month").
 
 ## Key Business Rules
 
-- **10 spots** for this cohort — always enforce in copy and UI. Cohort starts September 15, 2026; sign-up closes September 11, 2026 or when spots fill. Enrollment is via a short application form (`offer/apply.html`, revived and trimmed to 8 fields) — not a DM-only funnel.
-- **$1,000 pricing** (or 5×$250); no future/standard price is advertised on the offer page (the $6,000 anchor was deliberately removed).
-- **6-month program, 2 phases:** first 3 months = learn and build (weekly group calls); next 3 months = put it into practice (apply the plan at the real job). Skool community access for the full 6 months. Don't invent additional sessions/phases.
-- **Guarantee:** 60-day refund — "Give the program 60 days. If you show up, complete the first six assignments, ask for help when you're stuck, and still don't feel like you have a clear plan for becoming promotion-ready and a stronger way to make your impact visible, I'll refund the full $1,000." Not a generic money-back guarantee.
+- **Limited to 10 1:1 clients at a time** — a real calendar constraint, not cohort-style scarcity. No cohort dates, no enrollment window. Enrollment is via a short application form (`offer/apply.html`, 8 fields) — Mansour reaches out and talks with the applicant before deciding to work together.
+- **$1,000/month pricing, or $2,750 for 3 months upfront.** No minimum commitment unless the client prepays for 3 months.
+- **Ongoing 1:1 coaching, no fixed program length.** One weekly 1:1 session per client, built around what's actually happening in their job that week, plus text/voice support between sessions. Not a 6-month program, not a group cohort, no Skool community. Don't invent sessions/phases that don't exist.
+- **Guarantee:** open-ended, no stated cap — "Complete your first month. Show up, do the work we agree on, and ask for help when you get stuck. If you still don't have a much clearer understanding of what is holding you back and what you should be doing differently, I'll continue working with you at no additional cost until you do." Mansour manages the open-endedness manually; do not add a cap without his explicit request.
 - **ROI framing:** a stalled promotion can mean $10K–$30K/year in missed income.
 - **Impact Bullet Builder (IBB):** The 4-part formula: Accomplishment + Metric + How + Why. Three tiers: ★/★★/★★★. Avatar-agnostic — reusable for both external resumes and internal promotion cases.
-- **The 3 Program Layers:** Next-Level Work, Known for Impact, Trusted by Seniors (see `L2_MASTER_BRAND_AND_OFFER_CONTEXT.md` and `context-archive/magic-model-details.md`).
-- **No founder-only bonuses or dollar-valued named tools** on the offer page as of the Aug 20, 2026 rewrite — these read as hypey/cringy marketing to the engineer avatar. Do not reintroduce without Mansour's explicit request.
+- **The 3 Program Layers:** Next-Level Work, Known for Impact, Trusted by Seniors (see `L2_MASTER_BRAND_AND_OFFER_CONTEXT.md` and `context-archive/magic-model-details.md`) — these still apply to 1:1 coaching; only the delivery format changed.
+- **No founder-only bonuses or dollar-valued named tools** on the offer page — these read as hypey/cringy marketing to the engineer avatar. Do not reintroduce without Mansour's explicit request.
+- **Named client outcomes (Karen, Austin, Jonah, AJ) are kept directly on the 1:1 offer page** — unlike the earlier group-cohort version, which pushed all proof off-page to Instagram/`success-stories.html`.
 - **The free Engineering Resume Leak Finder tool has been retired** (`/free/`, `/leak/` redirect to homepage; source archived at `archive/retired-tools/resume-leak-finder/`).
 - **Results disclaimer** on any page with testimonials: "Individual experiences presented here may not be typical. Your results may vary."
 
